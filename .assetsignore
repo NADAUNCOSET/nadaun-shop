@@ -1,0 +1,8 @@
+_scraper
+data/_scrape_pilot
+data/sources.md
+data/taxonomy_kpp.md
+data/taxonomy_rainbowshop.md
+node_modules
+*.py
+.assetsignore

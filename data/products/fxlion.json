@@ -1,0 +1,78 @@
+{
+  "brand": "에프엑스리온",
+  "brand_slug": "fxlion",
+  "products": {
+    "clmedia-2258": {
+      "id": "clmedia-2258",
+      "source": "clmedia",
+      "source_id": "2258",
+      "name": "에프엑스리온 FXNANO1 나노 원 V마운트 배터리 50Wh / 8A 대용량",
+      "brand": "에프엑스리온",
+      "brand_slug": "fxlion",
+      "category": "Lighting",
+      "cat_path": [
+        "Lighting"
+      ],
+      "price": 229000,
+      "source_url": "https://www.clmedia.co.kr/product/에프엑스리온-fxnano1-나노-원-v마운트-배터리-50wh-8a-대용량/2258/category/207/display/1/",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/clmedia-2258.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/clmedia-2258/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/clmedia-2258/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/clmedia-2258/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/clmedia-2258/main_4.webp",
+          "https://media.nadaun.co/shop/images/fxlion/clmedia-2258/main_5.webp",
+          "https://media.nadaun.co/shop/images/fxlion/clmedia-2258/main_6.webp",
+          "https://media.nadaun.co/shop/images/fxlion/clmedia-2258/main_7.webp",
+          "https://media.nadaun.co/shop/images/fxlion/clmedia-2258/main_8.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-2258/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-2258/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-2258/04.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-2258/05.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-2258/06.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-2258/07.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-2258/08.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-2258/09.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-2258/11.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-2258/13.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-2258/14.webp"
+        ]
+      }
+    },
+    "clmedia-284": {
+      "id": "clmedia-284",
+      "source": "clmedia",
+      "source_id": "284",
+      "name": "에프엑스리온 PL-3680Q-D2 2슬롯 멀티 배터리 충전기",
+      "brand": "에프엑스리온",
+      "brand_slug": "fxlion",
+      "category": "Lighting",
+      "cat_path": [
+        "Lighting"
+      ],
+      "price": 99000,
+      "source_url": "https://www.clmedia.co.kr/product/에프엑스리온-pl-3680q-d2-2슬롯-멀티-배터리-충전기/284/category/207/display/1/",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/clmedia-284.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/clmedia-284/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/clmedia-284/main_2.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-284/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-284/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-284/05.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-284/06.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-284/07.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-284/08.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-284/09.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-284/11.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/clmedia-284/12.webp"
+        ]
+      }
+    }
+  }
+}

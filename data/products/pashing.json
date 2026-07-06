@@ -1,0 +1,69 @@
+{
+  "brand": "파싱",
+  "brand_slug": "pashing",
+  "products": {
+    "clmedia-1782": {
+      "id": "clmedia-1782",
+      "source": "clmedia",
+      "source_id": "1782",
+      "name": "파싱 FS-F550 F타입 마운트 배터리",
+      "brand": "파싱",
+      "brand_slug": "pashing",
+      "category": "Lighting",
+      "cat_path": [
+        "Lighting"
+      ],
+      "price": 42000,
+      "source_url": "https://www.clmedia.co.kr/product/파싱-fs-f550-f타입-마운트-배터리/1782/category/207/display/1/",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/pashing/clmedia-1782.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/pashing/clmedia-1782/main_1.webp",
+          "https://media.nadaun.co/shop/images/pashing/clmedia-1782/main_2.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-1782/01.webp",
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-1782/03.webp",
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-1782/05.webp",
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-1782/06.webp",
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-1782/07.webp",
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-1782/08.webp",
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-1782/09.webp",
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-1782/11.webp",
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-1782/12.webp"
+        ]
+      }
+    },
+    "clmedia-312": {
+      "id": "clmedia-312",
+      "source": "clmedia",
+      "source_id": "312",
+      "name": "파싱 소니 F770 호환 배터리 FS-770N",
+      "brand": "파싱",
+      "brand_slug": "pashing",
+      "category": "Lighting",
+      "cat_path": [
+        "Lighting"
+      ],
+      "price": 53000,
+      "source_url": "https://www.clmedia.co.kr/product/파싱-소니-f770-호환-배터리-fs-770n/312/category/207/display/1/",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/pashing/clmedia-312.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/pashing/clmedia-312/main_1.webp",
+          "https://media.nadaun.co/shop/images/pashing/clmedia-312/main_2.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-312/01.webp",
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-312/03.webp",
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-312/05.webp",
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-312/06.webp",
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-312/07.webp",
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-312/09.webp",
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-312/10.webp",
+          "https://media.nadaun.co/shop/detail/pashing/clmedia-312/11.webp"
+        ]
+      }
+    }
+  }
+}

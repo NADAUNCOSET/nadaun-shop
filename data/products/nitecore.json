@@ -1,0 +1,70 @@
+{
+  "brand": "나이트코어",
+  "brand_slug": "nitecore",
+  "products": {
+    "clmedia-1620": {
+      "id": "clmedia-1620",
+      "source": "clmedia",
+      "source_id": "1620",
+      "name": "나이트코어 USN3PRO 소니F배터리용 듀얼 급속 충전기",
+      "brand": "나이트코어",
+      "brand_slug": "nitecore",
+      "category": "Lighting",
+      "cat_path": [
+        "Lighting"
+      ],
+      "price": 47000,
+      "source_url": "https://www.clmedia.co.kr/product/나이트코어-usn3pro-소니f배터리용-듀얼-급속-충전기/1620/category/207/display/1/",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/nitecore/clmedia-1620.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/nitecore/clmedia-1620/main_1.webp",
+          "https://media.nadaun.co/shop/images/nitecore/clmedia-1620/main_2.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-1620/01.webp",
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-1620/03.webp",
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-1620/05.webp",
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-1620/06.webp",
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-1620/08.webp",
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-1620/09.webp"
+        ]
+      }
+    },
+    "clmedia-852": {
+      "id": "clmedia-852",
+      "source": "clmedia",
+      "source_id": "852",
+      "name": "나이트코어 USN4PRO NP-FZ100용 배터리 듀얼 급속 충전기",
+      "brand": "나이트코어",
+      "brand_slug": "nitecore",
+      "category": "Lighting",
+      "cat_path": [
+        "Lighting"
+      ],
+      "price": 47000,
+      "source_url": "https://www.clmedia.co.kr/product/나이트코어-usn4pro-np-fz100용-배터리-듀얼-급속-충전기/852/category/207/display/1/",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/nitecore/clmedia-852.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/nitecore/clmedia-852/main_1.webp",
+          "https://media.nadaun.co/shop/images/nitecore/clmedia-852/main_2.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-852/01.webp",
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-852/03.webp",
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-852/05.webp",
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-852/06.webp",
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-852/07.webp",
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-852/08.webp",
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-852/09.webp",
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-852/10.webp",
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-852/11.webp",
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-852/12.webp",
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-852/14.webp",
+          "https://media.nadaun.co/shop/detail/nitecore/clmedia-852/15.webp"
+        ]
+      }
+    }
+  }
+}

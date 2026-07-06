@@ -1,0 +1,82 @@
+{
+  "brand": "파나소닉",
+  "brand_slug": "panasonic",
+  "products": {
+    "clmedia-2344": {
+      "id": "clmedia-2344",
+      "source": "clmedia",
+      "source_id": "2344",
+      "name": "파나소닉 HC-X2100 UHD 4K 프로 캠코더 (3G-SDI / HDMI / 24x 줌)",
+      "brand": "파나소닉",
+      "brand_slug": "panasonic",
+      "category": "Camera",
+      "cat_path": [
+        "Camera"
+      ],
+      "price": 3070000,
+      "source_url": "https://www.clmedia.co.kr/product/파나소닉-hc-x2100-uhd-4k-프로-캠코더-3g-sdi-hdmi-24x-줌/2344/category/136/display/1/",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/panasonic/clmedia-2344.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/panasonic/clmedia-2344/main_1.webp",
+          "https://media.nadaun.co/shop/images/panasonic/clmedia-2344/main_2.webp",
+          "https://media.nadaun.co/shop/images/panasonic/clmedia-2344/main_3.webp",
+          "https://media.nadaun.co/shop/images/panasonic/clmedia-2344/main_4.webp",
+          "https://media.nadaun.co/shop/images/panasonic/clmedia-2344/main_5.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2344/01.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2344/03.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2344/04.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2344/05.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2344/06.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2344/09.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2344/10.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2344/11.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2344/13.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2344/14.webp"
+        ]
+      }
+    },
+    "clmedia-2343": {
+      "id": "clmedia-2343",
+      "source": "clmedia",
+      "source_id": "2343",
+      "name": "파나소닉 AG-CX370 UHD 4K 방송용 캠코더 (NDI|HX2 / 오토 트래킹지원)",
+      "brand": "파나소닉",
+      "brand_slug": "panasonic",
+      "category": "Camera",
+      "cat_path": [
+        "Camera"
+      ],
+      "price": 6300000,
+      "source_url": "https://www.clmedia.co.kr/product/파나소닉-ag-cx370-uhd-4k-방송용-캠코더-ndihx2-오토-트래킹지원/2343/category/136/display/1/",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/panasonic/clmedia-2343.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/panasonic/clmedia-2343/main_1.webp",
+          "https://media.nadaun.co/shop/images/panasonic/clmedia-2343/main_2.webp",
+          "https://media.nadaun.co/shop/images/panasonic/clmedia-2343/main_3.webp",
+          "https://media.nadaun.co/shop/images/panasonic/clmedia-2343/main_4.webp",
+          "https://media.nadaun.co/shop/images/panasonic/clmedia-2343/main_5.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2343/01.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2343/03.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2343/04.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2343/05.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2343/06.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2343/08.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2343/09.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2343/10.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2343/11.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2343/12.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2343/13.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2343/14.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2343/16.webp",
+          "https://media.nadaun.co/shop/detail/panasonic/clmedia-2343/17.webp"
+        ]
+      }
+    }
+  }
+}
