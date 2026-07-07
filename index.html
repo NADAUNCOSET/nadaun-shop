@@ -96,6 +96,8 @@
   .brand-btn span{position:relative;z-index:1}
   .brand-btn::after{content:"";position:absolute;top:0;left:-60%;width:42%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.9),transparent);transform:skewX(-18deg);animation:sweep 3.4s ease-in-out infinite}
   .brand-btn:hover{transform:translateY(-1px)}
+  .brand-btn.alt{background:var(--accent);animation:none;box-shadow:0 4px 14px rgba(27,42,74,.26)}
+  .brand-btn.alt::after{display:none}
   @keyframes shine{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
   @keyframes sweep{0%{left:-60%}58%,100%{left:130%}}
   .menu{display:flex;gap:32px;align-items:center;font-size:14.5px;font-weight:500}
@@ -194,7 +196,7 @@
   .allin-pic .badge{position:absolute;left:22px;bottom:22px;z-index:2;color:#fff;background:rgba(27,42,74,.66);
      backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.28);padding:10px 18px;border-radius:999px;font-size:13.5px;font-weight:600}
   .floors{display:flex;flex-direction:column;justify-content:center}
-  .floor{display:flex;gap:22px;align-items:flex-start;padding:30px;border:1px solid var(--line);background:var(--paper);
+  .floor{position:relative;z-index:1;display:flex;gap:22px;align-items:flex-start;padding:30px;border:1px solid var(--line);background:var(--paper);
      transition:border-color .55s var(--ease),transform .55s var(--ease)}
   .floor:hover{border-color:var(--accent);transform:translateX(5px)}
   .floor2{border-radius:20px 20px 0 0;border-bottom:none;background:var(--cream)}
@@ -203,7 +205,7 @@
   .fl-body b{font-size:20px;font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:9px}
   .fl-body .tag{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:3px 9px}
   .fl-body p{color:var(--ink-soft);font-size:14px;margin-top:8px;max-width:36ch}
-  .flow{position:relative;height:0;display:flex;justify-content:center;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+  .flow{position:relative;z-index:3;height:0;display:flex;justify-content:center;border-left:1px solid var(--line);border-right:1px solid var(--line)}
   .flow span{position:relative;top:-13px;background:var(--accent);color:#fff;font-size:12px;font-weight:600;letter-spacing:.02em;
      padding:6px 15px;border-radius:999px;box-shadow:0 6px 18px rgba(27,42,74,.28)}
 
@@ -270,7 +272,8 @@
         <img class="logo-w" src="brand/logo-white.png" alt="nadaun" />
         <img class="logo-b" src="brand/logo-black.png" alt="nadaun" />
       </a>
-      <a class="brand-btn" href="catalog.html"><span>브랜드</span></a>
+      <a class="brand-btn" href="catalog.html"><span>브랜드별</span></a>
+      <a class="brand-btn alt" href="catalog_category.html"><span>제품별</span></a>
     </div>
     <nav class="menu">
       <a href="#rent">렌탈</a>
@@ -281,7 +284,8 @@
     <button class="burger" id="burger" aria-label="메뉴"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-menu" id="mmenu">
-    <a class="mm-brand" href="catalog.html">브랜드</a>
+    <a class="mm-brand" href="catalog.html">브랜드별 카탈로그</a>
+    <a class="mm-brand" href="catalog_category.html">제품별 카탈로그</a>
     <a href="#rent">렌탈</a>
     <a href="#buy">구매</a>
     <a href="#studio">스튜디오</a>

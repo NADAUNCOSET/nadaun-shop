@@ -31,6 +31,12 @@ NOTICE = "https://media.nadaun.co/shop/notice"
 TOP_NOTICES = [(f"{NOTICE}/return-policy.webp", "교환 및 반품 불가 안내 — 나다운 스페이스 판매 상품은 미개봉 상품입니다")]
 BOTTOM_NOTICES = []
 
+# clmedia 매장 프로모 이미지 제거용 블록리스트(내용 동일본 URL 목록). 없으면 빈 set.
+try:
+    BLOCK = set(json.load(open(Path(__file__).parent / "_promo_blocklist.json", encoding="utf-8")))
+except Exception:
+    BLOCK = set()
+
 master = json.load(open(ROOT/"data"/"brands.json", encoding="utf-8"))["brands"]
 by_slug = {m["slug"]: m for m in master}
 FRIENDLY = {"_misc": ("기타", "ETC"), "_custom": ("주문제작", "CUSTOM")}
@@ -130,7 +136,7 @@ def page_html(p, slug):
     price = p.get("price") or 0
     imgs  = p.get("images", {}) or {}
     main  = imgs.get("main") or ([imgs["thumb"]] if imgs.get("thumb") else [])
-    detail= imgs.get("detail") or []
+    detail= [u for u in (imgs.get("detail") or []) if u not in BLOCK]
     thumb = imgs.get("thumb") or (main[0] if main else "")
     hero  = main[0] if main else thumb
     url   = f"{SITE}/product/{slug}/{pid}.html"
