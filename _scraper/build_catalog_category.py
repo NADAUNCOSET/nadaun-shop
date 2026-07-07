@@ -21,10 +21,10 @@ cards=[]
 for p in prods:
     dc,dn,jc,jn = K.classify(p.get("name",""), p.get("category",""))
     price=p.get("price",0); usd=p.get("price_usd",0)
-    cards.append({"n":p["name"],"b":p.get("brand",""),
+    cards.append({"n":p["name"],"b":p.get("brand",""),"s":p.get("brand_slug",""),"id":p["id"],
                   "d":dc,"dn":dn,"j":jc,"jn":jn,
                   "p":price,"usd":usd,
-                  "t":p["images"].get("thumb",""),"u":p.get("source_url","")})
+                  "t":p["images"].get("thumb","")})
 # 정렬: 대분류 순 → 중분류 코드 → 브랜드 → 가격 desc
 dorder={c:i for i,c in enumerate(K.DAE_ORDER)}
 cards.sort(key=lambda c:(dorder.get(c["d"],99), c["j"], c["b"], -(c["p"] or c["usd"] or 0)))
@@ -158,7 +158,7 @@ function renderJungs(){
   bar.style.maxHeight='240px';
   $('jungs').querySelectorAll('button').forEach(x=>x.onclick=()=>{curJ=x.dataset.j;shown=PAGE;render()});
 }
-function card(d){return `<a class="card" href="${d.u}" target="_blank" rel="noopener">
+function card(d){return `<a class="card" href="/product/${d.s}/${d.id}.html">
   <div class="ph">${d.t?`<img src="${d.t}" loading="lazy" alt="">`:'<span class="no">이미지 준비중</span>'}</div>
   <div class="b"><div class="bt"><span>${esc(d.b)}</span><span class="it">${esc(d.jn)}</span></div>
   <div class="nm">${esc(d.n)}</div><div class="pr">${fmt(d)}</div></div></a>`}

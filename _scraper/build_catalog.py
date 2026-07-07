@@ -30,9 +30,9 @@ for f in sorted(DATA.glob("*.json")):
         else:
             dc,dn,jc,jn = K.classify(nm,cat); kc,kn = "",""
         price=p.get("price",0); usd=p.get("price_usd",0)
-        prods.append({"s":slug,"b":p.get("brand",""),"n":nm,
+        prods.append({"s":slug,"b":p.get("brand",""),"n":nm,"id":p["id"],
                       "d":dc,"dn":dn,"j":jc,"jn":jn,"k":kc,"kn":kn,"p":price,"usd":usd,
-                      "t":p["images"].get("thumb",""),"u":p.get("source_url","")})
+                      "t":p["images"].get("thumb","")})
 
 # 대분류 통합 순서: 틸타(카메라별→제품군→특가) + KPP. 코드 disjoint.
 DAE_ORDER_ALL = TT.DAE_ORDER + K.DAE_ORDER
@@ -258,7 +258,7 @@ function renderJungs(){
   bar.style.maxHeight='260px';
   $('jungs').querySelectorAll('button').forEach(x=>x.onclick=()=>{curJ=x.dataset.j;shown=PAGE;renderDetail()});
 }
-function card(d){return `<a class="card" href="${d.u}" target="_blank" rel="noopener">
+function card(d){return `<a class="card" href="/product/${d.s}/${d.id}.html">
   <div class="ph">${d.t?`<img src="${d.t}" loading="lazy" alt="">`:'<span class="no">이미지 준비중</span>'}</div>
   <div class="b"><div class="bt">${esc(d.jn)}</div><div class="nm">${esc(d.n)}</div><div class="pr">${fmt(d)}</div></div></a>`}
 function renderDetail(){
