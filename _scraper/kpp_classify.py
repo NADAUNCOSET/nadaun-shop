@@ -55,8 +55,8 @@ def _kw(*ws):
 # ── 규칙: (대, 중, 키워드들). 위에서부터 첫 매칭. specific → general. ──
 RULES = [
  # ── c0 드론·액션캠 (아주 특정 토큰 먼저) ──
- ("c0","c010", _kw("드론","drone","mavic","dji air","air 3","air 2","avata","dji neo","dji flip","fpv","inspire")),
- ("c0","c020", _kw("gopro","고프로","hero 13","hero 12","hero11","hero 11","osmo action","오즈모 액션","액션5","액션 5","action 6","action 5","action 3","action 2","insta360","인스타360","osmo pocket","오즈모 포켓","osmo 360","dji pocket","dji osmo action","action cam","액션캠")),
+ ("c0","c010", _kw("드론","drone","mavic","매빅","dji air","air 3","air 2","avata","아바타","dji neo","네오","dji flip","플립","fpv","inspire","인스파이어","미니5","미니 5","mini 5","mini5","미니4","미니 4","mini 4","미니3","미니 3","mini 3","리토","lito","플라이 모어 콤보","플라이모어 콤보","fly more combo","플라이모어콤보")),
+ ("c0","c020", _kw("gopro","고프로","hero 13","hero 12","hero11","hero 11","osmo action","오즈모 액션","액션5","액션 5","action 6","action 5","action 3","action 2","insta360","인스타360","osmo pocket","오즈모 포켓","osmo 360","오즈모 360","오즈모360","osmo nano","오즈모 나노","오즈모나노","dji pocket","dji osmo action","action cam","액션캠","포켓4","pocket 4")),
  ("c0","c030", _kw("action lens","고프로 렌즈")),
  # ── 06a0 스마트폰 리그 (khronos/iphone) ──
  ("06","06a0", _kw("khronos","크로노스","for iphone","아이폰","smartphone","스마트폰","osmo mobile","오즈모 모바일","for samsung","for oppo","phone case","폰 케이스")),

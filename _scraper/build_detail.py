@@ -25,11 +25,25 @@ SITE = "https://shop.nadaun.co"
 TEL  = "0507-1394-6231"       # 나다운 스페이스 고객센터
 CORP = "(주)레인보우베네"
 
-# 상세페이지 고정 안내문(전 제품 공통). 상단=상세영역 맨 위, 하단=상세이미지 뒤.
-# 나중에 하단/렌탈용 추가 시 여기 리스트에만 넣으면 전 페이지 반영.
-NOTICE = "https://media.nadaun.co/shop/notice"
-TOP_NOTICES = [(f"{NOTICE}/return-policy.webp", "교환 및 반품 불가 안내 — 나다운 스페이스 판매 상품은 미개봉 상품입니다")]
-BOTTOM_NOTICES = []
+# 상단 고정 안내문(전 제품 공통) — 나다운 스페이스 감성 HTML(재고확인 + 교환/반품 불가).
+# 노란 경고 이미지 대신 골드/네이비 미니멀 카드. 상세영역 맨 위에 삽입.
+NOTICE_HTML = """<div class="ns-notice">
+<div class="ns-stock"><span class="ic">✦</span><p><b>고객센터에서 미리 재고를 확인</b>하여 주문하시기 바랍니다.</p></div>
+<div class="ns-return">
+<div class="ns-return-h"><span class="badge">NOTICE</span><h3>청약철회 및 교환·반품 안내</h3></div>
+<div class="ns-return-b">
+<p class="law">본 안내는 「전자상거래 등에서의 소비자보호에 관한 법률」 제17조에 근거합니다.</p>
+<p>나다운 스페이스의 모든 상품은 <b>미개봉 정품</b>입니다. 다음의 경우 <b>청약철회(반품·교환)가 제한</b>됩니다. <span class="muted">(동법 제17조 제2항)</span></p>
+<ul class="ns-law">
+<li>소비자의 책임 있는 사유로 상품이 멸실·훼손된 경우 <span class="muted">(단순 확인을 위한 개봉 제외)</span></li>
+<li>사용 또는 일부 소비로 상품 가치가 <b>현저히 감소</b>한 경우</li>
+<li>봉인 실링·스티커 훼손 등 재판매가 곤란할 정도로 가치가 감소한 경우</li>
+</ul>
+<p class="strong"><b>초기 불량·오배송</b>은 수령 후 <b>7일 이내</b> 고객센터로 연락 주시면 교환·반품이 가능합니다. 교환·반품 시 최초 패키지의 <b>모든 구성품</b>을 포함하여 보내주셔야 합니다.</p>
+</div>
+<div class="ns-return-f">문의　·　고객센터 %s</div>
+</div>
+</div>""" % TEL
 
 # clmedia 매장 프로모 이미지 제거용 블록리스트(내용 동일본 URL 목록). 없으면 빈 set.
 try:
@@ -113,10 +127,28 @@ header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba
 .detail .imgs{display:flex;flex-direction:column;align-items:center;max-width:820px;margin:0 auto}
 .detail .imgs img{width:100%;border-radius:6px;margin-bottom:2px}
 .detail .empty{color:var(--soft);font-size:14px;text-align:center;padding:30px 0}
-/* 고정 안내문 — 상세 이미지와 동일 폭(820px), 모바일 반응형 */
-.notice-top{width:100%;max-width:820px;margin:0 auto 30px}
-.notice-bot{width:100%;max-width:820px;margin:30px auto 0}
-.notice-top img,.notice-bot img{width:100%;border-radius:10px}
+/* 상단 고정 안내문 — 나다운 스페이스 감성(골드/네이비/Pretendard) */
+.ns-notice{max-width:820px;margin:0 auto 38px}
+.ns-stock{display:flex;align-items:center;gap:13px;background:var(--navy);color:#fff;border-radius:13px;padding:16px 24px;margin-bottom:14px}
+.ns-stock .ic{color:var(--gold);font-size:15px;flex:0 0 auto}
+.ns-stock p{font-size:14.5px;letter-spacing:-.01em;line-height:1.5}
+.ns-stock b{color:var(--gold);font-weight:700}
+.ns-return{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.ns-return-h{display:flex;align-items:center;gap:12px;padding:17px 26px;border-bottom:1px solid var(--line);background:var(--cream)}
+.ns-return-h .badge{font-size:10px;font-weight:800;letter-spacing:.18em;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:4px 11px}
+.ns-return-h h3{font-size:16px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.ns-return-b{padding:22px 26px;display:flex;flex-direction:column;gap:12px}
+.ns-return-b p{font-size:13.5px;line-height:1.78;color:var(--soft)}
+.ns-return-b b{color:var(--ink);font-weight:700}
+.ns-return-b .muted{color:#aca89f}
+.ns-return-b .strong{color:var(--ink)}
+.ns-return-b .law{font-size:12px;color:var(--gold);font-weight:600;letter-spacing:-.01em}
+.ns-law{list-style:none;counter-reset:nsl;display:flex;flex-direction:column;gap:9px;margin:2px 0}
+.ns-law li{counter-increment:nsl;position:relative;padding-left:27px;font-size:13.5px;line-height:1.7;color:var(--soft)}
+.ns-law li::before{content:counter(nsl);position:absolute;left:0;top:1px;width:19px;height:19px;border-radius:50%;background:var(--navy);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.ns-law li b{color:var(--ink);font-weight:700}
+.ns-return-f{padding:15px 26px;border-top:1px solid var(--line);font-size:12.5px;color:var(--soft);text-align:center;letter-spacing:.01em}
+@media(max-width:600px){.ns-stock,.ns-return-h,.ns-return-b,.ns-return-f{padding-left:18px;padding-right:18px}}
 /* 푸터 */
 footer{border-top:1px solid var(--line);margin-top:60px;background:var(--cream)}
 footer .in{padding:40px 0;display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;font-size:13px;color:var(--soft)}
@@ -176,11 +208,6 @@ def page_html(p, slug):
 
     chips = "".join(f'<a href="/catalog.html">{esc(c)}</a>' for c in cats)
 
-    tn = "".join(f'<div class="notice-top"><img src="{esc(u)}" alt="{esc(a)}" loading="lazy"></div>'
-                 for u, a in TOP_NOTICES)
-    bn = "".join(f'<div class="notice-bot"><img src="{esc(u)}" alt="{esc(a)}" loading="lazy"></div>'
-                 for u, a in BOTTOM_NOTICES)
-
     return f"""<!DOCTYPE html><html lang="ko"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>{esc(title)}</title>
@@ -224,9 +251,9 @@ def page_html(p, slug):
 </div>
 </section>
 <section class="detail">
-{tn}<h2>상세 정보</h2>
+{NOTICE_HTML}<h2>상세 정보</h2>
 <div class="imgs">{dimgs}</div>
-{bn}</section>
+</section>
 </main>
 <footer><div class="wrap in">
 <div class="cs"><strong>{TEL}</strong><span>나다운 스페이스 고객센터 · {CORP}</span></div>

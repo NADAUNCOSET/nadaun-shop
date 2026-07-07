@@ -27,7 +27,7 @@ for p in prods:
                   "t":p["images"].get("thumb","")})
 # 정렬: 대분류 순 → 중분류 코드 → 브랜드 → 가격 desc
 dorder={c:i for i,c in enumerate(K.DAE_ORDER)}
-cards.sort(key=lambda c:(dorder.get(c["d"],99), c["j"], c["b"], -(c["p"] or c["usd"] or 0)))
+cards.sort(key=lambda c:(dorder.get(c["d"],99), c["b"], c["j"], -(c["p"] or c["usd"] or 0)))
 
 from collections import Counter
 brands=sorted({c["b"] for c in cards})
@@ -158,22 +158,23 @@ function renderJungs(){
   bar.style.maxHeight='240px';
   $('jungs').querySelectorAll('button').forEach(x=>x.onclick=()=>{curJ=x.dataset.j;shown=PAGE;render()});
 }
-function card(d){return `<a class="card" href="/product/${d.s}/${d.id}.html">
+function card(d){const bt=curD==='전체'?`<span>${esc(d.b)}</span><span class="it">${esc(d.jn)}</span>`:`<span>${esc(d.jn)}</span>`;
+  return `<a class="card" href="/product/${d.s}/${d.id}.html">
   <div class="ph">${d.t?`<img src="${d.t}" loading="lazy" alt="">`:'<span class="no">이미지 준비중</span>'}</div>
-  <div class="b"><div class="bt"><span>${esc(d.b)}</span><span class="it">${esc(d.jn)}</span></div>
+  <div class="b"><div class="bt">${bt}</div>
   <div class="nm">${esc(d.n)}</div><div class="pr">${fmt(d)}</div></div></a>`}
 function render(){
   renderBrands();renderDaes();renderJungs();
   const list=filtered();
   const label=(curB!=='전체'?` · ${esc(curB)}`:'')+(curD!=='전체'?` · ${DAENAME[curD]}`:'')+(curJ!=='전체'&&list[0]?` · ${esc(list[0].jn)}`:'');
   $('count').innerHTML=`<b>${list.length.toLocaleString()}</b>개 제품${label}`;
-  // 그룹 헤더: 전체=대분류별, 대선택·중전체=중분류별, 중선택=없음
-  const gkey = curJ!=='전체' ? null : (curD==='전체' ? 'd' : 'j');
+  // 그룹 헤더: 전체=대분류별 / 카테고리 선택 시=브랜드별(소니·캐논·니콘…)
+  const gkey = curD==='전체' ? 'd' : 'b';
   const gcnt={};if(gkey)list.forEach(d=>gcnt[d[gkey]]=(gcnt[d[gkey]]||0)+1);
   let html='',last=null;
   list.slice(0,shown).forEach(d=>{
     if(gkey && d[gkey]!==last){last=d[gkey];
-      const lb=gkey==='d'?DAENAME[d.d]:d.jn;
+      const lb=gkey==='d'?DAENAME[d.d]:d.b;
       html+=`<div class="ghead">${esc(lb)} <span class="gc">${gcnt[d[gkey]]}</span></div>`}
     html+=card(d);
   });
