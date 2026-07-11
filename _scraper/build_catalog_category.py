@@ -6,15 +6,18 @@ import sys, io, json
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import kpp_classify as K
+import source_rules as SR
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 ROOT = Path(r"\\Nadaunproject\nadaunproject\_DAVINCI NADAUN PROJECT\_Site\nadaun-shop")
 DATA = ROOT/"data"/"products"
+SRC_IDX = SR.build_index(DATA)
 
 prods=[]
 for f in sorted(DATA.glob("*.json")):
     if f.stem=="_index": continue
     d=json.load(open(f,encoding="utf-8"))
     for p in d.get("products",{}).values():
+        if not SR.allowed(p, p.get("brand_slug") or f.stem, SRC_IDX): continue
         prods.append(p)
 
 cards=[]

@@ -7,9 +7,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import kpp_classify as K
 import tilta_taxonomy as TT
+import source_rules as SR
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 ROOT = Path(r"\\Nadaunproject\nadaunproject\_DAVINCI NADAUN PROJECT\_Site\nadaun-shop")
 DATA = ROOT/"data"/"products"
+SRC_IDX = SR.build_index(DATA)
 
 # ── 마스터 브랜드(전체 138) ──
 master = json.load(open(ROOT/"data"/"brands.json", encoding="utf-8"))["brands"]
@@ -24,6 +26,7 @@ for f in sorted(DATA.glob("*.json")):
     top_slug=d.get("brand_slug") or f.stem
     for p in d.get("products",{}).values():
         slug=p.get("brand_slug") or top_slug
+        if not SR.allowed(p, slug, SRC_IDX): continue
         nm=p.get("name",""); cat=p.get("category","")
         if p.get("source")=="kpp" and p.get("ca_id"):     # KPP 정식분류가 정답 (이름추측 금지)
             dc,dn,jc,jn = K.from_ca_id(p["ca_id"],nm,cat); kc,kn = "",""

@@ -271,12 +271,16 @@ def main():
     OUT.mkdir(exist_ok=True)
     (OUT / "_style.css").write_text(CSS, encoding="utf-8")
 
+    import source_rules as SR
+    src_idx = SR.build_index(DATA)
     n = 0; brands_seen = set()
     for f in sorted(DATA.glob("*.json")):
         d = json.load(open(f, encoding="utf-8"))
         slug = d.get("brand_slug") or f.stem
         for p in d.get("products", {}).values():
             s = p.get("brand_slug") or slug
+            if not SR.allowed(p, s, src_idx):
+                continue
             bdir = OUT / s
             bdir.mkdir(exist_ok=True)
             (bdir / f'{p["id"]}.html').write_text(page_html(p, s), encoding="utf-8")
