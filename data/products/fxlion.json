@@ -1,5 +1,5 @@
 {
-  "brand": "에프엑스리온",
+  "brand": "FXLION",
   "brand_slug": "fxlion",
   "products": {
     "clmedia-2258": {
@@ -71,6 +71,743 @@
           "https://media.nadaun.co/shop/detail/fxlion/clmedia-284/09.webp",
           "https://media.nadaun.co/shop/detail/fxlion/clmedia-284/11.webp",
           "https://media.nadaun.co/shop/detail/fxlion/clmedia-284/12.webp"
+        ]
+      }
+    },
+    "kpp-1715320849": {
+      "id": "kpp-1715320849",
+      "source": "kpp",
+      "source_id": "1715320849",
+      "name": "FXLION Bi-Voltage V마운트 배터리 BP-BV200",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 799000,
+      "list_price": 0,
+      "sale_price": 799000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1715320849",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1715320849.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320849/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320849/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320849/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320849/main_4.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320849/main_5.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320849/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320849/02.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320849/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320849/04.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320849/05.webp"
+        ]
+      }
+    },
+    "kpp-1715320751": {
+      "id": "kpp-1715320751",
+      "source": "kpp",
+      "source_id": "1715320751",
+      "name": "FXLION BM-HV200 B마운트 배터리 200Wh / 10A",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 799000,
+      "list_price": 0,
+      "sale_price": 799000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1715320751",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1715320751.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320751/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320751/main_2.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320751/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320751/02.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320751/03.webp"
+        ]
+      }
+    },
+    "kpp-1711610248": {
+      "id": "kpp-1711610248",
+      "source": "kpp",
+      "source_id": "1711610248",
+      "name": "FXLION 나노 V마운트 배터리 어댑터 NP-F 7.4V",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 110000,
+      "list_price": 0,
+      "sale_price": 110000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1711610248",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1711610248.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1711610248/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1711610248/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1711610248/main_3.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1711610248/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1711610248/02.webp"
+        ]
+      }
+    },
+    "kpp-1671612841": {
+      "id": "kpp-1671612841",
+      "source": "kpp",
+      "source_id": "1671612841",
+      "name": "FXLION V마운트 D-Tap 듀얼 고속 충전기",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 99000,
+      "list_price": 0,
+      "sale_price": 99000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1671612841",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1671612841.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1671612841/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1671612841/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1671612841/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1671612841/main_4.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1671612841/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1671612841/04.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1671612841/05.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1671612841/06.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1671612841/07.webp"
+        ]
+      }
+    },
+    "kpp-1715320947": {
+      "id": "kpp-1715320947",
+      "source": "kpp",
+      "source_id": "1715320947",
+      "name": "FXLION 스마트 스퀘어 BP-M200L V마운트 배터리 198Wh",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 559000,
+      "list_price": 0,
+      "sale_price": 559000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1715320947",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1715320947.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320947/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320947/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320947/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320947/main_4.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320947/main_5.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320947/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320947/02.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320947/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320947/04.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320947/05.webp"
+        ]
+      }
+    },
+    "kpp-1767680956": {
+      "id": "kpp-1767680956",
+      "source": "kpp",
+      "source_id": "1767680956",
+      "name": "FXLION 넥서스 스마트 V마운트 배터리 BP-300SL 300Wh 18A",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 499000,
+      "list_price": 0,
+      "sale_price": 499000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1767680956",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1767680956.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1767680956/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1767680956/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1767680956/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1767680956/main_4.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1767680956/main_5.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1767680956/main_6.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1767680956/main_7.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1767680956/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1767680956/02.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1767680956/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1767680956/04.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1767680956/05.webp"
+        ]
+      }
+    },
+    "kpp-1715320443": {
+      "id": "kpp-1715320443",
+      "source": "kpp",
+      "source_id": "1715320443",
+      "name": "FXLION 26V BP-7S500 Waterproof V마운트 배터리 289Wh",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 849000,
+      "list_price": 0,
+      "sale_price": 849000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1715320443",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1715320443.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320443/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320443/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320443/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320443/main_4.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320443/main_5.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320443/main_6.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320443/main_7.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320443/main_8.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320443/main_9.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320443/main_10.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320443/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320443/02.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320443/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320443/04.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320443/05.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320443/06.webp"
+        ]
+      }
+    },
+    "kpp-1661318995": {
+      "id": "kpp-1661318995",
+      "source": "kpp",
+      "source_id": "1661318995",
+      "name": "FXLION 아토 원 카메라 짐벌 멀티 휴대용 배터리 37Wh",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 149000,
+      "list_price": 0,
+      "sale_price": 149000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1661318995",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1661318995.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1661318995/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1661318995/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1661318995/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1661318995/main_4.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1661318995/main_5.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1661318995/main_6.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1661318995/main_7.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1661318995/main_8.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1661318995/main_9.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1661318995/main_10.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1661318995/main_11.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1661318995/02.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1661318995/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1661318995/04.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1661318995/05.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1661318995/06.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1661318995/07.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1661318995/08.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1661318995/09.webp"
+        ]
+      }
+    },
+    "kpp-1708676382": {
+      "id": "kpp-1708676382",
+      "source": "kpp",
+      "source_id": "1708676382",
+      "name": "FXLION 4채널 B 마운트 충전기",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 990000,
+      "list_price": 0,
+      "sale_price": 990000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1708676382",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1708676382.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1708676382/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1708676382/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1708676382/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1708676382/main_4.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1708676382/main_5.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1708676382/main_6.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1708676382/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1708676382/02.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1708676382/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1708676382/04.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1708676382/05.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1708676382/06.webp"
+        ]
+      }
+    },
+    "kpp-1715320471": {
+      "id": "kpp-1715320471",
+      "source": "kpp",
+      "source_id": "1715320471",
+      "name": "FXLION 하이파워 BP-M160 V마운트 배터리 159Wh / 15A",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 499000,
+      "list_price": 0,
+      "sale_price": 499000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1715320471",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1715320471.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320471/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320471/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320471/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320471/main_4.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320471/main_5.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320471/main_6.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320471/main_7.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320471/main_8.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320471/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320471/02.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320471/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320471/04.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320471/05.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320471/06.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320471/07.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320471/08.webp"
+        ]
+      }
+    },
+    "kpp-1686793540": {
+      "id": "kpp-1686793540",
+      "source": "kpp",
+      "source_id": "1686793540",
+      "name": "FXLION 나노 V마운트 플레이트",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 45000,
+      "list_price": 0,
+      "sale_price": 45000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1686793540",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1686793540.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1686793540/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1686793540/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1686793540/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1686793540/main_4.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1686793540/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1686793540/04.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1686793540/05.webp"
+        ]
+      }
+    },
+    "kpp-1683090664": {
+      "id": "kpp-1683090664",
+      "source": "kpp",
+      "source_id": "1683090664",
+      "name": "FXLION V마운트 배터리 BP-BV300",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 899000,
+      "list_price": 0,
+      "sale_price": 899000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1683090664",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1683090664.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1683090664/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1683090664/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1683090664/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1683090664/main_4.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1683090664/main_5.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1683090664/03.webp"
+        ]
+      }
+    },
+    "kpp-1715320196": {
+      "id": "kpp-1715320196",
+      "source": "kpp",
+      "source_id": "1715320196",
+      "name": "FXLION 나노 원 와이어리스 V마운트 배터리 50Wh / 8A 스마트폰 무선충전",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 179000,
+      "list_price": 0,
+      "sale_price": 179000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1715320196",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1715320196.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320196/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320196/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320196/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320196/main_4.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320196/main_5.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320196/main_6.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320196/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320196/02.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320196/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320196/04.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320196/05.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320196/06.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320196/07.webp"
+        ]
+      }
+    },
+    "kpp-1676275965": {
+      "id": "kpp-1676275965",
+      "source": "kpp",
+      "source_id": "1676275965",
+      "name": "FXLION 고출력 대용량 V마운트 배터리 300Wh / 18A BP-M300",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 699000,
+      "list_price": 0,
+      "sale_price": 699000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1676275965",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1676275965.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1676275965/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1676275965/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1676275965/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1676275965/main_4.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1676275965/main_5.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1676275965/main_6.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1676275965/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1676275965/04.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1676275965/05.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1676275965/06.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1676275965/07.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1676275965/08.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1676275965/09.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1676275965/10.webp"
+        ]
+      }
+    },
+    "kpp-1715320972": {
+      "id": "kpp-1715320972",
+      "source": "kpp",
+      "source_id": "1715320972",
+      "name": "FXLION 2구 V마운트 고속 충전기 16.8V / 4A PL-Q280B",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 399000,
+      "list_price": 0,
+      "sale_price": 399000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1715320972",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1715320972.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320972/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320972/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320972/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320972/main_4.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320972/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320972/02.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320972/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320972/04.webp"
+        ]
+      }
+    },
+    "kpp-1715320419": {
+      "id": "kpp-1715320419",
+      "source": "kpp",
+      "source_id": "1715320419",
+      "name": "FXLION 하이파워 BP-HP600 Waterproof V마운트 배터리 559Wh",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 899000,
+      "list_price": 0,
+      "sale_price": 899000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1715320419",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1715320419.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320419/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320419/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320419/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320419/main_4.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320419/main_5.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320419/main_6.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320419/main_7.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320419/main_8.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320419/main_9.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320419/main_10.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320419/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320419/02.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320419/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320419/04.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320419/05.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320419/06.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320419/07.webp"
+        ]
+      }
+    },
+    "kpp-1711610003": {
+      "id": "kpp-1711610003",
+      "source": "kpp",
+      "source_id": "1711610003",
+      "name": "FXLION 나노 V마운트 배터리 어댑터 NP-F 14.8V",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 79000,
+      "list_price": 0,
+      "sale_price": 79000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1711610003",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1711610003.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1711610003/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1711610003/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1711610003/main_3.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1711610003/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1711610003/02.webp"
+        ]
+      }
+    },
+    "kpp-1711610428": {
+      "id": "kpp-1711610428",
+      "source": "kpp",
+      "source_id": "1711610428",
+      "name": "FXLION 나노 치즈 V마운트 플레이트",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 62000,
+      "list_price": 0,
+      "sale_price": 62000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1711610428",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1711610428.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1711610428/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1711610428/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1711610428/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1711610428/main_4.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1711610428/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1711610428/02.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1711610428/03.webp"
+        ]
+      }
+    },
+    "kpp-1715320905": {
+      "id": "kpp-1715320905",
+      "source": "kpp",
+      "source_id": "1715320905",
+      "name": "FXLION 쿨블랙 BP-250S V마운트 배터리 250Wh",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 559000,
+      "list_price": 0,
+      "sale_price": 559000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1715320905",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1715320905.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320905/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320905/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320905/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320905/main_4.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320905/main_5.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320905/main_6.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1715320905/main_7.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320905/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320905/02.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320905/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320905/04.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320905/05.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1715320905/06.webp"
+        ]
+      }
+    },
+    "kpp-1774943790": {
+      "id": "kpp-1774943790",
+      "source": "kpp",
+      "source_id": "1774943790",
+      "name": "FXLION 26V BP-7S270 V마운트 배터리 270Wh",
+      "brand": "FXLION",
+      "brand_slug": "fxlion",
+      "category": "배터리",
+      "cat_path": [
+        "영상장비",
+        "배터리"
+      ],
+      "ca_id": "0680",
+      "price": 550000,
+      "list_price": 0,
+      "sale_price": 550000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1774943790",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/fxlion/kpp-1774943790.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1774943790/main_1.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1774943790/main_2.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1774943790/main_3.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1774943790/main_4.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1774943790/main_5.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1774943790/main_6.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1774943790/main_7.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1774943790/main_8.webp",
+          "https://media.nadaun.co/shop/images/fxlion/kpp-1774943790/main_9.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1774943790/01.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1774943790/02.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1774943790/03.webp",
+          "https://media.nadaun.co/shop/detail/fxlion/kpp-1774943790/04.webp"
         ]
       }
     }

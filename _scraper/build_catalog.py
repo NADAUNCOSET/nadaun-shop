@@ -25,7 +25,9 @@ for f in sorted(DATA.glob("*.json")):
     for p in d.get("products",{}).values():
         slug=p.get("brand_slug") or top_slug
         nm=p.get("name",""); cat=p.get("category","")
-        if slug=="tilta":
+        if p.get("source")=="kpp" and p.get("ca_id"):     # KPP 정식분류가 정답 (이름추측 금지)
+            dc,dn,jc,jn = K.from_ca_id(p["ca_id"],nm,cat); kc,kn = "",""
+        elif slug=="tilta":
             dc,dn,jc,jn,kc,kn = TT.classify_tilta(nm,cat)
         else:
             dc,dn,jc,jn = K.classify(nm,cat); kc,kn = "",""

@@ -1,0 +1,40 @@
+{
+  "brand": "Savage",
+  "brand_slug": "savage",
+  "products": {
+    "hktools-21017": {
+      "id": "hktools-21017",
+      "source": "hktools",
+      "source_id": "21017",
+      "name": "[렌탈] Savage Cranberry Washed Muslin Backdrop",
+      "brand": "Savage",
+      "brand_slug": "savage",
+      "category": "[렌탈]스튜디오 장비",
+      "cat_path": [
+        "[렌탈]스튜디오 장비"
+      ],
+      "cate_no": "1847",
+      "price": 0,
+      "list_price": 0,
+      "sale_price": 0,
+      "inquiry": true,
+      "source_url": "https://hktools.co.kr/product/detail.html?product_no=21017&cate_no=1847&display_group=1",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/savage/hktools-21017.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/savage/hktools-21017/main_1.webp",
+          "https://media.nadaun.co/shop/images/savage/hktools-21017/main_2.webp",
+          "https://media.nadaun.co/shop/images/savage/hktools-21017/main_3.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/savage/hktools-21017/01.webp",
+          "https://media.nadaun.co/shop/detail/savage/hktools-21017/02.webp",
+          "https://media.nadaun.co/shop/detail/savage/hktools-21017/03.webp",
+          "https://media.nadaun.co/shop/detail/savage/hktools-21017/06.webp",
+          "https://media.nadaun.co/shop/detail/savage/hktools-21017/07.webp",
+          "https://media.nadaun.co/shop/detail/savage/hktools-21017/08.webp"
+        ]
+      }
+    }
+  }
+}

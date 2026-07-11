@@ -1,0 +1,44 @@
+{
+  "brand": "니콘",
+  "brand_slug": "nikon",
+  "products": {
+    "fomex-3891": {
+      "id": "fomex-3891",
+      "source": "fomex",
+      "source_id": "3891",
+      "name": "니콘용 배터리팩케이블",
+      "brand": "니콘",
+      "brand_slug": "nikon",
+      "category": "플래시용품·동조기",
+      "cat_path": [
+        "플래시용품·동조기"
+      ],
+      "cate_no": "195",
+      "price": 25000,
+      "list_price": 0,
+      "sale_price": 25000,
+      "inquiry": false,
+      "source_url": "https://fomex.co.kr/product/detail.html?product_no=3891&cate_no=195&display_group=1",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/nikon/fomex-3891.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/nikon/fomex-3891/main_1.webp",
+          "https://media.nadaun.co/shop/images/nikon/fomex-3891/main_2.webp",
+          "https://media.nadaun.co/shop/images/nikon/fomex-3891/main_3.webp",
+          "https://media.nadaun.co/shop/images/nikon/fomex-3891/main_4.webp",
+          "https://media.nadaun.co/shop/images/nikon/fomex-3891/main_5.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/nikon/fomex-3891/01.webp",
+          "https://media.nadaun.co/shop/detail/nikon/fomex-3891/02.webp",
+          "https://media.nadaun.co/shop/detail/nikon/fomex-3891/03.webp",
+          "https://media.nadaun.co/shop/detail/nikon/fomex-3891/04.webp",
+          "https://media.nadaun.co/shop/detail/nikon/fomex-3891/05.webp",
+          "https://media.nadaun.co/shop/detail/nikon/fomex-3891/08.webp",
+          "https://media.nadaun.co/shop/detail/nikon/fomex-3891/09.webp",
+          "https://media.nadaun.co/shop/detail/nikon/fomex-3891/12.webp"
+        ]
+      }
+    }
+  }
+}

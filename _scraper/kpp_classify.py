@@ -49,6 +49,29 @@ JUNG = {
     "h010":"무선 영상 송수신","h000":"기타 송수신",
 }
 
+# ── KPP 사이트 정식 ca_id → 우리 (대,중) 직매핑 ──────────────────
+# source=kpp 레코드는 사이트 분류가 정답 → 이름추측(classify) 대신 이걸 우선.
+# 사이트/우리 코드 불일치만 보정. 매핑 불가(00xx 별추적기, 0450, 40h0 등)는 classify() 폴백.
+_CA_JUNG_FIX = {
+    "0320": "0310",   # 미러리스 렌즈 → DSLR/미러리스 통합
+    "0540": "0500",   # 카메라가방/액세서리 → 기타 가방
+    "0730": "s010", "0740": "s020", "0750": "s030",   # 사이트 07 조명마이크 → 우리 s0 사운드 분리
+    "c050": "c060",   # care refresh → 드론·액션캠 액세서리
+}
+def from_ca_id(ca_id, name="", cat=""):
+    """KPP 정식 ca_id → (dc,dn,jc,jn). 6자리(011050)는 중분류 4자리로 절단."""
+    if not ca_id:
+        return classify(name, cat)
+    jung = _CA_JUNG_FIX.get(ca_id[:4], ca_id[:4])
+    dae = "s0" if jung.startswith("s0") else jung[:2]
+    if dae in DAE and jung in JUNG:
+        if jung == "0690":   # 잡화 → 모니터·뷰파인더(06c0)만 이름으로 세분화 시도
+            dc, dn, jc, jn = classify(name, cat)
+            if jc == "06c0":
+                return dc, dn, jc, jn
+        return dae, DAE[dae], jung, JUNG[jung]
+    return classify(name, cat)
+
 def _kw(*ws):
     return [w.lower() for w in ws]
 

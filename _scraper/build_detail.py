@@ -65,9 +65,11 @@ def brand_names(slug, prod_brand):
     en = m.get("en") or FRIENDLY.get(slug, ("", slug.upper()))[1] or slug.upper()
     return kr, en
 
-def categories(slug, name, cat):
+def categories(slug, name, cat, rec=None):
     """대분류/중분류(/소분류) 표시명 리스트 반환."""
-    if slug == "tilta":
+    if rec and rec.get("source") == "kpp" and rec.get("ca_id"):   # KPP 정식분류가 정답
+        dc, dn, jc, jn = K.from_ca_id(rec["ca_id"], name, cat); kn = ""
+    elif slug == "tilta":
         dc, dn, jc, jn, kc, kn = TT.classify_tilta(name, cat)
     else:
         dc, dn, jc, jn = K.classify(name, cat); kn = ""
@@ -164,7 +166,7 @@ def page_html(p, slug):
     name  = p.get("name", "")
     brand = p.get("brand", "")
     kr, en = brand_names(slug, brand)
-    cats  = categories(slug, name, p.get("category", ""))
+    cats  = categories(slug, name, p.get("category", ""), p)
     price = p.get("price") or 0
     imgs  = p.get("images", {}) or {}
     main  = imgs.get("main") or ([imgs["thumb"]] if imgs.get("thumb") else [])

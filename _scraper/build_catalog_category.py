@@ -19,7 +19,10 @@ for f in sorted(DATA.glob("*.json")):
 
 cards=[]
 for p in prods:
-    dc,dn,jc,jn = K.classify(p.get("name",""), p.get("category",""))
+    if p.get("source")=="kpp" and p.get("ca_id"):     # KPP 정식분류가 정답 (이름추측 금지)
+        dc,dn,jc,jn = K.from_ca_id(p["ca_id"], p.get("name",""), p.get("category",""))
+    else:
+        dc,dn,jc,jn = K.classify(p.get("name",""), p.get("category",""))
     price=p.get("price",0); usd=p.get("price_usd",0)
     cards.append({"n":p["name"],"b":p.get("brand",""),"s":p.get("brand_slug",""),"id":p["id"],
                   "d":dc,"dn":dn,"j":jc,"jn":jn,

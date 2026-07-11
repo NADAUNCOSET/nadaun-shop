@@ -2410,6 +2410,75 @@
           "https://media.nadaun.co/shop/detail/sony/clmedia-2213/10.webp"
         ]
       }
+    },
+    "fomex-3893": {
+      "id": "fomex-3893",
+      "source": "fomex",
+      "source_id": "3893",
+      "name": "소니용 배터리팩케이블",
+      "brand": "소니",
+      "brand_slug": "sony",
+      "category": "플래시용품·동조기",
+      "cat_path": [
+        "플래시용품·동조기"
+      ],
+      "cate_no": "195",
+      "price": 25000,
+      "list_price": 0,
+      "sale_price": 25000,
+      "inquiry": false,
+      "source_url": "https://fomex.co.kr/product/detail.html?product_no=3893&cate_no=195&display_group=1",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/sony/fomex-3893.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/sony/fomex-3893/main_1.webp",
+          "https://media.nadaun.co/shop/images/sony/fomex-3893/main_2.webp",
+          "https://media.nadaun.co/shop/images/sony/fomex-3893/main_3.webp",
+          "https://media.nadaun.co/shop/images/sony/fomex-3893/main_4.webp",
+          "https://media.nadaun.co/shop/images/sony/fomex-3893/main_5.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/sony/fomex-3893/01.webp",
+          "https://media.nadaun.co/shop/detail/sony/fomex-3893/02.webp",
+          "https://media.nadaun.co/shop/detail/sony/fomex-3893/03.webp",
+          "https://media.nadaun.co/shop/detail/sony/fomex-3893/04.webp",
+          "https://media.nadaun.co/shop/detail/sony/fomex-3893/05.webp",
+          "https://media.nadaun.co/shop/detail/sony/fomex-3893/08.webp",
+          "https://media.nadaun.co/shop/detail/sony/fomex-3893/09.webp",
+          "https://media.nadaun.co/shop/detail/sony/fomex-3893/12.webp"
+        ]
+      }
+    },
+    "kpp-1649571501": {
+      "id": "kpp-1649571501",
+      "source": "kpp",
+      "source_id": "1649571501",
+      "name": "소니 A7S3 하프 케이지 나토레일 블랙 TA-T18-NRA-B",
+      "brand": "소니",
+      "brand_slug": "sony",
+      "category": "액세서리",
+      "cat_path": [
+        "영상장비",
+        "액세서리"
+      ],
+      "ca_id": "0690",
+      "price": 25000,
+      "list_price": 0,
+      "sale_price": 25000,
+      "inquiry": false,
+      "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1649571501",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/sony/kpp-1649571501.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/sony/kpp-1649571501/main_1.webp",
+          "https://media.nadaun.co/shop/images/sony/kpp-1649571501/main_2.webp",
+          "https://media.nadaun.co/shop/images/sony/kpp-1649571501/main_3.webp",
+          "https://media.nadaun.co/shop/images/sony/kpp-1649571501/main_4.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/sony/kpp-1649571501/04.webp"
+        ]
+      }
     }
   }
 }
