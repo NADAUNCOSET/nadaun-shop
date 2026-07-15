@@ -1,0 +1,41 @@
+{
+  "brand": "라이카",
+  "brand_slug": "leica",
+  "products": {
+    "bando-19825": {
+      "id": "bando-19825",
+      "source": "bando",
+      "source_id": "19825",
+      "name": "라이카 E60 UVa 13381 (3322)",
+      "brand": "라이카",
+      "brand_slug": "leica",
+      "category": "중고/위탁",
+      "cat_path": [
+        "중고/위탁"
+      ],
+      "cate_no": "789",
+      "price": 110000,
+      "list_price": 0,
+      "sale_price": 110000,
+      "inquiry": false,
+      "source_url": "https://bandocamera.co.kr/product/detail.html?product_no=19825&cate_no=789&display_group=1",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/leica/bando-19825.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/leica/bando-19825/main_1.webp",
+          "https://media.nadaun.co/shop/images/leica/bando-19825/main_2.webp",
+          "https://media.nadaun.co/shop/images/leica/bando-19825/main_7.webp",
+          "https://media.nadaun.co/shop/images/leica/bando-19825/main_8.webp",
+          "https://media.nadaun.co/shop/images/leica/bando-19825/main_9.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/leica/bando-19825/01.webp",
+          "https://media.nadaun.co/shop/detail/leica/bando-19825/02.webp",
+          "https://media.nadaun.co/shop/detail/leica/bando-19825/07.webp",
+          "https://media.nadaun.co/shop/detail/leica/bando-19825/08.webp",
+          "https://media.nadaun.co/shop/detail/leica/bando-19825/09.webp"
+        ]
+      }
+    }
+  }
+}

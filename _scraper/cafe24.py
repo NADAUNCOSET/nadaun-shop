@@ -122,8 +122,10 @@ def list_items(base, cate_no, max_pages=100):
 # ── 상세 ───────────────────────────────────────────────────────
 def parse_item(base, url):
     soup=BeautifulSoup(get(url).text,"html.parser")
-    og=soup.select_one('meta[property="og:title"]')
-    name=clean(og.get("content")) if (og and og.get("content")) else clean(soup.title.get_text() if soup.title else "")
+    # og:title이 2개인 사이트(cinemall: 첫번째=슬로건, 마지막=상품명) → 마지막 것 사용
+    ogs=[m.get("content","") for m in soup.select('meta[property="og:title"]') if m.get("content")]
+    name=clean(ogs[-1]) if ogs else clean(soup.title.get_text() if soup.title else "")
+    name=re.sub(r"\s*-\s*시네몰\s*$","",name)   # cinemall 상점명 접미 제거
     name=re.sub(r"\s*[|\-]\s*[^|\-]*$","",name) if len(name)>60 else name
     # 정가(소비자가) 우선, 없으면 판매가 (룰: taxonomy_kpp.md "가격=정가")
     listp=0

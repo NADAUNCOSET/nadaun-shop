@@ -1,0 +1,45 @@
+{
+  "brand": "TAMRON",
+  "brand_slug": "tamron",
+  "products": {
+    "bando-23317": {
+      "id": "bando-23317",
+      "source": "bando",
+      "source_id": "23317",
+      "name": "[중고] TAMRON E28-200/2.8-5.6 (3764)",
+      "brand": "TAMRON",
+      "brand_slug": "tamron",
+      "category": "중고/위탁",
+      "cat_path": [
+        "중고/위탁"
+      ],
+      "cate_no": "789",
+      "price": 650000,
+      "list_price": 0,
+      "sale_price": 650000,
+      "inquiry": false,
+      "source_url": "https://bandocamera.co.kr/product/detail.html?product_no=23317&cate_no=789&display_group=1",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/tamron/bando-23317.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/tamron/bando-23317/main_1.webp",
+          "https://media.nadaun.co/shop/images/tamron/bando-23317/main_2.webp",
+          "https://media.nadaun.co/shop/images/tamron/bando-23317/main_3.webp",
+          "https://media.nadaun.co/shop/images/tamron/bando-23317/main_6.webp",
+          "https://media.nadaun.co/shop/images/tamron/bando-23317/main_9.webp",
+          "https://media.nadaun.co/shop/images/tamron/bando-23317/main_10.webp",
+          "https://media.nadaun.co/shop/images/tamron/bando-23317/main_11.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/tamron/bando-23317/01.webp",
+          "https://media.nadaun.co/shop/detail/tamron/bando-23317/02.webp",
+          "https://media.nadaun.co/shop/detail/tamron/bando-23317/03.webp",
+          "https://media.nadaun.co/shop/detail/tamron/bando-23317/06.webp",
+          "https://media.nadaun.co/shop/detail/tamron/bando-23317/09.webp",
+          "https://media.nadaun.co/shop/detail/tamron/bando-23317/10.webp",
+          "https://media.nadaun.co/shop/detail/tamron/bando-23317/11.webp"
+        ]
+      }
+    }
+  }
+}

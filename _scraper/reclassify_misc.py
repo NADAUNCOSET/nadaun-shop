@@ -4,6 +4,7 @@ import sys, io, json
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 sys.path.insert(0, r"\\Nadaunproject\nadaunproject\_DAVINCI NADAUN PROJECT\_Site\nadaun-shop\_scraper")
 import clmedia as C
+from brands_map import brand_of   # 공용맵 (2026-07-11 보강: 영문표기+태그매칭) — clmedia 내장맵 대신 사용
 DATA = C.DATA
 fp = DATA/"_misc.json"
 misc = json.load(open(fp, encoding="utf-8"))
@@ -24,7 +25,7 @@ def movekey(url, slug):
 
 moved={}; keep={}
 for pid, rec in misc["products"].items():
-    ko, slug = C.brand_of(rec["name"])
+    ko, slug = brand_of(rec["name"])
     if slug=="_misc": keep[pid]=rec; continue
     rec["brand"]=ko; rec["brand_slug"]=slug
     im=rec["images"]

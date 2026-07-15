@@ -1,0 +1,45 @@
+{
+  "brand": "젠하이저",
+  "brand_slug": "sennheiser",
+  "products": {
+    "bando-24004": {
+      "id": "bando-24004",
+      "source": "bando",
+      "source_id": "24004",
+      "name": "[중고 ] 젠하이저 MKE 400 (3790)",
+      "brand": "젠하이저",
+      "brand_slug": "sennheiser",
+      "category": "중고/위탁",
+      "cat_path": [
+        "중고/위탁"
+      ],
+      "cate_no": "789",
+      "price": 180000,
+      "list_price": 0,
+      "sale_price": 180000,
+      "inquiry": false,
+      "source_url": "https://bandocamera.co.kr/product/detail.html?product_no=24004&cate_no=789&display_group=1",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/sennheiser/bando-24004.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/sennheiser/bando-24004/main_1.webp",
+          "https://media.nadaun.co/shop/images/sennheiser/bando-24004/main_2.webp",
+          "https://media.nadaun.co/shop/images/sennheiser/bando-24004/main_3.webp",
+          "https://media.nadaun.co/shop/images/sennheiser/bando-24004/main_6.webp",
+          "https://media.nadaun.co/shop/images/sennheiser/bando-24004/main_9.webp",
+          "https://media.nadaun.co/shop/images/sennheiser/bando-24004/main_10.webp",
+          "https://media.nadaun.co/shop/images/sennheiser/bando-24004/main_11.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/sennheiser/bando-24004/01.webp",
+          "https://media.nadaun.co/shop/detail/sennheiser/bando-24004/02.webp",
+          "https://media.nadaun.co/shop/detail/sennheiser/bando-24004/03.webp",
+          "https://media.nadaun.co/shop/detail/sennheiser/bando-24004/06.webp",
+          "https://media.nadaun.co/shop/detail/sennheiser/bando-24004/09.webp",
+          "https://media.nadaun.co/shop/detail/sennheiser/bando-24004/10.webp",
+          "https://media.nadaun.co/shop/detail/sennheiser/bando-24004/11.webp"
+        ]
+      }
+    }
+  }
+}

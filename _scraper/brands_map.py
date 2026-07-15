@@ -75,6 +75,15 @@ BRANDS = [
  ("ZHIYUN","zhiyun"),("지윤","zhiyun"),("LUXPAD","luxpad"),("룩스패드","luxpad"),
  ("ROCKNROLLER","rocknroller"),("락앤롤러","rocknroller"),("PANYANFILM","panyanfilm"),("판얀필름","panyanfilm"),
  ("KLOTZ","klotz"),("클로츠","klotz"),
+ # _misc 2차 감사 보강 (2026-07-15): 후반 소스(ldnet/cinemall/bando) 유입분
+ ("Canon","canon"),("CANON","canon"),("Sony","sony"),("SONY","sony"),("ARRI","arri"),("Arri","arri"),
+ ("Hasselblad","hasselblad"),("HASSELBLAD","hasselblad"),("Broncolor","broncolor"),("BRONCOLOR","broncolor"),
+ ("WOTANCRAFT","wotancraft"),("보탄크래프트","wotancraft"),("Oberwerth","oberwerth"),("OBERWERTH","oberwerth"),
+ ("BRIESE","briese"),("브리제","briese"),("Leitz","leitz"),("LEITZ","leitz"),
+ ("Lexar","lexar"),("LEXAR","lexar"),("렉사","lexar"),("두릭스","durix"),("Durix","durix"),
+ ("하네뮬레","hahnemuhle"),("Hahnemuhle","hahnemuhle"),("Giottos","giottos"),("지오토스","giottos"),
+ ("PDMOVIE","pdmovie"),("피디무비","pdmovie"),("PDmovie","pdmovie"),
+ ("cmotion","cmotion"),("CMOTION","cmotion"),("씨모션","cmotion"),
 ]
 
 def brand_of(name):

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "\\nadaunproject\nadaunproject\_DAVINCI NADAUN PROJECT\_Site\nadaun-shop\_scraper\reclassify_misc.py", line 45, in <module>
+    print(f"재분류 이동 {sum(len(v) for v in moved.values())}개, _기타 잔여 {len(keep)}개")
+ValueError: I/O operation on closed file.

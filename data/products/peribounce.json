@@ -1,5 +1,5 @@
 {
-  "brand": "페리바운스",
+  "brand": "PERIBOUNCE",
   "brand_slug": "peribounce",
   "products": {
     "fomex-2713": {
@@ -2041,6 +2041,45 @@
           "https://media.nadaun.co/shop/detail/peribounce/hktools-10473/13.webp",
           "https://media.nadaun.co/shop/detail/peribounce/hktools-10473/14.webp",
           "https://media.nadaun.co/shop/detail/peribounce/hktools-10473/15.webp"
+        ]
+      }
+    },
+    "bando-21306": {
+      "id": "bando-21306",
+      "source": "bando",
+      "source_id": "21306",
+      "name": "[PERIBOUNCE] SoftBag for Light Stand, Reflecter",
+      "brand": "PERIBOUNCE",
+      "brand_slug": "peribounce",
+      "category": "CINE",
+      "cat_path": [
+        "CINE"
+      ],
+      "cate_no": "1667",
+      "price": 110000,
+      "list_price": 0,
+      "sale_price": 110000,
+      "inquiry": false,
+      "source_url": "https://bandocamera.co.kr/product/detail.html?product_no=21306&cate_no=1667&display_group=1",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/peribounce/bando-21306.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/peribounce/bando-21306/main_1.webp",
+          "https://media.nadaun.co/shop/images/peribounce/bando-21306/main_2.webp",
+          "https://media.nadaun.co/shop/images/peribounce/bando-21306/main_3.webp",
+          "https://media.nadaun.co/shop/images/peribounce/bando-21306/main_6.webp",
+          "https://media.nadaun.co/shop/images/peribounce/bando-21306/main_9.webp",
+          "https://media.nadaun.co/shop/images/peribounce/bando-21306/main_10.webp",
+          "https://media.nadaun.co/shop/images/peribounce/bando-21306/main_11.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/peribounce/bando-21306/01.webp",
+          "https://media.nadaun.co/shop/detail/peribounce/bando-21306/02.webp",
+          "https://media.nadaun.co/shop/detail/peribounce/bando-21306/03.webp",
+          "https://media.nadaun.co/shop/detail/peribounce/bando-21306/06.webp",
+          "https://media.nadaun.co/shop/detail/peribounce/bando-21306/09.webp",
+          "https://media.nadaun.co/shop/detail/peribounce/bando-21306/10.webp",
+          "https://media.nadaun.co/shop/detail/peribounce/bando-21306/11.webp"
         ]
       }
     }

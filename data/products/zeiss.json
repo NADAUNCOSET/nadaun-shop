@@ -1,0 +1,43 @@
+{
+  "brand": "자이스",
+  "brand_slug": "zeiss",
+  "products": {
+    "bando-20358": {
+      "id": "bando-20358",
+      "source": "bando",
+      "source_id": "20358",
+      "name": "자이스 Zeiss Planar 50mm F1.4 ZF (5909)",
+      "brand": "자이스",
+      "brand_slug": "zeiss",
+      "category": "중고/위탁",
+      "cat_path": [
+        "중고/위탁"
+      ],
+      "cate_no": "789",
+      "price": 530000,
+      "list_price": 530000,
+      "sale_price": 0,
+      "inquiry": false,
+      "source_url": "https://bandocamera.co.kr/product/detail.html?product_no=20358&cate_no=789&display_group=1",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/zeiss/bando-20358.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/zeiss/bando-20358/main_1.webp",
+          "https://media.nadaun.co/shop/images/zeiss/bando-20358/main_2.webp",
+          "https://media.nadaun.co/shop/images/zeiss/bando-20358/main_5.webp",
+          "https://media.nadaun.co/shop/images/zeiss/bando-20358/main_8.webp",
+          "https://media.nadaun.co/shop/images/zeiss/bando-20358/main_9.webp",
+          "https://media.nadaun.co/shop/images/zeiss/bando-20358/main_10.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/zeiss/bando-20358/01.webp",
+          "https://media.nadaun.co/shop/detail/zeiss/bando-20358/02.webp",
+          "https://media.nadaun.co/shop/detail/zeiss/bando-20358/05.webp",
+          "https://media.nadaun.co/shop/detail/zeiss/bando-20358/08.webp",
+          "https://media.nadaun.co/shop/detail/zeiss/bando-20358/09.webp",
+          "https://media.nadaun.co/shop/detail/zeiss/bando-20358/10.webp"
+        ]
+      }
+    }
+  }
+}

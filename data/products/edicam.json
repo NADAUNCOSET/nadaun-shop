@@ -333,6 +333,45 @@
           "https://media.nadaun.co/shop/detail/edicam/clmedia-2478/10.webp"
         ]
       }
+    },
+    "bando-23328": {
+      "id": "bando-23328",
+      "source": "bando",
+      "source_id": "23328",
+      "name": "[중고] 에디캠 넥스트랩(BLUE),(3771)",
+      "brand": "에디캠",
+      "brand_slug": "edicam",
+      "category": "중고/위탁",
+      "cat_path": [
+        "중고/위탁"
+      ],
+      "cate_no": "789",
+      "price": 120000,
+      "list_price": 0,
+      "sale_price": 120000,
+      "inquiry": false,
+      "source_url": "https://bandocamera.co.kr/product/detail.html?product_no=23328&cate_no=789&display_group=1",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/edicam/bando-23328.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/edicam/bando-23328/main_1.webp",
+          "https://media.nadaun.co/shop/images/edicam/bando-23328/main_2.webp",
+          "https://media.nadaun.co/shop/images/edicam/bando-23328/main_3.webp",
+          "https://media.nadaun.co/shop/images/edicam/bando-23328/main_6.webp",
+          "https://media.nadaun.co/shop/images/edicam/bando-23328/main_9.webp",
+          "https://media.nadaun.co/shop/images/edicam/bando-23328/main_10.webp",
+          "https://media.nadaun.co/shop/images/edicam/bando-23328/main_11.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/edicam/bando-23328/01.webp",
+          "https://media.nadaun.co/shop/detail/edicam/bando-23328/02.webp",
+          "https://media.nadaun.co/shop/detail/edicam/bando-23328/03.webp",
+          "https://media.nadaun.co/shop/detail/edicam/bando-23328/06.webp",
+          "https://media.nadaun.co/shop/detail/edicam/bando-23328/09.webp",
+          "https://media.nadaun.co/shop/detail/edicam/bando-23328/10.webp",
+          "https://media.nadaun.co/shop/detail/edicam/bando-23328/11.webp"
+        ]
+      }
     }
   }
 }
