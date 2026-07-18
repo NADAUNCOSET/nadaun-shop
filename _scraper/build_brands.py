@@ -3,7 +3,7 @@
    출력: data/brands.json (canonical). 각 브랜드 1회, 소스표시 + 제품수."""
 import sys, io, json, glob, os
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
-ROOT=r"\\Nadaunproject\nadaunproject\_DAVINCI NADAUN PROJECT\_Site\nadaun-shop"
+ROOT=r"\\Nadaunproject\nadaunproject\_Site\nadaun-shop"
 PDIR=ROOT+r"\data\products"
 
 # rainbowshop 제품구매 브랜드 55 + 렌탈틸타 → (slug, 한글표기, 영문)

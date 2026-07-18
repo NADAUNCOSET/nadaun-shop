@@ -638,6 +638,93 @@
           "https://media.nadaun.co/shop/detail/pmi/cinemall-2499/19.webp"
         ]
       }
+    },
+    "green-7196": {
+      "id": "green-7196",
+      "source": "green",
+      "source_id": "7196",
+      "name": "피엠아이 PMI 버블 포뮬라 Bubble Formula 버블 전용 용액 100ml",
+      "brand": "피엠아이",
+      "brand_slug": "pmi",
+      "category": "카메라 악세서리",
+      "cat_path": [
+        "카메라 악세서리"
+      ],
+      "cate_no": "0002",
+      "price": 14000,
+      "list_price": 0,
+      "sale_price": 14000,
+      "inquiry": false,
+      "source_url": "https://greenshop.co.kr/goods/view?no=7196",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/pmi/green-7196.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/pmi/green-7196/main_1.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/pmi/green-7196/01.webp"
+        ]
+      }
+    },
+    "green-7195": {
+      "id": "green-7195",
+      "source": "green",
+      "source_id": "7195",
+      "name": "피엠아이 PMI 클라우드 포뮬라 Cloud Formula 전용 용액 100ml",
+      "brand": "피엠아이",
+      "brand_slug": "pmi",
+      "category": "카메라 악세서리",
+      "cat_path": [
+        "카메라 악세서리"
+      ],
+      "cate_no": "0002",
+      "price": 18000,
+      "list_price": 0,
+      "sale_price": 18000,
+      "inquiry": false,
+      "source_url": "https://greenshop.co.kr/goods/view?no=7195",
+      "images": {
+        "thumb": "",
+        "main": [],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/pmi/green-7195/01.webp"
+        ]
+      }
+    },
+    "green-7162": {
+      "id": "green-7162",
+      "source": "green",
+      "source_id": "7162",
+      "name": "피엠아이 PMI Smoke NINJA PRO 스모크 닌자 프로 - 헤이저 키트",
+      "brand": "피엠아이",
+      "brand_slug": "pmi",
+      "category": "카메라 악세서리",
+      "cat_path": [
+        "카메라 악세서리"
+      ],
+      "cate_no": "0002",
+      "price": 340000,
+      "list_price": 0,
+      "sale_price": 340000,
+      "inquiry": false,
+      "source_url": "https://greenshop.co.kr/goods/view?no=7162",
+      "images": {
+        "thumb": "",
+        "main": [],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/pmi/green-7162/01.webp",
+          "https://media.nadaun.co/shop/detail/pmi/green-7162/02.webp",
+          "https://media.nadaun.co/shop/detail/pmi/green-7162/03.webp",
+          "https://media.nadaun.co/shop/detail/pmi/green-7162/04.webp",
+          "https://media.nadaun.co/shop/detail/pmi/green-7162/05.webp",
+          "https://media.nadaun.co/shop/detail/pmi/green-7162/06.webp",
+          "https://media.nadaun.co/shop/detail/pmi/green-7162/07.webp",
+          "https://media.nadaun.co/shop/detail/pmi/green-7162/08.webp",
+          "https://media.nadaun.co/shop/detail/pmi/green-7162/09.webp",
+          "https://media.nadaun.co/shop/detail/pmi/green-7162/10.webp",
+          "https://media.nadaun.co/shop/detail/pmi/green-7162/11.webp"
+        ]
+      }
     }
   }
 }

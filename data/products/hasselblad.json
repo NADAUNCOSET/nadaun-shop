@@ -1,5 +1,5 @@
 {
-  "brand": "핫셀블라드",
+  "brand": "Hasselblad",
   "brand_slug": "hasselblad",
   "products": {
     "bando-23939": {
@@ -10459,6 +10459,107 @@
           "https://media.nadaun.co/shop/detail/hasselblad/bando-20802/09.webp",
           "https://media.nadaun.co/shop/detail/hasselblad/bando-20802/10.webp",
           "https://media.nadaun.co/shop/detail/hasselblad/bando-20802/11.webp"
+        ]
+      }
+    },
+    "green-7322": {
+      "id": "green-7322",
+      "source": "green",
+      "source_id": "7322",
+      "name": "Hasselblad XCD 35-100mm F2.8-4 E Lens",
+      "brand": "Hasselblad",
+      "brand_slug": "hasselblad",
+      "category": "카메라",
+      "cat_path": [
+        "카메라"
+      ],
+      "cate_no": "0001",
+      "price": 6600000,
+      "list_price": 0,
+      "sale_price": 6600000,
+      "inquiry": false,
+      "source_url": "https://greenshop.co.kr/goods/view?no=7322",
+      "images": {
+        "thumb": "",
+        "main": [],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/hasselblad/green-7322/01.webp",
+          "https://media.nadaun.co/shop/detail/hasselblad/green-7322/02.webp"
+        ]
+      }
+    },
+    "green-7321": {
+      "id": "green-7321",
+      "source": "green",
+      "source_id": "7321",
+      "name": "Hasselblad X2DII 100C Camera",
+      "brand": "Hasselblad",
+      "brand_slug": "hasselblad",
+      "category": "카메라",
+      "cat_path": [
+        "카메라"
+      ],
+      "cate_no": "0001",
+      "price": 10380000,
+      "list_price": 0,
+      "sale_price": 10380000,
+      "inquiry": false,
+      "source_url": "https://greenshop.co.kr/goods/view?no=7321",
+      "images": {
+        "thumb": "",
+        "main": [],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/hasselblad/green-7321/01.webp"
+        ]
+      }
+    },
+    "green-7324": {
+      "id": "green-7324",
+      "source": "green",
+      "source_id": "7324",
+      "name": "Hasselblad Rechargeable Battery 3400mAh for X2d, X1d, 907x 배터리",
+      "brand": "Hasselblad",
+      "brand_slug": "hasselblad",
+      "category": "카메라 악세서리",
+      "cat_path": [
+        "카메라 악세서리"
+      ],
+      "cate_no": "0002",
+      "price": 200000,
+      "list_price": 0,
+      "sale_price": 200000,
+      "inquiry": false,
+      "source_url": "https://greenshop.co.kr/goods/view?no=7324",
+      "images": {
+        "thumb": "",
+        "main": [],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/hasselblad/green-7324/01.webp"
+        ]
+      }
+    },
+    "green-7323": {
+      "id": "green-7323",
+      "source": "green",
+      "source_id": "7323",
+      "name": "Hasselblad Battery Hub X 충전기",
+      "brand": "Hasselblad",
+      "brand_slug": "hasselblad",
+      "category": "카메라 악세서리",
+      "cat_path": [
+        "카메라 악세서리"
+      ],
+      "cate_no": "0002",
+      "price": 229000,
+      "list_price": 0,
+      "sale_price": 229000,
+      "inquiry": false,
+      "source_url": "https://greenshop.co.kr/goods/view?no=7323",
+      "images": {
+        "thumb": "",
+        "main": [],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/hasselblad/green-7323/01.webp"
         ]
       }
     }

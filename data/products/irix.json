@@ -1,0 +1,32 @@
+{
+  "brand": "Irix",
+  "brand_slug": "irix",
+  "products": {
+    "green-3668": {
+      "id": "green-3668",
+      "source": "green",
+      "source_id": "3668",
+      "name": "Irix 11mm F4 Filter Holder : 180mm System",
+      "brand": "Irix",
+      "brand_slug": "irix",
+      "category": "SALE 상품",
+      "cat_path": [
+        "SALE 상품"
+      ],
+      "cate_no": "0010",
+      "price": 271700,
+      "list_price": 0,
+      "sale_price": 271700,
+      "inquiry": false,
+      "source_url": "https://greenshop.co.kr/goods/view?no=3668",
+      "images": {
+        "thumb": "",
+        "main": [],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/irix/green-3668/02.webp",
+          "https://media.nadaun.co/shop/detail/irix/green-3668/03.webp"
+        ]
+      }
+    }
+  }
+}

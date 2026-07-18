@@ -18,7 +18,7 @@ import kpp_classify as K
 import tilta_taxonomy as TT
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
-ROOT = Path(r"\\Nadaunproject\nadaunproject\_DAVINCI NADAUN PROJECT\_Site\nadaun-shop")
+ROOT = Path(r"\\Nadaunproject\nadaunproject\_Site\nadaun-shop")
 DATA = ROOT / "data" / "products"
 OUT  = ROOT / "product"
 SITE = "https://shop.nadaun.co"

@@ -1,5 +1,5 @@
 {
-  "brand": "MATTHEWS",
+  "brand": "Matthews",
   "brand_slug": "matthews",
   "products": {
     "bando-16752": {
@@ -25012,6 +25012,29 @@
           "https://media.nadaun.co/shop/detail/matthews/hktools-23794/09.webp",
           "https://media.nadaun.co/shop/detail/matthews/hktools-23794/10.webp"
         ]
+      }
+    },
+    "green-4889": {
+      "id": "green-4889",
+      "source": "green",
+      "source_id": "4889",
+      "name": "Matthews Slider 35\" 매장 DEMO 제품",
+      "brand": "Matthews",
+      "brand_slug": "matthews",
+      "category": "카메라 악세서리",
+      "cat_path": [
+        "카메라 악세서리"
+      ],
+      "cate_no": "0002",
+      "price": 1500000,
+      "list_price": 0,
+      "sale_price": 1500000,
+      "inquiry": false,
+      "source_url": "https://greenshop.co.kr/goods/view?no=4889",
+      "images": {
+        "thumb": "",
+        "main": [],
+        "detail": []
       }
     }
   }

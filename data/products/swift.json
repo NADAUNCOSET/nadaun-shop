@@ -1,0 +1,61 @@
+{
+  "brand": "스위프트",
+  "brand_slug": "swift",
+  "products": {
+    "green-6432": {
+      "id": "green-6432",
+      "source": "green",
+      "source_id": "6432",
+      "name": "스위프트용 어댑터링 마운트 업링SWIFT System Adaptor Ring for Swift System Filters",
+      "brand": "스위프트",
+      "brand_slug": "swift",
+      "category": "카메라 서포트",
+      "cat_path": [
+        "카메라 서포트"
+      ],
+      "cate_no": "0014",
+      "price": 11000,
+      "list_price": 0,
+      "sale_price": 11000,
+      "inquiry": false,
+      "source_url": "https://greenshop.co.kr/goods/view?no=6432",
+      "images": {
+        "thumb": "",
+        "main": [],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/swift/green-6432/01.webp"
+        ]
+      }
+    },
+    "green-6007": {
+      "id": "green-6007",
+      "source": "green",
+      "source_id": "6007",
+      "name": "스위프트 FS ND 필터 킷 | SWIFT FS ND KIT",
+      "brand": "스위프트",
+      "brand_slug": "swift",
+      "category": "카메라 서포트",
+      "cat_path": [
+        "카메라 서포트"
+      ],
+      "cate_no": "0014",
+      "price": 190300,
+      "list_price": 0,
+      "sale_price": 190300,
+      "inquiry": false,
+      "source_url": "https://greenshop.co.kr/goods/view?no=6007",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/swift/green-6007.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/swift/green-6007/main_1.webp",
+          "https://media.nadaun.co/shop/images/swift/green-6007/main_2.webp",
+          "https://media.nadaun.co/shop/images/swift/green-6007/main_3.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/swift/green-6007/01.webp",
+          "https://media.nadaun.co/shop/detail/swift/green-6007/02.webp"
+        ]
+      }
+    }
+  }
+}

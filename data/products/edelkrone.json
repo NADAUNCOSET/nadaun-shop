@@ -1,0 +1,73 @@
+{
+  "brand": "에델크론",
+  "brand_slug": "edelkrone",
+  "products": {
+    "green-6477": {
+      "id": "green-6477",
+      "source": "green",
+      "source_id": "6477",
+      "name": "에델크론 Tripod Wheels 삼각대 휠",
+      "brand": "에델크론",
+      "brand_slug": "edelkrone",
+      "category": "카메라 악세서리",
+      "cat_path": [
+        "카메라 악세서리"
+      ],
+      "cate_no": "0002",
+      "price": 920700,
+      "list_price": 0,
+      "sale_price": 920700,
+      "inquiry": false,
+      "source_url": "https://greenshop.co.kr/goods/view?no=6477",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/edelkrone/green-6477.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/edelkrone/green-6477/main_1.webp",
+          "https://media.nadaun.co/shop/images/edelkrone/green-6477/main_2.webp",
+          "https://media.nadaun.co/shop/images/edelkrone/green-6477/main_3.webp",
+          "https://media.nadaun.co/shop/images/edelkrone/green-6477/main_4.webp"
+        ],
+        "detail": []
+      }
+    },
+    "green-5046": {
+      "id": "green-5046",
+      "source": "green",
+      "source_id": "5046",
+      "name": "에델크론 백팩 Backpack",
+      "brand": "에델크론",
+      "brand_slug": "edelkrone",
+      "category": "카메라 악세서리",
+      "cat_path": [
+        "카메라 악세서리"
+      ],
+      "cate_no": "0002",
+      "price": 856900,
+      "list_price": 0,
+      "sale_price": 856900,
+      "inquiry": false,
+      "source_url": "https://greenshop.co.kr/goods/view?no=5046",
+      "images": {
+        "thumb": "",
+        "main": [],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/edelkrone/green-5046/01.webp",
+          "https://media.nadaun.co/shop/detail/edelkrone/green-5046/02.webp",
+          "https://media.nadaun.co/shop/detail/edelkrone/green-5046/03.webp",
+          "https://media.nadaun.co/shop/detail/edelkrone/green-5046/04.webp",
+          "https://media.nadaun.co/shop/detail/edelkrone/green-5046/05.webp",
+          "https://media.nadaun.co/shop/detail/edelkrone/green-5046/06.webp",
+          "https://media.nadaun.co/shop/detail/edelkrone/green-5046/07.webp",
+          "https://media.nadaun.co/shop/detail/edelkrone/green-5046/08.webp",
+          "https://media.nadaun.co/shop/detail/edelkrone/green-5046/09.webp",
+          "https://media.nadaun.co/shop/detail/edelkrone/green-5046/10.webp",
+          "https://media.nadaun.co/shop/detail/edelkrone/green-5046/11.webp",
+          "https://media.nadaun.co/shop/detail/edelkrone/green-5046/12.webp",
+          "https://media.nadaun.co/shop/detail/edelkrone/green-5046/13.webp",
+          "https://media.nadaun.co/shop/detail/edelkrone/green-5046/14.webp",
+          "https://media.nadaun.co/shop/detail/edelkrone/green-5046/15.webp"
+        ]
+      }
+    }
+  }
+}

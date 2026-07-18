@@ -1,5 +1,5 @@
 {
-  "brand": "호야",
+  "brand": "HOYA",
   "brand_slug": "hoya",
   "products": {
     "kpp-1665552743": {
@@ -9364,6 +9364,60 @@
           "https://media.nadaun.co/shop/detail/hoya/kpp-1665561972/04.webp",
           "https://media.nadaun.co/shop/detail/hoya/kpp-1665561972/05.webp",
           "https://media.nadaun.co/shop/detail/hoya/kpp-1665561972/06.webp"
+        ]
+      }
+    },
+    "saeki-PD00032975": {
+      "id": "saeki-PD00032975",
+      "source": "saeki",
+      "source_id": "PD00032975",
+      "name": "HOYA PRO ND 8 FILTER (77MM)",
+      "brand": "HOYA",
+      "brand_slug": "hoya",
+      "category": "기타",
+      "cat_path": [
+        "기타"
+      ],
+      "cate_no": "100002",
+      "price": 87000,
+      "list_price": 87000,
+      "sale_price": 77400,
+      "inquiry": false,
+      "source_url": "https://www.saeki.co.kr/item/itemDetail?itemId=PD00032975",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/hoya/saeki-PD00032975.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/hoya/saeki-PD00032975/main_1.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/hoya/saeki-PD00032975/01.webp"
+        ]
+      }
+    },
+    "saeki-PD00032977": {
+      "id": "saeki-PD00032977",
+      "source": "saeki",
+      "source_id": "PD00032977",
+      "name": "HOYA PRO ND 1000 FILTER (77MM)",
+      "brand": "HOYA",
+      "brand_slug": "hoya",
+      "category": "기타",
+      "cat_path": [
+        "기타"
+      ],
+      "cate_no": "100002",
+      "price": 99000,
+      "list_price": 99000,
+      "sale_price": 90000,
+      "inquiry": false,
+      "source_url": "https://www.saeki.co.kr/item/itemDetail?itemId=PD00032977",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/hoya/saeki-PD00032977.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/hoya/saeki-PD00032977/main_1.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/hoya/saeki-PD00032977/01.webp"
         ]
       }
     }

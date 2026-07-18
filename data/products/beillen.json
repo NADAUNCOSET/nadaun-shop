@@ -1,5 +1,5 @@
 {
-  "brand": "BEILLEN",
+  "brand": "베일런",
   "brand_slug": "beillen",
   "products": {
     "fomex-6685": {
@@ -508,6 +508,146 @@
           "https://media.nadaun.co/shop/detail/beillen/fomex-8431/08.webp",
           "https://media.nadaun.co/shop/detail/beillen/fomex-8431/09.webp",
           "https://media.nadaun.co/shop/detail/beillen/fomex-8431/12.webp"
+        ]
+      }
+    },
+    "tov-1302": {
+      "id": "tov-1302",
+      "source": "tov",
+      "source_id": "1302",
+      "name": "베일런 BL-BP130NE /V마운트배터리/130Wh",
+      "brand": "베일런",
+      "brand_slug": "beillen",
+      "category": "미분류",
+      "cat_path": [
+        "미분류"
+      ],
+      "cate_no": "",
+      "price": 343200,
+      "list_price": 0,
+      "sale_price": 343200,
+      "inquiry": false,
+      "source_url": "https://tovmall.co.kr/product/%eb%b2%a0%ec%9d%bc%eb%9f%b0-bl-bp130ne-v%eb%a7%88%ec%9a%b4%ed%8a%b8%eb%b0%b0%ed%84%b0%eb%a6%ac-130wh/",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/beillen/tov-1302.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/beillen/tov-1302/main_1.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/beillen/tov-1302/01.webp",
+          "https://media.nadaun.co/shop/detail/beillen/tov-1302/02.webp"
+        ]
+      }
+    },
+    "tov-1303": {
+      "id": "tov-1303",
+      "source": "tov",
+      "source_id": "1303",
+      "name": "베일런 BL-BP160NE /V마운트배터리/160Wh",
+      "brand": "베일런",
+      "brand_slug": "beillen",
+      "category": "미분류",
+      "cat_path": [
+        "미분류"
+      ],
+      "cate_no": "",
+      "price": 419100,
+      "list_price": 0,
+      "sale_price": 419100,
+      "inquiry": false,
+      "source_url": "https://tovmall.co.kr/product/%eb%b2%a0%ec%9d%bc%eb%9f%b0-bl-bp160ne-v%eb%a7%88%ec%9a%b4%ed%8a%b8%eb%b0%b0%ed%84%b0%eb%a6%ac-160wh/",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/beillen/tov-1303.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/beillen/tov-1303/main_1.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/beillen/tov-1303/01.webp",
+          "https://media.nadaun.co/shop/detail/beillen/tov-1303/02.webp"
+        ]
+      }
+    },
+    "tov-1304": {
+      "id": "tov-1304",
+      "source": "tov",
+      "source_id": "1304",
+      "name": "베일런 BL-BP190NE /V마운트배터리/190Wh",
+      "brand": "베일런",
+      "brand_slug": "beillen",
+      "category": "미분류",
+      "cat_path": [
+        "미분류"
+      ],
+      "cate_no": "",
+      "price": 430000,
+      "list_price": 0,
+      "sale_price": 430000,
+      "inquiry": false,
+      "source_url": "https://tovmall.co.kr/product/%eb%b2%a0%ec%9d%bc%eb%9f%b0-bl-bp190ne-v%eb%a7%88%ec%9a%b4%ed%8a%b8%eb%b0%b0%ed%84%b0%eb%a6%ac-190wh/",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/beillen/tov-1304.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/beillen/tov-1304/main_1.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/beillen/tov-1304/01.webp",
+          "https://media.nadaun.co/shop/detail/beillen/tov-1304/02.webp"
+        ]
+      }
+    },
+    "tov-1305": {
+      "id": "tov-1305",
+      "source": "tov",
+      "source_id": "1305",
+      "name": "베일런 BL-BP230NE /V마운트배터리/230Wh",
+      "brand": "베일런",
+      "brand_slug": "beillen",
+      "category": "미분류",
+      "cat_path": [
+        "미분류"
+      ],
+      "cate_no": "",
+      "price": 568700,
+      "list_price": 0,
+      "sale_price": 568700,
+      "inquiry": false,
+      "source_url": "https://tovmall.co.kr/product/%eb%b2%a0%ec%9d%bc%eb%9f%b0-bl-bp230ne-v%eb%a7%88%ec%9a%b4%ed%8a%b8%eb%b0%b0%ed%84%b0%eb%a6%ac-230wh/",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/beillen/tov-1305.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/beillen/tov-1305/main_1.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/beillen/tov-1305/01.webp",
+          "https://media.nadaun.co/shop/detail/beillen/tov-1305/02.webp"
+        ]
+      }
+    },
+    "tov-1301": {
+      "id": "tov-1301",
+      "source": "tov",
+      "source_id": "1301",
+      "name": "베일런 BL-BP95NE /V마운트배터리/95Wh",
+      "brand": "베일런",
+      "brand_slug": "beillen",
+      "category": "미분류",
+      "cat_path": [
+        "미분류"
+      ],
+      "cate_no": "",
+      "price": 267300,
+      "list_price": 0,
+      "sale_price": 267300,
+      "inquiry": false,
+      "source_url": "https://tovmall.co.kr/product/%eb%b2%a0%ec%9d%bc%eb%9f%b0-bl-bp95ne-v%eb%a7%88%ec%9a%b4%ed%8a%b8%eb%b0%b0%ed%84%b0%eb%a6%ac-95wh/",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/beillen/tov-1301.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/beillen/tov-1301/main_1.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/beillen/tov-1301/01.webp",
+          "https://media.nadaun.co/shop/detail/beillen/tov-1301/02.webp"
         ]
       }
     }

@@ -2,7 +2,7 @@
 """_misc.json 제품을 갱신된 브랜드별칭으로 재분류 + R2 이미지 서버복사(재다운X)."""
 import sys, io, json
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
-sys.path.insert(0, r"\\Nadaunproject\nadaunproject\_DAVINCI NADAUN PROJECT\_Site\nadaun-shop\_scraper")
+sys.path.insert(0, r"\\Nadaunproject\nadaunproject\_Site\nadaun-shop\_scraper")
 import clmedia as C
 from brands_map import brand_of   # 공용맵 (2026-07-11 보강: 영문표기+태그매칭) — clmedia 내장맵 대신 사용
 DATA = C.DATA

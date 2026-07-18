@@ -344,6 +344,65 @@
           "https://media.nadaun.co/shop/detail/atomos/cinemall-1367/15.webp"
         ]
       }
+    },
+    "avx-1792": {
+      "id": "avx-1792",
+      "source": "avx",
+      "source_id": "1792",
+      "name": "아토모스 닌자 울트라 ATOMOS NINJA ULTRA",
+      "brand": "아토모스",
+      "brand_slug": "atomos",
+      "category": "모니터",
+      "cat_path": [
+        "모니터"
+      ],
+      "cate_no": "00010009",
+      "price": 1431000,
+      "list_price": 0,
+      "sale_price": 1431000,
+      "inquiry": false,
+      "source_url": "https://avx.co.kr/goods/view?no=1792",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/atomos/avx-1792.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/atomos/avx-1792/main_1.webp",
+          "https://media.nadaun.co/shop/images/atomos/avx-1792/main_2.webp",
+          "https://media.nadaun.co/shop/images/atomos/avx-1792/main_3.webp",
+          "https://media.nadaun.co/shop/images/atomos/avx-1792/main_4.webp",
+          "https://media.nadaun.co/shop/images/atomos/avx-1792/main_5.webp",
+          "https://media.nadaun.co/shop/images/atomos/avx-1792/main_6.webp",
+          "https://media.nadaun.co/shop/images/atomos/avx-1792/main_7.webp"
+        ],
+        "detail": []
+      }
+    },
+    "avx-1789": {
+      "id": "avx-1789",
+      "source": "avx",
+      "source_id": "1789",
+      "name": "아토모스 쇼군 ATOMOS SHOGUN",
+      "brand": "아토모스",
+      "brand_slug": "atomos",
+      "category": "특별 프로모션 모음",
+      "cat_path": [
+        "특별 프로모션 모음"
+      ],
+      "cate_no": "00060001",
+      "price": 1496000,
+      "list_price": 0,
+      "sale_price": 1496000,
+      "inquiry": false,
+      "source_url": "https://avx.co.kr/goods/view?no=1789",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/atomos/avx-1789.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/atomos/avx-1789/main_1.webp",
+          "https://media.nadaun.co/shop/images/atomos/avx-1789/main_2.webp",
+          "https://media.nadaun.co/shop/images/atomos/avx-1789/main_3.webp",
+          "https://media.nadaun.co/shop/images/atomos/avx-1789/main_4.webp"
+        ],
+        "detail": []
+      }
     }
   }
 }
