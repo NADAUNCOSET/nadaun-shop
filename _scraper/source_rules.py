@@ -28,8 +28,8 @@ def allowed(p, slug, srcs):
     """이 제품을 빌드에 포함할지."""
     src = p.get("source")
     s = srcs.get(slug, set())
-    if slug in DEMOTED_KEEP:                      # 프로포토: hktools 물량 유지
-        return True
+    if slug in DEMOTED_KEEP:                      # 프로포토: 정식 수입사 hktools 것만 (타소스 오염 차단, 2026-07-20 대표 지적)
+        return src == DEMOTED
     if not slug.startswith("_") and (s & TIER1):  # KPP/씨엘미디어 보유 브랜드
         return src in TIER1
     if src == DEMOTED:                            # hktools: 타소스 겹치면 제외

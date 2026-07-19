@@ -1,5 +1,5 @@
 {
-  "total": 196,
+  "total": 195,
   "brands": [
     {
       "slug": "_misc",
@@ -8,7 +8,7 @@
       "in_rainbow": false,
       "in_supplier": false,
       "in_scrape": true,
-      "count": 18426
+      "count": 18424
     },
     {
       "slug": "tilta",
@@ -869,15 +869,6 @@
       "slug": "fxlion",
       "kr": "에프엑스리온",
       "en": "FXLION",
-      "in_rainbow": false,
-      "in_supplier": false,
-      "in_scrape": true,
-      "count": 48
-    },
-    {
-      "slug": "nitecore",
-      "kr": "나이트코어",
-      "en": "NITECORE",
       "in_rainbow": false,
       "in_supplier": false,
       "in_scrape": true,
