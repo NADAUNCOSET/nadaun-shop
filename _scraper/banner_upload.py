@@ -9,7 +9,7 @@ import sys, io
 from pathlib import Path
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 from PIL import Image
-sys.path.insert(0, r"\\Nadaunproject\nadaunproject\_DAVINCI NADAUN PROJECT\_claude\jellyfin_proxy\_r2")
+sys.path.insert(0, r"\\Nadaunproject\nadaunproject\_claude\jellyfin_proxy\_r2")
 from _r2_common import client, BUCKET
 
 S3 = client()

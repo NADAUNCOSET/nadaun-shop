@@ -247,9 +247,10 @@
       "name": "줌 ZOOM LiveTrak L-8 /디지털믹서레코더 /8채널/12트랙동시녹음/USB오디오인터페이스",
       "brand": "줌",
       "brand_slug": "zoom",
-      "category": "음향장비-콘솔/프로세서",
+      "category": "오디오 믹서",
       "cat_path": [
-        "음향장비-콘솔/프로세서"
+        "음향장비-콘솔/프로세서",
+        "오디오 믹서"
       ],
       "cate_no": "020",
       "price": 600000,
@@ -1799,9 +1800,11 @@
       "name": "줌 Zoom H2essential 32bit 플로트 핸디 레코더 녹음기 [국내 정식 판매처]",
       "brand": "줌",
       "brand_slug": "zoom",
-      "category": "영상",
+      "category": "DJI",
       "cat_path": [
-        "영상"
+        "영상",
+        "카메라",
+        "DJI"
       ],
       "cate_no": "0001",
       "price": 339000,
@@ -1843,9 +1846,11 @@
       "name": "줌 Q8N-4K 비디오 카메라 [국내 정식 판매처]",
       "brand": "줌",
       "brand_slug": "zoom",
-      "category": "영상",
+      "category": "DJI",
       "cat_path": [
-        "영상"
+        "영상",
+        "카메라",
+        "DJI"
       ],
       "cate_no": "0001",
       "price": 648000,
@@ -1875,9 +1880,11 @@
       "name": "줌 H1essential 32bit 플로트 핸디 레코더 녹음기 [국내 정식 판매처]",
       "brand": "줌",
       "brand_slug": "zoom",
-      "category": "음향",
+      "category": "믹서&레코더",
       "cat_path": [
-        "음향"
+        "음향",
+        "믹서&레코더",
+        "믹서&레코더"
       ],
       "cate_no": "0002",
       "price": 199000,
@@ -1920,6 +1927,8 @@
       "brand_slug": "zoom",
       "category": "유선마이크",
       "cat_path": [
+        "음향",
+        "마이크",
         "유선마이크"
       ],
       "cate_no": "000200010002",
@@ -1955,6 +1964,8 @@
       "brand_slug": "zoom",
       "category": "액세서리",
       "cat_path": [
+        "음향",
+        "마이크",
         "액세서리"
       ],
       "cate_no": "000200010004",
@@ -1982,6 +1993,8 @@
       "brand_slug": "zoom",
       "category": "믹서&레코더",
       "cat_path": [
+        "음향",
+        "믹서&레코더",
         "믹서&레코더"
       ],
       "cate_no": "00020002",
@@ -2032,6 +2045,8 @@
       "brand_slug": "zoom",
       "category": "믹서&레코더",
       "cat_path": [
+        "음향",
+        "믹서&레코더",
         "믹서&레코더"
       ],
       "cate_no": "00020002",
@@ -2077,6 +2092,8 @@
       "brand_slug": "zoom",
       "category": "액세서리",
       "cat_path": [
+        "음향",
+        "믹서&레코더",
         "액세서리"
       ],
       "cate_no": "000200020004",
@@ -2104,6 +2121,8 @@
       "brand_slug": "zoom",
       "category": "액세서리",
       "cat_path": [
+        "음향",
+        "믹서&레코더",
         "액세서리"
       ],
       "cate_no": "000200020004",
@@ -2134,6 +2153,8 @@
       "brand_slug": "zoom",
       "category": "액세서리",
       "cat_path": [
+        "음향",
+        "믹서&레코더",
         "액세서리"
       ],
       "cate_no": "000200020004",
@@ -2161,6 +2182,8 @@
       "brand_slug": "zoom",
       "category": "액세서리",
       "cat_path": [
+        "음향",
+        "믹서&레코더",
         "액세서리"
       ],
       "cate_no": "000200020004",
@@ -2190,6 +2213,8 @@
       "brand_slug": "zoom",
       "category": "액세서리",
       "cat_path": [
+        "음향",
+        "믹서&레코더",
         "액세서리"
       ],
       "cate_no": "000200020004",
@@ -2217,6 +2242,7 @@
       "brand_slug": "zoom",
       "category": "오디오 인터페이스",
       "cat_path": [
+        "음향",
         "오디오 인터페이스"
       ],
       "cate_no": "00020005",
@@ -2258,6 +2284,7 @@
       "brand_slug": "zoom",
       "category": "오디오 인터페이스",
       "cat_path": [
+        "음향",
         "오디오 인터페이스"
       ],
       "cate_no": "00020005",
@@ -2294,6 +2321,7 @@
       "brand_slug": "zoom",
       "category": "오디오 인터페이스",
       "cat_path": [
+        "음향",
         "오디오 인터페이스"
       ],
       "cate_no": "00020005",

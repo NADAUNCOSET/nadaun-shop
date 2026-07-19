@@ -151,9 +151,9 @@
       "name": "[렌탈] [Jackery] 잭커리 2000Pro 휴대용 파워뱅크 대용량 배터리 / 난라이트 포르자 야외 광량 손실없이 호환가능",
       "brand": "잭커리",
       "brand_slug": "jackery",
-      "category": "[렌탈]스튜디오 장비",
+      "category": "스튜디오 장비 렌탈",
       "cat_path": [
-        "[렌탈]스튜디오 장비"
+        "스튜디오 장비 렌탈"
       ],
       "cate_no": "1847",
       "price": 0,
@@ -204,9 +204,9 @@
       "name": "[Jackery] 잭커리 1000Pro 휴대용 파워뱅크 전용 수납가방 M사이즈",
       "brand": "잭커리",
       "brand_slug": "jackery",
-      "category": "04. 충전기/배터리/음향",
+      "category": "4. 충전기/배터리/음향",
       "cat_path": [
-        "04. 충전기/배터리/음향"
+        "4. 충전기/배터리/음향"
       ],
       "cate_no": "1922",
       "price": 58000,
@@ -247,9 +247,9 @@
       "name": "[Jackery] 잭커리 1000Pro 휴대용 파워뱅크 대용량 배터리 / 난라이트 포르자 야외 광량 손실없이 호환가능",
       "brand": "잭커리",
       "brand_slug": "jackery",
-      "category": "04. 충전기/배터리/음향",
+      "category": "4. 충전기/배터리/음향",
       "cat_path": [
-        "04. 충전기/배터리/음향"
+        "4. 충전기/배터리/음향"
       ],
       "cate_no": "1922",
       "price": 1399000,
@@ -303,9 +303,10 @@
       "name": "잭커리 Jackery 휴대용 파워뱅크 1000 Plus",
       "brand": "잭커리",
       "brand_slug": "jackery",
-      "category": "영상",
+      "category": "배터리/충전기",
       "cat_path": [
-        "영상"
+        "영상",
+        "배터리/충전기"
       ],
       "cate_no": "0001",
       "price": 1259000,
@@ -370,6 +371,7 @@
       "brand_slug": "jackery",
       "category": "배터리/충전기",
       "cat_path": [
+        "영상",
         "배터리/충전기"
       ],
       "cate_no": "00010007",
@@ -423,6 +425,7 @@
       "brand_slug": "jackery",
       "category": "배터리/충전기",
       "cat_path": [
+        "영상",
         "배터리/충전기"
       ],
       "cate_no": "00010007",
@@ -465,6 +468,7 @@
       "brand_slug": "jackery",
       "category": "배터리/충전기",
       "cat_path": [
+        "영상",
         "배터리/충전기"
       ],
       "cate_no": "00010007",
@@ -506,6 +510,7 @@
       "brand_slug": "jackery",
       "category": "배터리/충전기",
       "cat_path": [
+        "영상",
         "배터리/충전기"
       ],
       "cate_no": "00010007",
@@ -561,6 +566,7 @@
       "brand_slug": "jackery",
       "category": "배터리/충전기",
       "cat_path": [
+        "영상",
         "배터리/충전기"
       ],
       "cate_no": "00010007",
@@ -591,6 +597,7 @@
       "brand_slug": "jackery",
       "category": "배터리/충전기",
       "cat_path": [
+        "영상",
         "배터리/충전기"
       ],
       "cate_no": "00010007",

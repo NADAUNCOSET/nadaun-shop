@@ -818,9 +818,11 @@
       "name": "FXLION PL-Q280B 2-ch V마운트 배터리 충전기",
       "brand": "FXLION",
       "brand_slug": "fxlion",
-      "category": "촬영장비",
+      "category": "FXLION",
       "cat_path": [
-        "촬영장비"
+        "촬영장비",
+        "배터리/충전기/전원",
+        "FXLION"
       ],
       "cate_no": "002",
       "price": 412000,
@@ -848,9 +850,11 @@
       "name": "FXLION BP-250S V마운트 배터리",
       "brand": "FXLION",
       "brand_slug": "fxlion",
-      "category": "촬영장비",
+      "category": "FXLION",
       "cat_path": [
-        "촬영장비"
+        "촬영장비",
+        "배터리/충전기/전원",
+        "FXLION"
       ],
       "cate_no": "002",
       "price": 616000,
@@ -878,9 +882,11 @@
       "name": "FXLION BP-190S V마운트 배터리",
       "brand": "FXLION",
       "brand_slug": "fxlion",
-      "category": "촬영장비",
+      "category": "FXLION",
       "cat_path": [
-        "촬영장비"
+        "촬영장비",
+        "배터리/충전기/전원",
+        "FXLION"
       ],
       "cate_no": "002",
       "price": 473000,
@@ -910,6 +916,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -945,6 +952,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -973,6 +981,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -1002,6 +1011,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -1037,6 +1047,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -1065,6 +1076,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -1095,6 +1107,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -1123,6 +1136,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -1153,6 +1167,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -1183,6 +1198,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -1213,6 +1229,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -1243,6 +1260,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -1277,6 +1295,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -1307,6 +1326,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -1337,6 +1357,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -1366,6 +1387,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -1395,6 +1417,7 @@
       "brand_slug": "fxlion",
       "category": "배터리/충전기",
       "cat_path": [
+        "카메라",
         "배터리/충전기"
       ],
       "cate_no": "100001",
@@ -1425,6 +1448,7 @@
       "brand_slug": "fxlion",
       "category": "플레이트",
       "cat_path": [
+        "삼각대",
         "플레이트"
       ],
       "cate_no": "100003",
@@ -1453,6 +1477,7 @@
       "brand_slug": "fxlion",
       "category": "플레이트",
       "cat_path": [
+        "삼각대",
         "플레이트"
       ],
       "cate_no": "100003",
@@ -1481,6 +1506,7 @@
       "brand_slug": "fxlion",
       "category": "플레이트",
       "cat_path": [
+        "삼각대",
         "플레이트"
       ],
       "cate_no": "100003",
@@ -1509,6 +1535,7 @@
       "brand_slug": "fxlion",
       "category": "플레이트",
       "cat_path": [
+        "삼각대",
         "플레이트"
       ],
       "cate_no": "100003",
@@ -1538,6 +1565,7 @@
       "brand_slug": "fxlion",
       "category": "플레이트",
       "cat_path": [
+        "삼각대",
         "플레이트"
       ],
       "cate_no": "100003",
@@ -1566,6 +1594,7 @@
       "brand_slug": "fxlion",
       "category": "하드케이스",
       "cat_path": [
+        "가방",
         "하드케이스"
       ],
       "cate_no": "100004",

@@ -9,9 +9,11 @@
       "name": "엘가토 웹캠 Elgato Facecam MK.2",
       "brand": "엘가토",
       "brand_slug": "elgato",
-      "category": "영상·장비",
+      "category": "스트리밍 카메라·웹캠",
       "cat_path": [
-        "영상·장비"
+        "영상·장비",
+        "엘가토(Elgato)",
+        "스트리밍 카메라·웹캠"
       ],
       "cate_no": "428",
       "price": 232000,
@@ -49,9 +51,11 @@
       "name": "엘가토 프롬프터 Elgato Prompter",
       "brand": "엘가토",
       "brand_slug": "elgato",
-      "category": "영상·장비",
+      "category": "스트리밍 카메라·웹캠",
       "cat_path": [
-        "영상·장비"
+        "영상·장비",
+        "엘가토(Elgato)",
+        "스트리밍 카메라·웹캠"
       ],
       "cate_no": "428",
       "price": 453000,
@@ -89,9 +93,11 @@
       "name": "엘가토 캡쳐보드 Elgato Game Capture 4K X",
       "brand": "엘가토",
       "brand_slug": "elgato",
-      "category": "영상·장비",
+      "category": "캡쳐보드(Video Capture)",
       "cat_path": [
-        "영상·장비"
+        "영상·장비",
+        "엘가토(Elgato)",
+        "캡쳐보드(Video Capture)"
       ],
       "cate_no": "428",
       "price": 342000,
@@ -129,9 +135,11 @@
       "name": "엘가토 스트림 덱 Elgato Stream Deck MK.2",
       "brand": "엘가토",
       "brand_slug": "elgato",
-      "category": "영상·장비",
+      "category": "마이크·오디오",
       "cat_path": [
-        "영상·장비"
+        "영상·장비",
+        "엘가토(Elgato)",
+        "마이크·오디오"
       ],
       "cate_no": "428",
       "price": 222000,
@@ -172,9 +180,10 @@
       "name": "엘가토 Elgato Stream Deck Mini 스트림덱 미니 /프로프리젠터/영상편집/게임/매크로/단축키보드",
       "brand": "엘가토",
       "brand_slug": "elgato",
-      "category": "시스템장비-자막기/스트리밍",
+      "category": "기타브랜드",
       "cat_path": [
-        "시스템장비-자막기/스트리밍"
+        "시스템장비-자막기/스트리밍",
+        "기타브랜드"
       ],
       "cate_no": "012",
       "price": 119000,
@@ -201,9 +210,10 @@
       "name": "엘가토 Elgato Stream Deck MK.2 스트림덱 MK2 /프로프리젠터/영상편집/게임/매크로/단축키보드",
       "brand": "엘가토",
       "brand_slug": "elgato",
-      "category": "시스템장비-자막기/스트리밍",
+      "category": "기타브랜드",
       "cat_path": [
-        "시스템장비-자막기/스트리밍"
+        "시스템장비-자막기/스트리밍",
+        "기타브랜드"
       ],
       "cate_no": "012",
       "price": 219000,

@@ -9,9 +9,10 @@
       "name": "[TASCAM] MZ-223 랙장착형 설치형 믹서",
       "brand": "tascam",
       "brand_slug": "tascam",
-      "category": "오디오/음향장비",
+      "category": "오디오 믹서",
       "cat_path": [
-        "오디오/음향장비"
+        "오디오/음향장비",
+        "오디오 믹서"
       ],
       "cate_no": "005",
       "price": 0,
@@ -47,9 +48,10 @@
       "name": "[TASCAM] MZ-372 랙장착형 설치형 믹서",
       "brand": "tascam",
       "brand_slug": "tascam",
-      "category": "오디오/음향장비",
+      "category": "오디오 믹서",
       "cat_path": [
-        "오디오/음향장비"
+        "오디오/음향장비",
+        "오디오 믹서"
       ],
       "cate_no": "005",
       "price": 0,
@@ -85,9 +87,10 @@
       "name": "[TASCAM] TM-AR1 어쿠스틱 컨트롤 필터",
       "brand": "tascam",
       "brand_slug": "tascam",
-      "category": "오디오/음향장비",
+      "category": "액세서리",
       "cat_path": [
-        "오디오/음향장비"
+        "오디오/음향장비",
+        "액세서리"
       ],
       "cate_no": "005",
       "price": 0,
@@ -121,9 +124,10 @@
       "name": "[TASCAM] TM-250U USB 마이크로폰",
       "brand": "tascam",
       "brand_slug": "tascam",
-      "category": "오디오/음향장비",
+      "category": "마이크/스탠드",
       "cat_path": [
-        "오디오/음향장비"
+        "오디오/음향장비",
+        "마이크/스탠드"
       ],
       "cate_no": "005",
       "price": 0,
@@ -159,9 +163,10 @@
       "name": "[TASCAM] TM-200SG 샷건 마이크로폰",
       "brand": "tascam",
       "brand_slug": "tascam",
-      "category": "오디오/음향장비",
+      "category": "마이크/스탠드",
       "cat_path": [
-        "오디오/음향장비"
+        "오디오/음향장비",
+        "마이크/스탠드"
       ],
       "cate_no": "005",
       "price": 0,
@@ -197,9 +202,10 @@
       "name": "[TASCAM] TM-70 다이나믹 마이크로폰",
       "brand": "tascam",
       "brand_slug": "tascam",
-      "category": "오디오/음향장비",
+      "category": "액세서리",
       "cat_path": [
-        "오디오/음향장비"
+        "오디오/음향장비",
+        "액세서리"
       ],
       "cate_no": "005",
       "price": 0,
@@ -233,9 +239,10 @@
       "name": "[TASCAM] TM-AM2 굴절 마이크 스탠드",
       "brand": "tascam",
       "brand_slug": "tascam",
-      "category": "오디오/음향장비",
+      "category": "액세서리",
       "cat_path": [
-        "오디오/음향장비"
+        "오디오/음향장비",
+        "액세서리"
       ],
       "cate_no": "005",
       "price": 0,
@@ -269,9 +276,10 @@
       "name": "[TASCAM] TH-11 헤드폰",
       "brand": "tascam",
       "brand_slug": "tascam",
-      "category": "오디오/음향장비",
+      "category": "액세서리",
       "cat_path": [
-        "오디오/음향장비"
+        "오디오/음향장비",
+        "액세서리"
       ],
       "cate_no": "005",
       "price": 0,
@@ -307,6 +315,7 @@
       "brand_slug": "tascam",
       "category": "음향장비",
       "cat_path": [
+        "카메라/디지털",
         "음향장비"
       ],
       "cate_no": "",
@@ -330,9 +339,11 @@
       "name": "타스캠 TASCAM Portacapture X8 + AK-BT1 블루투스아답터 포터캡쳐 리니어 PCM 레코더",
       "brand": "타스캠",
       "brand_slug": "tascam",
-      "category": "음향장비",
+      "category": "타스캠 / TASCAM",
       "cat_path": [
-        "음향장비"
+        "음향장비",
+        "레코더 / RECORDER",
+        "타스캠 / TASCAM"
       ],
       "cate_no": "0008",
       "price": 805000,

@@ -33,16 +33,23 @@ for f in sorted(DATA.glob("*.json")):
         elif slug=="tilta":
             dc,dn,jc,jn,kc,kn = TT.classify_tilta(nm,cat)
         else:
-            dc,dn,jc,jn = K.classify(nm,cat); kc,kn = "",""
+            # 소스 원본 카테고리 트리 그대로 (2026-07-20 대표: "각 브랜드 메뉴=사이트 카테고리 그대로,
+            # 대분류 발명은 마지막 단계에". kpp_classify 추측분류 사용 금지)
+            cp=[x for x in (p.get("cat_path") or []) if x] or ([cat] if cat else ["기타"])
+            dn=cp[0]; jn=cp[1] if len(cp)>1 else ""; kn=cp[2] if len(cp)>2 else ""
+            dc="src:"+dn; jc=jn; kc=kn
         price=p.get("price",0); usd=p.get("price_usd",0)
         prods.append({"s":slug,"b":p.get("brand",""),"n":nm,"id":p["id"],
                       "d":dc,"dn":dn,"j":jc,"jn":jn,"k":kc,"kn":kn,"p":price,"usd":usd,
                       "t":p["images"].get("thumb","")})
 
-# 대분류 통합 순서: 틸타(카메라별→제품군→특가) + KPP. 코드 disjoint.
+# 대분류 통합 순서: 틸타(카메라별→제품군→특가) + KPP + 소스원본(첫 등장 순=수집 시 사이트 네비 순).
 DAE_ORDER_ALL = TT.DAE_ORDER + K.DAE_ORDER
 DAE_NAME_ALL = {**TT.DAE, **K.DAE}
 dorder={c:i for i,c in enumerate(DAE_ORDER_ALL)}
+for p in prods:
+    if p["d"] not in dorder:
+        dorder[p["d"]]=len(DAE_ORDER_ALL); DAE_ORDER_ALL.append(p["d"]); DAE_NAME_ALL[p["d"]]=p["dn"]
 
 from collections import Counter, defaultdict
 cnt=Counter(p["s"] for p in prods)

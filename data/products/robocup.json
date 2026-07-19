@@ -276,9 +276,9 @@
       "name": "[ROBOCUP] 로보컵 Dual Cup Holder Purple",
       "brand": "로보컵",
       "brand_slug": "robocup",
-      "category": "03. 조명 스탠드",
+      "category": "3. 조명 스탠드",
       "cat_path": [
-        "03. 조명 스탠드"
+        "3. 조명 스탠드"
       ],
       "cate_no": "1748",
       "price": 46000,
@@ -310,9 +310,9 @@
       "name": "[ROBOCUP] 로보컵 Dual Cup Holder Orange",
       "brand": "로보컵",
       "brand_slug": "robocup",
-      "category": "03. 조명 스탠드",
+      "category": "3. 조명 스탠드",
       "cat_path": [
-        "03. 조명 스탠드"
+        "3. 조명 스탠드"
       ],
       "cate_no": "1748",
       "price": 46000,
@@ -344,9 +344,9 @@
       "name": "[ROBOCUP] 로보컵 Dual Cup Holder Hot Pink",
       "brand": "로보컵",
       "brand_slug": "robocup",
-      "category": "03. 조명 스탠드",
+      "category": "3. 조명 스탠드",
       "cat_path": [
-        "03. 조명 스탠드"
+        "3. 조명 스탠드"
       ],
       "cate_no": "1748",
       "price": 46000,
@@ -378,9 +378,9 @@
       "name": "[ROBOCUP] 로보컵 Dual Cup Holder Gray",
       "brand": "로보컵",
       "brand_slug": "robocup",
-      "category": "03. 조명 스탠드",
+      "category": "3. 조명 스탠드",
       "cat_path": [
-        "03. 조명 스탠드"
+        "3. 조명 스탠드"
       ],
       "cate_no": "1748",
       "price": 46000,
@@ -412,9 +412,9 @@
       "name": "[ROBOCUP] 로보컵 Dual Cup Holder Black",
       "brand": "로보컵",
       "brand_slug": "robocup",
-      "category": "03. 조명 스탠드",
+      "category": "3. 조명 스탠드",
       "cat_path": [
-        "03. 조명 스탠드"
+        "3. 조명 스탠드"
       ],
       "cate_no": "1748",
       "price": 46000,
@@ -646,9 +646,10 @@
       "name": "로보 컵 홀더 ROBO CUP HOLDER",
       "brand": "로보컵",
       "brand_slug": "robocup",
-      "category": "카메라 악세서리",
+      "category": "기타 / OTHERS",
       "cat_path": [
-        "카메라 악세서리"
+        "카메라 악세서리",
+        "기타 / OTHERS"
       ],
       "cate_no": "0002",
       "price": 40000,

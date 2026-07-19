@@ -19,11 +19,11 @@ from bs4 import BeautifulSoup
 from PIL import Image
 from brands_map import brand_of
 
-sys.path.insert(0, r"\\Nadaunproject\nadaunproject\_DAVINCI NADAUN PROJECT\_claude\jellyfin_proxy\_r2")
+sys.path.insert(0, r"\\Nadaunproject\nadaunproject\_claude\jellyfin_proxy\_r2")
 from _r2_common import client, BUCKET
 S3 = client()
 PUBLIC = "https://media.nadaun.co"
-ROOT = Path(r"\\Nadaunproject\nadaunproject\_DAVINCI NADAUN PROJECT\_Site\nadaun-shop")
+ROOT = Path(r"\\Nadaunproject\nadaunproject\_Site\nadaun-shop")
 DATA = ROOT/"data"/"products"; DATA.mkdir(parents=True, exist_ok=True)
 
 SITES = {

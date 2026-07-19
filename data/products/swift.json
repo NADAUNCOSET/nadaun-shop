@@ -9,9 +9,11 @@
       "name": "스위프트용 어댑터링 마운트 업링SWIFT System Adaptor Ring for Swift System Filters",
       "brand": "스위프트",
       "brand_slug": "swift",
-      "category": "카메라 서포트",
+      "category": "링 필터 / Ring Filters",
       "cat_path": [
-        "카메라 서포트"
+        "카메라 서포트",
+        "니시필터-포토 / NiSi Filters - Photo",
+        "링 필터 / Ring Filters"
       ],
       "cate_no": "0014",
       "price": 11000,
@@ -20,8 +22,10 @@
       "inquiry": false,
       "source_url": "https://greenshop.co.kr/goods/view?no=6432",
       "images": {
-        "thumb": "",
-        "main": [],
+        "thumb": "https://media.nadaun.co/shop/detail/swift/green-6432/01.webp",
+        "main": [
+          "https://media.nadaun.co/shop/detail/swift/green-6432/01.webp"
+        ],
         "detail": [
           "https://media.nadaun.co/shop/detail/swift/green-6432/01.webp"
         ]
@@ -34,9 +38,11 @@
       "name": "스위프트 FS ND 필터 킷 | SWIFT FS ND KIT",
       "brand": "스위프트",
       "brand_slug": "swift",
-      "category": "카메라 서포트",
+      "category": "링 필터 / Ring Filters",
       "cat_path": [
-        "카메라 서포트"
+        "카메라 서포트",
+        "니시필터-포토 / NiSi Filters - Photo",
+        "링 필터 / Ring Filters"
       ],
       "cate_no": "0014",
       "price": 190300,

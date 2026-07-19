@@ -1,0 +1,141 @@
+[07:27:29] START — firstmall catwalk 완료 대기
+[07:31:29] catwalk 완료 감지
+[07:31:29] STEP1 thumb_fallback --apply
+=== APPLY: detail[0]→thumb 승격 ===
+  복구 1527개: {'avx': 4, 'aurora': 89, 'green': 1429, 'tov': 4, 'kpp': 1}
+  여전히 이미지전무 213개: {'hktools': 1, 'plthink': 4, 'avx': 2, 'aurora': 1, 'green': 88, 'tov': 116, 'tilta.com': 1}
+[07:31:35] STEP2 rebuild_cat_paths --apply
+[aurora] 워크 결과 사용 (멤버십 462개)
+[avx] 워크 결과 사용 (멤버십 234개)
+[bando] 워크 결과 사용 (멤버십 2185개)
+[benro] 워크 결과 사용 (멤버십 1162개)
+[calla] 워크 결과 사용 (멤버십 1252개)
+[cinemall] 워크 결과 사용 (멤버십 1259개)
+[fomex] 워크 결과 사용 (멤버십 2451개)
+[green] 워크 결과 사용 (멤버십 2826개)
+[hktools] 워크 결과 사용 (멤버십 7868개)
+[ldnet] 워크 결과 사용 (멤버십 2518개)
+[lmount] 워크 결과 사용 (멤버십 321개)
+[mustcolor] 워크 결과 사용 (멤버십 1924개)
+[redsun] 워크 결과 사용 (멤버십 783개)
+[saeki] 카테고리 10개 경로 복원 중…
+[sajin] 워크 결과 사용 (멤버십 4337개)
+[sama] 워크 결과 사용 (멤버십 1548개)
+[tov] 카테고리 0개 경로 복원 중…
+    … tov 제품 p1 (100개)
+    … tov 제품 p2 (200개)
+    … tov 제품 p3 (300개)
+    … tov 제품 p4 (400개)
+    … tov 제품 p5 (500개)
+    … tov 제품 p6 (600개)
+    … tov 제품 p7 (700개)
+    … tov 제품 p8 (800개)
+    … tov 제품 p9 (900개)
+    … tov 제품 p10 (1000개)
+    … tov 제품 p11 (1100개)
+    … tov 제품 p12 (1200개)
+    … tov 제품 p13 (1300개)
+    … tov 제품 p14 (1400개)
+    … tov 제품 p15 (1500개)
+    … tov 제품 p16 (1600개)
+    … tov 제품 p17 (1700개)
+    … tov 제품 p18 (1800개)
+    … tov 제품 p19 (1900개)
+    … tov 제품 p20 (2000개)
+    … tov 제품 p21 (2100개)
+    … tov 제품 p22 (2200개)
+    … tov 제품 p23 (2300개)
+    … tov 제품 p24 (2315개)
+
+=== APPLY 결과 (제품수 / 경로복원 / 2단계이상) ===
+  aurora        463 /    463 /    462
+  avx           236 /    236 /    235
+  bando        4676 /   4676 /   2186
+  benro        1130 /   1130 /   1127
+  calla        1262 /   1262 /   1214
+  cinemall     1259 /   1259 /   1259
+  fomex        2533 /   2533 /   2389
+  green        3004 /   3004 /   2826
+  hktools      8192 /   8192 /   1182
+  ldnet        2503 /   2503 /      0
+  lmount        322 /    322 /    274
+  mustcolor    1918 /   1918 /   1918
+  redsun        801 /    801 /    729
+  saeki        7138 /   7138 /   7009
+  sajin           1 /      1 /      1
+  sama         1555 /   1555 /      0
+  tov          2313 /   1970 /   1665
+[07:32:15] STEP3 build_brands
+마스터 브랜드 195개 = rainbow 55 ∪ scrape 148 (중복통합)
+
+■ 양쪽 다 있음(겹침) 52개 — 제품 스크랩 완료:
+   틸타(TILTA) 2974개
+   스몰리그(SMALLRIG) 2227개
+   쿠포(KUPO) 1795개
+   난라이트(NANLITE) 1273개
+   디제이아이(DJI) 864개
+   펠리칸(PELICAN) 826개
+   프로포토(PROFOTO) 782개
+   레오포토(LEOFOTO) 690개
+   매튜스(MATTHEWS) 643개
+   니시(NISI) 551개
+   캐논(CANON) 548개
+   리필터(LEE FILTERS) 485개
+   블랙매직(BLACKMAGICDESIGN) 471개
+   새비지(SAVAGE) 459개
+   어퓨처(APUTURE) 441개
+   홀리랜드(HOLLYLAND) 350개
+   소니(SONY) 348개
+   테더툴스(TETHERTOOLS) 335개
+   오로라(AURORA) 291개
+   슈어(SHURE) 253개
+   리코(RICOH) 243개
+   기트조(GITZO) 233개
+   후지필름(FUJIFILM) 231개
+   어벤져(AVENGER) 203개
+   난룩스(NANLUX) 190개
+   페리바운스(PERIBOUNCE) 171개
+   젠트리(GENTREE) 146개
+   파라볼릭스(PARABOLIX) 125개
+   아이풋티지(IFOOTAGE) 110개
+   티비로직(TVLogic) 108개
+   젠하이저(SENNHEISER) 103개
+   엡손(EPSON) 102개
+   할로위(HARLOWE) 98개
+   에이조(EIZO) 89개
+   와콤(WACOM) 76개
+   세코닉(SEKONIC) 73개
+   호만(HOMAN) 55개
+   세도나(SEDONA) 46개
+   래그플레이스(The Rag Place) 34개
+   테리스(TERIS) 34개
+   스윗(SWIT) 28개
+   호버에어(HOVER AIR) 22개
+   로보컵(ROBO CUP) 22개
+   에코플로우(ECOFLOW) 21개
+   모션9(MOTION9) 18개
+   피엠아이(PMI) 17개
+   지지씨(ZGCINE) 16개
+   잭커리(JACKERY) 13개
+   이이미지(E-IMAGE) 5개
+   에델크론(EDELKRONE) 2개
+   캡쳐원(CAPTURE ONE) 1개
+   라오와(LAOWA) 1개
+
+■ rainbow에만 있음 3개 — 아직 제품 스크랩 안됨(나중에):
+   아르카스위스(ARCA SWISS), 리버노보(LIVERNOVO), 삭틀러(SACHTLER)
+
+■ 스크랩에만 있음 96개 — rainbow에 없던 신규:
+   기타, 맨프로토, bw, 고독스, benro, sigma, 팔캠, 발렌스, saramonic, fomex, 아리, wandrd, hoya, hasselblad, prismlensfx, broncolor, 지윤, schneider, thinktank, 율란지, hy, pgytech, tenba, 로데, durix, 렉사, rocknroller, klotz, skb, superior, 코미카, ttartisan, genelec, tokina, wotancraft, idx, oberwerth, luxpad, 비스고, 디조필름, 리벡, apogee, briese, hahnemuhle, meking, presonus, panyanfilm, zoom, kumkwang, datacolor, leitz, 삼양, viltrox, arturia, 제아폰, 노바칩스, 테라덱, 카세, astrhori, 에프엑스리온, vatue, 타이포크, 데스뷰, 파나소닉, bon, cmotion, marshall, progaffer, 파싱, elgato, zitay, nikon, 카텔로, beillen, cartoni, 오픈문, vanguard, xeen, shuttler, 에디캠, 아토모스, 노가, 퀄라이트, tascam, 주문제작, 피디무비, evoto, zeiss, 앨빈스케이블, 아스테라, 아트뮤, swift, irix, leica, 오스람, tamron
+
+→ data/brands.json 저장
+[07:32:18] STEP3 build_catalog
+제품 37532 / 브랜드 총 195(제품보유 148) / 대분류 298
+→ catalog.html 생성 (9454KB)
+[07:32:21] STEP3 build_catalog_category
+제품 37532 / 브랜드 201 / 대분류 13
+대분류별: {'00 카메라·바디': 538, '01 삼각대': 2052, '02 필터': 2911, '03 카메라렌즈': 991, '04 시네마렌즈': 527, '05 카메라가방': 2031, '06 영상장비': 8119, '07 조명': 2548, 's0 사운드·마이크': 1166, 'h0 영상송수신기': 278, '08 테더툴스': 103, '09 액세서리': 15832, 'c0 드론·액션캠': 436}
+→ catalog_category.html 생성 (8351KB)
+[07:32:25] STEP3 build_detail
+[전체] 37532개 상세페이지 생성 (브랜드 148) → \\Nadaunproject\nadaunproject\_Site\nadaun-shop\product
+[07:35:55] STEP4 git commit + push

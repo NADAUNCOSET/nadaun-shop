@@ -1,0 +1,7 @@
+카테고리 전면 복원: 소스 원본 대>중>소 트리 + 브랜드메뉴 사이트그대로 + 썸네일 폴백
+
+- rebuild_cat_paths: 리프 멤버십 워크로 전 소스 카테고리 트리 복원(cafe24/godo/makeshop/firstmall/saeki/tov)
+- build_catalog: 브랜드 메뉴를 kpp추측분류 -> 소스 원본 cat_path 그대로 렌더
+- thumb_fallback: 대표이미지 미등록 제품 detail[0]->썸네일 승격(1,500여개 카드 복구)
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>

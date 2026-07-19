@@ -9,9 +9,11 @@
       "name": "에델크론 Tripod Wheels 삼각대 휠",
       "brand": "에델크론",
       "brand_slug": "edelkrone",
-      "category": "카메라 악세서리",
+      "category": "에델크론 (Edelkrone)",
       "cat_path": [
-        "카메라 악세서리"
+        "카메라 악세서리",
+        "헤드, 지브, 포커스 (Head, Jibs, Focus)",
+        "에델크론 (Edelkrone)"
       ],
       "cate_no": "0002",
       "price": 920700,
@@ -37,9 +39,11 @@
       "name": "에델크론 백팩 Backpack",
       "brand": "에델크론",
       "brand_slug": "edelkrone",
-      "category": "카메라 악세서리",
+      "category": "기타 케이스 / OTHER CASE",
       "cat_path": [
-        "카메라 악세서리"
+        "카메라 악세서리",
+        "케이스&백 / CASE & BAG",
+        "기타 케이스 / OTHER CASE"
       ],
       "cate_no": "0002",
       "price": 856900,
@@ -48,8 +52,10 @@
       "inquiry": false,
       "source_url": "https://greenshop.co.kr/goods/view?no=5046",
       "images": {
-        "thumb": "",
-        "main": [],
+        "thumb": "https://media.nadaun.co/shop/detail/edelkrone/green-5046/01.webp",
+        "main": [
+          "https://media.nadaun.co/shop/detail/edelkrone/green-5046/01.webp"
+        ],
         "detail": [
           "https://media.nadaun.co/shop/detail/edelkrone/green-5046/01.webp",
           "https://media.nadaun.co/shop/detail/edelkrone/green-5046/02.webp",

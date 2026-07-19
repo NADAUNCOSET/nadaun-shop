@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "\\Nadaunproject\nadaunproject\_Site\nadaun-shop\_scraper\cat_membership_walk.py", line 103, in <module>
+    C24 = mod("cafe24")
+          ^^^^^^^^^^^^^
+  File "\\Nadaunproject\nadaunproject\_Site\nadaun-shop\_scraper\cat_membership_walk.py", line 16, in mod
+    return __import__(name)
+           ^^^^^^^^^^^^^^^^
+  File "\\Nadaunproject\nadaunproject\_Site\nadaun-shop\_scraper\cafe24.py", line 23, in <module>
+    from _r2_common import client, BUCKET
+ModuleNotFoundError: No module named '_r2_common'

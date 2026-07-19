@@ -8,10 +8,10 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 import requests
 from bs4 import BeautifulSoup
 from PIL import Image
-sys.path.insert(0, r"\\Nadaunproject\nadaunproject\_DAVINCI NADAUN PROJECT\_claude\jellyfin_proxy\_r2")
+sys.path.insert(0, r"\\Nadaunproject\nadaunproject\_claude\jellyfin_proxy\_r2")
 from _r2_common import client, BUCKET
 S3=client(); PUBLIC="https://media.nadaun.co"
-DATA=Path(r"\\Nadaunproject\nadaunproject\_DAVINCI NADAUN PROJECT\_Site\nadaun-shop\data\products"); DATA.mkdir(parents=True,exist_ok=True)
+DATA=Path(r"\\Nadaunproject\nadaunproject\_Site\nadaun-shop\data\products"); DATA.mkdir(parents=True,exist_ok=True)
 API="https://tilta.com/wp-json/wc/store/v1/products"
 S=requests.Session(); S.headers.update({"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64) Chrome/149 Safari/537.36"})
 

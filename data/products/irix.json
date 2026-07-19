@@ -9,9 +9,11 @@
       "name": "Irix 11mm F4 Filter Holder : 180mm System",
       "brand": "Irix",
       "brand_slug": "irix",
-      "category": "SALE 상품",
+      "category": "180mm 시스템 / 180mm System",
       "cat_path": [
-        "SALE 상품"
+        "카메라 서포트",
+        "니시필터-포토 / NiSi Filters - Photo",
+        "180mm 시스템 / 180mm System"
       ],
       "cate_no": "0010",
       "price": 271700,
@@ -20,8 +22,10 @@
       "inquiry": false,
       "source_url": "https://greenshop.co.kr/goods/view?no=3668",
       "images": {
-        "thumb": "",
-        "main": [],
+        "thumb": "https://media.nadaun.co/shop/detail/irix/green-3668/02.webp",
+        "main": [
+          "https://media.nadaun.co/shop/detail/irix/green-3668/02.webp"
+        ],
         "detail": [
           "https://media.nadaun.co/shop/detail/irix/green-3668/02.webp",
           "https://media.nadaun.co/shop/detail/irix/green-3668/03.webp"

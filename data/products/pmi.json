@@ -11,6 +11,7 @@
       "brand_slug": "pmi",
       "category": "BRAND",
       "cat_path": [
+        "BRAND",
         "BRAND"
       ],
       "cate_no": "56",
@@ -61,6 +62,7 @@
       "brand_slug": "pmi",
       "category": "BRAND",
       "cat_path": [
+        "BRAND",
         "BRAND"
       ],
       "cate_no": "56",
@@ -121,6 +123,7 @@
       "brand_slug": "pmi",
       "category": "BRAND",
       "cat_path": [
+        "BRAND",
         "BRAND"
       ],
       "cate_no": "56",
@@ -157,6 +160,7 @@
       "brand_slug": "pmi",
       "category": "BRAND",
       "cat_path": [
+        "BRAND",
         "BRAND"
       ],
       "cate_no": "56",
@@ -199,6 +203,7 @@
       "brand_slug": "pmi",
       "category": "BRAND",
       "cat_path": [
+        "BRAND",
         "BRAND"
       ],
       "cate_no": "56",
@@ -235,6 +240,7 @@
       "brand_slug": "pmi",
       "category": "BRAND",
       "cat_path": [
+        "BRAND",
         "BRAND"
       ],
       "cate_no": "56",
@@ -291,6 +297,7 @@
       "brand_slug": "pmi",
       "category": "BRAND",
       "cat_path": [
+        "BRAND",
         "BRAND"
       ],
       "cate_no": "56",
@@ -335,6 +342,7 @@
       "brand_slug": "pmi",
       "category": "BRAND",
       "cat_path": [
+        "BRAND",
         "BRAND"
       ],
       "cate_no": "56",
@@ -380,6 +388,7 @@
       "brand_slug": "pmi",
       "category": "BRAND",
       "cat_path": [
+        "BRAND",
         "BRAND"
       ],
       "cate_no": "56",
@@ -424,6 +433,7 @@
       "brand_slug": "pmi",
       "category": "BRAND",
       "cat_path": [
+        "BRAND",
         "BRAND"
       ],
       "cate_no": "56",
@@ -468,6 +478,7 @@
       "brand_slug": "pmi",
       "category": "BRAND",
       "cat_path": [
+        "BRAND",
         "BRAND"
       ],
       "cate_no": "56",
@@ -532,6 +543,7 @@
       "brand_slug": "pmi",
       "category": "BRAND",
       "cat_path": [
+        "BRAND",
         "BRAND"
       ],
       "cate_no": "56",
@@ -568,6 +580,7 @@
       "brand_slug": "pmi",
       "category": "BRAND",
       "cat_path": [
+        "BRAND",
         "BRAND"
       ],
       "cate_no": "56",
@@ -604,6 +617,7 @@
       "brand_slug": "pmi",
       "category": "BRAND",
       "cat_path": [
+        "BRAND",
         "BRAND"
       ],
       "cate_no": "56",
@@ -646,9 +660,10 @@
       "name": "피엠아이 PMI 버블 포뮬라 Bubble Formula 버블 전용 용액 100ml",
       "brand": "피엠아이",
       "brand_slug": "pmi",
-      "category": "카메라 악세서리",
+      "category": "기타 / OTHERS",
       "cat_path": [
-        "카메라 악세서리"
+        "카메라 악세서리",
+        "기타 / OTHERS"
       ],
       "cate_no": "0002",
       "price": 14000,
@@ -673,9 +688,10 @@
       "name": "피엠아이 PMI 클라우드 포뮬라 Cloud Formula 전용 용액 100ml",
       "brand": "피엠아이",
       "brand_slug": "pmi",
-      "category": "카메라 악세서리",
+      "category": "기타 / OTHERS",
       "cat_path": [
-        "카메라 악세서리"
+        "카메라 악세서리",
+        "기타 / OTHERS"
       ],
       "cate_no": "0002",
       "price": 18000,
@@ -684,8 +700,10 @@
       "inquiry": false,
       "source_url": "https://greenshop.co.kr/goods/view?no=7195",
       "images": {
-        "thumb": "",
-        "main": [],
+        "thumb": "https://media.nadaun.co/shop/detail/pmi/green-7195/01.webp",
+        "main": [
+          "https://media.nadaun.co/shop/detail/pmi/green-7195/01.webp"
+        ],
         "detail": [
           "https://media.nadaun.co/shop/detail/pmi/green-7195/01.webp"
         ]
@@ -698,9 +716,10 @@
       "name": "피엠아이 PMI Smoke NINJA PRO 스모크 닌자 프로 - 헤이저 키트",
       "brand": "피엠아이",
       "brand_slug": "pmi",
-      "category": "카메라 악세서리",
+      "category": "기타 / OTHERS",
       "cat_path": [
-        "카메라 악세서리"
+        "카메라 악세서리",
+        "기타 / OTHERS"
       ],
       "cate_no": "0002",
       "price": 340000,
@@ -709,8 +728,10 @@
       "inquiry": false,
       "source_url": "https://greenshop.co.kr/goods/view?no=7162",
       "images": {
-        "thumb": "",
-        "main": [],
+        "thumb": "https://media.nadaun.co/shop/detail/pmi/green-7162/01.webp",
+        "main": [
+          "https://media.nadaun.co/shop/detail/pmi/green-7162/01.webp"
+        ],
         "detail": [
           "https://media.nadaun.co/shop/detail/pmi/green-7162/01.webp",
           "https://media.nadaun.co/shop/detail/pmi/green-7162/02.webp",

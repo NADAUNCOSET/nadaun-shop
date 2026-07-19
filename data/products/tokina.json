@@ -3280,8 +3280,10 @@
       "inquiry": false,
       "source_url": "https://www.kppkpp.co.kr/shop/item.php?it_id=1599714228",
       "images": {
-        "thumb": "",
-        "main": [],
+        "thumb": "https://media.nadaun.co/shop/detail/tokina/kpp-1599714228/02.webp",
+        "main": [
+          "https://media.nadaun.co/shop/detail/tokina/kpp-1599714228/02.webp"
+        ],
         "detail": [
           "https://media.nadaun.co/shop/detail/tokina/kpp-1599714228/02.webp",
           "https://media.nadaun.co/shop/detail/tokina/kpp-1599714228/03.webp"
