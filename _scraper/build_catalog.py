@@ -35,7 +35,15 @@ for f in sorted(DATA.glob("*.json")):
         else:
             # 소스 원본 카테고리 트리 그대로 (2026-07-20 대표: "각 브랜드 메뉴=사이트 카테고리 그대로,
             # 대분류 발명은 마지막 단계에". kpp_classify 추측분류 사용 금지)
-            cp=[x for x in (p.get("cat_path") or []) if x] or ([cat] if cat else ["기타"])
+            cp=[x for x in (p.get("cat_path") or []) if x]
+            # 브랜드명 세그먼트가 경로에 있으면 그 이후만 메뉴로 (프로포토>라이트쉐이핑툴 → 라이트쉐이핑툴)
+            bn={(p.get("brand") or "").lower(), slug.lower(),
+                (by_slug.get(slug,{}).get("en","") or "").lower(),
+                (by_slug.get(slug,{}).get("kr","") or "").lower()}
+            bn.discard("")
+            bidx=next((i for i,seg in enumerate(cp) if seg.lower() in bn), -1)
+            if bidx>=0: cp=cp[bidx+1:]
+            cp=cp or ([cat] if cat else ["기타"])
             dn=cp[0]; jn=cp[1] if len(cp)>1 else ""; kn=cp[2] if len(cp)>2 else ""
             dc="src:"+dn; jc=jn; kc=kn
         price=p.get("price",0); usd=p.get("price_usd",0)

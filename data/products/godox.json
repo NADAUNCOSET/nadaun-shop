@@ -2,39 +2,6 @@
   "brand": "고독스",
   "brand_slug": "godox",
   "products": {
-    "hktools-27178": {
-      "id": "hktools-27178",
-      "source": "hktools",
-      "source_id": "27178",
-      "name": "[렌탈] [GODOX] 고독스 AD1200Pro TTL 파워팩 / AC1200 전원 어댑터 / X3 Pro 무선동조기 송신기 키트",
-      "brand": "고독스",
-      "brand_slug": "godox",
-      "category": "지속광 렌탈",
-      "cat_path": [
-        "지속광 렌탈"
-      ],
-      "cate_no": "1846",
-      "price": 0,
-      "list_price": 0,
-      "sale_price": 0,
-      "inquiry": true,
-      "source_url": "https://hktools.co.kr/product/detail.html?product_no=27178&cate_no=1846&display_group=1",
-      "images": {
-        "thumb": "https://media.nadaun.co/shop/thumbnails/godox/hktools-27178.webp",
-        "main": [
-          "https://media.nadaun.co/shop/images/godox/hktools-27178/main_1.webp",
-          "https://media.nadaun.co/shop/images/godox/hktools-27178/main_2.webp",
-          "https://media.nadaun.co/shop/images/godox/hktools-27178/main_3.webp"
-        ],
-        "detail": [
-          "https://media.nadaun.co/shop/detail/godox/hktools-27178/01.webp",
-          "https://media.nadaun.co/shop/detail/godox/hktools-27178/02.webp",
-          "https://media.nadaun.co/shop/detail/godox/hktools-27178/06.webp",
-          "https://media.nadaun.co/shop/detail/godox/hktools-27178/07.webp",
-          "https://media.nadaun.co/shop/detail/godox/hktools-27178/08.webp"
-        ]
-      }
-    },
     "hktools-27228": {
       "id": "hktools-27228",
       "source": "hktools",
@@ -19444,40 +19411,6 @@
           "https://media.nadaun.co/shop/detail/godox/hktools-26777/06.webp",
           "https://media.nadaun.co/shop/detail/godox/hktools-26777/07.webp",
           "https://media.nadaun.co/shop/detail/godox/hktools-26777/09.webp"
-        ]
-      }
-    },
-    "hktools-27179": {
-      "id": "hktools-27179",
-      "source": "hktools",
-      "source_id": "27179",
-      "name": "[렌탈] [GODOX] G 고독스 R1200 링플래시 헤드 AD1200Pro 전용",
-      "brand": "GODOX",
-      "brand_slug": "godox",
-      "category": "지속광 렌탈",
-      "cat_path": [
-        "지속광 렌탈"
-      ],
-      "cate_no": "1846",
-      "price": 0,
-      "list_price": 0,
-      "sale_price": 0,
-      "inquiry": true,
-      "source_url": "https://hktools.co.kr/product/detail.html?product_no=27179&cate_no=1846&display_group=1",
-      "images": {
-        "thumb": "https://media.nadaun.co/shop/thumbnails/godox/hktools-27179.webp",
-        "main": [
-          "https://media.nadaun.co/shop/images/godox/hktools-27179/main_1.webp",
-          "https://media.nadaun.co/shop/images/godox/hktools-27179/main_2.webp",
-          "https://media.nadaun.co/shop/images/godox/hktools-27179/main_3.webp"
-        ],
-        "detail": [
-          "https://media.nadaun.co/shop/detail/godox/hktools-27179/01.webp",
-          "https://media.nadaun.co/shop/detail/godox/hktools-27179/02.webp",
-          "https://media.nadaun.co/shop/detail/godox/hktools-27179/06.webp",
-          "https://media.nadaun.co/shop/detail/godox/hktools-27179/07.webp",
-          "https://media.nadaun.co/shop/detail/godox/hktools-27179/08.webp",
-          "https://media.nadaun.co/shop/detail/godox/hktools-27179/10.webp"
         ]
       }
     },

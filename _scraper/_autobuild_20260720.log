@@ -139,3 +139,55 @@
 [07:32:25] STEP3 build_detail
 [전체] 37532개 상세페이지 생성 (브랜드 148) → \\Nadaunproject\nadaunproject\_Site\nadaun-shop\product
 [07:35:55] STEP4 git commit + push
+warning: in the working copy of '_scraper/build_catalog.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '_scraper/_autobuild_20260720.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '_scraper/_autobuild_20260720.sh', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '_scraper/_autobuild_commitmsg.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '_scraper/_chain_image_refill_20260720.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '_scraper/cat_membership_walk.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '_scraper/rebuild_cat_paths.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '_scraper/thumb_fallback.py', LF will be replaced by CRLF the next time Git touches it
+[main 72383a31] 카테고리 전면 복원: 소스 원본 대>중>소 트리 + 브랜드메뉴 사이트그대로 + 썸네일 폴백
+ 2252 files changed, 186412 insertions(+), 51092 deletions(-)
+ create mode 100644 _scraper/_autobuild_20260720.log
+ create mode 100644 _scraper/_autobuild_20260720.sh
+ create mode 100644 _scraper/_autobuild_commitmsg.txt
+ create mode 100644 _scraper/_catwalk_cafe24_20260720.err.log
+ create mode 100644 _scraper/_catwalk_cafe24_20260720.log
+ create mode 100644 _scraper/_catwalk_cafe24_20260720b.err.log
+ create mode 100644 _scraper/_catwalk_cafe24_20260720b.log
+ create mode 100644 _scraper/_catwalk_firstmall_20260720.err.log
+ create mode 100644 _scraper/_catwalk_firstmall_20260720.log
+ create mode 100644 _scraper/_catwalk_godo_20260720.err.log
+ create mode 100644 _scraper/_catwalk_godo_20260720.log
+ create mode 100644 _scraper/_catwalk_makeshop_20260720.err.log
+ create mode 100644 _scraper/_catwalk_makeshop_20260720.log
+ create mode 100644 _scraper/_chain_image_refill_20260720.ps1
+ create mode 100644 _scraper/_refill_chain_20260720.done.log
+ create mode 100644 _scraper/_refill_firstmall_20260720.log
+ create mode 100644 _scraper/_refill_tov_20260720.log
+ create mode 100644 _scraper/cat_membership_walk.py
+ create mode 100644 _scraper/rebuild_cat_paths.py
+ create mode 100644 _scraper/thumb_fallback.py
+ create mode 100644 data/_catwalk_aurora.json
+ create mode 100644 data/_catwalk_avx.json
+ create mode 100644 data/_catwalk_bando.json
+ create mode 100644 data/_catwalk_benro.json
+ create mode 100644 data/_catwalk_calla.json
+ create mode 100644 data/_catwalk_cinemall.json
+ create mode 100644 data/_catwalk_fomex.json
+ create mode 100644 data/_catwalk_green.json
+ create mode 100644 data/_catwalk_hipixel.json
+ create mode 100644 data/_catwalk_hktools.json
+ create mode 100644 data/_catwalk_ldnet.json
+ create mode 100644 data/_catwalk_lmount.json
+ create mode 100644 data/_catwalk_motionnine.json
+ create mode 100644 data/_catwalk_mustcolor.json
+ create mode 100644 data/_catwalk_onnoff.json
+ create mode 100644 data/_catwalk_plthink.json
+ create mode 100644 data/_catwalk_redsun.json
+ create mode 100644 data/_catwalk_sajin.json
+ create mode 100644 data/_catwalk_sama.json
+To https://github.com/NADAUNCOSET/nadaun-shop.git
+   1861f9a2..72383a31  main -> main
+[07:37:58] AUTOBUILD DONE

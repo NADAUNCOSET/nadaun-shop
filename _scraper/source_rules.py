@@ -10,7 +10,17 @@ from collections import defaultdict
 
 TIER1 = {"kpp", "clmedia", "tilta.com"}   # 우선 채택 소스 (tilta.com=본사)
 DEMOTED = "hktools"                        # 겹치면 밀리는 소스
-DEMOTED_KEEP = {"profoto"}                 # 예외: 이 브랜드는 hktools 유지
+DEMOTED_KEEP = set()                       # (비움 — profoto는 아래 BRAND_SRC로 처리)
+
+# 브랜드별 소스 고정 — 메뉴 세분화가 좋은 소스로 강제 (2026-07-20 대표: profoto 메뉴=fomex 구조)
+BRAND_SRC = {"profoto": "fomex"}
+
+# 렌탈/중고/전시류 = 판매 제품 아님, 전역 제외 (2026-07-20 대표 "hktools 렌탈 하지마·쓸데없는거 지워")
+JUNK_CAT = ("렌탈", "렌트", "대여", "중고", "전시", "데모", "리퍼", "단순개봉", "반납", "B급")
+
+def is_junk(p):
+    cp = " ".join(p.get("cat_path") or []) + " " + (p.get("category") or "")
+    return any(w in cp for w in JUNK_CAT)
 
 def build_index(DATA):
     """data/products/*.json 전체 스캔 → {brand_slug: {source,...}}"""
@@ -28,8 +38,10 @@ def allowed(p, slug, srcs):
     """이 제품을 빌드에 포함할지."""
     src = p.get("source")
     s = srcs.get(slug, set())
-    if slug in DEMOTED_KEEP:                      # 프로포토: 정식 수입사 hktools 것만 (타소스 오염 차단, 2026-07-20 대표 지적)
-        return src == DEMOTED
+    if is_junk(p):                                # 렌탈/중고/전시 = 전역 제외
+        return False
+    if slug in BRAND_SRC:                         # 소스 고정 브랜드(profoto=fomex)
+        return src == BRAND_SRC[slug]
     if not slug.startswith("_") and (s & TIER1):  # KPP/씨엘미디어 보유 브랜드
         return src in TIER1
     if src == DEMOTED:                            # hktools: 타소스 겹치면 제외

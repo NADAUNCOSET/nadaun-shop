@@ -2,42 +2,6 @@
   "brand": "PRISM LENS",
   "brand_slug": "prismlensfx",
   "products": {
-    "hktools-25688": {
-      "id": "hktools-25688",
-      "source": "hktools",
-      "source_id": "25688",
-      "name": "[단순개봉SS급][PRISM LENS FX] 프리즘 렌즈 필터 Rainbow Flare FX 77mm",
-      "brand": "프리즘 렌즈",
-      "brand_slug": "prismlensfx",
-      "category": "단순개봉 & 전시/데모 상품",
-      "cat_path": [
-        "중고마켓",
-        "단순개봉 & 전시/데모 상품"
-      ],
-      "cate_no": "2539",
-      "price": 154000,
-      "list_price": 154000,
-      "sale_price": 110000,
-      "inquiry": false,
-      "source_url": "https://hktools.co.kr/product/detail.html?product_no=25688&cate_no=2539&display_group=1",
-      "images": {
-        "thumb": "https://media.nadaun.co/shop/thumbnails/prismlensfx/hktools-25688.webp",
-        "main": [
-          "https://media.nadaun.co/shop/images/prismlensfx/hktools-25688/main_1.webp",
-          "https://media.nadaun.co/shop/images/prismlensfx/hktools-25688/main_2.webp",
-          "https://media.nadaun.co/shop/images/prismlensfx/hktools-25688/main_3.webp"
-        ],
-        "detail": [
-          "https://media.nadaun.co/shop/detail/prismlensfx/hktools-25688/01.webp",
-          "https://media.nadaun.co/shop/detail/prismlensfx/hktools-25688/02.webp",
-          "https://media.nadaun.co/shop/detail/prismlensfx/hktools-25688/05.webp",
-          "https://media.nadaun.co/shop/detail/prismlensfx/hktools-25688/06.webp",
-          "https://media.nadaun.co/shop/detail/prismlensfx/hktools-25688/07.webp",
-          "https://media.nadaun.co/shop/detail/prismlensfx/hktools-25688/09.webp",
-          "https://media.nadaun.co/shop/detail/prismlensfx/hktools-25688/10.webp"
-        ]
-      }
-    },
     "hktools-23483": {
       "id": "hktools-23483",
       "source": "hktools",

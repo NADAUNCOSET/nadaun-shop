@@ -2,42 +2,6 @@
   "brand": "오로라",
   "brand_slug": "aurora",
   "products": {
-    "hktools-26884": {
-      "id": "hktools-26884",
-      "source": "hktools",
-      "source_id": "26884",
-      "name": "[HK중고][AURORA] 오로라 스피드링 스피드트론 Speedtron SRST",
-      "brand": "오로라",
-      "brand_slug": "aurora",
-      "category": "[중고] 조명 악세사리",
-      "cat_path": [
-        "중고마켓",
-        "[중고] 조명 악세사리"
-      ],
-      "cate_no": "2046",
-      "price": 25000,
-      "list_price": 25000,
-      "sale_price": 13750,
-      "inquiry": false,
-      "source_url": "https://hktools.co.kr/product/detail.html?product_no=26884&cate_no=2046&display_group=1",
-      "images": {
-        "thumb": "https://media.nadaun.co/shop/thumbnails/aurora/hktools-26884.webp",
-        "main": [
-          "https://media.nadaun.co/shop/images/aurora/hktools-26884/main_1.webp",
-          "https://media.nadaun.co/shop/images/aurora/hktools-26884/main_2.webp",
-          "https://media.nadaun.co/shop/images/aurora/hktools-26884/main_3.webp"
-        ],
-        "detail": [
-          "https://media.nadaun.co/shop/detail/aurora/hktools-26884/01.webp",
-          "https://media.nadaun.co/shop/detail/aurora/hktools-26884/02.webp",
-          "https://media.nadaun.co/shop/detail/aurora/hktools-26884/06.webp",
-          "https://media.nadaun.co/shop/detail/aurora/hktools-26884/07.webp",
-          "https://media.nadaun.co/shop/detail/aurora/hktools-26884/08.webp",
-          "https://media.nadaun.co/shop/detail/aurora/hktools-26884/10.webp",
-          "https://media.nadaun.co/shop/detail/aurora/hktools-26884/11.webp"
-        ]
-      }
-    },
     "hktools-26376": {
       "id": "hktools-26376",
       "source": "hktools",
