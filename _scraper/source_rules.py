@@ -5,7 +5,7 @@
    ② hktools는 프로포토만 채택, 그 외엔 타소스와 겹치면 hktools분 제외.
    ③ _misc/_custom 같은 가상 브랜드 통은 티어룰 미적용(브랜드가 아님) — hktools룰만.
    모두 동적: 새 소스가 들어오면 다음 빌드에서 자동 반영."""
-import json
+import json, re
 from collections import defaultdict
 
 TIER1 = {"kpp", "clmedia", "tilta.com"}   # 우선 채택 소스 (tilta.com=본사)
@@ -20,7 +20,12 @@ JUNK_CAT = ("렌탈", "렌트", "대여", "중고", "전시", "데모", "리퍼"
 
 def is_junk(p):
     cp = " ".join(p.get("cat_path") or []) + " " + (p.get("category") or "")
-    return any(w in cp for w in JUNK_CAT)
+    if any(w in cp for w in JUNK_CAT):
+        return True
+    # 제품명에 렌탈/대여/rental (판매 아님, 2026-07-20 대표 "렌탈 관련 다 삭제·구매만")
+    if re.search(r"렌탈|대여|rental", p.get("name") or "", re.I):
+        return True
+    return False
 
 def build_index(DATA):
     """data/products/*.json 전체 스캔 → {brand_slug: {source,...}}"""
