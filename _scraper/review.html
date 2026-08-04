@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>브랜드 미러링 검수</title>
+<style>
+  :root{--ink:#1F1D1A;--gold:#B8862D;--line:#e6e3dd;--bad:#c0392b;--ok:#2b7a4b;--bg:#faf9f7}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Pretendard","맑은 고딕",system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+  header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);padding:14px 20px}
+  h1{margin:0 0 6px;font-size:17px;letter-spacing:-.02em}
+  .meta{font-size:13px;color:#6b6660;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .meta b{color:var(--ink)}
+  .pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;background:#f0ede8}
+  .pill.bad{background:#fde8e6;color:var(--bad)}
+  .pill.ok{background:#e6f4ec;color:var(--ok)}
+  .bar{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
+  select,button,input{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:#fff}
+  button{cursor:pointer}
+  button.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+  main{padding:18px 20px 60px}
+  .cat{margin-bottom:26px}
+  .cat h2{font-size:14px;margin:0 0 4px;padding-bottom:6px;border-bottom:1px solid var(--line);
+          display:flex;justify-content:space-between;align-items:baseline;letter-spacing:-.01em}
+  .cat h2 span{font-size:12px;color:#8a847c;font-weight:400}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;margin-top:12px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+  .card.flag{border-color:var(--bad)}
+  .thumb{aspect-ratio:1;background:#f4f2ee;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .thumb img{width:100%;height:100%;object-fit:contain}
+  .thumb.none{color:var(--bad);font-size:12px}
+  .info{padding:9px 10px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .nm{font-size:12.5px;line-height:1.35;max-height:3.5em;overflow:hidden}
+  .pr{font-size:13px;font-weight:600}
+  .pr.zero{color:var(--bad)}
+  .tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:auto}
+  .tag{font-size:10.5px;padding:1px 6px;border-radius:4px;background:#f0ede8;color:#6b6660}
+  .tag.bad{background:#fde8e6;color:var(--bad)}
+  a.src{font-size:11px;color:var(--gold);text-decoration:none}
+  .empty{padding:60px 0;text-align:center;color:#8a847c}
+</style>
+</head>
+<body>
+<header>
+  <h1>브랜드 미러링 검수</h1>
+  <div class="meta" id="meta">데이터를 불러오세요.</div>
+  <div class="bar">
+    <input type="file" id="file" accept=".json">
+    <select id="filter">
+      <option value="all">전체 보기</option>
+      <option value="flag">문제 있는 것만 (가격0·이미지없음·상세없음)</option>
+      <option value="noprice">가격 없음</option>
+      <option value="nodetail">상세 없음</option>
+      <option value="noimg">대표이미지 없음</option>
+    </select>
+    <a id="srcLink" class="src" href="#" target="_blank" rel="noopener">원본 브랜드몰 열기 ↗</a>
+  </div>
+</header>
+<main id="app"><div class="empty">위에서 <b>_pending/&lt;site&gt;__&lt;BRAND&gt;.json</b> 파일을 선택하세요.</div></main>
+
+<script>
+let DATA = null;
+
+document.getElementById('file').addEventListener('change', e => {
+  const f = e.target.files[0];
+  if (!f) return;
+  const r = new FileReader();
+  r.onload = () => { try { DATA = JSON.parse(r.result); render(); } catch (err) { alert('JSON 파싱 실패: ' + err.message); } };
+  r.readAsText(f, 'utf-8');
+});
+document.getElementById('filter').addEventListener('change', render);
+
+function flags(p) {
+  const f = [];
+  if (!p.price) f.push('가격0');
+  if (!(p.images_src && p.images_src.main && p.images_src.main.length)) f.push('대표이미지X');
+  if (!(p.images_src && p.images_src.detail && p.images_src.detail.length)) f.push('상세X');
+  return f;
+}
+
+function render() {
+  if (!DATA) return;
+  const prods = Object.values(DATA.products || {});
+  const st = DATA.stats || {};
+  const mode = document.getElementById('filter').value;
+
+  document.getElementById('meta').innerHTML =
+    `<span><b>${DATA.site}</b> / <b>${DATA.brand}</b></span>` +
+    `<span>제품 <b>${prods.length}</b>개</span>` +
+    `<span>카테고리 <b>${Object.keys(DATA.categories || {}).length}</b>개</span>` +
+    `<span class="pill ${st.no_price ? 'bad' : 'ok'}">가격없음 ${st.no_price ?? 0}</span>` +
+    `<span class="pill ${st.no_main_image ? 'bad' : 'ok'}">대표이미지없음 ${st.no_main_image ?? 0}</span>` +
+    `<span class="pill ${st.no_detail ? 'bad' : 'ok'}">상세없음 ${st.no_detail ?? 0}</span>`;
+  const sl = document.getElementById('srcLink');
+  sl.href = DATA.brand_url || '#';
+
+  const keep = p => {
+    const f = flags(p);
+    if (mode === 'all') return true;
+    if (mode === 'flag') return f.length > 0;
+    if (mode === 'noprice') return !p.price;
+    if (mode === 'nodetail') return f.includes('상세X');
+    if (mode === 'noimg') return f.includes('대표이미지X');
+    return true;
+  };
+
+  // 카테고리별 그룹
+  const byCat = {};
+  prods.filter(keep).forEach(p => {
+    const c = (p.cat_path && p.cat_path[0]) || '(분류없음)';
+    (byCat[c] = byCat[c] || []).push(p);
+  });
+
+  const cats = Object.keys(byCat).sort();
+  const app = document.getElementById('app');
+  if (!cats.length) { app.innerHTML = '<div class="empty">해당 조건의 제품이 없습니다.</div>'; return; }
+
+  app.innerHTML = cats.map(c => {
+    const items = byCat[c];
+    return `<section class="cat">
+      <h2>${esc(c)} <span>${items.length}개</span></h2>
+      <div class="grid">${items.map(card).join('')}</div>
+    </section>`;
+  }).join('');
+}
+
+function card(p) {
+  const f = flags(p);
+  const img = (p.images_src && p.images_src.main && p.images_src.main[0]) || '';
+  const price = p.price ? p.price.toLocaleString() + '원' : (p.inquiry ? '전화문의' : '가격없음');
+  return `<div class="card ${f.length ? 'flag' : ''}">
+    <div class="thumb ${img ? '' : 'none'}">${img ? `<img loading="lazy" src="${esc(img)}" alt="">` : '이미지 없음'}</div>
+    <div class="info">
+      <div class="nm">${esc(p.name || '')}</div>
+      <div class="pr ${p.price ? '' : 'zero'}">${price}</div>
+      <div class="tags">
+        ${f.map(x => `<span class="tag bad">${x}</span>`).join('')}
+        ${p.images_src && p.images_src.detail ? `<span class="tag">상세 ${p.images_src.detail.length}</span>` : ''}
+      </div>
+      <a class="src" href="${esc(p.source_url || '#')}" target="_blank" rel="noopener">원본 ↗</a>
+    </div>
+  </div>`;
+}
+
+function esc(s) { return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+ "_note": "대표 검수를 통과해 shop.nadaun.co에 '노출'되는 브랜드만 여기 등록한다 (2026-08-04 대표 룰). 데이터는 지우지 않고 표시만 거른다 — 나중에 다시 불러올 수 있어야 하므로. 브랜드 1개를 검수·확정할 때마다 여기 한 줄씩 추가한다. 이 파일이 없거나 brands가 비면 빌더는 기존처럼 전체를 표시한다.",
+ "brands": {
+  "smallrig": {
+   "display": "SmallRig",
+   "sources": ["kpp", "clmedia"],
+   "mirror": "kpp",
+   "mirror_brand": "SMALLRIG",
+   "approved_at": "2026-08-04",
+   "note": "대표 지시 — 씨엘미디어와 KPP만 섞고 나머지 소스(hktools/plthink/saeki/avx/bando)는 제외"
+  }
+ }
+}

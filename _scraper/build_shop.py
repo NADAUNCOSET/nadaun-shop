@@ -19,6 +19,31 @@ ROOT = Path(r"\\Nadaunproject\nadaunproject\_Site\nadaun-shop")
 DATA = ROOT/"data"/"products"
 SRC_IDX = SR.build_index(DATA)
 
+# ── 승인 게이트 (2026-08-04 대표 룰) ────────────────────────────
+# "브랜드마다 하나씩 잡고 넘어가자" — 대표 검수를 통과한 브랜드만 사이트에 노출한다.
+# 데이터는 지우지 않는다("나중에 불러올 수도 있으니까"). 여기서 표시만 거른다.
+# data/_approved.json 의 brands 가 비어있거나 파일이 없으면 = 게이트 해제(전체 표시).
+_APPROVED = {}
+_apath = ROOT/"data"/"_approved.json"
+if _apath.exists():
+    try:
+        _APPROVED = (json.load(open(_apath, encoding="utf-8")) or {}).get("brands") or {}
+    except Exception as _e:
+        print(f"[warn] _approved.json 읽기 실패 — 게이트 해제: {_e}")
+        _APPROVED = {}
+if _APPROVED:
+    print(f"[승인게이트 ON] 노출 브랜드 {len(_APPROVED)}개: {', '.join(sorted(_APPROVED))}")
+
+def _approved_ok(slug, src):
+    """승인 브랜드인지 + 그 브랜드에 허용된 소스인지."""
+    if not _APPROVED:
+        return True
+    e = _APPROVED.get(slug)
+    if not e:
+        return False
+    allow = e.get("sources")
+    return True if not allow else (src in allow)
+
 # ── 제품 로드 + 12분류 + 세부(중분류) ──
 cards = []
 disp_vote = defaultdict(Counter)   # slug → 표시명 후보
@@ -28,6 +53,7 @@ for f in sorted(DATA.glob("*.json")):
     top_slug = d.get("brand_slug") or f.stem
     for p in d.get("products", {}).values():
         slug = p.get("brand_slug") or top_slug
+        if not _approved_ok(slug, p.get("source")): continue
         if not SR.allowed(p, slug, SRC_IDX): continue
         nm, cat = p.get("name",""), p.get("category","")
         if p.get("source") == "kpp" and p.get("ca_id"):

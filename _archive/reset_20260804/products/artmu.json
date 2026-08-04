@@ -1,0 +1,78 @@
+{
+  "brand": "아트뮤",
+  "brand_slug": "artmu",
+  "products": {
+    "clmedia-1939": {
+      "id": "clmedia-1939",
+      "source": "clmedia",
+      "source_id": "1939",
+      "name": "아트뮤 GC620 USB-PD 65W PPS 접지 초고속 충전기",
+      "brand": "아트뮤",
+      "brand_slug": "artmu",
+      "category": "Lighting",
+      "cat_path": [
+        "Lighting"
+      ],
+      "price": 23400,
+      "source_url": "https://www.clmedia.co.kr/product/아트뮤-gc620-usb-pd-65w-pps-접지-초고속-충전기/1939/category/207/display/1/",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/artmu/clmedia-1939.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/artmu/clmedia-1939/main_1.webp",
+          "https://media.nadaun.co/shop/images/artmu/clmedia-1939/main_2.webp",
+          "https://media.nadaun.co/shop/images/artmu/clmedia-1939/main_3.webp",
+          "https://media.nadaun.co/shop/images/artmu/clmedia-1939/main_4.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-1939/01.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-1939/03.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-1939/04.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-1939/05.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-1939/07.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-1939/08.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-1939/09.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-1939/10.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-1939/11.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-1939/13.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-1939/14.webp"
+        ]
+      }
+    },
+    "clmedia-823": {
+      "id": "clmedia-823",
+      "source": "clmedia",
+      "source_id": "823",
+      "name": "아트뮤 GS610 USB-PD 100W PPS GaN 접지 멀티 초고속 충전기",
+      "brand": "아트뮤",
+      "brand_slug": "artmu",
+      "category": "Lighting",
+      "cat_path": [
+        "Lighting"
+      ],
+      "price": 39900,
+      "source_url": "https://www.clmedia.co.kr/product/아트뮤-gs610-usb-pd-100w-pps-gan-접지-멀티-초고속-충전기/823/category/207/display/1/",
+      "images": {
+        "thumb": "https://media.nadaun.co/shop/thumbnails/artmu/clmedia-823.webp",
+        "main": [
+          "https://media.nadaun.co/shop/images/artmu/clmedia-823/main_1.webp",
+          "https://media.nadaun.co/shop/images/artmu/clmedia-823/main_2.webp",
+          "https://media.nadaun.co/shop/images/artmu/clmedia-823/main_3.webp",
+          "https://media.nadaun.co/shop/images/artmu/clmedia-823/main_4.webp"
+        ],
+        "detail": [
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-823/01.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-823/03.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-823/04.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-823/05.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-823/07.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-823/08.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-823/09.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-823/10.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-823/11.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-823/13.webp",
+          "https://media.nadaun.co/shop/detail/artmu/clmedia-823/14.webp"
+        ]
+      }
+    }
+  }
+}

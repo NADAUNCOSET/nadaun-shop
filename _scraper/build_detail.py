@@ -16,6 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import kpp_classify as K
 import tilta_taxonomy as TT
+import approved_gate as AG
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
 ROOT = Path(r"\\Nadaunproject\nadaunproject\_Site\nadaun-shop")
@@ -279,6 +280,8 @@ def main():
         slug = d.get("brand_slug") or f.stem
         for p in d.get("products", {}).values():
             s = p.get("brand_slug") or slug
+            if not AG.ok(s, p.get("source")):   # 승인 게이트 (2026-08-04)
+                continue
             if not SR.allowed(p, s, src_idx):
                 continue
             bdir = OUT / s

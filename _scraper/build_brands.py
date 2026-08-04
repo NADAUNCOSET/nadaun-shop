@@ -51,9 +51,14 @@ KR_EXTRA={"kase":"카세","arri":"아리","dzofilm":"디조필름","novachips":"
 
 # 스크랩 제품수
 scraped={}
+import approved_gate as AG          # 승인 게이트 (2026-08-04)
+AG.banner("build_brands")
 for f in glob.glob(PDIR+r"\*.json"):
     slug=os.path.basename(f).replace(".json",""); slug=ALIAS.get(slug,slug)
-    j=json.load(open(f,encoding="utf-8")); scraped[slug]=scraped.get(slug,0)+len(j.get("products",{}))
+    if not AG.ok(slug): continue     # 미승인 브랜드는 브랜드 목록에서도 제외
+    j=json.load(open(f,encoding="utf-8"))
+    cnt=sum(1 for p in j.get("products",{}).values() if AG.ok(slug, p.get("source")))
+    scraped[slug]=scraped.get(slug,0)+cnt
 
 reg={}  # slug -> record
 def touch(slug,kr,en):
