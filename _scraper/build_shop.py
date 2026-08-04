@@ -60,6 +60,11 @@ for f in sorted(DATA.glob("*.json")):
             dc,dn,jc,jn = K.from_ca_id(p["ca_id"], nm, cat)
         else:
             dc,dn,jc,jn = K.classify(nm, cat)
+        # ★ 미러링 제품(브랜드=소스 사이트 고정)은 **원본 사이트 카테고리를 그대로** 쓴다.
+        #   추측 분류(K.classify)로 덮으면 브랜드 메뉴가 원본과 달라진다 (2026-08-05 대표 지적:
+        #   "스몰리그 누르면 딱 저 카테고리가 있어야 할거 아니야").
+        if p.get("mirror") and p.get("cat_path"):
+            jn = " > ".join(p["cat_path"])
         tcode, tname = T.resolve(slug, dc, jc, nm)
         disp = p.get("brand") or slug
         disp_vote[slug][disp] += 1
