@@ -231,7 +231,7 @@ function renderCats(){
   let h=`<button data-t="all" class="${curCat==='all'?'on':''}">전체<span class="c">${mode==='brand'?REAL.size:DATA.length.toLocaleString()}</span></button>`;
   h+=TOPORDER.map((t,i)=>{const n=showCnt(t);return `<button data-t="${t}" class="${curCat===t?'on':''}" ${n?'':'disabled'}>${String(i+1).padStart(2,'0')}. ${TOP[t]}<span class="c">${n}</span></button>`}).join('');
   $('cats').innerHTML=h;
-  $('cats').querySelectorAll('button').forEach(b=>b.onclick=()=>{if(b.disabled)return;curCat=b.dataset.t;curBrand=null;curSub='전체';shown=PAGE;render()});
+  $('cats').querySelectorAll('button').forEach(b=>b.onclick=()=>{if(b.disabled)return;curCat=b.dataset.t;curBrand=null;curSub='전체';curTop='전체';shown=PAGE;render()});
 }
 
 // ── 브랜드별 ──
@@ -316,7 +316,7 @@ function renderProduct(){
   if(curBrand)cr+=` · <b>${esc(bdisp[curBrand])}</b> <button class="back" id="bk">← 브랜드 전체</button>`;
   cr+=` · ${list.length.toLocaleString()}개`;
   $('crumb').innerHTML=cr;
-  const bk=$('bk'); if(bk)bk.onclick=()=>{mode='brand';curBrand=null;curSub='전체';shown=PAGE;render()};
+  const bk=$('bk'); if(bk)bk.onclick=()=>{mode='brand';curBrand=null;curSub='전체';curTop='전체';shown=PAGE;render()};
   // 그룹: 대분류 선택+브랜드 미선택 → 브랜드별 / 그 외 → 없음(단일)
   const groupByBrand = !curBrand;
   const gc={}; if(groupByBrand)list.forEach(d=>gc[d.s]=(gc[d.s]||0)+1);
@@ -334,7 +334,7 @@ function renderProduct(){
 
 function render(){syncToggle();renderCats();(mode==='brand'?renderBrand:(mode==='brandcat'?renderBrandCats:renderProduct))()}
 // 토글 클릭=페이지 이동 대신 모드전환(같은 데이터)
-$('tgB').onclick=e=>{e.preventDefault();mode='brand';curBrand=null;curSub='전체';shown=PAGE;render()};
+$('tgB').onclick=e=>{e.preventDefault();mode='brand';curBrand=null;curSub='전체';curTop='전체';shown=PAGE;render()};
 $('tgP').onclick=e=>{e.preventDefault();mode='product';curSub='전체';shown=PAGE;render()};
 render();
 </script></body></html>"""
