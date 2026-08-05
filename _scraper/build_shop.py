@@ -47,10 +47,13 @@ def _approved_ok(slug, src):
 # ── 제품 로드 + 12분류 + 세부(중분류) ──
 cards = []
 disp_vote = defaultdict(Counter)   # slug → 표시명 후보
+MENU_ORDER = {}   # slug → 원본 브랜드몰 1차 메뉴 순서 (KPP와 동일 배열용)
 for f in sorted(DATA.glob("*.json")):
     if f.stem == "_index": continue
     d = json.load(open(f, encoding="utf-8"))
     top_slug = d.get("brand_slug") or f.stem
+    if d.get("menu_order"):
+        MENU_ORDER[top_slug] = d["menu_order"]
     for p in d.get("products", {}).values():
         slug = p.get("brand_slug") or top_slug
         if not _approved_ok(slug, p.get("source")): continue
@@ -208,6 +211,7 @@ header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba
 </div>
 <script>
 const DATA=__DATA__, BIMG=__BIMG__, TOP=__TOP__, TOPORDER=__TOPORDER__, REAL=new Set(__REAL__);
+const MENUORDER=__MENUORDER__;   // 브랜드별 원본 브랜드몰 1차 메뉴 순서
 const MODE0="__MODE__", PAGE=60;
 const $=id=>document.getElementById(id);
 const esc=s=>(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -274,7 +278,13 @@ function renderSubs(){
     tree[a]=tree[a]||{}; topCnt[a]=(topCnt[a]||0)+1;
     if(b) tree[a][b]=(tree[a][b]||0)+1;
   });
-  const tops=Object.keys(tree).sort((x,y)=>topCnt[y]-topCnt[x]);
+  // 1차 메뉴 순서 = 원본 브랜드몰 그대로. 목록에 없는 건 뒤에 제품수 순으로.
+  const ord=MENUORDER[curBrand]||[];
+  const rank=n=>{const i=ord.indexOf(n);return i<0?999:i};
+  const tops=Object.keys(tree).sort((x,y)=>{
+    const rx=rank(x), ry=rank(y);
+    return rx!==ry ? rx-ry : topCnt[y]-topCnt[x];
+  });
   // 1차
   let h=`<div class="l1"><button data-top="전체" class="${curTop==='전체'?'on':''}">전체<span class="c">${p.length}</span></button>`+
     tops.map(a=>`<button data-top="${esc(a)}" class="${curTop===a?'on':''}">${esc(a)}<span class="c">${topCnt[a]}</span></button>`).join('')+`</div>`;
@@ -332,7 +342,8 @@ render();
 def emit(path, mode, title):
     out = (TEMPLATE.replace("__DATA__", DATAJS).replace("__BIMG__", BIMGJS)
            .replace("__TOP__", TOPJS).replace("__TOPORDER__", TOPORDJS)
-           .replace("__REAL__", REALJS).replace("__MODE__", mode).replace("__TITLE__", title))
+           .replace("__REAL__", REALJS).replace("__MENUORDER__", json.dumps(MENU_ORDER, ensure_ascii=False))
+           .replace("__MODE__", mode).replace("__TITLE__", title))
     (ROOT/path).write_text(out, encoding="utf-8")
     print(f"→ {path} ({len(out)//1024}KB, mode={mode})")
 
