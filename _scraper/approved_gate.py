@@ -13,7 +13,7 @@ SoT = data/_approved.json
 import json
 from pathlib import Path
 
-ROOT = Path(r"\\Nadaunproject\nadaunproject\_Site\nadaun-shop")
+ROOT = Path(__file__).resolve().parent.parent
 _PATH = ROOT / "data" / "_approved.json"
 
 BRANDS = {}

@@ -7,7 +7,7 @@ import sys, io, json, collections
 from pathlib import Path
 try: sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 except Exception: pass
-ROOT = Path(r"\\Nadaunproject\nadaunproject\_Site\nadaun-shop")
+ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "products"
 APPLY = "--apply" in sys.argv
 

@@ -15,7 +15,7 @@ import source_rules as SR
 import top12 as T
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
-ROOT = Path(r"\\Nadaunproject\nadaunproject\_Site\nadaun-shop")
+ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT/"data"/"products"
 SRC_IDX = SR.build_index(DATA)
 
@@ -242,15 +242,32 @@ function brandTiles(t){
     <div class="im">${BIMG[s]?`<img src="${BIMG[s]}" loading="lazy" alt="">`:'<span class="no">이미지</span>'}</div>
     <div class="bb"><div class="bn">${esc(bdisp[s])}</div><div class="bc">${cnt[s]||0}개 제품</div></div></button>`).join('');
 }
+// ★ 전체 브랜드를 한 화면에 쫙 (2026-08-06 대표 지정: "브랜드별 누르면 딱 브랜드 쫘아악 나오고 바로 누를 수 있게")
+//   대분류 섹션으로 쪼개면 같은 브랜드가 여러 곳에 흩어져 찾기 어렵다 → 전체 = 평면 그리드 1개
+function allBrandTiles(){
+  const cnt={}, mainCat={};
+  DATA.forEach(d=>{ if(!REAL.has(d.s)) return;
+    cnt[d.s]=(cnt[d.s]||0)+1;
+    (mainCat[d.s]=mainCat[d.s]||{})[d.c]=(mainCat[d.s][d.c]||0)+1; });
+  const slugs=Object.keys(cnt).sort((a,b)=>bdisp[a].localeCompare(bdisp[b],'ko'));
+  return slugs.map(s=>{
+    // 제품이 가장 많은 대분류로 진입 (브랜드 클릭 시 바로 제품 화면)
+    const t=Object.entries(mainCat[s]).sort((a,b)=>b[1]-a[1])[0][0];
+    return `<button class="btile" data-s="${s}" data-t="${t}">
+    <div class="im">${BIMG[s]?`<img src="${BIMG[s]}" loading="lazy" alt="">`:'<span class="no">이미지</span>'}</div>
+    <div class="bb"><div class="bn">${esc(bdisp[s])}</div><div class="bc">${cnt[s]}개 제품</div></div></button>`;
+  }).join('');
+}
 function renderBrand(){
   $('subbar').classList.remove('open');
-  const cats=curCat==='all'?TOPORDER.filter(t=>catBrands[t].size):[curCat];
-  $('crumb').innerHTML=curCat==='all'?`브랜드별 · <b>전체 ${REAL.size}개 브랜드</b>`:`브랜드별 · <b>${TOP[curCat]}</b> · ${catBrands[curCat].size}개 브랜드`;
   let h='';
-  cats.forEach((t,i)=>{
-    h+=`<div class="sec"><h2>${String(TOPORDER.indexOf(t)+1).padStart(2,'0')}. ${TOP[t]}</h2><span class="c">${catBrands[t].size}개 브랜드</span></div>`;
-    h+=`<div class="btiles">${brandTiles(t)}</div>`;
-  });
+  if(curCat==='all'){
+    $('crumb').innerHTML=`브랜드별 · <b>전체 ${REAL.size}개 브랜드</b>`;
+    h=`<div class="btiles">${allBrandTiles()}</div>`;
+  }else{
+    $('crumb').innerHTML=`브랜드별 · <b>${TOP[curCat]}</b> · ${catBrands[curCat].size}개 브랜드`;
+    h=`<div class="btiles">${brandTiles(curCat)}</div>`;
+  }
   $('body').innerHTML=h||'<div class="empty">브랜드가 없습니다.</div>';
   // 브랜드 타일 클릭 → 제품 화면 + 원본 브랜드몰과 동일한 1차/2차 카테고리 메뉴
   $('body').querySelectorAll('.btile').forEach(b=>b.onclick=()=>{mode='product';curCat=b.dataset.t;curBrand=b.dataset.s;curSub='전체';curTop='전체';shown=PAGE;render()});

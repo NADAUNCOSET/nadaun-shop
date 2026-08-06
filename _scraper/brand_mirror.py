@@ -67,6 +67,11 @@ def collect_kpp(brand, limit=None):
     for cid, nm in sorted(cats.items()):
         print(f"    {cid}  {nm}")
 
+    def chain(cid):
+        """ca_id 접두 계층 → 이름 경로 (대>중>소). KPP 루트를 그대로 복원."""
+        anc = sorted([c for c in cats if cid.startswith(c)], key=len)
+        return [cats[c] for c in anc]
+
     products, seen = {}, set()
     for cid, cname in sorted(cats.items()):
         ids = kpp.list_items(cid)
@@ -76,8 +81,17 @@ def collect_kpp(brand, limit=None):
         for i, it_id in enumerate(ids, 1):
             pid = f"kpp-{it_id}"
             if pid in seen:
-                # 같은 제품이 여러 카테고리에 있으면 카테고리만 추가
-                products[pid]["cat_paths"].append([cname])
+                # ★ 같은 제품이 여러 카테고리에 걸리면 **모든 경로를 계층 그대로** 보존한다.
+                #   이름만 담으면 'CANON'이 어느 상위 소속인지 잃어버려 하위 메뉴가 빈다
+                #   (2026-08-05 대표: "완벽하게 루트설정이 똑같이 되어 있어야 참고가 되지").
+                pth = chain(cid)
+                if pth and pth not in products[pid]["cat_paths"]:
+                    products[pid]["cat_paths"].append(pth)
+                    products[pid]["cat_ids"].append(cid)
+                    # 더 구체적인(깊은) 경로를 대표 카테고리로 승격
+                    if len(pth) > len(products[pid]["cat_path"]):
+                        products[pid]["cat_path"] = pth
+                        products[pid]["ca_id"] = cid
                 continue
             try:
                 d = kpp.parse_item(it_id)
@@ -89,14 +103,17 @@ def collect_kpp(brand, limit=None):
             if is_junk({"name": name, "cat_path": [cname], "category": cname}):
                 continue
             seen.add(pid)
+            _p = chain(cid) or [cname]
             products[pid] = {
                 "id": pid,
                 "source": "kpp",
                 "source_id": it_id,
                 "name": name,
                 "brand": brand,
-                "cat_path": [cname],          # 소스 원본 카테고리
-                "cat_paths": [[cname]],
+                "ca_id": cid,
+                "cat_ids": [cid],
+                "cat_path": _p,               # 소스 원본 카테고리 (계층 그대로)
+                "cat_paths": [_p],
                 "price": d.get("price") or 0,
                 "list_price": d.get("list_price") or 0,
                 "sale_price": d.get("sale_price") or 0,

@@ -19,7 +19,7 @@ import tilta_taxonomy as TT
 import approved_gate as AG
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
-ROOT = Path(r"\\Nadaunproject\nadaunproject\_Site\nadaun-shop")
+ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "products"
 OUT  = ROOT / "product"
 SITE = "https://shop.nadaun.co"

@@ -9,7 +9,7 @@ import sys, io, re, json, time
 try: sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 except Exception: pass
 sys.argv_backup = sys.argv[:]
-sys.path.insert(0, r"\\Nadaunproject\nadaunproject\_Site\nadaun-shop\_scraper")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 import cafe24 as C
 from bs4 import BeautifulSoup
 from pathlib import Path
@@ -18,7 +18,7 @@ SLUG = sys.argv_backup[1] if len(sys.argv_backup) > 1 else "profoto"
 ROOT_CID = sys.argv_backup[2] if len(sys.argv_backup) > 2 else "2968"
 BRAND_EN = sys.argv_backup[3] if len(sys.argv_backup) > 3 else "Profoto"
 BASE = "https://hktools.co.kr"
-DATA = Path(r"\\Nadaunproject\nadaunproject\_Site\nadaun-shop\data\products")
+DATA = Path(str(Path(__file__).resolve().parent.parent / "data/products"))
 
 def crumb(cid):
     soup = BeautifulSoup(C.get(f"{BASE}/product/list.html?cate_no={cid}").text, "html.parser")
