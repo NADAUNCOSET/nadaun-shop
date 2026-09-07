@@ -24,11 +24,12 @@ from build_catalog import build
 
 STATE=ROOT/'_scraper/.sync-state'
 SITE='https://shop.nadaun.co'
-GENERATED=['data/catalog','assets/shop/thumbnails','brands','brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','catalog-sitemap.xml']
+GENERATED=['data/catalog','assets/shop/thumbnails','brands','brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','orders.html','admin.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','catalog-sitemap.xml']
 CODE=['_scraper/shipping_policy.py','_scraper/test_shop_shipping.py','assets/shop/shipping.js','_scraper/test_shop_taxonomy.py','_scraper/product_taxonomy.py','_scraper/rental_taxonomy.py','_scraper/references/slrrent-categories.json','assets/shop/motion.js','assets/shop/departments','assets/shop/banners.js','data/catalog/banners.json','assets/shop/studio','_scraper/brand_products.py','assets/shop/vendor','assets/shop/brands','data/catalog/partner-image-rules.json','_scraper/sync_partner_catalogs.py','data/catalog/brand-assets.json','_scraper/catalog_seo.py','assets/shop/catalog-tools.js','_scraper/tests','_scraper/test_shop_catalog.py','api','assets/shop/cart.js','_scraper/storefront_pages.py','_scraper/sync_shop_sources.py','_scraper/sync_kpp_catalog.py','_scraper/enrich_shop_sources.py','_scraper/build_catalog.py','_scraper/catalog_dedup.py','_scraper/shop_sync.py','_scraper/prepare_shop_assets.py','_scraper/shop_templates','assets/shop/shop.js','assets/shop/shop.css','data/catalog/overrides.json','data/catalog/dedup-rules.json','vercel.json']
 
 CODE += ['_scraper/gift_product_details.py','_scraper/source_transport.py','_scraper/plthink_checkpoint.py','_scraper/sync_plthink_catalog.py',
          '_scraper/sync_gift_inventory.py','_scraper/partner_worker.py','_scraper/install_partner_workers.py']
+CODE += ['server/commerce','assets/shop/commerce.js','assets/shop/commerce.css','_scraper/commerce_setup.cjs']
 CODE += ['_scraper/brand_category_policy.py','_scraper/partner_sync_status.py','_scraper/partner-sync-plan.json']
 
 def command(*args):
@@ -44,7 +45,7 @@ def api(path):return json.loads(command('vercel','api',path,'--raw'))
 
 def managed_files():
     """Stage exact generated files, never an arbitrary file in those folders."""
-    files=['brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','catalog-sitemap.xml',
+    files=['brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','orders.html','admin.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','catalog-sitemap.xml',
            'data/catalog/catalog.json','data/catalog/rental.json','data/catalog/brands.json','data/catalog/sync-status.json','data/catalog/asset-manifest.json','data/catalog/dedup-audit.json']
     for source in ('smartstore','imweb-dji','imweb-promotions','kpp','l-mount','nadaun-gift'):
         files.append('data/catalog/sources/'+source+'.json')

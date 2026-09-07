@@ -10,6 +10,17 @@
       "continue": true
     },
     {
+      "src": "^/server(?:/.*)?$",
+      "status": 404
+    },
+    {
+      "src": "^/(admin|orders)$",
+      "status": 308,
+      "headers": {
+        "Location": "/$1.html"
+      }
+    },
+    {
       "src": "/brand/(.*)",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
@@ -48,6 +59,10 @@
   "functions": {
     "api/product.js": {
       "includeFiles": "{item.html,data/catalog/catalog.json}"
+    },
+    "api/orders.js": {
+      "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,server/commerce/**}",
+      "maxDuration": 60
     }
   }
 }

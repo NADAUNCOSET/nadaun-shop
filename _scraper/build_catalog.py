@@ -276,6 +276,8 @@ def build(allow_pending=False):
     output={'meta':meta,'brands':brand_list,'categories':list(categories.values()),'products':public_products,'redirects':redirects}
     presentation=''.join(p.read_text() for pattern in ('*.html','policies/*.html') for p in sorted((ROOT/'_scraper/shop_templates').glob(pattern)))
     presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/shop.js','assets/shop/shop.css','assets/shop/cart.js','assets/shop/banners.js','assets/shop/motion.js','_scraper/product_taxonomy.py','_scraper/rental_taxonomy.py','_scraper/references/slrrent-categories.json','data/catalog/banners.json','assets/shop/catalog-tools.js','_scraper/storefront_pages.py','_scraper/catalog_seo.py','api/product.js'))
+    presentation+=(ROOT/'assets/shop/commerce.js').read_text()+(ROOT/'assets/shop/commerce.css').read_text()
+    presentation+=(ROOT/'api/orders.js').read_text()+''.join(p.read_text() for p in sorted((ROOT/'server/commerce').glob('*')) if p.is_file())
     presentation+=(ROOT/'assets/shop/shipping.js').read_text()+(ROOT/'_scraper/shipping_policy.py').read_text()
     presentation+=(OUT/'nadaun-gift.json').read_text()
     presentation+=''.join(p.read_text() for p in sorted((ROOT/'assets/shop/vendor').glob('*.js')))
@@ -300,6 +302,8 @@ def build(allow_pending=False):
       ('item.html','상품 상세 | 나다운 샵','나다운 샵 촬영장비의 상품 정보와 이미지를 확인하고 구매 상담을 받아보세요.','item'),
       ('cart.html','장바구니 | 나다운 샵','선택한 촬영장비와 옵션, 수량을 확인하세요.','cart'),
       ('checkout.html','주문서 | 나다운 샵','선택한 촬영장비의 주문 내용을 확인하세요.','checkout'),
+      ('orders.html','주문 조회 | 나다운 샵','접수한 주문과 결제·배송 상태를 확인하세요.','orders'),
+      ('admin.html','주문 관리 | 나다운 샵','나다운 샵 관리자 전용 주문 처리 화면입니다.','admin'),
       ('terms.html','이용약관 | 나다운 샵','나다운 샵의 상품 정보, 구매와 서비스 이용에 관한 약관입니다.','policy'),
       ('privacy.html','개인정보처리방침 | 나다운 샵','나다운 샵의 개인정보 처리 목적과 항목, 보유기간 및 권리 행사 방법을 안내합니다.','policy'),
       ('studio.html','영등포 자연광·호리존 스튜디오 대여 | 나다운 스튜디오','서울 영등포 나다운 스튜디오. 자연광·호리존·전동 배경지와 룩북·제품 촬영 공간, 시설 및 예약 방법을 안내합니다.','studio'),
@@ -312,7 +316,9 @@ def build(allow_pending=False):
         body=(ROOT/'_scraper/shop_templates/policies'/filename).read_text() if mode=='policy' else (ROOT/'_scraper/shop_templates'/filename).read_text() if mode in ('guide','about','studio') else page_content(mode,brand_list,public_products)
         page=page.replace('{{CONTENT}}',body)
         if mode=='studio':page=page.replace('https://shop.nadaun.co/assets/shop/nadaun-logo.png','https://shop.nadaun.co/assets/shop/studio/space-09.jpg')
-        if mode in ('cart','checkout','item'):
+        if mode in ('orders','admin','checkout'):
+            page=page.replace('</head>',f'<link rel="stylesheet" href="/assets/shop/commerce.css?v={revision}"><script type="module" src="/assets/shop/commerce.js?v={revision}"></script></head>')
+        if mode in ('cart','checkout','item','orders','admin'):
             page=page.replace('index,follow,max-image-preview:large','noindex,follow')
         (ROOT/filename).write_text(page)
     brand_dir=ROOT/'brands';brand_dir.mkdir(exist_ok=True)

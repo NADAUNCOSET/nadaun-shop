@@ -33,6 +33,11 @@ def card(p):
 
 
 def content(mode, brands, products, brand=None):
+    if mode in ('orders','admin'):
+        title='주문 조회' if mode=='orders' else '주문 관리'
+        description='접수한 주문과 결제·배송 상태를 확인하세요.' if mode=='orders' else '접수 확인부터 금액 확정, 결제 확인과 출고까지.'
+        note='<p class="commerce-note">주문한 브라우저에서 조회할 수 있습니다. 다른 기기에서는 주문번호로 고객센터에 문의해주세요.</p>' if mode=='orders' else ''
+        return f'<section class="commerce-shell"><header class="commerce-heading"><div><span class="section-index">NADAUN SHOP / ORDERS</span><h1>{title}</h1><p>{description}</p></div><a href="/catalog.html">상품 둘러보기 ↗</a></header>{note}<p id="commerce-status" class="commerce-feedback" role="status" hidden></p><div id="commerce-content" aria-live="polite"><p>주문 서비스 연결을 확인하고 있습니다.</p></div><noscript>주문 조회에는 자바스크립트가 필요합니다.</noscript></section>'
     if mode=='brands':
         cards=''.join(brand_tile(b) for b in brands)
         return f'<div class="breadcrumb"><a href="/">홈</a><span aria-hidden="true">›</span><span aria-current="page">전체 브랜드</span></div><section class="brand-directory" aria-labelledby="brand-directory-title"><div class="section-head"><div><span class="section-index">THE BRAND INDEX</span><h1 id="brand-directory-title">전체 브랜드</h1><p>브랜드의 대표 제품을 보고, 원하는 브랜드몰로 들어가세요.</p></div><span class="brand-total">{len(brands)} BRANDS</span></div><div class="brand-tools"><label class="sr" for="brand-search">브랜드 찾기</label><input type="search" id="brand-search" placeholder="브랜드명으로 찾기" aria-controls="brand-grid" autocomplete="off"><span id="brand-search-status" role="status" aria-live="polite">전체 {len(brands)}개 브랜드</span></div><div class="brand-grid" id="brand-grid">{cards}</div><p class="brand-no-results" id="brand-no-results" hidden>일치하는 브랜드가 없습니다. 다른 이름으로 찾아보세요.</p></section>'
