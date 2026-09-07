@@ -56,7 +56,7 @@ test('replacing search results releases old animations and registers the new pho
 test('changing motion preference restores the DOM and removes pointer, observer and timer work',()=>{
  const s=setup({motion:true,desktop:true,fine:true,mobile:false});const {frame,image}=s.photo();
  const pair=new s.Element('section',['.editorial-pair']);s.main.append(pair);pair.append(s.doc.createElement('a'));pair.append(s.doc.createElement('a'));
- const dispose=s.mount();assert.equal(pair.classList.contains('has-stacked-motion'),true);assert.equal(s.doc.body.children.length,3);
+ const dispose=s.mount();assert.equal(pair.classList.contains('has-stacked-motion'),false);assert.equal(s.doc.body.children.length,3);
  s.observers[0].fn();assert.equal(s.timers.size,1);s.change({motion:false,desktop:true,fine:true,mobile:false});
  assert.equal(frame.firstElementChild,image);assert.equal(pair.classList.contains('has-stacked-motion'),false);assert.equal(s.doc.body.children.length,1);assert.equal(s.timers.size,0);assert.equal(s.observers[0].disconnected,true);
  assert.ok([...s.main.listeners.values(),...s.env.listeners.values(),...s.doc.listeners.values()].every(set=>!set.size));assert.ok(s.effects.every(e=>e.killed));
@@ -68,7 +68,7 @@ test('home keeps useful image links without JavaScript and uses the lightweight 
  for(const label of ['제품 구매','제품 렌탈','기프트 구매'])assert.ok(home.includes('<strong>'+label+'</strong>'));
  for(const href of ['/catalog.html','/catalog.html?kind=rental','/gifts.html'])assert.ok(home.includes('href="'+href+'"'));
  assert.ok(home.includes('/assets/shop/thumbnails/imweb-13283.webp'));assert.ok(!home.includes('/assets/shop/departments/purchase.jpg'));
- assert.ok(!home.includes('motion-ribbon'));assert.ok(!home.includes('{{'));
+ assert.ok(!home.includes('motion-ribbon'));assert.ok(!home.includes('class="editorial-pair"'));assert.ok(!home.includes('{{'));
  const css=fs.readFileSync('assets/shop/shop.css','utf8');assert.ok(css.includes('.editorial-pair.has-stacked-motion:focus-within>a'));assert.ok(css.includes('a:focus-visible .motion-plane'));
 });
 

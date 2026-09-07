@@ -189,6 +189,14 @@ def build(allow_pending=False):
         if not thumb:raise RuntimeError('Missing product thumbnail: '+pid)
         public_products.append({k:p.get(k) for k in ('id','name','brand_id','kind','price','sale_price','status','category_ids','type_ids','promotion_ids','offers','supplier_status')}|{'image':thumb,'detail_bucket':shard(pid)})
         public_details[shard(pid)][pid]=details[pid]
+    from product_taxonomy import build_taxonomy
+    from rental_taxonomy import build_rental_taxonomy
+    type_nodes,type_audit=build_taxonomy(public_products,categories,config.get('product_type_overrides'))
+    categories.update({c['id']:c for c in type_nodes})
+    rental_nodes,rental_audit=build_rental_taxonomy(public_products,categories)
+    categories.update({c['id']:c for c in rental_nodes})
+    save_json(ROOT/'_scraper/.sync-state/product-taxonomy-review.json',type_audit)
+    save_json(ROOT/'_scraper/.sync-state/rental-taxonomy-review.json',rental_audit)
     # Same named families with different option sets get one list card while
     # every variant remains independently addressable and purchasable later.
     families=defaultdict(list)
@@ -245,7 +253,7 @@ def build(allow_pending=False):
           'deduplication':{'brands_checked':len(brands),'groups':dedup_audit['duplicate_group_count'],'removed':merge_count}}
     output={'meta':meta,'brands':brand_list,'categories':list(categories.values()),'products':public_products,'redirects':redirects}
     presentation=''.join(p.read_text() for pattern in ('*.html','policies/*.html') for p in sorted((ROOT/'_scraper/shop_templates').glob(pattern)))
-    presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/shop.js','assets/shop/shop.css','assets/shop/cart.js','assets/shop/banners.js','assets/shop/motion.js','data/catalog/banners.json','assets/shop/catalog-tools.js','_scraper/storefront_pages.py','_scraper/catalog_seo.py','api/product.js'))
+    presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/shop.js','assets/shop/shop.css','assets/shop/cart.js','assets/shop/banners.js','assets/shop/motion.js','_scraper/product_taxonomy.py','_scraper/rental_taxonomy.py','_scraper/references/slrrent-categories.json','data/catalog/banners.json','assets/shop/catalog-tools.js','_scraper/storefront_pages.py','_scraper/catalog_seo.py','api/product.js'))
     presentation+=(OUT/'nadaun-gift.json').read_text()
     presentation+=''.join(p.read_text() for p in sorted((ROOT/'assets/shop/vendor').glob('*.js')))
     revision=hashlib.sha256((json.dumps(output,ensure_ascii=False,sort_keys=True)+presentation).encode()).hexdigest()[:16]
@@ -256,6 +264,9 @@ def build(allow_pending=False):
         (PUBLIC/'details'/f'{key}.json').write_text(json.dumps(bucket,ensure_ascii=False,separators=(',',':'))+'\n')
     (PUBLIC/'catalog.json').write_text(json.dumps(output,ensure_ascii=False,separators=(',',':'))+'\n')
     (PUBLIC/'brands.json').write_text(json.dumps({'meta':{'revision':revision},'brands':brand_list},ensure_ascii=False,separators=(',',':'))+'\n')
+    rental_products=[p for p in public_products if p['kind']=='rental']
+    rental_category_ids={cid for p in rental_products for field in ('category_ids','type_ids') for cid in p[field]}
+    save_json(PUBLIC/'rental.json',{'meta':{**meta,'view':'rental','product_count':len(rental_products),'listing_count':len({p.get('listing_id',p['id']) for p in rental_products})},'brands':brand_list,'categories':[c for c in categories.values() if c['id'] in rental_category_ids or c.get('scope')=='rental-product'],'products':rental_products,'redirects':redirects})
     save_json(PUBLIC/'sync-status.json',meta)
     template=(ROOT/'_scraper/shop_templates/page.html').read_text()
     for filename,title,description,mode in [

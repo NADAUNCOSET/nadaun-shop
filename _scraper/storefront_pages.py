@@ -42,12 +42,8 @@ def content(mode, brands, products, brand=None):
         page=(Path(__file__).parent/'shop_templates/home.html').read_text()
         for key,value in {'BRAND_COUNT':len(brands)}.items():
             page=page.replace('{{'+key+'}}',escape(str(value)))
-        offers=[p for p in products if p['kind']=='purchase' and p['status']!='soldout' and any(o['source'] in ('smartstore','imweb') for o in p['offers']) and (p.get('promotion_ids') or (p.get('sale_price') is not None and p.get('price') and p['sale_price']<p['price']))]
-        featured=next((p for p in offers if p['id']=='imweb-13210'),next(iter(offers),None))
-        visual=f'<img src="{escape(featured["image"])}" alt="{escape(featured["name"])}" width="850" height="850" loading="lazy" decoding="async" referrerpolicy="no-referrer">' if featured else '<span class="editorial-empty">NADAUN<br>SELECTION</span>'
-        page=page.replace('{{PROMOTION_VISUAL}}',visual)
         return page.replace('{{BANNERS}}',banner_content()).replace('{{BRANDS}}',links).replace('{{PRODUCTS}}',''.join(card(p) for p in selected if p))
-    if mode=='catalog':
+    if mode in ('catalog','categories'):
         name=(brand['name']+' 브랜드몰') if brand else '전체 상품'
         rows=[p for p in products if (not brand or p['brand_id']==brand['id']) and p.get('listing_id',p['id'])==p['id']]
         kind='rental' if brand and not brand['purchase_count'] else 'purchase'
@@ -56,6 +52,4 @@ def content(mode, brands, products, brand=None):
     if mode=='gift':return gift_content()
     if mode in ('cart','checkout'):
         return '<div class="loading" role="status">선택하신 상품을 확인하고 있습니다.</div>'
-    if mode=='categories':
-        return '<section class="brand-section"><h1>브랜드별로 장비를 찾아보세요.</h1><p>제품 종류별 통합 카테고리는 준비 중입니다.</p><a href="/brands.html" target="_blank" rel="noopener">브랜드 전체 보기 ↗</a></section>'
     return '<div class="loading" role="status"><span></span>상품을 불러오고 있습니다.</div>'

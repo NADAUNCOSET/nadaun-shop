@@ -42,19 +42,12 @@ export function mountArtMotion(main,{gsap,ScrollTrigger:ST},env=window){
     if(lines.length)gsap.fromTo(lines,{yPercent:108,rotation:2},{yPercent:0,rotation:0,duration:1,stagger:.16,ease:'power2.out',scrollTrigger:scroll(heading,'top 96%','top 58%')});
     else gsap.fromTo(heading,{y:mobile?24:44},{y:0,ease:'none',scrollTrigger:scroll(heading,'top 96%','top 60%')});
    }));
-   main.querySelectorAll('.section-head p,.section-index,.department-title').forEach(text=>register(text,()=>{
+   main.querySelectorAll('.section-head p,.section-index').forEach(text=>register(text,()=>{
     gsap.fromTo(text,{y:mobile?12:24},{y:0,ease:'none',scrollTrigger:scroll(text,'top bottom','top 66%')});
    }));
    main.querySelectorAll('.cart-items>li,.checkout-services>section,.service-grid>section,.studio-gallery figure,.studio-specs>div,.studio-amenities li').forEach(node=>register(node,()=>{
     gsap.fromTo(node,{y:mobile?20:44},{y:0,ease:'none',scrollTrigger:scroll(node,'top bottom','top 66%')});
    }));
-   const pair=main.querySelector('.editorial-pair');
-   if(desktop&&pair)register(pair,()=>{
-    pair.classList.add('has-stacked-motion');
-    const [first,second]=pair.children;
-    gsap.to(first,{scale:.93,y:-24,transformOrigin:'center top',ease:'none',scrollTrigger:scroll(second,'top 90%','top 18%')});
-    return ()=>pair.classList.remove('has-stacked-motion');
-   });
    ST.refresh();
   }
   const schedule=()=>{env.clearTimeout(timer);timer=env.setTimeout(scan,100)};
