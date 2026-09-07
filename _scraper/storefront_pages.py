@@ -38,7 +38,13 @@ def content(mode, brands, products, brand=None):
         return f'<div class="breadcrumb"><a href="/">홈</a><span aria-hidden="true">›</span><span aria-current="page">전체 브랜드</span></div><section class="brand-directory" aria-labelledby="brand-directory-title"><div class="section-head"><div><span class="section-index">THE BRAND INDEX</span><h1 id="brand-directory-title">전체 브랜드</h1><p>브랜드의 대표 제품을 보고, 원하는 브랜드몰로 들어가세요.</p></div><span class="brand-total">{len(brands)} BRANDS</span></div><div class="brand-tools"><label class="sr" for="brand-search">브랜드 찾기</label><input type="search" id="brand-search" placeholder="브랜드명으로 찾기" aria-controls="brand-grid" autocomplete="off"><span id="brand-search-status" role="status" aria-live="polite">전체 {len(brands)}개 브랜드</span></div><div class="brand-grid" id="brand-grid">{cards}</div><p class="brand-no-results" id="brand-no-results" hidden>일치하는 브랜드가 없습니다. 다른 이름으로 찾아보세요.</p></section>'
     if mode=='home':
         links=''.join(brand_tile(b) for b in brands[:18])
-        selected=[next(p for p in products if p['id']==next(b['representative_id'] for b in brands if b['id']==bid)) for bid in ['dji','leofoto','hoya','smallrig','tilta','pgytech','nanlite','godox']]
+        # Curated purchase display. Do not label this as measured sales ranking.
+        eligible=[p for p in products if p['kind']=='purchase' and p['status']!='soldout' and p.get('listing_id',p['id'])==p['id']]
+        selected=[]
+        for bid in ['dji','leofoto','hoya','smallrig','tilta','pgytech','nanlite','godox']:
+            featured=next((b['representative_id'] for b in brands if b['id']==bid),None)
+            chosen=next((p for p in eligible if p['id']==featured),next((p for p in eligible if p['brand_id']==bid),None))
+            if chosen:selected.append(chosen)
         page=(Path(__file__).parent/'shop_templates/home.html').read_text()
         for key,value in {'BRAND_COUNT':len(brands)}.items():
             page=page.replace('{{'+key+'}}',escape(str(value)))

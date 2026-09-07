@@ -2,7 +2,7 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const vm=require('node:vm');
-const source=fs.readFileSync('assets/shop/cart.js','utf8').replaceAll('export ','');
+const source=fs.readFileSync('assets/shop/shipping.js','utf8').replaceAll('export ','')+'\n'+fs.readFileSync('assets/shop/cart.js','utf8').replace(/^import .*shipping\.js';\n/m,'').replaceAll('export ','');
 
 async function render(rows,{products,details,checkout=true}={}){
  const main={innerHTML:'',querySelectorAll:()=>[]};let fetched=0;
@@ -18,7 +18,7 @@ async function render(rows,{products,details,checkout=true}={}){
 }
 test('checkout retains redirected products, selected option fees, quantities and detailed photography',async()=>{
  const {html,fetched}=await render([{id:'old',option:'Black',quantity:2}]);
- assert.equal(fetched,1);assert.match(html,/54,000/);assert.match(html,/Camera &lt;Test&gt;/);
+ assert.equal(fetched,1);assert.match(html,/54,000/);assert.match(html,/class="order-total">58,500<small>원/);assert.match(html,/Camera &lt;Test&gt;/);
  assert.match(html,/src="https:\/\/example.com\/large.jpg"/);assert.match(html,/수량 <b>2<\/b>개/);
  assert.match(html,/href="\/item.html\?id=p"/);assert.ok(html.indexOf('렌탈 이용 방법')<html.indexOf('id="checkout-contact"'));
  assert.match(html,/온라인 결제 오픈 준비 중/);assert.doesNotMatch(html,/<input|<form/);
@@ -40,4 +40,19 @@ test('cart keeps editable quantities, deletion and its checkout link',async()=>{
 test('an empty selection has a working product discovery link and no total',async()=>{
  const {html,fetched}=await render([]);assert.equal(fetched,0);
  assert.match(html,/아직 담은 상품이 없습니다/);assert.match(html,/href="\/catalog.html"/);assert.doesNotMatch(html,/order-total/);
+});
+test('heavy stands charge 7000 once even with ordinary goods and several quantities',async()=>{
+ const base={brand_id:'brand',kind:'purchase',status:'sale',price:30000,sale_price:30000,image:'https://example.test/p.jpg',detail_bucket:'00',offers:[]};
+ const products=[{...base,id:'p',name:'C Stand',shipping_class:'heavy_stand'},{...base,id:'q',name:'Filter',shipping_class:'standard'}];
+ const {html}=await render([{id:'p',option:'',quantity:2},{id:'q',option:'',quantity:1}],{products,details:{p:{options:[]},q:{options:[]}}});
+ assert.match(html,/<dt>기본 배송비<\/dt><dd>7,000원/);
+ assert.match(html,/class="order-total">97,000<small>원/);
+});
+test('sold-out heavy stands and rental items cannot raise purchase shipping',async()=>{
+ const base={brand_id:'brand',kind:'purchase',status:'sale',price:30000,sale_price:30000,image:'https://example.test/p.jpg',detail_bucket:'00',offers:[]};
+ const products=[{...base,id:'p',name:'Filter',shipping_class:'standard'},{...base,id:'q',name:'Sold out stand',shipping_class:'heavy_stand',status:'soldout'},{...base,id:'r',name:'Rental stand',shipping_class:'heavy_stand',kind:'rental'}];
+ const {html}=await render([{id:'p',option:'',quantity:1},{id:'q',option:'',quantity:2},{id:'r',option:'',quantity:1}],{products,details:{p:{options:[]},q:{options:[]},r:{options:[]}}});
+ assert.match(html,/<dt>기본 배송비<\/dt><dd>4,500원/);
+ assert.match(html,/class="order-total">34,500<small>원/);
+ assert.match(html,/2개 구성<\/dd>/);
 });

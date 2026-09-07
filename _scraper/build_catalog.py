@@ -175,11 +175,12 @@ def build(allow_pending=False):
     for pid,override in config.get('products',{}).items():
         p=products.get(redirects.get(pid,pid))
         if p:
-            for key in ('name','price','sale_price','hidden','category_ids','type_ids','status'):
+            for key in ('name','price','sale_price','hidden','category_ids','type_ids','status','shipping_class'):
                 if key in override:p[key]=deepcopy(override[key])
     asset_path=PUBLIC/'asset-manifest.json'
     assets=json.loads(asset_path.read_text()) if asset_path.exists() else {}
     public_products=[];public_details=defaultdict(dict)
+    from shipping_policy import shipping_class
     for pid,p in products.items():
         if p.get('hidden'):continue
         main=p['images'].get('main') or []
@@ -187,7 +188,7 @@ def build(allow_pending=False):
         if pid in assets and assets[pid]['source_url']==thumb:
             thumb='/'+assets[pid]['path']
         if not thumb:raise RuntimeError('Missing product thumbnail: '+pid)
-        public_products.append({k:p.get(k) for k in ('id','name','brand_id','kind','price','sale_price','status','category_ids','type_ids','promotion_ids','offers','supplier_status')}|{'image':thumb,'detail_bucket':shard(pid)})
+        public_products.append({k:p.get(k) for k in ('id','name','brand_id','kind','price','sale_price','status','category_ids','type_ids','promotion_ids','offers','supplier_status')}|{'image':thumb,'detail_bucket':shard(pid),'shipping_class':shipping_class(p,p.get('shipping_class'))})
         public_details[shard(pid)][pid]=details[pid]
     from product_taxonomy import build_taxonomy
     from rental_taxonomy import build_rental_taxonomy
@@ -254,6 +255,7 @@ def build(allow_pending=False):
     output={'meta':meta,'brands':brand_list,'categories':list(categories.values()),'products':public_products,'redirects':redirects}
     presentation=''.join(p.read_text() for pattern in ('*.html','policies/*.html') for p in sorted((ROOT/'_scraper/shop_templates').glob(pattern)))
     presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/shop.js','assets/shop/shop.css','assets/shop/cart.js','assets/shop/banners.js','assets/shop/motion.js','_scraper/product_taxonomy.py','_scraper/rental_taxonomy.py','_scraper/references/slrrent-categories.json','data/catalog/banners.json','assets/shop/catalog-tools.js','_scraper/storefront_pages.py','_scraper/catalog_seo.py','api/product.js'))
+    presentation+=(ROOT/'assets/shop/shipping.js').read_text()+(ROOT/'_scraper/shipping_policy.py').read_text()
     presentation+=(OUT/'nadaun-gift.json').read_text()
     presentation+=''.join(p.read_text() for p in sorted((ROOT/'assets/shop/vendor').glob('*.js')))
     revision=hashlib.sha256((json.dumps(output,ensure_ascii=False,sort_keys=True)+presentation).encode()).hexdigest()[:16]
