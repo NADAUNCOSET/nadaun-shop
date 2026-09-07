@@ -66,6 +66,27 @@ class InventoryTest(unittest.TestCase):
         with self.assertRaises(ValueError):self.inventory.save_page(changed,2)
         self.assertEqual(self.inventory.status()['unique_products'],30)
 
+    def test_stable_source_duplicate_cards_are_counted_once_only_after_two_complete_passes(self):
+        first=parse_page(document(page_html(range(1,31))),'1',1)
+        last=parse_page(document(page_html([30],page=2)),'1',2)
+        self.inventory.save_page(first,1)
+        self.inventory.save_duplicate_root([first,last],[first,last])
+        self.inventory.verify_root(first);self.inventory.finalize(['1'])
+        status=self.inventory.status()
+        self.assertTrue(status['inventory_complete']);self.assertEqual(status['unique_products'],30)
+        self.assertEqual(status['expected_category_memberships'],31)
+        self.assertEqual(status['pages_collected'],2)
+
+    def test_duplicate_reconciliation_preserves_originals_when_pages_change_or_are_incomplete(self):
+        first=parse_page(document(page_html(range(1,31))),'1',1)
+        last=parse_page(document(page_html([30],page=2)),'1',2)
+        changed=parse_page(document(page_html([31],page=2)),'1',2)
+        self.inventory.save_page(first,1)
+        for a,b in [([first,last],[first,changed]),([first],[first])]:
+            with self.assertRaises(ValueError):self.inventory.save_duplicate_root(a,b)
+        status=self.inventory.status();self.assertEqual(status['pages_collected'],1)
+        self.assertEqual(status['roots'][0]['next_page'],2);self.assertFalse(status['inventory_complete'])
+
     def test_same_product_in_two_categories_is_one_product_with_two_memberships(self):
         for cid in ('1','2'):
             data=parse_page(document(page_html([1],total=1,last=1)),cid,1)

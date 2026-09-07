@@ -7,6 +7,7 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 import argparse
+import hashlib
 import json
 import math
 import os
@@ -169,6 +170,10 @@ class Inventory:
             CREATE TABLE IF NOT EXISTS pages (root_id TEXT, page INTEGER, observed_at TEXT,
                 PRIMARY KEY(root_id,page));
             CREATE TABLE IF NOT EXISTS scan_state (key TEXT PRIMARY KEY, value TEXT);
+            CREATE TABLE IF NOT EXISTS duplicate_root_checks (
+                root_id TEXT PRIMARY KEY, source_rows INTEGER, unique_products INTEGER,
+                ids_hash TEXT, capture_hash TEXT, verified_at TEXT
+            );
         ''')
         (self.root/'inventory.sqlite3').chmod(0o600)
 
@@ -178,6 +183,7 @@ class Inventory:
         if old and (old[0] is not None and old[0] != info['total'] or old[1] != page):
             raise ValueError('Gift count or cursor changed; review the preserved scan')
         with self.db:
+            self.db.execute('UPDATE duplicate_root_checks SET verified_at=NULL WHERE root_id=?',(cid,))
             self.db.execute("INSERT INTO scan_state VALUES('final_verified','0') ON CONFLICT(key) DO UPDATE SET value='0'")
             self.db.execute('INSERT OR IGNORE INTO roots(id) VALUES(?)', (cid,))
             for row in info['rows']:
@@ -199,12 +205,63 @@ class Inventory:
         cid = info['id']
         old = self.db.execute('SELECT total,last_page,next_page,first_ids FROM roots WHERE id=?', (cid,)).fetchone()
         count = self.db.execute('SELECT COUNT(*) FROM memberships WHERE root_id=?', (cid,)).fetchone()[0]
-        if not old or old[0] != info['total'] or count != info['total'] or old[2] <= old[1]:
+        if not old or old[0] != info['total'] or old[2] <= old[1]:
             raise ValueError('Gift root coverage is incomplete')
+        if count != info['total']:
+            proof=self.db.execute('SELECT source_rows,unique_products,ids_hash,verified_at FROM duplicate_root_checks WHERE root_id=?',(cid,)).fetchone()
+            ids=[r[0] for r in self.db.execute('SELECT product_id FROM memberships WHERE root_id=? ORDER BY product_id',(cid,))]
+            digest=hashlib.sha256(json.dumps(ids).encode()).hexdigest()
+            if not proof or proof[0]!=info['total'] or proof[1]!=count or proof[2]!=digest or not proof[3]:
+                raise ValueError('Gift duplicate rows require two complete matching source captures')
         if json.loads(old[3]) != [r['product_id'] for r in info['rows']]:
             raise ValueError('Gift newest products changed while scanning; reconcile before publishing')
         with self.db:
             self.db.execute('UPDATE roots SET complete=1 WHERE id=?', (cid,))
+
+    def save_duplicate_root(self, first, second):
+        """Accept repeated source cards only after two matching complete passes.
+
+        This never removes previously observed products or trusts partial pages.
+        It separates the site's advertised card count from unique product IDs.
+        """
+        def signature(pages):
+            return json.dumps([{**p,'rows':[{k:v for k,v in row.items() if k!='observed_at'} for row in p['rows']]} for p in pages],sort_keys=True,ensure_ascii=False)
+        if not first or signature(first)!=signature(second):
+            raise ValueError('Gift duplicate category changed between complete captures')
+        start=first[0];cid=start['id'];total=start['total'];last=start['last_page']
+        if len(first)!=last:raise ValueError('Gift duplicate category capture is incomplete')
+        records={};leaf_ids={}
+        for index,p in enumerate(first,1):
+            if (p['id'],p['total'],p['last_page'],p['name'])!=(cid,total,last,start['name']) or len(p['rows'])!=min(30,max(0,total-(index-1)*30)):
+                raise ValueError('Gift duplicate category page coverage is invalid')
+            if len({r['product_id'] for r in p['rows']})!=len(p['rows']):raise ValueError('Gift repeats a product on the same page')
+            for row in p['rows']:
+                pid=row['product_id'];records[pid]=dict(row)
+                leaf_ids.setdefault(pid,set()).add(row['leaf_category_id'])
+        old=self.db.execute('SELECT total,first_ids FROM roots WHERE id=?',(cid,)).fetchone()
+        first_ids=[r['product_id'] for r in start['rows']]
+        old_ids={r[0] for r in self.db.execute('SELECT product_id FROM memberships WHERE root_id=?',(cid,))}
+        if not old or old[0]!=total or json.loads(old[1])!=first_ids or not old_ids<=set(records):
+            raise ValueError('Gift category membership changed; previous inventory remains preserved')
+        digest=hashlib.sha256(json.dumps(sorted(records)).encode()).hexdigest()
+        captured=signature(first)
+        with self.db:
+            self.db.execute("INSERT INTO scan_state VALUES('final_verified','0') ON CONFLICT(key) DO UPDATE SET value='0'")
+            for pid,row in records.items():
+                row['leaf_category_ids']=sorted(leaf_ids[pid])
+                self.db.execute('INSERT INTO products VALUES(?,?) ON CONFLICT(id) DO UPDATE SET record_json=excluded.record_json',(pid,json.dumps(row,ensure_ascii=False)))
+                self.db.execute('INSERT OR IGNORE INTO memberships VALUES(?,?)',(cid,pid))
+            for n in range(1,last+1):
+                self.db.execute('INSERT INTO pages VALUES(?,?,?) ON CONFLICT(root_id,page) DO UPDATE SET observed_at=excluded.observed_at',(cid,n,stamp()))
+            self.db.execute('UPDATE roots SET next_page=?,complete=0 WHERE id=?',(last+1,cid))
+            self.db.execute('INSERT INTO duplicate_root_checks VALUES(?,?,?,?,?,?) ON CONFLICT(root_id) DO UPDATE SET source_rows=excluded.source_rows,unique_products=excluded.unique_products,ids_hash=excluded.ids_hash,capture_hash=excluded.capture_hash,verified_at=excluded.verified_at',(cid,total,len(records),digest,hashlib.sha256(captured.encode()).hexdigest(),stamp()))
+
+    def reconcile_duplicates(self, source, cid):
+        def capture():
+            first=parse_page(source.get(LIST_URL,cid=cid,main_cid=cid,sort=5,p=1),cid,1)
+            return [first]+[parse_page(source.get(LIST_URL,cid=cid,main_cid=cid,sort=5,p=n),cid,n) for n in range(2,first['last_page']+1)]
+        first=capture();second=capture()
+        self.save_duplicate_root(first,second)
 
     def finalize(self, verified_roots):
         rows=list(self.db.execute('SELECT id,complete FROM roots ORDER BY rowid'))
@@ -253,7 +310,11 @@ class Inventory:
                 row = self.db.execute('SELECT next_page,last_page,complete FROM roots WHERE id=?',(cid,)).fetchone()
                 if row[2]: continue
                 for page in range(row[0], row[1]+1):
-                    self.save_page(parse_page(source.get(LIST_URL,cid=cid,main_cid=cid,sort=5,p=page),cid,page),page)
+                    try:self.save_page(parse_page(source.get(LIST_URL,cid=cid,main_cid=cid,sort=5,p=page),cid,page),page)
+                    except ValueError as exc:
+                        if str(exc)!='Repeated gift product across pages; scan needs reconciliation':raise
+                        self.reconcile_duplicates(source,cid)
+                        break
                     if page % 10 == 0: self.report()
                 self.verify_root(parse_page(source.get(LIST_URL,cid=cid,main_cid=cid,sort=5,p=1),cid,1))
                 self.report()

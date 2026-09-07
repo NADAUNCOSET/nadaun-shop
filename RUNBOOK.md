@@ -300,3 +300,12 @@ python3 _scraper/gift_supplier_registry.py lookup --product 187684 --output ../_
 05:09 KST `plthink-1919281`의 Product JSON-LD 이름/설명 문자열에 이스케이프되지 않은 줄바꿈과 HTML font 태그가 들어 있어 엄격 JSON 파서가 거절했다. 1,907개 체크포인트를 보존했다. JSON 문자열 제어 문자만 허용하는 `json.loads(strict=False)`를 사용하고 이름/설명은 HTML 텍스트로 정규화한다. 실제 원본 상품번호 대조는 그대로 유지한다. JS 평가나 임의 필드 추측은 하지 않는다.
 
 이 상품은 화면에 가격문의라고 표시하지만 구조화 데이터가 price 0이므로 원본 0은 `source_sale_price`에 보관하고 공개 가격은 null(가격문의)로 유지한다. 이전 체크포인트의 0원/HTML 이름만 재조회하며 나머지 정상 검증 상품은 재사용한다. 실제 실패 HTML과 PLTHINK/체크포인트 테스트 12개로 확인했다. 이후 파트너 워커를 최신 커밋으로 재시작하고 `.sync-state/plthink/commerce-reload-verified.json`에서 같은 세대/기존 ID 보존/상세 건수 증가를 확인한다.
+
+
+### 2026-09-08 기프트 원본 페이지 중복 대조
+
+기프트 `업소용품(cid=422)`의 신상품순(sort=5) 목록은 원본 4/5페이지에 같은 상품번호 6개가 실제로 중복 노출된다. 첫 페이지는 초기 수집과 같았고 재조회에서도 동일한 중복을 확인했다. 이는 상품번호를 바꿔 등록하거나 원본 표시 개수를 고유 상품 수라고 가정해서 해결하지 않는다.
+
+일반 수집에서는 페이지 간 중복을 계속 거절한다. 이 오류를 만난 카테고리만 전체 페이지를 두 번 다시 읽어 페이지 순서·상품번호·이름·가격·이미지·분류가 모두 같은지 대조한다. 모든 페이지의 표시 개수/총 페이지 수/첫 페이지가 맞고 기존 관측 상품번호가 전부 새 대조에도 있는 경우에만 `duplicate_root_checks` 증거와 함께 고유 상품번호로 한 번씩 저장한다. 원본의 표시 카드 수와 고유 상품 수를 구분한다. 기존 원본 상품·페이지는 삭제하지 않으며 두 번의 응답이 다르거나 기존 상품이 사라지면 보존 후 중단한다. 검증 전 전체 완료/품절/공개 반영으로 처리하지 않는다.
+
+관련 파일: `_scraper/sync_gift_inventory.py`, `_scraper/test_gift_inventory.py`. 실제 실행 증거는 `.sync-state/gift-duplicate-diagnosis.json`, `.sync-state/gift-resume.json` 및 private DB의 `duplicate_root_checks`/`roots`다. 기프트 전체 수집/자동 갱신/공개 결제 미러링이 완료됐다는 의미는 아니다.
