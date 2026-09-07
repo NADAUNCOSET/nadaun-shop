@@ -15,7 +15,7 @@ def install():
     logs.mkdir(parents=True,exist_ok=True)
     definition={'Label':LABEL,'ProgramArguments':[sys.executable,str(ROOT/'_scraper/shop_sync.py'),'--scheduled'],
       'WorkingDirectory':str(Path.home()),'StartCalendarInterval':{'Hour':8,'Minute':0},
-      'RunAtLoad':True,'ProcessType':'Background',
+      'RunAtLoad':True,'ProcessType':'Standard',
       'StandardOutPath':str(logs/'worker.stdout.log'),'StandardErrorPath':str(logs/'worker.stderr.log'),
       'EnvironmentVariables':{'PATH':os.environ.get('PATH','/usr/bin:/bin'),'PYTHONUNBUFFERED':'1'}}
     if target.exists():subprocess.run(['launchctl','bootout',f'gui/{os.getuid()}',str(target)],capture_output=True)
