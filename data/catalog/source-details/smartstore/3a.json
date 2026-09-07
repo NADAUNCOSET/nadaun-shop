@@ -1,0 +1,641 @@
+{
+  "smartstore-13745582115": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260904_69/1788455463716mn8qG_JPEG/10dc59fee5b4ba338161ffbaeb2e2429.jpg"
+      ],
+      "detail": [
+        "https://gi.esmplus.com/clmedia/250106/4609.jpg"
+      ]
+    },
+    "description_text": "스몰리그 4609 H11 퀵릴리즈 어댑터 아르카 스위스 타입\n제품 구성 및 호환 정보는 상세 이미지를 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-04T02:11:04.866+09:00",
+    "checked_at": "2026-09-07T05:22:54+00:00",
+    "checked_epoch": 1788758574
+  },
+  "smartstore-13745581721": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260904_167/1788455450077B1jPL_JPEG/e19b9c654eb008fa7d8fe14a0ba513de.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20221226_269/1672044281922zfc8V_JPEG/2929B.jpg"
+      ]
+    },
+    "description_text": "스몰리그 2929B 아이패드 듀얼핸들그립 태블릿 마운트\n제품 구성 및 호환 정보는 상세 이미지를 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-04T02:10:50.967+09:00",
+    "checked_at": "2026-09-07T05:24:00+00:00",
+    "checked_epoch": 1788758640
+  },
+  "smartstore-13740756180": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260901_39/1788255339346rq3YF_JPEG/0080950002733.jpg"
+      ],
+      "detail": [
+        "https://www.plthink.com/shopimages/plthink/0080950002733.jpg?1769062248"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-01T18:35:40.087+09:00",
+    "checked_at": "2026-09-07T05:27:00+00:00",
+    "checked_epoch": 1788758820
+  },
+  "smartstore-13740755125": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260901_3/1788255266915xwfQr_JPEG/0080950004543.jpg"
+      ],
+      "detail": [
+        "https://www.plthink.com/shopimages/plthink/0080950004543.jpg?1778566115"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-01T18:34:28.221+09:00",
+    "checked_at": "2026-09-07T05:28:06+00:00",
+    "checked_epoch": 1788758886
+  },
+  "smartstore-13740734719": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260901_211/1788253760422dRzjC_JPEG/0081340000773.jpg"
+      ],
+      "detail": [
+        "https://www.plthink.com/shopimages/plthink/0081340000773.jpg?1769402293"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 3000,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-01T18:09:21.490+09:00",
+    "checked_at": "2026-09-07T05:29:21+00:00",
+    "checked_epoch": 1788758961
+  },
+  "smartstore-13740669789": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260901_46/1788249597701fn3Ux_JPEG/0080310002412.jpg"
+      ],
+      "detail": [
+        "https://www.plthink.com/shopimages/plthink/0080310002412.jpg?1777350204"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [
+      "SRTB링"
+    ],
+    "options": [
+      {
+        "name": "선택 안함",
+        "additional_price": 0
+      },
+      {
+        "name": "오로라 보웬스",
+        "additional_price": 70000
+      },
+      {
+        "name": "엘린크롬",
+        "additional_price": 70000
+      },
+      {
+        "name": "브론펄소",
+        "additional_price": 70000
+      },
+      {
+        "name": "프로포토",
+        "additional_price": 110000
+      }
+    ],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-01T16:59:59.121+09:00",
+    "checked_at": "2026-09-07T05:33:09+00:00",
+    "checked_epoch": 1788759189
+  },
+  "smartstore-13740634036": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260901_120/1788247627047IQimj_PNG/08405e539008eb8b57fede7b030430ab.gif"
+      ],
+      "detail": [
+        "https://ecimg.cafe24img.com/pg821b55468729089/hipplus/web/product/medium/20250407/08405e539008eb8b57fede7b030430ab.gif"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-01T16:33:59.374+09:00",
+    "checked_at": "2026-09-07T05:34:44+00:00",
+    "checked_epoch": 1788759284
+  },
+  "smartstore-13740393601": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260901_211/1788231078891ogMpD_JPEG/1b905f755a517014f971fc133bfd8948.jpg"
+      ],
+      "detail": [
+        "https://gi.esmplus.com/thecamera/take/thecamera/dowon/thecamera_cs.jpg",
+        "https://gi.esmplus.com/thecamera/take/thecamera/dowon/get_visit.jpg",
+        "https://www.clmedia.co.kr/data/editor/goods/1/2022/02/2300_ffdc94a7d4be08c8e9a0a172b17450ba1428582.jpg",
+        "https://gi.esmplus.com/thecamera/gentree/battery/cube_290w_12a_c_01.jpg",
+        "https://gi.esmplus.com/thecamera/gentree/battery/bumblebee_b50_145w_cc_01.jpg",
+        "https://ai.esmplus.com/thecamera75/thecamera_info/thecamera_delivery_2.jpg"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-01T11:51:20.506+09:00",
+    "checked_at": "2026-09-07T05:37:43+00:00",
+    "checked_epoch": 1788759463
+  },
+  "smartstore-13740393595": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260901_294/1788231078935FbYOq_JPEG/cf35ec3d46414682fb41c8458a3331f0.jpg"
+      ],
+      "detail": [
+        "https://gi.esmplus.com/thecamera/take/thecamera/dowon/thecamera_cs.jpg",
+        "https://gi.esmplus.com/thecamera/take/thecamera/dowon/get_visit.jpg",
+        "https://www.clmedia.co.kr/data/editor/goods/1/2018/06/635_b8305d2f024c7f8a260da9fa614cc7fb1427312.jpg",
+        "https://gentree.co.kr/web/season2_skin/skin2/product/charger/cube_station_k/deail-01.jpg",
+        "https://gentree.co.kr/web/season2_skin/skin2/product/charger/cube_station_k/deail-02.jpg",
+        "https://gentree.co.kr/web/season2_skin/skin2/product/charger/cube_station_k/deail-04.jpg",
+        "https://gentree.co.kr/web/season2_skin/skin2/product/charger/cube_station_k/deail-05.jpg",
+        "https://ai.esmplus.com/thecamera75/thecamera_info/thecamera_delivery_2.jpg"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-01T11:51:20.477+09:00",
+    "checked_at": "2026-09-07T05:38:00+00:00",
+    "checked_epoch": 1788759480
+  },
+  "smartstore-13740318514": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260901_32/1788225505217GaXPf_JPEG/1879aaf35878f5237a2004809c40fe79.jpg"
+      ],
+      "detail": [
+        "https://photobay.godohosting.com/matthews/matthews_com_01.jpg",
+        "https://photobay.godohosting.com/matthews/429636.jpg",
+        "https://photobay.godohosting.com/matthews/matthews_com_03.jpg"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-01T10:18:26.600+09:00",
+    "checked_at": "2026-09-07T05:41:11+00:00",
+    "checked_epoch": 1788759671
+  },
+  "smartstore-13739631346": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260831_284/1788161205764L6GfN_JPEG/54e50dfd8efd902f0f0e476b0011d817.jpg"
+      ],
+      "detail": [
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/upload/NNEditor/20250213/1349a8b795173d5554d1a4c22c69d654.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/upload/NNEditor/20250213/7ea25a1d3d77767b4047b15b37f880d2.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/upload/NNEditor/20250213/a81aabe14114127dbe814e4428286e17.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/upload/NNEditor/20250213/bd64d335b45bc49f6bf68db166629165.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_01.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_02.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_03.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_04.jpg"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-08-31T16:45:32.048+09:00",
+    "checked_at": "2026-09-07T05:42:57+00:00",
+    "checked_epoch": 1788759777
+  },
+  "smartstore-13739631078": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260831_139/17881611932242ULqC_JPEG/38c5ccffe2de6a707a79299cf19a894c.jpg"
+      ],
+      "detail": [
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/upload/NNEditor/20251028/MS60BAT01_DETAIL.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_01.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_02.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_03.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_04.jpg"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-08-31T16:45:43.035+09:00",
+    "checked_at": "2026-09-07T05:43:57+00:00",
+    "checked_epoch": 1788759837
+  },
+  "smartstore-13739630846": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260831_74/1788161183160rM440_JPEG/2198cb809e68b5acb027d353e7533bde.jpg"
+      ],
+      "detail": [
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/upload/NNEditor/20250227/AF30SS_DETAIL.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_01.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_02.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_03.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_04.jpg"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-08-31T16:45:47.077+09:00",
+    "checked_at": "2026-09-07T05:44:44+00:00",
+    "checked_epoch": 1788759884
+  },
+  "smartstore-13678686527": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260723_26/1784796159844pAkol_JPEG/24722551908928065_2127692334.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20260728_127/1785221481290Ge3Kq_PNG/KakaoTalk_20260728_114937109.png",
+        "https://ai.esmplus.com/samadni/ARTURIA/KeyLab_Essential_MK3_88-MAIN1.jpg",
+        "https://ai.esmplus.com/samadni/ARTURIA/KeyLab_Essential_MK3_88-MAIN2.jpg",
+        "https://ai.esmplus.com/samadni/ARTURIA/KeyLab_Essential_MK3_88-MAIN3.jpg",
+        "https://ai.esmplus.com/samadni/ARTURIA/KeyLab_Essential_MK3_88-MAIN4.jpg",
+        "https://ai.esmplus.com/samadni/ARTURIA/KeyLab_Essential_MK3_88-MAIN5.jpg",
+        "https://ai.esmplus.com/samadni/ARTURIA/KeyLab_Essential_MK3_88-MAIN6.jpg",
+        "https://ai.esmplus.com/samadni/ARTURIA/KeyLab_Essential_MK3_88-MAIN7.jpg",
+        "https://ai.esmplus.com/samadni/ARTURIA/KeyLab_Essential_MK3_88-MAIN8.jpg"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-08-31T16:17:15.301+09:00",
+    "checked_at": "2026-09-07T05:45:31+00:00",
+    "checked_epoch": 1788759931
+  },
+  "smartstore-12456590675": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20250826_296/1756203185622naNUs_JPEG/90336033417631188_15290492.jpg"
+      ],
+      "detail": [
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250805/b1142b2c47666f01978bc8b13d0f4a0c.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250805/97d3c384fc43e76b8d07a809368f28e0.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4200,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-01T12:19:19.788+09:00",
+    "checked_at": "2026-09-07T05:48:54+00:00",
+    "checked_epoch": 1788760134
+  },
+  "smartstore-11900166879": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20250529_1/1748489103094J3KMd_JPEG/3122325142111848_450722638.jpg"
+      ],
+      "detail": [
+        "https://gi.esmplus.com/clmedia/ZGC/PD-FW50.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-02T18:24:27.925+09:00",
+    "checked_at": "2026-09-07T05:53:03+00:00",
+    "checked_epoch": 1788760383
+  },
+  "smartstore-11237311469": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20241211_127/1733920483751Ar9rN_JPEG/48936148340545203_1377543218.jpg"
+      ],
+      "detail": [
+        "https://media.gaunet.co.kr/godox/acc/RFT-21W.jpg"
+      ]
+    },
+    "description_text": "​\n​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-08-24T11:55:57.691+09:00",
+    "checked_at": "2026-09-07T05:56:25+00:00",
+    "checked_epoch": 1788760585
+  },
+  "smartstore-8541160089": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20230513_232/16839614555978edPx_JPEG/17988777519905890_1011117487.jpg"
+      ],
+      "detail": [
+        "https://www.clmedia.co.kr/data/editor/goods/1/2019/08/1092_73c003affca6bd71aedbeb073e0c09ec1557313.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2025-12-18T23:50:18.388+09:00",
+    "checked_at": "2026-09-07T06:02:34+00:00",
+    "checked_epoch": 1788760954
+  },
+  "smartstore-8536846364": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20230512_97/1683878373262F9mUB_JPEG/17905695185656044_501514482.jpg"
+      ],
+      "detail": [
+        "https://www.clmedia.co.kr/data/editor/goods/1/2017/12/399_13de502533ae539e2fa47300bf89c97f1437232.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2025-12-18T23:50:18.310+09:00",
+    "checked_at": "2026-09-07T06:03:19+00:00",
+    "checked_epoch": 1788760999
+  },
+  "smartstore-8347639031": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20230404_97/1680613823411IkAf3_JPEG/81749666099249256_850338377.jpg"
+      ],
+      "detail": [
+        "https://cdn.imweb.me/upload/S2020100856a601720ff3b/d796f533c503b.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [
+      "색상"
+    ],
+    "options": [
+      {
+        "name": "화이트",
+        "additional_price": 0
+      },
+      {
+        "name": "실버",
+        "additional_price": 0
+      },
+      {
+        "name": "투과",
+        "additional_price": 0
+      }
+    ],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-06-17T10:44:19.737+09:00",
+    "checked_at": "2026-09-07T06:06:26+00:00",
+    "checked_epoch": 1788761186
+  },
+  "smartstore-8325638364": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20230331_85/1680250526889xtDe6_JPEG/81386415588120444_1069904426.jpg"
+      ],
+      "detail": [
+        "https://cdn.imweb.me/upload/S2020100856a601720ff3b/23c78fa857f8e.png"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-06-17T10:44:19.737+09:00",
+    "checked_at": "2026-09-07T06:06:36+00:00",
+    "checked_epoch": 1788761196
+  },
+  "smartstore-7140040671": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20220905_194/1662362098590BMQjb_JPEG/63497882289344842_1338354062.jpg"
+      ],
+      "detail": [
+        "https://cdn.imweb.me/upload/S2020100856a601720ff3b/7a06abf4c8547.jpeg",
+        "https://cdn.imweb.me/upload/S2020100856a601720ff3b/563270e23578a.jpeg"
+      ]
+    },
+    "description_text": "구성품\nLT-120 // 1ea\nCase // 1ea\n​\n​\n​\n​\n​\n​",
+    "option_groups": [
+      "대여시간"
+    ],
+    "options": [
+      {
+        "name": "12시간",
+        "additional_price": 0
+      },
+      {
+        "name": "24시간",
+        "additional_price": 5000
+      }
+    ],
+    "shipping": {
+      "type": "FREE",
+      "base_fee": 0,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-07-13T13:10:32.521+09:00",
+    "checked_at": "2026-09-07T06:11:06+00:00",
+    "checked_epoch": 1788761466
+  },
+  "smartstore-6053467034": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20211130_197/163825697983337OMe_JPEG/39392868493738065_660034853.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20211130_53/1638256990190nXVFG_GIF/A10.gif",
+        "https://shop-phinf.pstatic.net/20211130_138/1638256989618KbK5h_JPEG/A11.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2025-11-19T14:02:28.952+09:00",
+    "checked_at": "2026-09-07T06:13:15+00:00",
+    "checked_epoch": 1788761595
+  },
+  "smartstore-5981159668": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20211103_205/1635920160958O6fOu_JPEG/37056049669019644_1122258369.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20211103_172/1635920168993aXOEt_JPEG/1364975968.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-08-25T22:46:16.996+09:00",
+    "checked_at": "2026-09-07T06:13:55+00:00",
+    "checked_epoch": 1788761635
+  },
+  "smartstore-4919337363": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20200921_194/1600675696952TN2lo_JPEG/1811524775449832_669449906.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20200921_232/160067563708648GWg_JPEG/02_TetherPro_USB_to_USB-C.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-08-25T21:35:59.385+09:00",
+    "checked_at": "2026-09-07T06:19:36+00:00",
+    "checked_epoch": 1788761976
+  }
+}

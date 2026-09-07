@@ -1,0 +1,761 @@
+{
+  "smartstore-13740754950": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260901_125/17882552598510UFNk_JPEG/0080950002633.jpg"
+      ],
+      "detail": [
+        "https://www.plthink.com/shopimages/plthink/0080950002633.jpg?1769063950"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-01T18:34:20.912+09:00",
+    "checked_at": "2026-09-07T05:28:44+00:00",
+    "checked_epoch": 1788758924
+  },
+  "smartstore-13740727148": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260901_213/1788253253061ODofK_PNG/a5a6f4aa-fe2c-4334-bc4a-e4b0c121c301.png"
+      ],
+      "detail": [
+        "https://cdn.saeki.co.kr/malluploadfile/public/images/item/2023/202301/a5a6f4aa-fe2c-4334-bc4a-e4b0c121c301.png"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 3000,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-01T18:06:49.885+09:00",
+    "checked_at": "2026-09-07T05:30:35+00:00",
+    "checked_epoch": 1788759035
+  },
+  "smartstore-13740669867": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260901_232/17882496023037FKEl_JPEG/0080310004312.jpg"
+      ],
+      "detail": [
+        "https://www.plthink.com/shopimages/plthink/0080310004312.jpg?1768798580"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-01T17:00:03.167+09:00",
+    "checked_at": "2026-09-07T05:32:54+00:00",
+    "checked_epoch": 1788759174
+  },
+  "smartstore-13740669758": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260901_140/1788249596083gFu0k_JPEG/0080310003862.jpg"
+      ],
+      "detail": [
+        "https://www.plthink.com/shopimages/plthink/0080310003862.jpg?1768798708"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [
+      "스피드링"
+    ],
+    "options": [
+      {
+        "name": "선택 안함",
+        "additional_price": 0
+      },
+      {
+        "name": "SRBW(오로라/보웬)",
+        "additional_price": 25000
+      },
+      {
+        "name": "SRBP(브론칼라)",
+        "additional_price": 25000
+      },
+      {
+        "name": "SREC(엘린크롬)",
+        "additional_price": 25000
+      },
+      {
+        "name": "SRPF(프로포토)",
+        "additional_price": 66000
+      }
+    ],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-01T16:59:57.379+09:00",
+    "checked_at": "2026-09-07T05:33:13+00:00",
+    "checked_epoch": 1788759193
+  },
+  "smartstore-13740634151": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260901_248/1788247630771EV9Ms_PNG/0d8f5303038eaa5c5103d45ea34356ee.gif"
+      ],
+      "detail": [
+        "https://ecimg.cafe24img.com/pg821b55468729089/hipplus/web/product/medium/20240705/0d8f5303038eaa5c5103d45ea34356ee.gif"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-01T16:33:52.572+09:00",
+    "checked_at": "2026-09-07T05:34:16+00:00",
+    "checked_epoch": 1788759256
+  },
+  "smartstore-13740393642": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260901_67/1788231081159OVr0f_JPEG/bea836507c7b8931699fb25832ee2860.jpg"
+      ],
+      "detail": [
+        "https://gi.esmplus.com/thecamera/take/thecamera/dowon/thecamera_cs.jpg",
+        "https://gi.esmplus.com/thecamera/take/thecamera/dowon/get_visit.jpg",
+        "https://www.clmedia.co.kr/data/editor/goods/1/2022/02/2300_ffdc94a7d4be08c8e9a0a172b17450ba1428582.jpg",
+        "https://gentree.co.kr/web/season2_skin/skin2/product/v-mount-battery/26a-390w/deail-01.jpg",
+        "https://gentree.co.kr/web/season2_skin/skin2/product/v-mount-battery/26a-390w/deail-02.jpg",
+        "https://gentree.co.kr/web/season2_skin/skin2/product/v-mount-battery/26a-390w/deail-03.jpg",
+        "https://gentree.co.kr/web/season2_skin/skin2/product/v-mount-battery/26a-390w/deail-04.jpg",
+        "https://gentree.co.kr/web/season2_skin/skin2/product/v-mount-battery/26a-390w/deail-05.jpg",
+        "https://clmedia.co.kr/data/editor/goods/1/2022/02/2308_9461ad232b6734dd1ee7131a8c20edd61520194.gif",
+        "https://clmedia.co.kr/data/editor/goods/1/2022/02/2308_c54604816a05e6b26993f29436b88dd31520204.jpg",
+        "https://clmedia.co.kr/data/editor/goods/1/2022/02/2308_0e401176f2f9f5fad61b9b713110e9391520214.gif",
+        "https://ai.esmplus.com/thecamera75/thecamera_info/thecamera_delivery_2.jpg"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-01T11:51:22.350+09:00",
+    "checked_at": "2026-09-07T05:37:36+00:00",
+    "checked_epoch": 1788759456
+  },
+  "smartstore-13739631302": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260831_204/1788161203383LxcnA_JPEG/d167d4c6cb7e66f506b27eda8e00190d.jpg"
+      ],
+      "detail": [
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/upload/NNEditor/20250707/ML-SP-36_DETAIL.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/upload/NNEditor/20250710/ML-SP19K2C26k2C36k_ED8CA8ED82B9EBA6ACEC8AA4ED8AB8.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_01.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_02.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_03.jpg",
+        "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_04.jpg"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-08-31T16:45:32.048+09:00",
+    "checked_at": "2026-09-07T05:43:07+00:00",
+    "checked_epoch": 1788759787
+  },
+  "smartstore-12558362687": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20250405_58/1743850496859luJmo_PNG/20312941705030956_1458745241.png"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20251219_52/1766119746374PNsyj_JPEG/14.jpg"
+      ]
+    },
+    "description_text": "구성품\nR6M2 // 1ea\nSandisk Extreme Pro SD 128gb // 1ea\nSD Card Reader // 1ea\nBattery // 2ea\nBag // 1ea\nRF100500 // 1ea\n​",
+    "option_groups": [
+      "대여시간"
+    ],
+    "options": [
+      {
+        "name": "12시간",
+        "additional_price": 0
+      },
+      {
+        "name": "24시간",
+        "additional_price": 5000
+      }
+    ],
+    "shipping": {
+      "type": "FREE",
+      "base_fee": 0,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-07-13T13:10:32.582+09:00",
+    "checked_at": "2026-09-07T05:48:45+00:00",
+    "checked_epoch": 1788760125
+  },
+  "smartstore-12171790129": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20250729_241/1753766229894UN4yi_JPEG/2580385542848993_1216995130.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20260728_107/1785224372735XsU8W_PNG/KakaoTalk_20260728_114937109.png",
+        "https://shop-phinf.pstatic.net/20260609_130/1780993601684Shgx2_PNG/%EC%82%BC%EC%95%84%EC%82%AC%EC%9A%B4%EB%93%9C_%EC%8D%B8%EB%84%A4%EC%9D%BC(%EC%A3%BC)%EB%A0%88%EC%9D%B8%EB%B3%B4%EC%9A%B0%EB%B2%A0%EB%84%A4.png",
+        "https://gi.esmplus.com/samadni/SHURE_MV/MV5-MAIN.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4200,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-07-31T13:23:22.516+09:00",
+    "checked_at": "2026-09-07T05:50:17+00:00",
+    "checked_epoch": 1788760217
+  },
+  "smartstore-12085645442": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20250710_149/1752137962659xIi8U_PNG/10972022795811699_1528707320.png"
+      ],
+      "detail": [
+        "https://cdn.imweb.me/upload/S2020100856a601720ff3b/fe66b72119114.jpeg",
+        "https://cdn.imweb.me/upload/S2020100856a601720ff3b/c50ccff84a995.jpeg",
+        "https://mwplatform.openhost.cafe24.com/web/upload/NNEditor/20250406/copy-1743926167-03.JPG"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-07-27T18:29:17.721+09:00",
+    "checked_at": "2026-09-07T05:51:14+00:00",
+    "checked_epoch": 1788760274
+  },
+  "smartstore-10087355054": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20240318_278/1710739229244mmmYk_JPEG/111875124980773796_1649443068.jpg"
+      ],
+      "detail": [
+        "https://soundpower24.openhost.cafe24.com/web/product/img/iQ10.jpg"
+      ]
+    },
+    "description_text": "구성품\nTUROBOSOUND IQ10// 1ea\nTripod // 1ea\nPower Cable // 1ea\n​\n​\n​",
+    "option_groups": [
+      "대여시간"
+    ],
+    "options": [
+      {
+        "name": "12시간",
+        "additional_price": 0
+      },
+      {
+        "name": "24시간",
+        "additional_price": 5000
+      }
+    ],
+    "shipping": {
+      "type": "FREE",
+      "base_fee": 0,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-07-13T13:10:32.582+09:00",
+    "checked_at": "2026-09-07T05:59:35+00:00",
+    "checked_epoch": 1788760775
+  },
+  "smartstore-8545853155": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20230514_112/1684045027497YpnW5_JPEG/2210150839061563_1605060350.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20200911_140/15998153974453qghl_JPEG/2790.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2025-12-18T23:50:18.460+09:00",
+    "checked_at": "2026-09-07T06:02:06+00:00",
+    "checked_epoch": 1788760926
+  },
+  "smartstore-8545565699": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20230514_245/1684039965776iC763_JPEG/2205089117959121_1140628184.jpg"
+      ],
+      "detail": [
+        "https://www.clmedia.co.kr/data/editor/goods/1/2020/06/1443_9407eefce9a1cf9b6dcf87423adea54e1555005.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2025-12-18T23:50:18.388+09:00",
+    "checked_at": "2026-09-07T06:02:21+00:00",
+    "checked_epoch": 1788760941
+  },
+  "smartstore-8542333593": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20230513_42/16839800725702oN41_JPEG/2145195910535527_1565769412.jpg"
+      ],
+      "detail": [
+        "https://www.clmedia.co.kr/data/editor/goods/1/2022/01/2265_cdc900dab6d49a4f9ffc7906db2344f51524072.jpg",
+        "https://www.clmedia.co.kr/data/editor/goods/1/2021/01/1716_4e66f3e74c97584afe10b635cacfc3211658311.png"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2025-12-18T23:50:18.388+09:00",
+    "checked_at": "2026-09-07T06:02:30+00:00",
+    "checked_epoch": 1788760950
+  },
+  "smartstore-8524492029": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20230510_3/1683692964242j78T8_JPEG/12010626066774664_1513824974.jpg"
+      ],
+      "detail": [
+        "https://gi.esmplus.com/greensag/item%20intro%20nomal.jpg",
+        "https://www.greenshop.co.kr/data/editor/1409/c048900a1b1a16fa72677ab99c96531b_1410776063.41.jpg"
+      ]
+    },
+    "description_text": "​\n​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-02T20:39:25.004+09:00",
+    "checked_at": "2026-09-07T06:03:48+00:00",
+    "checked_epoch": 1788761028
+  },
+  "smartstore-8522195357": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20230509_134/1683637920655L7Y9G_JPEG/1803043994804828_1379635104.jpg"
+      ],
+      "detail": [
+        "https://gi.esmplus.com/greensag/item%20intro%20nomal.jpg",
+        "https://www.greenshop.co.kr/data/editor/1412/mobile_c048900a1b1a16fa72677ab99c96531b_1417397439.48.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-02T20:39:39.119+09:00",
+    "checked_at": "2026-09-07T06:04:55+00:00",
+    "checked_epoch": 1788761095
+  },
+  "smartstore-8522118991": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20230509_113/1683636147027rP2vh_JPEG/1801270368233715_1505911434.jpg"
+      ],
+      "detail": [
+        "https://gi.esmplus.com/greensag/item%20intro%20nomal.jpg",
+        "https://www.greenshop.co.kr/data/editor/1412/mobile_c048900a1b1a16fa72677ab99c96531b_1417599865.51.jpg"
+      ]
+    },
+    "description_text": "​\n​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-02T20:39:39.119+09:00",
+    "checked_at": "2026-09-07T06:05:05+00:00",
+    "checked_epoch": 1788761105
+  },
+  "smartstore-8521992772": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20230509_162/1683632550949OUSFv_JPEG/8739179267997358_126019601.jpg"
+      ],
+      "detail": [
+        "https://gi.esmplus.com/greensag/item%20intro%20nomal.jpg",
+        "https://www.greenshop.co.kr/data/editor/1412/mobile_c048900a1b1a16fa72677ab99c96531b_1417602479.07.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-02T20:39:39.119+09:00",
+    "checked_at": "2026-09-07T06:05:24+00:00",
+    "checked_epoch": 1788761124
+  },
+  "smartstore-8390039513": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20230418_74/1681787941989opFU1_PNG/31271549167762278_198262283.png"
+      ],
+      "detail": [
+        "https://image.plthink.com/XTAR/PD45II/01.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-03-22T16:31:30.615+09:00",
+    "checked_at": "2026-09-07T06:06:12+00:00",
+    "checked_epoch": 1788761172
+  },
+  "smartstore-8357256614": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20230406_60/1680759716107rXSWg_JPEG/81895558795299895_1910324574.jpg"
+      ],
+      "detail": [
+        "https://cdn.imweb.me/upload/S2020100856a601720ff3b/76044b7b8a6ae.png"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-06-17T10:44:19.737+09:00",
+    "checked_at": "2026-09-07T06:06:20+00:00",
+    "checked_epoch": 1788761180
+  },
+  "smartstore-8285885670": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20230323_41/1679571165492T7btK_JPEG/80706945217221634_686782260.jpg"
+      ],
+      "detail": [
+        "https://ai.esmplus.com/kppshop/12_TOKINACINEMA/VISTAPRIME/135mmT15/Tokina_cinema_vista_prime_lens_135mm_T15_01.jpg",
+        "https://ai.esmplus.com/kppshop/12_TOKINACINEMA/VISTAPRIME/135mmT15/Tokina_cinema_vista_prime_lens_135mm_T15_02.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2025-12-18T23:53:01.134+09:00",
+    "checked_at": "2026-09-07T06:06:41+00:00",
+    "checked_epoch": 1788761201
+  },
+  "smartstore-8241082973": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20230315_20/1678850219705Se1mN_JPEG/79986047528614460_1199583887.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20230315_275/167885023809324IGb_JPEG/mco_04.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2025-12-18T23:53:01.134+09:00",
+    "checked_at": "2026-09-07T06:07:11+00:00",
+    "checked_epoch": 1788761231
+  },
+  "smartstore-7465879033": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20221027_122/1666850303929kench_JPEG/67986146644478684_276755720.jpg"
+      ],
+      "detail": [
+        "https://benroimg.godohosting.com/product/nitecore/np-f970/nitecore_f970_detail.jpg",
+        "https://benroimg.godohosting.com/2019/product/nitecore/usn3_pro/USN3_PRO_DB.jpg"
+      ]
+    },
+    "description_text": "​\n​\n​\n​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-08-14T22:10:52.257+09:00",
+    "checked_at": "2026-09-07T06:10:03+00:00",
+    "checked_epoch": 1788761403
+  },
+  "smartstore-7441591127": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20221023_281/1666531663792ugHgE_JPEG/67667552495239037_916816133.jpg"
+      ],
+      "detail": [
+        "https://benroimg.godohosting.com/2020/product/mgf/UV_00.jpg",
+        "https://benroimg.godohosting.com/2020/product/mgf/UV_01.jpg",
+        "https://benroimg.godohosting.com/2020/product/mgf/mgUV_2.gif",
+        "https://benroimg.godohosting.com/2020/product/mgf/UV_03.jpg",
+        "https://benroimg.godohosting.com/2020/product/mgf/UV_000.jpg"
+      ]
+    },
+    "description_text": "",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2025-12-18T23:53:01.382+09:00",
+    "checked_at": "2026-09-07T06:10:54+00:00",
+    "checked_epoch": 1788761454
+  },
+  "smartstore-6053457057": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20211130_263/1638256730427arT8r_JPEG/39392564246211060_34435686.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20211130_210/1638256736439ELYES_JPEG/A16.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2025-11-19T14:02:28.950+09:00",
+    "checked_at": "2026-09-07T06:13:16+00:00",
+    "checked_epoch": 1788761596
+  },
+  "smartstore-5001477257": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20200705_12/1593937413822uoRBG_JPEG/31300802337311194_839432685.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20200701_42/1593605029729PkRtK_JPEG/matthews_com_01.jpg",
+        "https://shop-phinf.pstatic.net/20200705_172/1593937421441hYXt3_JPEG/655040.jpg",
+        "https://shop-phinf.pstatic.net/20200701_278/15936050335498Wg0m_JPEG/zz.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-02-27T15:35:18.541+09:00",
+    "checked_at": "2026-09-07T06:16:38+00:00",
+    "checked_epoch": 1788761798
+  },
+  "smartstore-4970140267": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20200612_242/1591961447503rcsOd_JPEG/29321282039440719_1343493167.jpg"
+      ],
+      "detail": [
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_01.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_02.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_03.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_04.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_05.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_06.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_07.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_08.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_09.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_10.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_11.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_12.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_13.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_14.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_15.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_16.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_17.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_18.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_19.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_20.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_21.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_22.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_23.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_24.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_25.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_26.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_27.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_28.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_29.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_30.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_31.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_32.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/_contents_img/Avenger_A2025F_33.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [
+      "옵션"
+    ],
+    "options": [
+      {
+        "name": "A2025F C-Stand 25 SILVER",
+        "additional_price": 0
+      },
+      {
+        "name": "A2025FCB C-Stand 25 BLACK",
+        "additional_price": 6000
+      }
+    ],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2025-11-19T14:03:39.168+09:00",
+    "checked_at": "2026-09-07T06:18:25+00:00",
+    "checked_epoch": 1788761905
+  },
+  "smartstore-4926962204": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20200512_25/1589272654758wICit_JPEG/26632489307180286_1951442976.jpg"
+      ],
+      "detail": [
+        "https://www.fomex.co.kr/Detail_page/Kupo/KCP-220.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-01T09:59:12.343+09:00",
+    "checked_at": "2026-09-07T06:19:06+00:00",
+    "checked_epoch": 1788761946
+  },
+  "smartstore-4921051371": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20200507_143/1588850558821MAbG9_JPEG/26212101454166737_916207199.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20200507_255/1588850566024z6aYO_JPEG/55_Rock_Solid_Master_Articulating_Arm.jpg"
+      ]
+    },
+    "description_text": "​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-08-25T21:35:59.385+09:00",
+    "checked_at": "2026-09-07T06:19:22+00:00",
+    "checked_epoch": 1788761962
+  }
+}

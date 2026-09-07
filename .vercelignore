@@ -8,3 +8,9 @@ data/taxonomy_rainbowshop.md
 .assetsignore
 _카테고리_리스트업.txt
 _명령어메모
+
+RUNBOOK.md
+data/catalog/sources
+data/catalog/source-details
+data/catalog/overrides.json
+data/catalog/asset-manifest.json
