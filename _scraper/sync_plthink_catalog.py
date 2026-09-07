@@ -146,7 +146,9 @@ def collect_brand(brand, checkpoint=None):
 def detail(doc, product):
     p=deepcopy(product);schema=None
     for script in doc.select('script[type="application/ld+json"]'):
-        try:obj=json.loads(script.get_text())
+        # Some source product names contain literal newlines inside JSON strings.
+        # Accept JSON string controls only; never evaluate or repair executable JS.
+        try:obj=json.loads(script.get_text(),strict=False)
         except (ValueError,TypeError):continue
         candidates=obj if isinstance(obj,list) else obj.get('@graph',[obj])
         schema=next((o for o in candidates if o.get('@type')=='Product'),schema)
@@ -154,7 +156,8 @@ def detail(doc, product):
         raise RuntimeError('PLTHINK verified detail missing: '+p['id'])
     if parse_qs(urlparse(str(schema.get('@id',''))).query).get('branduid') != [str(p['source_id'])]:
         raise RuntimeError('PLTHINK detail identity mismatch: '+p['id'])
-    p['name']=clean(schema['name'])
+    p['name']=clean(BeautifulSoup(schema['name'],'html.parser').get_text(' ',strip=True))
+    if not p['name']:raise RuntimeError('PLTHINK detail name missing: '+p['id'])
     if '\ufffd' in p['name']:raise ValueError('PLTHINK detail name contains invalid replacement characters')
     offer=schema.get('offers') or {}
     if isinstance(offer,list):offer=offer[0] if offer else {}
@@ -165,12 +168,18 @@ def detail(doc, product):
         p['supplier_status']=availability;p['status']='inquiry'
     else:p['supplier_status']='unknown';p['status']='inquiry'
     # Supplier amounts remain source facts; they do not establish our discount.
-    if offer.get('price') is not None:p['sale_price']=int(float(offer['price']))
+    if offer.get('price') is not None:
+        amount=float(offer['price'])
+        if not amount.is_integer() or amount<0:raise RuntimeError('PLTHINK detail price invalid: '+p['id'])
+        p['source_sale_price']=int(amount)
+        # MakeShop encodes price-on-request service listings as price 0.
+        # Preserve the source fact without advertising a free product.
+        p['sale_price']=int(amount) if amount>0 else None
     original=doc.select_one('.table-opt strike')
     p['source_original_price']=number(original.get_text()) if original else p['sale_price']
     p['price']=p['sale_price']
     p['source_sku']=schema.get('sku');p['source_mpn']=schema.get('mpn')
-    p['description_text']=clean(schema.get('description',''))
+    p['description_text']=clean(BeautifulSoup(schema.get('description',''),'html.parser').get_text(' ',strip=True))
     p['images']['main']=list(dict.fromkeys(absolute(i['src']) for i in doc.select('.thumb img[src]')))
     body=doc.select_one('.detail-con-img')
     if body is None:raise RuntimeError('PLTHINK description region missing: '+p['id'])
@@ -214,6 +223,7 @@ def _collect_plthink(checkpoint):
     completed={}
     for listing in products.values():
         p=checkpoint.detail(listing)
+        if p and (p.get('price')==0 or re.search(r'<[^>]+>',p.get('name',''))):p=None
         if p and (datetime.now(timezone.utc)-datetime.fromisoformat(p['detail_checked_at'])).total_seconds()>12*3600:p=None
         if p is None:
             p=detail(page(listing['source_url']),listing)

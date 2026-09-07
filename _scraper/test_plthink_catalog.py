@@ -54,5 +54,19 @@ class PLThinkImportTests(unittest.TestCase):
             self.assertEqual(get.call_count,1)
             self.assertGreater(json.loads(source.RATE_STATE.read_text())['retry_not_before'],source.time.time())
 
+    def test_literal_newlines_and_html_in_service_names_do_not_block_the_catalogue(self):
+        schema={'@type':'Product','@id':'https://www.plthink.com/shop/shopdetail.html?branduid=123','name':'<font color="blue">[스튜디오 시공]</font>\n오픈 스튜디오','description':'<b>설치 상담</b>\n일정 확인','offers':{'price':0,'availability':'https://schema.org/InStock'}}
+        raw=json.dumps(schema,ensure_ascii=False).replace('\\n','\n')
+        doc=BeautifulSoup('<script type="application/ld+json">'+raw+'</script><div class="thumb"><img src="/p.jpg"></div><div class="table-opt"><h4>가격문의</h4></div><div class="detail-con-img"><img src="/studio.jpg"></div>','lxml')
+        p=source.detail(doc,{'id':'plthink-123','source_id':'123','sale_price':None,'images':{}})
+        self.assertEqual(p['name'],'[스튜디오 시공] 오픈 스튜디오');self.assertEqual(p['description_text'],'설치 상담 일정 확인')
+        self.assertIsNone(p['price']);self.assertIsNone(p['sale_price']);self.assertEqual(p['source_sale_price'],0);self.assertEqual(p['status'],'inquiry')
+
+    def test_relaxed_string_control_parser_still_rejects_other_product_identity(self):
+        schema={'@type':'Product','@id':'https://www.plthink.com/shop/shopdetail.html?branduid=999','name':'다른\n상품','offers':{'price':100}}
+        doc=BeautifulSoup('<script type="application/ld+json">'+json.dumps(schema).replace('\\n','\n')+'</script><div class="thumb"><img src="/p.jpg"></div>','lxml')
+        with self.assertRaisesRegex(RuntimeError,'identity mismatch'):
+            source.detail(doc,{'id':'plthink-123','source_id':'123','images':{}})
+
 
 if __name__=='__main__':unittest.main()

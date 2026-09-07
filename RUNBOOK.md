@@ -293,3 +293,10 @@ python3 _scraper/gift_supplier_registry.py lookup --product 187684 --output ../_
 관리자/주문 생성 페이지는 `_scraper/build_catalog.py`가 생성한다. `shop_sync.managed_files()`와 `CODE`에 등록해 이후 PLTHINK/일일 카탈로그 배포에도 유지한다. 빌더를 수정한 뒤 기존 PLTHINK 워커는 체크포인트를 보존하면서 재시작해야 새 빌더를 사용한다.
 
 비공개 설정은 프로젝트 밖 `_Site/_private/nadaun-shop/commerce/`에 두며 Git·정적 파일·R2에 올리지 않는다. `commerce_setup.cjs check`는 설정 이름/검증 여부만 보고한다. 자동 배포 시 이 private 설정이나 공장 정보 저장소를 수집하지 않는다.
+
+
+### 2026-09-08 PLTHINK 상세 수집 중단 복구
+
+05:09 KST `plthink-1919281`의 Product JSON-LD 이름/설명 문자열에 이스케이프되지 않은 줄바꿈과 HTML font 태그가 들어 있어 엄격 JSON 파서가 거절했다. 1,907개 체크포인트를 보존했다. JSON 문자열 제어 문자만 허용하는 `json.loads(strict=False)`를 사용하고 이름/설명은 HTML 텍스트로 정규화한다. 실제 원본 상품번호 대조는 그대로 유지한다. JS 평가나 임의 필드 추측은 하지 않는다.
+
+이 상품은 화면에 가격문의라고 표시하지만 구조화 데이터가 price 0이므로 원본 0은 `source_sale_price`에 보관하고 공개 가격은 null(가격문의)로 유지한다. 이전 체크포인트의 0원/HTML 이름만 재조회하며 나머지 정상 검증 상품은 재사용한다. 실제 실패 HTML과 PLTHINK/체크포인트 테스트 12개로 확인했다. 이후 파트너 워커를 최신 커밋으로 재시작하고 `.sync-state/plthink/commerce-reload-verified.json`에서 같은 세대/기존 ID 보존/상세 건수 증가를 확인한다.
