@@ -68,5 +68,25 @@ class PLThinkImportTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError,'identity mismatch'):
             source.detail(doc,{'id':'plthink-123','source_id':'123','images':{}})
 
+    def test_source_apostrophe_escape_preserves_actual_product_dimensions(self):
+        schema={'@type':'Product','@id':'https://www.plthink.com/shop/shopdetail.html?branduid=123','name':"플랙 4'x4' 확산판",'offers':{'price':1000}}
+        raw=json.dumps(schema,ensure_ascii=False).replace("'","\\'")
+        doc=BeautifulSoup('<script type="application/ld+json">'+raw+'</script><div class="thumb"><img src="/p.jpg"></div><div class="detail-con-img">확산판</div>','lxml')
+        p=source.detail(doc,{'id':'plthink-123','source_id':'123','sale_price':None,'images':{}})
+        self.assertEqual(p['name'],"플랙 4'x4' 확산판");self.assertEqual(p['price'],1000)
+
+    def test_single_invalid_detail_does_not_prevent_later_valid_products_from_being_saved(self):
+        brands=[{'id':'1','name':'브랜드'}]
+        rows={str(n):{'id':'plthink-'+str(n),'source_id':str(n),'brand_category_ids':['1'],'source_url':source.BASE+'/shop/shopdetail.html?branduid='+str(n)} for n in (1,2)}
+        valid={**rows['2'],'detail_status':'verified','detail_checked_at':source.stamp()}
+        with tempfile.TemporaryDirectory() as tmp:
+            cp=source.Checkpoint(Path(tmp)/'checkpoint.db')
+            try:
+                with patch.object(source,'WORK',Path(tmp)),patch.object(source,'OUT',Path(tmp)),patch.object(source,'page'),patch.object(source,'brand_menu',return_value=brands),patch.object(source,'collect_brand',return_value=(rows,[{'id':'1'}],{})),patch.object(source,'detail',side_effect=[RuntimeError('format changed'),valid]),patch.object(source,'report'):
+                    with self.assertRaisesRegex(RuntimeError,'1 details need review'):source._collect_plthink(cp)
+                self.assertIsNotNone(cp.detail(rows['2']));self.assertIsNone(cp.detail(rows['1']))
+                self.assertFalse((Path(tmp)/'plthink.json').exists())
+            finally:cp.close()
+
 
 if __name__=='__main__':unittest.main()

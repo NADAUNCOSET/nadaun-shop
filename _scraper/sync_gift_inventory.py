@@ -147,7 +147,7 @@ class Source:
             cooldown.write_text(json.dumps({'blocked_at': stamp(), 'retry_not_before': time.time()+max(3600, wait)}))
             raise RuntimeError('Gift source limited requests; scan paused without publishing')
         if response.status_code != 200 or not response.content:
-            raise RuntimeError('Gift source response is unavailable; existing inventory preserved')
+            raise RuntimeError(f'Gift source response is unavailable (HTTP {response.status_code}, {len(response.content)} bytes); existing inventory preserved')
         return document(response.text)
 
 

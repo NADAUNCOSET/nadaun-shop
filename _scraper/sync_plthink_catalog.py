@@ -148,7 +148,12 @@ def detail(doc, product):
     for script in doc.select('script[type="application/ld+json"]'):
         # Some source product names contain literal newlines inside JSON strings.
         # Accept JSON string controls only; never evaluate or repair executable JS.
-        try:obj=json.loads(script.get_text(),strict=False)
+        try:
+            raw=script.get_text()
+            # MakeShop also applies PHP-style \' escaping to inch/foot names.
+            # Remove only an odd, JSON-invalid escape before an apostrophe.
+            raw=re.sub(r"\\+(?=')",lambda m:'\\'*(len(m[0])-len(m[0])%2),raw)
+            obj=json.loads(raw,strict=False)
         except (ValueError,TypeError):continue
         candidates=obj if isinstance(obj,list) else obj.get('@graph',[obj])
         schema=next((o for o in candidates if o.get('@type')=='Product'),schema)
@@ -220,16 +225,26 @@ def _collect_plthink(checkpoint):
     previous=OUT/'plthink.json'
     if previous.exists() and len(products)<json.loads(previous.read_text())['product_count']*.85:
         raise RuntimeError('PLTHINK count dropped more than 15%; review before publishing')
-    completed={}
+    completed={};failures={};consecutive_errors=0
     for listing in products.values():
         p=checkpoint.detail(listing)
         if p and (p.get('price')==0 or re.search(r'<[^>]+>',p.get('name',''))):p=None
         if p and (datetime.now(timezone.utc)-datetime.fromisoformat(p['detail_checked_at'])).total_seconds()>12*3600:p=None
         if p is None:
-            p=detail(page(listing['source_url']),listing)
+            doc=page(listing['source_url'])  # Transport/rate limits still stop the source.
+            try:p=detail(doc,listing)
+            except (ValueError,RuntimeError,KeyError,TypeError) as exc:
+                failures[listing['id']]={'checked_at':stamp(),'error':type(exc).__name__+': '+str(exc)}
+                save_json(WORK/'detail-errors.json',{'generation':checkpoint.run,'failures':failures,'published':False})
+                consecutive_errors+=1
+                if consecutive_errors>=3:raise RuntimeError('PLTHINK consecutive detail format failures; verified records preserved') from exc
+                continue
             checkpoint.save_detail(listing,p)
+        consecutive_errors=0
         completed[p['id']]=p
         if len(completed)%25==0:report('details',len(brands),len(brands),len(products),len(completed))
+    save_json(WORK/'detail-errors.json',{'generation':checkpoint.run,'failures':failures,'published':False})
+    if failures:raise RuntimeError(f'PLTHINK {len(failures)} details need review; all other verified records preserved')
     # Re-read every brand count and first page before publishing the generation.
     changed=[]
     for brand,audit in zip(brands,coverage):
