@@ -14,6 +14,7 @@ import sys
 import tempfile
 import time
 from urllib.parse import urlencode
+from bs4 import BeautifulSoup
 from sync_shop_sources import ROOT,OUT,collect_smartstore,collect_imweb_dji,request,save_json,stamp
 from sync_kpp_catalog import collect as collect_kpp
 from enrich_shop_sources import collect as enrich
@@ -68,6 +69,15 @@ def verify_live(revision):
             if live.get('revision')==revision:
                 home=request('GET',SITE+'/',params={'verify':revision}).text
                 if revision not in home:raise RuntimeError('Live HTML does not match the catalogue revision')
+                catalog=json.loads((ROOT/'data/catalog/catalog.json').read_text())
+                product=catalog['products'][0]
+                page=BeautifulSoup(request('GET',SITE+'/item.html',params={'id':product['id']}).text,'lxml')
+                if not page.h1 or page.h1.get_text()!=product['name']:
+                    raise RuntimeError('Live product route is not rendering its server-side product content')
+                for selector in ('meta[name="description"]','meta[property="og:description"]'):
+                    tag=page.select_one(selector)
+                    if not tag or not 0<len(tag.get('content',''))<=80:
+                        raise RuntimeError('Live product SEO description is missing or exceeds 80 characters')
                 return {'commit':head,'deployment':match['uid'],'revision':revision,'verified_at':stamp(),'site':SITE}
         time.sleep(12)
     raise RuntimeError('Vercel/live verification timed out; last good deployment remains available')
