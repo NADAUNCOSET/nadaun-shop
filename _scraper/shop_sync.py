@@ -23,8 +23,8 @@ from build_catalog import build
 
 STATE=ROOT/'_scraper/.sync-state'
 SITE='https://shop.nadaun.co'
-GENERATED=['data/catalog','assets/shop/thumbnails','brands','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','terms.html','privacy.html','shipping.html','catalog-sitemap.xml']
-CODE=['_scraper/tests','_scraper/test_shop_catalog.py','api','assets/shop/cart.js','_scraper/storefront_pages.py','_scraper/sync_shop_sources.py','_scraper/sync_kpp_catalog.py','_scraper/enrich_shop_sources.py','_scraper/build_catalog.py','_scraper/catalog_dedup.py','_scraper/shop_sync.py','_scraper/prepare_shop_assets.py','_scraper/shop_templates','assets/shop/shop.js','assets/shop/shop.css','data/catalog/overrides.json','data/catalog/dedup-rules.json','vercel.json']
+GENERATED=['data/catalog','assets/shop/thumbnails','brands','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','terms.html','privacy.html','shipping.html','services.html','catalog-sitemap.xml']
+CODE=['_scraper/catalog_seo.py','assets/shop/catalog-tools.js','_scraper/tests','_scraper/test_shop_catalog.py','api','assets/shop/cart.js','_scraper/storefront_pages.py','_scraper/sync_shop_sources.py','_scraper/sync_kpp_catalog.py','_scraper/enrich_shop_sources.py','_scraper/build_catalog.py','_scraper/catalog_dedup.py','_scraper/shop_sync.py','_scraper/prepare_shop_assets.py','_scraper/shop_templates','assets/shop/shop.js','assets/shop/shop.css','data/catalog/overrides.json','data/catalog/dedup-rules.json','vercel.json']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
@@ -39,7 +39,7 @@ def api(path):return json.loads(command('vercel','api',path,'--raw'))
 
 def managed_files():
     """Stage exact generated files, never an arbitrary file in those folders."""
-    files=['index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','terms.html','privacy.html','shipping.html','catalog-sitemap.xml',
+    files=['index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','terms.html','privacy.html','shipping.html','services.html','catalog-sitemap.xml',
            'data/catalog/catalog.json','data/catalog/sync-status.json','data/catalog/asset-manifest.json','data/catalog/dedup-audit.json']
     for source in ('smartstore','imweb-dji','kpp'):
         files.append('data/catalog/sources/'+source+'.json')
@@ -78,6 +78,11 @@ def verify_live(revision):
                     tag=page.select_one(selector)
                     if not tag or not 0<len(tag.get('content',''))<=80:
                         raise RuntimeError('Live product SEO description is missing or exceeds 80 characters')
+                if not page.select_one('.product-tags'):
+                    raise RuntimeError('Live product discovery links are missing')
+                guide=BeautifulSoup(request('GET',SITE+'/services.html',params={'verify':revision}).text,'lxml')
+                if not guide.select_one('#production a[href="https://collective.nadaun.co/"]') or revision not in str(guide):
+                    raise RuntimeError('Live service guide is missing or stale')
                 return {'commit':head,'deployment':match['uid'],'revision':revision,'verified_at':stamp(),'site':SITE}
         time.sleep(12)
     raise RuntimeError('Vercel/live verification timed out; last good deployment remains available')
@@ -128,7 +133,7 @@ def run(publish=True,existing=False):
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_shop_catalog.py')
         command('node','--check','assets/shop/shop.js')
         command('node','--check','assets/shop/cart.js')
-        command('node','--test','_scraper/tests/product-server.test.cjs')
+        command('node','--test','_scraper/tests/product-server.test.cjs','_scraper/tests/catalog-tools.test.mjs','_scraper/tests/discovery.test.cjs')
         if publish:return publish_existing()
     except Exception as e:
         save_json(STATE/'last-failure.json',{'failed_at':stamp(),'error':str(e)})

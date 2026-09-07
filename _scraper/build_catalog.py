@@ -8,11 +8,12 @@ import html
 import json
 from pathlib import Path
 import re
-from urllib.parse import quote
+from urllib.parse import quote,urljoin
 from sync_shop_sources import ROOT,OUT,clean,save_json
 from enrich_shop_sources import CACHE,shard,source_fingerprint
 from catalog_dedup import model_key,deduplicate,name_key,primary_key
 from storefront_pages import content as page_content
+from catalog_seo import product_discovery
 
 PUBLIC=ROOT/'data/catalog'
 
@@ -188,6 +189,8 @@ def build(allow_pending=False):
             } for q in family]
     dedup_audit['option_families']=family_audit
     save_json(PUBLIC/'dedup-audit.json',dedup_audit)
+    for p in public_products:
+        p['discovery']=product_discovery(p,brands[p['brand_id']],categories)
     listing_products=[p for p in public_products if p.get('listing_id',p['id'])==p['id']]
     counts=Counter(p['brand_id'] for p in listing_products)
     kind_counts=Counter((p['brand_id'],p['kind']) for p in listing_products)
@@ -206,7 +209,7 @@ def build(allow_pending=False):
           'deduplication':{'brands_checked':len(brands),'groups':dedup_audit['duplicate_group_count'],'removed':merge_count}}
     output={'meta':meta,'brands':brand_list,'categories':list(categories.values()),'products':public_products,'redirects':redirects}
     presentation=''.join(p.read_text() for pattern in ('*.html','policies/*.html') for p in sorted((ROOT/'_scraper/shop_templates').glob(pattern)))
-    presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/shop.js','assets/shop/shop.css','assets/shop/cart.js','_scraper/storefront_pages.py'))
+    presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/shop.js','assets/shop/shop.css','assets/shop/cart.js','assets/shop/catalog-tools.js','_scraper/storefront_pages.py','_scraper/catalog_seo.py','api/product.js'))
     revision=hashlib.sha256((json.dumps(output,ensure_ascii=False,sort_keys=True)+presentation).encode()).hexdigest()[:16]
     output['meta']['revision']=revision
     PUBLIC.mkdir(parents=True,exist_ok=True)
@@ -225,10 +228,11 @@ def build(allow_pending=False):
       ('checkout.html','주문서 | 나다운 샵','선택한 촬영장비의 주문 내용을 확인하세요.','checkout'),
       ('terms.html','이용약관 | 나다운 샵','나다운 샵의 상품 정보, 구매와 서비스 이용에 관한 약관입니다.','policy'),
       ('privacy.html','개인정보처리방침 | 나다운 샵','나다운 샵의 개인정보 처리 목적과 항목, 보유기간 및 권리 행사 방법을 안내합니다.','policy'),
+      ('services.html','촬영장비 구매·렌탈·협찬·사진영상 제작 안내 | 나다운 샵','카메라·조명·삼각대 구매, 서울 영등포 장비 렌탈, 협찬·브랜드 협업과 사진·영상 촬영 제작 문의를 안내합니다.','guide'),
       ('shipping.html','배송·교환·반품 안내 | 나다운 샵','상품별 배송 조건, 교환과 반품 접수, 환급 및 고객센터를 안내합니다.','policy'),
     ]:
         page=template.replace('{{TITLE}}',title).replace('{{DESCRIPTION}}',description).replace('{{CANONICAL}}','https://shop.nadaun.co/'+('' if filename=='index.html' else filename)).replace('{{MODE}}',mode).replace('{{BRAND}}','').replace('{{REVISION}}',revision)
-        body=(ROOT/'_scraper/shop_templates/policies'/filename).read_text() if mode=='policy' else page_content(mode,brand_list,public_products)
+        body=(ROOT/'_scraper/shop_templates/policies'/filename).read_text() if mode=='policy' else (ROOT/'_scraper/shop_templates/services.html').read_text() if mode=='guide' else page_content(mode,brand_list,public_products)
         page=page.replace('{{CONTENT}}',body)
         if mode in ('cart','checkout','item'):
             page=page.replace('index,follow,max-image-preview:large','noindex,follow')
@@ -238,8 +242,10 @@ def build(allow_pending=False):
         page=template.replace('{{TITLE}}',html.escape(b['name']+' 브랜드몰 | 나다운 샵')).replace('{{DESCRIPTION}}',html.escape(b['name']+' 촬영장비를 나다운 샵에서 만나보세요. 브랜드별 세부 분류와 상품 정보, 구매 상담.')).replace('{{CANONICAL}}','https://shop.nadaun.co/brands/'+b['id']+'.html').replace('{{MODE}}','catalog').replace('{{BRAND}}',b['id']).replace('{{REVISION}}',revision)
         page=page.replace('{{CONTENT}}',page_content('catalog',brand_list,public_products,b))
         (brand_dir/(b['id']+'.html')).write_text(page)
-    urls=['https://shop.nadaun.co/','https://shop.nadaun.co/catalog.html']+['https://shop.nadaun.co/brands/'+b['id']+'.html' for b in brand_list]+['https://shop.nadaun.co/'+p for p in ('terms.html','privacy.html','shipping.html')]+['https://shop.nadaun.co/item.html?id='+p['id'] for p in public_products]
-    (ROOT/'catalog-sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+html.escape(u)+'</loc></url>' for u in urls)+'</urlset>\n')
+    urls=['https://shop.nadaun.co/','https://shop.nadaun.co/catalog.html']+['https://shop.nadaun.co/brands/'+b['id']+'.html' for b in brand_list]+['https://shop.nadaun.co/'+p for p in ('terms.html','privacy.html','shipping.html','services.html')]+['https://shop.nadaun.co/item.html?id='+p['id'] for p in public_products]
+    images={'https://shop.nadaun.co/item.html?id='+p['id']:urljoin('https://shop.nadaun.co/',p['image']) for p in public_products}
+    entries=''.join('<url><loc>'+html.escape(u)+'</loc>'+('<image:image><image:loc>'+html.escape(images[u])+'</image:loc></image:image>' if u in images else '')+'</url>' for u in urls)
+    (ROOT/'catalog-sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+entries+'</urlset>\n')
     print(json.dumps(meta,ensure_ascii=False,indent=2))
     return output
 
