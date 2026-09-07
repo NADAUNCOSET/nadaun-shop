@@ -26,7 +26,11 @@ GENERATED=['data/catalog','assets/shop/thumbnails','brands','index.html','catalo
 CODE=['_scraper/sync_shop_sources.py','_scraper/sync_kpp_catalog.py','_scraper/enrich_shop_sources.py','_scraper/build_catalog.py','_scraper/shop_sync.py','_scraper/prepare_shop_assets.py','_scraper/shop_templates','assets/shop/shop.js','assets/shop/shop.css','data/catalog/overrides.json','vercel.json']
 
 def command(*args):
-    p=subprocess.run(args,cwd=ROOT,text=True,capture_output=True,timeout=180)
+    print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
+    try:
+        p=subprocess.run(args,cwd=ROOT,text=True,capture_output=True,timeout=900 if args[0]=='git' else 180)
+    except subprocess.TimeoutExpired:
+        raise RuntimeError(f'{args[0]} {args[1]} timed out; inspect NAS connectivity before retrying') from None
     if p.returncode:raise RuntimeError(f'{args[0]} {args[1]} failed: '+(p.stderr or p.stdout)[-1500:])
     return p.stdout.strip()
 
@@ -72,9 +76,12 @@ def publish_existing():
     status=json.loads((ROOT/'data/catalog/sync-status.json').read_text())
     if command('git','diff','--cached','--name-only'):raise RuntimeError('Unrelated staged changes exist; refusing an automatic commit')
     owned=managed_files()
-    command('git','diff','--check','--',*owned)
     command('git','add','--',*owned)
     staged=command('git','diff','--cached','--name-only')
+    if set(staged.splitlines())-set(owned):raise RuntimeError('Unrelated changes were staged during sync; refusing an automatic commit')
+    # Check the staged snapshot once. Re-reading every NAS file before git add
+    # doubles SMB I/O and can time out even when all source data is valid.
+    command('git','diff','--cached','--check')
     if staged:command('git','commit','-m','auto(shop): refresh verified brand catalogue')
     command('git','push','origin','HEAD:main')
     command('git','fetch','origin','main')
