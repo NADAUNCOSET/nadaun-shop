@@ -15,7 +15,7 @@ function discoveryLinks(p){return `<nav class="product-tags" aria-label="관련 
 function catalogHref(changes={}){const q=new URLSearchParams(location.search);q.delete('page');for(const [k,v]of Object.entries(changes)){v===null||v===''?q.delete(k):q.set(k,v)}const base=document.body.dataset.brand&&!('brand'in changes)?brandHref(document.body.dataset.brand):'/catalog.html';return base+(q.size?'?'+q.toString():'')}
 function empty(title,text='',link='/catalog.html',label='전체 상품 보기'){return `<div class="empty"><h2>${esc(title)}</h2><p>${esc(text)}</p><a href="${esc(link)}">${esc(label)} →</a></div>`}
 function productCard(p){const b=brandMap.get(p.brand_id);const price=money(p);const sold=p.status==='soldout';const discount=isDiscounted(p);return `<a class="product-card" href="/item.html?id=${encodeURIComponent(p.id)}"><div class="product-image"><img src="${safe(p.image)}" alt="${esc(p.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${sold?'<span class="badge">품절</span>':p.kind==='rental'?'<span class="badge rental">렌탈</span>':discount?'<span class="badge sale-badge">SALE</span>':isPromotion(p)?'<span class="badge sale-badge">PROMOTION</span>':''}</div><div class="product-brand">${esc(b?.name||'')}</div><h3 class="product-name">${esc(p.name)}</h3><p class="product-price">${discount?`<span class="price-before">${won(p.price)}원</span>`:''}${price===null?'가격 문의':`${won(price)}<small>원</small>`}</p>${p.kind==='rental'?'<p class="card-note">대여 상품 · 기간별 요금 확인</p>':p.status==='inquiry'?'<p class="card-note">구매·입고 상담</p>':''}</a>`}
-function brandTile(b){return `<a class="brand-tile" href="${brandHref(b.id)}" target="_blank" rel="noopener" aria-label="${esc(b.name)} 브랜드몰 새 창"><span class="brand-visual ${b.logo_dark?'dark':''} ${b.image_kind==='product'?'representative':''}"><img src="${safe(b.logo)}" alt="${esc(b.name)}" width="180" height="78" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="brand-label">${esc(b.name)}</span><small>${(b.purchase_count||b.rental_count).toLocaleString('ko-KR')} ${b.purchase_count?'PRODUCTS':'RENTAL'} <span aria-hidden="true">↗</span></small></a>`}
+function brandTile(b){return `<a class="brand-tile" href="${brandHref(b.id)}" target="_blank" rel="noopener" aria-label="${esc(b.name)} 브랜드몰 새 창"><span class="brand-visual brand-object"><img src="${safe(b.representative_image)}" alt="${esc(b.representative_name)}" width="400" height="400" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="brand-label">${esc(b.name)}</span><small>${(b.purchase_count||b.rental_count).toLocaleString('ko-KR')} ${b.purchase_count?'PRODUCTS':'RENTAL'} <span aria-hidden="true">↗</span></small></a>`}
 function renderHome(){
  const shown=data.brands.slice(0,18);let expanded=false;
  const toggle=document.querySelector('#all-brands'),grid=document.querySelector('#brand-grid'),input=document.querySelector('#brand-search'),status=document.querySelector('#brand-search-status');
@@ -23,15 +23,37 @@ function renderHome(){
  input.addEventListener('input',e=>{const q=normalize(e.target.value);const found=data.brands.filter(b=>normalize([b.name,...b.aliases].join(' ')).includes(q));grid.innerHTML=found.map(brandTile).join('')||'<p class="brand-no-results">일치하는 브랜드가 없습니다.</p>';status.textContent=`${found.length}개 브랜드`});
 }
 async function enhanceArtMotion(){
- if(!matchMedia('(min-width:701px) and (pointer:fine) and (prefers-reduced-motion:no-preference)').matches)return;
+ if(!matchMedia('(prefers-reduced-motion:no-preference)').matches)return;
  const load=src=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=src+'?v='+document.querySelector('meta[name="catalog-revision"]').content;script.onload=resolve;script.onerror=reject;document.head.append(script)});
  try{
   await load('/assets/shop/vendor/gsap.min.js');await load('/assets/shop/vendor/ScrollTrigger.min.js');
-  const gsap=window.gsap;gsap.registerPlugin(window.ScrollTrigger);
-  gsap.matchMedia().add('(min-width:701px) and (pointer:fine) and (prefers-reduced-motion:no-preference)',()=>{
-   gsap.to('.object-circle',{y:34,ease:'none',scrollTrigger:{trigger:'.art-hero',start:'top top',end:'bottom top',scrub:1}});
-   document.querySelectorAll('.editorial-pair>a').forEach(el=>gsap.from(el,{y:20,duration:.8,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 95%',once:true}}));
-   const target=document.querySelector('.art-object'),cursor=document.createElement('span');cursor.className='art-cursor';cursor.textContent='VIEW ↗';cursor.setAttribute('aria-hidden','true');document.body.append(cursor);
+  const gsap=window.gsap,ST=window.ScrollTrigger;gsap.registerPlugin(ST);
+  const media=gsap.matchMedia();
+  media.add('(prefers-reduced-motion:no-preference)',()=>{
+   const seen=new WeakSet(),triggers=new Set(),animations=new Set();let timer;
+   const scan=()=>{
+    for(const trigger of triggers)if(!trigger.trigger?.isConnected){trigger.kill();triggers.delete(trigger)}
+    const elements=[...main.querySelectorAll('.section-head,.brand-tile,.product-card,.editorial-pair>a,.shop-departments>a,.cart-items>li,.checkout-services>section,.service-grid>section')].filter(el=>!seen.has(el)&&!el.hidden);
+    elements.forEach(el=>seen.add(el));
+    if(elements.length)ST.batch(elements,{start:'top 96%',once:true,interval:.08,batchMax:6,onEnter:batch=>{
+     const targets=batch.filter(el=>el.isConnected&&!el.contains(document.activeElement));
+     if(!targets.length)return;
+     const tween=gsap.fromTo(targets,{y:matchMedia('(max-width:700px)').matches?16:30},{y:0,duration:.65,stagger:.06,ease:'power3.out',clearProps:'transform',overwrite:'auto',onComplete:()=>animations.delete(tween)});
+     animations.add(tween);
+    }}).forEach(t=>triggers.add(t));
+    ST.refresh();
+   };
+   const schedule=()=>{clearTimeout(timer);timer=setTimeout(scan,100)};
+   const observer=new MutationObserver(schedule);observer.observe(main,{childList:true,subtree:true});
+   document.addEventListener('shop:content-updated',schedule);scan();
+   return ()=>{clearTimeout(timer);observer.disconnect();document.removeEventListener('shop:content-updated',schedule);for(const t of triggers)t.kill();for(const a of animations){gsap.set(a.targets(),{clearProps:'transform'});a.kill()}};
+  });
+  media.add('(min-width:701px) and (pointer:fine) and (prefers-reduced-motion:no-preference)',()=>{
+   const target=document.querySelector('.art-object');if(!target)return;
+   gsap.to('.object-circle',{yPercent:14,rotation:8,ease:'none',scrollTrigger:{trigger:'.art-hero',start:'top top',end:'bottom top',scrub:1}});
+   gsap.to('.art-object>img',{yPercent:-7,rotation:-4,ease:'none',scrollTrigger:{trigger:'.art-hero',start:'top top',end:'bottom top',scrub:1}});
+   gsap.to('.gold-disc',{xPercent:-18,rotation:25,ease:'none',scrollTrigger:{trigger:'.editorial-pair',start:'top bottom',end:'bottom top',scrub:1}});
+   const cursor=document.createElement('span');cursor.className='art-cursor';cursor.textContent='VIEW ↗';cursor.setAttribute('aria-hidden','true');document.body.append(cursor);
    const move=e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';cursor.classList.add('visible');target.classList.add('has-art-cursor')};
    const hide=()=>{cursor.classList.remove('visible');target.classList.remove('has-art-cursor')};
    target.addEventListener('pointermove',move);target.addEventListener('pointerleave',hide);window.addEventListener('blur',hide);window.addEventListener('scroll',hide,{passive:true});
@@ -58,7 +80,7 @@ document.addEventListener('error',event=>{
     return;
   }
   image.style.visibility='hidden';
-  const holder=image.closest('.product-image,.gallery-main,.gallery-thumbs button');
+  const holder=image.closest('.product-image,.gallery-main,.gallery-thumbs button,.cart-image');
   if(holder){holder.classList.add('image-fallback');holder.setAttribute('aria-label','상품 이미지 준비 중')}
 },true);
 document.addEventListener('load',event=>{
@@ -68,6 +90,7 @@ document.addEventListener('load',event=>{
   const holder=image.closest('.image-fallback');
   if(holder){holder.classList.remove('image-fallback');holder.removeAttribute('aria-label')}
 },true);
-if(mode==='home')enhanceArtMotion();
 if(mode==='gift')enhanceGift();
-if(!['policy','guide','gift'].includes(mode))try{const revision=document.querySelector('meta[name="catalog-revision"]').content;const response=await fetch(`/data/catalog/${mode==='home'?'brands':'catalog'}.json?v=${revision}`);if(!response.ok)throw Error('상품 목록을 불러오지 못했습니다.');data=await response.json();brandMap=new Map(data.brands.map(b=>[b.id,b]));categoryMap=new Map((data.categories||[]).map(c=>[c.id,c]));if(mode==='item')await renderItem();else if(mode==='cart'||mode==='checkout')await renderCart(data,mode==='checkout');else if(mode==='home')renderHome();else if(mode==='categories')renderCategories();else renderCatalog();}catch(error){console.error(error);if(mode==='home'){const button=document.querySelector('#all-brands');button.disabled=true;button.textContent='브랜드 검색을 불러오지 못했습니다.';}else main.innerHTML=empty('잠시 상품을 불러오지 못했습니다.','새로고침 후 다시 확인해주세요.','https://smartstore.naver.com/rainbowbene','스마트스토어에서 상품 보기')}
+if(!['policy','guide','gift','about'].includes(mode))try{const revision=document.querySelector('meta[name="catalog-revision"]').content;const response=await fetch(`/data/catalog/${mode==='home'?'brands':'catalog'}.json?v=${revision}`);if(!response.ok)throw Error('상품 목록을 불러오지 못했습니다.');data=await response.json();brandMap=new Map(data.brands.map(b=>[b.id,b]));categoryMap=new Map((data.categories||[]).map(c=>[c.id,c]));if(mode==='item')await renderItem();else if(mode==='cart'||mode==='checkout')await renderCart(data,mode==='checkout');else if(mode==='home')renderHome();else if(mode==='categories')renderCategories();else renderCatalog();}catch(error){console.error(error);if(mode==='home'){const button=document.querySelector('#all-brands');button.disabled=true;button.textContent='브랜드 검색을 불러오지 못했습니다.';}else main.innerHTML=empty('잠시 상품을 불러오지 못했습니다.','새로고침 후 다시 확인해주세요.','https://smartstore.naver.com/rainbowbene','스마트스토어에서 상품 보기')}
+
+if(mode!=='policy')enhanceArtMotion();

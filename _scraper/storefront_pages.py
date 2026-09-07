@@ -5,9 +5,7 @@ import json
 
 
 def brand_tile(b):
-    style='brand-visual dark' if b.get('logo_dark') else 'brand-visual'
-    if b.get('image_kind')=='product':style+=' representative'
-    return f'<a class="brand-tile" href="/brands/{escape(b["id"])}.html" target="_blank" rel="noopener" aria-label="{escape(b["name"])} 브랜드몰 새 창"><span class="{style}"><img src="{escape(b["logo"])}" alt="{escape(b["name"])}" width="180" height="78" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="brand-label">{escape(b["name"])}</span><small>{b["purchase_count"] or b["rental_count"]:,} {"PRODUCTS" if b["purchase_count"] else "RENTAL"} <span aria-hidden="true">↗</span></small></a>'
+    return f'<a class="brand-tile" href="/brands/{escape(b["id"])}.html" target="_blank" rel="noopener" aria-label="{escape(b["name"])} 브랜드몰 새 창"><span class="brand-visual brand-object"><img src="{escape(b["representative_image"])}" alt="{escape(b["representative_name"])}" width="400" height="400" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="brand-label">{escape(b["name"])}</span><small>{b["purchase_count"] or b["rental_count"]:,} {"PRODUCTS" if b["purchase_count"] else "RENTAL"} <span aria-hidden="true">↗</span></small></a>'
 
 
 def gift_content():
@@ -29,7 +27,7 @@ def content(mode, brands, products, brand=None):
         links=''.join(brand_tile(b) for b in brands[:18])
         dji=next((p for p in products if p['brand_id']=='dji' and 'Action 6' in p['name'] and p['kind']!='rental'),next(p for p in products if p['brand_id']=='dji'))
         hero=next((p for p in products if p['id']=='imweb-13283'),dji)
-        selected=[next((p for p in products if p['brand_id']==bid and p['kind']!='rental' and p['status']!='soldout'),None) for bid in ['dji','leofoto','hoya','smallrig','tilta','pgytech','nanlite','godox']]
+        selected=[next(p for p in products if p['id']==next(b['representative_id'] for b in brands if b['id']==bid)) for bid in ['dji','leofoto','hoya','smallrig','tilta','pgytech','nanlite','godox']]
         page=(Path(__file__).parent/'shop_templates/home.html').read_text()
         for key,value in {'HERO_IMAGE':hero['image'],'HERO_NAME':hero['name'],'HERO_ID':hero['id'],'BRAND_COUNT':len(brands)}.items():
             page=page.replace('{{'+key+'}}',escape(str(value)))

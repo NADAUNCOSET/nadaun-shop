@@ -43,6 +43,17 @@ test('service relationships have visible explanations and a discoverable guide l
  assert.match(fs.readFileSync('index.html','utf8'),/href="\/services.html"/);
 });
 
+test('company and four customer information pages are crawlable and linked from the shared footer',()=>{
+ const pages=['about.html','terms.html','privacy.html','services.html','shipping.html'];
+ for(const file of pages){
+  const html=fs.readFileSync(file,'utf8');assert.match(html,/<h1>/);assert.doesNotMatch(html,/\{\{/);
+  for(const link of pages)assert.ok(html.includes('href="/'+link+'"'),file+' → '+link);
+  assert.ok(html.includes('https://shop.nadaun.co/'+file));
+ }
+ assert.match(fs.readFileSync('about.html','utf8'),/data-mode="about"/);
+ assert.ok(fs.readFileSync('catalog-sitemap.xml','utf8').includes('https://shop.nadaun.co/about.html'));
+});
+
 test('each canonical product has its real image in the sitemap, without duplicate or checkout URLs',()=>{
  const xml=fs.readFileSync('catalog-sitemap.xml','utf8');
  assert.match(xml,/xmlns:image="http:\/\/www.google.com\/schemas\/sitemap-image\/1.1"/);

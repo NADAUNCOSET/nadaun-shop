@@ -167,6 +167,11 @@ class SourceRules(unittest.TestCase):
             if any(rule.get('notice') and pid in rule['products'] for rule in image_rules.values()):
                 self.assertTrue(detail.get('description_notice'))
         for b in data['brands']:
+            representative=next(p for p in data['products'] if p['id']==b['representative_id'])
+            self.assertEqual(representative['brand_id'],b['id'])
+            detail=json.loads((ROOT/'data/catalog/details'/(representative['detail_bucket']+'.json')).read_text())[representative['id']]
+            self.assertIn(b['representative_image'],[representative['image'],*detail['images']['main']])
+            self.assertEqual(representative['name'],b['representative_name'])
             self.assertTrue(b['logo'],b['id']);self.assertIn(b['image_kind'],('logo','product'))
             if b['logo'].startswith('/'):self.assertTrue((ROOT/b['logo'].lstrip('/')).is_file(),b['id'])
 
