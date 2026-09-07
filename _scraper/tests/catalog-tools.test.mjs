@@ -77,3 +77,20 @@ test('brand switching preserves rental mode, product type and search but clears 
  assert.equal(url.pathname,'/brands/canon.html');assert.equal(url.searchParams.get('kind'),'rental');assert.equal(url.searchParams.get('type'),'rent:24');assert.equal(url.searchParams.get('q'),'카메라');assert.equal(url.searchParams.get('available'),'1');assert.equal(url.searchParams.has('cat'),false);assert.equal(url.searchParams.has('page'),false);
  assert.equal(new URL(brandSelectionHref('',url.search,'rental'),url.origin).pathname,'/catalog.html');
 });
+
+test('preferred brand navigation avoids repeated source menus and preserves old links',()=>{
+ const categories=[['kpp:r',null],['kpp:l','kpp:r'],['naver:r',null],['naver:l','naver:r']].map(([id,parent_id])=>({id,parent_id,name:id,brand_id:'b'}));
+ const preferred=['kpp:r','kpp:l','naver:r'];
+ const data={categories,brands:[{id:'b',navigation_category_ids:preferred}],products:[
+  {id:'1',kind:'purchase',brand_id:'b',category_ids:categories.map(c=>c.id),navigation_category_ids:['kpp:r','kpp:l'],type_ids:['tripod']},
+  {id:'2',kind:'purchase',brand_id:'b',category_ids:['naver:r'],navigation_category_ids:['naver:r'],type_ids:['mic']}
+ ]};
+ const current=catalogSelection(data,{brand:'b',cat:'naver:r'});
+ assert.deepEqual(current.rows.map(p=>p.id),['2']);assert.equal(current.brandCounts.get('naver:r'),1);
+ assert.deepEqual(current.brandCategories.map(c=>c.id),preferred);
+ assert.equal(current.typeCounts.get('mic'),1);assert.equal(current.typeCounts.has('tripod'),false);
+ const legacy=catalogSelection(data,{brand:'b',cat:'naver:l'});
+ assert.deepEqual(legacy.rows.map(p=>p.id),['1']);assert.equal(legacy.brandCategories.length,4);
+ assert.equal(categoryTrail(new Map(legacy.brandCategories.map(c=>[c.id,c])),'naver:l').length,2);
+ const all=catalogSelection(data,{brand:'b'});assert.equal(all.rows.length,2);
+});

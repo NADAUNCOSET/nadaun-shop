@@ -42,13 +42,19 @@ export function catalogSelection(data,{brand='',kind='purchase',cat='',type='',s
     const id=p.listing_id||p.id;if(!families.has(id)||p.id===id)families.set(id,p);
   }
   const base=[...families.values()];
-  const brandCategories=brand?data.categories.filter(c=>c.brand_id===brand&&(kind==='rental'?c.scope==='rental-brand':c.scope!=='rental-brand')):[];
+  const preferred=kind==='purchase'?data.brands?.find(b=>b.id===brand)?.navigation_category_ids:null;
+  // Old bookmarked category URLs keep their original source tree and membership.
+  const legacy=Array.isArray(preferred)&&!!cat&&!preferred.includes(cat);
+  const navigation=Array.isArray(preferred)&&!legacy?new Set(preferred):null;
+  const brandCategories=brand?data.categories.filter(c=>c.brand_id===brand&&(kind==='rental'?c.scope==='rental-brand':c.scope!=='rental-brand')&&(!navigation||navigation.has(c.id))):[];
   const typeCategories=data.categories.filter(c=>c.scope===(kind==='rental'?'rental-product':'product'));
-  const count=(rows,field)=>{const out=new Map();for(const p of rows)for(const id of new Set(p[field]||[]))out.set(id,(out.get(id)||0)+1);return out};
+  const categoryIds=p=>navigation?(p.navigation_category_ids??p.category_ids):p.category_ids;
+  const matchesCategory=p=>!cat||categoryIds(p).includes(cat);
+  const count=(rows,field)=>{const out=new Map();for(const p of rows)for(const id of new Set((field==='category_ids'?categoryIds(p):p[field])||[]))out.set(id,(out.get(id)||0)+1);return out};
   return {base,brandCategories,typeCategories,
     brandCounts:count(base.filter(p=>!type||p.type_ids.includes(type)),'category_ids'),
-    typeCounts:count(base.filter(p=>!cat||p.category_ids.includes(cat)),'type_ids'),
-    rows:base.filter(p=>(!cat||p.category_ids.includes(cat))&&(!type||p.type_ids.includes(type)))};
+    typeCounts:count(base.filter(matchesCategory),'type_ids'),
+    rows:base.filter(p=>matchesCategory(p)&&(!type||p.type_ids.includes(type)))};
 }
 
 export function productTypeNavigation(categories,counts,selected,href){

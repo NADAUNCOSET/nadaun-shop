@@ -29,6 +29,7 @@ CODE=['_scraper/shipping_policy.py','_scraper/test_shop_shipping.py','assets/sho
 
 CODE += ['_scraper/gift_product_details.py','_scraper/source_transport.py','_scraper/plthink_checkpoint.py','_scraper/sync_plthink_catalog.py',
          '_scraper/sync_gift_inventory.py','_scraper/partner_worker.py','_scraper/install_partner_workers.py']
+CODE += ['_scraper/brand_category_policy.py','_scraper/partner_sync_status.py','_scraper/partner-sync-plan.json']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)

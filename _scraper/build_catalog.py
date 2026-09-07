@@ -238,6 +238,9 @@ def build(allow_pending=False):
             } for q in family]
     dedup_audit['option_families']=family_audit
     save_json(PUBLIC/'dedup-audit.json',dedup_audit)
+    from brand_category_policy import choose_navigation
+    navigation_audit=choose_navigation(public_products,categories,brands,config.get('brand_category_sources'))
+    save_json(ROOT/'_scraper/.sync-state/brand-category-selection.json',navigation_audit)
     for p in public_products:
         p['discovery']=product_discovery(p,brands[p['brand_id']],categories)
     listing_products=[p for p in public_products if p.get('listing_id',p['id'])==p['id']]

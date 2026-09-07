@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "plthink": {
+      "name": "유쾌한생각",
+      "url": "https://www.plthink.com/",
+      "adapter": "plthink",
+      "refresh_interval_seconds": 43200,
+      "resume_interval_seconds": 600
+    },
+    "onnoff": {
+      "name": "온앤오프미디어",
+      "url": "https://onnoff.kr/",
+      "brand_url": "https://onnoff.kr/category/%EB%B8%8C%EB%9E%9C%EB%93%9C/23/",
+      "after_live_verified": "plthink",
+      "adapter": null,
+      "target_refresh_interval_seconds": 43200,
+      "status": "awaiting_source_access",
+      "blocker": "Public source returned HTTP 403; no approved API/feed or verified current adapter is available.",
+      "required_fields": ["brands", "category_hierarchy", "products", "options", "price", "availability", "main_images", "detail_images"],
+      "completion_gate": "Full source coverage, detail and option verification, dedup audit, deployed live ID verification",
+      "on_request_failure": "Keep previous verified snapshot; never infer soldout or deletion from a failed request"
+    }
+  }
+}

@@ -26,7 +26,7 @@
       "groups": 1000,
       "removed": 1055
     },
-    "revision": "a280cbc088ecaaa1",
+    "revision": "0158be28c21d627e",
     "view": "rental"
   },
   "brands": [
@@ -41,6 +41,46 @@
       ],
       "logo": "/assets/shop/brands/dji-d7dcd6b736.webp",
       "featured": true,
+      "navigation_category_ids": [
+        "imweb:b:dji:s20220214975e339e7784c",
+        "imweb:b:dji:s20220303f347a370d9604",
+        "imweb:b:dji:s20220317033ee7dd4f463",
+        "imweb:b:dji:s202203175ad502eec58f8",
+        "imweb:b:dji:s20220820c384f423d441c",
+        "imweb:b:dji:s202210036704019793852",
+        "imweb:b:dji:s20221106e97730b781ff4",
+        "imweb:b:dji:s202309142cb44f374e5a1",
+        "imweb:b:dji:s202404147f4939764cbca",
+        "imweb:b:dji:s20240414b56c241269b34",
+        "imweb:b:dji:s20240911ad993056bc105",
+        "imweb:b:dji:s202409200feda2e8989c6",
+        "imweb:b:dji:s202410167d38156293f34",
+        "imweb:b:dji:s2025032727ccf87d29980",
+        "imweb:b:dji:s202503272c0da2347c605",
+        "imweb:b:dji:s20250327667af23e95520",
+        "imweb:b:dji:s2025032782d3f9f9e89f1",
+        "imweb:b:dji:s20250327a98ee26b1b96d",
+        "imweb:b:dji:s20250327bce4e6ee3aba1",
+        "imweb:b:dji:s20250327dbc7c20bd1248",
+        "imweb:b:dji:s2025040906c09a5abbb2f",
+        "imweb:b:dji:s2025073195d5aa9c2abb0",
+        "imweb:b:dji:s20250731c168d3117c353",
+        "imweb:b:dji:s20250918c30d9edf6bf7d",
+        "imweb:b:dji:s20250925dece877475fbc",
+        "imweb:b:dji:s202511182bf1c9af021dc",
+        "imweb:b:dji:s20260202304cc2a0812a1",
+        "imweb:b:dji:s202602206f5c200db05d8",
+        "imweb:b:dji:s2026022089772e4fe79bb",
+        "imweb:b:dji:s20260327fcc6bb024d1be",
+        "imweb:b:dji:s2026041628f11867f2d39",
+        "imweb:b:dji:s202604234b63cc8401d85",
+        "imweb:b:dji:s20260428388292dad03c5",
+        "imweb:b:dji:s20260507719bbd7a66032",
+        "imweb:b:dji:s202606290b6cc688ae502",
+        "imweb:b:dji:s202607213f0d94a688a01",
+        "imweb:b:dji:s20260804b041474f698ad",
+        "imweb:b:dji:s2026081140673dc2e9714"
+      ],
       "count": 156,
       "purchase_count": 146,
       "rental_count": 10,
@@ -112,6 +152,139 @@
       ],
       "logo": "/assets/shop/brands/smallrig-bf7eca11e0.webp",
       "featured": true,
+      "navigation_category_ids": [
+        "kpp:b:smallrig:d210",
+        "kpp:b:smallrig:d21010",
+        "kpp:b:smallrig:d21020",
+        "kpp:b:smallrig:d21030",
+        "kpp:b:smallrig:d21040",
+        "kpp:b:smallrig:d21050",
+        "kpp:b:smallrig:d21070",
+        "kpp:b:smallrig:d210a0",
+        "kpp:b:smallrig:d210b0",
+        "kpp:b:smallrig:d210c0",
+        "kpp:b:smallrig:d210d0",
+        "kpp:b:smallrig:d210e0",
+        "kpp:b:smallrig:d210f0",
+        "kpp:b:smallrig:d210g0",
+        "kpp:b:smallrig:d210h0",
+        "kpp:b:smallrig:d220",
+        "kpp:b:smallrig:d22010",
+        "kpp:b:smallrig:d22020",
+        "kpp:b:smallrig:d22030",
+        "kpp:b:smallrig:d22040",
+        "kpp:b:smallrig:d22050",
+        "kpp:b:smallrig:d22060",
+        "kpp:b:smallrig:d230",
+        "kpp:b:smallrig:d23010",
+        "kpp:b:smallrig:d23020",
+        "kpp:b:smallrig:d240",
+        "kpp:b:smallrig:d24010",
+        "kpp:b:smallrig:d24020",
+        "kpp:b:smallrig:d24030",
+        "kpp:b:smallrig:d24060",
+        "kpp:b:smallrig:d240a0",
+        "kpp:b:smallrig:d240c0",
+        "kpp:b:smallrig:d240d0",
+        "kpp:b:smallrig:d240e0",
+        "kpp:b:smallrig:d250",
+        "kpp:b:smallrig:d25010",
+        "kpp:b:smallrig:d25020",
+        "kpp:b:smallrig:d25030",
+        "kpp:b:smallrig:d25040",
+        "kpp:b:smallrig:d260",
+        "kpp:b:smallrig:d26010",
+        "kpp:b:smallrig:d26020",
+        "kpp:b:smallrig:d26030",
+        "kpp:b:smallrig:d26040",
+        "kpp:b:smallrig:d26050",
+        "kpp:b:smallrig:d26060",
+        "kpp:b:smallrig:d270",
+        "kpp:b:smallrig:d27010",
+        "kpp:b:smallrig:d27020",
+        "kpp:b:smallrig:d27040",
+        "kpp:b:smallrig:d27050",
+        "kpp:b:smallrig:d27060",
+        "kpp:b:smallrig:d27070",
+        "kpp:b:smallrig:d280",
+        "kpp:b:smallrig:d28010",
+        "kpp:b:smallrig:d28020",
+        "kpp:b:smallrig:d28030",
+        "kpp:b:smallrig:d28040",
+        "kpp:b:smallrig:d28050",
+        "kpp:b:smallrig:d290",
+        "kpp:b:smallrig:d29010",
+        "kpp:b:smallrig:d29020",
+        "kpp:b:smallrig:d29030",
+        "kpp:b:smallrig:d29040",
+        "kpp:b:smallrig:d2a0",
+        "kpp:b:smallrig:d2a010",
+        "kpp:b:smallrig:d2a020",
+        "kpp:b:smallrig:d2a030",
+        "kpp:b:smallrig:d2b0",
+        "kpp:b:smallrig:d2b010",
+        "kpp:b:smallrig:d2b020",
+        "kpp:b:smallrig:d2b030",
+        "kpp:b:smallrig:d2b040",
+        "kpp:b:smallrig:d2b050",
+        "kpp:b:smallrig:d2b060",
+        "kpp:b:smallrig:d2c0",
+        "kpp:b:smallrig:d2c010",
+        "kpp:b:smallrig:d2c020",
+        "kpp:b:smallrig:d2c030",
+        "kpp:b:smallrig:d2c040",
+        "kpp:b:smallrig:d2c050",
+        "kpp:b:smallrig:d2f0",
+        "kpp:b:smallrig:d2f010",
+        "kpp:b:smallrig:d2f020",
+        "kpp:b:smallrig:d2f030",
+        "kpp:b:smallrig:d2f040",
+        "kpp:b:smallrig:d2f050",
+        "kpp:b:smallrig:d2f060",
+        "kpp:b:smallrig:d2f070",
+        "kpp:b:smallrig:d2f080",
+        "kpp:b:smallrig:d2f090",
+        "kpp:b:smallrig:d2f0b0",
+        "kpp:b:smallrig:d2f0c0",
+        "kpp:b:smallrig:d2f0d0",
+        "kpp:b:smallrig:d2f0e0",
+        "kpp:b:smallrig:d2f0f0",
+        "kpp:b:smallrig:d2g0",
+        "kpp:b:smallrig:d2g010",
+        "kpp:b:smallrig:d2g020",
+        "kpp:b:smallrig:d2g030",
+        "kpp:b:smallrig:d2g040",
+        "kpp:b:smallrig:d2g050",
+        "kpp:b:smallrig:d2g060",
+        "kpp:b:smallrig:d2g070",
+        "kpp:b:smallrig:d2g080",
+        "kpp:b:smallrig:d2g090",
+        "kpp:b:smallrig:d2g0a0",
+        "kpp:b:smallrig:global:01",
+        "kpp:b:smallrig:global:0140",
+        "kpp:b:smallrig:global:06",
+        "kpp:b:smallrig:global:0640",
+        "kpp:b:smallrig:global:0680",
+        "kpp:b:smallrig:global:0690",
+        "naver:b:smallrig:50000206",
+        "naver:b:smallrig:50000209",
+        "naver:b:smallrig:50001387",
+        "naver:b:smallrig:50001388",
+        "naver:b:smallrig:50001389",
+        "naver:b:smallrig:50001390",
+        "naver:b:smallrig:50001394",
+        "naver:b:smallrig:50001404",
+        "naver:b:smallrig:50002073",
+        "naver:b:smallrig:50002074",
+        "naver:b:smallrig:50002076",
+        "naver:b:smallrig:50002077",
+        "naver:b:smallrig:50002079",
+        "naver:b:smallrig:50002082",
+        "naver:b:smallrig:50002100",
+        "naver:b:smallrig:50002113",
+        "naver:b:smallrig:50002328",
+        "naver:b:smallrig:50004633"
+      ],
       "count": 1601,
       "purchase_count": 1598,
       "rental_count": 3,
@@ -282,6 +455,105 @@
       ],
       "logo": "/assets/shop/brands/leofoto-1b3f51f678.webp",
       "featured": true,
+      "navigation_category_ids": [
+        "kpp:b:leofoto:3010",
+        "kpp:b:leofoto:301010",
+        "kpp:b:leofoto:301020",
+        "kpp:b:leofoto:301040",
+        "kpp:b:leofoto:301050",
+        "kpp:b:leofoto:301080",
+        "kpp:b:leofoto:301090",
+        "kpp:b:leofoto:3010a0",
+        "kpp:b:leofoto:3010b0",
+        "kpp:b:leofoto:3010c0",
+        "kpp:b:leofoto:3010e0",
+        "kpp:b:leofoto:3010f0",
+        "kpp:b:leofoto:3010g0",
+        "kpp:b:leofoto:3010h0",
+        "kpp:b:leofoto:3010i0",
+        "kpp:b:leofoto:3010j0",
+        "kpp:b:leofoto:3010k0",
+        "kpp:b:leofoto:3020",
+        "kpp:b:leofoto:302010",
+        "kpp:b:leofoto:302020",
+        "kpp:b:leofoto:302030",
+        "kpp:b:leofoto:302040",
+        "kpp:b:leofoto:302050",
+        "kpp:b:leofoto:302060",
+        "kpp:b:leofoto:302070",
+        "kpp:b:leofoto:302080",
+        "kpp:b:leofoto:302090",
+        "kpp:b:leofoto:3020b0",
+        "kpp:b:leofoto:3020c0",
+        "kpp:b:leofoto:3030",
+        "kpp:b:leofoto:303010",
+        "kpp:b:leofoto:303020",
+        "kpp:b:leofoto:303030",
+        "kpp:b:leofoto:303040",
+        "kpp:b:leofoto:303050",
+        "kpp:b:leofoto:3040",
+        "kpp:b:leofoto:304010",
+        "kpp:b:leofoto:304020",
+        "kpp:b:leofoto:304040",
+        "kpp:b:leofoto:304050",
+        "kpp:b:leofoto:304060",
+        "kpp:b:leofoto:304070",
+        "kpp:b:leofoto:304080",
+        "kpp:b:leofoto:3040a0",
+        "kpp:b:leofoto:3040c0",
+        "kpp:b:leofoto:3040g0",
+        "kpp:b:leofoto:3040i0",
+        "kpp:b:leofoto:3040j0",
+        "kpp:b:leofoto:3040k0",
+        "kpp:b:leofoto:3040l0",
+        "kpp:b:leofoto:3040m0",
+        "kpp:b:leofoto:3040n0",
+        "kpp:b:leofoto:3050",
+        "kpp:b:leofoto:305010",
+        "kpp:b:leofoto:305020",
+        "kpp:b:leofoto:305030",
+        "kpp:b:leofoto:305040",
+        "kpp:b:leofoto:305050",
+        "kpp:b:leofoto:305060",
+        "kpp:b:leofoto:305070",
+        "kpp:b:leofoto:305080",
+        "kpp:b:leofoto:3060",
+        "kpp:b:leofoto:306010",
+        "kpp:b:leofoto:306030",
+        "kpp:b:leofoto:306040",
+        "kpp:b:leofoto:306050",
+        "kpp:b:leofoto:3070",
+        "kpp:b:leofoto:307010",
+        "kpp:b:leofoto:307020",
+        "kpp:b:leofoto:307030",
+        "kpp:b:leofoto:307040",
+        "kpp:b:leofoto:307050",
+        "kpp:b:leofoto:307060",
+        "kpp:b:leofoto:3080",
+        "kpp:b:leofoto:308010",
+        "kpp:b:leofoto:308020",
+        "kpp:b:leofoto:308030",
+        "kpp:b:leofoto:308040",
+        "kpp:b:leofoto:308050",
+        "kpp:b:leofoto:308060",
+        "kpp:b:leofoto:30a0",
+        "kpp:b:leofoto:30a010",
+        "kpp:b:leofoto:30a020",
+        "kpp:b:leofoto:30a030",
+        "kpp:b:leofoto:30a040",
+        "kpp:b:leofoto:30a050",
+        "kpp:b:leofoto:30b0",
+        "kpp:b:leofoto:30b010",
+        "kpp:b:leofoto:30b020",
+        "kpp:b:leofoto:30b030",
+        "kpp:b:leofoto:global:01",
+        "kpp:b:leofoto:global:0110",
+        "kpp:b:leofoto:global:0120",
+        "kpp:b:leofoto:global:0130",
+        "kpp:b:leofoto:global:06",
+        "kpp:b:leofoto:global:0640",
+        "kpp:b:leofoto:global:0690"
+      ],
       "count": 738,
       "purchase_count": 738,
       "rental_count": 0,
@@ -405,6 +677,69 @@
       ],
       "logo": "/assets/shop/brands/tilta-224fb044ff.webp",
       "featured": true,
+      "navigation_category_ids": [
+        "kpp:b:tilta:t210",
+        "kpp:b:tilta:t21010",
+        "kpp:b:tilta:t21020",
+        "kpp:b:tilta:t21030",
+        "kpp:b:tilta:t21040",
+        "kpp:b:tilta:t21060",
+        "kpp:b:tilta:t21070",
+        "kpp:b:tilta:t220",
+        "kpp:b:tilta:t22010",
+        "kpp:b:tilta:t22020",
+        "kpp:b:tilta:t22030",
+        "kpp:b:tilta:t22040",
+        "kpp:b:tilta:t230",
+        "kpp:b:tilta:t23010",
+        "kpp:b:tilta:t23020",
+        "kpp:b:tilta:t23030",
+        "kpp:b:tilta:t240",
+        "kpp:b:tilta:t24010",
+        "kpp:b:tilta:t24020",
+        "kpp:b:tilta:t24030",
+        "kpp:b:tilta:t24040",
+        "kpp:b:tilta:t24060",
+        "kpp:b:tilta:t24070",
+        "kpp:b:tilta:t24080",
+        "kpp:b:tilta:t250",
+        "kpp:b:tilta:t25010",
+        "kpp:b:tilta:t25020",
+        "kpp:b:tilta:t25030",
+        "kpp:b:tilta:t260",
+        "kpp:b:tilta:t26010",
+        "kpp:b:tilta:t270",
+        "kpp:b:tilta:t27010",
+        "kpp:b:tilta:t280",
+        "kpp:b:tilta:t28010",
+        "kpp:b:tilta:t28020",
+        "kpp:b:tilta:t28030",
+        "kpp:b:tilta:t28040",
+        "kpp:b:tilta:t28060",
+        "kpp:b:tilta:t28070",
+        "kpp:b:tilta:t28080",
+        "kpp:b:tilta:t28090",
+        "kpp:b:tilta:t280a0",
+        "kpp:b:tilta:t280b0",
+        "kpp:b:tilta:t290",
+        "kpp:b:tilta:t29010",
+        "kpp:b:tilta:t29020",
+        "kpp:b:tilta:t29040",
+        "kpp:b:tilta:t2a0",
+        "kpp:b:tilta:t2a010",
+        "kpp:b:tilta:t2a020",
+        "kpp:b:tilta:t2b0",
+        "kpp:b:tilta:t2b010",
+        "kpp:b:tilta:t2b020",
+        "kpp:b:tilta:t2b030",
+        "naver:b:tilta:50000206",
+        "naver:b:tilta:50001387",
+        "naver:b:tilta:50001391",
+        "naver:b:tilta:50001394",
+        "naver:b:tilta:50002086",
+        "naver:b:tilta:50002113",
+        "naver:b:tilta:50004633"
+      ],
       "count": 476,
       "purchase_count": 475,
       "rental_count": 1,
@@ -492,6 +827,54 @@
       ],
       "logo": "/assets/shop/brands/hoya-5760ec06b1.webp",
       "featured": true,
+      "navigation_category_ids": [
+        "kpp:b:hoya:4010",
+        "kpp:b:hoya:401050",
+        "kpp:b:hoya:401070",
+        "kpp:b:hoya:401090",
+        "kpp:b:hoya:4010a0",
+        "kpp:b:hoya:4010b0",
+        "kpp:b:hoya:4010d0",
+        "kpp:b:hoya:4020",
+        "kpp:b:hoya:402090",
+        "kpp:b:hoya:4020a0",
+        "kpp:b:hoya:4020b0",
+        "kpp:b:hoya:4040",
+        "kpp:b:hoya:404020",
+        "kpp:b:hoya:404030",
+        "kpp:b:hoya:404040",
+        "kpp:b:hoya:404050",
+        "kpp:b:hoya:404060",
+        "kpp:b:hoya:4050",
+        "kpp:b:hoya:405020",
+        "kpp:b:hoya:405030",
+        "kpp:b:hoya:405040",
+        "kpp:b:hoya:405050",
+        "kpp:b:hoya:4080",
+        "kpp:b:hoya:408010",
+        "kpp:b:hoya:4090",
+        "kpp:b:hoya:409030",
+        "kpp:b:hoya:40e0",
+        "kpp:b:hoya:40e010",
+        "kpp:b:hoya:40e020",
+        "kpp:b:hoya:40e030",
+        "kpp:b:hoya:40e040",
+        "kpp:b:hoya:40e050",
+        "kpp:b:hoya:40e060",
+        "kpp:b:hoya:40f0",
+        "kpp:b:hoya:40f010",
+        "kpp:b:hoya:40f020",
+        "kpp:b:hoya:40f030",
+        "kpp:b:hoya:40f050",
+        "kpp:b:hoya:40f060",
+        "kpp:b:hoya:40f070",
+        "kpp:b:hoya:40h0",
+        "kpp:b:hoya:40h010",
+        "kpp:b:hoya:40h020",
+        "kpp:b:hoya:40h030",
+        "kpp:b:hoya:global:02",
+        "kpp:b:hoya:global:0220"
+      ],
       "count": 376,
       "purchase_count": 376,
       "rental_count": 0,
@@ -561,6 +944,51 @@
       ],
       "logo": "/assets/shop/brands/hy-2f5bc0b5c2.webp",
       "featured": true,
+      "navigation_category_ids": [
+        "kpp:b:hy:5010",
+        "kpp:b:hy:501010",
+        "kpp:b:hy:501020",
+        "kpp:b:hy:501030",
+        "kpp:b:hy:501040",
+        "kpp:b:hy:501050",
+        "kpp:b:hy:501060",
+        "kpp:b:hy:501070",
+        "kpp:b:hy:501080",
+        "kpp:b:hy:5020",
+        "kpp:b:hy:502010",
+        "kpp:b:hy:502020",
+        "kpp:b:hy:502030",
+        "kpp:b:hy:502040",
+        "kpp:b:hy:502050",
+        "kpp:b:hy:502060",
+        "kpp:b:hy:5060",
+        "kpp:b:hy:506010",
+        "kpp:b:hy:506020",
+        "kpp:b:hy:506030",
+        "kpp:b:hy:506040",
+        "kpp:b:hy:506050",
+        "kpp:b:hy:506060",
+        "kpp:b:hy:506070",
+        "kpp:b:hy:506080",
+        "kpp:b:hy:506090",
+        "kpp:b:hy:5070",
+        "kpp:b:hy:507010",
+        "kpp:b:hy:507020",
+        "kpp:b:hy:507030",
+        "kpp:b:hy:507040",
+        "kpp:b:hy:507050",
+        "kpp:b:hy:507070",
+        "kpp:b:hy:507080",
+        "kpp:b:hy:5070a0",
+        "kpp:b:hy:5070b0",
+        "kpp:b:hy:5070c0",
+        "kpp:b:hy:5070d0",
+        "kpp:b:hy:5070e0",
+        "kpp:b:hy:50b0",
+        "kpp:b:hy:50b010",
+        "kpp:b:hy:global:09",
+        "kpp:b:hy:global:0940"
+      ],
       "count": 284,
       "purchase_count": 284,
       "rental_count": 0,
@@ -625,6 +1053,48 @@
       ],
       "logo": "/assets/shop/brands/pgytech-e21dea7666.webp",
       "featured": true,
+      "navigation_category_ids": [
+        "kpp:b:pgytech:6010",
+        "kpp:b:pgytech:601010",
+        "kpp:b:pgytech:601020",
+        "kpp:b:pgytech:601030",
+        "kpp:b:pgytech:6060",
+        "kpp:b:pgytech:606010",
+        "kpp:b:pgytech:606020",
+        "kpp:b:pgytech:606050",
+        "kpp:b:pgytech:606060",
+        "kpp:b:pgytech:606070",
+        "kpp:b:pgytech:606080",
+        "kpp:b:pgytech:6060a0",
+        "kpp:b:pgytech:6060b0",
+        "kpp:b:pgytech:6060c0",
+        "kpp:b:pgytech:6060d0",
+        "kpp:b:pgytech:6060e0",
+        "kpp:b:pgytech:6060f0",
+        "kpp:b:pgytech:6070",
+        "kpp:b:pgytech:607010",
+        "kpp:b:pgytech:607030",
+        "kpp:b:pgytech:607040",
+        "kpp:b:pgytech:607050",
+        "kpp:b:pgytech:607060",
+        "kpp:b:pgytech:607070",
+        "kpp:b:pgytech:607080",
+        "kpp:b:pgytech:6080",
+        "kpp:b:pgytech:608010",
+        "kpp:b:pgytech:60a0",
+        "kpp:b:pgytech:60a010",
+        "kpp:b:pgytech:60a020",
+        "kpp:b:pgytech:60a030",
+        "kpp:b:pgytech:60a040",
+        "kpp:b:pgytech:60a050",
+        "kpp:b:pgytech:60a060",
+        "kpp:b:pgytech:60b0",
+        "kpp:b:pgytech:60b010",
+        "kpp:b:pgytech:60b020",
+        "kpp:b:pgytech:60b030",
+        "kpp:b:pgytech:60b040",
+        "kpp:b:pgytech:60b050"
+      ],
       "count": 291,
       "purchase_count": 291,
       "rental_count": 0,
@@ -687,6 +1157,25 @@
       ],
       "logo": "/assets/shop/brands/viltrox-7955ad3f21.webp",
       "featured": true,
+      "navigation_category_ids": [
+        "kpp:b:viltrox:b020",
+        "kpp:b:viltrox:b02010",
+        "kpp:b:viltrox:b02020",
+        "kpp:b:viltrox:b02030",
+        "kpp:b:viltrox:b02040",
+        "kpp:b:viltrox:b060",
+        "kpp:b:viltrox:b06010",
+        "kpp:b:viltrox:b06020",
+        "kpp:b:viltrox:b06030",
+        "kpp:b:viltrox:b06050",
+        "kpp:b:viltrox:b080",
+        "kpp:b:viltrox:b08010",
+        "kpp:b:viltrox:b08020",
+        "kpp:b:viltrox:b08030",
+        "kpp:b:viltrox:b08040",
+        "kpp:b:viltrox:b08050",
+        "kpp:b:viltrox:b090"
+      ],
       "count": 100,
       "purchase_count": 100,
       "rental_count": 0,
@@ -732,6 +1221,14 @@
         "난라이트"
       ],
       "logo": "/assets/shop/brands/nanlite-ca7c5a5ad9.webp",
+      "navigation_category_ids": [
+        "naver:b:nanlite:50000206",
+        "naver:b:nanlite:50001390",
+        "naver:b:nanlite:50001394",
+        "naver:b:nanlite:50002080",
+        "naver:b:nanlite:50002082",
+        "naver:b:nanlite:50002113"
+      ],
       "count": 390,
       "purchase_count": 365,
       "rental_count": 25,
@@ -760,6 +1257,17 @@
         "고독스"
       ],
       "logo": "/assets/shop/brands/godox-caff5a8b55.webp",
+      "navigation_category_ids": [
+        "naver:b:godox:50000206",
+        "naver:b:godox:50000209",
+        "naver:b:godox:50001390",
+        "naver:b:godox:50001394",
+        "naver:b:godox:50001404",
+        "naver:b:godox:50002080",
+        "naver:b:godox:50002082",
+        "naver:b:godox:50002113",
+        "naver:b:godox:50002326"
+      ],
       "count": 495,
       "purchase_count": 495,
       "rental_count": 0,
@@ -788,6 +1296,19 @@
         "KUPO"
       ],
       "logo": "/assets/shop/brands/kupo-f428114a1d.webp",
+      "navigation_category_ids": [
+        "naver:b:kupo:50000093",
+        "naver:b:kupo:50000206",
+        "naver:b:kupo:50001389",
+        "naver:b:kupo:50001390",
+        "naver:b:kupo:50001394",
+        "naver:b:kupo:50002076",
+        "naver:b:kupo:50002077",
+        "naver:b:kupo:50002079",
+        "naver:b:kupo:50002082",
+        "naver:b:kupo:50002113",
+        "naver:b:kupo:50006203"
+      ],
       "count": 476,
       "purchase_count": 470,
       "rental_count": 6,
@@ -825,6 +1346,13 @@
         "아마란"
       ],
       "logo": "/assets/shop/brands/aputure-de3dcdb4e8.webp",
+      "navigation_category_ids": [
+        "naver:b:aputure:50000206",
+        "naver:b:aputure:50001390",
+        "naver:b:aputure:50001394",
+        "naver:b:aputure:50002082",
+        "naver:b:aputure:50002113"
+      ],
       "count": 77,
       "purchase_count": 68,
       "rental_count": 9,
@@ -854,6 +1382,33 @@
       ],
       "logo": "/assets/shop/brands/tokina-1ae26d99b3.webp",
       "featured": true,
+      "navigation_category_ids": [
+        "kpp:b:tokina:1010",
+        "kpp:b:tokina:101010",
+        "kpp:b:tokina:101020",
+        "kpp:b:tokina:101030",
+        "kpp:b:tokina:101040",
+        "kpp:b:tokina:1020",
+        "kpp:b:tokina:102010",
+        "kpp:b:tokina:102020",
+        "kpp:b:tokina:102030",
+        "kpp:b:tokina:102040",
+        "kpp:b:tokina:1030",
+        "kpp:b:tokina:1060",
+        "kpp:b:tokina:106010",
+        "kpp:b:tokina:106020",
+        "kpp:b:tokina:global:03",
+        "kpp:b:tokina:global:0330",
+        "kpp:b:tokina:global:04",
+        "kpp:b:tokina:global:0420",
+        "naver:b:tokina:50000206",
+        "naver:b:tokina:50001381",
+        "naver:b:tokina:50001390",
+        "naver:b:tokina:50002082",
+        "naver:b:tokina:50004604",
+        "naver:b:tokina:50004605",
+        "naver:b:tokina:50004606"
+      ],
       "count": 71,
       "purchase_count": 71,
       "rental_count": 0,
@@ -903,6 +1458,32 @@
       ],
       "logo": "/assets/shop/brands/tokina-cinema-dd193bbd09.webp",
       "featured": true,
+      "navigation_category_ids": [
+        "kpp:b:tokina-cinema:2010",
+        "kpp:b:tokina-cinema:201010",
+        "kpp:b:tokina-cinema:201020",
+        "kpp:b:tokina-cinema:201030",
+        "kpp:b:tokina-cinema:201040",
+        "kpp:b:tokina-cinema:201050",
+        "kpp:b:tokina-cinema:2020",
+        "kpp:b:tokina-cinema:202020",
+        "kpp:b:tokina-cinema:202040",
+        "kpp:b:tokina-cinema:202050",
+        "kpp:b:tokina-cinema:202060",
+        "kpp:b:tokina-cinema:202070",
+        "kpp:b:tokina-cinema:202080",
+        "kpp:b:tokina-cinema:2030",
+        "kpp:b:tokina-cinema:203010",
+        "kpp:b:tokina-cinema:2050",
+        "kpp:b:tokina-cinema:205010",
+        "kpp:b:tokina-cinema:2060",
+        "kpp:b:tokina-cinema:206010",
+        "kpp:b:tokina-cinema:206020",
+        "kpp:b:tokina-cinema:206030",
+        "kpp:b:tokina-cinema:206040",
+        "kpp:b:tokina-cinema:206050",
+        "kpp:b:tokina-cinema:206060"
+      ],
       "count": 109,
       "purchase_count": 109,
       "rental_count": 0,
@@ -948,6 +1529,32 @@
       ],
       "logo": "/assets/shop/brands/ttartisan-46a8719ccc.webp",
       "featured": true,
+      "navigation_category_ids": [
+        "kpp:b:ttartisan:v230",
+        "kpp:b:ttartisan:v23020",
+        "kpp:b:ttartisan:v23030",
+        "kpp:b:ttartisan:v23040",
+        "kpp:b:ttartisan:v23050",
+        "kpp:b:ttartisan:v260",
+        "kpp:b:ttartisan:v26010",
+        "kpp:b:ttartisan:v26020",
+        "kpp:b:ttartisan:v270",
+        "kpp:b:ttartisan:v27010",
+        "kpp:b:ttartisan:v27020",
+        "kpp:b:ttartisan:v280",
+        "kpp:b:ttartisan:v28010",
+        "kpp:b:ttartisan:v28020",
+        "kpp:b:ttartisan:v290",
+        "kpp:b:ttartisan:v2a0",
+        "kpp:b:ttartisan:v2b0",
+        "kpp:b:ttartisan:v2c0",
+        "kpp:b:ttartisan:v2d0",
+        "kpp:b:ttartisan:v2d010",
+        "kpp:b:ttartisan:v2d020",
+        "kpp:b:ttartisan:v2d030",
+        "kpp:b:ttartisan:v2d040",
+        "kpp:b:ttartisan:v2d050"
+      ],
       "count": 174,
       "purchase_count": 174,
       "rental_count": 0,
@@ -993,6 +1600,29 @@
       ],
       "logo": "/assets/shop/brands/astrhori-77cfe66960.webp",
       "featured": true,
+      "navigation_category_ids": [
+        "kpp:b:astrhori:global:06",
+        "kpp:b:astrhori:global:0690",
+        "kpp:b:astrhori:y210",
+        "kpp:b:astrhori:y21010",
+        "kpp:b:astrhori:y21020",
+        "kpp:b:astrhori:y21030",
+        "kpp:b:astrhori:y21040",
+        "kpp:b:astrhori:y21050",
+        "kpp:b:astrhori:y220",
+        "kpp:b:astrhori:y22020",
+        "kpp:b:astrhori:y22030",
+        "kpp:b:astrhori:y22040",
+        "kpp:b:astrhori:y22050",
+        "kpp:b:astrhori:y22060",
+        "kpp:b:astrhori:y22070",
+        "kpp:b:astrhori:y230",
+        "kpp:b:astrhori:y23010",
+        "kpp:b:astrhori:y23020",
+        "kpp:b:astrhori:y240",
+        "kpp:b:astrhori:y24010",
+        "kpp:b:astrhori:y24020"
+      ],
       "count": 69,
       "purchase_count": 69,
       "rental_count": 0,
@@ -1035,6 +1665,21 @@
       ],
       "logo": "/assets/shop/brands/wandrd-d61e5fbdb7.webp",
       "featured": true,
+      "navigation_category_ids": [
+        "kpp:b:wandrd:b110",
+        "kpp:b:wandrd:b11010",
+        "kpp:b:wandrd:b11020",
+        "kpp:b:wandrd:b11040",
+        "kpp:b:wandrd:b140",
+        "kpp:b:wandrd:b14010",
+        "kpp:b:wandrd:b14060",
+        "kpp:b:wandrd:b14070",
+        "kpp:b:wandrd:b1c0",
+        "kpp:b:wandrd:b1c010",
+        "kpp:b:wandrd:b1c050",
+        "kpp:b:wandrd:b1c060",
+        "kpp:b:wandrd:b1c070"
+      ],
       "count": 44,
       "purchase_count": 44,
       "rental_count": 0,
@@ -1076,6 +1721,32 @@
       ],
       "logo": "/assets/shop/brands/fxlion-d86c2b526b.webp",
       "featured": true,
+      "navigation_category_ids": [
+        "kpp:b:fxlion:global:06",
+        "kpp:b:fxlion:global:0680",
+        "kpp:b:fxlion:q210",
+        "kpp:b:fxlion:q21010",
+        "kpp:b:fxlion:q21020",
+        "kpp:b:fxlion:q21030",
+        "kpp:b:fxlion:q21040",
+        "kpp:b:fxlion:q21050",
+        "kpp:b:fxlion:q21060",
+        "kpp:b:fxlion:q21070",
+        "kpp:b:fxlion:q21080",
+        "kpp:b:fxlion:q21090",
+        "kpp:b:fxlion:q210a0",
+        "kpp:b:fxlion:q220",
+        "kpp:b:fxlion:q22010",
+        "kpp:b:fxlion:q230",
+        "kpp:b:fxlion:q23010",
+        "kpp:b:fxlion:q23020",
+        "kpp:b:fxlion:q240",
+        "naver:b:fxlion:50000206",
+        "naver:b:fxlion:50001391",
+        "naver:b:fxlion:50001394",
+        "naver:b:fxlion:50002086",
+        "naver:b:fxlion:50002113"
+      ],
       "count": 52,
       "purchase_count": 50,
       "rental_count": 2,
@@ -1127,6 +1798,22 @@
       ],
       "logo": "/assets/shop/brands/zitay-435816321d.webp",
       "featured": true,
+      "navigation_category_ids": [
+        "kpp:b:zitay:z110",
+        "kpp:b:zitay:z11010",
+        "kpp:b:zitay:z120",
+        "kpp:b:zitay:z12010",
+        "kpp:b:zitay:z12020",
+        "kpp:b:zitay:z12030",
+        "kpp:b:zitay:z12050",
+        "kpp:b:zitay:z12060",
+        "kpp:b:zitay:z130",
+        "kpp:b:zitay:z13010",
+        "kpp:b:zitay:z13020",
+        "kpp:b:zitay:z13050",
+        "kpp:b:zitay:z13060",
+        "kpp:b:zitay:z13070"
+      ],
       "count": 35,
       "purchase_count": 35,
       "rental_count": 0,
@@ -1165,6 +1852,11 @@
         "홀리랜드"
       ],
       "logo": "/assets/shop/brands/hollyland-85cb361012.webp",
+      "navigation_category_ids": [
+        "naver:b:hollyland:50000206",
+        "naver:b:hollyland:50001394",
+        "naver:b:hollyland:50002113"
+      ],
       "count": 173,
       "purchase_count": 158,
       "rental_count": 15,
@@ -1198,6 +1890,19 @@
         "blackmagic"
       ],
       "logo": "/assets/shop/brands/blackmagic-4b537a8c33.webp",
+      "navigation_category_ids": [
+        "naver:b:blackmagic:50000095",
+        "naver:b:blackmagic:50000206",
+        "naver:b:blackmagic:50001215",
+        "naver:b:blackmagic:50001382",
+        "naver:b:blackmagic:50001390",
+        "naver:b:blackmagic:50001394",
+        "naver:b:blackmagic:50002082",
+        "naver:b:blackmagic:50002113",
+        "naver:b:blackmagic:50002977",
+        "naver:b:blackmagic:50002979",
+        "naver:b:blackmagic:50004610"
+      ],
       "count": 309,
       "purchase_count": 309,
       "rental_count": 0,
@@ -1227,6 +1932,11 @@
         "AMBITFUL"
       ],
       "logo": "https://shop-phinf.pstatic.net/20230504_285/16831834488071Riw1_JPEG/506753692288104_1099061639.jpg",
+      "navigation_category_ids": [
+        "naver:b:ambitful:50000206",
+        "naver:b:ambitful:50001394",
+        "naver:b:ambitful:50002113"
+      ],
       "count": 1,
       "purchase_count": 1,
       "rental_count": 0,
@@ -1249,6 +1959,10 @@
         "anyport"
       ],
       "logo": "https://shop-phinf.pstatic.net/20250723_75/1753244698454Opsur_JPEG/10870439523536170_1203167149.jpg",
+      "navigation_category_ids": [
+        "naver:b:anyport:50000205",
+        "naver:b:anyport:50000252"
+      ],
       "count": 2,
       "purchase_count": 2,
       "rental_count": 0,
@@ -1269,6 +1983,11 @@
         "APC"
       ],
       "logo": "https://shop-phinf.pstatic.net/20250719_270/1752916278578dsfya_PNG/23180947700983131_697270666.png",
+      "navigation_category_ids": [
+        "naver:b:apc:50000097",
+        "naver:b:apc:50001221",
+        "naver:b:apc:50003113"
+      ],
       "count": 1,
       "purchase_count": 1,
       "rental_count": 0,
@@ -1291,6 +2010,13 @@
         "아리"
       ],
       "logo": "/assets/shop/brands/arri-fe875e87c5.webp",
+      "navigation_category_ids": [
+        "naver:b:arri:50000206",
+        "naver:b:arri:50001390",
+        "naver:b:arri:50001394",
+        "naver:b:arri:50002082",
+        "naver:b:arri:50002113"
+      ],
       "count": 16,
       "purchase_count": 13,
       "rental_count": 3,
@@ -1318,6 +2044,11 @@
         "arturia"
       ],
       "logo": "/assets/shop/brands/arturia-25d5c06d2e.webp",
+      "navigation_category_ids": [
+        "naver:b:arturia:50000156",
+        "naver:b:arturia:50000869",
+        "naver:b:arturia:50004320"
+      ],
       "count": 46,
       "purchase_count": 46,
       "rental_count": 0,
@@ -1339,6 +2070,9 @@
         "ASUS"
       ],
       "logo": "https://shop-phinf.pstatic.net/20260330_13/177484495703008LI0_JPEG/39648510153050774_1461571290.jpg",
+      "navigation_category_ids": [
+        "naver:b:asus:50000153"
+      ],
       "count": 11,
       "purchase_count": 11,
       "rental_count": 0,
@@ -1385,6 +2119,13 @@
         "aurora"
       ],
       "logo": "/assets/shop/brands/aurora-b866c7c4f5.webp",
+      "navigation_category_ids": [
+        "naver:b:aurora:50000206",
+        "naver:b:aurora:50001390",
+        "naver:b:aurora:50001394",
+        "naver:b:aurora:50002082",
+        "naver:b:aurora:50002113"
+      ],
       "count": 221,
       "purchase_count": 217,
       "rental_count": 4,
@@ -1412,6 +2153,16 @@
         "어벤져"
       ],
       "logo": "/assets/shop/brands/avenger-ad600f3e52.webp",
+      "navigation_category_ids": [
+        "naver:b:avenger:50000206",
+        "naver:b:avenger:50001389",
+        "naver:b:avenger:50001390",
+        "naver:b:avenger:50001394",
+        "naver:b:avenger:50002074",
+        "naver:b:avenger:50002079",
+        "naver:b:avenger:50002082",
+        "naver:b:avenger:50002113"
+      ],
       "count": 136,
       "purchase_count": 135,
       "rental_count": 1,
@@ -1441,6 +2192,9 @@
         "benq"
       ],
       "logo": "https://shop-phinf.pstatic.net/20250918_55/1758190287053bU8M6_JPEG/32752221184564209_1040070057.jpg",
+      "navigation_category_ids": [
+        "naver:b:benq:50000153"
+      ],
       "count": 2,
       "purchase_count": 2,
       "rental_count": 0,
@@ -1462,6 +2216,19 @@
         "benro"
       ],
       "logo": "/assets/shop/brands/benro-62b3e007b7.webp",
+      "navigation_category_ids": [
+        "naver:b:benro:50000206",
+        "naver:b:benro:50001382",
+        "naver:b:benro:50001389",
+        "naver:b:benro:50001394",
+        "naver:b:benro:50002074",
+        "naver:b:benro:50002075",
+        "naver:b:benro:50002076",
+        "naver:b:benro:50002113",
+        "naver:b:benro:50004609",
+        "naver:b:benro:50004610",
+        "naver:b:benro:50004614"
+      ],
       "count": 108,
       "purchase_count": 105,
       "rental_count": 3,
@@ -1518,6 +2285,11 @@
         "broncolor"
       ],
       "logo": "/assets/shop/brands/broncolor-79abb1df5f.webp",
+      "navigation_category_ids": [
+        "naver:b:broncolor:50000206",
+        "naver:b:broncolor:50001390",
+        "naver:b:broncolor:50002082"
+      ],
       "count": 68,
       "purchase_count": 68,
       "rental_count": 0,
@@ -1540,6 +2312,17 @@
         "캐논"
       ],
       "logo": "/assets/shop/brands/canon-3b20a15344.webp",
+      "navigation_category_ids": [
+        "kpp:b:canon:global:03",
+        "naver:b:canon:50000206",
+        "naver:b:canon:50000266",
+        "naver:b:canon:50000267",
+        "naver:b:canon:50001381",
+        "naver:b:canon:50001394",
+        "naver:b:canon:50002113",
+        "naver:b:canon:50004604",
+        "naver:b:canon:50004606"
+      ],
       "count": 47,
       "purchase_count": 31,
       "rental_count": 16,
@@ -1578,6 +2361,10 @@
         "captureone"
       ],
       "logo": "/assets/shop/brands/captureone-ea20916926.webp",
+      "navigation_category_ids": [
+        "naver:b:captureone:50000099",
+        "naver:b:captureone:50001516"
+      ],
       "count": 2,
       "purchase_count": 2,
       "rental_count": 0,
@@ -1599,6 +2386,11 @@
         "datacolor"
       ],
       "logo": "/assets/shop/brands/datacolor-89cae3075d.webp",
+      "navigation_category_ids": [
+        "naver:b:datacolor:50000206",
+        "naver:b:datacolor:50001394",
+        "naver:b:datacolor:50002113"
+      ],
       "count": 1,
       "purchase_count": 1,
       "rental_count": 0,
@@ -1620,6 +2412,11 @@
         "DURIX"
       ],
       "logo": "/assets/shop/brands/durix-6f7b130695.webp",
+      "navigation_category_ids": [
+        "naver:b:durix:50000206",
+        "naver:b:durix:50001394",
+        "naver:b:durix:50002113"
+      ],
       "count": 59,
       "purchase_count": 59,
       "rental_count": 0,
@@ -1644,6 +2441,12 @@
         "eimage"
       ],
       "logo": "https://shop-phinf.pstatic.net/20260901_275/1788225771615ed2qb_PNG/926_temp_17101220093864view.png",
+      "navigation_category_ids": [
+        "naver:b:eimage:50000206",
+        "naver:b:eimage:50001389",
+        "naver:b:eimage:50002074",
+        "naver:b:eimage:50002079"
+      ],
       "count": 109,
       "purchase_count": 109,
       "rental_count": 0,
@@ -1668,6 +2471,11 @@
         "ecoflow"
       ],
       "logo": "/assets/shop/brands/ecoflow-608fd0b5bd.webp",
+      "navigation_category_ids": [
+        "naver:b:ecoflow:50000206",
+        "naver:b:ecoflow:50001394",
+        "naver:b:ecoflow:50002113"
+      ],
       "count": 46,
       "purchase_count": 45,
       "rental_count": 1,
@@ -1694,6 +2502,13 @@
         "edelkrone"
       ],
       "logo": "/assets/shop/brands/edelkrone-1d01fa04e5.webp",
+      "navigation_category_ids": [
+        "naver:b:edelkrone:50000206",
+        "naver:b:edelkrone:50001389",
+        "naver:b:edelkrone:50001394",
+        "naver:b:edelkrone:50002079",
+        "naver:b:edelkrone:50002113"
+      ],
       "count": 19,
       "purchase_count": 11,
       "rental_count": 8,
@@ -1724,6 +2539,9 @@
         "eizo"
       ],
       "logo": "/assets/shop/brands/eizo-f2d347a390.webp",
+      "navigation_category_ids": [
+        "naver:b:eizo:50000153"
+      ],
       "count": 5,
       "purchase_count": 5,
       "rental_count": 0,
@@ -1744,6 +2562,11 @@
         "epson"
       ],
       "logo": "/assets/shop/brands/epson-40f9d0215e.webp",
+      "navigation_category_ids": [
+        "naver:b:epson:50000094",
+        "naver:b:epson:50001208",
+        "naver:b:epson:50002948"
+      ],
       "count": 3,
       "purchase_count": 3,
       "rental_count": 0,
@@ -1765,6 +2588,7 @@
         "ETC"
       ],
       "logo": "https://kppkpp.co.kr/data/item/1781855454/thumb-7ISs64Sk7J2867O17IKs_262x262.jpg",
+      "navigation_category_ids": [],
       "count": 1,
       "purchase_count": 1,
       "rental_count": 0,
@@ -1782,6 +2606,10 @@
         "EYLIN"
       ],
       "logo": "/assets/shop/brands/eylin-4fcf72503c.webp",
+      "navigation_category_ids": [
+        "kpp:b:eylin:global:09",
+        "kpp:b:eylin:global:0940"
+      ],
       "count": 1,
       "purchase_count": 1,
       "rental_count": 0,
@@ -1802,6 +2630,11 @@
         "FARSEEING"
       ],
       "logo": "/assets/shop/brands/farseeing-8e0699f81f.webp",
+      "navigation_category_ids": [
+        "naver:b:farseeing:50000206",
+        "naver:b:farseeing:50001394",
+        "naver:b:farseeing:50002113"
+      ],
       "count": 2,
       "purchase_count": 1,
       "rental_count": 1,
@@ -1848,6 +2681,13 @@
         "Fender Studio"
       ],
       "logo": "https://shop-phinf.pstatic.net/20260831_33/1788156005220eauCX_JPEG/f8d7d43b3e84c7d43feb2194d6e721e5.jpg",
+      "navigation_category_ids": [
+        "naver:b:fender-studio:50000095",
+        "naver:b:fender-studio:50000099",
+        "naver:b:fender-studio:50001214",
+        "naver:b:fender-studio:50001516",
+        "naver:b:fender-studio:50002974"
+      ],
       "count": 8,
       "purchase_count": 8,
       "rental_count": 0,
@@ -1873,6 +2713,12 @@
         "fomex"
       ],
       "logo": "/assets/shop/brands/fomex-3dc8151cee.webp",
+      "navigation_category_ids": [
+        "naver:b:fomex:50000206",
+        "naver:b:fomex:50001390",
+        "naver:b:fomex:50002080",
+        "naver:b:fomex:50002082"
+      ],
       "count": 32,
       "purchase_count": 30,
       "rental_count": 2,
@@ -1901,6 +2747,11 @@
         "genelec"
       ],
       "logo": "/assets/shop/brands/genelec-df31a07e1d.webp",
+      "navigation_category_ids": [
+        "naver:b:genelec:50000209",
+        "naver:b:genelec:50001402",
+        "naver:b:genelec:50002320"
+      ],
       "count": 13,
       "purchase_count": 13,
       "rental_count": 0,
@@ -1923,6 +2774,15 @@
         "젠트리"
       ],
       "logo": "/assets/shop/brands/gentree-319e97604c.webp",
+      "navigation_category_ids": [
+        "naver:b:gentree:50000206",
+        "naver:b:gentree:50001390",
+        "naver:b:gentree:50001391",
+        "naver:b:gentree:50001394",
+        "naver:b:gentree:50002082",
+        "naver:b:gentree:50002086",
+        "naver:b:gentree:50002113"
+      ],
       "count": 61,
       "purchase_count": 59,
       "rental_count": 2,
@@ -1952,6 +2812,11 @@
         "gitzo"
       ],
       "logo": "/assets/shop/brands/gitzo-89639cdf68.webp",
+      "navigation_category_ids": [
+        "naver:b:gitzo:50000206",
+        "naver:b:gitzo:50001389",
+        "naver:b:gitzo:50002076"
+      ],
       "count": 8,
       "purchase_count": 8,
       "rental_count": 0,
@@ -1974,6 +2839,13 @@
         "hahnel"
       ],
       "logo": "/assets/shop/brands/hahnel-9021d741a9.webp",
+      "navigation_category_ids": [
+        "naver:b:hahnel:50000206",
+        "naver:b:hahnel:50001391",
+        "naver:b:hahnel:50001394",
+        "naver:b:hahnel:50002084",
+        "naver:b:hahnel:50002113"
+      ],
       "count": 5,
       "purchase_count": 5,
       "rental_count": 0,
@@ -1997,6 +2869,13 @@
         "Harlowe"
       ],
       "logo": "/assets/shop/brands/harlowe-4a2cab1f3d.webp",
+      "navigation_category_ids": [
+        "naver:b:harlowe:50000206",
+        "naver:b:harlowe:50001390",
+        "naver:b:harlowe:50001394",
+        "naver:b:harlowe:50002082",
+        "naver:b:harlowe:50002113"
+      ],
       "count": 92,
       "purchase_count": 92,
       "rental_count": 0,
@@ -2020,6 +2899,11 @@
         "HOBOLITE"
       ],
       "logo": "https://shop-phinf.pstatic.net/20260126_81/17694121215728MLcN_JPEG/22127682034880933_1324271178.jpg",
+      "navigation_category_ids": [
+        "naver:b:hobolite:50000206",
+        "naver:b:hobolite:50001394",
+        "naver:b:hobolite:50002113"
+      ],
       "count": 11,
       "purchase_count": 2,
       "rental_count": 9,
@@ -2043,6 +2927,13 @@
         "HOMAN"
       ],
       "logo": "https://shop-phinf.pstatic.net/20241029_137/1730201151241yARxH_JPEG/48503806044687831_1170868778.jpg",
+      "navigation_category_ids": [
+        "naver:b:homan:50000206",
+        "naver:b:homan:50001385",
+        "naver:b:homan:50001394",
+        "naver:b:homan:50002113",
+        "naver:b:homan:50004625"
+      ],
       "count": 18,
       "purchase_count": 18,
       "rental_count": 0,
@@ -2069,6 +2960,14 @@
         "hoverair"
       ],
       "logo": "https://shop-phinf.pstatic.net/20260901_19/1788233717524oGYrW_JPEG/3fa631ca-487b-4938-97e5-688f2fc7b9fc.jpg",
+      "navigation_category_ids": [
+        "naver:b:hoverair:50000056",
+        "naver:b:hoverair:50000206",
+        "naver:b:hoverair:50000952",
+        "naver:b:hoverair:50001394",
+        "naver:b:hoverair:50002113",
+        "naver:b:hoverair:50006129"
+      ],
       "count": 28,
       "purchase_count": 28,
       "rental_count": 0,
@@ -2093,6 +2992,11 @@
         "hyperthin"
       ],
       "logo": "https://shop-phinf.pstatic.net/20220915_48/1663227923083OlsPO_JPEG/64363768798443951_93193403.jpg",
+      "navigation_category_ids": [
+        "naver:b:hyperthin:50000206",
+        "naver:b:hyperthin:50001394",
+        "naver:b:hyperthin:50002113"
+      ],
       "count": 1,
       "purchase_count": 1,
       "rental_count": 0,
@@ -2115,6 +3019,11 @@
         "아이풋티지"
       ],
       "logo": "/assets/shop/brands/ifootage-37bcd56eb6.webp",
+      "navigation_category_ids": [
+        "naver:b:ifootage:50000206",
+        "naver:b:ifootage:50001394",
+        "naver:b:ifootage:50002113"
+      ],
       "count": 4,
       "purchase_count": 3,
       "rental_count": 1,
@@ -2138,6 +3047,19 @@
         "잭커리"
       ],
       "logo": "/assets/shop/brands/jackery-68fb20c39f.webp",
+      "navigation_category_ids": [
+        "naver:b:jackery:50000028",
+        "naver:b:jackery:50000055",
+        "naver:b:jackery:50000165",
+        "naver:b:jackery:50000206",
+        "naver:b:jackery:50000936",
+        "naver:b:jackery:50001030",
+        "naver:b:jackery:50001394",
+        "naver:b:jackery:50002113",
+        "naver:b:jackery:50003442",
+        "naver:b:jackery:50003930",
+        "naver:b:jackery:50017740"
+      ],
       "count": 24,
       "purchase_count": 21,
       "rental_count": 3,
@@ -2192,6 +3114,24 @@
         "JOBY"
       ],
       "logo": "/assets/shop/brands/joby-cef7d57d28.webp",
+      "navigation_category_ids": [
+        "naver:b:joby:50000205",
+        "naver:b:joby:50000206",
+        "naver:b:joby:50000209",
+        "naver:b:joby:50000255",
+        "naver:b:joby:50001389",
+        "naver:b:joby:50001390",
+        "naver:b:joby:50001394",
+        "naver:b:joby:50001404",
+        "naver:b:joby:50002074",
+        "naver:b:joby:50002076",
+        "naver:b:joby:50002079",
+        "naver:b:joby:50002082",
+        "naver:b:joby:50002102",
+        "naver:b:joby:50002113",
+        "naver:b:joby:50002328",
+        "naver:b:joby:50006370"
+      ],
       "count": 157,
       "purchase_count": 157,
       "rental_count": 0,
@@ -2227,6 +3167,17 @@
         "카세"
       ],
       "logo": "https://kppkpp.co.kr/data/item/1634007508/thumb-00_262x262.jpg",
+      "navigation_category_ids": [
+        "kpp:b:kase:global:02",
+        "kpp:b:kase:global:0210",
+        "kpp:b:kase:global:0220",
+        "kpp:b:kase:global:0230",
+        "kpp:b:kase:global:0260",
+        "kpp:b:kase:global:03",
+        "kpp:b:kase:global:0340",
+        "kpp:b:kase:global:04",
+        "kpp:b:kase:global:0450"
+      ],
       "count": 21,
       "purchase_count": 21,
       "rental_count": 0,
@@ -2256,6 +3207,13 @@
         "kumkwang"
       ],
       "logo": "https://shop-phinf.pstatic.net/20260901_131/1788252785739D1vbO_JPEG/0081450000082.jpg",
+      "navigation_category_ids": [
+        "naver:b:kumkwang:50000206",
+        "naver:b:kumkwang:50001390",
+        "naver:b:kumkwang:50001394",
+        "naver:b:kumkwang:50002082",
+        "naver:b:kumkwang:50002113"
+      ],
       "count": 58,
       "purchase_count": 58,
       "rental_count": 0,
@@ -2279,6 +3237,13 @@
         "라오와"
       ],
       "logo": "/assets/shop/brands/laowa-ab438160ff.webp",
+      "navigation_category_ids": [
+        "naver:b:laowa:50000206",
+        "naver:b:laowa:50001381",
+        "naver:b:laowa:50004604",
+        "naver:b:laowa:50004605",
+        "naver:b:laowa:50004606"
+      ],
       "count": 125,
       "purchase_count": 125,
       "rental_count": 0,
@@ -2306,6 +3271,65 @@
         "ldl-mount"
       ],
       "logo": "/assets/shop/brands/ldl-mount-314a43a2b2.webp",
+      "navigation_category_ids": [
+        "l-mount:b:ldl-mount:001",
+        "l-mount:b:ldl-mount:001001",
+        "l-mount:b:ldl-mount:001001001",
+        "l-mount:b:ldl-mount:001001001001",
+        "l-mount:b:ldl-mount:001001001002",
+        "l-mount:b:ldl-mount:001001002",
+        "l-mount:b:ldl-mount:001001002001",
+        "l-mount:b:ldl-mount:001001002002",
+        "l-mount:b:ldl-mount:001002",
+        "l-mount:b:ldl-mount:001002001",
+        "l-mount:b:ldl-mount:001002001001",
+        "l-mount:b:ldl-mount:001002001002",
+        "l-mount:b:ldl-mount:001002002",
+        "l-mount:b:ldl-mount:001002002001",
+        "l-mount:b:ldl-mount:001002002002",
+        "l-mount:b:ldl-mount:001003",
+        "l-mount:b:ldl-mount:001003001",
+        "l-mount:b:ldl-mount:001003002",
+        "l-mount:b:ldl-mount:001004",
+        "l-mount:b:ldl-mount:001005",
+        "l-mount:b:ldl-mount:002",
+        "l-mount:b:ldl-mount:002001",
+        "l-mount:b:ldl-mount:002001001",
+        "l-mount:b:ldl-mount:002001002",
+        "l-mount:b:ldl-mount:002002",
+        "l-mount:b:ldl-mount:002002001",
+        "l-mount:b:ldl-mount:002002002",
+        "l-mount:b:ldl-mount:002003",
+        "l-mount:b:ldl-mount:002004",
+        "l-mount:b:ldl-mount:002005",
+        "l-mount:b:ldl-mount:002006",
+        "l-mount:b:ldl-mount:003",
+        "l-mount:b:ldl-mount:003001",
+        "l-mount:b:ldl-mount:003001001",
+        "l-mount:b:ldl-mount:003001002",
+        "l-mount:b:ldl-mount:003001003",
+        "l-mount:b:ldl-mount:003003",
+        "l-mount:b:ldl-mount:003003001",
+        "l-mount:b:ldl-mount:003003002",
+        "l-mount:b:ldl-mount:003004",
+        "l-mount:b:ldl-mount:003004001",
+        "l-mount:b:ldl-mount:003004002",
+        "l-mount:b:ldl-mount:003005",
+        "l-mount:b:ldl-mount:005",
+        "l-mount:b:ldl-mount:005001",
+        "l-mount:b:ldl-mount:005002",
+        "l-mount:b:ldl-mount:005003",
+        "l-mount:b:ldl-mount:005004",
+        "l-mount:b:ldl-mount:005005",
+        "l-mount:b:ldl-mount:005006",
+        "l-mount:b:ldl-mount:005007",
+        "l-mount:b:ldl-mount:006",
+        "l-mount:b:ldl-mount:006001",
+        "l-mount:b:ldl-mount:006002",
+        "l-mount:b:ldl-mount:006003",
+        "l-mount:b:ldl-mount:006004",
+        "l-mount:b:ldl-mount:011"
+      ],
       "count": 335,
       "purchase_count": 335,
       "rental_count": 0,
@@ -2383,6 +3407,11 @@
         "lee-filters"
       ],
       "logo": "/assets/shop/brands/lee-filters-831738f82f.webp",
+      "navigation_category_ids": [
+        "naver:b:lee-filters:50000206",
+        "naver:b:lee-filters:50001382",
+        "naver:b:lee-filters:50004609"
+      ],
       "count": 278,
       "purchase_count": 278,
       "rental_count": 0,
@@ -2405,6 +3434,11 @@
         "lemark"
       ],
       "logo": "https://shop-phinf.pstatic.net/20220516_25/16527113977719NqMX_JPEG/53847243486932486_9783186.jpg",
+      "navigation_category_ids": [
+        "naver:b:lemark:50000206",
+        "naver:b:lemark:50001394",
+        "naver:b:lemark:50002100"
+      ],
       "count": 4,
       "purchase_count": 4,
       "rental_count": 0,
@@ -2427,6 +3461,15 @@
         "lexar"
       ],
       "logo": "https://shop-phinf.pstatic.net/20260720_54/17845457842257yA7B_PNG/69730750015773906_1384909945.png",
+      "navigation_category_ids": [
+        "naver:b:lexar:50000206",
+        "naver:b:lexar:50001385",
+        "naver:b:lexar:50001386",
+        "naver:b:lexar:50004624",
+        "naver:b:lexar:50004625",
+        "naver:b:lexar:50004626",
+        "naver:b:lexar:50004630"
+      ],
       "count": 29,
       "purchase_count": 29,
       "rental_count": 0,
@@ -2453,6 +3496,13 @@
         "libec"
       ],
       "logo": "/assets/shop/brands/libec-9a07ceefb2.webp",
+      "navigation_category_ids": [
+        "naver:b:libec:50000206",
+        "naver:b:libec:50001389",
+        "naver:b:libec:50001394",
+        "naver:b:libec:50002079",
+        "naver:b:libec:50002113"
+      ],
       "count": 95,
       "purchase_count": 95,
       "rental_count": 0,
@@ -2476,6 +3526,10 @@
         "LIMS"
       ],
       "logo": "https://kppkpp.co.kr/data/item/1569984972/thumb-1_262x262.jpg",
+      "navigation_category_ids": [
+        "kpp:b:lims:global:05",
+        "kpp:b:lims:global:0530"
+      ],
       "count": 6,
       "purchase_count": 6,
       "rental_count": 0,
@@ -2496,6 +3550,13 @@
         "lowepro"
       ],
       "logo": "/assets/shop/brands/lowepro-8326dea9cb.webp",
+      "navigation_category_ids": [
+        "naver:b:lowepro:50000206",
+        "naver:b:lowepro:50001387",
+        "naver:b:lowepro:50001394",
+        "naver:b:lowepro:50002113",
+        "naver:b:lowepro:50004635"
+      ],
       "count": 2,
       "purchase_count": 2,
       "rental_count": 0,
@@ -2519,6 +3580,17 @@
         "맨프로토"
       ],
       "logo": "/assets/shop/brands/manfrotto-4846aeeb14.webp",
+      "navigation_category_ids": [
+        "naver:b:manfrotto:50000206",
+        "naver:b:manfrotto:50001387",
+        "naver:b:manfrotto:50001389",
+        "naver:b:manfrotto:50002074",
+        "naver:b:manfrotto:50002075",
+        "naver:b:manfrotto:50002076",
+        "naver:b:manfrotto:50002079",
+        "naver:b:manfrotto:50004634",
+        "naver:b:manfrotto:50004635"
+      ],
       "count": 74,
       "purchase_count": 72,
       "rental_count": 2,
@@ -2553,6 +3625,12 @@
         "matthews"
       ],
       "logo": "/assets/shop/brands/matthews-857b4e8f65.webp",
+      "navigation_category_ids": [
+        "naver:b:matthews:50000206",
+        "naver:b:matthews:50001389",
+        "naver:b:matthews:50002074",
+        "naver:b:matthews:50002079"
+      ],
       "count": 177,
       "purchase_count": 177,
       "rental_count": 0,
@@ -2576,6 +3654,11 @@
         "megadap"
       ],
       "logo": "/assets/shop/brands/megadap-c1da403ad8.webp",
+      "navigation_category_ids": [
+        "naver:b:megadap:50000206",
+        "naver:b:megadap:50001394",
+        "naver:b:megadap:50002100"
+      ],
       "count": 2,
       "purchase_count": 2,
       "rental_count": 0,
@@ -2598,6 +3681,11 @@
         "metabones"
       ],
       "logo": "https://shop-phinf.pstatic.net/20260112_96/1768214955664GQc5t_JPEG/5473151504367165_1001928382.jpg",
+      "navigation_category_ids": [
+        "naver:b:metabones:50000206",
+        "naver:b:metabones:50001394",
+        "naver:b:metabones:50002100"
+      ],
       "count": 1,
       "purchase_count": 1,
       "rental_count": 0,
@@ -2621,6 +3709,11 @@
         "misonics"
       ],
       "logo": "https://shop-phinf.pstatic.net/20230630_62/1688102309587TSYEf_JPEG/1991167392737522_1766478870.jpg",
+      "navigation_category_ids": [
+        "naver:b:misonics:50000206",
+        "naver:b:misonics:50001390",
+        "naver:b:misonics:50002082"
+      ],
       "count": 10,
       "purchase_count": 7,
       "rental_count": 3,
@@ -2648,6 +3741,14 @@
         "motion9"
       ],
       "logo": "https://shop-phinf.pstatic.net/20260329_215/1774786858778WdSfH_JPEG/43446293659211493_584865494.jpg",
+      "navigation_category_ids": [
+        "naver:b:motion9:50000078",
+        "naver:b:motion9:50000206",
+        "naver:b:motion9:50000915",
+        "naver:b:motion9:50001387",
+        "naver:b:motion9:50002703",
+        "naver:b:motion9:50004633"
+      ],
       "count": 15,
       "purchase_count": 15,
       "rental_count": 0,
@@ -2672,6 +3773,11 @@
         "MOVMAX"
       ],
       "logo": "/assets/shop/brands/movmax-67f5ffc913.webp",
+      "navigation_category_ids": [
+        "naver:b:movmax:50000206",
+        "naver:b:movmax:50001394",
+        "naver:b:movmax:50002113"
+      ],
       "count": 3,
       "purchase_count": 3,
       "rental_count": 0,
@@ -2695,6 +3801,14 @@
         "rainbowbene"
       ],
       "logo": "/assets/shop/brands/rainbowbene-fcb83d4e8f.webp",
+      "navigation_category_ids": [
+        "naver:b:rainbowbene:50000206",
+        "naver:b:rainbowbene:50001390",
+        "naver:b:rainbowbene:50001394",
+        "naver:b:rainbowbene:50002082",
+        "naver:b:rainbowbene:50002100",
+        "naver:b:rainbowbene:50002113"
+      ],
       "count": 69,
       "purchase_count": 57,
       "rental_count": 12,
@@ -2730,6 +3844,14 @@
         "난룩스"
       ],
       "logo": "/assets/shop/brands/nanlux-f398e4d33f.webp",
+      "navigation_category_ids": [
+        "naver:b:nanlux:50000206",
+        "naver:b:nanlux:50001390",
+        "naver:b:nanlux:50001394",
+        "naver:b:nanlux:50002080",
+        "naver:b:nanlux:50002082",
+        "naver:b:nanlux:50002113"
+      ],
       "count": 109,
       "purchase_count": 106,
       "rental_count": 3,
@@ -2784,6 +3906,13 @@
         "nisi"
       ],
       "logo": "https://shop-phinf.pstatic.net/20250922_49/1758521016432HWD4r_PNG/6390510157002117_550773575.png",
+      "navigation_category_ids": [
+        "naver:b:nisi:50000206",
+        "naver:b:nisi:50001381",
+        "naver:b:nisi:50001382",
+        "naver:b:nisi:50004604",
+        "naver:b:nisi:50004609"
+      ],
       "count": 8,
       "purchase_count": 8,
       "rental_count": 0,
@@ -2807,6 +3936,10 @@
         "OFFICIAL EXCLUSIVE"
       ],
       "logo": "https://kppkpp.co.kr/data/item/1665987633/thumb-01_262x262.jpg",
+      "navigation_category_ids": [
+        "kpp:b:official-exclusive:global:09",
+        "kpp:b:official-exclusive:global:0910"
+      ],
       "count": 45,
       "purchase_count": 45,
       "rental_count": 0,
@@ -2828,6 +3961,11 @@
         "오픈문"
       ],
       "logo": "https://shop-phinf.pstatic.net/20240819_236/17240507384706IBs0_JPEG/9007438375557729_43984658.jpg",
+      "navigation_category_ids": [
+        "naver:b:openmoon:50000206",
+        "naver:b:openmoon:50001390",
+        "naver:b:openmoon:50002082"
+      ],
       "count": 11,
       "purchase_count": 11,
       "rental_count": 0,
@@ -2850,6 +3988,11 @@
         "오스람"
       ],
       "logo": "/assets/shop/brands/osram-417858aff2.webp",
+      "navigation_category_ids": [
+        "naver:b:osram:50000206",
+        "naver:b:osram:50001394",
+        "naver:b:osram:50002113"
+      ],
       "count": 15,
       "purchase_count": 15,
       "rental_count": 0,
@@ -2872,6 +4015,11 @@
         "PARABOLIX"
       ],
       "logo": "/assets/shop/brands/parabolix-abc7080b64.webp",
+      "navigation_category_ids": [
+        "naver:b:parabolix:50000206",
+        "naver:b:parabolix:50001394",
+        "naver:b:parabolix:50002113"
+      ],
       "count": 84,
       "purchase_count": 84,
       "rental_count": 0,
@@ -2894,6 +4042,13 @@
         "pentax"
       ],
       "logo": "https://shop-phinf.pstatic.net/20260602_34/17804058901514Oqj3_JPEG/127039673391260713_1829165998.jpg",
+      "navigation_category_ids": [
+        "naver:b:pentax:50000206",
+        "naver:b:pentax:50000266",
+        "naver:b:pentax:50000267",
+        "naver:b:pentax:50001384",
+        "naver:b:pentax:50004619"
+      ],
       "count": 6,
       "purchase_count": 6,
       "rental_count": 0,
@@ -2919,6 +4074,13 @@
         "peribounce"
       ],
       "logo": "/assets/shop/brands/peribounce-708430e1b1.webp",
+      "navigation_category_ids": [
+        "naver:b:peribounce:50000206",
+        "naver:b:peribounce:50001390",
+        "naver:b:peribounce:50001394",
+        "naver:b:peribounce:50002082",
+        "naver:b:peribounce:50002113"
+      ],
       "count": 5,
       "purchase_count": 3,
       "rental_count": 2,
@@ -2947,6 +4109,10 @@
         "phaseone"
       ],
       "logo": "https://shop-phinf.pstatic.net/20230827_131/1693122757006sIfQL_JPEG/4048874868569018_937277811.jpg",
+      "navigation_category_ids": [
+        "naver:b:phaseone:50000099",
+        "naver:b:phaseone:50001516"
+      ],
       "count": 8,
       "purchase_count": 1,
       "rental_count": 7,
@@ -2977,6 +4143,11 @@
         "plthink"
       ],
       "logo": "https://shop-phinf.pstatic.net/20230315_25/1678850278530kz8r6_JPEG/79986106360569501_757940277.jpg",
+      "navigation_category_ids": [
+        "naver:b:plthink:50000206",
+        "naver:b:plthink:50001390",
+        "naver:b:plthink:50002082"
+      ],
       "count": 3,
       "purchase_count": 3,
       "rental_count": 0,
@@ -2998,6 +4169,11 @@
         "PMI"
       ],
       "logo": "/assets/shop/brands/pmi-54b2979ad8.webp",
+      "navigation_category_ids": [
+        "naver:b:pmi:50000206",
+        "naver:b:pmi:50001390",
+        "naver:b:pmi:50002082"
+      ],
       "count": 13,
       "purchase_count": 13,
       "rental_count": 0,
@@ -3019,6 +4195,13 @@
         "POLARPRO"
       ],
       "logo": "/assets/shop/brands/polarpro-cb32087539.webp",
+      "navigation_category_ids": [
+        "kpp:b:polarpro:global:02",
+        "kpp:b:polarpro:global:0220",
+        "kpp:b:polarpro:global:0230",
+        "kpp:b:polarpro:global:04",
+        "kpp:b:polarpro:global:0450"
+      ],
       "count": 3,
       "purchase_count": 3,
       "rental_count": 0,
@@ -3042,6 +4225,15 @@
         "PRESONUS"
       ],
       "logo": "/assets/shop/brands/presonus-d6387782c0.webp",
+      "navigation_category_ids": [
+        "naver:b:presonus:50000095",
+        "naver:b:presonus:50000209",
+        "naver:b:presonus:50001214",
+        "naver:b:presonus:50001407",
+        "naver:b:presonus:50001966",
+        "naver:b:presonus:50002342",
+        "naver:b:presonus:50002974"
+      ],
       "count": 15,
       "purchase_count": 15,
       "rental_count": 0,
@@ -3067,6 +4259,11 @@
         "PRO GAFF"
       ],
       "logo": "https://shop-phinf.pstatic.net/20260208_289/1770557636962Ce67m_JPEG/99919254509269468_1231101369.jpg",
+      "navigation_category_ids": [
+        "naver:b:pro-gaff:50000206",
+        "naver:b:pro-gaff:50001394",
+        "naver:b:pro-gaff:50002100"
+      ],
       "count": 3,
       "purchase_count": 3,
       "rental_count": 0,
@@ -3090,6 +4287,11 @@
         "PROFOTO"
       ],
       "logo": "/assets/shop/brands/profoto-70662422eb.webp",
+      "navigation_category_ids": [
+        "naver:b:profoto:50000206",
+        "naver:b:profoto:50001390",
+        "naver:b:profoto:50002082"
+      ],
       "count": 11,
       "purchase_count": 1,
       "rental_count": 10,
@@ -3117,6 +4319,15 @@
         "qon"
       ],
       "logo": "https://shop-phinf.pstatic.net/20230516_189/1684221626548G7O4S_JPEG/504515817364830_748655033.jpg",
+      "navigation_category_ids": [
+        "naver:b:qon:50000206",
+        "naver:b:qon:50001390",
+        "naver:b:qon:50001394",
+        "naver:b:qon:50002080",
+        "naver:b:qon:50002082",
+        "naver:b:qon:50002100",
+        "naver:b:qon:50002113"
+      ],
       "count": 22,
       "purchase_count": 22,
       "rental_count": 0,
@@ -3167,6 +4378,11 @@
         "ricoh"
       ],
       "logo": "/assets/shop/brands/ricoh-5ee8c9b5d0.webp",
+      "navigation_category_ids": [
+        "naver:b:ricoh:50000206",
+        "naver:b:ricoh:50000266",
+        "naver:b:ricoh:50000267"
+      ],
       "count": 3,
       "purchase_count": 3,
       "rental_count": 0,
@@ -3188,6 +4404,11 @@
         "로보컵"
       ],
       "logo": "/assets/shop/brands/robocup-d53f35a4ea.webp",
+      "navigation_category_ids": [
+        "naver:b:robocup:50000206",
+        "naver:b:robocup:50001394",
+        "naver:b:robocup:50002113"
+      ],
       "count": 8,
       "purchase_count": 8,
       "rental_count": 0,
@@ -3209,6 +4430,11 @@
         "ROCKET"
       ],
       "logo": "https://shop-phinf.pstatic.net/20230224_94/1677204950566be4hI_PNG/4507634427247913_684519662.png",
+      "navigation_category_ids": [
+        "naver:b:rocket:50000206",
+        "naver:b:rocket:50001390",
+        "naver:b:rocket:50002082"
+      ],
       "count": 2,
       "purchase_count": 2,
       "rental_count": 0,
@@ -3232,6 +4458,10 @@
         "rocknroller"
       ],
       "logo": "/assets/shop/brands/rocknroller-bb0f5b1dab.webp",
+      "navigation_category_ids": [
+        "naver:b:rocknroller:50000102",
+        "naver:b:rocknroller:50001315"
+      ],
       "count": 19,
       "purchase_count": 19,
       "rental_count": 0,
@@ -3280,6 +4510,13 @@
         "sachtler"
       ],
       "logo": "/assets/shop/brands/sachtler-3af4b66756.webp",
+      "navigation_category_ids": [
+        "naver:b:sachtler:50000206",
+        "naver:b:sachtler:50001389",
+        "naver:b:sachtler:50001394",
+        "naver:b:sachtler:50002074",
+        "naver:b:sachtler:50002113"
+      ],
       "count": 13,
       "purchase_count": 12,
       "rental_count": 1,
@@ -3307,6 +4544,13 @@
         "samyang"
       ],
       "logo": "/assets/shop/brands/samyang-576f125575.webp",
+      "navigation_category_ids": [
+        "naver:b:samyang:50000206",
+        "naver:b:samyang:50001381",
+        "naver:b:samyang:50004604",
+        "naver:b:samyang:50004605",
+        "naver:b:samyang:50004606"
+      ],
       "count": 26,
       "purchase_count": 26,
       "rental_count": 0,
@@ -3331,6 +4575,12 @@
         "sandisk"
       ],
       "logo": "/assets/shop/brands/sandisk-fa2757420f.webp",
+      "navigation_category_ids": [
+        "naver:b:sandisk:50000206",
+        "naver:b:sandisk:50001385",
+        "naver:b:sandisk:50004624",
+        "naver:b:sandisk:50004625"
+      ],
       "count": 4,
       "purchase_count": 2,
       "rental_count": 2,
@@ -3358,6 +4608,11 @@
         "saramonic"
       ],
       "logo": "/assets/shop/brands/saramonic-6d6963d3e8.webp",
+      "navigation_category_ids": [
+        "naver:b:saramonic:50000206",
+        "naver:b:saramonic:50001394",
+        "naver:b:saramonic:50002102"
+      ],
       "count": 5,
       "purchase_count": 4,
       "rental_count": 1,
@@ -3383,6 +4638,11 @@
         "savage"
       ],
       "logo": "/assets/shop/brands/savage-86a2187b2b.webp",
+      "navigation_category_ids": [
+        "naver:b:savage:50000206",
+        "naver:b:savage:50001390",
+        "naver:b:savage:50002082"
+      ],
       "count": 94,
       "purchase_count": 94,
       "rental_count": 0,
@@ -3405,6 +4665,11 @@
         "sedona"
       ],
       "logo": "/assets/shop/brands/sedona-fb2bff0974.webp",
+      "navigation_category_ids": [
+        "naver:b:sedona:50000206",
+        "naver:b:sedona:50001394",
+        "naver:b:sedona:50002113"
+      ],
       "count": 15,
       "purchase_count": 15,
       "rental_count": 0,
@@ -3427,6 +4692,11 @@
         "sekonic"
       ],
       "logo": "/assets/shop/brands/sekonic-89210bebf7.webp",
+      "navigation_category_ids": [
+        "naver:b:sekonic:50000206",
+        "naver:b:sekonic:50001390",
+        "naver:b:sekonic:50002082"
+      ],
       "count": 6,
       "purchase_count": 5,
       "rental_count": 1,
@@ -3476,6 +4746,10 @@
         "SG-image"
       ],
       "logo": "https://kppkpp.co.kr/data/item/1766046169/thumb-50mm_f1_8_262x262.jpg",
+      "navigation_category_ids": [
+        "kpp:b:sg-image:global:03",
+        "kpp:b:sg-image:global:0320"
+      ],
       "count": 6,
       "purchase_count": 6,
       "rental_count": 0,
@@ -3496,6 +4770,27 @@
         "슈어"
       ],
       "logo": "/assets/shop/brands/shure-3691e6cfb6.webp",
+      "navigation_category_ids": [
+        "naver:b:shure:50000095",
+        "naver:b:shure:50000209",
+        "naver:b:shure:50001214",
+        "naver:b:shure:50001404",
+        "naver:b:shure:50001407",
+        "naver:b:shure:50001964",
+        "naver:b:shure:50002326",
+        "naver:b:shure:50002327",
+        "naver:b:shure:50002328",
+        "naver:b:shure:50002342",
+        "naver:b:shure:50002974",
+        "naver:b:shure:50006972",
+        "naver:b:shure:50024359",
+        "naver:b:shure:50024379",
+        "naver:b:shure:50024399",
+        "naver:b:shure:50024419",
+        "naver:b:shure:50024439",
+        "naver:b:shure:50024459",
+        "naver:b:shure:50024479"
+      ],
       "count": 79,
       "purchase_count": 78,
       "rental_count": 1,
@@ -3536,6 +4831,11 @@
         "SIGHTRON"
       ],
       "logo": "/assets/shop/brands/sightron-fa7ce6cb5f.webp",
+      "navigation_category_ids": [
+        "kpp:b:sightron:global:00",
+        "kpp:b:sightron:global:0020",
+        "kpp:b:sightron:global:0030"
+      ],
       "count": 10,
       "purchase_count": 10,
       "rental_count": 0,
@@ -3557,6 +4857,11 @@
         "SKB"
       ],
       "logo": "/assets/shop/brands/skb-3f00556cbc.webp",
+      "navigation_category_ids": [
+        "naver:b:skb:50000206",
+        "naver:b:skb:50001387",
+        "naver:b:skb:50004637"
+      ],
       "count": 1,
       "purchase_count": 1,
       "rental_count": 0,
@@ -3600,6 +4905,15 @@
         "소니"
       ],
       "logo": "/assets/shop/brands/sony-267a08e067.webp",
+      "navigation_category_ids": [
+        "naver:b:sony:50000206",
+        "naver:b:sony:50000268",
+        "naver:b:sony:50001381",
+        "naver:b:sony:50001394",
+        "naver:b:sony:50002098",
+        "naver:b:sony:50004604",
+        "naver:b:sony:50004606"
+      ],
       "count": 35,
       "purchase_count": 18,
       "rental_count": 17,
@@ -3637,6 +4951,14 @@
         "swit"
       ],
       "logo": "/assets/shop/brands/swit-6a9a47c5ed.webp",
+      "navigation_category_ids": [
+        "naver:b:swit:50000206",
+        "naver:b:swit:50001391",
+        "naver:b:swit:50001394",
+        "naver:b:swit:50002084",
+        "naver:b:swit:50002086",
+        "naver:b:swit:50002113"
+      ],
       "count": 57,
       "purchase_count": 56,
       "rental_count": 1,
@@ -3663,6 +4985,10 @@
         "TARION"
       ],
       "logo": "/assets/shop/brands/tarion-8e15a8573f.webp",
+      "navigation_category_ids": [
+        "kpp:b:tarion:global:06",
+        "kpp:b:tarion:global:0690"
+      ],
       "count": 3,
       "purchase_count": 3,
       "rental_count": 0,
@@ -3685,6 +5011,13 @@
         "tenba"
       ],
       "logo": "/assets/shop/brands/tenba-cf0249f27d.webp",
+      "navigation_category_ids": [
+        "naver:b:tenba:50000206",
+        "naver:b:tenba:50001387",
+        "naver:b:tenba:50004634",
+        "naver:b:tenba:50004635",
+        "naver:b:tenba:50004637"
+      ],
       "count": 48,
       "purchase_count": 48,
       "rental_count": 0,
@@ -3734,6 +5067,14 @@
         "teris"
       ],
       "logo": "/assets/shop/brands/teris-6b473bf5c8.webp",
+      "navigation_category_ids": [
+        "naver:b:teris:50000206",
+        "naver:b:teris:50001389",
+        "naver:b:teris:50002074",
+        "naver:b:teris:50002077",
+        "naver:b:teris:50002078",
+        "naver:b:teris:50002079"
+      ],
       "count": 37,
       "purchase_count": 37,
       "rental_count": 0,
@@ -3760,6 +5101,15 @@
         "tethertools"
       ],
       "logo": "https://kppkpp.co.kr/data/item/1720657916/thumb-01_262x262.jpg",
+      "navigation_category_ids": [
+        "kpp:b:tethertools:global:06",
+        "kpp:b:tethertools:global:0690",
+        "kpp:b:tethertools:global:08",
+        "kpp:b:tethertools:global:0810",
+        "naver:b:tethertools:50000206",
+        "naver:b:tethertools:50001394",
+        "naver:b:tethertools:50002113"
+      ],
       "count": 58,
       "purchase_count": 58,
       "rental_count": 0,
@@ -3785,6 +5135,11 @@
         "THE RAG PLACE"
       ],
       "logo": "/assets/shop/brands/the-rag-place-f04aa44a37.webp",
+      "navigation_category_ids": [
+        "naver:b:the-rag-place:50000206",
+        "naver:b:the-rag-place:50001390",
+        "naver:b:the-rag-place:50002082"
+      ],
       "count": 17,
       "purchase_count": 17,
       "rental_count": 0,
@@ -3831,6 +5186,12 @@
         "tvlogic"
       ],
       "logo": "/assets/shop/brands/tvlogic-73be41140b.webp",
+      "navigation_category_ids": [
+        "naver:b:tvlogic:50000206",
+        "naver:b:tvlogic:50001394",
+        "naver:b:tvlogic:50002100",
+        "naver:b:tvlogic:50002113"
+      ],
       "count": 18,
       "purchase_count": 17,
       "rental_count": 1,
@@ -3856,6 +5217,13 @@
         "ulanzi"
       ],
       "logo": "https://shop-phinf.pstatic.net/20250611_51/1749626253726tLQWW_JPEG/100323778754221663_1549868442.jpg",
+      "navigation_category_ids": [
+        "naver:b:ulanzi:50000206",
+        "naver:b:ulanzi:50001389",
+        "naver:b:ulanzi:50001394",
+        "naver:b:ulanzi:50002079",
+        "naver:b:ulanzi:50002113"
+      ],
       "count": 2,
       "purchase_count": 2,
       "rental_count": 0,
@@ -3881,6 +5249,16 @@
         "valens"
       ],
       "logo": "/assets/shop/brands/valens-c18274d85e.webp",
+      "navigation_category_ids": [
+        "naver:b:valens:50000206",
+        "naver:b:valens:50001389",
+        "naver:b:valens:50001390",
+        "naver:b:valens:50001394",
+        "naver:b:valens:50002079",
+        "naver:b:valens:50002082",
+        "naver:b:valens:50002100",
+        "naver:b:valens:50002113"
+      ],
       "count": 165,
       "purchase_count": 165,
       "rental_count": 0,
@@ -3908,6 +5286,14 @@
         "visgo"
       ],
       "logo": "https://shop-phinf.pstatic.net/20240819_148/17240562193080yFVO_JPEG/71015744130481502_554139982.jpg",
+      "navigation_category_ids": [
+        "naver:b:visgo:50000206",
+        "naver:b:visgo:50001390",
+        "naver:b:visgo:50001394",
+        "naver:b:visgo:50002082",
+        "naver:b:visgo:50002100",
+        "naver:b:visgo:50002112"
+      ],
       "count": 26,
       "purchase_count": 26,
       "rental_count": 0,
@@ -3933,6 +5319,15 @@
         "wacom"
       ],
       "logo": "/assets/shop/brands/wacom-3275a45320.webp",
+      "navigation_category_ids": [
+        "naver:b:wacom:50000094",
+        "naver:b:wacom:50000206",
+        "naver:b:wacom:50001205",
+        "naver:b:wacom:50001381",
+        "naver:b:wacom:50002935",
+        "naver:b:wacom:50002936",
+        "naver:b:wacom:50004605"
+      ],
       "count": 31,
       "purchase_count": 31,
       "rental_count": 0,
@@ -3960,6 +5355,15 @@
         "xtar"
       ],
       "logo": "/assets/shop/brands/xtar-a2d59318a9.webp",
+      "navigation_category_ids": [
+        "naver:b:xtar:50000206",
+        "naver:b:xtar:50001391",
+        "naver:b:xtar:50001394",
+        "naver:b:xtar:50002084",
+        "naver:b:xtar:50002086",
+        "naver:b:xtar:50002088",
+        "naver:b:xtar:50002113"
+      ],
       "count": 15,
       "purchase_count": 14,
       "rental_count": 1,
@@ -3987,6 +5391,11 @@
         "자이스"
       ],
       "logo": "https://shop-phinf.pstatic.net/20251212_66/1765514902472AzYp1_JPEG/18440964007300131_2144965810.jpg",
+      "navigation_category_ids": [
+        "naver:b:zeiss:50000206",
+        "naver:b:zeiss:50001390",
+        "naver:b:zeiss:50002082"
+      ],
       "count": 4,
       "purchase_count": 4,
       "rental_count": 0,
@@ -4009,6 +5418,11 @@
         "zgc"
       ],
       "logo": "/assets/shop/brands/zgc-b73ec901c4.webp",
+      "navigation_category_ids": [
+        "naver:b:zgc:50000206",
+        "naver:b:zgc:50001394",
+        "naver:b:zgc:50002100"
+      ],
       "count": 17,
       "purchase_count": 17,
       "rental_count": 0,
@@ -4054,6 +5468,11 @@
         "러그박스"
       ],
       "logo": "https://shop-phinf.pstatic.net/20240617_73/1718603071990Gt9IX_PNG/52517765005330734_926064150.png",
+      "navigation_category_ids": [
+        "naver:b:brand-33f2578e39:50000206",
+        "naver:b:brand-33f2578e39:50001394",
+        "naver:b:brand-33f2578e39:50002113"
+      ],
       "count": 1,
       "purchase_count": 1,
       "rental_count": 0,
@@ -4075,6 +5494,11 @@
         "스탠리 팻맥스"
       ],
       "logo": "/assets/shop/brands/brand-37cde4a591-137ef6c4ec.webp",
+      "navigation_category_ids": [
+        "naver:b:brand-37cde4a591:50000206",
+        "naver:b:brand-37cde4a591:50001394",
+        "naver:b:brand-37cde4a591:50002100"
+      ],
       "count": 1,
       "purchase_count": 1,
       "rental_count": 0,
@@ -4120,6 +5544,10 @@
         "후지필름"
       ],
       "logo": "/assets/shop/brands/brand-63ad1e5419-0a4f8946e7.webp",
+      "navigation_category_ids": [
+        "naver:b:brand-63ad1e5419:50000206",
+        "naver:b:brand-63ad1e5419:50000266"
+      ],
       "count": 10,
       "purchase_count": 10,
       "rental_count": 0,
