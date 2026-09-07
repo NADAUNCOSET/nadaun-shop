@@ -1,52 +1,41 @@
 {
-  "headers": [
+  "routes": [
     {
-      "source": "/data/catalog/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
-      ]
+      "src": "/(.*)",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Referrer-Policy": "no-referrer"
+      },
+      "continue": true
     },
     {
-      "source": "/brand/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
+      "src": "/brand/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      },
+      "continue": true
     },
     {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "no-referrer"
-        }
-      ]
-    }
-  ],
-  "redirects": [
+      "src": "/data/catalog/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate"
+      },
+      "continue": true
+    },
     {
-      "source": "/product/:brand/kpp-:id.html",
-      "destination": "/item.html?id=kpp-:id",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
+      "src": "^/product/[^/]+/kpp-([^/]+)\\.html$",
+      "status": 308,
+      "headers": {
+        "Location": "/item.html?id=kpp-$1"
+      }
+    },
     {
-      "source": "/item.html",
-      "destination": "/api/product"
+      "src": "^/item\\.html$",
+      "dest": "/api/product"
+    },
+    {
+      "handle": "filesystem"
     }
   ],
   "functions": {
