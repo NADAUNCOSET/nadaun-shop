@@ -17,6 +17,7 @@ function setup(conditions={motion:true,desktop:false,fine:false,mobile:false}){
   before(child){child.remove();const index=this.parent.children.indexOf(this);child.parent=this.parent;child.ownerDocument=this.ownerDocument;this.parent.children.splice(index,0,child)}
   remove(){if(this.parent){this.parent.children.splice(this.parent.children.indexOf(this),1);this.parent=null}}
   replaceWith(child){this.before(child);this.remove()}
+  closest(selector){return selector==='[hidden]'?(this.hidden?this:this.parent?.closest(selector)):null}
   matches(selector){return selector.split(',').some(s=>s===this.tag||this.selectors.has(s))}
   querySelectorAll(selector){return this.children.flatMap(c=>[...(c.matches(selector)?[c]:[]),...c.querySelectorAll(selector)])}
   querySelector(selector){return this.querySelectorAll(selector)[0]}
@@ -67,6 +68,12 @@ test('home keeps useful image links without JavaScript and uses the lightweight 
  for(const label of ['제품 구매','제품 렌탈','기프트 구매'])assert.ok(home.includes('<strong>'+label+'</strong>'));
  for(const href of ['/catalog.html','/catalog.html?kind=rental','/gifts.html'])assert.ok(home.includes('href="'+href+'"'));
  assert.ok(home.includes('/assets/shop/thumbnails/imweb-13283.webp'));assert.ok(!home.includes('/assets/shop/departments/purchase.jpg'));
- assert.ok(home.includes('class="motion-ribbon" aria-hidden="true"'));assert.ok(!home.includes('{{'));
+ assert.ok(!home.includes('motion-ribbon'));assert.ok(!home.includes('{{'));
  const css=fs.readFileSync('assets/shop/shop.css','utf8');assert.ok(css.includes('.editorial-pair.has-stacked-motion:focus-within>a'));assert.ok(css.includes('a:focus-visible .motion-plane'));
+});
+
+test('hidden brand search results release scroll work and restore it when shown',()=>{
+ const s=setup();const {frame,image}=s.photo();const dispose=s.mount();const old=s.effects.find(e=>e.vars.scrollTrigger?.trigger===frame);
+ frame.hidden=true;s.observers[0].fn();s.flush();assert.equal(old.killed,true);assert.equal(frame.firstElementChild,image);
+ frame.hidden=false;s.observers[0].fn();s.flush();assert.equal(frame.firstElementChild.className,'motion-plane');dispose();
 });

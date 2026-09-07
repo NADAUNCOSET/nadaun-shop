@@ -13,7 +13,7 @@ export function mountArtMotion(main,{gsap,ScrollTrigger:ST},env=window){
    entry.context.revert();entry.cleanup?.();records.delete(node);
   }
   function register(node,build){
-   if(!node||records.has(node))return;
+   if(!node||node.closest('[hidden]')||records.has(node))return;
    let cleanup;
    const scope=gsap.context(()=>{cleanup=build()},main);
    records.set(node,{context:scope,cleanup});
@@ -35,7 +35,7 @@ export function mountArtMotion(main,{gsap,ScrollTrigger:ST},env=window){
   }
   function scan(){
    if(disposed)return;
-   for(const node of records.keys())if(!node.isConnected)remove(node);
+   for(const node of records.keys())if(!node.isConnected||node.closest('[hidden]'))remove(node);
    main.querySelectorAll('.department-visual,.brand-object,.product-image,.editorial-visual').forEach(photograph);
    main.querySelectorAll('.section-head h2,.editorial-copy h2,.studio-amenities h2').forEach(heading=>register(heading,()=>{
     const lines=heading.querySelectorAll('.motion-line>span');
@@ -48,8 +48,6 @@ export function mountArtMotion(main,{gsap,ScrollTrigger:ST},env=window){
    main.querySelectorAll('.cart-items>li,.checkout-services>section,.service-grid>section,.studio-gallery figure,.studio-specs>div,.studio-amenities li').forEach(node=>register(node,()=>{
     gsap.fromTo(node,{y:mobile?20:44},{y:0,ease:'none',scrollTrigger:scroll(node,'top bottom','top 66%')});
    }));
-   const ribbon=main.querySelector('.motion-ribbon');
-   register(ribbon,()=>{gsap.fromTo(ribbon.firstElementChild,{xPercent:3},{xPercent:-22,ease:'none',scrollTrigger:scroll(ribbon)})});
    const pair=main.querySelector('.editorial-pair');
    if(desktop&&pair)register(pair,()=>{
     pair.classList.add('has-stacked-motion');

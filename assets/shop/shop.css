@@ -399,7 +399,7 @@ body{background:var(--paper)}.header{background:#fff}.utility{background:#f0f0ed
 @media(prefers-reduced-motion:reduce){.shop-banner-slide{transition:none}.banner-progress{display:none}.reading-progress{display:none}}
 
 /* Product-led entrances, reversible scroll motion and a two-part feature stack. */
-.shop-departments{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:30px 0 0;align-items:start}
+.shop-departments{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:30px 0 0;align-items:stretch}
 .shop-departments>a,.shop-departments>a:first-child{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:0;border:1px solid #deded8;background:#fff;border-radius:20px;overflow:hidden;transition:border-color .35s}
 .shop-departments>a:hover{background:#fff;border-color:#96988f}
 .shop-departments .department-top{display:flex;justify-content:space-between;align-items:center;padding:22px 24px 0;font-size:12px;letter-spacing:.12em;color:#62645e;min-width:0}
@@ -418,10 +418,7 @@ body{background:var(--paper)}.header{background:#fff}.utility{background:#f0f0ed
 .department-visual:hover img,.brand-tile:hover .brand-object img,.editorial-pair>a:hover .editorial-visual img{transform:translate3d(var(--hover-x,0px),var(--hover-y,0px),0) scale(1.075) rotate(-1.5deg)}
 .motion-line{display:block;overflow:hidden;padding-bottom:.13em;margin-bottom:-.13em}
 .motion-line>span{display:block;transform-origin:left bottom}
-.motion-ribbon{overflow:hidden;margin:70px calc(-1 * var(--gutter)) 74px;border-block:1px solid #deded8;padding:22px 0;color:#6c7066;pointer-events:none}
-.motion-ribbon>div{width:max-content;white-space:nowrap;font-size:clamp(70px,8.8vw,174px);font-weight:620;line-height:1.15;letter-spacing:-.065em}
-.motion-ribbon span{display:inline-block;font-size:.75em;padding:0 .28em;color:#b59a57;font-weight:400}
-body[data-mode="home"] .brand-section{padding-top:0}
+body[data-mode="home"] .brand-section{padding-top:0;margin-top:clamp(52px,6vw,96px)}
 body[data-mode="home"] .section-head h2{font-size:clamp(38px,4.4vw,84px);line-height:1.16}
 body[data-mode="home"] .section-head{align-items:end}
 .editorial-pair{display:block;margin:40px 0 100px}
@@ -445,7 +442,6 @@ body[data-mode="home"] .section-head{align-items:end}
 .editorial-pair.has-stacked-motion:focus-within>a{position:relative;top:auto;transform:none!important}
 a:focus-visible .motion-plane,a:focus-visible img{transform:none!important}
 .department-visual.has-art-cursor,.editorial-visual.has-art-cursor{cursor:none}
-@media(min-width:1000px){.shop-departments>a:nth-child(2){margin-top:46px}.shop-departments>a:nth-child(3){margin-top:18px}}
 @media(max-width:999px){
  .shop-departments{gap:12px}.shop-departments .department-top{padding:14px 16px 0;font-size:11px}
  .department-visual{margin:6px;aspect-ratio:1.1}.department-visual img{padding:12px}
@@ -460,7 +456,6 @@ a:focus-visible .motion-plane,a:focus-visible img{transform:none!important}
  .department-visual{grid-column:2;grid-row:1/3;width:100%;aspect-ratio:1;align-self:center;margin:0}
  .department-visual img{padding:5px}.department-title{grid-column:1;grid-row:2;margin:0;padding:0;border:0;align-self:end;gap:8px}
  .shop-departments strong{font-size:clamp(27px,6.4vw,43px);line-height:1.2;letter-spacing:-.055em}.department-title>span{font-size:13px;word-break:keep-all}
- .motion-ribbon{margin-top:42px;margin-bottom:50px;padding-block:16px}.motion-ribbon>div{font-size:78px}
  body[data-mode="home"] .section-head h2{font-size:clamp(34px,7.8vw,52px)}
  .brand-tile .brand-object img{padding:12px}
  .editorial-pair{margin:16px 0 58px}.editorial-pair>a{grid-template-columns:1fr;gap:28px;padding:28px 24px;margin-bottom:18px;min-height:0;border-radius:18px}
@@ -473,3 +468,12 @@ a:focus-visible .motion-plane,a:focus-visible img{transform:none!important}
  .shop-departments>a:is(:hover,:focus-visible) .department-arrow,.department-visual img,.brand-tile .brand-object img,.editorial-visual img,.editorial-link>span{transform:none!important}
  .editorial-pair.has-stacked-motion>a{position:relative;top:auto;height:auto;transform:none!important}
 }
+
+
+/* All brands are present in the first response of the separate directory. */
+.brand-directory{padding:28px 0 80px}
+.brand-directory h1{font-size:clamp(40px,5vw,88px);line-height:1.15;letter-spacing:-.055em;margin:22px 0 16px;font-weight:670}
+.brand-directory .section-head{align-items:end}.brand-total{font-size:13px;letter-spacing:.08em;color:#64685e;white-space:nowrap;padding-bottom:5px}
+.brand-directory .brand-tools{margin:0 0 40px}.brand-directory .brand-tools input{max-width:560px}
+.brand-directory .brand-tile[hidden],.brand-no-results[hidden]{display:none!important}
+@media(max-width:700px){.brand-directory{padding:12px 0 55px}.brand-directory .brand-tools{margin-bottom:28px}.brand-directory h1{font-size:42px}.brand-total{font-size:11px}}

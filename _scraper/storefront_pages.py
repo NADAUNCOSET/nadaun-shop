@@ -15,7 +15,7 @@ def banner_content():
 
 
 def brand_tile(b):
-    return f'<a class="brand-tile" href="/brands/{escape(b["id"])}.html" target="_blank" rel="noopener" aria-label="{escape(b["name"])} 브랜드몰 새 창"><span class="brand-visual brand-object"><img src="{escape(b["representative_image"])}" alt="{escape(b["representative_name"])}" width="400" height="400" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="brand-label">{escape(b["name"])}</span><small>{b["purchase_count"] or b["rental_count"]:,} {"PRODUCTS" if b["purchase_count"] else "RENTAL"} <span aria-hidden="true">↗</span></small></a>'
+    return f'<a class="brand-tile" data-brand-search="{escape(" ".join([b["name"],*b.get("aliases",[])]))}" href="/brands/{escape(b["id"])}.html" target="_blank" rel="noopener" aria-label="{escape(b["name"])} 브랜드몰 새 창"><span class="brand-visual brand-object"><img src="{escape(b["representative_image"])}" alt="{escape(b["representative_name"])}" width="400" height="400" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="brand-label">{escape(b["name"])}</span><small>{b["purchase_count"] or b["rental_count"]:,} {"PRODUCTS" if b["purchase_count"] else "RENTAL"} <span aria-hidden="true">↗</span></small></a>'
 
 
 def gift_content():
@@ -33,6 +33,9 @@ def card(p):
 
 
 def content(mode, brands, products, brand=None):
+    if mode=='brands':
+        cards=''.join(brand_tile(b) for b in brands)
+        return f'<div class="breadcrumb"><a href="/">홈</a><span aria-hidden="true">›</span><span aria-current="page">전체 브랜드</span></div><section class="brand-directory" aria-labelledby="brand-directory-title"><div class="section-head"><div><span class="section-index">THE BRAND INDEX</span><h1 id="brand-directory-title">전체 브랜드</h1><p>브랜드의 대표 제품을 보고, 원하는 브랜드몰로 들어가세요.</p></div><span class="brand-total">{len(brands)} BRANDS</span></div><div class="brand-tools"><label class="sr" for="brand-search">브랜드 찾기</label><input type="search" id="brand-search" placeholder="브랜드명으로 찾기" aria-controls="brand-grid" autocomplete="off"><span id="brand-search-status" role="status" aria-live="polite">전체 {len(brands)}개 브랜드</span></div><div class="brand-grid" id="brand-grid">{cards}</div><p class="brand-no-results" id="brand-no-results" hidden>일치하는 브랜드가 없습니다. 다른 이름으로 찾아보세요.</p></section>'
     if mode=='home':
         links=''.join(brand_tile(b) for b in brands[:18])
         selected=[next(p for p in products if p['id']==next(b['representative_id'] for b in brands if b['id']==bid)) for bid in ['dji','leofoto','hoya','smallrig','tilta','pgytech','nanlite','godox']]
@@ -54,5 +57,5 @@ def content(mode, brands, products, brand=None):
     if mode in ('cart','checkout'):
         return '<div class="loading" role="status">선택하신 상품을 확인하고 있습니다.</div>'
     if mode=='categories':
-        return '<section class="brand-section"><h1>브랜드별로 장비를 찾아보세요.</h1><p>제품 종류별 통합 카테고리는 준비 중입니다.</p><a href="/#brands">브랜드 전체 보기 →</a></section>'
+        return '<section class="brand-section"><h1>브랜드별로 장비를 찾아보세요.</h1><p>제품 종류별 통합 카테고리는 준비 중입니다.</p><a href="/brands.html" target="_blank" rel="noopener">브랜드 전체 보기 ↗</a></section>'
     return '<div class="loading" role="status"><span></span>상품을 불러오고 있습니다.</div>'

@@ -38,3 +38,15 @@ test('published banners target existing pages and studio navigation has a standa
  for(const file of ['index.html','catalog.html','checkout.html','services.html'])assert.match(fs.readFileSync(file,'utf8'),/class="nav-end" href="\/studio.html"/);
  assert.ok(fs.readFileSync('catalog-sitemap.xml','utf8').includes('https://shop.nadaun.co/studio.html'));
 });
+
+test('all brands are visible in the initial directory response and both entry points open it separately',()=>{
+ const data=JSON.parse(fs.readFileSync('data/catalog/brands.json','utf8'));const page=fs.readFileSync('brands.html','utf8');
+ assert.equal((page.match(/class="brand-tile"/g)||[]).length,data.brands.length);
+ for(const brand of data.brands){assert.ok(page.includes('href="/brands/'+brand.id+'.html"'));assert.ok(page.includes(brand.representative_image.replaceAll('&','&amp;')))}
+ assert.ok(page.includes('data-mode="brands"'));assert.ok(page.includes('id="brand-search"'));assert.ok(!page.includes('aria-expanded="false"'));
+ for(const file of ['index.html','catalog.html','brands.html','brands/dji.html']){
+  const html=fs.readFileSync(file,'utf8');assert.match(html,/<a href="\/brands.html" class="nav-brands" target="_blank" rel="noopener"/);
+ }
+ assert.match(fs.readFileSync('index.html','utf8'),/id="all-brands" href="\/brands.html" target="_blank" rel="noopener"/);
+ assert.ok(fs.readFileSync('catalog-sitemap.xml','utf8').includes('https://shop.nadaun.co/brands.html'));
+});

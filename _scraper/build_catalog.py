@@ -260,6 +260,7 @@ def build(allow_pending=False):
     template=(ROOT/'_scraper/shop_templates/page.html').read_text()
     for filename,title,description,mode in [
       ('index.html','나다운 샵 | 촬영의 모든 장비','DJI, SmallRig, Leofoto 등 촬영장비를 브랜드별로 만나보세요. 카메라·렌즈·조명·삼각대 구매와 렌탈 상담.','home'),
+      ('brands.html','전체 브랜드 | 나다운 샵','DJI, SmallRig, Leofoto 등 전체 촬영장비 브랜드를 대표 제품 사진으로 만나보세요. 브랜드명을 검색하고 브랜드별 상품을 확인하세요.','brands'),
       ('catalog.html','전체 상품 | 나다운 샵','카메라, 렌즈, 조명과 촬영 액세서리. 브랜드와 세부 분류로 나다운 샵의 상품을 찾아보세요.','catalog'),
       ('catalog_category.html','카테고리별 상품 | 나다운 샵','여러 브랜드의 촬영장비를 제품 종류별로 찾아보세요.','categories'),
       ('item.html','상품 상세 | 나다운 샵','나다운 샵 촬영장비의 상품 정보와 이미지를 확인하고 구매 상담을 받아보세요.','item'),
@@ -285,7 +286,7 @@ def build(allow_pending=False):
         page=template.replace('{{TITLE}}',html.escape(b['name']+' 브랜드몰 | 나다운 샵')).replace('{{DESCRIPTION}}',html.escape(b['name']+' 제품을 나다운 샵에서 만나보세요. 브랜드별 세부 분류와 상품 정보, 구매 상담.')).replace('{{CANONICAL}}','https://shop.nadaun.co/brands/'+b['id']+'.html').replace('{{MODE}}','catalog').replace('{{BRAND}}',b['id']).replace('{{REVISION}}',revision)
         page=page.replace('{{CONTENT}}',page_content('catalog',brand_list,public_products,b))
         (brand_dir/(b['id']+'.html')).write_text(page)
-    urls=['https://shop.nadaun.co/','https://shop.nadaun.co/catalog.html']+['https://shop.nadaun.co/brands/'+b['id']+'.html' for b in brand_list]+['https://shop.nadaun.co/'+p for p in ('studio.html','about.html','terms.html','privacy.html','shipping.html','services.html','gifts.html')]+['https://shop.nadaun.co/item.html?id='+p['id'] for p in public_products]
+    urls=['https://shop.nadaun.co/','https://shop.nadaun.co/catalog.html','https://shop.nadaun.co/brands.html']+['https://shop.nadaun.co/brands/'+b['id']+'.html' for b in brand_list]+['https://shop.nadaun.co/'+p for p in ('studio.html','about.html','terms.html','privacy.html','shipping.html','services.html','gifts.html')]+['https://shop.nadaun.co/item.html?id='+p['id'] for p in public_products]
     images={'https://shop.nadaun.co/item.html?id='+p['id']:urljoin('https://shop.nadaun.co/',p['image']) for p in public_products}
     entries=''.join('<url><loc>'+html.escape(u)+'</loc>'+('<image:image><image:loc>'+html.escape(images[u])+'</image:loc></image:image>' if u in images else '')+'</url>' for u in urls)
     (ROOT/'catalog-sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+entries+'</urlset>\n')
