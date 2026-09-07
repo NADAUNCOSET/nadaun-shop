@@ -77,6 +77,7 @@
 - 자동 커밋은 생성 파일의 정확한 목록만 지정한다. 같은 폴더에 사용자가 만든 다른 파일, 기존 `data/products/` 원본, `overrides.json`은 자동 커밋 대상이 아니다.
 - 구매 상품이 없는 브랜드는 렌탈 탭으로 바로 열린다. 브랜드 카드 상품 수는 기본 진입 목록과 일치한다.
 - Mac 로그인 때에도 자동 실행되며, 최근 6시간 안에 검증을 마쳤으면 중복 실행을 생략한다. 같은 Mac에서 종료된 이전 프로세스의 잠금은 기록 후 복구한다.
+- macOS launchd의 실행 준비 단계가 SMB 폴더에 접근하지 못해 `EX_CONFIG(78)`로 종료되는 것을 방지하려고, 시작 디렉터리와 표준 출력 로그만 로컬에 둔다. 로그는 `~/Library/Logs/NADAUN/shop/`, 코드·인증·수집 결과·검증 상태의 원본은 계속 NAS다. 실행 상태는 NAS `_scraper/.sync-state/last-success.json`과 LaunchAgent 종료 코드로 확인한다.
 - 스마트스토어의 기존 전시 대분류 19개는 `data/catalog/reference-smartstore-menus.json`에 참조용으로 보존했다. 그 하위 전시 분류 전체를 API로 복제한 결과는 아니다.
 
 기존 `/product/<브랜드>/kpp-<상품번호>.html` 주소는 최신 상세 화면으로 연결한다. 기존 상세 파일은 NAS에 그대로 보존한다.
