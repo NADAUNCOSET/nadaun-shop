@@ -11,6 +11,12 @@ class PLThinkImportTests(unittest.TestCase):
     def setUp(self):source._halt.clear()
     def tearDown(self):source._halt.clear()
 
+    def test_mixed_source_encodings_preserve_korean_without_replacements(self):
+        markup='<meta charset="utf-8"><h3>[유쾌한생각] 천장 설치 이동형배경</h3>'
+        for encoding in ('utf-8','cp949'):
+            self.assertEqual(source.decode_page(markup.encode(encoding)),markup)
+        with self.assertRaises(ValueError):source.decode_page(b'\xff\xff')
+
     def test_reading_scope_excludes_global_recommendations(self):
         markup='''<a href="/shop/shopdetail.html?branduid=999"><h3>공통 추천</h3></a>
         <div id="productClass"><div class="item-total">Total : 1</div><div class="item-list-2021">

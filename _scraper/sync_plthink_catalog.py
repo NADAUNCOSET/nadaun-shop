@@ -3,8 +3,8 @@
 The previous makeshop.py records are preserved; this importer owns only the new
 data/catalog source. Public category totals and unique IDs are checked together.
 """
-from concurrent.futures import ThreadPoolExecutor
 from copy import deepcopy
+from datetime import datetime, timezone
 import json
 import re
 import threading
@@ -13,9 +13,13 @@ from urllib.parse import parse_qs, urljoin, urlparse
 from bs4 import BeautifulSoup
 import requests
 from sync_shop_sources import OUT, ROOT, clean, save_json, stamp
+from source_transport import interrupted_get
+from plthink_checkpoint import Checkpoint
+from sync_gift_inventory import run_lock
 
 BASE = 'https://www.plthink.com'
 CHECKPOINT = ROOT / '_scraper/.sync-state/plthink-details.json'
+WORK = ROOT / '_scraper/.sync-state/plthink'
 RATE_STATE = ROOT / '_scraper/.sync-state/plthink-rate-limit.json'
 _rate_lock = threading.Lock()
 _halt = threading.Event()
@@ -24,6 +28,15 @@ _next_request = 0.0
 
 class SourceRateLimited(RuntimeError):
     pass
+
+
+def decode_page(content):
+    # MakeShop declares UTF-8 even for some CP949 responses. Decode actual bytes
+    # strictly so broken Korean can never enter a verified product snapshot.
+    for encoding in ('utf-8-sig','cp949'):
+        try:return content.decode(encoding)
+        except UnicodeDecodeError:continue
+    raise ValueError('PLTHINK response encoding could not be verified')
 
 
 def page(url, **params):
@@ -36,17 +49,17 @@ def page(url, **params):
                 raise SourceRateLimited('PLTHINK source cooldown is still active')
         time.sleep(max(0,_next_request-time.monotonic()))
         try:
-            response=requests.get(url,params=params,timeout=(8,35))
+            response=interrupted_get(requests.get,url,params=params,timeout=(8,35),allow_redirects=False)
         finally:_next_request=time.monotonic()+2.1
-        response.encoding=response.apparent_encoding
-        if response.status_code==429 or any(s in response.text for s in ('페이지를 너무 많이 요청','서버보호차원에서 차단')):
+        body=decode_page(response.content) if hasattr(response,'content') else response.text
+        if response.status_code in (403,429) or any(s in body for s in ('페이지를 너무 많이 요청','서버보호차원에서 차단')):
             _halt.set()
             retry=response.headers.get('Retry-After','')
             wait=max(3600,int(retry) if retry.isdigit() else 3600)
             save_json(RATE_STATE,{'blocked_at':stamp(),'retry_not_before':time.time()+wait,'reason':'source request rate limit'})
             raise SourceRateLimited('PLTHINK temporarily limited page requests; no snapshot published')
-        response.raise_for_status()
-        return BeautifulSoup(response.text,'lxml')
+        if response.status_code != 200:raise RuntimeError('PLTHINK source unavailable: HTTP '+str(response.status_code))
+        return BeautifulSoup(body,'lxml')
 
 
 def absolute(value):
@@ -86,6 +99,8 @@ def list_page(doc, brand):
         q = parse_qs(urlparse(a['href']).query); sid = q['branduid'][0]
         price = node.select_one('.price h4'); original = node.select_one('.price strike')
         sale = number(price.get_text()) if price else None
+        if '\ufffd' in name.get_text() or '\ufffd' in brand['name']:
+            raise ValueError('PLTHINK product name contains invalid replacement characters')
         cats = [brand['id']]
         if q.get('mcode') == [brand['id']] and q.get('scode'):
             cats.append(brand['id']+':'+q['scode'][0])
@@ -106,16 +121,21 @@ def list_page(doc, brand):
     return products, total, max(pages, default=1), cats
 
 
-def collect_brand(brand):
+def collect_brand(brand, checkpoint=None):
     products={}; expected=None; last=1; n=1; categories={}
     while n <= last:
         if n > 1000: raise RuntimeError('PLTHINK pagination exceeded safety limit')
-        doc=page(BASE+'/shop/shopbrand.html',type='M',xcode='008',mcode=brand['id'],sort='order',page=n)
-        rows,total,end,cats=list_page(doc,brand)
+        saved=checkpoint.page(brand['id'],n) if checkpoint else None
+        if saved:rows,total,end,cats=saved
+        else:
+            doc=page(BASE+'/shop/shopbrand.html',type='M',xcode='008',mcode=brand['id'],sort='order',page=n)
+            rows,total,end,cats=list_page(doc,brand)
         if expected is None:expected=total
         if total!=expected:raise RuntimeError('PLTHINK source count changed during collection: '+brand['id'])
         if total and not (set(rows)-set(products)):
             raise RuntimeError('PLTHINK empty/repeated page: '+brand['id']+' / '+str(n))
+        if set(rows)&set(products):raise RuntimeError('PLTHINK duplicate product across pages: '+brand['id'])
+        if checkpoint and not saved:checkpoint.save_page(brand['id'],n,[rows,total,end,cats])
         products.update(rows);categories.update({c['id']:c for c in cats});last=max(last,end)
         n+=1;time.sleep(.12)
     if len(products)!=expected:
@@ -132,9 +152,10 @@ def detail(doc, product):
         schema=next((o for o in candidates if o.get('@type')=='Product'),schema)
     if not schema or not doc.select_one('.thumb img'):
         raise RuntimeError('PLTHINK verified detail missing: '+p['id'])
-    if str(p['source_id']) not in str(schema.get('@id','')):
+    if parse_qs(urlparse(str(schema.get('@id',''))).query).get('branduid') != [str(p['source_id'])]:
         raise RuntimeError('PLTHINK detail identity mismatch: '+p['id'])
     p['name']=clean(schema['name'])
+    if '\ufffd' in p['name']:raise ValueError('PLTHINK detail name contains invalid replacement characters')
     offer=schema.get('offers') or {}
     if isinstance(offer,list):offer=offer[0] if offer else {}
     availability=str(offer.get('availability','')).rsplit('/',1)[-1]
@@ -146,7 +167,8 @@ def detail(doc, product):
     # Supplier amounts remain source facts; they do not establish our discount.
     if offer.get('price') is not None:p['sale_price']=int(float(offer['price']))
     original=doc.select_one('.table-opt strike')
-    p['price']=number(original.get_text()) if original else p['sale_price']
+    p['source_original_price']=number(original.get_text()) if original else p['sale_price']
+    p['price']=p['sale_price']
     p['source_sku']=schema.get('sku');p['source_mpn']=schema.get('mpn')
     p['description_text']=clean(schema.get('description',''))
     p['images']['main']=list(dict.fromkeys(absolute(i['src']) for i in doc.select('.thumb img[src]')))
@@ -171,49 +193,72 @@ def detail(doc, product):
     return p
 
 
-def collect_plthink():
+def _collect_plthink(checkpoint):
     brands=brand_menu(page(BASE+'/shop/shopbrand.html',xcode='008'))
+    try:checkpoint.menu(brands)
+    except ValueError:checkpoint.restart(brands)
     products={};categories={};coverage=[]
-    with ThreadPoolExecutor(max_workers=3) as pool:
-        for rows,cats,audit in pool.map(collect_brand,brands):
-            categories.update({c['id']:c for c in cats});coverage.append(audit)
-            for sid,p in rows.items():
-                if sid in products:
-                    products[sid]['brand_category_ids']=list(dict.fromkeys(products[sid]['brand_category_ids']+p['brand_category_ids']))
-                else:products[sid]=p
-            print('PLTHINK brands:',len(coverage),'/',len(brands),'products:',len(products),flush=True)
+    for brand in brands:
+        rows,cats,audit=collect_brand(brand,checkpoint)
+        categories.update({c['id']:c for c in cats});coverage.append(audit)
+        for sid,p in rows.items():
+            if sid in products:
+                products[sid]['brand_category_ids']=list(dict.fromkeys(products[sid]['brand_category_ids']+p['brand_category_ids']))
+            else:products[sid]=p
+        report('listing',len(coverage),len(brands),len(products),0)
     # Resolve a card's leaf only if that named category exists in the source menu.
     for p in products.values():p['brand_category_ids']=[cid for cid in p['brand_category_ids'] if cid in categories]
     previous=OUT/'plthink.json'
     if previous.exists() and len(products)<json.loads(previous.read_text())['product_count']*.85:
         raise RuntimeError('PLTHINK count dropped more than 15%; review before publishing')
     completed={}
-    # Checkpoint belongs to this exact listing and this run date; stale data is
-    # never silently accepted as a fresh inventory check after an interrupted run.
-    cache=json.loads(CHECKPOINT.read_text()) if CHECKPOINT.exists() else {}
-    day=stamp()[:10]
-    def one(p):
-        old=cache.get(p['id'])
-        if old and old.get('detail_checked_at','').startswith(day) and old.get('listing')==p:
-            return old['product']
-        result=detail(page(p['source_url']),p);time.sleep(.12);return result
-    try:
-        with ThreadPoolExecutor(max_workers=3) as pool:
-            for p in pool.map(one,products.values()):
-                completed[p['id']]=p
-                cache[p['id']]={'listing':products[p['source_id']],'product':p,'detail_checked_at':p['detail_checked_at']}
-                if len(completed)%100==0:
-                    print('PLTHINK details:',len(completed),'/',len(products),flush=True)
-                    save_json(CHECKPOINT,cache)
-    finally:save_json(CHECKPOINT,cache)
-    if brands!=brand_menu(page(BASE+'/shop/shopbrand.html',xcode='008')):
-        raise RuntimeError('PLTHINK brand navigation changed during collection')
+    for listing in products.values():
+        p=checkpoint.detail(listing)
+        if p and (datetime.now(timezone.utc)-datetime.fromisoformat(p['detail_checked_at'])).total_seconds()>12*3600:p=None
+        if p is None:
+            p=detail(page(listing['source_url']),listing)
+            checkpoint.save_detail(listing,p)
+        completed[p['id']]=p
+        if len(completed)%25==0:report('details',len(brands),len(brands),len(products),len(completed))
+    # Re-read every brand count and first page before publishing the generation.
+    changed=[]
+    for brand,audit in zip(brands,coverage):
+        rows,total,_,_=list_page(page(BASE+'/shop/shopbrand.html',type='M',xcode='008',mcode=brand['id'],sort='order',page=1),brand)
+        first=checkpoint.page(brand['id'],1)[0]
+        if total!=audit['expected'] or set(rows)!=set(first):
+            changed.append(brand['id'])
+    final_menu=brand_menu(page(BASE+'/shop/shopbrand.html',xcode='008'))
+    if brands!=final_menu:
+        checkpoint.restart(final_menu)
+        raise RuntimeError('PLTHINK brand navigation changed; a new resumable generation is ready')
+    if changed:
+        checkpoint.restart(brands,changed)
+        raise RuntimeError('PLTHINK changed categories queued for reconciliation: '+','.join(changed))
     result={'complete':True,'source':'plthink','source_url':BASE,'collected_at':stamp(),
             'brands':brands,'categories':list(categories.values()),'products':completed,
             'product_count':len(completed),'coverage':coverage}
     save_json(OUT/'plthink.json',result)
-    print('PLTHINK complete:',len(completed),flush=True)
+    checkpoint.finish()
+    report('verified',len(brands),len(brands),len(products),len(completed))
     return result
+
+
+def report(phase,brands,total,products,details):
+    status={'checked_at':stamp(),'phase':phase,'brands_checked':brands,'brand_count':total,
+            'products_found':products,'details_verified':details,'snapshot_complete':phase=='verified','published':False}
+    save_json(WORK/'progress.json',status)
+    print(json.dumps(status,ensure_ascii=False),flush=True)
+
+
+def collect_plthink():
+    WORK.mkdir(parents=True,exist_ok=True)
+    with run_lock(WORK):
+        checkpoint=Checkpoint(WORK/'checkpoint.sqlite3')
+        try:return _collect_plthink(checkpoint)
+        except Exception as exc:
+            save_json(WORK/'last-error.json',{'at':stamp(),'error':type(exc).__name__+': '+str(exc),'published':False})
+            raise
+        finally:checkpoint.close()
 
 
 if __name__=='__main__':collect_plthink()

@@ -50,6 +50,7 @@ def brand_dictionary():
       'datacolor':['데이터컬러'], 'tvlogic':['티브이로직'], 'tokina-cinema':['tokina cinema','cinema'],
       'hy':['h&y'], 'tethertools':['테더툴스'], 'pgytech':['피지테크'], 'smallrig':['스몰리그'],
       'ldl-mount':['엘디엘마운트','엘디마운트','ldl mount'],
+      'plthink':['유쾌한생각','유쾌한 생각'],
     }
     for key,names in extras.items():
         for name in names+[key]: aliases[name.casefold()]=key
@@ -64,10 +65,25 @@ def product_name(name):
     # Only remove the store's repeated prefix, preserving bundle/variant text.
     return re.sub(r'^\[\s*[^\]]*레인보우베네\s*\]\s*','',name).strip()
 
+def verified_sources():
+    sources=['kpp','smartstore','imweb-dji','imweb-promotions','l-mount']
+    if (OUT/'plthink.json').exists():sources.append('plthink')
+    snapshots={key:json.loads((OUT/(key+'.json')).read_text()) for key in sources}
+    if not all(s.get('complete') for s in snapshots.values()):raise RuntimeError('Incomplete source snapshot')
+    if 'plthink' in snapshots:
+        snapshot=snapshots['plthink']
+        if snapshot['product_count']!=len(snapshot['products']):raise RuntimeError('PLTHINK count is inconsistent')
+        if len(snapshot['brands'])!=len(snapshot['coverage']) or any(c['expected']!=c['unique'] for c in snapshot['coverage']):
+            raise RuntimeError('PLTHINK brand coverage is incomplete')
+        if {b['id'] for b in snapshot['brands']}!={c['brand_id'] for c in snapshot['coverage']}:
+            raise RuntimeError('PLTHINK verified brands do not match the source menu')
+        if any(p.get('detail_status')!='verified' for p in snapshot['products'].values()):
+            raise RuntimeError('PLTHINK product details are incomplete')
+    return snapshots
+
+
 def build(allow_pending=False):
-    source_files=['kpp','smartstore','imweb-dji','imweb-promotions','l-mount']
-    snapshots={key:json.loads((OUT/(key+'.json')).read_text()) for key in source_files}
-    if not all(s.get('complete') for s in snapshots.values()): raise RuntimeError('Incomplete source snapshot')
+    snapshots=verified_sources()
     partner_image_rules=json.loads((PUBLIC/'partner-image-rules.json').read_text())
     products={}; categories={}; brands={}; details={}; coverage=Counter()
     def add_brand(raw):
@@ -86,6 +102,7 @@ def build(allow_pending=False):
                 prefix='kpp:'+('b:'+bid if bid else 'p')+':'
             elif source=='imweb-promotions':bid=None;prefix='imweb:promotion:'
             elif source=='l-mount':bid='ldl-mount';prefix='l-mount:b:ldl-mount:'
+            elif source=='plthink':bid=brand_id(c['brand']);prefix='plthink:b:'
             else:bid='dji';prefix='imweb:b:dji:'
             c.update(id=prefix+c['id'],parent_id=prefix+c['parent_id'] if c['parent_id'] else None,brand_id=bid)
             categories[c['id']]={k:c[k] for k in ('id','name','parent_id','brand_id')}
@@ -118,6 +135,7 @@ def build(allow_pending=False):
             elif source=='imweb-promotions': pass
             elif source=='imweb-dji': membership=['imweb:b:dji:'+cid for cid in p.get('brand_category_ids',[])]
             elif source=='l-mount': membership=['l-mount:b:ldl-mount:'+cid for cid in p.get('brand_category_ids',[])]
+            elif source=='plthink': membership=['plthink:b:'+cid for cid in p.get('brand_category_ids',[])]
             else:
                 path=p.get('source_category_path') or [];ids=p.get('source_category_ids') or []
                 # Naver standard classifications are retained separately from
@@ -140,7 +158,7 @@ def build(allow_pending=False):
             if source=='kpp' and d.get('source_fingerprint')!=source_fingerprint(p0):
                 d={}
             if source.startswith('imweb-'):d={'detail_status':'verified','description_text':p.get('description_text',''),'images':p['images']}
-            if source=='l-mount':d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation') if k in p}
+            if source in ('l-mount','plthink'):d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation') if k in p}
             if d.get('detail_status')=='verified':coverage[source]+=1
             elif not allow_pending:raise RuntimeError('Unverified product detail: '+pid)
             if d.get('unavailable'):

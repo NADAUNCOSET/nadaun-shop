@@ -19,6 +19,7 @@ from urllib.parse import parse_qs, urljoin, urlparse
 from bs4 import BeautifulSoup
 import requests
 from gift_supplier_registry import PRIVATE_ROOT, private_path
+from source_transport import interrupted_get
 
 BASE = 'https://www.nadaun-gift.com'
 LIST_URL = BASE + '/new/search/allmain.php'
@@ -130,7 +131,7 @@ class Source:
             raise RuntimeError('Gift source cooldown is active; no requests made')
         time.sleep(max(0, self.next_request - time.monotonic()))
         try:
-            response = self.session.get(url, params=params, timeout=(10, 40), allow_redirects=False)
+            response = interrupted_get(self.session.get, url, params=params, timeout=(10, 40), allow_redirects=False)
         finally:
             self.next_request = time.monotonic() + 2.1
         response.encoding = 'euc-kr'

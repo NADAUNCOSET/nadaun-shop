@@ -66,6 +66,8 @@ def variants(product):
 def conflict(a, b, details):
     if (a['brand_id'],a['kind']) != (b['brand_id'],b['kind']):
         return 'different_brand_or_purchase_type'
+    if any(p.get('source')=='plthink' and details.get(p['id'],{}).get('options_require_confirmation') for p in (a,b)):
+        return 'unverified_option_equivalence'
     av, bv = variants(a), variants(b)
     if av[0] and bv[0] and av[0] != bv[0]:
         return 'different_color'

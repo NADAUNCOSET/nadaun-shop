@@ -26,7 +26,7 @@
       "groups": 1000,
       "removed": 1055
     },
-    "revision": "8ecb1b6eb21229c2",
+    "revision": "a280cbc088ecaaa1",
     "view": "rental"
   },
   "brands": [
@@ -2969,6 +2969,29 @@
       "logo_dark": false
     },
     {
+      "id": "plthink",
+      "name": "PLTHINK",
+      "aliases": [
+        "유쾌한생각",
+        "유쾌한 생각",
+        "plthink"
+      ],
+      "logo": "https://shop-phinf.pstatic.net/20230315_25/1678850278530kz8r6_JPEG/79986106360569501_757940277.jpg",
+      "count": 3,
+      "purchase_count": 3,
+      "rental_count": 0,
+      "category_ids": [
+        "naver:b:plthink:50000206",
+        "naver:b:plthink:50001390",
+        "naver:b:plthink:50002082"
+      ],
+      "representative_id": "smartstore-8241085468",
+      "representative_image": "https://shop-phinf.pstatic.net/20230315_25/1678850278530kz8r6_JPEG/79986106360569501_757940277.jpg",
+      "representative_name": "매직웨이트 ( 카운트웨이트 대용 ) 136cm",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "pmi",
       "name": "PMI",
       "aliases": [
@@ -4088,27 +4111,6 @@
       "representative_image": "https://shop-phinf.pstatic.net/20240730_274/1722351436751V8w05_PNG/9014183111408517_406688380.png",
       "representative_name": "시네트리 T360-80 회전 턴테이블 화이트 색상",
       "image_kind": "product",
-      "logo_dark": false
-    },
-    {
-      "id": "brand-cb8705572d",
-      "name": "유쾌한생각",
-      "aliases": [
-        "유쾌한생각"
-      ],
-      "logo": "/assets/shop/brands/brand-cb8705572d-222d7a693d.webp",
-      "count": 3,
-      "purchase_count": 3,
-      "rental_count": 0,
-      "category_ids": [
-        "naver:b:brand-cb8705572d:50000206",
-        "naver:b:brand-cb8705572d:50001390",
-        "naver:b:brand-cb8705572d:50002082"
-      ],
-      "representative_id": "smartstore-8241085468",
-      "representative_image": "https://shop-phinf.pstatic.net/20230315_25/1678850278530kz8r6_JPEG/79986106360569501_757940277.jpg",
-      "representative_name": "매직웨이트 ( 카운트웨이트 대용 ) 136cm",
-      "image_kind": "logo",
       "logo_dark": false
     },
     {
