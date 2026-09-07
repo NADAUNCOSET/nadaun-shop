@@ -24,43 +24,12 @@ function renderHome(){
  input.addEventListener('input',e=>{const q=normalize(e.target.value);const found=data.brands.filter(b=>normalize([b.name,...b.aliases].join(' ')).includes(q));grid.innerHTML=found.map(brandTile).join('')||'<p class="brand-no-results">일치하는 브랜드가 없습니다.</p>';status.textContent=`${found.length}개 브랜드`});
 }
 async function enhanceArtMotion(){
- if(!matchMedia('(prefers-reduced-motion:no-preference)').matches)return;
- const load=src=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=src+'?v='+document.querySelector('meta[name="catalog-revision"]').content;script.onload=resolve;script.onerror=reject;document.head.append(script)});
+ const revision=document.querySelector('meta[name="catalog-revision"]').content;
+ const load=src=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=src+'?v='+revision;script.onload=resolve;script.onerror=reject;document.head.append(script)});
  try{
   await load('/assets/shop/vendor/gsap.min.js');await load('/assets/shop/vendor/ScrollTrigger.min.js');
-  const gsap=window.gsap,ST=window.ScrollTrigger;gsap.registerPlugin(ST);
-  const media=gsap.matchMedia();
-  media.add('(prefers-reduced-motion:no-preference)',()=>{
-   const seen=new WeakSet(),triggers=new Set(),animations=new Set();let timer;
-   const scan=()=>{
-    for(const trigger of triggers)if(!trigger.trigger?.isConnected){trigger.kill();triggers.delete(trigger)}
-    const elements=[...main.querySelectorAll('.section-head,.brand-tile,.product-card,.editorial-pair>a,.shop-departments>a,.cart-items>li,.checkout-services>section,.service-grid>section,.studio-gallery figure,.studio-specs>div,.studio-amenities li')].filter(el=>!seen.has(el)&&!el.hidden);
-    elements.forEach(el=>seen.add(el));
-    if(elements.length)ST.batch(elements,{start:'top 96%',once:true,interval:.1,batchMax:6,onEnter:batch=>{
-     const targets=batch.filter(el=>el.isConnected&&!el.contains(document.activeElement));
-     if(!targets.length)return;
-     const tween=gsap.fromTo(targets,{y:matchMedia('(max-width:700px)').matches?36:72},{y:0,duration:1.1,stagger:.1,ease:'power4.out',clearProps:'transform',overwrite:'auto',onComplete:()=>animations.delete(tween)});
-     animations.add(tween);
-    }}).forEach(t=>triggers.add(t));
-    ST.refresh();
-   };
-   const schedule=()=>{clearTimeout(timer);timer=setTimeout(scan,100)};
-   const observer=new MutationObserver(schedule);observer.observe(main,{childList:true,subtree:true});
-   document.addEventListener('shop:content-updated',schedule);scan();
-   return ()=>{clearTimeout(timer);observer.disconnect();document.removeEventListener('shop:content-updated',schedule);for(const t of triggers)t.kill();for(const a of animations){gsap.set(a.targets(),{clearProps:'transform'});a.kill()}};
-  });
-  media.add('(min-width:701px) and (pointer:fine) and (prefers-reduced-motion:no-preference)',()=>{
-   if(main.querySelector('.gold-disc'))gsap.to('.gold-disc',{xPercent:-35,yPercent:25,rotation:65,ease:'none',scrollTrigger:{trigger:'.editorial-pair',start:'top bottom',end:'bottom top',scrub:1}});
-   for(const heading of main.querySelectorAll('.section-head h2,.studio-amenities h2'))gsap.fromTo(heading,{x:28},{x:0,ease:'none',scrollTrigger:{trigger:heading,start:'top bottom',end:'top 55%',scrub:.7}});
-   const progress=document.createElement('span');progress.className='reading-progress';progress.setAttribute('aria-hidden','true');document.body.append(progress);
-   gsap.fromTo(progress,{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{trigger:main,start:'top top',end:'bottom bottom',scrub:true}});
-   const cursor=document.createElement('span');cursor.className='art-cursor';cursor.textContent='VIEW ↗';cursor.setAttribute('aria-hidden','true');document.body.append(cursor);
-   let target;
-   const hide=()=>{cursor.classList.remove('visible');target?.classList.remove('has-art-cursor');target=null};
-   const move=e=>{const next=e.target.closest('.brand-object,.editorial-pair>a');if(!next){hide();return}if(target!==next){hide();target=next}cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';cursor.classList.add('visible');target.classList.add('has-art-cursor')};
-   main.addEventListener('pointermove',move);main.addEventListener('pointerleave',hide);window.addEventListener('blur',hide);window.addEventListener('scroll',hide,{passive:true});
-   return ()=>{main.removeEventListener('pointermove',move);main.removeEventListener('pointerleave',hide);window.removeEventListener('blur',hide);window.removeEventListener('scroll',hide);hide();cursor.remove();progress.remove()};
-  });
+  const {mountArtMotion}=await import('/assets/shop/motion.js?v='+revision);
+  mountArtMotion(main,{gsap:window.gsap,ScrollTrigger:window.ScrollTrigger});
  }catch(error){console.warn('Shop motion unavailable',error)}
 }
 function enhanceGift(){const input=document.querySelector('#gift-search');if(!input)return;const rows=[...document.querySelectorAll('.gift-category-grid>a')];input.addEventListener('input',()=>{const q=normalize(input.value);let visible=0;for(const row of rows){row.hidden=!normalize(row.textContent).includes(q);if(!row.hidden)visible++}document.querySelector('#gift-search-status').textContent=visible?`${visible}개 카테고리`:'일치하는 카테고리가 없습니다.'})}

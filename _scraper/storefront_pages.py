@@ -39,6 +39,10 @@ def content(mode, brands, products, brand=None):
         page=(Path(__file__).parent/'shop_templates/home.html').read_text()
         for key,value in {'BRAND_COUNT':len(brands)}.items():
             page=page.replace('{{'+key+'}}',escape(str(value)))
+        offers=[p for p in products if p['kind']=='purchase' and p['status']!='soldout' and any(o['source'] in ('smartstore','imweb') for o in p['offers']) and (p.get('promotion_ids') or (p.get('sale_price') is not None and p.get('price') and p['sale_price']<p['price']))]
+        featured=next((p for p in offers if p['id']=='imweb-13210'),next(iter(offers),None))
+        visual=f'<img src="{escape(featured["image"])}" alt="{escape(featured["name"])}" width="850" height="850" loading="lazy" decoding="async" referrerpolicy="no-referrer">' if featured else '<span class="editorial-empty">NADAUN<br>SELECTION</span>'
+        page=page.replace('{{PROMOTION_VISUAL}}',visual)
         return page.replace('{{BANNERS}}',banner_content()).replace('{{BRANDS}}',links).replace('{{PRODUCTS}}',''.join(card(p) for p in selected if p))
     if mode=='catalog':
         name=(brand['name']+' 브랜드몰') if brand else '전체 상품'

@@ -25,7 +25,7 @@ from build_catalog import build
 STATE=ROOT/'_scraper/.sync-state'
 SITE='https://shop.nadaun.co'
 GENERATED=['data/catalog','assets/shop/thumbnails','brands','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','catalog-sitemap.xml']
-CODE=['assets/shop/banners.js','data/catalog/banners.json','assets/shop/studio','_scraper/brand_products.py','assets/shop/vendor','assets/shop/brands','data/catalog/partner-image-rules.json','_scraper/sync_partner_catalogs.py','data/catalog/brand-assets.json','_scraper/catalog_seo.py','assets/shop/catalog-tools.js','_scraper/tests','_scraper/test_shop_catalog.py','api','assets/shop/cart.js','_scraper/storefront_pages.py','_scraper/sync_shop_sources.py','_scraper/sync_kpp_catalog.py','_scraper/enrich_shop_sources.py','_scraper/build_catalog.py','_scraper/catalog_dedup.py','_scraper/shop_sync.py','_scraper/prepare_shop_assets.py','_scraper/shop_templates','assets/shop/shop.js','assets/shop/shop.css','data/catalog/overrides.json','data/catalog/dedup-rules.json','vercel.json']
+CODE=['assets/shop/motion.js','assets/shop/departments','assets/shop/banners.js','data/catalog/banners.json','assets/shop/studio','_scraper/brand_products.py','assets/shop/vendor','assets/shop/brands','data/catalog/partner-image-rules.json','_scraper/sync_partner_catalogs.py','data/catalog/brand-assets.json','_scraper/catalog_seo.py','assets/shop/catalog-tools.js','_scraper/tests','_scraper/test_shop_catalog.py','api','assets/shop/cart.js','_scraper/storefront_pages.py','_scraper/sync_shop_sources.py','_scraper/sync_kpp_catalog.py','_scraper/enrich_shop_sources.py','_scraper/build_catalog.py','_scraper/catalog_dedup.py','_scraper/shop_sync.py','_scraper/prepare_shop_assets.py','_scraper/shop_templates','assets/shop/shop.js','assets/shop/shop.css','data/catalog/overrides.json','data/catalog/dedup-rules.json','vercel.json']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
@@ -134,7 +134,8 @@ def run(publish=True,existing=False):
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_shop_catalog.py')
         command('node','--check','assets/shop/shop.js')
         command('node','--check','assets/shop/cart.js')
-        command('node','--test','_scraper/tests/product-server.test.cjs','_scraper/tests/catalog-tools.test.mjs','_scraper/tests/discovery.test.cjs','_scraper/tests/cart.test.cjs','_scraper/tests/banners.test.mjs')
+        command('node','--check','assets/shop/motion.js')
+        command('node','--test','_scraper/tests/product-server.test.cjs','_scraper/tests/catalog-tools.test.mjs','_scraper/tests/discovery.test.cjs','_scraper/tests/cart.test.cjs','_scraper/tests/banners.test.mjs','_scraper/tests/motion.test.mjs')
         if publish:return publish_existing()
     except Exception as e:
         save_json(STATE/'last-failure.json',{'failed_at':stamp(),'error':str(e)})

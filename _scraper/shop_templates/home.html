@@ -1,7 +1,33 @@
 <h1 class="sr">나다운 샵 — 사진·영상 촬영장비 구매와 렌탈</h1>
 {{BANNERS}}
 <div class="art-overline home-signature"><span>NADAUN SHOP — OBJECTS FOR CREATORS</span><span>SEOUL, KR / CURATED TOOLS</span></div>
-<nav class="shop-departments" aria-label="쇼핑 공간"><a href="/catalog.html"><span>01 / SHOP</span><strong>촬영을 위한 도구</strong><span class="department-arrow">↗</span></a><a href="/catalog.html?kind=rental"><span>02 / RENTAL</span><strong>필요한 순간의 장비</strong><span class="department-arrow">↗</span></a><a href="/gifts.html"><span>03 / GIFT</span><strong>마음을 전하는 물건</strong><span class="department-arrow">↗</span></a></nav>
-<section class="brand-section" id="brands"><div class="section-head"><div><span class="section-index">01 — THE BRAND INDEX</span><h2>각자의 방식으로,<br class="mobile-break"> 더 나다운 선택.</h2><p>브랜드를 고르면, 그 안의 모든 카테고리를 만날 수 있습니다.</p></div><button class="text-button" id="all-brands" aria-expanded="false">전체 {{BRAND_COUNT}}개 브랜드 +</button></div><div class="brand-tools" id="brand-tools" hidden><label class="sr" for="brand-search">브랜드 찾기</label><input type="search" id="brand-search" placeholder="브랜드명으로 찾기"><span id="brand-search-status" role="status" aria-live="polite"></span></div><div class="brand-grid" id="brand-grid">{{BRANDS}}</div></section>
-<section class="editorial-pair" aria-label="나다운의 쇼핑 제안"><a class="editorial-sale" href="/catalog.html?sale=1"><span class="section-index">THE GOLD SELECTION</span><h2>좋아하던 장비,<br>조금 더 가까이.</h2><span class="editorial-link">할인상품 · 프로모션 <span aria-hidden="true">↗</span></span><span class="gold-disc" aria-hidden="true"></span></a><a class="editorial-gift" href="/gifts.html"><span class="section-index">NADAUN GIFT</span><h2>좋은 물건에,<br>당신의 이야기를.</h2><p>기업 선물부터 브랜드 굿즈까지.</p><span class="editorial-link">기프트·굿즈 둘러보기 <span aria-hidden="true">↗</span></span></a></section>
-<section class="product-section"><div class="section-head"><div><span class="section-index">02 — EQUIPMENT EDIT</span><h2>다음 장면을 위한 선택.</h2><p>빛과 구도, 촬영의 작은 디테일까지.</p></div><a class="text-button" href="/catalog.html">전체 상품 보기 ↗</a></div><div class="product-grid">{{PRODUCTS}}</div></section>
+<nav class="shop-departments" aria-label="쇼핑 공간">
+  <a href="/catalog.html" class="department-purchase">
+    <span class="department-top"><span>01 / SHOP</span><span class="department-arrow" aria-hidden="true">↗</span></span>
+    <span class="department-visual"><img src="/assets/shop/thumbnails/imweb-13283.webp" alt="DJI Osmo Action 6" width="850" height="850" loading="lazy" decoding="async"></span>
+    <span class="department-title"><strong>제품 구매</strong><span>사진·영상 촬영 장비</span></span>
+  </a>
+  <a href="/catalog.html?kind=rental" class="department-rental">
+    <span class="department-top"><span>02 / RENTAL</span><span class="department-arrow" aria-hidden="true">↗</span></span>
+    <span class="department-visual"><img src="/assets/shop/departments/rental.jpg" alt="소니 FX3와 28–135G 렌즈" width="2000" height="2000" loading="lazy" decoding="async"></span>
+    <span class="department-title"><strong>제품 렌탈</strong><span>촬영 일정에 맞춘 장비 대여</span></span>
+  </a>
+  <a href="/gifts.html" class="department-gift">
+    <span class="department-top"><span>03 / GIFT</span><span class="department-arrow" aria-hidden="true">↗</span></span>
+    <span class="department-visual"><img src="/assets/shop/departments/gift.jpg" alt="모두애 필름 키링 굿즈" width="400" height="350" loading="lazy" decoding="async"></span>
+    <span class="department-title"><strong>기프트 구매</strong><span>기업 선물·브랜드 굿즈</span></span>
+  </a>
+</nav>
+<div class="motion-ribbon" aria-hidden="true"><div>SHOP <span>↗</span> RENTAL <span>↗</span> GIFT <span>↗</span> SHOP <span>↗</span> RENTAL <span>↗</span> GIFT</div></div>
+<section class="brand-section" id="brands"><div class="section-head"><div><span class="section-index">01 — THE BRAND INDEX</span><h2><span class="motion-line"><span>각자의 방식으로,</span></span> <span class="motion-line"><span>더 나다운 선택.</span></span></h2><p>브랜드를 고르면, 그 안의 모든 카테고리를 만날 수 있습니다.</p></div><button class="text-button" id="all-brands" aria-expanded="false">전체 {{BRAND_COUNT}}개 브랜드 +</button></div><div class="brand-tools" id="brand-tools" hidden><label class="sr" for="brand-search">브랜드 찾기</label><input type="search" id="brand-search" placeholder="브랜드명으로 찾기"><span id="brand-search-status" role="status" aria-live="polite"></span></div><div class="brand-grid" id="brand-grid">{{BRANDS}}</div></section>
+<section class="editorial-pair" aria-label="나다운의 쇼핑 제안">
+  <a class="editorial-sale" href="/catalog.html?sale=1">
+    <div class="editorial-copy"><span class="section-index">01 / SPECIAL OFFERS</span><h2><span class="motion-line"><span>할인상품</span></span> <span class="motion-line"><span>· 프로모션</span></span></h2><p>지금 진행 중인 혜택을 만나보세요.</p><span class="editorial-link">혜택 전체 보기 <span aria-hidden="true">↗</span></span></div>
+    <div class="editorial-visual">{{PROMOTION_VISUAL}}</div>
+  </a>
+  <a class="editorial-gift" href="/gifts.html">
+    <div class="editorial-copy"><span class="section-index">02 / NADAUN GIFT</span><h2><span class="motion-line"><span>브랜드 굿즈,</span></span> <span class="motion-line"><span>마음을 담은 선물.</span></span></h2><p>기업 선물부터 나만의 기프트까지.</p><span class="editorial-link">기프트 구매 <span aria-hidden="true">↗</span></span></div>
+    <div class="editorial-visual"><img src="/assets/shop/departments/gift.jpg" alt="모두애 필름 키링 굿즈" width="400" height="350" loading="lazy" decoding="async"></div>
+  </a>
+</section>
+<section class="product-section"><div class="section-head"><div><span class="section-index">02 — EQUIPMENT EDIT</span><h2><span class="motion-line"><span>다음 장면을 위한 선택.</span></span></h2><p>빛과 구도, 촬영의 작은 디테일까지.</p></div><a class="text-button" href="/catalog.html">전체 상품 보기 ↗</a></div><div class="product-grid">{{PRODUCTS}}</div></section>

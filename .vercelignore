@@ -21,3 +21,6 @@ COMMERCE-PLAN.md
 
 data/catalog/brand-assets.json
 data/catalog/partner-image-rules.json
+
+# Preserve the original on NAS; serve the existing 42KB thumbnail.
+assets/shop/departments/purchase.jpg
