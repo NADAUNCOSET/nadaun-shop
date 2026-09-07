@@ -3,23 +3,27 @@
   "source_counts": {
     "kpp": 4014,
     "smartstore": 6964,
-    "imweb-dji": 146
+    "imweb-dji": 146,
+    "imweb-promotions": 37,
+    "l-mount": 335
   },
   "detail_coverage": {
     "kpp": 4014,
     "smartstore": 6964,
-    "imweb-dji": 146
+    "imweb-dji": 146,
+    "imweb-promotions": 37,
+    "l-mount": 335
   },
-  "synced_at": "2026-09-07T06:42:42+00:00",
-  "merged_count": 1042,
-  "product_count": 10074,
+  "synced_at": "2026-09-07T10:51:39+00:00",
+  "merged_count": 1055,
+  "product_count": 10412,
   "category_browsing_enabled": false,
-  "listing_count": 10058,
+  "listing_count": 10396,
   "option_family_count": 16,
   "deduplication": {
-    "brands_checked": 137,
-    "groups": 987,
-    "removed": 1042
+    "brands_checked": 138,
+    "groups": 1000,
+    "removed": 1055
   },
-  "revision": "119805bf1255189c"
+  "revision": "6c902d6eaf68ff69"
 }

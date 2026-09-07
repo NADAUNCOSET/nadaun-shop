@@ -1,6 +1,21 @@
 """Render crawlable first responses; JavaScript progressively adds filters."""
 from html import escape
 from pathlib import Path
+import json
+
+
+def brand_tile(b):
+    style='brand-visual dark' if b.get('logo_dark') else 'brand-visual'
+    if b.get('image_kind')=='product':style+=' representative'
+    return f'<a class="brand-tile" href="/brands/{escape(b["id"])}.html" target="_blank" rel="noopener" aria-label="{escape(b["name"])} 브랜드몰 새 창"><span class="{style}"><img src="{escape(b["logo"])}" alt="{escape(b["name"])}" width="180" height="78" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="brand-label">{escape(b["name"])}</span><small>{b["purchase_count"] or b["rental_count"]:,} {"PRODUCTS" if b["purchase_count"] else "RENTAL"} <span aria-hidden="true">↗</span></small></a>'
+
+
+def gift_content():
+    data=json.loads((Path(__file__).resolve().parents[1]/'data/catalog/sources/nadaun-gift.json').read_text())
+    if not data.get('complete'):raise RuntimeError('Gift shop source is incomplete')
+    categories=''.join(f'<a href="{escape(c["url"])}" target="_blank" rel="noopener">{escape(c["name"])} <span aria-hidden="true">↗</span></a>' for c in data['categories'])
+    products=''.join(f'<a class="product-card" href="{escape(p["url"])}" target="_blank" rel="noopener"><div class="product-image"><img src="{escape(p["image"])}" alt="{escape(p["name"])}" loading="lazy" referrerpolicy="no-referrer"></div><div class="product-brand">NADAUN GIFT</div><h3 class="product-name">{escape(p["name"])}</h3><span class="gift-product-link">수량·인쇄·가격 확인 ↗</span></a>' for p in data['featured_products'][:12])
+    return '<div class="breadcrumb"><a href="/">홈</a><span>›</span>기프트·굿즈</div><section class="gift-intro"><span class="section-index">NADAUN GIFT / OBJECTS WITH MEANING</span><h1>물건에 담는,<br>당신의 이야기.</h1><div><p>기업 선물, 브랜드 굿즈, 일상의 작은 기념품.<br>나다운기프트에서 수량과 인쇄, 제작 조건을 확인하세요.</p><a class="art-cta" href="https://www.nadaun-gift.com/" target="_blank" rel="noopener">기프트샵 전체 보기 <span>↗</span></a></div></section><section class="gift-selection"><div class="section-head"><div><span class="section-index">GIFT SELECTION</span><h2>전하고 싶은 마음의 모양.</h2></div><a href="#gift-categories">종류별로 찾기 ↓</a></div><div class="product-grid">'+products+'</div><p class="gift-order-note">기프트 상품의 가격은 주문 수량, 인쇄와 포장에 따라 달라집니다. 선택한 상품은 나다운기프트의 상세·주문 화면으로 연결됩니다.</p></section><section id="gift-categories" class="gift-categories"><div class="section-head"><div><span class="section-index">THE GIFT INDEX</span><h2>무엇을 선물할까요?</h2><p>기프트샵의 전체 상품 분류에서 찾아보세요.</p></div></div><label class="sr" for="gift-search">기프트 카테고리 찾기</label><input id="gift-search" type="search" placeholder="텀블러, 에코가방, 문구, 상패…"><span id="gift-search-status" role="status" aria-live="polite"></span><div class="gift-category-grid">'+categories+'</div></section>'
 
 
 def card(p):
@@ -11,12 +26,12 @@ def card(p):
 
 def content(mode, brands, products, brand=None):
     if mode=='home':
-        links=''.join(f'<a class="brand-tile" href="/brands/{escape(b["id"])}.html" target="_blank" rel="noopener"><span class="brand-word">'+(f'<img src="{escape(b["logo"])}" alt="{escape(b["name"])}" loading="lazy" referrerpolicy="no-referrer">' if b.get('logo') else escape(b['name']))+f'</span><small>{b["count"]:,} PRODUCTS ↗</small></a>' for b in brands[:21])
+        links=''.join(brand_tile(b) for b in brands[:18])
         dji=next((p for p in products if p['brand_id']=='dji' and 'Action 6' in p['name'] and p['kind']!='rental'),next(p for p in products if p['brand_id']=='dji'))
-        rig=next(p for p in products if p['brand_id']=='smallrig' and '케이지' in p['name'] and p['status']!='soldout')
+        hero=next((p for p in products if p['id']=='imweb-13283'),dji)
         selected=[next((p for p in products if p['brand_id']==bid and p['kind']!='rental' and p['status']!='soldout'),None) for bid in ['dji','leofoto','hoya','smallrig','tilta','pgytech','nanlite','godox']]
         page=(Path(__file__).parent/'shop_templates/home.html').read_text()
-        for key,value in {'DJI_IMAGE':dji['image'],'DJI_NAME':dji['name'],'RIG_IMAGE':rig['image'],'BRAND_COUNT':len(brands)}.items():
+        for key,value in {'HERO_IMAGE':hero['image'],'HERO_NAME':hero['name'],'HERO_ID':hero['id'],'BRAND_COUNT':len(brands)}.items():
             page=page.replace('{{'+key+'}}',escape(str(value)))
         return page.replace('{{BRANDS}}',links).replace('{{PRODUCTS}}',''.join(card(p) for p in selected if p))
     if mode=='catalog':
@@ -25,6 +40,7 @@ def content(mode, brands, products, brand=None):
         kind='rental' if brand and not brand['purchase_count'] else 'purchase'
         rows=[p for p in rows if p['kind']==kind]
         return f'<div class="breadcrumb"><a href="/">홈</a><span>›</span>{escape(name)}</div><div class="catalog-heading"><h1>{escape(name)}</h1></div><div class="product-grid">'+''.join(card(p) for p in rows[:24])+'</div>'
+    if mode=='gift':return gift_content()
     if mode in ('cart','checkout'):
         return '<div class="loading" role="status">선택하신 상품을 확인하고 있습니다.</div>'
     if mode=='categories':

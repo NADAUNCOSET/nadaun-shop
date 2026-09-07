@@ -1,10 +1,11 @@
 {
   "schema_version": 1,
-  "brands_checked": 137,
-  "input_count": 11116,
-  "duplicate_group_count": 987,
-  "duplicate_entries_removed": 1042,
+  "brands_checked": 138,
+  "input_count": 11467,
+  "duplicate_group_count": 1000,
+  "duplicate_entries_removed": 1055,
   "by_brand": {
+    "hoverair": 13,
     "viltrox": 4,
     "smallrig": 642,
     "leofoto": 3,
@@ -33,6 +34,318 @@
     "durix": 4
   },
   "groups": [
+    {
+      "brand_id": "hoverair",
+      "kind": "purchase",
+      "primary_id": "smartstore-11979494387",
+      "evidence": [
+        "name:x1프로맥스싸이클링콤보"
+      ],
+      "members": [
+        {
+          "id": "smartstore-11979494387",
+          "name": "HOVERAir X1 프로 맥스 싸이클링 콤보",
+          "price": 1504000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/11979494387"
+        },
+        {
+          "id": "imweb-12623",
+          "name": "HOVERAir X1 프로 맥스 싸이클링 콤보",
+          "price": 1504000,
+          "source": "imweb",
+          "url": "https://rainbowshop.imweb.me/shop_view/12623"
+        }
+      ]
+    },
+    {
+      "brand_id": "hoverair",
+      "kind": "purchase",
+      "primary_id": "smartstore-11979499287",
+      "evidence": [
+        "name:x1프로맥스베이직콤보"
+      ],
+      "members": [
+        {
+          "id": "smartstore-11979499287",
+          "name": "HOVERAir X1 프로 맥스 베이직 콤보",
+          "price": 1224000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/11979499287"
+        },
+        {
+          "id": "imweb-12624",
+          "name": "HOVERAir X1 프로 맥스 베이직 콤보",
+          "price": 1224000,
+          "source": "imweb",
+          "url": "https://rainbowshop.imweb.me/shop_view/12624"
+        }
+      ]
+    },
+    {
+      "brand_id": "hoverair",
+      "kind": "purchase",
+      "primary_id": "smartstore-11979506467",
+      "evidence": [
+        "name:x1프로맥스스탠다드"
+      ],
+      "members": [
+        {
+          "id": "smartstore-11979506467",
+          "name": "HOVERAir X1 프로 맥스 스탠다드",
+          "price": 968000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/11979506467"
+        },
+        {
+          "id": "imweb-12625",
+          "name": "HOVERAir X1 프로 맥스 스탠다드",
+          "price": 968000,
+          "source": "imweb",
+          "url": "https://rainbowshop.imweb.me/shop_view/12625"
+        }
+      ]
+    },
+    {
+      "brand_id": "hoverair",
+      "kind": "purchase",
+      "primary_id": "smartstore-11979540563",
+      "evidence": [
+        "name:x1프로싸이클링콤보"
+      ],
+      "members": [
+        {
+          "id": "smartstore-11979540563",
+          "name": "HOVERAir X1 프로 싸이클링 콤보",
+          "price": 1232000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/11979540563"
+        },
+        {
+          "id": "imweb-12626",
+          "name": "HOVERAir X1 프로 싸이클링 콤보",
+          "price": 1232000,
+          "source": "imweb",
+          "url": "https://rainbowshop.imweb.me/shop_view/12626"
+        }
+      ]
+    },
+    {
+      "brand_id": "hoverair",
+      "kind": "purchase",
+      "primary_id": "smartstore-11979542752",
+      "evidence": [
+        "name:x1프로베이직콤보"
+      ],
+      "members": [
+        {
+          "id": "smartstore-11979542752",
+          "name": "HOVERAir X1 프로 베이직 콤보",
+          "price": 928000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/11979542752"
+        },
+        {
+          "id": "imweb-12627",
+          "name": "HOVERAir X1 프로 베이직 콤보",
+          "price": 928000,
+          "source": "imweb",
+          "url": "https://rainbowshop.imweb.me/shop_view/12627"
+        }
+      ]
+    },
+    {
+      "brand_id": "hoverair",
+      "kind": "purchase",
+      "primary_id": "smartstore-11979547023",
+      "evidence": [
+        "name:x1프로스탠다드"
+      ],
+      "members": [
+        {
+          "id": "smartstore-11979547023",
+          "name": "HOVERAir X1 프로 스탠다드",
+          "price": 688000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/11979547023"
+        },
+        {
+          "id": "imweb-12628",
+          "name": "HOVERAir X1 프로 스탠다드",
+          "price": 688000,
+          "source": "imweb",
+          "url": "https://rainbowshop.imweb.me/shop_view/12628"
+        }
+      ]
+    },
+    {
+      "brand_id": "hoverair",
+      "kind": "purchase",
+      "primary_id": "smartstore-11979555144",
+      "evidence": [
+        "name:x1스마트콤보스페셜패키지화이트"
+      ],
+      "members": [
+        {
+          "id": "smartstore-11979555144",
+          "name": "HOVERAir X1 스마트 콤보 스페셜패키지 화이트",
+          "price": 511000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/11979555144"
+        },
+        {
+          "id": "imweb-12629",
+          "name": "HOVERAir X1 스마트 콤보 스페셜패키지 화이트",
+          "price": 511000,
+          "source": "imweb",
+          "url": "https://rainbowshop.imweb.me/shop_view/12629"
+        }
+      ]
+    },
+    {
+      "brand_id": "hoverair",
+      "kind": "purchase",
+      "primary_id": "smartstore-11979556496",
+      "evidence": [
+        "name:x1스마트콤보스페셜패키지블랙"
+      ],
+      "members": [
+        {
+          "id": "smartstore-11979556496",
+          "name": "HOVERAir X1 스마트 콤보 스페셜패키지 블랙",
+          "price": 511000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/11979556496"
+        },
+        {
+          "id": "imweb-12630",
+          "name": "HOVERAir X1 스마트 콤보 스페셜패키지 블랙",
+          "price": 511000,
+          "source": "imweb",
+          "url": "https://rainbowshop.imweb.me/shop_view/12630"
+        }
+      ]
+    },
+    {
+      "brand_id": "hoverair",
+      "kind": "purchase",
+      "primary_id": "smartstore-11979565618",
+      "evidence": [
+        "name:x1화이트"
+      ],
+      "members": [
+        {
+          "id": "smartstore-11979565618",
+          "name": "HOVERAir X1 화이트",
+          "price": 349300,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/11979565618"
+        },
+        {
+          "id": "imweb-12631",
+          "name": "HOVERAir X1 화이트",
+          "price": 349300,
+          "source": "imweb",
+          "url": "https://rainbowshop.imweb.me/shop_view/12631"
+        }
+      ]
+    },
+    {
+      "brand_id": "hoverair",
+      "kind": "purchase",
+      "primary_id": "smartstore-11979567152",
+      "evidence": [
+        "name:x1블랙"
+      ],
+      "members": [
+        {
+          "id": "smartstore-11979567152",
+          "name": "HOVERAir X1 블랙",
+          "price": 349300,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/11979567152"
+        },
+        {
+          "id": "imweb-12632",
+          "name": "HOVERAir X1 블랙",
+          "price": 349300,
+          "source": "imweb",
+          "url": "https://rainbowshop.imweb.me/shop_view/12632"
+        }
+      ]
+    },
+    {
+      "brand_id": "hoverair",
+      "kind": "purchase",
+      "primary_id": "smartstore-12200260829",
+      "evidence": [
+        "name:joystickset조이스틱세트"
+      ],
+      "members": [
+        {
+          "id": "smartstore-12200260829",
+          "name": "HOVERAir Joystick Set 조이스틱 세트",
+          "price": 132000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12200260829"
+        },
+        {
+          "id": "imweb-13048",
+          "name": "HOVERAir Joystick Set 조이스틱 세트",
+          "price": 132000,
+          "source": "imweb",
+          "url": "https://rainbowshop.imweb.me/shop_view/13048"
+        }
+      ]
+    },
+    {
+      "brand_id": "hoverair",
+      "kind": "purchase",
+      "primary_id": "smartstore-12200263929",
+      "evidence": [
+        "name:beacon&joystickbundle비콘조이스틱번들"
+      ],
+      "members": [
+        {
+          "id": "smartstore-12200263929",
+          "name": "HOVERAir Beacon & JoyStick Bundle 비콘 조이스틱 번들",
+          "price": 340000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12200263929"
+        },
+        {
+          "id": "imweb-13049",
+          "name": "HOVERAir Beacon & JoyStick Bundle 비콘 조이스틱 번들",
+          "price": 340000,
+          "source": "imweb",
+          "url": "https://rainbowshop.imweb.me/shop_view/13049"
+        }
+      ]
+    },
+    {
+      "brand_id": "hoverair",
+      "kind": "purchase",
+      "primary_id": "smartstore-12200267872",
+      "evidence": [
+        "name:beacon비콘"
+      ],
+      "members": [
+        {
+          "id": "smartstore-12200267872",
+          "name": "HOVERAir Beacon 비콘",
+          "price": 208000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12200267872"
+        },
+        {
+          "id": "imweb-13050",
+          "name": "HOVERAir Beacon 비콘",
+          "price": 208000,
+          "source": "imweb",
+          "url": "https://rainbowshop.imweb.me/shop_view/13050"
+        }
+      ]
+    },
     {
       "brand_id": "viltrox",
       "kind": "purchase",

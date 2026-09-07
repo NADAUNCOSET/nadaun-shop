@@ -17,14 +17,15 @@ from urllib.parse import urlencode
 from bs4 import BeautifulSoup
 from sync_shop_sources import ROOT,OUT,collect_smartstore,collect_imweb_dji,request,save_json,stamp
 from sync_kpp_catalog import collect as collect_kpp
+from sync_partner_catalogs import collect_lmount,collect_gift
 from enrich_shop_sources import collect as enrich
 from prepare_shop_assets import prepare
 from build_catalog import build
 
 STATE=ROOT/'_scraper/.sync-state'
 SITE='https://shop.nadaun.co'
-GENERATED=['data/catalog','assets/shop/thumbnails','brands','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','terms.html','privacy.html','shipping.html','services.html','catalog-sitemap.xml']
-CODE=['_scraper/catalog_seo.py','assets/shop/catalog-tools.js','_scraper/tests','_scraper/test_shop_catalog.py','api','assets/shop/cart.js','_scraper/storefront_pages.py','_scraper/sync_shop_sources.py','_scraper/sync_kpp_catalog.py','_scraper/enrich_shop_sources.py','_scraper/build_catalog.py','_scraper/catalog_dedup.py','_scraper/shop_sync.py','_scraper/prepare_shop_assets.py','_scraper/shop_templates','assets/shop/shop.js','assets/shop/shop.css','data/catalog/overrides.json','data/catalog/dedup-rules.json','vercel.json']
+GENERATED=['data/catalog','assets/shop/thumbnails','brands','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','catalog-sitemap.xml']
+CODE=['assets/shop/vendor','assets/shop/brands','data/catalog/partner-image-rules.json','_scraper/sync_partner_catalogs.py','data/catalog/brand-assets.json','_scraper/catalog_seo.py','assets/shop/catalog-tools.js','_scraper/tests','_scraper/test_shop_catalog.py','api','assets/shop/cart.js','_scraper/storefront_pages.py','_scraper/sync_shop_sources.py','_scraper/sync_kpp_catalog.py','_scraper/enrich_shop_sources.py','_scraper/build_catalog.py','_scraper/catalog_dedup.py','_scraper/shop_sync.py','_scraper/prepare_shop_assets.py','_scraper/shop_templates','assets/shop/shop.js','assets/shop/shop.css','data/catalog/overrides.json','data/catalog/dedup-rules.json','vercel.json']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
@@ -39,9 +40,9 @@ def api(path):return json.loads(command('vercel','api',path,'--raw'))
 
 def managed_files():
     """Stage exact generated files, never an arbitrary file in those folders."""
-    files=['index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','terms.html','privacy.html','shipping.html','services.html','catalog-sitemap.xml',
-           'data/catalog/catalog.json','data/catalog/sync-status.json','data/catalog/asset-manifest.json','data/catalog/dedup-audit.json']
-    for source in ('smartstore','imweb-dji','kpp'):
+    files=['index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','catalog-sitemap.xml',
+           'data/catalog/catalog.json','data/catalog/brands.json','data/catalog/sync-status.json','data/catalog/asset-manifest.json','data/catalog/dedup-audit.json']
+    for source in ('smartstore','imweb-dji','imweb-promotions','kpp','l-mount','nadaun-gift'):
         files.append('data/catalog/sources/'+source+'.json')
     for source in ('smartstore','kpp'):
         base=ROOT/'data/catalog/source-details'/source
@@ -124,7 +125,7 @@ def run(publish=True,existing=False):
         if command('git','diff','--name-only','--',*CODE):raise RuntimeError('Uncommitted catalogue code or overrides; automatic sync paused')
         if not existing:
             previous=json.loads((ROOT/'data/catalog/sync-status.json').read_text()) if (ROOT/'data/catalog/sync-status.json').exists() else {}
-            collect_smartstore();collect_imweb_dji();collect_kpp()
+            collect_smartstore();collect_imweb_dji();collect_imweb_dji(promotion=True);collect_kpp();collect_lmount();collect_gift()
             for source,count in previous.get('source_counts',{}).items():
                 new=json.loads((OUT/(source+'.json')).read_text())['product_count']
                 if new<count*.85:raise RuntimeError(f'{source} count dropped more than 15%; keep live data and review')

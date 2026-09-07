@@ -49,13 +49,14 @@ def brand_dictionary():
       'captureone':['캡쳐원'], 'metabones':['메타본즈'], 'ecoflow':['에코플로우'],
       'datacolor':['데이터컬러'], 'tvlogic':['티브이로직'], 'tokina-cinema':['tokina cinema','cinema'],
       'hy':['h&y'], 'tethertools':['테더툴스'], 'pgytech':['피지테크'], 'smallrig':['스몰리그'],
+      'ldl-mount':['엘디엘마운트','엘디마운트','ldl mount'],
     }
     for key,names in extras.items():
         for name in names+[key]: aliases[name.casefold()]=key
     return aliases
 
 ALIASES=brand_dictionary()
-DISPLAY={'hy':'H&Y','eimage':'E-IMAGE','blackmagic':'Blackmagic Design','rainbowbene':'NADAUN','lee-filters':'LEE Filters','tokina-cinema':'TOKINA CINEMA','visgo':'VSGO'}
+DISPLAY={'hy':'H&Y','eimage':'E-IMAGE','blackmagic':'Blackmagic Design','rainbowbene':'NADAUN','lee-filters':'LEE Filters','tokina-cinema':'TOKINA CINEMA','visgo':'VSGO','ldl-mount':'LDL-MOUNT'}
 
 def brand_id(raw): return ALIASES.get(clean(raw).casefold(),slug(raw or '기타 브랜드'))
 
@@ -64,9 +65,10 @@ def product_name(name):
     return re.sub(r'^\[\s*[^\]]*레인보우베네\s*\]\s*','',name).strip()
 
 def build(allow_pending=False):
-    source_files=['kpp','smartstore','imweb-dji']
+    source_files=['kpp','smartstore','imweb-dji','imweb-promotions','l-mount']
     snapshots={key:json.loads((OUT/(key+'.json')).read_text()) for key in source_files}
     if not all(s.get('complete') for s in snapshots.values()): raise RuntimeError('Incomplete source snapshot')
+    partner_image_rules=json.loads((PUBLIC/'partner-image-rules.json').read_text())
     products={}; categories={}; brands={}; details={}; coverage=Counter()
     def add_brand(raw):
         bid=brand_id(raw)
@@ -82,14 +84,20 @@ def build(allow_pending=False):
             if source=='kpp':
                 scope=c['scope'];bid=brand_id(scope.split(':',1)[1]) if scope.startswith('brand:') else None
                 prefix='kpp:'+('b:'+bid if bid else 'p')+':'
+            elif source=='imweb-promotions':bid=None;prefix='imweb:promotion:'
+            elif source=='l-mount':bid='ldl-mount';prefix='l-mount:b:ldl-mount:'
             else:bid='dji';prefix='imweb:b:dji:'
             c.update(id=prefix+c['id'],parent_id=prefix+c['parent_id'] if c['parent_id'] else None,brand_id=bid)
             categories[c['id']]={k:c[k] for k in ('id','name','parent_id','brand_id')}
         cached={}
-        if source!='imweb-dji':
+        if not source.startswith('imweb-'):
             for f in (CACHE/source).glob('*.json'):
                 if re.fullmatch('[a-f0-9]{2}',f.stem):cached.update(json.loads(f.read_text()))
         for pid,p0 in s['products'].items():
+            if source=='imweb-promotions' and pid in products:
+                products[pid]['promotion_ids']=['imweb:promotion:'+cid for cid in p0['brand_category_ids']]
+                coverage[source]+=1
+                continue
             p=deepcopy(p0);p['brand_id']=add_brand(p['brand']);p['name']=product_name(p['name'])
             bid=p['brand_id'];membership=[];types=[]
             if source=='kpp':
@@ -107,7 +115,9 @@ def build(allow_pending=False):
                         categories.setdefault(key,{'id':key,'name':source_cat['name'],'parent_id':f'kpp:b:{bid}:global:'+parent.split(':')[-1] if parent else None,'brand_id':bid})
                         membership.append(key)
                 p['status']='inquiry'
+            elif source=='imweb-promotions': pass
             elif source=='imweb-dji': membership=['imweb:b:dji:'+cid for cid in p.get('brand_category_ids',[])]
+            elif source=='l-mount': membership=['l-mount:b:ldl-mount:'+cid for cid in p.get('brand_category_ids',[])]
             else:
                 path=p.get('source_category_path') or [];ids=p.get('source_category_ids') or []
                 # Naver standard classifications are retained separately from
@@ -123,22 +133,34 @@ def build(allow_pending=False):
                     categories.setdefault(key,{'id':key,'name':path[-1],'parent_id':None,'brand_id':None})
                     types.append(key)
             p['category_ids']=list(dict.fromkeys(membership));p['type_ids']=types
+            p['promotion_ids']=['imweb:promotion:'+cid for cid in p.get('brand_category_ids',[])] if source=='imweb-promotions' else []
             d=cached.get(pid,{})
             if source=='smartstore' and d.get('source_modified_at')!=p.get('source_modified_at'):
                 d={}
             if source=='kpp' and d.get('source_fingerprint')!=source_fingerprint(p0):
                 d={}
-            if source=='imweb-dji':d={'detail_status':'verified','description_text':p.get('description_text',''),'images':p['images']}
+            if source.startswith('imweb-'):d={'detail_status':'verified','description_text':p.get('description_text',''),'images':p['images']}
+            if source=='l-mount':d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation') if k in p}
             if d.get('detail_status')=='verified':coverage[source]+=1
             elif not allow_pending:raise RuntimeError('Unverified product detail: '+pid)
             if d.get('unavailable'):
                 continue
             p['images'].update(d.get('images') or {})
+            if source=='l-mount':
+                for group in ('main','detail'):
+                    cleaned=[]
+                    for url in p['images'].get(group,[]):
+                        rule=partner_image_rules.get(url)
+                        if rule and pid in rule['products']:
+                            if rule.get('notice'):d['description_notice']='일부 상세 정보는 구매 상담에서 확인해주세요.'
+                            url=rule['replacement']
+                        if url and url not in cleaned:cleaned.append(url)
+                    p['images'][group]=cleaned
             if source=='kpp':
                 p['images']['detail']=[u for u in p['images'].get('detail',[]) if '/shop/images/' not in u]
             if source=='kpp' and d.get('detail_status')=='verified':p['price']=d['price'];p['sale_price']=d['sale_price']
             p['offers']=[{'source':p['source'],'url':p['source_url'],'status':p['status'],'price':p.get('sale_price'),'id':pid}]
-            details[pid]={k:d.get(k) for k in ('description_text','options','option_groups','shipping') if d.get(k)}
+            details[pid]={k:d.get(k) for k in ('description_text','options','option_groups','shipping','options_require_confirmation','description_notice') if d.get(k)}
             details[pid]['images']=p['images'];details[pid]['source_id']=p['source_id']
             products[pid]=p
     for b in brands.values():
@@ -165,7 +187,7 @@ def build(allow_pending=False):
         if pid in assets and assets[pid]['source_url']==thumb:
             thumb='/'+assets[pid]['path']
         if not thumb:raise RuntimeError('Missing product thumbnail: '+pid)
-        public_products.append({k:p.get(k) for k in ('id','name','brand_id','kind','price','sale_price','status','category_ids','type_ids','offers','supplier_status')}|{'image':thumb,'detail_bucket':shard(pid)})
+        public_products.append({k:p.get(k) for k in ('id','name','brand_id','kind','price','sale_price','status','category_ids','type_ids','promotion_ids','offers','supplier_status')}|{'image':thumb,'detail_bucket':shard(pid)})
         public_details[shard(pid)][pid]=details[pid]
     # Same named families with different option sets get one list card while
     # every variant remains independently addressable and purchasable later.
@@ -181,7 +203,7 @@ def build(allow_pending=False):
         family_audit.append({'listing_id':primary['id'],'variant_ids':ids})
         for p in family:
             p['listing_id']=primary['id']
-            for field in ('category_ids','type_ids'):
+            for field in ('category_ids','type_ids','promotion_ids'):
                 p[field]=list(dict.fromkeys(cid for q in family for cid in q[field]))
             public_details[p['detail_bucket']][p['id']]['related_variants']=[{
                 'id':q['id'],'name':q['name'],
@@ -200,6 +222,15 @@ def build(allow_pending=False):
         b['purchase_count']=kind_counts[(b['id'],'purchase')]
         b['rental_count']=kind_counts[(b['id'],'rental')]
         b['category_ids']=[c['id'] for c in categories.values() if c['brand_id']==b['id']]
+    brand_assets=json.loads((PUBLIC/'brand-assets.json').read_text())
+    for b in brands.values():
+        asset=brand_assets.get(b['id'])
+        if asset:
+            if not (ROOT/asset['path']).is_file():raise RuntimeError('Missing brand image: '+b['id'])
+            b.update(logo='/'+asset['path'],image_kind='logo',logo_dark=asset.get('dark',False))
+        else:
+            sample=next((p for p in listing_products if p['brand_id']==b['id'] and p['status']!='soldout'),next((p for p in listing_products if p['brand_id']==b['id']),None))
+            if sample:b.update(logo=sample['image'],image_kind='product',logo_dark=False)
     preferred=config.get('brand_order') or ['dji','smallrig','leofoto','tilta','hoya','hy','pgytech','viltrox','nanlite','godox','kupo','aputure','tokina','tokina-cinema','ttartisan','astrhori','wandrd','fxlion','zitay']
     brand_list=sorted(brands.values(),key=lambda b:(preferred.index(b['id']) if b['id'] in preferred else 999,b['name']))
     meta={'schema_version':1,'source_counts':{k:s['product_count'] for k,s in snapshots.items()},'detail_coverage':dict(coverage),
@@ -210,6 +241,8 @@ def build(allow_pending=False):
     output={'meta':meta,'brands':brand_list,'categories':list(categories.values()),'products':public_products,'redirects':redirects}
     presentation=''.join(p.read_text() for pattern in ('*.html','policies/*.html') for p in sorted((ROOT/'_scraper/shop_templates').glob(pattern)))
     presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/shop.js','assets/shop/shop.css','assets/shop/cart.js','assets/shop/catalog-tools.js','_scraper/storefront_pages.py','_scraper/catalog_seo.py','api/product.js'))
+    presentation+=(OUT/'nadaun-gift.json').read_text()
+    presentation+=''.join(p.read_text() for p in sorted((ROOT/'assets/shop/vendor').glob('*.js')))
     revision=hashlib.sha256((json.dumps(output,ensure_ascii=False,sort_keys=True)+presentation).encode()).hexdigest()[:16]
     output['meta']['revision']=revision
     PUBLIC.mkdir(parents=True,exist_ok=True)
@@ -217,6 +250,7 @@ def build(allow_pending=False):
         (PUBLIC/'details').mkdir(exist_ok=True)
         (PUBLIC/'details'/f'{key}.json').write_text(json.dumps(bucket,ensure_ascii=False,separators=(',',':'))+'\n')
     (PUBLIC/'catalog.json').write_text(json.dumps(output,ensure_ascii=False,separators=(',',':'))+'\n')
+    (PUBLIC/'brands.json').write_text(json.dumps({'meta':{'revision':revision},'brands':brand_list},ensure_ascii=False,separators=(',',':'))+'\n')
     save_json(PUBLIC/'sync-status.json',meta)
     template=(ROOT/'_scraper/shop_templates/page.html').read_text()
     for filename,title,description,mode in [
@@ -229,6 +263,7 @@ def build(allow_pending=False):
       ('terms.html','이용약관 | 나다운 샵','나다운 샵의 상품 정보, 구매와 서비스 이용에 관한 약관입니다.','policy'),
       ('privacy.html','개인정보처리방침 | 나다운 샵','나다운 샵의 개인정보 처리 목적과 항목, 보유기간 및 권리 행사 방법을 안내합니다.','policy'),
       ('services.html','촬영장비 구매·렌탈·협찬·사진영상 제작 안내 | 나다운 샵','카메라·조명·삼각대 구매, 서울 영등포 장비 렌탈, 협찬·브랜드 협업과 사진·영상 촬영 제작 문의를 안내합니다.','guide'),
+      ('gifts.html','기프트·굿즈 | 나다운 샵','나다운기프트의 기업 선물, 브랜드 굿즈와 판촉물을 만나보세요. 상품별 수량·인쇄·제작 조건을 확인할 수 있습니다.','gift'),
       ('shipping.html','배송·교환·반품 안내 | 나다운 샵','상품별 배송 조건, 교환과 반품 접수, 환급 및 고객센터를 안내합니다.','policy'),
     ]:
         page=template.replace('{{TITLE}}',title).replace('{{DESCRIPTION}}',description).replace('{{CANONICAL}}','https://shop.nadaun.co/'+('' if filename=='index.html' else filename)).replace('{{MODE}}',mode).replace('{{BRAND}}','').replace('{{REVISION}}',revision)
@@ -239,10 +274,10 @@ def build(allow_pending=False):
         (ROOT/filename).write_text(page)
     brand_dir=ROOT/'brands';brand_dir.mkdir(exist_ok=True)
     for b in brand_list:
-        page=template.replace('{{TITLE}}',html.escape(b['name']+' 브랜드몰 | 나다운 샵')).replace('{{DESCRIPTION}}',html.escape(b['name']+' 촬영장비를 나다운 샵에서 만나보세요. 브랜드별 세부 분류와 상품 정보, 구매 상담.')).replace('{{CANONICAL}}','https://shop.nadaun.co/brands/'+b['id']+'.html').replace('{{MODE}}','catalog').replace('{{BRAND}}',b['id']).replace('{{REVISION}}',revision)
+        page=template.replace('{{TITLE}}',html.escape(b['name']+' 브랜드몰 | 나다운 샵')).replace('{{DESCRIPTION}}',html.escape(b['name']+' 제품을 나다운 샵에서 만나보세요. 브랜드별 세부 분류와 상품 정보, 구매 상담.')).replace('{{CANONICAL}}','https://shop.nadaun.co/brands/'+b['id']+'.html').replace('{{MODE}}','catalog').replace('{{BRAND}}',b['id']).replace('{{REVISION}}',revision)
         page=page.replace('{{CONTENT}}',page_content('catalog',brand_list,public_products,b))
         (brand_dir/(b['id']+'.html')).write_text(page)
-    urls=['https://shop.nadaun.co/','https://shop.nadaun.co/catalog.html']+['https://shop.nadaun.co/brands/'+b['id']+'.html' for b in brand_list]+['https://shop.nadaun.co/'+p for p in ('terms.html','privacy.html','shipping.html','services.html')]+['https://shop.nadaun.co/item.html?id='+p['id'] for p in public_products]
+    urls=['https://shop.nadaun.co/','https://shop.nadaun.co/catalog.html']+['https://shop.nadaun.co/brands/'+b['id']+'.html' for b in brand_list]+['https://shop.nadaun.co/'+p for p in ('terms.html','privacy.html','shipping.html','services.html','gifts.html')]+['https://shop.nadaun.co/item.html?id='+p['id'] for p in public_products]
     images={'https://shop.nadaun.co/item.html?id='+p['id']:urljoin('https://shop.nadaun.co/',p['image']) for p in public_products}
     entries=''.join('<url><loc>'+html.escape(u)+'</loc>'+('<image:image><image:loc>'+html.escape(images[u])+'</image:loc></image:image>' if u in images else '')+'</url>' for u in urls)
     (ROOT/'catalog-sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+entries+'</urlset>\n')

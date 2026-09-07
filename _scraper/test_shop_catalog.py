@@ -117,7 +117,7 @@ class SourceRules(unittest.TestCase):
             self.assertTrue(set(p['category_ids']+p['type_ids'])<=cats,p['id'])
             self.assertNotIn(p['id'],d['redirects'])
             for offer in p['offers']:
-                self.assertTrue(offer['url'].startswith(('https://smartstore.naver.com/rainbowbene/','https://rainbowshop.imweb.me/','https://kppkpp.co.kr/')))
+                self.assertTrue(offer['url'].startswith(('https://smartstore.naver.com/rainbowbene/','https://rainbowshop.imweb.me/','https://kppkpp.co.kr/','https://www.l-mount.co.kr/goods/goods_view.php?goodsNo=')))
         self.assertTrue(set(d['redirects'].values())<=ids)
         offers=[o['id'] for p in d['products'] for o in p['offers']]
         self.assertEqual(len(offers),len(set(offers)))
@@ -138,5 +138,50 @@ class SourceRules(unittest.TestCase):
                 detail=json.loads((ROOT/'data/catalog/details'/(p['detail_bucket']+'.json')).read_text())[p['id']]
                 self.assertTrue(any(v['id']==p['id'] for v in detail['related_variants']))
         self.assertGreater(d['meta']['source_counts']['imweb-dji'],0)
+
+    def test_partner_coverage_options_and_brand_images(self):
+        from sync_partner_catalogs import normalize_ldl_options,ldl_categories
+        fixture={'option_groups':[{'values':[{'name':'화이트 : +16,000원','value':'1||16000||||0^|^화이트'}]}]*2,'options_require_confirmation':True}
+        normalized=normalize_ldl_options(fixture)
+        self.assertEqual(normalized['options'],[{'id':'1','name':'화이트','additional_price':16000}])
+        self.assertFalse(normalized['options_require_confirmation'])
+        with self.assertRaises(RuntimeError):
+            ldl_categories(BeautifulSoup('<a href="goods_list.php?cateCd=003001">누락된 상위 분류</a>','lxml'))
+        source=json.loads((ROOT/'data/catalog/sources/l-mount.json').read_text())
+        data=json.loads((ROOT/'data/catalog/catalog.json').read_text())
+        brand_index=json.loads((ROOT/'data/catalog/brands.json').read_text())
+        self.assertEqual(brand_index['brands'],data['brands'])
+        self.assertEqual(brand_index['meta']['revision'],data['meta']['revision'])
+        self.assertNotIn('products',brand_index)
+        image_rules=json.loads((ROOT/'data/catalog/partner-image-rules.json').read_text())
+        self.assertTrue(source['complete']);self.assertEqual(len(source['coverage']),len(source['categories']))
+        for report in source['coverage']:self.assertEqual(report['unique'],report['expected'])
+        ids={p['id']:p for p in data['products']}
+        for pid,original in source['products'].items():
+            p=ids[data['redirects'].get(pid,pid)]
+            self.assertIn('l-mount', [o['source'] for o in p['offers']])
+            self.assertTrue(p['category_ids'])
+            detail=json.loads((ROOT/'data/catalog/details'/(p['detail_bucket']+'.json')).read_text())[p['id']]
+            if original['options']:self.assertEqual(detail['options'],original['options'])
+            self.assertFalse(set(detail['images']['main']+detail['images']['detail']) & set(image_rules))
+            if any(rule.get('notice') and pid in rule['products'] for rule in image_rules.values()):
+                self.assertTrue(detail.get('description_notice'))
+        for b in data['brands']:
+            self.assertTrue(b['logo'],b['id']);self.assertIn(b['image_kind'],('logo','product'))
+            if b['logo'].startswith('/'):self.assertTrue((ROOT/b['logo'].lstrip('/')).is_file(),b['id'])
+
+    def test_gift_links_keep_bulk_order_terms_and_original_categories(self):
+        source=json.loads((ROOT/'data/catalog/sources/nadaun-gift.json').read_text())
+        page=BeautifulSoup((ROOT/'gifts.html').read_text(),'lxml')
+        links=page.select('.gift-category-grid>a')
+        self.assertEqual(len(links),source['category_count'])
+        self.assertEqual({a['href'] for a in links},{c['url'] for c in source['categories']})
+        self.assertTrue(all(a['target']=='_blank' and 'noopener' in a['rel'] for a in links))
+        self.assertIn('수량',page.select_one('.gift-order-note').get_text())
+        self.assertEqual(len(page.select('.gift-selection .product-card')),12)
+        self.assertTrue(page.select_one('.navigation a[href="/gifts.html"]'))
+        for selector in ('meta[name="description"]','meta[property="og:description"]'):
+            self.assertTrue(0<len(page.select_one(selector)['content'])<=80)
+        self.assertIn('https://shop.nadaun.co/gifts.html',(ROOT/'catalog-sitemap.xml').read_text())
 
 if __name__=='__main__':unittest.main()

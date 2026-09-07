@@ -210,14 +210,14 @@ def imweb_public_price(item):
     return price
 
 
-def collect_imweb_dji():
+def collect_imweb_dji(promotion=False):
     headers = imweb_headers()
     body = request("GET", IMWEB + "/shop/categories", headers=headers).json()
     if body.get("code") != 200:
         raise RuntimeError("Imweb category query was unsuccessful")
     all_cats = flatten_categories(body["data"])
     roots = [c for c in all_cats if c["parent_id"] is None
-             and clean(c["name"]).casefold() in {"dji", "디지아이", "디제이아이"}]
+             and (bool(re.search(r"프로모션|promotion",c["name"],re.I)) if promotion else clean(c["name"]).casefold() in {"dji", "디지아이", "디제이아이"})]
     if len(roots) != 1:
         raise RuntimeError(f"Expected exactly one DJI category root, found {len(roots)}")
     root = roots[0]
@@ -258,7 +258,7 @@ def collect_imweb_dji():
             pid = "imweb-" + iid
             products[pid] = {
                 "id": pid, "source": "imweb", "source_id": iid,
-                "name": clean(item.get("name")), "brand": "DJI", "manufacturer": "DJI",
+                "name": clean(item.get("name")), "brand": clean(re.split(r"[,/]",item.get("brand") or "")[0]) if promotion else "DJI", "manufacturer": clean(item.get("brand")) if promotion else "DJI",
                 "source_url": "https://rainbowshop.imweb.me/shop_view/" + iid,
                 "price": None if item.get('price_none') else item.get("price"), "sale_price": imweb_public_price(item),
                 "status": item["prod_status"], "kind": "purchase",
@@ -279,10 +279,10 @@ def collect_imweb_dji():
     verify = request("GET", IMWEB + "/shop/categories/" + root["id"], headers=headers).json()
     if verify.get("code") != 200:
         raise RuntimeError("Imweb final category re-query failed")
-    out = {"source": "imweb", "source_url": "https://rainbowshop.imweb.me/DJI", "brand": "DJI",
+    out = {"source": "imweb", "source_url": "https://rainbowshop.imweb.me/", "brand": "mixed" if promotion else "DJI",
            "collected_at": stamp(), "complete": True, "categories": cats,
            "product_count": len(products), "products": products}
-    save_json(OUT / "imweb-dji.json", out)
+    save_json(OUT / ("imweb-promotions.json" if promotion else "imweb-dji.json"), out)
     return out
 
 

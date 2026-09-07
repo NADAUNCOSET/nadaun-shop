@@ -163,8 +163,8 @@ def deduplicate(products, details, brands, rules=None):
                                    'source':p.get('source'),'url':p['source_url']} for p in ordered]})
         for duplicate in ordered[1:]:
             did = duplicate['id']
-            for field in ('category_ids','type_ids'):
-                primary[field] = list(dict.fromkeys(primary[field]+duplicate[field]))
+            for field in ('category_ids','type_ids','promotion_ids'):
+                primary[field] = list(dict.fromkeys(primary.get(field,[])+duplicate.get(field,[])))
             seen = {o['id'] for o in primary['offers']}
             primary['offers'] += [deepcopy(o) for o in duplicate['offers'] if o['id'] not in seen]
             if not primary.get('supplier_status'):
