@@ -1,5 +1,6 @@
 import {isDiscounted,isPromotion,matchesBenefit,benefitNavigation,categoryTrail,categoryControls} from './catalog-tools.js';
 import {mountPurchase,renderCart,rentalGuide} from './cart.js';
+import {mountBanners} from './banners.js';
 const main=document.querySelector('#main');
 const params=new URLSearchParams(location.search);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -33,12 +34,12 @@ async function enhanceArtMotion(){
    const seen=new WeakSet(),triggers=new Set(),animations=new Set();let timer;
    const scan=()=>{
     for(const trigger of triggers)if(!trigger.trigger?.isConnected){trigger.kill();triggers.delete(trigger)}
-    const elements=[...main.querySelectorAll('.section-head,.brand-tile,.product-card,.editorial-pair>a,.shop-departments>a,.cart-items>li,.checkout-services>section,.service-grid>section')].filter(el=>!seen.has(el)&&!el.hidden);
+    const elements=[...main.querySelectorAll('.section-head,.brand-tile,.product-card,.editorial-pair>a,.shop-departments>a,.cart-items>li,.checkout-services>section,.service-grid>section,.studio-gallery figure,.studio-specs>div,.studio-amenities li')].filter(el=>!seen.has(el)&&!el.hidden);
     elements.forEach(el=>seen.add(el));
-    if(elements.length)ST.batch(elements,{start:'top 96%',once:true,interval:.08,batchMax:6,onEnter:batch=>{
+    if(elements.length)ST.batch(elements,{start:'top 96%',once:true,interval:.1,batchMax:6,onEnter:batch=>{
      const targets=batch.filter(el=>el.isConnected&&!el.contains(document.activeElement));
      if(!targets.length)return;
-     const tween=gsap.fromTo(targets,{y:matchMedia('(max-width:700px)').matches?16:30},{y:0,duration:.65,stagger:.06,ease:'power3.out',clearProps:'transform',overwrite:'auto',onComplete:()=>animations.delete(tween)});
+     const tween=gsap.fromTo(targets,{y:matchMedia('(max-width:700px)').matches?36:72},{y:0,duration:1.1,stagger:.1,ease:'power4.out',clearProps:'transform',overwrite:'auto',onComplete:()=>animations.delete(tween)});
      animations.add(tween);
     }}).forEach(t=>triggers.add(t));
     ST.refresh();
@@ -49,15 +50,16 @@ async function enhanceArtMotion(){
    return ()=>{clearTimeout(timer);observer.disconnect();document.removeEventListener('shop:content-updated',schedule);for(const t of triggers)t.kill();for(const a of animations){gsap.set(a.targets(),{clearProps:'transform'});a.kill()}};
   });
   media.add('(min-width:701px) and (pointer:fine) and (prefers-reduced-motion:no-preference)',()=>{
-   const target=document.querySelector('.art-object');if(!target)return;
-   gsap.to('.object-circle',{yPercent:14,rotation:8,ease:'none',scrollTrigger:{trigger:'.art-hero',start:'top top',end:'bottom top',scrub:1}});
-   gsap.to('.art-object>img',{yPercent:-7,rotation:-4,ease:'none',scrollTrigger:{trigger:'.art-hero',start:'top top',end:'bottom top',scrub:1}});
-   gsap.to('.gold-disc',{xPercent:-18,rotation:25,ease:'none',scrollTrigger:{trigger:'.editorial-pair',start:'top bottom',end:'bottom top',scrub:1}});
+   if(main.querySelector('.gold-disc'))gsap.to('.gold-disc',{xPercent:-35,yPercent:25,rotation:65,ease:'none',scrollTrigger:{trigger:'.editorial-pair',start:'top bottom',end:'bottom top',scrub:1}});
+   for(const heading of main.querySelectorAll('.section-head h2,.studio-amenities h2'))gsap.fromTo(heading,{x:28},{x:0,ease:'none',scrollTrigger:{trigger:heading,start:'top bottom',end:'top 55%',scrub:.7}});
+   const progress=document.createElement('span');progress.className='reading-progress';progress.setAttribute('aria-hidden','true');document.body.append(progress);
+   gsap.fromTo(progress,{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{trigger:main,start:'top top',end:'bottom bottom',scrub:true}});
    const cursor=document.createElement('span');cursor.className='art-cursor';cursor.textContent='VIEW ↗';cursor.setAttribute('aria-hidden','true');document.body.append(cursor);
-   const move=e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';cursor.classList.add('visible');target.classList.add('has-art-cursor')};
-   const hide=()=>{cursor.classList.remove('visible');target.classList.remove('has-art-cursor')};
-   target.addEventListener('pointermove',move);target.addEventListener('pointerleave',hide);window.addEventListener('blur',hide);window.addEventListener('scroll',hide,{passive:true});
-   return ()=>{target.removeEventListener('pointermove',move);target.removeEventListener('pointerleave',hide);window.removeEventListener('blur',hide);window.removeEventListener('scroll',hide);target.classList.remove('has-art-cursor');cursor.remove()};
+   let target;
+   const hide=()=>{cursor.classList.remove('visible');target?.classList.remove('has-art-cursor');target=null};
+   const move=e=>{const next=e.target.closest('.brand-object,.editorial-pair>a');if(!next){hide();return}if(target!==next){hide();target=next}cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';cursor.classList.add('visible');target.classList.add('has-art-cursor')};
+   main.addEventListener('pointermove',move);main.addEventListener('pointerleave',hide);window.addEventListener('blur',hide);window.addEventListener('scroll',hide,{passive:true});
+   return ()=>{main.removeEventListener('pointermove',move);main.removeEventListener('pointerleave',hide);window.removeEventListener('blur',hide);window.removeEventListener('scroll',hide);hide();cursor.remove();progress.remove()};
   });
  }catch(error){console.warn('Shop motion unavailable',error)}
 }
@@ -91,6 +93,7 @@ document.addEventListener('load',event=>{
   if(holder){holder.classList.remove('image-fallback');holder.removeAttribute('aria-label')}
 },true);
 if(mode==='gift')enhanceGift();
-if(!['policy','guide','gift','about'].includes(mode))try{const revision=document.querySelector('meta[name="catalog-revision"]').content;const response=await fetch(`/data/catalog/${mode==='home'?'brands':'catalog'}.json?v=${revision}`);if(!response.ok)throw Error('상품 목록을 불러오지 못했습니다.');data=await response.json();brandMap=new Map(data.brands.map(b=>[b.id,b]));categoryMap=new Map((data.categories||[]).map(c=>[c.id,c]));if(mode==='item')await renderItem();else if(mode==='cart'||mode==='checkout')await renderCart(data,mode==='checkout');else if(mode==='home')renderHome();else if(mode==='categories')renderCategories();else renderCatalog();}catch(error){console.error(error);if(mode==='home'){const button=document.querySelector('#all-brands');button.disabled=true;button.textContent='브랜드 검색을 불러오지 못했습니다.';}else main.innerHTML=empty('잠시 상품을 불러오지 못했습니다.','새로고침 후 다시 확인해주세요.','https://smartstore.naver.com/rainbowbene','스마트스토어에서 상품 보기')}
+if(!['policy','guide','gift','about','studio'].includes(mode))try{const revision=document.querySelector('meta[name="catalog-revision"]').content;const response=await fetch(`/data/catalog/${mode==='home'?'brands':'catalog'}.json?v=${revision}`);if(!response.ok)throw Error('상품 목록을 불러오지 못했습니다.');data=await response.json();brandMap=new Map(data.brands.map(b=>[b.id,b]));categoryMap=new Map((data.categories||[]).map(c=>[c.id,c]));if(mode==='item')await renderItem();else if(mode==='cart'||mode==='checkout')await renderCart(data,mode==='checkout');else if(mode==='home')renderHome();else if(mode==='categories')renderCategories();else renderCatalog();}catch(error){console.error(error);if(mode==='home'){const button=document.querySelector('#all-brands');button.disabled=true;button.textContent='브랜드 검색을 불러오지 못했습니다.';}else main.innerHTML=empty('잠시 상품을 불러오지 못했습니다.','새로고침 후 다시 확인해주세요.','https://smartstore.naver.com/rainbowbene','스마트스토어에서 상품 보기')}
 
+if(mode==='home')mountBanners(document.querySelector('.shop-banner'));
 if(mode!=='policy')enhanceArtMotion();

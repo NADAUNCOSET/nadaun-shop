@@ -4,6 +4,16 @@ from pathlib import Path
 import json
 
 
+def banner_content():
+    banners=json.loads((Path(__file__).resolve().parents[1]/'data/catalog/banners.json').read_text())['banners']
+    slides=[]
+    for i,b in enumerate(banners):
+        if not b['href'].startswith('/') or b['href'].startswith('//'):
+            raise ValueError('Banner target must be a shop path')
+        slides.append(f'<a class="shop-banner-slide{" is-active" if i==0 else ""}" href="{escape(b["href"])}" data-banner-title="{escape(b["title"])}" aria-label="{escape(b["title"])} 브랜드 상품 보기"'+('' if i==0 else ' inert aria-hidden="true"')+f'><picture><source media="(max-width:700px)" srcset="{escape(b["mobile"])}" width="750" height="600"><img src="{escape(b["desktop"])}" alt="{escape(b["alt"])}" width="1920" height="400" '+('fetchpriority="high"' if i==0 else 'loading="lazy"')+' decoding="async"></picture></a>')
+    return '<section class="shop-banner" aria-label="브랜드 소식" aria-roledescription="캐러셀"><div class="shop-banner-stage">'+''.join(slides)+'</div><div class="banner-bar"><span class="banner-caption">'+escape(banners[0]['title'])+'</span><div class="banner-controls" hidden><button type="button" data-banner-prev aria-label="이전 배너">←</button><span class="banner-counter" aria-live="off">01 / '+str(len(banners)).zfill(2)+'</span><button type="button" data-banner-next aria-label="다음 배너">→</button><button type="button" data-banner-play aria-label="배너 자동 넘김 일시정지">Ⅱ</button></div><span class="sr" data-banner-status role="status"></span></div><div class="banner-progress" aria-hidden="true"><span></span></div></section>'
+
+
 def brand_tile(b):
     return f'<a class="brand-tile" href="/brands/{escape(b["id"])}.html" target="_blank" rel="noopener" aria-label="{escape(b["name"])} 브랜드몰 새 창"><span class="brand-visual brand-object"><img src="{escape(b["representative_image"])}" alt="{escape(b["representative_name"])}" width="400" height="400" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="brand-label">{escape(b["name"])}</span><small>{b["purchase_count"] or b["rental_count"]:,} {"PRODUCTS" if b["purchase_count"] else "RENTAL"} <span aria-hidden="true">↗</span></small></a>'
 
@@ -25,13 +35,11 @@ def card(p):
 def content(mode, brands, products, brand=None):
     if mode=='home':
         links=''.join(brand_tile(b) for b in brands[:18])
-        dji=next((p for p in products if p['brand_id']=='dji' and 'Action 6' in p['name'] and p['kind']!='rental'),next(p for p in products if p['brand_id']=='dji'))
-        hero=next((p for p in products if p['id']=='imweb-13283'),dji)
         selected=[next(p for p in products if p['id']==next(b['representative_id'] for b in brands if b['id']==bid)) for bid in ['dji','leofoto','hoya','smallrig','tilta','pgytech','nanlite','godox']]
         page=(Path(__file__).parent/'shop_templates/home.html').read_text()
-        for key,value in {'HERO_IMAGE':hero['image'],'HERO_NAME':hero['name'],'HERO_ID':hero['id'],'BRAND_COUNT':len(brands)}.items():
+        for key,value in {'BRAND_COUNT':len(brands)}.items():
             page=page.replace('{{'+key+'}}',escape(str(value)))
-        return page.replace('{{BRANDS}}',links).replace('{{PRODUCTS}}',''.join(card(p) for p in selected if p))
+        return page.replace('{{BANNERS}}',banner_content()).replace('{{BRANDS}}',links).replace('{{PRODUCTS}}',''.join(card(p) for p in selected if p))
     if mode=='catalog':
         name=(brand['name']+' 브랜드몰') if brand else '전체 상품'
         rows=[p for p in products if (not brand or p['brand_id']==brand['id']) and p.get('listing_id',p['id'])==p['id']]

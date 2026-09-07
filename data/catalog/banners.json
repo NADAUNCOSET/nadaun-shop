@@ -1,0 +1,10 @@
+{
+  "desktop": {"width": 1920, "height": 400},
+  "mobile": {"width": 750, "height": 600},
+  "banners": [
+    {"id":"manfrotto","title":"MANFROTTO / IMAGINE MORE","alt":"맨프로토의 신뢰와 함께 상상력을 펼치세요","desktop":"https://media.nadaun.co/shop/banner/manfrotto-pc.webp","mobile":"https://media.nadaun.co/shop/banner/manfrotto-mob.webp","href":"/brands/manfrotto.html"},
+    {"id":"shure","title":"SHURE / SOUND EXTRAORDINARY","alt":"슈어, 어디서나 울림을 듣다","desktop":"https://media.nadaun.co/shop/banner/shure-pc.webp","mobile":"https://media.nadaun.co/shop/banner/shure-mob.webp","href":"/brands/shure.html"},
+    {"id":"jackery","title":"JACKERY / POWER YOUR NEXT SCENE","alt":"잭커리 파워뱅크, 전력의 한계를 깨다","desktop":"https://media.nadaun.co/shop/banner/jackery-1000plus-pc.webp","mobile":"https://media.nadaun.co/shop/banner/jackery-1000plus-mob.webp","href":"/brands/jackery.html"},
+    {"id":"genelec","title":"GENELEC / THE SOUND OF YOUR SPACE","alt":"제네렉 스피커, 사운드로 공간을 채우다","desktop":"https://media.nadaun.co/shop/banner/genelec-g-series-pc.webp","mobile":"https://media.nadaun.co/shop/banner/genelec-g-series-mob.webp","href":"/brands/genelec.html"}
+  ]
+}
