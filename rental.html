@@ -40,7 +40,7 @@
     "https://blog.naver.com/nadaunstudio",
     "https://nadaunspace.blogspot.com/",
     "https://www.instagram.com/nadaun.space/",
-    "https://pf.kakao.com/_pyNxnxb"
+    "https://pf.kakao.com/_pyNxnxb/chat"
   ],
   "address": {
     "@type": "PostalAddress",
@@ -262,7 +262,7 @@
     footer h4.mt{margin-top:26px}
   }
 </style>
-</head>
+<style>.chat-dock{position:fixed;right:20px;bottom:22px;z-index:35;display:flex;flex-direction:column;align-items:flex-end;gap:9px}.chat-dock>a{display:flex;align-items:center;justify-content:center;gap:10px;width:126px;height:45px;border-radius:24px;box-shadow:0 3px 14px #1a1a1a12;font-size:12px;font-weight:650}.chat-naver{background:#03c75a;color:white}.chat-naver b{font-size:21px;font-weight:900}.chat-kakao{background:#fee500;color:#29241f}.chat-kakao svg{width:22px;height:22px}.chat-dock .chat-top{width:37px;height:37px;background:#fff;border:1px solid var(--line);font-size:18px;margin-right:3px}.chat-dock a:hover{transform:translateY(-2px)}@media(max-width:700px){.chat-dock{right:12px;bottom:14px;gap:7px}.chat-dock>a{width:45px;height:45px;border-radius:50%}.chat-dock span{display:none}.chat-dock .chat-top{width:31px;height:31px;margin-right:7px}}</style></head>
 <body>
 
 <header id="hdr">
@@ -400,7 +400,7 @@
         <div class="frow">Mail : <a href="mailto:info@nadaun.co">info@nadaun.co</a></div>
         <div class="frow">Tax Mail : <a href="mailto:tax@nadaun.co">tax@nadaun.co</a></div>
         <div class="frow ftime">OPEN : AM 10:00 - PM 10:00 / SAT AM 10:00 - PM 04:00 / SUN, HOLIDAY OFF</div>
-        <div class="frow">영업시간외 문의는 <a href="https://pf.kakao.com/_pyNxnxb" target="_blank" rel="noopener">카카오톡 채널</a>로 부탁드립니다.</div>
+        <div class="frow">영업시간외 문의는 <a href="https://pf.kakao.com/_pyNxnxb/chat" target="_blank" rel="noopener">카카오톡 채널</a>로 부탁드립니다.</div>
 
         <h4 class="mt">입금은행</h4>
         <div class="frow"><b>Sinhan Bank : 140-012-972242</b> (제품 구매)</div>
@@ -428,8 +428,9 @@
           <a href="https://www.instagram.com/nadaun.space/" target="_blank" rel="noopener" aria-label="인스타그램" title="인스타그램"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg></a>
         </div>
         <div class="flinks">
-          <a href="#">이용약관</a>
-          <a href="#">개인정보처리방침</a>
+          <a href="/terms.html">이용약관</a>
+          <a href="/privacy.html">개인정보처리방침</a>
+          <a href="/shipping.html">배송 · 교환 · 반품</a>
           <a class="quote" href="mailto:info@nadaun.co?subject=견적문의">견적문의 메일보내기</a>
         </div>
       </div>
@@ -459,5 +460,5 @@
   const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
   document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
 </script>
-</body>
+<nav class="chat-dock" aria-label="바로 상담"><a class="chat-naver" href="https://talk.naver.com/ct/w4w1o8" target="_blank" rel="noopener" aria-label="네이버 톡톡 상담 새 창"><b aria-hidden="true">N</b><span>톡톡 상담</span></a><a class="chat-kakao" href="https://pf.kakao.com/_pyNxnxb/chat" target="_blank" rel="noopener" aria-label="카카오톡 상담 새 창"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.4 2 10.6c0 2.7 1.8 5 4.5 6.3l-.9 3.5c-.1.3.2.5.5.3l4-2.6 1.9.1c5.5 0 10-3.4 10-7.6S17.5 3 12 3Z"/></svg><span>카카오 상담</span></a><a class="chat-top" href="#" aria-label="페이지 위로">↑</a></nav></body>
 </html>

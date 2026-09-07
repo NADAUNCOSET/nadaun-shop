@@ -14,3 +14,6 @@ data/catalog/sources
 data/catalog/source-details
 data/catalog/overrides.json
 data/catalog/asset-manifest.json
+data/catalog/dedup-audit.json
+data/catalog/dedup-rules.json
+REVIEW-2026-09-07.md

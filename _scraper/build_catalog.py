@@ -11,6 +11,8 @@ import re
 from urllib.parse import quote
 from sync_shop_sources import ROOT,OUT,clean,save_json
 from enrich_shop_sources import CACHE,shard,source_fingerprint
+from catalog_dedup import model_key,deduplicate,name_key,primary_key
+from storefront_pages import content as page_content
 
 PUBLIC=ROOT/'data/catalog'
 
@@ -59,16 +61,6 @@ def brand_id(raw): return ALIASES.get(clean(raw).casefold(),slug(raw or '기타 
 def product_name(name):
     # Only remove the store's repeated prefix, preserving bundle/variant text.
     return re.sub(r'^\[\s*[^\]]*레인보우베네\s*\]\s*','',name).strip()
-
-def model_key(p):
-    if p['kind']!='purchase': return None
-    if p['brand_id']=='tilta':
-        tokens=set(re.findall(r'(?<![A-Z0-9])(?:TA|ES|WLC|MB|UBP|TGA|TT)-[A-Z0-9]+(?:-[A-Z0-9]+)+(?![A-Z0-9])',p['name'].upper()))
-        return next(iter(tokens)) if len(tokens)==1 else None
-    if p['brand_id']!='smallrig':return None
-    tokens=set(re.findall(r'(?<![A-Z0-9])(?:SR)?(\d{3,4}[A-Z]?)(?![A-Z0-9])',p['name'].upper()))
-    # Merge only unique, unambiguous SmallRig model numbers. Never fuzzy names.
-    return next(iter(tokens)) if len(tokens)==1 else None
 
 def build(allow_pending=False):
     source_files=['kpp','smartstore','imweb-dji']
@@ -148,22 +140,13 @@ def build(allow_pending=False):
             details[pid]={k:d.get(k) for k in ('description_text','options','option_groups','shipping') if d.get(k)}
             details[pid]['images']=p['images'];details[pid]['source_id']=p['source_id']
             products[pid]=p
-    # Exact same model must be unique in each source. Ambiguity stays separate.
-    candidates=defaultdict(lambda:defaultdict(list))
-    for p in products.values():
-        key=model_key(p)
-        if key:candidates[(p['brand_id'],key,p['kind'])][p['source']].append(p['id'])
-    redirects={};merge_count=0
-    for sources in candidates.values():
-        if len(sources.get('kpp',[]))!=1 or len(sources.get('smartstore',[]))!=1:continue
-        sid,kid=sources['smartstore'][0],sources['kpp'][0]
-        own,supplier=products[sid],products[kid]
-        own['category_ids']=list(dict.fromkeys(own['category_ids']+supplier['category_ids']))
-        own['type_ids']=list(dict.fromkeys(own['type_ids']+supplier['type_ids']))
-        own['offers']+=supplier['offers'];own['supplier_status']=supplier.get('supplier_status')
-        for kind in ('main','detail'):
-            if not details[sid]['images'].get(kind):details[sid]['images'][kind]=details[kid]['images'].get(kind,[])
-        redirects[kid]=sid;del products[kid];merge_count+=1
+    for b in brands.values():
+        b['aliases']=list(dict.fromkeys(b['aliases']+[alias for alias,key in ALIASES.items() if key==b['id']]))
+    rules_path=PUBLIC/'dedup-rules.json'
+    rules=json.loads(rules_path.read_text()) if rules_path.exists() else {}
+    redirects,dedup_audit=deduplicate(products,details,brands,rules)
+    merge_count=len(redirects)
+    save_json(PUBLIC/'dedup-audit.json',dedup_audit)
     config_path=PUBLIC/'overrides.json'
     config=json.loads(config_path.read_text()) if config_path.exists() else {'products':{},'brand_order':[],'category_order':[],'category_browsing_enabled':False}
     for pid,override in config.get('products',{}).items():
@@ -183,8 +166,31 @@ def build(allow_pending=False):
         if not thumb:raise RuntimeError('Missing product thumbnail: '+pid)
         public_products.append({k:p.get(k) for k in ('id','name','brand_id','kind','price','sale_price','status','category_ids','type_ids','offers','supplier_status')}|{'image':thumb,'detail_bucket':shard(pid)})
         public_details[shard(pid)][pid]=details[pid]
-    counts=Counter(p['brand_id'] for p in public_products)
-    kind_counts=Counter((p['brand_id'],p['kind']) for p in public_products)
+    # Same named families with different option sets get one list card while
+    # every variant remains independently addressable and purchasable later.
+    families=defaultdict(list)
+    for p in public_products:
+        families[(p['brand_id'],p['kind'],name_key(p,brands[p['brand_id']]))].append(p)
+    family_audit=[]
+    for family in families.values():
+        if len(family)<2:continue
+        family.sort(key=lambda p:primary_key(products[p['id']]))
+        primary=family[0]
+        ids=[p['id'] for p in family]
+        family_audit.append({'listing_id':primary['id'],'variant_ids':ids})
+        for p in family:
+            p['listing_id']=primary['id']
+            for field in ('category_ids','type_ids'):
+                p[field]=list(dict.fromkeys(cid for q in family for cid in q[field]))
+            public_details[p['detail_bucket']][p['id']]['related_variants']=[{
+                'id':q['id'],'name':q['name'],
+                'options':[o['name'] for o in details[q['id']].get('options',[])]
+            } for q in family]
+    dedup_audit['option_families']=family_audit
+    save_json(PUBLIC/'dedup-audit.json',dedup_audit)
+    listing_products=[p for p in public_products if p.get('listing_id',p['id'])==p['id']]
+    counts=Counter(p['brand_id'] for p in listing_products)
+    kind_counts=Counter((p['brand_id'],p['kind']) for p in listing_products)
     for b in brands.values():
         b['aliases']=list(dict.fromkeys(b['aliases']+[alias for alias,key in ALIASES.items() if key==b['id']]))
         b['count']=counts[b['id']]
@@ -195,9 +201,13 @@ def build(allow_pending=False):
     brand_list=sorted(brands.values(),key=lambda b:(preferred.index(b['id']) if b['id'] in preferred else 999,b['name']))
     meta={'schema_version':1,'source_counts':{k:s['product_count'] for k,s in snapshots.items()},'detail_coverage':dict(coverage),
           'synced_at':max(s['collected_at'] for s in snapshots.values()),'merged_count':merge_count,
-          'product_count':len(public_products),'category_browsing_enabled':config.get('category_browsing_enabled',False)}
+          'product_count':len(public_products),'category_browsing_enabled':config.get('category_browsing_enabled',False),
+          'listing_count':len(listing_products),'option_family_count':len(family_audit),
+          'deduplication':{'brands_checked':len(brands),'groups':dedup_audit['duplicate_group_count'],'removed':merge_count}}
     output={'meta':meta,'brands':brand_list,'categories':list(categories.values()),'products':public_products,'redirects':redirects}
-    revision=hashlib.sha256(json.dumps(output,ensure_ascii=False,sort_keys=True).encode()).hexdigest()[:16]
+    presentation=''.join(p.read_text() for pattern in ('*.html','policies/*.html') for p in sorted((ROOT/'_scraper/shop_templates').glob(pattern)))
+    presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/shop.js','assets/shop/shop.css','assets/shop/cart.js','_scraper/storefront_pages.py'))
+    revision=hashlib.sha256((json.dumps(output,ensure_ascii=False,sort_keys=True)+presentation).encode()).hexdigest()[:16]
     output['meta']['revision']=revision
     PUBLIC.mkdir(parents=True,exist_ok=True)
     for key,bucket in public_details.items():
@@ -211,14 +221,24 @@ def build(allow_pending=False):
       ('catalog.html','전체 상품 | 나다운 샵','카메라, 렌즈, 조명과 촬영 액세서리. 브랜드와 세부 분류로 나다운 샵의 상품을 찾아보세요.','catalog'),
       ('catalog_category.html','카테고리별 상품 | 나다운 샵','여러 브랜드의 촬영장비를 제품 종류별로 찾아보세요.','categories'),
       ('item.html','상품 상세 | 나다운 샵','나다운 샵 촬영장비의 상품 정보와 이미지를 확인하고 구매 상담을 받아보세요.','item'),
+      ('cart.html','장바구니 | 나다운 샵','선택한 촬영장비와 옵션, 수량을 확인하세요.','cart'),
+      ('checkout.html','주문서 | 나다운 샵','선택한 촬영장비의 주문 내용을 확인하세요.','checkout'),
+      ('terms.html','이용약관 | 나다운 샵','나다운 샵의 상품 정보, 구매와 서비스 이용에 관한 약관입니다.','policy'),
+      ('privacy.html','개인정보처리방침 | 나다운 샵','나다운 샵의 개인정보 처리 목적과 항목, 보유기간 및 권리 행사 방법을 안내합니다.','policy'),
+      ('shipping.html','배송·교환·반품 안내 | 나다운 샵','상품별 배송 조건, 교환과 반품 접수, 환급 및 고객센터를 안내합니다.','policy'),
     ]:
         page=template.replace('{{TITLE}}',title).replace('{{DESCRIPTION}}',description).replace('{{CANONICAL}}','https://shop.nadaun.co/'+('' if filename=='index.html' else filename)).replace('{{MODE}}',mode).replace('{{BRAND}}','').replace('{{REVISION}}',revision)
+        body=(ROOT/'_scraper/shop_templates/policies'/filename).read_text() if mode=='policy' else page_content(mode,brand_list,public_products)
+        page=page.replace('{{CONTENT}}',body)
+        if mode in ('cart','checkout','item'):
+            page=page.replace('index,follow,max-image-preview:large','noindex,follow')
         (ROOT/filename).write_text(page)
     brand_dir=ROOT/'brands';brand_dir.mkdir(exist_ok=True)
     for b in brand_list:
         page=template.replace('{{TITLE}}',html.escape(b['name']+' 브랜드몰 | 나다운 샵')).replace('{{DESCRIPTION}}',html.escape(b['name']+' 촬영장비를 나다운 샵에서 만나보세요. 브랜드별 세부 분류와 상품 정보, 구매 상담.')).replace('{{CANONICAL}}','https://shop.nadaun.co/brands/'+b['id']+'.html').replace('{{MODE}}','catalog').replace('{{BRAND}}',b['id']).replace('{{REVISION}}',revision)
+        page=page.replace('{{CONTENT}}',page_content('catalog',brand_list,public_products,b))
         (brand_dir/(b['id']+'.html')).write_text(page)
-    urls=['https://shop.nadaun.co/','https://shop.nadaun.co/catalog.html']+['https://shop.nadaun.co/brands/'+b['id']+'.html' for b in brand_list]
+    urls=['https://shop.nadaun.co/','https://shop.nadaun.co/catalog.html']+['https://shop.nadaun.co/brands/'+b['id']+'.html' for b in brand_list]+['https://shop.nadaun.co/'+p for p in ('terms.html','privacy.html','shipping.html')]+['https://shop.nadaun.co/item.html?id='+p['id'] for p in public_products]
     (ROOT/'catalog-sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+html.escape(u)+'</loc></url>' for u in urls)+'</urlset>\n')
     print(json.dumps(meta,ensure_ascii=False,indent=2))
     return output

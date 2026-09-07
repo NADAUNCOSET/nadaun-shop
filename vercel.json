@@ -42,5 +42,16 @@
       "destination": "/item.html?id=kpp-:id",
       "permanent": true
     }
-  ]
+  ],
+  "rewrites": [
+    {
+      "source": "/item.html",
+      "destination": "/api/product"
+    }
+  ],
+  "functions": {
+    "api/product.js": {
+      "includeFiles": "{item.html,data/catalog/catalog.json}"
+    }
+  }
 }

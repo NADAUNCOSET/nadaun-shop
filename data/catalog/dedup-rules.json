@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "corrections": {
+    "kpp-1734938010": {
+      "expected_name": "레오포토 어반시리즈 삼각대용 센터컬럼 후크 Center column hook",
+      "name": "레오포토 어반시리즈 센터컬럼 후크 (개방형)",
+      "reason": "동일 원본 상품명이지만 상세 이미지에서 개방형 후크 확인",
+      "evidence": [
+        "https://ai.esmplus.com/kppshop/01_LEOFOTO/04_Acc/27_Centercolumn_hook/chk_02/01.jpg"
+      ]
+    },
+    "kpp-1734938594": {
+      "expected_name": "레오포토 어반시리즈 삼각대용 센터컬럼 후크 Center column hook",
+      "name": "레오포토 어반시리즈 센터컬럼 후크 (링형)",
+      "reason": "동일 원본 상품명이지만 상세 이미지에서 링형 후크 확인",
+      "evidence": [
+        "https://ai.esmplus.com/kppshop/01_LEOFOTO/04_Acc/27_Centercolumn_hook/chk_01/01.jpg"
+      ]
+    },
+    "imweb-13715": {
+      "expected_name": "DJI 리토 X1 Lito X1 플라이 모어 콤보 드론 (RC2 조종기)",
+      "name": "DJI 리토 X1 Lito X1 플라이 모어 콤보 드론 (스마트폰 연결형 조종기)",
+      "reason": "RC2라고 잘못 중복된 원본 제목. 상품 이미지에서는 화면 없는 스마트폰 연결형 조종기 확인",
+      "evidence": [
+        "https://cdn.imweb.me/upload/S2020100856a601720ff3b/a0f4c804d5bff.jpg"
+      ]
+    },
+    "smartstore-11669021232": {
+      "expected_name": "에코플로우 차량용 주행충전기 800W+휴대용 태양광 패널 160W 세트",
+      "hidden": true,
+      "reason": "제목은 160W 패널, 상세는 각각 220W와 110W로 상충하여 상품 구성 확인 전 공개 보류. 중복으로 합치지 않음.",
+      "evidence": [
+        "https://smartstore.naver.com/rainbowbene/products/11669021232"
+      ]
+    },
+    "smartstore-11669016975": {
+      "expected_name": "에코플로우 차량용 주행충전기 800W+휴대용 태양광 패널 160W 세트",
+      "hidden": true,
+      "reason": "제목은 160W 패널, 상세는 각각 220W와 110W로 상충하여 상품 구성 확인 전 공개 보류. 중복으로 합치지 않음.",
+      "evidence": [
+        "https://smartstore.naver.com/rainbowbene/products/11669016975"
+      ]
+    }
+  }
+}

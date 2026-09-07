@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /cart.html
+Disallow: /checkout.html
+Disallow: /api/
 
 Sitemap: https://shop.nadaun.co/sitemap.xml
 
