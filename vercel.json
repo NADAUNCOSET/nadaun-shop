@@ -35,6 +35,13 @@
       "dest": "/api/product"
     },
     {
+      "src": "^/brands/brand-cb8705572d\\.html$",
+      "status": 308,
+      "headers": {
+        "Location": "/brands/plthink.html"
+      }
+    },
+    {
       "handle": "filesystem"
     }
   ],
