@@ -725,5 +725,50 @@
     "source_modified_at": "2026-09-01T09:59:04.147+09:00",
     "checked_at": "2026-09-07T06:14:46+00:00",
     "checked_epoch": 1788761686
+  },
+  "smartstore-13752020114": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_225/1788877699676Vm5wH_JPEG/5696_tmp_147556263241271view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2016/10/5696_14755627176087.jpg"
+      ]
+    },
+    "description_text": "펠리칸 0450 SD4 모빌툴케스트 하드케이스 (With Drawers)\n0450 SD4 서랍 4개 구성입니다. 사진 속 장비 및 추가 액세서리는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T23:28:20.527+09:00",
+    "checked_at": "2026-09-08T16:15:55+00:00",
+    "checked_epoch": 1788884155
+  },
+  "smartstore-13751891867": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_249/1788871069342IVupG_JPEG/11114_tmp_d0b1572dd892061dfa98032f25132f718268view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2016/08/5594_14715882777818.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2021/07/11114_5b7115961fcc4875235b161f525b5d621636061.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1465 Air 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:50.803+09:00",
+    "checked_at": "2026-09-08T16:16:55+00:00",
+    "checked_epoch": 1788884215
   }
 }

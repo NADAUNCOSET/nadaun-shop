@@ -610,5 +610,50 @@
     "source_modified_at": "2025-11-19T14:03:39.660+09:00",
     "checked_at": "2026-09-07T06:17:44+00:00",
     "checked_epoch": 1788761864
+  },
+  "smartstore-13751891881": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_148/17888710701416js1A_JPEG/g201112271338_95_detail.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/95_15144413724501.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/95_15144412983996.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 Storm case iM2370 Black with foam\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:50.895+09:00",
+    "checked_at": "2026-09-08T16:16:46+00:00",
+    "checked_epoch": 1788884206
+  },
+  "smartstore-13751871992": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_229/1788870104943H9mBj_JPEG/9583_2019091614021617.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9583_15686103311063.jpg"
+      ]
+    },
+    "description_text": "펠리칸 0500 (0501) 폼세트(7pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:46.003+09:00",
+    "checked_at": "2026-09-08T16:17:40+00:00",
+    "checked_epoch": 1788884260
   }
 }

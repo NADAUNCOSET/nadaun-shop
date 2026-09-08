@@ -443,9 +443,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-04-02T12:38:36.171+09:00",
-    "checked_at": "2026-09-07T05:56:39+00:00",
-    "checked_epoch": 1788760599
+    "source_modified_at": "2026-09-08T20:13:41.130+09:00",
+    "checked_at": "2026-09-08T16:19:20+00:00",
+    "checked_epoch": 1788884360
   },
   "smartstore-8542128512": {
     "images": {
@@ -787,5 +787,28 @@
     "source_modified_at": "2025-11-19T14:03:39.657+09:00",
     "checked_at": "2026-09-07T06:17:48+00:00",
     "checked_epoch": 1788761868
+  },
+  "smartstore-13751891800": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_35/17888710667767DOqW_JPEG/10035_tmp_8a57a4bf0976ccc6946931009b20edc40910view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2020/03/10035_290f462a1e5707d91eb1ddadc8048bf81529544.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/temp_14673418473709.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1520NF 미듐 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:48.554+09:00",
+    "checked_at": "2026-09-08T16:16:59+00:00",
+    "checked_epoch": 1788884219
   }
 }

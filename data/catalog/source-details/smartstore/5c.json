@@ -658,9 +658,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-04-02T11:41:11.489+09:00",
-    "checked_at": "2026-09-07T05:56:42+00:00",
-    "checked_epoch": 1788760602
+    "source_modified_at": "2026-09-08T20:13:41.130+09:00",
+    "checked_at": "2026-09-08T16:19:24+00:00",
+    "checked_epoch": 1788884364
   },
   "smartstore-10809025049": {
     "images": {
@@ -668,10 +668,13 @@
         "https://shop-phinf.pstatic.net/20240830_25/1724948388461rcW5C_JPEG/10509904329519417_1182668371.jpg"
       ],
       "detail": [
-        "https://www.clmedia.co.kr/data/editor/goods/1/2024/04/3672_dcea9531137be57eb6d489b113bb5fb61145532.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/d700fabdc5dc20152b48df7978bb0222.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/c5ebe03e403da5597905ea09e9637bea.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/134b49c292ef27e1dd36b07ce680daba.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/d2b22709821cf593ae58698175efafcb.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -680,9 +683,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:57:21+00:00",
-    "checked_epoch": 1788760641
+    "source_modified_at": "2026-09-08T15:24:40.724+09:00",
+    "checked_at": "2026-09-08T16:19:36+00:00",
+    "checked_epoch": 1788884376
   },
   "smartstore-10808488400": {
     "images": {
@@ -690,10 +693,12 @@
         "https://shop-phinf.pstatic.net/20240829_98/17249373527304CwdF_JPEG/35118225710296724_1892355264.jpg"
       ],
       "detail": [
-        "https://www.clmedia.co.kr/data/editor/goods/1/2024/04/3690_985dbdf274ca8786f32c7aa5306c9e8d1438421.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/0b43e9fd82262f1088ea4a55f71d5b80.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/3ac316f3198fd482572191d657851f19.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/11514c313efa9382fb483d0094fe83b2.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -702,9 +707,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T05:57:28+00:00",
-    "checked_epoch": 1788760648
+    "source_modified_at": "2026-09-08T15:14:38.933+09:00",
+    "checked_at": "2026-09-08T16:19:39+00:00",
+    "checked_epoch": 1788884379
   },
   "smartstore-10760029521": {
     "images": {
@@ -880,5 +885,27 @@
     "source_modified_at": "2026-08-25T19:37:57.748+09:00",
     "checked_at": "2026-09-07T06:16:21+00:00",
     "checked_epoch": 1788761781
+  },
+  "smartstore-13751871905": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_220/1788870100938CB59W_JPEG/9623_2019091616342313.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9623_15686193730090.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1750 (1751) 폼세트(3pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:42.630+09:00",
+    "checked_at": "2026-09-08T16:18:02+00:00",
+    "checked_epoch": 1788884282
   }
 }

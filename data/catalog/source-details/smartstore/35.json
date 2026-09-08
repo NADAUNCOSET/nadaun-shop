@@ -660,10 +660,10 @@
         "https://shop-phinf.pstatic.net/20200512_211/1589287550359a9KoR_JPEG/26650938876698716_568776574.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KSF-15.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250224/72970466b86c02df558be04e1601c0a2.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -672,9 +672,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T06:14:47+00:00",
-    "checked_epoch": 1788761687
+    "source_modified_at": "2026-09-08T14:59:28.617+09:00",
+    "checked_at": "2026-09-08T16:19:52+00:00",
+    "checked_epoch": 1788884392
   },
   "smartstore-5043250152": {
     "images": {
@@ -706,10 +706,12 @@
         "https://shop-phinf.pstatic.net/20200512_231/1589273852394PpBm7_JPEG/26636185970772702_1376197355.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KCP-645.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/9c74192f7f620677e7f6b2d7a51308ec.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/cb1667dedcf5e4c293a240b7c8a296f1.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/ffd3c045ba2acc7208795cb528db66dc.jpg"
       ]
     },
-    "description_text": "​\n​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -718,8 +720,8 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T06:19:01+00:00",
-    "checked_epoch": 1788761941
+    "source_modified_at": "2026-09-08T15:19:35.925+09:00",
+    "checked_at": "2026-09-08T16:20:05+00:00",
+    "checked_epoch": 1788884405
   }
 }

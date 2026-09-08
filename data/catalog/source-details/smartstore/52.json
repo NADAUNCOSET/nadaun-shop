@@ -638,5 +638,94 @@
     "source_modified_at": "2025-11-19T14:03:39.411+09:00",
     "checked_at": "2026-09-07T06:18:19+00:00",
     "checked_epoch": 1788761899
+  },
+  "smartstore-13751915675": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_178/1788872239208MwLkk_JPEG/9655_2019092012560914.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9655_15689520619352.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1450 (1455 )패디드 디바이더 세트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:20.439+09:00",
+    "checked_at": "2026-09-08T16:16:13+00:00",
+    "checked_epoch": 1788884173
+  },
+  "smartstore-13751891719": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_228/1788871063922uq4Cd_JPEG/12269_tmp_ca1e3982b8e5ac4195865c072c9be2b12960view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/52_14690802315688.jpg",
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/04/73_e2fa78beeb4ecdd2ff5624af4d39bcc31030271.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1670NF Protector 케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:45.190+09:00",
+    "checked_at": "2026-09-08T16:17:22+00:00",
+    "checked_epoch": 1788884242
+  },
+  "smartstore-13751891646": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_177/1788871061820Di9FV_JPEG/13035_tmp_01876d785f8138ff0c0f31fb501257b81896view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2025/01/401_bca258a2f39d8a83a18748a3555373511503264.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1505 Air 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:43.203+09:00",
+    "checked_at": "2026-09-08T16:17:33+00:00",
+    "checked_epoch": 1788884253
+  },
+  "smartstore-13751871994": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_169/1788870105225yKJSO_JPEG/9581_2019091613555111.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9581_15686098783760.jpg"
+      ]
+    },
+    "description_text": "펠리칸 0350 (0351) 폼세트(7pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:46.014+09:00",
+    "checked_at": "2026-09-08T16:17:39+00:00",
+    "checked_epoch": 1788884259
   }
 }

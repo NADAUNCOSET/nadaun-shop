@@ -260,9 +260,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-14T22:36:27.714+09:00",
-    "checked_at": "2026-09-07T05:45:44+00:00",
-    "checked_epoch": 1788759944
+    "source_modified_at": "2026-09-08T20:23:58.334+09:00",
+    "checked_at": "2026-09-08T16:18:40+00:00",
+    "checked_epoch": 1788884320
   },
   "smartstore-13673735744": {
     "images": {
@@ -300,9 +300,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-14T22:36:27.714+09:00",
-    "checked_at": "2026-09-07T05:45:51+00:00",
-    "checked_epoch": 1788759951
+    "source_modified_at": "2026-09-08T20:25:24.716+09:00",
+    "checked_at": "2026-09-08T16:18:48+00:00",
+    "checked_epoch": 1788884328
   },
   "smartstore-13654376075": {
     "images": {
@@ -563,5 +563,28 @@
     "source_modified_at": "2025-11-19T14:02:30.138+09:00",
     "checked_at": "2026-09-07T06:11:51+00:00",
     "checked_epoch": 1788761511
+  },
+  "smartstore-13751891717": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_31/1788871063926u0I7r_JPEG/12373_tmp_7a02fc847894fd16cfa9aaf65202be4b5325view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2016/08/5594_14715882777818.jpg",
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2023/01/348_f01c6c1d9268c52394ad988a0544d44d1209382.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1755 Air NF 롱 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:45.177+09:00",
+    "checked_at": "2026-09-08T16:17:23+00:00",
+    "checked_epoch": 1788884243
   }
 }

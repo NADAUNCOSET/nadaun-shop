@@ -667,5 +667,49 @@
     "source_modified_at": "2026-08-25T20:17:24.257+09:00",
     "checked_at": "2026-09-07T06:15:52+00:00",
     "checked_epoch": 1788761752
+  },
+  "smartstore-13751891865": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_113/1788871068837bXvuO_JPEG/5616_tmp_4e29980b7a474e3fcabf7903060a64f00117view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/04/161_c411356e3ddc06f662444c6ca6197b3d1259195.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1605TP Air 하드케이스 (With TrekPak Divider System)\n트렉팩(TrekPak) 디바이더 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:50.791+09:00",
+    "checked_at": "2026-09-08T16:16:57+00:00",
+    "checked_epoch": 1788884217
+  },
+  "smartstore-13751871909": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_19/1788870101722fcJva_JPEG/9619_2019091615542018.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9619_15686170128526.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1700 (1701) 폼세트(3pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:42.650+09:00",
+    "checked_at": "2026-09-08T16:18:00+00:00",
+    "checked_epoch": 1788884280
   }
 }

@@ -326,9 +326,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-14T22:36:27.714+09:00",
-    "checked_at": "2026-09-07T05:45:49+00:00",
-    "checked_epoch": 1788759949
+    "source_modified_at": "2026-09-08T20:25:24.716+09:00",
+    "checked_at": "2026-09-08T16:18:46+00:00",
+    "checked_epoch": 1788884326
   },
   "smartstore-12167910537": {
     "images": {
@@ -436,10 +436,12 @@
         "https://shop-phinf.pstatic.net/20240830_271/1724950383316sSqC4_JPEG/35131256294087591_1264350680.jpg"
       ],
       "detail": [
-        "https://www.clmedia.co.kr/data/editor/goods/1/2024/04/3723_9737b0ee364695a5d9fb94680d4be7db2028482.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/a22be310b72897572a9e6cb9182fb13e.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/3244d307910bdf064f86899a9c863645.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/610870c646c6e9e162b34bd8c1af2da1.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -448,9 +450,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T05:57:14+00:00",
-    "checked_epoch": 1788760634
+    "source_modified_at": "2026-09-08T14:54:57.506+09:00",
+    "checked_at": "2026-09-08T16:19:31+00:00",
+    "checked_epoch": 1788884371
   },
   "smartstore-8549700310": {
     "images": {

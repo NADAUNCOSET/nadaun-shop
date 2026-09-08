@@ -575,5 +575,50 @@
     "source_modified_at": "2026-09-01T09:59:12.343+09:00",
     "checked_at": "2026-09-07T06:18:55+00:00",
     "checked_epoch": 1788761935
+  },
+  "smartstore-13751891656": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_278/1788871061532NaKPG_JPEG/12571_tmp_182b98f274f48f6998d873f64d3683d41295view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/108_15145330622913.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2018/01/8938_15148681922757.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 iM3220 No Foam\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:43.257+09:00",
+    "checked_at": "2026-09-08T16:17:27+00:00",
+    "checked_epoch": 1788884247
+  },
+  "smartstore-13751871904": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_23/1788870100934CPHjM_JPEG/9624_2019091616364213.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9624_15686195579212.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1770 (1771) 폼세트(4pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:42.624+09:00",
+    "checked_at": "2026-09-08T16:18:03+00:00",
+    "checked_epoch": 1788884283
   }
 }

@@ -547,9 +547,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-04-02T12:38:36.171+09:00",
-    "checked_at": "2026-09-07T05:56:40+00:00",
-    "checked_epoch": 1788760600
+    "source_modified_at": "2026-09-08T20:13:41.130+09:00",
+    "checked_at": "2026-09-08T16:19:21+00:00",
+    "checked_epoch": 1788884361
   },
   "smartstore-10809067430": {
     "images": {
@@ -834,5 +834,52 @@
     "source_modified_at": "2026-08-25T21:35:59.385+09:00",
     "checked_at": "2026-09-07T06:19:28+00:00",
     "checked_epoch": 1788761968
+  },
+  "smartstore-13751902013": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_221/1788871584350mlrjX_JPEG/9393_tmp_2722aa44594fcd0a63ae4d1d9a4df5979823view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/09/7065_15057052096858.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/09/7425_15064060521524.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2016/09/5656_14727914070035.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1610TP 라지 캐리온 하드케이스 (With TrekPak Divider System) 탄 (모래색)\n트렉팩(TrekPak) 디바이더 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:46:24.959+09:00",
+    "checked_at": "2026-09-08T16:16:37+00:00",
+    "checked_epoch": 1788884197
+  },
+  "smartstore-13751891658": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_129/1788871062087x9jdl_JPEG/12570_tmp_4006446738c96e1ba00bdf562b0230794153view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/12/8935_15145366243250.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/12/8935_15145366230005.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 iM3100 No Foam\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:43.272+09:00",
+    "checked_at": "2026-09-08T16:17:26+00:00",
+    "checked_epoch": 1788884246
   }
 }

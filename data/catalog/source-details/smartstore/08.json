@@ -589,5 +589,50 @@
     "source_modified_at": "2026-09-01T09:59:12.343+09:00",
     "checked_at": "2026-09-07T06:18:57+00:00",
     "checked_epoch": 1788761937
+  },
+  "smartstore-13751891920": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_18/1788871071281ARHsA_JPEG/8938_tmp_536fdaac7a6ec25245e5ebff36bfe9a59303view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/108_15145330622913.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2018/01/8938_15148681922757.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 iM3220 With Foam\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:52.690+09:00",
+    "checked_at": "2026-09-08T16:16:41+00:00",
+    "checked_epoch": 1788884201
+  },
+  "smartstore-13751891726": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_256/1788871063906IcUVk_JPEG/12229_tmp_cc50e4c2083bb3549f22e96c9b7fe7323807view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/03/54_1dc44fee5a27a0deda9f272479840a261437571.jpg"
+      ]
+    },
+    "description_text": "펠리칸 0350NF 큐브 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:45.230+09:00",
+    "checked_at": "2026-09-08T16:17:18+00:00",
+    "checked_epoch": 1788884238
   }
 }

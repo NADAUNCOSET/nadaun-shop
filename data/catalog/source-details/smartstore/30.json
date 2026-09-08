@@ -503,5 +503,27 @@
     "source_modified_at": "2026-08-25T21:35:59.385+09:00",
     "checked_at": "2026-09-07T06:19:25+00:00",
     "checked_epoch": 1788761965
+  },
+  "smartstore-13751981563": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_101/1788875456566DuSjS_JPEG/5615_tmp_99f7265e929853ada32db861d991536d8007view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/04/161_c411356e3ddc06f662444c6ca6197b3d1259195.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1605 Air 하드케이스 (With Padded Dividers)\n디바이더 포함(With Divider) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T22:50:57.221+09:00",
+    "checked_at": "2026-09-08T16:16:04+00:00",
+    "checked_epoch": 1788884164
   }
 }

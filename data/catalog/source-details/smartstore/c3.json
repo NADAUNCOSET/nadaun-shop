@@ -329,9 +329,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-04-02T11:41:11.489+09:00",
-    "checked_at": "2026-09-07T05:56:45+00:00",
-    "checked_epoch": 1788760605
+    "source_modified_at": "2026-09-08T20:13:41.130+09:00",
+    "checked_at": "2026-09-08T16:19:27+00:00",
+    "checked_epoch": 1788884367
   },
   "smartstore-10824461953": {
     "images": {
@@ -406,10 +406,11 @@
         "https://shop-phinf.pstatic.net/20221028_247/1666939759809OrhIS_JPEG/68075543522356358_562139431.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KS-078.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/2161354eb024260d3b01276037591f7a.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/dabf4e1dc039df3a5559091858e48325.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -418,9 +419,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:04.147+09:00",
-    "checked_at": "2026-09-07T06:10:02+00:00",
-    "checked_epoch": 1788761402
+    "source_modified_at": "2026-09-08T14:40:00.796+09:00",
+    "checked_at": "2026-09-08T16:19:48+00:00",
+    "checked_epoch": 1788884388
   },
   "smartstore-7458472211": {
     "images": {

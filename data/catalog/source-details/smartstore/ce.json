@@ -554,10 +554,13 @@
         "https://shop-phinf.pstatic.net/20200512_278/1589285092063FTUJ0_JPEG/26644926610203247_416630724.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KCP-101K.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250224/e2fdd83c6acf3fd1afe684006abc8c6c.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250324/adeb7a9d634aa6378205644461af2db3.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250324/0f6e38bedccd0f39d4f97c01234763e8.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250324/cca2d83cbf958eaa14d56b7ea05b0cb0.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -566,8 +569,30 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:12.343+09:00",
-    "checked_at": "2026-09-07T06:18:50+00:00",
-    "checked_epoch": 1788761930
+    "source_modified_at": "2026-09-08T14:51:11.844+09:00",
+    "checked_at": "2026-09-08T16:19:58+00:00",
+    "checked_epoch": 1788884398
+  },
+  "smartstore-13751871896": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_112/1788870101541rmJCa_JPEG/9633_2019091814303313.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9633_15687848066653.jpg"
+      ]
+    },
+    "description_text": "펠리칸 iM2370 스톰 폼세트(4pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:42.586+09:00",
+    "checked_at": "2026-09-08T16:18:08+00:00",
+    "checked_epoch": 1788884288
   }
 }

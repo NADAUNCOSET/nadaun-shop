@@ -667,10 +667,12 @@
         "https://shop-phinf.pstatic.net/20200512_226/1589276393935smymI_JPEG/26637936567174352_1769623001.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KS-085.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/892f2e995cd282e4d3694e91cebfa4a0.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/1f4c9e6c345b8f890fed298cd40332f8.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/2a8262da88c3ae56eb07503e3c069e0d.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -679,8 +681,30 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T06:18:53+00:00",
-    "checked_epoch": 1788761933
+    "source_modified_at": "2026-09-08T15:06:07.914+09:00",
+    "checked_at": "2026-09-08T16:19:59+00:00",
+    "checked_epoch": 1788884399
+  },
+  "smartstore-13752020111": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_44/1788877699668UPLA2_JPEG/2769_15121339view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2014/01/2769_14685523366325.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1620M 라지 캐리온 하드케이스 (Mobility Version)\n1620M 이동형 케이스 구성입니다. 사진 속 장비 및 추가 액세서리는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T23:28:20.509+09:00",
+    "checked_at": "2026-09-08T16:15:57+00:00",
+    "checked_epoch": 1788884157
   }
 }

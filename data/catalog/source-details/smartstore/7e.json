@@ -187,7 +187,7 @@
         "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250224/56c4c5a5bc85886e582116c4eda98a11.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -196,9 +196,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:46:53+00:00",
-    "checked_epoch": 1788760013
+    "source_modified_at": "2026-09-08T15:57:37.273+09:00",
+    "checked_at": "2026-09-08T16:18:49+00:00",
+    "checked_epoch": 1788884329
   },
   "smartstore-13027049007": {
     "images": {
@@ -206,10 +206,12 @@
         "https://shop-phinf.pstatic.net/20240829_46/1724936060781mYxrI_JPEG/51275008767549634_548407133.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/b1324d9b5ccbdbcc08b451b6dd157cf6.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/b1324d9b5ccbdbcc08b451b6dd157cf6.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/513707df1c74660dca3bdb1a476caab1.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/bf39b28a0a3094d9ac10cdb7152cfac3.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -218,9 +220,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:47:09+00:00",
-    "checked_epoch": 1788760029
+    "source_modified_at": "2026-09-08T15:59:45.306+09:00",
+    "checked_at": "2026-09-08T16:19:04+00:00",
+    "checked_epoch": 1788884344
   },
   "smartstore-12443642127": {
     "images": {
@@ -603,5 +605,51 @@
     "source_modified_at": "2026-02-27T15:35:18.541+09:00",
     "checked_at": "2026-09-07T06:17:04+00:00",
     "checked_epoch": 1788761824
+  },
+  "smartstore-13751891922": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_173/1788871071586vSQ4D_PNG/8928_tmp_6a90d78aaddf92ae5c855a96042f57251933view.png"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/12/8927_15144414438942.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/12/8928_15144441315999.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 Storm case iM2435 Black With Foam\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:52.703+09:00",
+    "checked_at": "2026-09-08T16:16:39+00:00",
+    "checked_epoch": 1788884199
+  },
+  "smartstore-13751891716": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_30/1788871063641jgyP5_JPEG/12555_tmp_e4868248e39d32f2f3dbd7ea44bd45d01411view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/06/6004_14962896935363.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/06/6004_14962897004854.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 Storm case iM2275 Black No Foam\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:45.164+09:00",
+    "checked_at": "2026-09-08T16:17:24+00:00",
+    "checked_epoch": 1788884244
   }
 }

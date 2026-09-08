@@ -293,10 +293,11 @@
         "https://shop-phinf.pstatic.net/20250915_2/1757914526679q4s0G_JPEG/92047469820282197_35367094.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250529/9f5bba3fc482d7d63b8cc6a509956ef3.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250529/9f5bba3fc482d7d63b8cc6a509956ef3.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250224/1f5cd79387e6d1216896c29a3f1be484.jpg"
       ]
     },
-    "description_text": "​\n​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -305,9 +306,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:49:11+00:00",
-    "checked_epoch": 1788760151
+    "source_modified_at": "2026-09-08T14:34:32.452+09:00",
+    "checked_at": "2026-09-08T16:19:17+00:00",
+    "checked_epoch": 1788884357
   },
   "smartstore-11900163576": {
     "images": {
@@ -471,10 +472,12 @@
         "https://shop-phinf.pstatic.net/20240829_20/1724936416953tOuTR_JPEG/5718653523483731_1288100068.jpg"
       ],
       "detail": [
-        "https://www.clmedia.co.kr/data/editor/goods/1/2024/04/3709_a225f85a259bd8d574d614ab9edc7a101349532.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/d1a90b7b94edb5e48abc7937f18f37b3.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/83da8188b2b1b15e31e13d37b474155f.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/1a24c72b1ecba754236ff2d1f585cbd3.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -483,9 +486,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T05:57:29+00:00",
-    "checked_epoch": 1788760649
+    "source_modified_at": "2026-09-08T15:08:04.810+09:00",
+    "checked_at": "2026-09-08T16:19:39+00:00",
+    "checked_epoch": 1788884379
   },
   "smartstore-10573675797": {
     "images": {
@@ -842,5 +845,27 @@
     "source_modified_at": "2026-08-25T19:37:57.748+09:00",
     "checked_at": "2026-09-07T06:16:59+00:00",
     "checked_epoch": 1788761819
+  },
+  "smartstore-13752020110": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_71/1788877699958EjHzM_JPEG/12227_tmp_4534cdb8f8905c0e9a0a23eb29475f640319view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/03/49_f5c68c72522723f91584d069f881b3f01325381.jpg"
+      ]
+    },
+    "description_text": "펠리칸 0550NF 하드케이스\n내부 폼 미포함 구성입니다. 바퀴는 별도 추가구성으로 기본 상품에 포함되지 않습니다. 사진 속 장비 및 추가 액세서리는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T23:28:20.497+09:00",
+    "checked_at": "2026-09-08T16:15:57+00:00",
+    "checked_epoch": 1788884157
   }
 }

@@ -345,10 +345,10 @@
         "https://shop-phinf.pstatic.net/20240830_223/1724949328905tgd3V_JPEG/7584346819550557_1125029943.jpg"
       ],
       "detail": [
-        "https://www.clmedia.co.kr/data/editor/goods/1/2024/04/3724_8150fcb890f9859c6f2d6bc45f87c1031627193.jpg"
+        "https://shop-phinf.pstatic.net/20240909_87/1725862805207PF5PL_JPEG/3724_8150fcb890f9859c6f2d6bc45f87c1031627193.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -357,9 +357,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:57:18+00:00",
-    "checked_epoch": 1788760638
+    "source_modified_at": "2026-09-08T14:58:05.598+09:00",
+    "checked_at": "2026-09-08T16:19:33+00:00",
+    "checked_epoch": 1788884373
   },
   "smartstore-10807639469": {
     "images": {
@@ -367,10 +367,10 @@
         "https://shop-phinf.pstatic.net/20240829_275/1724922070798KzxGc_JPEG/75770522658841427_686411834.jpg"
       ],
       "detail": [
-        "https://www.clmedia.co.kr/data/editor/goods/1/2024/05/3805_ce6019eb7a14664d4a8dfcb038d050f91735425.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250224/dec993a3359c9656991d769c4d01f97d.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -379,9 +379,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:04.147+09:00",
-    "checked_at": "2026-09-07T05:57:43+00:00",
-    "checked_epoch": 1788760663
+    "source_modified_at": "2026-09-08T14:59:54.500+09:00",
+    "checked_at": "2026-09-08T16:19:42+00:00",
+    "checked_epoch": 1788884382
   },
   "smartstore-10481970132": {
     "images": {
@@ -597,5 +597,71 @@
     "source_modified_at": "2025-11-19T14:02:26.478+09:00",
     "checked_at": "2026-09-07T06:17:12+00:00",
     "checked_epoch": 1788761832
+  },
+  "smartstore-13751981556": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_117/178887545601561tpG_JPEG/47_01122009view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/temp_14673433168519.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1520wd 미듐 하드케이스 (With Padded Dividers)\n디바이더 포함(With Divider) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T22:50:57.170+09:00",
+    "checked_at": "2026-09-08T16:16:09+00:00",
+    "checked_epoch": 1788884169
+  },
+  "smartstore-13751915628": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_37/1788872237374bxt1m_JPEG/9671_tmp_6cfeb07078286526c0d687971eb2e7b41193view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9671_15689575218007.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1640 (1645) 패디드 디바이더 세트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:18.784+09:00",
+    "checked_at": "2026-09-08T16:16:23+00:00",
+    "checked_epoch": 1788884183
+  },
+  "smartstore-13751871913": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_239/1788870101214K708w_JPEG/9613_2019091615352510.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9613_15686159282847.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1630 (1631) 폼세트(5pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:42.669+09:00",
+    "checked_at": "2026-09-08T16:17:57+00:00",
+    "checked_epoch": 1788884277
   }
 }

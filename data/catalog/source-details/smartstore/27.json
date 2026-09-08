@@ -503,10 +503,11 @@
         "https://shop-phinf.pstatic.net/20260127_13/1769502599019CH3DU_JPEG/76259963421009726_1575164372.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/32303a6ab90ed109b162d2c31de04d8a.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/32303a6ab90ed109b162d2c31de04d8a.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/cd995ae2aaaafffb5c5ac6d8e85d8c46.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -515,9 +516,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:47:11+00:00",
-    "checked_epoch": 1788760031
+    "source_modified_at": "2026-09-08T15:51:25.097+09:00",
+    "checked_at": "2026-09-08T16:19:06+00:00",
+    "checked_epoch": 1788884346
   },
   "smartstore-13026998408": {
     "images": {
@@ -525,10 +526,11 @@
         "https://shop-phinf.pstatic.net/20260127_265/1769502315268DMDje_JPEG/24192171236403457_1237932872.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/7feab216847504d1d24921d4f09ad73b.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/7feab216847504d1d24921d4f09ad73b.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/cd995ae2aaaafffb5c5ac6d8e85d8c46.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -537,9 +539,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:47:13+00:00",
-    "checked_epoch": 1788760033
+    "source_modified_at": "2026-09-08T15:48:53.562+09:00",
+    "checked_at": "2026-09-08T16:19:09+00:00",
+    "checked_epoch": 1788884349
   },
   "smartstore-11024736487": {
     "images": {
@@ -562,9 +564,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-04-02T11:41:11.489+09:00",
-    "checked_at": "2026-09-07T05:56:49+00:00",
-    "checked_epoch": 1788760609
+    "source_modified_at": "2026-09-08T20:13:41.130+09:00",
+    "checked_at": "2026-09-08T16:19:30+00:00",
+    "checked_epoch": 1788884370
   },
   "smartstore-10481952617": {
     "images": {
@@ -892,5 +894,27 @@
     "source_modified_at": "2025-11-19T14:03:39.823+09:00",
     "checked_at": "2026-09-07T06:17:28+00:00",
     "checked_epoch": 1788761848
+  },
+  "smartstore-13751871844": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_163/1788870098768fyw8v_JPEG/9638_2019091814573712.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9638_15687863549624.jpg"
+      ]
+    },
+    "description_text": "펠리칸 iM2600 스톰 폼세트(5pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:40.530+09:00",
+    "checked_at": "2026-09-08T16:18:11+00:00",
+    "checked_epoch": 1788884291
   }
 }

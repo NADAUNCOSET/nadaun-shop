@@ -729,5 +729,49 @@
     "source_modified_at": "2025-08-04T16:56:40.610+09:00",
     "checked_at": "2026-09-07T06:17:25+00:00",
     "checked_epoch": 1788761845
+  },
+  "smartstore-13751891791": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_51/1788871066794MhViy_JPEG/5672_tmp_508ca6153318745f11cb37cbb55dbf0b6206view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/03/57_5125941023bd6f4321250fa758e21c7b1605281.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1780WF 트랜스포트 캐리온 하드케이스 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:48.501+09:00",
+    "checked_at": "2026-09-08T16:17:05+00:00",
+    "checked_epoch": 1788884225
+  },
+  "smartstore-13751891725": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_12/17888710636437XBvR_JPEG/12230_tmp_058151f6c84c7096883876389af331363429view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/03/55_c8671af092c3cf29e8b72118e1b31bc51452121.jpg"
+      ]
+    },
+    "description_text": "펠리칸 0340NF 큐브 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:45.222+09:00",
+    "checked_at": "2026-09-08T16:17:18+00:00",
+    "checked_epoch": 1788884238
   }
 }

@@ -627,10 +627,11 @@
         "https://shop-phinf.pstatic.net/20200512_40/1589274417621RU6Dg_JPEG/26635156064752913_1592107979.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KS-090.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/3270aa23082b7a177833a59e150a3599.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/21fa7bdaf452c847b60d7a80d093cf29.jpg"
       ]
     },
-    "description_text": "​\n​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -639,9 +640,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:12.343+09:00",
-    "checked_at": "2026-09-07T06:18:58+00:00",
-    "checked_epoch": 1788761938
+    "source_modified_at": "2026-09-08T14:40:21.761+09:00",
+    "checked_at": "2026-09-08T16:20:02+00:00",
+    "checked_epoch": 1788884402
   },
   "smartstore-4919361653": {
     "images": {
@@ -664,5 +665,49 @@
     "source_modified_at": "2026-08-25T21:35:59.385+09:00",
     "checked_at": "2026-09-07T06:19:30+00:00",
     "checked_epoch": 1788761970
+  },
+  "smartstore-13752020115": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_263/1788877699963ctfYP_JPEG/g201112271733_111_detail.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/111_15145346996943.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 iM2975 Black\n내부 폼 포함 구성입니다. 사진 속 장비 및 추가 액세서리는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T23:28:20.533+09:00",
+    "checked_at": "2026-09-08T16:15:54+00:00",
+    "checked_epoch": 1788884154
+  },
+  "smartstore-13751891795": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_169/1788871067839IQI06_JPEG/5670_tmp_7e2362f45e6b12c9cad3e8cdbc8e8e448409view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/03/63_22f89a1dfb649febca1951dcea5a09b41603014.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1740WF 롱 캐리온 하드케이스 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:48.528+09:00",
+    "checked_at": "2026-09-08T16:17:02+00:00",
+    "checked_epoch": 1788884222
   }
 }

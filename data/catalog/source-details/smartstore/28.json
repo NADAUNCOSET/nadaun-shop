@@ -672,9 +672,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-04-02T11:41:11.489+09:00",
-    "checked_at": "2026-09-07T05:56:47+00:00",
-    "checked_epoch": 1788760607
+    "source_modified_at": "2026-09-08T20:13:41.130+09:00",
+    "checked_at": "2026-09-08T16:19:29+00:00",
+    "checked_epoch": 1788884369
   },
   "smartstore-10663701859": {
     "images": {
@@ -885,5 +885,49 @@
     "source_modified_at": "2026-08-25T19:37:57.748+09:00",
     "checked_at": "2026-09-07T06:16:41+00:00",
     "checked_epoch": 1788761801
+  },
+  "smartstore-13751891878": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_30/1788871069096BYHeh_JPEG/11106_tmp_9294e2a47fcee95026bdf96f35f491654075view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/04/169_af60a720f8606f2904e4631c4a261a551422165.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1556 Air 롱/딥 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:50.877+09:00",
+    "checked_at": "2026-09-08T16:16:48+00:00",
+    "checked_epoch": 1788884208
+  },
+  "smartstore-13751891877": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_204/17888710689617errI_JPEG/10033_2020031914152573.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/temp_14672547488322.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1500NF 미듐 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:50.871+09:00",
+    "checked_at": "2026-09-08T16:16:49+00:00",
+    "checked_epoch": 1788884209
   }
 }

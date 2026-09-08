@@ -482,9 +482,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-04-02T11:41:11.489+09:00",
-    "checked_at": "2026-09-07T05:56:41+00:00",
-    "checked_epoch": 1788760601
+    "source_modified_at": "2026-09-08T20:13:41.130+09:00",
+    "checked_at": "2026-09-08T16:19:22+00:00",
+    "checked_epoch": 1788884362
   },
   "smartstore-10808467972": {
     "images": {
@@ -627,10 +627,12 @@
         "https://shop-phinf.pstatic.net/20200921_169/1600670583749YCOog_JPEG/1806418584796941_21621914.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KAB-018.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250224/d9d2675e7b0b4440c22d22a08c435d23.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250224/db64aad632d243ff47198581042f5313.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250224/a11bb7e42720b54b69d643ec1eb2b0ef.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -639,9 +641,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:04.147+09:00",
-    "checked_at": "2026-09-07T06:14:49+00:00",
-    "checked_epoch": 1788761689
+    "source_modified_at": "2026-09-08T15:26:37.092+09:00",
+    "checked_at": "2026-09-08T16:19:52+00:00",
+    "checked_epoch": 1788884392
   },
   "smartstore-5048087498": {
     "images": {

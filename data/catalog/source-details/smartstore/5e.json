@@ -207,10 +207,11 @@
         "https://shop-phinf.pstatic.net/20260127_208/1769502998346KkoSz_JPEG/42489851487724834_1546005148.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/c5a56c2bc867fdc538b9be66fc187ebd.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/c5a56c2bc867fdc538b9be66fc187ebd.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250318/19f76b5c4871ef3300e736f3c05aca05.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -219,9 +220,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:47:10+00:00",
-    "checked_epoch": 1788760030
+    "source_modified_at": "2026-09-08T15:52:24.293+09:00",
+    "checked_at": "2026-09-08T16:19:05+00:00",
+    "checked_epoch": 1788884345
   },
   "smartstore-12374695206": {
     "images": {
@@ -611,5 +612,50 @@
     "source_modified_at": "2026-02-27T15:35:18.541+09:00",
     "checked_at": "2026-09-07T06:14:34+00:00",
     "checked_epoch": 1788761674
+  },
+  "smartstore-13751997021": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_199/1788876288302oIvGu_JPEG/46_tmp_049c57e0e63334ee967119cf294de9030189view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/46_8043364df4f79bbb6e2dea9653649e941416395.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1520wf 미디움 하드케이스 옐로우 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T23:04:49.185+09:00",
+    "checked_at": "2026-09-08T16:15:59+00:00",
+    "checked_epoch": 1788884159
+  },
+  "smartstore-13751891730": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_12/1788871064510dQ8gp_JPEG/11717_tmp_bf74c70495a1d2addfbb68175418701a5298view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/98_15144453193598.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2022/08/11717_b5cc3fbfd7c513f9fbde6edcfe97c9761531384.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 Storm case iM2450 No Foam\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:45.257+09:00",
+    "checked_at": "2026-09-08T16:17:15+00:00",
+    "checked_epoch": 1788884235
   }
 }

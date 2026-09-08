@@ -286,10 +286,11 @@
         "https://shop-phinf.pstatic.net/20260127_102/1769505578452uxGlB_JPEG/103638426486092750_1377512887.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250808/0604430790725cac58ed50429903425d.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250808/0604430790725cac58ed50429903425d.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250730/c87ec2050b41a51434ec454cee272da0.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "<iframe src=\"https://drive.google.com/file/d/1gFqQOsuAHXBwdw2074HLEX_XNX1QjsDS/preview\" width=\"848\" height=\"477\" style=\"max-width:100%;border:0\" allowfullscreen=\"allowfullscreen\"></iframe>",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -298,9 +299,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T05:47:06+00:00",
-    "checked_epoch": 1788760026
+    "source_modified_at": "2026-09-08T12:33:57.793+09:00",
+    "checked_at": "2026-09-08T16:19:01+00:00",
+    "checked_epoch": 1788884341
   },
   "smartstore-13026068879": {
     "images": {
@@ -346,9 +347,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:41:55.461+09:00",
-    "checked_at": "2026-09-07T05:53:28+00:00",
-    "checked_epoch": 1788760408
+    "source_modified_at": "2026-09-08T13:22:32.229+09:00",
+    "checked_at": "2026-09-08T16:19:20+00:00",
+    "checked_epoch": 1788884360
   },
   "smartstore-9334988209": {
     "images": {
@@ -634,10 +635,13 @@
         "https://shop-phinf.pstatic.net/20200512_160/1589287821403pCnjt_JPEG/26651209922222495_772974773.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KCP-610.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/6f78c88173e6951898dbf08be719677b.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/7d82ff2f016233b6621040b4857ec05f.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250324/a8551eb923128f1a7cd9aac6ce594b0b.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/4c4e7a505582dba1524fbd24d0dd8a77.jpg"
       ]
     },
-    "description_text": "​\n​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -646,8 +650,8 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:12.343+09:00",
-    "checked_at": "2026-09-07T06:18:45+00:00",
-    "checked_epoch": 1788761925
+    "source_modified_at": "2026-09-08T15:22:44.920+09:00",
+    "checked_at": "2026-09-08T16:19:55+00:00",
+    "checked_epoch": 1788884395
   }
 }

@@ -487,10 +487,12 @@
         "https://shop-phinf.pstatic.net/20200512_233/15892749254154YgOQ_JPEG/26635663998398448_518377667.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KS-063.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/3b73cbf21b8a962ef5cda25c475f7c58.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/63f1cc57fd7eda4a8a72c391fc3d233b.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/7e18a78b22ed77849d803a748d44be31.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -499,8 +501,31 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:12.343+09:00",
-    "checked_at": "2026-09-07T06:18:58+00:00",
-    "checked_epoch": 1788761938
+    "source_modified_at": "2026-09-08T16:06:54.871+09:00",
+    "checked_at": "2026-09-08T16:20:02+00:00",
+    "checked_epoch": 1788884402
+  },
+  "smartstore-13751891728": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_11/1788871063649A1yjF_JPEG/12219_tmp_a5dc195ea9c8a7b179f4a505c4aa9e0a3908view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2016/08/5594_14715882777818.jpg",
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2023/01/348_f01c6c1d9268c52394ad988a0544d44d1209382.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1755 Air WF 롱 하드케이스 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:45.242+09:00",
+    "checked_at": "2026-09-08T16:17:16+00:00",
+    "checked_epoch": 1788884236
   }
 }

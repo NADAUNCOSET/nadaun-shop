@@ -918,5 +918,53 @@
     "source_modified_at": "2026-01-20T16:02:06.769+09:00",
     "checked_at": "2026-09-07T06:18:37+00:00",
     "checked_epoch": 1788761917
+  },
+  "smartstore-13751891734": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_87/1788871063648i3nlJ_JPEG/27121451view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2014/04/3140_14684677435367.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2014/04/3140_14685498085507.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2014/04/3140_14684677597014.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1630WF 라지 캐리온 하드케이스 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:45.283+09:00",
+    "checked_at": "2026-09-08T16:17:12+00:00",
+    "checked_epoch": 1788884232
+  },
+  "smartstore-13751891649": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_205/1788871061525NF8yI_JPEG/13030_2025010715534410.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2014/04/3140_14684677435367.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2016/07/5530_14685517375576.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2014/04/3140_14684677597014.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1640NF 라지 캐리온 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:43.223+09:00",
+    "checked_at": "2026-09-08T16:17:31+00:00",
+    "checked_epoch": 1788884251
   }
 }

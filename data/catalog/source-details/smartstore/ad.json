@@ -711,9 +711,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-07-13T13:10:32.521+09:00",
-    "checked_at": "2026-09-07T06:08:07+00:00",
-    "checked_epoch": 1788761287
+    "source_modified_at": "2026-09-07T15:44:26.270+09:00",
+    "checked_at": "2026-09-08T16:19:47+00:00",
+    "checked_epoch": 1788884387
   },
   "smartstore-4995554714": {
     "images": {
@@ -760,5 +760,71 @@
     "source_modified_at": "2026-09-01T09:59:12.343+09:00",
     "checked_at": "2026-09-07T06:19:04+00:00",
     "checked_epoch": 1788761944
+  },
+  "smartstore-13751891727": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_197/1788871063881TLKa5_JPEG/12228_tmp_49298a9e793926bb4658520536f7c4929977view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/03/52_d2777161ea7989b6c8402e027fffe5a11423211.jpg"
+      ]
+    },
+    "description_text": "펠리칸 0370NF 큐브 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:45.236+09:00",
+    "checked_at": "2026-09-08T16:17:17+00:00",
+    "checked_epoch": 1788884237
+  },
+  "smartstore-13751871968": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_57/1788870103485Lgd42_JPEG/9592_2019091614335415.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9592_15686121360496.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1441 폼세트(6pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:44.554+09:00",
+    "checked_at": "2026-09-08T16:17:46+00:00",
+    "checked_epoch": 1788884266
+  },
+  "smartstore-13751871830": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_55/178887009875535SCK_JPEG/9744_2019102313453413.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/10/9744_15718068940271.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1507 에어 폼세트\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:40.453+09:00",
+    "checked_at": "2026-09-08T16:18:20+00:00",
+    "checked_epoch": 1788884300
   }
 }

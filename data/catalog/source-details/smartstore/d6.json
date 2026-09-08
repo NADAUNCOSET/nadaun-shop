@@ -495,5 +495,27 @@
     "source_modified_at": "2025-11-19T14:02:26.477+09:00",
     "checked_at": "2026-09-07T06:17:12+00:00",
     "checked_epoch": 1788761832
+  },
+  "smartstore-13751915621": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_226/17888722373520cUal_JPEG/9703_2019092316204819.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9703_15692233491889.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1510TP 트랙팩 디바이더 키트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:18.741+09:00",
+    "checked_at": "2026-09-08T16:16:28+00:00",
+    "checked_epoch": 1788884188
   }
 }

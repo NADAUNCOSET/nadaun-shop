@@ -359,10 +359,11 @@
         "https://shop-phinf.pstatic.net/20260127_116/17695137552477c5Jt_JPEG/98875372791828751_2115393095.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250528/3e47ae9f24ec2325f10570a485e24979.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250528/3e47ae9f24ec2325f10570a485e24979.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250224/1f5cd79387e6d1216896c29a3f1be484.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -371,9 +372,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T05:46:58+00:00",
-    "checked_epoch": 1788760018
+    "source_modified_at": "2026-09-08T14:35:45.746+09:00",
+    "checked_at": "2026-09-08T16:18:52+00:00",
+    "checked_epoch": 1788884332
   },
   "smartstore-12172076227": {
     "images": {
@@ -748,5 +749,71 @@
     "source_modified_at": "2025-11-19T14:03:39.406+09:00",
     "checked_at": "2026-09-07T06:18:23+00:00",
     "checked_epoch": 1788761903
+  },
+  "smartstore-13751981560": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_205/1788875456014cBKFX_JPEG/9392_tmp_c059f0cbe630484fd5e7fb6aada1d3fb5076view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2014/01/2767_14682909527023.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1610WD 라지 캐리온 하드케이스 (With Padded Dividers) 탄 (모래색)\n디바이더 포함(With Divider) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T22:50:57.199+09:00",
+    "checked_at": "2026-09-08T16:16:06+00:00",
+    "checked_epoch": 1788884166
+  },
+  "smartstore-13751915676": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_96/1788872239194Ib4QA_JPEG/9654_tmp_e0d74438e7795e366c7caeebd58b16915871view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9654_15718063546016.jpg"
+      ]
+    },
+    "description_text": "펠리칸 0370 (0375) 패디드 디바이더 세트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:20.445+09:00",
+    "checked_at": "2026-09-08T16:16:13+00:00",
+    "checked_epoch": 1788884173
+  },
+  "smartstore-13751871898": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_91/1788870101202qCcJz_JPEG/9630_2019091814225012.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9630_15687843133675.jpg"
+      ]
+    },
+    "description_text": "펠리칸 iM2275 폼세트(4pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:42.598+09:00",
+    "checked_at": "2026-09-08T16:18:07+00:00",
+    "checked_epoch": 1788884287
   }
 }

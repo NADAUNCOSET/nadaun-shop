@@ -330,9 +330,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-14T22:36:27.714+09:00",
-    "checked_at": "2026-09-07T05:45:42+00:00",
-    "checked_epoch": 1788759942
+    "source_modified_at": "2026-09-08T20:22:28.617+09:00",
+    "checked_at": "2026-09-08T16:18:38+00:00",
+    "checked_epoch": 1788884318
   },
   "smartstore-12550471986": {
     "images": {
@@ -632,5 +632,72 @@
     "source_modified_at": "2026-08-25T19:37:57.748+09:00",
     "checked_at": "2026-09-07T06:16:45+00:00",
     "checked_epoch": 1788761805
+  },
+  "smartstore-13751997019": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_140/1788876288392jMdHo_JPEG/11309_tmp_85eeb9dcbba6a9db1ba11a21de2460367419view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2021/12/11305_1aa5b5483e1361bbf4d318f5c17804891442335.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2021/12/11305_827099bbc10b09be159bc0ce3ab8ba271504575.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1650 이지클릭 몰리패널 EZ Click MOLLE PANEL\n제품명에 명시된 케이스 모델 전용 몰리패널입니다. 하드케이스 본체와 파우치 및 촬영 예시 장비는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T23:04:49.175+09:00",
+    "checked_at": "2026-09-08T16:16:01+00:00",
+    "checked_epoch": 1788884161
+  },
+  "smartstore-13751915624": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_57/17888722373563oB3F_JPEG/9685_2019092313332718.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9685_15692134328750.jpg"
+      ]
+    },
+    "description_text": "펠리칸 iM2500 스톰 패디드 디바이더 세트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:18.759+09:00",
+    "checked_at": "2026-09-08T16:16:26+00:00",
+    "checked_epoch": 1788884186
+  },
+  "smartstore-13751891732": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_52/178887106363922s7J_JPEG/11702_tmp_e65821f04fcd0f4436babc852b84bace3662view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/05/270_3e0f46a201027c1ebd89f0e37d3f59201604272.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1646 Air NF 하드케이스 (No FOAM)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:45.271+09:00",
+    "checked_at": "2026-09-08T16:17:14+00:00",
+    "checked_epoch": 1788884234
   }
 }

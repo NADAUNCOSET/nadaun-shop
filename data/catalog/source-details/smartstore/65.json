@@ -754,5 +754,49 @@
     "source_modified_at": "2026-08-25T21:35:59.385+09:00",
     "checked_at": "2026-09-07T06:19:35+00:00",
     "checked_epoch": 1788761975
+  },
+  "smartstore-13751891868": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_210/1788871068839vBtzY_JPEG/11116_tmp_ee2138eec692ef92824830c84890a3d12669view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/01/40_caeb0da32479e03e0921381873b311bb1401084.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1745 Air NF 롱 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:50.812+09:00",
+    "checked_at": "2026-09-08T16:16:55+00:00",
+    "checked_epoch": 1788884215
+  },
+  "smartstore-13751871901": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_201/17888701009305gXdQ_JPEG/9627_2019091814140411.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9627_15687837802506.jpg"
+      ]
+    },
+    "description_text": "펠리칸 iM2075 스톰 폼세트(4pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:42.611+09:00",
+    "checked_at": "2026-09-08T16:18:05+00:00",
+    "checked_epoch": 1788884285
   }
 }

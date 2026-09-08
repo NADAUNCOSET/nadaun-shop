@@ -290,7 +290,7 @@
         "https://shop-phinf.pstatic.net/20260127_150/1769516455756PPKeC_JPEG/27893923893808090_361145849.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/web/product/medium/KS-400.jpg"
+        "https://gi.esmplus.com/clmedia/KUPO/KS-470.jpg"
       ]
     },
     "description_text": "",
@@ -302,9 +302,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:55:23.122+09:00",
-    "checked_at": "2026-09-07T05:39:42+00:00",
-    "checked_epoch": 1788759582
+    "source_modified_at": "2026-09-08T15:03:39.534+09:00",
+    "checked_at": "2026-09-08T16:18:25+00:00",
+    "checked_epoch": 1788884305
   },
   "smartstore-13739631635": {
     "images": {
@@ -711,5 +711,71 @@
     "source_modified_at": "2026-08-25T21:35:59.385+09:00",
     "checked_at": "2026-09-07T06:19:29+00:00",
     "checked_epoch": 1788761969
+  },
+  "smartstore-13751915614": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_14/1788872237375ONbNh_JPEG/9714_2019092316465018.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9714_15692249085329.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1650TP 트랙팩 디바이더 키트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:18.694+09:00",
+    "checked_at": "2026-09-08T16:16:33+00:00",
+    "checked_epoch": 1788884193
+  },
+  "smartstore-13751891784": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_31/1788871066876rKX5x_JPEG/13576_tmp_617da6837c0d61f498cfa8406960ee214195view.jpg"
+      ],
+      "detail": [
+        "https://hardcasekorea.com/data/editor/goods/1/2025/10/415_8c3decd46221fd8aa8db456992af1e961525303.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1705 Air WF 롱 하드케이스 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:48.451+09:00",
+    "checked_at": "2026-09-08T16:17:09+00:00",
+    "checked_epoch": 1788884229
+  },
+  "smartstore-13751871965": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_74/1788870103308PrE7z_JPEG/9597_2019091614481812.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9597_15686130445656.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1485 에어 폼세트(3pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:44.540+09:00",
+    "checked_at": "2026-09-08T16:17:48+00:00",
+    "checked_epoch": 1788884268
   }
 }

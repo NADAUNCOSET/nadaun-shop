@@ -291,9 +291,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-04-02T11:41:11.489+09:00",
-    "checked_at": "2026-09-07T05:56:48+00:00",
-    "checked_epoch": 1788760608
+    "source_modified_at": "2026-09-08T20:13:41.130+09:00",
+    "checked_at": "2026-09-08T16:19:29+00:00",
+    "checked_epoch": 1788884369
   },
   "smartstore-10781052886": {
     "images": {
@@ -744,5 +744,28 @@
     "source_modified_at": "2026-09-01T09:59:12.343+09:00",
     "checked_at": "2026-09-07T06:19:14+00:00",
     "checked_epoch": 1788761954
+  },
+  "smartstore-13751891653": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_222/1788871061964C5uEe_JPEG/12572_tmp_b055fa6dfe99b895530b1ed1bff7dba02389view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/12/8935_15145366243250.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/12/8936_15145367318076.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 iM3200 No Foam\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:43.245+09:00",
+    "checked_at": "2026-09-08T16:17:28+00:00",
+    "checked_epoch": 1788884248
   }
 }

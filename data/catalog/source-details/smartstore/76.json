@@ -622,5 +622,49 @@
     "source_modified_at": "2025-11-19T14:02:26.474+09:00",
     "checked_at": "2026-09-07T06:17:15+00:00",
     "checked_epoch": 1788761835
+  },
+  "smartstore-13751891785": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_212/1788871066442mwBYe_JPEG/71_tmp_45b3e29f696bd4385ae91c11660d972e8475view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/03/67_18edbb7a9313a0107c67826b691f11e51534041.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1720WF 롱 캐리온 하드케이스 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:48.457+09:00",
+    "checked_at": "2026-09-08T16:17:09+00:00",
+    "checked_epoch": 1788884229
+  },
+  "smartstore-13751871962": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_169/1788870103372SHUCD_JPEG/9601_2019091614595615.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9601_15686137248501.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1520 (1521) 폼세트(3pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:44.526+09:00",
+    "checked_at": "2026-09-08T16:17:50+00:00",
+    "checked_epoch": 1788884270
   }
 }

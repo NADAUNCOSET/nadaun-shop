@@ -386,9 +386,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-14T22:36:27.714+09:00",
-    "checked_at": "2026-09-07T05:45:41+00:00",
-    "checked_epoch": 1788759941
+    "source_modified_at": "2026-09-08T20:22:28.617+09:00",
+    "checked_at": "2026-09-08T16:18:36+00:00",
+    "checked_epoch": 1788884316
   },
   "smartstore-13027334261": {
     "images": {
@@ -396,10 +396,11 @@
         "https://shop-phinf.pstatic.net/20260127_90/1769507876889A41p0_JPEG/79638338595784187_980160905.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/64264125d2795b85d30cd6ba8bc7a72c.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/64264125d2795b85d30cd6ba8bc7a72c.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250226/2c01a0cdf02d765d9990181148c32e5b.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -408,9 +409,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:47:02+00:00",
-    "checked_epoch": 1788760022
+    "source_modified_at": "2026-09-08T15:54:18.752+09:00",
+    "checked_at": "2026-09-08T16:18:56+00:00",
+    "checked_epoch": 1788884336
   },
   "smartstore-12086017366": {
     "images": {
@@ -613,5 +614,50 @@
     "source_modified_at": "2026-08-25T19:51:30.590+09:00",
     "checked_at": "2026-09-07T06:09:53+00:00",
     "checked_epoch": 1788761393
+  },
+  "smartstore-13751915672": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_59/1788872239787xcOd8_JPEG/9658_2019092013062014.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9658_15689524924827.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1510 (1515) 패디드 디바이더 세트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:20.419+09:00",
+    "checked_at": "2026-09-08T16:16:15+00:00",
+    "checked_epoch": 1788884175
+  },
+  "smartstore-13751891912": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_195/1788871071294E2t4M_JPEG/8930_tmp_34406dc779a1a7e5075d5f451df283068054view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/100_15144475547781.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/12/8930_15144480608048.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 iM2500 Black With Divider\n디바이더 포함(With Divider) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:52.641+09:00",
+    "checked_at": "2026-09-08T16:16:45+00:00",
+    "checked_epoch": 1788884205
   }
 }

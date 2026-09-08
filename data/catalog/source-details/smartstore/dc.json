@@ -540,5 +540,51 @@
     "source_modified_at": "2025-11-19T14:02:28.741+09:00",
     "checked_at": "2026-09-07T06:13:20+00:00",
     "checked_epoch": 1788761600
+  },
+  "smartstore-13751891923": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_201/1788871071820vgjVy_JPEG/6004_tmp_92872c339f5b498407b90b7741274d034614view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/06/6004_14962896935363.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/06/6004_14962897004854.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 Storm case iM2275 With Foam\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:52.708+09:00",
+    "checked_at": "2026-09-08T16:16:39+00:00",
+    "checked_epoch": 1788884199
+  },
+  "smartstore-13751891659": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_242/1788871061807k2LE0_JPEG/12566_tmp_4718572541aecb4da736cc2dc3bc8da88246view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/108_15145330622913.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/108_15145330616796.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 iM2875 Black No Foam\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:43.279+09:00",
+    "checked_at": "2026-09-08T16:17:25+00:00",
+    "checked_epoch": 1788884245
   }
 }

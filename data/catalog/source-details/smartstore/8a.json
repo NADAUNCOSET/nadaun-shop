@@ -333,10 +333,13 @@
         "https://shop-phinf.pstatic.net/20240829_33/1724924622232QqC0F_JPEG/38222579043154406_1128947526.jpg"
       ],
       "detail": [
-        "https://www.clmedia.co.kr/data/editor/goods/1/2024/07/3879_eebebb812e489a25df2f9c4d6e02afe60953013.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250318/c8a8091c91e9cf3cd97ec40230d72ac6.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/9e9eedb91c83a418c4d49ba85d071768.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/926fa568df85d355dae589c9077c83ac.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/416bb53de0384ae8415ebd296204afc6.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -345,9 +348,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:04.147+09:00",
-    "checked_at": "2026-09-07T05:57:36+00:00",
-    "checked_epoch": 1788760656
+    "source_modified_at": "2026-09-08T14:40:44.913+09:00",
+    "checked_at": "2026-09-08T16:19:42+00:00",
+    "checked_epoch": 1788884382
   },
   "smartstore-8263259020": {
     "images": {
@@ -490,5 +493,27 @@
     "source_modified_at": "2026-08-25T19:37:57.748+09:00",
     "checked_at": "2026-09-07T06:17:05+00:00",
     "checked_epoch": 1788761825
+  },
+  "smartstore-13751915670": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_85/1788872239479VfTol_JPEG/9660_2019092013104610.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9660_15689528738978.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1520 패디드 디바이더 세트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:20.407+09:00",
+    "checked_at": "2026-09-08T16:16:17+00:00",
+    "checked_epoch": 1788884177
   }
 }

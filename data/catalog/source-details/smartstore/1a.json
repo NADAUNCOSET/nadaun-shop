@@ -412,9 +412,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:17:15.301+09:00",
-    "checked_at": "2026-09-07T05:45:37+00:00",
-    "checked_epoch": 1788759937
+    "source_modified_at": "2026-09-08T20:26:55.586+09:00",
+    "checked_at": "2026-09-08T16:18:30+00:00",
+    "checked_epoch": 1788884310
   },
   "smartstore-13523030959": {
     "images": {
@@ -915,5 +915,50 @@
     "source_modified_at": "2026-09-01T09:59:12.343+09:00",
     "checked_at": "2026-09-07T06:19:12+00:00",
     "checked_epoch": 1788761952
+  },
+  "smartstore-13751891880": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_32/1788871069539jxqdU_JPEG/g201112261741_93_detail.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/93_14969031977677.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/93_14969032057800.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 Storm case iM2300 With Foam\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:50.889+09:00",
+    "checked_at": "2026-09-08T16:16:47+00:00",
+    "checked_epoch": 1788884207
+  },
+  "smartstore-13751891875": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_276/1788871069337h40c8_JPEG/10020_tmp_e74e970d5ce5fcf4f25be5f6cbfedbc35426view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/04/150_16b357227d5737d76573087c313dd7f31758295.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1626 Air 롱/딥 하드케이스 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:50.859+09:00",
+    "checked_at": "2026-09-08T16:16:50+00:00",
+    "checked_epoch": 1788884210
   }
 }

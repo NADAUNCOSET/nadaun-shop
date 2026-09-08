@@ -731,5 +731,27 @@
     "source_modified_at": "2026-09-01T09:59:04.147+09:00",
     "checked_at": "2026-09-07T06:13:08+00:00",
     "checked_epoch": 1788761588
+  },
+  "smartstore-13751871908": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_117/1788870100930DrbHl_JPEG/9620_2019091616154010.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9620_15686182571487.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1720 (1721) 폼세트(3pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:42.646+09:00",
+    "checked_at": "2026-09-08T16:18:00+00:00",
+    "checked_epoch": 1788884280
   }
 }

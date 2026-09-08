@@ -573,5 +573,27 @@
     "source_modified_at": "2025-11-19T14:03:39.654+09:00",
     "checked_at": "2026-09-07T06:17:51+00:00",
     "checked_epoch": 1788761871
+  },
+  "smartstore-13751871832": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_19/1788870098759oJ3XO_JPEG/9651_2019091815295815.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9651_15687882751718.jpg"
+      ]
+    },
+    "description_text": "펠리칸 iM3410 스톰 폼세트(4pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:40.464+09:00",
+    "checked_at": "2026-09-08T16:18:19+00:00",
+    "checked_epoch": 1788884299
   }
 }

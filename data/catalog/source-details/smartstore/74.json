@@ -243,10 +243,11 @@
         "https://shop-phinf.pstatic.net/20260127_271/1769502362248W82Db_JPEG/5540129078503193_415735754.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/4f86cd73b770aaebfde3ae44f40d57b6.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/4f86cd73b770aaebfde3ae44f40d57b6.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/cd995ae2aaaafffb5c5ac6d8e85d8c46.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -255,9 +256,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T05:47:13+00:00",
-    "checked_epoch": 1788760033
+    "source_modified_at": "2026-09-08T14:38:03.972+09:00",
+    "checked_at": "2026-09-08T16:19:09+00:00",
+    "checked_epoch": 1788884349
   },
   "smartstore-12054020917": {
     "images": {
@@ -668,10 +669,12 @@
         "https://shop-phinf.pstatic.net/20200512_84/1589274196324z1F1C_JPEG/26634934957071056_1696218018.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KS-017.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/73ac8245cfd59edcb2a6a47f39180175.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/54a134642c08f54707e5a0486424feba.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/8bfb4be252c22328e6f0c43cb381d55e.jpg"
       ]
     },
-    "description_text": "​\n​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -680,8 +683,30 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:12.343+09:00",
-    "checked_at": "2026-09-07T06:19:00+00:00",
-    "checked_epoch": 1788761940
+    "source_modified_at": "2026-09-08T15:08:58.277+09:00",
+    "checked_at": "2026-09-08T16:20:04+00:00",
+    "checked_epoch": 1788884404
+  },
+  "smartstore-13751871969": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_91/1788870103013HeYSY_JPEG/9591_2019091614273113.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9591_15686117976667.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1431 폼세트(5pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:44.560+09:00",
+    "checked_at": "2026-09-08T16:17:45+00:00",
+    "checked_epoch": 1788884265
   }
 }

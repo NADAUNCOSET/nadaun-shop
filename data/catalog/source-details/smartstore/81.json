@@ -638,10 +638,11 @@
         "https://shop-phinf.pstatic.net/20200512_252/1589273543882QItJW_JPEG/26635877460595761_1298154487.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KS-320.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/f25a143e332db714d7b6c7b51bcf9c16.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/aef4f023c99f8c3ffe4f91dc090e2b20.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -650,8 +651,30 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T06:19:03+00:00",
-    "checked_epoch": 1788761943
+    "source_modified_at": "2026-09-08T15:04:28.544+09:00",
+    "checked_at": "2026-09-08T16:20:06+00:00",
+    "checked_epoch": 1788884406
+  },
+  "smartstore-13751871906": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_220/17888701011790nt55_JPEG/9622_2019091616312213.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9622_15686192320342.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1740 (1741) 폼세트(6pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:42.635+09:00",
+    "checked_at": "2026-09-08T16:18:02+00:00",
+    "checked_epoch": 1788884282
   }
 }

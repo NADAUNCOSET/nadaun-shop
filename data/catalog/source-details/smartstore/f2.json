@@ -252,10 +252,11 @@
         "https://shop-phinf.pstatic.net/20260127_97/1769509325875bAi7O_JPEG/50924519847932769_6263140.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250602/1d30292c37f9ea3cedb8ef4d74a36950.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250602/1d30292c37f9ea3cedb8ef4d74a36950.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/9e9eedb91c83a418c4d49ba85d071768.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -264,9 +265,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T05:46:59+00:00",
-    "checked_epoch": 1788760019
+    "source_modified_at": "2026-09-08T14:32:28.332+09:00",
+    "checked_at": "2026-09-08T16:18:53+00:00",
+    "checked_epoch": 1788884333
   },
   "smartstore-10824157041": {
     "images": {
@@ -340,10 +341,12 @@
         "https://shop-phinf.pstatic.net/20240829_210/17249363465923FlVv_JPEG/39253618406426133_500495269.jpg"
       ],
       "detail": [
-        "https://www.clmedia.co.kr/data/editor/goods/1/2024/04/3686_e062ad01d7d1591478a8aa5234f0cd8c1117571.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/8b6d17da052d2162f6d763f5d313f8e3.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/3669b8a69abeb41c25903d23d068c05b.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/fb7c55f2be447675512a444c817b497b.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -352,9 +355,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T05:57:30+00:00",
-    "checked_epoch": 1788760650
+    "source_modified_at": "2026-09-08T15:17:32.434+09:00",
+    "checked_at": "2026-09-08T16:19:40+00:00",
+    "checked_epoch": 1788884380
   },
   "smartstore-8550497417": {
     "images": {
@@ -623,5 +626,49 @@
     "source_modified_at": "2026-09-01T09:59:12.343+09:00",
     "checked_at": "2026-09-07T06:19:14+00:00",
     "checked_epoch": 1788761954
+  },
+  "smartstore-13751915669": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_127/1788872239203l5pIw_JPEG/9661_2019092013145714.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9661_15689531817031.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1535 에어 패디드 디바이더 세트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:20.400+09:00",
+    "checked_at": "2026-09-08T16:16:17+00:00",
+    "checked_epoch": 1788884177
+  },
+  "smartstore-13751891647": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_225/1788871061766OenC2_JPEG/13036_tmp_e04cf05f20ded06104575646cf2259fe3493view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2025/01/401_bca258a2f39d8a83a18748a3555373511503264.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1505WF Air 하드케이스 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:43.211+09:00",
+    "checked_at": "2026-09-08T16:17:32+00:00",
+    "checked_epoch": 1788884252
   }
 }

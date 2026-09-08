@@ -178,7 +178,7 @@
     "schema_version": 1,
     "source_counts": {
       "kpp": 4014,
-      "smartstore": 6964,
+      "smartstore": 7161,
       "imweb-dji": 146,
       "imweb-promotions": 37,
       "l-mount": 335,
@@ -188,25 +188,25 @@
     },
     "detail_coverage": {
       "kpp": 4014,
-      "smartstore": 6878,
+      "smartstore": 7075,
       "imweb-promotions": 16,
       "l-mount": 335,
       "plthink": 6189,
       "dji-official": 905,
       "avx": 493
     },
-    "synced_at": "2026-09-08T16:00:41+00:00",
+    "synced_at": "2026-09-08T16:15:39+00:00",
     "merged_count": 2376,
     "product_count": 220,
     "category_browsing_enabled": true,
     "listing_count": 220,
     "option_family_count": 99,
     "deduplication": {
-      "brands_checked": 251,
+      "brands_checked": 252,
       "groups": 1861,
       "removed": 2376
     },
-    "revision": "83e0bd02bfdeda03",
+    "revision": "99ea16637a6afc69",
     "view": "rental"
   },
   "brands": [
@@ -1067,6 +1067,7 @@
         "naver:b:smallrig:50001389",
         "naver:b:smallrig:50002077",
         "naver:b:smallrig:50002076",
+        "naver:b:smallrig:50002079",
         "naver:b:smallrig:50002074",
         "naver:b:smallrig:50001390",
         "naver:b:smallrig:50002082",
@@ -1074,16 +1075,15 @@
         "naver:b:smallrig:50004633",
         "naver:b:smallrig:50001388",
         "naver:b:smallrig:50002073",
-        "naver:b:smallrig:50002079",
+        "naver:b:smallrig:50000209",
+        "naver:b:smallrig:50001404",
+        "naver:b:smallrig:50002328",
         "naver:b:smallrig:50000097",
         "naver:b:smallrig:50001222",
         "naver:b:smallrig:50003120",
         "naver:b:smallrig:50003118",
         "naver:b:smallrig:50000205",
         "naver:b:smallrig:50006369",
-        "naver:b:smallrig:50000209",
-        "naver:b:smallrig:50001404",
-        "naver:b:smallrig:50002328",
         "naver:b:smallrig:50000264",
         "naver:b:smallrig:50002100",
         "plthink:b:084",
@@ -2038,8 +2038,8 @@
         "plthink:b:064:008",
         "plthink:b:064:009"
       ],
-      "count": 655,
-      "purchase_count": 649,
+      "count": 630,
+      "purchase_count": 624,
       "rental_count": 6,
       "category_ids": [
         "naver:b:kupo:50000206",
@@ -9858,6 +9858,36 @@
       "logo_dark": false
     },
     {
+      "id": "brand-9fd517d8de",
+      "name": "펠리칸",
+      "aliases": [
+        "펠리칸"
+      ],
+      "logo": "https://shop-phinf.pstatic.net/20260908_263/1788877699963ctfYP_JPEG/g201112271733_111_detail.jpg",
+      "navigation_category_ids": [
+        "naver:b:brand-9fd517d8de:50000206",
+        "naver:b:brand-9fd517d8de:50001387",
+        "naver:b:brand-9fd517d8de:50001394",
+        "naver:b:brand-9fd517d8de:50002113",
+        "naver:b:brand-9fd517d8de:50004637"
+      ],
+      "count": 222,
+      "purchase_count": 222,
+      "rental_count": 0,
+      "category_ids": [
+        "naver:b:brand-9fd517d8de:50000206",
+        "naver:b:brand-9fd517d8de:50001387",
+        "naver:b:brand-9fd517d8de:50004637",
+        "naver:b:brand-9fd517d8de:50001394",
+        "naver:b:brand-9fd517d8de:50002113"
+      ],
+      "representative_id": "smartstore-13752020115",
+      "representative_image": "https://shop-phinf.pstatic.net/20260908_263/1788877699963ctfYP_JPEG/g201112271733_111_detail.jpg",
+      "representative_name": "스톰케이스 iM2975 Black",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "brand-63ad1e5419",
       "name": "후지필름",
       "aliases": [
@@ -9884,6 +9914,12 @@
   ],
   "categories": [
     {
+      "id": "naver:p:50002113",
+      "name": "기타카메라/캠코더용품",
+      "parent_id": null,
+      "brand_id": null
+    },
+    {
       "id": "naver:b:smallrig:50000206",
       "name": "카메라/캠코더용품",
       "parent_id": null,
@@ -9900,12 +9936,6 @@
       "name": "기타카메라/캠코더용품",
       "parent_id": "naver:b:smallrig:50001394",
       "brand_id": "smallrig"
-    },
-    {
-      "id": "naver:p:50002113",
-      "name": "기타카메라/캠코더용품",
-      "parent_id": null,
-      "brand_id": null
     },
     {
       "id": "naver:p:50002082",
@@ -16615,8 +16645,8 @@
       "name": "디지아이 DJI 오즈모 액션 Action 4 어드벤처콤보",
       "brand_id": "dji",
       "kind": "rental",
-      "price": 15000,
-      "sale_price": 15000,
+      "price": 20000,
+      "sale_price": 20000,
       "status": "sale",
       "category_ids": [
         "naver:b:dji:50000206",
@@ -16638,7 +16668,7 @@
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/12569353655",
           "status": "sale",
-          "price": 15000,
+          "price": 20000,
           "id": "smartstore-12569353655"
         }
       ],
@@ -16648,7 +16678,7 @@
       "shipping_class": null,
       "rental": {
         "service": "equipment",
-        "price": 15000,
+        "price": 20000,
         "period": "12시간",
         "rate_count": 2
       },

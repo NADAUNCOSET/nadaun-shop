@@ -207,7 +207,7 @@
         "https://shop-phinf.pstatic.net/20260901_172/1788225712778uL1He_JPEG/KSD-1680L.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/web/product/medium/KSD-1680L.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250224/401524a47ca8e8b392501a3170de2f82.jpg"
       ]
     },
     "description_text": "",
@@ -219,9 +219,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:21:53.996+09:00",
-    "checked_at": "2026-09-07T05:39:31+00:00",
-    "checked_epoch": 1788759571
+    "source_modified_at": "2026-09-08T15:00:10.877+09:00",
+    "checked_at": "2026-09-08T16:18:24+00:00",
+    "checked_epoch": 1788884304
   },
   "smartstore-13739631712": {
     "images": {
@@ -665,5 +665,27 @@
     "source_modified_at": "2026-08-25T19:37:57.748+09:00",
     "checked_at": "2026-09-07T06:17:00+00:00",
     "checked_epoch": 1788761820
+  },
+  "smartstore-13751915623": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_287/178887223736377tLP_JPEG/9690_2019092313515219.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9690_15692144220543.jpg"
+      ]
+    },
+    "description_text": "펠리칸 iM2750 스톰 패디드 디바이더 세트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:18.752+09:00",
+    "checked_at": "2026-09-08T16:16:27+00:00",
+    "checked_epoch": 1788884187
   }
 }

@@ -785,5 +785,27 @@
     "source_modified_at": "2026-08-25T21:35:59.385+09:00",
     "checked_at": "2026-09-07T06:19:26+00:00",
     "checked_epoch": 1788761966
+  },
+  "smartstore-13751871956": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_18/1788870103025IOo7c_JPEG/9607_2019091615185915.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9607_15686148689929.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1600 (1601) 폼세트(4pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:44.497+09:00",
+    "checked_at": "2026-09-08T16:17:54+00:00",
+    "checked_epoch": 1788884274
   }
 }

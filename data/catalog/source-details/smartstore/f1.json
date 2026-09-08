@@ -740,5 +740,28 @@
     "source_modified_at": "2026-08-25T20:17:24.257+09:00",
     "checked_at": "2026-09-07T06:15:53+00:00",
     "checked_epoch": 1788761753
+  },
+  "smartstore-13751891654": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_165/1788871061534A3tv6_JPEG/12573_tmp_04c93ceec651ff408ffc0bc055aa402f0519view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/108_15145330622913.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2018/01/8939_15148714523156.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 iM3300 No Foam\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:43.251+09:00",
+    "checked_at": "2026-09-08T16:17:28+00:00",
+    "checked_epoch": 1788884248
   }
 }

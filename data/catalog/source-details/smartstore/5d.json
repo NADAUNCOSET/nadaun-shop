@@ -219,10 +219,11 @@
         "https://shop-phinf.pstatic.net/20260127_137/1769500180035FOAf6_JPEG/8036148023629669_657869060.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/1678167a5c2fe0cf9000801001570a74.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/1678167a5c2fe0cf9000801001570a74.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/cd995ae2aaaafffb5c5ac6d8e85d8c46.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -231,9 +232,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:47:16+00:00",
-    "checked_epoch": 1788760036
+    "source_modified_at": "2026-09-08T15:42:41.620+09:00",
+    "checked_at": "2026-09-08T16:19:13+00:00",
+    "checked_epoch": 1788884353
   },
   "smartstore-13026539522": {
     "images": {
@@ -653,5 +654,27 @@
     "source_modified_at": "2025-11-19T14:02:28.951+09:00",
     "checked_at": "2026-09-07T06:13:15+00:00",
     "checked_epoch": 1788761595
+  },
+  "smartstore-13752020112": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_19/1788877699672EfYaf_JPEG/2552_tmp_78d3b2d0dfaa8498ff3de05e08c29bb82422view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/03/49_f5c68c72522723f91584d069f881b3f01325381.jpg"
+      ]
+    },
+    "description_text": "펠리칸 0550WF 하드케이스\n내부 폼 포함 구성입니다. 바퀴는 별도 추가구성으로 기본 상품에 포함되지 않습니다. 사진 속 장비 및 추가 액세서리는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T23:28:20.514+09:00",
+    "checked_at": "2026-09-08T16:15:56+00:00",
+    "checked_epoch": 1788884156
   }
 }

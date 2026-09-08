@@ -438,10 +438,11 @@
         "https://shop-phinf.pstatic.net/20250915_195/1757914626273XlHOF_JPEG/92047446396461843_1572988345.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250529/37ffea0ac357ce7976021b699cc45980.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250529/37ffea0ac357ce7976021b699cc45980.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250224/1f5cd79387e6d1216896c29a3f1be484.jpg"
       ]
     },
-    "description_text": "​\n​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -450,9 +451,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:49:09+00:00",
-    "checked_epoch": 1788760149
+    "source_modified_at": "2026-09-08T14:35:23.577+09:00",
+    "checked_at": "2026-09-08T16:19:15+00:00",
+    "checked_epoch": 1788884355
   },
   "smartstore-12193208531": {
     "images": {
@@ -892,5 +893,49 @@
     "source_modified_at": "2026-08-25T21:35:59.385+09:00",
     "checked_at": "2026-09-07T06:19:33+00:00",
     "checked_epoch": 1788761973
+  },
+  "smartstore-13751915609": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_174/1788872237372eASm7_JPEG/9750_2019102314490319.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/10/9750_15718098148648.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1637 에어 패디드 디바이더 세트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:18.656+09:00",
+    "checked_at": "2026-09-08T16:16:36+00:00",
+    "checked_epoch": 1788884196
+  },
+  "smartstore-13751871839": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_24/1788870099096RohM4_JPEG/9641_2019091815053716.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9641_15687868401465.jpg"
+      ]
+    },
+    "description_text": "펠리칸 iM2720 스톰 폼세트(5pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:40.501+09:00",
+    "checked_at": "2026-09-08T16:18:14+00:00",
+    "checked_epoch": 1788884294
   }
 }

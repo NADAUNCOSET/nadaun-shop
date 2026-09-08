@@ -433,9 +433,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-14T22:36:27.714+09:00",
-    "checked_at": "2026-09-07T05:45:46+00:00",
-    "checked_epoch": 1788759946
+    "source_modified_at": "2026-09-08T20:23:58.334+09:00",
+    "checked_at": "2026-09-08T16:18:42+00:00",
+    "checked_epoch": 1788884322
   },
   "smartstore-13621002128": {
     "images": {
@@ -980,10 +980,12 @@
         "https://shop-phinf.pstatic.net/20200512_262/1589276021863NcB4h_JPEG/26639410292118404_99476339.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KCP-611.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/134e98262442fea8b03600df3e162be9.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/8e8dde32118db75e607bde70d709e3ad.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/eae63c04d7832f0bc690c6f46ca50b45.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -992,9 +994,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:12.343+09:00",
-    "checked_at": "2026-09-07T06:18:55+00:00",
-    "checked_epoch": 1788761935
+    "source_modified_at": "2026-09-08T15:21:57.816+09:00",
+    "checked_at": "2026-09-08T16:20:01+00:00",
+    "checked_epoch": 1788884401
   },
   "smartstore-4927027634": {
     "images": {

@@ -321,9 +321,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-14T22:36:27.714+09:00",
-    "checked_at": "2026-09-07T05:45:38+00:00",
-    "checked_epoch": 1788759938
+    "source_modified_at": "2026-09-08T20:20:38.143+09:00",
+    "checked_at": "2026-09-08T16:18:31+00:00",
+    "checked_epoch": 1788884311
   },
   "smartstore-13502777622": {
     "images": {
@@ -388,10 +388,13 @@
         "https://shop-phinf.pstatic.net/20240829_282/17249220037740n24N_JPEG/4924230255833429_1004811618.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/89f8b3eb037df95b378a6d52b8d158a5.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/89f8b3eb037df95b378a6d52b8d158a5.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/a4543030cec0a26852aaa283e6f1b0b7.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/5f2eaf834204b92bccfc3060852b5384.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/4ffa8c0cf7974d9f4dbfa64b5b60acb0.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -400,9 +403,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:47:10+00:00",
-    "checked_epoch": 1788760030
+    "source_modified_at": "2026-09-08T15:58:39.650+09:00",
+    "checked_at": "2026-09-08T16:19:05+00:00",
+    "checked_epoch": 1788884345
   },
   "smartstore-12306712150": {
     "images": {

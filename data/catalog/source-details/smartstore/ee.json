@@ -692,5 +692,73 @@
     "source_modified_at": "2026-08-25T20:17:24.257+09:00",
     "checked_at": "2026-09-07T06:16:01+00:00",
     "checked_epoch": 1788761761
+  },
+  "smartstore-13751915661": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_153/1788872239206bERR3_JPEG/9670_tmp_a68a64e3fdf3cb1897184777aebdb4e54686view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9670_15689573439453.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1630 (1635) 패디드 디바이더 세트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:20.339+09:00",
+    "checked_at": "2026-09-08T16:16:23+00:00",
+    "checked_epoch": 1788884183
+  },
+  "smartstore-13751891866": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_119/1788871069072EVpSI_JPEG/11112_tmp_9f599b08b3616c9f058dd0e4f12ab1c46695view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/04/150_16b357227d5737d76573087c313dd7f31758295.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1626 Air 롱/딥 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:50.796+09:00",
+    "checked_at": "2026-09-08T16:16:56+00:00",
+    "checked_epoch": 1788884216
+  },
+  "smartstore-13751891736": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_278/17888710636488wvLN_JPEG/g201209101300_1330_detail.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2012/09/1330_14682173295591.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2012/09/1330_14682173394920.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2012/09/1330_14682173472219.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1610NF 라지 캐리온 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:45.296+09:00",
+    "checked_at": "2026-09-08T16:17:11+00:00",
+    "checked_epoch": 1788884231
   }
 }

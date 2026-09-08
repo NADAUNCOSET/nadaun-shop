@@ -908,10 +908,12 @@
         "https://shop-phinf.pstatic.net/20200512_165/1589276301200WfMqa_JPEG/26639689719515293_1469179281.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KS-077.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/023eb1eedc943dbd7414c8b7e9c26458.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/dabf4e1dc039df3a5559091858e48325.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/b5e639ccd86a721f5b2b39c23526f368.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -920,8 +922,30 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:12.343+09:00",
-    "checked_at": "2026-09-07T06:18:54+00:00",
-    "checked_epoch": 1788761934
+    "source_modified_at": "2026-09-08T15:07:39.555+09:00",
+    "checked_at": "2026-09-08T16:19:59+00:00",
+    "checked_epoch": 1788884399
+  },
+  "smartstore-13751871971": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_137/1788870103843k2myi_JPEG/9589_2019091614192616.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9589_15686114334991.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1300 (1301) 폼세트(4pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:44.571+09:00",
+    "checked_at": "2026-09-08T16:17:44+00:00",
+    "checked_epoch": 1788884264
   }
 }

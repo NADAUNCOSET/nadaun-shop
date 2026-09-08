@@ -390,10 +390,12 @@
         "https://shop-phinf.pstatic.net/20200512_118/1589274296333qr35e_JPEG/26635034966597883_749004550.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KS-045.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250903/bd3598b6e74544dee26af9c07c946d30.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250224/aea40142661cb4517b5c7ebecc9dcaa4.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250224/7453f384394902f0233a27f15e438af1.jpg"
       ]
     },
-    "description_text": "​\n​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -402,8 +404,30 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:12.343+09:00",
-    "checked_at": "2026-09-07T06:18:59+00:00",
-    "checked_epoch": 1788761939
+    "source_modified_at": "2026-09-08T16:08:40.523+09:00",
+    "checked_at": "2026-09-08T16:20:03+00:00",
+    "checked_epoch": 1788884403
+  },
+  "smartstore-13751891796": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_45/1788871066123jJizQ_JPEG/5671_tmp_8003df6948f9a529b142d7dcf840514d8100view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/03/59_88220cd104f95788237dfeb3e84d12481710541.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1770WF 롱 캐리온 하드케이스 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:48.535+09:00",
+    "checked_at": "2026-09-08T16:17:01+00:00",
+    "checked_epoch": 1788884221
   }
 }

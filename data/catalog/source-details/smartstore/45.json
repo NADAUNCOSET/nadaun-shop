@@ -408,10 +408,11 @@
         "https://shop-phinf.pstatic.net/20260127_183/17695045110230hiwA_JPEG/22220071490871029_19817338.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250819/c16dc43071887794e3754a4461b36c7b.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250819/c16dc43071887794e3754a4461b36c7b.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250730/c87ec2050b41a51434ec454cee272da0.jpg"
       ]
     },
-    "description_text": "​\n​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -420,9 +421,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:47:08+00:00",
-    "checked_epoch": 1788760028
+    "source_modified_at": "2026-09-08T12:29:47.372+09:00",
+    "checked_at": "2026-09-08T16:19:02+00:00",
+    "checked_epoch": 1788884342
   },
   "smartstore-12003302995": {
     "images": {
@@ -774,5 +775,27 @@
     "source_modified_at": "2026-08-25T21:35:59.385+09:00",
     "checked_at": "2026-09-07T06:19:27+00:00",
     "checked_epoch": 1788761967
+  },
+  "smartstore-13751871907": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_38/1788870100931iMQGz_JPEG/9621_2019091616194319.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9621_15686185258656.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1730 (1731) 폼세트(5pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:42.640+09:00",
+    "checked_at": "2026-09-08T16:18:01+00:00",
+    "checked_epoch": 1788884281
   }
 }

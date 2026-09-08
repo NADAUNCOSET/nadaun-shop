@@ -817,5 +817,27 @@
     "source_modified_at": "2024-07-10T14:00:25.377+09:00",
     "checked_at": "2026-09-07T06:15:49+00:00",
     "checked_epoch": 1788761749
+  },
+  "smartstore-13751891729": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_141/1788871063897utx3P_JPEG/12170_2022120210492815.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2021/06/11097_17efefd5a92bf32f87b071a7ab53b5571041555.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1535 Air 데저트탄 NF 한정판 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:45.250+09:00",
+    "checked_at": "2026-09-08T16:17:16+00:00",
+    "checked_epoch": 1788884236
   }
 }

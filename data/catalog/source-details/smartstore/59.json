@@ -576,5 +576,27 @@
     "source_modified_at": "2026-08-25T21:35:59.385+09:00",
     "checked_at": "2026-09-07T06:19:24+00:00",
     "checked_epoch": 1788761964
+  },
+  "smartstore-13751891783": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_86/1788871067256nrGhk_JPEG/13577_tmp_6f5f23832c195b9464fab084be7882d56072view.jpg"
+      ],
+      "detail": [
+        "https://hardcasekorea.com/data/editor/goods/1/2025/10/415_8c3decd46221fd8aa8db456992af1e961525303.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1705 Air NF 롱 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:48.439+09:00",
+    "checked_at": "2026-09-08T16:17:10+00:00",
+    "checked_epoch": 1788884230
   }
 }

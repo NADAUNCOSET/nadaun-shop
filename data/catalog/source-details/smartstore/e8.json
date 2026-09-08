@@ -206,7 +206,8 @@
         "https://shop-phinf.pstatic.net/20260901_80/17882257064700r3Cr_JPEG/KCP-350B.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/web/product/medium/KCP-350B.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250925/8523464e52ec32d6bc543ff9141b4e2e.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/9e9eedb91c83a418c4d49ba85d071768.jpg"
       ]
     },
     "description_text": "",
@@ -218,9 +219,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:21:47.787+09:00",
-    "checked_at": "2026-09-07T05:40:10+00:00",
-    "checked_epoch": 1788759610
+    "source_modified_at": "2026-09-08T11:33:56.124+09:00",
+    "checked_at": "2026-09-08T16:18:29+00:00",
+    "checked_epoch": 1788884309
   },
   "smartstore-13740320398": {
     "images": {
@@ -379,10 +380,11 @@
         "https://shop-phinf.pstatic.net/20260127_83/1769500428608DdCFm_JPEG/50915622601159658_1584791597.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/0d9136fcebe0108b5e6cde84d5e1ce25.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/0d9136fcebe0108b5e6cde84d5e1ce25.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/cd995ae2aaaafffb5c5ac6d8e85d8c46.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -391,9 +393,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:47:15+00:00",
-    "checked_epoch": 1788760035
+    "source_modified_at": "2026-09-08T15:45:17.220+09:00",
+    "checked_at": "2026-09-08T16:19:11+00:00",
+    "checked_epoch": 1788884351
   },
   "smartstore-11063571847": {
     "images": {
@@ -413,9 +415,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-04-02T12:38:36.171+09:00",
-    "checked_at": "2026-09-07T05:56:40+00:00",
-    "checked_epoch": 1788760600
+    "source_modified_at": "2026-09-08T20:13:41.130+09:00",
+    "checked_at": "2026-09-08T16:19:21+00:00",
+    "checked_epoch": 1788884361
   },
   "smartstore-10808513636": {
     "images": {
@@ -676,5 +678,27 @@
     "source_modified_at": "2026-09-01T09:59:12.343+09:00",
     "checked_at": "2026-09-07T06:19:21+00:00",
     "checked_epoch": 1788761961
+  },
+  "smartstore-13751891872": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_243/1788871069230FngaY_JPEG/10016_tmp_3b13d40d1ab939ef372fff3b7603cd313256view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/05/188_fd4bd5139d2308fc6db95f7bd76e794a1120271.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1506 Air 롱/딥 하드케이스 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:50.840+09:00",
+    "checked_at": "2026-09-08T16:16:52+00:00",
+    "checked_epoch": 1788884212
   }
 }

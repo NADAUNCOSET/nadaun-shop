@@ -571,10 +571,12 @@
         "https://shop-phinf.pstatic.net/20200512_168/1589274988842aANHr_JPEG/26635727476380056_2056169911.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KS-052.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/3b73cbf21b8a962ef5cda25c475f7c58.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/63f1cc57fd7eda4a8a72c391fc3d233b.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/7e18a78b22ed77849d803a748d44be31.jpg"
       ]
     },
-    "description_text": "​\n​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -583,8 +585,30 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:12.343+09:00",
-    "checked_at": "2026-09-07T06:18:57+00:00",
-    "checked_epoch": 1788761937
+    "source_modified_at": "2026-09-08T16:06:08.804+09:00",
+    "checked_at": "2026-09-08T16:20:01+00:00",
+    "checked_epoch": 1788884401
+  },
+  "smartstore-13751871845": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_251/1788870098765Ih2AX_JPEG/9636_2019091814422818.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9636_15687855053141.jpg"
+      ]
+    },
+    "description_text": "펠리칸 iM2450 스톰 폼세트(5pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:40.539+09:00",
+    "checked_at": "2026-09-08T16:18:10+00:00",
+    "checked_epoch": 1788884290
   }
 }

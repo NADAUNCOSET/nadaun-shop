@@ -840,5 +840,27 @@
     "source_modified_at": "2026-08-25T21:35:59.385+09:00",
     "checked_at": "2026-09-07T06:19:30+00:00",
     "checked_epoch": 1788761970
+  },
+  "smartstore-13751981562": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_76/1788875456296kDyF5_JPEG/9388_tmp_c71e79e6a45df41b038badb28b39b3c96580view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2012/02/560_14682061950894.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1560WD 라지 캐리온 하드케이스 (With Padded Dividers) 탄(TAN) 모래색\n디바이더 포함(With Divider) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T22:50:57.214+09:00",
+    "checked_at": "2026-09-08T16:16:05+00:00",
+    "checked_epoch": 1788884165
   }
 }

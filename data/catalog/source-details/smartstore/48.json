@@ -359,10 +359,11 @@
         "https://shop-phinf.pstatic.net/20260127_10/1769500140312x5C5t_JPEG/42486993449332325_2021363487.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/fb5e473caab6c70e5a1cc386031cc6f3.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/fb5e473caab6c70e5a1cc386031cc6f3.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/cd995ae2aaaafffb5c5ac6d8e85d8c46.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -371,9 +372,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:47:17+00:00",
-    "checked_epoch": 1788760037
+    "source_modified_at": "2026-09-08T15:41:53.222+09:00",
+    "checked_at": "2026-09-08T16:19:14+00:00",
+    "checked_epoch": 1788884354
   },
   "smartstore-13026076874": {
     "images": {
@@ -851,5 +852,27 @@
     "source_modified_at": "2025-11-19T14:02:27.138+09:00",
     "checked_at": "2026-09-07T06:15:39+00:00",
     "checked_epoch": 1788761739
+  },
+  "smartstore-13751891731": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_300/1788871064183c65fu_JPEG/11703_tmp_da774f931e7f91fc0b2edfbf031c0bb39213view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/05/270_3e0f46a201027c1ebd89f0e37d3f59201604272.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1646 Air WF 하드케이스 (With FOAM)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:45.263+09:00",
+    "checked_at": "2026-09-08T16:17:14+00:00",
+    "checked_epoch": 1788884234
   }
 }

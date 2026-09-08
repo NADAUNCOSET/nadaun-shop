@@ -1020,5 +1020,49 @@
     "source_modified_at": "2025-11-19T14:03:39.413+09:00",
     "checked_at": "2026-09-07T06:18:16+00:00",
     "checked_epoch": 1788761896
+  },
+  "smartstore-13751915674": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_118/1788872239466u2zn2_JPEG/9656_2019092013012914.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9656_15689522086239.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1485 에어 패디드 디바이더 세트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:20.432+09:00",
+    "checked_at": "2026-09-08T16:16:14+00:00",
+    "checked_epoch": 1788884174
+  },
+  "smartstore-13751871958": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_125/1788870103720iyMqm_JPEG/9605_2019091615131519.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9605_15686145149480.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1555 에어 폼세트(4pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:44.506+09:00",
+    "checked_at": "2026-09-08T16:17:52+00:00",
+    "checked_epoch": 1788884272
   }
 }

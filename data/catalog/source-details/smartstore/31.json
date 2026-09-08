@@ -647,5 +647,28 @@
     "source_modified_at": "2025-11-19T14:03:39.653+09:00",
     "checked_at": "2026-09-07T06:17:52+00:00",
     "checked_epoch": 1788761872
+  },
+  "smartstore-13751891914": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_291/17888710712894vBst_PNG/99_tmp_0f1b1fa53d4298cb155e26267d283fe05745view.png"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/99_15144453882412.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/99_15144453879259.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 Storm case iM2450 Black With Divider\n디바이더 포함(With Divider) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:52.659+09:00",
+    "checked_at": "2026-09-08T16:16:44+00:00",
+    "checked_epoch": 1788884204
   }
 }

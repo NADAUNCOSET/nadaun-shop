@@ -229,10 +229,11 @@
         "https://shop-phinf.pstatic.net/20260127_161/1769500215708BlSDU_JPEG/5537982532863414_1507265972.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/eabe950bf328287ab68e234e07d9cf5b.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/eabe950bf328287ab68e234e07d9cf5b.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/cd995ae2aaaafffb5c5ac6d8e85d8c46.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -241,9 +242,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:47:16+00:00",
-    "checked_epoch": 1788760036
+    "source_modified_at": "2026-09-08T15:43:22.958+09:00",
+    "checked_at": "2026-09-08T16:19:13+00:00",
+    "checked_epoch": 1788884353
   },
   "smartstore-12888736376": {
     "images": {
@@ -360,9 +361,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-04-02T11:41:11.489+09:00",
-    "checked_at": "2026-09-07T05:56:45+00:00",
-    "checked_epoch": 1788760605
+    "source_modified_at": "2026-09-08T20:13:41.130+09:00",
+    "checked_at": "2026-09-08T16:19:27+00:00",
+    "checked_epoch": 1788884367
   },
   "smartstore-10824360011": {
     "images": {
@@ -552,5 +553,50 @@
     "source_modified_at": "2026-09-01T09:59:12.343+09:00",
     "checked_at": "2026-09-07T06:19:18+00:00",
     "checked_epoch": 1788761958
+  },
+  "smartstore-13751891917": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_248/1788871071291YeFK9_JPEG/8935_tmp_9215e58709f2833cbd7ef7b4356755034574view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/12/8935_15145366243250.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/12/8935_15145366230005.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 iM3100 With Foam\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:52.676+09:00",
+    "checked_at": "2026-09-08T16:16:42+00:00",
+    "checked_epoch": 1788884202
+  },
+  "smartstore-13751871840": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_104/1788870099053wznYa_JPEG/9642_2019091815074016.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9642_15687869696879.jpg"
+      ]
+    },
+    "description_text": "펠리칸 iM2750 스톰 폼세트(7pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:40.508+09:00",
+    "checked_at": "2026-09-08T16:18:14+00:00",
+    "checked_epoch": 1788884294
   }
 }

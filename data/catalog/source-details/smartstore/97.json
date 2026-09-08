@@ -295,7 +295,7 @@
         "https://gi.esmplus.com/clmedia/KUPO/KSB-007.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -304,9 +304,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T05:46:53+00:00",
-    "checked_epoch": 1788760013
+    "source_modified_at": "2026-09-08T15:02:22.990+09:00",
+    "checked_at": "2026-09-08T16:18:50+00:00",
+    "checked_epoch": 1788884330
   },
   "smartstore-13000412581": {
     "images": {
@@ -675,5 +675,27 @@
     "source_modified_at": "2026-02-27T15:35:18.541+09:00",
     "checked_at": "2026-09-07T06:17:06+00:00",
     "checked_epoch": 1788761826
+  },
+  "smartstore-13751871967": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_194/1788870103019QSM23_JPEG/9593_2019091614362619.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9593_15686123063070.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1450 (1451) 폼세트(3pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:44.549+09:00",
+    "checked_at": "2026-09-08T16:17:46+00:00",
+    "checked_epoch": 1788884266
   }
 }

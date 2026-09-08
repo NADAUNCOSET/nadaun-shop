@@ -675,5 +675,72 @@
     "source_modified_at": "2025-11-19T14:02:26.475+09:00",
     "checked_at": "2026-09-07T06:17:14+00:00",
     "checked_epoch": 1788761834
+  },
+  "smartstore-13751997016": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_293/1788876288050R3BMy_JPEG/11306_tmp_210af3deb494cb302e1d87e9c3e3571c4742view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2021/12/11305_1aa5b5483e1361bbf4d318f5c17804891442335.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2021/12/11305_827099bbc10b09be159bc0ce3ab8ba271504575.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1535 이지클릭 몰리패널 EZ Click MOLLE PANEL\n제품명에 명시된 케이스 모델 전용 몰리패널입니다. 하드케이스 본체와 파우치 및 촬영 예시 장비는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T23:04:49.161+09:00",
+    "checked_at": "2026-09-08T16:16:03+00:00",
+    "checked_epoch": 1788884163
+  },
+  "smartstore-13751871990": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_165/1788870105178gJMCr_JPEG/9586_2019091614111813.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9586_15686107975160.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1150 (1151) 폼세트(3pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:45.987+09:00",
+    "checked_at": "2026-09-08T16:17:42+00:00",
+    "checked_epoch": 1788884262
+  },
+  "smartstore-13751871843": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_71/1788870098754Sm5R4_JPEG/9637_2019091814461816.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9637_15687860625008.jpg"
+      ]
+    },
+    "description_text": "펠리칸 iM2500 스톰 폼세트(5pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:40.525+09:00",
+    "checked_at": "2026-09-08T16:18:12+00:00",
+    "checked_epoch": 1788884292
   }
 }

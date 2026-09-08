@@ -514,10 +514,10 @@
         "https://shop-phinf.pstatic.net/20240830_41/1724949543317fJ0Ki_JPEG/5491751961589779_1741967602.jpg"
       ],
       "detail": [
-        "https://www.clmedia.co.kr/data/editor/goods/1/2024/04/3725_83fd9f6fe2a1585b839e1cf4525f0bfc1628533.jpg"
+        "https://shop-phinf.pstatic.net/20240909_64/1725862998469eVBoq_JPEG/3725_83fd9f6fe2a1585b839e1cf4525f0bfc1628533.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -526,9 +526,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T05:57:16+00:00",
-    "checked_epoch": 1788760636
+    "source_modified_at": "2026-09-08T14:57:24.805+09:00",
+    "checked_at": "2026-09-08T16:19:32+00:00",
+    "checked_epoch": 1788884372
   },
   "smartstore-10482122326": {
     "images": {
@@ -682,5 +682,28 @@
     "source_modified_at": "2026-08-25T19:37:57.748+09:00",
     "checked_at": "2026-09-07T06:16:43+00:00",
     "checked_epoch": 1788761803
+  },
+  "smartstore-13751891645": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_257/1788871061540tVxeS_JPEG/12622_tmp_31f2bd44b882f0c018eba286cf82cc214174view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2024/04/387_9c91f25c1fd9fe608f83f7fec48adbea1619313.jpg",
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2024/04/387_03ec28600e4193e1efdd8e54666825751619323.jpg"
+      ]
+    },
+    "description_text": "펠리칸에어 1535TP 그라파이트 (TREKPAK) PELICAN AIR\n트렉팩(TrekPak) 디바이더 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:43.196+09:00",
+    "checked_at": "2026-09-08T16:17:34+00:00",
+    "checked_epoch": 1788884254
   }
 }

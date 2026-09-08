@@ -824,5 +824,71 @@
     "source_modified_at": "2026-06-02T18:30:38.072+09:00",
     "checked_at": "2026-09-07T06:14:27+00:00",
     "checked_epoch": 1788761667
+  },
+  "smartstore-13751981555": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_200/1788875456318nmUQi_JPEG/44_30115053view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/temp_14672551490462.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1500wd 미듐 하드케이스 (With Padded Dividers)\n디바이더 포함(With Divider) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T22:50:57.163+09:00",
+    "checked_at": "2026-09-08T16:16:09+00:00",
+    "checked_epoch": 1788884169
+  },
+  "smartstore-13751915616": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_171/1788872237358RvbuX_JPEG/9710_2019092316354011.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9710_15692242297279.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1600TP 트랙팩 디바이더 키트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:18.708+09:00",
+    "checked_at": "2026-09-08T16:16:31+00:00",
+    "checked_epoch": 1788884191
+  },
+  "smartstore-13751871961": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_208/1788870103270uq4tC_JPEG/9602_2019091615023814.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9602_15686138825801.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1525 에어 폼세트(3pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:44.521+09:00",
+    "checked_at": "2026-09-08T16:17:50+00:00",
+    "checked_epoch": 1788884270
   }
 }

@@ -630,10 +630,10 @@
         "https://shop-phinf.pstatic.net/20210404_19/1617534930110fP7oj_JPEG/18670763930253234_135634495.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KSF-25.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250515/db867f85349b42bef4fd84c97f341af4.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -642,9 +642,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:04.147+09:00",
-    "checked_at": "2026-09-07T06:14:29+00:00",
-    "checked_epoch": 1788761669
+    "source_modified_at": "2026-09-08T14:59:08.333+09:00",
+    "checked_at": "2026-09-08T16:19:50+00:00",
+    "checked_epoch": 1788884390
   },
   "smartstore-4995545449": {
     "images": {
@@ -736,10 +736,13 @@
         "https://shop-phinf.pstatic.net/20210404_31/1617532621910nO1YV_JPEG/18668464621343196_1846925709.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KS-308.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/794a5928696678d401c95b27c20c0bae.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/43e5aa393d73d70f5159f6c27e09f3ac.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/c4b289986b2dab39a618fa9166fd249e.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/16544327781445337c365379d27bcf12.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -748,9 +751,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:12.343+09:00",
-    "checked_at": "2026-09-07T06:18:50+00:00",
-    "checked_epoch": 1788761930
+    "source_modified_at": "2026-09-08T15:28:48.416+09:00",
+    "checked_at": "2026-09-08T16:19:57+00:00",
+    "checked_epoch": 1788884397
   },
   "smartstore-4923527644": {
     "images": {
@@ -773,5 +776,27 @@
     "source_modified_at": "2026-09-01T09:59:12.343+09:00",
     "checked_at": "2026-09-07T06:19:11+00:00",
     "checked_epoch": 1788761951
+  },
+  "smartstore-13751891862": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_273/1788871069097rPifU_JPEG/9579_tmp_b942ebb9b37d7d649f2529ccd40c48ef6186view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/01/40_caeb0da32479e03e0921381873b311bb1401084.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1745 Air WF 롱 하드케이스 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:50.766+09:00",
+    "checked_at": "2026-09-08T16:16:59+00:00",
+    "checked_epoch": 1788884219
   }
 }

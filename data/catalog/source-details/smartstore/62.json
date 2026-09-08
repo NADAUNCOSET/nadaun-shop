@@ -437,10 +437,12 @@
         "https://shop-phinf.pstatic.net/20240829_163/1724938163024tEHDS_JPEG/6650136071011205_1877513119.jpg"
       ],
       "detail": [
-        "https://www.clmedia.co.kr/data/editor/goods/1/2024/04/3692_4642384dd7ab25ef4debebbcb40136921644111.jpg"
+        "https://shop-phinf.pstatic.net/20240909_237/1725849055616TNLoW_JPEG/3692_4642384dd7ab25ef4debebbcb40136921644111.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/d7686372510076a8f63639b755ddee10.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/4ab7299b4202613872be5c1b8e8d6c2f.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -449,9 +451,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T05:57:25+00:00",
-    "checked_epoch": 1788760645
+    "source_modified_at": "2026-09-08T14:50:28.451+09:00",
+    "checked_at": "2026-09-08T16:19:38+00:00",
+    "checked_epoch": 1788884378
   },
   "smartstore-10744528500": {
     "images": {
@@ -872,5 +874,27 @@
     "source_modified_at": "2025-11-19T14:03:38.595+09:00",
     "checked_at": "2026-09-07T06:19:22+00:00",
     "checked_epoch": 1788761962
+  },
+  "smartstore-13751871846": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_220/1788870099571dEfA4_JPEG/9635_2019091814360412.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9635_15687853199216.jpg"
+      ]
+    },
+    "description_text": "펠리칸 iM2435 스톰 폼세트(5pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:40.545+09:00",
+    "checked_at": "2026-09-08T16:18:10+00:00",
+    "checked_epoch": 1788884290
   }
 }

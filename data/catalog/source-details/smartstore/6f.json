@@ -255,7 +255,9 @@
         "https://shop-phinf.pstatic.net/20260901_106/1788225721732FbQxN_JPEG/9e8f4262c980ebd91f3c3a630caae64e.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/web/product/medium/202308/9e8f4262c980ebd91f3c3a630caae64e.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250730/7f2accebbe3698d405695c5c34e797e6.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/9e9eedb91c83a418c4d49ba85d071768.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/416bb53de0384ae8415ebd296204afc6.jpg"
       ]
     },
     "description_text": "",
@@ -267,9 +269,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:22:02.441+09:00",
-    "checked_at": "2026-09-07T05:38:51+00:00",
-    "checked_epoch": 1788759531
+    "source_modified_at": "2026-09-08T14:25:59.980+09:00",
+    "checked_at": "2026-09-08T16:18:23+00:00",
+    "checked_epoch": 1788884303
   },
   "smartstore-13739631685": {
     "images": {
@@ -639,5 +641,49 @@
     "source_modified_at": "2026-09-01T09:39:05.549+09:00",
     "checked_at": "2026-09-07T06:17:02+00:00",
     "checked_epoch": 1788761822
+  },
+  "smartstore-13751871973": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_246/1788870103302aECUx_JPEG/9587_2019091614133710.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9587_15686109224511.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1170 (1171) 폼세트(3pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:44.582+09:00",
+    "checked_at": "2026-09-08T16:17:42+00:00",
+    "checked_epoch": 1788884262
+  },
+  "smartstore-13751871903": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_105/1788870101998gF3Ia_JPEG/9625_2019091616394216.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9625_15686199119496.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1780 (1781) 폼세트(6pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:42.620+09:00",
+    "checked_at": "2026-09-08T16:18:04+00:00",
+    "checked_epoch": 1788884284
   }
 }

@@ -703,10 +703,12 @@
         "https://shop-phinf.pstatic.net/20240829_74/1724935926644Joq8a_JPEG/53142065460345509_1856107828.jpg"
       ],
       "detail": [
-        "https://www.clmedia.co.kr/data/editor/goods/1/2024/04/3706_b3fed2848a8510f7b431557ee4861c9b1105022.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/211c2599beae46e61dd70d93dbce6613.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/89efbfc87297fe19cf8afee73444efae.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/147b3b2c050f97769576422ddeed72bb.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -715,9 +717,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T05:57:31+00:00",
-    "checked_epoch": 1788760651
+    "source_modified_at": "2026-09-08T15:08:26.598+09:00",
+    "checked_at": "2026-09-08T16:19:40+00:00",
+    "checked_epoch": 1788884380
   },
   "smartstore-9694737803": {
     "images": {
@@ -842,5 +844,29 @@
     "source_modified_at": "2026-03-31T19:43:31.153+09:00",
     "checked_at": "2026-09-07T06:16:05+00:00",
     "checked_epoch": 1788761765
+  },
+  "smartstore-13751891786": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_245/1788871065632iTumW_JPEG/50_tmp_0664b440d0b9ee762f8a0ebd5470f2216563view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/50_14679575573050.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/50_14679575700384.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/50_14679575783682.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1600WF 라지 하드케이스 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:48.465+09:00",
+    "checked_at": "2026-09-08T16:17:08+00:00",
+    "checked_epoch": 1788884228
   }
 }

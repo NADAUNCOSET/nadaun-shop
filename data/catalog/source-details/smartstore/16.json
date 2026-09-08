@@ -330,10 +330,11 @@
         "https://shop-phinf.pstatic.net/20260127_295/1769502400237FsALp_JPEG/103635224439830397_1759951523.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/fb8a07530d580021bbaf04d5c1f758c8.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/fb8a07530d580021bbaf04d5c1f758c8.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/cd995ae2aaaafffb5c5ac6d8e85d8c46.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -342,9 +343,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:47:14+00:00",
-    "checked_epoch": 1788760034
+    "source_modified_at": "2026-09-08T15:49:54.025+09:00",
+    "checked_at": "2026-09-08T16:19:08+00:00",
+    "checked_epoch": 1788884348
   },
   "smartstore-13026532047": {
     "images": {
@@ -797,5 +798,49 @@
     "source_modified_at": "2026-02-27T15:35:18.541+09:00",
     "checked_at": "2026-09-07T06:16:08+00:00",
     "checked_epoch": 1788761768
+  },
+  "smartstore-13751891789": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_68/1788871067582u3cgo_JPEG/5677_tmp_6c363ef70df1d1395df9a7a2af60e24f5763view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/03/54_1dc44fee5a27a0deda9f272479840a261437571.jpg"
+      ]
+    },
+    "description_text": "펠리칸 0350WF 큐브 하드케이스 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:48.488+09:00",
+    "checked_at": "2026-09-08T16:17:06+00:00",
+    "checked_epoch": 1788884226
+  },
+  "smartstore-13751871957": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_119/17888701030143vGTs_JPEG/9606_2019091615153416.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9606_15686146972953.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1560 (1561) 폼세트(4pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:44.501+09:00",
+    "checked_at": "2026-09-08T16:17:53+00:00",
+    "checked_epoch": 1788884273
   }
 }

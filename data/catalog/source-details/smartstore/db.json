@@ -207,10 +207,11 @@
         "https://shop-phinf.pstatic.net/20260127_144/1769501079246fg9un_JPEG/25483796388914696_702512558.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/61c9c1edcb026ca51b3fbfa9bffa52fb.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/61c9c1edcb026ca51b3fbfa9bffa52fb.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/cd995ae2aaaafffb5c5ac6d8e85d8c46.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -219,9 +220,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:47:28+00:00",
-    "checked_epoch": 1788760048
+    "source_modified_at": "2026-09-08T15:48:09.886+09:00",
+    "checked_at": "2026-09-08T16:19:10+00:00",
+    "checked_epoch": 1788884350
   },
   "smartstore-13000432206": {
     "images": {
@@ -308,9 +309,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-07-13T13:10:32.628+09:00",
-    "checked_at": "2026-09-07T05:48:43+00:00",
-    "checked_epoch": 1788760123
+    "source_modified_at": "2026-09-07T17:50:03.366+09:00",
+    "checked_at": "2026-09-08T16:19:14+00:00",
+    "checked_epoch": 1788884354
   },
   "smartstore-11952779405": {
     "images": {
@@ -369,10 +370,10 @@
         "https://shop-phinf.pstatic.net/20240830_15/1724948505049NHPSA_JPEG/27524253806571681_1204929225.jpg"
       ],
       "detail": [
-        "https://www.clmedia.co.kr/data/editor/goods/1/2024/04/3697_a2d2b8cccfce14f4e4591473f351b4c31746591.jpg"
+        "https://shop-phinf.pstatic.net/20240909_164/1725849209977DErcl_JPEG/3697_a2d2b8cccfce14f4e4591473f351b4c31746591.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -381,9 +382,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T05:57:20+00:00",
-    "checked_epoch": 1788760640
+    "source_modified_at": "2026-09-08T15:11:37.389+09:00",
+    "checked_at": "2026-09-08T16:19:35+00:00",
+    "checked_epoch": 1788884375
   },
   "smartstore-10781182026": {
     "images": {
@@ -734,10 +735,13 @@
         "https://shop-phinf.pstatic.net/20200512_218/1589277017012LmKhJ_JPEG/26638559644257533_435926351.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/Detail_page/Kupo/KCP-101QW.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250224/b0474b90d3921c72ab1679be7e694411.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250324/15e664d07f434a4577da33e781551f92.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250324/82710ec5e3e465aa89fdb537172262a3.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250324/0352fb63eca7543a627958213babe192.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -746,8 +750,52 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:12.343+09:00",
-    "checked_at": "2026-09-07T06:18:52+00:00",
-    "checked_epoch": 1788761932
+    "source_modified_at": "2026-09-08T14:50:51.169+09:00",
+    "checked_at": "2026-09-08T16:19:58+00:00",
+    "checked_epoch": 1788884398
+  },
+  "smartstore-13751915668": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_34/17888722394485VENv_JPEG/9662_2019092013200319.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9662_15689533413261.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1555 에어 패디드 디바이더 세트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:20.395+09:00",
+    "checked_at": "2026-09-08T16:16:18+00:00",
+    "checked_epoch": 1788884178
+  },
+  "smartstore-13751891724": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_39/17888710639583M8jD_JPEG/12231_tmp_4e00378a73d1e17ecd4b7cb0160639ac4671view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/03/57_5125941023bd6f4321250fa758e21c7b1605281.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1780NF 트랜스포트 캐리온 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:45.215+09:00",
+    "checked_at": "2026-09-08T16:17:19+00:00",
+    "checked_epoch": 1788884239
   }
 }

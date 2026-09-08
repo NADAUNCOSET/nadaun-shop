@@ -694,5 +694,50 @@
     "source_modified_at": "2025-11-19T14:03:39.418+09:00",
     "checked_at": "2026-09-07T06:18:12+00:00",
     "checked_epoch": 1788761892
+  },
+  "smartstore-13751871970": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_71/1788870103270kOHCM_JPEG/9590_2019091614242214.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9590_15686116021462.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1400 (1401) 폼세트(3pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:44.566+09:00",
+    "checked_at": "2026-09-08T16:17:44+00:00",
+    "checked_epoch": 1788884264
+  },
+  "smartstore-13751871960": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_9/1788870103076EjG7u_JPEG/9603_2019091615051012.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9603_15686141335397.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9602_15686138825801.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1535 에어 폼세트(5pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:44.516+09:00",
+    "checked_at": "2026-09-08T16:17:51+00:00",
+    "checked_epoch": 1788884271
   }
 }

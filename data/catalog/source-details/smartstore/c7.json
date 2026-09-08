@@ -292,9 +292,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-14T22:36:27.714+09:00",
-    "checked_at": "2026-09-07T05:45:42+00:00",
-    "checked_epoch": 1788759942
+    "source_modified_at": "2026-09-08T20:22:28.617+09:00",
+    "checked_at": "2026-09-08T16:18:35+00:00",
+    "checked_epoch": 1788884315
   },
   "smartstore-12835026286": {
     "images": {
@@ -666,5 +666,28 @@
     "source_modified_at": "2026-09-01T09:59:12.343+09:00",
     "checked_at": "2026-09-07T06:19:18+00:00",
     "checked_epoch": 1788761958
+  },
+  "smartstore-13751891863": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_145/1788871069698E6IqB_JPEG/9578_tmp_a3c35e6d7d408341ef26729049495fb79479view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2016/08/5594_14715882777818.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2021/07/11114_5b7115961fcc4875235b161f525b5d621636061.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1465 Air 하드케이스 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:50.778+09:00",
+    "checked_at": "2026-09-08T16:16:58+00:00",
+    "checked_epoch": 1788884218
   }
 }

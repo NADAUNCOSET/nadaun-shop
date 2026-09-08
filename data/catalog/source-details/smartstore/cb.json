@@ -202,10 +202,12 @@
         "https://shop-phinf.pstatic.net/20260127_92/1769504438195EOCRD_JPEG/22219998664692173_925076311.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250825/1a2f8aa2a60d3ddf3ca7a19ba0dda65b.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250825/1a2f8aa2a60d3ddf3ca7a19ba0dda65b.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250825/6960e3bc4e8acf9abef836c04830aecc.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250730/c87ec2050b41a51434ec454cee272da0.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -214,9 +216,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:47:08+00:00",
-    "checked_epoch": 1788760028
+    "source_modified_at": "2026-09-08T11:35:24.252+09:00",
+    "checked_at": "2026-09-08T16:19:03+00:00",
+    "checked_epoch": 1788884343
   },
   "smartstore-11952849594": {
     "images": {
@@ -645,5 +647,49 @@
     "source_modified_at": "2025-11-19T14:02:27.622+09:00",
     "checked_at": "2026-09-07T06:15:07+00:00",
     "checked_epoch": 1788761707
+  },
+  "smartstore-13751981558": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_292/1788875456058JRvDQ_JPEG/1366_tmp_25e54fa1f4b1f0ec8bc7ff1d419cb5b85863view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2012/11/1366_14682062384871.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1560SC 라지 캐리온 하드케이스 (With Padded Dividers) 블랙\n디바이더 포함(With Divider) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T22:50:57.183+09:00",
+    "checked_at": "2026-09-08T16:16:07+00:00",
+    "checked_epoch": 1788884167
+  },
+  "smartstore-13751915677": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_2/1788872239599uee0M_JPEG/9652_2019091815333614.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9652_15687886064822.jpg"
+      ]
+    },
+    "description_text": "펠리칸 0345 패디드 디바이더 세트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:20.451+09:00",
+    "checked_at": "2026-09-08T16:16:12+00:00",
+    "checked_epoch": 1788884172
   }
 }

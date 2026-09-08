@@ -420,9 +420,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-14T22:36:27.714+09:00",
-    "checked_at": "2026-09-07T05:55:07+00:00",
-    "checked_epoch": 1788760507
+    "source_modified_at": "2026-09-08T20:22:28.617+09:00",
+    "checked_at": "2026-09-08T16:18:37+00:00",
+    "checked_epoch": 1788884317
   },
   "smartstore-12219308560": {
     "images": {
@@ -685,5 +685,72 @@
     "source_modified_at": "2025-11-19T14:03:39.664+09:00",
     "checked_at": "2026-09-07T06:17:39+00:00",
     "checked_epoch": 1788761859
+  },
+  "smartstore-13751997023": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_205/1788876288736hM9kU_JPEG/11118_tmp_1461023437620fbe1ca696e817006a8d8813view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/49_b9dd2501791fee675b5e1cc047ce620d1150103.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1550NF 미듐 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T23:04:49.194+09:00",
+    "checked_at": "2026-09-08T16:15:58+00:00",
+    "checked_epoch": 1788884158
+  },
+  "smartstore-13751891718": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_59/17888710636417YB2s_JPEG/12270_tmp_d6dcf6fdd15be14465da5f726948db943917view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2016/02/4419_14721940358047.jpg",
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/04/75_d240e8d2ed6b907c2c842ad7217d41371122301.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1660NF Protector 케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:45.184+09:00",
+    "checked_at": "2026-09-08T16:17:22+00:00",
+    "checked_epoch": 1788884242
+  },
+  "smartstore-13751871835": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_134/1788870098767Tg4tg_JPEG/9648_2019091815214210.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9648_15687878955453.jpg"
+      ]
+    },
+    "description_text": "펠리칸 iM3200 스톰 폼세트(4pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:40.479+09:00",
+    "checked_at": "2026-09-08T16:18:17+00:00",
+    "checked_epoch": 1788884297
   }
 }

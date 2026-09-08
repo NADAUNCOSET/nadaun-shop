@@ -587,5 +587,49 @@
     "source_modified_at": "2026-08-25T21:35:59.385+09:00",
     "checked_at": "2026-09-07T06:19:36+00:00",
     "checked_epoch": 1788761976
+  },
+  "smartstore-13751915610": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_93/1788872237930GsMTb_JPEG/9749_2019102314450615.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/10/9749_15718099995672.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1607 에어 패디드 디바이더 세트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:18.667+09:00",
+    "checked_at": "2026-09-08T16:16:35+00:00",
+    "checked_epoch": 1788884195
+  },
+  "smartstore-13751871897": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_156/1788870101788LMLRi_JPEG/9631_2019091814254011.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9631_15687844566301.jpg"
+      ]
+    },
+    "description_text": "펠리칸 iM2300 스톰 폼세트(4pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:42.594+09:00",
+    "checked_at": "2026-09-08T16:18:08+00:00",
+    "checked_epoch": 1788884288
   }
 }

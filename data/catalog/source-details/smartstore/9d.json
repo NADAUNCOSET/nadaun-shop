@@ -571,5 +571,72 @@
     "source_modified_at": "2026-09-01T09:59:04.147+09:00",
     "checked_at": "2026-09-07T06:18:43+00:00",
     "checked_epoch": 1788761923
+  },
+  "smartstore-13751891921": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_101/1788871071568VdqOW_JPEG/8939_tmp_342e88eb9eaac05cd255f2ef2a6c8d423948view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2011/12/108_15145330622913.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2018/01/8939_15148714523156.jpg"
+      ]
+    },
+    "description_text": "펠리칸스톰케이스 iM3300 With Foam\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:52.697+09:00",
+    "checked_at": "2026-09-08T16:16:40+00:00",
+    "checked_epoch": 1788884200
+  },
+  "smartstore-13751891864": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_100/17888710694379bX1A_JPEG/5614_tmp_d76722399a4ce64399e2512a7b494e8e0104view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/04/161_c411356e3ddc06f662444c6ca6197b3d1259195.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1605 Air 하드케이스 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:50.784+09:00",
+    "checked_at": "2026-09-08T16:16:57+00:00",
+    "checked_epoch": 1788884217
+  },
+  "smartstore-13751891720": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_3/1788871064167GXxJP_JPEG/12234_tmp_1c7ceb4c2086d55dd73c563f3e182e4f8949view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/03/65_9f0e6092a6b2c83fb1912832d76998941427561.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1730NF 트랜스폴트 캐리온 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:45.196+09:00",
+    "checked_at": "2026-09-08T16:17:21+00:00",
+    "checked_epoch": 1788884241
   }
 }

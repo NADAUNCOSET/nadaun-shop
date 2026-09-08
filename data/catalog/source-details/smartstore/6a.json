@@ -118,7 +118,10 @@
         "https://shop-phinf.pstatic.net/20260127_150/1769516455756PPKeC_JPEG/27893923893808090_361145849.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/web/product/medium/340.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250318/43247ab33f0c6de0bda9db6e42c04708.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250318/71253082819ee397ad19f2aac346c7b0.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250318/b5fe2609d87104afeae728c9a0532117.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250318/2dbd9d9a7b762c09ab2a7f1c6fc0fb5b.jpg"
       ]
     },
     "description_text": "",
@@ -130,9 +133,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:55:23.122+09:00",
-    "checked_at": "2026-09-07T05:38:50+00:00",
-    "checked_epoch": 1788759530
+    "source_modified_at": "2026-09-08T14:41:18.994+09:00",
+    "checked_at": "2026-09-08T16:18:22+00:00",
+    "checked_epoch": 1788884302
   },
   "smartstore-13740321195": {
     "images": {
@@ -498,5 +501,50 @@
     "source_modified_at": "2025-11-19T14:03:39.168+09:00",
     "checked_at": "2026-09-07T06:18:26+00:00",
     "checked_epoch": 1788761906
+  },
+  "smartstore-13751997015": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_11/1788876288042puTcE_JPEG/11305_tmp_8feab2d5b134d3870bf5bba8dec2c7f02179view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2021/12/11305_1aa5b5483e1361bbf4d318f5c17804891442335.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2021/12/11305_827099bbc10b09be159bc0ce3ab8ba271504575.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1510 이지클릭 몰리패널 EZ Click MOLLE PANEL\n제품명에 명시된 케이스 모델 전용 몰리패널입니다. 하드케이스 본체와 파우치 및 촬영 예시 장비는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T23:04:49.152+09:00",
+    "checked_at": "2026-09-08T16:16:03+00:00",
+    "checked_epoch": 1788884163
+  },
+  "smartstore-13751891794": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_62/1788871066323xB1Lw_JPEG/5669_tmp_8519d25ad4464126ee97a61d66f6b3c16442view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/03/65_9f0e6092a6b2c83fb1912832d76998941427561.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1730WF 트랜스폴트 캐리온 하드케이스 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:48.521+09:00",
+    "checked_at": "2026-09-08T16:17:03+00:00",
+    "checked_epoch": 1788884223
   }
 }

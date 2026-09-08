@@ -482,10 +482,11 @@
         "https://shop-phinf.pstatic.net/20260127_64/1769507835196Jij13_JPEG/84523650068997074_785161653.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/23ab994aea020b9fcf63633d4aeeb259.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/23ab994aea020b9fcf63633d4aeeb259.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250224/a9b16020782f02b545bf49eee7ab3a5a.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -494,9 +495,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:47:03+00:00",
-    "checked_epoch": 1788760023
+    "source_modified_at": "2026-09-08T16:05:14.819+09:00",
+    "checked_at": "2026-09-08T16:18:57+00:00",
+    "checked_epoch": 1788884337
   },
   "smartstore-13027159885": {
     "images": {
@@ -504,10 +505,11 @@
         "https://shop-phinf.pstatic.net/20260127_79/1769504913257UEaCJ_JPEG/45907367387496826_870189945.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250819/bcc048633fae0bf7a97a42309e750aba.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250819/bcc048633fae0bf7a97a42309e750aba.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250730/c87ec2050b41a51434ec454cee272da0.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -516,9 +518,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T05:47:07+00:00",
-    "checked_epoch": 1788760027
+    "source_modified_at": "2026-09-08T12:31:12.468+09:00",
+    "checked_at": "2026-09-08T16:19:02+00:00",
+    "checked_epoch": 1788884342
   },
   "smartstore-12888574973": {
     "images": {
@@ -948,5 +950,72 @@
     "source_modified_at": "2024-07-10T14:00:25.383+09:00",
     "checked_at": "2026-09-07T06:15:48+00:00",
     "checked_epoch": 1788761748
+  },
+  "smartstore-13751891642": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_41/1788871061570eJICF_JPEG/12168_tmp_9d2746eae62a142cca65f9fcad3c92b11424view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2021/06/11097_17efefd5a92bf32f87b071a7ab53b5571041555.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1535 Air WF 데저트탄 한정판 (With Foam)\n내부 폼 포함(With Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:43.179+09:00",
+    "checked_at": "2026-09-08T16:17:36+00:00",
+    "checked_epoch": 1788884256
+  },
+  "smartstore-13751891640": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_30/1788871062081u5X0I_JPEG/12619_tmp_5446a1a61ec5650dd464bb7c54e269f90449view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2024/04/387_9c91f25c1fd9fe608f83f7fec48adbea1619313.jpg",
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2024/04/387_03ec28600e4193e1efdd8e54666825751619323.jpg"
+      ]
+    },
+    "description_text": "펠리칸에어 1535NF 그라파이트 (No Foam) PELICAN AIR\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:43.161+09:00",
+    "checked_at": "2026-09-08T16:17:37+00:00",
+    "checked_epoch": 1788884257
+  },
+  "smartstore-13751871833": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_138/1788870099778aPiID_JPEG/9650_2019091815273719.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9650_15687881664651.jpg"
+      ]
+    },
+    "description_text": "펠리칸 iM3300 스톰 폼세트(4pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:40.469+09:00",
+    "checked_at": "2026-09-08T16:18:18+00:00",
+    "checked_epoch": 1788884298
   }
 }

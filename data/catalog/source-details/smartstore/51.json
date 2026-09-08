@@ -314,9 +314,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-14T22:36:27.714+09:00",
-    "checked_at": "2026-09-07T05:45:43+00:00",
-    "checked_epoch": 1788759943
+    "source_modified_at": "2026-09-08T20:22:28.617+09:00",
+    "checked_at": "2026-09-08T16:18:38+00:00",
+    "checked_epoch": 1788884318
   },
   "smartstore-12306670173": {
     "images": {
@@ -736,5 +736,28 @@
     "source_modified_at": "2025-11-19T14:03:39.426+09:00",
     "checked_at": "2026-09-07T06:18:04+00:00",
     "checked_epoch": 1788761884
+  },
+  "smartstore-13751891644": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_228/1788871062545CclAv_JPEG/12621_tmp_e8afa3da2fe2202a8c4f1b0621af77cd5021view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2024/04/387_9c91f25c1fd9fe608f83f7fec48adbea1619313.jpg",
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2024/04/387_03ec28600e4193e1efdd8e54666825751619323.jpg"
+      ]
+    },
+    "description_text": "펠리칸에어 1535WD 그라파이트 (With DIVIDER) PELICAN AIR\n디바이더 포함(With Divider) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:43.191+09:00",
+    "checked_at": "2026-09-08T16:17:34+00:00",
+    "checked_epoch": 1788884254
   }
 }

@@ -794,5 +794,29 @@
     "source_modified_at": "2025-11-19T14:03:39.167+09:00",
     "checked_at": "2026-09-07T06:18:27+00:00",
     "checked_epoch": 1788761907
+  },
+  "smartstore-13751902012": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_72/1788871584349qUSu2_JPEG/8266_tmp_54c93beb29937ff2ca948e66b5362ca53988view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/09/7065_15057052096858.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2017/10/8266_15088213482870.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2016/09/5656_14727914070035.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1600TP 라지 캐리온 하드케이스 (With TrekPak Divider System)\n트렉팩(TrekPak) 디바이더 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:46:24.954+09:00",
+    "checked_at": "2026-09-08T16:16:37+00:00",
+    "checked_epoch": 1788884197
   }
 }

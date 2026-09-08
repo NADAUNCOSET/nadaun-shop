@@ -268,10 +268,11 @@
         "https://shop-phinf.pstatic.net/20260127_99/1769507918831o1QnJ_JPEG/24206219946384298_1420847363.jpg"
       ],
       "detail": [
-        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/389282da786f41fd816e064f671db5c3.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250327/389282da786f41fd816e064f671db5c3.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250226/2c01a0cdf02d765d9990181148c32e5b.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -280,9 +281,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:58:52.810+09:00",
-    "checked_at": "2026-09-07T05:47:02+00:00",
-    "checked_epoch": 1788760022
+    "source_modified_at": "2026-09-08T15:55:08.309+09:00",
+    "checked_at": "2026-09-08T16:18:56+00:00",
+    "checked_epoch": 1788884336
   },
   "smartstore-12997168146": {
     "images": {
@@ -512,9 +513,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-04-02T11:41:11.489+09:00",
-    "checked_at": "2026-09-07T05:56:47+00:00",
-    "checked_epoch": 1788760607
+    "source_modified_at": "2026-09-08T20:13:41.130+09:00",
+    "checked_at": "2026-09-08T16:19:28+00:00",
+    "checked_epoch": 1788884368
   },
   "smartstore-10817287926": {
     "images": {
@@ -546,10 +547,12 @@
         "https://shop-phinf.pstatic.net/20240830_239/1724949950024569rK_JPEG/58977271946735683_202143413.jpg"
       ],
       "detail": [
-        "https://www.clmedia.co.kr/data/editor/goods/1/2024/04/3689_bfb49cf4c859aaf9da661a9daf143d241424251.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/afddbc08eba84608ceea14eef7152287.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/c4eebe77a2fdc94a0899eda627d67fb0.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/f92485291baa9c6a0b6c681d488442d4.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -558,9 +561,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T05:57:15+00:00",
-    "checked_epoch": 1788760635
+    "source_modified_at": "2026-09-08T15:14:58.520+09:00",
+    "checked_at": "2026-09-08T16:19:31+00:00",
+    "checked_epoch": 1788884371
   },
   "smartstore-10130276726": {
     "images": {

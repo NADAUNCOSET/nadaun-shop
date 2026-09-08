@@ -239,7 +239,9 @@
         "https://shop-phinf.pstatic.net/20260901_247/1788225706947lPalA_JPEG/013.jpg"
       ],
       "detail": [
-        "https://www.fomex.co.kr/web/product/medium/013.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250702/585d66a1f64bd940150e11ff6224c9ef.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/9e9eedb91c83a418c4d49ba85d071768.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250228/416bb53de0384ae8415ebd296204afc6.jpg"
       ]
     },
     "description_text": "",
@@ -251,9 +253,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:21:47.899+09:00",
-    "checked_at": "2026-09-07T05:40:01+00:00",
-    "checked_epoch": 1788759601
+    "source_modified_at": "2026-09-08T16:03:16.280+09:00",
+    "checked_at": "2026-09-08T16:18:28+00:00",
+    "checked_epoch": 1788884308
   },
   "smartstore-13740320913": {
     "images": {
@@ -729,5 +731,27 @@
     "source_modified_at": "2026-02-27T15:35:18.541+09:00",
     "checked_at": "2026-09-07T06:16:19+00:00",
     "checked_epoch": 1788761779
+  },
+  "smartstore-13751915673": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_300/1788872239218PBPFK_JPEG/9657_2019092013034918.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9657_15689523629489.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1500 (1505) 패디드 디바이더 세트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:20.425+09:00",
+    "checked_at": "2026-09-08T16:16:15+00:00",
+    "checked_epoch": 1788884175
   }
 }

@@ -396,10 +396,12 @@
         "https://shop-phinf.pstatic.net/20240829_163/1724938163024tEHDS_JPEG/6650136071011205_1877513119.jpg"
       ],
       "detail": [
-        "https://www.clmedia.co.kr/data/editor/goods/1/2024/04/3698_12750984d86a5244d631c6cf90addc391758361.jpg"
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/1f604fb15a70097f258204a57a4390fb.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/c997667030af1aa2cb9b594e2f2f88a3.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250304/1a74dad7d4165849542e72c1c974fc96.jpg"
       ]
     },
-    "description_text": "​",
+    "description_text": "",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -408,9 +410,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-07T13:49:43.597+09:00",
-    "checked_at": "2026-09-07T05:57:19+00:00",
-    "checked_epoch": 1788760639
+    "source_modified_at": "2026-09-08T15:11:14.595+09:00",
+    "checked_at": "2026-09-08T16:19:34+00:00",
+    "checked_epoch": 1788884374
   },
   "smartstore-10673237226": {
     "images": {
@@ -672,5 +674,27 @@
     "source_modified_at": "2026-09-01T09:59:12.343+09:00",
     "checked_at": "2026-09-07T06:18:44+00:00",
     "checked_epoch": 1788761924
+  },
+  "smartstore-13751891871": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_153/1788871068840oUdGd_JPEG/11108_tmp_f0d74616e5708dfc9744cf38f90829169154view.jpg"
+      ],
+      "detail": [
+        "https://pelicankorea.firstmall.kr/data/editor/goods/1/2022/04/161_c411356e3ddc06f662444c6ca6197b3d1259195.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1605 Air 하드케이스 (No Foam)\n내부 폼 미포함(No Foam) 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:50.832+09:00",
+    "checked_at": "2026-09-08T16:16:53+00:00",
+    "checked_epoch": 1788884213
   }
 }

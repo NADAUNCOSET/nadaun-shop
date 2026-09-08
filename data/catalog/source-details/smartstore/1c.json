@@ -660,5 +660,73 @@
     "source_modified_at": "2026-08-25T19:37:57.748+09:00",
     "checked_at": "2026-09-07T06:16:23+00:00",
     "checked_epoch": 1788761783
+  },
+  "smartstore-13751915666": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_118/1788872239199rjmxV_JPEG/9663_2019092013225512.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9663_15689536396296.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1550 (1555) 패디드 디바이더 세트\n케이스 내부 정리용 디바이더 세트/키트입니다. 하드케이스 본체는 포함되지 않습니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:57:20.377+09:00",
+    "checked_at": "2026-09-08T16:16:19+00:00",
+    "checked_epoch": 1788884179
+  },
+  "smartstore-13751891788": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_82/1788871066998aGMEW_JPEG/5745_tmp_14785717311880view.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2016/09/5656_14727913829224.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2016/11/5745_14785717799714.jpg",
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2016/09/5656_14727914070035.jpg"
+      ]
+    },
+    "description_text": "펠리칸 1550TP 미듐 하드케이스 (With TrekPak Divider System)\n트렉팩(TrekPak) 디바이더 구성입니다. 제품명에 명시된 모델과 색상 및 구성을 확인해 주세요. 촬영 예시 장비는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:37:48.480+09:00",
+    "checked_at": "2026-09-08T16:17:07+00:00",
+    "checked_epoch": 1788884227
+  },
+  "smartstore-13751871841": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260908_42/1788870099376Beu7J_JPEG/9640_2019091815023815.jpg"
+      ],
+      "detail": [
+        "https://www.sajinsangsa.co.kr/data/editor/goods/1/2019/09/9640_15687867133147.jpg"
+      ]
+    },
+    "description_text": "펠리칸 iM2700 스톰 폼세트(5pc)\n본 상품은 케이스 내부 교체용 폼 세트입니다. 케이스 본체는 포함되지 않습니다.\n제품 및 A/S 문의: 레인보우베네 070-8830-4568",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-08T21:21:40.513+09:00",
+    "checked_at": "2026-09-08T16:18:13+00:00",
+    "checked_epoch": 1788884293
   }
 }
