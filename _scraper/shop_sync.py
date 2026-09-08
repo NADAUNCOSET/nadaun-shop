@@ -151,6 +151,7 @@ def run(publish=True,existing=False):
             enrich('smartstore');enrich('kpp');prepare()
         build()
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_shop*.py')
+        command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_avx*.py')
         command('node','--check','assets/shop/shop.js')
         command('node','--check','assets/shop/cart.js')
         command('node','--check','assets/shop/motion.js')

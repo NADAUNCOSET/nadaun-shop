@@ -3,7 +3,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import Mock, patch
-from sync_avx_catalog import Source, SourceSuspended, parse_list, parse_detail
+from sync_avx_catalog import Source, SourceSuspended, Importer, CatalogueChanged, parse_list, parse_detail
 
 
 def listing(price='54,000', state='', sid='3034'):
@@ -52,6 +52,32 @@ class AvxTests(unittest.TestCase):
         p['price']=p['sale_price']=None
         inquiry=html.replace('54000;','99999999;')+'<script>gl_string_price_use = 1;</script>'
         self.assertIsNone(parse_detail(p,inquiry,desc)['price'])
+
+    def test_changing_inventory_can_resume_without_losing_verified_details(self):
+        with tempfile.TemporaryDirectory() as directory:
+            importer=Importer(Path(directory))
+            importer.db.execute('INSERT INTO pages VALUES (?,?,?)', ('/1',41,json.dumps({'3034':{'id':'3034'}})))
+            importer.db.execute('INSERT INTO details VALUES (?,?,?)', ('3034','verified','{}'))
+            importer.db.commit()
+            importer.source.get=Mock(return_value=listing(sid='3035'))
+            with self.assertRaises(CatalogueChanged):importer.listing()
+            self.assertEqual(importer.db.execute('SELECT count(*) FROM pages').fetchone()[0],0)
+            self.assertEqual(importer.db.execute('SELECT count(*) FROM details').fetchone()[0],1)
+            self.assertEqual(set(importer.listing()),{'3035'})
+            importer.db.close()
+
+    def test_changed_final_inventory_keeps_previous_published_snapshot(self):
+        with tempfile.TemporaryDirectory() as directory:
+            folder=Path(directory); importer=Importer(folder)
+            importer.db.execute('INSERT INTO pages VALUES (?,?,?)', ('/1',1,json.dumps({'3034':{}})))
+            importer.db.commit()
+            importer.source.get=Mock(return_value=listing(sid='3035'))
+            previous=folder/'avx.json';previous.write_text('{"previous":"verified"}')
+            with patch('sync_avx_catalog.OUT',folder):
+                with self.assertRaises(CatalogueChanged):importer.export({'3034':{}},{},'all')
+            self.assertEqual(previous.read_text(),'{"previous":"verified"}')
+            self.assertEqual(importer.db.execute('SELECT count(*) FROM pages').fetchone()[0],0)
+            importer.db.close()
 
 
 if __name__=='__main__':unittest.main()

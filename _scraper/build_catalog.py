@@ -73,6 +73,9 @@ def verified_sources():
     if avx_path:
         snapshot=json.loads(avx_path.read_text())
         if not snapshot.get('complete') or snapshot['product_count']!=len(snapshot['products']) or any(p.get('detail_status')!='verified' for p in snapshot['products'].values()):raise RuntimeError('AVX snapshot is incomplete')
+        expected_scope='all' if avx_path.name=='avx.json' else 'aputure'
+        if snapshot.get('scope')!=expected_scope or snapshot.get('catalogue_complete')!=(expected_scope=='all') or snapshot.get('coverage')!={'expected':snapshot['product_count'],'unique':snapshot['product_count']}:
+            raise RuntimeError('AVX source scope or coverage is inconsistent')
         snapshots['avx']=snapshot
     if not all(s.get('complete') for s in snapshots.values()):raise RuntimeError('Incomplete source snapshot')
     if 'plthink' in snapshots:

@@ -28,6 +28,10 @@ class SourceSuspended(RuntimeError):
     pass
 
 
+class CatalogueChanged(ValueError):
+    pass
+
+
 class Source:
     def __init__(self, work=WORK, session=None):
         self.work = work
@@ -134,7 +138,7 @@ def parse_detail(product, text, description):
         # the public price is "가격문의". It is not a purchasable price.
         detail_price = None
     if detail_price != p['price']:
-        raise ValueError('AVX list/detail price changed: ' + sid)
+        raise CatalogueChanged('AVX list/detail price changed: ' + sid)
     main = [urljoin(BASE, i['src']) for i in doc.select('#goods_thumbs .viewImgWrap img[src]')]
     if not main:
         raise ValueError('AVX main gallery missing: ' + sid)
@@ -177,6 +181,17 @@ class Importer:
         self.db.execute('CREATE TABLE IF NOT EXISTS metadata (key TEXT PRIMARY KEY, payload TEXT)')
         self.db.commit()
 
+    def invalidate_listings(self, reason, category=None):
+        # A catalogue can change during a long import. Preserve verified details
+        # and the live snapshot, but never retry against stale page positions.
+        if category is None:
+            self.db.execute('DELETE FROM pages')
+        else:
+            self.db.execute('DELETE FROM pages WHERE key LIKE ?', (category+'/%',))
+        self.db.commit()
+        save_json(self.work / 'listing-refresh.json', {'at':stamp(), 'reason':reason,
+            'category':category, 'verified_details_preserved':True})
+
     def listing(self, category=''):
         rows = {}; expected = None; page = 1
         while expected is None or page <= math.ceil(expected / 40):
@@ -192,7 +207,8 @@ class Importer:
                 self.db.commit()
             if expected is None: expected = total
             if total != expected or set(rows) & set(items):
-                raise ValueError('AVX inventory changed or duplicate page: ' + key)
+                self.invalidate_listings('inventory_changed_or_duplicate_page', category)
+                raise CatalogueChanged('AVX inventory changed or duplicate page: ' + key)
             rows.update(items)
             self.report('listing', category=category, pages=page, found=len(rows), expected=expected)
             page += 1
@@ -240,6 +256,9 @@ class Importer:
                 content = self.source.get('/goods/view_contents', no=sid, zoom=1, view_preload=1)
                 try:
                     product = parse_detail(p, detail, content)
+                except CatalogueChanged:
+                    self.invalidate_listings('detail_price_changed')
+                    raise
                 except ValueError as exc:
                     failures[sid] = str(exc); consecutive_errors += 1
                     self.db.execute('INSERT OR REPLACE INTO detail_errors VALUES (?,?,?)', (sid, str(exc), stamp()))
@@ -268,7 +287,8 @@ class Importer:
             category='c'+category if category else '', per=40, sorting='regist', auto=1))
         original = self.db.execute('SELECT total,payload FROM pages WHERE key=?', (category+'/1',)).fetchone()
         if not original or total != len(products) or first != json.loads(original[1]):
-            raise ValueError('AVX final inventory reconciliation failed')
+            self.invalidate_listings('final_inventory_changed', category)
+            raise CatalogueChanged('AVX final inventory reconciliation failed')
         categories = {}; rows = {}
         for sid, value in products.items():
             p = deepcopy(value); p['brand_category_ids'] = []
