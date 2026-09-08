@@ -390,3 +390,14 @@ PLTHINK `plthink-1921456`의 4'x4' 규격명은 원본 JSON-LD에서 JSON이 허
 - AVX 전체 수집 결과는 우선 비공개 체크포인트의 `catalogue-candidate.json`에 보존한다. 전체 상세 검증과 브랜드 중복 출처 선택을 모두 통과해야 공개 `sources/avx.json`을 갱신한다. 선택 대기는 `.sync-state/avx/publication-waiting.json`에 남기며 기존 공개 상품을 유지한다. AVX 1,772개 목록 기준으로 확정된 4개 브랜드 외에 겹치는 25개 브랜드의 추가 선택이 필요하다. HOLLYLAND/SWIT/GENTREE 기준을 먼저 질문한 상태다.
 - 씨엘미디어 `https://clmedia.co.kr/`와 시네몰 `https://www.cinemall.co.kr/` **전체 브랜드**는 작업 대기열에 기록한다. 틸타 시네몰 분류는 `/product/list.html?cate_no=56`. AVX 이후 순차 수집·출처 선택·중복 대조·배포 검증한다. 파트너 배너도 원본 URL·브랜드·목표 링크를 기록해 검토용으로 추가하되, 현재 공개 배너 6개를 네이버 전체 10개 확보로 보고하지 않는다.
 - Mac/Windows는 이 NAS 저장소를 공유하며 공개 사이트는 같은 Vercel 배포를 본다. 현재 AVX/PLTHINK 수집 워커의 실행 주체는 **Mac**이다. Windows 별도 수집 워커를 설치하거나 실행했다고 보고하지 않는다. 소스 저장과 프로세스 재시작/라이브 배포는 별개로 확인한다. 배포 증거는 `.sync-state/gift-directory-release.json`과 `last-success.json`을 우선한다.
+
+
+### 2026-09-08 브랜드별 출처 전수 감사와 공급처 품절 반영
+
+- 대표는 전체 협력사 자동 연동과 브랜드별 매칭 사이트의 지속 기록을 재확인했다. 저장소 밖 `../_private/nadaun-shop/catalog/brand-source-review.md`에는 **공개 브랜드 전체**를 기록한다. 중복 브랜드만 적던 방식을 바꾸어 단일 출처·렌탈 전용 브랜드도 포함하고 공개 구매/렌탈의 대표 출처 수량과 아직 공개하지 않은 수집 후보를 구분한다.
+- `source-matches.json` schema 2는 상품의 원본 숫자 상품번호·URL·원본 목록/상세 확인 시각과 필드별 출처를 보존한다. 중복 병합으로 보완한 상세 이미지·공급처 상태·분류는 실제 보완한 원본을 기록하고, 운영자 상품 수정과 검토된 이름 수정은 각각 overrides/dedup-rules 파일로 표시한다. 원본에 개별 상세 확인 시각이 없으면 배치 확인 시각만 기록하며 새 시각을 지어내지 않는다. 이 파일은 공개 상품 JSON이나 Git/R2에 포함하지 않는다.
+- 빌드만 한 상태는 `publication.state=not_live_verified`다. Vercel에서 해당 커밋이 READY이고 실제 공개 상품 전체의 ID·가격·품절·분류·원본 목록이 SHA256으로 일치해야 `live_verified`와 커밋/배포/revision/검증 시각을 기록한다. 같은 revision의 출처 선택 대기 보고서를 다시 써도 검증된 필드 출처·배포 증거를 유지한다.
+- KPP 원본의 `supplier_status=soldout`을 공개 `status=inquiry`로 덮어쓰던 오류를 수정했다. **자체 KPP 대표 상품 1,547개**가 품절과 품절 제외 필터에 반영된다. 다른 상품 ID·가격은 유지하며 렌탈 220개 레코드는 바이트 내용 기준 동일하다. 이는 저장된 검증 스냅샷의 상태를 올바르게 표시한 수정이며 새로 실시간 재고를 조회했다는 뜻이 아니다.
+- `source_refresh_state.py`는 공급처 갱신 완료를 UI 배포 완료와 분리한다. 기존 일일 작업은 last-success의 UI 배포 시각만 보고 최근 6시간이면 원본 수집까지 건너뛰었으나, 이제 실제 원본 수집·검사·라이브 대조를 마친 source-refresh-success만 사용한다. 원본 파일 SHA256이 달라지거나 6시간이 지나거나 증거가 없으면 건너뛰지 않는다. 기존 UI 커밋을 새 상품 갱신으로 소급 기록하지 않는다.
+- 씨엘미디어와 시네몰을 수집 환경에서 각 1회 일반 GET으로 확인했지만 두 곳 모두 HTTP 403이었다. 각 소스의 비공개 source-suspended 기록과 대기열 상태에 남겼다. 헤더/IP를 바꾸어 우회하거나 수집기를 가동하지 않았다. 온앤오프와 함께 공식 피드/API 또는 정상 접근 복구가 필요하다. 기존 선행 조건·대표의 중복 브랜드 선택은 유지한다.
+- 이번 변경의 검사: Python 66개·Node 88개 통과. 실제 배포 증거는 `.sync-state/source-ledger-release.json`에 저장한다. 전체 파트너 미러링·자동 실시간 갱신·실결제·브라우저 실기 검수를 완료로 해석하지 않는다.

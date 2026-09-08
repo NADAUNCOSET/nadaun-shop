@@ -92,7 +92,7 @@ def verified_sources():
 
 def build(allow_pending=False):
     snapshots=verified_sources()
-    from brand_source_policy import selections,write_audit
+    from brand_source_policy import selections,write_audit,source_provenance,merge_category_provenance
     source_choices=selections()
     partner_image_rules=json.loads((PUBLIC/'partner-image-rules.json').read_text())
     products={}; categories={}; brands={}; details={}; coverage=Counter()
@@ -143,7 +143,7 @@ def build(allow_pending=False):
                         parent=source_cat['parent_id']
                         categories.setdefault(key,{'id':key,'name':source_cat['name'],'parent_id':f'kpp:b:{bid}:global:'+parent.split(':')[-1] if parent else None,'brand_id':bid})
                         membership.append(key)
-                p['status']='inquiry'
+                p['status']='soldout' if p.get('supplier_status')=='soldout' else 'inquiry'
             elif source=='imweb-promotions': pass
             elif source=='imweb-dji': membership=['imweb:b:dji:'+cid for cid in p.get('brand_category_ids',[])]
             elif source=='l-mount': membership=['l-mount:b:ldl-mount:'+cid for cid in p.get('brand_category_ids',[])]
@@ -192,6 +192,7 @@ def build(allow_pending=False):
             p['offers']=[{'source':p['source'],'url':p['source_url'],'status':p['status'],'price':p.get('sale_price'),'id':pid}]
             details[pid]={k:d.get(k) for k in ('description_text','options','option_groups','shipping','options_require_confirmation','description_notice') if d.get(k)}
             details[pid]['images']=p['images'];details[pid]['source_id']=p['source_id']
+            p['_provenance']=source_provenance(p,d,s)
             products[pid]=p
     for b in brands.values():
         b['aliases']=list(dict.fromkeys(b['aliases']+[alias for alias,key in ALIASES.items() if key==b['id']]))
@@ -206,7 +207,9 @@ def build(allow_pending=False):
         p=products.get(redirects.get(pid,pid))
         if p:
             for key in ('name','price','sale_price','hidden','category_ids','type_ids','status','shipping_class'):
-                if key in override:p[key]=deepcopy(override[key])
+                if key in override:
+                    p[key]=deepcopy(override[key])
+                    p['_provenance']['fields'][key]={'source':'owner_override','file':'data/catalog/overrides.json','product_id':pid}
     asset_path=PUBLIC/'asset-manifest.json'
     assets=json.loads(asset_path.read_text()) if asset_path.exists() else {}
     public_products=[];public_details=defaultdict(dict)
@@ -244,6 +247,7 @@ def build(allow_pending=False):
             p['listing_id']=primary['id']
             for field in ('category_ids','type_ids','promotion_ids'):
                 p[field]=list(dict.fromkeys(cid for q in family for cid in q[field]))
+            for q in family:merge_category_provenance(products[p['id']],products[q['id']])
             public_details[p['detail_bucket']][p['id']]['related_variants']=[{
                 'id':q['id'],'name':q['name'],
                 'options':[o['name'] for o in details[q['id']].get('options',[])]
@@ -306,7 +310,7 @@ def build(allow_pending=False):
     presentation+=''.join(p.read_text() for p in sorted((ROOT/'assets/shop/vendor').glob('*.js')))
     revision=hashlib.sha256((json.dumps(output,ensure_ascii=False,sort_keys=True)+presentation).encode()).hexdigest()[:16]
     output['meta']['revision']=revision
-    write_audit(output)
+    write_audit(output,provenance={pid:p['_provenance'] for pid,p in products.items()})
     PUBLIC.mkdir(parents=True,exist_ok=True)
     for key,bucket in public_details.items():
         (PUBLIC/'details').mkdir(exist_ok=True)

@@ -46,22 +46,24 @@
       "url": "https://clmedia.co.kr/",
       "after_live_verified": "avx",
       "adapter": null,
-      "status": "queued",
+      "status": "awaiting_source_access",
       "scope": "All public brands; owner confirms overlapping brand sources before publish",
-      "blocker": "Source adapter and full inventory verification are pending.",
+      "blocker": "Public source returned HTTP 403 from the sync host; an official feed/API or restored normal access is required before adapter verification.",
       "target_refresh_interval_seconds": 43200,
-      "completion_gate": "Complete source inventory/details, owner-approved brand matches, dedup audit, deployed live ID verification"
+      "completion_gate": "Complete source inventory/details, owner-approved brand matches, dedup audit, deployed live ID verification",
+      "access_checked_at": "2026-09-08T11:47:28+00:00"
     },
     "cinemall": {
       "name": "시네몰",
       "url": "https://www.cinemall.co.kr/",
       "after_live_verified": "clmedia",
       "adapter": null,
-      "status": "queued",
+      "status": "awaiting_source_access",
       "scope": "All public brands; owner confirms overlapping brand sources before publish",
-      "blocker": "Source adapter and full inventory verification are pending.",
+      "blocker": "Public source returned HTTP 403 from the sync host; an official feed/API or restored normal access is required before adapter verification.",
       "target_refresh_interval_seconds": 43200,
-      "completion_gate": "Complete source inventory/details, owner-approved brand matches, dedup audit, deployed live ID verification"
+      "completion_gate": "Complete source inventory/details, owner-approved brand matches, dedup audit, deployed live ID verification",
+      "access_checked_at": "2026-09-08T11:47:28+00:00"
     }
   }
 }

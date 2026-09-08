@@ -113,6 +113,8 @@ def deduplicate(products, details, brands, rules=None):
         for key in ('name','hidden','status'):
             if key in rule:
                 p[key] = rule[key]
+                if '_provenance' in p:
+                    p['_provenance']['fields'][key]={'source':'reviewed_correction','file':'data/catalog/dedup-rules.json','product_id':pid,'reason':rule['reason']}
         corrections.append({'id':pid,'before':before,'after':p['name'],'hidden':p.get('hidden',False),
                             'reason':rule['reason'],'evidence':rule.get('evidence',[])})
 
@@ -166,15 +168,21 @@ def deduplicate(products, details, brands, rules=None):
                                    'source':p.get('source'),'url':p['source_url']} for p in ordered]})
         for duplicate in ordered[1:]:
             did = duplicate['id']
+            from brand_source_policy import merge_category_provenance
+            merge_category_provenance(primary,duplicate)
             for field in ('category_ids','type_ids','promotion_ids'):
                 primary[field] = list(dict.fromkeys(primary.get(field,[])+duplicate.get(field,[])))
             seen = {o['id'] for o in primary['offers']}
             primary['offers'] += [deepcopy(o) for o in duplicate['offers'] if o['id'] not in seen]
             if not primary.get('supplier_status'):
                 primary['supplier_status'] = duplicate.get('supplier_status')
+                if '_provenance' in primary and '_provenance' in duplicate:
+                    primary['_provenance']['fields']['supplier_status']=deepcopy(duplicate['_provenance']['fields']['supplier_status'])
             for kind in ('main','detail'):
                 if not details[pid]['images'].get(kind):
                     details[pid]['images'][kind] = deepcopy(details[did]['images'].get(kind,[]))
+                    if '_provenance' in primary and '_provenance' in duplicate:
+                        primary['_provenance']['fields']['images.'+kind]=deepcopy(duplicate['_provenance']['fields']['images.'+kind])
             redirects[did] = pid
             del products[did]
     audit = {'schema_version':1,'brands_checked':len(brands),'input_count':len(active),

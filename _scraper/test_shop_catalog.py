@@ -106,6 +106,18 @@ class SourceRules(unittest.TestCase):
             for target in ['terms','privacy','shipping']:
                 self.assertTrue(soup.select_one(f'.legacy-footer a[href="/{target}.html"]'))
         self.assertNotIn('기존 스토어에서 구매',(ROOT/'assets/shop/shop.js').read_text())
+    def test_kpp_supplier_soldout_is_not_left_as_orderable_inquiry(self):
+        catalog=json.loads((ROOT/'data/catalog/catalog.json').read_text())
+        source=json.loads((ROOT/'data/catalog/sources/kpp.json').read_text())['products']
+        checked=0
+        for p in catalog['products']:
+            if p['id'] not in source or source[p['id']]['supplier_status']!='soldout':continue
+            self.assertEqual(p['status'],'soldout',p['id'])
+            own=next(o for o in p['offers'] if o['id']==p['id'])
+            self.assertEqual(own['status'],'soldout',p['id'])
+            checked+=1
+        self.assertGreater(checked,0)
+
     def test_generated_catalog_integrity(self):
         p=ROOT/'data/catalog/catalog.json'
         if not p.exists():self.skipTest('Build the catalogue first')

@@ -22,6 +22,7 @@ from enrich_shop_sources import collect as enrich
 from prepare_shop_assets import prepare
 from build_catalog import build
 from sync_gift_inventory import ensure_source_access, GiftSourceSuspended
+from source_refresh_state import recent_refresh,record_refresh
 
 STATE=ROOT/'_scraper/.sync-state'
 SITE='https://shop.nadaun.co'
@@ -35,6 +36,7 @@ CODE += ['_scraper/brand_category_policy.py','_scraper/partner_sync_status.py','
 CODE += ['assets/shop/storefront.css','assets/shop/scenes.js','assets/shop/browse.js','_scraper/category_gallery.py','_scraper/sync_avx_catalog.py','_scraper/avx_worker.py','_scraper/test_avx_catalog.py']
 CODE += ['_scraper/test_partner_sync_status.py']
 CODE += ['_scraper/build_gift_catalog.py','_scraper/brand_source_policy.py','_scraper/test_gift_public_catalog.py','_scraper/test_brand_source_policy.py','data/catalog/brand-source-policy.json','server/gift-catalog.cjs','server/shop-search.cjs']
+CODE += ['_scraper/source_refresh_state.py','_scraper/test_source_refresh_state.py']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
@@ -99,7 +101,11 @@ def verify_live(revision):
                 guide=BeautifulSoup(request('GET',SITE+'/services.html',params={'verify':revision}).text,'lxml')
                 if not guide.select_one('#production a[href="https://collective.nadaun.co/"]') or revision not in str(guide):
                     raise RuntimeError('Live service guide is missing or stale')
-                return {'commit':head,'deployment':match['uid'],'revision':revision,'verified_at':stamp(),'site':SITE}
+                result={'commit':head,'deployment':match['uid'],'revision':revision,'verified_at':stamp(),'site':SITE}
+                from brand_source_policy import verify_audit_live
+                all_products=request('GET',SITE+'/data/catalog/catalog.json',params={'verify':revision},headers={'Cache-Control':'no-cache'}).json()
+                verify_audit_live(all_products,result)
+                return result
         time.sleep(12)
     raise RuntimeError('Vercel/live verification timed out; last good deployment remains available')
 
@@ -160,12 +166,16 @@ def run(publish=True,existing=False):
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_partner_sync_status.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_gift_public_catalog.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_brand_source_policy.py')
+        command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_source_refresh_state.py')
         command('node','--test','_scraper/tests/gift-search.test.cjs')
         command('node','--check','assets/shop/shop.js')
         command('node','--check','assets/shop/cart.js')
         command('node','--check','assets/shop/motion.js')
         command('node','--test','_scraper/tests/product-server.test.cjs','_scraper/tests/catalog-tools.test.mjs','_scraper/tests/discovery.test.cjs','_scraper/tests/cart.test.cjs','_scraper/tests/banners.test.mjs','_scraper/tests/motion.test.mjs','_scraper/tests/browse.test.mjs')
-        if publish:return publish_existing()
+        if publish:
+            result=publish_existing()
+            if not existing:record_refresh(result)
+            return result
     except Exception as e:
         save_json(STATE/'last-failure.json',{'failed_at':stamp(),'error':str(e)})
         raise
@@ -174,11 +184,8 @@ def run(publish=True,existing=False):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--existing',action='store_true',help='Use already verified source snapshots');p.add_argument('--no-publish',action='store_true');p.add_argument('--verify-revision');p.add_argument('--scheduled',action='store_true');a=p.parse_args()
-    if a.scheduled and (STATE/'last-success.json').exists():
-        last=json.loads((STATE/'last-success.json').read_text())
-        age=time.time()-datetime.fromisoformat(last['verified_at']).timestamp()
-        if age<6*3600:
-            print('Catalogue was verified within six hours; skip duplicate startup run.',flush=True)
-            sys.exit(0)
+    if a.scheduled and recent_refresh():
+        print('Supplier data was refreshed and live-verified within six hours; skip duplicate startup run.',flush=True)
+        sys.exit(0)
     if a.verify_revision:print(json.dumps(verify_live(a.verify_revision),ensure_ascii=False))
     else:run(not a.no_publish,a.existing)
