@@ -153,7 +153,7 @@ class SourceRules(unittest.TestCase):
 
     def test_avx_source_conservation_and_aputure_replacement(self):
         base=ROOT/'data/catalog/sources'
-        path=next((base/name for name in ('avx.json','avx-aputure.json') if (base/name).exists()),None)
+        path=next((base/name for name in ('avx-approved.json','avx.json','avx-aputure.json') if (base/name).exists()),None)
         if path is None:self.skipTest('AVX source not imported yet')
         source=json.loads(path.read_text())
         products=json.loads((ROOT/'data/catalog/catalog.json').read_text())['products']

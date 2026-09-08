@@ -183,7 +183,7 @@
       "imweb-promotions": 37,
       "l-mount": 335,
       "plthink": 6580,
-      "avx": 130
+      "avx": 943
     },
     "detail_coverage": {
       "kpp": 4014,
@@ -192,20 +192,20 @@
       "imweb-promotions": 37,
       "l-mount": 335,
       "plthink": 6580,
-      "avx": 130
+      "avx": 943
     },
-    "synced_at": "2026-09-08T09:13:40+00:00",
-    "merged_count": 2385,
+    "synced_at": "2026-09-08T12:59:54+00:00",
+    "merged_count": 2438,
     "product_count": 220,
     "category_browsing_enabled": true,
     "listing_count": 220,
-    "option_family_count": 99,
+    "option_family_count": 108,
     "deduplication": {
-      "brands_checked": 219,
-      "groups": 1870,
-      "removed": 2385
+      "brands_checked": 251,
+      "groups": 1920,
+      "removed": 2438
     },
-    "revision": "40eed65c0bdaf27a",
+    "revision": "024c5323a10e7bfa",
     "view": "rental"
   },
   "brands": [
@@ -221,6 +221,48 @@
       "logo": "/assets/shop/brands/dji-d7dcd6b736.webp",
       "featured": true,
       "navigation_category_ids": [
+        "avx:b:003ab0cd7ab3da8a",
+        "avx:b:042daded827dfd17",
+        "avx:b:0628b883914cc8ad",
+        "avx:b:08a87347ec1eac4e",
+        "avx:b:0d119633ad3836ed",
+        "avx:b:113323e7d73f7465",
+        "avx:b:13aa590ad07b17ef",
+        "avx:b:166034d9aefb0a7c",
+        "avx:b:19648e407a6e0691",
+        "avx:b:240a0988e6414628",
+        "avx:b:2da75284e6072e5d",
+        "avx:b:3bcddde89aa50b28",
+        "avx:b:45d639f9550f9844",
+        "avx:b:4699d145579ec610",
+        "avx:b:5910615f637726b6",
+        "avx:b:5c7439be2984a27e",
+        "avx:b:5edcf00172e5b7f4",
+        "avx:b:64811253d7c73767",
+        "avx:b:778cf9a40a2f94d1",
+        "avx:b:79c7eb737232c835",
+        "avx:b:7ddd77ed44851cd0",
+        "avx:b:8c6b26759657e417",
+        "avx:b:8d711fe77c118680",
+        "avx:b:918948ed5011f930",
+        "avx:b:96e974918c1a2684",
+        "avx:b:9713bd12176007bd",
+        "avx:b:9fe196c62f7be3c0",
+        "avx:b:acffe1f09a679d23",
+        "avx:b:b04dafc3d4f39460",
+        "avx:b:b143a71946c2a6d1",
+        "avx:b:b6e2e23fa23922f2",
+        "avx:b:b89fe300c5cc7f47",
+        "avx:b:ccdea6ecf94564d6",
+        "avx:b:cd7ccdf875e1db8b",
+        "avx:b:cfe0236c52724936",
+        "avx:b:d67c3ad56d01e9bb",
+        "avx:b:e05292671f58b161",
+        "avx:b:ebe6cf4961990db6",
+        "avx:b:f18ace3099acc2b7",
+        "avx:b:fb747ec9af7a1132",
+        "avx:b:fdb78a5ada8c961c",
+        "avx:b:febb218cfb077fab",
         "imweb:b:dji:s20220214975e339e7784c",
         "imweb:b:dji:s20220303f347a370d9604",
         "imweb:b:dji:s20220317033ee7dd4f463",
@@ -255,7 +297,6 @@
         "imweb:b:dji:s20260428388292dad03c5",
         "imweb:b:dji:s20260507719bbd7a66032",
         "imweb:b:dji:s202606290b6cc688ae502",
-        "imweb:b:dji:s202607213f0d94a688a01",
         "imweb:b:dji:s20260804b041474f698ad",
         "imweb:b:dji:s2026081140673dc2e9714",
         "plthink:b:065",
@@ -267,8 +308,8 @@
         "plthink:b:065:006",
         "plthink:b:065:007"
       ],
-      "count": 538,
-      "purchase_count": 528,
+      "count": 926,
+      "purchase_count": 916,
       "rental_count": 10,
       "category_ids": [
         "naver:b:dji:50000206",
@@ -321,6 +362,48 @@
         "plthink:b:065:003",
         "plthink:b:065:006",
         "plthink:b:065:007",
+        "avx:b:003ab0cd7ab3da8a",
+        "avx:b:f18ace3099acc2b7",
+        "avx:b:8d711fe77c118680",
+        "avx:b:febb218cfb077fab",
+        "avx:b:240a0988e6414628",
+        "avx:b:9713bd12176007bd",
+        "avx:b:13aa590ad07b17ef",
+        "avx:b:8c6b26759657e417",
+        "avx:b:b04dafc3d4f39460",
+        "avx:b:ccdea6ecf94564d6",
+        "avx:b:19648e407a6e0691",
+        "avx:b:fdb78a5ada8c961c",
+        "avx:b:5c7439be2984a27e",
+        "avx:b:5edcf00172e5b7f4",
+        "avx:b:9fe196c62f7be3c0",
+        "avx:b:7ddd77ed44851cd0",
+        "avx:b:79c7eb737232c835",
+        "avx:b:e05292671f58b161",
+        "avx:b:166034d9aefb0a7c",
+        "avx:b:113323e7d73f7465",
+        "avx:b:64811253d7c73767",
+        "avx:b:0d119633ad3836ed",
+        "avx:b:b89fe300c5cc7f47",
+        "avx:b:042daded827dfd17",
+        "avx:b:d67c3ad56d01e9bb",
+        "avx:b:778cf9a40a2f94d1",
+        "avx:b:4699d145579ec610",
+        "avx:b:2da75284e6072e5d",
+        "avx:b:cd7ccdf875e1db8b",
+        "avx:b:918948ed5011f930",
+        "avx:b:cfe0236c52724936",
+        "avx:b:3bcddde89aa50b28",
+        "avx:b:96e974918c1a2684",
+        "avx:b:5910615f637726b6",
+        "avx:b:acffe1f09a679d23",
+        "avx:b:45d639f9550f9844",
+        "avx:b:b6e2e23fa23922f2",
+        "avx:b:0628b883914cc8ad",
+        "avx:b:fb747ec9af7a1132",
+        "avx:b:b143a71946c2a6d1",
+        "avx:b:08a87347ec1eac4e",
+        "avx:b:ebe6cf4961990db6",
         "rental-brand:dji:8",
         "rental-brand:dji:145",
         "rental-brand:dji:2",
@@ -1627,6 +1710,11 @@
       ],
       "logo": "/assets/shop/brands/aputure-de3dcdb4e8.webp",
       "navigation_category_ids": [
+        "avx:b:02a4e5e22705181f",
+        "avx:b:1eac61412cc2f0f2",
+        "avx:b:29546610dc1192f6",
+        "avx:b:634aa27ced2b61bd",
+        "avx:b:65e53513155c41e3",
         "avx:b:aputure:0020",
         "avx:b:aputure:00200001",
         "avx:b:aputure:002000010001",
@@ -1651,10 +1739,15 @@
         "avx:b:aputure:002000070004",
         "avx:b:aputure:002000070005",
         "avx:b:aputure:002000070006",
-        "avx:b:aputure:002000070007"
+        "avx:b:aputure:002000070007",
+        "avx:b:c3fbc2c5354ec15c",
+        "avx:b:d10dc04e3f61745f",
+        "avx:b:ef362728ad120d42",
+        "avx:b:fad951a3b3751da2",
+        "avx:b:fc70f4be399c9a2e"
       ],
-      "count": 137,
-      "purchase_count": 128,
+      "count": 159,
+      "purchase_count": 150,
       "rental_count": 9,
       "category_ids": [
         "naver:b:aputure:50000206",
@@ -1687,6 +1780,16 @@
         "avx:b:aputure:00200005",
         "avx:b:aputure:002000020001",
         "avx:b:aputure:002000030001",
+        "avx:b:fad951a3b3751da2",
+        "avx:b:02a4e5e22705181f",
+        "avx:b:634aa27ced2b61bd",
+        "avx:b:1eac61412cc2f0f2",
+        "avx:b:fc70f4be399c9a2e",
+        "avx:b:ef362728ad120d42",
+        "avx:b:c3fbc2c5354ec15c",
+        "avx:b:65e53513155c41e3",
+        "avx:b:29546610dc1192f6",
+        "avx:b:d10dc04e3f61745f",
         "rental-brand:aputure:4",
         "rental-brand:aputure:102",
         "rental-brand:aputure:103"
@@ -2370,6 +2473,71 @@
       "logo_dark": false
     },
     {
+      "id": "amaran",
+      "name": "AMARAN",
+      "aliases": [
+        "amaran"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/09/3075_temp_17888592018108list1.png",
+      "navigation_category_ids": [
+        "avx:b:27e52905a9342e02",
+        "avx:b:2d6fc2e058b9c0ff",
+        "avx:b:3659ba3229353d82",
+        "avx:b:398ba4aeebd532fe",
+        "avx:b:4b53433680bffd43",
+        "avx:b:5057f1f710e17185",
+        "avx:b:652fc3693c5f569e",
+        "avx:b:75ea1ee487cfce8a",
+        "avx:b:7786b24329c2081f",
+        "avx:b:829de99ca49678b0",
+        "avx:b:835c5a3dbd059cb0",
+        "avx:b:8b1ab41509117f7f",
+        "avx:b:95c223436ab8fbe1",
+        "avx:b:9603ac0960f7113f",
+        "avx:b:b173408a67194d97",
+        "avx:b:bf1befd2d652889a",
+        "avx:b:cdcd0f7630ab6009",
+        "avx:b:d6d8e06f20ee24f2",
+        "avx:b:dd726da2087a2479",
+        "avx:b:e67e718c9452c93d",
+        "avx:b:f3ddab0ea8e52d87",
+        "avx:b:f56fd34a05cd4f9f"
+      ],
+      "count": 65,
+      "purchase_count": 65,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:e67e718c9452c93d",
+        "avx:b:9603ac0960f7113f",
+        "avx:b:f3ddab0ea8e52d87",
+        "avx:b:2d6fc2e058b9c0ff",
+        "avx:b:bf1befd2d652889a",
+        "avx:b:8b1ab41509117f7f",
+        "avx:b:b173408a67194d97",
+        "avx:b:652fc3693c5f569e",
+        "avx:b:d6d8e06f20ee24f2",
+        "avx:b:398ba4aeebd532fe",
+        "avx:b:95c223436ab8fbe1",
+        "avx:b:7786b24329c2081f",
+        "avx:b:4b53433680bffd43",
+        "avx:b:f56fd34a05cd4f9f",
+        "avx:b:27e52905a9342e02",
+        "avx:b:75ea1ee487cfce8a",
+        "avx:b:835c5a3dbd059cb0",
+        "avx:b:cdcd0f7630ab6009",
+        "avx:b:3659ba3229353d82",
+        "avx:b:dd726da2087a2479",
+        "avx:b:829de99ca49678b0",
+        "avx:b:5057f1f710e17185"
+      ],
+      "representative_id": "avx-3075",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/09/3075_temp_17888592018108view.png",
+      "representative_name": "사전예약 5% 할인 I amaran MIC",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/09/3075_temp_17888592038147view.png",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "ambitful",
       "name": "AMBITFUL",
       "aliases": [
@@ -2538,22 +2706,30 @@
       "id": "atomos",
       "name": "ATOMOS",
       "aliases": [
-        "아토모스"
+        "아토모스",
+        "ATOMOS"
       ],
       "logo": "/assets/shop/brands/atomos-383ec45b11.webp",
-      "count": 2,
-      "purchase_count": 0,
+      "navigation_category_ids": [
+        "avx:b:a6aa6f71682aaeb5",
+        "avx:b:e2425e994d4cac5b"
+      ],
+      "count": 4,
+      "purchase_count": 2,
       "rental_count": 2,
       "category_ids": [
         "naver:b:atomos:50000206",
         "naver:b:atomos:50001394",
         "naver:b:atomos:50002113",
+        "avx:b:e2425e994d4cac5b",
+        "avx:b:a6aa6f71682aaeb5",
         "rental-brand:atomos:8",
         "rental-brand:atomos:145"
       ],
-      "representative_id": "smartstore-8790689054",
-      "representative_image": "https://shop-phinf.pstatic.net/20220905_52/1662354655598Xbxqa_JPEG/63490490433602741_1344697421.jpg",
-      "representative_name": "Atomos Ninja V+",
+      "representative_id": "avx-1789",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2024/10/1789_temp_17288824862607view.png",
+      "representative_name": "아토모스 쇼군 ATOMOS SHOGUN",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2024/10/1789_temp_17288824853598view.png",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -2699,17 +2875,51 @@
       ],
       "logo": "https://www.avx.co.kr/data/goods/1/2026/07/3026_temp_17846243525550list1.jpg",
       "navigation_category_ids": [
+        "avx:b:00682a1d74aed1d1",
+        "avx:b:0edbdc36e485ac2f",
+        "avx:b:11218a417cea946c",
         "avx:b:314346e28f94029b",
         "avx:b:378da5c29a91603c",
-        "avx:b:8bffda5b7a30e40d"
+        "avx:b:41874dc4bc62c9ba",
+        "avx:b:480f00a190aa789c",
+        "avx:b:5e215deab5e37138",
+        "avx:b:605ea3ab95b02061",
+        "avx:b:73c8cf3b96214727",
+        "avx:b:814aa024ee069d3d",
+        "avx:b:8350f49ade3ae655",
+        "avx:b:8903c02bd2ca76f2",
+        "avx:b:8bffda5b7a30e40d",
+        "avx:b:9d8bd97bf490f3ea",
+        "avx:b:c25160d99995060f",
+        "avx:b:d9026aef907e41db",
+        "avx:b:dbe746f200caca68",
+        "avx:b:ecbb0ae014553782",
+        "avx:b:ef6895c3b0c781fc"
       ],
-      "count": 2,
-      "purchase_count": 2,
+      "count": 38,
+      "purchase_count": 38,
       "rental_count": 0,
       "category_ids": [
         "avx:b:314346e28f94029b",
         "avx:b:378da5c29a91603c",
-        "avx:b:8bffda5b7a30e40d"
+        "avx:b:8bffda5b7a30e40d",
+        "avx:b:00682a1d74aed1d1",
+        "avx:b:41874dc4bc62c9ba",
+        "avx:b:8903c02bd2ca76f2",
+        "avx:b:c25160d99995060f",
+        "avx:b:d9026aef907e41db",
+        "avx:b:dbe746f200caca68",
+        "avx:b:73c8cf3b96214727",
+        "avx:b:11218a417cea946c",
+        "avx:b:605ea3ab95b02061",
+        "avx:b:0edbdc36e485ac2f",
+        "avx:b:8350f49ade3ae655",
+        "avx:b:5e215deab5e37138",
+        "avx:b:ef6895c3b0c781fc",
+        "avx:b:ecbb0ae014553782",
+        "avx:b:9d8bd97bf490f3ea",
+        "avx:b:814aa024ee069d3d",
+        "avx:b:480f00a190aa789c"
       ],
       "representative_id": "avx-3026",
       "representative_image": "https://www.avx.co.kr/data/goods/1/2026/07/3026_temp_17846243525550view.jpg",
@@ -2871,6 +3081,29 @@
       "logo_dark": false
     },
     {
+      "id": "betz-tools",
+      "name": "BETZ-TOOLS",
+      "aliases": [
+        "Betz-tools"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2025/05/_temp_17470334560134list1.png",
+      "navigation_category_ids": [
+        "avx:b:c077dba610a67c83"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:c077dba610a67c83"
+      ],
+      "representative_id": "avx-2241",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2025/05/_temp_17470334560134view.png",
+      "representative_name": "Betz-tools Wave1 스테디캠 밸런싱장비",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2025/05/_temp_17470334578011view.png",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "blackangel",
       "name": "BLACKANGEL",
       "aliases": [
@@ -2969,6 +3202,30 @@
       "representative_image": "https://shop-phinf.pstatic.net/20200619_154/1592571362447OEDOy_JPEG/29931196784584911_1519334612.jpg",
       "representative_name": "Siros 400 L WiFi / RFS 2.1 (31.710.XX)",
       "image_kind": "logo",
+      "logo_dark": false
+    },
+    {
+      "id": "cam-gear",
+      "name": "CAM-GEAR",
+      "aliases": [
+        "Cam gear"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2021/08/811_temp_16287356150902list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:d497942490ec8c09",
+        "avx:b:d9f0bbc18ae07383"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:d9f0bbc18ae07383",
+        "avx:b:d497942490ec8c09"
+      ],
+      "representative_id": "avx-811",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2021/08/811_temp_16287356150902view.jpg",
+      "representative_name": "캠기어 Elite8 AL Kit /알루미늄그라운드3단키트/최대하중10kg/볼지름75mm",
+      "image_kind": "product",
       "logo_dark": false
     },
     {
@@ -3101,6 +3358,31 @@
       "representative_id": "plthink-1927102",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080520000052.jpg?1769058956",
       "representative_name": "[Chipolo] 치폴로 팝 분실방지 블루투스 소형 위치추적기 스마트태그",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "cinema-devices",
+      "name": "CINEMA-DEVICES",
+      "aliases": [
+        "CINEMA DEVICES"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2023/03/1092_temp_16788536404268list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:0d36a47426b172bd",
+        "avx:b:851eecca9beba6b0"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:0d36a47426b172bd",
+        "avx:b:851eecca9beba6b0"
+      ],
+      "representative_id": "avx-1092",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2023/03/1092_temp_16788536404268view.jpg",
+      "representative_name": "ZEEGEE",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2023/03/1092_temp_16788536403468view.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -3238,6 +3520,35 @@
       "logo_dark": false
     },
     {
+      "id": "custom-easy",
+      "name": "CUSTOM-EASY",
+      "aliases": [
+        "CUSTOM EASY"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/02/2753_temp_17714645756324list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:347ae8bd898aaa1e",
+        "avx:b:678d613dd55bee4e",
+        "avx:b:ac5248ffd05efffd",
+        "avx:b:d4722f54c476cfb7"
+      ],
+      "count": 14,
+      "purchase_count": 14,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:347ae8bd898aaa1e",
+        "avx:b:678d613dd55bee4e",
+        "avx:b:d4722f54c476cfb7",
+        "avx:b:ac5248ffd05efffd"
+      ],
+      "representative_id": "avx-2753",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/02/2753_temp_17714645756324view.jpg",
+      "representative_name": "커스텀이지 Modulus X 모듈러스 엑스 악세서리 11종",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/02/2753_temp_17714645754344view.png",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "datacolor",
       "name": "DATACOLOR",
       "aliases": [
@@ -3265,6 +3576,78 @@
       "representative_image": "https://shop-phinf.pstatic.net/20221106_160/1667745018621TATgf_JPEG/68880861337302279_2075084824.jpg",
       "representative_name": "스파이더큐브 Datacolor SpyderCUBE",
       "image_kind": "logo",
+      "logo_dark": false
+    },
+    {
+      "id": "dearkol",
+      "name": "DEARKOL",
+      "aliases": [
+        "Dearkol"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2025/09/2507_temp_17586130305994list1.png",
+      "navigation_category_ids": [
+        "avx:b:9963bebd3b03ed12",
+        "avx:b:fad70d2085031767"
+      ],
+      "count": 12,
+      "purchase_count": 12,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:9963bebd3b03ed12",
+        "avx:b:fad70d2085031767"
+      ],
+      "representative_id": "avx-2507",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2025/09/2507_temp_17586130305994view.png",
+      "representative_name": "Dearkol 디어콜 C스탠드 롤러 베이스 전용 세로 기둥 컬럼",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2025/09/2507_temp_17586130396171view.png",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "deity",
+      "name": "DEITY",
+      "aliases": [
+        "DEITY"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/08/3054_temp_17871991464879list1.png",
+      "navigation_category_ids": [
+        "avx:b:3baeebdfc21645ec",
+        "avx:b:411d726cbcfe5cef",
+        "avx:b:5be1151cbfd23315",
+        "avx:b:8b4bde5680e158f0",
+        "avx:b:99e658134bc28e66",
+        "avx:b:9de83a4644897ce4",
+        "avx:b:9ea9a188cce3dd89",
+        "avx:b:a407fb5cdd93a118",
+        "avx:b:b6de64c8400174ba",
+        "avx:b:b988c7dff51b9e83",
+        "avx:b:ca61e1671295714f",
+        "avx:b:da4721aa5f38b903",
+        "avx:b:e009f22eb5c4d8f2"
+      ],
+      "count": 77,
+      "purchase_count": 77,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:8b4bde5680e158f0",
+        "avx:b:3baeebdfc21645ec",
+        "avx:b:411d726cbcfe5cef",
+        "avx:b:e009f22eb5c4d8f2",
+        "avx:b:9ea9a188cce3dd89",
+        "avx:b:5be1151cbfd23315",
+        "avx:b:a407fb5cdd93a118",
+        "avx:b:b6de64c8400174ba",
+        "avx:b:9de83a4644897ce4",
+        "avx:b:99e658134bc28e66",
+        "avx:b:b988c7dff51b9e83",
+        "avx:b:ca61e1671295714f",
+        "avx:b:da4721aa5f38b903"
+      ],
+      "representative_id": "avx-3054",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/08/3054_temp_17871991464879view.png",
+      "representative_name": "DEITY PR-4 필드 오디오 백 (미니)",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/08/3054_temp_17871991471211view.png",
+      "image_kind": "product",
       "logo_dark": false
     },
     {
@@ -3737,19 +4120,26 @@
         "FEELWORLD"
       ],
       "logo": "/assets/shop/brands/feelworld-4784871146.webp",
-      "count": 2,
-      "purchase_count": 0,
+      "navigation_category_ids": [
+        "avx:b:4da9a5a600bc2979",
+        "avx:b:c3c56c3cd563961a"
+      ],
+      "count": 6,
+      "purchase_count": 4,
       "rental_count": 2,
       "category_ids": [
         "naver:b:feelworld:50000206",
         "naver:b:feelworld:50001394",
         "naver:b:feelworld:50002113",
+        "avx:b:c3c56c3cd563961a",
+        "avx:b:4da9a5a600bc2979",
         "rental-brand:feelworld:8",
         "rental-brand:feelworld:145"
       ],
-      "representative_id": "smartstore-8790810842",
-      "representative_image": "https://shop-phinf.pstatic.net/20230629_192/1688040449593VowkO_PNG/1929307342004369_876570099.PNG",
-      "representative_name": "SEETEC ATEM215S 디렉터모니터",
+      "representative_id": "avx-3059",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/08/3059_temp_17876497267761view.png",
+      "representative_name": "SEETEC P215 PRO-CO 21.5인치 1000nit 고휘도 방송 디렉터 모니터",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/08/3059_temp_17876497277644view.png",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -3780,6 +4170,57 @@
       "representative_id": "smartstore-13739554663",
       "representative_image": "https://shop-phinf.pstatic.net/20260831_33/1788156005220eauCX_JPEG/f8d7d43b3e84c7d43feb2194d6e721e5.jpg",
       "representative_name": "Fender Studio Pro 12 Months 펜더 스튜디오 프로 12개월 라이선스 (구 스튜디오원)",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "flowcine",
+      "name": "FLOWCINE",
+      "aliases": [
+        "FLOWCINE"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/03/2808_temp_17732794142564list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:2cf93ed5e6313559",
+        "avx:b:c01904ec6b82b992",
+        "avx:b:cf0caaa27e48a048"
+      ],
+      "count": 2,
+      "purchase_count": 2,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:cf0caaa27e48a048",
+        "avx:b:2cf93ed5e6313559",
+        "avx:b:c01904ec6b82b992"
+      ],
+      "representative_id": "avx-2808",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/03/2808_temp_17732794142564view.jpg",
+      "representative_name": "FLOWCINE GLINK",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/03/2808_temp_17732794143592view.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "fomasystems",
+      "name": "FOMASYSTEMS",
+      "aliases": [
+        "FoMaSystems"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/08/3061_temp_17881591295237list1.png",
+      "navigation_category_ids": [
+        "avx:b:c9a03f7b1a1e3f4a",
+        "avx:b:d641f78963078cb4"
+      ],
+      "count": 2,
+      "purchase_count": 2,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:c9a03f7b1a1e3f4a",
+        "avx:b:d641f78963078cb4"
+      ],
+      "representative_id": "avx-3061",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/08/3061_temp_17881591295237view.png",
+      "representative_name": "FoMa Maxima Mk ll 핸드헬드 스태빌라이저",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -3820,6 +4261,32 @@
       "representative_name": "Peri Para 200 Kit",
       "image_kind": "logo",
       "logo_dark": true
+    },
+    {
+      "id": "fookus-pookus",
+      "name": "FOOKUS-POOKUS",
+      "aliases": [
+        "FOOKUS POOKUS"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/08/3060_temp_17878051241615list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:0f1de070d9b15011",
+        "avx:b:3161fde01e11c725",
+        "avx:b:bc44b2a21c12d62a"
+      ],
+      "count": 3,
+      "purchase_count": 3,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:3161fde01e11c725",
+        "avx:b:bc44b2a21c12d62a",
+        "avx:b:0f1de070d9b15011"
+      ],
+      "representative_id": "avx-2720",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/01/2720_temp_17694962659914view.jpg",
+      "representative_name": "Mod Crane 모드 크레인_모듈러스 X",
+      "image_kind": "product",
+      "logo_dark": false
     },
     {
       "id": "fotopro",
@@ -3939,6 +4406,33 @@
       "logo_dark": false
     },
     {
+      "id": "gfm",
+      "name": "GFM",
+      "aliases": [
+        "GFM"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/02/2764_temp_17719238310366list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:4ff8e91270845cc5",
+        "avx:b:7b86b4bc4772b816",
+        "avx:b:bc55039409cfd157"
+      ],
+      "count": 8,
+      "purchase_count": 8,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:7b86b4bc4772b816",
+        "avx:b:bc55039409cfd157",
+        "avx:b:4ff8e91270845cc5"
+      ],
+      "representative_id": "avx-2764",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/02/2764_temp_17719238310366view.jpg",
+      "representative_name": "GFM GF-NEO COLUMN",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/02/2764_temp_17719238327485view.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "gitzo",
       "name": "GITZO",
       "aliases": [
@@ -4010,6 +4504,30 @@
       "representative_id": "plthink-1917653",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080150000142.jpg?1768449817",
       "representative_name": "[GOODSGOOD] 굿스굿 흡습 방식 카메라 보관함 CH-ION-70D",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "gripfilm",
+      "name": "GRIPFILM",
+      "aliases": [
+        "gripfilm"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/01/2725_temp_17696714494768list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:3eda1a304ffb0706",
+        "avx:b:e7f479bb05fee830"
+      ],
+      "count": 2,
+      "purchase_count": 2,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:e7f479bb05fee830",
+        "avx:b:3eda1a304ffb0706"
+      ],
+      "representative_id": "avx-2725",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/01/2725_temp_17696714494768view.jpg",
+      "representative_name": "Triple Axis Offset Mount_3축 조절 마운트_GRIP FILM",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4146,6 +4664,33 @@
       "representative_id": "plthink-1914621",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080930000092.jpg?1768461881",
       "representative_name": "[힐링쉴드] 후지필름 X T30 올레포빅 액정 보호 필름 2매",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "healingshield",
+      "name": "HEALINGSHIELD",
+      "aliases": [
+        "HealingShield"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2025/06/2312_temp_17509887053611list1.png",
+      "navigation_category_ids": [
+        "avx:b:0a8d8d4ac9a00c72",
+        "avx:b:31aeb118a6c2932e",
+        "avx:b:f3fa5caed1a49c23"
+      ],
+      "count": 11,
+      "purchase_count": 11,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:31aeb118a6c2932e",
+        "avx:b:0a8d8d4ac9a00c72",
+        "avx:b:f3fa5caed1a49c23"
+      ],
+      "representative_id": "avx-2312",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2025/06/2312_temp_17509887053611view.png",
+      "representative_name": "DJI RC Pro 2 컨트롤러 올레포빅 액정보호필름",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2025/06/2312_temp_17509887045977view.png",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4626,6 +5171,31 @@
       "representative_id": "plthink-1926158",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080870000082.jpg?1768377854",
       "representative_name": "[Kateluo] 카텔로 LY-300 마이크 붐폴 붐대 Boompole",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "kondor-blue",
+      "name": "KONDOR-BLUE",
+      "aliases": [
+        "KONDOR BLUE"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/03/2823_temp_17738160255250list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:01a4cbc735222e15",
+        "avx:b:1e6c221c2611949d"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:01a4cbc735222e15",
+        "avx:b:1e6c221c2611949d"
+      ],
+      "representative_id": "avx-2823",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/03/2823_temp_17738160255250view.jpg",
+      "representative_name": "KondorBlue D-Tap 미니 라이트 카메라 케이블 조명 45cm KB-CRL15-PRO",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/03/2823_temp_17738160265504view.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -5342,6 +5912,31 @@
       "logo_dark": false
     },
     {
+      "id": "modulus",
+      "name": "MODULUS",
+      "aliases": [
+        "MODULUS"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2025/05/_temp_17471149120339list1.png",
+      "navigation_category_ids": [
+        "avx:b:381c1e354a694848",
+        "avx:b:798e228dd91b1bde"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:381c1e354a694848",
+        "avx:b:798e228dd91b1bde"
+      ],
+      "representative_id": "avx-2243",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2025/05/_temp_17471149120339view.png",
+      "representative_name": "Modulus-X Series 모듈러스-X 시리즈 6061 알루미늄 모듈형 프레임 (MX66, MX99)",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2025/05/_temp_17471149113112view.png",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "motion9",
       "name": "MOTION9",
       "aliases": [
@@ -5372,6 +5967,58 @@
       "representative_id": "smartstore-5125307000",
       "representative_image": "https://shop-phinf.pstatic.net/20260329_215/1774786858778WdSfH_JPEG/43446293659211493_584865494.jpg",
       "representative_name": "TRUCK serise Cart 카트 M711",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "motocrane",
+      "name": "MOTOCRANE",
+      "aliases": [
+        "MOTOCRANE"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2025/06/2309_temp_17509272167125list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:181ef0971203f967",
+        "avx:b:cf84135827e899d0",
+        "avx:b:d43529e3f2203209"
+      ],
+      "count": 5,
+      "purchase_count": 5,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:d43529e3f2203209",
+        "avx:b:cf84135827e899d0",
+        "avx:b:181ef0971203f967"
+      ],
+      "representative_id": "avx-2309",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2025/06/2309_temp_17509272167125view.jpg",
+      "representative_name": "TITAN LT 타이탄 LT",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2025/06/2309_temp_17509271402133view.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "movcam",
+      "name": "MOVCAM",
+      "aliases": [
+        "MOVCAM"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/06/2950_temp_17822798088116list1.png",
+      "navigation_category_ids": [
+        "avx:b:9289b981b5d0329d",
+        "avx:b:a006086f51459ff2"
+      ],
+      "count": 3,
+      "purchase_count": 3,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:9289b981b5d0329d",
+        "avx:b:a006086f51459ff2"
+      ],
+      "representative_id": "avx-2950",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/06/2950_temp_17822798088116view.png",
+      "representative_name": "무브캠 Movcam Skyline 모니터 레벨링 시스템",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/06/2950_temp_17822797591488view.png",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -5524,6 +6171,33 @@
       "logo_dark": false
     },
     {
+      "id": "neumann",
+      "name": "NEUMANN",
+      "aliases": [
+        "NEUMANN"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2022/06/932_temp_16563065368554list1.png",
+      "navigation_category_ids": [
+        "avx:b:97a35958ce9dfebd",
+        "avx:b:e7bcbc264f3d7f0d",
+        "avx:b:f1d5ee12242acd84"
+      ],
+      "count": 4,
+      "purchase_count": 4,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:e7bcbc264f3d7f0d",
+        "avx:b:f1d5ee12242acd84",
+        "avx:b:97a35958ce9dfebd"
+      ],
+      "representative_id": "avx-932",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2022/06/932_temp_16563065368554view.png",
+      "representative_name": "노이만(NEUMANN) KM184 MT 스테레오 세트",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2022/06/932_temp_16563065487497view.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "nikon",
       "name": "NIKON",
       "aliases": [
@@ -5601,6 +6275,56 @@
       "representative_id": "plthink-1905763",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080090000072.jpg?1768464302",
       "representative_name": "[NITECORE] 나이트코어 USN1 소니 FW50 전용 배터리 급속 충전기",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "nodo",
+      "name": "NODO",
+      "aliases": [
+        "NODO"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2024/09/1839_temp_17276710094100list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:7e42e74430131e4c",
+        "avx:b:d3b3eddc394b34a0"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:7e42e74430131e4c",
+        "avx:b:d3b3eddc394b34a0"
+      ],
+      "representative_id": "avx-1839",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2024/09/1839_temp_17276710094100view.jpg",
+      "representative_name": "NODO Inertia Wheels MAX 3-Axis Pro Kit 노도 무선 컨트롤러",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2024/09/1839_temp_17276710093255view.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "noga",
+      "name": "NOGA",
+      "aliases": [
+        "NOGA",
+        "노가"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2025/01/1948_temp_17362347786497list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:355cd270128d4d60",
+        "avx:b:7b689b89cff8c5be"
+      ],
+      "count": 6,
+      "purchase_count": 6,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:355cd270128d4d60",
+        "avx:b:7b689b89cff8c5be"
+      ],
+      "representative_id": "avx-1948",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2025/01/1948_temp_17362347786497view.jpg",
+      "representative_name": "Noga Arm NF9038 3/8인치 to 1/4인치 촬영 장비용 매직 암",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -5871,6 +6595,31 @@
       "representative_image": "https://shop-phinf.pstatic.net/20260901_278/1788248864526TLbiH_JPEG/f906ed5bc55cd71111fece59a9149ce1.jpg",
       "representative_name": "20 Package (스탠드 미포함)",
       "image_kind": "logo",
+      "logo_dark": false
+    },
+    {
+      "id": "pdmovie",
+      "name": "PDMOVIE",
+      "aliases": [
+        "PDMOVIE"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2023/12/1372_temp_17029742034837list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:5301cfca36bb6c74",
+        "avx:b:d78e12c6a4580449"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:d78e12c6a4580449",
+        "avx:b:5301cfca36bb6c74"
+      ],
+      "representative_id": "avx-1372",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2023/12/1372_temp_17029742034837view.jpg",
+      "representative_name": "Pdmovie Live air 3 무선 렌즈 시스템 팔로우포커스 피디무비 [국내 판매처]",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2023/12/1372_temp_17029544271769view.jpg",
+      "image_kind": "product",
       "logo_dark": false
     },
     {
@@ -6349,6 +7098,56 @@
       "logo_dark": false
     },
     {
+      "id": "puas",
+      "name": "PUAS",
+      "aliases": [
+        "PUAS"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2025/08/2430_temp_17558436471344list1.png",
+      "navigation_category_ids": [
+        "avx:b:60df888652697f40",
+        "avx:b:a1a87a6603d7e723"
+      ],
+      "count": 8,
+      "purchase_count": 8,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:a1a87a6603d7e723",
+        "avx:b:60df888652697f40"
+      ],
+      "representative_id": "avx-2430",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2025/08/2430_temp_17558436471344view.png",
+      "representative_name": "푸아스 PUAS 12G-SDI 4K UHD800 30x 방송용 30배줌 전문가 PTZ 카메라",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2025/08/2430_2025082215200981.png",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "qfys",
+      "name": "QFYS",
+      "aliases": [
+        "QFYS"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/04/2858_temp_17763080977385list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:4b32063f43a6db1e",
+        "avx:b:68c9fabdd2f73037"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:4b32063f43a6db1e",
+        "avx:b:68c9fabdd2f73037"
+      ],
+      "representative_id": "avx-2858",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/04/2858_temp_17763080977385view.jpg",
+      "representative_name": "QFYS TECHNO JIB 테크노 집 QF-Telescope 15",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/04/2858_temp_17763080980521view.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "qnap",
       "name": "QNAP",
       "aliases": [
@@ -6406,6 +7205,31 @@
       "representative_id": "smartstore-5985011282",
       "representative_image": "https://shop-phinf.pstatic.net/20211104_26/163600956114877PyY_JPEG/37145340684548931_1666430478.jpg",
       "representative_name": "QON 215 S4K / 21인치 방송용 스튜디오 모니터 / 4K 지원",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "readyrig",
+      "name": "READYRIG",
+      "aliases": [
+        "READYRIG"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/01/2714_temp_17690459514351list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:2bbd1186b333e035",
+        "avx:b:3067c310cdb2ae43"
+      ],
+      "count": 4,
+      "purchase_count": 4,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:3067c310cdb2ae43",
+        "avx:b:2bbd1186b333e035"
+      ],
+      "representative_id": "avx-2714",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/01/2714_temp_17690459514351view.jpg",
+      "representative_name": "Ready Rig Nimbus Full Kit 님버스 풀 키트",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/01/2714_temp_17690459514166view.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -6980,6 +7804,33 @@
       "logo_dark": true
     },
     {
+      "id": "selens",
+      "name": "SELENS",
+      "aliases": [
+        "Selens"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2025/07/2358_temp_17533368431161list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:2f6a5f98b25efcf1",
+        "avx:b:4016449504f74cf5",
+        "avx:b:a6d0323a86f28269"
+      ],
+      "count": 5,
+      "purchase_count": 5,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:a6d0323a86f28269",
+        "avx:b:4016449504f74cf5",
+        "avx:b:2f6a5f98b25efcf1"
+      ],
+      "representative_id": "avx-2358",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2025/07/2358_temp_17533368431161view.jpg",
+      "representative_name": "Selens 셀렌스 리그트리 시스템",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2025/07/2358_temp_17533368449031view.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "sennheiser",
       "name": "SENNHEISER",
       "aliases": [
@@ -7257,6 +8108,31 @@
       "logo_dark": true
     },
     {
+      "id": "smartsystem",
+      "name": "SMARTSYSTEM",
+      "aliases": [
+        "SmartSystem"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2023/07/1205_temp_16892981296065list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:469769a4ca603d2e",
+        "avx:b:fec66cf7d4855cdd"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:469769a4ca603d2e",
+        "avx:b:fec66cf7d4855cdd"
+      ],
+      "representative_id": "avx-1205",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2023/07/1205_temp_16892981296065view.jpg",
+      "representative_name": "Matrix One R2 Bundle메트릭스 원 알투 번들",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2024/01/1205_temp_17065003161789view.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "smdv",
       "name": "SMDV",
       "aliases": [
@@ -7282,6 +8158,30 @@
       "representative_id": "plthink-1895328",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080020000242.jpg?1768460871",
       "representative_name": "[SMDV] 에스엠디브이 무선동조기 FlashWave-4 TTL Kit 캐논용",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "snorricam",
+      "name": "SNORRICAM",
+      "aliases": [
+        "SNORRICAM"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2024/01/_temp_17066758960356list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:bbce16c24d8fcdce",
+        "avx:b:d9b24cc93bee64f5"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:d9b24cc93bee64f5",
+        "avx:b:bbce16c24d8fcdce"
+      ],
+      "representative_id": "avx-1428",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2024/01/_temp_17066758960356view.jpg",
+      "representative_name": "SNORRICAM PRO스노리캠 프로",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -7706,6 +8606,31 @@
       "logo_dark": false
     },
     {
+      "id": "topping",
+      "name": "TOPPING",
+      "aliases": [
+        "TOPPING"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2025/04/2204_temp_17434943917696list1.png",
+      "navigation_category_ids": [
+        "avx:b:323987ebbc4eebf1",
+        "avx:b:47c3d9042bb895c2"
+      ],
+      "count": 8,
+      "purchase_count": 8,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:47c3d9042bb895c2",
+        "avx:b:323987ebbc4eebf1"
+      ],
+      "representative_id": "avx-2204",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2025/04/2204_temp_17434943917696view.png",
+      "representative_name": "TOPPING E4x4 Pre 토핑 프리 오디오 인터페이스 화이트",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2025/04/2204_temp_17434944030787view.png",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "turbosound",
       "name": "TURBOSOUND",
       "aliases": [
@@ -7849,6 +8774,31 @@
       "representative_id": "plthink-1926412",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0081280000102.jpg?1779079173",
       "representative_name": "[UNIU] 유니유 클릭 애플워치 스테인리스 티타늄 스트랩 42 44 45 46 49mm",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "ursa",
+      "name": "URSA",
+      "aliases": [
+        "URSA"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/03/2838_temp_17745740168458list1.png",
+      "navigation_category_ids": [
+        "avx:b:757d483cc958499b",
+        "avx:b:f6e679774d6f253a"
+      ],
+      "count": 26,
+      "purchase_count": 26,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:f6e679774d6f253a",
+        "avx:b:757d483cc958499b"
+      ],
+      "representative_id": "avx-2838",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/03/2838_temp_17745740168458view.png",
+      "representative_name": "URSA 얼사 Sticky Circles 스티키 서클",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/03/2838_temp_17745744892738view.png",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -8117,6 +9067,31 @@
       "logo_dark": false
     },
     {
+      "id": "xvive",
+      "name": "XVIVE",
+      "aliases": [
+        "Xvive"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2025/12/2636_temp_17647512090503list1.png",
+      "navigation_category_ids": [
+        "avx:b:a1842ca2f27cd262",
+        "avx:b:c0633e4d7814b281"
+      ],
+      "count": 7,
+      "purchase_count": 7,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:c0633e4d7814b281",
+        "avx:b:a1842ca2f27cd262"
+      ],
+      "representative_id": "avx-2636",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2025/12/2636_temp_17647512090503view.png",
+      "representative_name": "Xvive U45T9 5.8GHz 디지털 인이어 모니터 무선 시스템 컴플리트 세트 (T9 이어폰 포함)",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2025/12/2636_2025120317102685.png",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "yamaha",
       "name": "YAMAHA",
       "aliases": [
@@ -8147,6 +9122,31 @@
       "representative_id": "plthink-1921582",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0081390000022.jpg?1768531776",
       "representative_name": "[YAMAHA] 야마하 ZG01 Pack 게임 스트리밍 믹서 헤드폰 패키지",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "yc-onion",
+      "name": "YC-ONION",
+      "aliases": [
+        "YC Onion"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/03/2821_temp_17737945527374list1.png",
+      "navigation_category_ids": [
+        "avx:b:41d8176d5702160b",
+        "avx:b:d2706ae67b0f0dd5"
+      ],
+      "count": 16,
+      "purchase_count": 16,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:41d8176d5702160b",
+        "avx:b:d2706ae67b0f0dd5"
+      ],
+      "representative_id": "avx-2821",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/03/2821_temp_17737945527374view.png",
+      "representative_name": "YC Onion FH60S Fluid Head 와이씨어니언 파인타 프로 모노포드 유압식 헤드",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/03/2821_temp_17737945529634view.png",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -8380,6 +9380,32 @@
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080290000132.jpg?1776054815",
       "representative_name": "[ZOOM] 줌 SSH-6 샷건 촬영 마이크 캡슐 H5 H6 Q8전용",
       "image_kind": "logo",
+      "logo_dark": false
+    },
+    {
+      "id": "zunow",
+      "name": "ZUNOW",
+      "aliases": [
+        "ZUNOW"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2017/12/383_tmp_043b5c434553905c3c9efab2a2d17ed66209list1.png",
+      "navigation_category_ids": [
+        "avx:b:2fa6999e10ca6d84",
+        "avx:b:8e706ba55c8eda72",
+        "avx:b:e590d596ee9361d8"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:2fa6999e10ca6d84",
+        "avx:b:e590d596ee9361d8",
+        "avx:b:8e706ba55c8eda72"
+      ],
+      "representative_id": "avx-383",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2017/12/383_tmp_043b5c434553905c3c9efab2a2d17ed66209view.png",
+      "representative_name": "4K Wide Conversion Lens",
+      "image_kind": "product",
       "logo_dark": false
     },
     {
@@ -26472,6 +27498,61 @@
     }
   ],
   "redirects": {
+    "imweb-10644": "avx-1093",
+    "plthink-1929898": "avx-1495",
+    "imweb-12210": "avx-1512",
+    "plthink-1924618": "avx-1517",
+    "plthink-1923699": "avx-1530",
+    "plthink-1924597": "avx-1548",
+    "plthink-1924587": "avx-1557",
+    "plthink-1924607": "avx-1597",
+    "imweb-11806": "avx-1652",
+    "imweb-11805": "avx-1653",
+    "imweb-12411": "avx-1756",
+    "imweb-12412": "avx-1757",
+    "imweb-12408": "avx-1758",
+    "imweb-12409": "avx-1759",
+    "avx-1779": "avx-2681",
+    "plthink-1924615": "avx-2681",
+    "plthink-1924610": "avx-1782",
+    "plthink-1925421": "avx-1816",
+    "plthink-1926016": "avx-1958",
+    "plthink-1926015": "avx-1960",
+    "plthink-1926234": "avx-1968",
+    "plthink-1926235": "avx-1969",
+    "imweb-12279": "avx-2069",
+    "imweb-12280": "avx-2070",
+    "plthink-1926301": "avx-2071",
+    "plthink-1926300": "avx-2072",
+    "plthink-1924608": "avx-2111",
+    "plthink-1924613": "avx-2112",
+    "imweb-12294": "avx-2257",
+    "imweb-13658": "avx-2283",
+    "plthink-1927819": "avx-2283",
+    "imweb-13659": "avx-2284",
+    "plthink-1928225": "avx-2284",
+    "plthink-1926893": "avx-2285",
+    "plthink-1927273": "avx-2377",
+    "plthink-1927274": "avx-2378",
+    "avx-2452": "avx-3050",
+    "plthink-1927629": "avx-2497",
+    "plthink-1927625": "avx-2498",
+    "plthink-1928056": "avx-2585",
+    "plthink-1928059": "avx-2589",
+    "plthink-1928078": "avx-2604",
+    "plthink-1928073": "avx-2608",
+    "plthink-1928071": "avx-2611",
+    "plthink-1929916": "avx-2846",
+    "imweb-13711": "avx-2863",
+    "plthink-1929542": "avx-2890",
+    "plthink-1929543": "avx-2891",
+    "plthink-1929897": "avx-2896",
+    "imweb-13710": "avx-2903",
+    "plthink-1929863": "avx-2939",
+    "plthink-1929868": "avx-2940",
+    "imweb-13793": "avx-3031",
+    "plthink-1922436": "avx-954",
+    "imweb-9781": "avx-959",
     "plthink-1924625": "imweb-12404",
     "imweb-12623": "smartstore-11979494387",
     "imweb-12624": "smartstore-11979499287",
@@ -26492,8 +27573,6 @@
     "plthink-1927630": "imweb-13215",
     "plthink-1927647": "imweb-13240",
     "plthink-1927646": "imweb-13241",
-    "plthink-1927819": "imweb-13658",
-    "plthink-1928225": "imweb-13659",
     "kpp-1579572827": "smartstore-12959114500",
     "smartstore-13745581756": "kpp-1606719988",
     "plthink-1916918": "kpp-1606723406",

@@ -7,7 +7,7 @@
     "imweb-promotions": 37,
     "l-mount": 335,
     "plthink": 6580,
-    "avx": 130
+    "avx": 943
   },
   "detail_coverage": {
     "kpp": 4014,
@@ -16,18 +16,18 @@
     "imweb-promotions": 37,
     "l-mount": 335,
     "plthink": 6580,
-    "avx": 130
+    "avx": 943
   },
-  "synced_at": "2026-09-08T09:13:40+00:00",
-  "merged_count": 2385,
-  "product_count": 15706,
+  "synced_at": "2026-09-08T12:59:54+00:00",
+  "merged_count": 2438,
+  "product_count": 16466,
   "category_browsing_enabled": true,
-  "listing_count": 15607,
-  "option_family_count": 99,
+  "listing_count": 16358,
+  "option_family_count": 108,
   "deduplication": {
-    "brands_checked": 219,
-    "groups": 1870,
-    "removed": 2385
+    "brands_checked": 251,
+    "groups": 1920,
+    "removed": 2438
   },
-  "revision": "40eed65c0bdaf27a"
+  "revision": "024c5323a10e7bfa"
 }
