@@ -188,6 +188,8 @@ class Importer:
     def __init__(self, work=WORK):
         self.work = work
         self.source = Source(work)
+        self._last_report = 0
+        self._last_phase = None
         self.db = sqlite3.connect(work / 'checkpoint.sqlite3')
         self.db.execute('CREATE TABLE IF NOT EXISTS pages (key TEXT PRIMARY KEY, total INTEGER, payload TEXT)')
         self.db.execute('CREATE TABLE IF NOT EXISTS details (id TEXT PRIMARY KEY, fingerprint TEXT, payload TEXT)')
@@ -232,6 +234,12 @@ class Importer:
         return rows
 
     def report(self, phase, **extra):
+        now = time.monotonic()
+        if (phase == self._last_phase == 'details' and now-self._last_report < 1
+                and extra.get('found') != extra.get('expected')):
+            return
+        self._last_report = now
+        self._last_phase = phase
         count = self.db.execute('SELECT count(*) FROM details').fetchone()[0]
         save_json(self.work / 'progress.json', {'at': stamp(), 'phase': phase,
                   'verified_details': count, 'full_catalogue_complete': False, **extra})
@@ -259,10 +267,13 @@ class Importer:
         for sid in pending:
             if sid in ap: pending[sid]['brand_category_ids'] = ap[sid]['brand_category_ids']
         done = {}; failures = {}; consecutive_errors = 0
+        # Reuse verified rows in memory: per-item SMB reads/progress rewrites
+        # make a checkpoint-only replay unnecessarily slow and unstable.
+        stored_rows = {sid:(fp,payload) for sid,fp,payload in self.db.execute('SELECT id,fingerprint,payload FROM details')}
         for sid in sorted(pending, key=lambda k:(k not in ap, -int(k))):
             p = pending[sid]
             fp = hashlib.sha256(json.dumps(p, sort_keys=True).encode()).hexdigest()
-            stored = self.db.execute('SELECT fingerprint,payload FROM details WHERE id=?', (sid,)).fetchone()
+            stored = stored_rows.get(sid)
             if stored and stored[0] == fp:
                 product = json.loads(stored[1])
             else:
@@ -301,6 +312,13 @@ class Importer:
             category='c'+category if category else '', per=40, sorting='regist', auto=1))
         original = self.db.execute('SELECT total,payload FROM pages WHERE key=?', (category+'/1',)).fetchone()
         if not original or total != len(products) or first != json.loads(original[1]):
+            previous = json.loads(original[1]) if original else {}
+            save_json(self.work/'reconciliation-change.json',{'at':stamp(),'category':category,
+                'expected_total':len(products),'observed_total':total,
+                'added_first_page_ids':sorted(set(first)-set(previous)),
+                'removed_first_page_ids':sorted(set(previous)-set(first)),
+                'changed_first_page_fields':{sid:[k for k in set(previous[sid])|set(first[sid]) if previous[sid].get(k)!=first[sid].get(k)]
+                    for sid in set(first)&set(previous) if first[sid]!=previous[sid]}})
             self.invalidate_listings('final_inventory_changed', category)
             raise CatalogueChanged('AVX final inventory reconciliation failed')
         categories = {}; rows = {}

@@ -97,6 +97,18 @@ class AvxTests(unittest.TestCase):
                 with self.assertRaises(CatalogueChanged):importer.export({'3034':{}},{},'all')
             self.assertEqual(previous.read_text(),'{"previous":"verified"}')
             self.assertEqual(importer.db.execute('SELECT count(*) FROM pages').fetchone()[0],0)
+            change=json.loads((folder/'reconciliation-change.json').read_text())
+            self.assertEqual(change['added_first_page_ids'],['3035'])
+            self.assertEqual(change['removed_first_page_ids'],['3034'])
+            importer.db.close()
+
+    def test_cached_progress_is_throttled_but_final_count_is_always_saved(self):
+        with tempfile.TemporaryDirectory() as directory:
+            importer=Importer(Path(directory))
+            with patch('sync_avx_catalog.time.monotonic',side_effect=[1,1.2,2.1,2.2]),patch('sync_avx_catalog.save_json') as save:
+                for found in (1,2,3,4):importer.report('details',found=found,expected=4)
+                self.assertEqual(save.call_count,3)
+                self.assertEqual(save.call_args.args[1]['found'],4)
             importer.db.close()
 
 
