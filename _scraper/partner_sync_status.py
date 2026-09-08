@@ -14,11 +14,23 @@ def read(path):
 
 def verified_receipt(source, out=OUT, state=STATE):
     snapshot_path = out / (source + '.json')
+    if source=='avx' and (out/'avx-approved.json').exists():snapshot_path=out/'avx-approved.json'
     receipt = read(state / source / 'published.json')
     snapshot = read(snapshot_path)
     count = snapshot.get('product_count')
-    if source == 'avx' and (snapshot.get('scope') != 'all' or not snapshot.get('catalogue_complete')):
-        return False
+    if not isinstance(count,int) or count<1:return False
+    if source == 'avx':
+        if snapshot.get('scope')=='approved-brands':
+            from avx_publication import policy_fingerprint
+            publication=snapshot.get('publication',{})
+            if (not publication.get('full_collection_verified') or publication.get('pending_brand_count')!=0 or
+                publication.get('pending_product_count')!=0 or receipt.get('pending_brand_count')!=0 or
+                publication.get('accepted_product_count')!=count or
+                publication.get('source_product_count')!=count+publication.get('owner_excluded_product_count',0) or
+                receipt.get('source_verified_products')!=publication.get('source_product_count') or
+                receipt.get('policy_sha256')!=publication.get('policy_sha256') or
+                receipt.get('policy_sha256')!=policy_fingerprint()):return False
+        elif snapshot.get('scope')!='all' or not snapshot.get('catalogue_complete'):return False
     return bool(snapshot.get('complete') and isinstance(count, int) and count > 0
                 and count == len(snapshot.get('products', {}))
                 and receipt.get('verified_products') == count
@@ -42,6 +54,7 @@ def report(plan_path=PLAN, out=OUT, state=STATE):
                 'products_found':progress.get('expected'), 'details_verified':progress.get('verified_details')}
         # A receipt cannot turn an unimplemented adapter into recurring sync.
         source_choices = read(folder / 'publication-waiting.json') if source == 'avx' else {}
+        receipt=read(folder/'published.json')
         phase = ('awaiting_brand_source_choices' if source_choices.get('state') == 'awaiting_brand_source_choices' and not published else
                  config.get('status','awaiting_source_access') if not adapter_ready else
                  'waiting_for_predecessor' if waiting else
@@ -56,6 +69,9 @@ def report(plan_path=PLAN, out=OUT, state=STATE):
             'last_worker_error': read(folder / 'worker-error.json' if source == 'avx' else state / (source + '-worker-error.json')) or None,
             'blocker': config.get('blocker') if not adapter_ready else None,
             'pending_brand_source_choices':len(source_choices.get('brands',[])),
+            'last_verified_published_products':receipt.get('verified_products'),
+            'last_verified_source_products':receipt.get('source_verified_products'),
+            'published_scope':receipt.get('scope'),
         }
     return result
 

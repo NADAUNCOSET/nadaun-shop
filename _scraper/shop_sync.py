@@ -37,6 +37,7 @@ CODE += ['assets/shop/storefront.css','assets/shop/scenes.js','assets/shop/brows
 CODE += ['_scraper/test_partner_sync_status.py']
 CODE += ['_scraper/build_gift_catalog.py','_scraper/brand_source_policy.py','_scraper/test_gift_public_catalog.py','_scraper/test_brand_source_policy.py','data/catalog/brand-source-policy.json','server/gift-catalog.cjs','server/shop-search.cjs']
 CODE += ['_scraper/source_refresh_state.py','_scraper/test_source_refresh_state.py']
+CODE += ['_scraper/avx_publication.py','_scraper/test_avx_publication.py']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
@@ -59,7 +60,7 @@ def managed_files():
     for source in ('smartstore','imweb-dji','imweb-promotions','kpp','l-mount','nadaun-gift'):
         files.append('data/catalog/sources/'+source+'.json')
     if (OUT/'plthink.json').exists():files.append('data/catalog/sources/plthink.json')
-    for source in ('avx','avx-aputure'):
+    for source in ('avx','avx-aputure','avx-approved'):
         if (OUT/(source+'.json')).exists():files.append('data/catalog/sources/'+source+'.json')
     for source in ('smartstore','kpp'):
         base=ROOT/'data/catalog/source-details'/source
@@ -156,7 +157,7 @@ def run(publish=True,existing=False):
             else: collect_gift()
             for source,count in previous.get('source_counts',{}).items():
                 path=OUT/(source+'.json')
-                if source=='avx' and not path.exists():path=OUT/'avx-aputure.json'
+                if source=='avx':path=next(p for p in (OUT/'avx-approved.json',OUT/'avx.json',OUT/'avx-aputure.json') if p.exists())
                 new=json.loads(path.read_text())['product_count']
                 if new<count*.85:raise RuntimeError(f'{source} count dropped more than 15%; keep live data and review')
             enrich('smartstore');enrich('kpp');prepare()

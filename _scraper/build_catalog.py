@@ -69,13 +69,18 @@ def verified_sources():
     sources=['kpp','smartstore','imweb-dji','imweb-promotions','l-mount']
     if (OUT/'plthink.json').exists():sources.append('plthink')
     snapshots={key:json.loads((OUT/(key+'.json')).read_text()) for key in sources}
-    avx_path=next((OUT/name for name in ('avx.json','avx-aputure.json') if (OUT/name).exists()),None)
+    avx_path=next((OUT/name for name in ('avx-approved.json','avx.json','avx-aputure.json') if (OUT/name).exists()),None)
     if avx_path:
         snapshot=json.loads(avx_path.read_text())
         if not snapshot.get('complete') or snapshot['product_count']!=len(snapshot['products']) or any(p.get('detail_status')!='verified' for p in snapshot['products'].values()):raise RuntimeError('AVX snapshot is incomplete')
-        expected_scope='all' if avx_path.name=='avx.json' else 'aputure'
+        expected_scope={'avx.json':'all','avx-approved.json':'approved-brands','avx-aputure.json':'aputure'}[avx_path.name]
         if snapshot.get('scope')!=expected_scope or snapshot.get('catalogue_complete')!=(expected_scope=='all') or snapshot.get('coverage')!={'expected':snapshot['product_count'],'unique':snapshot['product_count']}:
             raise RuntimeError('AVX source scope or coverage is inconsistent')
+        if expected_scope=='approved-brands':
+            publication=snapshot.get('publication',{})
+            if (not publication.get('full_collection_verified') or publication.get('accepted_product_count')!=snapshot['product_count'] or
+                publication.get('source_product_count')!=sum(publication.get(k,0) for k in ('accepted_product_count','pending_product_count','owner_excluded_product_count'))):
+                raise RuntimeError('AVX approved source partition is inconsistent')
         snapshots['avx']=snapshot
     if not all(s.get('complete') for s in snapshots.values()):raise RuntimeError('Incomplete source snapshot')
     if 'plthink' in snapshots:
@@ -255,7 +260,15 @@ def build(allow_pending=False):
     dedup_audit['option_families']=family_audit
     save_json(PUBLIC/'dedup-audit.json',dedup_audit)
     from brand_category_policy import choose_navigation
-    navigation_audit=choose_navigation(public_products,categories,brands,config.get('brand_category_sources'))
+    navigation_choices=dict(config.get('brand_category_sources') or {})
+    for bid,choice in source_choices.items():
+        # Owner-selected source is also the first navigation tree once its
+        # actual memberships exist. Other verified paths remain a fallback.
+        if bid not in ('dji','aputure') or choice['source']!='avx':continue
+        selected=choice['source']
+        if any(p['brand_id']==bid and p['kind']=='purchase' and any(cid.startswith(selected+':') and categories[cid].get('brand_id')==bid for cid in p['category_ids']) for p in public_products):
+            navigation_choices.setdefault(bid,selected)
+    navigation_audit=choose_navigation(public_products,categories,brands,navigation_choices)
     save_json(ROOT/'_scraper/.sync-state/brand-category-selection.json',navigation_audit)
     for p in public_products:
         p['discovery']=product_discovery(p,brands[p['brand_id']],categories)

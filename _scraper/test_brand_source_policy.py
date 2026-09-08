@@ -10,8 +10,10 @@ from catalog_dedup import primary_key,deduplicate
 class SourcePolicyTests(unittest.TestCase):
     def test_unselected_overlap_never_enters_publication(self):
         import avx_worker
+        import avx_publication
         unresolved=[{'brand_id':'sony','sources':{'avx':1,'smartstore':2}}]
-        with patch.object(policy,'pending',return_value=unresolved),patch.object(policy,'write_audit'),patch.object(avx_worker,'save_json') as save:
+        selection={'held_ids':{'avx-1':'sony'},'excluded_ids':{},'pending_brands':{'sony':1}}
+        with patch.object(avx_publication,'partition',return_value=({'products':{},'product_count':0},selection)),patch.object(policy,'pending',return_value=unresolved),patch.object(policy,'write_audit'),patch.object(avx_worker,'save_json') as save:
             result=avx_worker.publish({'products':{}})
             self.assertEqual(result['state'],'awaiting_brand_source_choices')
             self.assertEqual(save.call_args.args[0].name,'publication-waiting.json')

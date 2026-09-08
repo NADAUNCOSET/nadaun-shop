@@ -18,26 +18,41 @@ from sync_shop_sources import ROOT, OUT, save_json, stamp
 
 def publish(snapshot):
     from brand_source_policy import pending,write_audit
+    from avx_publication import partition
+    approved,decisions=partition(snapshot)
     choices=pending(snapshot)
-    if choices:
+    save_json(WORK/'publication-selection.json',{'at':stamp(),**decisions})
+    save_json(WORK/'publication-waiting.json',{'at':stamp(),'state':'awaiting_brand_source_choices' if choices else 'resolved',
+        'brands':choices,'approved_products':approved['product_count'],'held_products':len(decisions['held_ids']),
+        'owner_excluded_products':len(decisions['excluded_ids'])})
+    if not approved['products']:
         write_audit(json.loads((ROOT/'data/catalog/catalog.json').read_text()),snapshot)
-        save_json(WORK/'publication-waiting.json',{'at':stamp(),'state':'awaiting_brand_source_choices','brands':choices})
         return {'state':'awaiting_brand_source_choices','brands':len(choices)}
+    prior=json.loads((WORK/'published.json').read_text()) if (WORK/'published.json').exists() else {}
+    if snapshot['product_count']<prior.get('source_verified_products',0)*.85:
+        raise RuntimeError('AVX full inventory decreased more than 15%; preserve previous publication and review')
     from shop_sync import CODE, command, managed_files, run, request, SITE
     from partner_worker import changed_files
     if command('git','diff','--cached','--name-only') or command('git','diff','--name-only','--',*CODE):
         raise RuntimeError('Reviewed commit required before AVX automatic publish')
-    allowed={'data/catalog/sources/avx.json','data/catalog/sources/avx-aputure.json'}
+    allowed={'data/catalog/sources/avx.json','data/catalog/sources/avx-aputure.json','data/catalog/sources/avx-approved.json'}
     if changed_files() & (set(managed_files())-allowed):
         raise RuntimeError('Existing generated edits require review before AVX publish')
-    save_json(OUT/'avx.json',snapshot)
+    save_json(OUT/'avx-approved.json',approved)
     result=run(existing=True)
     live=request('GET',SITE+'/data/catalog/catalog.json',params={'verify':result['revision']}).json()
     ids={o['id'] for p in live['products'] for o in p['offers'] if o['source']=='avx'}
-    if ids!=set(snapshot['products']):raise RuntimeError('AVX live IDs do not match source')
-    receipt=result|{'scope':snapshot['scope'],'verified_products':len(ids),
+    if ids!=set(approved['products']):raise RuntimeError('AVX live IDs do not match approved source partition')
+    # Unresolved and owner-excluded sources may never leak into public offers.
+    if ids & (set(decisions['held_ids'])|set(decisions['excluded_ids'])):raise RuntimeError('Unapproved AVX product appeared in public offers')
+    receipt=result|{'scope':approved['scope'],'verified_products':len(ids),
+                    'source_file':'avx-approved.json','source_verified_products':snapshot['product_count'],
+                    'pending_brand_count':len(decisions['pending_brands']),
+                    'pending_product_count':len(decisions['held_ids']),
+                    'owner_excluded_product_count':len(decisions['excluded_ids']),
+                    'policy_sha256':decisions['policy_sha256'],
                     'source_collected_at':snapshot['collected_at'],
-                    'source_sha256':hashlib.sha256((OUT/'avx.json').read_bytes()).hexdigest()}
+                    'source_sha256':hashlib.sha256((OUT/'avx-approved.json').read_bytes()).hexdigest()}
     save_json(WORK/'published.json',receipt)
     return receipt
 
@@ -55,7 +70,8 @@ def work():
         snapshot=json.loads(candidate.read_text()) if candidate.exists() else json.loads((OUT/'avx.json').read_text()) if (OUT/'avx.json').exists() else None
         if snapshot and (folder/'all-complete.json').exists():
             receipt=json.loads((WORK/'published.json').read_text()) if (WORK/'published.json').exists() else {}
-            if receipt.get('source_collected_at')!=snapshot['collected_at']:return publish(snapshot)
+            from avx_publication import policy_fingerprint
+            if receipt.get('source_collected_at')!=snapshot['collected_at'] or receipt.get('policy_sha256')!=policy_fingerprint():return publish(snapshot)
             if time.time()-datetime.fromisoformat(snapshot['collected_at']).timestamp()<12*3600:return
             folder=WORK/('generation-'+datetime.now().strftime('%Y%m%d-%H%M%S'))
             folder.mkdir()

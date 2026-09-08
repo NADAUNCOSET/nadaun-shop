@@ -20,7 +20,7 @@ def snapshots(candidate=None):
     result={}
     for source in NAMES:
         path=OUT/(source+'.json')
-        if source=='avx' and not path.exists():path=OUT/'avx-aputure.json'
+        if source=='avx':path=next((p for p in (OUT/'avx-approved.json',OUT/'avx.json',OUT/'avx-aputure.json') if p.exists()),path)
         if path.exists():result[source]=json.loads(path.read_text())
     if candidate:
         result[candidate.get('source','avx')]=candidate
