@@ -14,6 +14,10 @@ GIFT = 'https://www.nadaun-gift.com'
 
 
 def soup(url, **params):
+    if urlparse(url).hostname in ('www.nadaun-gift.com', 'nadaun-gift.com'):
+        from sync_gift_inventory import Source
+        from gift_supplier_registry import PRIVATE_ROOT
+        return Source(PRIVATE_ROOT).get(url, **params)
     r = request('GET', url, params=params)
     r.encoding = r.apparent_encoding if url.startswith(GIFT) else 'utf-8'
     return BeautifulSoup(r.text, 'lxml')

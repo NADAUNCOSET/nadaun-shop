@@ -1,11 +1,12 @@
 /* Scroll-linked entrances, product photo changes and stable shopping links.
    Smooth desktop wheel scrolling; native touch and reduced-motion fallback. */
-export function mountArtMotion(main,{gsap,ScrollTrigger:ST,Lenis},env=window){
+export function mountArtMotion(main,{gsap,ScrollTrigger:ST,Lenis,motionPreference='system'},env=window){
  if(!main||!gsap||!ST)return ()=>{};
  gsap.registerPlugin(ST);
  const doc=main.ownerDocument;
  const media=gsap.matchMedia();
- media.add({motion:'(prefers-reduced-motion:no-preference)',desktop:'(min-width:1000px) and (min-height:740px)',fine:'(pointer:fine)',mobile:'(max-width:700px)'},context=>{
+ const preference=motionPreference==='on'?'all':motionPreference==='off'?'not all':'(prefers-reduced-motion:no-preference)';
+ media.add({motion:preference,desktop:'(min-width:1000px) and (min-height:740px)',fine:'(pointer:fine)',mobile:'(max-width:700px)'},context=>{
   if(!context.conditions.motion)return;
   const {fine,mobile}=context.conditions;
   let releaseScroll=()=>{};
@@ -37,11 +38,12 @@ export function mountArtMotion(main,{gsap,ScrollTrigger:ST,Lenis},env=window){
     const plane=doc.createElement('span');plane.className='motion-plane';
     img.before(plane);plane.append(img);
     const large=frame.matches('.department-visual,.editorial-visual');
-    const distance=mobile?20:large?24:30;
-    const tilt=(index%2?1:-1)*(mobile?1.1:2.4);
+    const home=!!frame.closest('.home-scene');
+    const distance=home?12:mobile?20:large?24:30;
+    const tilt=home?0:(index%2?1:-1)*(mobile?1.1:2.4);
     const phase=(index%(mobile?2:4))*3;
     const timeline=gsap.timeline({scrollTrigger:scroll(frame,`top ${98-phase}%`)});
-    timeline.fromTo(plane,{yPercent:distance,scale:.88,rotation:tilt,clipPath:'inset(14% 0% 10% 0% round 18px)'},{yPercent:0,scale:1,rotation:0,clipPath:'inset(0% 0% 0% 0% round 0px)',duration:.38,ease:'power2.out'})
+    timeline.fromTo(plane,{yPercent:distance,scale:home?.97:.88,rotation:tilt,clipPath:home?'inset(0%)':'inset(14% 0% 10% 0% round 18px)'},{yPercent:0,scale:1,rotation:0,clipPath:'inset(0% 0% 0% 0% round 0px)',duration:.38,ease:'power2.out'})
      .to(plane,{yPercent:-3,scale:1.025,rotation:0,duration:.34,ease:'none'})
      .to(plane,{yPercent:mobile?-9:-14,scale:1.04,rotation:-tilt*.2,duration:.28,ease:'none'});
     // A real second view of the SAME product is revealed only after it loads.
@@ -77,19 +79,19 @@ export function mountArtMotion(main,{gsap,ScrollTrigger:ST,Lenis},env=window){
    if(disposed)return;
    for(const node of records.keys())if(!node.isConnected||node.closest('[hidden]'))remove(node);
    main.querySelectorAll('.department-visual,.brand-object,.product-image,.editorial-visual').forEach(photograph);
-   main.querySelectorAll('.section-head').forEach(section=>register(section,()=>{
+   main.querySelectorAll('.section-head').forEach(section=>{if(section.closest('.home-scene'))return;register(section,()=>{
     section.classList.add('motion-section-head');
     gsap.fromTo(section,{'--section-line':0},{'--section-line':1,ease:'none',scrollTrigger:scroll(section,'top 92%','top 55%')});
     return ()=>section.classList.remove('motion-section-head');
-   }));
-   main.querySelectorAll('.section-head h2,.editorial-copy h2,.studio-amenities h2').forEach(heading=>register(heading,()=>{
+   })});
+   main.querySelectorAll('.section-head h2,.editorial-copy h2,.studio-amenities h2').forEach(heading=>{if(heading.closest('.home-scene'))return;register(heading,()=>{
     const lines=heading.querySelectorAll('.motion-line>span');
     if(lines.length)gsap.fromTo(lines,{yPercent:108,rotation:2},{yPercent:0,rotation:0,duration:1,stagger:.16,ease:'power2.out',scrollTrigger:scroll(heading,'top 96%','top 58%')});
     else gsap.fromTo(heading,{y:mobile?24:44},{y:0,ease:'none',scrollTrigger:scroll(heading,'top 96%','top 60%')});
-   }));
-   main.querySelectorAll('.section-head p,.section-index').forEach(text=>register(text,()=>{
+   })});
+   main.querySelectorAll('.section-head p,.section-index').forEach(text=>{if(text.closest('.home-scene'))return;register(text,()=>{
     gsap.fromTo(text,{y:mobile?12:24},{y:0,ease:'none',scrollTrigger:scroll(text,'top bottom','top 66%')});
-   }));
+   })});
    main.querySelectorAll('.cart-items>li,.checkout-services>section,.service-grid>section,.studio-gallery figure,.studio-specs>div,.studio-amenities li').forEach(node=>register(node,()=>{
     gsap.fromTo(node,{y:mobile?20:44},{y:0,ease:'none',scrollTrigger:scroll(node,'top bottom','top 66%')});
    }));

@@ -37,6 +37,24 @@ class ShopTaxonomy(unittest.TestCase):
         for p,key in zip(rows,['type:kpp:03','type:kpp:04','type:phone-lens','type:rig-mounts','type:v-mount']):self.assertIn(key,p['type_ids'],p['name'])
         for p in rows[:3]:self.assertNotIn('type:rig-mounts',p['type_ids'])
 
+    def test_camera_mounting_and_audio_adapters_are_not_camera_bodies(self):
+        names=['[Manfrotto] 맨프로토 208 카메라 마운팅 어댑터','SMALLRIG FX6 핸드그립용 로제트 어댑터 SR3403','[COMICA] CVM-CPX 3.5mm 스마트폰 카메라 변환 어댑터','카메라 렌즈 어댑터','카메라 전원 어댑터']
+        rows,_=self.classify(names)
+        for p,target in zip(rows,['mount-adapter','mount-adapter','audio-adapter','kpp:0330','power-parts']):
+            self.assertIn('type:'+target,p['type_ids'],p['name']);self.assertNotIn('type:camera',p['type_ids'],p['name'])
+
+    def test_camera_compatibility_does_not_turn_filters_grips_or_storage_into_bodies(self):
+        names=['카메라 DSLR 우측 우든그립','B+W Soft Pro BASIC 52mm 카메라 렌즈 필터','LEXAR CF익스프레스 니콘 캐논 카메라 호환 1TB','KUPO KS-168 CAMERA T MARKER 티마커','[FALCAM] 카메라 F38 퀵릴리즈 키트','카메라 제습함 50L','카메라 팬틸트 헤드 키트']
+        rows,_=self.classify(names)
+        for p,target in zip(rows,['kpp:0650','kpp:02','cf-card','camera-markers','kpp:0140','dry-cabinet','pan-head']):
+            self.assertIn('type:'+target,p['type_ids'],p['name']);self.assertNotIn('type:camera',p['type_ids'],p['name'])
+
+    def test_camera_body_and_rental_bundles_remain_cameras(self):
+        rows,_=self.classify(['SONY ILCE-7M4 미러리스 카메라','Reloadable 35mm 필름카메라 마그네틱 필터 3종 키트'])
+        for p in rows:self.assertIn('type:camera',p['type_ids'])
+        rentals,_=self.classify(['캐논 R6M2+R어댑터+EF70200 ii','NIKON 니콘 ZR 케이지 세트 미러리스 RAW촬영 캠 렌탈'],kind='rental')
+        for p in rentals:self.assertIn('type:camera',p['type_ids'])
+
     def test_rental_medium_format_lights_and_support_have_specific_paths(self):
         rows,_=self.classify(['PHASEONE LS 35mm F3.5','PHASEONE XF IQ2 60MP KIT','APUTURE Amaran 300C','EDELKRONE 에델크론 슬라이더+헤드플러스+V마운트 키트','EDELKRONE 에델크론 달리','KUPO KAB-41K NESTING APPLE BOX','레인보우 시네새들','DJI TWIST DUAL GRIP'],kind='rental')
         for p,key in zip(rows,['medium-lens','medium-camera','102','133','133','270','140','135']):self.assertIn('rent:'+key,p['type_ids'],p['name'])

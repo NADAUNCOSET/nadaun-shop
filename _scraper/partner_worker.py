@@ -6,7 +6,7 @@ import json
 import subprocess
 import time
 from sync_shop_sources import ROOT, OUT, save_json, stamp
-from sync_gift_inventory import Inventory
+from sync_gift_inventory import Inventory, ensure_source_access
 from gift_product_details import collect_details
 from sync_plthink_catalog import collect_plthink, WORK
 from shop_sync import STATE, CODE, command, managed_files, run, request, SITE
@@ -39,6 +39,7 @@ def publish_ready(snapshot):
 
 def work(source):
     if source=='gift':
+        ensure_source_access()
         inventory=Inventory()
         try:
             if not inventory.status()['inventory_complete']:inventory.scan()

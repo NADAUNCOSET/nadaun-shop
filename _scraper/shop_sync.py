@@ -21,6 +21,7 @@ from sync_partner_catalogs import collect_lmount,collect_gift
 from enrich_shop_sources import collect as enrich
 from prepare_shop_assets import prepare
 from build_catalog import build
+from sync_gift_inventory import ensure_source_access, GiftSourceSuspended
 
 STATE=ROOT/'_scraper/.sync-state'
 SITE='https://shop.nadaun.co'
@@ -31,6 +32,7 @@ CODE += ['_scraper/gift_product_details.py','_scraper/source_transport.py','_scr
          '_scraper/sync_gift_inventory.py','_scraper/partner_worker.py','_scraper/install_partner_workers.py']
 CODE += ['server/commerce','assets/shop/commerce.js','assets/shop/commerce.css','_scraper/commerce_setup.cjs']
 CODE += ['_scraper/brand_category_policy.py','_scraper/partner_sync_status.py','_scraper/partner-sync-plan.json']
+CODE += ['assets/shop/storefront.css','assets/shop/scenes.js']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
@@ -131,7 +133,14 @@ def run(publish=True,existing=False):
         if command('git','diff','--name-only','--',*CODE):raise RuntimeError('Uncommitted catalogue code or overrides; automatic sync paused')
         if not existing:
             previous=json.loads((ROOT/'data/catalog/sync-status.json').read_text()) if (ROOT/'data/catalog/sync-status.json').exists() else {}
-            collect_smartstore();collect_imweb_dji();collect_imweb_dji(promotion=True);collect_kpp();collect_lmount();collect_gift()
+            collect_smartstore();collect_imweb_dji();collect_imweb_dji(promotion=True);collect_kpp();collect_lmount()
+            try: ensure_source_access()
+            except GiftSourceSuspended:
+                # Preserve the linked-store snapshot without blocking other sources.
+                save_json(STATE/'gift-refresh-skipped.json', {'at':stamp(), 'reason':'source_suspended',
+                    'source_request_made':False, 'previous_snapshot_preserved':True})
+                print('Gift refresh suspended; previous linked-store snapshot retained', flush=True)
+            else: collect_gift()
             for source,count in previous.get('source_counts',{}).items():
                 new=json.loads((OUT/(source+'.json')).read_text())['product_count']
                 if new<count*.85:raise RuntimeError(f'{source} count dropped more than 15%; keep live data and review')

@@ -119,6 +119,30 @@ def run_lock(root):
                 fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
 
 
+def suspend_source(root, reason, **evidence):
+    """Latch a source block on NAS; elapsed time must never resume requests."""
+    path = Path(root) / 'source-suspended.json'
+    path.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
+    if not path.exists():
+        path.write_text(json.dumps({'suspended': True, 'suspended_at': stamp(),
+            'reason': reason, 'automatic_resume': False, **evidence}, ensure_ascii=False, indent=2)+'\n')
+        path.chmod(0o600)
+
+
+class GiftSourceSuspended(RuntimeError):
+    pass
+
+
+def ensure_source_access(root=PRIVATE_ROOT):
+    root = Path(root)
+    # Existence is intentional: malformed/partially written records fail closed.
+    if (root / 'source-suspended.json').exists():
+        raise GiftSourceSuspended('Gift source suspended pending provider review; no requests made')
+    if (root / 'inventory-cooldown.json').exists():
+        suspend_source(root, 'Previously blocked source requires provider review before resuming')
+        raise GiftSourceSuspended('Gift source previously blocked; automatic retry disabled')
+
+
 class Source:
     def __init__(self, root):
         self.root = root
@@ -127,18 +151,23 @@ class Source:
         self.session.headers['User-Agent'] = 'NADAUNShopCatalog/1.0 (+https://shop.nadaun.co)'
 
     def get(self, url, **params):
+        ensure_source_access(self.root)
         cooldown = self.root / 'inventory-cooldown.json'
-        if cooldown.exists() and time.time() < json.loads(cooldown.read_text())['retry_not_before']:
-            raise RuntimeError('Gift source cooldown is active; no requests made')
         time.sleep(max(0, self.next_request - time.monotonic()))
+        def guarded_get(*args, **kwargs):
+            ensure_source_access(self.root)
+            return self.session.get(*args, **kwargs)
         try:
-            response = interrupted_get(self.session.get, url, params=params, timeout=(10, 40), allow_redirects=False)
+            response = interrupted_get(guarded_get, url, params=params, timeout=(10, 40), allow_redirects=False)
         finally:
             self.next_request = time.monotonic() + 2.1
         response.encoding = 'euc-kr'
         blocked = response.status_code in (403, 429) or any(x in response.text for x in
-                   ('페이지를 너무 많이 요청', '서버보호차원에서 차단', '비정상적인 접근'))
+                   ('페이지를 너무 많이 요청', '서버보호차원에서 차단', '비정상적인 접근',
+                    '접근 금지', '접근금지', '차단된 IP', '차단된 아이피')) or bool(re.search(
+                    r'(?:접근|접속)\s*(?:이\s*)?금지|차단된\s*(?:IP|아이피)', response.text, re.I))
         if blocked:
+            suspend_source(self.root, 'Source access block detected', http_status=response.status_code)
             retry = response.headers.get('Retry-After', '')
             try:
                 wait = int(retry) if retry.isdigit() else parsedate_to_datetime(retry).timestamp()-time.time()
@@ -275,7 +304,9 @@ class Inventory:
                  for row in self.db.execute('SELECT id,name,total,last_page,next_page,complete FROM roots ORDER BY rowid')]
         final=self.db.execute("SELECT value FROM scan_state WHERE key='final_verified'").fetchone()
         dates=self.db.execute('SELECT MIN(observed_at), MAX(observed_at) FROM pages').fetchone()
+        paused = any((self.root/name).exists() for name in ('source-suspended.json', 'inventory-cooldown.json'))
         return {'checked_at':stamp(), 'source':BASE,
+                'automatic_requests_paused':paused, 'resume_requires_provider_review':paused,
                 'snapshot_started_at':dates[0], 'snapshot_last_page_at':dates[1],
                 'unique_products':self.db.execute('SELECT COUNT(*) FROM products').fetchone()[0],
                 'pages_collected':self.db.execute('SELECT COUNT(*) FROM pages').fetchone()[0],
@@ -291,6 +322,7 @@ class Inventory:
         print(json.dumps({k:v for k,v in status.items() if k!='roots'}, ensure_ascii=False), flush=True)
 
     def scan(self):
+        ensure_source_access(self.root)
         source = Source(self.root)
         with run_lock(self.root):
             with self.db:

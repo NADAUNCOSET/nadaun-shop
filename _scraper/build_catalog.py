@@ -282,6 +282,7 @@ def build(allow_pending=False):
     presentation=''.join(p.read_text() for pattern in ('*.html','policies/*.html') for p in sorted((ROOT/'_scraper/shop_templates').glob(pattern)))
     presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/shop.js','assets/shop/shop.css','assets/shop/cart.js','assets/shop/banners.js','assets/shop/motion.js','_scraper/product_taxonomy.py','_scraper/rental_taxonomy.py','_scraper/references/slrrent-categories.json','data/catalog/banners.json','assets/shop/catalog-tools.js','_scraper/storefront_pages.py','_scraper/catalog_seo.py','api/product.js'))
     presentation+=(ROOT/'assets/shop/commerce.js').read_text()+(ROOT/'assets/shop/commerce.css').read_text()
+    presentation+=(ROOT/'assets/shop/storefront.css').read_text()+(ROOT/'assets/shop/scenes.js').read_text()
     presentation+=(ROOT/'api/orders.js').read_text()+''.join(p.read_text() for p in sorted((ROOT/'server/commerce').glob('*')) if p.is_file())
     presentation+=(ROOT/'assets/shop/shipping.js').read_text()+(ROOT/'_scraper/shipping_policy.py').read_text()
     presentation+=(OUT/'nadaun-gift.json').read_text()

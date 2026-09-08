@@ -16,7 +16,8 @@ def banner_content():
 
 def brand_tile(b):
     motion=f' data-motion-image="{escape(b["representative_alternate"])}"' if b.get('representative_alternate') else ''
-    return f'<a class="brand-tile" data-brand-search="{escape(" ".join([b["name"],*b.get("aliases",[])]))}" href="/brands/{escape(b["id"])}.html" target="_blank" rel="noopener" aria-label="{escape(b["name"])} 브랜드몰 새 창"><span class="brand-visual brand-object"{motion}><img src="{escape(b["representative_image"])}" alt="{escape(b["representative_name"])}" width="400" height="400" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="brand-label">{escape(b["name"])}</span><small>{b["purchase_count"] or b["rental_count"]:,} {"PRODUCTS" if b["purchase_count"] else "RENTAL"} <span aria-hidden="true">↗</span></small></a>'
+    mark=f'<span class="brand-mark"><img src="{escape(b["logo"])}" alt="{escape(b["name"])}" loading="lazy" decoding="async"></span>' if b.get('image_kind')=='logo' and not b.get('logo_dark') else f'<span class="brand-mark brand-mark-text">{escape(b["name"])}</span>'
+    return f'<a class="brand-tile" data-brand-search="{escape(" ".join([b["name"],*b.get("aliases",[])]))}" href="/brands/{escape(b["id"])}.html" target="_blank" rel="noopener" aria-label="{escape(b["name"])} 브랜드몰 새 창">{mark}<span class="brand-visual brand-object"{motion}><img src="{escape(b["representative_image"])}" alt="{escape(b["representative_name"])}" width="400" height="400" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="brand-label">{escape(b["name"])}</span><small>{b["purchase_count"] or b["rental_count"]:,} {"PRODUCTS" if b["purchase_count"] else "RENTAL"} <span aria-hidden="true">↗</span></small></a>'
 
 
 def gift_content():
@@ -29,7 +30,7 @@ def gift_content():
 
 def card(p):
     price=p.get('sale_price') if any(o['source'] in ('smartstore','imweb') for o in p['offers']) else p.get('price')
-    amount=f'{price:,}원' if price is not None else '가격 문의'
+    amount=(f'{price:,}원' if price is not None else '가격 문의')+(' <small>/ 대여료 · 기간 확인</small>' if p['kind']=='rental' else '')
     motion=f' data-motion-image="{escape(p["motion_image"])}"' if p.get('motion_image') else ''
     return f'<a class="product-card" href="/item.html?id={escape(p["id"])}"><div class="product-image"{motion}><img src="{escape(p["image"])}" alt="{escape(p["name"])}" loading="lazy" referrerpolicy="no-referrer"></div><h3 class="product-name">{escape(p["name"])}</h3><p class="product-price">{amount}</p></a>'
 
@@ -44,7 +45,7 @@ def content(mode, brands, products, brand=None):
         cards=''.join(brand_tile(b) for b in brands)
         return f'<div class="breadcrumb"><a href="/">홈</a><span aria-hidden="true">›</span><span aria-current="page">전체 브랜드</span></div><section class="brand-directory" aria-labelledby="brand-directory-title"><div class="section-head"><div><span class="section-index">THE BRAND INDEX</span><h1 id="brand-directory-title">전체 브랜드</h1><p>브랜드의 대표 제품을 보고, 원하는 브랜드몰로 들어가세요.</p></div><span class="brand-total">{len(brands)} BRANDS</span></div><div class="brand-tools"><label class="sr" for="brand-search">브랜드 찾기</label><input type="search" id="brand-search" placeholder="브랜드명으로 찾기" aria-controls="brand-grid" autocomplete="off"><span id="brand-search-status" role="status" aria-live="polite">전체 {len(brands)}개 브랜드</span></div><div class="brand-grid" id="brand-grid">{cards}</div><p class="brand-no-results" id="brand-no-results" hidden>일치하는 브랜드가 없습니다. 다른 이름으로 찾아보세요.</p></section>'
     if mode=='home':
-        links=''.join(brand_tile(b) for b in brands[:18])
+        links=''.join(brand_tile(b) for b in brands[:24])
         # Curated purchase display. Do not label this as measured sales ranking.
         eligible=[p for p in products if p['kind']=='purchase' and p['status']!='soldout' and p.get('listing_id',p['id'])==p['id']]
         selected=[]
@@ -52,10 +53,15 @@ def content(mode, brands, products, brand=None):
             featured=next((b['representative_id'] for b in brands if b['id']==bid),None)
             chosen=next((p for p in eligible if p['id']==featured),next((p for p in eligible if p['brand_id']==bid),None))
             if chosen:selected.append(chosen)
+        rental_rows=[p for p in products if p['kind']=='rental' and p['status']!='soldout' and p.get('listing_id',p['id'])==p['id']]
+        rental=[]
+        for category in ('rent:1','rent:3','rent:4','rent:5'):
+            chosen=next((p for p in rental_rows if category in p['type_ids'] and p not in rental),None)
+            if chosen:rental.append(chosen)
         page=(Path(__file__).parent/'shop_templates/home.html').read_text()
         for key,value in {'BRAND_COUNT':len(brands)}.items():
             page=page.replace('{{'+key+'}}',escape(str(value)))
-        return page.replace('{{BANNERS}}',banner_content()).replace('{{BRANDS}}',links).replace('{{PRODUCTS}}',''.join(card(p) for p in selected if p))
+        return page.replace('{{BANNERS}}',banner_content()).replace('{{BRANDS}}',links).replace('{{PRODUCTS}}',''.join(card(p) for p in selected if p)).replace('{{RENTALS}}',''.join(card(p) for p in rental))
     if mode in ('catalog','categories'):
         name=(brand['name']+' 브랜드몰') if brand else '전체 상품'
         rows=[p for p in products if (not brand or p['brand_id']==brand['id']) and p.get('listing_id',p['id'])==p['id']]

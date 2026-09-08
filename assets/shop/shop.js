@@ -31,11 +31,25 @@ async function enhanceArtMotion(){
  const revision=document.querySelector('meta[name="catalog-revision"]').content;
  const load=src=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=src+'?v='+revision;script.onload=resolve;script.onerror=reject;document.head.append(script)});
  try{
+  document.documentElement.dataset.shopMotion='loading';
   await load('/assets/shop/vendor/gsap.min.js');await load('/assets/shop/vendor/ScrollTrigger.min.js');
   await load('/assets/shop/vendor/lenis-1.3.26.min.js').catch(()=>{});
-  const {mountArtMotion}=await import('/assets/shop/motion.js?v='+revision);
-  mountArtMotion(main,{gsap:window.gsap,ScrollTrigger:window.ScrollTrigger,Lenis:window.Lenis});
- }catch(error){console.warn('Shop motion unavailable',error)}
+  const [{mountArtMotion},{mountScenes}]=await Promise.all([import('/assets/shop/motion.js?v='+revision),import('/assets/shop/scenes.js?v='+revision)]);
+  const reduced=matchMedia('(prefers-reduced-motion:reduce)'),button=main.querySelector('[data-motion-control]');
+  let preference='system',stopArt=()=>{},stopScenes=()=>{};
+  const update=()=>{
+   stopScenes();stopArt();
+   const enabled=preference==='on'||(preference==='system'&&!reduced.matches);
+   document.body.dataset.motionActive=String(enabled);document.body.dataset.motionExplicit=String(preference==='on');
+   const options={gsap:window.gsap,ScrollTrigger:window.ScrollTrigger,Lenis:window.Lenis,motionPreference:preference};
+   stopArt=mountArtMotion(main,options);stopScenes=mountScenes(main,options);
+   document.documentElement.dataset.shopMotion=enabled?'ready':'reduced';
+   if(button){button.hidden=false;button.textContent=enabled?'상품 움직임 멈추기':'상품 움직임 켜기';button.setAttribute('aria-pressed',String(enabled))}
+  };
+  button?.addEventListener('click',()=>{preference=document.body.dataset.motionActive==='true'?'off':'on';update()});
+  reduced.addEventListener('change',()=>{if(preference==='system')update()});
+  update();
+ }catch(error){document.documentElement.dataset.shopMotion='unavailable';console.warn('Shop motion unavailable',error)}
 }
 function enhanceGift(){const input=document.querySelector('#gift-search');if(!input)return;const rows=[...document.querySelectorAll('.gift-category-grid>a')];input.addEventListener('input',()=>{const q=normalize(input.value);let visible=0;for(const row of rows){row.hidden=!normalize(row.textContent).includes(q);if(!row.hidden)visible++}document.querySelector('#gift-search-status').textContent=visible?`${visible}개 카테고리`:'일치하는 카테고리가 없습니다.'})}
 function renderCatalog(){
@@ -92,6 +106,8 @@ function renderCategories(){if(!data.meta.category_browsing_enabled){main.innerH
 document.addEventListener('error',event=>{
   const image=event.target;
   if(!(image instanceof HTMLImageElement)||!main.contains(image)||image.closest('.motion-alternate'))return;
+  const mark=image.closest('.brand-mark');
+  if(mark){mark.classList.add('brand-mark-text');mark.textContent=image.alt;return}
   const brand=image.closest('.brand-word,.brand-visual');
   if(brand){brand.textContent=image.alt;return}
   if(image.closest('.description')){
@@ -115,5 +131,5 @@ if(mode==='gift')enhanceGift();
 if(mode==='brands')enhanceBrandIndex();
 if(!['policy','guide','gift','about','studio','home','brands','orders','admin','payment-test'].includes(mode))try{const revision=document.querySelector('meta[name="catalog-revision"]').content;const response=await fetch(`/data/catalog/${["catalog","categories"].includes(mode)&&params.get("kind")==="rental"?"rental":"catalog"}.json?v=${revision}`);if(!response.ok)throw Error('상품 목록을 불러오지 못했습니다.');data=await response.json();brandMap=new Map(data.brands.map(b=>[b.id,b]));categoryMap=new Map((data.categories||[]).map(c=>[c.id,c]));if(mode==='item')await renderItem();else if(mode==='cart'||mode==='checkout')await renderCart(data,mode==='checkout');else if(mode==='categories')renderCategories();else renderCatalog();}catch(error){console.error(error);main.innerHTML=empty('잠시 상품을 불러오지 못했습니다.','새로고침 후 다시 확인해주세요.','https://smartstore.naver.com/rainbowbene','스마트스토어에서 상품 보기')}
 
-if(mode==='home')mountBanners(document.querySelector('.shop-banner'));
+if(mode==='home')try{mountBanners(document.querySelector('.shop-banner'))}catch(error){console.warn('Banner autoplay unavailable',error)}
 if(!['policy','cart','checkout','orders','admin','payment-test'].includes(mode))enhanceArtMotion();

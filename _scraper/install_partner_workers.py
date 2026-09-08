@@ -14,6 +14,12 @@ def install():
     agents=Path.home()/'Library/LaunchAgents'
     logs.mkdir(parents=True,exist_ok=True);agents.mkdir(parents=True,exist_ok=True)
     for source in ('gift','plthink'):
+        if source == 'gift':
+            from sync_gift_inventory import ensure_source_access, GiftSourceSuspended
+            try: ensure_source_access()
+            except GiftSourceSuspended:
+                print('Gift worker remains suspended; provider review required', flush=True)
+                continue
         label='co.nadaun.shop.'+source+'-sync'
         target=agents/(label+'.plist')
         awake=shutil.which('caffeinate')

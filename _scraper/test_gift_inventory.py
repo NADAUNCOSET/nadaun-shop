@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 from types import SimpleNamespace
 import tempfile
 import unittest
@@ -116,6 +117,50 @@ class InventoryTest(unittest.TestCase):
             with self.assertRaises(RuntimeError):source.get('https://www.nadaun-gift.com/')
             with self.assertRaises(RuntimeError):source.get('https://www.nadaun-gift.com/')
             self.assertEqual(get.call_count,1)
+
+    def test_expired_cooldown_never_restarts_requests_in_another_process(self):
+        root = Path(self.temp.name)
+        (root/'inventory-cooldown.json').write_text(json.dumps({'retry_not_before': 0}))
+        source = Source(root)
+        with patch.object(source.session, 'get') as get:
+            with self.assertRaises(RuntimeError): source.get('https://www.nadaun-gift.com/')
+            self.assertEqual(get.call_count, 0)
+        self.assertTrue((root/'source-suspended.json').exists())
+
+    def test_paused_scan_does_not_invalidate_the_completed_inventory(self):
+        first = parse_page(document(page_html([1], total=1, last=1)), '1', 1)
+        self.inventory.save_page(first, 1)
+        self.inventory.verify_root(first)
+        self.inventory.finalize(['1'])
+        (self.inventory.root/'source-suspended.json').write_text('{}')
+        with patch('requests.sessions.Session.get') as get:
+            with self.assertRaises(RuntimeError): self.inventory.scan()
+            self.assertEqual(get.call_count, 0)
+        self.assertTrue(self.inventory.status()['inventory_complete'])
+        self.assertTrue(self.inventory.status()['automatic_requests_paused'])
+
+    def test_suspension_during_retry_delay_prevents_another_request(self):
+        import requests
+        root = Path(self.temp.name)
+        source = Source(root)
+        def fail(*args, **kwargs):
+            (root/'source-suspended.json').write_text('{}')
+            raise requests.exceptions.ConnectionError('interrupted')
+        with patch.object(source.session, 'get', side_effect=fail) as get, patch('sync_gift_inventory.time.sleep'):
+            with self.assertRaises(RuntimeError): source.get('https://www.nadaun-gift.com/')
+            self.assertEqual(get.call_count, 1)
+
+    def test_http_200_ip_block_is_latched_and_homepage_uses_same_guard(self):
+        from sync_partner_catalogs import collect_gift
+        root = Path(self.temp.name)
+        source = Source(root)
+        response = SimpleNamespace(status_code=200, headers={}, text='접근 금지 아이피입니다', content=b'blocked')
+        with patch.object(source.session, 'get', return_value=response) as get, patch('sync_gift_inventory.time.sleep'):
+            with self.assertRaises(RuntimeError): source.get('https://www.nadaun-gift.com/')
+            self.assertEqual(get.call_count, 1)
+        with patch('gift_supplier_registry.PRIVATE_ROOT', root), patch('requests.sessions.Session.get') as get:
+            with self.assertRaises(RuntimeError): collect_gift()
+            self.assertEqual(get.call_count, 0)
 
 
 if __name__=='__main__':unittest.main()

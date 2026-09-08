@@ -10,6 +10,7 @@ from collections import Counter
 
 # New leaves supplement the KPP groups; their names describe product types.
 EXTRA = [
+ ('mount-adapter','kpp:0690','마운팅 어댑터'),('audio-adapter','kpp:0740','오디오 변환 어댑터'),('camera-markers','kpp:09','카메라 마커·현장 소모품'),('dry-cabinet','kpp:09','제습함·보관용품'),('drone-parts','kpp:c010','드론 부품'),
  ('tv-display',None,'TV·디스플레이'),('tv','tv-display','TV'),('projector','tv-display','프로젝터·스크린'),('light-meter','kpp:0720','노출계·조명 동조기'),('jib','kpp:06','지브·크레인'),('turntable','kpp:06','턴테이블'),('camera',None,'카메라'),('mirrorless','camera','미러리스 카메라'),('dslr','camera','DSLR 카메라'),('cinema-camera','camera','시네마 카메라'),('camcorder','camera','캠코더'),('compact-camera','camera','컴팩트·즉석 카메라'),
  ('medium-camera','camera','중형 카메라'),('medium-lens','kpp:03','중형 렌즈'),('phone-lens','kpp:03','스마트폰 렌즈'),
  ('dolly','kpp:06b0','카메라 달리'),('apple-box','kpp:09','애플박스'),
@@ -84,6 +85,47 @@ LIGHT_BRANDS={'godox','nanlite','nanlux','aputure','fomex','broncolor','aurora',
 GRIP_BRANDS={'kupo','matthews','avenger','valens','kumkwang'}
 
 
+def camera_accessory_type(name,brand):
+    """Reject accessory nouns mistaken for the camera they fit.
+
+    Applied to camera candidates only, not to verified rental body packages.
+    Specific electrical/optical adapters precede mechanical mounting adapters.
+    """
+    if re.search(r'필름카메라.*필터.*키트|(?:카메라|바디).*(?:사은품|증정)',name,re.I):
+        return None
+    rules=[
+      ('power-parts',r'(?:전원|배터리|power|battery|\bAC\b).*(?:어[댑뎁]터|adapto?r)'),
+      ('audio-adapter',r'(?:3[.]5\s*mm|TRRS|TRS|XLR).*(?:어[댑뎁]터|adapto?r)'),
+      ('filter-parts',r'필터.*(?:어[댑뎁]터|어[댑뎁]타|adapter)|filter.*adapt'),
+      ('kpp:0330',r'(?:렌즈|lens).*(?:어[댑뎁]터|어[댑뎁]타|adapto?r)'),
+      ('mount-adapter',r'어[댑뎁]터|어[댑뎁]타|\badapto?r\b'),
+      ('kpp:0620',r'케이지|\bcage\b'),('kpp:0140',r'플레이트|\bplate\b|퀵\s*릴리즈|quick\s*release'),
+      ('kpp:0650',r'핸드그립|우든그립|\bgrip\b'),
+      ('cf-card',r'CF\s*익스프레스|CFexpress'),('sd-card',r'\bSDXXD\b|\bSDXC\b|\bSDHC\b'),('storage',r'메모리|\bmemory\b'),
+      ('cleaning',r'청소|클리너|극세사|면봉|cleaner|swab'),
+      ('kpp:0340',r'링캡|보호캡|렌즈\s*캡'),
+      ('kpp:02',r'필터|\bfilter\b'),
+      ('dry-cabinet',r'제습함|dry\s*cabinet'),
+      ('equipment-bag',r'파우치|pouch'),('kpp:0530',r'레인커버|rain\s*cover'),
+      ('camera-markers',r'티마커|아이마커|camera\s*(?:T\s*)?marker'),
+      ('rig-mounts',r'카메라\s*(?:스탠드|라이저)|camera\s*(?:riser|platform)|콜드슈|연장암'),
+      ('rig-mounts',r'피벗\s*조인트'),('pan-head',r'팬헤드|팬틸트\s*헤드|PAN.*HEAD'),
+      ('jib',r'지미집|\bjib\b|크레인|\bcrane\b'),
+      ('video-control',r'PTZ.*(?:컨트롤러|controller)|조이스틱'),
+      ('remote',r'리모컨|릴리즈|remote'),
+      ('video-recorder',r'\bURSA\s+Mini\s+Recorder\b'),
+      ('drone-parts',r'Air\s*Unit.*Camera\s*Module'),
+      ('action-parts',r'액션\s*카메라.*(?:액세서리|셀카봉)'),
+      ('other',r'핫슈.*(?:커버|수평계)|플립미러|shim\s*kit|\bENG\s*Kit\b|ProDock|Live\s*Encoder|프런트박스|front\s*box'),
+    ]
+    for target,pattern in rules:
+        if re.search(pattern,name,re.I):return target
+    if brand in {'smallrig','tilta'} and re.search(r'(?:FX[369]|FX30).*?(?:키트|kit)',name,re.I):return 'kpp:0620'
+    if brand=='edelkrone' and re.search(r'헤드|head|FlexTILT',name,re.I):return 'kpp:0120'
+    if brand=='harlowe' and re.search(r'솔\s*5|SOL\s*5',name,re.I):return 'kpp:0710'
+    return None
+
+
 def build_taxonomy(products,categories,overrides=None):
     nodes={}
     def add(key,name,parent=None,source=None):
@@ -137,6 +179,9 @@ def build_taxonomy(products,categories,overrides=None):
                 elif bid in LIGHT_BRANDS:selected=['type:kpp:07'];reason='brand-family'
                 elif bid in GRIP_BRANDS:selected=['type:light-grip'];reason='brand-family'
                 else:selected=['type:other'];reason='general-review'
+        if p['kind']=='purchase' and any('type:camera' in path(cid) for cid in selected):
+            accessory=camera_accessory_type(name,bid)
+            if accessory:selected=['type:'+accessory];reason='camera-accessory:'+accessory
         # Subdivide known groups only. Accessory model names do not create bodies.
         ancestors=set(x for c in selected for x in path(c))
         refinements=[
