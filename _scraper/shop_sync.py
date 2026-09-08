@@ -38,6 +38,7 @@ CODE += ['_scraper/test_partner_sync_status.py']
 CODE += ['_scraper/build_gift_catalog.py','_scraper/brand_source_policy.py','_scraper/test_gift_public_catalog.py','_scraper/test_brand_source_policy.py','data/catalog/brand-source-policy.json','server/gift-catalog.cjs','server/shop-search.cjs']
 CODE += ['_scraper/source_refresh_state.py','_scraper/test_source_refresh_state.py']
 CODE += ['_scraper/avx_publication.py','_scraper/test_avx_publication.py']
+CODE += ['_scraper/rental_content.py','_scraper/test_shop_rental_content.py','assets/shop/rental-content.js']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
@@ -55,6 +56,7 @@ def managed_files():
     files=['brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','payment-test.html','orders.html','admin.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','catalog-sitemap.xml',
            'data/catalog/catalog.json','data/catalog/rental.json','data/catalog/brands.json','data/catalog/sync-status.json','data/catalog/asset-manifest.json','data/catalog/dedup-audit.json']
     files += ['gift-item.html','search.html','gift-sitemap.xml','data/gift/catalog.json','data/gift/manifest.json']
+    files += ['data/catalog/rental-details.json']
     files.extend(p.relative_to(ROOT).as_posix() for p in (ROOT/'data/gift/details').glob('??.json'))
     files.extend(p.relative_to(ROOT).as_posix() for p in ROOT.glob('gift-sitemap-[0-9]*.xml'))
     for source in ('smartstore','imweb-dji','imweb-promotions','kpp','l-mount','nadaun-gift'):
@@ -168,11 +170,11 @@ def run(publish=True,existing=False):
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_gift_public_catalog.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_brand_source_policy.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_source_refresh_state.py')
-        command('node','--test','_scraper/tests/gift-search.test.cjs')
+        command('node','--test','_scraper/tests/gift-search.test.cjs','_scraper/tests/rental-content.test.cjs')
         command('node','--check','assets/shop/shop.js')
         command('node','--check','assets/shop/cart.js')
         command('node','--check','assets/shop/motion.js')
-        command('node','--test','_scraper/tests/product-server.test.cjs','_scraper/tests/catalog-tools.test.mjs','_scraper/tests/discovery.test.cjs','_scraper/tests/cart.test.cjs','_scraper/tests/banners.test.mjs','_scraper/tests/motion.test.mjs','_scraper/tests/browse.test.mjs')
+        command('node','--test','_scraper/tests/product-server.test.cjs','_scraper/tests/catalog-tools.test.mjs','_scraper/tests/discovery.test.cjs','_scraper/tests/cart.test.cjs','_scraper/tests/banners.test.mjs','_scraper/tests/motion.test.mjs','_scraper/tests/browse.test.mjs','_scraper/tests/scenes.test.mjs','_scraper/tests/commerce.test.cjs','_scraper/tests/commerce-ui.test.cjs')
         if publish:
             result=publish_existing()
             if not existing:record_refresh(result)

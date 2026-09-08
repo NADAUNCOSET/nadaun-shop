@@ -217,7 +217,7 @@ def build(allow_pending=False):
                     p['_provenance']['fields'][key]={'source':'owner_override','file':'data/catalog/overrides.json','product_id':pid}
     asset_path=PUBLIC/'asset-manifest.json'
     assets=json.loads(asset_path.read_text()) if asset_path.exists() else {}
-    public_products=[];public_details=defaultdict(dict)
+    public_products=[];public_details=defaultdict(dict);rental_details={};rental_content_audit=[]
     from shipping_policy import shipping_class
     for pid,p in products.items():
         if p.get('hidden'):continue
@@ -226,8 +226,18 @@ def build(allow_pending=False):
         if pid in assets and assets[pid]['source_url']==thumb:
             thumb='/'+assets[pid]['path']
         if not thumb:raise RuntimeError('Missing product thumbnail: '+pid)
-        public_products.append({k:p.get(k) for k in ('id','name','brand_id','kind','price','sale_price','status','category_ids','type_ids','promotion_ids','offers','supplier_status')}|{'image':thumb,'detail_bucket':shard(pid),'shipping_class':shipping_class(p,p.get('shipping_class'))})
+        public_row={k:p.get(k) for k in ('id','name','brand_id','kind','price','sale_price','status','category_ids','type_ids','promotion_ids','offers','supplier_status')}|{'image':thumb,'detail_bucket':shard(pid),'shipping_class':shipping_class(p,p.get('shipping_class'))}
+        if p['kind']=='rental':
+            from rental_content import presentation as rental_presentation
+            summary,content,audit=rental_presentation(p,details[pid])
+            public_row['rental']=summary;details[pid]['rental']=content
+            rental_details[pid]={'rental':content,'images':details[pid]['images']}
+            rental_content_audit.append(audit)
+            p['_provenance']['fields']['rental_presentation']={**p['_provenance']['record'],'derived_by':'_scraper/rental_content.py'}
+        public_products.append(public_row)
         public_details[shard(pid)][pid]=details[pid]
+    save_json(PUBLIC/'rental-details.json',rental_details)
+    save_json(ROOT.parent/'_private/nadaun-shop/catalog/rental-content-review.json',{'products_checked':len(rental_content_audit),'products':rental_content_audit})
     from product_taxonomy import build_taxonomy
     from rental_taxonomy import build_rental_taxonomy
     type_nodes,type_audit=build_taxonomy(public_products,categories,config.get('product_type_overrides'))
@@ -315,6 +325,7 @@ def build(allow_pending=False):
     presentation+=(ROOT/'assets/shop/commerce.js').read_text()+(ROOT/'assets/shop/commerce.css').read_text()
     presentation+=(ROOT/'assets/shop/browse.js').read_text()+(ROOT/'_scraper/category_gallery.py').read_text()
     presentation+=(ROOT/'assets/shop/storefront.css').read_text()+(ROOT/'assets/shop/scenes.js').read_text()
+    presentation+=(ROOT/'assets/shop/rental-content.js').read_text()+(ROOT/'_scraper/rental_content.py').read_text()
     presentation+=(ROOT/'api/orders.js').read_text()+''.join(p.read_text() for p in sorted((ROOT/'server/commerce').glob('*')) if p.is_file())
     presentation+=(ROOT/'assets/shop/shipping.js').read_text()+(ROOT/'_scraper/shipping_policy.py').read_text()
     presentation+=(OUT/'nadaun-gift.json').read_text()

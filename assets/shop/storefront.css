@@ -126,3 +126,26 @@ body[data-mode="home"] #brands .section-head .all-brands-button{display:inline-f
 .gift-detail-actions{display:flex;gap:12px;margin:24px 0 14px;flex-wrap:wrap}.gift-detail-actions a{flex:1;min-width:170px;text-align:center}.gift-reference{color:#666;font-size:14px;margin-bottom:25px}.gift-description{max-width:1000px;margin:55px auto}.gift-description h2{font-size:26px;margin-bottom:24px}.gift-description>img{margin:0 auto;height:auto;max-width:100%}.gift-description table{width:100%;border-collapse:collapse;margin-bottom:32px}.gift-description th,.gift-description td{padding:14px;text-align:left;border-bottom:1px solid #eee;vertical-align:top}.gift-description th{width:30%;font-weight:650}
 .search-directory{margin-bottom:60px}.unified-search-form{max-width:740px;margin:0 0 25px}.search-scopes{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 32px}.search-scopes a{display:flex;align-items:center;gap:10px;padding:10px 16px;min-height:45px;border:1px solid #ddd;border-radius:30px;font-weight:650}.search-scopes [aria-current]{background:#1a1a1a;color:#fff;border-color:#1a1a1a}.search-scopes span{font-size:12px;font-weight:450}.search-result-count{margin-bottom:24px}
 @media(max-width:767px){body[data-mode="home"] #brands .section-head .all-brands-button{font-size:17px;min-height:50px;max-width:100%;padding:12px 20px}.gift-type-groups{grid-template-columns:1fr}.gift-product-tools{align-items:stretch;flex-direction:column}.gift-search-form{width:100%}.gift-directory .category-image-grid{gap:22px 9px}.gift-product-card .product-name{font-size:14px;min-height:42px}.gift-product-card .product-price{font-size:16px}.gift-description th,.gift-description td{font-size:14px;padding:12px 7px}.search-scopes{gap:8px}.search-scopes a{padding:9px 12px;font-size:14px}.gift-detail-actions{flex-direction:column}}
+/* Rental prices and packing lists stay visible beside the product. */
+.rental-period-label{display:block;margin-top:7px;font-size:13px;font-weight:500;line-height:1.5;color:#737373;letter-spacing:0}
+.rental-product .detail-price .rental-period-label{font-size:15px;margin-top:9px}
+.rental-kind{margin:14px 0 18px;font-size:12px;letter-spacing:.08em;color:#777}
+.rental-rate-section{margin:30px 0 24px}
+.rental-rate-section h2{font-size:18px;line-height:1.4;margin:0 0 14px}
+.rental-rates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 15px}
+.rental-rates>div{padding:18px 20px;background:#f7f7f7;border-radius:10px;min-width:0}
+.rental-rates dt{font-size:14px;line-height:1.5;color:#666}
+.rental-rates dd{margin:8px 0 0;font-size:23px;font-weight:700;letter-spacing:-.025em;color:#1a1a1a}
+.rental-rates dd small{margin-left:3px;font-size:13px;font-weight:500}
+.rental-note{font-size:14px;line-height:1.75;color:#6e6e6e}
+.rental-contact{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 13px}
+.rental-contact a{min-height:52px;padding:14px 12px;text-align:center;font-size:14px}
+.rental-item-number{margin:18px 0;color:#888;font-size:12px}
+.rental-components{list-style:none;padding:0;margin:22px 0;max-width:860px}
+.rental-components li{display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding:15px 0;border-bottom:1px solid #eee;font-size:16px;line-height:1.6}
+.rental-components li strong{white-space:nowrap;font-size:14px;font-weight:500;color:#777}
+.rental-source-notes{margin:24px 0;max-width:860px;font-size:15px;line-height:1.8;color:#666}
+.rental-source-notes p{margin:5px 0}
+.rental-use ol{list-style:none;padding:0;margin:24px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.rental-use li strong{font-size:17px}.rental-use li p{font-size:15px;line-height:1.8;margin-top:10px;color:#666}
+@media(max-width:600px){.rental-rates>div{padding:16px}.rental-rates dd{font-size:21px}.rental-contact{grid-template-columns:1fr}.rental-use ol{grid-template-columns:1fr;gap:22px}.rental-components li{font-size:14px;gap:16px}.rental-product .detail-tabs{overflow:auto;white-space:nowrap;justify-content:flex-start;gap:24px}}

@@ -1,6 +1,7 @@
 const fs=require('node:fs');
 const path=require('node:path');
 const gift=require('./gift-catalog.cjs');
+const rental=require('../assets/shop/rental-content.js');
 const catalog=JSON.parse(fs.readFileSync(path.join(process.cwd(),'data/catalog/catalog.json'),'utf8'));
 const brandMap=new Map(catalog.brands.map(b=>[b.id,b]));
 const categoryMap=new Map(catalog.categories.map(c=>[c.id,c]));
@@ -12,7 +13,7 @@ function url(q,scope='all',page=1){const p=new URLSearchParams({q});if(scope!=='
 function card(p){
  if(p.search_kind==='gift')return gift.card(p);
  const price=p.offers.some(o=>['smartstore','imweb'].includes(o.source))?(p.sale_price??p.price):p.price;
- return `<a class="product-card" href="/item.html?id=${encodeURIComponent(p.id)}"><div class="product-image"><img src="${gift.esc(p.image)}" alt="${gift.esc(p.name)}" loading="lazy" referrerpolicy="no-referrer">${p.status==='soldout'?'<span class="badge">품절</span>':p.kind==='rental'?'<span class="badge rental">렌탈</span>':''}</div><p class="product-brand">${gift.esc(brandMap.get(p.brand_id)?.name)}</p><h3 class="product-name">${gift.esc(p.name)}</h3><p class="product-price">${price==null?'가격 문의':price.toLocaleString('ko-KR')+'원'}${p.kind==='rental'?' <small>/ 대여료</small>':''}</p></a>`;
+ return `<a class="product-card" href="/item.html?id=${encodeURIComponent(p.id)}"><div class="product-image"><img src="${gift.esc(p.image)}" alt="${gift.esc(p.name)}" loading="lazy" referrerpolicy="no-referrer">${p.status==='soldout'?'<span class="badge">품절</span>':p.kind==='rental'?'<span class="badge rental">렌탈</span>':''}</div><p class="product-brand">${gift.esc(brandMap.get(p.brand_id)?.name)}</p><h3 class="product-name">${gift.esc(p.name)}</h3><p class="product-price">${p.kind==='rental'?rental.priceHTML(p):price==null?'가격 문의':price.toLocaleString('ko-KR')+'원'}</p></a>`;
 }
 function results(q){
  const words=gift.tokens(q);

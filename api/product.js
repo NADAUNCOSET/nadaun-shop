@@ -3,6 +3,8 @@ const path=require('node:path');
 const base=process.cwd();
 const catalog=JSON.parse(fs.readFileSync(path.join(base,'data/catalog/catalog.json'),'utf8'));
 const template=fs.readFileSync(path.join(base,'item.html'),'utf8');
+const rentalContent=require('../assets/shop/rental-content.js');
+const rentalDetails=JSON.parse(fs.readFileSync(path.join(base,'data/catalog/rental-details.json'),'utf8'));
 const products=new Map(catalog.products.map(p=>[p.id,p]));
 const brands=new Map(catalog.brands.map(b=>[b.id,b]));
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -24,7 +26,7 @@ module.exports=function handler(req,res){
  const schema={'@context':'https://schema.org','@type':'Product',name:p.name,description,image:[image],sku:p.id,url:canonical,brand:{'@type':'Brand',name:brand},category:p.discovery.categories.join(' / '),keywords:p.discovery.tags.join(', ')};
  // Do not invent ratings, availability, shipping terms or a live checkout offer.
  const tags=`<nav class="product-tags" aria-label="관련 상품 검색">${p.discovery.tags.map(tag=>`<a href="/catalog.html?q=${encodeURIComponent(tag)}&amp;kind=${p.kind}">#${esc(tag.replace(/\s+/g,''))}</a>`).join('')}</nav>`;
- const body=`<div class="breadcrumb"><a href="/">홈</a><span>›</span><a href="/brands/${esc(p.brand_id)}.html">${esc(brand)}</a><span>›</span>상품 상세</div><section class="detail-layout"><div class="gallery-main"><img src="${esc(image)}" alt="${esc(p.name)}" referrerpolicy="no-referrer"></div><div class="detail-info"><a class="detail-brand" href="/brands/${esc(p.brand_id)}.html">${esc(brand)}</a><h1>${esc(p.name)}</h1><p class="detail-price">${price===null?'가격 문의':Number(price).toLocaleString('ko-KR')+'원'}</p><p class="purchase-help">${p.kind==='rental'?'장비 렌탈 · 대여 기간별 요금을 확인해주세요.':p.status==='soldout'?'품절 · 재입고 문의':'옵션과 재고·납기는 상품별로 확인해주세요.'}</p><a class="button-outline" href="https://pf.kakao.com/_pyNxnxb/chat" target="_blank" rel="noopener">구매·렌탈 상담</a><p><a href="/shipping.html">배송·교환·반품 안내</a></p>${tags}</div></section>`;
+ const body=p.kind==='rental'?rentalContent.render(p,rentalDetails[p.id]||{},{brand}):`<div class="breadcrumb"><a href="/">홈</a><span>›</span><a href="/brands/${esc(p.brand_id)}.html">${esc(brand)}</a><span>›</span>상품 상세</div><section class="detail-layout"><div class="gallery-main"><img src="${esc(image)}" alt="${esc(p.name)}" referrerpolicy="no-referrer"></div><div class="detail-info"><a class="detail-brand" href="/brands/${esc(p.brand_id)}.html">${esc(brand)}</a><h1>${esc(p.name)}</h1><p class="detail-price">${price===null?'가격 문의':Number(price).toLocaleString('ko-KR')+'원'}</p><p class="purchase-help">${p.kind==='rental'?'장비 렌탈 · 대여 기간별 요금을 확인해주세요.':p.status==='soldout'?'품절 · 재입고 문의':'옵션과 재고·납기는 상품별로 확인해주세요.'}</p><a class="button-outline" href="https://pf.kakao.com/_pyNxnxb/chat" target="_blank" rel="noopener">구매·렌탈 상담</a><p><a href="/shipping.html">배송·교환·반품 안내</a></p>${tags}</div></section>`;
  let html=template.replace(/<title>.*?<\/title>/,()=>`<title>${esc(title)}</title>`)
  .replace(/(<meta name="description" content=")[^"]*"/,(_,prefix)=>prefix+esc(description)+'"')
  .replace(/(<meta property="og:title" content=")[^"]*"/,(_,prefix)=>prefix+esc(title)+'"')

@@ -205,7 +205,7 @@
       "groups": 1870,
       "removed": 2385
     },
-    "revision": "7ef49bd2a291d7bc",
+    "revision": "40eed65c0bdaf27a",
     "view": "rental"
   },
   "brands": [
@@ -12043,6 +12043,12 @@
       "image": "https://shop-phinf.pstatic.net/20260807_151/17860287216265J1WW_JPEG/29828078664167635_1609176275.jpg",
       "detail_bucket": "f2",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -12103,6 +12109,12 @@
       "image": "https://shop-phinf.pstatic.net/20260806_232/1786025355728VFsUO_JPEG/70397772857845228_1095153418.jpg",
       "detail_bucket": "7f",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -12162,6 +12174,12 @@
       "image": "https://shop-phinf.pstatic.net/20260806_36/1786024265077eQQLf_PNG/16371003758326315_1282086820.png",
       "detail_bucket": "5e",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "DJI",
@@ -12223,6 +12241,12 @@
       "image": "https://shop-phinf.pstatic.net/20260720_6/1784536738044OuxPk_JPEG/4579708945635889_1049814685.jpg",
       "detail_bucket": "4c",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 6000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SMALLRIG",
@@ -12280,6 +12304,12 @@
       "image": "https://shop-phinf.pstatic.net/20260213_22/1770977661610XsI7r_JPEG/105110508757166259_946674343.jpg",
       "detail_bucket": "45",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SHURE",
@@ -12339,6 +12369,12 @@
       "image": "https://shop-phinf.pstatic.net/20260608_19/1780889401930h1b2P_JPEG/60283349051053795_1753204387.jpg",
       "detail_bucket": "7f",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "BENRO",
@@ -12404,6 +12440,12 @@
       "image": "https://shop-phinf.pstatic.net/20260520_151/1779277326391n8DUu_JPEG/31977900547017188_383972822.jpg",
       "detail_bucket": "f7",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "PROFOTO",
@@ -12462,6 +12504,12 @@
       "image": "https://shop-phinf.pstatic.net/20260507_143/177813399095654SNv_JPEG/15009422871986588_1303999648.jpg",
       "detail_bucket": "7a",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "DJI",
@@ -12523,6 +12571,12 @@
       "image": "https://shop-phinf.pstatic.net/20260423_112/1776926116104UR0SQ_PNG/19940693931289492_889525819.png",
       "detail_bucket": "27",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SMALLRIG",
@@ -12587,6 +12641,12 @@
       "image": "https://shop-phinf.pstatic.net/20260317_136/17737354354803NC5J_PNG/6559046441972766_1400604745.png",
       "detail_bucket": "d8",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 35000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -12647,6 +12707,12 @@
       "image": "https://shop-phinf.pstatic.net/20260317_44/1773714998536Fu599_JPEG/28994756029673310_1994103965.jpg",
       "detail_bucket": "7d",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "FOMEX",
@@ -12708,6 +12774,12 @@
       "image": "https://shop-phinf.pstatic.net/20260225_155/1772005780393C4vsA_PNG/106138631513693934_343891469.png",
       "detail_bucket": "40",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "DJI",
@@ -12768,6 +12840,12 @@
       "image": "https://shop-phinf.pstatic.net/20260209_225/1770606435579GSY8d_PNG/104739256713553997_1630995191.png",
       "detail_bucket": "74",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "SANDISK",
@@ -12827,6 +12905,12 @@
       "image": "https://shop-phinf.pstatic.net/20260209_297/1770605980729oPfDL_PNG/84095239096804823_1872511838.png",
       "detail_bucket": "19",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "SANDISK",
@@ -12885,6 +12969,12 @@
       "image": "https://shop-phinf.pstatic.net/20260126_81/17694121215728MLcN_JPEG/22127682034880933_1324271178.jpg",
       "detail_bucket": "fc",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOBOLITE",
@@ -12943,6 +13033,12 @@
       "image": "https://shop-phinf.pstatic.net/20260126_254/17694120540049taM3_JPEG/103544969142470502_309458320.jpg",
       "detail_bucket": "bf",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOBOLITE",
@@ -13001,6 +13097,12 @@
       "image": "https://shop-phinf.pstatic.net/20260126_5/1769411947778DMTsD_JPEG/11543263435389636_339491987.jpg",
       "detail_bucket": "ae",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOBOLITE",
@@ -13059,6 +13161,12 @@
       "image": "https://shop-phinf.pstatic.net/20260126_72/1769411813964Ug38f_JPEG/7947781963930574_1093736121.jpg",
       "detail_bucket": "a6",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOBOLITE",
@@ -13116,6 +13224,12 @@
       "image": "https://shop-phinf.pstatic.net/20260105_16/1767604645541EbC1D_JPEG/101737457676276931_606009496.jpg",
       "detail_bucket": "78",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "CANON",
@@ -13172,6 +13286,12 @@
       "image": "https://shop-phinf.pstatic.net/20260105_286/1767603787674Hl5iu_PNG/101736634768672860_558962075.png",
       "detail_bucket": "01",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 40000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOLLYLAND",
@@ -13233,6 +13353,12 @@
       "image": "https://shop-phinf.pstatic.net/20230331_115/1680250615707qgdkD_JPEG/81386504399135236_2056613608.jpg",
       "detail_bucket": "fb",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 8000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "AURORA",
@@ -13296,6 +13422,12 @@
       "image": "https://shop-phinf.pstatic.net/20260102_232/1767343930527tEnXg_JPEG/16955463042111813_407445737.jpg",
       "detail_bucket": "7c",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SEKONIC",
@@ -13357,6 +13489,12 @@
       "image": "https://shop-phinf.pstatic.net/20251223_174/1766479613356Xk5uq_JPEG/29470466541756884_92614536.jpg",
       "detail_bucket": "46",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 40000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "NIKON",
@@ -13415,6 +13553,12 @@
       "image": "https://shop-phinf.pstatic.net/20251223_8/1766479538811mlgAL_JPEG/3354970775772702_1898348914.jpg",
       "detail_bucket": "85",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "NIKON",
@@ -13473,6 +13617,12 @@
       "image": "https://shop-phinf.pstatic.net/20251223_206/17664794583692hFVR_JPEG/100612299498739474_1250467517.jpg",
       "detail_bucket": "0c",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "NIKON",
@@ -13531,6 +13681,12 @@
       "image": "https://shop-phinf.pstatic.net/20251223_149/1766479353836DCnWf_JPEG/100612339949665384_1213709725.jpg",
       "detail_bucket": "d9",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "NIKON",
@@ -13590,6 +13746,12 @@
       "image": "https://shop-phinf.pstatic.net/20251222_164/17663733326542U2zL_JPEG/100506318771679434_680260237.jpg",
       "detail_bucket": "97",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 45000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NIKON",
@@ -13652,6 +13814,12 @@
       "image": "https://shop-phinf.pstatic.net/20251209_133/1765245084003He9RT_JPEG/99377885139977684_572448555.jpg",
       "detail_bucket": "49",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 2000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "FOMEX",
@@ -13715,6 +13883,12 @@
       "image": "https://shop-phinf.pstatic.net/20240729_144/1722245936861CFlAI_JPEG/55718805667238227_602117845.jpg",
       "detail_bucket": "0d",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -13774,6 +13948,12 @@
       "image": "https://shop-phinf.pstatic.net/20251124_29/1763966463801rsT0z_JPEG/61444598372339924_1381271989.jpg",
       "detail_bucket": "52",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -13832,6 +14012,12 @@
       "image": "https://shop-phinf.pstatic.net/20241011_125/1728627675406Jzb5k_JPEG/62760610553614720_829349775.jpg",
       "detail_bucket": "1a",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 30000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "ECOFLOW",
@@ -13893,6 +14079,12 @@
       "image": "https://shop-phinf.pstatic.net/20250405_121/1743850615506X5w8p_PNG/77983485626122012_205214376.png",
       "detail_bucket": "fd",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 50000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "CANON",
@@ -13953,6 +14145,12 @@
       "image": "https://shop-phinf.pstatic.net/20251029_93/1761712477592sbmGW_PNG/8474020585187424_2108276006.png",
       "detail_bucket": "b7",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 55000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "CANON",
@@ -14010,6 +14208,12 @@
       "image": "https://shop-phinf.pstatic.net/20251028_39/1761656222904iVUrx_PNG/9632215922234377_1009653174.png",
       "detail_bucket": "3b",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOLLYLAND",
@@ -14066,6 +14270,12 @@
       "image": "https://shop-phinf.pstatic.net/20251028_31/1761656148471XSV9S_PNG/95789115317125674_1217986399.png",
       "detail_bucket": "1a",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 50000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOLLYLAND",
@@ -14122,6 +14332,12 @@
       "image": "https://shop-phinf.pstatic.net/20251021_83/17610229510392nAx7_JPEG/6980024851155005_227384013.jpg",
       "detail_bucket": "39",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 45000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SARAMONIC",
@@ -14179,6 +14395,12 @@
       "image": "https://shop-phinf.pstatic.net/20250114_99/1736851784311gqPW4_JPEG/70984632843486037_1566378386.jpg",
       "detail_bucket": "80",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOLLYLAND",
@@ -14238,6 +14460,12 @@
       "image": "https://shop-phinf.pstatic.net/20250114_184/1736851841820qeT9H_JPEG/55415589623744332_1638604286.jpg",
       "detail_bucket": "b5",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOLLYLAND",
@@ -14298,6 +14526,12 @@
       "image": "https://shop-phinf.pstatic.net/20251021_294/1761020228439xwG8w_JPEG/95153089569518074_1255110804.jpg",
       "detail_bucket": "4c",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 45000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "DJI",
@@ -14359,6 +14593,12 @@
       "image": "https://shop-phinf.pstatic.net/20230914_253/1694682759929W2Ian_JPEG/43480268754696749_1581523198.jpg",
       "detail_bucket": "a4",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 45000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "DJI",
@@ -14418,6 +14658,12 @@
       "image": "https://shop-phinf.pstatic.net/20250321_234/1742529653454Hotag_JPEG/18147748934014185_853823330.jpg",
       "detail_bucket": "53",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "DJI",
@@ -14480,6 +14726,12 @@
       "image": "https://shop-phinf.pstatic.net/20251021_11/1761018983348wWQdq_PNG/14613895484294253_1684497230.png",
       "detail_bucket": "8c",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -14542,6 +14794,12 @@
       "image": "https://shop-phinf.pstatic.net/20251021_5/1761018008565Q4y2T_JPEG/2831402391965735_96347382.jpg",
       "detail_bucket": "2d",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 40000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -14602,6 +14860,12 @@
       "image": "https://shop-phinf.pstatic.net/20220621_150/1655804072418wLeBy_JPEG/56939906242058765_1483645197.jpg",
       "detail_bucket": "60",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -14662,6 +14926,12 @@
       "image": "https://shop-phinf.pstatic.net/20251021_284/1761017000317hUs8b_JPEG/8886494071333751_102172541.jpg",
       "detail_bucket": "71",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -14720,6 +14990,12 @@
       "image": "https://shop-phinf.pstatic.net/20251021_293/1761013038410XVqWf_PNG/95145978559000740_277969101.png",
       "detail_bucket": "25",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 30000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "JACKERY",
@@ -14778,6 +15054,12 @@
       "image": "https://shop-phinf.pstatic.net/20240731_16/1722412312734VoBgv_JPEG/25785720715231103_1278738589.jpg",
       "detail_bucket": "3c",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 30000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "JACKERY",
@@ -14838,6 +15120,12 @@
       "image": "https://shop-phinf.pstatic.net/20251018_162/1760781617300HKeJm_PNG/12353581420948732_821986361.png",
       "detail_bucket": "8e",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 35000,
+        "period": "12시간 · 삼각대",
+        "rate_count": 4
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -14898,6 +15186,12 @@
       "image": "https://shop-phinf.pstatic.net/20251021_149/1761012437336lezPX_JPEG/95145377475655818_1626591135.jpg",
       "detail_bucket": "79",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 30000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -14953,6 +15247,12 @@
       "image": "https://shop-phinf.pstatic.net/20251021_160/1761011776812o0NSx_PNG/8881270564842963_1449551579.png",
       "detail_bucket": "db",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "DJI",
@@ -15015,6 +15315,12 @@
       "image": "https://shop-phinf.pstatic.net/20251018_298/1760782168122EEJLC_PNG/94915029252985521_292357833.png",
       "detail_bucket": "79",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 55000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "CANON",
@@ -15075,6 +15381,12 @@
       "image": "https://shop-phinf.pstatic.net/20251018_41/1760782127181wVtrW_PNG/7460548238132669_772366264.png",
       "detail_bucket": "81",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 55000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "CANON",
@@ -15135,6 +15447,12 @@
       "image": "https://shop-phinf.pstatic.net/20251018_191/1760782088054Qdc1W_PNG/36554925090395296_237948458.png",
       "detail_bucket": "91",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 50000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "CANON",
@@ -15195,6 +15513,12 @@
       "image": "https://shop-phinf.pstatic.net/20250405_58/1743850496859luJmo_PNG/20312941705030956_1458745241.png",
       "detail_bucket": "07",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 55000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "CANON",
@@ -15252,6 +15576,12 @@
       "image": "https://shop-phinf.pstatic.net/20250902_29/1756806800345hqrUE_JPEG/11415617257147660_1124019428.jpg",
       "detail_bucket": "a4",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 60000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SMALLHD",
@@ -15307,6 +15637,12 @@
       "image": "https://shop-phinf.pstatic.net/20250902_35/175680641776149Ukr_JPEG/26360067857755123_1273914106.jpg",
       "detail_bucket": "ee",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 200000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "TERADEK",
@@ -15362,6 +15698,12 @@
       "image": "https://shop-phinf.pstatic.net/20250902_112/1756806385417FXoVE_JPEG/90939254548481265_1244837743.jpg",
       "detail_bucket": "8f",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 150000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "TERADEK",
@@ -15417,6 +15759,12 @@
       "image": "https://shop-phinf.pstatic.net/20250909_70/17573920524609wSAX_JPEG/17520929273551543_995719863.jpg",
       "detail_bucket": "1f",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 100000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "TERADEK",
@@ -15472,6 +15820,12 @@
       "image": "https://shop-phinf.pstatic.net/20250902_72/1756806276685stGaF_JPEG/106980779078364411_1029797659.jpg",
       "detail_bucket": "87",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 80000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "TERADEK",
@@ -15527,6 +15881,12 @@
       "image": "https://shop-phinf.pstatic.net/20250902_36/1756805551480f2OC4_JPEG/26359201574865543_1662032976.jpg",
       "detail_bucket": "1c",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 200000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "TERADEK",
@@ -15582,6 +15942,12 @@
       "image": "https://shop-phinf.pstatic.net/20250902_128/17568055135364y7Tj_JPEG/82193878222682003_1971609882.jpg",
       "detail_bucket": "5e",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 150000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "TERADEK",
@@ -15637,6 +16003,12 @@
       "image": "https://shop-phinf.pstatic.net/20250902_181/1756805397453E0qYl_JPEG/90938273548421936_419655349.jpg",
       "detail_bucket": "28",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 100000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "TERADEK",
@@ -15692,6 +16064,12 @@
       "image": "https://shop-phinf.pstatic.net/20250902_223/1756805186591lfv4q_JPEG/90938006718806598_462935021.jpg",
       "detail_bucket": "b3",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 80000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "TERADEK",
@@ -15750,6 +16128,12 @@
       "image": "https://shop-phinf.pstatic.net/20250904_97/17569553401848LC6f_JPEG/90708538681594858_1894595690.jpg",
       "detail_bucket": "a6",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 45000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "CANON",
@@ -15810,6 +16194,12 @@
       "image": "https://shop-phinf.pstatic.net/20250904_150/1756955284694pGgf3_JPEG/12540312695248340_539120589.jpg",
       "detail_bucket": "73",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 45000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "CANON",
@@ -15867,6 +16257,12 @@
       "image": "https://shop-phinf.pstatic.net/20250724_269/1753339194034Rqbhf_JPEG/3033429762673326_2020550075.jpg",
       "detail_bucket": "fc",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 60000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOLLYLAND",
@@ -15927,6 +16323,12 @@
       "image": "https://shop-phinf.pstatic.net/20250719_229/1752933897019D5qOK_JPEG/29126571166279184_1169243570.jpg",
       "detail_bucket": "ea",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 70000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -15988,6 +16390,12 @@
       "image": "https://shop-phinf.pstatic.net/20250719_267/1752934646297gsMu0_JPEG/29127320418627813_1395479220.jpg",
       "detail_bucket": "47",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 70000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -16049,6 +16457,12 @@
       "image": "https://shop-phinf.pstatic.net/20250722_117/1753161206338DYveG_JPEG/23425875434119061_1154607567.jpg",
       "detail_bucket": "52",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 65000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -16110,6 +16524,12 @@
       "image": "https://shop-phinf.pstatic.net/20250719_292/1752933831610Gpi6I_JPEG/87066679950821020_916239082.jpg",
       "detail_bucket": "43",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 65000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -16171,6 +16591,12 @@
       "image": "https://shop-phinf.pstatic.net/20250719_131/1752933745786TiRWp_JPEG/85751009687770522_1747813436.jpg",
       "detail_bucket": "6d",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 70000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -16232,6 +16658,12 @@
       "image": "https://shop-phinf.pstatic.net/20250719_299/1752933213195gi8b3_JPEG/37890133276040952_430547309.jpg",
       "detail_bucket": "cc",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 70000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -16292,6 +16724,12 @@
       "image": "https://shop-phinf.pstatic.net/20250630_138/1751283213413kRJAC_JPEG/64663195268757407_836422318.jpg",
       "detail_bucket": "71",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SWIT",
@@ -16351,6 +16789,12 @@
       "image": "https://shop-phinf.pstatic.net/20250421_86/1745213001289vtfXY_PNG/79345905436250963_1946100190.png",
       "detail_bucket": "ea",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "JACKERY",
@@ -16410,6 +16854,12 @@
       "image": "https://shop-phinf.pstatic.net/20250323_109/1742739481414q8KDj_PNG/15036367113013792_2138378605.png",
       "detail_bucket": "83",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 35000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "DJI",
@@ -16469,6 +16919,12 @@
       "image": "https://shop-phinf.pstatic.net/20230818_137/1692329649459KzgnP_JPEG/15171758250264166_1262458588.jpg",
       "detail_bucket": "74",
       "shipping_class": null,
+      "rental": {
+        "service": "studio",
+        "price": 50000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "NADAUN",
@@ -16528,6 +16984,12 @@
       "image": "https://shop-phinf.pstatic.net/20241112_57/1731402400281u4mPk_PNG/4348211416528926_923149844.png",
       "detail_bucket": "ef",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOBOLITE",
@@ -16586,6 +17048,12 @@
       "image": "https://shop-phinf.pstatic.net/20241112_142/1731402322123o5V9R_PNG/65535230684519296_255688075.png",
       "detail_bucket": "36",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOBOLITE",
@@ -16646,6 +17114,12 @@
       "image": "https://shop-phinf.pstatic.net/20241112_24/1731402221850jPgSb_PNG/37241520675002103_1775555223.png",
       "detail_bucket": "00",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOBOLITE",
@@ -16704,6 +17178,12 @@
       "image": "https://shop-phinf.pstatic.net/20241112_159/1731401936710ywUD6_PNG/3418024830067361_1579652632.png",
       "detail_bucket": "bc",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOBOLITE",
@@ -16762,6 +17242,12 @@
       "image": "https://shop-phinf.pstatic.net/20241112_178/1731401792825FMW9x_PNG/65534596973494288_1034969444.png",
       "detail_bucket": "7d",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOBOLITE",
@@ -16821,6 +17307,12 @@
       "image": "https://shop-phinf.pstatic.net/20241101_51/1730435171755SFaUm_JPEG/64568093882890718_2096006104.jpg",
       "detail_bucket": "62",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -16883,6 +17375,12 @@
       "image": "https://shop-phinf.pstatic.net/20241101_186/17304350950779DM2I_JPEG/6648274975192026_259173415.jpg",
       "detail_bucket": "cb",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -16942,6 +17440,12 @@
       "image": "https://shop-phinf.pstatic.net/20241101_173/1730434910572y7qtf_JPEG/16146075772070457_1900859844.jpg",
       "detail_bucket": "33",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 30000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -17001,6 +17505,12 @@
       "image": "https://shop-phinf.pstatic.net/20241101_170/1730434706415W3ADt_JPEG/77153025833114353_786949610.jpg",
       "detail_bucket": "ff",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -17061,6 +17571,12 @@
       "image": "https://shop-phinf.pstatic.net/20241101_58/1730429413480NNuJX_JPEG/16278494017015204_19669180.jpg",
       "detail_bucket": "6d",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -17121,6 +17637,12 @@
       "image": "https://shop-phinf.pstatic.net/20241022_91/1729570581164KpxBD_JPEG/79920857112740782_1522392772.jpg",
       "detail_bucket": "71",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "KUPO",
@@ -17183,6 +17705,12 @@
       "image": "https://shop-phinf.pstatic.net/20241022_125/1729569838313713wY_JPEG/77158315681048711_1506441378.jpg",
       "detail_bucket": "4a",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "KUPO",
@@ -17242,6 +17770,12 @@
       "image": "https://shop-phinf.pstatic.net/20240731_54/17223997599385qfk0_JPEG/35867259453001361_297085369.jpg",
       "detail_bucket": "88",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 35000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOLLYLAND",
@@ -17298,6 +17832,12 @@
       "image": "https://shop-phinf.pstatic.net/20240731_265/1722393760544wvP1u_JPEG/2971315236684294_1729412288.jpg",
       "detail_bucket": "fd",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 50000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOLLYLAND",
@@ -17354,6 +17894,12 @@
       "image": "https://shop-phinf.pstatic.net/20240731_239/1722394180208eg2Tn_JPEG/68767759263628333_1865098561.jpg",
       "detail_bucket": "62",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOLLYLAND",
@@ -17410,6 +17956,12 @@
       "image": "https://shop-phinf.pstatic.net/20240731_182/17223935030020AzDD_JPEG/68767082062757394_75066304.jpg",
       "detail_bucket": "f5",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 60000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOLLYLAND",
@@ -17469,6 +18021,12 @@
       "image": "https://shop-phinf.pstatic.net/20240815_33/17237143163645ajHX_JPEG/70673841191564584_1734125078.jpg",
       "detail_bucket": "1c",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "FXLION",
@@ -17530,6 +18088,12 @@
       "image": "https://shop-phinf.pstatic.net/20240815_232/1723713620873bVINr_JPEG/18101377872024649_716408937.jpg",
       "detail_bucket": "1a",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 50000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SACHTLER",
@@ -17596,6 +18160,12 @@
       "image": "https://shop-phinf.pstatic.net/20240807_156/1722997676984jmAFs_JPEG/5357669990743546_799918055.jpg",
       "detail_bucket": "72",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 55000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLUX",
@@ -17655,6 +18225,12 @@
       "image": "https://shop-phinf.pstatic.net/20240807_278/1722996179050cmyDo_JPEG/45784251644461511_1672619680.jpg",
       "detail_bucket": "22",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 55000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLUX",
@@ -17716,6 +18292,12 @@
       "image": "https://shop-phinf.pstatic.net/20240730_274/1722351436751V8w05_PNG/9014183111408517_406688380.png",
       "detail_bucket": "aa",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 30000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "시네트리",
@@ -17772,6 +18354,12 @@
       "image": "https://shop-phinf.pstatic.net/20240717_189/1721184319974b9SQe_PNG/67818103210820349_81852720.png",
       "detail_bucket": "ed",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 40000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "DJI",
@@ -17831,6 +18419,12 @@
       "image": "https://shop-phinf.pstatic.net/20240318_276/17107373024562Nt3t_JPEG/111873086174663668_1378545511.jpg",
       "detail_bucket": "2b",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOLLYLAND",
@@ -17887,6 +18481,12 @@
       "image": "https://shop-phinf.pstatic.net/20240318_290/17107372542675FLS8_JPEG/111873037978784572_1163551837.jpg",
       "detail_bucket": "67",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 55000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOLLYLAND",
@@ -17945,6 +18545,12 @@
       "image": "https://shop-phinf.pstatic.net/20240302_181/1709390665328LVtvM_PNG/110526445050887204_368288941.png",
       "detail_bucket": "24",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 45000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NADAUN",
@@ -18005,6 +18611,12 @@
       "image": "https://shop-phinf.pstatic.net/20240519_69/1716111508083JDdPT_JPEG/117247350708166244_883886373.jpeg",
       "detail_bucket": "7c",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NADAUN",
@@ -18069,6 +18681,12 @@
       "image": "https://shop-phinf.pstatic.net/20240519_165/1716111518742WSAUp_JPEG/117247361376841466_658975727.jpeg",
       "detail_bucket": "34",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NADAUN",
@@ -18133,6 +18751,12 @@
       "image": "https://shop-phinf.pstatic.net/20240519_166/1716111262498QnLdJ_JPEG/117247105108159561_927789043.jpeg",
       "detail_bucket": "c2",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 14000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NADAUN",
@@ -18197,6 +18821,12 @@
       "image": "https://shop-phinf.pstatic.net/20240519_23/1716111062175dp7s7_JPEG/117246904792581947_188956952.jpeg",
       "detail_bucket": "db",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 12000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NADAUN",
@@ -18261,6 +18891,12 @@
       "image": "https://shop-phinf.pstatic.net/20240519_69/1716111508083JDdPT_JPEG/117247350708166244_883886373.jpeg",
       "detail_bucket": "27",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NADAUN",
@@ -18323,6 +18959,12 @@
       "image": "https://shop-phinf.pstatic.net/20240519_165/1716111518742WSAUp_JPEG/117247361376841466_658975727.jpeg",
       "detail_bucket": "af",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NADAUN",
@@ -18385,6 +19027,12 @@
       "image": "https://shop-phinf.pstatic.net/20240519_166/1716111262498QnLdJ_JPEG/117247105108159561_927789043.jpeg",
       "detail_bucket": "6f",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NADAUN",
@@ -18447,6 +19095,12 @@
       "image": "https://shop-phinf.pstatic.net/20240519_23/1716111062175dp7s7_JPEG/117246904792581947_188956952.jpeg",
       "detail_bucket": "5e",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NADAUN",
@@ -18508,6 +19162,12 @@
       "image": "https://shop-phinf.pstatic.net/20240415_133/17131535100704crHJ_JPEG/114289405744241847_1040721737.jpeg",
       "detail_bucket": "80",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NADAUN",
@@ -18567,6 +19227,12 @@
       "image": "https://shop-phinf.pstatic.net/20240318_60/1710754084601g7plR_PNG/111889980334589123_728998012.png",
       "detail_bucket": "8c",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOLLYLAND",
@@ -18627,6 +19293,12 @@
       "image": "https://shop-phinf.pstatic.net/20240318_278/1710739229244mmmYk_JPEG/111875124980773796_1649443068.jpg",
       "detail_bucket": "07",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "TURBOSOUND",
@@ -18683,6 +19355,12 @@
       "image": "https://shop-phinf.pstatic.net/20240306_232/1709716090983YVvXy_JPEG/110851989694623659_487523837.jpg",
       "detail_bucket": "47",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "BENRO",
@@ -18748,6 +19426,12 @@
       "image": "https://shop-phinf.pstatic.net/20240228_293/1709100956743nPavW_PNG/36403640623577844_1433023310.png",
       "detail_bucket": "8b",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "MANFROTTO",
@@ -18811,6 +19495,12 @@
       "image": "https://shop-phinf.pstatic.net/20240302_93/1709390226280ON99m_JPEG/110526006005022169_1653518343.jpg",
       "detail_bucket": "a1",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "APUTURE",
@@ -18873,6 +19563,12 @@
       "image": "https://shop-phinf.pstatic.net/20240302_181/1709390665328LVtvM_PNG/110526445050887204_368288941.png",
       "detail_bucket": "4d",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 45000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "JCPROM",
@@ -18930,6 +19626,12 @@
       "image": "https://shop-phinf.pstatic.net/20240124_59/1706062395354kkyyo_JPEG/107198238064904878_838152309.jpg",
       "detail_bucket": "a6",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "MANFROTTO",
@@ -18993,6 +19695,12 @@
       "image": "https://shop-phinf.pstatic.net/20231123_209/1700714628865Ni57i_JPEG/27541894065900206_1157538331.jpg",
       "detail_bucket": "74",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -19052,6 +19760,12 @@
       "image": "https://shop-phinf.pstatic.net/20230916_271/16948705499475b3W1_JPEG/43668058770624358_299148684.jpg",
       "detail_bucket": "6e",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "ZOOM",
@@ -19107,6 +19821,12 @@
       "image": "https://shop-phinf.pstatic.net/20230818_137/1692329649459KzgnP_JPEG/15171758250264166_1262458588.jpg",
       "detail_bucket": "f9",
       "shipping_class": null,
+      "rental": {
+        "service": "studio",
+        "price": 50000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "NADAUN",
@@ -19168,6 +19888,12 @@
       "image": "https://shop-phinf.pstatic.net/20230909_13/1694186953703Kl1MO_JPEG/9695844498059201_1338105273.jpg",
       "detail_bucket": "a8",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 200000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "RED",
@@ -19228,6 +19954,12 @@
       "image": "https://shop-phinf.pstatic.net/20230909_206/169418685700930xqo_JPEG/7466258850115148_1650754363.jpg",
       "detail_bucket": "89",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 150000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "RED",
@@ -19285,6 +20017,12 @@
       "image": "https://shop-phinf.pstatic.net/20230817_237/16922837919192ObLS_JPEG/19114023492540665_604651634.jpg",
       "detail_bucket": "f1",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "CANON",
@@ -19343,6 +20081,12 @@
       "image": "https://shop-phinf.pstatic.net/20230817_24/16922835464400dB68_JPEG/6732946671223558_1977293678.jpg",
       "detail_bucket": "3d",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "CANON",
@@ -19401,6 +20145,12 @@
       "image": "https://shop-phinf.pstatic.net/20230817_212/1692283412293hr0w1_JPEG/19113643869432548_1253280303.jpg",
       "detail_bucket": "98",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "CANON",
@@ -19459,6 +20209,12 @@
       "image": "https://shop-phinf.pstatic.net/20230817_192/1692282629273wjw9h_JPEG/15139067074147384_635389528.jpg",
       "detail_bucket": "75",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 35000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "CANON",
@@ -19516,6 +20272,12 @@
       "image": "https://shop-phinf.pstatic.net/20230827_131/1693122757006sIfQL_JPEG/4048874868569018_937277811.jpg",
       "detail_bucket": "93",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 60000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "PHASEONE",
@@ -19578,6 +20340,12 @@
       "image": "https://shop-phinf.pstatic.net/20230827_279/1693122726444n5AKP_JPEG/668903429548414_56483565.jpg",
       "detail_bucket": "9c",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 60000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "PHASEONE",
@@ -19640,6 +20408,12 @@
       "image": "https://shop-phinf.pstatic.net/20200506_275/1588758654809N9N78_JPEG/26118489358113230_757959794.jpg",
       "detail_bucket": "a2",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 60000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "PHASEONE",
@@ -19702,6 +20476,12 @@
       "image": "https://shop-phinf.pstatic.net/20230827_226/1693122534406gAvue_JPEG/39139118236186045_622519621.jpg",
       "detail_bucket": "ae",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 70000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "PHASEONE",
@@ -19764,6 +20544,12 @@
       "image": "https://shop-phinf.pstatic.net/20230827_2/1693122481520iR69N_JPEG/38962518340002747_72467670.jpg",
       "detail_bucket": "6c",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 70000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "PHASEONE",
@@ -19826,6 +20612,12 @@
       "image": "https://shop-phinf.pstatic.net/20230827_95/1693122363483RwKk7_JPEG/4048481315468498_1806961461.jpg",
       "detail_bucket": "c9",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 80000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "PHASEONE",
@@ -19887,6 +20679,12 @@
       "image": "https://shop-phinf.pstatic.net/20230825_123/1692934232102P5NKA_JPEG/28999087917850799_110579661.jpg",
       "detail_bucket": "67",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "CANON",
@@ -19945,6 +20743,12 @@
       "image": "https://shop-phinf.pstatic.net/20230825_134/1692933786820EArqc_JPEG/28998642625442624_2126437603.jpg",
       "detail_bucket": "91",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 35000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "CANON",
@@ -20002,6 +20806,12 @@
       "image": "https://shop-phinf.pstatic.net/20230702_19/1688287645428dt7dw_JPEG/3774933648871569_2038172099.jpg",
       "detail_bucket": "5c",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 100000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "EDELKRONE",
@@ -20060,6 +20870,12 @@
       "image": "https://shop-phinf.pstatic.net/20230702_198/1688287180432C7OEH_JPEG/2161667975368834_360352715.jpg",
       "detail_bucket": "37",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 80000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "EDELKRONE",
@@ -20117,6 +20933,12 @@
       "image": "https://shop-phinf.pstatic.net/20230701_185/16882218550641cxmg_JPEG/2110712863736703_1819806677.jpg",
       "detail_bucket": "df",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 150000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "CANON",
@@ -20176,6 +20998,12 @@
       "image": "https://shop-phinf.pstatic.net/20230630_182/1688107427157DfGit_JPEG/1287145001664843_1751093733.jpg",
       "detail_bucket": "e6",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 30000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "TERADEK",
@@ -20234,6 +21062,12 @@
       "image": "https://shop-phinf.pstatic.net/20230701_164/1688220320920vusCO_PNG/780728928719190_1308795927.PNG",
       "detail_bucket": "7a",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "AVENGER",
@@ -20297,6 +21131,12 @@
       "image": "https://shop-phinf.pstatic.net/20230630_35/1688104231329jdO9q_PNG/1570225610089955_519067607.PNG",
       "detail_bucket": "cd",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "AURORA",
@@ -20360,6 +21200,12 @@
       "image": "https://shop-phinf.pstatic.net/20230630_35/1688104231329jdO9q_PNG/1570225610089955_519067607.PNG",
       "detail_bucket": "81",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "AURORA",
@@ -20423,6 +21269,12 @@
       "image": "https://shop-phinf.pstatic.net/20230630_117/1688104075554knsod_PNG/20838953514687839_887921550.PNG",
       "detail_bucket": "e0",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "AURORA",
@@ -20486,6 +21338,12 @@
       "image": "https://shop-phinf.pstatic.net/20230630_123/16881035846661Yg6a_JPEG/1978072324884787_401593594.jpg",
       "detail_bucket": "02",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "PROFOTO",
@@ -20548,6 +21406,12 @@
       "image": "https://shop-phinf.pstatic.net/20230630_47/1688103010394y3vnG_JPEG/20837888356753273_2003317379.jpg",
       "detail_bucket": "9d",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SMALLRIG",
@@ -20608,6 +21472,12 @@
       "image": "https://shop-phinf.pstatic.net/20230630_62/1688102309587TSYEf_JPEG/1991167392737522_1766478870.jpg",
       "detail_bucket": "de",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "MISONICS",
@@ -20668,6 +21538,12 @@
       "image": "https://shop-phinf.pstatic.net/20230630_162/168810251639233NoN_JPEG/1568510674767293_1526534712.jpg",
       "detail_bucket": "7a",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "MISONICS",
@@ -20728,6 +21604,12 @@
       "image": "https://shop-phinf.pstatic.net/20230630_62/1688102309587TSYEf_JPEG/1991167392737522_1766478870.jpg",
       "detail_bucket": "74",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "MISONICS",
@@ -20789,6 +21671,12 @@
       "image": "https://shop-phinf.pstatic.net/20230630_122/16881018544100B5nh_JPEG/1567848691307479_76607520.jpg",
       "detail_bucket": "55",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "APUTURE",
@@ -20851,6 +21739,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_35/1688045691278TPAjx_PNG/15401879271361583_1380996668.png",
       "detail_bucket": "78",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "APUTURE",
@@ -20913,6 +21807,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_256/16880454557327m7H4_JPEG/1511450017465269_264047091.jpg",
       "detail_bucket": "6a",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "XTAR",
@@ -20974,6 +21874,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_124/1688045242025KDpKc_JPEG/1919729686765750_417177446.jpg",
       "detail_bucket": "a8",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 3000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "FARSEEING",
@@ -21032,6 +21938,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_184/1688044667373JDBTs_JPEG/1224385218225014_1641443323.jpg",
       "detail_bucket": "d7",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "BOYA",
@@ -21090,6 +22002,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_217/1688044356046ow1oQ_JPEG/15400544044997291_1639946762.jpg",
       "detail_bucket": "7c",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "RODE",
@@ -21149,6 +22067,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_79/1688043679603Cv5Lk_JPEG/1918167260334338_1282151539.jpg",
       "detail_bucket": "66",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "BENRO",
@@ -21214,6 +22138,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_300/16880433304382em8n_JPEG/1917818105285917_1945882133.jpg",
       "detail_bucket": "ab",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "IFOOTAGE",
@@ -21278,6 +22208,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_231/1688042173175mjezQ_JPEG/1221891019612017_43454971.jpg",
       "detail_bucket": "a5",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 2000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "PROFOTO",
@@ -21339,6 +22275,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_290/1688041989927sy0jd_JPEG/1221707770566030_148889074.jpg",
       "detail_bucket": "a5",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -21401,6 +22343,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_185/1688041250439sq0aD_PNG/20776128406621779_412011721.PNG",
       "detail_bucket": "d6",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SENNHEISER",
@@ -21461,6 +22409,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_132/1688040807018h0K4E_JPEG/20775684980849272_257506614.jpg",
       "detail_bucket": "17",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SENNHEISER",
@@ -21520,6 +22474,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_192/1688040449593VowkO_PNG/1929307342004369_876570099.PNG",
       "detail_bucket": "44",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "FEELWORLD",
@@ -21576,6 +22536,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_55/1688040108069tmouE_PNG/1506102351252596_2118922746.PNG",
       "detail_bucket": "d2",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "FEELWORLD",
@@ -21632,6 +22598,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_212/1688038457067Q8Qs5_JPEG/1927314868100879_628940808.jpg",
       "detail_bucket": "18",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "DJI",
@@ -21693,6 +22665,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_52/1662354655598Xbxqa_JPEG/63490490433602741_1344697421.jpg",
       "detail_bucket": "06",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "ATOMOS",
@@ -21750,6 +22728,12 @@
       "image": "https://shop-phinf.pstatic.net/20211208_263/1638951961614JHK1M_JPEG/40087796448164260_36371701.jpg",
       "detail_bucket": "93",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "EDELKRONE",
@@ -21811,6 +22795,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_250/1688037501795HMqgX_JPEG/20772379760593227_308664598.jpg",
       "detail_bucket": "7f",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 70000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "EDELKRONE",
@@ -21869,6 +22859,12 @@
       "image": "https://shop-phinf.pstatic.net/20230112_7/1673521570973Y7MYN_PNG/74657354682543996_741242831.png",
       "detail_bucket": "7a",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 40000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "EDELKRONE",
@@ -21927,6 +22923,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_84/16880372694581f4HH_JPEG/3524557702029859_1575649731.jpg",
       "detail_bucket": "4a",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 30000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "EDELKRONE",
@@ -21985,6 +22987,12 @@
       "image": "https://shop-phinf.pstatic.net/20230629_41/168803718030731SdT_JPEG/1911667974053233_2073351081.jpg",
       "detail_bucket": "f6",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "EDELKRONE",
@@ -22049,6 +23057,12 @@
       "image": "https://shop-phinf.pstatic.net/20211208_121/16389542810315MBPu_JPEG/40090176768895358_1071106758.jpg",
       "detail_bucket": "c8",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 30000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "EDELKRONE",
@@ -22113,6 +23127,12 @@
       "image": "https://shop-phinf.pstatic.net/20230524_99/16849226834131jtkP_JPEG/4434772419870991_2049405062.jpeg",
       "detail_bucket": "42",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 150000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "RED",
@@ -22169,6 +23189,12 @@
       "image": "https://shop-phinf.pstatic.net/20230707_201/16887121509488O8qC_JPEG/2042952212867039_489306236.jpeg",
       "detail_bucket": "7b",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 100000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "PROFOTO",
@@ -22227,6 +23253,12 @@
       "image": "https://shop-phinf.pstatic.net/20230523_197/1684831397334eUtEj_JPEG/2877922156367769_1867964360.jpg",
       "detail_bucket": "a3",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 30000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -22286,6 +23318,12 @@
       "image": "https://shop-phinf.pstatic.net/20230430_221/16828512025258Gu4d_JPEG/11390921176890682_1907946121.jpg",
       "detail_bucket": "0a",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 30000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -22345,6 +23383,12 @@
       "image": "https://shop-phinf.pstatic.net/20230206_191/16756500534463mYB0_JPEG/76785837159773341_1132043894.jpg",
       "detail_bucket": "63",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -22404,6 +23448,12 @@
       "image": "https://shop-phinf.pstatic.net/20230206_278/1675650236455UOkAr_PNG/76786020168431063_1038212629.png",
       "detail_bucket": "6a",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -22463,6 +23513,12 @@
       "image": "https://shop-phinf.pstatic.net/20230206_165/1675650057243evRLo_PNG/76785840933307449_1280258645.png",
       "detail_bucket": "c0",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -22522,6 +23578,12 @@
       "image": "https://shop-phinf.pstatic.net/20230206_244/1675649511241mkeGz_JPEG/76785353957415772_1427230483.jpg",
       "detail_bucket": "96",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -22581,6 +23643,12 @@
       "image": "https://shop-phinf.pstatic.net/20230702_49/1688283460044Kd5mX_JPEG/1749454282682818_417656341.jpg",
       "detail_bucket": "ad",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 45000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "SONY",
@@ -22639,6 +23707,12 @@
       "image": "https://shop-phinf.pstatic.net/20220921_69/1663756057559rFarK_JPEG/64891885388596602_1096914255.jpg",
       "detail_bucket": "42",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "GENTREE",
@@ -22699,6 +23773,12 @@
       "image": "https://shop-phinf.pstatic.net/20220810_32/16601196043617r4IK_JPEG/61255388079625542_846061788.jpg",
       "detail_bucket": "ed",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 40000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "PERIBOUNCE",
@@ -22760,6 +23840,12 @@
       "image": "https://shop-phinf.pstatic.net/20220921_82/1663751157817A5Rv1_JPEG/64886992646883399_276208758.jpg",
       "detail_bucket": "f8",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 35000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "PERIBOUNCE",
@@ -22820,6 +23906,12 @@
       "image": "https://shop-phinf.pstatic.net/20220726_106/1658820470246saFEB_JPEG/59956312961294019_1857853042.jpg",
       "detail_bucket": "38",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "TILTA",
@@ -22878,6 +23970,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_18/1662362731139GLXR9_JPEG/63498514834066613_789945901.jpg",
       "detail_bucket": "88",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 45000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLUX",
@@ -22938,6 +24036,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_290/1662362639213asv52_PNG/63498422914836997_773269467.png",
       "detail_bucket": "3f",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 40000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -22998,6 +24102,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_272/1662362547091cEdXq_JPEG/63498330798263627_275825590.jpg",
       "detail_bucket": "be",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 80000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -23058,6 +24168,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_259/1662362459957wMsKg_JPEG/63498243674365325_1313096537.jpg",
       "detail_bucket": "f1",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -23117,6 +24233,12 @@
       "image": "https://shop-phinf.pstatic.net/20221220_279/1671527610514WEU20_JPEG/72663444330803753_2063704610.jpg",
       "detail_bucket": "65",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -23177,6 +24299,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_179/1662362155821P1WwG_PNG/63497939518930349_1653450398.png",
       "detail_bucket": "61",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -23239,6 +24367,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_194/1662362098590BMQjb_JPEG/63497882289344842_1338354062.jpg",
       "detail_bucket": "3a",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -23301,6 +24435,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_90/1662362045889WWneS_JPEG/63497829594691416_5699614.jpg",
       "detail_bucket": "fa",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -23363,6 +24503,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_205/16623619796652WKGk_JPEG/63497763254739745_1394432899.jpg",
       "detail_bucket": "63",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -23425,6 +24571,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_21/1662361877509OGDrk_JPEG/63497661214252850_56291389.jpg",
       "detail_bucket": "79",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -23485,6 +24637,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_261/1662361723382VslYI_JPEG/63497507099025908_204268215.jpg",
       "detail_bucket": "04",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -23545,6 +24703,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_158/1662361632695YUyiI_JPEG/63497416409541152_358788705.jpg",
       "detail_bucket": "da",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "NANLITE",
@@ -23604,6 +24768,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_169/1662361468814ugPxB_JPEG/63497303643061432_2108170940.jpg",
       "detail_bucket": "ee",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 30000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "APUTURE",
@@ -23667,6 +24837,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_222/1662361179548G2oug_JPEG/63497014381455588_710645245.jpg",
       "detail_bucket": "2b",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "APUTURE",
@@ -23730,6 +24906,12 @@
       "image": "https://shop-phinf.pstatic.net/20250313_164/1741875353024JClkJ_JPEG/3144926832873288_778259988.jpg",
       "detail_bucket": "d1",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "APUTURE",
@@ -23793,6 +24975,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_28/1662360771548Xi7r4_JPEG/63496606383810257_1742553128.jpg",
       "detail_bucket": "ec",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "APUTURE",
@@ -23856,6 +25044,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_52/1662360712161sVjip_JPEG/63496546986342750_1627085897.jpg",
       "detail_bucket": "13",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "APUTURE",
@@ -23919,6 +25113,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_252/1662360509085U5m8h_JPEG/63496343915896571_1631884065.jpg",
       "detail_bucket": "46",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "APUTURE",
@@ -23981,6 +25181,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_11/16623604363931i0dw_JPEG/63496271226669075_1269141185.jpg",
       "detail_bucket": "6f",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 60000,
+        "period": null,
+        "rate_count": 0
+      },
       "discovery": {
         "tags": [
           "ARRI",
@@ -24039,6 +25245,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_133/1662358614170u0mbN_JPEG/63494459891586582_529253286.jpg",
       "detail_bucket": "3e",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "ARRI",
@@ -24097,6 +25309,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_133/1662358614170u0mbN_JPEG/63494459891586582_529253286.jpg",
       "detail_bucket": "62",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "ARRI",
@@ -24157,6 +25375,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_219/1662357563453oWwyD_PNG/63493459177727740_1830172741.png",
       "detail_bucket": "06",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "PROFOTO",
@@ -24218,6 +25442,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_227/1662357504150jurwI_PNG/63493399873204133_1480248046.png",
       "detail_bucket": "c7",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "PROFOTO",
@@ -24279,6 +25509,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_54/16623574231793fBPS_PNG/63493318892646251_1521643145.png",
       "detail_bucket": "d4",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "PROFOTO",
@@ -24340,6 +25576,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_152/166235735110885Wlh_PNG/63493246832178831_1783248852.png",
       "detail_bucket": "b3",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "PROFOTO",
@@ -24403,6 +25645,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_204/1662357262066ULHlI_PNG/63493157804260380_1641921018.png",
       "detail_bucket": "c7",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "PROFOTO",
@@ -24466,6 +25714,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_159/1662357189254D6LJQ_PNG/63493084989903485_760062074.png",
       "detail_bucket": "a7",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "PROFOTO",
@@ -24527,6 +25781,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_248/1662356958568vbdxv_JPEG/63492854306698263_1719135189.jpg",
       "detail_bucket": "50",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "KUPO",
@@ -24589,6 +25849,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_81/1662356822532OB4Lh_JPEG/63492718269735606_1198369021.jpg",
       "detail_bucket": "b9",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "KUPO",
@@ -24651,6 +25917,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_33/1662356733147BrL8x_JPEG/63492575858361285_550423614.jpg",
       "detail_bucket": "8c",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "KUPO",
@@ -24713,6 +25985,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_220/1662356235021ArQWU_JPEG/63492077727940892_1838185110.jpg",
       "detail_bucket": "ac",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 5000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "FXLION",
@@ -24774,6 +26052,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_300/1662355979010ruiiz_JPEG/63491821722233752_2012732278.jpg",
       "detail_bucket": "0e",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 15000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "GENTREE",
@@ -24835,6 +26119,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_209/1662355689316G0VT6_JPEG/63491532023811062_415278987.jpg",
       "detail_bucket": "89",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "KUPO",
@@ -24892,6 +26182,12 @@
       "image": "https://shop-phinf.pstatic.net/20220921_300/1663723761543yBtFI_JPEG/64859595349922211_819326644.jpg",
       "detail_bucket": "56",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "TVLOGIC",
@@ -24952,6 +26248,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_52/1662354655598Xbxqa_JPEG/63490490433602741_1344697421.jpg",
       "detail_bucket": "f4",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "ATOMOS",
@@ -25009,6 +26311,12 @@
       "image": "https://shop-phinf.pstatic.net/20220801_85/1659329584476kSuR6_JPEG/60465483185231245_1650926262.jpg",
       "detail_bucket": "93",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOLLYLAND",
@@ -25067,6 +26375,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_160/1662353597124yVHJx_JPEG/63489442845438544_1771979384.jpg",
       "detail_bucket": "53",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "HOLLYLAND",
@@ -25124,6 +26438,12 @@
       "image": "https://shop-phinf.pstatic.net/20220905_256/16623529277612B8xX_PNG/63488773469455090_1299101758.png",
       "detail_bucket": "12",
       "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 200000,
+        "period": "12시간",
+        "rate_count": 2
+      },
       "discovery": {
         "tags": [
           "PHASEONE",

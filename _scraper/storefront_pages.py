@@ -30,7 +30,10 @@ def gift_content():
 
 def card(p):
     price=p.get('sale_price') if any(o['source'] in ('smartstore','imweb') for o in p['offers']) else p.get('price')
-    amount=(f'{price:,}원' if price is not None else '가격 문의')+(' <small>/ 대여료 · 기간 확인</small>' if p['kind']=='rental' else '')
+    if p['kind']=='rental':price=p.get('rental',{}).get('price',price)
+    period=p.get('rental',{}).get('period')
+    rental_label=period+' 기준' if period else ('이용시간 확인' if p.get('rental',{}).get('service')=='studio' else '대여기간 확인')
+    amount=(f'{price:,}원' if price is not None else '가격 문의')+(f' <span class="rental-period-label">{escape(rental_label)}</span>' if p['kind']=='rental' else '')
     motion=f' data-motion-image="{escape(p["motion_image"])}"' if p.get('motion_image') else ''
     return f'<a class="product-card" href="/item.html?id={escape(p["id"])}"><div class="product-image"{motion}><img src="{escape(p["image"])}" alt="{escape(p["name"])}" loading="lazy" referrerpolicy="no-referrer"></div><h3 class="product-name">{escape(p["name"])}</h3><p class="product-price">{amount}</p></a>'
 

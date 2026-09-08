@@ -77,7 +77,7 @@
   ],
   "functions": {
     "api/product.js": {
-      "includeFiles": "{item.html,data/catalog/catalog.json}"
+      "includeFiles": "{item.html,data/catalog/catalog.json,data/catalog/rental-details.json,assets/shop/rental-content.js}"
     },
     "api/orders.js": {
       "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,server/commerce/**}",
@@ -90,7 +90,7 @@
       "includeFiles": "{gift-item.html,data/gift/**,server/gift-catalog.cjs}"
     },
     "api/search.js": {
-      "includeFiles": "{search.html,data/gift/catalog.json,data/catalog/catalog.json,server/gift-catalog.cjs,server/shop-search.cjs}"
+      "includeFiles": "{search.html,data/gift/catalog.json,data/catalog/catalog.json,server/gift-catalog.cjs,server/shop-search.cjs,assets/shop/rental-content.js}"
     }
   }
 }
