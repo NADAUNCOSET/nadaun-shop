@@ -12,7 +12,7 @@ class SourcePolicyTests(unittest.TestCase):
         import avx_worker
         import avx_publication
         unresolved=[{'brand_id':'sony','sources':{'avx':1,'smartstore':2}}]
-        selection={'held_ids':{'avx-1':'sony'},'excluded_ids':{},'pending_brands':{'sony':1}}
+        selection={'held_ids':{'avx-1':'sony'},'excluded_ids':{},'pending_brands':{'sony':1},'content_review_ids':{}}
         with patch.object(avx_publication,'partition',return_value=({'products':{},'product_count':0},selection)),patch.object(policy,'pending',return_value=unresolved),patch.object(policy,'write_audit'),patch.object(avx_worker,'save_json') as save:
             result=avx_worker.publish({'products':{}})
             self.assertEqual(result['state'],'awaiting_brand_source_choices')

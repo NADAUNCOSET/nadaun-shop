@@ -46,6 +46,16 @@ class PublicationTests(unittest.TestCase):
             else:snapshot['coverage']['expected']=7
             with self.assertRaises(ValueError):publication.partition(snapshot)
 
+    def test_confirmed_empty_source_is_held_even_for_an_owner_approved_brand(self):
+        snapshot=source();snapshot['products']['avx-0']['content_issues']=['source_description_empty']
+        with patch.object(publication,'inventory',return_value={}),patch.object(publication,'selections',return_value={'dji':{'source':'avx'}}):
+            public,decisions=publication.partition(snapshot)
+        self.assertNotIn('avx-0',public['products'])
+        self.assertEqual(decisions['content_review_ids'],{'avx-0':['source_description_empty']})
+        self.assertEqual(decisions['pending_brands'],{})
+        self.assertEqual(public['publication']['pending_content_product_count'],1)
+        self.assertEqual(sum(public['publication'][k] for k in ('accepted_product_count','pending_product_count','owner_excluded_product_count')),6)
+
     def test_pending_choice_cannot_unlock_complete_dependency_and_policy_changes_invalidate_receipt(self):
         public,_=self.partition()
         with tempfile.TemporaryDirectory() as tmp,patch.object(publication,'policy_fingerprint',return_value='policy'):

@@ -55,7 +55,7 @@ def report(plan_path=PLAN, out=OUT, state=STATE):
         # A receipt cannot turn an unimplemented adapter into recurring sync.
         source_choices = read(folder / 'publication-waiting.json') if source == 'avx' else {}
         receipt=read(folder/'published.json')
-        phase = ('awaiting_brand_source_choices' if source_choices.get('state') == 'awaiting_brand_source_choices' and not published else
+        phase = (source_choices['state'] if source_choices.get('state') in ('awaiting_brand_source_choices','awaiting_content_review') and not published else
                  config.get('status','awaiting_source_access') if not adapter_ready else
                  'waiting_for_predecessor' if waiting else
                  'live_verified' if published else progress.get('phase', 'not_started'))
@@ -69,6 +69,7 @@ def report(plan_path=PLAN, out=OUT, state=STATE):
             'last_worker_error': read(folder / 'worker-error.json' if source == 'avx' else state / (source + '-worker-error.json')) or None,
             'blocker': config.get('blocker') if not adapter_ready else None,
             'pending_brand_source_choices':len(source_choices.get('brands',[])),
+            'pending_source_content_reviews':len(source_choices.get('content_review_ids',{})),
             'last_verified_published_products':receipt.get('verified_products'),
             'last_verified_source_products':receipt.get('source_verified_products'),
             'published_scope':receipt.get('scope'),

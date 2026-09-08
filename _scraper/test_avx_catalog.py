@@ -66,6 +66,26 @@ class AvxTests(unittest.TestCase):
             self.assertEqual(set(importer.listing()),{'3035'})
             importer.db.close()
 
+    def test_manufacturer_hosted_images_are_preserved_without_executing_source_html(self):
+        p=parse_list(listing())[1]['3034']
+        page='<script>gl_goods_seq=3034;gl_goods_price=54000;</script><div id="goods_thumbs"><div class="viewImgWrap"><img src="/data/goods/3034.png"></div></div>'
+        desc='<div class="goods_desc_contents goods_description"><img src="https://contents.sony.co.kr/sony/contents/2478/ilme-fx2_960.jpg"><img src="javascript:bad()"></div>'
+        parsed=parse_detail(p,page,desc)
+        self.assertEqual(parsed['images']['detail'],['https://contents.sony.co.kr/sony/contents/2478/ilme-fx2_960.jpg'])
+        self.assertEqual(parsed['content_status'],'complete')
+
+    def test_confirmed_empty_source_is_review_required_but_missing_markup_still_fails(self):
+        p=parse_list(listing())[1]['3034']
+        page='<script>gl_goods_seq=3034;gl_goods_price=54000;</script><div id="goods_thumbs"></div>'
+        desc='<div class="goods_desc_contents goods_description"></div>'
+        parsed=parse_detail(p,page,desc)
+        self.assertEqual(parsed['content_status'],'review_required')
+        self.assertEqual(parsed['content_issues'],['source_gallery_empty','source_description_empty'])
+        self.assertEqual(parsed['detail_status'],'verified')
+        self.assertEqual(parsed['images']['main'],[])
+        for html,body in [(page,'<html>\n</html>'),(page.replace('id="goods_thumbs"','id="changed"'),desc)]:
+            with self.assertRaises(ValueError):parse_detail(p,html,body)
+
     def test_changed_final_inventory_keeps_previous_published_snapshot(self):
         with tempfile.TemporaryDirectory() as directory:
             folder=Path(directory); importer=Importer(folder)

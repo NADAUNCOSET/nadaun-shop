@@ -22,12 +22,14 @@ def publish(snapshot):
     approved,decisions=partition(snapshot)
     choices=pending(snapshot)
     save_json(WORK/'publication-selection.json',{'at':stamp(),**decisions})
-    save_json(WORK/'publication-waiting.json',{'at':stamp(),'state':'awaiting_brand_source_choices' if choices else 'resolved',
+    waiting_state='awaiting_brand_source_choices' if choices else 'awaiting_content_review' if decisions['content_review_ids'] else 'resolved'
+    save_json(WORK/'publication-waiting.json',{'at':stamp(),'state':waiting_state,
         'brands':choices,'approved_products':approved['product_count'],'held_products':len(decisions['held_ids']),
-        'owner_excluded_products':len(decisions['excluded_ids'])})
+        'owner_excluded_products':len(decisions['excluded_ids']),
+        'content_review_ids':decisions['content_review_ids']})
     if not approved['products']:
         write_audit(json.loads((ROOT/'data/catalog/catalog.json').read_text()),snapshot)
-        return {'state':'awaiting_brand_source_choices','brands':len(choices)}
+        return {'state':waiting_state,'brands':len(choices),'content_reviews':len(decisions['content_review_ids'])}
     prior=json.loads((WORK/'published.json').read_text()) if (WORK/'published.json').exists() else {}
     if snapshot['product_count']<prior.get('source_verified_products',0)*.85:
         raise RuntimeError('AVX full inventory decreased more than 15%; preserve previous publication and review')
@@ -49,6 +51,7 @@ def publish(snapshot):
                     'source_file':'avx-approved.json','source_verified_products':snapshot['product_count'],
                     'pending_brand_count':len(decisions['pending_brands']),
                     'pending_product_count':len(decisions['held_ids']),
+                    'pending_content_product_count':len(decisions['content_review_ids']),
                     'owner_excluded_product_count':len(decisions['excluded_ids']),
                     'policy_sha256':decisions['policy_sha256'],
                     'source_collected_at':snapshot['collected_at'],

@@ -423,3 +423,12 @@ PLTHINK `plthink-1921456`의 4'x4' 규격명은 원본 JSON-LD에서 JSON이 허
 - 원본의 편집 잔여 공백·영폭 문자·독립된 1.00은 파생 안내문에서만 정리한다. SR4702 변환 플레이트의 Monopod 구성품, Harlowe Atom 2 Action의 Pocket Duo 구성품은 상품명과 충돌하므로 확인된 구성으로 노출하지 않고 예약 전 구성 확인 안내를 둔다. 추정한 다른 구성품으로 바꾸지 않는다. 원본 상세 이미지 안의 문구는 수정하지 않았다.
 - 저장소 밖 `../_private/nadaun-shop/catalog/rental-content-review.json`과 `.md`에 220개 점검 결과 및 기간 미확인 19개·구성 충돌 2개를 기록한다. 이를 실제 구성 전체 확인 완료로 보고하지 않는다. 상품별 출처 장부에는 rental_presentation 파생 스크립트도 기록한다.
 - Python 73개·Node 93개 검사 통과. 키보드/이미지 오류 복구·HTML 이스케이프·서버에서 바로 보이는 요금/구성품·기존 구매/결제 동작을 검사한다. 실제 배포 및 라이브 검증 증거는 `.sync-state/rental-content-release.json`에 저장한다. 현재 Chrome 연결이 없어 시각·Windows 실기 검수는 미확인이다.
+
+
+### 2026-09-08 AVX 제조사 상세 이미지와 원본 누락 분리
+
+- AVX 소니 FX2의 상세 이미지는 contents.sony.co.kr에 있었으며 기존 수집기는 /data/editor·/data/goods 경로만 인정해 본문이 없는 것으로 오인했다. 상세 설명 영역의 정상 HTTP(S) 이미지 URL을 수집하고 원본 HTML/스크립트는 삽입하지 않는다. 실제 저장한 FX2 페이지에서 갤러리 6개·상세 이미지 2개를 확인했다.
+- 대형장비 수리(2865)는 원본 갤러리·설명이 모두 비어 있고, Portkeys MT22 DS(1700)는 원본 설명이 비어 있다. 상품 ID·가격과 정상 갤러리/설명 컨테이너를 확인한 빈 값은 `content_issues`와 `content_status=review_required`로 기록한다. 컨테이너 자체가 없거나 응답이 잘못되면 계속 검증 실패다. 빈 설명을 만들어 채우지 않는다.
+- 원본 정보 확인과 상세 내용 완비를 구분한다. 정상 컨테이너의 실제 빈 값을 확인한 상품도 원본 전체 수량 대조에는 남기지만, 대표가 확정한 브랜드라도 공개 후보에서는 보류한다. 중복 공급처 선택 대기와 별도로 `content_review_ids`·`pending_content_product_count`에 표시한다. 대표 제외 공급처는 기존 제외 정책을 유지한다. 이 보류가 남으면 전체 파트너 연동 완료 조건도 통과하지 않는다.
+- 진단 중에는 AVX 예약 작업을 일시 해제해 단일 프로세스에서 최소 3초 간격으로 원본을 읽었다. 저장된 1,724개 검증 기록은 유지했고 코드 검증·커밋·배포 뒤 동일 LaunchAgent를 복원한다. 작업 해제/복원 근거는 `.sync-state/avx/format-review-pause.json`에 기록한다. 기존 접근 보호 중단 규칙은 유지한다.
+- Python 76개 통과. 실제 원본 3개 진단은 `.sync-state/avx/format-review/verified.json`, 코드 배포는 `.sync-state/avx-format-release.json`에 저장한다. 공개 상품 수는 이번 코드 수정으로 늘었다고 보고하지 않고 후속 AVX 공개 영수증으로만 확인한다.

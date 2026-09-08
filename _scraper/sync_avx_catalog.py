@@ -139,22 +139,36 @@ def parse_detail(product, text, description):
         detail_price = None
     if detail_price != p['price']:
         raise CatalogueChanged('AVX list/detail price changed: ' + sid)
-    main = [urljoin(BASE, i['src']) for i in doc.select('#goods_thumbs .viewImgWrap img[src]')]
-    if not main:
-        raise ValueError('AVX main gallery missing: ' + sid)
+    gallery = doc.select_one('#goods_thumbs')
+    if gallery is None:
+        raise ValueError('AVX main gallery markup missing: ' + sid)
+    main = [urljoin(BASE, i['src']) for i in gallery.select('.viewImgWrap img[src]')]
+    issues = [] if main else ['source_gallery_empty']
     area = doc.select_one('.goods_buttons_area')
     area_text = area.get_text(' ', strip=True) if area else ''
     if re.search(r'품절|재고확보중|판매중지|SOLD\s*OUT', area_text, re.I):
         p['supplier_status'] = p['status'] = 'soldout'
     desc = BeautifulSoup(description, 'lxml')
-    images = [urljoin(BASE, i.get('src') or i.get('data-src')) for i in desc.select('img[src],img[data-src]')
-              if re.search(r'/data/(?:editor|goods)/', i.get('src') or i.get('data-src') or '')]
-    text_content = clean(desc.get_text(' ', strip=True))
+    description_area = desc.select_one('.goods_desc_contents.goods_description')
+    body = description_area if description_area is not None else desc
+    images = []
+    for image in body.select('img[src],img[data-src]'):
+        url = urljoin(BASE, image.get('data-src') or image.get('src') or '')
+        parsed = urlparse(url)
+        # AVX also embeds manufacturer-hosted detail images (e.g. Sony).
+        # Keep image URLs only; never embed source HTML or scripts.
+        if parsed.scheme in ('https', 'http') and parsed.netloc and not parsed.username and not parsed.password:
+            images.append(url)
+    text_content = clean(body.get_text(' ', strip=True))
     if not images and not text_content:
-        raise ValueError('AVX description is empty: ' + sid)
+        if description_area is None:
+            raise ValueError('AVX description markup missing: ' + sid)
+        issues.append('source_description_empty')
     p['images']['main'] = list(dict.fromkeys(main))
     p['images']['detail'] = list(dict.fromkeys(images))
     p['description_text'] = text_content
+    p['content_issues'] = issues
+    p['content_status'] = 'review_required' if issues else 'complete'
     groups = []
     for select in doc.select('.goods_option_select_area select'):
         values = [{'value': str(o.get('value', '')), 'name': clean(o.get_text())}
