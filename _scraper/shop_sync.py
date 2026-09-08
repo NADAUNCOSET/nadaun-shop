@@ -34,6 +34,7 @@ CODE += ['server/commerce','assets/shop/commerce.js','assets/shop/commerce.css',
 CODE += ['_scraper/brand_category_policy.py','_scraper/partner_sync_status.py','_scraper/partner-sync-plan.json']
 CODE += ['assets/shop/storefront.css','assets/shop/scenes.js','assets/shop/browse.js','_scraper/category_gallery.py','_scraper/sync_avx_catalog.py','_scraper/avx_worker.py','_scraper/test_avx_catalog.py']
 CODE += ['_scraper/test_partner_sync_status.py']
+CODE += ['_scraper/build_gift_catalog.py','_scraper/brand_source_policy.py','_scraper/test_gift_public_catalog.py','_scraper/test_brand_source_policy.py','data/catalog/brand-source-policy.json','server/gift-catalog.cjs','server/shop-search.cjs']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
@@ -50,6 +51,9 @@ def managed_files():
     """Stage exact generated files, never an arbitrary file in those folders."""
     files=['brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','payment-test.html','orders.html','admin.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','catalog-sitemap.xml',
            'data/catalog/catalog.json','data/catalog/rental.json','data/catalog/brands.json','data/catalog/sync-status.json','data/catalog/asset-manifest.json','data/catalog/dedup-audit.json']
+    files += ['gift-item.html','search.html','gift-sitemap.xml','data/gift/catalog.json','data/gift/manifest.json']
+    files.extend(p.relative_to(ROOT).as_posix() for p in (ROOT/'data/gift/details').glob('??.json'))
+    files.extend(p.relative_to(ROOT).as_posix() for p in ROOT.glob('gift-sitemap-[0-9]*.xml'))
     for source in ('smartstore','imweb-dji','imweb-promotions','kpp','l-mount','nadaun-gift'):
         files.append('data/catalog/sources/'+source+'.json')
     if (OUT/'plthink.json').exists():files.append('data/catalog/sources/plthink.json')
@@ -154,6 +158,9 @@ def run(publish=True,existing=False):
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_shop*.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_avx*.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_partner_sync_status.py')
+        command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_gift_public_catalog.py')
+        command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_brand_source_policy.py')
+        command('node','--test','_scraper/tests/gift-search.test.cjs')
         command('node','--check','assets/shop/shop.js')
         command('node','--check','assets/shop/cart.js')
         command('node','--check','assets/shop/motion.js')

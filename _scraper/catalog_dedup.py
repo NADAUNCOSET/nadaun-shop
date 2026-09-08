@@ -93,7 +93,8 @@ def primary_key(p):
     except (TypeError,ValueError):
         modified = 0
     sid = str(p.get('source_id') or p['id'].split('-',1)[1])
-    return (0 if p.get('status')=='sale' else 1,
+    return (0 if p.get('_preferred_source')==source else 1,
+            0 if p.get('status')=='sale' else 1,
             {'smartstore':0,'imweb':1,'kpp':2}.get(source,3), -modified,
             -int(sid) if sid.isdigit() else 0, p['id'])
 

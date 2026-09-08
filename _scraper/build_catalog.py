@@ -92,6 +92,8 @@ def verified_sources():
 
 def build(allow_pending=False):
     snapshots=verified_sources()
+    from brand_source_policy import selections,write_audit
+    source_choices=selections()
     partner_image_rules=json.loads((PUBLIC/'partner-image-rules.json').read_text())
     products={}; categories={}; brands={}; details={}; coverage=Counter()
     def add_brand(raw):
@@ -125,6 +127,7 @@ def build(allow_pending=False):
                 continue
             p=deepcopy(p0);p['brand_id']=add_brand(p['brand']);p['name']=product_name(p['name'])
             bid=p['brand_id'];membership=[];types=[]
+            if p.get('kind')=='purchase':p['_preferred_source']=source_choices.get(bid,{}).get('source')
             if 'avx' in snapshots and source!='avx' and bid=='aputure' and p.get('kind')=='purchase':continue
             if source=='kpp':
                 for mall in p.get('brand_mall_ids',[]):
@@ -298,9 +301,12 @@ def build(allow_pending=False):
     presentation+=(ROOT/'api/orders.js').read_text()+''.join(p.read_text() for p in sorted((ROOT/'server/commerce').glob('*')) if p.is_file())
     presentation+=(ROOT/'assets/shop/shipping.js').read_text()+(ROOT/'_scraper/shipping_policy.py').read_text()
     presentation+=(OUT/'nadaun-gift.json').read_text()
+    presentation+=(ROOT/'data/gift/manifest.json').read_text()
+    presentation+=''.join((ROOT/p).read_text() for p in ('server/gift-catalog.cjs','server/shop-search.cjs','api/gifts.js','api/gift-product.js','api/search.js'))
     presentation+=''.join(p.read_text() for p in sorted((ROOT/'assets/shop/vendor').glob('*.js')))
     revision=hashlib.sha256((json.dumps(output,ensure_ascii=False,sort_keys=True)+presentation).encode()).hexdigest()[:16]
     output['meta']['revision']=revision
+    write_audit(output)
     PUBLIC.mkdir(parents=True,exist_ok=True)
     for key,bucket in public_details.items():
         (PUBLIC/'details').mkdir(exist_ok=True)
@@ -328,6 +334,8 @@ def build(allow_pending=False):
       ('studio.html','영등포 자연광·호리존 스튜디오 대여 | 나다운 스튜디오','서울 영등포 나다운 스튜디오. 자연광·호리존·전동 배경지와 룩북·제품 촬영 공간, 시설 및 예약 방법을 안내합니다.','studio'),
       ('about.html','회사소개 | 나다운 샵','레인보우베네가 운영하는 나다운 샵. 사진·영상 촬영장비 구매와 렌탈, 기프트·굿즈를 안내합니다.','about'),
       ('services.html','촬영장비 구매·렌탈·협찬·사진영상 제작 안내 | 나다운 샵','카메라·조명·삼각대 구매, 서울 영등포 장비 렌탈, 협찬·브랜드 협업과 사진·영상 촬영 제작 문의를 안내합니다.','guide'),
+      ('gift-item.html','기프트 상품 상세 | 나다운 샵','기프트·굿즈의 상품 정보와 수량·인쇄 조건을 확인하세요.','gift-item'),
+      ('search.html','통합 검색 | 나다운 샵','촬영장비 구매·렌탈과 기프트·굿즈를 상품명, 브랜드와 종류로 검색하세요.','search'),
       ('gifts.html','기프트·굿즈 | 나다운 샵','나다운기프트의 기업 선물, 브랜드 굿즈와 판촉물을 만나보세요. 상품별 수량·인쇄·제작 조건을 확인할 수 있습니다.','gift'),
       ('shipping.html','배송·교환·반품 안내 | 나다운 샵','상품별 배송 조건, 교환과 반품 접수, 환급 및 고객센터를 안내합니다.','policy'),
     ]:

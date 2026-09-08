@@ -41,7 +41,9 @@ def report(plan_path=PLAN, out=OUT, state=STATE):
             progress = progress | {'checked_at':progress.get('at'),
                 'products_found':progress.get('expected'), 'details_verified':progress.get('verified_details')}
         # A receipt cannot turn an unimplemented adapter into recurring sync.
-        phase = ('awaiting_source_access' if not adapter_ready else
+        source_choices = read(folder / 'publication-waiting.json') if source == 'avx' else {}
+        phase = ('awaiting_brand_source_choices' if source_choices.get('state') == 'awaiting_brand_source_choices' and not published else
+                 config.get('status','awaiting_source_access') if not adapter_ready else
                  'waiting_for_predecessor' if waiting else
                  'live_verified' if published else progress.get('phase', 'not_started'))
         result['sources'][source] = {
@@ -53,6 +55,7 @@ def report(plan_path=PLAN, out=OUT, state=STATE):
             'progress': {k: progress.get(k) for k in ('checked_at', 'brand_count', 'brands_checked', 'products_found', 'details_verified')},
             'last_worker_error': read(folder / 'worker-error.json' if source == 'avx' else state / (source + '-worker-error.json')) or None,
             'blocker': config.get('blocker') if not adapter_ready else None,
+            'pending_brand_source_choices':len(source_choices.get('brands',[])),
         }
     return result
 

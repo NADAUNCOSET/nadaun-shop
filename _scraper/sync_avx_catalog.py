@@ -314,7 +314,9 @@ class Importer:
             'collected_at':stamp(),'product_count':len(rows),'products':rows,
             'categories':list(categories.values()), 'coverage':{'expected':total,'unique':len(rows)},
             'brands':sorted({p['brand'] for p in rows.values()})}
-        path = OUT / ('avx-aputure.json' if scope == 'aputure' else 'avx.json')
+        # Full AVX imports remain private candidates until the owner chooses
+        # the source for each overlapping brand. Aputure is already approved.
+        path = OUT/'avx-aputure.json' if scope == 'aputure' else self.work/'catalogue-candidate.json'
         if path.exists():
             previous = json.loads(path.read_text())
             if len(rows) < previous['product_count'] * .85:

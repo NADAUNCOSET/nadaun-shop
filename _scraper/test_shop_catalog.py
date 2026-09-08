@@ -193,15 +193,16 @@ class SourceRules(unittest.TestCase):
             self.assertTrue(b['logo'],b['id']);self.assertIn(b['image_kind'],('logo','product'))
             if b['logo'].startswith('/'):self.assertTrue((ROOT/b['logo'].lstrip('/')).is_file(),b['id'])
 
-    def test_gift_links_keep_bulk_order_terms_and_original_categories(self):
-        source=json.loads((ROOT/'data/catalog/sources/nadaun-gift.json').read_text())
+    def test_gift_directory_keeps_bulk_order_context_and_internal_category_links(self):
+        source=json.loads((ROOT/'data/gift/manifest.json').read_text())
         page=BeautifulSoup((ROOT/'gifts.html').read_text(),'lxml')
-        links=page.select('.gift-category-grid>a')
-        self.assertEqual(len(links),source['category_count'])
-        self.assertEqual({a['href'] for a in links},{c['url'] for c in source['categories']})
-        self.assertTrue(all(a['target']=='_blank' and 'noopener' in a['rel'] for a in links))
-        self.assertIn('수량',page.select_one('.gift-order-note').get_text())
-        self.assertEqual(len(page.select('.gift-selection .product-card')),12)
+        links=page.select('.category-image-grid>a')
+        roots=[c for c in source['categories'] if not c['parent_ids']]
+        self.assertEqual(len(links),len(roots))
+        self.assertEqual({a['href'] for a in links},{'/gifts.html?category='+c['id'] for c in roots})
+        self.assertIn('수량',page.select_one('main').get_text())
+        self.assertFalse(page.select_one('main a[href*="nadaun-gift.com"]'))
+        self.assertFalse(page.select_one('main .brand-grid'))
         self.assertTrue(page.select_one('.navigation a[href="/gifts.html"]'))
         for selector in ('meta[name="description"]','meta[property="og:description"]'):
             self.assertTrue(0<len(page.select_one(selector)['content'])<=80)

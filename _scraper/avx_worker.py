@@ -17,6 +17,12 @@ from sync_shop_sources import ROOT, OUT, save_json, stamp
 
 
 def publish(snapshot):
+    from brand_source_policy import pending,write_audit
+    choices=pending(snapshot)
+    if choices:
+        write_audit(json.loads((ROOT/'data/catalog/catalog.json').read_text()),snapshot)
+        save_json(WORK/'publication-waiting.json',{'at':stamp(),'state':'awaiting_brand_source_choices','brands':choices})
+        return {'state':'awaiting_brand_source_choices','brands':len(choices)}
     from shop_sync import CODE, command, managed_files, run, request, SITE
     from partner_worker import changed_files
     if command('git','diff','--cached','--name-only') or command('git','diff','--name-only','--',*CODE):
@@ -24,6 +30,7 @@ def publish(snapshot):
     allowed={'data/catalog/sources/avx.json','data/catalog/sources/avx-aputure.json'}
     if changed_files() & (set(managed_files())-allowed):
         raise RuntimeError('Existing generated edits require review before AVX publish')
+    save_json(OUT/'avx.json',snapshot)
     result=run(existing=True)
     live=request('GET',SITE+'/data/catalog/catalog.json',params={'verify':result['revision']}).json()
     ids={o['id'] for p in live['products'] for o in p['offers'] if o['source']=='avx'}
@@ -44,7 +51,8 @@ def work():
         current=WORK/'generation.json'
         folder=WORK
         if current.exists():folder=WORK/json.loads(current.read_text())['directory']
-        snapshot=json.loads((OUT/'avx.json').read_text()) if (OUT/'avx.json').exists() else None
+        candidate=folder/'catalogue-candidate.json'
+        snapshot=json.loads(candidate.read_text()) if candidate.exists() else json.loads((OUT/'avx.json').read_text()) if (OUT/'avx.json').exists() else None
         if snapshot and (folder/'all-complete.json').exists():
             receipt=json.loads((WORK/'published.json').read_text()) if (WORK/'published.json').exists() else {}
             if receipt.get('source_collected_at')!=snapshot['collected_at']:return publish(snapshot)

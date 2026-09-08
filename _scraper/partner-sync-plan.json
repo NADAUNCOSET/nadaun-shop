@@ -40,6 +40,28 @@
       "request_interval_seconds": 3,
       "completion_gate": "Complete unique inventory, reconciled details/options, scoped commit and production ID verification",
       "on_request_failure": "Preserve last published snapshot; protection responses permanently latch until provider review"
+    },
+    "clmedia": {
+      "name": "씨엘미디어",
+      "url": "https://clmedia.co.kr/",
+      "after_live_verified": "avx",
+      "adapter": null,
+      "status": "queued",
+      "scope": "All public brands; owner confirms overlapping brand sources before publish",
+      "blocker": "Source adapter and full inventory verification are pending.",
+      "target_refresh_interval_seconds": 43200,
+      "completion_gate": "Complete source inventory/details, owner-approved brand matches, dedup audit, deployed live ID verification"
+    },
+    "cinemall": {
+      "name": "시네몰",
+      "url": "https://www.cinemall.co.kr/",
+      "after_live_verified": "clmedia",
+      "adapter": null,
+      "status": "queued",
+      "scope": "All public brands; owner confirms overlapping brand sources before publish",
+      "blocker": "Source adapter and full inventory verification are pending.",
+      "target_refresh_interval_seconds": 43200,
+      "completion_gate": "Complete source inventory/details, owner-approved brand matches, dedup audit, deployed live ID verification"
     }
   }
 }

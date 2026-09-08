@@ -22,11 +22,10 @@ def brand_tile(b):
 
 
 def gift_content():
-    data=json.loads((Path(__file__).resolve().parents[1]/'data/catalog/sources/nadaun-gift.json').read_text())
-    if not data.get('complete'):raise RuntimeError('Gift shop source is incomplete')
-    categories=''.join(f'<a href="{escape(c["url"])}" target="_blank" rel="noopener">{escape(c["name"])} <span aria-hidden="true">↗</span></a>' for c in data['categories'])
-    products=''.join(f'<a class="product-card" href="{escape(p["url"])}" target="_blank" rel="noopener"><div class="product-image"><img src="{escape(p["image"])}" alt="{escape(p["name"])}" loading="lazy" referrerpolicy="no-referrer"></div><div class="product-brand">NADAUN GIFT</div><h3 class="product-name">{escape(p["name"])}</h3><span class="gift-product-link">수량·인쇄·가격 확인 ↗</span></a>' for p in data['featured_products'][:12])
-    return '<div class="breadcrumb"><a href="/">홈</a><span>›</span>기프트·굿즈</div><section class="gift-intro"><span class="section-index">NADAUN GIFT / OBJECTS WITH MEANING</span><h1>물건에 담는,<br>당신의 이야기.</h1><div><p>기업 선물, 브랜드 굿즈, 일상의 작은 기념품.<br>나다운기프트에서 수량과 인쇄, 제작 조건을 확인하세요.</p><a class="art-cta" href="https://www.nadaun-gift.com/" target="_blank" rel="noopener">기프트샵 전체 보기 <span>↗</span></a></div></section><section class="gift-selection"><div class="section-head"><div><span class="section-index">GIFT SELECTION</span><h2>전하고 싶은 마음의 모양.</h2></div><a href="#gift-categories">종류별로 찾기 ↓</a></div><div class="product-grid">'+products+'</div><p class="gift-order-note">기프트 상품의 가격은 주문 수량, 인쇄와 포장에 따라 달라집니다. 선택한 상품은 나다운기프트의 상세·주문 화면으로 연결됩니다.</p></section><section id="gift-categories" class="gift-categories"><div class="section-head"><div><span class="section-index">THE GIFT INDEX</span><h2>무엇을 선물할까요?</h2><p>기프트샵의 전체 상품 분류에서 찾아보세요.</p></div></div><label class="sr" for="gift-search">기프트 카테고리 찾기</label><input id="gift-search" type="search" placeholder="텀블러, 에코가방, 문구, 상패…"><span id="gift-search-status" role="status" aria-live="polite"></span><div class="gift-category-grid">'+categories+'</div></section>'
+    data=json.loads((Path(__file__).resolve().parents[1]/'data/gift/manifest.json').read_text())
+    roots=[c for c in data['categories'] if not c['parent_ids']]
+    tiles=''.join(f'<a class="category-image-tile" href="/gifts.html?category={escape(c["id"])}"><span class="category-image"><img src="{escape(c["image"])}" alt="" loading="lazy" referrerpolicy="no-referrer"></span><strong>{escape(c["name"])}</strong></a>' for c in roots)
+    return '<div class="breadcrumb"><a href="/">홈</a><span>›</span>기프트 구매</div><section class="catalog-heading gift-heading"><h1>기프트 구매</h1><p>필요한 종류를 고르고, 수량과 인쇄에 맞는 상품을 찾아보세요.</p></section><nav class="browse-kinds" aria-label="쇼핑 목적"><a href="/catalog.html?kind=purchase">제품 구매</a><a href="/catalog.html?kind=rental">제품 렌탈</a><a href="/gifts.html" aria-current="page">기프트 구매</a></nav><section class="category-gallery"><div class="section-head"><h2>기프트 종류로 찾기</h2></div><nav class="category-image-grid" aria-label="기프트 종류 선택">'+tiles+'</nav></section>'
 
 
 def card(p):

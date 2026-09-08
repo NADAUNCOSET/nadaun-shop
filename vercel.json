@@ -35,6 +35,13 @@
       "continue": true
     },
     {
+      "src": "/data/gift/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate"
+      },
+      "continue": true
+    },
+    {
       "src": "^/product/[^/]+/kpp-([^/]+)\\.html$",
       "status": 308,
       "headers": {
@@ -53,6 +60,18 @@
       }
     },
     {
+      "src": "^/gifts\\.html$",
+      "dest": "/api/gifts"
+    },
+    {
+      "src": "^/gift-item\\.html$",
+      "dest": "/api/gift-product"
+    },
+    {
+      "src": "^/search\\.html$",
+      "dest": "/api/search"
+    },
+    {
       "handle": "filesystem"
     }
   ],
@@ -63,6 +82,15 @@
     "api/orders.js": {
       "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,server/commerce/**}",
       "maxDuration": 60
+    },
+    "api/gifts.js": {
+      "includeFiles": "{gifts.html,data/gift/catalog.json,server/gift-catalog.cjs}"
+    },
+    "api/gift-product.js": {
+      "includeFiles": "{gift-item.html,data/gift/**,server/gift-catalog.cjs}"
+    },
+    "api/search.js": {
+      "includeFiles": "{search.html,data/gift/catalog.json,data/catalog/catalog.json,server/gift-catalog.cjs,server/shop-search.cjs}"
     }
   }
 }

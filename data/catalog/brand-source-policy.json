@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "brands": {
+    "tilta": {"source":"smartstore","sources":["smartstore","clmedia","cinemall"],"scope":"purchase","confirmed_by":"owner","preserve_existing":true,"reason":"우리 기존 틸타 본사 상품을 메인으로 유지하고 씨엘미디어·시네몰 상품 보완"},
+    "dji": {"source":"avx","scope":"purchase","confirmed_by":"owner","reason":"DJI는 AVX 기준"},
+    "smallrig": {"source":"kpp","sources":["kpp","clmedia"],"scope":"purchase","confirmed_by":"owner","reason":"KPP와 씨엘미디어 통합, 동일 모델·색상·구성은 중복 표시하지 않음"},
+    "aputure": {
+      "source": "avx",
+      "scope": "purchase",
+      "confirmed_by": "owner",
+      "reason": "기존 구매 상품은 AVX로 교체, 렌탈은 유지"
+    }
+  }
+}
