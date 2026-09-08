@@ -28,7 +28,7 @@
       "groups": 1888,
       "removed": 2403
     },
-    "revision": "62d948188c08b827",
+    "revision": "1f819c96e96355be",
     "view": "rental"
   },
   "brands": [
@@ -156,6 +156,7 @@
       "representative_id": "imweb-13887",
       "representative_image": "/assets/shop/thumbnails/imweb-13887.webp",
       "representative_name": "DJI Osmo Action 6 Capture more Combo (액션 6 캡처 모어 콤보)",
+      "representative_alternate": "https://cdn.imweb.me/upload/S2020100856a601720ff3b/36e61e3672096.png",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -472,6 +473,7 @@
       "representative_id": "kpp-1606719364",
       "representative_image": "https://kppkpp.co.kr/data/item/1606719364/01600.jpg",
       "representative_name": "스몰리그 소니 A6500/A6400/A6300 카메라 케이지 2310",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1606719364/02600.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -694,6 +696,7 @@
       "representative_id": "kpp-1561081215",
       "representative_image": "https://kppkpp.co.kr/data/item/1561081215/afabdsk1.jpg",
       "representative_name": "레오포토 레인저 LS-365C 카본삼각대 4 시리즈",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1561081215/02.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -862,6 +865,7 @@
       "representative_id": "kpp-1649408516",
       "representative_image": "https://kppkpp.co.kr/data/item/1649408516/01.jpg",
       "representative_name": "틸타 소니 A7M IV용 풀 카메라 케이지 Black TA-T30-FCC-B",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1649408516/02.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -1088,6 +1092,7 @@
       "representative_id": "kpp-1561102382",
       "representative_image": "https://kppkpp.co.kr/data/item/1561102382/M_HY_HOLDER_CPL_x.jpg",
       "representative_name": "HNY K시리즈 사각필터 홀더 100mm + CPL 95mm 드롭인필터 세트",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1561102382/2.jpg",
       "image_kind": "logo",
       "logo_dark": true
     },
@@ -1192,6 +1197,7 @@
       "representative_id": "kpp-1664848290",
       "representative_image": "https://kppkpp.co.kr/data/item/1664848290/01.jpg",
       "representative_name": "피지테크 원모 라이트 카메라 백팩 22L 블랙 P-CB-115",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1664848290/02.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -1543,6 +1549,7 @@
       "representative_id": "kpp-1561104207",
       "representative_image": "https://kppkpp.co.kr/data/item/1561104207/hny7ZWE7YSw7Kad7KCV_7I2464Sk7J28.jpg",
       "representative_name": "토키나 Opera 16-28mm F2.8 FF 광각렌즈 캐논 EF마운트 풀프레임",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1561104207/1holder.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -1687,6 +1694,7 @@
       "representative_id": "kpp-1657766687",
       "representative_image": "https://kppkpp.co.kr/data/item/1657766687/01.jpg",
       "representative_name": "티티아티산 MF 35mm F1.4 ASPH 라이카 M마운트 렌즈 블랙 TTArtisan",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1657766687/02.jpg",
       "image_kind": "logo",
       "logo_dark": true
     },
@@ -1752,6 +1760,7 @@
       "representative_id": "kpp-1683093393",
       "representative_image": "https://kppkpp.co.kr/data/item/1683093393/01.jpg",
       "representative_name": "아스트로호리 28mm F13 2X 매크로 프로브 렌즈 PL마운트",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1683093393/02.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -1825,6 +1834,7 @@
       "representative_id": "kpp-1593764778",
       "representative_image": "https://kppkpp.co.kr/data/item/1593764778/01_21L_67iU66Oo.jpg",
       "representative_name": "원더드 PRVKE 21L Photo Bundle 백팩 블루",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1593764778/02_67iU66Oo.jpg",
       "image_kind": "logo",
       "logo_dark": true
     },
@@ -1903,6 +1913,7 @@
       "representative_id": "kpp-1646980198",
       "representative_image": "https://kppkpp.co.kr/data/item/1646980198/nano_two_mini_01.jpg",
       "representative_name": "FXLION 나노 투 V마운트 배터리 98Wh",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1646980198/nano_two_mini_02.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -1958,6 +1969,7 @@
       "representative_id": "kpp-1750147888",
       "representative_image": "https://kppkpp.co.kr/data/item/1750147888/01.jpg",
       "representative_name": "ZITAY 지테이 소니 NP-FZ100 더미 배터리 D-tap 타입 DT17",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1750147888/02.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -2273,6 +2285,7 @@
       "representative_id": "smartstore-13685348834",
       "representative_image": "https://shop-phinf.pstatic.net/20260728_88/1785208384382vfmcl_JPEG/37921267533351008_1446700430.jpg",
       "representative_name": "ARTURIA Astrolab 61 아투리아 아스트로랩 61키 스마트 스테이지 키보드 한정판 실버 색상",
+      "representative_alternate": "https://shop-phinf.pstatic.net/20260728_46/1785215504118RhH2j_JPEG/34367860253988449_1357492517.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -2794,6 +2807,7 @@
       "representative_id": "kpp-1775522724",
       "representative_image": "https://kppkpp.co.kr/data/item/1775522724/1775539211_7164_c50_thumbnail_017IiY7KCV.jpg",
       "representative_name": "캐논 EOS C50 카메라",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1775522724/c50_thumbnail_02.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -2819,6 +2833,7 @@
       "representative_id": "smartstore-5264238828",
       "representative_image": "https://shop-phinf.pstatic.net/20250526_125/17482407987245vLKR_PNG/14169737617192377_317685630.png",
       "representative_name": "[ CaptureoOne Pro 나다운 스페이스 ] 캡쳐원 프로 영구 버젼 16.8.x",
+      "representative_alternate": "https://shop-phinf.pstatic.net/20250526_221/1748240792012pAaI9_PNG/82373760094829372_595905066.png",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -3338,6 +3353,7 @@
       "representative_id": "kpp-1781855454",
       "representative_image": "https://kppkpp.co.kr/data/item/1781855454/7ISs64Sk7J2867O17IKs.jpg",
       "representative_name": "지게백 삼각대 K-캐리어 A프레임 삼각대 운반 가방",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1781855454/7KeA6rKM67Cx64yA7ZGc7J206647KeA.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -3364,6 +3380,7 @@
       "representative_id": "kpp-1657777138",
       "representative_image": "https://kppkpp.co.kr/data/item/1657777138/01.jpg",
       "representative_name": "이지클린 카메라 렌즈 클리닝 키트 8종 세트 EY-15",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1657777138/02.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -3770,6 +3787,7 @@
       "representative_id": "plthink-1925148",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0081350000092.jpg?1787710408",
       "representative_name": "[GUTEK] 구텍 T-300 기내용 방수 20인치 촬영용 하드 케이스 폼 포함",
+      "representative_alternate": "https://www.plthink.com/shopimages/plthink/0081350000033.jpg?1769134707",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -3965,6 +3983,7 @@
       "representative_id": "smartstore-11645603951",
       "representative_image": "https://shop-phinf.pstatic.net/20250327_28/1743075316595A2tp7_PNG/77208090994897341_117100160.png",
       "representative_name": "Harlowe Iris Optical Modifier Kit",
+      "representative_alternate": "https://shop-phinf.pstatic.net/20250327_270/1743075333235RKbbm_PNG/29117676670387690_1470328862.png",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4806,6 +4825,7 @@
       "representative_id": "kpp-1569984972",
       "representative_image": "https://kppkpp.co.kr/data/item/1569984972/1.jpg",
       "representative_name": "림즈 캐논 EOS M5 전용 속사케이스 브라운",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1569984972/2.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4869,6 +4889,7 @@
       "representative_id": "smartstore-5614369864",
       "representative_image": "https://shop-phinf.pstatic.net/20240121_142/170582798240809LMd_PNG/106963881108019832_1992971924.png",
       "representative_name": "플립사이드 백팩 400 AW III (블랙)",
+      "representative_alternate": "https://shop-phinf.pstatic.net/20210528_260/1622181321380tEnka_JPEG/23317100799107106_1181076690.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -5437,6 +5458,7 @@
       "representative_id": "kpp-1665987633",
       "representative_image": "https://kppkpp.co.kr/data/item/1665987633/01.jpg",
       "representative_name": "OE 펜탁스 6X7 카메라 뱃지 P3",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1665987633/02.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -5741,6 +5763,7 @@
       "representative_id": "smartstore-6041896590",
       "representative_image": "https://shop-phinf.pstatic.net/20221109_114/1667970624919UrOCS_JPEG/69106404543978063_2073464349.jpg",
       "representative_name": "[ 본사 정품 ] 블랙프라이데이 23 프로 정품 한글 가이드 및 영상메뉴얼 제공",
+      "representative_alternate": "https://shop-phinf.pstatic.net/20221109_16/1667970616843JMULh_JPEG/69106396454429844_1859205651.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -6251,6 +6274,7 @@
       "representative_id": "smartstore-11453544209",
       "representative_image": "https://shop-phinf.pstatic.net/20250316_209/1742133254163DxgkW_JPEG/28990107281897525_815218107.jpg",
       "representative_name": "Robocup RC-02BK 블랙",
+      "representative_alternate": "https://shop-phinf.pstatic.net/20250316_111/1742133268739NU0tn_JPEG/28990121858747936_1829717114.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -6763,6 +6787,7 @@
       "representative_id": "kpp-1766046169",
       "representative_image": "https://kppkpp.co.kr/data/item/1766046169/50mm_f1_8.jpg",
       "representative_name": "SG image 50mm F1.8 E마운트 MF 풀프레임 렌즈",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1766046169/thumbnail_02.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -6881,6 +6906,7 @@
       "representative_id": "kpp-1688115164",
       "representative_image": "https://kppkpp.co.kr/data/item/1688115164/nano_tracker2_tl_1.jpg",
       "representative_name": "사이트론 별추적기 적도의 나노트래커 2 TL",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1688115164/nano_tracker2_tl_2.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -7212,6 +7238,7 @@
       "representative_id": "kpp-1762247902",
       "representative_image": "https://kppkpp.co.kr/data/item/1762247902/tarion_cart_01.jpg",
       "representative_name": "[썸머 이벤트] TARION 타리온 타이탄 리그 접이식 경량 시네 카트",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1762247902/tarion_cart_02.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },

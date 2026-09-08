@@ -259,6 +259,11 @@ def build(allow_pending=False):
         gallery=(public_details[featured['detail_bucket']][featured['id']].get('images') or {}).get('main') or []
         photo=featured['image'] if featured['image'].startswith('/assets/') else next(iter(gallery),featured['image'])
         b.update(representative_id=featured['id'],representative_image=photo,representative_name=featured['name'])
+        # Only a second photograph of this exact product, never another model.
+        alternate=next((url for url in gallery[1:] if url and url!=gallery[0] and url!=photo),None)
+        if alternate:
+            b['representative_alternate']=alternate
+            featured['motion_image']=alternate
         asset=brand_assets.get(b['id'])
         if asset:
             if not (ROOT/asset['path']).is_file():raise RuntimeError('Missing brand image: '+b['id'])

@@ -15,7 +15,8 @@ def banner_content():
 
 
 def brand_tile(b):
-    return f'<a class="brand-tile" data-brand-search="{escape(" ".join([b["name"],*b.get("aliases",[])]))}" href="/brands/{escape(b["id"])}.html" target="_blank" rel="noopener" aria-label="{escape(b["name"])} 브랜드몰 새 창"><span class="brand-visual brand-object"><img src="{escape(b["representative_image"])}" alt="{escape(b["representative_name"])}" width="400" height="400" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="brand-label">{escape(b["name"])}</span><small>{b["purchase_count"] or b["rental_count"]:,} {"PRODUCTS" if b["purchase_count"] else "RENTAL"} <span aria-hidden="true">↗</span></small></a>'
+    motion=f' data-motion-image="{escape(b["representative_alternate"])}"' if b.get('representative_alternate') else ''
+    return f'<a class="brand-tile" data-brand-search="{escape(" ".join([b["name"],*b.get("aliases",[])]))}" href="/brands/{escape(b["id"])}.html" target="_blank" rel="noopener" aria-label="{escape(b["name"])} 브랜드몰 새 창"><span class="brand-visual brand-object"{motion}><img src="{escape(b["representative_image"])}" alt="{escape(b["representative_name"])}" width="400" height="400" loading="lazy" decoding="async" referrerpolicy="no-referrer"></span><span class="brand-label">{escape(b["name"])}</span><small>{b["purchase_count"] or b["rental_count"]:,} {"PRODUCTS" if b["purchase_count"] else "RENTAL"} <span aria-hidden="true">↗</span></small></a>'
 
 
 def gift_content():
@@ -29,7 +30,8 @@ def gift_content():
 def card(p):
     price=p.get('sale_price') if any(o['source'] in ('smartstore','imweb') for o in p['offers']) else p.get('price')
     amount=f'{price:,}원' if price is not None else '가격 문의'
-    return f'<a class="product-card" href="/item.html?id={escape(p["id"])}"><div class="product-image"><img src="{escape(p["image"])}" alt="{escape(p["name"])}" loading="lazy" referrerpolicy="no-referrer"></div><h3 class="product-name">{escape(p["name"])}</h3><p class="product-price">{amount}</p></a>'
+    motion=f' data-motion-image="{escape(p["motion_image"])}"' if p.get('motion_image') else ''
+    return f'<a class="product-card" href="/item.html?id={escape(p["id"])}"><div class="product-image"{motion}><img src="{escape(p["image"])}" alt="{escape(p["name"])}" loading="lazy" referrerpolicy="no-referrer"></div><h3 class="product-name">{escape(p["name"])}</h3><p class="product-price">{amount}</p></a>'
 
 
 def content(mode, brands, products, brand=None):

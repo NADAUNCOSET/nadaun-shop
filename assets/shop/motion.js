@@ -1,12 +1,24 @@
-/* Native scrolling drives the exhibition; links and text keep their layout. */
-export function mountArtMotion(main,{gsap,ScrollTrigger:ST},env=window){
+/* Scroll-linked entrances, product photo changes and stable shopping links.
+   Smooth desktop wheel scrolling; native touch and reduced-motion fallback. */
+export function mountArtMotion(main,{gsap,ScrollTrigger:ST,Lenis},env=window){
  if(!main||!gsap||!ST)return ()=>{};
  gsap.registerPlugin(ST);
  const doc=main.ownerDocument;
  const media=gsap.matchMedia();
  media.add({motion:'(prefers-reduced-motion:no-preference)',desktop:'(min-width:1000px) and (min-height:740px)',fine:'(pointer:fine)',mobile:'(max-width:700px)'},context=>{
   if(!context.conditions.motion)return;
-  const {desktop,fine,mobile}=context.conditions;
+  const {fine,mobile}=context.conditions;
+  let releaseScroll=()=>{};
+  if(Lenis&&fine&&!mobile){
+   let smooth,tick;
+   try{
+    smooth=new Lenis({autoRaf:false,lerp:.14,smoothWheel:true,syncTouch:false,anchors:true,allowNestedScroll:true,stopInertiaOnNavigate:true,prevent:node=>node.matches?.('input,textarea,select,[contenteditable="true"],dialog,[role="dialog"],[data-lenis-prevent]')});
+    smooth.on('scroll',ST.update);
+    tick=time=>smooth.raf(time*1000);
+    gsap.ticker.add(tick);
+    releaseScroll=()=>{gsap.ticker.remove(tick);smooth.off('scroll',ST.update);smooth.destroy()};
+   }catch(_error){if(tick)gsap.ticker.remove(tick);smooth?.destroy()}
+  }
   const records=new Map();let timer,disposed=false;
   function remove(node){
    const entry=records.get(node);if(!entry)return;
@@ -18,25 +30,58 @@ export function mountArtMotion(main,{gsap,ScrollTrigger:ST},env=window){
    const scope=gsap.context(()=>{cleanup=build()},main);
    records.set(node,{context:scope,cleanup});
   }
-  const scroll=(node,start='top bottom',end='bottom top')=>({trigger:node,start,end,scrub:mobile?.35:.65,invalidateOnRefresh:true});
+  const scroll=(node,start='top bottom',end='bottom top')=>({trigger:node,start,end,scrub:mobile?.4:.85,invalidateOnRefresh:true});
   function photograph(frame,index){
    const img=frame.querySelector('img');if(!img)return;
    register(frame,()=>{
     const plane=doc.createElement('span');plane.className='motion-plane';
     img.before(plane);plane.append(img);
     const large=frame.matches('.department-visual,.editorial-visual');
-    const distance=mobile?8:large?18:12;
-    const tilt=(index%2?1:-1)*(mobile?.8:large?3:1.6);
-    const timeline=gsap.timeline({scrollTrigger:scroll(frame)});
-    timeline.fromTo(plane,{yPercent:distance,scale:large?.9:.95,rotation:tilt},{yPercent:0,scale:1,rotation:0,duration:.52,ease:'none'})
-     .to(plane,{yPercent:-distance*.8,scale:large?1.06:1.025,rotation:-tilt*.35,duration:.48,ease:'none'});
-    return ()=>{if(img.parentNode===plane)plane.replaceWith(img);else plane.remove()};
+    const distance=mobile?20:large?24:30;
+    const tilt=(index%2?1:-1)*(mobile?1.1:2.4);
+    const phase=(index%(mobile?2:4))*3;
+    const timeline=gsap.timeline({scrollTrigger:scroll(frame,`top ${98-phase}%`)});
+    timeline.fromTo(plane,{yPercent:distance,scale:.88,rotation:tilt,clipPath:'inset(14% 0% 10% 0% round 18px)'},{yPercent:0,scale:1,rotation:0,clipPath:'inset(0% 0% 0% 0% round 0px)',duration:.38,ease:'power2.out'})
+     .to(plane,{yPercent:-3,scale:1.025,rotation:0,duration:.34,ease:'none'})
+     .to(plane,{yPercent:mobile?-9:-14,scale:1.04,rotation:-tilt*.2,duration:.28,ease:'none'});
+    // A real second view of the SAME product is revealed only after it loads.
+    // The original photo stays underneath throughout failure/slow connections.
+    const source=frame.dataset?.motionImage;
+    let alternate,second,swapScope,loaded;
+    if(source&&(/^(https?:\/\/)/.test(source)||(/^\/(?!\/)/.test(source)))){
+     alternate=doc.createElement('span');alternate.className='motion-alternate';alternate.setAttribute('aria-hidden','true');
+     second=doc.createElement('img');second.alt='';second.loading='lazy';second.decoding='async';second.referrerPolicy='no-referrer';
+     loaded=()=>{
+      if(disposed||!plane.isConnected||swapScope||!second.naturalWidth)return;
+      frame.classList.add('has-motion-alternate');
+      swapScope=gsap.context(()=>{
+       gsap.fromTo(alternate,{opacity:0,xPercent:mobile?5:9,clipPath:'inset(0% 100% 0% 0%)'},{opacity:1,xPercent:0,clipPath:'inset(0% 0% 0% 0%)',ease:'power1.inOut',scrollTrigger:scroll(frame,`top ${64-phase}%`,`top ${24-phase}%`)});
+      },main);
+     };
+     second.addEventListener('load',loaded);alternate.append(second);plane.append(alternate);second.src=source;
+     if(second.complete)loaded();
+    }
+    return ()=>{
+     if(second)second.removeEventListener('load',loaded);
+     swapScope?.revert();alternate?.remove();frame.classList.remove('has-motion-alternate');
+     if(img.parentNode===plane)plane.replaceWith(img);else plane.remove();
+    };
+   });
+   const card=frame.closest('.product-card,.brand-tile');
+   if(card)register(card,()=>{
+    const labels=[...card.children].filter(el=>el.matches('.product-brand,.product-name,.product-price,.brand-label,small'));
+    if(labels.length)gsap.fromTo(labels,{y:mobile?14:24},{y:0,stagger:.07,duration:.65,ease:'power2.out',scrollTrigger:scroll(frame,'top 86%','top 48%')});
    });
   }
   function scan(){
    if(disposed)return;
    for(const node of records.keys())if(!node.isConnected||node.closest('[hidden]'))remove(node);
    main.querySelectorAll('.department-visual,.brand-object,.product-image,.editorial-visual').forEach(photograph);
+   main.querySelectorAll('.section-head').forEach(section=>register(section,()=>{
+    section.classList.add('motion-section-head');
+    gsap.fromTo(section,{'--section-line':0},{'--section-line':1,ease:'none',scrollTrigger:scroll(section,'top 92%','top 55%')});
+    return ()=>section.classList.remove('motion-section-head');
+   }));
    main.querySelectorAll('.section-head h2,.editorial-copy h2,.studio-amenities h2').forEach(heading=>register(heading,()=>{
     const lines=heading.querySelectorAll('.motion-line>span');
     if(lines.length)gsap.fromTo(lines,{yPercent:108,rotation:2},{yPercent:0,rotation:0,duration:1,stagger:.16,ease:'power2.out',scrollTrigger:scroll(heading,'top 96%','top 58%')});
@@ -68,7 +113,7 @@ export function mountArtMotion(main,{gsap,ScrollTrigger:ST},env=window){
    };
    const move=event=>{
     if(event.pointerType==='touch')return;
-    const next=event.target.closest('.department-visual,.brand-object,.editorial-visual');
+    const next=event.target.closest('.department-visual,.brand-object,.product-image,.editorial-visual');
     if(!next||!main.contains(next)){hide();return}
     if(active!==next){hide();active=next;active.classList.add('has-art-cursor')}
     const box=active.getBoundingClientRect();
@@ -87,7 +132,7 @@ export function mountArtMotion(main,{gsap,ScrollTrigger:ST},env=window){
    disposed=true;env.clearTimeout(timer);observer.disconnect();
    doc.removeEventListener('shop:content-updated',schedule);main.removeEventListener('load',schedule,true);
    for(const node of records.keys())remove(node);
-   releasePointer();progress.remove();
+   releasePointer();releaseScroll();progress.remove();
   };
  });
  return ()=>media.revert();

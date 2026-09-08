@@ -15,7 +15,7 @@ const brandHref=id=>`/brands/${encodeURIComponent(id)}.html`;
 function discoveryLinks(p){return `<nav class="product-tags" aria-label="관련 상품 검색">${p.discovery.tags.map(tag=>`<a href="/catalog.html?q=${encodeURIComponent(tag)}&amp;kind=${p.kind}">#${esc(tag.replace(/\s+/g,''))}</a>`).join('')}</nav>`}
 function catalogHref(changes={}){const q=new URLSearchParams(location.search);q.delete('page');for(const [k,v]of Object.entries(changes)){v===null||v===''?q.delete(k):q.set(k,v)}const base=document.body.dataset.brand&&!('brand'in changes)?brandHref(document.body.dataset.brand):'/catalog.html';return base+(q.size?'?'+q.toString():'')}
 function empty(title,text='',link='/catalog.html',label='전체 상품 보기'){return `<div class="empty"><h2>${esc(title)}</h2><p>${esc(text)}</p><a href="${esc(link)}">${esc(label)} →</a></div>`}
-function productCard(p){const b=brandMap.get(p.brand_id);const price=money(p);const sold=p.status==='soldout';const discount=isDiscounted(p);return `<a class="product-card" href="/item.html?id=${encodeURIComponent(p.id)}"><div class="product-image"><img src="${safe(p.image)}" alt="${esc(p.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${sold?'<span class="badge">품절</span>':p.kind==='rental'?'<span class="badge rental">렌탈</span>':discount?'<span class="badge sale-badge">SALE</span>':isPromotion(p)?'<span class="badge sale-badge">PROMOTION</span>':''}</div><div class="product-brand">${esc(b?.name||'')}</div><h3 class="product-name">${esc(p.name)}</h3><p class="product-price">${discount?`<span class="price-before">${won(p.price)}원</span>`:''}${price===null?'가격 문의':`${won(price)}<small>원</small>`}</p>${p.kind==='rental'?'<p class="card-note">대여 상품 · 기간별 요금 확인</p>':p.status==='inquiry'?'<p class="card-note">구매·입고 상담</p>':''}</a>`}
+function productCard(p){const b=brandMap.get(p.brand_id);const price=money(p);const sold=p.status==='soldout';const discount=isDiscounted(p);return `<a class="product-card" href="/item.html?id=${encodeURIComponent(p.id)}"><div class="product-image"${p.motion_image?` data-motion-image="${safe(p.motion_image)}"`:""}><img src="${safe(p.image)}" alt="${esc(p.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${sold?'<span class="badge">품절</span>':p.kind==='rental'?'<span class="badge rental">렌탈</span>':discount?'<span class="badge sale-badge">SALE</span>':isPromotion(p)?'<span class="badge sale-badge">PROMOTION</span>':''}</div><div class="product-brand">${esc(b?.name||'')}</div><h3 class="product-name">${esc(p.name)}</h3><p class="product-price">${discount?`<span class="price-before">${won(p.price)}원</span>`:''}${price===null?'가격 문의':`${won(price)}<small>원</small>`}</p>${p.kind==='rental'?'<p class="card-note">대여 상품 · 기간별 요금 확인</p>':p.status==='inquiry'?'<p class="card-note">구매·입고 상담</p>':''}</a>`}
 function enhanceBrandIndex(){
  const input=document.querySelector('#brand-search');if(!input)return;
  const cards=[...document.querySelectorAll('#brand-grid>.brand-tile')];
@@ -32,8 +32,9 @@ async function enhanceArtMotion(){
  const load=src=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=src+'?v='+revision;script.onload=resolve;script.onerror=reject;document.head.append(script)});
  try{
   await load('/assets/shop/vendor/gsap.min.js');await load('/assets/shop/vendor/ScrollTrigger.min.js');
+  await load('/assets/shop/vendor/lenis-1.3.26.min.js').catch(()=>{});
   const {mountArtMotion}=await import('/assets/shop/motion.js?v='+revision);
-  mountArtMotion(main,{gsap:window.gsap,ScrollTrigger:window.ScrollTrigger});
+  mountArtMotion(main,{gsap:window.gsap,ScrollTrigger:window.ScrollTrigger,Lenis:window.Lenis});
  }catch(error){console.warn('Shop motion unavailable',error)}
 }
 function enhanceGift(){const input=document.querySelector('#gift-search');if(!input)return;const rows=[...document.querySelectorAll('.gift-category-grid>a')];input.addEventListener('input',()=>{const q=normalize(input.value);let visible=0;for(const row of rows){row.hidden=!normalize(row.textContent).includes(q);if(!row.hidden)visible++}document.querySelector('#gift-search-status').textContent=visible?`${visible}개 카테고리`:'일치하는 카테고리가 없습니다.'})}
@@ -90,7 +91,7 @@ async function renderItem(){let id=params.get('id')||'';id=data.redirects[id]||i
 function renderCategories(){if(!data.meta.category_browsing_enabled){main.innerHTML=`<div class="breadcrumb"><a href="/">홈</a><span>›</span><span>카테고리</span></div>${empty('브랜드별로 장비를 찾아보세요.','제품 종류별 통합 카테고리는 준비 중입니다.','/brands.html','브랜드 전체 보기')}`;return}renderCatalog()}
 document.addEventListener('error',event=>{
   const image=event.target;
-  if(!(image instanceof HTMLImageElement)||!main.contains(image))return;
+  if(!(image instanceof HTMLImageElement)||!main.contains(image)||image.closest('.motion-alternate'))return;
   const brand=image.closest('.brand-word,.brand-visual');
   if(brand){brand.textContent=image.alt;return}
   if(image.closest('.description')){
@@ -105,7 +106,7 @@ document.addEventListener('error',event=>{
 },true);
 document.addEventListener('load',event=>{
   const image=event.target;
-  if(!(image instanceof HTMLImageElement)||!main.contains(image))return;
+  if(!(image instanceof HTMLImageElement)||!main.contains(image)||image.closest('.motion-alternate'))return;
   image.style.visibility='';
   const holder=image.closest('.image-fallback');
   if(holder){holder.classList.remove('image-fallback');holder.removeAttribute('aria-label')}
@@ -115,4 +116,4 @@ if(mode==='brands')enhanceBrandIndex();
 if(!['policy','guide','gift','about','studio','home','brands','orders','admin','payment-test'].includes(mode))try{const revision=document.querySelector('meta[name="catalog-revision"]').content;const response=await fetch(`/data/catalog/${["catalog","categories"].includes(mode)&&params.get("kind")==="rental"?"rental":"catalog"}.json?v=${revision}`);if(!response.ok)throw Error('상품 목록을 불러오지 못했습니다.');data=await response.json();brandMap=new Map(data.brands.map(b=>[b.id,b]));categoryMap=new Map((data.categories||[]).map(c=>[c.id,c]));if(mode==='item')await renderItem();else if(mode==='cart'||mode==='checkout')await renderCart(data,mode==='checkout');else if(mode==='categories')renderCategories();else renderCatalog();}catch(error){console.error(error);main.innerHTML=empty('잠시 상품을 불러오지 못했습니다.','새로고침 후 다시 확인해주세요.','https://smartstore.naver.com/rainbowbene','스마트스토어에서 상품 보기')}
 
 if(mode==='home')mountBanners(document.querySelector('.shop-banner'));
-if(mode!=='policy')enhanceArtMotion();
+if(!['policy','cart','checkout','orders','admin','payment-test'].includes(mode))enhanceArtMotion();

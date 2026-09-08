@@ -6,7 +6,7 @@ const {mountArtMotion}=await import('data:text/javascript;base64,'+Buffer.from(f
 // A small DOM/GSAP harness checks lifecycle and accessibility, not visual timing.
 function setup(conditions={motion:true,desktop:false,fine:false,mobile:false}){
  class Element{
-  constructor(tag='div',selectors=[]){this.tag=tag;this.selectors=new Set(selectors);this.children=[];this.listeners=new Map();this.attrs={};this.props=new Map();this.style={setProperty:(k,v)=>this.props.set(k,v),removeProperty:k=>this.props.delete(k)};const values=new Set();this.classList={add:k=>values.add(k),remove:k=>values.delete(k),contains:k=>values.has(k)};}
+  constructor(tag='div',selectors=[]){this.tag=tag;this.selectors=new Set(selectors);this.children=[];this.listeners=new Map();this.attrs={};this.dataset={};this.props=new Map();this.style={setProperty:(k,v)=>this.props.set(k,v),removeProperty:k=>this.props.delete(k)};const values=new Set();this.classList={add:k=>values.add(k),remove:k=>values.delete(k),contains:k=>values.has(k)};}
   get parentNode(){return this.parent}get firstElementChild(){return this.children[0]}
   get isConnected(){return this.root===true||!!this.parent?.isConnected}
   setAttribute(k,v){this.attrs[k]=v}
@@ -17,7 +17,7 @@ function setup(conditions={motion:true,desktop:false,fine:false,mobile:false}){
   before(child){child.remove();const index=this.parent.children.indexOf(this);child.parent=this.parent;child.ownerDocument=this.ownerDocument;this.parent.children.splice(index,0,child)}
   remove(){if(this.parent){this.parent.children.splice(this.parent.children.indexOf(this),1);this.parent=null}}
   replaceWith(child){this.before(child);this.remove()}
-  closest(selector){return selector==='[hidden]'?(this.hidden?this:this.parent?.closest(selector)):null}
+  closest(selector){return selector==='[hidden]'?(this.hidden?this:this.parent?.closest(selector)):(this.matches(selector)?this:this.parent?.closest(selector))}
   matches(selector){return selector.split(',').some(s=>s===this.tag||this.selectors.has(s))}
   querySelectorAll(selector){return this.children.flatMap(c=>[...(c.matches(selector)?[c]:[]),...c.querySelectorAll(selector)])}
   querySelector(selector){return this.querySelectorAll(selector)[0]}
@@ -27,10 +27,11 @@ function setup(conditions={motion:true,desktop:false,fine:false,mobile:false}){
  let activeScope=null,mediaCallback,mediaContext,cleanup;const effects=[],observers=[],timers=new Map();let id=0;
  const scope=fn=>{const previous=activeScope;const own=[];const result={revert(){for(const e of own)e.killed=true}};activeScope=own;fn();activeScope=previous;return result};
  const effect=(target,vars)=>{const e={target,vars,killed:false};effects.push(e);activeScope?.push(e);return e};
- const gsap={registerPlugin(){},context:scope,fromTo(target,from,to){return effect(target,to)},to:effect,timeline(vars){const e=effect(null,vars);e.fromTo=()=>e;e.to=()=>e;return e},matchMedia(){return {add(_queries,cb){mediaCallback=cb;mediaContext=scope(()=>{cleanup=cb({conditions})})},revert(){cleanup?.();mediaContext?.revert()}}}};
- const ST={refresh(){}};const env=new Element('window');env.setTimeout=fn=>{timers.set(++id,fn);return id};env.clearTimeout=id=>timers.delete(id);env.MutationObserver=class{constructor(fn){this.fn=fn;observers.push(this)}observe(target,options){this.target=target;this.options=options}disconnect(){this.disconnected=true}};
- const mount=()=>mountArtMotion(main,{gsap,ScrollTrigger:ST},env);
- return {doc,main,photo,effects,observers,timers,env,mount,Element,flush(){for(const [id,fn] of [...timers]){timers.delete(id);fn()}},change(next){cleanup?.();mediaContext.revert();conditions=next;mediaContext=scope(()=>{cleanup=mediaCallback({conditions})})}};
+ const gsap={registerPlugin(){},context:scope,fromTo(target,from,to){const e=effect(target,to);e.from=from;return e},to:effect,timeline(vars){const e=effect(null,vars);e.steps=[];e.fromTo=(target,from,to)=>{e.steps.push({target,from,to});return e};e.to=(target,to)=>{e.steps.push({target,to});return e};return e},matchMedia(){return {add(_queries,cb){mediaCallback=cb;mediaContext=scope(()=>{cleanup=cb({conditions})})},revert(){cleanup?.();mediaContext?.revert()}}}};
+ const ticks=new Set();gsap.ticker={add:fn=>ticks.add(fn),remove:fn=>ticks.delete(fn)};
+ const ST={refresh(){},update(){}};const env=new Element('window');env.setTimeout=fn=>{timers.set(++id,fn);return id};env.clearTimeout=id=>timers.delete(id);env.MutationObserver=class{constructor(fn){this.fn=fn;observers.push(this)}observe(target,options){this.target=target;this.options=options}disconnect(){this.disconnected=true}};
+ const mount=Lenis=>mountArtMotion(main,{gsap,ScrollTrigger:ST,Lenis},env);
+ return {doc,main,photo,effects,observers,timers,ticks,ST,env,mount,Element,flush(){for(const [id,fn] of [...timers]){timers.delete(id);fn()}},change(next){cleanup?.();mediaContext.revert();conditions=next;mediaContext=scope(()=>{cleanup=mediaCallback({conditions})})}};
 }
 
 test('reduced motion leaves product images and link content untouched',()=>{
@@ -76,4 +77,53 @@ test('hidden brand search results release scroll work and restore it when shown'
  const s=setup();const {frame,image}=s.photo();const dispose=s.mount();const old=s.effects.find(e=>e.vars.scrollTrigger?.trigger===frame);
  frame.hidden=true;s.observers[0].fn();s.flush();assert.equal(old.killed,true);assert.equal(frame.firstElementChild,image);
  frame.hidden=false;s.observers[0].fn();s.flush();assert.equal(frame.firstElementChild.className,'motion-plane');dispose();
+});
+
+
+test('successive product images have staggered reversible entrances while the card position stays fixed',()=>{
+ const s=setup(),cards=[];
+ for(let i=0;i<3;i++){const card=new s.Element('a',['.product-card']);s.main.append(card);const photo=s.photo(card,'.product-image');const name=new s.Element('h3',['.product-name']);card.append(name);cards.push({card,...photo,name});}
+ const dispose=s.mount();const animations=cards.map(({frame})=>s.effects.find(e=>e.vars.scrollTrigger?.trigger===frame&&e.steps));
+ assert.equal(new Set(animations.map(a=>a.vars.scrollTrigger.start)).size,3);
+ for(const animation of animations){assert.ok(animation.vars.scrollTrigger.scrub>=.8);assert.ok(animation.steps[0].from.yPercent>=24);assert.equal(animation.steps[0].to.scale,1);assert.equal(animation.steps.length,3);assert.equal(animation.vars.scrollTrigger.pin,undefined);}
+ assert.ok(!s.effects.some(e=>cards.some(c=>e.target===c.card)));assert.ok(s.effects.some(e=>Array.isArray(e.target)&&e.target.includes(cards[0].name)));dispose();
+});
+
+test('alternate photos remain hidden until loaded and cannot replace the original after removal',()=>{
+ const s=setup();const {frame,image}=s.photo();frame.dataset.motionImage='https://example.com/same-product-angle.jpg';const dispose=s.mount();const plane=frame.firstElementChild,alternate=plane.children[1],second=alternate.firstElementChild;
+ assert.equal(second.loading,'lazy');assert.equal(second.alt,'');assert.equal(alternate.attrs['aria-hidden'],'true');assert.equal(image.parentNode,plane);assert.equal(frame.classList.contains('has-motion-alternate'),false);
+ second.emit('error');assert.equal(frame.classList.contains('has-motion-alternate'),false);assert.equal(image.parentNode,plane);
+ second.naturalWidth=800;second.emit('load');assert.equal(frame.classList.contains('has-motion-alternate'),true);const effect=s.effects.find(e=>e.target===alternate);assert.ok(effect.vars.scrollTrigger.scrub);assert.equal(effect.vars.opacity,1);
+ const count=s.effects.length;second.emit('load');assert.equal(s.effects.length,count);dispose();assert.equal(frame.firstElementChild,image);assert.equal(effect.killed,true);assert.equal(frame.classList.contains('has-motion-alternate'),false);
+ second.emit('load');assert.equal(s.effects.length,count);
+});
+
+test('malformed secondary image URLs never become network requests',()=>{
+ for(const url of ['javascript:alert(1)','data:image/svg+xml,x','//example.com/image.jpg']){const s=setup();const {frame}=s.photo();frame.dataset.motionImage=url;const dispose=s.mount();assert.equal(frame.firstElementChild.children.length,1);dispose();}
+});
+
+test('reduced motion restores both photos and leaves no extra download or event work',()=>{
+ const s=setup();const {frame,image}=s.photo();frame.dataset.motionImage='https://example.com/angle.jpg';const dispose=s.mount();const second=frame.firstElementChild.children[1].firstElementChild;second.naturalWidth=400;second.emit('load');
+ s.change({motion:false});assert.equal(frame.firstElementChild,image);assert.equal(frame.children.length,1);assert.ok(s.effects.every(e=>e.killed));assert.equal([...second.listeners.values()].some(set=>set.size),false);dispose();
+});
+
+test('payment and checkout screens do not initialize scroll animations',()=>{
+ const source=fs.readFileSync('assets/shop/shop.js','utf8');assert.ok(source.includes("if(!['policy','cart','checkout','orders','admin','payment-test'].includes(mode))enhanceArtMotion()"));assert.ok(source.includes("image.closest('.motion-alternate')"));
+});
+
+test('desktop smoothing uses one ticker and preserves anchors, nested panels and native touch',()=>{
+ const s=setup({motion:true,fine:true,mobile:false});s.photo();const instances=[];
+ class Smooth{constructor(options){this.options=options;this.events=new Map();instances.push(this)}on(name,fn){this.events.set(name,fn)}off(name,fn){assert.equal(this.events.get(name),fn);this.events.delete(name)}raf(time){this.lastFrame=time}destroy(){this.destroyed=true}}
+ const dispose=s.mount(Smooth),smooth=instances[0];assert.equal(s.ticks.size,1);assert.equal(smooth.events.get('scroll'),s.ST.update);
+ assert.equal(smooth.options.autoRaf,false);assert.equal(smooth.options.syncTouch,false);assert.equal(smooth.options.anchors,true);assert.equal(smooth.options.allowNestedScroll,true);
+ assert.ok(smooth.options.prevent(new s.Element('textarea')));assert.ok(!smooth.options.prevent(new s.Element('a')));
+ for(const tick of s.ticks)tick(1.25);assert.equal(smooth.lastFrame,1250);
+ s.change({motion:false,fine:true,mobile:false});assert.equal(s.ticks.size,0);assert.equal(smooth.destroyed,true);assert.equal(smooth.events.size,0);
+ s.change({motion:true,fine:false,mobile:true});assert.equal(instances.length,1);
+ s.change({motion:true,fine:true,mobile:false});assert.equal(instances.length,2);assert.equal(s.ticks.size,1);dispose();assert.equal(s.ticks.size,0);assert.equal(instances[1].destroyed,true);
+});
+
+test('failed optional scroll library leaves the product animation usable with native scrolling',()=>{
+ const s=setup({motion:true,fine:true,mobile:false});const {frame,image}=s.photo();const dispose=s.mount(class{constructor(){throw new Error('unavailable')}});
+ assert.equal(s.ticks.size,0);assert.equal(frame.firstElementChild.className,'motion-plane');dispose();assert.equal(frame.firstElementChild,image);
 });
