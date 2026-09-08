@@ -182,7 +182,7 @@
       "imweb-dji": 146,
       "imweb-promotions": 37,
       "l-mount": 335,
-      "plthink": 6580,
+      "plthink": 6589,
       "dji-official": 910,
       "avx": 493
     },
@@ -191,22 +191,22 @@
       "smartstore": 7075,
       "imweb-promotions": 16,
       "l-mount": 335,
-      "plthink": 6189,
+      "plthink": 6198,
       "dji-official": 905,
       "avx": 493
     },
-    "synced_at": "2026-09-08T16:15:39+00:00",
-    "merged_count": 2376,
+    "synced_at": "2026-09-08T17:20:10+00:00",
+    "merged_count": 2380,
     "product_count": 220,
     "category_browsing_enabled": true,
     "listing_count": 220,
     "option_family_count": 99,
     "deduplication": {
       "brands_checked": 252,
-      "groups": 1861,
-      "removed": 2376
+      "groups": 1865,
+      "removed": 2380
     },
-    "revision": "99ea16637a6afc69",
+    "revision": "ac75abe335307ebb",
     "view": "rental"
   },
   "brands": [
@@ -1414,8 +1414,8 @@
         "plthink:b:112:007",
         "plthink:b:112:008"
       ],
-      "count": 569,
-      "purchase_count": 568,
+      "count": 575,
+      "purchase_count": 574,
       "rental_count": 1,
       "category_ids": [
         "kpp:b:tilta:t210",
@@ -4063,8 +4063,8 @@
         "plthink:b:140:002",
         "plthink:b:140:003"
       ],
-      "count": 28,
-      "purchase_count": 28,
+      "count": 27,
+      "purchase_count": 27,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:140",
@@ -30093,6 +30093,10 @@
     "plthink-1930266": "smartstore-13740734445",
     "plthink-1930267": "smartstore-13740734444",
     "plthink-1930321": "smartstore-13740734443",
+    "plthink-1930389": "smartstore-13744798787",
+    "plthink-1930392": "smartstore-13523035462",
+    "plthink-1930393": "smartstore-13523038608",
+    "plthink-1930395": "smartstore-13000390330",
     "plthink-2207": "smartstore-13740670082",
     "plthink-2208": "smartstore-13740670079",
     "plthink-318": "smartstore-13740721118",

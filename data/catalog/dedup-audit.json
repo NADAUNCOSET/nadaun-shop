@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
   "brands_checked": 252,
-  "input_count": 19019,
-  "duplicate_group_count": 1861,
-  "duplicate_entries_removed": 2376,
+  "input_count": 19028,
+  "duplicate_group_count": 1865,
+  "duplicate_entries_removed": 2380,
   "by_brand": {
     "hoverair": 13,
     "viltrox": 4,
     "smallrig": 767,
     "leofoto": 3,
-    "tilta": 155,
+    "tilta": 159,
     "fxlion": 21,
     "kumkwang": 16,
     "valens": 149,
@@ -44176,6 +44176,102 @@
           "price": 22000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930321"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "smartstore-13744798787",
+      "evidence": [
+        "model:TA-T102-HCC-B"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13744798787",
+          "name": "TA-T102-HCC-B 캐논 R6 V 하프 케이지 블랙",
+          "price": 85000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13744798787"
+        },
+        {
+          "id": "plthink-1930389",
+          "name": "[TILTA] 틸타 캐논 EOS R6V 카메라 하프 케이지 아르카타입 TA-T102-HCC-B",
+          "price": 85000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930389"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "smartstore-13523035462",
+      "evidence": [
+        "model:WLC-T07-K1"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13523035462",
+          "name": "TILTA 뉴클리어스 오토 포커스 어댑터 (E to PL) WLC-T07-K1 (포커스 모터 포함)",
+          "price": 865000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13523035462"
+        },
+        {
+          "id": "plthink-1930392",
+          "name": "[TILTA] 틸타 뉴클리어스 오토포커스 어댑터 E to PL 듀얼 나노2 모터 키트 WLC-T07-K1",
+          "price": 865000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930392"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "smartstore-13523038608",
+      "evidence": [
+        "model:WLC-T07"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13523038608",
+          "name": "TILTA 뉴클리어스 오토 포커스 어댑터 (E to PL) WLC-T07",
+          "price": 518000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13523038608"
+        },
+        {
+          "id": "plthink-1930393",
+          "name": "[TILTA] 틸타 뉴클리어스 오토포커스 어댑터 E to PL 마운트 베이스 키트 WLC-T07",
+          "price": 518000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930393"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "smartstore-13000390330",
+      "evidence": [
+        "model:TA-XTH3-B"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13000390330",
+          "name": "TILTA Xeno Top Handle with NATO Clamp (Black)_TA-XTH3-B",
+          "price": 68000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13000390330"
+        },
+        {
+          "id": "plthink-1930395",
+          "name": "[TILTA] 틸타 제노 탑핸들 카메라 그립 나토 타입 TA-XTH3-B",
+          "price": 68000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930395"
         }
       ]
     },
