@@ -1,4 +1,4 @@
-// Configuration lives outside the deployed/Git project. Never print values.
+// Configuration stays in the project's Git/deployment-excluded _private tree.
 const fs=require('node:fs');
 const path=require('node:path');
 const crypto=require('node:crypto');
@@ -6,7 +6,7 @@ const {passwordHash}=require('../server/commerce/security.cjs');
 const {database}=require('../server/commerce/d1.cjs');
 const {toss}=require('../server/commerce/toss.cjs');
 const root=path.resolve(__dirname,'..');
-const directory=path.join(path.dirname(root),'_private','nadaun-shop','commerce');
+const directory=path.join(root,'_private','commerce');
 const file=path.join(directory,'configuration.json');
 const fields=['SHOP_CF_ACCOUNT_ID','SHOP_D1_DATABASE_ID','SHOP_D1_API_TOKEN','SHOP_ORDER_DATA_KEY','SHOP_SESSION_KEY','SHOP_ADMIN_PASSWORD_HASH','SHOP_PAYMENT_MODE','SHOP_TOSS_CLIENT_KEY','SHOP_TOSS_SECRET_KEY'];
 async function main(){

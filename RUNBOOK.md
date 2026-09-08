@@ -227,7 +227,7 @@
 - 대표 계정으로 로그인하면 상품 위 `공급가정보`를 눌러 `공급업체정보` 팝업을 연다. 이 팝업의 공장·담당자·연락처·이메일·배송/인쇄 조건을 **원본 숫자 상품번호에 정확히 매칭**한다. 비슷한 상품명으로 공급처를 추정하거나 같은 업체의 담당자가 모든 상품에서 같다고 가정하지 않는다.
 - 대표가 나중에 메일 발송을 지시하면 이 매칭을 조회하여 해당 상품의 수신처와 조건을 사용한다. 현재 지시는 정보 정리이며 메일 발송 지시가 아니다. 발송 시 상품번호·최신 공급처·수신 주소를 대조하고 기존 NAS 메일 API/함수를 우선한다. 누락된 주소는 다른 상품이나 검색 결과로 임의 보충하지 않는다.
 - `_scraper/gift_supplier_registry.py`는 정확한 상품번호 조회, 입력 필드 검증, 부분 수집 시 기존 매칭 보존, 변경 이력, 오래된 자료의 덮어쓰기 방지, 로그의 연락처 제외를 구현한다. 동일 시각에 충돌하는 공급처가 있으면 해당 일괄 가져오기를 취소한다. 이 도구는 메일을 발송하거나 웹 관리자 인증을 제공하지 않는다.
-- 데이터는 저장소 **밖**의 `../_private/nadaun-shop/gift/`에 둔다. 루트는 실행 파일 위치에서 계산하므로 Mac/Windows 절대경로를 코드에 넣지 않는다. `suppliers.sqlite3`와 원본 입력 JSON은 Git·Vercel·R2·공개 상품 JSON에 넣지 않는다. 웹하드 등 외부 서비스의 계정/비밀번호 필드는 수집하지 않는다. NAS 신규 비공개 디렉터리와 입력 파일의 그룹/기타 권한 0을 확인했다. 웹의 대표 전용 관리자 화면은 아직 없다.
+- 데이터는 프로젝트 내부 비공개 폴더 `_private/gift/`에 둔다. 루트는 실행 파일 위치에서 계산하므로 Mac/Windows 절대경로를 코드에 넣지 않는다. `suppliers.sqlite3`와 원본 입력 JSON은 Git·Vercel·R2·공개 상품 JSON에 넣지 않는다. 웹하드 등 외부 서비스의 계정/비밀번호 필드는 수집하지 않는다. NAS 신규 비공개 디렉터리와 입력 파일의 그룹/기타 권한 0을 확인했다. 웹의 대표 전용 관리자 화면은 아직 없다.
 - 대표가 제공한 두 캡처의 상품 **187684 / 2602809**를 해당 화면의 공급처와 매칭해 저장하고 재조회했다. 근거 종류는 `owner_screenshot`이며, 로그인 세션에서 자동 수집한 데이터로 표시하지 않는다. **현재 2개만 등록됐으며 전체 상품 매칭·자동 갱신·공장 공급단가 수집은 미완료**다. 실행 중인 Chrome에 직접 연결을 여러 번 요청했으나 런타임에서 `Browser is not available: chrome`을 반환했다. 새 브라우저로 바꾸지 말고 사용 중인 Chrome의 정상 연결을 복구한 뒤 공식 내보내기/API 제공 여부부터 확인한다.
 - 팝업의 판매수수료는 제품 공급단가가 아니다. 대표가 요청한 약 20% 가산의 기준이 기존 판매단가인지 실제 공장 공급단가인지는 아직 답변 대기다. 기준 확정 전 공개 가격을 바꾸지 않는다. 수량별 단가·인쇄 옵션·배송비·부가세를 각각 보존하고, 결제에 필요한 정보가 미확정이면 임의 합계를 결제받지 않는다.
 - 검증: 공급처 저장소 단위 검사 12건. 동일 이름의 서로 다른 상품, 이메일 혼합/헤더 삽입, 비공개 경로 우회, 자료 충돌 시 일괄 롤백, 중복 입력, 과거 자료, 부분 갱신, 메일 누락을 확인했다.
@@ -236,8 +236,8 @@
 
 ```sh
 python3 _scraper/gift_supplier_registry.py status
-python3 _scraper/gift_supplier_registry.py import --input ../_private/nadaun-shop/gift/owner-screenshots-2026-09-08.json
-python3 _scraper/gift_supplier_registry.py lookup --product 187684 --output ../_private/nadaun-shop/gift/lookups/187684-review.json
+python3 _scraper/gift_supplier_registry.py import --input _private/gift/owner-screenshots-2026-09-08.json
+python3 _scraper/gift_supplier_registry.py lookup --product 187684 --output _private/gift/lookups/187684-review.json
 ```
 
 조회 파일이 이미 있으면 다른 파일명으로 보존한다. 실제 발송 전에는 반환 자료의 `evidence`, `age_days`, `email_present`를 확인하며, 조회 성공을 발송 완료로 보고하지 않는다.
@@ -256,7 +256,7 @@ python3 _scraper/gift_supplier_registry.py lookup --product 187684 --output ../_
 - `_scraper/sync_gift_inventory.py scan`을 실제 실행했다. 12개 원본 대분류의 첫 페이지를 각각 조회해 **총 2,403페이지 / 카테고리별 상품 수 합계 71,953건**을 확인했다. 여러 분류에 겹치는 상품이 있으므로 합계를 고유 상품 수로 보고하지 않는다. 고유 상품 수는 숫자 상품번호의 DB 기본키로 별도 집계한다.
 - 메뉴는 원본 홈페이지의 `main_cid == cid`인 대분류에서 읽는다. 목록은 `#allview_list .productList`로 한정하여 추천 상품을 제외한다. 원본의 신상품순 `sort=5`와 실제 마지막 페이지를 사용하며 화면에 보이는 1~5페이지만 읽고 끝내지 않는다.
 - 원본의 표시 개수, 페이지당 상품 수, 상품번호/링크 일치, 페이지 중복, 대분류별 고유 상품 수, 수집 전후 첫 페이지와 메뉴를 대조한다. 소스 수가 달라지면 기존 자료를 보존하고 대조를 요구한다. 오류나 누락을 상품 삭제/품절로 처리하지 않는다. source 요청은 한 번에 하나, 응답 후 2.1초 이상 간격이며 403/429/보호 응답 시 추가 요청을 중지하고 Retry-After/최소 1시간 대기를 보존한다.
-- 공개 목록 원장은 저장소 밖 `../_private/nadaun-shop/gift/inventory.sqlite3`, 진행 보고서는 `inventory-progress.json`이다. 공급처 원장 `suppliers.sqlite3`와 구분한다. NAS 잠금으로 두 PC의 동시 수집을 막고 각 페이지를 트랜잭션으로 보존하여 `scan` 재실행 시 해당 지점부터 이어간다. 이는 초기 전체 스냅샷의 재개 명령이며, 완료 후 새 변경분을 자동 갱신하는 예약 실행은 아직 연결하지 않았다.
+- 공개 목록 원장은 프로젝트 내부 비공개 폴더 `_private/gift/inventory.sqlite3`, 진행 보고서는 `inventory-progress.json`이다. 공급처 원장 `suppliers.sqlite3`와 구분한다. NAS 잠금으로 두 PC의 동시 수집을 막고 각 페이지를 트랜잭션으로 보존하여 `scan` 재실행 시 해당 지점부터 이어간다. 이는 초기 전체 스냅샷의 재개 명령이며, 완료 후 새 변경분을 자동 갱신하는 예약 실행은 아직 연결하지 않았다.
 - `python3 _scraper/sync_gift_inventory.py status`로 직접 DB 수를 조회한다. 로그의 `inventory_complete`와 `details_complete`·`suppliers_complete`·`published`는 별개다. 목록을 다 읽어도 수량별/인쇄별 단가와 비공개 공급처까지 연동 완료했다고 보고하지 않는다. 현재 수집기는 구매가를 가산하거나 공개 상품/주문을 변경하지 않는다.
 
 ### 야간 전체 수집·재시도 — 2026-09-08
@@ -268,7 +268,7 @@ python3 _scraper/gift_supplier_registry.py lookup --product 187684 --output ../_
 - 기존 유쾌한생각 브랜드 식별자 `brand-cb8705572d`는 공통 영문 식별자 `plthink`로 통합했다. 기존 브랜드 페이지 주소는 새 `/brands/plthink.html`로 308 연결한다. 예전 원본 파일은 삭제하지 않았다.
 - `_scraper/partner_worker.py plthink`은 전체 수집 → 분류·상품 수·상세 대조 → 빌드/테스트 → 한정 Git 커밋/푸시 → Vercel READY → 라이브 상품번호 전수 대조를 수행한다. 원본 갱신은 마지막 수집 이후 12시간 기준이며 즉시 동기화가 아니다. 편집 중인 코드·생성 파일이 있으면 자동 발행을 중단한다. 발행 증거는 `.sync-state/plthink/published.json`이다.
 - `_scraper/partner_worker.py gift`는 초기 전체 목록을 마친 뒤 `_scraper/gift_product_details.py`로 상세를 1,000건씩 이어 읽는다. 상품번호를 확인하고 이미지/제품 사양/수량·인쇄·색상·사이즈별 공개 단가를 추출한다. 원본 JavaScript를 실행하지 않는다. 실제 고객 단가의 올림 계산까지 대조했으며 샘플·최소수량 미만은 별도 견적으로 남긴다. 지원하지 않는 계산식은 `detail_errors`로 분리해 나머지 수집을 계속한다. 원본의 외부 노출 허용 여부도 보존한다.
-- 기프트 상세 DB와 진행 JSON은 계속 `../_private/nadaun-shop/gift/`에만 저장한다. 공급가/공장 정보 자동 접근, 20% 가산 기준 확정, 공개 상품·결제 편입과 이후 정기 변경 반영은 아직 완료하지 않았다. 목록/상세 수집과 전체 미러링 완료를 혼동하지 않는다.
+- 기프트 상세 DB와 진행 JSON은 계속 `_private/gift/`에만 저장한다. 공급가/공장 정보 자동 접근, 20% 가산 기준 확정, 공개 상품·결제 편입과 이후 정기 변경 반영은 아직 완료하지 않았다. 목록/상세 수집과 전체 미러링 완료를 혼동하지 않는다.
 - 설치: 가상환경 Python으로 `_scraper/install_partner_workers.py`를 실행한다. LaunchAgent `co.nadaun.shop.gift-sync`, `co.nadaun.shop.plthink-sync`가 10분 간격으로 미완료 작업을 재개하며 중복 실행은 잠금으로 막는다. 긴 실행 동안 `caffeinate -i`가 유휴 잠자기를 방지한다. Mac 전원·NAS 마운트·네트워크는 필요하다. 설치 결과는 `.sync-state/*-schedule.json`, 실행 결과는 `~/Library/Logs/NADAUN/shop/{gift,plthink}.{stdout,stderr}.log`와 NAS 진행 기록을 함께 확인한다.
 - 기프트 공급처 팝업의 일반 HTTP 접근은 내용 없는 응답이라 로그인 없이 대체 수집할 수 없었다. 사용자가 켜둔 Chrome의 로그인 세션 연결은 여전히 필요하다. 공장 정보를 읽으려고 브라우저 쿠키/비밀번호를 추출하거나 다른 계정으로 접근하지 않는다.
 - 수집기 검사 9건: 873번째 마지막 페이지, 추천 상품 제외, 잘못된 페이지/ID, 정확한 중단 재개, 중복 페이지 롤백, 소스 수 변경 시 보존, 분류 간 동일 상품 통합, 요청 제한 후 추가 요청 0건, 최종 메뉴 검증 실패 시 전체 완료 차단을 통과했다. 실제 완료 개수는 수시로 변하므로 이 문서의 초기 수치보다 진행 보고서/DB 재조회를 우선한다.
@@ -292,7 +292,7 @@ python3 _scraper/gift_supplier_registry.py lookup --product 187684 --output ../_
 
 관리자/주문 생성 페이지는 `_scraper/build_catalog.py`가 생성한다. `shop_sync.managed_files()`와 `CODE`에 등록해 이후 PLTHINK/일일 카탈로그 배포에도 유지한다. 빌더를 수정한 뒤 기존 PLTHINK 워커는 체크포인트를 보존하면서 재시작해야 새 빌더를 사용한다.
 
-비공개 설정은 프로젝트 밖 `_Site/_private/nadaun-shop/commerce/`에 두며 Git·정적 파일·R2에 올리지 않는다. `commerce_setup.cjs check`는 설정 이름/검증 여부만 보고한다. 자동 배포 시 이 private 설정이나 공장 정보 저장소를 수집하지 않는다.
+비공개 설정은 프로젝트 내부 비공개 폴더 `_Site/nadaun-shop/_private/commerce/`에 두며 Git·정적 파일·R2에 올리지 않는다. `commerce_setup.cjs check`는 설정 이름/검증 여부만 보고한다. 자동 배포 시 이 private 설정이나 공장 정보 저장소를 수집하지 않는다.
 
 
 ### 2026-09-08 PLTHINK 상세 수집 중단 복구
@@ -386,7 +386,7 @@ PLTHINK `plthink-1921456`의 4'x4' 규격명은 원본 JSON-LD에서 JSON이 허
 - 전체 페이지 상단 검색은 `/search.html`로 연결하고 구매·렌탈·기프트 상품명/브랜드/종류/상품번호를 함께 검색한다. 검색 결과에 세 용도별 개수와 필터를 제공한다. 검색 페이지는 noindex, 실제 종류/상품 페이지는 canonical과 사이트맵으로 연결한다. `gift-sitemap.xml`은 4만 URL 이하 파일로 나눈다.
 - 홈페이지의 **브랜드 전체보기**는 검정 배경의 눈에 띄는 버튼으로 바꾸고 현재 브랜드 수와 새 창 링크를 유지한다. 기존 렌탈 220개 상품 레코드는 수정 전과 동일함을 대조했다. 실제 Chrome 연결이 없어 브라우저 화면·Windows 실기 검수는 완료로 기록하지 않는다. HTTP/서버 렌더링 검증과 구분한다.
 - 브랜드 출처는 `data/catalog/brand-source-policy.json`에 대표 지시를 기록한다. **Aputure 구매와 DJI는 AVX**, **SmallRig는 KPP+씨엘미디어**, **TILTA는 기존 자체 스마트스토어 목록을 메인으로 씨엘미디어+시네몰 보완**이다. 렌탈은 유지한다. 이미 등록된 동일 상품의 대표 출처 우선순위에 반영하며 아직 수집·검증하지 않은 씨엘미디어/시네몰 상품이 공개됐다고 보고하지 않는다. 새로운 소스의 추가 브랜드 중복은 대표 선택 전 자동 통합 발행하지 않는다.
-- `_scraper/brand_source_policy.py`가 상품별 대표 원본 ID/URL과 함께 매칭된 모든 원본을 `../_private/nadaun-shop/catalog/source-matches.json`에 기록하고 `brand-source-review.md`에 사이트별 수량과 선택을 정리한다. 가격/상태 기준이 되는 대표 레코드의 출처이며, 이전 중복 병합에서 보완한 이미지·카테고리까지 전부 한 사이트에서 왔다고 단정하지 않는다. 두 파일은 저장소 밖이며 권한 600이다.
+- `_scraper/brand_source_policy.py`가 상품별 대표 원본 ID/URL과 함께 매칭된 모든 원본을 `_private/catalog/source-matches.json`에 기록하고 `brand-source-review.md`에 사이트별 수량과 선택을 정리한다. 가격/상태 기준이 되는 대표 레코드의 출처이며, 이전 중복 병합에서 보완한 이미지·카테고리까지 전부 한 사이트에서 왔다고 단정하지 않는다. 두 파일은 프로젝트 내부 비공개 폴더이며 권한 600이다.
 - AVX 전체 수집 결과는 우선 비공개 체크포인트의 `catalogue-candidate.json`에 보존한다. 전체 상세 검증과 브랜드 중복 출처 선택을 모두 통과해야 공개 `sources/avx.json`을 갱신한다. 선택 대기는 `.sync-state/avx/publication-waiting.json`에 남기며 기존 공개 상품을 유지한다. AVX 1,772개 목록 기준으로 확정된 4개 브랜드 외에 겹치는 25개 브랜드의 추가 선택이 필요하다. HOLLYLAND/SWIT/GENTREE 기준을 먼저 질문한 상태다.
 - 씨엘미디어 `https://clmedia.co.kr/`와 시네몰 `https://www.cinemall.co.kr/` **전체 브랜드**는 작업 대기열에 기록한다. 틸타 시네몰 분류는 `/product/list.html?cate_no=56`. AVX 이후 순차 수집·출처 선택·중복 대조·배포 검증한다. 파트너 배너도 원본 URL·브랜드·목표 링크를 기록해 검토용으로 추가하되, 현재 공개 배너 6개를 네이버 전체 10개 확보로 보고하지 않는다.
 - Mac/Windows는 이 NAS 저장소를 공유하며 공개 사이트는 같은 Vercel 배포를 본다. 현재 AVX/PLTHINK 수집 워커의 실행 주체는 **Mac**이다. Windows 별도 수집 워커를 설치하거나 실행했다고 보고하지 않는다. 소스 저장과 프로세스 재시작/라이브 배포는 별개로 확인한다. 배포 증거는 `.sync-state/gift-directory-release.json`과 `last-success.json`을 우선한다.
@@ -394,7 +394,7 @@ PLTHINK `plthink-1921456`의 4'x4' 규격명은 원본 JSON-LD에서 JSON이 허
 
 ### 2026-09-08 브랜드별 출처 전수 감사와 공급처 품절 반영
 
-- 대표는 전체 협력사 자동 연동과 브랜드별 매칭 사이트의 지속 기록을 재확인했다. 저장소 밖 `../_private/nadaun-shop/catalog/brand-source-review.md`에는 **공개 브랜드 전체**를 기록한다. 중복 브랜드만 적던 방식을 바꾸어 단일 출처·렌탈 전용 브랜드도 포함하고 공개 구매/렌탈의 대표 출처 수량과 아직 공개하지 않은 수집 후보를 구분한다.
+- 대표는 전체 협력사 자동 연동과 브랜드별 매칭 사이트의 지속 기록을 재확인했다. 프로젝트 내부 비공개 폴더 `_private/catalog/brand-source-review.md`에는 **공개 브랜드 전체**를 기록한다. 중복 브랜드만 적던 방식을 바꾸어 단일 출처·렌탈 전용 브랜드도 포함하고 공개 구매/렌탈의 대표 출처 수량과 아직 공개하지 않은 수집 후보를 구분한다.
 - `source-matches.json` schema 2는 상품의 원본 숫자 상품번호·URL·원본 목록/상세 확인 시각과 필드별 출처를 보존한다. 중복 병합으로 보완한 상세 이미지·공급처 상태·분류는 실제 보완한 원본을 기록하고, 운영자 상품 수정과 검토된 이름 수정은 각각 overrides/dedup-rules 파일로 표시한다. 원본에 개별 상세 확인 시각이 없으면 배치 확인 시각만 기록하며 새 시각을 지어내지 않는다. 이 파일은 공개 상품 JSON이나 Git/R2에 포함하지 않는다.
 - 빌드만 한 상태는 `publication.state=not_live_verified`다. Vercel에서 해당 커밋이 READY이고 실제 공개 상품 전체의 ID·가격·품절·분류·원본 목록이 SHA256으로 일치해야 `live_verified`와 커밋/배포/revision/검증 시각을 기록한다. 같은 revision의 출처 선택 대기 보고서를 다시 써도 검증된 필드 출처·배포 증거를 유지한다.
 - KPP 원본의 `supplier_status=soldout`을 공개 `status=inquiry`로 덮어쓰던 오류를 수정했다. **자체 KPP 대표 상품 1,547개**가 품절과 품절 제외 필터에 반영된다. 다른 상품 ID·가격은 유지하며 렌탈 220개 레코드는 바이트 내용 기준 동일하다. 이는 저장된 검증 스냅샷의 상태를 올바르게 표시한 수정이며 새로 실시간 재고를 조회했다는 뜻이 아니다.
@@ -421,7 +421,7 @@ PLTHINK `plthink-1921456`의 4'x4' 규격명은 원본 JSON-LD에서 JSON이 허
 - 목록·홈 베스트·통합 검색에 대여 기간을 금액과 함께 표시한다. 렌탈 상세의 기간별 요금은 접힌 구매 옵션 대신 처음부터 노출한다. 구성품 이름과 수량은 상세 사진보다 먼저 표시하며, 이미지가 있다는 이유로 구성품 텍스트를 생략하지 않는다. 상세 갤러리는 같은 상품의 원본 큰 사진을 우선하고 실패하면 같은 상품의 저장된 대표 이미지로 복구한다.
 - `assets/shop/rental-content.js`를 브라우저와 상품 서버 렌더링에서 함께 사용한다. `data/catalog/rental-details.json`은 공개 구성품·요금·이미지 전용 데이터이며 Vercel 함수에 포함한다. 렌탈에 구매·배송·주문서 문구를 섞지 않고 일정 상담→요금/구성 확인→픽업/반납 안내로 연결한다. 스튜디오에는 별도의 공간 안내를 사용한다.
 - 원본의 편집 잔여 공백·영폭 문자·독립된 1.00은 파생 안내문에서만 정리한다. SR4702 변환 플레이트의 Monopod 구성품, Harlowe Atom 2 Action의 Pocket Duo 구성품은 상품명과 충돌하므로 확인된 구성으로 노출하지 않고 예약 전 구성 확인 안내를 둔다. 추정한 다른 구성품으로 바꾸지 않는다. 원본 상세 이미지 안의 문구는 수정하지 않았다.
-- 저장소 밖 `../_private/nadaun-shop/catalog/rental-content-review.json`과 `.md`에 220개 점검 결과 및 기간 미확인 19개·구성 충돌 2개를 기록한다. 이를 실제 구성 전체 확인 완료로 보고하지 않는다. 상품별 출처 장부에는 rental_presentation 파생 스크립트도 기록한다.
+- 프로젝트 내부 비공개 폴더 `_private/catalog/rental-content-review.json`과 `.md`에 220개 점검 결과 및 기간 미확인 19개·구성 충돌 2개를 기록한다. 이를 실제 구성 전체 확인 완료로 보고하지 않는다. 상품별 출처 장부에는 rental_presentation 파생 스크립트도 기록한다.
 - Python 73개·Node 93개 검사 통과. 키보드/이미지 오류 복구·HTML 이스케이프·서버에서 바로 보이는 요금/구성품·기존 구매/결제 동작을 검사한다. 실제 배포 및 라이브 검증 증거는 `.sync-state/rental-content-release.json`에 저장한다. 현재 Chrome 연결이 없어 시각·Windows 실기 검수는 미확인이다.
 
 
@@ -463,7 +463,7 @@ PLTHINK `plthink-1921456`의 4'x4' 규격명은 원본 JSON-LD에서 JSON이 허
 - 공식 부문 → 시리즈 → 모델 경로를 유지하고 동일한 부모/외동 자식 이름은 한 번만 표시한다. 공식 구매 분류로 교체한 뒤 예전 공급처 DJI 분류 URL은 DJI 전체 구매로 정리한다. 렌탈 분류는 계속 기존 경로를 사용한다.
 - `brand-source-policy.json`의 DJI `exclusive` 선택은 빌드와 파트너 발행 대조에서 함께 적용한다. PLTHINK의 원본 전체 수와 공개 허용 수는 구분하며 제외 ID와 정책 SHA256을 남긴다. AVX 역시 새 선택에 맞춰 공개 허용 목록을 재분리한다.
 - `_scraper/dji_worker.py`는 12시간 주기의 새 검증 세대와 10분 재개 예약을 사용한다. 403/429/보호 응답은 자동 재시도하지 않고 중단한다. 전체 원본 수 15% 이상 감소는 검토 전 발행하지 않는다. 이 Mac이 켜져 있고 NAS와 네트워크에 연결돼 있어야 갱신된다. 웹훅 실시간 동기화가 아니다.
-- 수집 진행/후보/배포 영수증/예약 확인은 `_scraper/.sync-state/dji-official/`, 브랜드별 필드 출처는 기존 비공개 `_private/nadaun-shop/catalog/source-matches.json`에 기록한다. 초기 교체의 최종 수량·커밋·Vercel READY·라이브 전수 대조 결과는 실제 검증 후 아래에 기록한다.
+- 수집 진행/후보/배포 영수증/예약 확인은 `_scraper/.sync-state/dji-official/`, 브랜드별 필드 출처는 비공개 `_private/catalog/source-matches.json`에 기록한다. 초기 교체의 최종 수량·커밋·Vercel READY·라이브 전수 대조 결과는 실제 검증 후 아래에 기록한다.
 
 ### 초기 교체 검수와 재개 위치
 
@@ -473,3 +473,14 @@ PLTHINK `plthink-1921456`의 4'x4' 규격명은 원본 JSON-LD에서 JSON이 허
 - 대표가 폴더 이동을 취소했으므로 NAS 원본 위치는 계속 이 프로젝트 폴더다. 이동 대기 중 중지한 자동화는 코드 커밋·공개 검증 뒤 기존 경로로 재개하며, 실제 예약 확인은 `dji-official/automation-resumed.json`에 기록한다. 기프트의 기존 접근 보호 중단은 유지한다.
 - 최초 공개 검증: 커밋 `46741c9f`, Vercel `dpl_7KsYh2uxKgniFnzPGP875RiASZPK` READY, revision `83e0bd02bfdeda03`. 라이브 DJI 905개와 원본의 상품 ID·이름·가격·품절·분류를 대조했고 ROMO·구형 프로펠러·리퍼브 상세의 서버 HTML도 확인했다. 후속 코드 배포의 최신 커밋·예약 상태는 위 영수증 파일을 따른다.
 - DJI 재수집의 진행률은 세대 폴더와 별개로 공급처 최상위 `progress.json`에 기록된다. 상태 보고기도 이 위치를 읽으며, 두 번째 수집 세대에서도 진행률이 사라지지 않는 회귀 검사를 추가했다.
+
+
+## 2026-09-09 프로젝트 폴더 안으로 비공개 자료 통합 (대표 지시)
+
+- shop 프로젝트의 모든 작업 자료는 `nadaun-shop/` 안에 둔다. 비공개 자료를 형제 폴더 `_Site/_private/`에 새로 만들지 않는다. 공개 제외와 프로젝트 폴더링은 별개로 처리한다.
+- 현재 구조는 `_private/commerce/`(결제·관리자 설정), `_private/gift/`(상품 목록·상세 DB 및 공급처 원장), `_private/catalog/`(브랜드별 매칭·검토·동기화 보고서)다. `_scraper/.sync-state/`는 기존 수집 체크포인트와 실행·배포 증거를 유지한다.
+- Python의 단일 경로 기준은 `_scraper/private_storage.py`다. 공급처 원장·기프트 목록/상세·공개용 기프트 생성기·출처 장부·렌탈 검토 파일이 이 경로를 사용한다. Node의 `commerce_setup.cjs`도 프로젝트 기준 `_private/commerce`를 사용한다. Mac/Windows 절대경로를 새로 하드코딩하지 않는다.
+- `/_private/`는 Git 제외, `_private/`는 Vercel 업로드 제외이며 `vercel.json`의 filesystem 처리 이전 404 규칙도 적용한다. 설정·공장정보·DB·검토 보고서를 Git, Vercel 함수 번들, 정적 페이지, R2에 포함하지 않는다. 로컬 개발도 Vercel 라우트를 적용하는 서버를 사용하며 프로젝트 루트를 단순 파일 서버로 공개하지 않는다.
+- 이동 전 실행 중인 카탈로그 배포를 완료하고 Mac의 DJI/AVX/PLTHINK/일일 워커를 내려 기존 경로 쓰기를 막았다. 원래 기프트 수집 중지 상태는 유지한다. 이동 후에는 최신 코드로 워커를 다시 시작해야 한다.
+- 이전 `_Site/_private/nadaun-shop`의 16개 파일(202,349,661바이트)을 동일 볼륨 rename으로 `_Site/nadaun-shop/_private`로 이동했다. 전체 SHA256·파일 수·용량 일치, SQLite DB 2개 quick_check 통과를 확인했다. 외부 폴더의 Finder 메타데이터는 이동 기록 옆에 보관하고, 다른 자료가 없는 것을 확인한 뒤 빈 `_Site/_private`를 제거했다.
+- 이동 전후 원본 매핑·해시·워커 중지/재개·검증 기록은 `_scraper/.sync-state/private-folder-migration-20260909/`에 보관한다. 이 작업은 상품 수집의 전체 완료를 뜻하지 않는다. 원본 접근 제한 및 중복 브랜드 선택 대기는 계속 남아 있다.

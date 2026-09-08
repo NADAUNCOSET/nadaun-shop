@@ -5,9 +5,10 @@ import hashlib
 import json
 from pathlib import Path
 from sync_shop_sources import ROOT, OUT, save_json, stamp
+from private_storage import PRIVATE_DIRECTORY
 
 POLICY=ROOT/'data/catalog/brand-source-policy.json'
-AUDIT=ROOT.parent/'_private/nadaun-shop/catalog'
+AUDIT=PRIVATE_DIRECTORY/'catalog'
 NAMES={'kpp':'KPP','smartstore':'우리 스마트스토어','imweb':'기존 아임웹','imweb-dji':'기존 아임웹 DJI','l-mount':'엘디엘마운트','plthink':'유쾌한생각','avx':'AVX','clmedia':'씨엘미디어','cinemall':'시네몰'}
 NAMES['dji-official']='DJI 공식 한국 스토어'
 

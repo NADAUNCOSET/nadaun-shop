@@ -10,3 +10,6 @@ data/_scrape_pilot/
 _카테고리_리스트업.txt
 _명령어메모/
 _카테고리_리스트업.txt
+
+# NAS-only private records stay inside this project, never in Git.
+/_private/

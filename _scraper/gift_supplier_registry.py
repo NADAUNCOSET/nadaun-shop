@@ -1,6 +1,6 @@
 """Private, exact-SKU supplier directory. This module never sends mail.
 
-The database and imported records live outside the deployed shop and Git tree.
+The database and imported records live in the project's excluded _private tree.
 Only data explicitly supplied by the owner or a verified authenticated export
 belongs here. Browser cookies, passwords and Webhard accounts are not imported.
 """
@@ -13,10 +13,10 @@ import json
 from pathlib import Path
 import re
 import sqlite3
+from private_storage import PROJECT, PRIVATE_DIRECTORY, private_path
 
 
-PROJECT = Path(__file__).resolve().parents[1]
-PRIVATE_ROOT = PROJECT.parent / '_private' / PROJECT.name / 'gift'
+PRIVATE_ROOT = PRIVATE_DIRECTORY / 'gift'
 SOURCE = 'nadaun-gift'
 FIELDS = {'product_id', 'product_name', 'supplier', 'terms', 'evidence'}
 SUPPLIER_FIELDS = {'company', 'business_number', 'representative', 'contact_name',
@@ -26,13 +26,6 @@ TERM_FIELDS = {'supplier_product_name', 'supplier_product_code', 'shipping',
 EVIDENCE_FIELDS = {'kind', 'reference', 'observed_at'}
 EVIDENCE_KINDS = {'owner_screenshot', 'authenticated_supplier_page', 'owner_export'}
 EMAIL = re.compile(r'[^\s@,;<>]+@[^\s@,;<>]+\.[^\s@,;<>]+\Z')
-
-
-def private_path(path: Path) -> Path:
-    resolved = Path(path).expanduser().resolve()
-    if resolved == PROJECT or PROJECT in resolved.parents:
-        raise ValueError('Private supplier data must be outside the shop repository')
-    return resolved
 
 
 def object_fields(value, allowed, required=()):

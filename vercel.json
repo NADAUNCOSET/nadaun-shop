@@ -10,6 +10,13 @@
       "continue": true
     },
     {
+      "src": "^/_private(?:/.*)?$",
+      "status": 404,
+      "headers": {
+        "Cache-Control": "no-store"
+      }
+    },
+    {
       "src": "^/server(?:/.*)?$",
       "status": 404
     },

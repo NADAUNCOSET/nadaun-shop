@@ -101,7 +101,7 @@ def verified_sources():
 
 def build(allow_pending=False):
     snapshots=verified_sources()
-    from brand_source_policy import selections,write_audit,source_provenance,merge_category_provenance,purchase_source_allowed
+    from brand_source_policy import AUDIT,selections,write_audit,source_provenance,merge_category_provenance,purchase_source_allowed
     source_choices=selections()
     for bid,choice in source_choices.items():
         if choice.get('exclusive') and choice['source'] not in snapshots:
@@ -248,7 +248,7 @@ def build(allow_pending=False):
         public_products.append(public_row)
         public_details[shard(pid)][pid]=details[pid]
     save_json(PUBLIC/'rental-details.json',rental_details)
-    save_json(ROOT.parent/'_private/nadaun-shop/catalog/rental-content-review.json',{'products_checked':len(rental_content_audit),'products':rental_content_audit})
+    save_json(AUDIT/'rental-content-review.json',{'products_checked':len(rental_content_audit),'products':rental_content_audit})
     from product_taxonomy import build_taxonomy
     from rental_taxonomy import build_rental_taxonomy
     type_nodes,type_audit=build_taxonomy(public_products,categories,config.get('product_type_overrides'))

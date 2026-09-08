@@ -12,7 +12,7 @@
 
 ## 발급 이후 연결
 
-운영 주문용 설정 원본은 사이트 저장소 밖 `../_private/nadaun-shop/commerce/configuration.json`이다. 시크릿 키를 채팅·공개 코드·Git에 붙이지 않는다.
+운영 주문용 설정 원본은 사이트 프로젝트 내부 비공개 폴더 `_private/commerce/configuration.json`이다. 시크릿 키를 채팅·공개 코드·Git에 붙이지 않는다.
 
 - 주문서형 테스트 키 쌍: `test_gck_…`, `test_gsk_…`
 - 계약 후 라이브 키 쌍: `live_gck_…`, `live_gsk_…`
