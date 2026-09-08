@@ -68,7 +68,10 @@ def report(plan_path=PLAN, out=OUT, state=STATE):
         if source == 'avx':
             progress = progress | {'checked_at':progress.get('at'),
                 'products_found':progress.get('expected'), 'details_verified':progress.get('verified_details')}
-        if source=='dji-official':progress=progress|{'checked_at':progress.get('at')}
+        if source=='dji-official':
+            # DJI publishes current progress at provider level across generations.
+            progress=read(folder/'progress.json')
+            progress=progress|{'checked_at':progress.get('at')}
         # A receipt cannot turn an unimplemented adapter into recurring sync.
         source_choices = read(folder / 'publication-waiting.json') if source == 'avx' else {}
         receipt=read(folder/'published.json')

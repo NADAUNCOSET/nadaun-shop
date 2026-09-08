@@ -7,6 +7,18 @@ from partner_sync_status import verified_receipt, report
 
 
 class PartnerStatusTest(unittest.TestCase):
+    def test_dji_refresh_reports_provider_progress_after_generation_changes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);folder=root/'dji-official';folder.mkdir()
+            (folder/'generation.json').write_text(json.dumps({'directory':'generation-2'}))
+            (folder/'progress.json').write_text(json.dumps({'phase':'details','at':'now','products_found':910,'details_verified':150}))
+            plan=root/'plan.json';plan.write_text(json.dumps({'sources':{'dji-official':{'name':'DJI 공식 한국 스토어','adapter':'dji-official','refresh_interval_seconds':43200}}}))
+            result=report(plan,root,root)['sources']['dji-official']
+            self.assertEqual(result['progress']['details_verified'],150)
+            self.assertEqual(result['progress']['products_found'],910)
+            self.assertEqual(result['progress']['checked_at'],'now')
+            self.assertFalse(result['last_snapshot_live_verified'])
+
     def test_partial_or_stale_snapshot_never_unlocks_the_next_source(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp); (root/'plthink').mkdir()

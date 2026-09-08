@@ -471,3 +471,5 @@ PLTHINK `plthink-1921456`의 4'x4' 규격명은 원본 JSON-LD에서 JSON이 허
 - 렌탈 220개를 포함한 나머지 상품 15,541개는 교체 전후 레코드가 완전히 동일하다. AVX 공개 승인분은 493개, PLTHINK 공개 범위는 6,189개로 새 DJI 제외 정책을 함께 적용했다. 각 공급처 원본은 보존한다.
 - Python 88개·Node 94개 자동 검사를 통과했다. 실제 공개 확인은 `dji-official/release.json`과 각 공급처 `published.json`의 커밋·배포·revision 및 상품 ID 대조 결과를 기준으로 한다. Chrome 연결이 없어 브라우저 시각 검수는 미확인이다.
 - 대표가 폴더 이동을 취소했으므로 NAS 원본 위치는 계속 이 프로젝트 폴더다. 이동 대기 중 중지한 자동화는 코드 커밋·공개 검증 뒤 기존 경로로 재개하며, 실제 예약 확인은 `dji-official/automation-resumed.json`에 기록한다. 기프트의 기존 접근 보호 중단은 유지한다.
+- 최초 공개 검증: 커밋 `46741c9f`, Vercel `dpl_7KsYh2uxKgniFnzPGP875RiASZPK` READY, revision `83e0bd02bfdeda03`. 라이브 DJI 905개와 원본의 상품 ID·이름·가격·품절·분류를 대조했고 ROMO·구형 프로펠러·리퍼브 상세의 서버 HTML도 확인했다. 후속 코드 배포의 최신 커밋·예약 상태는 위 영수증 파일을 따른다.
+- DJI 재수집의 진행률은 세대 폴더와 별개로 공급처 최상위 `progress.json`에 기록된다. 상태 보고기도 이 위치를 읽으며, 두 번째 수집 세대에서도 진행률이 사라지지 않는 회귀 검사를 추가했다.
