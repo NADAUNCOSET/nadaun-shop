@@ -29,7 +29,8 @@ def publish(snapshot):
     ids={o['id'] for p in live['products'] for o in p['offers'] if o['source']=='avx'}
     if ids!=set(snapshot['products']):raise RuntimeError('AVX live IDs do not match source')
     receipt=result|{'scope':snapshot['scope'],'verified_products':len(ids),
-                    'source_collected_at':snapshot['collected_at']}
+                    'source_collected_at':snapshot['collected_at'],
+                    'source_sha256':hashlib.sha256((OUT/'avx.json').read_bytes()).hexdigest()}
     save_json(WORK/'published.json',receipt)
     return receipt
 

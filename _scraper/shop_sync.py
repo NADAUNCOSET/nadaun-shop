@@ -33,6 +33,7 @@ CODE += ['_scraper/gift_product_details.py','_scraper/source_transport.py','_scr
 CODE += ['server/commerce','assets/shop/commerce.js','assets/shop/commerce.css','_scraper/commerce_setup.cjs']
 CODE += ['_scraper/brand_category_policy.py','_scraper/partner_sync_status.py','_scraper/partner-sync-plan.json']
 CODE += ['assets/shop/storefront.css','assets/shop/scenes.js','assets/shop/browse.js','_scraper/category_gallery.py','_scraper/sync_avx_catalog.py','_scraper/avx_worker.py','_scraper/test_avx_catalog.py']
+CODE += ['_scraper/test_partner_sync_status.py']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
@@ -152,6 +153,7 @@ def run(publish=True,existing=False):
         build()
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_shop*.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_avx*.py')
+        command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_partner_sync_status.py')
         command('node','--check','assets/shop/shop.js')
         command('node','--check','assets/shop/cart.js')
         command('node','--check','assets/shop/motion.js')

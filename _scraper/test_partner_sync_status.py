@@ -30,5 +30,24 @@ class PartnerStatusTest(unittest.TestCase):
             self.assertFalse(result['automatic_refresh_implemented'])
             self.assertIsNone(result['refresh_interval_seconds'])
 
+    def test_avx_reports_current_generation_without_claiming_partial_as_full(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); folder=root/'avx'; generation=folder/'generation-1'
+            generation.mkdir(parents=True)
+            (folder/'generation.json').write_text(json.dumps({'directory':'generation-1'}))
+            (generation/'progress.json').write_text(json.dumps({'phase':'details','at':'now','expected':1772,'verified_details':150}))
+            plan=root/'plan.json';plan.write_text(json.dumps({'sources':{'avx':{'name':'AVX','adapter':'avx','refresh_interval_seconds':43200}}}))
+            result=report(plan,root,root)['sources']['avx']
+            self.assertTrue(result['automatic_refresh_implemented'])
+            self.assertFalse(result['last_snapshot_live_verified'])
+            self.assertEqual(result['progress']['details_verified'],150)
+            self.assertEqual(result['progress']['products_found'],1772)
+            snap=root/'avx.json'
+            for scope in ('aputure','all'):
+                snap.write_text(json.dumps({'complete':True,'scope':scope,'catalogue_complete':scope=='all','product_count':1,'products':{'avx-1':{}}}))
+                receipt={'source_sha256':hashlib.sha256(snap.read_bytes()).hexdigest(),'verified_products':1,'commit':'a','deployment':'b','revision':'c','verified_at':'now'}
+                (folder/'published.json').write_text(json.dumps(receipt))
+                self.assertEqual(verified_receipt('avx',root,root),scope=='all')
+
 
 if __name__ == '__main__': unittest.main()
