@@ -3,7 +3,7 @@ const {ShopError}=require('./security.cjs');
 function toss(env,fetcher=fetch){
  const prefix=env.SHOP_PAYMENT_MODE==='live'?'live_':'test_';
  const client=env.SHOP_TOSS_CLIENT_KEY,secret=env.SHOP_TOSS_SECRET_KEY;
- if(!['test','live'].includes(env.SHOP_PAYMENT_MODE)||!client?.startsWith(prefix+'ck_')||!secret?.startsWith(prefix+'sk_'))throw new ShopError(503,'결제 서비스 연결을 준비 중입니다.');
+ if(!['test','live'].includes(env.SHOP_PAYMENT_MODE)||!client?.startsWith(prefix+'gck_')||!secret?.startsWith(prefix+'gsk_'))throw new ShopError(503,'주문서형 결제 서비스 연결을 준비 중입니다.');
  async function call(method,path,body,key){
   let res,value;
   try{res=await fetcher('https://api.tosspayments.com/v1/payments'+path,{method,headers:{Authorization:'Basic '+Buffer.from(secret+':').toString('base64'),'Content-Type':'application/json',...(key?{'Idempotency-Key':key}:{})},...(body?{body:JSON.stringify(body)}:{}),signal:AbortSignal.timeout(12000)});value=await res.json();}catch{throw new ShopError(503,'결제 결과를 확인 중입니다. 다시 결제하지 말고 주문 상태를 확인해주세요.');}

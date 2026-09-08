@@ -22,7 +22,7 @@ function fixture(){
   {id:'p2',kind:'purchase',name:'중량 스탠드',status:'inquiry',price:20000,sale_price:10000,offers:[{source:'kpp'}],shipping_class:'heavy_stand',image:'/stand.jpg'}]};
  const details={p1:{options:[{name:'블랙',additional_price:1000}]},p2:{}};
  const repo=repository(db,clock),calls=[],remote={};
- const payment={clientKey:'test_ck_fixture',mode:'test',async confirm(input,key){calls.push({input,key});Object.assign(remote,{orderId:input.orderId,paymentKey:input.paymentKey,totalAmount:input.amount,currency:'KRW',status:'DONE'});},async get(){return {...remote};}};
+ const payment={clientKey:'test_gck_fixture',mode:'test',async confirm(input,key){calls.push({input,key});Object.assign(remote,{orderId:input.orderId,paymentKey:input.paymentKey,totalAmount:input.amount,currency:'KRW',status:'DONE'});},async get(){return {...remote};}};
  const service=orderService({repo,catalog,detail:p=>details[p.id],dataKey:secret,payment,clock});
  const create=()=>service.create(owner,'idempotency_fixture',{customer,items:[item],total:1});
  async function started(){let order=await create();order=await service.approve(order.id,{version:order.version,stock_confirmed:true});await service.start(order.id,owner,order.quote_version);return await repo.get(order.id);}
@@ -118,8 +118,11 @@ test('D1 uses bounded parameterized batches and hides provider errors',async()=>
  await assert.rejects(database(env,async()=>({ok:false,json:async()=>({success:false,errors:['private_fixture']})})).query('SELECT ?',['sensitive']),error=>error.status===503&&!error.message.includes('private_fixture'));
 });
 test('Toss uses the configured mode, Basic credentials and an idempotent confirmation',async()=>{
- const env={SHOP_PAYMENT_MODE:'test',SHOP_TOSS_CLIENT_KEY:'test_ck_fixture',SHOP_TOSS_SECRET_KEY:'test_sk_fixture'};const calls=[];
+ const env={SHOP_PAYMENT_MODE:'test',SHOP_TOSS_CLIENT_KEY:'test_gck_fixture',SHOP_TOSS_SECRET_KEY:'test_gsk_fixture'};const calls=[];
  const payment=toss(env,async(url,options)=>{calls.push({url,options});return{ok:true,json:async()=>({status:'DONE'})};});
- await payment.confirm({paymentKey:'p',orderId:'o',amount:100},'stable-key');await payment.get('p');assert.equal(calls[0].options.headers['Idempotency-Key'],'stable-key');assert.equal(calls[0].options.headers.Authorization,'Basic '+Buffer.from('test_sk_fixture:').toString('base64'));assert.equal(calls[1].options.method,'GET');
+ await payment.confirm({paymentKey:'p',orderId:'o',amount:100},'stable-key');await payment.get('p');assert.equal(calls[0].options.headers['Idempotency-Key'],'stable-key');assert.equal(calls[0].options.headers.Authorization,'Basic '+Buffer.from('test_gsk_fixture:').toString('base64'));assert.equal(calls[1].options.method,'GET');
  assert.throws(()=>toss({...env,SHOP_PAYMENT_MODE:'live'}));
+ assert.throws(()=>toss({...env,SHOP_TOSS_SECRET_KEY:'test_sk_fixture'}));
+ assert.throws(()=>toss({...env,SHOP_TOSS_CLIENT_KEY:'test_ck_fixture'}));
+ assert.throws(()=>toss({...env,SHOP_TOSS_SECRET_KEY:'live_gsk_fixture'}));
 });

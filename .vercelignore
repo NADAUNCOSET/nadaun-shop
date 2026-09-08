@@ -24,3 +24,5 @@ data/catalog/partner-image-rules.json
 
 # Preserve the original on NAS; serve the existing 42KB thumbnail.
 assets/shop/departments/purchase.jpg
+
+TOSS-SETUP.md

@@ -302,6 +302,7 @@ def build(allow_pending=False):
       ('item.html','상품 상세 | 나다운 샵','나다운 샵 촬영장비의 상품 정보와 이미지를 확인하고 구매 상담을 받아보세요.','item'),
       ('cart.html','장바구니 | 나다운 샵','선택한 촬영장비와 옵션, 수량을 확인하세요.','cart'),
       ('checkout.html','주문서 | 나다운 샵','선택한 촬영장비의 주문 내용을 확인하세요.','checkout'),
+      ('payment-test.html','토스페이먼츠 결제창 테스트 | 나다운 샵','실제 청구와 주문 접수가 없는 토스페이먼츠 주문서형 결제 테스트 화면입니다.','payment-test'),
       ('orders.html','주문 조회 | 나다운 샵','접수한 주문과 결제·배송 상태를 확인하세요.','orders'),
       ('admin.html','주문 관리 | 나다운 샵','나다운 샵 관리자 전용 주문 처리 화면입니다.','admin'),
       ('terms.html','이용약관 | 나다운 샵','나다운 샵의 상품 정보, 구매와 서비스 이용에 관한 약관입니다.','policy'),
@@ -313,12 +314,12 @@ def build(allow_pending=False):
       ('shipping.html','배송·교환·반품 안내 | 나다운 샵','상품별 배송 조건, 교환과 반품 접수, 환급 및 고객센터를 안내합니다.','policy'),
     ]:
         page=template.replace('{{TITLE}}',title).replace('{{DESCRIPTION}}',description).replace('{{CANONICAL}}','https://shop.nadaun.co/'+('' if filename=='index.html' else filename)).replace('{{MODE}}',mode).replace('{{BRAND}}','').replace('{{REVISION}}',revision)
-        body=(ROOT/'_scraper/shop_templates/policies'/filename).read_text() if mode=='policy' else (ROOT/'_scraper/shop_templates'/filename).read_text() if mode in ('guide','about','studio') else page_content(mode,brand_list,public_products)
+        body=(ROOT/'_scraper/shop_templates/policies'/filename).read_text() if mode=='policy' else (ROOT/'_scraper/shop_templates'/filename).read_text() if mode in ('guide','about','studio','payment-test') else page_content(mode,brand_list,public_products)
         page=page.replace('{{CONTENT}}',body)
         if mode=='studio':page=page.replace('https://shop.nadaun.co/assets/shop/nadaun-logo.png','https://shop.nadaun.co/assets/shop/studio/space-09.jpg')
-        if mode in ('orders','admin','checkout'):
+        if mode in ('orders','admin','checkout','payment-test'):
             page=page.replace('</head>',f'<link rel="stylesheet" href="/assets/shop/commerce.css?v={revision}"><script type="module" src="/assets/shop/commerce.js?v={revision}"></script></head>')
-        if mode in ('cart','checkout','item','orders','admin'):
+        if mode in ('cart','checkout','item','orders','admin','payment-test'):
             page=page.replace('index,follow,max-image-preview:large','noindex,follow')
         (ROOT/filename).write_text(page)
     brand_dir=ROOT/'brands';brand_dir.mkdir(exist_ok=True)

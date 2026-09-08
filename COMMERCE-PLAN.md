@@ -51,7 +51,7 @@
 
 ## 2026-09-08 토스 결제 연결 코드와 실제 개통 상태
 
-대표는 “아직 발급 전이야. 우선 결제창에 토스페이먼츠 연결해놔. 내일 전화할테니까”라고 확정했다. 계약·PG 키 발급은 완료로 취급하지 않는다. 테스트 키를 임의의 공용 샘플 키로 대신하지 않는다.
+대표는 “아직 발급 전이야. 우선 결제창에 토스페이먼츠 연결해놔. 내일 전화할테니까”라고 확정했다. 계약·PG 키 발급은 완료로 취급하지 않는다. 운영 주문 API의 키를 임의의 공용 샘플 키로 대신하지 않는다. 아래 사전연동 테스트 절의 공개 문서용 위젯 클라이언트 키는 실제 주문·승인 API와 분리된 미리보기에만 사용한다.
 
 ### 구현 파일과 동작
 
@@ -68,7 +68,7 @@
 
 `_scraper/commerce_setup.cjs`의 `init`을 실행해 저장소 밖 `_Site/_private/nadaun-shop/commerce/`에 `configuration.json`, `owner-login.private`를 생성했다. 폴더 700/파일 600으로 요청했고 기존 파일을 덮어쓰지 않는다. 설정값·관리자 비밀번호는 대화나 로그에 출력하지 않는다. 최종 NAS 접근 제어는 NAS 공유 ACL도 함께 확인한다.
 
-1. 토스페이먼츠 **API 개별 연동 키**의 테스트 `test_ck_`/`test_sk_`, 계약 후 라이브 `live_ck_`/`live_sk_` 쌍을 비공개 설정에 등록한다. `SHOP_PAYMENT_MODE=test|live`로 명시한다.
+1. 토스페이먼츠 **주문서형·결제창형 연동 키**의 테스트 `test_gck_`/`test_gsk_`, 계약 후 라이브 `live_gck_`/`live_gsk_` 쌍을 비공개 설정에 등록한다. `SHOP_PAYMENT_MODE=test|live`로 명시한다.
 2. 실제 비공개 Cloudflare D1 DB를 생성하고 D1 쓰기 범위 API 토큰/계정 ID/DB ID를 등록한다. `node _scraper/commerce_setup.cjs schema` → `check`로 테이블을 다시 조회한다. 현재 어댑터는 공식 REST 배치 규격에 맞춘 구현이며 **실제 D1의 NULL/숫자 바인딩, 배치 원자성 및 장애 복구는 연결 후 별도 종단 검증이 필요**하다. 로컬 SQLite 테스트만으로 D1 검증 완료라 하지 않는다.
 3. `SHOP_ORDER_DATA_KEY`, `SHOP_SESSION_KEY`, `SHOP_ADMIN_PASSWORD_HASH`는 위 private 설정에 생성되어 있다. `SHOP_CF_ACCOUNT_ID`, `SHOP_D1_DATABASE_ID`, `SHOP_D1_API_TOKEN`, `SHOP_TOSS_CLIENT_KEY`, `SHOP_TOSS_SECRET_KEY`와 함께 Vercel 서버 환경변수로 등록한다. 암호화 키를 바꾸면 기존 배송지 복호화가 불가능하므로 백업/복구 절차를 먼저 확정한다.
 4. 실제 수탁자·배송사·국외 이전 및 보존/파기 절차를 개인정보처리방침에 반영하고 운영 주문 접수를 열기 전에 확인한다. 현재 라이브 방침은 직접 수집 비활성 상태에 맞춰 유지했다.
@@ -86,3 +86,16 @@
 `_scraper/tests/commerce-ui.test.cjs`: 서버 확정 금액으로만 결제창 호출, 금액 동의 전 차단, 서비스 비활성 시 주소 입력/SDK 로드 차단, 상품/고객 문자열 HTML 이스케이프와 테스트 출고 버튼 숨김을 검증한다. Chrome 연결이 없어 실제 브라우저/모바일 시각 검수는 아직 하지 못했다.
 
 배포 증거: `_scraper/.sync-state/commerce-release.json`, `.sync-state/commerce-live.json`. 운영 환경의 `/api/orders?action=config`가 `ordersEnabled:false`이면 결제 개통이 완료된 것이 아니다.
+
+
+## 2026-09-08 계약 상담 전 주문서형 테스트 연결
+
+대표는 토스에 전화하여 신청을 시작할 수 있도록 먼저 결제 UI를 연결하라고 명확히 했다. 이어 SDK v2 결제창형/주문서형 문서와 공개 `test_gck_docs_` 클라이언트 키를 제공했다. **실결제 미발급을 이유로 사전 테스트 UI까지 막지 않는다.**
+
+- 현재 선택은 **주문서형**: `widgets({customerKey: ANONYMOUS})` → `setAmount()` → `renderPaymentMethods(DEFAULT)` + `renderAgreement(AGREEMENT)` → `requestPayment()`다. 샘플의 고정 고객 정보와 쿠폰은 적용하지 않는다.
+- `/checkout.html`에 금액이 확인된 구매 상품이 있으면 상품·옵션·수량·배송비 합계로 테스트 위젯을 표시한다. 불명확한 금액은 위젯 호출을 막는다. 실주문 API가 준비되면 이 미리보기 대신 기존 배송 정보 접수가 표시되며, 재고·납기 확정 후 `/orders.html`에서 서버 확정 금액의 운영 위젯을 사용한다.
+- `/payment-test.html`은 장바구니 없이 1,000원으로 결제수단/약관/인증 화면을 확인하는 페이지다. noindex·사이트맵 제외. 테스트임을 확인하는 체크박스와 실제 청구·주문·배송이 없다는 안내를 표시한다.
+- **미리보기는 승인 API를 호출하지 않는다.** 인증 반환 URL은 이 테스트 페이지로만 돌아오며, 쿼리 정보를 주소창에서 즉시 제거하고 실제 주문/결제완료로 처리하지 않는다. 운영 승인·저장·환불 종단 검증이 끝났다는 증거로 사용하지 않는다.
+- 공개 문서용 클라이언트 키는 미리보기 코드에만 들어간다. 서버 PG 어댑터는 동일 모드의 `gck/gsk` 쌍만 허용하며 예전 `ck/sk` 키로 이 위젯을 초기화하지 않는다. 기존 승인 금액 대조·멱등성·권한 검증은 유지한다.
+- 키 발급·상점 신청·카드사 심사·실거래 활성화는 아직 완료가 아니다. Chrome 연결이 없어 실제 토스 UI·모바일 리다이렉트 육안 검증은 미확인이다. 자동 테스트/배포 검증과 구분한다.
+- 공식 근거: https://docs.tosspayments.com/sdk/v2/js/payment-window , https://docs.tosspayments.com/guides/v2/payment-widget/integration . 상담용 요약은 `TOSS-SETUP.md`다.

@@ -15,7 +15,8 @@ const notice='<p class="commerce-note">이 브라우저에서 접수한 주문�
 const blocked='<div class="commerce-empty"><h2>온라인 주문 오픈 준비 중입니다.</h2><p>상품 구매와 견적은 상담으로 안내해드립니다.</p><a class="button-primary" href="https://pf.kakao.com/_pyNxnxb/chat" target="_blank" rel="noopener">카카오톡 구매 상담 ↗</a></div>';
 async function mountCheckout(){
  const services=main.querySelector('.checkout-services');if(!services||main.querySelector('#delivery-form'))return;
- let ready;try{ready=await config();}catch{return;}if(!ready.ordersEnabled||!services.isConnected||main.querySelector('#delivery-form'))return;
+ let ready;try{ready=await config();}catch{return;}if(!services.isConnected||main.querySelector('#delivery-form'))return;
+ if(!ready.ordersEnabled)return mountCheckoutPreview(services);
  const form=document.createElement('form');form.id='delivery-form';form.className='commerce-form';
  form.innerHTML='<div class="section-index">DELIVERY</div><h2>받으실 곳</h2><p>접수 후 재고·납기를 확인하면 주문 조회에서 확정 금액으로 결제할 수 있습니다.</p><div class="commerce-fields">'+[
   ['name','받는 분','text','name',60],['phone','연락처','tel','tel',20],['postcode','우편번호','text','postal-code',5],['address','주소','text','address-line1',160],['address_detail','상세 주소','text','address-line2',100]
@@ -52,11 +53,72 @@ function adminActions(order){
  return approve+ship+reconcile;
 }
 let sdk;
-function loadToss(){return sdk||(sdk=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='https://js.tosspayments.com/v2/standard';script.onload=()=>resolve(window.TossPayments);script.onerror=()=>{sdk=null;reject(Error('결제창을 불러오지 못했습니다. 다시 시도해주세요.'));};document.head.append(script);}));}
+function loadToss(){return sdk||(sdk=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='https://js.tosspayments.com/v2/standard';script.onload=()=>resolve(window.TossPayments);script.onerror=()=>{sdk=null;script.remove();reject(Error('결제창을 불러오지 못했습니다. 다시 시도해주세요.'));};document.head.append(script);}));}
+// Public documentation client key, supplied by the owner. Never a secret key or
+// a fallback for /api/orders. Preview requests never call the approval API.
+// https://github.com/tosspayments/tosspayments-sample/blob/main/express-javascript/public/widget/checkout.html
+const previewClientKey='test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm';
+const previewNotice='실제 금액이 청구되지 않으며 주문 접수·배송도 진행되지 않습니다.';
+function widgetMarkup(id){return `<div id="${id}-methods"></div><div id="${id}-agreement"></div>`;}
+async function mountWidget(value,holder,button,feedback,beforeRequest=()=>true){
+ if(!/^(test|live)_gck_/.test(value.clientKey)||!Number.isSafeInteger(value.amount)||value.amount<100||value.amount>100000000)throw Error('결제수단 또는 금액을 확인해주세요.');
+ const TossPayments=await loadToss();
+ const widgets=TossPayments(value.clientKey).widgets({customerKey:TossPayments.ANONYMOUS});
+ await widgets.setAmount({currency:'KRW',value:value.amount});
+ const results=await Promise.allSettled([
+  widgets.renderPaymentMethods({selector:'#'+holder.id+'-methods',variantKey:'DEFAULT'}),
+  widgets.renderAgreement({selector:'#'+holder.id+'-agreement',variantKey:'AGREEMENT'})
+ ]);
+ if(results.some(r=>r.status==='rejected')){for(const r of results)if(r.status==='fulfilled')r.value?.destroy?.();throw Error('결제수단을 불러오지 못했습니다. 새로고침 후 다시 시도해주세요.');}
+ if(holder.isConnected===false){for(const r of results)r.value?.destroy?.();return;}
+ let sending=false;button.disabled=false;
+ button.onclick=async()=>{
+  if(sending||!beforeRequest())return;
+  sending=true;button.disabled=true;message(feedback,'토스페이먼츠 결제창으로 연결하고 있습니다.');
+  try{await widgets.requestPayment({orderId:value.orderId,orderName:value.orderName,successUrl:value.successUrl,failUrl:value.failUrl});}
+  catch(error){message(feedback,['PAY_PROCESS_CANCELED','USER_CANCEL'].includes(error.code)?'결제를 중단했습니다. 결제수단을 확인하고 다시 시도할 수 있습니다.':'결제를 진행하지 못했습니다. 결제수단과 약관 동의를 확인하고 다시 시도해주세요.');sending=false;button.disabled=false;}
+ };
+ message(feedback,'');return widgets;
+}
+async function startPreview(holder,amount=1000){
+ const button=holder.querySelector('[data-preview-pay]'),feedback=holder.querySelector('.commerce-feedback');
+ button.disabled=true;
+ if(!Number.isSafeInteger(amount)||amount<100||amount>100000000){message(feedback,'상품 금액과 옵션을 먼저 확인해주세요. 별도 테스트 화면에서도 결제수단을 확인할 수 있습니다.');return;}
+ holder.querySelector('[data-preview-amount]').textContent=money(amount);
+ message(feedback,'토스페이먼츠 결제수단을 불러오고 있습니다.');
+ const value={clientKey:previewClientKey,amount,orderId:'NDPREVIEW_'+crypto.randomUUID().replaceAll('-',''),orderName:'나다운 샵 결제창 테스트 (주문 아님)',successUrl:location.origin+'/payment-test.html?result=success',failUrl:location.origin+'/payment-test.html?result=fail'};
+ try{await mountWidget(value,holder,button,feedback,()=>{if(!holder.querySelector('[data-preview-consent]').checked){message(feedback,'실제 주문이 아닌 테스트임을 확인해주세요.');return false;}return true;});}
+ catch(error){message(feedback,error.message);}
+}
+function previewMarkup(id){return `<header><div><span class="section-index">PAYMENT</span><h2>토스페이먼츠</h2></div><span class="payment-test-badge">테스트</span></header><p class="payment-preview-note">${previewNotice}</p><div class="payment-preview-total"><span>테스트 금액</span><strong data-preview-amount>확인 중</strong></div>${widgetMarkup(id)}<label class="commerce-check"><input type="checkbox" data-preview-consent><span>실제 구매가 아닌 결제창 테스트임을 확인했습니다.</span></label><p class="commerce-feedback" role="status" hidden></p><button type="button" class="button-primary" data-preview-pay disabled>토스 테스트 결제하기 →</button><p class="commerce-note">상점 개통 전 결제수단과 인증 화면을 확인하는 테스트입니다. <a href="/payment-test.html">테스트 화면 바로가기 ↗</a></p>`;}
+async function mountCheckoutPreview(services){
+ if(main.querySelector('#checkout-payment-preview'))return;
+ const summary=main.querySelector('.order-summary');if(!summary)return;
+ const holder=document.createElement('section');holder.id='checkout-payment-preview';holder.className='commerce-form payment-preview';holder.innerHTML=previewMarkup(holder.id);services.before(holder);
+ const state=summary.querySelector('.summary-state');if(state)state.textContent='토스페이먼츠 · 테스트 결제';
+ const link=summary.querySelector('.button-primary');if(link){link.href='#checkout-payment-preview';link.firstChild.textContent='결제수단 확인하기 ';}
+ const step=main.querySelector('.selection-steps li:last-child');if(step)step.innerHTML='<span>03</span>결제';
+ await startPreview(holder,Number(summary.dataset.previewAmount));
+}
+async function paymentTest(){
+ const params=new URLSearchParams(location.search),result=params.get('result');
+ if(location.search)history.replaceState(null,'','/payment-test.html');
+ const status=main.querySelector('#preview-result');
+ if(result==='success')message(status,'테스트 인증 화면에서 돌아왔습니다. 결제 승인은 요청하지 않았으며 실제 주문도 생성되지 않았습니다.');
+ else if(result==='fail')message(status,'테스트가 중단되었습니다. 실제 주문은 생성되지 않았습니다. 다시 테스트할 수 있습니다.');
+ const holder=main.querySelector('#payment-demo');holder.innerHTML=previewMarkup(holder.id);await startPreview(holder);
+}
 async function pay(order,card,button){
+ if(button.disabled)return;
  const feedback=card.querySelector('.commerce-feedback');if(!card.querySelector('[data-quote-consent]').checked){message(feedback,'확정 금액을 확인하고 동의해주세요.');return;}
  button.disabled=true;
- try{const value=await api('start',{id:order.id,quote_version:order.quote_version}),TossPayments=await loadToss();await TossPayments(value.clientKey).payment({customerKey:TossPayments.ANONYMOUS}).requestPayment({method:'CARD',amount:{currency:'KRW',value:value.amount},orderId:value.orderId,orderName:value.orderName,successUrl:location.origin+'/orders.html?result=success',failUrl:location.origin+'/orders.html?result=fail'});}catch(error){message(feedback,error.message||'결제가 중단되었습니다. 주문 상태를 확인해주세요.');button.disabled=false;}
+ let holder;
+ try{
+  const value=await api('start',{id:order.id,quote_version:order.quote_version});
+  holder=document.createElement('div');holder.id='order-payment-'+crypto.randomUUID();holder.className='order-payment-widget';holder.innerHTML=widgetMarkup(holder.id);card.querySelector('.commerce-actions').before(holder);
+  await mountWidget({...value,successUrl:location.origin+'/orders.html?result=success',failUrl:location.origin+'/orders.html?result=fail'},holder,button,feedback,()=>{if(!card.querySelector('[data-quote-consent]').checked){message(feedback,'확정 금액을 확인하고 동의해주세요.');return false;}return true;});
+  button.textContent=money(value.amount)+' 결제하기 →';
+ }catch(error){holder?.remove();message(feedback,error.message||'결제가 중단되었습니다. 주문 상태를 확인해주세요.');button.disabled=false;}
 }
 async function orders(){
  const container=main.querySelector('#commerce-content'),feedback=main.querySelector('#commerce-status');
@@ -93,4 +155,4 @@ async function admin(){
  }
 }
 if(mode==='checkout'){document.addEventListener('shop:content-updated',mountCheckout);void mountCheckout();}
-else if(mode==='orders')void orders();else if(mode==='admin')void admin();
+else if(mode==='orders')void orders();else if(mode==='admin')void admin();else if(mode==='payment-test')void paymentTest();
