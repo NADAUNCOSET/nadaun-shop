@@ -43,6 +43,7 @@ export function catalogSelection(data,{brand='',kind='purchase',cat='',type='',s
   }
   const base=[...families.values()];
   const preferred=kind==='purchase'?data.brands?.find(b=>b.id===brand)?.navigation_category_ids:null;
+  if(kind==='purchase'&&data.brands?.find(b=>b.id===brand)?.exclusive_purchase_categories&&Array.isArray(preferred)&&cat&&!preferred.includes(cat))cat='';
   // Old bookmarked category URLs keep their original source tree and membership.
   const legacy=Array.isArray(preferred)&&!!cat&&!preferred.includes(cat);
   const navigation=Array.isArray(preferred)&&!legacy?new Set(preferred):null;
@@ -51,7 +52,7 @@ export function catalogSelection(data,{brand='',kind='purchase',cat='',type='',s
   const categoryIds=p=>navigation?(p.navigation_category_ids??p.category_ids):p.category_ids;
   const matchesCategory=p=>!cat||categoryIds(p).includes(cat);
   const count=(rows,field)=>{const out=new Map();for(const p of rows)for(const id of new Set((field==='category_ids'?categoryIds(p):p[field])||[]))out.set(id,(out.get(id)||0)+1);return out};
-  return {base,brandCategories,typeCategories,
+  return {base,brandCategories,typeCategories,selectedCategory:cat,
     brandCounts:count(base.filter(p=>!type||p.type_ids.includes(type)),'category_ids'),
     typeCounts:count(base.filter(matchesCategory),'type_ids'),
     rows:base.filter(p=>matchesCategory(p)&&(!type||p.type_ids.includes(type)))};

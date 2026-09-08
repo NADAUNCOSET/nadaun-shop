@@ -31,7 +31,9 @@ test('promotion membership survives cross-store deduplication without inventing 
  const data=JSON.parse(fs.readFileSync('data/catalog/catalog.json','utf8'));
  const source=JSON.parse(fs.readFileSync('data/catalog/sources/imweb-promotions.json','utf8'));
  const map=new Map(data.products.map(p=>[p.id,p]));
+ const policy=JSON.parse(fs.readFileSync('data/catalog/brand-source-policy.json','utf8'));
  for(const id of Object.keys(source.products)){
+  if(policy.brands.dji?.exclusive&&source.products[id].kind==='purchase'&&source.products[id].brand.toUpperCase()==='DJI'){assert.equal(map.has(id),false);continue}
   const p=map.get(data.redirects[id]||id);assert.ok(p,id);assert.ok(isPromotion(p),id);
   assert.ok(matchesBenefit(p,'all'));assert.ok(matchesBenefit(p,'promotion'));
  }
@@ -40,6 +42,19 @@ test('promotion membership survives cross-store deduplication without inventing 
  assert.equal(isPromotion({...p,kind:'rental'}),false);
  const html=benefitNavigation('promotion',key=>'/catalog.html?sale=1&benefit='+key);
  assert.ok(html.includes('전체 혜택'));assert.ok(html.includes('할인상품'));assert.ok(html.includes('프로모션'));
+});
+
+test('exclusive replacement clears obsolete purchase categories without changing rental navigation',()=>{
+ const categories=[{id:'official:root',parent_id:null,brand_id:'dji'},{id:'rent',brand_id:'dji',scope:'rental-brand'}];
+ const data={categories,brands:[{id:'dji',exclusive_purchase_categories:true,navigation_category_ids:['official:root']}],products:[
+  {id:'new',kind:'purchase',brand_id:'dji',category_ids:['official:root'],navigation_category_ids:['official:root'],type_ids:[]},
+  {id:'rental',kind:'rental',brand_id:'dji',category_ids:['rent'],type_ids:[]}
+ ]};
+ const result=catalogSelection(data,{brand:'dji',cat:'plthink:old'});
+ assert.equal(result.selectedCategory,'');assert.deepEqual(result.rows.map(p=>p.id),['new']);
+ assert.deepEqual(result.brandCategories.map(c=>c.id),['official:root']);
+ const rental=catalogSelection(data,{brand:'dji',kind:'rental',cat:'rent'});
+ assert.equal(rental.selectedCategory,'rent');assert.deepEqual(rental.rows.map(p=>p.id),['rental']);
 });
 
 test('brand and product-type filters combine while each facet counts the other selection',()=>{

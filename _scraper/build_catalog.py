@@ -68,6 +68,7 @@ def product_name(name):
 def verified_sources():
     sources=['kpp','smartstore','imweb-dji','imweb-promotions','l-mount']
     if (OUT/'plthink.json').exists():sources.append('plthink')
+    if (OUT/'dji-official.json').exists():sources.append('dji-official')
     snapshots={key:json.loads((OUT/(key+'.json')).read_text()) for key in sources}
     avx_path=next((OUT/name for name in ('avx-approved.json','avx.json','avx-aputure.json') if (OUT/name).exists()),None)
     if avx_path:
@@ -83,6 +84,9 @@ def verified_sources():
                 raise RuntimeError('AVX approved source partition is inconsistent')
         snapshots['avx']=snapshot
     if not all(s.get('complete') for s in snapshots.values()):raise RuntimeError('Incomplete source snapshot')
+    if 'dji-official' in snapshots:
+        from sync_dji_official import validate_snapshot
+        validate_snapshot(snapshots['dji-official'])
     if 'plthink' in snapshots:
         snapshot=snapshots['plthink']
         if snapshot['product_count']!=len(snapshot['products']):raise RuntimeError('PLTHINK count is inconsistent')
@@ -97,8 +101,12 @@ def verified_sources():
 
 def build(allow_pending=False):
     snapshots=verified_sources()
-    from brand_source_policy import selections,write_audit,source_provenance,merge_category_provenance
+    from brand_source_policy import selections,write_audit,source_provenance,merge_category_provenance,purchase_source_allowed
     source_choices=selections()
+    for bid,choice in source_choices.items():
+        if choice.get('exclusive') and choice['source'] not in snapshots:
+            raise RuntimeError('Exclusive replacement is not verified yet: '+bid)
+    official_dji=source_choices.get('dji',{}).get('source')=='dji-official' and 'dji-official' in snapshots
     partner_image_rules=json.loads((PUBLIC/'partner-image-rules.json').read_text())
     products={}; categories={}; brands={}; details={}; coverage=Counter()
     def add_brand(raw):
@@ -117,8 +125,9 @@ def build(allow_pending=False):
                 prefix='kpp:'+('b:'+bid if bid else 'p')+':'
             elif source=='imweb-promotions':bid=None;prefix='imweb:promotion:'
             elif source=='l-mount':bid='ldl-mount';prefix='l-mount:b:ldl-mount:'
-            elif source in ('plthink','avx'):bid=brand_id(c['brand']);prefix=source+':b:'
+            elif source in ('plthink','avx','dji-official'):bid=brand_id(c['brand']);prefix=source+':b:'
             else:bid='dji';prefix='imweb:b:dji:'
+            if official_dji and bid=='dji' and source!='dji-official':continue
             c.update(id=prefix+c['id'],parent_id=prefix+c['parent_id'] if c['parent_id'] else None,brand_id=bid)
             categories[c['id']]={k:c[k] for k in ('id','name','parent_id','brand_id')}
         cached={}
@@ -126,11 +135,13 @@ def build(allow_pending=False):
             for f in (CACHE/source).glob('*.json'):
                 if re.fullmatch('[a-f0-9]{2}',f.stem):cached.update(json.loads(f.read_text()))
         for pid,p0 in s['products'].items():
+            if source=='dji-official' and brand_id(p0['brand'])!='dji':continue
             if source=='imweb-promotions' and pid in products:
                 products[pid]['promotion_ids']=['imweb:promotion:'+cid for cid in p0['brand_category_ids']]
                 coverage[source]+=1
                 continue
             p=deepcopy(p0);p['brand_id']=add_brand(p['brand']);p['name']=product_name(p['name'])
+            if not purchase_source_allowed(p,source_choices):continue
             bid=p['brand_id'];membership=[];types=[]
             if p.get('kind')=='purchase':p['_preferred_source']=source_choices.get(bid,{}).get('source')
             if 'avx' in snapshots and source!='avx' and bid=='aputure' and p.get('kind')=='purchase':continue
@@ -152,7 +163,7 @@ def build(allow_pending=False):
             elif source=='imweb-promotions': pass
             elif source=='imweb-dji': membership=['imweb:b:dji:'+cid for cid in p.get('brand_category_ids',[])]
             elif source=='l-mount': membership=['l-mount:b:ldl-mount:'+cid for cid in p.get('brand_category_ids',[])]
-            elif source in ('plthink','avx'): membership=[source+':b:'+cid for cid in p.get('brand_category_ids',[])]
+            elif source in ('plthink','avx','dji-official'): membership=[source+':b:'+cid for cid in p.get('brand_category_ids',[])]
             else:
                 path=p.get('source_category_path') or [];ids=p.get('source_category_ids') or []
                 # Naver standard classifications are retained separately from
@@ -175,7 +186,7 @@ def build(allow_pending=False):
             if source=='kpp' and d.get('source_fingerprint')!=source_fingerprint(p0):
                 d={}
             if source.startswith('imweb-'):d={'detail_status':'verified','description_text':p.get('description_text',''),'images':p['images']}
-            if source in ('l-mount','plthink','avx'):d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation') if k in p}
+            if source in ('l-mount','plthink','avx','dji-official'):d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation') if k in p}
             if d.get('detail_status')=='verified':coverage[source]+=1
             elif not allow_pending:raise RuntimeError('Unverified product detail: '+pid)
             if d.get('unavailable'):
@@ -274,10 +285,10 @@ def build(allow_pending=False):
     for bid,choice in source_choices.items():
         # Owner-selected source is also the first navigation tree once its
         # actual memberships exist. Other verified paths remain a fallback.
-        if bid not in ('dji','aputure') or choice['source']!='avx':continue
+        if bid not in ('dji','aputure') or choice['source'] not in ('avx','dji-official'):continue
         selected=choice['source']
         if any(p['brand_id']==bid and p['kind']=='purchase' and any(cid.startswith(selected+':') and categories[cid].get('brand_id')==bid for cid in p['category_ids']) for p in public_products):
-            navigation_choices.setdefault(bid,selected)
+            navigation_choices[bid]=selected
     navigation_audit=choose_navigation(public_products,categories,brands,navigation_choices)
     save_json(ROOT/'_scraper/.sync-state/brand-category-selection.json',navigation_audit)
     for p in public_products:
@@ -291,6 +302,8 @@ def build(allow_pending=False):
         b['purchase_count']=kind_counts[(b['id'],'purchase')]
         b['rental_count']=kind_counts[(b['id'],'rental')]
         b['category_ids']=[c['id'] for c in categories.values() if c['brand_id']==b['id']]
+        if source_choices.get(b['id'],{}).get('exclusive'):
+            b['exclusive_purchase_categories']=True
     from brand_products import representative
     brand_assets=json.loads((PUBLIC/'brand-assets.json').read_text())
     for b in brands.values():

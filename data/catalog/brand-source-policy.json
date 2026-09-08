@@ -1,9 +1,41 @@
 {
   "version": 1,
   "brands": {
-    "tilta": {"source":"smartstore","sources":["smartstore","clmedia","cinemall"],"scope":"purchase","confirmed_by":"owner","preserve_existing":true,"reason":"우리 기존 틸타 본사 상품을 메인으로 유지하고 씨엘미디어·시네몰 상품 보완"},
-    "dji": {"source":"avx","scope":"purchase","confirmed_by":"owner","reason":"DJI는 AVX 기준"},
-    "smallrig": {"source":"kpp","sources":["kpp","clmedia"],"scope":"purchase","confirmed_by":"owner","reason":"KPP와 씨엘미디어 통합, 동일 모델·색상·구성은 중복 표시하지 않음"},
+    "tilta": {
+      "source": "smartstore",
+      "sources": [
+        "smartstore",
+        "clmedia",
+        "cinemall"
+      ],
+      "scope": "purchase",
+      "confirmed_by": "owner",
+      "preserve_existing": true,
+      "reason": "우리 기존 틸타 본사 상품을 메인으로 유지하고 씨엘미디어·시네몰 상품 보완"
+    },
+    "dji": {
+      "source": "dji-official",
+      "scope": "purchase",
+      "exclusive": true,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-09-09",
+      "reason": "AVX·유쾌한생각 등 기존 DJI 구매 수록분을 공식 한국 스토어 단일 기준으로 교체; DJI 렌탈은 유지",
+      "reference_urls": [
+        "https://store.dji.com/kr/",
+        "https://www.dji.com/kr/handheld",
+        "https://www.romo.tech/kr"
+      ]
+    },
+    "smallrig": {
+      "source": "kpp",
+      "sources": [
+        "kpp",
+        "clmedia"
+      ],
+      "scope": "purchase",
+      "confirmed_by": "owner",
+      "reason": "KPP와 씨엘미디어 통합, 동일 모델·색상·구성은 중복 표시하지 않음"
+    },
     "aputure": {
       "source": "avx",
       "scope": "purchase",

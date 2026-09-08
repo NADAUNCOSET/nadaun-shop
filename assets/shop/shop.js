@@ -58,10 +58,11 @@ function renderCatalog(){
  const bid=currentBrand(),brand=brandMap.get(bid);
  if(bid&&!brand){main.innerHTML=empty('브랜드를 찾을 수 없습니다.');return}
  const kind=params.get('kind')||(brand?.purchase_count===0&&brand?.rental_count>0?'rental':'purchase');
- const cat=params.get('cat')||'',type=params.get('type')||'';
+ let cat=params.get('cat')||'';const type=params.get('type')||'';
  const discountOnly=params.get('sale')==='1'&&kind!=='rental';
  const benefit=['discount','promotion'].includes(params.get('benefit'))?params.get('benefit'):'all';
  const selection=catalogSelection(data,{brand:bid,kind,cat,type,sale:discountOnly,benefit});
+ if(cat!==selection.selectedCategory){cat=selection.selectedCategory;params.delete('cat');params.delete('page');history.replaceState(null,'',location.pathname+(params.size?'?'+params.toString():''))}
  const applicable=selection.brandCategories,categoryCounts=selection.brandCounts;
  const relevant=c=>categoryCounts.get(c.id)||cat===c.id||isAncestor(c.id,cat);
  const roots=applicable.filter(c=>!c.parent_id&&relevant(c));

@@ -7,27 +7,28 @@
     "imweb-promotions": 37,
     "l-mount": 335,
     "plthink": 6580,
-    "avx": 943
+    "dji-official": 910,
+    "avx": 493
   },
   "detail_coverage": {
     "kpp": 4014,
     "smartstore": 6878,
-    "imweb-dji": 146,
-    "imweb-promotions": 37,
+    "imweb-promotions": 16,
     "l-mount": 335,
-    "plthink": 6580,
-    "avx": 943
+    "plthink": 6189,
+    "dji-official": 905,
+    "avx": 493
   },
-  "synced_at": "2026-09-08T12:59:54+00:00",
-  "merged_count": 2438,
-  "product_count": 16466,
+  "synced_at": "2026-09-08T16:00:41+00:00",
+  "merged_count": 2376,
+  "product_count": 16446,
   "category_browsing_enabled": true,
-  "listing_count": 16358,
-  "option_family_count": 108,
+  "listing_count": 16347,
+  "option_family_count": 99,
   "deduplication": {
     "brands_checked": 251,
-    "groups": 1920,
-    "removed": 2438
+    "groups": 1861,
+    "removed": 2376
   },
-  "revision": "024c5323a10e7bfa"
+  "revision": "83e0bd02bfdeda03"
 }

@@ -39,6 +39,7 @@ CODE += ['_scraper/build_gift_catalog.py','_scraper/brand_source_policy.py','_sc
 CODE += ['_scraper/source_refresh_state.py','_scraper/test_source_refresh_state.py']
 CODE += ['_scraper/avx_publication.py','_scraper/test_avx_publication.py']
 CODE += ['_scraper/rental_content.py','_scraper/test_shop_rental_content.py','assets/shop/rental-content.js']
+CODE += ['_scraper/sync_dji_official.py','_scraper/dji_worker.py','_scraper/test_shop_dji_official.py']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
@@ -62,7 +63,7 @@ def managed_files():
     for source in ('smartstore','imweb-dji','imweb-promotions','kpp','l-mount','nadaun-gift'):
         files.append('data/catalog/sources/'+source+'.json')
     if (OUT/'plthink.json').exists():files.append('data/catalog/sources/plthink.json')
-    for source in ('avx','avx-aputure','avx-approved'):
+    for source in ('avx','avx-aputure','avx-approved','dji-official'):
         if (OUT/(source+'.json')).exists():files.append('data/catalog/sources/'+source+'.json')
     for source in ('smartstore','kpp'):
         base=ROOT/'data/catalog/source-details'/source

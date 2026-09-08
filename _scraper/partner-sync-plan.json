@@ -1,6 +1,17 @@
 {
   "schema_version": 1,
   "sources": {
+    "dji-official": {
+      "name": "DJI 공식 한국 스토어",
+      "url": "https://store.dji.com/kr/",
+      "adapter": "dji-official",
+      "scope": "Exclusive DJI purchase source including ROMO and official refurbished products; rentals unchanged",
+      "refresh_interval_seconds": 43200,
+      "resume_interval_seconds": 600,
+      "request_interval_seconds": 3,
+      "completion_gate": "Full official categories, exact SKU identities, KRW prices and stock, detailed content, scoped commit, deployed live verification",
+      "on_request_failure": "Preserve the last publication; never interpret an incomplete response as removed or sold out"
+    },
     "plthink": {
       "name": "유쾌한생각",
       "url": "https://www.plthink.com/",

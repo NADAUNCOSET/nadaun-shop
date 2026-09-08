@@ -10,6 +10,7 @@ from collections import Counter
 
 # New leaves supplement the KPP groups; their names describe product types.
 EXTRA = [
+ ('robot-vacuum',None,'로봇 청소기'),('robot-vacuum-body','robot-vacuum','로봇 청소기 본체'),('robot-vacuum-parts','robot-vacuum','로봇 청소기 소모품·액세서리'),
  ('mini-light','kpp:0710','미니 라이트'),('mat-light','kpp:0710','매트 라이트'),('car-mount','kpp:06','카마운팅'),('light-power','kpp:0720','조명 케이블·전원'),('light-bag','kpp:0720','조명 가방·케이스'),
  ('mount-adapter','kpp:0690','마운팅 어댑터'),('audio-adapter','kpp:0740','오디오 변환 어댑터'),('camera-markers','kpp:09','카메라 마커·현장 소모품'),('dry-cabinet','kpp:09','제습함·보관용품'),('drone-parts','kpp:c010','드론 부품'),
  ('tv-display',None,'TV·디스플레이'),('tv','tv-display','TV'),('projector','tv-display','프로젝터·스크린'),('light-meter','kpp:0720','노출계·조명 동조기'),('jib','kpp:06','지브·크레인'),('turntable','kpp:06','턴테이블'),('camera',None,'카메라'),('mirrorless','camera','미러리스 카메라'),('dslr','camera','DSLR 카메라'),('cinema-camera','camera','시네마 카메라'),('camcorder','camera','캠코더'),('compact-camera','camera','컴팩트·즉석 카메라'),
@@ -207,6 +208,14 @@ def build_taxonomy(products,categories,overrides=None):
             if accessory:selected=['type:'+accessory];reason='camera-accessory:'+accessory
         if p['kind']=='purchase' and bid=='aputure':
             selected=['type:'+aputure_type(name,p.get('category_ids',[]))];reason='aputure-lighting-purpose'
+        if p['kind']=='purchase' and bid=='dji' and p['id'].startswith('dji-official-'):
+            if re.search(r'Care\s*(?:Refresh|Pro)|Extended Protection|연장.*보호',name,re.I):
+                selected=['type:kpp:c050'];reason='dji-official-service'
+            elif 'dji-official:b:robot-vacuums' in p.get('category_ids',[]):
+                target='robot-vacuum-body' if re.match(r'^DJI ROMO [PAS] \(',name,re.I) else 'robot-vacuum-parts'
+                selected=['type:'+target];reason='dji-official-robot'
+            elif re.match(r'^Osmo Nano \(',name,re.I):
+                selected=['type:kpp:c020'];reason='dji-official-action-camera'
         # Subdivide known groups only. Accessory model names do not create bodies.
         ancestors=set(x for c in selected for x in path(c))
         refinements=[

@@ -31,9 +31,25 @@ def verified_receipt(source, out=OUT, state=STATE):
                 receipt.get('policy_sha256')!=publication.get('policy_sha256') or
                 receipt.get('policy_sha256')!=policy_fingerprint()):return False
         elif snapshot.get('scope')!='all' or not snapshot.get('catalogue_complete'):return False
+    expected_count=count
+    if source=='dji-official':
+        from sync_dji_official import validate_snapshot,official_dji_ids
+        from brand_source_policy import policy_fingerprint
+        try:validate_snapshot(snapshot)
+        except ValueError:return False
+        expected=official_dji_ids(snapshot);expected_count=len(expected)
+        if (receipt.get('held_other_brand_ids')!=sorted(set(snapshot['products'])-expected) or
+            receipt.get('source_verified_products')!=count or receipt.get('policy_sha256')!=policy_fingerprint()):return False
+    if source=='plthink':
+        from brand_source_policy import publishable_ids,policy_fingerprint
+        expected=publishable_ids(snapshot)
+        if (len(expected)!=count or 'excluded_ids' in receipt) and (receipt.get('policy_sha256')!=policy_fingerprint() or
+            receipt.get('excluded_ids')!=sorted(set(snapshot['products'])-expected) or
+            receipt.get('source_verified_products')!=count):return False
+        expected_count=len(expected)
     return bool(snapshot.get('complete') and isinstance(count, int) and count > 0
                 and count == len(snapshot.get('products', {}))
-                and receipt.get('verified_products') == count
+                and receipt.get('verified_products') == expected_count
                 and all(receipt.get(key) for key in ('commit', 'deployment', 'revision', 'verified_at'))
                 and receipt.get('source_sha256') == hashlib.sha256(snapshot_path.read_bytes()).hexdigest())
 
@@ -43,15 +59,16 @@ def report(plan_path=PLAN, out=OUT, state=STATE):
     result = {'checked_at': stamp(), 'sources': {}}
     for source, config in sources.items():
         folder = state / source
-        generation = read(folder / 'generation.json') if source == 'avx' else {}
+        generation = read(folder / 'generation.json') if source in ('avx','dji-official') else {}
         progress = read(folder / generation.get('directory', '') / 'progress.json')
         published = verified_receipt(source, out, state)
         dependency = config.get('after_live_verified')
         waiting = dependency if dependency and not verified_receipt(dependency, out, state) else None
-        adapter_ready = config.get('adapter') in ('plthink', 'avx')
+        adapter_ready = config.get('adapter') in ('plthink', 'avx', 'dji-official')
         if source == 'avx':
             progress = progress | {'checked_at':progress.get('at'),
                 'products_found':progress.get('expected'), 'details_verified':progress.get('verified_details')}
+        if source=='dji-official':progress=progress|{'checked_at':progress.get('at')}
         # A receipt cannot turn an unimplemented adapter into recurring sync.
         source_choices = read(folder / 'publication-waiting.json') if source == 'avx' else {}
         receipt=read(folder/'published.json')
@@ -66,10 +83,11 @@ def report(plan_path=PLAN, out=OUT, state=STATE):
             'refresh_interval_seconds': config.get('refresh_interval_seconds') if adapter_ready else None,
             'target_refresh_interval_seconds': config.get('target_refresh_interval_seconds'),
             'progress': {k: progress.get(k) for k in ('checked_at', 'brand_count', 'brands_checked', 'products_found', 'details_verified')},
-            'last_worker_error': read(folder / 'worker-error.json' if source == 'avx' else state / (source + '-worker-error.json')) or None,
+            'last_worker_error': read(folder / 'worker-error.json' if source in ('avx','dji-official') else state / (source + '-worker-error.json')) or None,
             'blocker': config.get('blocker') if not adapter_ready else None,
             'pending_brand_source_choices':len(source_choices.get('brands',[])),
             'pending_source_content_reviews':len(source_choices.get('content_review_ids',{})),
+            'held_other_brand_products':len(receipt.get('held_other_brand_ids',[])),
             'last_verified_published_products':receipt.get('verified_products'),
             'last_verified_source_products':receipt.get('source_verified_products'),
             'published_scope':receipt.get('scope'),

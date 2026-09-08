@@ -10,6 +10,7 @@ from sync_gift_inventory import Inventory, ensure_source_access
 from gift_product_details import collect_details
 from sync_plthink_catalog import collect_plthink, WORK
 from shop_sync import STATE, CODE, command, managed_files, run, request, SITE
+from brand_source_policy import publishable_ids, policy_fingerprint
 
 
 def changed_files():
@@ -25,12 +26,14 @@ def publish_ready(snapshot):
     result=run(existing=True)
     live=request('GET',SITE+'/data/catalog/catalog.json',params={'verify':result['revision']}).json()
     offers={o['id'] for p in live['products'] for o in p['offers'] if o['source']=='plthink'}
-    if offers!=set(snapshot['products']):raise RuntimeError('Live PLTHINK products do not match the verified snapshot')
+    expected=publishable_ids(snapshot)
+    if offers!=expected:raise RuntimeError('Live PLTHINK products do not match the owner-selected source scope')
     if live['meta']['source_counts'].get('plthink')!=snapshot['product_count']:
         raise RuntimeError('Live PLTHINK source count is wrong')
     save_json(WORK/'published.json',result|{'source_collected_at':snapshot['collected_at'],
               'source_sha256':hashlib.sha256((OUT/'plthink.json').read_bytes()).hexdigest(),
-              'verified_products':len(offers)})
+              'verified_products':len(offers),'source_verified_products':snapshot['product_count'],
+              'excluded_ids':sorted(set(snapshot['products'])-expected),'policy_sha256':policy_fingerprint()})
     progress=json.loads((WORK/'progress.json').read_text()) if (WORK/'progress.json').exists() else {}
     save_json(WORK/'progress.json',progress|{'published':True,'live_verified_at':result['verified_at'],
               'commit':result['commit'],'deployment':result['deployment'],'revision':result['revision']})
@@ -52,7 +55,7 @@ def work(source):
     receipt=json.loads((WORK/'published.json').read_text()) if (WORK/'published.json').exists() else {}
     if snapshot and snapshot.get('complete'):
         digest=hashlib.sha256(path.read_bytes()).hexdigest()
-        if receipt.get('source_sha256')!=digest:return publish_ready(snapshot)
+        if receipt.get('source_sha256')!=digest or receipt.get('policy_sha256')!=policy_fingerprint():return publish_ready(snapshot)
         age=time.time()-datetime.fromisoformat(snapshot['collected_at']).timestamp()
         if age<12*3600:return
     snapshot=collect_plthink()
