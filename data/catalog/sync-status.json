@@ -6,26 +6,28 @@
     "imweb-dji": 146,
     "imweb-promotions": 37,
     "l-mount": 335,
-    "plthink": 6580
+    "plthink": 6580,
+    "avx": 130
   },
   "detail_coverage": {
     "kpp": 4014,
-    "smartstore": 6964,
+    "smartstore": 6878,
     "imweb-dji": 146,
     "imweb-promotions": 37,
     "l-mount": 335,
-    "plthink": 6580
+    "plthink": 6580,
+    "avx": 130
   },
-  "synced_at": "2026-09-07T23:45:49+00:00",
-  "merged_count": 2403,
-  "product_count": 15644,
+  "synced_at": "2026-09-08T09:13:40+00:00",
+  "merged_count": 2385,
+  "product_count": 15706,
   "category_browsing_enabled": true,
-  "listing_count": 15545,
+  "listing_count": 15607,
   "option_family_count": 99,
   "deduplication": {
-    "brands_checked": 218,
-    "groups": 1888,
-    "removed": 2403
+    "brands_checked": 219,
+    "groups": 1870,
+    "removed": 2385
   },
-  "revision": "9003ba125541523e"
+  "revision": "f25b29c3735b185e"
 }

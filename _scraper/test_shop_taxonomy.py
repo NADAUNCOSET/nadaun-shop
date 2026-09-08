@@ -55,6 +55,21 @@ class ShopTaxonomy(unittest.TestCase):
         rentals,_=self.classify(['캐논 R6M2+R어댑터+EF70200 ii','NIKON 니콘 ZR 케이지 세트 미러리스 RAW촬영 캠 렌탈'],kind='rental')
         for p in rentals:self.assertIn('type:camera',p['type_ids'])
 
+    def test_aputure_optics_and_mounts_stay_with_lighting_and_rentals_keep_their_paths(self):
+        names=['Aputure Spotlight Max ETC Lens Adapter','Aputure F10 프리즈넬 렌즈',
+               'Aputure Light Box 30x120','Aputure STORM 80c','Aputure INFINIMAT 4x4',
+               'Aputure INFINIBAR PB12','Aputure NOVA II 1x1','Aputure LS600 cable']
+        rows=[dict(id=str(i),name=n,brand_id='aputure',kind='purchase',type_ids=[],category_ids=[]) for i,n in enumerate(names)]
+        build_taxonomy(rows,self.source_categories)
+        for p in rows:
+            self.assertIn('type:kpp:07',p['type_ids'])
+            self.assertNotIn('type:camera',p['type_ids']);self.assertNotIn('type:kpp:03',p['type_ids'])
+        for p,target in zip(rows,['light-grip','light-lens','softbox','continuous','mat-light','tube-light','panel-light','light-power']):
+            self.assertIn('type:'+target,p['type_ids'])
+        rentals=[p for p in self.catalog['products'] if p['brand_id']=='aputure' and p['kind']=='rental']
+        self.assertEqual(len(rentals),9)
+        self.assertTrue(all(all(o['source']=='smartstore' for o in p['offers']) for p in rentals))
+
     def test_rental_medium_format_lights_and_support_have_specific_paths(self):
         rows,_=self.classify(['PHASEONE LS 35mm F3.5','PHASEONE XF IQ2 60MP KIT','APUTURE Amaran 300C','EDELKRONE 에델크론 슬라이더+헤드플러스+V마운트 키트','EDELKRONE 에델크론 달리','KUPO KAB-41K NESTING APPLE BOX','레인보우 시네새들','DJI TWIST DUAL GRIP'],kind='rental')
         for p,key in zip(rows,['medium-lens','medium-camera','102','133','133','270','140','135']):self.assertIn('rent:'+key,p['type_ids'],p['name'])

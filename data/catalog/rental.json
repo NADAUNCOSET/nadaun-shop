@@ -1,4 +1,179 @@
 {
+  "category_gallery": {
+    "rental": [
+      {
+        "id": "rent:11",
+        "name": "시네마 카메라",
+        "kind": "rental",
+        "count": 11,
+        "image": "https://shop-phinf.pstatic.net/20251222_164/17663733326542U2zL_JPEG/100506318771679434_680260237.jpg",
+        "product_id": "smartstore-12862311891",
+        "href": "/catalog.html?kind=rental&type=rent%3A11"
+      },
+      {
+        "id": "rent:24",
+        "name": "미러리스",
+        "kind": "rental",
+        "count": 10,
+        "image": "https://shop-phinf.pstatic.net/20250405_121/1743850615506X5w8p_PNG/77983485626122012_205214376.png",
+        "product_id": "smartstore-12605934869",
+        "href": "/catalog.html?kind=rental&type=rent%3A24"
+      },
+      {
+        "id": "rent:3",
+        "name": "렌즈",
+        "kind": "rental",
+        "count": 18,
+        "image": "https://shop-phinf.pstatic.net/20240729_144/1722245936861CFlAI_JPEG/55718805667238227_602117845.jpg",
+        "product_id": "smartstore-12728374567",
+        "href": "/catalog.html?kind=rental&type=rent%3A3"
+      },
+      {
+        "id": "rent:12",
+        "name": "시네마 렌즈",
+        "kind": "rental",
+        "count": 1,
+        "image": "https://shop-phinf.pstatic.net/20230701_185/16882218550641cxmg_JPEG/2110712863736703_1819806677.jpg",
+        "product_id": "smartstore-8802285665",
+        "href": "/catalog.html?kind=rental&type=rent%3A12"
+      },
+      {
+        "id": "rent:102",
+        "name": "LED 조명",
+        "kind": "rental",
+        "count": 34,
+        "image": "https://shop-phinf.pstatic.net/20260807_151/17860287216265J1WW_JPEG/29828078664167635_1609176275.jpg",
+        "product_id": "smartstore-13704209907",
+        "href": "/catalog.html?kind=rental&type=rent%3A102"
+      },
+      {
+        "id": "rent:47",
+        "name": "스트로보·플래시",
+        "kind": "rental",
+        "count": 2,
+        "image": "https://shop-phinf.pstatic.net/20260520_151/1779277326391n8DUu_JPEG/31977900547017188_383972822.jpg",
+        "product_id": "smartstore-13555132856",
+        "href": "/catalog.html?kind=rental&type=rent%3A47"
+      },
+      {
+        "id": "rent:5",
+        "name": "마이크·오디오",
+        "kind": "rental",
+        "count": 12,
+        "image": "https://shop-phinf.pstatic.net/20260213_22/1770977661610XsI7r_JPEG/105110508757166259_946674343.jpg",
+        "product_id": "smartstore-13635367147",
+        "href": "/catalog.html?kind=rental&type=rent%3A5"
+      },
+      {
+        "id": "rent:127",
+        "name": "삼각대·모노포드·헤드",
+        "kind": "rental",
+        "count": 10,
+        "image": "https://shop-phinf.pstatic.net/20260608_19/1780889401930h1b2P_JPEG/60283349051053795_1753204387.jpg",
+        "product_id": "smartstore-13626200656",
+        "href": "/catalog.html?kind=rental&type=rent%3A127"
+      },
+      {
+        "id": "rent:132",
+        "name": "짐벌·스테빌라이저",
+        "kind": "rental",
+        "count": 3,
+        "image": "https://shop-phinf.pstatic.net/20250323_109/1742739481414q8KDj_PNG/15036367113013792_2138378605.png",
+        "product_id": "smartstore-11618968711",
+        "href": "/catalog.html?kind=rental&type=rent%3A132"
+      },
+      {
+        "id": "rent:133",
+        "name": "달리·슬라이더",
+        "kind": "rental",
+        "count": 3,
+        "image": "https://shop-phinf.pstatic.net/20230702_198/1688287180432C7OEH_JPEG/2161667975368834_360352715.jpg",
+        "product_id": "smartstore-8806010539",
+        "href": "/catalog.html?kind=rental&type=rent%3A133"
+      },
+      {
+        "id": "rent:27",
+        "name": "액션캠·포켓 카메라",
+        "kind": "rental",
+        "count": 2,
+        "image": "https://shop-phinf.pstatic.net/20260507_143/177813399095654SNv_JPEG/15009422871986588_1303999648.jpg",
+        "product_id": "smartstore-13498631102",
+        "href": "/catalog.html?kind=rental&type=rent%3A27"
+      },
+      {
+        "id": "rent:46",
+        "name": "배터리·전원",
+        "kind": "rental",
+        "count": 12,
+        "image": "https://shop-phinf.pstatic.net/20241011_125/1728627675406Jzb5k_JPEG/62760610553614720_829349775.jpg",
+        "product_id": "smartstore-12695944289",
+        "href": "/catalog.html?kind=rental&type=rent%3A46"
+      },
+      {
+        "id": "rent:145",
+        "name": "모니터·레코더·영상 송수신",
+        "kind": "rental",
+        "count": 29,
+        "image": "https://shop-phinf.pstatic.net/20260806_36/1786024265077eQQLf_PNG/16371003758326315_1282086820.png",
+        "product_id": "smartstore-13704050446",
+        "href": "/catalog.html?kind=rental&type=rent%3A145"
+      },
+      {
+        "id": "rent:146",
+        "name": "메모리·스토리지",
+        "kind": "rental",
+        "count": 6,
+        "image": "https://shop-phinf.pstatic.net/20260209_225/1770606435579GSY8d_PNG/104739256713553997_1630995191.png",
+        "product_id": "smartstore-13088223160",
+        "href": "/catalog.html?kind=rental&type=rent%3A146"
+      },
+      {
+        "id": "rent:135",
+        "name": "리그·케이지",
+        "kind": "rental",
+        "count": 1,
+        "image": "https://shop-phinf.pstatic.net/20250321_234/1742529653454Hotag_JPEG/18147748934014185_853823330.jpg",
+        "product_id": "smartstore-12569864712",
+        "href": "/catalog.html?kind=rental&type=rent%3A135"
+      },
+      {
+        "id": "rent:134",
+        "name": "매트박스·팔로우포커스",
+        "kind": "rental",
+        "count": 1,
+        "image": "https://shop-phinf.pstatic.net/20220726_106/1658820470246saFEB_JPEG/59956312961294019_1857853042.jpg",
+        "product_id": "smartstore-7229222883",
+        "href": "/catalog.html?kind=rental&type=rent%3A134"
+      },
+      {
+        "id": "rent:104",
+        "name": "배경·조명 스탠드",
+        "kind": "rental",
+        "count": 7,
+        "image": "https://shop-phinf.pstatic.net/20251209_133/1765245084003He9RT_JPEG/99377885139977684_572448555.jpg",
+        "product_id": "smartstore-12797727500",
+        "href": "/catalog.html?kind=rental&type=rent%3A104"
+      },
+      {
+        "id": "rent:56",
+        "name": "기타 액세서리",
+        "kind": "rental",
+        "count": 2,
+        "image": "https://shop-phinf.pstatic.net/20260720_6/1784536738044OuxPk_JPEG/4579708945635889_1049814685.jpg",
+        "product_id": "smartstore-13673669066",
+        "href": "/catalog.html?kind=rental&type=rent%3A56"
+      },
+      {
+        "id": "rent:9",
+        "name": "기타 장비",
+        "kind": "rental",
+        "count": 2,
+        "image": "https://shop-phinf.pstatic.net/20230818_137/1692329649459KzgnP_JPEG/15171758250264166_1262458588.jpg",
+        "product_id": "smartstore-11378368014",
+        "href": "/catalog.html?kind=rental&type=rent%3A9"
+      }
+    ]
+  },
   "meta": {
     "schema_version": 1,
     "source_counts": {
@@ -7,28 +182,30 @@
       "imweb-dji": 146,
       "imweb-promotions": 37,
       "l-mount": 335,
-      "plthink": 6580
+      "plthink": 6580,
+      "avx": 130
     },
     "detail_coverage": {
       "kpp": 4014,
-      "smartstore": 6964,
+      "smartstore": 6878,
       "imweb-dji": 146,
       "imweb-promotions": 37,
       "l-mount": 335,
-      "plthink": 6580
+      "plthink": 6580,
+      "avx": 130
     },
-    "synced_at": "2026-09-07T23:45:49+00:00",
-    "merged_count": 2403,
+    "synced_at": "2026-09-08T09:13:40+00:00",
+    "merged_count": 2385,
     "product_count": 220,
     "category_browsing_enabled": true,
     "listing_count": 220,
     "option_family_count": 99,
     "deduplication": {
-      "brands_checked": 218,
-      "groups": 1888,
-      "removed": 2403
+      "brands_checked": 219,
+      "groups": 1870,
+      "removed": 2385
     },
-    "revision": "9003ba125541523e",
+    "revision": "f25b29c3735b185e",
     "view": "rental"
   },
   "brands": [
@@ -1453,14 +1630,34 @@
       ],
       "logo": "/assets/shop/brands/aputure-de3dcdb4e8.webp",
       "navigation_category_ids": [
-        "naver:b:aputure:50000206",
-        "naver:b:aputure:50001390",
-        "naver:b:aputure:50001394",
-        "naver:b:aputure:50002082",
-        "naver:b:aputure:50002113"
+        "avx:b:aputure:0020",
+        "avx:b:aputure:00200001",
+        "avx:b:aputure:002000010001",
+        "avx:b:aputure:002000010002",
+        "avx:b:aputure:00200002",
+        "avx:b:aputure:002000020001",
+        "avx:b:aputure:002000020002",
+        "avx:b:aputure:00200003",
+        "avx:b:aputure:002000030001",
+        "avx:b:aputure:002000030002",
+        "avx:b:aputure:00200004",
+        "avx:b:aputure:002000040001",
+        "avx:b:aputure:002000040002",
+        "avx:b:aputure:00200005",
+        "avx:b:aputure:00200006",
+        "avx:b:aputure:002000060001",
+        "avx:b:aputure:002000060002",
+        "avx:b:aputure:00200007",
+        "avx:b:aputure:002000070001",
+        "avx:b:aputure:002000070002",
+        "avx:b:aputure:002000070003",
+        "avx:b:aputure:002000070004",
+        "avx:b:aputure:002000070005",
+        "avx:b:aputure:002000070006",
+        "avx:b:aputure:002000070007"
       ],
-      "count": 77,
-      "purchase_count": 68,
+      "count": 137,
+      "purchase_count": 128,
       "rental_count": 9,
       "category_ids": [
         "naver:b:aputure:50000206",
@@ -1468,13 +1665,39 @@
         "naver:b:aputure:50002113",
         "naver:b:aputure:50001390",
         "naver:b:aputure:50002082",
+        "avx:b:aputure:002000010001",
+        "avx:b:aputure:00200001",
+        "avx:b:aputure:0020",
+        "avx:b:aputure:002000010002",
+        "avx:b:aputure:002000060001",
+        "avx:b:aputure:00200006",
+        "avx:b:aputure:00200007",
+        "avx:b:aputure:002000030002",
+        "avx:b:aputure:00200003",
+        "avx:b:aputure:002000070005",
+        "avx:b:aputure:002000020002",
+        "avx:b:aputure:00200002",
+        "avx:b:aputure:002000070001",
+        "avx:b:aputure:002000070002",
+        "avx:b:aputure:002000060002",
+        "avx:b:aputure:002000070006",
+        "avx:b:aputure:002000070004",
+        "avx:b:aputure:002000040002",
+        "avx:b:aputure:00200004",
+        "avx:b:aputure:002000070003",
+        "avx:b:aputure:002000040001",
+        "avx:b:aputure:002000070007",
+        "avx:b:aputure:00200005",
+        "avx:b:aputure:002000020001",
+        "avx:b:aputure:002000030001",
         "rental-brand:aputure:4",
         "rental-brand:aputure:102",
         "rental-brand:aputure:103"
       ],
-      "representative_id": "smartstore-13740613723",
-      "representative_image": "https://shop-phinf.pstatic.net/20260901_300/1788246449672JaEUl_PNG/658_tmp_03b9e5e8cc0b5a4e7e195acfac0901741516list1.png",
-      "representative_name": "Aputure MC 12-Light Kit 어퓨쳐 엠씨 미니 조명 키트",
+      "representative_id": "avx-2013",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2025/02/2013_temp_17391738524680view.png",
+      "representative_name": "어퓨쳐 Nova P600c Pole Operated Yoke 노바 P600C 폴요크",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2025/02/2013_temp_17391738539854view.png",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -2469,6 +2692,33 @@
       "representative_id": "plthink-1917285",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080620000222.jpg?1768453503",
       "representative_name": "[AVerMedia] 에버미디어 PW513 Live Streamer CAM 방송용 웹캠",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "avx",
+      "name": "AVX",
+      "aliases": [
+        "AVX 기타"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/07/3026_temp_17846243525550list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:314346e28f94029b",
+        "avx:b:378da5c29a91603c",
+        "avx:b:8bffda5b7a30e40d"
+      ],
+      "count": 2,
+      "purchase_count": 2,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:314346e28f94029b",
+        "avx:b:378da5c29a91603c",
+        "avx:b:8bffda5b7a30e40d"
+      ],
+      "representative_id": "avx-3026",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/07/3026_temp_17846243525550view.jpg",
+      "representative_name": "[리퍼브상품-개봉상품] Aputure 호환 2.8M 스테인레스 조명 스탠드 SSS-280 (딱1개)",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/07/3026_2026072116254482.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -8462,36 +8712,6 @@
       "brand_id": "nanlux"
     },
     {
-      "id": "naver:b:aputure:50000206",
-      "name": "카메라/캠코더용품",
-      "parent_id": null,
-      "brand_id": "aputure"
-    },
-    {
-      "id": "naver:b:aputure:50001394",
-      "name": "카메라/캠코더 관련용품",
-      "parent_id": "naver:b:aputure:50000206",
-      "brand_id": "aputure"
-    },
-    {
-      "id": "naver:b:aputure:50002113",
-      "name": "기타카메라/캠코더용품",
-      "parent_id": "naver:b:aputure:50001394",
-      "brand_id": "aputure"
-    },
-    {
-      "id": "naver:b:aputure:50001390",
-      "name": "플래시/조명용품",
-      "parent_id": "naver:b:aputure:50000206",
-      "brand_id": "aputure"
-    },
-    {
-      "id": "naver:b:aputure:50002082",
-      "name": "배경/노출용품",
-      "parent_id": "naver:b:aputure:50001390",
-      "brand_id": "aputure"
-    },
-    {
       "id": "naver:b:kupo:50000206",
       "name": "카메라/캠코더용품",
       "parent_id": null,
@@ -8978,6 +9198,24 @@
       "brand_id": "manfrotto"
     },
     {
+      "id": "naver:b:aputure:50000206",
+      "name": "카메라/캠코더용품",
+      "parent_id": null,
+      "brand_id": "aputure"
+    },
+    {
+      "id": "naver:b:aputure:50001394",
+      "name": "카메라/캠코더 관련용품",
+      "parent_id": "naver:b:aputure:50000206",
+      "brand_id": "aputure"
+    },
+    {
+      "id": "naver:b:aputure:50002113",
+      "name": "기타카메라/캠코더용품",
+      "parent_id": "naver:b:aputure:50001394",
+      "brand_id": "aputure"
+    },
+    {
       "id": "naver:b:jcprom:50000206",
       "name": "카메라/캠코더용품",
       "parent_id": null,
@@ -9270,6 +9508,18 @@
       "name": "기타카메라/캠코더용품",
       "parent_id": "naver:b:peribounce:50001394",
       "brand_id": "peribounce"
+    },
+    {
+      "id": "naver:b:aputure:50001390",
+      "name": "플래시/조명용품",
+      "parent_id": "naver:b:aputure:50000206",
+      "brand_id": "aputure"
+    },
+    {
+      "id": "naver:b:aputure:50002082",
+      "name": "배경/노출용품",
+      "parent_id": "naver:b:aputure:50001390",
+      "brand_id": "aputure"
     },
     {
       "id": "naver:b:hollyland:50002101",
@@ -27188,23 +27438,6 @@
     "smartstore-10817338957": "smartstore-6961350645",
     "smartstore-10817343290": "smartstore-6961372587",
     "smartstore-11428336231": "smartstore-8538139758",
-    "smartstore-11498708117": "smartstore-13740613689",
-    "smartstore-11498713257": "smartstore-13740613653",
-    "smartstore-11498728547": "smartstore-13740613688",
-    "smartstore-11498767885": "smartstore-13740613687",
-    "smartstore-11498832870": "smartstore-13740613686",
-    "smartstore-11498847289": "smartstore-13740613685",
-    "smartstore-11498849651": "smartstore-13740613684",
-    "smartstore-11498855786": "smartstore-13740613652",
-    "smartstore-11498886134": "smartstore-13740613651",
-    "smartstore-11498892873": "smartstore-13740613668",
-    "smartstore-11498902555": "smartstore-13740613650",
-    "smartstore-11498949188": "smartstore-13740613660",
-    "smartstore-11529259752": "smartstore-13740613659",
-    "smartstore-11529264109": "smartstore-13740613658",
-    "smartstore-11529269428": "smartstore-13740613657",
-    "smartstore-11529274482": "smartstore-13740613656",
-    "smartstore-11529310602": "smartstore-13740613655",
     "smartstore-11668039658": "smartstore-11669013361",
     "smartstore-11935976657": "smartstore-13742812642",
     "smartstore-11935979659": "smartstore-13742812643",
@@ -27252,7 +27485,6 @@
     "smartstore-13740393584": "smartstore-13742693068",
     "smartstore-13742686833": "smartstore-13742693069",
     "smartstore-13740393591": "smartstore-13742693069",
-    "smartstore-9409647470": "smartstore-13740613691",
     "smartstore-8262993357": "smartstore-13740633121",
     "smartstore-9336885649": "smartstore-13740655688",
     "smartstore-9336870581": "smartstore-13740655689",

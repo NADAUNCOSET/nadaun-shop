@@ -10,6 +10,7 @@ from collections import Counter
 
 # New leaves supplement the KPP groups; their names describe product types.
 EXTRA = [
+ ('mini-light','kpp:0710','미니 라이트'),('mat-light','kpp:0710','매트 라이트'),('car-mount','kpp:06','카마운팅'),('light-power','kpp:0720','조명 케이블·전원'),('light-bag','kpp:0720','조명 가방·케이스'),
  ('mount-adapter','kpp:0690','마운팅 어댑터'),('audio-adapter','kpp:0740','오디오 변환 어댑터'),('camera-markers','kpp:09','카메라 마커·현장 소모품'),('dry-cabinet','kpp:09','제습함·보관용품'),('drone-parts','kpp:c010','드론 부품'),
  ('tv-display',None,'TV·디스플레이'),('tv','tv-display','TV'),('projector','tv-display','프로젝터·스크린'),('light-meter','kpp:0720','노출계·조명 동조기'),('jib','kpp:06','지브·크레인'),('turntable','kpp:06','턴테이블'),('camera',None,'카메라'),('mirrorless','camera','미러리스 카메라'),('dslr','camera','DSLR 카메라'),('cinema-camera','camera','시네마 카메라'),('camcorder','camera','캠코더'),('compact-camera','camera','컴팩트·즉석 카메라'),
  ('medium-camera','camera','중형 카메라'),('medium-lens','kpp:03','중형 렌즈'),('phone-lens','kpp:03','스마트폰 렌즈'),
@@ -126,6 +127,28 @@ def camera_accessory_type(name,brand):
     return None
 
 
+def aputure_type(name, category_ids):
+    # The user's Aputure purchase source is AVX; optical lighting accessories
+    # must never enter the camera-lens tree because their title says "lens".
+    for target, pattern in [
+        ('light-power', r'케이블|cable|충전기|charger|전원.*어댑터'),
+        ('light-bag', r'케이스|case|가방|bag'),
+        ('light-grip', r'어댑터|adapter|브라켓|브래킷|bracket|클램프|clamp|요크|yoke|connector|커넥터'),
+        ('light-shaping', r'그리드|grid|barn.?door|반도어|고보|gobo|아이리스|iris'),
+        ('softbox', r'soft.?box|소프트박스|dome|돔|lantern|랜턴|light.?box|라이트박스'),
+        ('light-lens', r'프레[즈]?넬|프리즈넬|fresnel|spotlight|스포트라이트|parallel.?beam|리플렉터|reflector'),
+        ('light-stand', r'스탠드|stand'),
+        ('mat-light', r'infinimat|인피니매트'),
+        ('tube-light', r'infinibar|인피니바|튜브|tube|MT.?Pro'),
+        ('panel-light', r'nova|노바|패널|panel'),
+        ('mini-light', r'\bMC\b|미니'),
+        ('continuous', r'storm|스톰|\bLS\b|\bCS\d|\d+[dcx]\b'),
+    ]:
+        if re.search(pattern, name, re.I): return target
+    if any('00200007' in cid for cid in category_ids): return 'kpp:0720'
+    return 'kpp:0710'
+
+
 def build_taxonomy(products,categories,overrides=None):
     nodes={}
     def add(key,name,parent=None,source=None):
@@ -182,9 +205,12 @@ def build_taxonomy(products,categories,overrides=None):
         if p['kind']=='purchase' and any('type:camera' in path(cid) for cid in selected):
             accessory=camera_accessory_type(name,bid)
             if accessory:selected=['type:'+accessory];reason='camera-accessory:'+accessory
+        if p['kind']=='purchase' and bid=='aputure':
+            selected=['type:'+aputure_type(name,p.get('category_ids',[]))];reason='aputure-lighting-purpose'
         # Subdivide known groups only. Accessory model names do not create bodies.
         ancestors=set(x for c in selected for x in path(c))
         refinements=[
+          ('kpp:0710','mat-light',r'infinimat|인피니매트|라이트.*매트|매트.*라이트|LED.*매트'),('kpp:0710','mini-light',r'미니.*(?:조명|라이트)|(?:조명|라이트).*미니|\bMC\b|\bAce\b'),('kpp:0710','panel-light',r'패널|panel|nova'),('kpp:0710','tube-light',r'infinibar|인피니바|튜브|tube'),('kpp:06','car-mount',r'카마운팅|car\s*mount|차량.*마운트|car\s*rig'),
           ('kpp:0110','carbon',r'카본|carbon'),('kpp:0110','aluminum',r'알루미늄|alum'),('kpp:0110','mini-tripod',r'미니|mini|테이블|table'),('kpp:0110','travel-tripod',r'여행|travel'),
           ('kpp:0120','ball-head',r'볼\s*헤드|ball'),('kpp:0120','video-head',r'비디오|video|fluid'),('kpp:0120','gear-head',r'기어|gear'),('kpp:0120','gimbal-head',r'짐벌|gimbal'),('kpp:0120','pan-head',r'3.?way|파노라마|panoram'),
           ('kpp:0210','uv',r'\bUV\b|protect'),('kpp:0210','cpl',r'\bCPL\b|편광'),('kpp:0220','vnd',r'가변|variable|\bVND\b'),('kpp:0220','nd-pl',r'ND\s*[-/]?\s*PL'),('kpp:0230','mist',r'미스트|mist|소프트|soft'),
@@ -192,6 +218,7 @@ def build_taxonomy(products,categories,overrides=None):
           ('kpp:0680','v-mount',r'V.?마운트|V.?mount|broadcast'),('kpp:0730','wireless-mic',r'무선|wireless|라크|lark'),
         ]
         for parent,target,pattern in refinements:
+            if p['kind']=='rental' and target in {'mat-light','mini-light','panel-light','tube-light','car-mount'}:continue
             if 'type:'+parent in ancestors and re.search(pattern,name,re.I):selected.append('type:'+target)
         if 'type:kpp:0220' in ancestors and not any(x in selected for x in ('type:vnd','type:nd-pl')):selected.append('type:fixed-nd')
         if 'type:kpp:0680' in ancestors and 'type:v-mount' not in selected:selected.append('type:camera-battery')

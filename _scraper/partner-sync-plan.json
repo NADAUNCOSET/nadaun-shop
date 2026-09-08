@@ -17,9 +17,29 @@
       "target_refresh_interval_seconds": 43200,
       "status": "awaiting_source_access",
       "blocker": "Public source returned HTTP 403; no approved API/feed or verified current adapter is available.",
-      "required_fields": ["brands", "category_hierarchy", "products", "options", "price", "availability", "main_images", "detail_images"],
+      "required_fields": [
+        "brands",
+        "category_hierarchy",
+        "products",
+        "options",
+        "price",
+        "availability",
+        "main_images",
+        "detail_images"
+      ],
       "completion_gate": "Full source coverage, detail and option verification, dedup audit, deployed live ID verification",
       "on_request_failure": "Keep previous verified snapshot; never infer soldout or deletion from a failed request"
+    },
+    "avx": {
+      "name": "에이브이엑스",
+      "url": "https://www.avx.co.kr/",
+      "adapter": "avx",
+      "scope": "All public brands and products; Aputure purchase replacement first; rentals unchanged",
+      "refresh_interval_seconds": 43200,
+      "resume_interval_seconds": 600,
+      "request_interval_seconds": 3,
+      "completion_gate": "Complete unique inventory, reconciled details/options, scoped commit and production ID verification",
+      "on_request_failure": "Preserve last published snapshot; protection responses permanently latch until provider review"
     }
   }
 }

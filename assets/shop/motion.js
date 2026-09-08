@@ -78,7 +78,7 @@ export function mountArtMotion(main,{gsap,ScrollTrigger:ST,Lenis,motionPreferenc
   function scan(){
    if(disposed)return;
    for(const node of records.keys())if(!node.isConnected||node.closest('[hidden]'))remove(node);
-   main.querySelectorAll('.department-visual,.brand-object,.product-image,.editorial-visual').forEach(photograph);
+   main.querySelectorAll('.department-visual,.brand-object,.product-image,.editorial-visual,.category-image').forEach(photograph);
    main.querySelectorAll('.section-head').forEach(section=>{if(section.closest('.home-scene'))return;register(section,()=>{
     section.classList.add('motion-section-head');
     gsap.fromTo(section,{'--section-line':0},{'--section-line':1,ease:'none',scrollTrigger:scroll(section,'top 92%','top 55%')});
@@ -115,7 +115,7 @@ export function mountArtMotion(main,{gsap,ScrollTrigger:ST,Lenis,motionPreferenc
    };
    const move=event=>{
     if(event.pointerType==='touch')return;
-    const next=event.target.closest('.department-visual,.brand-object,.product-image,.editorial-visual');
+    const next=event.target.closest('.department-visual,.brand-object,.product-image,.editorial-visual,.category-image');
     if(!next||!main.contains(next)){hide();return}
     if(active!==next){hide();active=next;active.classList.add('has-art-cursor')}
     const box=active.getBoundingClientRect();

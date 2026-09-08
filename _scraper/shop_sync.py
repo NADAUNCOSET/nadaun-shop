@@ -32,7 +32,7 @@ CODE += ['_scraper/gift_product_details.py','_scraper/source_transport.py','_scr
          '_scraper/sync_gift_inventory.py','_scraper/partner_worker.py','_scraper/install_partner_workers.py']
 CODE += ['server/commerce','assets/shop/commerce.js','assets/shop/commerce.css','_scraper/commerce_setup.cjs']
 CODE += ['_scraper/brand_category_policy.py','_scraper/partner_sync_status.py','_scraper/partner-sync-plan.json']
-CODE += ['assets/shop/storefront.css','assets/shop/scenes.js']
+CODE += ['assets/shop/storefront.css','assets/shop/scenes.js','assets/shop/browse.js','_scraper/category_gallery.py','_scraper/sync_avx_catalog.py','_scraper/avx_worker.py','_scraper/test_avx_catalog.py']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
@@ -52,6 +52,8 @@ def managed_files():
     for source in ('smartstore','imweb-dji','imweb-promotions','kpp','l-mount','nadaun-gift'):
         files.append('data/catalog/sources/'+source+'.json')
     if (OUT/'plthink.json').exists():files.append('data/catalog/sources/plthink.json')
+    for source in ('avx','avx-aputure'):
+        if (OUT/(source+'.json')).exists():files.append('data/catalog/sources/'+source+'.json')
     for source in ('smartstore','kpp'):
         base=ROOT/'data/catalog/source-details'/source
         files.extend(p.relative_to(ROOT).as_posix() for p in base.glob('??.json'))
@@ -142,7 +144,9 @@ def run(publish=True,existing=False):
                 print('Gift refresh suspended; previous linked-store snapshot retained', flush=True)
             else: collect_gift()
             for source,count in previous.get('source_counts',{}).items():
-                new=json.loads((OUT/(source+'.json')).read_text())['product_count']
+                path=OUT/(source+'.json')
+                if source=='avx' and not path.exists():path=OUT/'avx-aputure.json'
+                new=json.loads(path.read_text())['product_count']
                 if new<count*.85:raise RuntimeError(f'{source} count dropped more than 15%; keep live data and review')
             enrich('smartstore');enrich('kpp');prepare()
         build()
@@ -150,7 +154,7 @@ def run(publish=True,existing=False):
         command('node','--check','assets/shop/shop.js')
         command('node','--check','assets/shop/cart.js')
         command('node','--check','assets/shop/motion.js')
-        command('node','--test','_scraper/tests/product-server.test.cjs','_scraper/tests/catalog-tools.test.mjs','_scraper/tests/discovery.test.cjs','_scraper/tests/cart.test.cjs','_scraper/tests/banners.test.mjs','_scraper/tests/motion.test.mjs')
+        command('node','--test','_scraper/tests/product-server.test.cjs','_scraper/tests/catalog-tools.test.mjs','_scraper/tests/discovery.test.cjs','_scraper/tests/cart.test.cjs','_scraper/tests/banners.test.mjs','_scraper/tests/motion.test.mjs','_scraper/tests/browse.test.mjs')
         if publish:return publish_existing()
     except Exception as e:
         save_json(STATE/'last-failure.json',{'failed_at':stamp(),'error':str(e)})

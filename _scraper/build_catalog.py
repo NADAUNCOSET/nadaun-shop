@@ -69,6 +69,11 @@ def verified_sources():
     sources=['kpp','smartstore','imweb-dji','imweb-promotions','l-mount']
     if (OUT/'plthink.json').exists():sources.append('plthink')
     snapshots={key:json.loads((OUT/(key+'.json')).read_text()) for key in sources}
+    avx_path=next((OUT/name for name in ('avx.json','avx-aputure.json') if (OUT/name).exists()),None)
+    if avx_path:
+        snapshot=json.loads(avx_path.read_text())
+        if not snapshot.get('complete') or snapshot['product_count']!=len(snapshot['products']) or any(p.get('detail_status')!='verified' for p in snapshot['products'].values()):raise RuntimeError('AVX snapshot is incomplete')
+        snapshots['avx']=snapshot
     if not all(s.get('complete') for s in snapshots.values()):raise RuntimeError('Incomplete source snapshot')
     if 'plthink' in snapshots:
         snapshot=snapshots['plthink']
@@ -102,7 +107,7 @@ def build(allow_pending=False):
                 prefix='kpp:'+('b:'+bid if bid else 'p')+':'
             elif source=='imweb-promotions':bid=None;prefix='imweb:promotion:'
             elif source=='l-mount':bid='ldl-mount';prefix='l-mount:b:ldl-mount:'
-            elif source=='plthink':bid=brand_id(c['brand']);prefix='plthink:b:'
+            elif source in ('plthink','avx'):bid=brand_id(c['brand']);prefix=source+':b:'
             else:bid='dji';prefix='imweb:b:dji:'
             c.update(id=prefix+c['id'],parent_id=prefix+c['parent_id'] if c['parent_id'] else None,brand_id=bid)
             categories[c['id']]={k:c[k] for k in ('id','name','parent_id','brand_id')}
@@ -117,6 +122,7 @@ def build(allow_pending=False):
                 continue
             p=deepcopy(p0);p['brand_id']=add_brand(p['brand']);p['name']=product_name(p['name'])
             bid=p['brand_id'];membership=[];types=[]
+            if 'avx' in snapshots and source!='avx' and bid=='aputure' and p.get('kind')=='purchase':continue
             if source=='kpp':
                 for mall in p.get('brand_mall_ids',[]):
                     mbid=brand_id(mall)
@@ -135,7 +141,7 @@ def build(allow_pending=False):
             elif source=='imweb-promotions': pass
             elif source=='imweb-dji': membership=['imweb:b:dji:'+cid for cid in p.get('brand_category_ids',[])]
             elif source=='l-mount': membership=['l-mount:b:ldl-mount:'+cid for cid in p.get('brand_category_ids',[])]
-            elif source=='plthink': membership=['plthink:b:'+cid for cid in p.get('brand_category_ids',[])]
+            elif source in ('plthink','avx'): membership=[source+':b:'+cid for cid in p.get('brand_category_ids',[])]
             else:
                 path=p.get('source_category_path') or [];ids=p.get('source_category_ids') or []
                 # Naver standard classifications are retained separately from
@@ -158,7 +164,7 @@ def build(allow_pending=False):
             if source=='kpp' and d.get('source_fingerprint')!=source_fingerprint(p0):
                 d={}
             if source.startswith('imweb-'):d={'detail_status':'verified','description_text':p.get('description_text',''),'images':p['images']}
-            if source in ('l-mount','plthink'):d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation') if k in p}
+            if source in ('l-mount','plthink','avx'):d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation') if k in p}
             if d.get('detail_status')=='verified':coverage[source]+=1
             elif not allow_pending:raise RuntimeError('Unverified product detail: '+pid)
             if d.get('unavailable'):
@@ -278,10 +284,13 @@ def build(allow_pending=False):
           'product_count':len(public_products),'category_browsing_enabled':config.get('category_browsing_enabled',False),
           'listing_count':len(listing_products),'option_family_count':len(family_audit),
           'deduplication':{'brands_checked':len(brands),'groups':dedup_audit['duplicate_group_count'],'removed':merge_count}}
-    output={'meta':meta,'brands':brand_list,'categories':list(categories.values()),'products':public_products,'redirects':redirects}
+    from category_gallery import galleries
+    category_galleries=galleries(public_products,list(categories.values()))
+    output={'category_gallery':category_galleries,'meta':meta,'brands':brand_list,'categories':list(categories.values()),'products':public_products,'redirects':redirects}
     presentation=''.join(p.read_text() for pattern in ('*.html','policies/*.html') for p in sorted((ROOT/'_scraper/shop_templates').glob(pattern)))
     presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/shop.js','assets/shop/shop.css','assets/shop/cart.js','assets/shop/banners.js','assets/shop/motion.js','_scraper/product_taxonomy.py','_scraper/rental_taxonomy.py','_scraper/references/slrrent-categories.json','data/catalog/banners.json','assets/shop/catalog-tools.js','_scraper/storefront_pages.py','_scraper/catalog_seo.py','api/product.js'))
     presentation+=(ROOT/'assets/shop/commerce.js').read_text()+(ROOT/'assets/shop/commerce.css').read_text()
+    presentation+=(ROOT/'assets/shop/browse.js').read_text()+(ROOT/'_scraper/category_gallery.py').read_text()
     presentation+=(ROOT/'assets/shop/storefront.css').read_text()+(ROOT/'assets/shop/scenes.js').read_text()
     presentation+=(ROOT/'api/orders.js').read_text()+''.join(p.read_text() for p in sorted((ROOT/'server/commerce').glob('*')) if p.is_file())
     presentation+=(ROOT/'assets/shop/shipping.js').read_text()+(ROOT/'_scraper/shipping_policy.py').read_text()
@@ -297,7 +306,7 @@ def build(allow_pending=False):
     (PUBLIC/'brands.json').write_text(json.dumps({'meta':{'revision':revision},'brands':brand_list},ensure_ascii=False,separators=(',',':'))+'\n')
     rental_products=[p for p in public_products if p['kind']=='rental']
     rental_category_ids={cid for p in rental_products for field in ('category_ids','type_ids') for cid in p[field]}
-    save_json(PUBLIC/'rental.json',{'meta':{**meta,'view':'rental','product_count':len(rental_products),'listing_count':len({p.get('listing_id',p['id']) for p in rental_products})},'brands':brand_list,'categories':[c for c in categories.values() if c['id'] in rental_category_ids or c.get('scope')=='rental-product'],'products':rental_products,'redirects':redirects})
+    save_json(PUBLIC/'rental.json',{'category_gallery':{'rental':category_galleries['rental']},'meta':{**meta,'view':'rental','product_count':len(rental_products),'listing_count':len({p.get('listing_id',p['id']) for p in rental_products})},'brands':brand_list,'categories':[c for c in categories.values() if c['id'] in rental_category_ids or c.get('scope')=='rental-product'],'products':rental_products,'redirects':redirects})
     save_json(PUBLIC/'sync-status.json',meta)
     template=(ROOT/'_scraper/shop_templates/page.html').read_text()
     for filename,title,description,mode in [
@@ -320,7 +329,7 @@ def build(allow_pending=False):
       ('shipping.html','배송·교환·반품 안내 | 나다운 샵','상품별 배송 조건, 교환과 반품 접수, 환급 및 고객센터를 안내합니다.','policy'),
     ]:
         page=template.replace('{{TITLE}}',title).replace('{{DESCRIPTION}}',description).replace('{{CANONICAL}}','https://shop.nadaun.co/'+('' if filename=='index.html' else filename)).replace('{{MODE}}',mode).replace('{{BRAND}}','').replace('{{REVISION}}',revision)
-        body=(ROOT/'_scraper/shop_templates/policies'/filename).read_text() if mode=='policy' else (ROOT/'_scraper/shop_templates'/filename).read_text() if mode in ('guide','about','studio','payment-test') else page_content(mode,brand_list,public_products)
+        body=(ROOT/'_scraper/shop_templates/policies'/filename).read_text() if mode=='policy' else (ROOT/'_scraper/shop_templates'/filename).read_text() if mode in ('guide','about','studio','payment-test') else page_content(mode,brand_list,public_products,category_galleries=category_galleries)
         page=page.replace('{{CONTENT}}',body)
         if mode=='studio':page=page.replace('https://shop.nadaun.co/assets/shop/nadaun-logo.png','https://shop.nadaun.co/assets/shop/studio/space-09.jpg')
         if mode in ('orders','admin','checkout','payment-test'):

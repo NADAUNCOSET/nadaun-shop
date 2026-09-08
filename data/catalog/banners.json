@@ -1,10 +1,60 @@
 {
-  "desktop": {"width": 1920, "height": 400},
-  "mobile": {"width": 750, "height": 600},
+  "desktop": {
+    "width": 1920,
+    "height": 400
+  },
+  "mobile": {
+    "width": 750,
+    "height": 600
+  },
   "banners": [
-    {"id":"manfrotto","title":"MANFROTTO / IMAGINE MORE","alt":"맨프로토의 신뢰와 함께 상상력을 펼치세요","desktop":"https://media.nadaun.co/shop/banner/manfrotto-pc.webp","mobile":"https://media.nadaun.co/shop/banner/manfrotto-mob.webp","href":"/brands/manfrotto.html"},
-    {"id":"shure","title":"SHURE / SOUND EXTRAORDINARY","alt":"슈어, 어디서나 울림을 듣다","desktop":"https://media.nadaun.co/shop/banner/shure-pc.webp","mobile":"https://media.nadaun.co/shop/banner/shure-mob.webp","href":"/brands/shure.html"},
-    {"id":"jackery","title":"JACKERY / POWER YOUR NEXT SCENE","alt":"잭커리 파워뱅크, 전력의 한계를 깨다","desktop":"https://media.nadaun.co/shop/banner/jackery-1000plus-pc.webp","mobile":"https://media.nadaun.co/shop/banner/jackery-1000plus-mob.webp","href":"/brands/jackery.html"},
-    {"id":"genelec","title":"GENELEC / THE SOUND OF YOUR SPACE","alt":"제네렉 스피커, 사운드로 공간을 채우다","desktop":"https://media.nadaun.co/shop/banner/genelec-g-series-pc.webp","mobile":"https://media.nadaun.co/shop/banner/genelec-g-series-mob.webp","href":"/brands/genelec.html"}
+    {
+      "id": "manfrotto",
+      "title": "MANFROTTO / IMAGINE MORE",
+      "alt": "맨프로토의 신뢰와 함께 상상력을 펼치세요",
+      "desktop": "https://media.nadaun.co/shop/banner/manfrotto-pc.webp",
+      "mobile": "https://media.nadaun.co/shop/banner/manfrotto-mob.webp",
+      "href": "/brands/manfrotto.html"
+    },
+    {
+      "id": "shure",
+      "title": "SHURE / SOUND EXTRAORDINARY",
+      "alt": "슈어, 어디서나 울림을 듣다",
+      "desktop": "https://media.nadaun.co/shop/banner/shure-pc.webp",
+      "mobile": "https://media.nadaun.co/shop/banner/shure-mob.webp",
+      "href": "/brands/shure.html"
+    },
+    {
+      "id": "jackery",
+      "title": "JACKERY / POWER YOUR NEXT SCENE",
+      "alt": "잭커리 파워뱅크, 전력의 한계를 깨다",
+      "desktop": "https://media.nadaun.co/shop/banner/jackery-1000plus-pc.webp",
+      "mobile": "https://media.nadaun.co/shop/banner/jackery-1000plus-mob.webp",
+      "href": "/brands/jackery.html"
+    },
+    {
+      "id": "genelec",
+      "title": "GENELEC / THE SOUND OF YOUR SPACE",
+      "alt": "제네렉 스피커, 사운드로 공간을 채우다",
+      "desktop": "https://media.nadaun.co/shop/banner/genelec-g-series-pc.webp",
+      "mobile": "https://media.nadaun.co/shop/banner/genelec-g-series-mob.webp",
+      "href": "/brands/genelec.html"
+    },
+    {
+      "id": "20260418-osmo-pocket4",
+      "title": "DJI / OSMO POCKET 4",
+      "alt": "DJI 오즈모 포켓 4, 주머니 속의 스튜디오",
+      "desktop": "https://media.nadaun.co/shop/banner/20260418-osmo-pocket4-pc.webp",
+      "mobile": "https://media.nadaun.co/shop/banner/20260418-osmo-pocket4-mob.webp",
+      "href": "/brands/dji.html"
+    },
+    {
+      "id": "powerbank-rental",
+      "title": "NADAUN / POWERBANK RENTAL",
+      "alt": "캠핑·차박·행사·버스킹을 위한 파워뱅크 대여",
+      "desktop": "https://media.nadaun.co/shop/banner/powerbank-rental-pc.webp",
+      "mobile": "https://media.nadaun.co/shop/banner/powerbank-rental-mob.webp",
+      "href": "/catalog.html?kind=rental&q=파워뱅크"
+    }
   ]
 }

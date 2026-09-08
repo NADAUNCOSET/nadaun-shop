@@ -117,7 +117,7 @@ class SourceRules(unittest.TestCase):
             self.assertTrue(set(p['category_ids']+p['type_ids'])<=cats,p['id'])
             self.assertNotIn(p['id'],d['redirects'])
             for offer in p['offers']:
-                self.assertTrue(offer['url'].startswith(('https://smartstore.naver.com/rainbowbene/','https://rainbowshop.imweb.me/','https://kppkpp.co.kr/','https://www.l-mount.co.kr/goods/goods_view.php?goodsNo=','https://www.plthink.com/shop/shopdetail.html?branduid=')))
+                self.assertTrue(offer['url'].startswith(('https://smartstore.naver.com/rainbowbene/','https://rainbowshop.imweb.me/','https://kppkpp.co.kr/','https://www.l-mount.co.kr/goods/goods_view.php?goodsNo=','https://www.plthink.com/shop/shopdetail.html?branduid=','https://www.avx.co.kr/goods/view?no=')))
         self.assertTrue(set(d['redirects'].values())<=ids)
         offers=[o['id'] for p in d['products'] for o in p['offers']]
         self.assertEqual(len(offers),len(set(offers)))
@@ -138,6 +138,24 @@ class SourceRules(unittest.TestCase):
                 detail=json.loads((ROOT/'data/catalog/details'/(p['detail_bucket']+'.json')).read_text())[p['id']]
                 self.assertTrue(any(v['id']==p['id'] for v in detail['related_variants']))
         self.assertGreater(d['meta']['source_counts']['imweb-dji'],0)
+
+    def test_avx_source_conservation_and_aputure_replacement(self):
+        base=ROOT/'data/catalog/sources'
+        path=next((base/name for name in ('avx.json','avx-aputure.json') if (base/name).exists()),None)
+        if path is None:self.skipTest('AVX source not imported yet')
+        source=json.loads(path.read_text())
+        products=json.loads((ROOT/'data/catalog/catalog.json').read_text())['products']
+        offers=[o['id'] for p in products for o in p['offers'] if o['source']=='avx']
+        self.assertEqual(set(offers),set(source['products']))
+        self.assertEqual(len(offers),source['product_count'])
+        for p in products:
+            if p['brand_id']=='aputure' and p['kind']=='purchase':
+                self.assertTrue(all(o['source']=='avx' for o in p['offers']))
+                self.assertFalse({'type:camera','type:lens','type:cinema-lens'} & set(p['type_ids']))
+        original=json.loads((base/'smartstore.json').read_text())['products']
+        rentals={pid for pid,p in original.items() if p['kind']=='rental'}
+        actual={o['id'] for p in products if p['kind']=='rental' for o in p['offers']}
+        self.assertEqual(actual,rentals)
 
     def test_partner_coverage_options_and_brand_images(self):
         from sync_partner_catalogs import normalize_ldl_options,ldl_categories

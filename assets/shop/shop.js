@@ -1,6 +1,7 @@
 import {isDiscounted,isPromotion,matchesBenefit,benefitNavigation,categoryTrail,categoryControls,catalogSelection,productTypeNavigation,brandSelectionHref} from './catalog-tools.js';
 import {mountPurchase,renderCart,rentalGuide} from './cart.js';
 import {mountBanners} from './banners.js';
+import {browseDirectoryHtml} from './browse.js';
 const main=document.querySelector('#main');
 const params=new URLSearchParams(location.search);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -81,7 +82,8 @@ function renderCatalog(){
  const availableBrands=data.brands.filter(b=>kind==='rental'?b.rental_count>0:kind==='purchase'?b.purchase_count>0:true);
  main.innerHTML=`<div class="breadcrumb"><a href="/">홈</a><span>›</span><a href="/brands.html" target="_blank" rel="noopener">브랜드</a>${brand?`<span>›</span><a href="${esc(catalogHref({cat:null,type:null,sale:null}))}">${esc(brand.name)}</a>`:''}${trail.map((c,i)=>`<span aria-hidden="true">›</span>${i===trail.length-1?`<span aria-current="page">${esc(c.name)}</span>`:`<a href="${esc(catalogHref({cat:c.id}))}">${esc(c.name)}</a>`}`).join('')}</div>
  <div class="catalog-heading">${brand?.logo?`<img class="${brand.logo_dark?'brand-logo-dark':''}" src="${safe(brand.logo)}" alt="${esc(brand.name)}" referrerpolicy="no-referrer">`:''}<div><h1>${esc(heading)}</h1><p>제품 종류와 브랜드를 선택해 필요한 ${kind==='rental'?'대여 장비':'상품'}를 찾아보세요.</p></div></div>
- <div class="catalog-layout"><aside class="sidebar" aria-label="브랜드 및 세부 분류"><h2>브랜드 선택</h2><label class="sr" for="brand-select">브랜드 선택</label><select id="brand-select"><option value="">전체 브랜드</option>${availableBrands.map(b=>`<option value="${esc(b.id)}" ${bid===b.id?'selected':''}>${esc(b.name)} (${kind==='rental'?b.rental_count:kind==='purchase'?b.purchase_count:b.count})</option>`).join('')}</select>
+ ${!bid&&!type&&!cat&&!query&&!discountOnly?browseDirectoryHtml(data,kind):''}
+ <div class="catalog-layout" id="catalog-products"><aside class="sidebar" aria-label="브랜드 및 세부 분류"><h2>브랜드 선택</h2><label class="sr" for="brand-select">브랜드 선택</label><select id="brand-select"><option value="">전체 브랜드</option>${availableBrands.map(b=>`<option value="${esc(b.id)}" ${bid===b.id?'selected':''}>${esc(b.name)} (${kind==='rental'?b.rental_count:kind==='purchase'?b.purchase_count:b.count})</option>`).join('')}</select>
  <label class="sr" for="kind-select">구매 또는 렌탈</label><select id="kind-select"><option value="purchase" ${kind==='purchase'?'selected':''}>구매 상품</option><option value="rental" ${kind==='rental'?'selected':''}>렌탈 상품</option><option value="all" ${kind==='all'?'selected':''}>구매 + 렌탈</option></select>
  ${kind!=='rental'?`<a class="sidebar-sale ${discountOnly?'active':''}" href="${esc(catalogHref({sale:'1',benefit:null,cat:null,type:null,kind:'purchase',q:null}))}" ${discountOnly?'aria-current="page"':''}><span>할인상품 · 프로모션</span><small>SALE</small></a>`:''}
  <div class="mobile-categories" style="display:none" ${applicable.length?'':'hidden'}><label class="sr" for="category-select">브랜드 세부 카테고리</label><select id="category-select"><option value="">브랜드 전체 카테고리</option>${rootOptions}</select></div>
