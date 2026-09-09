@@ -1,7 +1,7 @@
 {
   "source": "smartstore",
   "source_url": "https://smartstore.naver.com/rainbowbene",
-  "collected_at": "2026-09-09T15:48:13+00:00",
+  "collected_at": "2026-09-09T23:01:45+00:00",
   "complete": true,
   "origin_count": 8947,
   "product_count": 7161,
@@ -47923,18 +47923,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50002082",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001394",
-        "50002113"
+        "50001390",
+        "50002082"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "플래시/조명용품",
+        "배경/노출용품"
       ],
       "source_modified_at": "2026-09-01T18:09:16.936+09:00"
     },
@@ -99595,18 +99595,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50002080",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001394",
-        "50002113"
+        "50001390",
+        "50002080"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "플래시/조명용품",
+        "플래시/라이트/조명"
       ],
       "source_modified_at": "2026-08-31T16:45:20.924+09:00"
     },
@@ -102169,18 +102169,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50002080",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001394",
-        "50002113"
+        "50001390",
+        "50002080"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "플래시/조명용품",
+        "플래시/라이트/조명"
       ],
       "source_modified_at": "2026-08-31T16:45:32.048+09:00"
     },
