@@ -41,6 +41,7 @@ CODE += ['_scraper/avx_publication.py','_scraper/test_avx_publication.py']
 CODE += ['_scraper/rental_content.py','_scraper/test_shop_rental_content.py','assets/shop/rental-content.js']
 CODE += ['_scraper/sync_dji_official.py','_scraper/dji_worker.py','_scraper/test_shop_dji_official.py']
 CODE += ['_scraper/private_storage.py','_scraper/test_private_storage.py','_scraper/gift_supplier_registry.py']
+CODE += ['_scraper/publication_storage.py','_scraper/test_publication_storage.py','_scraper/test_partner_worker.py']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
@@ -118,11 +119,11 @@ def publish_existing():
     status=json.loads((ROOT/'data/catalog/sync-status.json').read_text())
     if command('git','diff','--cached','--name-only'):raise RuntimeError('Unrelated staged changes exist; refusing an automatic commit')
     owned=managed_files()
-    command('git','add','--',*owned)
+    from publication_storage import stage_generated
+    stage_generated(owned,command)
     staged=command('git','diff','--cached','--name-only')
     if set(staged.splitlines())-set(owned):raise RuntimeError('Unrelated changes were staged during sync; refusing an automatic commit')
-    # Check the staged snapshot once. Re-reading every NAS file before git add
-    # doubles SMB I/O and can time out even when all source data is valid.
+    # Validate the exact staged snapshot before committing it.
     command('git','diff','--cached','--check')
     if staged:command('git','commit','-m','auto(shop): refresh verified brand catalogue')
     command('git','push','origin','HEAD:main')
@@ -132,7 +133,7 @@ def publish_existing():
     print(json.dumps(result,ensure_ascii=False),flush=True)
     return result
 
-def run(publish=True,existing=False):
+def run(publish=True,existing=False,source_updates=None):
     STATE.mkdir(parents=True,exist_ok=True)
     lock=STATE/'run.lock'
     if lock.exists():
@@ -149,6 +150,10 @@ def run(publish=True,existing=False):
     with os.fdopen(fd,'w') as f:json.dump({'host':socket.gethostname(),'pid':os.getpid(),'started_at':stamp()},f)
     try:
         if command('git','diff','--name-only','--',*CODE):raise RuntimeError('Uncommitted catalogue code or overrides; automatic sync paused')
+        if source_updates:
+            if not existing:raise ValueError('Partner promotion cannot run with a general source refresh')
+            from publication_storage import promote_updates
+            promote_updates(source_updates,ROOT,OUT,STATE,managed_files(),save_json)
         if not existing:
             previous=json.loads((ROOT/'data/catalog/sync-status.json').read_text()) if (ROOT/'data/catalog/sync-status.json').exists() else {}
             collect_smartstore();collect_imweb_dji();collect_imweb_dji(promotion=True);collect_kpp();collect_lmount()
@@ -172,6 +177,8 @@ def run(publish=True,existing=False):
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_gift_public_catalog.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_brand_source_policy.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_source_refresh_state.py')
+        command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_publication_storage.py')
+        command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_partner_worker.py')
         command('node','--test','_scraper/tests/gift-search.test.cjs','_scraper/tests/rental-content.test.cjs')
         command('node','--check','assets/shop/shop.js')
         command('node','--check','assets/shop/cart.js')

@@ -346,9 +346,9 @@ class Importer:
             'collected_at':stamp(),'product_count':len(rows),'products':rows,
             'categories':list(categories.values()), 'coverage':{'expected':total,'unique':len(rows)},
             'brands':sorted({p['brand'] for p in rows.values()})}
-        # Full AVX imports remain private candidates until the owner chooses
-        # the source for each overlapping brand. Aputure is already approved.
-        path = OUT/'avx-aputure.json' if scope == 'aputure' else self.work/'catalogue-candidate.json'
+        # Collection never mutates a published source, including the intermediate
+        # Aputure pass during a full refresh. The shared publisher promotes it.
+        path = self.work/('aputure-candidate.json' if scope == 'aputure' else 'catalogue-candidate.json')
         if path.exists():
             previous = json.loads(path.read_text())
             if len(rows) < previous['product_count'] * .85:

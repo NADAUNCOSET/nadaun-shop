@@ -33,15 +33,8 @@ def publish(snapshot):
     prior=json.loads((WORK/'published.json').read_text()) if (WORK/'published.json').exists() else {}
     if snapshot['product_count']<prior.get('source_verified_products',0)*.85:
         raise RuntimeError('AVX full inventory decreased more than 15%; preserve previous publication and review')
-    from shop_sync import CODE, command, managed_files, run, request, SITE
-    from partner_worker import changed_files
-    if command('git','diff','--cached','--name-only') or command('git','diff','--name-only','--',*CODE):
-        raise RuntimeError('Reviewed commit required before AVX automatic publish')
-    allowed={'data/catalog/sources/avx.json','data/catalog/sources/avx-aputure.json','data/catalog/sources/avx-approved.json'}
-    if changed_files() & (set(managed_files())-allowed):
-        raise RuntimeError('Existing generated edits require review before AVX publish')
-    save_json(OUT/'avx-approved.json',approved)
-    result=run(existing=True)
+    from shop_sync import run, request, SITE
+    result=run(existing=True,source_updates={'avx-approved':approved})
     live=request('GET',SITE+'/data/catalog/catalog.json',params={'verify':result['revision']}).json()
     ids={o['id'] for p in live['products'] for o in p['offers'] if o['source']=='avx'}
     if ids!=set(approved['products']):raise RuntimeError('AVX live IDs do not match approved source partition')

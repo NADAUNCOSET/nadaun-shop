@@ -262,7 +262,7 @@ def _collect_plthink(checkpoint):
     result={'complete':True,'source':'plthink','source_url':BASE,'collected_at':stamp(),
             'brands':brands,'categories':list(categories.values()),'products':completed,
             'product_count':len(completed),'coverage':coverage}
-    save_json(OUT/'plthink.json',result)
+    save_json(WORK/'catalogue-candidate.json',result)
     checkpoint.finish()
     report('verified',len(brands),len(brands),len(products),len(completed))
     return result

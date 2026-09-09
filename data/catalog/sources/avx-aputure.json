@@ -3,7 +3,7 @@
   "scope": "aputure",
   "complete": true,
   "catalogue_complete": false,
-  "collected_at": "2026-09-08T09:13:40+00:00",
+  "collected_at": "2026-09-09T05:40:25+00:00",
   "product_count": 130,
   "products": {
     "avx-3058": {
@@ -50,11 +50,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:55:25+00:00"
+      "verified_at": "2026-09-09T05:25:38+00:00"
     },
     "avx-3034": {
       "id": "avx-3034",
@@ -89,11 +91,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:55:31+00:00"
+      "verified_at": "2026-09-09T05:25:45+00:00"
     },
     "avx-3033": {
       "id": "avx-3033",
@@ -133,11 +137,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:55:37+00:00"
+      "verified_at": "2026-09-09T05:25:51+00:00"
     },
     "avx-3026": {
       "id": "avx-3026",
@@ -183,11 +189,13 @@
         ]
       },
       "description_text": "해당상품 약간 찍힘 있습니다 사진 참고 부탁드립니다. 스테인레스 스틸 2.8m Light Stand - 스테인레스 스틸 재질 - 견고한 구조, 매끄러운 디자인 - 설치 및 접기 편한 설계 - 135cm~280cm 까지 높이 조절 가능 - 접었을 경우 1M - 제품 무게: 2.8KG - 최대 하중: 8KG",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:55:44+00:00"
+      "verified_at": "2026-09-09T05:25:58+00:00"
     },
     "avx-2922": {
       "id": "avx-2922",
@@ -238,6 +246,8 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [
         {
           "name": "viewSuboption[]",
@@ -252,7 +262,7 @@
       "options": [],
       "options_require_confirmation": true,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:55:50+00:00"
+      "verified_at": "2026-09-09T05:26:05+00:00"
     },
     "avx-2921": {
       "id": "avx-2921",
@@ -304,6 +314,8 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [
         {
           "name": "viewSuboption[]",
@@ -318,7 +330,7 @@
       "options": [],
       "options_require_confirmation": true,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:55:56+00:00"
+      "verified_at": "2026-09-09T05:26:11+00:00"
     },
     "avx-2859": {
       "id": "avx-2859",
@@ -355,11 +367,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:56:03+00:00"
+      "verified_at": "2026-09-09T05:26:18+00:00"
     },
     "avx-2836": {
       "id": "avx-2836",
@@ -396,11 +410,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:56:09+00:00"
+      "verified_at": "2026-09-09T05:26:25+00:00"
     },
     "avx-2835": {
       "id": "avx-2835",
@@ -437,11 +453,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:56:15+00:00"
+      "verified_at": "2026-09-09T05:26:31+00:00"
     },
     "avx-2834": {
       "id": "avx-2834",
@@ -478,11 +496,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:56:22+00:00"
+      "verified_at": "2026-09-09T05:26:38+00:00"
     },
     "avx-2833": {
       "id": "avx-2833",
@@ -519,11 +539,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:56:28+00:00"
+      "verified_at": "2026-09-09T05:26:44+00:00"
     },
     "avx-2832": {
       "id": "avx-2832",
@@ -568,11 +590,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:56:34+00:00"
+      "verified_at": "2026-09-09T05:26:51+00:00"
     },
     "avx-2826": {
       "id": "avx-2826",
@@ -617,11 +641,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:56:41+00:00"
+      "verified_at": "2026-09-09T05:26:58+00:00"
     },
     "avx-2825": {
       "id": "avx-2825",
@@ -666,11 +692,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:56:47+00:00"
+      "verified_at": "2026-09-09T05:27:05+00:00"
     },
     "avx-2824": {
       "id": "avx-2824",
@@ -714,11 +742,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:56:54+00:00"
+      "verified_at": "2026-09-09T05:27:11+00:00"
     },
     "avx-2767": {
       "id": "avx-2767",
@@ -766,11 +796,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:57:00+00:00"
+      "verified_at": "2026-09-09T05:27:18+00:00"
     },
     "avx-2766": {
       "id": "avx-2766",
@@ -818,11 +850,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:57:06+00:00"
+      "verified_at": "2026-09-09T05:27:25+00:00"
     },
     "avx-2765": {
       "id": "avx-2765",
@@ -870,6 +904,8 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [
         {
           "name": "viewOptions[]",
@@ -884,7 +920,7 @@
       "options": [],
       "options_require_confirmation": true,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:57:13+00:00"
+      "verified_at": "2026-09-09T05:27:31+00:00"
     },
     "avx-2737": {
       "id": "avx-2737",
@@ -927,11 +963,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:57:19+00:00"
+      "verified_at": "2026-09-09T05:27:38+00:00"
     },
     "avx-2712": {
       "id": "avx-2712",
@@ -972,11 +1010,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:57:26+00:00"
+      "verified_at": "2026-09-09T05:27:45+00:00"
     },
     "avx-2687": {
       "id": "avx-2687",
@@ -1014,11 +1054,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:57:32+00:00"
+      "verified_at": "2026-09-09T05:27:51+00:00"
     },
     "avx-2686": {
       "id": "avx-2686",
@@ -1056,11 +1098,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:57:38+00:00"
+      "verified_at": "2026-09-09T05:27:58+00:00"
     },
     "avx-2682": {
       "id": "avx-2682",
@@ -1111,6 +1155,8 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [
         {
           "name": "viewSuboption[]",
@@ -1125,7 +1171,7 @@
       "options": [],
       "options_require_confirmation": true,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:57:45+00:00"
+      "verified_at": "2026-09-09T05:28:05+00:00"
     },
     "avx-2581": {
       "id": "avx-2581",
@@ -1165,11 +1211,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:57:51+00:00"
+      "verified_at": "2026-09-09T05:28:12+00:00"
     },
     "avx-2580": {
       "id": "avx-2580",
@@ -1209,11 +1257,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:57:58+00:00"
+      "verified_at": "2026-09-09T05:28:18+00:00"
     },
     "avx-2538": {
       "id": "avx-2538",
@@ -1264,6 +1314,8 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [
         {
           "name": "viewSuboption[]",
@@ -1278,7 +1330,7 @@
       "options": [],
       "options_require_confirmation": true,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:58:04+00:00"
+      "verified_at": "2026-09-09T05:28:25+00:00"
     },
     "avx-2461": {
       "id": "avx-2461",
@@ -1316,11 +1368,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:58:11+00:00"
+      "verified_at": "2026-09-09T05:28:32+00:00"
     },
     "avx-2438": {
       "id": "avx-2438",
@@ -1361,11 +1415,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:58:17+00:00"
+      "verified_at": "2026-09-09T05:28:39+00:00"
     },
     "avx-2413": {
       "id": "avx-2413",
@@ -1408,11 +1464,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:58:24+00:00"
+      "verified_at": "2026-09-09T05:28:45+00:00"
     },
     "avx-2412": {
       "id": "avx-2412",
@@ -1451,11 +1509,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:58:30+00:00"
+      "verified_at": "2026-09-09T05:28:52+00:00"
     },
     "avx-2411": {
       "id": "avx-2411",
@@ -1494,11 +1554,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:58:37+00:00"
+      "verified_at": "2026-09-09T05:28:59+00:00"
     },
     "avx-2409": {
       "id": "avx-2409",
@@ -1549,11 +1611,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:58:43+00:00"
+      "verified_at": "2026-09-09T05:29:06+00:00"
     },
     "avx-2408": {
       "id": "avx-2408",
@@ -1591,11 +1655,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:58:50+00:00"
+      "verified_at": "2026-09-09T05:29:12+00:00"
     },
     "avx-2405": {
       "id": "avx-2405",
@@ -1635,11 +1701,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:58:56+00:00"
+      "verified_at": "2026-09-09T05:29:19+00:00"
     },
     "avx-2374": {
       "id": "avx-2374",
@@ -1682,11 +1750,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:59:03+00:00"
+      "verified_at": "2026-09-09T05:29:26+00:00"
     },
     "avx-2373": {
       "id": "avx-2373",
@@ -1726,11 +1796,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:59:09+00:00"
+      "verified_at": "2026-09-09T05:29:33+00:00"
     },
     "avx-2372": {
       "id": "avx-2372",
@@ -1777,11 +1849,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:59:16+00:00"
+      "verified_at": "2026-09-09T05:29:39+00:00"
     },
     "avx-2371": {
       "id": "avx-2371",
@@ -1823,11 +1897,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:59:22+00:00"
+      "verified_at": "2026-09-09T05:29:46+00:00"
     },
     "avx-2367": {
       "id": "avx-2367",
@@ -1873,11 +1949,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:59:29+00:00"
+      "verified_at": "2026-09-09T05:29:53+00:00"
     },
     "avx-2366": {
       "id": "avx-2366",
@@ -1921,11 +1999,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:59:35+00:00"
+      "verified_at": "2026-09-09T05:30:00+00:00"
     },
     "avx-2364": {
       "id": "avx-2364",
@@ -1966,11 +2046,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:59:42+00:00"
+      "verified_at": "2026-09-09T05:30:07+00:00"
     },
     "avx-2363": {
       "id": "avx-2363",
@@ -2011,11 +2093,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:59:48+00:00"
+      "verified_at": "2026-09-09T05:30:14+00:00"
     },
     "avx-2361": {
       "id": "avx-2361",
@@ -2068,6 +2152,8 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [
         {
           "name": "viewSuboption[]",
@@ -2082,7 +2168,7 @@
       "options": [],
       "options_require_confirmation": true,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T08:59:55+00:00"
+      "verified_at": "2026-09-09T05:30:21+00:00"
     },
     "avx-2240": {
       "id": "avx-2240",
@@ -2129,11 +2215,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:00:02+00:00"
+      "verified_at": "2026-09-09T05:30:28+00:00"
     },
     "avx-2237": {
       "id": "avx-2237",
@@ -2170,11 +2258,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:00:10+00:00"
+      "verified_at": "2026-09-09T05:30:35+00:00"
     },
     "avx-2224": {
       "id": "avx-2224",
@@ -2224,6 +2314,8 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [
         {
           "name": "viewSuboption[]",
@@ -2254,7 +2346,7 @@
       "options": [],
       "options_require_confirmation": true,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:00:17+00:00"
+      "verified_at": "2026-09-09T05:30:42+00:00"
     },
     "avx-2015": {
       "id": "avx-2015",
@@ -2293,11 +2385,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:00:23+00:00"
+      "verified_at": "2026-09-09T05:30:48+00:00"
     },
     "avx-2013": {
       "id": "avx-2013",
@@ -2333,11 +2427,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:00:30+00:00"
+      "verified_at": "2026-09-09T05:30:55+00:00"
     },
     "avx-2012": {
       "id": "avx-2012",
@@ -2375,11 +2471,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:00:36+00:00"
+      "verified_at": "2026-09-09T05:31:02+00:00"
     },
     "avx-2011": {
       "id": "avx-2011",
@@ -2416,11 +2514,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:00:43+00:00"
+      "verified_at": "2026-09-09T05:31:09+00:00"
     },
     "avx-2010": {
       "id": "avx-2010",
@@ -2456,11 +2556,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:00:50+00:00"
+      "verified_at": "2026-09-09T05:31:16+00:00"
     },
     "avx-2009": {
       "id": "avx-2009",
@@ -2497,11 +2599,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:00:56+00:00"
+      "verified_at": "2026-09-09T05:31:23+00:00"
     },
     "avx-2008": {
       "id": "avx-2008",
@@ -2542,11 +2646,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:01:03+00:00"
+      "verified_at": "2026-09-09T05:31:30+00:00"
     },
     "avx-2007": {
       "id": "avx-2007",
@@ -2587,11 +2693,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:01:10+00:00"
+      "verified_at": "2026-09-09T05:31:37+00:00"
     },
     "avx-2006": {
       "id": "avx-2006",
@@ -2632,11 +2740,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:01:16+00:00"
+      "verified_at": "2026-09-09T05:31:44+00:00"
     },
     "avx-2005": {
       "id": "avx-2005",
@@ -2676,11 +2786,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:01:23+00:00"
+      "verified_at": "2026-09-09T05:31:50+00:00"
     },
     "avx-2004": {
       "id": "avx-2004",
@@ -2720,11 +2832,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:01:30+00:00"
+      "verified_at": "2026-09-09T05:31:57+00:00"
     },
     "avx-2003": {
       "id": "avx-2003",
@@ -2764,11 +2878,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:01:36+00:00"
+      "verified_at": "2026-09-09T05:32:04+00:00"
     },
     "avx-1995": {
       "id": "avx-1995",
@@ -2806,11 +2922,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:01:43+00:00"
+      "verified_at": "2026-09-09T05:32:11+00:00"
     },
     "avx-1994": {
       "id": "avx-1994",
@@ -2847,11 +2965,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:01:49+00:00"
+      "verified_at": "2026-09-09T05:32:18+00:00"
     },
     "avx-1961": {
       "id": "avx-1961",
@@ -2889,11 +3009,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:01:56+00:00"
+      "verified_at": "2026-09-09T05:32:25+00:00"
     },
     "avx-1957": {
       "id": "avx-1957",
@@ -2936,11 +3058,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:02:03+00:00"
+      "verified_at": "2026-09-09T05:32:32+00:00"
     },
     "avx-1956": {
       "id": "avx-1956",
@@ -2976,11 +3100,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:02:10+00:00"
+      "verified_at": "2026-09-09T05:32:39+00:00"
     },
     "avx-1955": {
       "id": "avx-1955",
@@ -3019,11 +3145,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:02:16+00:00"
+      "verified_at": "2026-09-09T05:32:46+00:00"
     },
     "avx-1951": {
       "id": "avx-1951",
@@ -3065,11 +3193,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:02:23+00:00"
+      "verified_at": "2026-09-09T05:32:53+00:00"
     },
     "avx-1950": {
       "id": "avx-1950",
@@ -3107,11 +3237,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:02:29+00:00"
+      "verified_at": "2026-09-09T05:33:00+00:00"
     },
     "avx-1949": {
       "id": "avx-1949",
@@ -3157,11 +3289,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:02:36+00:00"
+      "verified_at": "2026-09-09T05:33:07+00:00"
     },
     "avx-1927": {
       "id": "avx-1927",
@@ -3209,11 +3343,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:02:43+00:00"
+      "verified_at": "2026-09-09T05:33:14+00:00"
     },
     "avx-1925": {
       "id": "avx-1925",
@@ -3262,11 +3398,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:02:49+00:00"
+      "verified_at": "2026-09-09T05:33:21+00:00"
     },
     "avx-1923": {
       "id": "avx-1923",
@@ -3312,11 +3450,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:07:03+00:00"
+      "verified_at": "2026-09-09T05:33:28+00:00"
     },
     "avx-1909": {
       "id": "avx-1909",
@@ -3364,6 +3504,8 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [
         {
           "name": "viewSuboption[]",
@@ -3387,7 +3529,7 @@
       "options": [],
       "options_require_confirmation": true,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:07:09+00:00"
+      "verified_at": "2026-09-09T05:33:35+00:00"
     },
     "avx-1908": {
       "id": "avx-1908",
@@ -3436,6 +3578,8 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [
         {
           "name": "viewSuboption[]",
@@ -3459,7 +3603,7 @@
       "options": [],
       "options_require_confirmation": true,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:07:16+00:00"
+      "verified_at": "2026-09-09T05:33:41+00:00"
     },
     "avx-1907": {
       "id": "avx-1907",
@@ -3507,6 +3651,8 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [
         {
           "name": "viewSuboption[]",
@@ -3530,7 +3676,7 @@
       "options": [],
       "options_require_confirmation": true,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:07:22+00:00"
+      "verified_at": "2026-09-09T05:33:48+00:00"
     },
     "avx-1905": {
       "id": "avx-1905",
@@ -3576,6 +3722,8 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [
         {
           "name": "viewSuboption[]",
@@ -3606,7 +3754,7 @@
       "options": [],
       "options_require_confirmation": true,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:07:28+00:00"
+      "verified_at": "2026-09-09T05:33:55+00:00"
     },
     "avx-1893": {
       "id": "avx-1893",
@@ -3648,11 +3796,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:07:35+00:00"
+      "verified_at": "2026-09-09T05:34:02+00:00"
     },
     "avx-1892": {
       "id": "avx-1892",
@@ -3694,11 +3844,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:07:41+00:00"
+      "verified_at": "2026-09-09T05:34:09+00:00"
     },
     "avx-1879": {
       "id": "avx-1879",
@@ -3742,11 +3894,13 @@
         ]
       },
       "description_text": "[ 어퓨쳐 인피니바 1 + 1 이벤트 ] 하나사면 하나 더 증정! Aputure INFINIBAR PB 6 8-Light Kit + Aputure INFINIBAR PB 6 8-Light Kit",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:07:47+00:00"
+      "verified_at": "2026-09-09T05:34:16+00:00"
     },
     "avx-1878": {
       "id": "avx-1878",
@@ -3786,11 +3940,13 @@
         ]
       },
       "description_text": "[ 어퓨쳐 인피니바 1 + 1 이벤트 ] 하나사면 하나 더 증정! Aputure INFINIBAR PB 12 8-Light Kit + Aputure INFINIBAR PB 12 8-Light Kit",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:07:54+00:00"
+      "verified_at": "2026-09-09T05:34:23+00:00"
     },
     "avx-1876": {
       "id": "avx-1876",
@@ -3829,11 +3985,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:08:00+00:00"
+      "verified_at": "2026-09-09T05:34:30+00:00"
     },
     "avx-1875": {
       "id": "avx-1875",
@@ -3883,11 +4041,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:08:06+00:00"
+      "verified_at": "2026-09-09T05:34:37+00:00"
     },
     "avx-1855": {
       "id": "avx-1855",
@@ -3924,11 +4084,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:08:13+00:00"
+      "verified_at": "2026-09-09T05:34:44+00:00"
     },
     "avx-1854": {
       "id": "avx-1854",
@@ -3967,11 +4129,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:08:19+00:00"
+      "verified_at": "2026-09-09T05:34:51+00:00"
     },
     "avx-1853": {
       "id": "avx-1853",
@@ -4010,11 +4174,13 @@
         ]
       },
       "description_text": "제품은 220V 코드 타입으로 배송 됩니다. 📌 고객센터 안내 고객센터: 02-2265-0032 📌 성수동 에이브이엑스 쇼룸 안내 성수동 에이브이엑스 쇼룸에서는 최신 영상, 음향, 조명 장비를 직접 체험하고 현장에서 구매도 가능합니다. 쇼룸 방문 가능한 시간 : (월-금) 𝟎 𝟗 : 𝟑 𝟎 - 𝟏 𝟖 : 𝟑 𝟎 ( 𝟏 𝟐 : 𝟑 𝟎 - 𝟏 𝟑 : 𝟑 𝟎 휴게시간)",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:08:25+00:00"
+      "verified_at": "2026-09-09T05:34:58+00:00"
     },
     "avx-1852": {
       "id": "avx-1852",
@@ -4052,11 +4218,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:08:32+00:00"
+      "verified_at": "2026-09-09T05:35:05+00:00"
     },
     "avx-1851": {
       "id": "avx-1851",
@@ -4094,11 +4262,13 @@
         ]
       },
       "description_text": "케이스 크기 60.7 x 40 x 37.2cm / 23.9 x 15.75 x 14.65in",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:08:38+00:00"
+      "verified_at": "2026-09-09T05:35:12+00:00"
     },
     "avx-1836": {
       "id": "avx-1836",
@@ -4140,11 +4310,13 @@
         ]
       },
       "description_text": "[ 어퓨쳐 인피니바 1 + 1 이벤트 ] 하나사면 하나 더 증정! Aputure INFINIBAR PB 6 4-Light Kit + Aputure INFINIBAR PB 6 4-Light Kit",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:08:45+00:00"
+      "verified_at": "2026-09-09T05:35:19+00:00"
     },
     "avx-1835": {
       "id": "avx-1835",
@@ -4187,11 +4359,13 @@
         ]
       },
       "description_text": "[ 어퓨쳐 인피니바 1 + 1 이벤트 ] 하나사면 하나 더 증정! Aputure INFINIBAR PB 12 4-Light Kit + Aputure INFINIBAR PB 12 4-Light Kit",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:08:51+00:00"
+      "verified_at": "2026-09-09T05:35:26+00:00"
     },
     "avx-1562": {
       "id": "avx-1562",
@@ -4244,11 +4418,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:08:57+00:00"
+      "verified_at": "2026-09-09T05:35:33+00:00"
     },
     "avx-1377": {
       "id": "avx-1377",
@@ -4298,6 +4474,8 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [
         {
           "name": "viewOptions[]",
@@ -4347,7 +4525,7 @@
       "options": [],
       "options_require_confirmation": true,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:09:04+00:00"
+      "verified_at": "2026-09-09T05:35:39+00:00"
     },
     "avx-1348": {
       "id": "avx-1348",
@@ -4391,11 +4569,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:09:10+00:00"
+      "verified_at": "2026-09-09T05:35:46+00:00"
     },
     "avx-1288": {
       "id": "avx-1288",
@@ -4438,11 +4618,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:09:17+00:00"
+      "verified_at": "2026-09-09T05:35:53+00:00"
     },
     "avx-1282": {
       "id": "avx-1282",
@@ -4486,6 +4668,8 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [
         {
           "name": "viewOptions[]",
@@ -4500,7 +4684,7 @@
       "options": [],
       "options_require_confirmation": true,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:09:23+00:00"
+      "verified_at": "2026-09-09T05:36:00+00:00"
     },
     "avx-1278": {
       "id": "avx-1278",
@@ -4544,6 +4728,8 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [
         {
           "name": "viewOptions[]",
@@ -4562,7 +4748,7 @@
       "options": [],
       "options_require_confirmation": true,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:09:30+00:00"
+      "verified_at": "2026-09-09T05:36:07+00:00"
     },
     "avx-1206": {
       "id": "avx-1206",
@@ -4605,11 +4791,13 @@
         ]
       },
       "description_text": "MT PRO 는 Aputure 최초의 풀 컬러 미니 LED 튜브 라이트이다. 콤팩트한 1피트 프레임으로 압축된 MT Pro는 업계 최고의 픽셀 밀도와 무선 CRMX 연결 등 다른 제품보다 뛰어난 전문 기능을 통해 눈부시게 빛납니다. MT Pro는 모든 수준의 영화 제작자, 사진작가 및 컨텐츠 제작자에게 적합합니다. 촬영중 실용적인 이동 중인 컨텐츠 제작 및 제품 촬영에 적합합니다. 업계 최고의 픽셀 밀도. MT Pro는 36개의 초미세 RGBWW 픽셀을 1피트 미니 LED 조명에 내장하고 G/M, 고급 HSI, xy*, RGB 튜너빌리티 컨트롤을 갖춘 CCT와 내장된 System FX를 통해 믿을 수 없을 정도로 부드러운 픽셀 추적 및 효과를 포함하고 있어 육안으로 개별 픽셀을 구별하는 것은 사실상 불가능하다. 콤팩트한 디자인. 전문가들을 염두에 두고 설계된 1피트짜리 MT Pro의 견고한 구조는 가볍고 391g의 알루미늄 프레임을 활용하면서 Aputure의 높은 빌드 품질을 유지합니다. 초박형 베젤과 180° 조리개도 어느 환경과도 매끄럽게 어우러져 카메라 내 실용성에 제격이다. 전문적인 연결성. Lumen Radio CRMX를 사용하여 원격으로 연결하든, 유선 DMX채널을 통해 연결하든, Sidus Link 모바일 앱을 통해 직접 연결하든, MT Pro는 기존 조명 워크플로우에 원활하게 통합되도록 보장합니다. 주요 기능 - 7.5W 출력 픽셀-매핑 가능한 RGBWW 미니 튜브 LED - 0.5m(6500K)에서 614 럭스 - 업계 최고의 픽셀 밀도: 36픽셀(1피트) - CRI: 95, TLCI: 98, TM-30 Rf(평균): 93, TM-30 Rg(평균): 102, SSI(D56): 73, SSI(텅스텐): 84 - 2,000K ~ 10,000K의 완전 조정 가능한 CCT - 내장 리튬 폴리머 배터리(약 120분). @ 최대 전력) - 백점 CCT 제어 기능이 있는 고급 HSI - 다중 제어 방법: Sidus Link 블루투스 앱 제어, DMX/RDM*, LumenRadio CRMX - SidusPro® FX 지원: 수동 FX, 시스템 FX, 피커 FX, 매직 프로그램 및 음악 FX - 9 내장 시스템 FX, 7 내장 픽셀 FX 기본 제공 내용 - MT Pro 1개 - 45° 패브릭 조명 제어 그리드 1개 - 볼 헤드에 1/4-20이 있는 미니 삼각대 1개 - USB Type-C 충전 케이블 1개 - 운반 케이스 1개 * Sidus Link를 통해 사용할 수 있습니다. ** USB-C에서 5핀 XLR 입력 및 출력 DMX 어댑터 별도 판매.",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:09:36+00:00"
+      "verified_at": "2026-09-09T05:36:14+00:00"
     },
     "avx-1169": {
       "id": "avx-1169",
@@ -4646,11 +4834,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:09:43+00:00"
+      "verified_at": "2026-09-09T05:36:21+00:00"
     },
     "avx-1168": {
       "id": "avx-1168",
@@ -4687,11 +4877,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:09:49+00:00"
+      "verified_at": "2026-09-09T05:36:28+00:00"
     },
     "avx-1167": {
       "id": "avx-1167",
@@ -4735,11 +4927,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:09:56+00:00"
+      "verified_at": "2026-09-09T05:36:34+00:00"
     },
     "avx-1124": {
       "id": "avx-1124",
@@ -4780,11 +4974,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:10:02+00:00"
+      "verified_at": "2026-09-09T05:36:41+00:00"
     },
     "avx-1121": {
       "id": "avx-1121",
@@ -4825,11 +5021,13 @@
         ]
       },
       "description_text": "------ MC MINI 바로가기",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:10:09+00:00"
+      "verified_at": "2026-09-09T05:36:48+00:00"
     },
     "avx-1084": {
       "id": "avx-1084",
@@ -4870,11 +5068,13 @@
         ]
       },
       "description_text": "재고 소진으로 예약주문으로 가능합니다. 참고 주문 부탁드립니다!! ( 제품 배송 관련 문의: 02-2265-0032 / 카톡문의 가능) [ 어퓨쳐 인피니바 1 + 1 이벤트 ] 하나사면 하나 더 증정! Aputure INFINIBAR PB12 + Aputure INFINIBAR PB12",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:10:16+00:00"
+      "verified_at": "2026-09-09T05:36:55+00:00"
     },
     "avx-1083": {
       "id": "avx-1083",
@@ -4916,11 +5116,13 @@
         ]
       },
       "description_text": "[ 어퓨쳐 인피니바 1 + 1 이벤트 ] 하나사면 하나 더 증정! Aputure INFINIBAR PB6 + Aputure INFINIBAR PB6",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:10:22+00:00"
+      "verified_at": "2026-09-09T05:37:02+00:00"
     },
     "avx-1082": {
       "id": "avx-1082",
@@ -4963,11 +5165,13 @@
         ]
       },
       "description_text": "[ 어퓨쳐 인피니바 1 + 1 이벤트 ] 하나사면 하나 더 증정! Aputure INFINIBAR PB3 + Aputure INFINIBAR PB3",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:10:29+00:00"
+      "verified_at": "2026-09-09T05:37:09+00:00"
     },
     "avx-971": {
       "id": "avx-971",
@@ -5007,11 +5211,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:10:35+00:00"
+      "verified_at": "2026-09-09T05:37:16+00:00"
     },
     "avx-970": {
       "id": "avx-970",
@@ -5052,11 +5258,13 @@
         ]
       },
       "description_text": "Nova P600C SPACE LIGHT Nova P600c Space Light는 Nova P600c 및 P300c 조명 패널용으로 설계된 전 방향 확산 제품입니다. 기존의 우주 조명과 마찬가지로 전 방향 빛 확산을 달성하기 위해 원통형 디자인이 특징입니다. 이렇게 하면 가장자리 그림자가 줄어들고 크고 부드러운 조명 환경을 만드는 데 적합합니다. -확산 통제 - 추가적인 유연성을 위해 Space Light에는 조절 가능한 조명 제어 스커트가 있습니다. 반사 내부 레이어와 검정색 외부 레이어로 Space Light는 과도한 스필 라이트를 완전히 제거합니다. 스커트의 한 쪽만 아래로 굴려 부드럽고 방향성 있는 조명을 연출하거나 스커트를 완전히 닫아 원형 조명 패턴으로 아래쪽으로 투사되는 조명을 만듭니다. -스튜디오에 최적화 - Nova P600c 또는 Nova P300c와 결합할 때 제품의 직경 0.9M 및 높이 0.7M는 그린 스크린을 채우기 위한 큰 광량 소스를 제공합니다. 휴대용 가방에 깔끔하게 접히므로 보관하는 것도 간단합니다. -제품구성- - 1x 스페이스 라이트 디퓨저 - 1x 스페이스 라이트 서스펜션 마운트 - 1x 조명 제어 스커트 - 1x 휴대용 가방1x Nova P600c 45º 메탈 그리드",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:10:41+00:00"
+      "verified_at": "2026-09-09T05:37:23+00:00"
     },
     "avx-969": {
       "id": "avx-969",
@@ -5095,11 +5303,13 @@
         ]
       },
       "description_text": "Nova P600C 45° Metal Grid 메탈그리드 Nova P600c 45° Metal Grid는 Nova P600c의 부드러운 빛 출력의 확산을 좁히고 번짐을 제거하도록 설계된 조명 제어 제품입니다. 강성을 위한 벌집 구조가 특징이며 초슬림 구조로 P600c의 액세서리 슬롯에 직접 밀어 넣습니다. 이를 통해 사용자는 패브릭 조명 악세사리에 필적하는 부드러운 품질을 유지하면서 P600C의 빔 확산을 조절할 수 있습니다. -낮은 프로필, 높은 효율성 - 두께가 2.1cm에 불과하고 무게가 0.63kg에 불과한 이 제품은 크기나 무게의 눈에 띄는 증가 없이 Nova P600c에 또 다른 제어 수준을 추가하여 팝업보다 더 컴팩트한 솔루션을 만듭니다. -빠르고 간단한 설치 - Nova P600c의 빠른 잠금 액세서리 슬롯을 활용하는 이 제품은 후크 앤 루프 스트랩 없이 설치할 수 있어 촬영 중 소중한 시간을 절약할 수 있습니다. -제품구성- - 1x Nova P600c 45º 메탈 그리드",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:10:48+00:00"
+      "verified_at": "2026-09-09T05:37:29+00:00"
     },
     "avx-968": {
       "id": "avx-968",
@@ -5138,11 +5348,13 @@
         ]
       },
       "description_text": "Nova P600C RAIN SHIELD 레인 쉴드 Nova P600c Rain Shield는 악천후에서 촬영할 때 Nova P600c를 보호하도록 설계되었습니다. 고밀도 방수 나일론 패브릭 재질과 구조적 강성을 강화한 금속 프레임이 특징입니다. 레인 쉴드는 빗속에서 빛을 보호하는 완벽한 동반자입니다. -직관적인 설치- P600c의 액세서리 슬롯에 쉽게 밀어 넣을 수 있는 금속 측면 지지대가 있어 설치가 간단하고 직관적입니다. 나일론 상단 커버는 가장 힘든 작업에도 견딜 수 있는 내구성 있는 고리형 패브릭을 사용하여 측면 지지대에 부착됩니다. -간편한 보관- 모듈식 디자인을 특징으로 하는 Nova P600c Rain Shield는 포함된 전용 가방에 컴팩트하게 보관하여 촬영 사이에 쉽게 이동할 수 있습니다. -제품구성- - 1x 금속 지지대(프레임) - 1x 방수 나일론 쉘 - 1x 휴대용 케이스",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:10:55+00:00"
+      "verified_at": "2026-09-09T05:37:36+00:00"
     },
     "avx-955": {
       "id": "avx-955",
@@ -5178,11 +5390,13 @@
         "detail": []
       },
       "description_text": "MT PRO 는 Aputure 최초의 풀 컬러 미니 LED 튜브 라이트이다. 콤팩트한 1피트 프레임으로 압축된 MT Pro는 업계 최고의 픽셀 밀도와 무선 CRMX 연결 등 다른 제품보다 뛰어난 전문 기능을 통해 눈부시게 빛납니다. MT Pro는 모든 수준의 영화 제작자, 사진작가 및 컨텐츠 제작자에게 적합합니다. 촬영중 실용적인 이동 중인 컨텐츠 제작 및 제품 촬영에 적합합니다. 업계 최고의 픽셀 밀도. MT Pro는 36개의 초미세 RGBWW 픽셀을 1피트 미니 LED 조명에 내장하고 G/M, 고급 HSI, xy*, RGB 튜너빌리티 컨트롤을 갖춘 CCT와 내장된 System FX를 통해 믿을 수 없을 정도로 부드러운 픽셀 추적 및 효과를 포함하고 있어 육안으로 개별 픽셀을 구별하는 것은 사실상 불가능하다. 콤팩트한 디자인. 전문가들을 염두에 두고 설계된 1피트짜리 MT Pro의 견고한 구조는 가볍고 391g의 알루미늄 프레임을 활용하면서 Aputure의 높은 빌드 품질을 유지합니다. 초박형 베젤과 180° 조리개도 어느 환경과도 매끄럽게 어우러져 카메라 내 실용성에 제격이다. 전문적인 연결성. Lumen Radio CRMX를 사용하여 원격으로 연결하든, 유선 DMX채널을 통해 연결하든, Sidus Link 모바일 앱을 통해 직접 연결하든, MT Pro는 기존 조명 워크플로우에 원활하게 통합되도록 보장합니다. 주요 기능 - 7.5W 출력 픽셀-매핑 가능한 RGBWW 미니 튜브 LED - 0.5m(6500K)에서 614 럭스 - 업계 최고의 픽셀 밀도: 36픽셀(1피트) - CRI: 95, TLCI: 98, TM-30 Rf(평균): 93, TM-30 Rg(평균): 102, SSI(D56): 73, SSI(텅스텐): 84 - 2,000K ~ 10,000K의 완전 조정 가능한 CCT - 내장 리튬 폴리머 배터리(약 120분). @ 최대 전력) - 백점 CCT 제어 기능이 있는 고급 HSI - 다중 제어 방법: Sidus Link 블루투스 앱 제어, DMX/RDM*, LumenRadio CRMX - SidusPro® FX 지원: 수동 FX, 시스템 FX, 피커 FX, 매직 프로그램 및 음악 FX - 9 내장 시스템 FX, 7 내장 픽셀 FX 기본 제공 내용 - MT Pro 1개 - 45° 패브릭 조명 제어 그리드 1개 - 볼 헤드에 1/4-20이 있는 미니 삼각대 1개 - USB Type-C 충전 케이블 1개 - 운반 케이스 1개 * Sidus Link를 통해 사용할 수 있습니다. ** USB-C에서 5핀 XLR 입력 및 출력 DMX 어댑터 별도 판매.",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:11:01+00:00"
+      "verified_at": "2026-09-09T05:37:43+00:00"
     },
     "avx-939": {
       "id": "avx-939",
@@ -5222,11 +5436,13 @@
         ]
       },
       "description_text": "600D, 600X용 헤드케이블 7.5M 5 Pin Weatherproof Cable 600D, 600X용 헤드케이블 7.5M 5 Pin Weatherproof Cable",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:11:08+00:00"
+      "verified_at": "2026-09-09T05:37:50+00:00"
     },
     "avx-937": {
       "id": "avx-937",
@@ -5271,11 +5487,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:11:14+00:00"
+      "verified_at": "2026-09-09T05:37:57+00:00"
     },
     "avx-936": {
       "id": "avx-936",
@@ -5313,11 +5531,13 @@
         ]
       },
       "description_text": "Nova P600c 소프트박스 Nova P600c에 맞게 제작되어 램프 본체와 완벽하게 어울립니다. 혁신적인 디자인, 간편하고 편리한 설치, 견고하고 신뢰할 수 있는 기능 소프트박스 본체는 내마모성과 고온에 강한 원단으로 제작되어 빛 활용도를 높이기 위한 반사율이 높은 소재를 사용합니다. 표준 45° 조명제어 그릴로 경량 및 휴대성을 더욱 높이고, 무게는 1.69kg에 불과하여 보관 및 운반이 용이합니다.",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:11:21+00:00"
+      "verified_at": "2026-09-09T05:38:04+00:00"
     },
     "avx-935": {
       "id": "avx-935",
@@ -5353,11 +5573,13 @@
         ]
       },
       "description_text": "Nova P600c Barndoor 가볍고 강하다 4-leaf 디자인, 음영 각도 조절 가능 간편한 설치, Nova P600c 외부 슬롯에 밀어넣기",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:11:28+00:00"
+      "verified_at": "2026-09-09T05:38:11+00:00"
     },
     "avx-912": {
       "id": "avx-912",
@@ -5402,11 +5624,13 @@
         ]
       },
       "description_text": "SPOTLIGHT MINI ZOOM - 15°~30° 2배 줌 조정 가능한 초점 투영 렌즈입니다. - 정밀 색수차가 없는 광학입니다. - 미래형 LS 60d 및 60x 초점 LED 조명과 호환됩니다. - M사이즈 고보를 사용할 수 있습니다. - 아이리스, 고보홀더, M사이즈 고보 15개 포함입니다 - Puture M-Size Iris 액세서리와 호환됩니다. - 5m 거리에서 1.4m-2.8m 직경의 조명 원입니다. - 균등한 배광(80% 이상의 일관된 가장자리 조도)을 제공합니다. - 내부 확대/축소 메커니즘입니다. - 다이캐스트 알루미늄 합금 및 정전기 분말 스프레이 구조로 내구성을 높입니다. - Rosette-Style 스타일 잠금 요크입니다.",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:11:34+00:00"
+      "verified_at": "2026-09-09T05:38:17+00:00"
     },
     "avx-909": {
       "id": "avx-909",
@@ -5451,11 +5675,13 @@
         ]
       },
       "description_text": "스테인레스 스틸 2.8m Light Stand - 스테인레스 스틸 재질 - 견고한 구조, 매끄러운 디자인 - 설치 및 접기 편한 설계 - 135cm~280cm 까지 높이 조절 가능 - 접었을 경우 1M - 제품 무게: 2.8KG - 최대 하중: 8KG",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:11:41+00:00"
+      "verified_at": "2026-09-09T05:38:24+00:00"
     },
     "avx-877": {
       "id": "avx-877",
@@ -5499,11 +5725,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:11:47+00:00"
+      "verified_at": "2026-09-09T05:38:31+00:00"
     },
     "avx-858": {
       "id": "avx-858",
@@ -5547,11 +5775,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:11:54+00:00"
+      "verified_at": "2026-09-09T05:38:38+00:00"
     },
     "avx-763": {
       "id": "avx-763",
@@ -5594,11 +5824,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:12:00+00:00"
+      "verified_at": "2026-09-09T05:38:45+00:00"
     },
     "avx-761": {
       "id": "avx-761",
@@ -5645,11 +5877,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:12:07+00:00"
+      "verified_at": "2026-09-09T05:38:52+00:00"
     },
     "avx-734": {
       "id": "avx-734",
@@ -5694,11 +5928,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:12:13+00:00"
+      "verified_at": "2026-09-09T05:38:58+00:00"
     },
     "avx-724": {
       "id": "avx-724",
@@ -5739,11 +5975,13 @@
         ]
       },
       "description_text": "* 구매전 안내사항 * 임시품절되어 사전예약으로 주문가능합니다.",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:12:20+00:00"
+      "verified_at": "2026-09-09T05:39:06+00:00"
     },
     "avx-714": {
       "id": "avx-714",
@@ -5789,11 +6027,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:12:27+00:00"
+      "verified_at": "2026-09-09T05:39:12+00:00"
     },
     "avx-712": {
       "id": "avx-712",
@@ -5843,11 +6083,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:12:33+00:00"
+      "verified_at": "2026-09-09T05:39:19+00:00"
     },
     "avx-711": {
       "id": "avx-711",
@@ -5892,11 +6134,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:12:40+00:00"
+      "verified_at": "2026-09-09T05:39:26+00:00"
     },
     "avx-710": {
       "id": "avx-710",
@@ -5936,11 +6180,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:12:46+00:00"
+      "verified_at": "2026-09-09T05:39:33+00:00"
     },
     "avx-702": {
       "id": "avx-702",
@@ -5984,11 +6230,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:12:53+00:00"
+      "verified_at": "2026-09-09T05:39:40+00:00"
     },
     "avx-658": {
       "id": "avx-658",
@@ -6020,15 +6268,25 @@
           "https://www.avx.co.kr/data/goods/1/2020/09/658_tmp_4dfa571f41a1d372c3c1dd550658d9437021view.png"
         ],
         "detail": [
-          "https://www.avx.co.kr/data/editor/goods/1/2020/09/mobile_658_830f73c1a6a7771b3a199aa9b77ec22a1035260_split_0_split_0_split_0_split_0.png"
+          "https://www.avx.co.kr/data/editor/goods/1/2020/09/mobile_658_830f73c1a6a7771b3a199aa9b77ec22a1035260_split_0_split_0_split_0_split_0.png",
+          "https://www.aputure.com/wp-content/uploads/2020/08/WEBSITE4-859x1000.jpeg",
+          "https://www.aputure.com/wp-content/uploads/2020/08/WEBSITE-1-1000x667.jpg",
+          "https://www.aputure.com/wp-content/uploads/2020/08/DX_4040-scaled.jpg",
+          "https://www.aputure.com/wp-content/uploads/2020/08/WEBSITE-2-1000x667.jpg",
+          "https://www.aputure.com/wp-content/uploads/2020/08/WEBSITE-3-1000x667.jpg",
+          "https://www.aputure.com/wp-content/uploads/2020/08/5a164c54-9c03-4a15-9bd2-0aed56dad57b-1000x666.jpg",
+          "https://www.aputure.com/wp-content/uploads/2020/08/DX_3949-1000x667.jpg",
+          "https://cdn.shopify.com/s/files/1/1343/1935/products/MC-12_1000x1500.png?v=1598922576"
         ]
       },
       "description_text": "무엇이든 준비 Aputure MC 12-Light Production Kit는 무선 충전, AC 및 D-Tap 전원, 내장 액세서리 서랍을 특징으로하는 소유자 및 임대 주택용으로 설계되었습니다. 모든 색상. 어딘가에. Aputure MC는 바이 컬러 및 HSI 컬러 컨트롤과 내장형 Sidus Mesh 앱 기능을 특징으로 하는 최초의 RGBWW 필름 조명으로, 어느 곳에나 어울리는 크기입니다. 내구성있는 케이스 매끄럽고 내구성있는 구조의 MC 12-Light Production Kit는 최대 12 개의 RGBWW Aputure MC 조명을 보관하고 보호할 수 있도록 독특하게 설계된 견고한 하드쉘 휴대용 케이스로 구성됩니다. 무선 충전 MC 12-Light Production Kit는 통합 무선 충전 패드를 사용하여 MC를 보관하고 보호할뿐만 아니라 충전도 하므로 더 이상 각 MC에 충전 케이블이 필요하지 않습니다. D-TAP 충전 MC 12-Light Kit는 고출력 D-Tap 배터리를 통해 전원을 공급할 수 있으며 D-Tap 대 D-Tap 전원 케이블이 포함되어있어 이동 중에도 언제든지 충전 할 수 있습니다. 액세서리 서랍 올인원 키트로 설계된 12-Light Production Kit에는 AC 및 D-Tap 전원 케이블, USB-C 케이블, 볼 헤드, 4 세트의 디퓨저 및 콜드 슈를 보관하는 고유한 내장 측면 서랍이 있습니다. 모든 것에 도전 12-Light Production Kit의 크기와 유연성을 통해 영화 제작자는 Picker FX, Manual FX 및 Magic Program을 포함한 Sidus Pro FX를 사용하여 새로운 조명 디자인을 발명하고 오래된 문제를 새로운 방식으로 해결할 수 있습니다.",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:13:00+00:00"
+      "verified_at": "2026-09-09T05:39:47+00:00"
     },
     "avx-606": {
       "id": "avx-606",
@@ -6077,6 +6335,8 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [
         {
           "name": "viewOptions[]",
@@ -6117,7 +6377,7 @@
       "options": [],
       "options_require_confirmation": true,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:13:06+00:00"
+      "verified_at": "2026-09-09T05:39:54+00:00"
     },
     "avx-594": {
       "id": "avx-594",
@@ -6156,11 +6416,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:13:13+00:00"
+      "verified_at": "2026-09-09T05:40:00+00:00"
     },
     "avx-429": {
       "id": "avx-429",
@@ -6200,11 +6462,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:13:20+00:00"
+      "verified_at": "2026-09-09T05:40:08+00:00"
     },
     "avx-412": {
       "id": "avx-412",
@@ -6244,11 +6508,13 @@
         ]
       },
       "description_text": "Aputure Space Light는 우리가 만든 가장 다양한 조명 액세서리입니다. Light Storm 120 및 300 시리즈뿐만 아니라 다른 Bowens 탑재 LED 조명을 위해 설계된 Space Light는 사진 작가, 영화 제작자 및 비디오 그래퍼가 COB 조명에 볼륨을 추가하고 부드럽고 넓은 광원을 생성하는 데 사용됩니다. 효율적이고 최적으로 분산되어 있습니다. - 28.5 \"높이 및 18.1\"너비 실린더 디자인 - 탈부착이 가능한 사이드 리플렉터가 있어야합니다. - 오버 헤드 소프트 라이트에 이상적입니다. - 밀리터리급 직물 - 설치 및 접기가 쉽습니다. - Bowens 마운트 라이트와 호환.",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:13:26+00:00"
+      "verified_at": "2026-09-09T05:40:15+00:00"
     },
     "avx-410": {
       "id": "avx-410",
@@ -6294,11 +6560,13 @@
         ]
       },
       "description_text": "",
+      "content_issues": [],
+      "content_status": "complete",
       "option_groups": [],
       "options": [],
       "options_require_confirmation": false,
       "detail_status": "verified",
-      "verified_at": "2026-09-08T09:13:33+00:00"
+      "verified_at": "2026-09-09T05:40:22+00:00"
     }
   },
   "categories": [

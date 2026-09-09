@@ -40,21 +40,15 @@ def receipt(snapshot, release, catalog):
 
 
 def publish(snapshot):
-    from shop_sync import CODE, command, managed_files, run, request, SITE
-    from partner_worker import changed_files
+    from shop_sync import run, request, SITE
     validate_snapshot(snapshot)
     if selections().get('dji',{}).get('source')!=SOURCE:
         raise RuntimeError('Official DJI source is not selected by the owner')
-    if command('git','diff','--cached','--name-only') or command('git','diff','--name-only','--',*CODE):
-        raise RuntimeError('Reviewed commit required before DJI automatic publication')
-    if changed_files() & (set(managed_files())-{'data/catalog/sources/dji-official.json'}):
-        raise RuntimeError('Existing generated edits require review before DJI publication')
     path=OUT/(SOURCE+'.json')
     previous=json.loads(path.read_text()) if path.exists() else {}
     if snapshot['product_count']<previous.get('product_count',0)*.85:
         raise RuntimeError('Official DJI inventory decreased more than 15%; review before publication')
-    save_json(path,snapshot)
-    release=run(existing=True)
+    release=run(existing=True,source_updates={SOURCE:snapshot})
     live=request('GET',SITE+'/data/catalog/catalog.json',params={'verify':release['revision']}).json()
     return receipt(snapshot,release,live)
 
