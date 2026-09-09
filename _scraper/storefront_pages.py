@@ -11,9 +11,21 @@ def banner_content():
     for i,b in enumerate(banners):
         if not b['href'].startswith('/') or b['href'].startswith('//'):
             raise ValueError('Banner target must be a shop path')
-        slides.append(f'<a class="shop-banner-slide{" is-active" if i==0 else ""}" href="{escape(b["href"])}" data-banner-title="{escape(b["title"])}" aria-label="{escape(b["title"])} 브랜드 상품 보기"'+('' if i==0 else ' inert aria-hidden="true"')+f'><picture><source media="(max-width:700px)" srcset="{escape(b["mobile"])}" width="750" height="600"><img src="{escape(b["desktop"])}" alt="{escape(b["alt"])}" width="1920" height="400" '+('fetchpriority="high"' if i==0 else 'loading="lazy"')+' decoding="async"></picture></a>')
+        loading='fetchpriority="high"' if i==0 else 'loading="lazy"'
+        copy=b.get('mobile_copy')
+        if copy:
+            # Preserve the partner's desktop master; mobile gets readable live text.
+            visual=(f'<picture class="banner-desktop-only"><img src="{escape(b["desktop"])}" alt="{escape(b["alt"])}" width="1920" height="400" {loading} decoding="async"></picture>'
+                    '<span class="banner-mobile-card">'
+                    f'<span class="banner-mobile-copy"><span class="banner-mobile-eyebrow">{escape(copy["eyebrow"])}</span>'
+                    f'<strong>{escape(copy["title"])}</strong><span class="banner-mobile-description">{escape(copy["description"])}</span>'
+                    '<span class="banner-mobile-cta">상품 보기 <span aria-hidden="true">↗</span></span></span>'
+                    f'<span class="banner-mobile-image"><img src="{escape(b["mobile"])}" alt="" width="600" height="600" {loading} decoding="async"></span></span>')
+        else:
+            visual=(f'<picture><source media="(max-width:700px)" srcset="{escape(b["mobile"])}" width="750" height="600">'
+                    f'<img src="{escape(b["desktop"])}" alt="{escape(b["alt"])}" width="1920" height="400" {loading} decoding="async"></picture>')
+        slides.append(f'<a class="shop-banner-slide{" is-active" if i==0 else ""}" href="{escape(b["href"])}" data-banner-title="{escape(b["title"])}" aria-label="{escape(b["alt"])} 상품 보기"'+('' if i==0 else ' inert aria-hidden="true"')+'>'+visual+'</a>')
     return '<section class="shop-banner" aria-label="브랜드 소식" aria-roledescription="캐러셀"><div class="shop-banner-stage">'+''.join(slides)+'</div><div class="banner-bar"><span class="banner-caption">'+escape(banners[0]['title'])+'</span><div class="banner-controls" hidden><button type="button" data-banner-prev aria-label="이전 배너">←</button><span class="banner-counter" aria-live="off">01 / '+str(len(banners)).zfill(2)+'</span><button type="button" data-banner-next aria-label="다음 배너">→</button><button type="button" class="banner-accessibility-pause" data-banner-pause aria-pressed="false">배너 자동 넘김 멈추기</button></div><span class="sr" data-banner-status role="status"></span></div><div class="banner-progress" aria-hidden="true"><span></span></div></section>'
-
 
 def brand_tile(b):
     motion=f' data-motion-image="{escape(b["representative_alternate"])}"' if b.get('representative_alternate') else ''
