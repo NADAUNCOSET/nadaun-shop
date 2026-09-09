@@ -195,7 +195,7 @@
       "dji-official": 905,
       "avx": 493
     },
-    "synced_at": "2026-09-09T10:27:57+00:00",
+    "synced_at": "2026-09-09T15:52:02+00:00",
     "merged_count": 2380,
     "product_count": 220,
     "category_browsing_enabled": true,
@@ -206,7 +206,7 @@
       "groups": 1865,
       "removed": 2380
     },
-    "revision": "34ed121dba5be0cc",
+    "revision": "3fb8d449fdd4be7e",
     "view": "rental"
   },
   "brands": [
@@ -1155,6 +1155,7 @@
         "kpp:b:leofoto:303030",
         "kpp:b:leofoto:303040",
         "kpp:b:leofoto:303050",
+        "kpp:b:leofoto:303060",
         "kpp:b:leofoto:3040",
         "kpp:b:leofoto:304010",
         "kpp:b:leofoto:304020",
@@ -1271,6 +1272,7 @@
         "kpp:b:leofoto:303010",
         "kpp:b:leofoto:303020",
         "kpp:b:leofoto:303030",
+        "kpp:b:leofoto:303060",
         "kpp:b:leofoto:303040",
         "kpp:b:leofoto:303050",
         "kpp:b:leofoto:3070",
@@ -1778,8 +1780,8 @@
         "kpp:b:pgytech:60b040",
         "kpp:b:pgytech:60b050"
       ],
-      "count": 291,
-      "purchase_count": 291,
+      "count": 290,
+      "purchase_count": 290,
       "rental_count": 0,
       "category_ids": [
         "kpp:b:pgytech:6060",
@@ -2358,8 +2360,8 @@
         "kpp:b:ttartisan:v2d040",
         "kpp:b:ttartisan:v2d050"
       ],
-      "count": 174,
-      "purchase_count": 174,
+      "count": 175,
+      "purchase_count": 175,
       "rental_count": 0,
       "category_ids": [
         "kpp:b:ttartisan:v260",
