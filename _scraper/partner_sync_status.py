@@ -40,7 +40,7 @@ def verified_receipt(source, out=OUT, state=STATE):
         expected=official_dji_ids(snapshot);expected_count=len(expected)
         if (receipt.get('held_other_brand_ids')!=sorted(set(snapshot['products'])-expected) or
             receipt.get('source_verified_products')!=count or receipt.get('policy_sha256')!=policy_fingerprint()):return False
-    if source=='plthink':
+    if source in ('plthink','clmedia','cinemall','onnoff'):
         from brand_source_policy import publishable_ids,policy_fingerprint
         expected=publishable_ids(snapshot)
         if (len(expected)!=count or 'excluded_ids' in receipt) and (receipt.get('policy_sha256')!=policy_fingerprint() or
@@ -64,7 +64,7 @@ def report(plan_path=PLAN, out=OUT, state=STATE):
         published = verified_receipt(source, out, state)
         dependency = config.get('after_live_verified')
         waiting = dependency if dependency and not verified_receipt(dependency, out, state) else None
-        adapter_ready = config.get('adapter') in ('plthink', 'avx', 'dji-official')
+        adapter_ready = config.get('adapter') in ('plthink', 'avx', 'dji-official','cafe24')
         collector_ready = config.get('collection_adapter') == 'cafe24'
         if collector_ready:progress=progress|{'checked_at':progress.get('at')}
         if source == 'avx':

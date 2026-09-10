@@ -24,10 +24,10 @@
       "url": "https://onnoff.kr/",
       "brand_url": "https://onnoff.kr/category/%EB%B8%8C%EB%9E%9C%EB%93%9C/23/",
       "after_live_verified": "plthink",
-      "adapter": null,
+      "adapter": "cafe24",
       "target_refresh_interval_seconds": 43200,
-      "status": "initial_inventory_collecting",
-      "blocker": "Initial full inventory/details and overlapping brand source selection must be verified before publication; recurring live refresh is not enabled yet.",
+      "status": "collecting_for_publication",
+      "blocker": "Full inventory, source details, category reconciliation and live publication must pass; existing primary sources and exclusive brand choices remain in force.",
       "required_fields": [
         "brands",
         "category_hierarchy",
@@ -43,7 +43,8 @@
       "collection_adapter": "cafe24",
       "access_checked_at": "2026-09-10T15:08:59+00:00",
       "request_interval_seconds": 5,
-      "resume_interval_seconds": 600
+      "resume_interval_seconds": 600,
+      "refresh_interval_seconds": 43200
     },
     "avx": {
       "name": "에이브이엑스",
@@ -60,31 +61,33 @@
       "name": "씨엘미디어",
       "url": "https://clmedia.co.kr/",
       "after_live_verified": "avx",
-      "adapter": null,
-      "status": "initial_inventory_collecting",
+      "adapter": "cafe24",
+      "status": "collecting_for_publication",
       "scope": "All public brands; owner confirms overlapping brand sources before publish",
-      "blocker": "Initial full inventory/details and overlapping brand source selection must be verified before publication; recurring live refresh is not enabled yet.",
+      "blocker": "Full inventory, source details, category reconciliation and live publication must pass; existing primary sources and exclusive brand choices remain in force.",
       "target_refresh_interval_seconds": 43200,
       "completion_gate": "Complete source inventory/details, owner-approved brand matches, dedup audit, deployed live ID verification",
       "access_checked_at": "2026-09-10T15:08:59+00:00",
       "collection_adapter": "cafe24",
       "request_interval_seconds": 5,
-      "resume_interval_seconds": 600
+      "resume_interval_seconds": 600,
+      "refresh_interval_seconds": 43200
     },
     "cinemall": {
       "name": "시네몰",
       "url": "https://www.cinemall.co.kr/",
       "after_live_verified": "clmedia",
-      "adapter": null,
-      "status": "initial_inventory_collecting",
+      "adapter": "cafe24",
+      "status": "collecting_for_publication",
       "scope": "All public brands; owner confirms overlapping brand sources before publish",
-      "blocker": "Initial full inventory/details and overlapping brand source selection must be verified before publication; recurring live refresh is not enabled yet.",
+      "blocker": "Full inventory, source details, category reconciliation and live publication must pass; existing primary sources and exclusive brand choices remain in force.",
       "target_refresh_interval_seconds": 43200,
       "completion_gate": "Complete source inventory/details, owner-approved brand matches, dedup audit, deployed live ID verification",
       "access_checked_at": "2026-09-10T15:08:59+00:00",
       "collection_adapter": "cafe24",
       "request_interval_seconds": 5,
-      "resume_interval_seconds": 600
+      "resume_interval_seconds": 600,
+      "refresh_interval_seconds": 43200
     }
   }
 }

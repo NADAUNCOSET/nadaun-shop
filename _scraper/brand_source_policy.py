@@ -11,6 +11,7 @@ POLICY=ROOT/'data/catalog/brand-source-policy.json'
 AUDIT=PRIVATE_DIRECTORY/'catalog'
 NAMES={'kpp':'KPP','smartstore':'우리 스마트스토어','imweb':'기존 아임웹','imweb-dji':'기존 아임웹 DJI','l-mount':'엘디엘마운트','plthink':'유쾌한생각','avx':'AVX','clmedia':'씨엘미디어','cinemall':'시네몰'}
 NAMES['dji-official']='DJI 공식 한국 스토어'
+NAMES['onnoff']='온앤오프미디어'
 
 
 def selections():
@@ -51,7 +52,7 @@ def snapshots(candidate=None):
     if candidate:
         result[candidate.get('source','avx')]=candidate
     else:
-        for source in ('avx','clmedia','cinemall'):
+        for source in ('avx','clmedia','cinemall','onnoff'):
             folder=ROOT/'_scraper/.sync-state'/source
             generation=folder/'generation.json'
             if generation.exists():folder=folder/json.loads(generation.read_text())['directory']
@@ -103,7 +104,7 @@ def merge_category_provenance(primary,other):
 
 def write_audit(catalog,candidate=None,provenance=None):
     chosen=selections();counts=inventory(candidate)
-    approved_avx=supplemental_source_approved('avx')
+    approved_sources={source for source in NAMES if supplemental_source_approved(source)}
     previous=AUDIT/'source-matches.json'
     old=json.loads(previous.read_text()) if previous.exists() else {}
     # Publication-waiting reports reuse this build's exact provenance, not a
@@ -134,8 +135,8 @@ def write_audit(catalog,candidate=None,provenance=None):
             'source_product_counts':dict(counts.get(bid,{})),
             'published_primary_counts':{k:dict(v) for k,v in public_counts.get(bid,{}).items()},
             'selection':chosen.get(bid),
-            'approved_supplemental_sources':['avx'] if approved_avx and counts.get(bid,{}).get('avx') and not chosen.get(bid,{}).get('exclusive') else [],
-            'selection_pending':len(counts.get(bid,{}))>1 and bid not in chosen and not (approved_avx and counts.get(bid,{}).get('avx'))} for bid in sorted(set(counts)|set(public_brands))],
+            'approved_supplemental_sources':sorted(approved_sources & set(counts.get(bid,{}))) if not chosen.get(bid,{}).get('exclusive') else [],
+            'selection_pending':len(counts.get(bid,{}))>1 and bid not in chosen and not (approved_sources & set(counts.get(bid,{})))} for bid in sorted(set(counts)|set(public_brands))],
         'products':rows,'public_products_sha256':product_digest(catalog),
         'publication':old.get('publication',{'state':'not_live_verified'}) if old.get('catalogue_revision')==catalog['meta']['revision'] and old.get('public_products_sha256')==product_digest(catalog) else {'state':'not_live_verified'}}
     AUDIT.mkdir(parents=True,exist_ok=True,mode=0o700)
@@ -149,8 +150,9 @@ def write_audit(catalog,candidate=None,provenance=None):
     for b in report['brands']:
         selection=b['selection'] or {}
         label=' + '.join(NAMES.get(s,s) for s in selection.get('sources',[selection.get('source')]) if s) or ('중복 선택 대기' if b['selection_pending'] else '단일 출처 유지')
-        if b['approved_supplemental_sources'] and 'avx' not in selection.get('sources',[selection.get('source')]):
-            label=('기존 상품별 출처 유지' if not selection else label)+' + AVX 추가 승인'
+        added=[source for source in b['approved_supplemental_sources'] if source not in selection.get('sources',[selection.get('source')])]
+        if added:
+            label=('기존 상품별 출처 유지' if not selection else label)+' + '+', '.join(NAMES[source] for source in added)+' 추가 승인'
         def describe(values):return ' / '.join(f'{NAMES.get(s,s)} {n:,}' for s,n in values.items()) or '—'
         lines.append('| '+b['name']+(' (수집 후보)' if not b['public'] else '')+' | '+describe(b['published_primary_counts'].get('purchase',{}))+' | '+describe(b['published_primary_counts'].get('rental',{}))+' | '+describe(b['source_product_counts'])+' | '+label+' |')
     (AUDIT/'brand-source-review.md').write_text('\n'.join(lines)+'\n')

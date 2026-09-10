@@ -523,3 +523,12 @@ PLTHINK `plthink-1921456`의 4'x4' 규격명은 원본 JSON-LD에서 JSON이 허
 - 씨네몰 기본 목록 순서가 같은 총수 1,217개 안에서도 바뀌어 57개 분류의 최종 대조가 실패했다. 원본 메뉴가 제공하는 `sort_method=5`(신상품)를 사용하며 연속 조회의 ID 순서 일치를 확인했다. 기존 `pages`를 보존하고 `ordered_pages`에 새 목록을 수집한다. 요청 간격 5초, 중복 ID·총수·최종 첫 페이지 대조는 유지한다.
 - 복구 후보의 `reconciliation_required=true`는 기존 워커가 목록 대조를 한 번 이어받도록 한다. 최종 대조 후에도 브랜드/가격 검토가 남으면 자동 반복하지 않는다. CL미디어는 남은 상세 수집을 재개한다. 새 공급처 상품의 공개 반영·12시간 정기 갱신 완료와 구분한다.
 - 실제 코드 커밋·Vercel READY·기존 라이브 카탈로그 대조·Mac 워커 PID/진행 시각은 `_private/catalog/partner-parser-review-20260911/resume-verification.json`에 기록한다. 기프트 중지는 유지한다.
+
+### 2026-09-11 “싹다 진행” — 세 협력사 공개 연동·정기 갱신
+
+- 대표가 기존 인계/AVX 승인 확인 후 “ㅇㅇ 싹다 진행”으로 전체 후속 진행을 지시했다. CL미디어·씨네몰·온앤오프 전 브랜드를 기존 상품에 보완하며 `brand-source-policy.json`의 `source_approvals`에 기록했다. 기존 주 출처를 먼저 유지하고 동일 모델·색상·옵션·구성만 통합한다. DJI 공식 구매와 Aputure AVX 구매 단독 기준, SmallRig KPP 우선, TILTA 자체 스토어 우선을 유지한다. 같은 출처 승인을 다시 묻지 않는다.
+- CL미디어의 Thypoch는 DZOFILM 아래와 독립 Thypoch 메뉴에 함께 걸려 있다. 중첩된 명시적 Thypoch 브랜드를 기준으로 판정한다. 씨네몰의 메뉴 미소속 DZOFILM 3개는 원본 Product 스키마의 브랜드를 따른다. 공급사 이름을 제품 제조 브랜드로 바꾸지 않는다. 씨네몰 326은 화면 판매가가 `가격문의`이므로 내부 옵션 숫자를 확정 판매가로 내보내지 않고 가격 미확정 상담 상품으로 보존한다.
+- `_scraper/cafe24_publication.py`는 원본 상품 ID·모든 분류의 고유 수·상세 검증·최종 목록 대조를 통과한 전체 후보만 수용한다. 원본 분류 트리는 `original_categories`에 보존하며 브랜드 안의 원본 하위 분류를 빌더에 연결한다. 메뉴가 없고 원본 스키마에만 브랜드가 있으면 해당 브랜드 진입점만 만들며 제품 종류를 추측하지 않는다.
+- `_scraper/cafe24_worker.py <source>`는 초기 체크포인트 재개, 저장된 오류 페이지의 로컬 재검증, 전체 대조, 기존 공유 배포 잠금 아래 source 승격, 엄격 빌드/회귀검사, 변경분 커밋/푸시, Vercel READY, 라이브 상품 ID 전수 대조와 비공개 출처 장부 검증을 연결한다. 최초 공개 이후 12시간마다 새 세대에서 재수집하며, 10분 LaunchAgent는 실패 요청을 무한 재시도하는 것이 아니라 미완료 실행을 이어받는다.
+- 403/429/보호 응답은 공급처 최상위 중지 기록으로 모든 세대에서 차단한다. 파싱/대조 실패는 같은 코드로 자동 반복하지 않는다. 이전 대비 전체 수량 15% 이상 감소는 공개 보류한다. 출처별 단일 프로세스·요청 종료 후 5초 간격은 유지한다. Mac 전원·NAS·네트워크가 필요하며 Windows 워커가 실행된 것으로 보고하지 않는다.
+- 설치/전환: 가상환경 Python으로 `_scraper/cafe24_worker.py <source> --install`. 해당 공급처의 기존 LaunchAgent만 교체하고 이전 plist는 해당 상태 폴더 `schedule-backups/`에 보존한다. 공개 증거는 `_scraper/.sync-state/<source>/published.json`, 전체 진행은 `progress.json`, 세대는 `generation.json`이다. 최초 실제 공개 결과·미완료 예외는 `_private/catalog/partner-integration-20260911/`에 기록한다.

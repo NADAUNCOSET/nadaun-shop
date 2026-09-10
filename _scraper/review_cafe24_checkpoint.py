@@ -11,8 +11,8 @@ import sqlite3
 import sync_cafe24_partners as catalog
 
 
-def review(source, apply=False):
-    work = catalog.STATE / source
+def review(source, apply=False, work=None):
+    work = Path(work) if work is not None else catalog.STATE / source
     database = work / 'checkpoint.sqlite3'
     inventory = json.loads((work / 'inventory-candidate.json').read_text())
     checked_at = catalog.stamp()
@@ -48,6 +48,9 @@ def review(source, apply=False):
                 if old and json.loads(old[1]).get('html_sha256') not in (None, digest):
                     raise ValueError('Saved HTML differs from checkpoint evidence: ' + sid)
                 product = inventory['products'][sid]
+                product = dict(product)
+                nodes = {node['id']: node for node in inventory.get('categories', [])}
+                product['brand'] = catalog.inventory_brand(product.get('brand_category_ids', []), nodes, catalog.SITES[source][1]) or product.get('brand', '')
                 try:
                     record, evidence = catalog.detail(catalog.soup(raw), product, product['brand'])
                 except (ValueError, KeyError, TypeError) as exc:

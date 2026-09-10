@@ -13,7 +13,7 @@ class SourcePolicyTests(unittest.TestCase):
         self.approval=approval.start();self.addCleanup(approval.stop)
 
     def test_owner_all_brand_approval_resolves_avx_overlap_without_changing_primary(self):
-        self.approval.return_value=True
+        self.approval.side_effect=lambda source:source=='avx'
         counts={'smallrig':{'avx':1,'kpp':2},'sony':{'avx':1,'smartstore':2}}
         choices={'smallrig':{'source':'kpp','sources':['kpp','clmedia']}}
         with tempfile.TemporaryDirectory() as folder,patch.object(policy,'AUDIT',Path(folder)),patch.object(policy,'inventory',return_value=counts),patch.object(policy,'selections',return_value=choices):

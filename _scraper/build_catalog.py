@@ -51,6 +51,9 @@ def brand_dictionary():
       'hy':['h&y'], 'tethertools':['테더툴스'], 'pgytech':['피지테크'], 'smallrig':['스몰리그'],
       'ldl-mount':['엘디엘마운트','엘디마운트','ldl mount'],
       'plthink':['유쾌한생각','유쾌한 생각'],
+      'blackmagic':['blackmagic design','블랙매직디자인','Black Magic'],
+      'smallhd':['Small HD'], 'samyang':['삼양옵틱스','Samyang Optics'],
+      'teradek':['테라덱'], 'zhiyun':['Zhiyun Tech'], 'zgcine':['ZGC'],
     }
     for key,names in extras.items():
         for name in names+[key]: aliases[name.casefold()]=key
@@ -69,6 +72,8 @@ def verified_sources():
     sources=['kpp','smartstore','imweb-dji','imweb-promotions','l-mount']
     if (OUT/'plthink.json').exists():sources.append('plthink')
     if (OUT/'dji-official.json').exists():sources.append('dji-official')
+    for partner in ('clmedia','cinemall','onnoff'):
+        if (OUT/(partner+'.json')).exists():sources.append(partner)
     snapshots={key:json.loads((OUT/(key+'.json')).read_text()) for key in sources}
     avx_path=next((OUT/name for name in ('avx-approved.json','avx.json','avx-aputure.json') if (OUT/name).exists()),None)
     if avx_path:
@@ -84,6 +89,13 @@ def verified_sources():
                 raise RuntimeError('AVX approved source partition is inconsistent')
         snapshots['avx']=snapshot
     if not all(s.get('complete') for s in snapshots.values()):raise RuntimeError('Incomplete source snapshot')
+    for partner in ('clmedia','cinemall','onnoff'):
+        if partner in snapshots:
+            from cafe24_publication import validate_candidate
+            from brand_source_policy import supplemental_source_approved
+            validate_candidate(snapshots[partner])
+            if not snapshots[partner].get('normalized_for_shop') or not supplemental_source_approved(partner):
+                raise RuntimeError('Partner source is not approved or normalized: '+partner)
     if 'dji-official' in snapshots:
         from sync_dji_official import validate_snapshot
         validate_snapshot(snapshots['dji-official'])
@@ -125,7 +137,7 @@ def build(allow_pending=False):
                 prefix='kpp:'+('b:'+bid if bid else 'p')+':'
             elif source=='imweb-promotions':bid=None;prefix='imweb:promotion:'
             elif source=='l-mount':bid='ldl-mount';prefix='l-mount:b:ldl-mount:'
-            elif source in ('plthink','avx','dji-official'):bid=brand_id(c['brand']);prefix=source+':b:'
+            elif source in ('plthink','avx','dji-official','clmedia','cinemall','onnoff'):bid=brand_id(c['brand']);prefix=source+':b:'
             else:bid='dji';prefix='imweb:b:dji:'
             if official_dji and bid=='dji' and source!='dji-official':continue
             c.update(id=prefix+c['id'],parent_id=prefix+c['parent_id'] if c['parent_id'] else None,brand_id=bid)
@@ -144,6 +156,7 @@ def build(allow_pending=False):
             if not purchase_source_allowed(p,source_choices):continue
             bid=p['brand_id'];membership=[];types=[]
             if p.get('kind')=='purchase':p['_preferred_source']=source_choices.get(bid,{}).get('source')
+            p['_supplemental_source']=source in ('clmedia','cinemall','onnoff')
             if 'avx' in snapshots and source!='avx' and bid=='aputure' and p.get('kind')=='purchase':continue
             if source=='kpp':
                 for mall in p.get('brand_mall_ids',[]):
@@ -163,7 +176,7 @@ def build(allow_pending=False):
             elif source=='imweb-promotions': pass
             elif source=='imweb-dji': membership=['imweb:b:dji:'+cid for cid in p.get('brand_category_ids',[])]
             elif source=='l-mount': membership=['l-mount:b:ldl-mount:'+cid for cid in p.get('brand_category_ids',[])]
-            elif source in ('plthink','avx','dji-official'): membership=[source+':b:'+cid for cid in p.get('brand_category_ids',[])]
+            elif source in ('plthink','avx','dji-official','clmedia','cinemall','onnoff'): membership=[source+':b:'+cid for cid in p.get('brand_category_ids',[])]
             else:
                 path=p.get('source_category_path') or [];ids=p.get('source_category_ids') or []
                 # Naver standard classifications are retained separately from
@@ -186,7 +199,7 @@ def build(allow_pending=False):
             if source=='kpp' and d.get('source_fingerprint')!=source_fingerprint(p0):
                 d={}
             if source.startswith('imweb-'):d={'detail_status':'verified','description_text':p.get('description_text',''),'images':p['images']}
-            if source in ('l-mount','plthink','avx','dji-official'):d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation') if k in p}
+            if source in ('l-mount','plthink','avx','dji-official','clmedia','cinemall','onnoff'):d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation') if k in p}
             if d.get('detail_status')=='verified':coverage[source]+=1
             elif not allow_pending:raise RuntimeError('Unverified product detail: '+pid)
             if d.get('unavailable'):

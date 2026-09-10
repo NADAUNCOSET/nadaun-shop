@@ -40,7 +40,8 @@
       "source": "avx",
       "scope": "purchase",
       "confirmed_by": "owner",
-      "reason": "기존 구매 상품은 AVX로 교체, 렌탈은 유지"
+      "reason": "기존 구매 상품은 AVX로 교체, 렌탈은 유지",
+      "exclusive": true
     }
   },
   "source_approvals": {
@@ -50,6 +51,27 @@
       "confirmed_by": "owner",
       "confirmed_at": "2026-09-11",
       "reason": "대표 최신 지시: avx 브랜드도 다 판매하면되. 전 브랜드 신규·중복 상품 판매 허용, 동일 모델·옵션은 병합하고 기존 상품별 주 출처 유지. DJI 공식 한국 스토어 단독 기준과 렌탈은 유지."
+    },
+    "clmedia": {
+      "scope": "all_brands",
+      "mode": "supplement_existing",
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-09-11",
+      "reason": "대표가 기존 인계·출처 기록 확인 후 “ㅇㅇ 싹다 진행” 지시. 세 협력사의 전 브랜드 수집·검증·공개 연동과 자동 갱신 진행. 기존 상품별 주 출처 및 DJI 공식·Aputure AVX 기준 유지."
+    },
+    "cinemall": {
+      "scope": "all_brands",
+      "mode": "supplement_existing",
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-09-11",
+      "reason": "대표가 기존 인계·출처 기록 확인 후 “ㅇㅇ 싹다 진행” 지시. 세 협력사의 전 브랜드 수집·검증·공개 연동과 자동 갱신 진행. 기존 상품별 주 출처 및 DJI 공식·Aputure AVX 기준 유지."
+    },
+    "onnoff": {
+      "scope": "all_brands",
+      "mode": "supplement_existing",
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-09-11",
+      "reason": "대표가 기존 인계·출처 기록 확인 후 “ㅇㅇ 싹다 진행” 지시. 세 협력사의 전 브랜드 수집·검증·공개 연동과 자동 갱신 진행. 기존 상품별 주 출처 및 DJI 공식·Aputure AVX 기준 유지."
     }
   }
 }

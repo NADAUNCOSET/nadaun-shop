@@ -10,6 +10,7 @@ import gzip
 import hashlib
 import json
 import math
+from pathlib import Path
 import re
 import sqlite3
 import time
@@ -114,6 +115,22 @@ def js_values(doc):
     return result
 
 
+def inventory_brand(category_ids,nodes,root):
+    """A nested named brand takes precedence over its distributor's brand tree."""
+    roots={cid:node['name'] for cid,node in nodes.items() if node['parent_id']==root}
+    labels=set();nested=set()
+    for cid in category_ids:
+        cursor=cid;seen=set()
+        while cursor not in roots and cursor!=root:
+            if cursor in seen or cursor not in nodes:raise ValueError('Invalid category ancestry')
+            seen.add(cursor)
+            if nodes[cursor]['name'] in roots.values():nested.add(nodes[cursor]['name'])
+            cursor=nodes[cursor]['parent_id']
+        if cursor in roots:labels.add(roots[cursor])
+    specific=nested & labels
+    return next(iter(labels)) if len(labels)==1 else next(iter(specific)) if len(specific)==1 else ''
+
+
 def won_value(value):
     if isinstance(value,bool) or not re.fullmatch(r'\d+(?:\.0+)?',str(value)):
         raise ValueError('Unverified price')
@@ -189,8 +206,9 @@ def detail(doc,product,brand):
     if any(not isinstance(o,dict) or product_id(o.get('url',''))!=sid for o in offers):raise ValueError('Detail identity mismatch')
     if any(o.get('priceCurrency')!='KRW' for o in offers):raise ValueError('Expected KRW price')
     values=js_values(doc)
-    quote=(not variant_offers and values.get('product_price_content')=='1' and
-           re.search(r'문의|상담',str(offer.get('price',''))) is not None and str(values.get('product_price'))=='0')
+    displayed_price=' '.join(node.get_text(' ',strip=True) for node in doc.select('.xans-product-detaildesign tr') if '판매가' in node.get_text())
+    quote=(values.get('product_price_content')=='1' and str(values.get('product_price'))=='0' and
+           re.search(r'문의|상담',displayed_price if variant_offers else str(offer.get('price',''))) is not None)
     price=None if quote else won_value(values.get('product_price')) if variant_offers else won_value(offer.get('price'))
     script_price=values.get('product_price')
     if not quote and script_price is not None and price!=won_value(script_price):raise ValueError('Schema and displayed price differ')
@@ -228,6 +246,11 @@ def detail(doc,product,brand):
     elif groups or variant_offers:issues.append('option_combinations_require_review')
     if supplier=='unknown':issues.append('availability_requires_review')
     if not body or not (descriptions or body.get_text(' ',strip=True)):issues.append('description_missing')
+    if not brand:
+        declared=schema.get('brand') or {}
+        declared=declared.get('name','') if isinstance(declared,dict) else declared if isinstance(declared,str) else ''
+        seller_names={'씨엘미디어(주)','씨엘미디어','clmedia','시네몰','씨네몰','cinemall','온앤오프','온앤오프미디어','onnoff'}
+        if declared.strip().casefold() not in seller_names and declared.strip():brand=declared.strip()
     if not brand:issues.append('brand_membership_requires_review')
     p.update(name=clean(schema['name']),brand=brand or '미분류',kind='purchase',price=price,sale_price=sale,
         status='soldout' if supplier=='soldout' else 'inquiry',supplier_status=supplier,
@@ -261,9 +284,9 @@ class Source:
 
 
 class Collector:
-    def __init__(self,source):
-        self.name=source;self.base,self.root=SITES[source];self.work=STATE/source;self.work.mkdir(exist_ok=True,parents=True)
-        self.source=Source(source,self.work);self.db=sqlite3.connect(self.work/'checkpoint.sqlite3',timeout=30)
+    def __init__(self,source,work=None):
+        self.name=source;self.base,self.root=SITES[source];self.work=Path(work) if work is not None else STATE/source;self.work.mkdir(exist_ok=True,parents=True)
+        self.source=Source(source,STATE/source);self.db=sqlite3.connect(self.work/'checkpoint.sqlite3',timeout=30)
         self.db.executescript('''
           CREATE TABLE IF NOT EXISTS state(key TEXT PRIMARY KEY,value TEXT NOT NULL);
           CREATE TABLE IF NOT EXISTS pages(category TEXT,page INTEGER,record TEXT NOT NULL,PRIMARY KEY(category,page));
@@ -278,6 +301,11 @@ class Collector:
             return value
         row=self.db.execute('SELECT value FROM state WHERE key=?',(key,)).fetchone()
         return json.loads(row[0]) if row else None
+
+    def progress(self,value):
+        save_json(self.work/'progress.json',value)
+        if self.work!=STATE/self.name:
+            save_json(STATE/self.name/'progress.json',{**value,'generation':self.work.name})
 
     def page(self,cid,page,fresh=False):
         method=LISTING_SORT.get(self.name)
@@ -314,7 +342,7 @@ class Collector:
                 for child in row['children']:
                     if child['id'] not in nodes:
                         nodes[child['id']]=child;queue.append(child['id'])
-                save_json(self.work/'progress.json',{'at':stamp(),'phase':'inventory','category_id':cid,
+                self.progress({'at':stamp(),'phase':'inventory','category_id':cid,
                     'page':p,'pages_in_category':end,'categories_verified':len(checked),'categories_found':len(nodes),
                     'products_found':len(set(products)|set(found)),'complete':False})
                 p+=1
@@ -323,20 +351,13 @@ class Collector:
             for sid in found:memberships.setdefault(sid,[]).append(cid)
             coverage.append({'id':cid,'expected':total,'unique':len(found),'pages':end})
             checked.add(cid);self.state('categories',nodes)
-            save_json(self.work/'progress.json',{'at':stamp(),'phase':'inventory','categories_verified':len(checked),'categories_found':len(nodes),'products_found':len(products),'complete':False})
+            self.progress({'at':stamp(),'phase':'inventory','categories_verified':len(checked),'categories_found':len(nodes),'products_found':len(products),'complete':False})
         root_all={sid for sid,cats in memberships.items() if self.root in cats}
         extra=set(products)-root_all
         if extra:raise ValueError('Brand root does not cover all descendants: '+str(len(extra)))
-        roots={cid:node for cid,node in nodes.items() if node['parent_id']==self.root}
         for sid,product in products.items():
-            labels=set();cats=memberships[sid]
-            for cid in cats:
-                cursor=cid;seen=set()
-                while cursor not in roots and cursor!=self.root:
-                    if cursor in seen or cursor not in nodes:raise ValueError('Invalid category ancestry')
-                    seen.add(cursor);cursor=nodes[cursor]['parent_id']
-                if cursor in roots:labels.add(roots[cursor]['name'])
-            product['brand']=next(iter(labels)) if len(labels)==1 else ''
+            cats=memberships[sid]
+            product['brand']=inventory_brand(cats,nodes,self.root)
             product['brand_category_ids']=[cid for cid in cats if cid!=self.root]
         result={'source':self.name,'at':stamp(),'listing_sort':LISTING_SORT.get(self.name),'categories':list(nodes.values()),'coverage':coverage,'products':products,'product_count':len(products),'inventory_complete':True,'complete':False}
         save_json(self.work/'inventory-candidate.json',result)
@@ -361,11 +382,13 @@ class Collector:
                         folder=self.work/'review-pages';folder.mkdir(exist_ok=True)
                         (folder/(sid+'.html.gz')).write_bytes(gzip.compress(raw))
                 counts=self.db.execute('SELECT (SELECT COUNT(*) FROM details),(SELECT COUNT(*) FROM errors)').fetchone()
-                save_json(self.work/'progress.json',{'at':stamp(),'phase':'details','products_found':len(snapshot['products']),'details_checked':sum(counts),'details_parsed':counts[0],'detail_errors':counts[1],'complete':False})
+                self.progress({'at':stamp(),'phase':'details','products_found':len(snapshot['products']),'details_checked':sum(counts),'details_parsed':counts[0],'detail_errors':counts[1],'complete':False})
             changed=[]
-            for category in snapshot['coverage']:
+            for index,category in enumerate(snapshot['coverage']):
                 old=self.page(category['id'],1);new=self.page(category['id'],1,True)
                 if old['total']!=new['total'] or list(old['products'])!=list(new['products']):changed.append(category['id'])
+                self.progress({'at':stamp(),'phase':'reconciliation','products_found':snapshot['product_count'],
+                    'categories_verified':index+1,'categories_found':len(snapshot['coverage']),'changed_categories':changed,'complete':False})
             rows={sid:json.loads(rec) for sid,rec in self.db.execute('SELECT id,record FROM details') if sid in snapshot['products']}
             errors={sid:error for sid,error in self.db.execute('SELECT id,error FROM errors') if sid in snapshot['products']}
             reviews={sid:p.get('content_issues',[]) for sid,p in rows.items() if p['detail_status']!='verified'}
@@ -373,7 +396,7 @@ class Collector:
                 'complete':not errors and not reviews and not changed and set(rows)==set(snapshot['products']),
                 'detail_errors':errors,'content_reviews':reviews,'changed_categories':changed}
             save_json(self.work/'catalogue-candidate.json',result)
-            save_json(self.work/'progress.json',{'at':stamp(),'phase':'review_required' if not result['complete'] else 'ready_for_source_selection',
+            self.progress({'at':stamp(),'phase':'review_required' if not result['complete'] else 'ready_for_source_selection',
                 'products_found':snapshot['product_count'],'details_parsed':len(rows),'details_verified':len(rows)-len(reviews),
                 'detail_errors':len(errors),'content_reviews':len(reviews),'changed_categories':changed,'complete':result['complete'],'published':False})
             return result

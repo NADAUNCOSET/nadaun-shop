@@ -137,6 +137,27 @@ class Cafe24Tests(unittest.TestCase):
         for value in ('가격문의',1000.5,True):
             with self.assertRaises(ValueError):self.parse(product_page(price=value))
 
+    def test_nested_named_brand_wins_over_distributor_category(self):
+        nodes={str(i):{'id':str(i),'name':name,'parent_id':str(parent) if parent else None} for i,name,parent in
+               [(24,'브랜드',None),(30,'DZOFILM',24),(31,'Thypoch',30),(40,'Thypoch',24),(41,'Simera',40)]}
+        self.assertEqual(c.inventory_brand(['30','31','40','41'],nodes,'24'),'Thypoch')
+        self.assertEqual(c.inventory_brand(['30','40'],nodes,'24'),'')
+
+    def test_schema_brand_can_fill_missing_menu_but_seller_name_cannot(self):
+        for name,expected in [('DZOFILM','DZOFILM'),('씨엘미디어(주)','미분류')]:
+            doc=product_page();script=doc.select_one('script[type="application/ld+json"]')
+            data=json.loads(script.string);data['brand']={'@type':'Brand','name':name};script.string=json.dumps(data)
+            record,_=c.detail(c.soup(str(doc)),{'id':'clmedia-10','source':'clmedia','source_id':'10'},'')
+            self.assertEqual(record['brand'],expected)
+
+    def test_explicit_price_inquiry_never_publishes_internal_variant_prices(self):
+        doc,_=variant_page()
+        doc.append(c.soup('<script>var product_price="0";var product_price_content="1";</script><table class="xans-product-detaildesign"><tr><th>판매가</th><td>가격문의</td></tr></table>'))
+        record=self.parse(doc)
+        self.assertIsNone(record['price']);self.assertTrue(record['options_require_confirmation'])
+        self.assertEqual(record['detail_status'],'verified')
+        self.assertTrue(all(option['price'] is None for option in record['options']))
+
     def test_js_parser_never_evaluates_function_calls(self):
         self.assertEqual(c.js_values(c.soup('<script>var price = dangerous();var safe="100";</script>')),{'safe':'100'})
 

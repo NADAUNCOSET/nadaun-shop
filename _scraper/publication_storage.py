@@ -7,6 +7,7 @@ import subprocess
 
 def validate_updates(updates):
     sources = {'plthink': 'plthink', 'avx-approved': 'avx', 'dji-official': 'dji-official'}
+    sources.update({name:name for name in ('clmedia','cinemall','onnoff')})
     for name, snapshot in updates.items():
         if name not in sources or snapshot.get('source') != sources[name]:
             raise ValueError('Unsupported source promotion')
@@ -16,6 +17,9 @@ def validate_updates(updates):
                 not isinstance(snapshot.get('products'), dict) or
                 count != len(snapshot['products'])):
             raise ValueError('A complete verified source candidate is required')
+        if name in ('clmedia','cinemall','onnoff'):
+            from cafe24_publication import validate_candidate
+            validate_candidate(snapshot)
 
 
 def promote_updates(updates, root, out, state, managed, save_json):
