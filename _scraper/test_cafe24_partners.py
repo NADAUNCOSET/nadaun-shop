@@ -1,9 +1,12 @@
 import json
+import gzip
+from contextlib import closing
 from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import Mock, patch
 import sync_cafe24_partners as c
+from review_cafe24_checkpoint import review
 
 
 def product_page(pid='10',price=1000,stock=None,options='',body='<img src="/detail.jpg">'):
@@ -19,6 +22,28 @@ def list_page(ids=(1,2),total=2,page=1):
     return c.soup('<p class="prdCount">총 '+str(total)+' 개</p><ul class="xans-product-listnormal">'+''.join(
         '<li id="anchorBoxId_'+str(i)+'"><a href="/product/sample/'+str(i)+'/"><img id="eListPrdImage'+str(i)+'" src="/image.jpg"></a><p class="name">Item '+str(i)+'</p></li>' for i in ids)+
         '</ul><div class="xans-product-normalpaging"><a class="this">'+str(page)+'</a></div>')
+
+
+def variant_page():
+    doc=product_page()
+    schema=json.loads(doc.select_one('script[type="application/ld+json"]').string)
+    stocks={};offers=[]
+    for code,color,delta,quantity in [('P000A001','검정',0,2),('P000A002','흰색',200,0)]:
+        stocks[code]={'option_name_original':['색상'],'option_value_orginal':[color],
+                      'option_price':1000+delta,'stock_price':str(delta)+'.00',
+                      'use_stock':True,'use_soldout':'T','stock_number':quantity,
+                      'is_display':'T','is_selling':'T'}
+        offers.append({'url':'https://clmedia.co.kr/product/detail.html?product_no=10&item_code='+code,
+                       'priceCurrency':'KRW','price':1000+delta})
+    schema['offers']=offers
+    doc.select_one('script[type="application/ld+json"]').string=json.dumps(schema)
+    doc.select_one('script:not([type])').string=(
+        'var product_price="1000";var is_soldout_icon="F";var option_stock_data='+repr(json.dumps(stocks))+';')
+    return doc,stocks
+
+
+def replace_stock(doc,stocks):
+    doc.append(c.soup('<script>var option_stock_data='+repr(json.dumps(stocks))+';</script>'))
 
 
 class Cafe24Tests(unittest.TestCase):
@@ -40,7 +65,7 @@ class Cafe24Tests(unittest.TestCase):
         self.assertEqual(c.category_menu(doc,'24'),[{'id':'30','name':'SmallRig','parent_id':'24'},{'id':'31','name':'케이지','parent_id':'30'}])
 
     def parse(self,doc):
-        return c.detail(doc,{'id':'clmedia-10','source':'clmedia','source_id':'10','name':'old','images':{}},'SmallRig')[0]
+        return c.detail(c.soup(str(doc)),{'id':'clmedia-10','source':'clmedia','source_id':'10','name':'old','images':{}},'SmallRig')[0]
 
     def test_single_sku_price_stock_and_images_verified(self):
         p=self.parse(product_page());self.assertEqual(p['sale_price'],1000)
@@ -65,6 +90,52 @@ class Cafe24Tests(unittest.TestCase):
 
     def test_missing_description_never_becomes_verified(self):
         self.assertEqual(self.parse(product_page(body=''))['content_issues'],['description_missing'])
+
+    def test_variants_preserve_combination_price_and_individual_soldout(self):
+        doc,_=variant_page();p=self.parse(doc)
+        self.assertEqual(p['detail_status'],'verified')
+        self.assertFalse(p['options_require_confirmation'])
+        self.assertEqual([(o['price'],o['disabled']) for o in p['options']],[(1000,False),(1200,True)])
+        self.assertEqual(p['options'][1]['selection'],[{'name':'색상','value':'흰색'}])
+
+    def test_variant_identity_and_contradictory_prices_are_rejected(self):
+        for mutation in ('identity','price','delta'):
+            doc,stocks=variant_page()
+            if mutation=='delta':
+                stocks['P000A002']['stock_price']='100';replace_stock(doc,stocks)
+            else:
+                node=doc.select_one('script[type="application/ld+json"]');schema=json.loads(node.string)
+                schema['offers'][1]['url' if mutation=='identity' else 'price']='https://clmedia.co.kr/product/detail.html?product_no=11&item_code=P000A002' if mutation=='identity' else 1000
+                node.string=json.dumps(schema)
+            with self.assertRaises(ValueError):self.parse(doc)
+
+    def test_global_instock_does_not_invent_each_variant_stock(self):
+        doc,stocks=variant_page()
+        for row in stocks.values():
+            for key in ('use_stock','use_soldout','stock_number'):row.pop(key)
+        replace_stock(doc,stocks);p=self.parse(doc)
+        self.assertEqual(p['detail_status'],'review_required')
+        self.assertTrue(all(o['disabled'] for o in p['options']))
+
+    def test_hidden_variants_and_global_soldout_cannot_be_purchased(self):
+        doc,stocks=variant_page();stocks['P000A001']['is_display']='F';replace_stock(doc,stocks)
+        p=self.parse(doc);self.assertEqual(p['supplier_status'],'soldout')
+        self.assertFalse(p['options'][0]['displayed']);self.assertTrue(p['options'][0]['disabled'])
+        doc,_=variant_page();doc.append(c.soup('<script>var is_soldout_icon="T";</script>'))
+        self.assertTrue(all(o['disabled'] for o in self.parse(doc)['options']))
+
+    def test_inquiry_price_is_not_free_and_requires_confirmation(self):
+        doc=product_page(price='가격문의')
+        doc.append(c.soup('<script>var product_price="0";var product_price_content="1";</script>'))
+        p=self.parse(doc)
+        self.assertEqual(p['detail_status'],'verified')
+        self.assertIsNone(p['price']);self.assertIsNone(p['sale_price'])
+        self.assertTrue(p['price_inquiry']);self.assertTrue(p['options_require_confirmation'])
+        self.assertEqual(p['status'],'inquiry')
+
+    def test_unconfirmed_text_price_and_fractional_won_are_rejected(self):
+        for value in ('가격문의',1000.5,True):
+            with self.assertRaises(ValueError):self.parse(product_page(price=value))
 
     def test_js_parser_never_evaluates_function_calls(self):
         self.assertEqual(c.js_values(c.soup('<script>var price = dangerous();var safe="100";</script>')),{'safe':'100'})
@@ -91,6 +162,66 @@ class Cafe24Tests(unittest.TestCase):
             collector.source.get=Mock(return_value=str(list_page()).encode())
             first=collector.page('24',1);self.assertEqual(collector.page('24',1),first)
             self.assertEqual(collector.source.get.call_count,1);collector.db.close()
+
+    def test_cinemall_newest_sort_does_not_reuse_or_destroy_default_rank_cache(self):
+        with tempfile.TemporaryDirectory() as tmp,patch.object(c,'STATE',Path(tmp)):
+            collector=c.Collector('cinemall')
+            original=c.listing(list_page(ids=(1,2)),'cinemall','56',1)
+            with collector.db:collector.db.execute('INSERT INTO pages VALUES(?,?,?)',('56',1,json.dumps(original)))
+            collector.source.get=Mock(return_value=str(list_page(ids=(2,1))).encode())
+            fresh=collector.page('56',1)
+            self.assertEqual(list(fresh['products']),['2','1'])
+            collector.source.get.assert_called_once_with('/product/list.html',cate_no='56',page=1,sort_method='5')
+            self.assertEqual(collector.page('56',1),fresh)
+            self.assertEqual(collector.source.get.call_count,1)
+            self.assertEqual(json.loads(collector.db.execute('SELECT record FROM pages').fetchone()[0]),original)
+            collector.db.close()
+
+    def test_reconciliation_matches_current_ids_and_preserves_old_checkpoint_rows(self):
+        with tempfile.TemporaryDirectory() as tmp,patch.object(c,'STATE',Path(tmp)):
+            collector=c.Collector('clmedia')
+            record=self.parse(product_page())
+            with collector.db:
+                collector.db.execute('INSERT INTO details VALUES(?,?,?)',('10',json.dumps(record),'{}'))
+                collector.db.execute('INSERT INTO details VALUES(?,?,?)',('old',json.dumps({**record,'id':'clmedia-old'}),'{}'))
+                collector.db.execute('INSERT INTO errors VALUES(?,?,?)',('old-error','Preserved old error','2026-09-10'))
+            collector.inventory=Mock(return_value={'products':{'10':record},'product_count':1,'coverage':[]})
+            collector.source.get=Mock(side_effect=AssertionError('Unexpected network call'))
+            result=collector.collect()
+            self.assertTrue(result['complete']);self.assertEqual(set(result['products']),{'clmedia-10'})
+            self.assertEqual(collector.db.execute('SELECT COUNT(*) FROM details').fetchone()[0],2)
+            self.assertEqual(collector.db.execute('SELECT COUNT(*) FROM errors').fetchone()[0],1)
+            collector.db.close()
+
+    def test_cached_review_backs_up_preserves_dates_and_requires_reconciliation(self):
+        with tempfile.TemporaryDirectory() as tmp,patch.object(c,'STATE',Path(tmp)),patch.object(c,'ROOT',Path(tmp)):
+            collector=c.Collector('clmedia');work=collector.work
+            original_at='2026-09-10T01:00:00+00:00'
+            product={'id':'clmedia-10','source':'clmedia','source_id':'10','brand':'SmallRig'}
+            c.save_json(work/'inventory-candidate.json',{'products':{'10':product},'product_count':1})
+            c.save_json(work/'catalogue-candidate.json',{'complete':False,'changed_categories':['24']})
+            (work/'review-pages').mkdir()
+            (work/'review-pages/10.html.gz').write_bytes(gzip.compress(str(product_page()).encode()))
+            with collector.db:collector.db.execute('INSERT INTO errors VALUES(?,?,?)',('10','Old parser error',original_at))
+            collector.db.close()
+            with patch.object(c.Source,'get',side_effect=AssertionError('Offline review contacted source')):
+                preview=review('clmedia')
+                self.assertEqual(preview['summary'],{'verified':1})
+                self.assertFalse((work/'parser-backups').exists())
+                result=review('clmedia',apply=True)
+            self.assertEqual(result['progress']['phase'],'reconciliation_required')
+            self.assertEqual(result['progress']['changed_categories'],['24'])
+            self.assertFalse(result['progress']['complete'])
+            with closing(c.sqlite3.connect(Path(tmp)/result['backup'])) as backup:
+                self.assertEqual(backup.execute('SELECT COUNT(*) FROM errors').fetchone()[0],1)
+                self.assertEqual(backup.execute('SELECT COUNT(*) FROM details').fetchone()[0],0)
+            with closing(c.sqlite3.connect(work/'checkpoint.sqlite3')) as db:
+                record=json.loads(db.execute('SELECT record FROM details').fetchone()[0])
+                self.assertEqual(record['detail_checked_at'],original_at)
+                self.assertIn('local_reparsed_at',record)
+                self.assertEqual(db.execute('SELECT COUNT(*) FROM errors').fetchone()[0],0)
+            candidate=json.loads((work/'catalogue-candidate.json').read_text())
+            self.assertTrue(candidate['reconciliation_required']);self.assertFalse(candidate['complete'])
 
 
 if __name__=='__main__':unittest.main()

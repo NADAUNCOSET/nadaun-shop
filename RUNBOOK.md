@@ -4,6 +4,8 @@
 
 이 프로젝트 폴더가 Mac·Windows 공용 NAS 원본이다. 상위 허브의 `CLAUDE.md`를 함께 따른다. 배포는 `NADAUNCOSET/nadaun-shop` → Vercel `nadaun-shop` → `https://shop.nadaun.co`다.
 
+**재개 시 최신 인계부터 확인:** `_private/catalog/partner-parser-review-20260911/restart-handoff.json`은 재부팅 직전 중단 지점, 같은 폴더의 `resume-verification.json`은 후속 재개 결과다. 이 문서 마지막 절과 실제 진행 파일을 함께 읽고, 이미 기록된 작업 범위·AVX 승인 여부를 다시 질문하지 않는다.
+
 ## 2026-09-07 대표 결정
 
 - 아임웹 `https://rainbowshop.imweb.me/`에서 나다운 샵으로 빠르게 이전한다.
@@ -512,3 +514,12 @@ PLTHINK `plthink-1921456`의 4'x4' 규격명은 원본 JSON-LD에서 JSON이 허
 - 각 공급처마다 단일 프로세스·요청 종료 후 5초 간격·페이지/상세 SQLite 체크포인트를 적용한다. 브랜드관 전체 페이지와 하위 분류의 고유 상품 수를 대조하고, 마지막에 분류 첫 페이지를 재조회한다. 가격·통화·상품 ID·옵션·품절을 확인하지 못하면 비공개 검토 대상으로 남긴다. 원본 HTML 해시와 옵션/재고 증거를 보존하며, 403/429/보호 문구 또는 파싱 오류는 자동 재시도 루프 없이 정지한다.
 - Mac LaunchAgent `co.nadaun.shop.clmedia-sync`, `cinemall-sync`, `onnoff-sync`를 실제 설치·시작했다. 10분 간격의 **최초 수집 이어받기**이며, 신규 3사의 공개 상품 배포·12시간 전체 자동 갱신이 완료됐다는 의미가 아니다. 상태 원본은 `_scraper/.sync-state/<source>/progress.json`, `schedule.json`, `checkpoint.sqlite3`다. 초기 상세 검증과 대표 중복 브랜드 선택 뒤 공개 연결을 이어간다.
 - 중복 출처 선택 목록은 `_private/catalog/partner-discovery-20260911/brand-source-choices.md` 및 JSON에 기록했다. 이미 지정한 DJI·Aputure·SmallRig·TILTA 기준은 유지하고, 그 외 브랜드의 기존 출처 우선/브랜드별 지정 방식을 대표에게 질의했다. 답변 전 신규 협력사의 중복 상품을 임의 발행하지 않는다. 출처 보존 및 보호 응답 회귀검사는 `test_cafe24_partners.py`, 진행/공개 완료 구분 검사는 `test_partner_sync_status.py`다.
+
+### 2026-09-11 재부팅 후 옵션 파서 복구와 수집 재개
+
+- 재부팅 직전 인계의 미커밋 파서·테스트 2개를 이어받았다. 상품 전체 품절(`is_soldout_icon=T`)이 모든 옵션을 막도록 수정했다. 옵션별 조합·추가금·품절과 가격문의 표시를 원본 구조화 데이터/옵션 재고표와 대조하며, 불일치 가격은 검토 상태를 유지한다.
+- `_scraper/review_cafe24_checkpoint.py <source>`는 저장된 오류 HTML만 읽는 미리보기다. `--apply`는 SQLite backup 및 quick_check 후 원장을 갱신하고 후보·검증 보고서를 `parser-backups/`에 보존한다. 원본 확인 시각은 유지하고 로컬 재해석 시각을 별도 필드에 기록한다. 외부 요청은 0건이며, 오프라인 복구만으로 전체 완료 또는 공개 완료로 바꾸지 않는다.
+- 재해석 후 CL미디어 상세 1,213개 중 검증 1,191개·브랜드 소속 검토 22개, 미수집 상세 988개다. 씨네몰 상세 1,217개 중 검증 1,213개·브랜드 소속 검토 3개·가격 충돌 1개(`326`)다. 온앤오프 상세 1,064개는 모두 검증됐다. 이는 복구 시점 수량이며 이후 실제 `progress.json`이 우선한다.
+- 씨네몰 기본 목록 순서가 같은 총수 1,217개 안에서도 바뀌어 57개 분류의 최종 대조가 실패했다. 원본 메뉴가 제공하는 `sort_method=5`(신상품)를 사용하며 연속 조회의 ID 순서 일치를 확인했다. 기존 `pages`를 보존하고 `ordered_pages`에 새 목록을 수집한다. 요청 간격 5초, 중복 ID·총수·최종 첫 페이지 대조는 유지한다.
+- 복구 후보의 `reconciliation_required=true`는 기존 워커가 목록 대조를 한 번 이어받도록 한다. 최종 대조 후에도 브랜드/가격 검토가 남으면 자동 반복하지 않는다. CL미디어는 남은 상세 수집을 재개한다. 새 공급처 상품의 공개 반영·12시간 정기 갱신 완료와 구분한다.
+- 실제 코드 커밋·Vercel READY·기존 라이브 카탈로그 대조·Mac 워커 PID/진행 시각은 `_private/catalog/partner-parser-review-20260911/resume-verification.json`에 기록한다. 기프트 중지는 유지한다.

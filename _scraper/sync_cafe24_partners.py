@@ -26,6 +26,9 @@ SITES={
     'onnoff':('https://onnoff.kr','23'),
 }
 STATE=ROOT/'_scraper/.sync-state'
+# Cinemall's default ranking changes between reads; its own menu exposes
+# sort_method=5 (newest). Keep this cache separate from the original pages.
+LISTING_SORT={'cinemall':'5'}
 
 
 def category_id(url):
@@ -111,6 +114,67 @@ def js_values(doc):
     return result
 
 
+def won_value(value):
+    if isinstance(value,bool) or not re.fullmatch(r'\d+(?:\.0+)?',str(value)):
+        raise ValueError('Unverified price')
+    return int(str(value).split('.')[0])
+
+
+def availability(stock,offer=None,global_soldout=None):
+    """Stock counts are not mandatory when the source explicitly exposes availability."""
+    if stock.get('is_display')=='F' or stock.get('is_selling')=='F' or stock.get('is_auto_soldout')=='T' or global_soldout=='T':return 'soldout'
+    schema=str((offer or {}).get('availability','')).rsplit('/',1)[-1]
+    if schema in ('OutOfStock','SoldOut','Discontinued'):return 'soldout'
+    if stock.get('use_stock') is True and stock.get('use_soldout')=='T' and 'stock_number' in stock:
+        return 'soldout' if int(stock['stock_number'])<=0 else 'available'
+    if schema in ('InStock','LimitedAvailability','PreOrder','BackOrder'):return 'available'
+    if stock.get('use_stock') is False or stock.get('use_soldout')=='F':return 'available'
+    if global_soldout in ('T','F'):return 'soldout' if global_soldout=='T' else 'available'
+    return 'unknown'
+
+
+def normalize_options(stock,offers,base_price,quote,global_soldout):
+    by_code={}
+    for offer in offers:
+        codes=parse_qs(urlparse(offer['url']).query).get('item_code',[])
+        if len(codes)!=1 or codes[0] in by_code:raise ValueError('Variant offer identity is missing or duplicated')
+        by_code[codes[0]]=offer
+    if not isinstance(stock,dict) or not stock:raise ValueError('Variant stock table is missing')
+    if set(by_code)-set(stock):raise ValueError('Variant offer is absent from stock table')
+    active=[code for code,row in stock.items() if row.get('is_display')!='F' and row.get('is_selling')!='F']
+    options=[];groups={};issues=[]
+    for code,row in stock.items():
+        if not re.fullmatch(r'P[A-Z0-9]+',code) or not isinstance(row,dict):raise ValueError('Invalid variant code')
+        names=row.get('option_name_original');values=row.get('option_value_orginal')
+        if not isinstance(names,list) or not isinstance(values,list) or not names or len(names)!=len(values):
+            raise ValueError('Variant option dimensions are incomplete')
+        amount=won_value(row.get('option_price'))
+        offer=by_code.get(code)
+        if offer and not quote and won_value(offer.get('price'))!=amount:raise ValueError('Variant price contradicts source schema')
+        if not quote and 'stock_price' in row:
+            from decimal import Decimal, InvalidOperation
+            try:delta=Decimal(str(row['stock_price']))
+            except InvalidOperation:raise ValueError('Variant additional price is invalid')
+            if delta!=delta.to_integral_value() or base_price+int(delta)!=amount:raise ValueError('Variant additional price is inconsistent')
+        fallback=global_soldout if global_soldout=='T' or (len(active)==1 and code in active) else None
+        status=availability(row,offer,fallback)
+        if status=='unknown':issues.append('variant_availability_requires_review')
+        selection=[]
+        for name,value in zip(names,values):
+            if not isinstance(name,str) or not isinstance(value,str):raise ValueError('Invalid option dimension')
+            selection.append({'name':name,'value':value})
+            groups.setdefault(name,[])
+            if value not in groups[name]:groups[name].append(value)
+        options.append({'id':code,'name':' · '.join(values),'selection':selection,
+            'price':None if quote else amount,'additional_price':None if quote else amount-base_price,
+            'supplier_status':status,'soldout':status=='soldout','disabled':status!='available',
+            'displayed':row.get('is_display')!='F'})
+    groups=[{'name':name,'values':[{'value':v,'label':v} for v in values]} for name,values in groups.items()]
+    states={o['supplier_status'] for o in options if o['displayed']}
+    status='available' if 'available' in states else 'soldout' if states=={'soldout'} else 'unknown'
+    return options,groups,status,list(dict.fromkeys(issues))
+
+
 def detail(doc,product,brand):
     p=deepcopy(product);base,_=SITES[p['source']];sid=p['source_id'];schema=None
     for script in doc.select('script[type="application/ld+json"]'):
@@ -120,17 +184,19 @@ def detail(doc,product,brand):
         schema=next((x for x in rows if x.get('@type')=='Product'),schema)
     if not schema:raise ValueError('Product schema absent')
     if '\ufffd' in schema.get('name',''):raise ValueError('Invalid detail name encoding')
-    offer=schema.get('offers') or {}
-    if not isinstance(offer,dict) or product_id(offer.get('url',''))!=sid:raise ValueError('Detail identity mismatch')
-    if offer.get('priceCurrency')!='KRW':raise ValueError('Expected KRW price')
-    raw=offer.get('price')
-    if not re.fullmatch(r'\d+(?:\.0+)?',str(raw)):raise ValueError('Unverified price')
-    price=int(float(raw));values=js_values(doc)
+    offer=schema.get('offers') or {};variant_offers=offer if isinstance(offer,list) else []
+    offers=variant_offers or [offer]
+    if any(not isinstance(o,dict) or product_id(o.get('url',''))!=sid for o in offers):raise ValueError('Detail identity mismatch')
+    if any(o.get('priceCurrency')!='KRW' for o in offers):raise ValueError('Expected KRW price')
+    values=js_values(doc)
+    quote=(not variant_offers and values.get('product_price_content')=='1' and
+           re.search(r'문의|상담',str(offer.get('price',''))) is not None and str(values.get('product_price'))=='0')
+    price=None if quote else won_value(values.get('product_price')) if variant_offers else won_value(offer.get('price'))
     script_price=values.get('product_price')
-    if script_price is not None and str(price)!=str(script_price):raise ValueError('Schema and displayed price differ')
+    if not quote and script_price is not None and price!=won_value(script_price):raise ValueError('Schema and displayed price differ')
     sale_node=doc.select_one('#span_product_price_sale')
     sale=price
-    if sale_node:
+    if sale_node and not quote:
         n=re.search(r'\d[\d,]*',sale_node.get_text())
         if n:sale=int(n[0].replace(',',''))
     images=schema.get('image') or []
@@ -145,17 +211,21 @@ def detail(doc,product,brand):
             if value and not value.startswith('data:'):descriptions.append(urljoin(base,value))
     groups=[]
     for node in doc.select('select[option_select_element], select[id^="product_option_id"]'):
+        if node.get('option_product_no') and node['option_product_no']!=sid:continue
         vals=[{'value':o.get('value'),'label':o.get_text(' ',strip=True)} for o in node.select('option') if o.get('value') not in ('','*','**',None)]
         groups.append({'name':node.get('option_title') or node.get('option_name') or node.get('name'),'values':vals})
     stock_raw=values.get('single_option_stock_data');stock=json.loads(stock_raw) if isinstance(stock_raw,str) and stock_raw else None
-    supplier='unknown';issues=[]
+    supplier='unknown';issues=[];options=[]
     if stock:
-        supplier='soldout' if stock.get('use_stock') and stock.get('use_soldout')=='T' and int(stock.get('stock_number',0))<=0 else 'available'
+        supplier=availability(stock,offer if isinstance(offer,dict) else None,values.get('is_soldout_icon'))
     elif values.get('option_stock_data'):
         try:stock=json.loads(values['option_stock_data'])
         except (ValueError,TypeError):issues.append('option_stock_requires_review')
     option_raw=values.get('option_stock_data')
-    if groups or (isinstance(stock,dict) and not stock_raw):issues.append('option_combinations_require_review')
+    if isinstance(stock,dict) and not stock_raw:
+        options,groups,supplier,option_issues=normalize_options(stock,variant_offers,price,quote,values.get('is_soldout_icon'))
+        issues.extend(option_issues)
+    elif groups or variant_offers:issues.append('option_combinations_require_review')
     if supplier=='unknown':issues.append('availability_requires_review')
     if not body or not (descriptions or body.get_text(' ',strip=True)):issues.append('description_missing')
     if not brand:issues.append('brand_membership_requires_review')
@@ -163,7 +233,8 @@ def detail(doc,product,brand):
         status='soldout' if supplier=='soldout' else 'inquiry',supplier_status=supplier,
         images={'thumb':images[0],'main':images,'detail':list(dict.fromkeys(descriptions))},
         description_text=body.get_text(' ',strip=True) if body else clean(schema.get('description','')),
-        option_groups=groups,options=[],options_require_confirmation=bool(groups or option_raw),
+        option_groups=groups,options=options,options_require_confirmation=bool(quote or (groups or option_raw) and (not options or issues)),
+        price_inquiry=bool(quote),
         detail_status='verified' if not issues else 'review_required',content_issues=issues,
         detail_checked_at=stamp())
     # Preserve the source's option/stock evidence privately, never in public JSON.
@@ -196,6 +267,7 @@ class Collector:
         self.db.executescript('''
           CREATE TABLE IF NOT EXISTS state(key TEXT PRIMARY KEY,value TEXT NOT NULL);
           CREATE TABLE IF NOT EXISTS pages(category TEXT,page INTEGER,record TEXT NOT NULL,PRIMARY KEY(category,page));
+          CREATE TABLE IF NOT EXISTS ordered_pages(sort_method TEXT,category TEXT,page INTEGER,record TEXT NOT NULL,PRIMARY KEY(sort_method,category,page));
           CREATE TABLE IF NOT EXISTS details(id TEXT PRIMARY KEY,record TEXT NOT NULL,evidence TEXT NOT NULL);
           CREATE TABLE IF NOT EXISTS errors(id TEXT PRIMARY KEY,error TEXT NOT NULL,at TEXT NOT NULL);
         ''')
@@ -208,12 +280,18 @@ class Collector:
         return json.loads(row[0]) if row else None
 
     def page(self,cid,page,fresh=False):
-        row=None if fresh else self.db.execute('SELECT record FROM pages WHERE category=? AND page=?',(cid,page)).fetchone()
+        method=LISTING_SORT.get(self.name)
+        query='SELECT record FROM ordered_pages WHERE sort_method=? AND category=? AND page=?' if method else 'SELECT record FROM pages WHERE category=? AND page=?'
+        key=(method,cid,page) if method else (cid,page)
+        row=None if fresh else self.db.execute(query,key).fetchone()
         if row:return json.loads(row[0])
-        raw=self.source.get('/product/list.html',cate_no=cid,page=page)
+        params={'cate_no':cid,'page':page}
+        if method:params['sort_method']=method
+        raw=self.source.get('/product/list.html',**params)
         value=listing(soup(raw),self.name,cid,page)
         if not fresh:
-            with self.db:self.db.execute('INSERT INTO pages VALUES(?,?,?)',(cid,page,json.dumps(value,ensure_ascii=False)))
+            insert='INSERT INTO ordered_pages VALUES(?,?,?,?)' if method else 'INSERT INTO pages VALUES(?,?,?)'
+            with self.db:self.db.execute(insert,(*key,json.dumps(value,ensure_ascii=False)))
         return value
 
     def inventory(self):
@@ -260,7 +338,7 @@ class Collector:
                 if cursor in roots:labels.add(roots[cursor]['name'])
             product['brand']=next(iter(labels)) if len(labels)==1 else ''
             product['brand_category_ids']=[cid for cid in cats if cid!=self.root]
-        result={'source':self.name,'at':stamp(),'categories':list(nodes.values()),'coverage':coverage,'products':products,'product_count':len(products),'inventory_complete':True,'complete':False}
+        result={'source':self.name,'at':stamp(),'listing_sort':LISTING_SORT.get(self.name),'categories':list(nodes.values()),'coverage':coverage,'products':products,'product_count':len(products),'inventory_complete':True,'complete':False}
         save_json(self.work/'inventory-candidate.json',result)
         self.state('inventory_complete',True)
         return result
@@ -288,11 +366,11 @@ class Collector:
             for category in snapshot['coverage']:
                 old=self.page(category['id'],1);new=self.page(category['id'],1,True)
                 if old['total']!=new['total'] or list(old['products'])!=list(new['products']):changed.append(category['id'])
-            rows={sid:json.loads(rec) for sid,rec in self.db.execute('SELECT id,record FROM details')}
-            errors=dict(self.db.execute('SELECT id,error FROM errors'))
+            rows={sid:json.loads(rec) for sid,rec in self.db.execute('SELECT id,record FROM details') if sid in snapshot['products']}
+            errors={sid:error for sid,error in self.db.execute('SELECT id,error FROM errors') if sid in snapshot['products']}
             reviews={sid:p.get('content_issues',[]) for sid,p in rows.items() if p['detail_status']!='verified'}
             result={**snapshot,'collected_at':stamp(),'products':{p['id']:p for p in rows.values()},'product_count':len(rows),
-                'complete':not errors and not reviews and not changed and len(rows)==snapshot['product_count'],
+                'complete':not errors and not reviews and not changed and set(rows)==set(snapshot['products']),
                 'detail_errors':errors,'content_reviews':reviews,'changed_categories':changed}
             save_json(self.work/'catalogue-candidate.json',result)
             save_json(self.work/'progress.json',{'at':stamp(),'phase':'review_required' if not result['complete'] else 'ready_for_source_selection',
@@ -307,7 +385,8 @@ def main():
     try:
         error=collector.work/'worker-error.json'
         if error.exists() and json.loads(error.read_text()).get('requires_review'):return
-        if (collector.work/'catalogue-candidate.json').exists():return
+        candidate=collector.work/'catalogue-candidate.json'
+        if candidate.exists() and not json.loads(candidate.read_text()).get('reconciliation_required'):return
         collector.collect()
     except Exception as exc:
         save_json(collector.work/'worker-error.json',{'at':stamp(),'error':type(exc).__name__+': '+str(exc),'requires_review':True});raise
