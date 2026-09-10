@@ -1,7 +1,7 @@
 {
   "source": "smartstore",
   "source_url": "https://smartstore.naver.com/rainbowbene",
-  "collected_at": "2026-09-09T23:01:45+00:00",
+  "collected_at": "2026-09-10T15:16:19+00:00",
   "complete": true,
   "origin_count": 8947,
   "product_count": 7161,
@@ -6008,18 +6008,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50004637",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001394",
-        "50002113"
+        "50001387",
+        "50004637"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "카메라가방/케이스",
+        "기타카메라가방/케이스"
       ],
       "source_modified_at": "2026-09-08T21:21:44.482+09:00"
     },
@@ -6305,18 +6305,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50004637",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001394",
-        "50002113"
+        "50001387",
+        "50004637"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "카메라가방/케이스",
+        "기타카메라가방/케이스"
       ],
       "source_modified_at": "2026-09-08T21:21:42.640+09:00"
     },
@@ -9011,18 +9011,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50002077",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001394",
-        "50002113"
+        "50001389",
+        "50002077"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "삼각대/헤드",
+        "플레이트/퀵슈"
       ],
       "source_modified_at": "2026-09-04T02:12:40.618+09:00"
     },
@@ -22277,18 +22277,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50002074",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001394",
-        "50002113"
+        "50001389",
+        "50002074"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "삼각대/헤드",
+        "삼각대"
       ],
       "source_modified_at": "2026-09-04T02:11:01.277+09:00"
     },
@@ -23828,18 +23828,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50002074",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001394",
-        "50002113"
+        "50001389",
+        "50002074"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "삼각대/헤드",
+        "삼각대"
       ],
       "source_modified_at": "2026-09-04T02:10:54.902+09:00"
     },
@@ -24158,18 +24158,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50002080",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001394",
-        "50002113"
+        "50001390",
+        "50002080"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "플래시/조명용품",
+        "플래시/라이트/조명"
       ],
       "source_modified_at": "2026-09-04T02:10:54.846+09:00"
     },
@@ -46570,18 +46570,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50002082",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001394",
-        "50002113"
+        "50001390",
+        "50002082"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "플래시/조명용품",
+        "배경/노출용품"
       ],
       "source_modified_at": "2026-09-01T18:09:21.517+09:00"
     },
@@ -128310,7 +128310,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/12200267872",
       "price": 260000,
-      "sale_price": 208000,
+      "sale_price": 260000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -128343,7 +128343,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/12200263929",
       "price": 425000,
-      "sale_price": 340000,
+      "sale_price": 425000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -128376,7 +128376,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/12200260829",
       "price": 165000,
-      "sale_price": 132000,
+      "sale_price": 165000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -129209,18 +129209,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50004605",
+      "source_category_id": "50002935",
       "source_category_ids": [
         "50000003",
-        "50000206",
-        "50001381",
-        "50004605"
+        "50000094",
+        "50001205",
+        "50002935"
       ],
       "source_category_path": [
         "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라렌즈",
-        "광각렌즈"
+        "주변기기",
+        "타블렛/액세서리",
+        "타블렛"
       ],
       "source_modified_at": "2025-12-18T23:41:55.384+09:00"
     },
@@ -139512,7 +139512,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/11979582945",
       "price": 59000,
-      "sale_price": 53100,
+      "sale_price": 59000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -139545,7 +139545,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/11979579358",
       "price": 69000,
-      "sale_price": 62100,
+      "sale_price": 69000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -139578,7 +139578,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/11979573987",
       "price": 116000,
-      "sale_price": 104400,
+      "sale_price": 116000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -139611,7 +139611,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/11979571357",
       "price": 116000,
-      "sale_price": 104400,
+      "sale_price": 116000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -139644,7 +139644,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/11979567152",
       "price": 499000,
-      "sale_price": 349300,
+      "sale_price": 499000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -139677,7 +139677,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/11979565618",
       "price": 499000,
-      "sale_price": 349300,
+      "sale_price": 499000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -139710,7 +139710,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/11979556496",
       "price": 730000,
-      "sale_price": 511000,
+      "sale_price": 730000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -139743,7 +139743,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/11979555144",
       "price": 730000,
-      "sale_price": 511000,
+      "sale_price": 730000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -139776,7 +139776,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/11979547023",
       "price": 860000,
-      "sale_price": 688000,
+      "sale_price": 860000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -139809,7 +139809,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/11979542752",
       "price": 1160000,
-      "sale_price": 928000,
+      "sale_price": 1160000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -139842,7 +139842,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/11979540563",
       "price": 1540000,
-      "sale_price": 1232000,
+      "sale_price": 1540000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -139875,7 +139875,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/11979506467",
       "price": 1210000,
-      "sale_price": 968000,
+      "sale_price": 1210000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -139908,7 +139908,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/11979499287",
       "price": 1530000,
-      "sale_price": 1224000,
+      "sale_price": 1530000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -139941,7 +139941,7 @@
       "manufacturer": "호버에어",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/11979494387",
       "price": 1880000,
-      "sale_price": 1504000,
+      "sale_price": 1880000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -188271,18 +188271,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50002979",
       "source_category_ids": [
         "50000003",
-        "50000206",
-        "50001394",
-        "50002113"
+        "50000095",
+        "50001215",
+        "50002979"
       ],
       "source_category_path": [
         "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "멀티미디어장비",
+        "영상편집카드",
+        "영상편집"
       ],
       "source_modified_at": "2026-04-27T15:13:50.898+09:00"
     },
@@ -202342,18 +202342,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50004609",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001394",
-        "50002113"
+        "50001382",
+        "50004609"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "렌즈용품",
+        "렌즈필터"
       ],
       "source_modified_at": "2025-12-18T23:53:01.382+09:00"
     },
@@ -231251,18 +231251,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002074",
+      "source_category_id": "50002082",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001389",
-        "50002074"
+        "50001390",
+        "50002082"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "삼각대/헤드",
-        "삼각대"
+        "플래시/조명용품",
+        "배경/노출용품"
       ],
       "source_modified_at": "2025-11-19T14:03:39.411+09:00"
     },
