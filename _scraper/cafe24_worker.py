@@ -25,8 +25,8 @@ def parser_revision():
 
 
 def publish(snapshot):
-    from brand_source_policy import supplemental_source_approved, publishable_ids, policy_fingerprint
-    from shop_sync import run, request, SITE
+    from brand_source_policy import supplemental_source_approved
+    from shop_sync import run
     source = snapshot['source']
     if not supplemental_source_approved(source):
         raise RuntimeError('Partner source approval is missing')
@@ -35,6 +35,17 @@ def publish(snapshot):
     if candidate['product_count'] < prior.get('source_verified_products',0) * .85:
         raise RuntimeError('Partner inventory decreased more than 15%; review before publication')
     result = run(existing=True, source_updates={source:candidate})
+    return record_publication(snapshot,result)
+
+
+def record_publication(snapshot,result):
+    """Verify the source and live offers after normal publication or reviewed recovery."""
+    from brand_source_policy import publishable_ids, policy_fingerprint
+    from shop_sync import request, SITE
+    source = snapshot['source']
+    candidate = prepare(snapshot)
+    if read(OUT/(source+'.json')) != candidate:
+        raise RuntimeError('Published source snapshot differs from the verified candidate')
     live = request('GET',SITE+'/data/catalog/catalog.json',params={'verify':result['revision']}).json()
     actual = {offer['id'] for product in live['products'] for offer in product['offers'] if offer['source']==source}
     expected = publishable_ids(candidate)

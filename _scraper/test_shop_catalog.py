@@ -129,7 +129,7 @@ class SourceRules(unittest.TestCase):
             self.assertTrue(set(p['category_ids']+p['type_ids'])<=cats,p['id'])
             self.assertNotIn(p['id'],d['redirects'])
             for offer in p['offers']:
-                self.assertTrue(offer['url'].startswith(('https://smartstore.naver.com/rainbowbene/','https://rainbowshop.imweb.me/','https://kppkpp.co.kr/','https://www.l-mount.co.kr/goods/goods_view.php?goodsNo=','https://www.plthink.com/shop/shopdetail.html?branduid=','https://www.avx.co.kr/goods/view?no=','https://store.dji.com/kr/product/')))
+                self.assertTrue(offer['url'].startswith(('https://smartstore.naver.com/rainbowbene/','https://rainbowshop.imweb.me/','https://kppkpp.co.kr/','https://www.l-mount.co.kr/goods/goods_view.php?goodsNo=','https://www.plthink.com/shop/shopdetail.html?branduid=','https://www.avx.co.kr/goods/view?no=','https://store.dji.com/kr/product/','https://clmedia.co.kr/product/','https://www.cinemall.co.kr/product/','https://onnoff.kr/product/')),offer['id'])
         self.assertTrue(set(d['redirects'].values())<=ids)
         offers=[o['id'] for p in d['products'] for o in p['offers']]
         self.assertEqual(len(offers),len(set(offers)))
