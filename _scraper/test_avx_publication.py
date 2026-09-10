@@ -18,6 +18,10 @@ def source():
 
 
 class PublicationTests(unittest.TestCase):
+    def setUp(self):
+        approval=patch.object(publication,'supplemental_source_approved',return_value=False)
+        self.approval=approval.start();self.addCleanup(approval.stop)
+
     def partition(self):
         counts={b:{'avx':1,'smartstore':1} for b in ('dji','aputure','smallrig','tilta','sony')}
         counts['newbrand']={'avx':1}
@@ -45,6 +49,20 @@ class PublicationTests(unittest.TestCase):
             elif bad=='detail':snapshot['products']['avx-0']['detail_status']='pending'
             else:snapshot['coverage']['expected']=7
             with self.assertRaises(ValueError):publication.partition(snapshot)
+
+    def test_all_brand_approval_includes_overlaps_but_preserves_exclusive_dji_and_content_review(self):
+        self.approval.return_value=True
+        snapshot=source();snapshot['products']['avx-5']['content_issues']=['source_description_empty']
+        choices={'dji':{'source':'dji-official','exclusive':True},
+                 'smallrig':{'source':'kpp','sources':['kpp','clmedia']},
+                 'tilta':{'source':'smartstore','sources':['smartstore','clmedia','cinemall']}}
+        with patch.object(publication,'inventory',return_value={'sony':{'avx':1,'smartstore':1}}),patch.object(publication,'selections',return_value=choices):
+            public,decisions=publication.partition(snapshot)
+        self.assertEqual(set(public['products']),{'avx-1','avx-2','avx-3','avx-4'})
+        self.assertEqual(decisions['excluded_ids'],{'avx-0':'dji'})
+        self.assertEqual(decisions['pending_brands'],{})
+        self.assertEqual(set(decisions['content_review_ids']),{'avx-5'})
+        self.assertEqual(sum(public['publication'][k] for k in ('accepted_product_count','pending_product_count','owner_excluded_product_count')),6)
 
     def test_confirmed_empty_source_is_held_even_for_an_owner_approved_brand(self):
         snapshot=source();snapshot['products']['avx-0']['content_issues']=['source_description_empty']

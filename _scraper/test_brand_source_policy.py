@@ -8,6 +8,21 @@ from catalog_dedup import primary_key,deduplicate
 
 
 class SourcePolicyTests(unittest.TestCase):
+    def setUp(self):
+        approval=patch.object(policy,'supplemental_source_approved',return_value=False)
+        self.approval=approval.start();self.addCleanup(approval.stop)
+
+    def test_owner_all_brand_approval_resolves_avx_overlap_without_changing_primary(self):
+        self.approval.return_value=True
+        counts={'smallrig':{'avx':1,'kpp':2},'sony':{'avx':1,'smartstore':2}}
+        choices={'smallrig':{'source':'kpp','sources':['kpp','clmedia']}}
+        with tempfile.TemporaryDirectory() as folder,patch.object(policy,'AUDIT',Path(folder)),patch.object(policy,'inventory',return_value=counts),patch.object(policy,'selections',return_value=choices):
+            self.assertEqual(policy.pending({}),[])
+            audit=policy.write_audit({'meta':{'revision':'approved'},'products':[]})
+            self.assertTrue(all(not b['selection_pending'] for b in audit['brands']))
+            self.assertTrue(all(b['approved_supplemental_sources']==['avx'] for b in audit['brands']))
+            self.assertEqual(next(b for b in audit['brands'] if b['brand_id']=='smallrig')['selection']['source'],'kpp')
+
     def test_unselected_overlap_never_enters_publication(self):
         import avx_worker
         import avx_publication

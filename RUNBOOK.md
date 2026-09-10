@@ -502,3 +502,5 @@ PLTHINK `plthink-1921456`의 4'x4' 규격명은 원본 JSON-LD에서 JSON이 허
 - 원본 JPEG와 제품 사진은 변환 없이 `media.nadaun.co/shop/banner/partners/`의 내용 해시가 포함된 경로에 저장한다. 재업로드는 새 해시 경로를 사용한다.
 - `data/catalog/banners.json`의 `mobile_copy`가 있는 배너만 모바일 카드로 렌더링한다. 문구는 이스케이프하고 링크는 나다운 샵 내부 상품/검색 경로만 허용한다. 자동 넘김 주기는 기존 5초다.
 - 원본 URL·SHA-256·R2 검증·상품 매칭 이력: `_private/catalog/partner-banners-20260910/publication-ledger.json`. 외부 출처의 배너는 현재 수동 검토 후 반영하며, 배너 자동 수집 연동으로 보고하지 않는다.
+- 2026-09-11 최신 대표 지시: **“avx 브랜드도 / 다 판매하면되”**. AVX 전 브랜드를 추가 판매 승인한다. 아래 과거의 AVX 중복 브랜드 선택 대기와 SmallRig/TILTA 제외 규칙보다 이 결정이 우선한다. `data/catalog/brand-source-policy.json`의 `source_approvals.avx`가 승인 원본이다. 기존 상품별 주 출처와 SmallRig KPP·TILTA 자체 스토어의 우선순위는 보존하고, AVX 추가 상품은 동일 모델·색상·옵션·구성을 확인해 합친다. DJI 구매는 별도로 확정된 공식 한국 스토어 단독 기준을 유지한다. 상세 내용이 누락된 원본은 판매 승인과 별개로 검토 목록에 남긴다. 렌탈 220개는 이 구매 출처 변경의 대상이 아니다. 상품별 출처와 AVX 추가 승인은 `_private/catalog/source-matches.json` 및 `brand-source-review.md`에 기록한다.
+- 2026-09-11 기프트 재개 요청 후 일반 접속 1회 확인은 HTTP 403이었다. 중지 기록과 71,941개 목록·3,430개 상세를 보존했다. 근거는 `_private/gift/resume-20260911/access-check.json`. 새 상세 수집을 재개했다고 보고하지 않는다. 공식 상품 API/피드 또는 이 작업 환경의 정상 접근 복구가 필요하다.
