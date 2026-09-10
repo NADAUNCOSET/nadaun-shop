@@ -72,13 +72,22 @@ class PublicationTests(unittest.TestCase):
                 collector.assert_not_called();publish.assert_not_called()
 
     def test_wrong_live_ids_never_create_success_receipt(self):
-        with tempfile.TemporaryDirectory() as tmp,patch.object(worker,'STATE',Path(tmp)):
+        with tempfile.TemporaryDirectory() as tmp,patch.object(worker,'STATE',Path(tmp)),patch.object(worker,'OUT',Path(tmp)/'sources'):
+            worker.OUT.mkdir()
+            (worker.OUT/'onnoff.json').write_text(json.dumps(publication.prepare(candidate())))
             with patch('brand_source_policy.supplemental_source_approved',return_value=True),\
                  patch('brand_source_policy.publishable_ids',return_value={'onnoff-10'}),\
                  patch('shop_sync.run',return_value={'revision':'test'}),\
                  patch('shop_sync.request',return_value=Mock(json=lambda:{'products':[]})):
                 with self.assertRaisesRegex(RuntimeError,'live product IDs'):worker.publish(candidate())
                 self.assertFalse((Path(tmp)/'onnoff/published.json').exists())
+
+    def test_recovery_requires_the_exact_verified_source_snapshot(self):
+        with tempfile.TemporaryDirectory() as tmp,patch.object(worker,'OUT',Path(tmp)),patch('shop_sync.request') as request:
+            (Path(tmp)/'onnoff.json').write_text('{}')
+            with self.assertRaisesRegex(RuntimeError,'snapshot differs'):
+                worker.record_publication(candidate(),{'revision':'test'})
+            request.assert_not_called()
 
     def test_successful_receipt_inside_refresh_window_makes_no_source_requests(self):
         with tempfile.TemporaryDirectory() as tmp,patch.object(worker,'STATE',Path(tmp)),patch.object(worker,'parser_revision',return_value='parser'):
