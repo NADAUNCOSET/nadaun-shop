@@ -13,6 +13,12 @@ const {toss}=require('../../server/commerce/toss.cjs');
 const secret='ab'.repeat(32),owner=hash('customer-one'),other=hash('customer-two');
 const customer={name:'테스트 고객',phone:'010-0000-0000',postcode:'01234',address:'테스트시 테스트로 123',address_detail:'테스트동',consent:true};
 const item={id:'p1',option:'블랙',quantity:2};
+test('supplier variant availability is enforced before a server quote is created',()=>{
+ for(const state of [{disabled:true},{soldout:true},{displayed:false},{supplier_status:'soldout'},{supplier_status:'unknown'}]){
+  const now=Date.now(),catalog={meta:{synced_at:new Date(now).toISOString()},redirects:{},products:[{id:'p',kind:'purchase',status:'inquiry',price:1000,offers:[]}]};
+  assert.throws(()=>quoteCatalog(catalog,()=>({options:[{name:'화이트',additional_price:0,...state}]}),[{id:'p',option:'화이트',quantity:1}],()=>now),{status:409});
+ }
+});
 function fixture(){
  let now=Date.parse('2026-09-08T00:00:00Z');const clock=()=>now;
  const sql=new DatabaseSync(':memory:');sql.exec(fs.readFileSync(path.join(root,'server/commerce/schema.sql'),'utf8'));

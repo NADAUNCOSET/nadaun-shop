@@ -56,3 +56,19 @@ test('sold-out heavy stands and rental items cannot raise purchase shipping',asy
  assert.match(html,/class="order-total">34,500<small>원/);
  assert.match(html,/2개 구성<\/dd>/);
 });
+test('saved sold-out or hidden variants are excluded from the checkout total',async()=>{
+ for(const state of [{disabled:true},{soldout:true},{displayed:false},{supplier_status:'soldout'},{supplier_status:'unknown'}]){
+  const {html}=await render([{id:'p',option:'Black',quantity:2}],{details:{p:{options:[{name:'Black',additional_price:5000,...state}]}}});
+  assert.match(html,/판매 상태 또는 옵션이 변경/);assert.match(html,/금액 확인 필요/);assert.doesNotMatch(html,/54,000/);
+ }
+});
+test('purchase controls label unavailable variants and refuse a stale forced selection',()=>{
+ const handlers={},selection={value:'1',addEventListener(){},focus(){}},quantity={value:'1',addEventListener(){},reportValidity:()=>true};
+ const slot={innerHTML:'',querySelector:s=>s==='select'?selection:s==='input'?quantity:{addEventListener:(_,fn)=>handlers[s]=fn}},toast={};let writes=0;
+ const context={document:{querySelector:s=>s==='#purchase-options'?slot:toast,querySelectorAll:()=>[]},window:{addEventListener(){}},localStorage:{getItem:()=> '[]',setItem(){writes++}},setTimeout:()=>0,clearTimeout(){}};
+ vm.createContext(context);vm.runInContext(source,context);
+ context.mountPurchase({id:'p',kind:'purchase',status:'inquiry',price:163000,offers:[]},{options:[{name:'블랙',additional_price:0,supplier_status:'available'},{name:'화이트',additional_price:0,soldout:true,disabled:true}]});
+ assert.match(slot.innerHTML,/<option value="1" disabled>화이트 · 품절<\/option>/);
+ handlers['#add-cart']();assert.equal(writes,0);assert.match(toast.textContent,/판매 상태/);
+ selection.value='0';handlers['#add-cart']();assert.equal(writes,1);
+});

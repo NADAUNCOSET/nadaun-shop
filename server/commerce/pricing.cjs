@@ -26,6 +26,8 @@ function quoteCatalog(catalog,detail,rows,clock=()=>Date.now()){
   if(d.options_require_confirmation)throw new ShopError(409,'옵션 구성을 상담으로 확인해야 하는 상품입니다.');
   const matches=options.filter(o=>o.name===row.option);
   if(options.length?matches.length!==1:row.option!=='')throw new ShopError(409,'상품 옵션이 변경되었습니다. 다시 선택해주세요.');
+  const selected=matches[0];
+  if(selected&&(selected.disabled||selected.soldout||selected.displayed===false||['soldout','unknown'].includes(selected.supplier_status)))throw new ShopError(409,'선택한 옵션의 판매 상태가 변경되었습니다. 다시 선택해주세요.');
   const identity=JSON.stringify([id,row.option]);if(seen.has(identity))throw new ShopError(400,'같은 상품·옵션은 수량으로 합쳐주세요.');seen.add(identity);
   const own=p.offers.some(o=>['smartstore','imweb'].includes(o.source));
   const base=own?(p.sale_price??p.price):p.price,extra=matches[0]?.additional_price??0;

@@ -119,6 +119,22 @@ class PublicationStorageTests(unittest.TestCase):
         promote.assert_not_called()
         self.assertTrue((self.state / 'run.lock').exists())
 
+    def test_code_edited_during_build_cannot_be_published(self):
+        import shop_sync
+        checks=0
+        def command(*args):
+            nonlocal checks
+            if args[:3]==('git','diff','--name-only'):
+                checks+=1
+                return 'assets/shop/cart.js' if checks>1 else ''
+            return ''
+        with patch.object(shop_sync,'STATE',self.state),patch.object(shop_sync,'command',side_effect=command),\
+             patch.object(shop_sync,'build'),patch.object(shop_sync,'publish_existing') as publish:
+            with self.assertRaisesRegex(RuntimeError,'changed during build'):
+                shop_sync.run(existing=True)
+        publish.assert_not_called()
+        self.assertFalse((self.state/'run.lock').exists())
+
 
 if __name__ == '__main__':
     unittest.main()
