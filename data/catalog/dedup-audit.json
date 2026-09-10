@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
   "brands_checked": 252,
-  "input_count": 19029,
-  "duplicate_group_count": 1865,
-  "duplicate_entries_removed": 2380,
+  "input_count": 19041,
+  "duplicate_group_count": 1867,
+  "duplicate_entries_removed": 2383,
   "by_brand": {
     "hoverair": 13,
     "viltrox": 4,
     "smallrig": 767,
     "leofoto": 3,
-    "tilta": 159,
+    "tilta": 161,
     "fxlion": 21,
     "kumkwang": 16,
     "valens": 149,
@@ -12596,6 +12596,13 @@
           "price": 59000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1731379788"
+        },
+        {
+          "id": "plthink-1930406",
+          "name": "[TILTA] 틸타 제노 사이드 핸들 카메라 그립 1/4인치 로케이팅 타입 TA-XSH1-B",
+          "price": 62000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930406"
         }
       ]
     },
@@ -44272,6 +44279,54 @@
           "price": 68000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930395"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "smartstore-13745139202",
+      "evidence": [
+        "model:TA-XSH3-B"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13745139202",
+          "name": "TA-XSH3-B 제노 NATO 사이드 핸들 블랙",
+          "price": 68000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13745139202"
+        },
+        {
+          "id": "plthink-1930405",
+          "name": "[TILTA] 틸타 제노 사이드 핸들 카메라 그립 나토 타입 TA-XSH3-B",
+          "price": 68000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930405"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "smartstore-11952616904",
+      "evidence": [
+        "model:TA-T65-AME-B"
+      ],
+      "members": [
+        {
+          "id": "smartstore-11952616904",
+          "name": "TILTA DJI 오즈모 포켓 3 확장 액세서리 마운트 케이지 블랙 TA-T65-AME-B",
+          "price": 55000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/11952616904"
+        },
+        {
+          "id": "plthink-1930411",
+          "name": "[TILTA] 틸타 오즈모 포켓3 포켓4 P 확장 케이지 액세서리 마운트 TA-T65-AME-B",
+          "price": 55000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930411"
         }
       ]
     },
