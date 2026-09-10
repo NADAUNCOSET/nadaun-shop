@@ -42,6 +42,7 @@ CODE += ['_scraper/rental_content.py','_scraper/test_shop_rental_content.py','as
 CODE += ['_scraper/sync_dji_official.py','_scraper/dji_worker.py','_scraper/test_shop_dji_official.py']
 CODE += ['_scraper/private_storage.py','_scraper/test_private_storage.py','_scraper/gift_supplier_registry.py']
 CODE += ['_scraper/publication_storage.py','_scraper/test_publication_storage.py','_scraper/test_partner_worker.py']
+CODE += ['_scraper/sync_cafe24_partners.py','_scraper/test_cafe24_partners.py']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)

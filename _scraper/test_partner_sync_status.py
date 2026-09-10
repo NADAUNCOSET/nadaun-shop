@@ -7,6 +7,16 @@ from partner_sync_status import verified_receipt, report
 
 
 class PartnerStatusTest(unittest.TestCase):
+    def test_private_collection_does_not_claim_recurring_live_sync(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);folder=root/'clmedia';folder.mkdir()
+            (folder/'progress.json').write_text(json.dumps({'at':'now','phase':'inventory','products_found':56,'page':2,'pages_in_category':79}))
+            plan=root/'plan.json';plan.write_text(json.dumps({'sources':{'clmedia':{'name':'씨엘미디어','adapter':None,'collection_adapter':'cafe24'}}}))
+            result=report(plan,root,root)['sources']['clmedia']
+            self.assertEqual(result['phase'],'inventory');self.assertTrue(result['collection_adapter_ready'])
+            self.assertFalse(result['automatic_refresh_implemented']);self.assertFalse(result['last_snapshot_live_verified'])
+            self.assertEqual(result['progress']['page'],2)
+
     def test_dji_refresh_reports_provider_progress_after_generation_changes(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);folder=root/'dji-official';folder.mkdir()
