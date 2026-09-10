@@ -8,6 +8,7 @@
     "l-mount": 335,
     "plthink": 6602,
     "dji-official": 910,
+    "onnoff": 1064,
     "avx": 1322
   },
   "detail_coverage": {
@@ -17,18 +18,19 @@
     "l-mount": 335,
     "plthink": 6211,
     "dji-official": 905,
+    "onnoff": 1064,
     "avx": 1322
   },
-  "synced_at": "2026-09-10T16:13:30+00:00",
-  "merged_count": 2529,
-  "product_count": 17341,
+  "synced_at": "2026-09-10T18:45:35+00:00",
+  "merged_count": 3068,
+  "product_count": 17866,
   "category_browsing_enabled": true,
-  "listing_count": 17234,
+  "listing_count": 17759,
   "option_family_count": 107,
   "deduplication": {
-    "brands_checked": 252,
-    "groups": 1950,
-    "removed": 2529
+    "brands_checked": 254,
+    "groups": 2080,
+    "removed": 3068
   },
-  "revision": "a1777f00a9ac0881"
+  "revision": "418e8eeb565e4823"
 }
