@@ -208,11 +208,11 @@
     "listing_count": 220,
     "option_family_count": 181,
     "deduplication": {
-      "brands_checked": 271,
+      "brands_checked": 270,
       "groups": 2857,
       "removed": 4750
     },
-    "revision": "8c52d914ec3078fa",
+    "revision": "47e3cdee8c0ac6ed",
     "view": "rental"
   },
   "brands": [
@@ -4325,46 +4325,31 @@
       "logo_dark": false
     },
     {
-      "id": "crystal-prompter",
-      "name": "CRYSTAL-PROMPTER",
-      "aliases": [
-        "Crystal Prompter"
-      ],
-      "logo": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20260720/a3bddfe31a41c443db43ee8a1508545f.jpg",
-      "navigation_category_ids": [
-        "clmedia:b:51"
-      ],
-      "count": 3,
-      "purchase_count": 3,
-      "rental_count": 0,
-      "category_ids": [
-        "clmedia:b:51"
-      ],
-      "representative_id": "clmedia-3114",
-      "representative_image": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20260720/a3bddfe31a41c443db43ee8a1508545f.jpg",
-      "representative_name": "크리스탈프롬프터 MOMO12",
-      "image_kind": "product",
-      "logo_dark": false
-    },
-    {
       "id": "crystalprompter",
       "name": "CRYSTALPROMPTER",
       "aliases": [
-        "CRYSTALPROMPTER"
+        "CRYSTALPROMPTER",
+        "Crystal Prompter",
+        "crystal prompter",
+        "crystal-prompter",
+        "크리스탈프롬프터",
+        "crystalprompter"
       ],
       "logo": "https://www.plthink.com/shopimages/plthink/0081320000013.jpg?1773975673",
       "navigation_category_ids": [
+        "clmedia:b:51",
         "plthink:b:132",
         "plthink:b:132:001",
         "plthink:b:132:002"
       ],
-      "count": 9,
-      "purchase_count": 9,
+      "count": 12,
+      "purchase_count": 12,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:132",
         "plthink:b:132:001",
-        "plthink:b:132:002"
+        "plthink:b:132:002",
+        "clmedia:b:51"
       ],
       "representative_id": "plthink-1920819",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0081320000012.jpg?1773975673",
