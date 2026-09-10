@@ -22,6 +22,13 @@ def candidate():
 
 
 class PublicationTests(unittest.TestCase):
+    def test_editor_blob_images_never_replace_valid_product_images(self):
+        from build_catalog import public_remote_images
+        valid='https://ecimg.cafe24img.com/product/detail.png'
+        self.assertEqual(public_remote_images(['blob:https://clmedia.cafe24.com/editor-id',valid,
+            'data:image/png;base64,test','javascript:alert(1)','file:///tmp/editor.png',
+            'https://user:password@example.invalid/private.png',valid]),[valid])
+
     def test_full_coverage_and_original_tree_are_preserved(self):
         raw=candidate();prepared=publication.prepare(raw)
         self.assertEqual(prepared['original_categories'],raw['categories'])

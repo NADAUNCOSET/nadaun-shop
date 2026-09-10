@@ -8,7 +8,7 @@ import html
 import json
 from pathlib import Path
 import re
-from urllib.parse import quote,urljoin
+from urllib.parse import quote,urljoin,urlsplit
 from sync_shop_sources import ROOT,OUT,clean,save_json
 from enrich_shop_sources import CACHE,shard,source_fingerprint
 from catalog_dedup import model_key,deduplicate,name_key,primary_key
@@ -16,6 +16,17 @@ from storefront_pages import content as page_content
 from catalog_seo import product_discovery
 
 PUBLIC=ROOT/'data/catalog'
+
+def public_remote_images(values):
+    """Keep persistent remote images; an editor's blob URL is not a public asset."""
+    result=[]
+    for value in values:
+        if not isinstance(value,str):continue
+        try:parsed=urlsplit(value)
+        except ValueError:continue
+        if parsed.scheme not in ('http','https') or not parsed.netloc or parsed.username or parsed.password:continue
+        if value not in result:result.append(value)
+    return result
 
 def slug(value):
     value=clean(value).casefold()
@@ -205,6 +216,11 @@ def build(allow_pending=False):
             if d.get('unavailable'):
                 continue
             p['images'].update(d.get('images') or {})
+            if source in ('clmedia','cinemall','onnoff'):
+                for group in ('main','detail'):
+                    p['images'][group]=public_remote_images(p['images'].get(group,[]))
+                if not p['images']['main']:raise RuntimeError('Unusable partner gallery: '+pid)
+                p['images']['thumb']=p['images']['main'][0]
             if source=='l-mount':
                 for group in ('main','detail'):
                     cleaned=[]
