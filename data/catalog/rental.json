@@ -184,7 +184,7 @@
       "l-mount": 335,
       "plthink": 6602,
       "dji-official": 910,
-      "avx": 1320
+      "avx": 1322
     },
     "detail_coverage": {
       "kpp": 4014,
@@ -193,20 +193,20 @@
       "l-mount": 335,
       "plthink": 6211,
       "dji-official": 905,
-      "avx": 1320
+      "avx": 1322
     },
-    "synced_at": "2026-09-10T15:20:26+00:00",
-    "merged_count": 2528,
+    "synced_at": "2026-09-10T16:13:30+00:00",
+    "merged_count": 2529,
     "product_count": 220,
     "category_browsing_enabled": true,
     "listing_count": 220,
     "option_family_count": 107,
     "deduplication": {
       "brands_checked": 252,
-      "groups": 1948,
-      "removed": 2528
+      "groups": 1950,
+      "removed": 2529
     },
-    "revision": "706d541b08d795af",
+    "revision": "a1777f00a9ac0881",
     "view": "rental"
   },
   "brands": [
@@ -2148,8 +2148,8 @@
         "avx:b:fad951a3b3751da2",
         "avx:b:fc70f4be399c9a2e"
       ],
-      "count": 159,
-      "purchase_count": 150,
+      "count": 160,
+      "purchase_count": 151,
       "rental_count": 9,
       "category_ids": [
         "naver:b:aputure:50000206",
@@ -2157,9 +2157,10 @@
         "naver:b:aputure:50002113",
         "naver:b:aputure:50001390",
         "naver:b:aputure:50002082",
+        "avx:b:aputure:00200005",
+        "avx:b:aputure:0020",
         "avx:b:aputure:002000010001",
         "avx:b:aputure:00200001",
-        "avx:b:aputure:0020",
         "avx:b:aputure:002000010002",
         "avx:b:aputure:002000060001",
         "avx:b:aputure:00200006",
@@ -2179,7 +2180,6 @@
         "avx:b:aputure:002000070003",
         "avx:b:aputure:002000040001",
         "avx:b:aputure:002000070007",
-        "avx:b:aputure:00200005",
         "avx:b:aputure:002000020001",
         "avx:b:aputure:002000030001",
         "avx:b:fad951a3b3751da2",
@@ -4054,6 +4054,7 @@
       ],
       "logo": "https://www.avx.co.kr/data/goods/1/2026/08/3054_temp_17871991464879list1.png",
       "navigation_category_ids": [
+        "avx:b:2d07d94f1ec531fe",
         "avx:b:3baeebdfc21645ec",
         "avx:b:411d726cbcfe5cef",
         "avx:b:5be1151cbfd23315",
@@ -4082,8 +4083,9 @@
         "avx:b:b6de64c8400174ba",
         "avx:b:9de83a4644897ce4",
         "avx:b:99e658134bc28e66",
-        "avx:b:b988c7dff51b9e83",
+        "avx:b:2d07d94f1ec531fe",
         "avx:b:ca61e1671295714f",
+        "avx:b:b988c7dff51b9e83",
         "avx:b:da4721aa5f38b903"
       ],
       "representative_id": "avx-3054",
@@ -28247,7 +28249,6 @@
     "avx-1587": "smartstore-11953923198",
     "avx-1588": "smartstore-11952859205",
     "plthink-1927364": "smartstore-10817294640",
-    "avx-2967": "smartstore-10817294640",
     "avx-1589": "smartstore-10817294640",
     "avx-1590": "smartstore-10817291726",
     "plthink-1927417": "smartstore-10817290315",
@@ -28370,6 +28371,8 @@
     "plthink-1928793": "kpp-1769497045",
     "avx-3020": "kpp-1769497045",
     "avx-3021": "plthink-1928790",
+    "avx-3070": "plthink-1927604",
+    "avx-3077": "plthink-1930412",
     "avx-725": "kpp-1636611791",
     "avx-728": "plthink-1914801",
     "avx-736": "smartstore-8530356620",

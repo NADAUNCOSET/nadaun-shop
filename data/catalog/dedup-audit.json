@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "brands_checked": 252,
-  "input_count": 19868,
-  "duplicate_group_count": 1948,
-  "duplicate_entries_removed": 2528,
+  "input_count": 19870,
+  "duplicate_group_count": 1950,
+  "duplicate_entries_removed": 2529,
   "by_brand": {
-    "tilta": 214,
+    "tilta": 216,
     "avenger": 10,
     "smallrig": 784,
     "hollyland": 18,
@@ -1126,13 +1126,6 @@
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1927364"
         },
         {
-          "id": "avx-2967",
-          "name": "(단순개봉)틸타 DJI 짐벌 용 어드밴스드 링 그립 TGA-ARG [국내정식판매처]",
-          "price": 1245600,
-          "source": "avx",
-          "url": "https://www.avx.co.kr/goods/view?no=2967"
-        },
-        {
           "id": "avx-1589",
           "name": "틸타 DJI 짐벌 용 어드밴스드 링 그립 TGA-ARG [국내정식판매처]",
           "price": 1384000,
@@ -1615,7 +1608,7 @@
         {
           "id": "avx-2210",
           "name": "TILTA Shock Absorbing Head for Hydra Alien Mini 히드라 에일리언 미니용 충격 흡수 헤드 HDA-T15-SAH-TG",
-          "price": 99000,
+          "price": 102000,
           "source": "avx",
           "url": "https://www.avx.co.kr/goods/view?no=2210"
         }
@@ -1647,7 +1640,7 @@
         {
           "id": "avx-2211",
           "name": "TILTA Handlebar Mount for Hydra Alien Mini 히드라 에일리언 미니용 핸들바 마운트 HDA-T15-HM-TG",
-          "price": 32000,
+          "price": 33000,
           "source": "avx",
           "url": "https://www.avx.co.kr/goods/view?no=2211"
         }
@@ -3090,7 +3083,7 @@
         {
           "id": "avx-3014",
           "name": "틸타 히드라 에일리언 미니 전자 흡착컵 6인치 키트 HDA-T15-G-TG",
-          "price": 375000,
+          "price": 345000,
           "source": "avx",
           "url": "https://www.avx.co.kr/goods/view?no=3014"
         }
@@ -3203,6 +3196,54 @@
           "price": 345000,
           "source": "avx",
           "url": "https://www.avx.co.kr/goods/view?no=3021"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "plthink-1927604",
+      "evidence": [
+        "model:HDA-T15-SAH2-TG"
+      ],
+      "members": [
+        {
+          "id": "plthink-1927604",
+          "name": "[TILTA] 틸타 히드라 에일리언 미니 유니버셜 충격 흡수 헤드 HDA-T15-SAH2-TG",
+          "price": 99000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1927604"
+        },
+        {
+          "id": "avx-3070",
+          "name": "틸타 히드라 에일리언 미니용 Shock Absorbing Head HDA-T15-SAH2-TG",
+          "price": 102000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3070"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "plthink-1930412",
+      "evidence": [
+        "model:TA-T103-D"
+      ],
+      "members": [
+        {
+          "id": "plthink-1930412",
+          "name": "[TILTA] 틸타 DJI 오즈모 포켓4P 마그네틱 ND필터 키트 5종 TA-T103-D",
+          "price": 68000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930412"
+        },
+        {
+          "id": "avx-3077",
+          "name": "틸타 오즈모 포켓 4P용 ND 필터 키트 TA-T103-D",
+          "price": 68000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3077"
         }
       ]
     },
