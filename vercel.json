@@ -79,6 +79,20 @@
       "dest": "/api/search"
     },
     {
+      "src": "^/brands/crystal-prompter\\.html$",
+      "status": 308,
+      "headers": {
+        "Location": "/brands/crystalprompter.html"
+      }
+    },
+    {
+      "src": "^/brands/zgc\\.html$",
+      "status": 308,
+      "headers": {
+        "Location": "/brands/zgcine.html"
+      }
+    },
+    {
       "handle": "filesystem"
     }
   ],

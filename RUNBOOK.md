@@ -4,7 +4,7 @@
 
 이 프로젝트 폴더가 Mac·Windows 공용 NAS 원본이다. 상위 허브의 `CLAUDE.md`를 함께 따른다. 배포는 `NADAUNCOSET/nadaun-shop` → Vercel `nadaun-shop` → `https://shop.nadaun.co`다.
 
-**재개 시 최신 인계부터 확인:** `_private/catalog/partner-parser-review-20260911/restart-handoff.json`은 재부팅 직전 중단 지점, 같은 폴더의 `resume-verification.json`은 후속 재개 결과다. 이 문서 마지막 절과 실제 진행 파일을 함께 읽고, 이미 기록된 작업 범위·AVX 승인 여부를 다시 질문하지 않는다.
+**재개 시 최신 인계부터 확인:** `_private/catalog/partner-integration-20260911/`의 공급처 공개 영수증과 `final-audit.json`을 먼저 확인한다. 현재 수집/배포 상태는 각 `_scraper/.sync-state/<source>/progress.json`·`published.json`이 기준이다. 최초 재부팅 인계는 `_private/catalog/partner-parser-review-20260911/restart-handoff.json`에 보존했다. 이미 기록된 작업 범위·AVX·세 협력사 승인을 다시 질문하지 않는다.
 
 ## 2026-09-07 대표 결정
 
@@ -542,3 +542,11 @@ PLTHINK `plthink-1921456`의 4'x4' 규격명은 원본 JSON-LD에서 JSON이 허
 - 로컬 화면 검수도 Vercel의 비공개 경로 차단을 적용해야 한다. 이번 임시 loopback 단순 파일 서버는 이 규칙 재확인 후 종료했다. 앞으로 프로젝트 루트를 단순 파일 서버로 띄우지 않는다. 최종 판정은 실제 배포 주소에서 다시 검수한 결과로 남긴다.
 
 - CL미디어 최종 이미지 점검에서 원본 편집기의 `blob:` 주소 3개를 발견했다(상품 2520/1402/1401). 정상 상세 이미지 15/7/8장은 별도로 존재한다. Cafe24 협력사의 공개 이미지 배열은 지속 가능한 HTTP(S) 주소만 남기며, 원본 스냅샷의 편집 흔적은 보존한다. 공개 제외되는 Aputure 2520도 원본 검토 기록에 포함한다. `test_cafe24_publication.py`로 임시/비공개 파일 주소·인증 포함 URL 제외와 정상 이미지 보존을 검증한다.
+
+### 2026-09-11 세 협력사 최초 공개·전수 대조
+
+- CL미디어 원본 2,201개 상세/279개 분류가 모두 통과했으며 공개 대상 2,107개를 배포하고 라이브 상품 ID를 전수 대조했다. DJI 49개/Aputure 45개는 기존 단독 출처 기준으로 제외한다. 씨네몰은 원본 1,217개 중 공개 1,191개, 온앤오프는 1,064개 전체가 검증됐다. AVX는 승인된 1,322개 공개를 재검증했다.
+- AVX 보류 2865/1700/1096은 실제 원본 재조회에서도 설명이 비어 있고, 2865는 대표 이미지도 없다. 임의 보충하지 않는다. MT22 DS와 PROFILE USB 마이크는 검증된 씨네몰/유쾌한생각 상품이 이미 공개돼 있다. 근거 HTML·해시는 같은 폴더의 `avx-content-review/`에 보관한다.
+- 기존 DJI 12시간 갱신도 실행됐다. 공식 전체 목록은 원본 910개→898개, 공개 DJI 905개→893개로 바뀌었다. 구형 액세서리·Care 플랜 12개가 최신 완전한 원본에서 제외된 것이며, 남아 있는 상품의 이름·가격·판매 상태 변경은 없다. 초기 원본 및 대조 근거는 `baseline-dji-source.json`·`dji-scheduled-refresh-comparison.json`에 보존한다. 신규 협력사가 기존 주 출처를 대체한 것으로 오인하지 않는다.
+- 새 CL미디어의 `Crystal Prompter`는 기존 `crystalprompter` 브랜드로 통합한다. `/brands/crystal-prompter.html` 및 기존 `/brands/zgc.html`은 각각 현재 브랜드 주소로 308 연결한다. 원본 상품 ID와 출처는 유지하고 검증된 동일 모델만 합친다.
+- 최종 전수 검수: 프로젝트 가상환경 Python으로 `_private/catalog/partner-integration-20260911/final_audit.py` 실행. NAS/원격·Vercel READY·라이브 전체 카탈로그 바이트·공급처별 공개 ID·출처 영수증·기존 상품 변경·렌탈 220개 상세·배포 JS·임시 이미지 주소를 검사한다. 검증된 DJI 정기 갱신 12개 외의 기존 상품 변화가 있으면 실패한다. 최종 수량과 배포 근거는 생성된 `final-audit.json`을 따른다.

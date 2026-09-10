@@ -65,6 +65,7 @@ def brand_dictionary():
       'blackmagic':['blackmagic design','블랙매직디자인','Black Magic'],
       'smallhd':['Small HD'], 'samyang':['삼양옵틱스','Samyang Optics'],
       'teradek':['테라덱'], 'zhiyun':['Zhiyun Tech'], 'zgcine':['ZGC'],
+      'crystalprompter':['Crystal Prompter','CRYSTAL-PROMPTER','크리스탈프롬프터'],
     }
     for key,names in extras.items():
         for name in names+[key]: aliases[name.casefold()]=key
