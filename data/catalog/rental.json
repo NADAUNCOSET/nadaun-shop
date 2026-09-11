@@ -182,7 +182,7 @@
       "imweb-dji": 146,
       "imweb-promotions": 37,
       "l-mount": 335,
-      "plthink": 6602,
+      "plthink": 6603,
       "dji-official": 898,
       "clmedia": 2201,
       "cinemall": 1217,
@@ -194,14 +194,14 @@
       "smartstore": 7075,
       "imweb-promotions": 16,
       "l-mount": 335,
-      "plthink": 6211,
+      "plthink": 6212,
       "dji-official": 893,
       "clmedia": 2107,
       "cinemall": 1191,
       "onnoff": 1064,
       "avx": 1322
     },
-    "synced_at": "2026-09-10T23:08:20+00:00",
+    "synced_at": "2026-09-11T03:25:13+00:00",
     "merged_count": 4750,
     "product_count": 220,
     "category_browsing_enabled": true,
@@ -212,7 +212,7 @@
       "groups": 2857,
       "removed": 4750
     },
-    "revision": "a8c54be110620027",
+    "revision": "1941a0f1493edb07",
     "view": "rental"
   },
   "brands": [
@@ -7890,15 +7890,15 @@
       "aliases": [
         "PANYAN"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081310000313.jpg?1779350089",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081310000633.jpg?1789088399",
       "navigation_category_ids": [
         "plthink:b:131",
         "plthink:b:131:001",
         "plthink:b:131:002",
         "plthink:b:131:003"
       ],
-      "count": 48,
-      "purchase_count": 48,
+      "count": 49,
+      "purchase_count": 49,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:131",
@@ -7906,9 +7906,9 @@
         "plthink:b:131:002",
         "plthink:b:131:003"
       ],
-      "representative_id": "plthink-1925245",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081310000312.jpg?1779350088",
-      "representative_name": "[PANYAN] 판얀 PA-BM01 카트 보관용 파우치 M사이즈용",
+      "representative_id": "plthink-1926605",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081310000632.jpg?1789088399",
+      "representative_name": "[PANYAN] 판얀 MCS-M1005 접이식 스튜디오 촬영 장비 시네 탱크 카트 500kg 하중",
       "image_kind": "product",
       "logo_dark": false
     },
