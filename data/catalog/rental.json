@@ -184,7 +184,7 @@
       "l-mount": 335,
       "plthink": 6603,
       "dji-official": 903,
-      "clmedia": 2201,
+      "clmedia": 2208,
       "cinemall": 1217,
       "onnoff": 1064,
       "avx": 1331
@@ -196,12 +196,12 @@
       "l-mount": 335,
       "plthink": 6212,
       "dji-official": 898,
-      "clmedia": 2107,
+      "clmedia": 2114,
       "cinemall": 1191,
       "onnoff": 1064,
       "avx": 1331
     },
-    "synced_at": "2026-09-11T09:26:59+00:00",
+    "synced_at": "2026-09-11T13:31:27+00:00",
     "merged_count": 4758,
     "product_count": 220,
     "category_browsing_enabled": true,
@@ -212,7 +212,7 @@
       "groups": 2859,
       "removed": 4758
     },
-    "revision": "6d8922ca3427754b",
+    "revision": "4bd01e5e8bd5922a",
     "view": "rental"
   },
   "brands": [
@@ -2269,8 +2269,8 @@
         "plthink:b:064:008",
         "plthink:b:064:009"
       ],
-      "count": 828,
-      "purchase_count": 822,
+      "count": 831,
+      "purchase_count": 825,
       "rental_count": 6,
       "category_ids": [
         "naver:b:kupo:50000206",
@@ -7989,8 +7989,8 @@
         "plthink:b:020:007",
         "plthink:b:020:008"
       ],
-      "count": 108,
-      "purchase_count": 108,
+      "count": 112,
+      "purchase_count": 112,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:020",
@@ -10234,7 +10234,7 @@
         "Thypoch",
         "THYPOCH"
       ],
-      "logo": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20250729/e9414d67bf5497b18b08a9b96680d959.jpg",
+      "logo": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20260820/006676aadbfcc3ae16f4cec9fdaa99a5.jpg",
       "navigation_category_ids": [
         "cinemall:b:248",
         "cinemall:b:382",
@@ -10266,10 +10266,10 @@
         "cinemall:b:384",
         "cinemall:b:408"
       ],
-      "representative_id": "clmedia-2289",
-      "representative_image": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20250729/e9414d67bf5497b18b08a9b96680d959.jpg",
-      "representative_name": "타이포크 TP-S35M-SR 시메라 35mm F1.4 실버(라이카 M마운트)",
-      "representative_alternate": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/extra/big/20250729/321b1e7ff8d086e40d02d2cb33de6404.jpg",
+      "representative_id": "clmedia-3290",
+      "representative_image": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20260820/006676aadbfcc3ae16f4cec9fdaa99a5.jpg",
+      "representative_name": "타이포크 TP-E28X-BLK 유레카 28mm F2.8 ASPH 후지필름 X마운트 수동 단렌즈 (블랙)",
+      "representative_alternate": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/extra/big/20260820/1f28fd13fd5a1ba8ecd539614e7cabe5.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
