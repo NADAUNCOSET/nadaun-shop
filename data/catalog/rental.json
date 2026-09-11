@@ -183,7 +183,7 @@
       "imweb-promotions": 37,
       "l-mount": 335,
       "plthink": 6603,
-      "dji-official": 898,
+      "dji-official": 903,
       "clmedia": 2201,
       "cinemall": 1217,
       "onnoff": 1064,
@@ -195,13 +195,13 @@
       "imweb-promotions": 16,
       "l-mount": 335,
       "plthink": 6212,
-      "dji-official": 893,
+      "dji-official": 898,
       "clmedia": 2107,
       "cinemall": 1191,
       "onnoff": 1064,
       "avx": 1331
     },
-    "synced_at": "2026-09-11T07:59:09+00:00",
+    "synced_at": "2026-09-11T08:46:05+00:00",
     "merged_count": 4758,
     "product_count": 220,
     "category_browsing_enabled": true,
@@ -212,7 +212,7 @@
       "groups": 2859,
       "removed": 4758
     },
-    "revision": "2c3bdb0f7c5d2679",
+    "revision": "7b5826a3be00abac",
     "view": "rental"
   },
   "brands": [
@@ -446,6 +446,7 @@
         "dji-official:b:service:107:101.201.305",
         "dji-official:b:service:107:101.201.307",
         "dji-official:b:service:107:101.202",
+        "dji-official:b:service:107:101.202.301",
         "dji-official:b:service:107:101.202.304",
         "dji-official:b:service:107:101.202.305",
         "dji-official:b:service:107:101.203",
@@ -498,8 +499,8 @@
         "dji-official:b:service:107:101.228.1",
         "dji-official:b:service:107:101.228.2"
       ],
-      "count": 903,
-      "purchase_count": 893,
+      "count": 908,
+      "purchase_count": 898,
       "rental_count": 10,
       "category_ids": [
         "naver:b:dji:50000206",
@@ -602,6 +603,7 @@
         "dji-official:b:service:107:101.202",
         "dji-official:b:service:107:101.202.305",
         "dji-official:b:service:107:101.202.304",
+        "dji-official:b:service:107:101.202.301",
         "dji-official:b:service:107:101.203",
         "dji-official:b:service:107:101.203.309",
         "dji-official:b:service:107:101.203.307",
