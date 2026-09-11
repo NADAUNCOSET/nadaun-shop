@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "brands_checked": 270,
-  "input_count": 24221,
-  "duplicate_group_count": 2857,
-  "duplicate_entries_removed": 4750,
+  "input_count": 24230,
+  "duplicate_group_count": 2859,
+  "duplicate_entries_removed": 4758,
   "by_brand": {
-    "tilta": 278,
+    "tilta": 280,
     "avenger": 10,
     "smallrig": 923,
     "hollyland": 113,
@@ -3670,6 +3670,137 @@
     {
       "brand_id": "tilta",
       "kind": "purchase",
+      "primary_id": "plthink-1928977",
+      "evidence": [
+        "model:TA-EMM-NATO-B"
+      ],
+      "members": [
+        {
+          "id": "plthink-1928977",
+          "name": "[TILTA] 틸타 프로 모니터 마운트 나토타입 확장형 TA-EMM-NATO-B",
+          "price": 99000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1928977"
+        },
+        {
+          "id": "avx-3065",
+          "name": "틸타 확장형 프로 모니터 마운트 (NATO) TA-EMM-NATO-B",
+          "price": 102000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3065"
+        },
+        {
+          "id": "clmedia-2637",
+          "name": "틸타 TA-EMM-NATO-B 확장형 프로 모니터 마운트",
+          "price": 99000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=2637"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "smartstore-13744759903",
+      "evidence": [
+        "model:TA-PBP-V"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13744759903",
+          "name": "TA-PBP-V 포켓 V마운트 배터리 플레이트",
+          "price": 39000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13744759903"
+        },
+        {
+          "id": "kpp-1650848710",
+          "name": "틸타 포켓 V 마운트 배터리 플레이트 TA-PBP-V",
+          "price": 25900,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1650848710"
+        },
+        {
+          "id": "plthink-1928794",
+          "name": "[TILTA] 틸타 TA-PBP-V 미니 V마운트 배터리 플레이트 멀티 마운트 어댑터",
+          "price": 39000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1928794"
+        },
+        {
+          "id": "avx-3066",
+          "name": "틸타 포켓 V-마운트 배터리 플레이트 TA-PBP-V",
+          "price": 40000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3066"
+        },
+        {
+          "id": "clmedia-2602",
+          "name": "틸타 TA-PBP-V 초경량 미니 V마운트 배터리 플레이트",
+          "price": 39000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=2602"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "avx-3067",
+      "evidence": [
+        "model:HDA-T15-F-TG"
+      ],
+      "members": [
+        {
+          "id": "avx-3067",
+          "name": "틸타 히드라 에일리언 미니 바이킹 키트 HDA-T15-F-TG",
+          "price": 293000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3067"
+        },
+        {
+          "id": "clmedia-3343",
+          "name": "틸타 HDA-T15-F-TG 히드라 에일리언 미니 유니버셜 바이킹 키트",
+          "price": 241000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3343"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "plthink-1927601",
+      "evidence": [
+        "model:HDA-T15-E-DB"
+      ],
+      "members": [
+        {
+          "id": "plthink-1927601",
+          "name": "[TILTA] 틸타 히드라 에일리언 미니 흡착 거치대 마스터 키트 HDA-T15-E-DB",
+          "price": 333000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1927601"
+        },
+        {
+          "id": "avx-3068",
+          "name": "틸타 히드라 에일리언 미니 마스터 키트 HDA-T15-E-DB",
+          "price": 431000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3068"
+        },
+        {
+          "id": "clmedia-2181",
+          "name": "틸타 HDA-T15-E-DB 히드라 에일리언 미니 마스터 키트 (데져트베이지)",
+          "price": 333000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=2181"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
       "primary_id": "plthink-1927604",
       "evidence": [
         "model:HDA-T15-SAH2-TG"
@@ -3695,6 +3826,130 @@
           "price": 99000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2184"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "smartstore-13744158303",
+      "evidence": [
+        "model:TA-T108-FCC-B"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13744158303",
+          "name": "TA-T108-FCC-B 소니 FX5 카메라 케이지 블랙",
+          "price": 172000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13744158303"
+        },
+        {
+          "id": "kpp-1788230863",
+          "name": "틸타 소니 FX5 카메라 케이지 블랙 TA-T108-FCC-B",
+          "price": 175000,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1788230863"
+        },
+        {
+          "id": "avx-3071",
+          "name": "틸타 Sony FX5용 풀 카메라 케이지 TA-T108-FCC-B",
+          "price": 172000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3071"
+        },
+        {
+          "id": "clmedia-3256",
+          "name": "틸타 TA-T108-FCC-B 소니 FX5 풀 카메라 케이지 (블랙)",
+          "price": 172000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3256"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "smartstore-13744821015",
+      "evidence": [
+        "model:TA-T108-A-B"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13744821015",
+          "name": "TA-T108-A-B 소니 FX5 카메라 케이지 베이스 키트 블랙",
+          "price": 294000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13744821015"
+        },
+        {
+          "id": "avx-3072",
+          "name": "틸타 Sony FX5용 카메라 케이지 베이스 키트 TA-T108-A-B",
+          "price": 293000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3072"
+        },
+        {
+          "id": "clmedia-3253",
+          "name": "틸타 TA-T108-A-B 소니 FX5 카메라 케이지 베이스 키트",
+          "price": 294000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3253"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "plthink-1930414",
+      "evidence": [
+        "model:TA-T108-B-B"
+      ],
+      "members": [
+        {
+          "id": "plthink-1930414",
+          "name": "[TILTA] 틸타 소니 FX5 카메라 풀케이지 파워 키트 아르카타입 TA-T108-B-B",
+          "price": 432000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930414"
+        },
+        {
+          "id": "avx-3073",
+          "name": "틸타 Sony FX5용 카메라 케이지 파워 키트 TA-T108-B-B",
+          "price": 431000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3073"
+        },
+        {
+          "id": "clmedia-3259",
+          "name": "틸타 TA-T108-B-B 소니 FX5 카메라 케이지 파워 키트",
+          "price": 432000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3259"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "avx-3074",
+      "evidence": [
+        "model:TA-T108-C-B"
+      ],
+      "members": [
+        {
+          "id": "avx-3074",
+          "name": "틸타 Sony FX5용 카메라 케이지 프로 키트 TA-T108-C-B",
+          "price": 466000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3074"
+        },
+        {
+          "id": "clmedia-3257",
+          "name": "틸타 TA-T108-C-B 소니 FX5 카메라 케이지 프로 키트",
+          "price": 466000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3257"
         }
       ]
     },
@@ -32367,30 +32622,6 @@
     {
       "brand_id": "tilta",
       "kind": "purchase",
-      "primary_id": "plthink-1927601",
-      "evidence": [
-        "model:HDA-T15-E-DB"
-      ],
-      "members": [
-        {
-          "id": "plthink-1927601",
-          "name": "[TILTA] 틸타 히드라 에일리언 미니 흡착 거치대 마스터 키트 HDA-T15-E-DB",
-          "price": 333000,
-          "source": "plthink",
-          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1927601"
-        },
-        {
-          "id": "clmedia-2181",
-          "name": "틸타 HDA-T15-E-DB 히드라 에일리언 미니 마스터 키트 (데져트베이지)",
-          "price": 333000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=2181"
-        }
-      ]
-    },
-    {
-      "brand_id": "tilta",
-      "kind": "purchase",
       "primary_id": "plthink-1927605",
       "evidence": [
         "model:HDA-T15-SA-TG"
@@ -37761,44 +37992,6 @@
     {
       "brand_id": "tilta",
       "kind": "purchase",
-      "primary_id": "smartstore-13744759903",
-      "evidence": [
-        "model:TA-PBP-V"
-      ],
-      "members": [
-        {
-          "id": "smartstore-13744759903",
-          "name": "TA-PBP-V 포켓 V마운트 배터리 플레이트",
-          "price": 39000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13744759903"
-        },
-        {
-          "id": "kpp-1650848710",
-          "name": "틸타 포켓 V 마운트 배터리 플레이트 TA-PBP-V",
-          "price": 25900,
-          "source": "kpp",
-          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1650848710"
-        },
-        {
-          "id": "plthink-1928794",
-          "name": "[TILTA] 틸타 TA-PBP-V 미니 V마운트 배터리 플레이트 멀티 마운트 어댑터",
-          "price": 39000,
-          "source": "plthink",
-          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1928794"
-        },
-        {
-          "id": "clmedia-2602",
-          "name": "틸타 TA-PBP-V 초경량 미니 V마운트 배터리 플레이트",
-          "price": 39000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=2602"
-        }
-      ]
-    },
-    {
-      "brand_id": "tilta",
-      "kind": "purchase",
       "primary_id": "plthink-1928796",
       "evidence": [
         "model:TA-T95-A-B"
@@ -38214,30 +38407,6 @@
           "price": 154900,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2634"
-        }
-      ]
-    },
-    {
-      "brand_id": "tilta",
-      "kind": "purchase",
-      "primary_id": "plthink-1928977",
-      "evidence": [
-        "model:TA-EMM-NATO-B"
-      ],
-      "members": [
-        {
-          "id": "plthink-1928977",
-          "name": "[TILTA] 틸타 프로 모니터 마운트 나토타입 확장형 TA-EMM-NATO-B",
-          "price": 99000,
-          "source": "plthink",
-          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1928977"
-        },
-        {
-          "id": "clmedia-2637",
-          "name": "틸타 TA-EMM-NATO-B 확장형 프로 모니터 마운트",
-          "price": 99000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=2637"
         }
       ]
     },
@@ -44456,85 +44625,6 @@
           "price": 35900,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=3242"
-        }
-      ]
-    },
-    {
-      "brand_id": "tilta",
-      "kind": "purchase",
-      "primary_id": "smartstore-13744821015",
-      "evidence": [
-        "model:TA-T108-A-B"
-      ],
-      "members": [
-        {
-          "id": "smartstore-13744821015",
-          "name": "TA-T108-A-B 소니 FX5 카메라 케이지 베이스 키트 블랙",
-          "price": 294000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13744821015"
-        },
-        {
-          "id": "clmedia-3253",
-          "name": "틸타 TA-T108-A-B 소니 FX5 카메라 케이지 베이스 키트",
-          "price": 294000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=3253"
-        }
-      ]
-    },
-    {
-      "brand_id": "tilta",
-      "kind": "purchase",
-      "primary_id": "smartstore-13744158303",
-      "evidence": [
-        "model:TA-T108-FCC-B"
-      ],
-      "members": [
-        {
-          "id": "smartstore-13744158303",
-          "name": "TA-T108-FCC-B 소니 FX5 카메라 케이지 블랙",
-          "price": 172000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13744158303"
-        },
-        {
-          "id": "kpp-1788230863",
-          "name": "틸타 소니 FX5 카메라 케이지 블랙 TA-T108-FCC-B",
-          "price": 175000,
-          "source": "kpp",
-          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1788230863"
-        },
-        {
-          "id": "clmedia-3256",
-          "name": "틸타 TA-T108-FCC-B 소니 FX5 풀 카메라 케이지 (블랙)",
-          "price": 172000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=3256"
-        }
-      ]
-    },
-    {
-      "brand_id": "tilta",
-      "kind": "purchase",
-      "primary_id": "plthink-1930414",
-      "evidence": [
-        "model:TA-T108-B-B"
-      ],
-      "members": [
-        {
-          "id": "plthink-1930414",
-          "name": "[TILTA] 틸타 소니 FX5 카메라 풀케이지 파워 키트 아르카타입 TA-T108-B-B",
-          "price": 432000,
-          "source": "plthink",
-          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930414"
-        },
-        {
-          "id": "clmedia-3259",
-          "name": "틸타 TA-T108-B-B 소니 FX5 카메라 케이지 파워 키트",
-          "price": 432000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=3259"
         }
       ]
     },
