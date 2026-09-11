@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "brands_checked": 270,
-  "input_count": 24242,
-  "duplicate_group_count": 2859,
-  "duplicate_entries_removed": 4758,
+  "input_count": 24253,
+  "duplicate_group_count": 2866,
+  "duplicate_entries_removed": 4765,
   "by_brand": {
     "tilta": 280,
     "avenger": 10,
@@ -19,7 +19,7 @@
     "ifootage": 2,
     "vsgo": 5,
     "gentree": 28,
-    "blackmagic": 132,
+    "blackmagic": 139,
     "nanlite": 320,
     "zgcine": 6,
     "farseeing": 1,
@@ -79598,6 +79598,174 @@
           "price": 22000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930321"
+        }
+      ]
+    },
+    {
+      "brand_id": "blackmagic",
+      "kind": "purchase",
+      "primary_id": "smartstore-13740632962",
+      "evidence": [
+        "name:streamingencoderhd"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13740632962",
+          "name": "Blackmagic Streaming Encoder HD",
+          "price": 968800,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13740632962"
+        },
+        {
+          "id": "plthink-1930428",
+          "name": "[Blackmagic Design] Streaming Encoder HD",
+          "price": 916800,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930428"
+        }
+      ]
+    },
+    {
+      "brand_id": "blackmagic",
+      "kind": "purchase",
+      "primary_id": "smartstore-13740633991",
+      "evidence": [
+        "name:ultrastudiominireplay12g"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13740633991",
+          "name": "UltraStudio Mini Replay 12G",
+          "price": 904800,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13740633991"
+        },
+        {
+          "id": "plthink-1930429",
+          "name": "[Blackmagic Design] UltraStudio Mini Replay 12G",
+          "price": 856800,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930429"
+        }
+      ]
+    },
+    {
+      "brand_id": "blackmagic",
+      "kind": "purchase",
+      "primary_id": "smartstore-13740633990",
+      "evidence": [
+        "name:ultrastudiominirecorder12g"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13740633990",
+          "name": "UltraStudio Mini Recorder 12G",
+          "price": 721800,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13740633990"
+        },
+        {
+          "id": "plthink-1930430",
+          "name": "[Blackmagic Design] UltraStudio Mini Recorder 12G",
+          "price": 683800,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930430"
+        }
+      ]
+    },
+    {
+      "brand_id": "blackmagic",
+      "kind": "purchase",
+      "primary_id": "smartstore-13740633989",
+      "evidence": [
+        "name:ultrastudiominimonitor12g"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13740633989",
+          "name": "UltraStudio Mini Monitor 12G",
+          "price": 721800,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13740633989"
+        },
+        {
+          "id": "plthink-1930431",
+          "name": "[Blackmagic Design] UltraStudio Mini Monitor 12G",
+          "price": 683800,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930431"
+        }
+      ]
+    },
+    {
+      "brand_id": "blackmagic",
+      "kind": "purchase",
+      "primary_id": "smartstore-13740632982",
+      "evidence": [
+        "name:atemminiextremeisog2"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13740632982",
+          "name": "ATEM Mini Extreme ISO G2",
+          "price": 3648000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13740632982"
+        },
+        {
+          "id": "plthink-1930432",
+          "name": "[Blackmagic Design] ATEM Mini Extreme ISO G2",
+          "price": 3458000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930432"
+        }
+      ]
+    },
+    {
+      "brand_id": "blackmagic",
+      "kind": "purchase",
+      "primary_id": "smartstore-13740633062",
+      "evidence": [
+        "name:hyperdeckshuttle4kpro"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13740633062",
+          "name": "HyperDeck Shuttle 4K Pro",
+          "price": 2748000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13740633062"
+        },
+        {
+          "id": "plthink-1930433",
+          "name": "[Blackmagic Design] HyperDeck Shuttle 4K Pro",
+          "price": 2608000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930433"
+        }
+      ]
+    },
+    {
+      "brand_id": "blackmagic",
+      "kind": "purchase",
+      "primary_id": "smartstore-13740633061",
+      "evidence": [
+        "name:hyperdeckshuttle4kpro2tb"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13740633061",
+          "name": "HyperDeck Shuttle 4K Pro 2TB",
+          "price": 5478000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13740633061"
+        },
+        {
+          "id": "plthink-1930434",
+          "name": "[Blackmagic Design] HyperDeck Shuttle 4K Pro 2TB",
+          "price": 5188000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930434"
         }
       ]
     },

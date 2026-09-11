@@ -182,7 +182,7 @@
       "imweb-dji": 146,
       "imweb-promotions": 37,
       "l-mount": 335,
-      "plthink": 6603,
+      "plthink": 6614,
       "dji-official": 903,
       "clmedia": 2208,
       "cinemall": 1217,
@@ -194,25 +194,25 @@
       "smartstore": 7075,
       "imweb-promotions": 16,
       "l-mount": 335,
-      "plthink": 6212,
+      "plthink": 6223,
       "dji-official": 898,
       "clmedia": 2114,
       "cinemall": 1191,
       "onnoff": 1064,
       "avx": 1331
     },
-    "synced_at": "2026-09-11T13:31:27+00:00",
-    "merged_count": 4758,
+    "synced_at": "2026-09-11T20:12:33+00:00",
+    "merged_count": 4765,
     "product_count": 220,
     "category_browsing_enabled": true,
     "listing_count": 220,
     "option_family_count": 181,
     "deduplication": {
       "brands_checked": 270,
-      "groups": 2859,
-      "removed": 4758
+      "groups": 2866,
+      "removed": 4765
     },
-    "revision": "4bd01e5e8bd5922a",
+    "revision": "427915c848c8d4cb",
     "view": "rental"
   },
   "brands": [
@@ -2793,9 +2793,9 @@
         "plthink:b:012:007",
         "plthink:b:012:008"
       ],
-      "representative_id": "plthink-1928273",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080120001242.jpg?1768351392",
-      "representative_name": "[WANDRD] 원더드 PRVKE 15L V4 카메라 백팩 여행용 가방 블루",
+      "representative_id": "plthink-1929531",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080120001582.jpg?1778130240",
+      "representative_name": "[WANDRD] 원더드 PRVKE 15L Photo Bundle V4 카메라 백팩 버건디",
       "image_kind": "logo",
       "logo_dark": true
     },
@@ -3177,7 +3177,7 @@
       "aliases": [
         "Alfoto"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080970000023.jpg?1780295753",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080970000013.jpg?1780295757",
       "navigation_category_ids": [
         "plthink:b:097",
         "plthink:b:097:001"
@@ -3190,9 +3190,9 @@
         "plthink:b:097:001",
         "plthink:b:097:002"
       ],
-      "representative_id": "plthink-1914975",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080970000022.jpg?1780295753",
-      "representative_name": "[Alfoto] 올포토 카메라 스마트폰용 마이크 Q-Mic",
+      "representative_id": "plthink-1915005",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080970000012.jpg?1780295757",
+      "representative_name": "[Alfoto] 올포토 카메라 스마트폰용 마이크 Q-Mic Kit 레드",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -3632,7 +3632,7 @@
       "aliases": [
         "AVERMEDIA"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080620000223.jpg?1768453503",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080620000453.jpg?1771987540",
       "navigation_category_ids": [
         "plthink:b:062",
         "plthink:b:062:001",
@@ -3648,9 +3648,9 @@
         "plthink:b:062:003",
         "plthink:b:062:002"
       ],
-      "representative_id": "plthink-1917285",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080620000222.jpg?1768453503",
-      "representative_name": "[AVerMedia] 에버미디어 PW513 Live Streamer CAM 방송용 웹캠",
+      "representative_id": "plthink-1928923",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080620000452.jpg?1771987540",
+      "representative_name": "[AVerMedia] 에버미디어 GC311G2 스트림라인 미니 플러스 외장형 HDMI 캡쳐보드",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -3721,7 +3721,7 @@
       "aliases": [
         "B+W Filter"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081210004223.jpg?1783313622",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081210004243.jpg?1783313203",
       "navigation_category_ids": [
         "plthink:b:121",
         "plthink:b:121:001",
@@ -3743,9 +3743,9 @@
         "plthink:b:121:001",
         "plthink:b:121:004"
       ],
-      "representative_id": "plthink-1921798",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081210004222.jpg?1783313622",
-      "representative_name": "[B+W] B+W ND 1000x MRC nano MASTER 95mm (810 ND 3.0) 필터",
+      "representative_id": "plthink-1926323",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081210004242.jpg?1783313203",
+      "representative_name": "[B+W] 007 Clear MRC nano MASTER 112mm 카메라 렌즈 필터",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -3755,7 +3755,7 @@
       "aliases": [
         "Bambu Lab"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080440000473.jpg?1775605345",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080440001033.jpg?1783923389",
       "navigation_category_ids": [
         "plthink:b:044",
         "plthink:b:044:001",
@@ -3771,9 +3771,9 @@
         "plthink:b:044:002",
         "plthink:b:044:003"
       ],
-      "representative_id": "plthink-1929107",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080440000472.jpg?1775605345",
-      "representative_name": "[Bambu Lab] A1 뱀부랩 3D 프린터 저소음 입문자용 글로벌",
+      "representative_id": "plthink-1929993",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080440001032.jpg?1783923388",
+      "representative_name": "[Bambu Lab] A2L Combo 뱀부랩 3D 프린터 저소음 AMS lite 포함 글로벌",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -3896,7 +3896,7 @@
       "aliases": [
         "BLACKANGEL"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081380000013.jpg?1788404046",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081380000043.jpg?1751866054",
       "navigation_category_ids": [
         "plthink:b:138",
         "plthink:b:138:001"
@@ -3908,9 +3908,9 @@
         "plthink:b:138",
         "plthink:b:138:001"
       ],
-      "representative_id": "plthink-1918403",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081380000012.jpg?1788404046",
-      "representative_name": "[BlackAngel] 블랙엔젤 국산 3.5mm 오디오 케이블 구리선 고음질 마이크 AUX 5m",
+      "representative_id": "plthink-1921565",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081380000042.jpg?1751866054",
+      "representative_name": "[BlackAngel] 블랙엔젤 브로드캐스팅 마이크 오디오 케이블 (XLR/TRS)",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4021,7 +4021,7 @@
       "aliases": [
         "CAMVATE"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081430000233.jpg?1761117861",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081430000183.jpg?1761117870",
       "navigation_category_ids": [
         "plthink:b:143",
         "plthink:b:143:001"
@@ -4033,9 +4033,9 @@
         "plthink:b:143",
         "plthink:b:143:001"
       ],
-      "representative_id": "plthink-1920793",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081430000232.jpg?1761117861",
-      "representative_name": "[CAMVATE] 캠베이트 지윤 DJI 짐벌 호환 미니 듀얼 그립 C1942 / L브라켓",
+      "representative_id": "plthink-1921953",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081430000182.jpg?1761117870",
+      "representative_name": "[CAMVATE] 캠베이트 C3086 미니 볼헤드 매직암",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4155,7 +4155,7 @@
       "aliases": [
         "Chipolo"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080520000053.jpg?1769058956",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080520000073.jpg?1763943905",
       "navigation_category_ids": [
         "plthink:b:052"
       ],
@@ -4165,9 +4165,9 @@
       "category_ids": [
         "plthink:b:052"
       ],
-      "representative_id": "plthink-1927102",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080520000052.jpg?1769058956",
-      "representative_name": "[Chipolo] 치폴로 팝 분실방지 블루투스 소형 위치추적기 스마트태그",
+      "representative_id": "plthink-1928126",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080520000072.jpg?1763943905",
+      "representative_name": "[Chipolo] 치폴로 카드 2025 분실방지 블루투스 트래커 소형 위치추적기 스마트태그",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4251,7 +4251,7 @@
       "aliases": [
         "COLORAMA"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080820000753.jpg?1766457658",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080820000783.jpg?1766469549",
       "navigation_category_ids": [
         "plthink:b:082",
         "plthink:b:082:001"
@@ -4263,9 +4263,9 @@
         "plthink:b:082",
         "plthink:b:082:001"
       ],
-      "representative_id": "plthink-1920756",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080820000752.jpg?1766457658",
-      "representative_name": "[Colorama] 컬러라마 롤 배경지 #102 Aqua (2.72m)",
+      "representative_id": "plthink-1928384",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080820000782.jpg?1766469549",
+      "representative_name": "[Colorama] 컬러라마 2.72 x 11m 스튜디오 촬영 롤 배경지 사진 누끼 풀사이즈",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4275,7 +4275,7 @@
       "aliases": [
         "COMICA"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080470000043.jpg?1723425495",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080470000473.jpg?1769386260",
       "navigation_category_ids": [
         "plthink:b:047",
         "plthink:b:047:001",
@@ -4296,9 +4296,9 @@
         "plthink:b:047:002",
         "plthink:b:047:003"
       ],
-      "representative_id": "plthink-1914851",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080470000042.jpg?1723425495",
-      "representative_name": "[COMICA] 코미카 DUALLAV D03 코미카 듀얼 핀마이크",
+      "representative_id": "plthink-1916085",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080470000472.jpg?1769386260",
+      "representative_name": "[COMICA] 코미카 CVM-V01SP(UC) C타입 스마트폰 라발리에 핀마이크",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4337,7 +4337,7 @@
         "크리스탈프롬프터",
         "crystalprompter"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081320000013.jpg?1773975673",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081320000033.jpg?1773975682",
       "navigation_category_ids": [
         "clmedia:b:51",
         "plthink:b:132",
@@ -4353,9 +4353,9 @@
         "plthink:b:132:002",
         "clmedia:b:51"
       ],
-      "representative_id": "plthink-1920819",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081320000012.jpg?1773975673",
-      "representative_name": "[크리스탈프롬프터] Clone16 프롬프터 16인치 / 1인 방송용 스튜디오 이동식 겸용",
+      "representative_id": "plthink-1920821",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081320000032.jpg?1773975682",
+      "representative_name": "[크리스탈프롬프터] LessonQ 27 프롬프터 27인치 / 강의 교육용",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4365,7 +4365,7 @@
       "aliases": [
         "CURA"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080230000523.jpg?1781829718",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080230000483.jpg?1781829938",
       "navigation_category_ids": [
         "plthink:b:023",
         "plthink:b:023:001",
@@ -4379,9 +4379,9 @@
         "plthink:b:023:001",
         "plthink:b:023:002"
       ],
-      "representative_id": "plthink-1929822",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080230000522.jpg?1781829718",
-      "representative_name": "[CURA] 쿠라 CRGK-101 카메라 스트랩 링 소가죽 보호탭 세트",
+      "representative_id": "plthink-1929834",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080230000482.jpg?1781829937",
+      "representative_name": "[CURA] 쿠라 CHCB-100 에어 하프 카메라 메신저백 인서트 가방 포함",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4525,7 +4525,7 @@
         "Desview",
         "데스뷰"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080770000083.jpg?1769387857",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080770000283.jpg?1781588560",
       "navigation_category_ids": [
         "plthink:b:077",
         "plthink:b:077:001",
@@ -4540,9 +4540,9 @@
         "plthink:b:077:002",
         "clmedia:b:49"
       ],
-      "representative_id": "plthink-1923208",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080770000082.jpg?1769387857",
-      "representative_name": "[Desview] 데스뷰 TP170 텔레프롬프터 스마트폰 아이패드 태블릿 거치 17인치",
+      "representative_id": "plthink-1929808",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080770000282.jpg?1781588560",
+      "representative_name": "[Desview] 데스뷰 OL14-S 방송용 13인치 필드 모니터 이동식 롤러 스탠드 세트",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4552,7 +4552,7 @@
       "aliases": [
         "DEWFREE"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081400000313.jpg?1787723293",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081400000493.jpg?1787726941",
       "navigation_category_ids": [
         "clmedia:b:562",
         "plthink:b:140",
@@ -4570,9 +4570,9 @@
         "plthink:b:140:003",
         "clmedia:b:562"
       ],
-      "representative_id": "plthink-1925202",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081400000312.jpg?1787723293",
-      "representative_name": "[DEWFREE] 듀프리 카메라 제습함 V2 무선 다용도 보관함 20L",
+      "representative_id": "plthink-1930323",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081400000492.jpg?1787726941",
+      "representative_name": "[DEWFREE] 듀프리 MP-L01N 제습함 상단 마그네틱 패드 대형 72L 108L 전용",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4798,7 +4798,7 @@
       "aliases": [
         "ELGATO"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080880000063.jpg?1768532217",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080880000563.jpg?1768532249",
       "navigation_category_ids": [
         "plthink:b:088",
         "plthink:b:088:001",
@@ -4820,9 +4820,9 @@
         "plthink:b:088:003",
         "plthink:b:088:004"
       ],
-      "representative_id": "plthink-1913595",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080880000062.jpg?1768532217",
-      "representative_name": "[elgato] 엘가토 매크로 키보드 STREAM DECK XL",
+      "representative_id": "plthink-1927701",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080880000562.jpg?1768532249",
+      "representative_name": "[elgato] 엘가토 스트림덱 Network Dock 네트워크독 이더넷 PoE 지원 Stream Deck",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4866,7 +4866,7 @@
       "aliases": [
         "ESCURA"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080300000053.jpg?1781766407",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080300000073.jpg?1781768872",
       "navigation_category_ids": [
         "plthink:b:030",
         "plthink:b:030:001",
@@ -4882,9 +4882,9 @@
         "plthink:b:030:002",
         "plthink:b:030:003"
       ],
-      "representative_id": "plthink-1929817",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080300000052.jpg?1781766407",
-      "representative_name": "[ESCURA] 에스쿠라 Snap 35 하프 필름카메라 레트로 감성",
+      "representative_id": "plthink-1929820",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080300000062.jpg?1781768868",
+      "representative_name": "[ESCURA] 에스쿠라 스냅롤 레트로 미니 디지털 카메라 랜덤 박스 1개",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4972,7 +4972,7 @@
       "aliases": [
         "FALCAM"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081290000223.jpg?1781482940",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081290001763.jpg?1788314071",
       "navigation_category_ids": [
         "plthink:b:129",
         "plthink:b:129:001",
@@ -4985,8 +4985,8 @@
         "plthink:b:129:008",
         "plthink:b:129:009"
       ],
-      "count": 125,
-      "purchase_count": 125,
+      "count": 124,
+      "purchase_count": 124,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:129",
@@ -5000,9 +5000,9 @@
         "plthink:b:129:002",
         "plthink:b:129:004"
       ],
-      "representative_id": "plthink-1920686",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081290000222.jpg?1781482940",
-      "representative_name": "[FALCAM] 팔캠 FC2541B 퀵릴리즈 팬헤드 키트 F22 블랙",
+      "representative_id": "plthink-1923352",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081290001762.jpg?1788314071",
+      "representative_name": "[FALCAM] 팔캠 FC3505 DJI 로닌용 퀵릴리즈 슬링 그립 연장암 F22 F38",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -5604,7 +5604,7 @@
       "aliases": [
         "HARMAN"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080170000643.jpg?1782721637",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080170000793.jpg?1782265569",
       "navigation_category_ids": [
         "plthink:b:017",
         "plthink:b:017:001",
@@ -5620,9 +5620,9 @@
         "plthink:b:017:002",
         "plthink:b:017:003"
       ],
-      "representative_id": "plthink-1929870",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080170000642.jpg?1782721637",
-      "representative_name": "[HARMAN] 하만 일포드 DELTA 100 흑백 네거 필름 1롤",
+      "representative_id": "plthink-1929876",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080170000792.jpg?1782265569",
+      "representative_name": "[HARMAN] 하만 RED 125/120 레드스케일 컬러 네거 필름 1롤",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -5632,7 +5632,7 @@
       "aliases": [
         "Healing Shield"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080930000093.jpg?1768461881",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080930000413.jpg?1782968788",
       "navigation_category_ids": [
         "plthink:b:093"
       ],
@@ -5681,7 +5681,7 @@
       "aliases": [
         "HeartBridge"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080490001713.jpg?1735868762",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080490001353.jpg?1761697501",
       "navigation_category_ids": [
         "plthink:b:049",
         "plthink:b:049:001",
@@ -5699,9 +5699,9 @@
         "plthink:b:049:005",
         "plthink:b:049:006"
       ],
-      "representative_id": "plthink-1892015",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080490001712.jpg?1735868762",
-      "representative_name": "[유쾌한생각] 인테리어 소품 핸드메이드 미니 선인장 3종 1세트",
+      "representative_id": "plthink-1897943",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080490001352.jpg?1761697501",
+      "representative_name": "[특가 이벤트][PHOISM] 다용도 2단 메이크업박스 화장품정리함 (레드)",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -5711,7 +5711,7 @@
       "aliases": [
         "HERRINGBONE"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081050000103.jpg?1768358297",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081050000143.jpg?1768358306",
       "navigation_category_ids": [
         "plthink:b:105",
         "plthink:b:105:001"
@@ -5723,9 +5723,9 @@
         "plthink:b:105",
         "plthink:b:105:001"
       ],
-      "representative_id": "plthink-1923416",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081050000102.jpg?1768358297",
-      "representative_name": "[Herringbone] 헤링본 트리핑 V2 30L 차콜 카메라가방",
+      "representative_id": "plthink-1926909",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081050000142.jpg?1768358305",
+      "representative_name": "[Herringbone] 헤링본 파파스포켓 시즌5 스몰 캔버스 카메라 가방 숄더백",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -5845,7 +5845,7 @@
       "aliases": [
         "HYPER"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080280000083.jpg?1751252404",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080280000093.jpg?1751252438",
       "navigation_category_ids": [
         "plthink:b:028",
         "plthink:b:028:001"
@@ -5857,9 +5857,9 @@
         "plthink:b:028",
         "plthink:b:028:001"
       ],
-      "representative_id": "plthink-1909959",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080280000082.jpg?1751252404",
-      "representative_name": "[Hyper] 하이퍼 HTM08 Mini HDMI to HDMI 케이블",
+      "representative_id": "plthink-1909961",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080280000092.jpg?1751252438",
+      "representative_name": "[Hyper] 하이퍼 HTMM08 Mini HDMI to Mini HDMI 케이블",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -5972,7 +5972,7 @@
       "aliases": [
         "iU LIGHT"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081260000163.jpg?1769128740",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081260000173.jpg?1773361030",
       "navigation_category_ids": [
         "plthink:b:126",
         "plthink:b:126:002"
@@ -6232,7 +6232,7 @@
         "KATELUO",
         "Kateluo"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080870000083.jpg?1768377854",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080870000133.jpg?1768377867",
       "navigation_category_ids": [
         "clmedia:b:272",
         "plthink:b:087",
@@ -6248,9 +6248,9 @@
         "plthink:b:087:002",
         "clmedia:b:272"
       ],
-      "representative_id": "plthink-1926158",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080870000082.jpg?1768377854",
-      "representative_name": "[Kateluo] 카텔로 LY-300 마이크 붐폴 붐대 Boompole",
+      "representative_id": "plthink-1926221",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080870000132.jpg?1768377866",
+      "representative_name": "[Kateluo] 카텔로 KT-6 붐 바스켓 서스펜션 샷건 붐마이크 블림프",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -6285,7 +6285,7 @@
       "aliases": [
         "Konig&Meyer"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080140000323.jpg?1788229770",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080140000553.jpg?1788229762",
       "navigation_category_ids": [
         "plthink:b:014"
       ],
@@ -6295,9 +6295,9 @@
       "category_ids": [
         "plthink:b:014"
       ],
-      "representative_id": "plthink-1908788",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080140000322.jpg?1788229770",
-      "representative_name": "[K&M] 케이앤엠 26250 1자 원핸드 마이크 스탠드 독일제",
+      "representative_id": "plthink-1921714",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080140000552.jpg?1788229762",
+      "representative_name": "[K&M] 케이앤엠 26773 모니터 스피커 스탠드 탁상용",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -6689,7 +6689,7 @@
       "aliases": [
         "LILLIPUT"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080480000143.jpg?1768455001",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080480000423.jpg?1768454997",
       "navigation_category_ids": [
         "plthink:b:048"
       ],
@@ -6699,9 +6699,9 @@
       "category_ids": [
         "plthink:b:048"
       ],
-      "representative_id": "plthink-1904499",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080480000142.jpg?1768455001",
-      "representative_name": "[LILLIPUT] 릴리풋 A7s 7인치 프리뷰모니터",
+      "representative_id": "plthink-1921386",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080480000422.jpg?1768454997",
+      "representative_name": "[LILLIPUT] 릴리풋 HT7S 7인치 3G-SDI 카메라 터치 모니터",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -6737,7 +6737,7 @@
         "LITRA",
         "litra"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080350000423.jpg?1751268282",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080350000523.jpg?1758249088",
       "navigation_category_ids": [
         "avx:b:603ec0f2dc64da69",
         "avx:b:fe239db5337305cb",
@@ -6755,9 +6755,9 @@
         "avx:b:603ec0f2dc64da69",
         "avx:b:fe239db5337305cb"
       ],
-      "representative_id": "plthink-1915592",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080350000422.jpg?1751268281",
-      "representative_name": "[LITRA] 리트라 고프로 액션캠 카메라 조명 호환 트리플마운트",
+      "representative_id": "plthink-1927637",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080350000522.jpg?1758249088",
+      "representative_name": "[LITRA] 리트라 LPHG 허니컴 허니콤 리트라프로 전용",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -6805,19 +6805,19 @@
       "aliases": [
         "LUMANTEK"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080220000563.jpg?1777523710",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080220000663.jpg?1789103811",
       "navigation_category_ids": [
         "plthink:b:022"
       ],
-      "count": 10,
-      "purchase_count": 10,
+      "count": 11,
+      "purchase_count": 11,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:022"
       ],
-      "representative_id": "plthink-1927762",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080220000562.jpg?1777523710",
-      "representative_name": "[LUMANTEK] 루먼텍 ez-MD+ 크로스 컨버터 SDI HDMI 양방향",
+      "representative_id": "plthink-1930427",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080220000662.jpg?1789103811",
+      "representative_name": "[LUMANTEK] 루먼텍 ez-UMD+ 4K 멀티 크로스 컨버터 SDI HDMI 양방향 동시출력",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -7353,7 +7353,7 @@
       "aliases": [
         "NANUK"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080740000353.jpg?1783305694",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080740000383.jpg?1783305746",
       "navigation_category_ids": [
         "plthink:b:074",
         "plthink:b:074:001",
@@ -7367,9 +7367,9 @@
         "plthink:b:074:001",
         "plthink:b:074:002"
       ],
-      "representative_id": "plthink-1922823",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080740000352.jpg?1783305694",
-      "representative_name": "[NANUK] 나누크 NANO 310 방수 케이스",
+      "representative_id": "plthink-1922828",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080740000382.jpg?1783305746",
+      "representative_name": "[NANUK] 나누크 Cubed Foam 폴리우레탄 폼 903-905",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -7465,7 +7465,7 @@
         "NITECORE",
         "나이트코어"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080090000073.jpg?1768464302",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080090000123.jpg?1768464293",
       "navigation_category_ids": [
         "plthink:b:009"
       ],
@@ -7475,9 +7475,9 @@
       "category_ids": [
         "plthink:b:009"
       ],
-      "representative_id": "plthink-1905763",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080090000072.jpg?1768464302",
-      "representative_name": "[NITECORE] 나이트코어 USN1 소니 FW50 전용 배터리 급속 충전기",
+      "representative_id": "plthink-1911847",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080090000122.jpg?1768464293",
+      "representative_name": "[NITECORE] 나이트코어 나이트코어 USN3 PRO 소니 전용 듀얼 급속 충전기",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -7540,7 +7540,7 @@
       "aliases": [
         "NOMATIC"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080110000913.jpg?1769733523",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080110001123.jpg?1769661063",
       "navigation_category_ids": [
         "plthink:b:011",
         "plthink:b:011:001",
@@ -7556,9 +7556,9 @@
         "plthink:b:011:002",
         "plthink:b:011:003"
       ],
-      "representative_id": "plthink-1927003",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080110000912.jpg?1769733523",
-      "representative_name": "[NOMATIC] 노매틱 피터매키넌 PM 카메라 가방 백팩 35L",
+      "representative_id": "plthink-1928391",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080110001122.jpg?1769661063",
+      "representative_name": "[NOMATIC] 노매틱 네비게이터 레인커버 배낭 백팩 전용 방수 M",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -7614,7 +7614,7 @@
       "aliases": [
         "NSH"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081200001463.jpg?1780626552",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081200001343.jpg?1780530216",
       "navigation_category_ids": [
         "clmedia:b:421",
         "plthink:b:120",
@@ -7632,9 +7632,9 @@
         "plthink:b:120:003",
         "clmedia:b:421"
       ],
-      "representative_id": "plthink-1928896",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081200001462.jpg?1780626552",
-      "representative_name": "[NSH] NH-2403 JIB 원형 무게추 지미집 카운터웨이트 6kg 12kg",
+      "representative_id": "plthink-1928908",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081200001342.jpg?1780530216",
+      "representative_name": "[NSH] 바주카 라이저 높이 조절 카메라 돌리 지미집 장착",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -7644,19 +7644,19 @@
       "aliases": [
         "OBSBOT"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080910000203.jpg?1768450064",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080910000263.jpg?1789103736",
       "navigation_category_ids": [
         "plthink:b:091"
       ],
-      "count": 6,
-      "purchase_count": 6,
+      "count": 9,
+      "purchase_count": 9,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:091"
       ],
-      "representative_id": "plthink-1927760",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080910000202.jpg?1768450064",
-      "representative_name": "[OBSBOT] 옵스봇 Tail 2 PTZ 카메라 4K AI 트래킹 웹캠 12배줌",
+      "representative_id": "plthink-1930425",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080910000262.jpg?1789103736",
+      "representative_name": "[OBSBOT] 옵스봇 Meet Flip 접이식 4K 웹캠 AI 화상카메라 PC거치",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -7747,7 +7747,7 @@
       "aliases": [
         "OSEE"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081270000193.jpg?1789002842",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081270000133.jpg?1768279826",
       "navigation_category_ids": [
         "avx:b:47698d3c4c7bdd8a",
         "avx:b:8289cdcbe7edee03",
@@ -7769,9 +7769,9 @@
         "avx:b:47698d3c4c7bdd8a",
         "avx:b:8289cdcbe7edee03"
       ],
-      "representative_id": "plthink-1927704",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081270000192.jpg?1789002842",
-      "representative_name": "[OSEE] 오씨 MEGA 22S 카메라 방송 22인치 프리뷰 모니터 1500nit",
+      "representative_id": "plthink-1927710",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081270000132.jpg?1768279825",
+      "representative_name": "[OSEE] 오씨 G7 PRO 터치 HDR 7인치 방송 프리뷰 모니터 3000nit",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -7835,7 +7835,7 @@
         "Panasonic",
         "파나소닉"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081440000033.png?1768263938",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081440000053.jpg?1775202485",
       "navigation_category_ids": [
         "avx:b:2a3384eb6447e3fe",
         "avx:b:3eabc70c53314f2d",
@@ -7880,9 +7880,9 @@
         "avx:b:6660688e91546530",
         "avx:b:9db77efa7f752862"
       ],
-      "representative_id": "plthink-1924091",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081440000032.png?1768263938",
-      "representative_name": "[PANASONIC] 파나소닉 VW-VBT380E-K 캠코더용 대용량 배터리",
+      "representative_id": "plthink-1924752",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081440000052.jpg?1775202485",
+      "representative_name": "[PANASONIC] 파나소닉 LUMIX DC-G100DV KIT (12-32m+슈팅그립 킷 2024년형)",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -7974,7 +7974,7 @@
         "PELICAN",
         "Pelican"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080200000703.jpg?1769673240",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080200001403.jpg?1779863983",
       "navigation_category_ids": [
         "avx:b:4f283399ff9caf74",
         "clmedia:b:606",
@@ -8008,9 +8008,9 @@
         "clmedia:b:609",
         "avx:b:4f283399ff9caf74"
       ],
-      "representative_id": "plthink-1902218",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080200000702.jpg?1769673240",
-      "representative_name": "[PELICAN] 펠리칸 1615TP 하드케이스 With TrekPak Divider System",
+      "representative_id": "plthink-1929652",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080200001402.jpg?1779863983",
+      "representative_name": "[PELICAN] 펠리칸 하드케이스 패딩 디바이더 1595 1595TRVL 전용",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -8190,7 +8190,7 @@
       "aliases": [
         "POLAROID"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080690000083.jpg?1695020674",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080690000123.jpg?1751269318",
       "navigation_category_ids": [
         "plthink:b:069"
       ],
@@ -8200,9 +8200,9 @@
       "category_ids": [
         "plthink:b:069"
       ],
-      "representative_id": "plthink-1908563",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080690000082.jpg?1695020674",
-      "representative_name": "[Polaroid] 폴라로이드 원스텝2 원스텝플러스 전용 가방 (아이보리)",
+      "representative_id": "plthink-1919631",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080690000122.jpg?1751269317",
+      "representative_name": "[Polaroid] now plus 폴라로이드 나우 플러스 즉석 카메라 블루",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -8245,7 +8245,7 @@
         "PORTKEYS",
         "PortKeys"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081130000193.jpg?1780643565",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081130000223.jpg?1787642631",
       "navigation_category_ids": [
         "avx:b:4992ff13c519d527",
         "avx:b:6aba6b5374355e4f",
@@ -8273,9 +8273,9 @@
         "avx:b:946951401bbe9a68",
         "avx:b:c996622216bdafd9"
       ],
-      "representative_id": "plthink-1927741",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081130000192.jpg?1780643565",
-      "representative_name": "[Portkeys] 포트키 BM5 IV 카메라 필드 모니터 5인치 터치 4세대",
+      "representative_id": "plthink-1930310",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081130000222.jpg?1787642631",
+      "representative_name": "[Portkeys] 포트키 BM7llDS 카메라 필드 모니터 7인치 터치 스크린 듀얼 모니터링",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -8325,7 +8325,7 @@
       "aliases": [
         "PRISM LENS FX"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081230000203.jpg?1784530259",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081230000933.jpg?1785741155",
       "navigation_category_ids": [
         "plthink:b:123",
         "plthink:b:123:001",
@@ -8345,9 +8345,9 @@
         "plthink:b:123:005",
         "plthink:b:123:004"
       ],
-      "representative_id": "plthink-1919753",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081230000202.jpg?1784530259",
-      "representative_name": "[PRISM LENS FX] 프리즘 렌즈 Radiant FX Filter 4X5.65 사각필터",
+      "representative_id": "plthink-1930144",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081230000932.jpg?1785741155",
+      "representative_name": "[PRISM LENS FX] 프리즘 렌즈 Reloadable 35mm 필름카메라 마그네틱 필터 3종 키트",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -8436,7 +8436,7 @@
       "aliases": [
         "PROGAFF"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080940000043.jpg?1786598866",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080940000143.jpg?1786427977",
       "navigation_category_ids": [
         "plthink:b:094"
       ],
@@ -8446,9 +8446,9 @@
       "category_ids": [
         "plthink:b:094"
       ],
-      "representative_id": "plthink-1908686",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080940000042.jpg?1786598866",
-      "representative_name": "[PROGAFF] 프로게퍼 크로마키 테이프 1인치 23m",
+      "representative_id": "plthink-1929538",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080940000142.jpg?1786427977",
+      "representative_name": "[PROGAFF] 프로게퍼 프로 게퍼테이프 포켓 1인치 5.4m",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -8459,7 +8459,7 @@
         "ProGrade",
         "PROGRADE"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080410007183.jpg?1783046211",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080410007313.jpg?1788765896",
       "navigation_category_ids": [
         "avx:b:021e2a5679549747",
         "avx:b:a1d594232dbb358a",
@@ -8479,9 +8479,9 @@
         "avx:b:021e2a5679549747",
         "avx:b:a1d594232dbb358a"
       ],
-      "representative_id": "plthink-1929496",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080410007182.jpg?1783046211",
-      "representative_name": "[ProGrade] 프로그레이드 SD 메모리카드 128GB SDXC UHS-II V60 250R",
+      "representative_id": "plthink-1929497",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080410007312.jpg?1788765896",
+      "representative_name": "[ProGrade] 프로그레이드 PG09 카드 듀얼 리더기 SDXC / CFX Type A",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -8541,7 +8541,7 @@
       "aliases": [
         "QNAP"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080860000073.jpg?1780363630",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080860000253.jpg?1780363717",
       "navigation_category_ids": [
         "plthink:b:086",
         "plthink:b:086:001",
@@ -8555,9 +8555,9 @@
         "plthink:b:086:001",
         "plthink:b:086:002"
       ],
-      "representative_id": "plthink-1918609",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080860000072.jpg?1780363630",
-      "representative_name": "[QNAP] 큐냅 TR-002 2베이 나스 레이드 스토리지 하드미포함",
+      "representative_id": "plthink-1921084",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080860000252.jpg?1780363717",
+      "representative_name": "[QNAP] 큐냅 TS-832PXU-RP-4G 8베이 쿼드코어 나스 스토리지 하드미포함",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -8721,7 +8721,7 @@
       "aliases": [
         "RIPTIE"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080270000553.jpg?1785377662",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080270000793.jpg?1751270288",
       "navigation_category_ids": [
         "plthink:b:027"
       ],
@@ -8731,9 +8731,9 @@
       "category_ids": [
         "plthink:b:027"
       ],
-      "representative_id": "plthink-1916108",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080270000572.jpg?1751270239",
-      "representative_name": "[RIP-TIE] 립타이 립랩 테이프 1/2인치 30ft",
+      "representative_id": "plthink-1916620",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080270000792.jpg?1751270288",
+      "representative_name": "[RIP-TIE] 립타이 벨크로 다용도 카라비너 고리 2개 블루",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -8859,9 +8859,9 @@
         "rental-brand:rode:5",
         "rental-brand:rode:54"
       ],
-      "representative_id": "plthink-1908462",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080380000602.jpg?1768357073",
-      "representative_name": "[RODE] Lavalier 전문가용 로데 핀 마이크",
+      "representative_id": "plthink-1929061",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080380002092.jpg?1773790680",
+      "representative_name": "[RODE] 로데 MiCon-3 핀마이크 젠더 슈어 송신기 호환",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -8871,7 +8871,7 @@
       "aliases": [
         "ROTOLIGHT"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080670000133.jpg?1787614965",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080670000353.jpg?1762737800",
       "navigation_category_ids": [
         "plthink:b:067",
         "plthink:b:067:001",
@@ -8887,9 +8887,9 @@
         "plthink:b:067:002",
         "plthink:b:067:003"
       ],
-      "representative_id": "plthink-1909404",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080670000132.jpg?1787614965",
-      "representative_name": "[ROTOLIGHT] 로토라이트 ANOVA PRO2",
+      "representative_id": "plthink-1925615",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080670000352.jpg?1762737800",
+      "representative_name": "[ROTOLIGHT] 로토라이트 NEOII Explorer KIT 스트로보 순간광 지속광 겸용 LED 조명",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -9148,7 +9148,7 @@
       "aliases": [
         "SCHNEIDER"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081220000033.jpg?1768264882",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081220000333.jpg?1768264921",
       "navigation_category_ids": [
         "plthink:b:122",
         "plthink:b:122:001"
@@ -9160,9 +9160,9 @@
         "plthink:b:122",
         "plthink:b:122:001"
       ],
-      "representative_id": "plthink-1919748",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081220000032.jpg?1768264882",
-      "representative_name": "[SCHNEIDER] 슈나이더 Black Frost 카메라 시네 필터 4x5.65 오더베이스",
+      "representative_id": "plthink-1919802",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081220000332.jpg?1768264921",
+      "representative_name": "[SCHNEIDER] 슈나이더 RHOdium FSND 1.2 카메라 ND 필터 4x5.65 오더베이스",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -9172,7 +9172,7 @@
       "aliases": [
         "SEAGATE"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081110000333.jpg?1785993597",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081110000723.jpg?1785390405",
       "navigation_category_ids": [
         "plthink:b:111",
         "plthink:b:111:001",
@@ -9187,9 +9187,9 @@
         "plthink:b:111:003",
         "plthink:b:111:002"
       ],
-      "representative_id": "plthink-1924062",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081110000332.jpg?1785993597",
-      "representative_name": "[Seagate] 씨게이트 바라쿠다 HDD 2TB 하드디스크 데스크탑용 ST2000DM008",
+      "representative_id": "plthink-1927200",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081110000722.jpg?1785390404",
+      "representative_name": "[Seagate] 씨게이트 바라쿠다 HDD 20TB 하드디스크 데스크탑용 ST20000DM001",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -9236,7 +9236,7 @@
       "aliases": [
         "SEISE"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080990000053.jpg?1778459626",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080990000093.jpg?1778459622",
       "navigation_category_ids": [
         "plthink:b:099",
         "plthink:b:099:001",
@@ -9250,9 +9250,9 @@
         "plthink:b:099:001",
         "plthink:b:099:002"
       ],
-      "representative_id": "plthink-1915485",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080990000052.jpg?1778459626",
-      "representative_name": "[SEISE] 세이즈 전선릴 전기연장선 30M 4구 R2 30m",
+      "representative_id": "plthink-2114",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080990000092.jpg?1778459622",
+      "representative_name": "[SEISE] 세이즈 전선릴 전기연장선 4구 접지형 X1 10m",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -9366,9 +9366,9 @@
         "rental-brand:sennheiser:5",
         "rental-brand:sennheiser:368"
       ],
-      "representative_id": "plthink-1924820",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080190000132.jpg?1782777109",
-      "representative_name": "[SENNHEISER] 젠하이저 EW-DP 835 SET 디지털 UHF 무선 마이크 세트",
+      "representative_id": "plthink-1929757",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080190000602.jpg?1782800327",
+      "representative_name": "[SENNHEISER] 젠하이저 XSW IEM SET 무선 인이어 모니터링 송수신기 세트",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -9403,7 +9403,7 @@
       "aliases": [
         "SHIMBOL"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081090000143.jpg?1768371903",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081090000213.jpg?1768799579",
       "navigation_category_ids": [
         "plthink:b:109"
       ],
@@ -9413,9 +9413,9 @@
       "category_ids": [
         "plthink:b:109"
       ],
-      "representative_id": "plthink-1924360",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081090000142.jpg?1768371902",
-      "representative_name": "[Shimbol] 심볼 7인치 프리뷰 모니터 M7 Pro",
+      "representative_id": "plthink-1927505",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081090000212.jpg?1768799579",
+      "representative_name": "[Shimbol] 심볼 CP5 MINI 미니 포켓 무선 미러링 모니터 스마트폰 촬영",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -9522,7 +9522,7 @@
       "aliases": [
         "SIGMA"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080540000023.jpg?1774417346",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080540000543.jpg?1777442831",
       "navigation_category_ids": [
         "plthink:b:054",
         "plthink:b:054:001",
@@ -9543,9 +9543,9 @@
         "plthink:b:054:002",
         "clmedia:b:98"
       ],
-      "representative_id": "plthink-1912244",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080540000022.jpg?1774417346",
-      "representative_name": "[SIGMA] 시그마 시네렌즈 50-100mm T2 캐논 소니 PL",
+      "representative_id": "plthink-1929484",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080540000542.jpg?1777442831",
+      "representative_name": "[SIGMA] 시그마 200mm F2 DG OS Sports SE마운트 소니 망원렌즈",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -9581,7 +9581,7 @@
       "aliases": [
         "SKINARMA"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080850000193.jpg?1760665701",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080850000293.jpg?1775458959",
       "navigation_category_ids": [
         "plthink:b:085"
       ],
@@ -9591,9 +9591,9 @@
       "category_ids": [
         "plthink:b:085"
       ],
-      "representative_id": "plthink-1926416",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080850000192.jpg?1760665701",
-      "representative_name": "[SKINARMA] 스키나마 사이도 투명 사각 에어팟 프로2 케이스 1세대 2세대",
+      "representative_id": "plthink-1928357",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080850000422.jpg?1786413736",
+      "representative_name": "[SKINARMA] 스키나마 3in1 액시스 맥세이프 카드 지갑 아이폰 거치대 홀더 2장 수납",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -9667,7 +9667,7 @@
       "aliases": [
         "SMDV"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080020000233.jpg?1768460983",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080020000913.jpg?1768460897",
       "navigation_category_ids": [
         "plthink:b:002",
         "plthink:b:002:002",
@@ -9684,9 +9684,9 @@
         "plthink:b:002:002",
         "plthink:b:002:003"
       ],
-      "representative_id": "plthink-1895328",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080020000242.jpg?1768460871",
-      "representative_name": "[SMDV] 에스엠디브이 무선동조기 FlashWave-4 TTL Kit 캐논용",
+      "representative_id": "plthink-1928467",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080020000912.jpg?1768460896",
+      "representative_name": "[SMDV] 에스엠디브이 미니싱크 Kit 무선 플래시 동조기 송수신기 플래시웨이브4 3 호환",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -9853,7 +9853,7 @@
       "aliases": [
         "SPRIG"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081470000013.jpg?1752627328",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081470000033.jpg?1751270274",
       "navigation_category_ids": [
         "plthink:b:147",
         "plthink:b:147:001"
@@ -9865,9 +9865,9 @@
         "plthink:b:147",
         "plthink:b:147:001"
       ],
-      "representative_id": "plthink-1922065",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081470000012.jpg?1752627328",
-      "representative_name": "[SPRIG] 스프리그 S6PK-1420 카메라 리그 케이블 홀더 6개입 미국산",
+      "representative_id": "plthink-1922067",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081470000032.jpg?1751270274",
+      "representative_name": "[SPRIG] 스프리그 SH3D-1420 카메라 리그 케이블 홀더 키체인",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -9878,7 +9878,7 @@
         "STARTRC",
         "StartRC"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081460000093.jpg?1768868476",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081460000423.jpg?1787717180",
       "navigation_category_ids": [
         "avx:b:229dd788d2da256c",
         "avx:b:8eb6be873c823ff2",
@@ -9906,9 +9906,9 @@
         "avx:b:e3535dae531aed6e",
         "avx:b:a7bb9d22af08a6df"
       ],
-      "representative_id": "plthink-1927079",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081460000092.jpg?1768868476",
-      "representative_name": "[STARTRC] 스타트알씨 DJI 에어 3S 패브릭 드론 보관 케이스",
+      "representative_id": "plthink-1930311",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081460000422.jpg?1787717180",
+      "representative_name": "[STARTRC] 스타트알씨 DJI 오즈모 포켓4P 필터 세트 3종 (VND CPL 블랙미스트)",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -9918,7 +9918,7 @@
       "aliases": [
         "STREAM STUDIO"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081410000013.jpg?1770343817",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081410000023.jpg?1770343822",
       "navigation_category_ids": [
         "plthink:b:141",
         "plthink:b:141:001"
@@ -9930,9 +9930,9 @@
         "plthink:b:141",
         "plthink:b:141:001"
       ],
-      "representative_id": "plthink-1921752",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081410000012.jpg?1770343817",
-      "representative_name": "[STREAM STUDIO] 스트림스튜디오 SS-V4K 올인원 라이브 이동형 방송 시스템 4K (VMIX ,최대 8채널 17.3인치 모니터)",
+      "representative_id": "plthink-1921753",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081410000022.jpg?1770343822",
+      "representative_name": "[STREAM STUDIO] 스트림스튜디오 SS-VHD 올인원 라이브 이동형 방송 시스템 HD (VMIX,최대 8채널 17.3인치 모니터)",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -10029,7 +10029,7 @@
       "aliases": [
         "TELESIN"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081420000083.jpg?1761117846",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081420000313.jpg?1761117935",
       "navigation_category_ids": [
         "plthink:b:142",
         "plthink:b:142:001"
@@ -10041,9 +10041,9 @@
         "plthink:b:142",
         "plthink:b:142:001"
       ],
-      "representative_id": "plthink-1921755",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081420000082.jpg?1761117846",
-      "representative_name": "[TELESIN] 텔레씬 GP-MFW-300 고프로 액션캠 카메라 3way 셀카봉 셀피스틱",
+      "representative_id": "plthink-1922227",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081420000312.jpg?1761117935",
+      "representative_name": "[TELESIN] 텔레씬 GP-JBK-001 고프로 액션캠 J훅 버클 마운트",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -10132,8 +10132,8 @@
         "plthink:b:136:002",
         "plthink:b:136:003"
       ],
-      "count": 77,
-      "purchase_count": 77,
+      "count": 78,
+      "purchase_count": 78,
       "rental_count": 0,
       "category_ids": [
         "naver:b:teris:50000206",
@@ -10398,7 +10398,7 @@
       "aliases": [
         "Twelvesouth"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081160000103.jpg?1762747928",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081160000223.jpg?1778478117",
       "navigation_category_ids": [
         "plthink:b:116"
       ],
@@ -10408,9 +10408,9 @@
       "category_ids": [
         "plthink:b:116"
       ],
-      "representative_id": "plthink-1924694",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081160000102.jpg?1762747927",
-      "representative_name": "[twelvesouth] 트웰브사우스 Airfly Pro 에어플라이 프로 휴대용 블루투스 오디오 리시버",
+      "representative_id": "plthink-1928124",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081160000212.jpg?1777435961",
+      "representative_name": "[twelvesouth] 트웰브사우스 커브 나노 접이식 맥세이프 거치대 스마트폰 스탠드 Curve Nano",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -10472,7 +10472,7 @@
       "aliases": [
         "UNIU"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081280000103.jpg?1779079173",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081280000213.jpg?1787895151",
       "navigation_category_ids": [
         "plthink:b:128"
       ],
@@ -10482,9 +10482,9 @@
       "category_ids": [
         "plthink:b:128"
       ],
-      "representative_id": "plthink-1926412",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081280000102.jpg?1779079173",
-      "representative_name": "[UNIU] 유니유 클릭 애플워치 스테인리스 티타늄 스트랩 42 44 45 46 49mm",
+      "representative_id": "plthink-1930335",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081280000212.jpg?1787895151",
+      "representative_name": "[UNIU] 유니유 애플워치 스트랩 44-49mm 오션 플럭스 스포츠 마그네틱 실리콘",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -10618,7 +10618,7 @@
       "aliases": [
         "vMix"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080760001183.jpg?1763692123",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080760001203.jpg?1763692131",
       "navigation_category_ids": [
         "plthink:b:076"
       ],
@@ -10628,9 +10628,9 @@
       "category_ids": [
         "plthink:b:076"
       ],
-      "representative_id": "plthink-1928090",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080760001182.jpg?1763692123",
-      "representative_name": "[vMix] 브이믹스 HD 라이브 스트리밍 녹화 소프트웨어 라이센스 영상 제작",
+      "representative_id": "plthink-1928092",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080760001202.jpg?1763692131",
+      "representative_name": "[vMix] 브이믹스 PRO 라이브 스트리밍 녹화 소프트웨어 라이센스 영상 제작",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -10673,7 +10673,7 @@
       "aliases": [
         "VSGO"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080250001803.jpg?1779151318",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080250002453.jpg?1779152146",
       "navigation_category_ids": [
         "clmedia:b:108",
         "clmedia:b:346",
@@ -10699,9 +10699,9 @@
         "clmedia:b:347",
         "clmedia:b:527"
       ],
-      "representative_id": "plthink-1910617",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080250001802.jpg?1779151318",
-      "representative_name": "[VSGO] 비스고 DDA-9 카메라 청소 미니 에어 블로워",
+      "representative_id": "plthink-1928983",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080250002452.jpg?1779152146",
+      "representative_name": "[VSGO] 비스고 V-BP01-A14 카메라 융 자가접착 테크랩 카메라모티브 그래픽",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -10755,7 +10755,7 @@
       "aliases": [
         "WD"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080390000033.jpg?1780360661",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080390000243.jpg?1780362501",
       "navigation_category_ids": [
         "plthink:b:039",
         "plthink:b:039:001"
@@ -10767,9 +10767,9 @@
         "plthink:b:039",
         "plthink:b:039:001"
       ],
-      "representative_id": "plthink-1918625",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080390000032.jpg?1780360661",
-      "representative_name": "[WD] RED Plus 10TB 하드디스크 3.5 NAS HDD WD101EFBX",
+      "representative_id": "plthink-1924168",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080390000242.jpg?1780362501",
+      "representative_name": "[WD] RED Pro 20TB 하드디스크 3.5 NAS HDD WD201KFGX",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -10779,7 +10779,7 @@
       "aliases": [
         "WICOMMEDIA"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081330000013.jpg?1775539966",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081330000053.jpg?1775539907",
       "navigation_category_ids": [
         "plthink:b:133",
         "plthink:b:133:001"
@@ -10791,9 +10791,9 @@
         "plthink:b:133",
         "plthink:b:133:001"
       ],
-      "representative_id": "plthink-1920899",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081330000012.jpg?1775539966",
-      "representative_name": "[위콤미디어] 무선인터컴 위즈2400 무선송수신기",
+      "representative_id": "plthink-1920976",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081330000052.jpg?1775539907",
+      "representative_name": "[위콤미디어] 무선인터컴 위즈2400 WIZ2400_PRO-5C 무선송수신기",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -10866,7 +10866,7 @@
       "aliases": [
         "YAMAHA"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081390000023.jpg?1768531776",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081390000303.jpg?1777006100",
       "navigation_category_ids": [
         "plthink:b:139",
         "plthink:b:139:001",
@@ -10888,9 +10888,9 @@
         "plthink:b:139:004",
         "plthink:b:139:005"
       ],
-      "representative_id": "plthink-1921582",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081390000022.jpg?1768531776",
-      "representative_name": "[YAMAHA] 야마하 ZG01 Pack 게임 스트리밍 믹서 헤드폰 패키지",
+      "representative_id": "plthink-1929452",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081390000302.jpg?1777006100",
+      "representative_name": "[YAMAHA] 야마하 URX44 디지털 믹서 6채널 USB-C 오디오 인터페이스",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -10925,7 +10925,7 @@
       "aliases": [
         "YCONION"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080710000373.jpg?1768281671",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080710000683.jpg?1787641791",
       "navigation_category_ids": [
         "plthink:b:071",
         "plthink:b:071:001",
@@ -10947,9 +10947,9 @@
         "plthink:b:071:004",
         "plthink:b:071:005"
       ],
-      "representative_id": "plthink-1923030",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080710000372.jpg?1768281670",
-      "representative_name": "[YC ONION] YoloLiv 욜로라이브 INSTREAM 인스트림 전용 케이지 TJ-BOXINS",
+      "representative_id": "plthink-1930309",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080710000682.jpg?1787641791",
+      "representative_name": "[YC ONION] 파인타 피네타 프로 XL 페달베이스 모노포드 퀵릴리즈 고정 지지대",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -10959,7 +10959,7 @@
       "aliases": [
         "YOLOLIV"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081240000023.jpg?1779409758",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081240000063.jpg?1787556783",
       "navigation_category_ids": [
         "plthink:b:124"
       ],
@@ -10969,9 +10969,9 @@
       "category_ids": [
         "plthink:b:124"
       ],
-      "representative_id": "plthink-1922381",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081240000022.jpg?1779409758",
-      "representative_name": "[YOLOLIV] 욜로라이브 VERTICAM 버티캠 PTZ 화상캠 카메라 라이브쇼핑",
+      "representative_id": "plthink-1924260",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081240000062.jpg?1787556783",
+      "representative_name": "[YOLOLIV] 욜로라이브 YOLOBOX Mini 욜로박스미니 1인 덕션 스트리밍 컨트롤러",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -11005,7 +11005,7 @@
       "aliases": [
         "ZEAPON"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080920000103.jpg?1769130445",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080920000353.jpg?1769130519",
       "navigation_category_ids": [
         "plthink:b:092",
         "plthink:b:092:001",
@@ -11021,9 +11021,9 @@
         "plthink:b:092:002",
         "plthink:b:092:003"
       ],
-      "representative_id": "plthink-1919458",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080920000102.jpg?1769130444",
-      "representative_name": "[ZEAPON] 지폰 리볼버 퀵 릴리즈 AI-H2-P 상단 핀 단품",
+      "representative_id": "plthink-1927486",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080920000352.jpg?1769130519",
+      "representative_name": "[ZEAPON] 지폰 AP-H3 폰즈 틸트암 키트 PONS Tilt Arm KIT",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -11099,7 +11099,7 @@
         "zhiyun tech",
         "zhiyun"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080680000143.jpg?1761117986",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080680003383.jpg?1787189098",
       "navigation_category_ids": [
         "plthink:b:068",
         "plthink:b:068:001",
@@ -11120,9 +11120,9 @@
         "plthink:b:068:002",
         "clmedia:b:110"
       ],
-      "representative_id": "plthink-1899299",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080680000202.jpg?1761117982",
-      "representative_name": "[ZHIYUN] Z1-BP 짐벌 액세서리 전용 파우치",
+      "representative_id": "plthink-1930271",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080680003382.jpg?1787189098",
+      "representative_name": "[ZHIYUN] 지윤 G60 COMBO 트라이포드 조명 미니 삼각대",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -11180,9 +11180,9 @@
         "rental-brand:zoom:5",
         "rental-brand:zoom:113"
       ],
-      "representative_id": "plthink-1890727",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080290000132.jpg?1776054815",
-      "representative_name": "[ZOOM] 줌 SSH-6 샷건 촬영 마이크 캡슐 H5 H6 Q8전용",
+      "representative_id": "plthink-1921521",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080290001002.jpg?1775536934",
+      "representative_name": "[ZOOM] 줌 BCF-1 벨트 클립 + 스크류",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -34011,6 +34011,13 @@
     "plthink-1930266": "smartstore-13740734445",
     "plthink-1930267": "smartstore-13740734444",
     "plthink-1930321": "smartstore-13740734443",
+    "plthink-1930428": "smartstore-13740632962",
+    "plthink-1930429": "smartstore-13740633991",
+    "plthink-1930430": "smartstore-13740633990",
+    "plthink-1930431": "smartstore-13740633989",
+    "plthink-1930432": "smartstore-13740632982",
+    "plthink-1930433": "smartstore-13740633062",
+    "plthink-1930434": "smartstore-13740633061",
     "plthink-2207": "smartstore-13740670082",
     "plthink-2208": "smartstore-13740670079",
     "plthink-318": "smartstore-13740721118",
