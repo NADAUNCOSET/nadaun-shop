@@ -177,7 +177,7 @@
   "meta": {
     "schema_version": 1,
     "source_counts": {
-      "kpp": 4014,
+      "kpp": 4024,
       "smartstore": 7161,
       "imweb-dji": 146,
       "imweb-promotions": 37,
@@ -190,7 +190,7 @@
       "avx": 1331
     },
     "detail_coverage": {
-      "kpp": 4014,
+      "kpp": 4024,
       "smartstore": 7075,
       "imweb-promotions": 16,
       "l-mount": 335,
@@ -201,7 +201,7 @@
       "onnoff": 1064,
       "avx": 1331
     },
-    "synced_at": "2026-09-13T22:34:32+00:00",
+    "synced_at": "2026-09-13T23:05:20+00:00",
     "merged_count": 4765,
     "product_count": 220,
     "category_browsing_enabled": true,
@@ -212,7 +212,7 @@
       "groups": 2866,
       "removed": 4765
     },
-    "revision": "c1a71cc7652fd6ab",
+    "revision": "500249ea3b65ecd1",
     "view": "rental"
   },
   "brands": [
@@ -884,7 +884,6 @@
         "kpp:b:smallrig:d24020",
         "kpp:b:smallrig:d24030",
         "kpp:b:smallrig:d24060",
-        "kpp:b:smallrig:d240a0",
         "kpp:b:smallrig:d240c0",
         "kpp:b:smallrig:d240d0",
         "kpp:b:smallrig:d240e0",
@@ -987,8 +986,8 @@
         "plthink:b:084:017",
         "plthink:b:084:019"
       ],
-      "count": 1704,
-      "purchase_count": 1701,
+      "count": 1712,
+      "purchase_count": 1709,
       "rental_count": 3,
       "category_ids": [
         "kpp:b:smallrig:d210",
@@ -1009,6 +1008,7 @@
         "kpp:b:smallrig:d210f0",
         "kpp:b:smallrig:d21090",
         "kpp:b:smallrig:d210i0",
+        "kpp:b:smallrig:d210j0",
         "kpp:b:smallrig:d270",
         "kpp:b:smallrig:d27010",
         "kpp:b:smallrig:d27020",
@@ -1037,7 +1037,6 @@
         "kpp:b:smallrig:d24030",
         "kpp:b:smallrig:d240e0",
         "kpp:b:smallrig:d24060",
-        "kpp:b:smallrig:d240a0",
         "kpp:b:smallrig:d240d0",
         "kpp:b:smallrig:d240c0",
         "kpp:b:smallrig:d220",
@@ -1964,8 +1963,8 @@
         "kpp:b:pgytech:60b040",
         "kpp:b:pgytech:60b050"
       ],
-      "count": 290,
-      "purchase_count": 290,
+      "count": 289,
+      "purchase_count": 289,
       "rental_count": 0,
       "category_ids": [
         "kpp:b:pgytech:6060",
@@ -2046,8 +2045,8 @@
         "kpp:b:viltrox:b08050",
         "kpp:b:viltrox:b090"
       ],
-      "count": 100,
-      "purchase_count": 100,
+      "count": 103,
+      "purchase_count": 103,
       "rental_count": 0,
       "category_ids": [
         "kpp:b:viltrox:b060",
@@ -8027,7 +8026,7 @@
         "naver:b:pentax:50000266",
         "naver:b:pentax:50000267",
         "naver:b:pentax:50001384",
-        "naver:b:pentax:50004619"
+        "naver:b:pentax:50004620"
       ],
       "count": 6,
       "purchase_count": 6,
@@ -8037,7 +8036,7 @@
         "naver:b:pentax:50000266",
         "naver:b:pentax:50000267",
         "naver:b:pentax:50001384",
-        "naver:b:pentax:50004619"
+        "naver:b:pentax:50004620"
       ],
       "representative_id": "smartstore-13621002857",
       "representative_image": "https://shop-phinf.pstatic.net/20260602_34/17804058901514Oqj3_JPEG/127039673391260713_1829165998.jpg",

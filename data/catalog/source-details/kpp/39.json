@@ -25,8 +25,8 @@
     "sale_price": 175000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-09-10T23:10:34+00:00",
-    "checked_epoch": 1789081834,
+    "checked_at": "2026-09-13T23:07:31+00:00",
+    "checked_epoch": 1789340851,
     "source_fingerprint": "868a9c987fccf71960c8d39ae2d1fa169310ba9c0574689ff5b92dafe8f20800"
   },
   "kpp-1663833362": {
@@ -55,8 +55,8 @@
     "sale_price": 16200,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-09-10T23:11:24+00:00",
-    "checked_epoch": 1789081884,
+    "checked_at": "2026-09-13T23:08:13+00:00",
+    "checked_epoch": 1789340893,
     "source_fingerprint": "41e60139d7649117a86cdb7cdb510ec2554aa8e1a66e1664f4e4c4f0065a8fb0"
   },
   "kpp-1664356573": {
@@ -87,8 +87,8 @@
     "sale_price": 409000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-09-10T23:11:28+00:00",
-    "checked_epoch": 1789081888,
+    "checked_at": "2026-09-13T23:08:16+00:00",
+    "checked_epoch": 1789340896,
     "source_fingerprint": "e151fad431fe815cac0a2d9fe901c53d3610d85bca6a6a9d343bee1382f35919"
   },
   "kpp-1665554536": {
@@ -115,8 +115,8 @@
     "sale_price": 53100,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-09-10T23:11:54+00:00",
-    "checked_epoch": 1789081914,
+    "checked_at": "2026-09-13T23:08:39+00:00",
+    "checked_epoch": 1789340919,
     "source_fingerprint": "7ddcd20eaba62ff60f465ceeea53f62ab7a312c04d5ba4ff45cd8036bb722c64"
   },
   "kpp-1665561018": {
@@ -140,8 +140,8 @@
     "sale_price": 25200,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-09-10T23:12:05+00:00",
-    "checked_epoch": 1789081925,
+    "checked_at": "2026-09-13T23:08:47+00:00",
+    "checked_epoch": 1789340927,
     "source_fingerprint": "a5ccd278507771239e7bb31674950e63212edce6f5995bd63133468c6f455c26"
   },
   "kpp-1715826368": {
@@ -180,8 +180,36 @@
     "sale_price": 2199000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-09-10T23:16:05+00:00",
-    "checked_epoch": 1789082165,
+    "checked_at": "2026-09-13T23:12:09+00:00",
+    "checked_epoch": 1789341129,
     "source_fingerprint": "1e7d1eafae7dd406198beb05cdfc13d8a7510655d497e73a58f72f38ffa6fc95"
+  },
+  "kpp-1789096479": {
+    "images": {
+      "main": [
+        "https://kppkpp.co.kr/data/item/1789096479/md6918_thumbnail_01.jpg",
+        "https://kppkpp.co.kr/data/item/1789096479/md6918_thumbnail_02.jpg",
+        "https://kppkpp.co.kr/data/item/1789096479/md6918_thumbnail_03.jpg",
+        "https://kppkpp.co.kr/data/item/1789096479/md6918_thumbnail_04.jpg",
+        "https://kppkpp.co.kr/data/item/1789096479/md6918_thumbnail_05.jpg",
+        "https://kppkpp.co.kr/data/item/1789096479/md6918_thumbnail_06.jpg"
+      ],
+      "detail": [
+        "https://kppshop.dothome.co.kr/img/02_smallrig/brand_event.jpg",
+        "https://kppshop.dothome.co.kr/img/02_smallrig/01_cage/cate_event.jpg",
+        "https://kppshop.dothome.co.kr/img/02_smallrig/01_cage/09_dji/cate_event.jpg",
+        "https://kppshop.dothome.co.kr/img/02_smallrig/01_cage/09_dji/md6918/product_event.jpg",
+        "https://kppshop.dothome.co.kr/img/02_smallrig/01_cage/09_dji/md6918/md6918_01.jpg",
+        "https://kppshop.dothome.co.kr/img/02_smallrig/01_cage/09_dji/md6918/md6918_02.jpg",
+        "https://kppshop.dothome.co.kr/img/02_smallrig/01_cage/09_dji/md6918/md6918_03.jpg"
+      ]
+    },
+    "price": 24900,
+    "sale_price": 24900,
+    "description_text": "",
+    "detail_status": "verified",
+    "checked_at": "2026-09-13T23:15:45+00:00",
+    "checked_epoch": 1789341345,
+    "source_fingerprint": "6c3eeaa95438a56e7a2fef9044dc2a9c98e37782bdd5a89792464e9ef84920da"
   }
 }
