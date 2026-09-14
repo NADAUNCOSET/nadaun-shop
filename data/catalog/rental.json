@@ -184,7 +184,7 @@
       "l-mount": 335,
       "plthink": 6614,
       "dji-official": 903,
-      "clmedia": 2208,
+      "clmedia": 2206,
       "cinemall": 1217,
       "onnoff": 1064,
       "avx": 1331
@@ -196,23 +196,23 @@
       "l-mount": 335,
       "plthink": 6223,
       "dji-official": 898,
-      "clmedia": 2114,
+      "clmedia": 2112,
       "cinemall": 1191,
       "onnoff": 1064,
       "avx": 1331
     },
-    "synced_at": "2026-09-14T00:21:58+00:00",
-    "merged_count": 4765,
+    "synced_at": "2026-09-14T08:38:47+00:00",
+    "merged_count": 4764,
     "product_count": 220,
     "category_browsing_enabled": true,
     "listing_count": 220,
     "option_family_count": 181,
     "deduplication": {
       "brands_checked": 270,
-      "groups": 2866,
-      "removed": 4765
+      "groups": 2865,
+      "removed": 4764
     },
-    "revision": "cd173f8a1fc9ecb5",
+    "revision": "45f2cf8d78c8170c",
     "view": "rental"
   },
   "brands": [
@@ -3493,8 +3493,8 @@
         "avx:b:e2425e994d4cac5b",
         "clmedia:b:45"
       ],
-      "count": 8,
-      "purchase_count": 6,
+      "count": 7,
+      "purchase_count": 5,
       "rental_count": 2,
       "category_ids": [
         "naver:b:atomos:50000206",
@@ -30794,7 +30794,6 @@
     "clmedia-1657": "smartstore-13027041585",
     "clmedia-1658": "smartstore-13027023386",
     "clmedia-1659": "smartstore-13027016813",
-    "clmedia-166": "smartstore-13745581828",
     "clmedia-1660": "smartstore-13027008242",
     "clmedia-1661": "smartstore-13027006092",
     "clmedia-1663": "smartstore-13027003984",

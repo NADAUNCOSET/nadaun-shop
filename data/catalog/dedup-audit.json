@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "brands_checked": 270,
-  "input_count": 24263,
-  "duplicate_group_count": 2866,
-  "duplicate_entries_removed": 4765,
+  "input_count": 24261,
+  "duplicate_group_count": 2865,
+  "duplicate_entries_removed": 4764,
   "by_brand": {
     "tilta": 280,
     "avenger": 10,
-    "smallrig": 923,
+    "smallrig": 922,
     "hollyland": 113,
     "swit": 45,
     "canon": 2,
@@ -1757,7 +1757,7 @@
         {
           "id": "clmedia-2182",
           "name": "틸타 HDA-T15-D-TG 히드라 에일리언 미니 DJI 오즈모 포켓 3 / 4 호환 바이킹 키트",
-          "price": 233000,
+          "price": 293000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2182"
         }
@@ -3792,7 +3792,7 @@
         {
           "id": "clmedia-2181",
           "name": "틸타 HDA-T15-E-DB 히드라 에일리언 미니 마스터 키트 (데져트베이지)",
-          "price": 333000,
+          "price": 431000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2181"
         }
@@ -25194,31 +25194,6 @@
       ]
     },
     {
-      "brand_id": "smallrig",
-      "kind": "purchase",
-      "primary_id": "smartstore-13745581828",
-      "evidence": [
-        "model:3784",
-        "name:3784파나소닉gh6풀케이지"
-      ],
-      "members": [
-        {
-          "id": "smartstore-13745581828",
-          "name": "3784 파나소닉 GH6 풀케이지",
-          "price": 101000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13745581828"
-        },
-        {
-          "id": "clmedia-166",
-          "name": "스몰리그 3784 파나소닉 GH6 풀케이지",
-          "price": 101000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=166"
-        }
-      ]
-    },
-    {
       "brand_id": "kupo",
       "kind": "purchase",
       "primary_id": "smartstore-13027008242",
@@ -31277,7 +31252,7 @@
         {
           "id": "clmedia-2101",
           "name": "틸타 HDA-T15-A-TG 히드라 에일리언 미니 차량 마운트 시스템",
-          "price": 250000,
+          "price": 327000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2101"
         }

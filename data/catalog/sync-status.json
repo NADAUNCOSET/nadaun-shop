@@ -8,7 +8,7 @@
     "l-mount": 335,
     "plthink": 6614,
     "dji-official": 903,
-    "clmedia": 2208,
+    "clmedia": 2206,
     "cinemall": 1217,
     "onnoff": 1064,
     "avx": 1331
@@ -20,21 +20,21 @@
     "l-mount": 335,
     "plthink": 6223,
     "dji-official": 898,
-    "clmedia": 2114,
+    "clmedia": 2112,
     "cinemall": 1191,
     "onnoff": 1064,
     "avx": 1331
   },
-  "synced_at": "2026-09-14T00:21:58+00:00",
-  "merged_count": 4765,
-  "product_count": 19498,
+  "synced_at": "2026-09-14T08:38:47+00:00",
+  "merged_count": 4764,
+  "product_count": 19497,
   "category_browsing_enabled": true,
-  "listing_count": 19317,
+  "listing_count": 19316,
   "option_family_count": 181,
   "deduplication": {
     "brands_checked": 270,
-    "groups": 2866,
-    "removed": 4765
+    "groups": 2865,
+    "removed": 4764
   },
-  "revision": "cd173f8a1fc9ecb5"
+  "revision": "45f2cf8d78c8170c"
 }
