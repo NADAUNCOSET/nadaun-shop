@@ -201,7 +201,7 @@
       "onnoff": 1064,
       "avx": 1332
     },
-    "synced_at": "2026-09-14T15:59:00+00:00",
+    "synced_at": "2026-09-14T23:06:24+00:00",
     "merged_count": 4765,
     "product_count": 220,
     "category_browsing_enabled": true,
@@ -212,7 +212,7 @@
       "groups": 2866,
       "removed": 4765
     },
-    "revision": "53210d25649c9c61",
+    "revision": "29c958d718e200f4",
     "view": "rental"
   },
   "brands": [
@@ -2818,10 +2818,7 @@
         "kpp:b:fxlion:q21030",
         "kpp:b:fxlion:q21040",
         "kpp:b:fxlion:q21050",
-        "kpp:b:fxlion:q21060",
         "kpp:b:fxlion:q21070",
-        "kpp:b:fxlion:q21080",
-        "kpp:b:fxlion:q21090",
         "kpp:b:fxlion:q210a0",
         "kpp:b:fxlion:q220",
         "kpp:b:fxlion:q22010",
@@ -2839,6 +2836,7 @@
       "purchase_count": 51,
       "rental_count": 2,
       "category_ids": [
+        "kpp:b:fxlion:q260",
         "kpp:b:fxlion:q210",
         "kpp:b:fxlion:q21090",
         "kpp:b:fxlion:q21080",
@@ -2872,7 +2870,7 @@
         "rental-brand:fxlion:46"
       ],
       "representative_id": "kpp-1646980198",
-      "representative_image": "https://kppkpp.co.kr/data/item/1646980198/nano_two_mini_01.jpg",
+      "representative_image": "https://kppkpp.co.kr/data/item/1646980198/64KY64W47YisV66eI7Jq07Yq467Cw7YSw66as98Wh.jpg",
       "representative_name": "FXLION 나노 투 V마운트 배터리 98Wh",
       "representative_alternate": "https://kppkpp.co.kr/data/item/1646980198/nano_two_mini_02.jpg",
       "image_kind": "logo",
