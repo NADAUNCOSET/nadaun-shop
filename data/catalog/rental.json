@@ -187,7 +187,7 @@
       "clmedia": 2206,
       "cinemall": 1217,
       "onnoff": 1064,
-      "avx": 1331
+      "avx": 1332
     },
     "detail_coverage": {
       "kpp": 4024,
@@ -199,20 +199,20 @@
       "clmedia": 2112,
       "cinemall": 1191,
       "onnoff": 1064,
-      "avx": 1331
+      "avx": 1332
     },
-    "synced_at": "2026-09-14T13:06:13+00:00",
-    "merged_count": 4764,
+    "synced_at": "2026-09-14T13:50:25+00:00",
+    "merged_count": 4765,
     "product_count": 220,
     "category_browsing_enabled": true,
     "listing_count": 220,
     "option_family_count": 181,
     "deduplication": {
       "brands_checked": 270,
-      "groups": 2865,
-      "removed": 4764
+      "groups": 2866,
+      "removed": 4765
     },
-    "revision": "455827ba9759ceef",
+    "revision": "86ea7306734c48e1",
     "view": "rental"
   },
   "brands": [
@@ -1663,8 +1663,8 @@
         "cinemall:b:399",
         "cinemall:b:241",
         "avx:b:671e8d440abf32f5",
-        "avx:b:97490708d83da406",
         "avx:b:23da3d99a2e431dd",
+        "avx:b:97490708d83da406",
         "avx:b:4f14a3c92dbd2d86",
         "avx:b:e493dbaf766e1b65",
         "avx:b:ede033475a273f64",
@@ -29489,6 +29489,7 @@
     "avx-1845": "smartstore-11952871704",
     "cinemall-2133": "smartstore-11952871704",
     "avx-1846": "smartstore-11952874954",
+    "avx-1849": "avx-3079",
     "avx-1871": "plthink-1930029",
     "clmedia-2987": "plthink-1930029",
     "cinemall-1030": "plthink-1930029",

@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "brands_checked": 270,
-  "input_count": 24260,
-  "duplicate_group_count": 2865,
-  "duplicate_entries_removed": 4764,
+  "input_count": 24261,
+  "duplicate_group_count": 2866,
+  "duplicate_entries_removed": 4765,
   "by_brand": {
-    "tilta": 280,
+    "tilta": 281,
     "avenger": 10,
     "smallrig": 922,
     "hollyland": 113,
@@ -1580,6 +1580,30 @@
           "price": 293000,
           "source": "avx",
           "url": "https://www.avx.co.kr/goods/view?no=1846"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "avx-3079",
+      "evidence": [
+        "model:HDA-T15-B-TG"
+      ],
+      "members": [
+        {
+          "id": "avx-3079",
+          "name": "[단순개봉]틸타 히드라 에일리언 미니 핸드 헬드 키트 HDA-T15-B-TG (재고: 1)",
+          "price": 224000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3079"
+        },
+        {
+          "id": "avx-1849",
+          "name": "틸타 히드라 에일리언 미니 핸드 헬드 키트 HDA-T15-B-TG [국내정식판매처]",
+          "price": 241000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=1849"
         }
       ]
     },
