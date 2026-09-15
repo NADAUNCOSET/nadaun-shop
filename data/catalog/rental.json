@@ -95,9 +95,9 @@
         "id": "rent:27",
         "name": "액션캠·포켓 카메라",
         "kind": "rental",
-        "count": 2,
-        "image": "https://shop-phinf.pstatic.net/20260507_143/177813399095654SNv_JPEG/15009422871986588_1303999648.jpg",
-        "product_id": "smartstore-13498631102",
+        "count": 3,
+        "image": "https://shop-phinf.pstatic.net/20260915_214/1789455307029McRTD_JPEG/123588148250053093_1164744046.jpg",
+        "product_id": "smartstore-13762129935",
         "href": "/catalog.html?kind=rental&type=rent%3A27"
       },
       {
@@ -178,8 +178,8 @@
     "schema_version": 1,
     "source_counts": {
       "kpp": 4024,
-      "smartstore": 7161,
-      "imweb-dji": 146,
+      "smartstore": 7162,
+      "imweb-dji": 149,
       "imweb-promotions": 37,
       "l-mount": 335,
       "plthink": 6617,
@@ -191,7 +191,7 @@
     },
     "detail_coverage": {
       "kpp": 4024,
-      "smartstore": 7075,
+      "smartstore": 7076,
       "imweb-promotions": 16,
       "l-mount": 335,
       "plthink": 6226,
@@ -201,18 +201,18 @@
       "onnoff": 1064,
       "avx": 1331
     },
-    "synced_at": "2026-09-15T14:54:03+00:00",
+    "synced_at": "2026-09-15T23:06:13+00:00",
     "merged_count": 4765,
-    "product_count": 220,
+    "product_count": 221,
     "category_browsing_enabled": true,
-    "listing_count": 220,
+    "listing_count": 221,
     "option_family_count": 181,
     "deduplication": {
       "brands_checked": 270,
       "groups": 2866,
       "removed": 4765
     },
-    "revision": "c8b3088262f7c587",
+    "revision": "e3b98fb615a654e1",
     "view": "rental"
   },
   "brands": [
@@ -501,9 +501,9 @@
         "dji-official:b:service:107:101.228.1",
         "dji-official:b:service:107:101.228.2"
       ],
-      "count": 928,
+      "count": 929,
       "purchase_count": 918,
-      "rental_count": 10,
+      "rental_count": 11,
       "category_ids": [
         "naver:b:dji:50000206",
         "naver:b:dji:50001394",
@@ -780,10 +780,10 @@
         "dji-official:b:refurbished",
         "dji-official:b:refurbished:refurbished-product-section-mavicgoggles-1",
         "dji-official:b:refurbished:refurbished-product-section-osmo-1",
-        "rental-brand:dji:8",
-        "rental-brand:dji:145",
         "rental-brand:dji:2",
         "rental-brand:dji:27",
+        "rental-brand:dji:8",
+        "rental-brand:dji:145",
         "rental-brand:dji:25",
         "rental-brand:dji:7",
         "rental-brand:dji:135",
@@ -11346,6 +11346,24 @@
   ],
   "categories": [
     {
+      "id": "naver:b:dji:50000206",
+      "name": "카메라/캠코더용품",
+      "parent_id": null,
+      "brand_id": "dji"
+    },
+    {
+      "id": "naver:b:dji:50001394",
+      "name": "카메라/캠코더 관련용품",
+      "parent_id": "naver:b:dji:50000206",
+      "brand_id": "dji"
+    },
+    {
+      "id": "naver:b:dji:50002113",
+      "name": "기타카메라/캠코더용품",
+      "parent_id": "naver:b:dji:50001394",
+      "brand_id": "dji"
+    },
+    {
       "id": "naver:p:50002113",
       "name": "기타카메라/캠코더용품",
       "parent_id": null,
@@ -11590,24 +11608,6 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "avenger"
-    },
-    {
-      "id": "naver:b:dji:50000206",
-      "name": "카메라/캠코더용품",
-      "parent_id": null,
-      "brand_id": "dji"
-    },
-    {
-      "id": "naver:b:dji:50001394",
-      "name": "카메라/캠코더 관련용품",
-      "parent_id": "naver:b:dji:50000206",
-      "brand_id": "dji"
-    },
-    {
-      "id": "naver:b:dji:50002113",
-      "name": "기타카메라/캠코더용품",
-      "parent_id": "naver:b:dji:50001394",
-      "brand_id": "dji"
     },
     {
       "id": "naver:p:50000266",
@@ -13809,6 +13809,20 @@
       "source_id": null
     },
     {
+      "id": "rental-brand:dji:2",
+      "name": "카메라",
+      "parent_id": null,
+      "brand_id": "dji",
+      "scope": "rental-brand"
+    },
+    {
+      "id": "rental-brand:dji:27",
+      "name": "액션캠·포켓 카메라",
+      "parent_id": "rental-brand:dji:2",
+      "brand_id": "dji",
+      "scope": "rental-brand"
+    },
+    {
       "id": "rental-brand:nanlite:4",
       "name": "조명",
       "parent_id": null,
@@ -13897,20 +13911,6 @@
       "name": "스트로보·플래시",
       "parent_id": "rental-brand:profoto:4",
       "brand_id": "profoto",
-      "scope": "rental-brand"
-    },
-    {
-      "id": "rental-brand:dji:2",
-      "name": "카메라",
-      "parent_id": null,
-      "brand_id": "dji",
-      "scope": "rental-brand"
-    },
-    {
-      "id": "rental-brand:dji:27",
-      "name": "액션캠·포켓 카메라",
-      "parent_id": "rental-brand:dji:2",
-      "brand_id": "dji",
       "scope": "rental-brand"
     },
     {
@@ -14867,6 +14867,73 @@
     }
   ],
   "products": [
+    {
+      "id": "smartstore-13762129935",
+      "name": "디지아이 DJI Osmo Pocket 4P 오즈모포켓4P 스탠더드",
+      "brand_id": "dji",
+      "kind": "rental",
+      "price": 25000,
+      "sale_price": 25000,
+      "status": "sale",
+      "category_ids": [
+        "naver:b:dji:50000206",
+        "naver:b:dji:50001394",
+        "naver:b:dji:50002113",
+        "rental-brand:dji:2",
+        "rental-brand:dji:27"
+      ],
+      "type_ids": [
+        "naver:p:50002113",
+        "type:kpp:c0",
+        "type:kpp:c020",
+        "rent:2",
+        "rent:27"
+      ],
+      "promotion_ids": [],
+      "offers": [
+        {
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13762129935",
+          "status": "sale",
+          "price": 25000,
+          "id": "smartstore-13762129935"
+        }
+      ],
+      "supplier_status": null,
+      "image": "https://shop-phinf.pstatic.net/20260915_214/1789455307029McRTD_JPEG/123588148250053093_1164744046.jpg",
+      "detail_bucket": "8a",
+      "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 25000,
+        "period": "12시간",
+        "rate_count": 2
+      },
+      "discovery": {
+        "tags": [
+          "DJI",
+          "장비 렌탈",
+          "액션캠"
+        ],
+        "search_terms": [
+          "DJI",
+          "장비 렌탈",
+          "액션캠",
+          "기타카메라/캠코더용품",
+          "액션캠·포켓 카메라",
+          "디제이아이",
+          "dji",
+          "디지아이",
+          "촬영장비 대여",
+          "장비 대여"
+        ],
+        "categories": [
+          "기타카메라/캠코더용품",
+          "액션캠·포켓 카메라"
+        ],
+        "description": "디지아이 DJI Osmo Pocket 4P 오즈모포켓4P 스탠더드 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
+      }
+    },
     {
       "id": "smartstore-13704209907",
       "name": "난라이트 NANLITE MixPanel 60 LED 믹스패널 컬러조명",

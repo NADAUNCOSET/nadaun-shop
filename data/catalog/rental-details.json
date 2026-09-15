@@ -1,4 +1,58 @@
 {
+  "smartstore-13762129935": {
+    "rental": {
+      "rates": [
+        {
+          "label": "12시간",
+          "hours": 12,
+          "price": 25000
+        },
+        {
+          "label": "24시간",
+          "hours": 24,
+          "price": 30000
+        }
+      ],
+      "components": [
+        {
+          "name": "Osmo Pocket 4P",
+          "quantity": 1
+        },
+        {
+          "name": "USB-C to C PD Cable",
+          "quantity": 1
+        },
+        {
+          "name": "Osmo Pocket 4P 보관 백",
+          "quantity": 1
+        },
+        {
+          "name": "Osmo Pocket 4 필라이트",
+          "quantity": 1
+        },
+        {
+          "name": "Osmo Pocket 4 핸들(1/4나사선)",
+          "quantity": 1
+        },
+        {
+          "name": "DJI 손목 스트렙",
+          "quantity": 1
+        }
+      ],
+      "notes": [],
+      "packing_confirmation_required": false,
+      "period_confirmation_required": false
+    },
+    "images": {
+      "thumb": "https://shop-phinf.pstatic.net/20260915_214/1789455307029McRTD_JPEG/123588148250053093_1164744046.jpg",
+      "main": [
+        "https://shop-phinf.pstatic.net/20260915_214/1789455307029McRTD_JPEG/123588148250053093_1164744046.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20260915_249/1789455116665r0kvC_JPEG/17828882040.jpg"
+      ]
+    }
+  },
   "smartstore-13704209907": {
     "rental": {
       "rates": [

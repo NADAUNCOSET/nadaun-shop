@@ -1,15 +1,15 @@
 {
   "source": "smartstore",
   "source_url": "https://smartstore.naver.com/rainbowbene",
-  "collected_at": "2026-09-14T23:01:44+00:00",
+  "collected_at": "2026-09-15T23:01:47+00:00",
   "complete": true,
-  "origin_count": 8947,
-  "product_count": 7161,
+  "origin_count": 8871,
+  "product_count": 7162,
   "status_counts": {
-    "SALE/ON": 6712,
+    "SALE/ON": 6713,
     "OUTOFSTOCK/ON": 449,
-    "SUSPENSION/ON": 42,
-    "SUSPENSION/SUSPENSION": 1456,
+    "SUSPENSION/ON": 41,
+    "SUSPENSION/SUSPENSION": 1380,
     "SALE/SUSPENSION": 191,
     "PROHIBITION/ON": 85,
     "OUTOFSTOCK/SUSPENSION": 6,
@@ -17,6 +17,39 @@
     "CLOSE/SUSPENSION": 5
   },
   "products": {
+    "smartstore-13762129935": {
+      "id": "smartstore-13762129935",
+      "source": "smartstore",
+      "source_id": "13762129935",
+      "origin_id": "13701302535",
+      "name": "[ 대여 레인보우베네 ] 디지아이 DJI Osmo Pocket 4P 오즈모포켓4P 스탠더드",
+      "brand": "DJI",
+      "manufacturer": "DJI",
+      "source_url": "https://smartstore.naver.com/rainbowbene/products/13762129935",
+      "price": 25000,
+      "sale_price": 25000,
+      "status": "sale",
+      "kind": "rental",
+      "images": {
+        "thumb": "https://shop-phinf.pstatic.net/20260915_214/1789455307029McRTD_JPEG/123588148250053093_1164744046.jpg",
+        "main": [],
+        "detail": []
+      },
+      "source_category_id": "50002113",
+      "source_category_ids": [
+        "50000003",
+        "50000206",
+        "50001394",
+        "50002113"
+      ],
+      "source_category_path": [
+        "디지털/가전",
+        "카메라/캠코더용품",
+        "카메라/캠코더 관련용품",
+        "기타카메라/캠코더용품"
+      ],
+      "source_modified_at": "2026-09-15T15:55:09.462+09:00"
+    },
     "smartstore-13752020115": {
       "id": "smartstore-13752020115",
       "source": "smartstore",
@@ -23234,18 +23267,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50002074",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001394",
-        "50002113"
+        "50001389",
+        "50002074"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "삼각대/헤드",
+        "삼각대"
       ],
       "source_modified_at": "2026-09-04T02:10:56.948+09:00"
     },
@@ -26006,18 +26039,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50002077",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001394",
-        "50002113"
+        "50001389",
+        "50002077"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "삼각대/헤드",
+        "플레이트/퀵슈"
       ],
       "source_modified_at": "2026-09-04T02:10:48.556+09:00"
     },
@@ -185396,18 +185429,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50002082",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001394",
-        "50002113"
+        "50001390",
+        "50002082"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "플래시/조명용품",
+        "배경/노출용품"
       ],
       "source_modified_at": "2026-09-08T12:23:45.747+09:00"
     },
@@ -234178,18 +234211,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50002082",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001394",
-        "50002113"
+        "50001390",
+        "50002082"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "플래시/조명용품",
+        "배경/노출용품"
       ],
       "source_modified_at": "2026-09-08T15:28:06.576+09:00"
     },

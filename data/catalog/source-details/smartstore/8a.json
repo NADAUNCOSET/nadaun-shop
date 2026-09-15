@@ -515,5 +515,38 @@
     "source_modified_at": "2026-09-08T21:57:20.407+09:00",
     "checked_at": "2026-09-08T16:16:17+00:00",
     "checked_epoch": 1788884177
+  },
+  "smartstore-13762129935": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20260915_214/1789455307029McRTD_JPEG/123588148250053093_1164744046.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20260915_249/1789455116665r0kvC_JPEG/17828882040.jpg"
+      ]
+    },
+    "description_text": "구성품\nOsmo Pocket 4P\n// 1ea\nUSB-C to C PD Cable\n// 1EA\nOsmo Pocket 4P 보관 백\n// 1EA\nOsmo Pocket 4 필라이트 // 1EA\nOsmo Pocket 4 핸들(1/4나사선) // 1EA\nDJI 손목 스트렙 // 1EA\n​",
+    "option_groups": [
+      "대여시간"
+    ],
+    "options": [
+      {
+        "name": "12시간",
+        "additional_price": 0
+      },
+      {
+        "name": "24시간",
+        "additional_price": 5000
+      }
+    ],
+    "shipping": {
+      "type": "FREE",
+      "base_fee": 0,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-09-15T15:55:09.462+09:00",
+    "checked_at": "2026-09-15T23:06:25+00:00",
+    "checked_epoch": 1789513585
   }
 }
