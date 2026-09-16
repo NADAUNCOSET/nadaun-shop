@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "brands_checked": 270,
-  "input_count": 24285,
-  "duplicate_group_count": 2866,
-  "duplicate_entries_removed": 4765,
+  "input_count": 24295,
+  "duplicate_group_count": 2869,
+  "duplicate_entries_removed": 4772,
   "by_brand": {
-    "tilta": 281,
+    "tilta": 284,
     "avenger": 10,
     "smallrig": 922,
     "hollyland": 113,
@@ -1453,7 +1453,7 @@
         {
           "id": "plthink-1929300",
           "name": "[TILTA] 틸타 스마트 V마운트 배터리 플레이트 PD 전원 공급 TA-BTP3-V-B",
-          "price": 250000,
+          "price": 258000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1929300"
         },
@@ -1487,6 +1487,13 @@
           "price": 193000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11952498534"
+        },
+        {
+          "id": "plthink-1930453",
+          "name": "[TILTA] 틸타 히드라 전자 석션컵 4.5인치 NATO 마운트 키트 HDA-ESC-NMB-45",
+          "price": 193000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930453"
         },
         {
           "id": "avx-1677",
@@ -3876,6 +3883,13 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1788230863"
         },
         {
+          "id": "plthink-1930449",
+          "name": "[TILTA] 틸타 소니 FX5 카메라 풀케이지 아르카타입 블랙 TA-T108-FCC-B",
+          "price": 172000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930449"
+        },
+        {
           "id": "avx-3071",
           "name": "틸타 Sony FX5용 풀 카메라 케이지 TA-T108-FCC-B",
           "price": 172000,
@@ -3905,6 +3919,13 @@
           "price": 294000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13744821015"
+        },
+        {
+          "id": "plthink-1930451",
+          "name": "[TILTA] 틸타 소니 FX5 카메라 풀케이지 베이스 키트 아르카타입 TA-T108-A-B",
+          "price": 294000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930451"
         },
         {
           "id": "avx-3072",
@@ -3956,11 +3977,18 @@
     {
       "brand_id": "tilta",
       "kind": "purchase",
-      "primary_id": "avx-3074",
+      "primary_id": "plthink-1930450",
       "evidence": [
         "model:TA-T108-C-B"
       ],
       "members": [
+        {
+          "id": "plthink-1930450",
+          "name": "[TILTA] 틸타 소니 FX5 카메라 풀케이지 프로 키트 아르카타입 TA-T108-C-B",
+          "price": 466000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930450"
+        },
         {
           "id": "avx-3074",
           "name": "틸타 Sony FX5용 카메라 케이지 프로 키트 TA-T108-C-B",
@@ -16708,7 +16736,7 @@
         {
           "id": "plthink-1929301",
           "name": "[TILTA] 틸타 MB-T12 카본 매트박스 4x5.65 시네마 렌즈 촬영",
-          "price": 836000,
+          "price": 865000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1929301"
         },
@@ -23262,7 +23290,7 @@
         {
           "id": "plthink-1924564",
           "name": "[Blackmagic Design] ATEM 1 M/E Constellation 4K",
-          "price": 3278000,
+          "price": 2628000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1924564"
         },
@@ -44624,6 +44652,78 @@
           "price": 35900,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=3242"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "plthink-1930455",
+      "evidence": [
+        "model:TA-UCS-B"
+      ],
+      "members": [
+        {
+          "id": "plthink-1930455",
+          "name": "[TILTA] 틸타 유니버셜 카메라 쿨러 유선 냉각 시스템 TA-UCS-B",
+          "price": 68000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930455"
+        },
+        {
+          "id": "clmedia-3254",
+          "name": "틸타 TA-UCS-B 유니버셜 냉각 쿨링 시스템",
+          "price": 68000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3254"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "plthink-1930454",
+      "evidence": [
+        "model:TA-UCSK-B"
+      ],
+      "members": [
+        {
+          "id": "plthink-1930454",
+          "name": "[TILTA] 틸타 유니버셜 카메라 쿨러 무선 냉각 시스템 파워 키트 TA-UCSK-B",
+          "price": 85000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930454"
+        },
+        {
+          "id": "clmedia-3255",
+          "name": "틸타 TA-UCSK-B 유니버셜 냉각 쿨링 시스템 파워 키트",
+          "price": 85000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3255"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "plthink-1930448",
+      "evidence": [
+        "model:TA-T108-FCC-TG"
+      ],
+      "members": [
+        {
+          "id": "plthink-1930448",
+          "name": "[TILTA] 틸타 소니 FX5 카메라 풀케이지 아르카타입 티타늄그레이 TA-T108-FCC-TG",
+          "price": 172000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930448"
+        },
+        {
+          "id": "clmedia-3258",
+          "name": "틸타 TA-T108-FCC-TG 소니 FX5 풀 카메라 케이지 (티타늄그레이)",
+          "price": 172000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3258"
         }
       ]
     },
@@ -66683,7 +66783,7 @@
         {
           "id": "plthink-1920459",
           "name": "[Blackmagic Design] HyperDeck Studio 4K Pro",
-          "price": 2868000,
+          "price": 2298000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1920459"
         }
@@ -71265,7 +71365,7 @@
         {
           "id": "plthink-1923312",
           "name": "[Blackmagic Design] Studio Camera 4K Pro G2",
-          "price": 3278000,
+          "price": 2628000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1923312"
         }
@@ -72297,7 +72397,7 @@
         {
           "id": "plthink-1923634",
           "name": "[Blackmagic Design] HyperDeck Extreme 4K HDR",
-          "price": 5368000,
+          "price": 4298000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1923634"
         }
@@ -72705,7 +72805,7 @@
         {
           "id": "plthink-1923686",
           "name": "[Blackmagic Design] ATEM 4 M/E Constellation 4K",
-          "price": 16580000,
+          "price": 13280000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1923686"
         }
@@ -72753,7 +72853,7 @@
         {
           "id": "plthink-1923690",
           "name": "[Blackmagic Design] ATEM Television Studio 4K8",
-          "price": 8648000,
+          "price": 6918000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1923690"
         }
@@ -73137,7 +73237,7 @@
         {
           "id": "plthink-1923740",
           "name": "[Blackmagic Design] Ultimatte 12 4K",
-          "price": 4688000,
+          "price": 3748000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1923740"
         }
@@ -74986,7 +75086,7 @@
         {
           "id": "plthink-1924557",
           "name": "[Blackmagic Design] 2110 IP Converter 4x12G PWR",
-          "price": 3598000,
+          "price": 2878000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1924557"
         }
@@ -75154,7 +75254,7 @@
         {
           "id": "plthink-1924565",
           "name": "[Blackmagic Design] ATEM 2 M/E Constellation 4K",
-          "price": 7638000,
+          "price": 6118000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1924565"
         }
@@ -78178,7 +78278,7 @@
         {
           "id": "plthink-1928096",
           "name": "[Blackmagic Design] Streaming Decoder 4K",
-          "price": 1208000,
+          "price": 961800,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1928096"
         }
@@ -78202,7 +78302,7 @@
         {
           "id": "plthink-1928097",
           "name": "[Blackmagic Design] Streaming Encoder 4K",
-          "price": 1208000,
+          "price": 961800,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1928097"
         }
@@ -79738,7 +79838,7 @@
         {
           "id": "plthink-1930433",
           "name": "[Blackmagic Design] HyperDeck Shuttle 4K Pro",
-          "price": 2608000,
+          "price": 2088000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930433"
         }
@@ -79762,7 +79862,7 @@
         {
           "id": "plthink-1930434",
           "name": "[Blackmagic Design] HyperDeck Shuttle 4K Pro 2TB",
-          "price": 5188000,
+          "price": 4148000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930434"
         }
