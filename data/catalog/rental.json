@@ -201,7 +201,7 @@
       "onnoff": 1064,
       "avx": 1331
     },
-    "synced_at": "2026-09-16T17:25:56+00:00",
+    "synced_at": "2026-09-16T23:06:14+00:00",
     "merged_count": 4772,
     "product_count": 221,
     "category_browsing_enabled": true,
@@ -212,7 +212,7 @@
       "groups": 2869,
       "removed": 4772
     },
-    "revision": "684d70a486ed8c54",
+    "revision": "6e3c23f316fe9b40",
     "view": "rental"
   },
   "brands": [
@@ -2876,7 +2876,7 @@
         "rental-brand:fxlion:46"
       ],
       "representative_id": "kpp-1646980198",
-      "representative_image": "https://kppkpp.co.kr/data/item/1646980198/64KY64W47YisV66eI7Jq07Yq467Cw7YSw66as98Wh.jpg",
+      "representative_image": "https://kppkpp.co.kr/data/item/1646980198/ymbnrybn.jpg",
       "representative_name": "FXLION 나노 투 V마운트 배터리 98Wh",
       "representative_alternate": "https://kppkpp.co.kr/data/item/1646980198/nano_two_mini_02.jpg",
       "image_kind": "logo",
@@ -5423,6 +5423,7 @@
         "avx:b:e14317c0cdf962dd",
         "naver:b:gitzo:50000206",
         "naver:b:gitzo:50001389",
+        "naver:b:gitzo:50002074",
         "naver:b:gitzo:50002076"
       ],
       "count": 9,
@@ -5432,6 +5433,7 @@
         "naver:b:gitzo:50000206",
         "naver:b:gitzo:50001389",
         "naver:b:gitzo:50002076",
+        "naver:b:gitzo:50002074",
         "avx:b:e14317c0cdf962dd",
         "avx:b:1d9592a776356f0a",
         "avx:b:dcc842507d05de24"
