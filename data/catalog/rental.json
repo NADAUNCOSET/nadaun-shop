@@ -201,7 +201,7 @@
       "onnoff": 1064,
       "avx": 1331
     },
-    "synced_at": "2026-09-16T16:25:36+00:00",
+    "synced_at": "2026-09-16T17:25:56+00:00",
     "merged_count": 4772,
     "product_count": 221,
     "category_browsing_enabled": true,
@@ -212,7 +212,7 @@
       "groups": 2869,
       "removed": 4772
     },
-    "revision": "a606e6702e2c3dca",
+    "revision": "684d70a486ed8c54",
     "view": "rental"
   },
   "brands": [
@@ -2369,8 +2369,8 @@
         "avx:b:fad951a3b3751da2",
         "avx:b:fc70f4be399c9a2e"
       ],
-      "count": 160,
-      "purchase_count": 151,
+      "count": 159,
+      "purchase_count": 150,
       "rental_count": 9,
       "category_ids": [
         "naver:b:aputure:50000206",
@@ -7750,16 +7750,18 @@
       ],
       "logo": "https://www.plthink.com/shopimages/plthink/0081270000133.jpg?1768279826",
       "navigation_category_ids": [
+        "avx:b:0325288385e8bb01",
         "avx:b:47698d3c4c7bdd8a",
         "avx:b:8289cdcbe7edee03",
+        "avx:b:f48a963f61ef7472",
         "plthink:b:127",
         "plthink:b:127:001",
         "plthink:b:127:002",
         "plthink:b:127:003",
         "plthink:b:127:004"
       ],
-      "count": 15,
-      "purchase_count": 15,
+      "count": 16,
+      "purchase_count": 16,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:127",
@@ -7767,6 +7769,8 @@
         "plthink:b:127:004",
         "plthink:b:127:002",
         "plthink:b:127:003",
+        "avx:b:0325288385e8bb01",
+        "avx:b:f48a963f61ef7472",
         "avx:b:47698d3c4c7bdd8a",
         "avx:b:8289cdcbe7edee03"
       ],
