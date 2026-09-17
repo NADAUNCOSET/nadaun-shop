@@ -179,7 +179,7 @@
     "source_counts": {
       "kpp": 4024,
       "smartstore": 7162,
-      "imweb-dji": 149,
+      "imweb-dji": 151,
       "imweb-promotions": 37,
       "l-mount": 335,
       "plthink": 6630,
@@ -201,7 +201,7 @@
       "onnoff": 1064,
       "avx": 1336
     },
-    "synced_at": "2026-09-17T17:51:31+00:00",
+    "synced_at": "2026-09-17T23:09:39+00:00",
     "merged_count": 4777,
     "product_count": 221,
     "category_browsing_enabled": true,
@@ -212,7 +212,7 @@
       "groups": 2872,
       "removed": 4777
     },
-    "revision": "eb714079261d34a2",
+    "revision": "7756374acdfa46c7",
     "view": "rental"
   },
   "brands": [
@@ -1139,6 +1139,8 @@
         "naver:b:smallrig:50003118",
         "naver:b:smallrig:50000205",
         "naver:b:smallrig:50006369",
+        "naver:b:smallrig:50001392",
+        "naver:b:smallrig:50002092",
         "naver:b:smallrig:50000264",
         "naver:b:smallrig:50002100",
         "plthink:b:084",

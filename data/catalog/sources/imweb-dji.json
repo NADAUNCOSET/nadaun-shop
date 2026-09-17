@@ -2,7 +2,7 @@
   "source": "imweb",
   "source_url": "https://rainbowshop.imweb.me/",
   "brand": "DJI",
-  "collected_at": "2026-09-16T23:01:43+00:00",
+  "collected_at": "2026-09-17T23:05:08+00:00",
   "complete": true,
   "categories": [
     {
@@ -565,8 +565,96 @@
       ]
     }
   ],
-  "product_count": 149,
+  "product_count": 151,
   "products": {
+    "imweb-13892": {
+      "id": "imweb-13892",
+      "source": "imweb",
+      "source_id": "13892",
+      "name": "[ 디지아이 레인보우베네 ] DJI SDR Transmission 2 콤보",
+      "brand": "DJI",
+      "manufacturer": "DJI",
+      "source_url": "https://rainbowshop.imweb.me/shop_view/13892",
+      "price": 719000,
+      "sale_price": 719000,
+      "status": "sale",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://cdn.imweb.me/upload/S2020100856a601720ff3b/9025f167ee5db.png",
+        "main": [
+          "https://cdn.imweb.me/upload/S2020100856a601720ff3b/9025f167ee5db.png"
+        ],
+        "detail": [
+          "https://shop-phinf.pstatic.net/20260915_39/1789426449539Sx6ON_PNG/1.png?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_217/1789426450601We2yq_PNG/2.png?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_147/1789426451457Cy18O_JPEG/3.jpg?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_287/17894264498424qRee_JPEG/4.jpg?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_85/1789426451180Nu2Wq_JPEG/5.jpg?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_167/1789426451271PuqeD_JPEG/6.jpg?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_244/1789426451066KFFHT_JPEG/7.jpg?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_54/1789426451509C6POV_JPEG/8.jpg?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_257/1789426451221dvSQL_JPEG/9.jpg?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_266/1789426452578HB86k_JPEG/10.jpg?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_48/1789426451842g5PoV_JPEG/11.jpg?type=w848"
+        ]
+      },
+      "description_text": "[[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2]",
+      "brand_category_ids": [
+        "s20220214975e339e7784c",
+        "s202309142cb44f374e5a1"
+      ],
+      "source_category_paths": [
+        [
+          "디지아이",
+          "트랜스미션 송수신기"
+        ]
+      ],
+      "source_modified_at": 1789652617
+    },
+    "imweb-13891": {
+      "id": "imweb-13891",
+      "source": "imweb",
+      "source_id": "13891",
+      "name": "[ 디지아이 레인보우베네 ] DJI SDR Transmission 2",
+      "brand": "DJI",
+      "manufacturer": "DJI",
+      "source_url": "https://rainbowshop.imweb.me/shop_view/13891",
+      "price": 405000,
+      "sale_price": 405000,
+      "status": "sale",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://cdn.imweb.me/upload/S2020100856a601720ff3b/40e9772c6842c.png",
+        "main": [
+          "https://cdn.imweb.me/upload/S2020100856a601720ff3b/40e9772c6842c.png"
+        ],
+        "detail": [
+          "https://shop-phinf.pstatic.net/20260915_39/1789426449539Sx6ON_PNG/1.png?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_217/1789426450601We2yq_PNG/2.png?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_147/1789426451457Cy18O_JPEG/3.jpg?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_287/17894264498424qRee_JPEG/4.jpg?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_85/1789426451180Nu2Wq_JPEG/5.jpg?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_167/1789426451271PuqeD_JPEG/6.jpg?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_244/1789426451066KFFHT_JPEG/7.jpg?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_54/1789426451509C6POV_JPEG/8.jpg?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_257/1789426451221dvSQL_JPEG/9.jpg?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_266/1789426452578HB86k_JPEG/10.jpg?type=w848",
+          "https://shop-phinf.pstatic.net/20260915_48/1789426451842g5PoV_JPEG/11.jpg?type=w848"
+        ]
+      },
+      "description_text": "[[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2][[ 디지아이 레인보우베네 ] DJI SDR Transmission 2]",
+      "brand_category_ids": [
+        "s20220214975e339e7784c",
+        "s202309142cb44f374e5a1"
+      ],
+      "source_category_paths": [
+        [
+          "디지아이",
+          "트랜스미션 송수신기"
+        ]
+      ],
+      "source_modified_at": 1789652618
+    },
     "imweb-13890": {
       "id": "imweb-13890",
       "source": "imweb",

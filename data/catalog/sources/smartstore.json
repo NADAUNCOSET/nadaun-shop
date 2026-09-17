@@ -1,7 +1,7 @@
 {
   "source": "smartstore",
   "source_url": "https://smartstore.naver.com/rainbowbene",
-  "collected_at": "2026-09-16T23:01:28+00:00",
+  "collected_at": "2026-09-17T23:04:53+00:00",
   "complete": true,
   "origin_count": 7841,
   "product_count": 7162,
@@ -131581,18 +131581,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50006972",
+      "source_category_id": "50024359",
       "source_category_ids": [
         "50000003",
         "50000209",
         "50001404",
-        "50006972"
+        "50024359"
       ],
       "source_category_path": [
         "디지털/가전",
         "음향가전",
         "마이크",
-        "전문가용마이크"
+        "PC마이크"
       ],
       "source_modified_at": "2026-07-31T13:23:22.516+09:00"
     },
@@ -169692,18 +169692,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50002092",
       "source_category_ids": [
         "50000003",
         "50000206",
-        "50001394",
-        "50002113"
+        "50001392",
+        "50002092"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "LCD용품/보호필름",
+        "LCD후드"
       ],
       "source_modified_at": "2026-01-20T15:58:32.702+09:00"
     },
@@ -213010,18 +213010,18 @@
         "main": [],
         "detail": []
       },
-      "source_category_id": "50002113",
+      "source_category_id": "50002100",
       "source_category_ids": [
         "50000003",
         "50000206",
         "50001394",
-        "50002113"
+        "50002100"
       ],
       "source_category_path": [
         "디지털/가전",
         "카메라/캠코더용품",
         "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
+        "촬영보조용품"
       ],
       "source_modified_at": "2025-11-19T14:02:28.735+09:00"
     },

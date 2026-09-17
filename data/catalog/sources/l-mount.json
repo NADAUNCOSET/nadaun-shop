@@ -2,7 +2,7 @@
   "complete": true,
   "source": "l-mount",
   "source_url": "https://www.l-mount.co.kr",
-  "collected_at": "2026-09-16T23:06:14+00:00",
+  "collected_at": "2026-09-17T23:09:39+00:00",
   "categories": [
     {
       "id": "003",
@@ -9886,40 +9886,6 @@
       "detail_status": "verified",
       "supplier_status": "inquiry"
     },
-    "ldl-1000000111": {
-      "id": "ldl-1000000111",
-      "source_id": "1000000111",
-      "source": "l-mount",
-      "source_url": "https://www.l-mount.co.kr/goods/goods_view.php?goodsNo=1000000111",
-      "name": "엘디엘마운트 TV벽걸이브라켓 가스스프링 모니터암 티비거치대 APL-GST11",
-      "brand": "LDL-MOUNT",
-      "kind": "purchase",
-      "status": "inquiry",
-      "brand_category_ids": [
-        "001",
-        "001005"
-      ],
-      "images": {
-        "thumb": "https://godomall-storage.cdn-nhncommerce.com/d71bd79936e69ffeb21ef6dd62e55b2e/goods/1000000111/image/main/1000000111_main_058.jpg",
-        "main": [
-          "https://godomall-storage.cdn-nhncommerce.com/d71bd79936e69ffeb21ef6dd62e55b2e/goods/1000000111/image/detail/1000000111_detail_097.jpg",
-          "https://godomall-storage.cdn-nhncommerce.com/d71bd79936e69ffeb21ef6dd62e55b2e/goods/1000000111/image/detail/1000000111_detail_127.jpg",
-          "https://godomall-storage.cdn-nhncommerce.com/d71bd79936e69ffeb21ef6dd62e55b2e/goods/1000000111/image/detail/1000000111_detail_264.jpg",
-          "https://godomall-storage.cdn-nhncommerce.com/d71bd79936e69ffeb21ef6dd62e55b2e/goods/1000000111/image/detail/1000000111_detail_325.jpg"
-        ],
-        "detail": [
-          "https://image.fzonesports.co.kr/L-MOUNT/APL-GST11.jpg"
-        ]
-      },
-      "price": 47000,
-      "sale_price": 47000,
-      "description_text": "권장 수용인치 : 13~32인치 / 최대 수용무게 : 15kg / 기울기 : +15° ~ -15° / 좌우 회전 : +90° ~ -90° / 로테이션 회전 : 360° / 벽과의거리 : 74~412mm / 1개당 포장무게 : 2.3kg\n",
-      "options": [],
-      "option_groups": [],
-      "options_require_confirmation": false,
-      "detail_status": "verified",
-      "supplier_status": "inquiry"
-    },
     "ldl-1000000083": {
       "id": "ldl-1000000083",
       "source_id": "1000000083",
@@ -11081,6 +11047,40 @@
       "price": 53500,
       "sale_price": 53500,
       "description_text": "권장 수용인치 : 13~32인치 / 최대 수용무게 : 15kg / 기울기 : +15° ~ -15° / 좌우 회전 : +90° ~ -90° / 로테이션 회전 : 360° / 벽과의거리 : 74~622mm / 1개당 포장무게 : 2.5kg\n",
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": false,
+      "detail_status": "verified",
+      "supplier_status": "inquiry"
+    },
+    "ldl-1000000111": {
+      "id": "ldl-1000000111",
+      "source_id": "1000000111",
+      "source": "l-mount",
+      "source_url": "https://www.l-mount.co.kr/goods/goods_view.php?goodsNo=1000000111",
+      "name": "엘디엘마운트 TV벽걸이브라켓 가스스프링 모니터암 티비거치대 APL-GST11",
+      "brand": "LDL-MOUNT",
+      "kind": "purchase",
+      "status": "inquiry",
+      "brand_category_ids": [
+        "001",
+        "001005"
+      ],
+      "images": {
+        "thumb": "https://godomall-storage.cdn-nhncommerce.com/d71bd79936e69ffeb21ef6dd62e55b2e/goods/1000000111/image/main/1000000111_main_058.jpg",
+        "main": [
+          "https://godomall-storage.cdn-nhncommerce.com/d71bd79936e69ffeb21ef6dd62e55b2e/goods/1000000111/image/detail/1000000111_detail_097.jpg",
+          "https://godomall-storage.cdn-nhncommerce.com/d71bd79936e69ffeb21ef6dd62e55b2e/goods/1000000111/image/detail/1000000111_detail_127.jpg",
+          "https://godomall-storage.cdn-nhncommerce.com/d71bd79936e69ffeb21ef6dd62e55b2e/goods/1000000111/image/detail/1000000111_detail_264.jpg",
+          "https://godomall-storage.cdn-nhncommerce.com/d71bd79936e69ffeb21ef6dd62e55b2e/goods/1000000111/image/detail/1000000111_detail_325.jpg"
+        ],
+        "detail": [
+          "https://image.fzonesports.co.kr/L-MOUNT/APL-GST11.jpg"
+        ]
+      },
+      "price": 47000,
+      "sale_price": 47000,
+      "description_text": "권장 수용인치 : 13~32인치 / 최대 수용무게 : 15kg / 기울기 : +15° ~ -15° / 좌우 회전 : +90° ~ -90° / 로테이션 회전 : 360° / 벽과의거리 : 74~412mm / 1개당 포장무게 : 2.3kg\n",
       "options": [],
       "option_groups": [],
       "options_require_confirmation": false,
