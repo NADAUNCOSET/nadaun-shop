@@ -187,7 +187,7 @@
       "clmedia": 2206,
       "cinemall": 1217,
       "onnoff": 1064,
-      "avx": 1331
+      "avx": 1336
     },
     "detail_coverage": {
       "kpp": 4024,
@@ -199,20 +199,20 @@
       "clmedia": 2112,
       "cinemall": 1191,
       "onnoff": 1064,
-      "avx": 1331
+      "avx": 1336
     },
-    "synced_at": "2026-09-17T05:05:38+00:00",
-    "merged_count": 4772,
+    "synced_at": "2026-09-17T09:21:27+00:00",
+    "merged_count": 4777,
     "product_count": 221,
     "category_browsing_enabled": true,
     "listing_count": 221,
     "option_family_count": 181,
     "deduplication": {
       "brands_checked": 270,
-      "groups": 2869,
-      "removed": 4772
+      "groups": 2872,
+      "removed": 4777
     },
-    "revision": "2283339060e7e041",
+    "revision": "d4bc97c807c6ba03",
     "view": "rental"
   },
   "brands": [
@@ -1669,8 +1669,8 @@
         "cinemall:b:399",
         "cinemall:b:241",
         "avx:b:671e8d440abf32f5",
-        "avx:b:23da3d99a2e431dd",
         "avx:b:97490708d83da406",
+        "avx:b:23da3d99a2e431dd",
         "avx:b:4f14a3c92dbd2d86",
         "avx:b:e493dbaf766e1b65",
         "avx:b:ede033475a273f64",
@@ -29739,6 +29739,14 @@
     "clmedia-3257": "plthink-1930450",
     "avx-3077": "plthink-1930412",
     "clmedia-3261": "plthink-1930412",
+    "avx-3089": "kpp-1666147195",
+    "avx-3090": "plthink-1930006",
+    "clmedia-2855": "plthink-1930006",
+    "plthink-1927363": "kpp-1650848484",
+    "avx-3091": "kpp-1650848484",
+    "clmedia-2055": "kpp-1650848484",
+    "clmedia-3349": "avx-3092",
+    "clmedia-3348": "avx-3093",
     "avx-725": "kpp-1636611791",
     "avx-728": "plthink-1914801",
     "avx-736": "smartstore-8530356620",
@@ -31239,8 +31247,6 @@
     "clmedia-2049": "smartstore-13745228475",
     "clmedia-2051": "smartstore-13745228474",
     "clmedia-2052": "smartstore-13745228473",
-    "plthink-1927363": "kpp-1650848484",
-    "clmedia-2055": "kpp-1650848484",
     "smartstore-11387183039": "kpp-1734933336",
     "clmedia-2056": "kpp-1734933336",
     "onnoff-1156": "kpp-1734933336",
@@ -31997,7 +32003,6 @@
     "plthink-1929714": "smartstore-13744158304",
     "clmedia-2848": "smartstore-13744158304",
     "clmedia-2849": "plthink-1929718",
-    "clmedia-2855": "plthink-1930006",
     "clmedia-2857": "plthink-1930003",
     "smartstore-13745581756": "kpp-1606719988",
     "onnoff-433": "kpp-1606719988",

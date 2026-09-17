@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "brands_checked": 270,
-  "input_count": 24295,
-  "duplicate_group_count": 2869,
-  "duplicate_entries_removed": 4772,
+  "input_count": 24300,
+  "duplicate_group_count": 2872,
+  "duplicate_entries_removed": 4777,
   "by_brand": {
-    "tilta": 284,
+    "tilta": 287,
     "avenger": 10,
     "smallrig": 922,
     "hollyland": 113,
@@ -4033,6 +4033,148 @@
           "price": 68000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=3261"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "kpp-1666147195",
+      "evidence": [
+        "name:포켓팔로우포커스ff-t07"
+      ],
+      "members": [
+        {
+          "id": "kpp-1666147195",
+          "name": "틸타 포켓 팔로우 포커스 FF-T07",
+          "price": 104000,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1666147195"
+        },
+        {
+          "id": "avx-3089",
+          "name": "틸타 포켓 팔로우 포커스 FF-T07",
+          "price": 102000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3089"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "plthink-1930006",
+      "evidence": [
+        "model:TA-T100-B-B"
+      ],
+      "members": [
+        {
+          "id": "plthink-1930006",
+          "name": "[TILTA] 틸타 소니 A7V 카메라 풀케이지 탑핸들 키트 TA-T100-B-B",
+          "price": 154000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930006"
+        },
+        {
+          "id": "avx-3090",
+          "name": "틸타 Sony A7 V용 카메라 케이지 경량 키트 TA-T100-B-B",
+          "price": 154000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3090"
+        },
+        {
+          "id": "clmedia-2855",
+          "name": "틸타 TA-T100-B-B 소니 A7 V 풀케이지 경량키트",
+          "price": 154000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=2855"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "kpp-1650848484",
+      "evidence": [
+        "model:MB-T15",
+        "name:미니매트박스mb-t15"
+      ],
+      "members": [
+        {
+          "id": "kpp-1650848484",
+          "name": "틸타 미니 매트 박스 MB-T15",
+          "price": 119000,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1650848484"
+        },
+        {
+          "id": "plthink-1927363",
+          "name": "[TILTA] 틸타 MB-T15 클램프형 15mm 로드 서포트 카메라 미니 매트박스",
+          "price": 111000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1927363"
+        },
+        {
+          "id": "avx-3091",
+          "name": "틸타 미니 매트 박스 MB-T15",
+          "price": 114000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3091"
+        },
+        {
+          "id": "clmedia-2055",
+          "name": "틸타 MB-T15 미니 매트박스",
+          "price": 111000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=2055"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "avx-3092",
+      "evidence": [
+        "model:TA-T103-PTC-B"
+      ],
+      "members": [
+        {
+          "id": "avx-3092",
+          "name": "틸타 오즈모 포켓 4P용 보호 트래블 케이스 TA-T103-PTC-B",
+          "price": 33000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3092"
+        },
+        {
+          "id": "clmedia-3349",
+          "name": "틸타 TA-T103-PTC-B DJI 오즈모 포켓 4P 전용 하드쉘 보호 트래블 케이스 (블랙)",
+          "price": 33000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3349"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "avx-3093",
+      "evidence": [
+        "model:TA-T106-A"
+      ],
+      "members": [
+        {
+          "id": "avx-3093",
+          "name": "틸타 Luna Ultra용 ND 필터 키트 TA-T106-A",
+          "price": 85000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3093"
+        },
+        {
+          "id": "clmedia-3348",
+          "name": "틸타 TA-T106-A 인스타360 루나 울트라 전용 마그네틱 FSND 필터 키트 4종 (ND1.2/1.5/1.8/2.1)",
+          "price": 85000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3348"
         }
       ]
     },
@@ -30553,37 +30695,6 @@
       ]
     },
     {
-      "brand_id": "tilta",
-      "kind": "purchase",
-      "primary_id": "kpp-1650848484",
-      "evidence": [
-        "model:MB-T15"
-      ],
-      "members": [
-        {
-          "id": "kpp-1650848484",
-          "name": "틸타 미니 매트 박스 MB-T15",
-          "price": 119000,
-          "source": "kpp",
-          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1650848484"
-        },
-        {
-          "id": "plthink-1927363",
-          "name": "[TILTA] 틸타 MB-T15 클램프형 15mm 로드 서포트 카메라 미니 매트박스",
-          "price": 111000,
-          "source": "plthink",
-          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1927363"
-        },
-        {
-          "id": "clmedia-2055",
-          "name": "틸타 MB-T15 미니 매트박스",
-          "price": 111000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=2055"
-        }
-      ]
-    },
-    {
       "brand_id": "smallrig",
       "kind": "purchase",
       "primary_id": "kpp-1734933336",
@@ -41137,30 +41248,6 @@
           "price": 16000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2849"
-        }
-      ]
-    },
-    {
-      "brand_id": "tilta",
-      "kind": "purchase",
-      "primary_id": "plthink-1930006",
-      "evidence": [
-        "model:TA-T100-B-B"
-      ],
-      "members": [
-        {
-          "id": "plthink-1930006",
-          "name": "[TILTA] 틸타 소니 A7V 카메라 풀케이지 탑핸들 키트 TA-T100-B-B",
-          "price": 154000,
-          "source": "plthink",
-          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930006"
-        },
-        {
-          "id": "clmedia-2855",
-          "name": "틸타 TA-T100-B-B 소니 A7 V 풀케이지 경량키트",
-          "price": 154000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=2855"
         }
       ]
     },
