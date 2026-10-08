@@ -12,6 +12,9 @@ CREATE TABLE IF NOT EXISTS shop_orders (
   quote_version INTEGER NOT NULL DEFAULT 0,
   quote_expires INTEGER,
   payment_key TEXT UNIQUE,
+  payment_provider TEXT,
+  payment_auth_cipher TEXT,
+  payment_receipt_cipher TEXT,
   payment_mode TEXT CHECK(payment_mode IN ('test','live')),
   confirm_key TEXT NOT NULL UNIQUE,
   fulfillment TEXT NOT NULL DEFAULT 'unfulfilled' CHECK(fulfillment IN ('unfulfilled','processing','shipped')),
@@ -33,3 +36,16 @@ CREATE TABLE IF NOT EXISTS shop_rate_limits (
   key TEXT PRIMARY KEY, attempts INTEGER NOT NULL, expires_at INTEGER NOT NULL
 );
 CREATE INDEX IF NOT EXISTS shop_rate_limits_expiry ON shop_rate_limits(expires_at);
+CREATE TABLE IF NOT EXISTS shop_documents (
+  order_id TEXT PRIMARY KEY REFERENCES shop_orders(id),
+  kind TEXT NOT NULL CHECK(kind IN ('card_receipt','cash_receipt','tax_invoice')),
+  status TEXT NOT NULL CHECK(status IN ('queued','processing','issued','retry','review','voided')),
+  result_cipher TEXT NOT NULL,
+  attempts INTEGER NOT NULL DEFAULT 0,
+  next_attempt INTEGER NOT NULL DEFAULT 0,
+  lease_until INTEGER NOT NULL DEFAULT 0,
+  created_at INTEGER NOT NULL,
+  updated_at INTEGER NOT NULL,
+  version INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS shop_documents_due ON shop_documents(status,next_attempt);

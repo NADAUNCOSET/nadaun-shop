@@ -31,7 +31,7 @@ CODE=['_scraper/shipping_policy.py','_scraper/test_shop_shipping.py','assets/sho
 
 CODE += ['_scraper/gift_product_details.py','_scraper/source_transport.py','_scraper/plthink_checkpoint.py','_scraper/sync_plthink_catalog.py',
          '_scraper/sync_gift_inventory.py','_scraper/partner_worker.py','_scraper/install_partner_workers.py']
-CODE += ['server/commerce','assets/shop/commerce.js','assets/shop/commerce.css','_scraper/commerce_setup.cjs']
+CODE += ['package.json','package-lock.json','_scraper/sync_ldl_catalog.py','_scraper/test_shop_ldl.py','_scraper/commerce_jobs.cjs','server/commerce','assets/shop/commerce.js','assets/shop/commerce.css','_scraper/commerce_setup.cjs']
 CODE += ['_scraper/brand_category_policy.py','_scraper/partner_sync_status.py','_scraper/partner-sync-plan.json']
 CODE += ['assets/shop/storefront.css','assets/shop/scenes.js','assets/shop/browse.js','_scraper/category_gallery.py','_scraper/sync_avx_catalog.py','_scraper/avx_worker.py','_scraper/test_avx_catalog.py']
 CODE += ['_scraper/test_partner_sync_status.py']
@@ -186,7 +186,7 @@ def run(publish=True,existing=False,source_updates=None):
         command('node','--check','assets/shop/shop.js')
         command('node','--check','assets/shop/cart.js')
         command('node','--check','assets/shop/motion.js')
-        command('node','--test','_scraper/tests/product-server.test.cjs','_scraper/tests/catalog-tools.test.mjs','_scraper/tests/discovery.test.cjs','_scraper/tests/cart.test.cjs','_scraper/tests/banners.test.mjs','_scraper/tests/motion.test.mjs','_scraper/tests/browse.test.mjs','_scraper/tests/scenes.test.mjs','_scraper/tests/commerce.test.cjs','_scraper/tests/commerce-ui.test.cjs')
+        command('node','--test','_scraper/tests/product-server.test.cjs','_scraper/tests/catalog-tools.test.mjs','_scraper/tests/discovery.test.cjs','_scraper/tests/cart.test.cjs','_scraper/tests/banners.test.mjs','_scraper/tests/motion.test.mjs','_scraper/tests/browse.test.mjs','_scraper/tests/scenes.test.mjs','_scraper/tests/commerce.test.cjs','_scraper/tests/commerce-ui.test.cjs','_scraper/tests/inicis.test.cjs')
         if command('git','diff','--name-only','--',*CODE):
             raise RuntimeError('Uncommitted catalogue code changed during build; review before publication')
         if publish:

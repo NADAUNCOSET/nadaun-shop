@@ -9,7 +9,9 @@ const {quoteCatalog}=require('../../server/commerce/pricing.cjs');
 const {protect,sessions,passwordHash,hash}=require('../../server/commerce/security.cjs');
 const {endpoint}=require('../../server/commerce/http.cjs');
 const {database}=require('../../server/commerce/d1.cjs');
-const {toss}=require('../../server/commerce/toss.cjs');
+const {documentService,managementKey}=require('../../server/commerce/documents.cjs');
+const {evidenceFields}=require('../../server/commerce/evidence.cjs');
+const {inicis}=require('../../server/commerce/inicis.cjs');
 const secret='ab'.repeat(32),owner=hash('customer-one'),other=hash('customer-two');
 const customer={name:'테스트 고객',phone:'010-0000-0000',postcode:'01234',address:'테스트시 테스트로 123',address_detail:'테스트동',consent:true};
 const item={id:'p1',option:'블랙',quantity:2};
@@ -19,7 +21,7 @@ test('supplier variant availability is enforced before a server quote is created
   assert.throws(()=>quoteCatalog(catalog,()=>({options:[{name:'화이트',additional_price:0,...state}]}),[{id:'p',option:'화이트',quantity:1}],()=>now),{status:409});
  }
 });
-function fixture(){
+function fixture({invoice=null,evidence}={}){
  let now=Date.parse('2026-09-08T00:00:00Z');const clock=()=>now;
  const sql=new DatabaseSync(':memory:');sql.exec(fs.readFileSync(path.join(root,'server/commerce/schema.sql'),'utf8'));
  const db={async batch(statements){sql.exec('BEGIN');try{const result=statements.map(s=>sql.prepare(s.sql).all(...(s.params||[])));sql.exec('COMMIT');return result;}catch(error){sql.exec('ROLLBACK');throw error;}},async query(statement,params=[]){return (await this.batch([{sql:statement,params}]))[0];}};
@@ -28,11 +30,13 @@ function fixture(){
   {id:'p2',kind:'purchase',name:'중량 스탠드',status:'inquiry',price:20000,sale_price:10000,offers:[{source:'kpp'}],shipping_class:'heavy_stand',image:'/stand.jpg'}]};
  const details={p1:{options:[{name:'블랙',additional_price:1000}]},p2:{}};
  const repo=repository(db,clock),calls=[],remote={};
- const payment={clientKey:'test_gck_fixture',mode:'test',async confirm(input,key){calls.push({input,key});Object.assign(remote,{orderId:input.orderId,paymentKey:input.paymentKey,totalAmount:input.amount,currency:'KRW',status:'DONE'});},async get(){return {...remote};}};
- const service=orderService({repo,catalog,detail:p=>details[p.id],dataKey:secret,payment,clock});
- const create=()=>service.create(owner,'idempotency_fixture',{customer,items:[item],total:1});
- async function started(){let order=await create();order=await service.approve(order.id,{version:order.version,stock_confirmed:true});await service.start(order.id,owner,order.quote_version);return await repo.get(order.id);}
- return {sql,db,repo,catalog,details,clock,advance:ms=>now+=ms,service,payment,calls,remote,create,started};
+ const adapter=inicis({SHOP_PAYMENT_MODE:'test',SHOP_INICIS_MID:'INIpayTest',SHOP_INICIS_HASH_KEY:'fixture-hash-key-only'},undefined,clock);
+ const payment={...adapter,async approve(auth,row){calls.push({action:'approve',auth});Object.assign(remote,{provider:'inicis',orderId:row.id,paymentKey:'approval_fixture_123',totalAmount:row.total,currency:'KRW',status:'DONE',method:evidence&&evidence.kind!=='card_receipt'?'BANK':'CARD'});return {...remote};},async netCancel(){calls.push({action:'cancel'});return {canceled:true};},async get(){calls.push({action:'get'});return {...remote};}};
+ const documents=documentService({db,repo,dataKey:secret,payment,invoice,clock});
+ const service=orderService({repo,catalog,detail:p=>details[p.id],dataKey:secret,payment,documents,invoiceEnabled:!!invoice,clock});
+ const create=()=>service.create(owner,'idempotency_fixture',{customer,items:[item],total:1,...(evidence?{evidence}:{})});
+ async function started(){let order=await create();order=await service.approve(order.id,{version:order.version,stock_confirmed:true});const prepared=await service.start(order.id,owner,order.quote_version);const row=await repo.get(order.id);row.callback={P_STATUS:'00',P_MID:'INIpayTest',P_OID:row.id,P_AMT:String(row.total),P_AUTH_TID:'authentication_fixture_123',P_IDCNAME:'fc',P_NOTI:prepared.fields.P_NOTI};return row;}
+ return {sql,db,repo,catalog,details,clock,advance:ms=>now+=ms,service,payment,calls,remote,create,started,documents};
 }
 test('server prices, option quantity and once-per-order shipping override client totals',()=>{
  const f=fixture();let q=quoteCatalog(f.catalog,p=>f.details[p.id],[item],f.clock);assert.equal(q.total,24500);
@@ -65,40 +69,57 @@ test('payment start rejects unapproved, stale quote version and expired quotes',
  const f=fixture(),a=await f.create();await assert.rejects(f.service.start(a.id,owner,0),{status:409});const b=await f.service.approve(a.id,{version:0,stock_confirmed:true});
  await assert.rejects(f.service.start(a.id,owner,0),{status:409});f.advance(31*60*1000);await assert.rejects(f.service.start(a.id,owner,b.quote_version),{status:409});assert.equal(f.calls.length,0);
 });
-test('verified payment marks paid once and only paid orders can receive shipment',async()=>{
- const f=fixture();f.payment.mode='live';const a=await f.started(),input={paymentKey:'payment_fixture_123',amount:a.total};
- const result=await f.service.confirm(a.id,owner,input);assert.equal(result.state,'PAID');assert.equal(f.calls.length,1);assert.equal(f.calls[0].key,a.confirm_key);
- assert.equal((await f.service.confirm(a.id,owner,input)).state,'PAID');assert.equal(f.calls.length,1);
- const shipped=await f.service.ship(a.id,{version:result.version,carrier:'CJ대한통운',tracking:'123456789012'});assert.equal(shipped.fulfillment,'shipped');
+test('authenticated provider approval is stored once; test orders cannot ship',async()=>{
+ const f=fixture(),a=await f.started(),paid=await f.service.acceptReturn(a.callback);
+ assert.equal(paid.state,'PAID');assert.equal(paid.payment_mode,'test');
+ assert.equal((await f.service.acceptReturn(a.callback)).state,'PAID');assert.equal(f.calls.filter(x=>x.action==='approve').length,1);
  assert.equal((await f.repo.events(a.id)).filter(x=>x.action==='payment_done').length,1);
+ await assert.rejects(f.service.ship(a.id,{version:paid.version,carrier:'CJ대한통운',tracking:'123456789012'}),{status:409});
+ assert.ok(!(await f.repo.get(a.id)).payment_auth_cipher.includes(a.callback.P_AUTH_TID));
 });
-test('test payments cannot ship and live keys cannot confirm a test-mode order',async()=>{
- const f=fixture(),a=await f.started(),input={paymentKey:'payment_fixture_123',amount:a.total};
- const paid=await f.service.confirm(a.id,owner,input);assert.equal(paid.payment_mode,'test');
- await assert.rejects(f.service.ship(a.id,{version:paid.version,carrier:'택배사',tracking:'123456789'}),{status:409});
- f.payment.mode='live';await assert.rejects(f.service.confirm(a.id,owner,input),{status:409});await assert.rejects(f.service.reconcile(a.id),{status:409});
+test('foreign order, amount and invalid signed callback never reach approval',async()=>{
+ for(const change of [{P_OID:'foreign_order'},{P_AMT:'1'},{P_MID:'FOREIGNMID'},{P_IDCNAME:'evil.invalid'},{P_NOTI:'forged'}]){
+  const f=fixture(),a=await f.started();await assert.rejects(f.service.acceptReturn({...a.callback,...change}));assert.equal(f.calls.length,0);assert.equal((await f.repo.get(a.id)).state,'PAYMENT_PENDING');
+ }
 });
-test('forged amount, foreign payment and inconsistent provider response never become paid',async()=>{
- const f=fixture(),a=await f.started();await assert.rejects(f.service.confirm(a.id,owner,{paymentKey:'payment_fixture_123',amount:1}),{status:409});assert.equal(f.calls.length,0);
- f.payment.confirm=async()=>{};Object.assign(f.remote,{orderId:'different-order',paymentKey:'payment_fixture_123',totalAmount:a.total,currency:'KRW',status:'DONE'});
- await assert.rejects(f.service.confirm(a.id,owner,{paymentKey:'payment_fixture_123',amount:a.total}),{status:502});assert.equal((await f.repo.get(a.id)).state,'CONFIRMING');
- await assert.rejects(f.service.confirm(a.id,owner,{paymentKey:'different_key_123',amount:a.total}),{status:409});
+test('expired callback and changed environment cannot approve',async()=>{
+ const f=fixture(),a=await f.started();f.advance(31*60000);await assert.rejects(f.service.acceptReturn(a.callback),{status:401});assert.equal(f.calls.length,0);
+ const g=fixture(),b=await g.started();g.payment.mode='live';await assert.rejects(g.service.acceptReturn(b.callback),{status:409});assert.equal(g.calls.length,0);
 });
-test('lost POST response recovers by authoritative GET without creating a new payment',async()=>{
- const f=fixture(),a=await f.started(),original=f.payment.confirm;
- f.payment.confirm=async(...args)=>{await original(...args);throw Error('response lost');};
- assert.equal((await f.service.confirm(a.id,owner,{paymentKey:'payment_fixture_123',amount:a.total})).state,'PAID');assert.equal(f.calls.length,1);
+test('simultaneous callbacks cannot double approve; a different auth token is rejected',async()=>{
+ const f=fixture(),a=await f.started();const results=await Promise.allSettled([f.service.acceptReturn(a.callback),f.service.acceptReturn(a.callback)]);
+ assert.ok(results.some(r=>r.status==='fulfilled'));assert.equal(f.calls.filter(x=>x.action==='approve').length,1);
+ await assert.rejects(f.service.acceptReturn({...a.callback,P_AUTH_TID:'different_authentication_123'}),{status:409});
 });
-test('POST that never arrived retries with the persisted idempotency key',async()=>{
- const f=fixture(),a=await f.started(),original=f.payment.confirm;let count=0;const keys=[];
- Object.assign(f.remote,{orderId:a.id,paymentKey:'payment_fixture_123',totalAmount:a.total,currency:'KRW',status:'READY'});
- f.payment.confirm=async(...args)=>{keys.push(args[1]);if(!count++)throw Error('network unavailable');return original(...args);};
- assert.equal((await f.service.confirm(a.id,owner,{paymentKey:'payment_fixture_123',amount:a.total})).state,'PAID');assert.equal(keys.length,2);assert.equal(keys[0],keys[1]);
+test('approval timeout is compensated; an uncertain cancellation stays in review',async()=>{
+ for(const cancelFails of [false,true]){
+  const f=fixture(),a=await f.started();let count=0;f.payment.approve=async()=>{count++;throw Error('timeout');};if(cancelFails)f.payment.netCancel=async()=>{throw Error('unreachable');};
+  await assert.rejects(f.service.acceptReturn(a.callback),{status:503});assert.equal((await f.repo.get(a.id)).state,cancelFails?'PAYMENT_REVIEW':'CANCELED');
+  await f.service.acceptReturn(a.callback);assert.equal(count,1);assert.equal((await f.repo.get(a.id)).fulfillment,'unfulfilled');
+ }
 });
-test('unknown payment stays unfulfilled; cancellation cannot regress to paid',async()=>{
- const f=fixture(),a=await f.started();f.payment.confirm=async()=>{};Object.assign(f.remote,{orderId:a.id,paymentKey:'payment_fixture_123',totalAmount:a.total,currency:'KRW',status:'IN_PROGRESS'});
- await assert.rejects(f.service.confirm(a.id,owner,{paymentKey:'payment_fixture_123',amount:a.total}),{status:503});assert.equal((await f.repo.get(a.id)).fulfillment,'unfulfilled');
- f.remote.status='CANCELED';assert.equal((await f.service.reconcile(a.id)).state,'CANCELED');f.remote.status='DONE';await assert.rejects(f.service.reconcile(a.id),{status:409});
+test('unbound approval results are not accepted and invoke compensation',async()=>{
+ const f=fixture(),a=await f.started();f.payment.approve=async()=>({provider:'inicis',orderId:'foreign',paymentKey:'approval_fixture_123',totalAmount:a.total,currency:'KRW',status:'DONE'});
+ await assert.rejects(f.service.acceptReturn(a.callback),{status:503});assert.equal((await f.repo.get(a.id)).state,'CANCELED');assert.equal(f.calls[0].action,'cancel');
+});
+test('DB failure after approval invokes net cancellation; a lost committed DB response does not',async()=>{
+ for(const committed of [false,true]){
+  const f=fixture(),a=await f.started(),patch=f.repo.patch;f.repo.patch=async(...args)=>{if(args[1].state==='PAID'){if(committed)await patch(...args);throw Error('DB response lost');}return patch(...args);};
+  if(committed){assert.equal((await f.service.acceptReturn(a.callback)).state,'PAID');assert.equal(f.calls.filter(x=>x.action==='cancel').length,0);}
+  else{await assert.rejects(f.service.acceptReturn(a.callback));assert.equal((await f.repo.get(a.id)).state,'CANCELED');assert.equal(f.calls.filter(x=>x.action==='cancel').length,1);}
+ }
+});
+test('live shipment queries current provider status and refuses a refunded order',async()=>{
+ const f=fixture();f.payment.mode='live';const a=await f.started(),paid=await f.service.acceptReturn(a.callback);
+ const shipped=await f.service.ship(a.id,{version:paid.version,carrier:'CJ대한통운',tracking:'123456789012'});assert.equal(shipped.fulfillment,'shipped');
+ const g=fixture();g.payment.mode='live';const b=await g.started(),q=await g.service.acceptReturn(b.callback);g.remote.status='CANCELED';
+ await assert.rejects(g.service.ship(b.id,{version:q.version,carrier:'CJ대한통운',tracking:'123456789012'}),{status:409});assert.equal((await g.repo.get(b.id)).fulfillment,'unfulfilled');
+ g.remote.status='DONE';await assert.rejects(g.service.reconcile(b.id),{status:409});
+});
+test('an interrupted confirmation is canceled during recovery rather than approved again',async()=>{
+ const f=fixture(),a=await f.started(),auth=f.payment.validateAuthentication(a.callback,a);
+ await f.repo.patch(a,{state:'CONFIRMING',payment_auth_cipher:protect(secret).encrypt(auth)},'payment','payment_confirming');
+ await assert.rejects(f.service.reconcile(a.id),{status:409});f.advance(61000);assert.equal((await f.service.reconcile(a.id)).state,'CANCELED');assert.equal(f.calls.filter(x=>x.action==='approve').length,0);
 });
 test('signed sessions expire, cannot swap roles and detect tampering; ciphertext authenticates',()=>{
  let time=100;const s=sessions(secret,()=>time),token=s.issue('owner','admin',1);assert.equal(s.read(token,'admin'),'owner');assert.equal(s.read(token,'customer'),null);assert.equal(s.read(token+'x','admin'),null);time=1101;assert.equal(s.read(token,'admin'),null);
@@ -123,12 +144,45 @@ test('D1 uses bounded parameterized batches and hides provider errors',async()=>
  assert.deepEqual(await db.query('SELECT ? AS id',['ok']),[{id:'ok'}]);assert.deepEqual(JSON.parse(request.options.body).batch[0].params,['ok']);assert.match(request.url,/api.cloudflare.com/);
  await assert.rejects(database(env,async()=>({ok:false,json:async()=>({success:false,errors:['private_fixture']})})).query('SELECT ?',['sensitive']),error=>error.status===503&&!error.message.includes('private_fixture'));
 });
-test('Toss uses the configured mode, Basic credentials and an idempotent confirmation',async()=>{
- const env={SHOP_PAYMENT_MODE:'test',SHOP_TOSS_CLIENT_KEY:'test_gck_fixture',SHOP_TOSS_SECRET_KEY:'test_gsk_fixture'};const calls=[];
- const payment=toss(env,async(url,options)=>{calls.push({url,options});return{ok:true,json:async()=>({status:'DONE'})};});
- await payment.confirm({paymentKey:'p',orderId:'o',amount:100},'stable-key');await payment.get('p');assert.equal(calls[0].options.headers['Idempotency-Key'],'stable-key');assert.equal(calls[0].options.headers.Authorization,'Basic '+Buffer.from('test_gsk_fixture:').toString('base64'));assert.equal(calls[1].options.method,'GET');
- assert.throws(()=>toss({...env,SHOP_PAYMENT_MODE:'live'}));
- assert.throws(()=>toss({...env,SHOP_TOSS_SECRET_KEY:'test_sk_fixture'}));
- assert.throws(()=>toss({...env,SHOP_TOSS_CLIENT_KEY:'test_ck_fixture'}));
- assert.throws(()=>toss({...env,SHOP_TOSS_SECRET_KEY:'live_gsk_fixture'}));
+
+const business={kind:'tax_invoice',corp_num:'1234567891',corp_name:'검증용 상호',ceo_name:'검증 대표',address:'서울시 검증로 123',biz_type:'도소매',biz_class:'촬영장비',email:'test@example.invalid'};
+function taxProvider(){const saved=new Map(),calls=[];return {mode:'test',calls,saved,async lookup(key){calls.push(['lookup',key]);return saved.get(key)||null;},async issue(key,row){calls.push(['issue',key]);const result={issued:true,approval_number:'202610081234567890123456',nts_status:'pending'};saved.set(key,result);return result;}};}
+test('business tax fields validate registration checksum and email; provider-disabled requests are blocked',async()=>{
+ assert.equal(evidenceFields(business).kind,'tax_invoice');
+ for(const change of [{corp_num:'1234567890'},{corp_num:'0000000000'},{email:'wrong'},{ceo_name:'<script>'},{kind:'foreign'}])assert.throws(()=>evidenceFields({...business,...change}));
+ const f=fixture();await assert.rejects(f.service.create(owner,'tax_request_disabled',{customer,items:[item],evidence:business}),{status:503});assert.equal(f.sql.prepare('SELECT COUNT(*) n FROM shop_orders').get().n,0);
+});
+test('tax invoice is queued atomically with paid state and issued once with a stable key',async()=>{
+ const invoice=taxProvider(),f=fixture({invoice,evidence:business}),a=await f.started();const paid=await f.service.acceptReturn(a.callback);
+ assert.equal(paid.state,'PAID');assert.equal(paid.document.status,'issued');assert.equal(invoice.calls.filter(x=>x[0]==='issue').length,1);assert.equal(invoice.calls[0][0],'lookup');assert.equal(invoice.calls[1][1],managementKey(a.id));
+ await f.service.acceptReturn(a.callback);await f.documents.process(a.id);assert.equal(invoice.calls.filter(x=>x[0]==='issue').length,1);
+ const raw=await f.repo.get(a.id);assert.ok(!raw.customer_cipher.includes(business.corp_num));assert.ok(!JSON.stringify(await f.service.list(owner)).includes(business.email));
+});
+test('missing outbox table rolls back paid state and compensates approval',async()=>{
+ const f=fixture(),a=await f.started();f.sql.exec('DROP TABLE shop_documents');await assert.rejects(f.service.acceptReturn(a.callback));assert.notEqual((await f.repo.get(a.id)).state,'PAID');assert.equal(f.calls.filter(x=>x.action==='cancel').length,1);
+});
+test('document failure never cancels payment and durable retry survives a new service instance',async()=>{
+ const invoice=taxProvider(),f=fixture({invoice,evidence:business}),a=await f.started();const issue=invoice.issue;invoice.issue=async()=>{throw Error('provider down');};
+ const paid=await f.service.acceptReturn(a.callback);assert.equal(paid.state,'PAID');assert.equal(paid.document.status,'retry');assert.equal(f.calls.filter(x=>x.action==='cancel').length,0);
+ invoice.issue=issue;f.advance(180000);const resumed=documentService({db:f.db,repo:f.repo,dataKey:secret,payment:f.payment,invoice,clock:f.clock});await resumed.drain();assert.equal((await resumed.get(a.id)).status,'issued');assert.equal(invoice.calls.filter(x=>x[0]==='issue').length,1);
+});
+test('lost invoice response is reconciled by the same document key without issuing twice',async()=>{
+ const invoice=taxProvider(),original=invoice.issue;invoice.issue=async(...args)=>{await original(...args);throw Error('response lost');};const f=fixture({invoice,evidence:business}),a=await f.started();await f.service.acceptReturn(a.callback);
+ f.advance(180000);await f.documents.process(a.id);assert.equal((await f.documents.get(a.id)).status,'issued');assert.equal(invoice.calls.filter(x=>x[0]==='issue').length,1);
+});
+test('concurrent workers claim one invoice; an expired lease can recover',async()=>{
+ const invoice=taxProvider(),f=fixture({invoice,evidence:business}),a=await f.started();const process=f.documents.process;f.documents.process=async()=>null;await f.service.acceptReturn(a.callback);f.documents.process=process;
+ await Promise.all([process(a.id),process(a.id)]);assert.equal(invoice.calls.filter(x=>x[0]==='issue').length,1);
+});
+test('unpaid or refunded orders and unexpected PG cash receipts cannot trigger a tax invoice',async()=>{
+ for(const condition of ['cancel','cash','environment']){const invoice=taxProvider(),f=fixture({invoice,evidence:business}),a=await f.started();const process=f.documents.process;f.documents.process=async()=>null;await f.service.acceptReturn(a.callback);f.documents.process=process;
+ if(condition==='cancel')f.remote.status='CANCELED';if(condition==='cash')f.remote.cashReceipt={issued:true};if(condition==='environment')invoice.mode='live';await process(a.id);assert.equal(invoice.calls.filter(x=>x[0]==='issue').length,0);assert.equal((await f.documents.get(a.id)).status,'review');}
+});
+test('cash receipt requires verified purpose, amount and approval; failures remain pending',async()=>{
+ for(const purpose of ['income','business']){const f=fixture({evidence:{kind:'cash_receipt'}}),a=await f.started(),approve=f.payment.approve;f.payment.approve=async(...args)=>({...await approve(...args),cashReceipt:{issued:true,purpose,amount:24500,approvalNumber:'123456789',issuedAt:'20261008123456'}});const paid=await f.service.acceptReturn(a.callback);assert.equal(paid.document.status,'issued');assert.equal(paid.document.purpose,purpose);}
+ const f=fixture({evidence:{kind:'cash_receipt'}}),a=await f.started();const paid=await f.service.acceptReturn(a.callback);assert.equal(paid.state,'PAID');assert.equal(paid.document.status,'retry');assert.equal(paid.document.approval_number,null);
+});
+test('tax invoice NTS transmission is refreshed without reissue and a later refund flags evidence',async()=>{
+ const invoice=taxProvider(),f=fixture({invoice,evidence:business}),a=await f.started();await f.service.acceptReturn(a.callback);invoice.saved.get(managementKey(a.id)).nts_status='accepted';f.advance(301000);await f.documents.drain();assert.equal((await f.documents.get(a.id)).nts_status,'accepted');assert.equal(invoice.calls.filter(x=>x[0]==='issue').length,1);
+ f.remote.status='CANCELED';await f.service.reconcile(a.id);assert.equal((await f.documents.get(a.id)).status,'review');assert.equal((await f.repo.get(a.id)).state,'CANCELED');
 });

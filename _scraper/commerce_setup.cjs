@@ -4,11 +4,11 @@ const path=require('node:path');
 const crypto=require('node:crypto');
 const {passwordHash}=require('../server/commerce/security.cjs');
 const {database}=require('../server/commerce/d1.cjs');
-const {toss}=require('../server/commerce/toss.cjs');
+const {inicis}=require('../server/commerce/inicis.cjs');
 const root=path.resolve(__dirname,'..');
 const directory=path.join(root,'_private','commerce');
 const file=path.join(directory,'configuration.json');
-const fields=['SHOP_CF_ACCOUNT_ID','SHOP_D1_DATABASE_ID','SHOP_D1_API_TOKEN','SHOP_ORDER_DATA_KEY','SHOP_SESSION_KEY','SHOP_ADMIN_PASSWORD_HASH','SHOP_PAYMENT_MODE','SHOP_TOSS_CLIENT_KEY','SHOP_TOSS_SECRET_KEY'];
+const fields=['SHOP_CF_ACCOUNT_ID','SHOP_D1_DATABASE_ID','SHOP_D1_API_TOKEN','SHOP_ORDER_DATA_KEY','SHOP_SESSION_KEY','SHOP_ADMIN_PASSWORD_HASH','SHOP_PAYMENT_MODE','SHOP_INICIS_MID','SHOP_INICIS_HASH_KEY','SHOP_INICIS_API_KEY','SHOP_INICIS_CLIENT_IP'];
 async function main(){
  const command=process.argv[2]||'check';
  if(command==='init'){
@@ -28,13 +28,15 @@ async function main(){
   const db=database(env);
   const sql=fs.readFileSync(path.join(root,'server/commerce/schema.sql'),'utf8').split(';').map(s=>s.trim()).filter(Boolean);
   await db.batch(sql.map(sql=>({sql,params:[]})));
-  const tables=await db.query("SELECT name FROM sqlite_master WHERE type='table' AND name IN ('shop_orders','shop_order_events','shop_rate_limits')");
-  if(tables.length!==3)throw Error('Schema verification failed.');
-  process.stdout.write('Three private order tables verified. Orders remain gated by configuration.\n');return;
+  const columns=await db.query('PRAGMA table_info(shop_orders)');
+  for(const name of ['payment_provider','payment_auth_cipher','payment_receipt_cipher'])if(!columns.some(c=>c.name===name))await db.query('ALTER TABLE shop_orders ADD COLUMN '+name+' TEXT');
+  const tables=await db.query("SELECT name FROM sqlite_master WHERE type='table' AND name IN ('shop_orders','shop_order_events','shop_rate_limits','shop_documents')");
+  if(tables.length!==4)throw Error('Schema verification failed.');
+  process.stdout.write('Four private order tables verified. Orders remain gated by configuration.\n');return;
  }
  if(command!=='check')throw Error('Use init, check or schema.');
  const result={configured:missing.length===0,missing,ordersEnabled:env.SHOP_ORDERS_ENABLED==='true',paymentMode:env.SHOP_PAYMENT_MODE||null,databaseVerified:false};
- if(!missing.length){toss(env);const tables=await database(env).query("SELECT name FROM sqlite_master WHERE type='table' AND name IN ('shop_orders','shop_order_events','shop_rate_limits')");result.databaseVerified=tables.length===3;}
+ if(!missing.length){inicis(env);const tables=await database(env).query("SELECT name FROM sqlite_master WHERE type='table' AND name IN ('shop_orders','shop_order_events','shop_rate_limits','shop_documents')");result.databaseVerified=tables.length===4;}
  process.stdout.write(JSON.stringify(result)+'\n');
 }
 main().catch(()=>{process.stderr.write('Commerce setup could not complete. Check private configuration and service access; values are not logged.\n');process.exitCode=1;});

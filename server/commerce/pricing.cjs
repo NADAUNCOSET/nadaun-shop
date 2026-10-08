@@ -11,7 +11,7 @@ function customerFields(raw){
  }
  if(!/^\d{5}$/.test(result.postcode)||!/^0[\d -]{8,19}$/.test(result.phone))throw new ShopError(400,'전화번호와 우편번호를 확인해주세요.');
  if(raw.consent!==true)throw new ShopError(400,'주문 처리에 필요한 개인정보 수집·이용 동의가 필요합니다.');
- result.consent_version='shop-order-2026-09-08';return result;
+ result.consent_version='shop-order-evidence-2026-10-08';return result;
 }
 function quoteCatalog(catalog,detail,rows,clock=()=>Date.now()){
  const at=Date.parse(catalog.meta.synced_at);

@@ -1,0 +1,8 @@
+{
+  "name": "nadaun-shop",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "popbill": "1.64.2"
+  }
+}

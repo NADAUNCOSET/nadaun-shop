@@ -129,7 +129,7 @@ class SourceRules(unittest.TestCase):
             self.assertTrue(set(p['category_ids']+p['type_ids'])<=cats,p['id'])
             self.assertNotIn(p['id'],d['redirects'])
             for offer in p['offers']:
-                self.assertTrue(offer['url'].startswith(('https://smartstore.naver.com/rainbowbene/','https://rainbowshop.imweb.me/','https://kppkpp.co.kr/','https://www.l-mount.co.kr/goods/goods_view.php?goodsNo=','https://www.plthink.com/shop/shopdetail.html?branduid=','https://www.avx.co.kr/goods/view?no=','https://store.dji.com/kr/product/','https://clmedia.co.kr/product/','https://www.cinemall.co.kr/product/','https://onnoff.kr/product/')),offer['id'])
+                self.assertTrue(offer['url'].startswith(('https://smartstore.naver.com/rainbowbene/','https://rainbowshop.imweb.me/','https://kppkpp.co.kr/','https://www.l-mount.co.kr/goods/goods_view.php?goodsNo=','https://www.l-mount.co.kr/products/','https://www.plthink.com/shop/shopdetail.html?branduid=','https://www.avx.co.kr/goods/view?no=','https://store.dji.com/kr/product/','https://clmedia.co.kr/product/','https://www.cinemall.co.kr/product/','https://onnoff.kr/product/')),offer['id'])
         self.assertTrue(set(d['redirects'].values())<=ids)
         offers=[o['id'] for p in d['products'] for o in p['offers']]
         self.assertEqual(len(offers),len(set(offers)))
@@ -194,7 +194,7 @@ class SourceRules(unittest.TestCase):
             detail=json.loads((ROOT/'data/catalog/details'/(p['detail_bucket']+'.json')).read_text())[p['id']]
             if original['options']:self.assertEqual(detail['options'],original['options'])
             self.assertFalse(set(detail['images']['main']+detail['images']['detail']) & set(image_rules))
-            if any(rule.get('notice') and pid in rule['products'] for rule in image_rules.values()):
+            if any(rule.get('notice') and pid in rule['products'] and url in original['images']['main']+original['images']['detail'] for url,rule in image_rules.items()):
                 self.assertTrue(detail.get('description_notice'))
         for b in data['brands']:
             representative=next(p for p in data['products'] if p['id']==b['representative_id'])

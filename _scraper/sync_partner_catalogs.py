@@ -127,6 +127,13 @@ def ldl_detail(product):
 
 
 def collect_lmount():
+    from sync_ldl_catalog import collect as redesigned_collect
+    result = redesigned_collect()
+    save_json(OUT/'l-mount.json', result)
+    return result
+
+
+def collect_lmount_legacy():
     home = soup(LDL+'/main/index.php'); cats = ldl_categories(home)
     products = {}; audit = []
     with ThreadPoolExecutor(max_workers=3) as pool:
