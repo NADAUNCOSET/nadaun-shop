@@ -1,0 +1,30 @@
+name: Recover payment evidence jobs
+on:
+  schedule:
+    - cron: '3-58/5 * * * *'
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: commerce-document-recovery
+  cancel-in-progress: false
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Process persisted, verified payment documents
+        env:
+          SHOP_JOBS_SECRET: ${{ secrets.SHOP_JOBS_SECRET }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          secret = os.environ.get('SHOP_JOBS_SECRET', '')
+          if len(secret) < 32:
+              raise SystemExit('Document recovery secret is not configured')
+          request = urllib.request.Request(
+              'https://shop.nadaun.co/api/commerce-jobs', data=b'{}', method='POST',
+              headers={'Authorization': 'Bearer ' + secret, 'Content-Type': 'application/json'})
+          with urllib.request.urlopen(request, timeout=65) as response:
+              result = json.load(response)
+          print(json.dumps({'state': result.get('state', 'checked'), 'processed': result.get('processed', 0)}))
+          PY

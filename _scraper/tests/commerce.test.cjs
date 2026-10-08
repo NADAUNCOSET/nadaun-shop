@@ -186,3 +186,8 @@ test('tax invoice NTS transmission is refreshed without reissue and a later refu
  const invoice=taxProvider(),f=fixture({invoice,evidence:business}),a=await f.started();await f.service.acceptReturn(a.callback);invoice.saved.get(managementKey(a.id)).nts_status='accepted';f.advance(301000);await f.documents.drain();assert.equal((await f.documents.get(a.id)).nts_status,'accepted');assert.equal(invoice.calls.filter(x=>x[0]==='issue').length,1);
  f.remote.status='CANCELED';await f.service.reconcile(a.id);assert.equal((await f.documents.get(a.id)).status,'review');assert.equal((await f.repo.get(a.id)).state,'CANCELED');
 });
+test('an expired document lease resumes after a worker crash',async()=>{
+ const invoice=taxProvider(),f=fixture({invoice,evidence:business}),a=await f.started(),process=f.documents.process;f.documents.process=async()=>null;await f.service.acceptReturn(a.callback);f.documents.process=process;
+ f.sql.prepare("UPDATE shop_documents SET status='processing',lease_until=? WHERE order_id=?").run(f.clock()+120000,a.id);
+ await process(a.id);assert.equal(invoice.calls.length,0);f.advance(121000);await process(a.id);assert.equal((await f.documents.get(a.id)).status,'issued');assert.equal(invoice.calls.filter(x=>x[0]==='issue').length,1);
+});

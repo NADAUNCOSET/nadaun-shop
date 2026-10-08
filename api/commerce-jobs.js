@@ -5,5 +5,6 @@ module.exports=async(req,res)=>{
  const secret=process.env.SHOP_JOBS_SECRET,actual=String(req.headers.authorization||'');
  const expected='Bearer '+secret;
  if(req.method!=='POST'||!secret||secret.length<32||Buffer.byteLength(actual)!==Buffer.byteLength(expected)||!crypto.timingSafeEqual(Buffer.from(actual),Buffer.from(expected)))return res.status(401).json({error:'Unauthorized'});
- try{return res.status(200).json(await runtime().documents.drain(2));}catch{return res.status(503).json({error:'Document processing pending'});}
+ if(process.env.SHOP_ORDERS_ENABLED!=='true')return res.status(200).json({state:'disabled',processed:0});
+ try{return res.status(200).json(await runtime().documents.drain(1));}catch{return res.status(503).json({error:'Document processing pending'});}
 };

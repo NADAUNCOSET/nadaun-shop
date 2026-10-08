@@ -49,3 +49,11 @@ test('invoice lookup validates full document ownership/total and distinguishes N
  const detail={invoicerMgtKey:'NSfixed',invoicerCorpNum:'1234567891',invoiceeCorpNum:buyer.corp_num,totalAmount:'11000',taxType:'과세'};const info={stateCode:304,ntsconfirmNum:'202610081234567890123456'};
  const sdk={checkMgtKeyInUse(...a){a.at(-2)(true);},getDetailInfo(...a){a.at(-2)(detail);},getInfo(...a){a.at(-2)(info);}};const adapter=popbill(taxEnv,sdk);assert.equal((await adapter.lookup('NSfixed',row,buyer)).nts_status,'accepted');detail.totalAmount='1';await assert.rejects(adapter.lookup('NSfixed',row,buyer));detail.totalAmount='11000';info.stateCode=600;await assert.rejects(adapter.lookup('NSfixed',row,buyer));
 });
+test('document recovery endpoint rejects unauthenticated requests and stays inert before orders open',async()=>{
+ const handler=require('../../api/commerce-jobs.js'),before={secret:process.env.SHOP_JOBS_SECRET,enabled:process.env.SHOP_ORDERS_ENABLED};
+ const response=()=>({status(v){this.code=v;return this;},json(value){this.value=value;return this;},setHeader(){}});
+ try{process.env.SHOP_JOBS_SECRET='f'.repeat(64);process.env.SHOP_ORDERS_ENABLED='false';let res=response();await handler({method:'POST',headers:{}},res);assert.equal(res.code,401);
+ res=response();await handler({method:'POST',headers:{authorization:'Bearer '+'f'.repeat(64)}},res);assert.equal(res.code,200);assert.deepEqual(res.value,{state:'disabled',processed:0});
+ res=response();await handler({method:'GET',headers:{authorization:'Bearer '+'f'.repeat(64)}},res);assert.equal(res.code,401);
+ }finally{for(const [key,value] of [['SHOP_JOBS_SECRET',before.secret],['SHOP_ORDERS_ENABLED',before.enabled]])if(value===undefined)delete process.env[key];else process.env[key]=value;}
+});
