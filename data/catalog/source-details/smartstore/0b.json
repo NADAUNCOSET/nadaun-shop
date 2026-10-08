@@ -17,9 +17,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:10:48.578+09:00",
-    "checked_at": "2026-09-07T05:24:09+00:00",
-    "checked_epoch": 1788758649
+    "source_modified_at": "2026-09-28T20:19:58.708+09:00",
+    "checked_at": "2026-10-08T08:19:45+00:00",
+    "checked_epoch": 1791447585
   },
   "smartstore-13740669826": {
     "images": {
@@ -50,9 +50,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:00:01.226+09:00",
-    "checked_at": "2026-09-07T05:33:05+00:00",
-    "checked_epoch": 1788759185
+    "source_modified_at": "2026-09-28T20:22:40.059+09:00",
+    "checked_at": "2026-10-08T08:29:02+00:00",
+    "checked_epoch": 1791448142
   },
   "smartstore-13740435462": {
     "images": {
@@ -74,9 +74,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T12:55:20.325+09:00",
-    "checked_at": "2026-09-07T05:37:00+00:00",
-    "checked_epoch": 1788759420
+    "source_modified_at": "2026-09-28T20:24:01.515+09:00",
+    "checked_at": "2026-10-08T08:33:18+00:00",
+    "checked_epoch": 1791448398
   },
   "smartstore-13740420723": {
     "images": {
@@ -96,9 +96,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T12:31:55.367+09:00",
-    "checked_at": "2026-09-07T05:37:10+00:00",
-    "checked_epoch": 1788759430
+    "source_modified_at": "2026-09-28T20:24:01.515+09:00",
+    "checked_at": "2026-10-08T08:33:29+00:00",
+    "checked_epoch": 1791448409
   },
   "smartstore-13740393600": {
     "images": {
@@ -123,9 +123,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T11:51:20.502+09:00",
-    "checked_at": "2026-09-07T05:37:44+00:00",
-    "checked_epoch": 1788759464
+    "source_modified_at": "2026-09-28T20:24:14.096+09:00",
+    "checked_at": "2026-10-08T08:34:05+00:00",
+    "checked_epoch": 1791448445
   },
   "smartstore-13740321048": {
     "images": {
@@ -145,9 +145,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:21:52.127+09:00",
-    "checked_at": "2026-09-07T05:39:48+00:00",
-    "checked_epoch": 1788759588
+    "source_modified_at": "2026-09-28T20:25:42.410+09:00",
+    "checked_at": "2026-10-08T08:36:17+00:00",
+    "checked_epoch": 1791448577
   },
   "smartstore-13740320415": {
     "images": {
@@ -174,9 +174,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:21:03.768+09:00",
-    "checked_at": "2026-09-07T05:40:39+00:00",
-    "checked_epoch": 1788759639
+    "source_modified_at": "2026-09-28T20:25:53.480+09:00",
+    "checked_at": "2026-10-08T08:37:12+00:00",
+    "checked_epoch": 1791448632
   },
   "smartstore-13739631805": {
     "images": {
@@ -200,9 +200,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:11.155+09:00",
-    "checked_at": "2026-09-07T05:41:14+00:00",
-    "checked_epoch": 1788759674
+    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
+    "checked_at": "2026-10-08T08:37:50+00:00",
+    "checked_epoch": 1791448670
   },
   "smartstore-13673457563": {
     "images": {
@@ -396,9 +396,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:00:12.130+09:00",
-    "checked_at": "2026-09-07T05:54:46+00:00",
-    "checked_epoch": 1788760486
+    "source_modified_at": "2026-09-28T20:22:30.151+09:00",
+    "checked_at": "2026-10-08T08:28:10+00:00",
+    "checked_epoch": 1791448090
   },
   "smartstore-11498767885": {
     "images": {
@@ -663,5 +663,29 @@
     "source_modified_at": "2025-11-19T14:03:39.409+09:00",
     "checked_at": "2026-09-07T06:18:20+00:00",
     "checked_epoch": 1788761900
+  },
+  "smartstore-13794870896": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261006_20/1791292165148W4DTr_JPEG/ACK20003.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20210408_137/16178718778888vN4J_PNG/ACK-200-03(%EC%83%81%ED%92%88%EC%84%A4%EB%AA%851).PNG?type=w848",
+        "https://shop-phinf.pstatic.net/20210408_110/16178718314442EYYC_PNG/ACK-200-03(%EC%83%81%ED%92%88%EC%84%A4%EB%AA%852).PNG?type=w848",
+        "https://shop-phinf.pstatic.net/20210408_280/1617871892755PkUS5_PNG/ACK-200-03(%EC%83%81%ED%92%88%EC%84%A4%EB%AA%853).PNG?type=w848"
+      ]
+    },
+    "description_text": "펜심 - ACK-200-03 WACOM 와콤 거친느낌 하드 펠트 펜심 5개입 원바이와콤-인튜어스-인튜어스4_5-인튜어스프로-그립펜- 프로펜-클래식펜 용\n모델명: ACK20003",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-06T22:36:10.123+09:00",
+    "checked_at": "2026-10-08T08:13:01+00:00",
+    "checked_epoch": 1791447181
   }
 }

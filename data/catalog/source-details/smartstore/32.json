@@ -18,9 +18,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-03T12:06:03.209+09:00",
-    "checked_at": "2026-09-07T05:25:19+00:00",
-    "checked_epoch": 1788758719
+    "source_modified_at": "2026-09-28T20:20:20.591+09:00",
+    "checked_at": "2026-10-08T08:20:56+00:00",
+    "checked_epoch": 1791447656
   },
   "smartstore-13742226372": {
     "images": {
@@ -62,9 +62,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:35:37.079+09:00",
-    "checked_at": "2026-09-07T05:27:19+00:00",
-    "checked_epoch": 1788758839
+    "source_modified_at": "2026-09-28T20:20:47.094+09:00",
+    "checked_at": "2026-10-08T08:22:55+00:00",
+    "checked_epoch": 1791447775
   },
   "smartstore-13740755079": {
     "images": {
@@ -84,9 +84,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:34:26.596+09:00",
-    "checked_at": "2026-09-07T05:28:20+00:00",
-    "checked_epoch": 1788758900
+    "source_modified_at": "2026-09-28T20:20:58.002+09:00",
+    "checked_at": "2026-10-08T08:24:00+00:00",
+    "checked_epoch": 1791447840
   },
   "smartstore-13740669835": {
     "images": {
@@ -113,9 +113,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:00:01.293+09:00",
-    "checked_at": "2026-09-07T05:32:59+00:00",
-    "checked_epoch": 1788759179
+    "source_modified_at": "2026-09-28T20:22:40.059+09:00",
+    "checked_at": "2026-10-08T08:28:57+00:00",
+    "checked_epoch": 1791448137
   },
   "smartstore-13740669787": {
     "images": {
@@ -158,9 +158,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:59:59.100+09:00",
-    "checked_at": "2026-09-07T05:33:10+00:00",
-    "checked_epoch": 1788759190
+    "source_modified_at": "2026-09-28T20:22:40.059+09:00",
+    "checked_at": "2026-10-08T08:29:10+00:00",
+    "checked_epoch": 1791448150
   },
   "smartstore-13740321943": {
     "images": {
@@ -180,9 +180,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:22:52.114+09:00",
-    "checked_at": "2026-09-07T05:38:08+00:00",
-    "checked_epoch": 1788759488
+    "source_modified_at": "2026-09-28T20:25:19.175+09:00",
+    "checked_at": "2026-10-08T08:34:31+00:00",
+    "checked_epoch": 1791448471
   },
   "smartstore-13740321878": {
     "images": {
@@ -202,9 +202,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:22:49.812+09:00",
-    "checked_at": "2026-09-07T05:38:29+00:00",
-    "checked_epoch": 1788759509
+    "source_modified_at": "2026-09-28T20:25:19.175+09:00",
+    "checked_at": "2026-10-08T08:34:53+00:00",
+    "checked_epoch": 1791448493
   },
   "smartstore-13740321233": {
     "images": {
@@ -224,9 +224,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:22:01.382+09:00",
-    "checked_at": "2026-09-07T05:38:58+00:00",
-    "checked_epoch": 1788759538
+    "source_modified_at": "2026-09-28T20:25:31.128+09:00",
+    "checked_at": "2026-10-08T08:35:23+00:00",
+    "checked_epoch": 1791448523
   },
   "smartstore-13740319995": {
     "images": {
@@ -247,9 +247,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:20:19.580+09:00",
-    "checked_at": "2026-09-07T05:40:54+00:00",
-    "checked_epoch": 1788759654
+    "source_modified_at": "2026-09-28T20:25:53.480+09:00",
+    "checked_at": "2026-10-08T08:37:28+00:00",
+    "checked_epoch": 1791448648
   },
   "smartstore-13739631303": {
     "images": {
@@ -275,9 +275,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:32.048+09:00",
-    "checked_at": "2026-09-07T05:43:07+00:00",
-    "checked_epoch": 1788759787
+    "source_modified_at": "2026-09-28T20:26:57.046+09:00",
+    "checked_at": "2026-10-08T08:39:52+00:00",
+    "checked_epoch": 1791448792
   },
   "smartstore-13679019756": {
     "images": {
@@ -381,13 +381,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 4200,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T12:19:19.788+09:00",
-    "checked_at": "2026-09-07T05:52:53+00:00",
-    "checked_epoch": 1788760373
+    "source_modified_at": "2026-09-28T19:23:07.741+09:00",
+    "checked_at": "2026-10-08T08:44:13+00:00",
+    "checked_epoch": 1791449053
   },
   "smartstore-12107398345": {
     "images": {
@@ -780,5 +780,27 @@
     "source_modified_at": "2026-01-20T16:02:06.769+09:00",
     "checked_at": "2026-09-07T06:18:38+00:00",
     "checked_epoch": 1788761918
+  },
+  "smartstore-13794870894": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261006_129/1791292165364xApsR_JPEG/ACK20006.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20210412_190/16181912745548zLNA_PNG/ACK-200-06_(%EC%83%81%ED%92%88%EC%82%AC%EC%A7%84).PNG?type=w848"
+      ]
+    },
+    "description_text": "펜심 - ACK-200-06 WACOM 와콤 아트펜 KP-701E 전용 펜심 치즐 모양 송곳 모양 붓글씨 효과 10개입 For Art Pen Nibs\n모델명: ACK20006",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-06T22:36:10.122+09:00",
+    "checked_at": "2026-10-08T08:13:02+00:00",
+    "checked_epoch": 1791447182
   }
 }

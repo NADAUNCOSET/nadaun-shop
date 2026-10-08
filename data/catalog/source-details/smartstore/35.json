@@ -24,9 +24,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:12:40.576+09:00",
-    "checked_at": "2026-09-07T05:20:06+00:00",
-    "checked_epoch": 1788758406
+    "source_modified_at": "2026-09-28T20:18:16.500+09:00",
+    "checked_at": "2026-10-08T08:15:43+00:00",
+    "checked_epoch": 1791447343
   },
   "smartstore-13745584401": {
     "images": {
@@ -72,9 +72,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:11:24.423+09:00",
-    "checked_at": "2026-09-07T05:21:32+00:00",
-    "checked_epoch": 1788758492
+    "source_modified_at": "2026-09-28T20:18:41.210+09:00",
+    "checked_at": "2026-10-08T08:17:06+00:00",
+    "checked_epoch": 1791447426
   },
   "smartstore-13740726441": {
     "images": {
@@ -90,13 +90,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 3000,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:59:59.733+09:00",
-    "checked_at": "2026-09-07T05:30:56+00:00",
-    "checked_epoch": 1788759056
+    "source_modified_at": "2026-09-28T20:22:10.086+09:00",
+    "checked_at": "2026-10-08T08:26:50+00:00",
+    "checked_epoch": 1791448010
   },
   "smartstore-13740613693": {
     "images": {
@@ -118,9 +118,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:07:29.263+09:00",
-    "checked_at": "2026-09-07T05:36:34+00:00",
-    "checked_epoch": 1788759394
+    "source_modified_at": "2026-09-28T20:24:01.515+09:00",
+    "checked_at": "2026-10-08T08:32:50+00:00",
+    "checked_epoch": 1791448370
   },
   "smartstore-13740388390": {
     "images": {
@@ -144,9 +144,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-03T11:32:10.461+09:00",
-    "checked_at": "2026-09-07T05:38:06+00:00",
-    "checked_epoch": 1788759486
+    "source_modified_at": "2026-09-28T20:24:14.096+09:00",
+    "checked_at": "2026-10-08T08:34:14+00:00",
+    "checked_epoch": 1791448454
   },
   "smartstore-13740319991": {
     "images": {
@@ -168,9 +168,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:20:19.560+09:00",
-    "checked_at": "2026-09-07T05:40:57+00:00",
-    "checked_epoch": 1788759657
+    "source_modified_at": "2026-09-28T20:25:53.480+09:00",
+    "checked_at": "2026-10-08T08:37:31+00:00",
+    "checked_epoch": 1791448651
   },
   "smartstore-13740318520": {
     "images": {
@@ -192,9 +192,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:18:26.628+09:00",
-    "checked_at": "2026-09-07T05:41:22+00:00",
-    "checked_epoch": 1788759682
+    "source_modified_at": "2026-09-28T20:25:53.480+09:00",
+    "checked_at": "2026-10-08T08:37:44+00:00",
+    "checked_epoch": 1791448664
   },
   "smartstore-13739631671": {
     "images": {
@@ -218,9 +218,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:11.155+09:00",
-    "checked_at": "2026-09-07T05:41:53+00:00",
-    "checked_epoch": 1788759713
+    "source_modified_at": "2026-09-28T20:26:04.098+09:00",
+    "checked_at": "2026-10-08T08:38:32+00:00",
+    "checked_epoch": 1791448712
   },
   "smartstore-13739631598": {
     "images": {
@@ -244,9 +244,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:20.924+09:00",
-    "checked_at": "2026-09-07T05:42:09+00:00",
-    "checked_epoch": 1788759729
+    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
+    "checked_at": "2026-10-08T08:38:48+00:00",
+    "checked_epoch": 1791448728
   },
   "smartstore-12306704656": {
     "images": {
@@ -720,8 +720,30 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T15:19:35.925+09:00",
-    "checked_at": "2026-09-08T16:20:05+00:00",
-    "checked_epoch": 1788884405
+    "source_modified_at": "2026-10-07T16:02:58.519+09:00",
+    "checked_at": "2026-10-08T08:45:05+00:00",
+    "checked_epoch": 1791449105
+  },
+  "smartstore-13794870862": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261006_161/1791292168021qRSOO_JPEG/ACK44930CZ.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20230911_135/16944062406051lfn4_JPEG/%EC%99%80%EC%BD%A4_%EC%9B%90_%ED%8E%9C_2_%EC%83%81%EB%8B%A8_%EC%88%98%EC%A0%950811.jpg?type=w848"
+      ]
+    },
+    "description_text": "와콤원 펜2 교체용 악세서리 - 상단 우드 ACK44930CZ 14가지 색상 커스텀\n모델명: ACK44930CZ",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-06T22:36:10.114+09:00",
+    "checked_at": "2026-10-08T08:13:12+00:00",
+    "checked_epoch": 1791447192
   }
 }

@@ -13,13 +13,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 3000,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:06:49.885+09:00",
-    "checked_at": "2026-09-07T05:30:45+00:00",
-    "checked_epoch": 1788759045
+    "source_modified_at": "2026-09-28T20:22:10.086+09:00",
+    "checked_at": "2026-10-08T08:26:37+00:00",
+    "checked_epoch": 1791447997
   },
   "smartstore-13740669756": {
     "images": {
@@ -62,9 +62,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:59:57.359+09:00",
-    "checked_at": "2026-09-07T05:33:14+00:00",
-    "checked_epoch": 1788759194
+    "source_modified_at": "2026-09-28T20:22:40.059+09:00",
+    "checked_at": "2026-10-08T08:29:13+00:00",
+    "checked_epoch": 1791448153
   },
   "smartstore-13740633205": {
     "images": {
@@ -84,9 +84,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:26:15.565+09:00",
-    "checked_at": "2026-09-07T05:35:09+00:00",
-    "checked_epoch": 1788759309
+    "source_modified_at": "2026-09-28T20:23:40.128+09:00",
+    "checked_at": "2026-10-08T08:31:17+00:00",
+    "checked_epoch": 1791448277
   },
   "smartstore-13740623492": {
     "images": {
@@ -106,9 +106,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:17:46.813+09:00",
-    "checked_at": "2026-09-07T05:36:01+00:00",
-    "checked_epoch": 1788759361
+    "source_modified_at": "2026-09-28T20:23:50.654+09:00",
+    "checked_at": "2026-10-08T08:32:15+00:00",
+    "checked_epoch": 1791448335
   },
   "smartstore-13740417133": {
     "images": {
@@ -130,9 +130,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T12:27:00.261+09:00",
-    "checked_at": "2026-09-07T05:37:31+00:00",
-    "checked_epoch": 1788759451
+    "source_modified_at": "2026-09-28T20:24:14.096+09:00",
+    "checked_at": "2026-10-08T08:33:51+00:00",
+    "checked_epoch": 1791448431
   },
   "smartstore-13740321876": {
     "images": {
@@ -152,9 +152,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:22:49.791+09:00",
-    "checked_at": "2026-09-07T05:38:44+00:00",
-    "checked_epoch": 1788759524
+    "source_modified_at": "2026-09-28T20:25:19.175+09:00",
+    "checked_at": "2026-10-08T08:34:54+00:00",
+    "checked_epoch": 1791448494
   },
   "smartstore-13021963924": {
     "images": {
@@ -301,13 +301,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 3000,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:06:49.885+09:00",
-    "checked_at": "2026-09-07T05:54:44+00:00",
-    "checked_epoch": 1788760484
+    "source_modified_at": "2026-09-28T20:22:10.086+09:00",
+    "checked_at": "2026-10-08T08:26:21+00:00",
+    "checked_epoch": 1791447981
   },
   "smartstore-10824469215": {
     "images": {
@@ -612,9 +612,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T21:37:45.209+09:00",
-    "checked_at": "2026-09-08T16:17:20+00:00",
-    "checked_epoch": 1788884240
+    "source_modified_at": "2026-09-28T20:18:04.474+09:00",
+    "checked_at": "2026-10-08T08:14:30+00:00",
+    "checked_epoch": 1791447270
   },
   "smartstore-13751871837": {
     "images": {
@@ -634,8 +634,53 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T21:21:40.489+09:00",
-    "checked_at": "2026-09-08T16:18:16+00:00",
-    "checked_epoch": 1788884296
+    "source_modified_at": "2026-09-28T20:18:16.500+09:00",
+    "checked_at": "2026-10-08T08:15:14+00:00",
+    "checked_epoch": 1791447314
+  },
+  "smartstore-13794870887": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261006_265/1791292167132URpOL_JPEG/ACK4472502Z.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20220321_230/1647832965199hmbnv_JPEG/%EC%99%80%EC%BD%A4_%EB%93%9C%EB%A1%9C%EC%9E%89%EC%9E%A5%EA%B0%91.jpg?type=w848"
+      ]
+    },
+    "description_text": "와콤 드로잉 장갑 3개입 ACK4472502Z WACOM 손보호 액정태블릿 신티크 프로\n모델명: ACK4472502Z",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-06T22:36:10.119+09:00",
+    "checked_at": "2026-10-08T08:13:06+00:00",
+    "checked_epoch": 1791447186
+  },
+  "smartstore-13794870843": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261006_213/1791292167250vNdsp_JPEG/ACK4480601Z.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20250613_237/1749781367434caysm_PNG/wacom-cintiq-pro-27-usb-c-to-usb-a-cable_main.png?type=w848",
+        "https://shop-phinf.pstatic.net/20231121_70/1700552294243IwlUs_JPEG/%EC%99%80%EC%BD%A4_%EC%8B%A0%ED%8B%B0%ED%81%AC%ED%94%84%EB%A1%9C%EC%9A%A9_%EC%A0%84%EC%9B%90%EC%BC%80%EC%9D%B4%EB%B8%94_C_to_A.jpg?type=w848"
+      ]
+    },
+    "description_text": "와콤 USB-C to A 케이블 1.8M ACK4480601Z 신티크 2025 용 연결선\n모델명: ACK4480601Z",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-06T22:36:10.105+09:00",
+    "checked_at": "2026-10-08T08:13:19+00:00",
+    "checked_epoch": 1791447199
   }
 }

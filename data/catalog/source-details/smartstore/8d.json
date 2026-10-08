@@ -19,9 +19,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:11:24.470+09:00",
-    "checked_at": "2026-09-07T05:21:26+00:00",
-    "checked_epoch": 1788758486
+    "source_modified_at": "2026-09-28T20:18:41.210+09:00",
+    "checked_at": "2026-10-08T08:17:02+00:00",
+    "checked_epoch": 1791447422
   },
   "smartstore-13745582644": {
     "images": {
@@ -43,9 +43,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:11:21.833+09:00",
-    "checked_at": "2026-09-07T05:21:36+00:00",
-    "checked_epoch": 1788758496
+    "source_modified_at": "2026-09-28T20:18:41.210+09:00",
+    "checked_at": "2026-10-08T08:17:11+00:00",
+    "checked_epoch": 1791447431
   },
   "smartstore-13745582123": {
     "images": {
@@ -66,9 +66,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:11:04.908+09:00",
-    "checked_at": "2026-09-07T05:22:50+00:00",
-    "checked_epoch": 1788758570
+    "source_modified_at": "2026-09-28T20:19:48.571+09:00",
+    "checked_at": "2026-10-08T08:18:27+00:00",
+    "checked_epoch": 1791447507
   },
   "smartstore-13745582122": {
     "images": {
@@ -90,9 +90,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:11:04.903+09:00",
-    "checked_at": "2026-09-07T05:22:50+00:00",
-    "checked_epoch": 1788758570
+    "source_modified_at": "2026-09-28T20:19:48.571+09:00",
+    "checked_at": "2026-10-08T08:18:27+00:00",
+    "checked_epoch": 1791447507
   },
   "smartstore-13745581760": {
     "images": {
@@ -112,9 +112,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:10:52.510+09:00",
-    "checked_at": "2026-09-07T05:23:50+00:00",
-    "checked_epoch": 1788758630
+    "source_modified_at": "2026-09-28T20:19:58.708+09:00",
+    "checked_at": "2026-10-08T08:19:27+00:00",
+    "checked_epoch": 1791447567
   },
   "smartstore-13742812758": {
     "images": {
@@ -147,9 +147,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-02T23:16:48.190+09:00",
-    "checked_at": "2026-09-07T05:25:24+00:00",
-    "checked_epoch": 1788758724
+    "source_modified_at": "2026-09-28T20:20:20.591+09:00",
+    "checked_at": "2026-10-08T08:21:01+00:00",
+    "checked_epoch": 1791447661
   },
   "smartstore-13740756050": {
     "images": {
@@ -169,9 +169,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:35:35.435+09:00",
-    "checked_at": "2026-09-07T05:27:30+00:00",
-    "checked_epoch": 1788758850
+    "source_modified_at": "2026-09-28T20:20:47.094+09:00",
+    "checked_at": "2026-10-08T08:23:06+00:00",
+    "checked_epoch": 1791447786
   },
   "smartstore-13740734693": {
     "images": {
@@ -187,13 +187,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 3000,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:09:20.112+09:00",
-    "checked_at": "2026-09-07T05:29:27+00:00",
-    "checked_epoch": 1788758967
+    "source_modified_at": "2026-09-28T20:21:09.083+09:00",
+    "checked_at": "2026-10-08T08:25:12+00:00",
+    "checked_epoch": 1791447912
   },
   "smartstore-13740669962": {
     "images": {
@@ -232,9 +232,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:00:07.409+09:00",
-    "checked_at": "2026-09-07T05:32:38+00:00",
-    "checked_epoch": 1788759158
+    "source_modified_at": "2026-09-28T20:22:30.151+09:00",
+    "checked_at": "2026-10-08T08:28:35+00:00",
+    "checked_epoch": 1791448115
   },
   "smartstore-13740669797": {
     "images": {
@@ -277,9 +277,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:59:59.184+09:00",
-    "checked_at": "2026-09-07T05:33:09+00:00",
-    "checked_epoch": 1788759189
+    "source_modified_at": "2026-09-28T20:22:40.059+09:00",
+    "checked_at": "2026-10-08T08:29:04+00:00",
+    "checked_epoch": 1791448144
   },
   "smartstore-13740657869": {
     "images": {
@@ -330,9 +330,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:47:45.399+09:00",
-    "checked_at": "2026-09-07T05:33:28+00:00",
-    "checked_epoch": 1788759208
+    "source_modified_at": "2026-09-28T20:22:40.059+09:00",
+    "checked_at": "2026-10-08T08:29:28+00:00",
+    "checked_epoch": 1791448168
   },
   "smartstore-13740633123": {
     "images": {
@@ -352,9 +352,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:26:11.714+09:00",
-    "checked_at": "2026-09-07T05:35:26+00:00",
-    "checked_epoch": 1788759326
+    "source_modified_at": "2026-09-28T20:23:40.128+09:00",
+    "checked_at": "2026-10-08T08:31:37+00:00",
+    "checked_epoch": 1791448297
   },
   "smartstore-13740623547": {
     "images": {
@@ -374,9 +374,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:17:48.823+09:00",
-    "checked_at": "2026-09-07T05:35:53+00:00",
-    "checked_epoch": 1788759353
+    "source_modified_at": "2026-09-28T20:23:50.654+09:00",
+    "checked_at": "2026-10-08T08:32:06+00:00",
+    "checked_epoch": 1791448326
   },
   "smartstore-13739631681": {
     "images": {
@@ -400,9 +400,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:11.155+09:00",
-    "checked_at": "2026-09-07T05:41:49+00:00",
-    "checked_epoch": 1788759709
+    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
+    "checked_at": "2026-10-08T08:38:27+00:00",
+    "checked_epoch": 1791448707
   },
   "smartstore-13739631138": {
     "images": {
@@ -430,9 +430,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:43.035+09:00",
-    "checked_at": "2026-09-07T05:43:40+00:00",
-    "checked_epoch": 1788759820
+    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
+    "checked_at": "2026-10-08T08:40:29+00:00",
+    "checked_epoch": 1791448829
   },
   "smartstore-13678892916": {
     "images": {
@@ -694,9 +694,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T15:02:59.622+09:00",
-    "checked_at": "2026-09-08T16:19:49+00:00",
-    "checked_epoch": 1788884389
+    "source_modified_at": "2026-10-07T16:02:58.519+09:00",
+    "checked_at": "2026-10-08T08:45:02+00:00",
+    "checked_epoch": 1791449102
   },
   "smartstore-6680550979": {
     "images": {
@@ -832,5 +832,27 @@
     "source_modified_at": "2025-11-19T14:03:39.415+09:00",
     "checked_at": "2026-09-07T06:18:15+00:00",
     "checked_epoch": 1788761895
+  },
+  "smartstore-13794870893": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261006_241/17912921654749JTsp_JPEG/ACK22207.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20210412_237/1618191843116zrjWY_JPEG/ACK-222-07_(%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80).jpg?type=w848"
+      ]
+    },
+    "description_text": "펜심 - ACK-222-07 WACOM 와콤 볼 포인트펜 KP-133 용 펜심 볼펜심 3개입 인튜어스프로 페이퍼모드 전용 BallPoint Pen Nibs\n모델명: ACK22207",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-06T22:36:10.122+09:00",
+    "checked_at": "2026-10-08T08:13:03+00:00",
+    "checked_epoch": 1791447183
   }
 }

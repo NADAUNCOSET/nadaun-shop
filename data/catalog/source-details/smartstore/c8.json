@@ -20,9 +20,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:11:02.950+09:00",
-    "checked_at": "2026-09-07T05:23:00+00:00",
-    "checked_epoch": 1788758580
+    "source_modified_at": "2026-09-28T20:19:48.571+09:00",
+    "checked_at": "2026-10-08T08:18:37+00:00",
+    "checked_epoch": 1791447517
   },
   "smartstore-13745581937": {
     "images": {
@@ -42,9 +42,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:10:59.492+09:00",
-    "checked_at": "2026-09-07T05:23:23+00:00",
-    "checked_epoch": 1788758603
+    "source_modified_at": "2026-09-28T20:19:48.571+09:00",
+    "checked_at": "2026-10-08T08:18:59+00:00",
+    "checked_epoch": 1791447539
   },
   "smartstore-13745581585": {
     "images": {
@@ -68,9 +68,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:10:46.553+09:00",
-    "checked_at": "2026-09-07T05:24:22+00:00",
-    "checked_epoch": 1788758662
+    "source_modified_at": "2026-09-28T20:20:09.070+09:00",
+    "checked_at": "2026-10-08T08:19:58+00:00",
+    "checked_epoch": 1791447598
   },
   "smartstore-13744158303": {
     "images": {
@@ -94,9 +94,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-03T14:18:51.145+09:00",
-    "checked_at": "2026-09-07T05:25:18+00:00",
-    "checked_epoch": 1788758718
+    "source_modified_at": "2026-09-28T20:20:20.591+09:00",
+    "checked_at": "2026-10-08T08:20:55+00:00",
+    "checked_epoch": 1791447655
   },
   "smartstore-13742339667": {
     "images": {
@@ -113,13 +113,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 4200,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-02T19:02:55.702+09:00",
-    "checked_at": "2026-09-07T05:26:28+00:00",
-    "checked_epoch": 1788758788
+    "source_modified_at": "2026-09-28T19:22:57.981+09:00",
+    "checked_at": "2026-10-08T08:22:00+00:00",
+    "checked_epoch": 1791447720
   },
   "smartstore-13740727145": {
     "images": {
@@ -135,13 +135,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 3000,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:06:49.885+09:00",
-    "checked_at": "2026-09-07T05:30:36+00:00",
-    "checked_epoch": 1788759036
+    "source_modified_at": "2026-09-28T20:22:10.086+09:00",
+    "checked_at": "2026-10-08T08:26:28+00:00",
+    "checked_epoch": 1791447988
   },
   "smartstore-13740670098": {
     "images": {
@@ -161,9 +161,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:00:12.160+09:00",
-    "checked_at": "2026-09-07T05:32:13+00:00",
-    "checked_epoch": 1788759133
+    "source_modified_at": "2026-09-28T20:22:30.151+09:00",
+    "checked_at": "2026-10-08T08:28:08+00:00",
+    "checked_epoch": 1791448088
   },
   "smartstore-13740669924": {
     "images": {
@@ -194,9 +194,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:00:05.113+09:00",
-    "checked_at": "2026-09-07T05:32:40+00:00",
-    "checked_epoch": 1788759160
+    "source_modified_at": "2026-09-28T20:22:30.151+09:00",
+    "checked_at": "2026-10-08T08:28:38+00:00",
+    "checked_epoch": 1791448118
   },
   "smartstore-13740417126": {
     "images": {
@@ -216,9 +216,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-02T23:01:55.411+09:00",
-    "checked_at": "2026-09-07T05:37:34+00:00",
-    "checked_epoch": 1788759454
+    "source_modified_at": "2026-09-28T20:24:14.096+09:00",
+    "checked_at": "2026-10-08T08:33:55+00:00",
+    "checked_epoch": 1791448435
   },
   "smartstore-13740321852": {
     "images": {
@@ -238,9 +238,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:22:48.717+09:00",
-    "checked_at": "2026-09-07T05:38:37+00:00",
-    "checked_epoch": 1788759517
+    "source_modified_at": "2026-09-28T20:25:19.175+09:00",
+    "checked_at": "2026-10-08T08:35:01+00:00",
+    "checked_epoch": 1791448501
   },
   "smartstore-13739631646": {
     "images": {
@@ -267,9 +267,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:11.155+09:00",
-    "checked_at": "2026-09-07T05:41:55+00:00",
-    "checked_epoch": 1788759715
+    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
+    "checked_at": "2026-10-08T08:38:35+00:00",
+    "checked_epoch": 1791448715
   },
   "smartstore-13685348834": {
     "images": {
@@ -338,9 +338,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-12T09:19:11.527+09:00",
-    "checked_at": "2026-09-13T23:05:39+00:00",
-    "checked_epoch": 1789340739
+    "source_modified_at": "2026-10-06T16:30:04.190+09:00",
+    "checked_at": "2026-10-08T08:42:04+00:00",
+    "checked_epoch": 1791448924
   },
   "smartstore-12958527043": {
     "images": {
@@ -478,9 +478,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:26:07.121+09:00",
-    "checked_at": "2026-09-07T05:54:52+00:00",
-    "checked_epoch": 1788760492
+    "source_modified_at": "2026-09-28T20:23:50.654+09:00",
+    "checked_at": "2026-10-08T08:31:56+00:00",
+    "checked_epoch": 1791448316
   },
   "smartstore-11429081673": {
     "images": {
@@ -520,13 +520,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 4500,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:50:18.246+09:00",
-    "checked_at": "2026-09-07T05:59:06+00:00",
-    "checked_epoch": 1788760746
+    "source_modified_at": "2026-09-28T19:33:55.654+09:00",
+    "checked_at": "2026-10-08T08:44:56+00:00",
+    "checked_epoch": 1791449096
   },
   "smartstore-8790643031": {
     "images": {
@@ -832,8 +832,75 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T21:21:42.674+09:00",
-    "checked_at": "2026-09-08T16:17:56+00:00",
-    "checked_epoch": 1788884276
+    "source_modified_at": "2026-09-28T20:18:04.474+09:00",
+    "checked_at": "2026-10-08T08:14:59+00:00",
+    "checked_epoch": 1791447299
+  },
+  "smartstore-13794870883": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261006_219/17912921677508qlXw_JPEG/ACK44827.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20221017_267/1665999970147uqnHb_JPEG/%ED%94%84%EB%A1%9C%ED%8E%9C_3_%ED%8E%9C_%EC%8A%A4%ED%83%A0%EB%93%9C_%EB%A9%94%EC%9D%B8%EC%9D%B4%EB%AF%B8%EC%A7%80_2.jpg?type=w848",
+        "https://shop-phinf.pstatic.net/20221017_52/16659999139805UH0s_JPEG/%ED%94%84%EB%A1%9C%ED%8E%9C_3_%ED%8E%9C_%EC%8A%A4%ED%83%A0%EB%93%9C_%EB%A9%94%EC%9D%B8%EC%9D%B4%EB%AF%B8%EC%A7%80_3.jpg?type=w848"
+      ]
+    },
+    "description_text": "펜트레이 - ACK-44827 WACOM 와콤 프로펜3 ACP-50000DZ 용 신티크프로 무빙크 DTH-227 DTH-271\n모델명: ACK44827",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-06T22:36:10.117+09:00",
+    "checked_at": "2026-10-08T08:13:08+00:00",
+    "checked_epoch": 1791447188
+  },
+  "smartstore-13794870860": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261006_254/1791292168214EmXBc_JPEG/ACK44930EZ.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20230911_251/1694418283748jCSdn_JPEG/%EC%99%80%EC%BD%A4_%EC%9B%90_%ED%8E%9C_2_%EC%83%81%EB%8B%A8_%EC%88%98%EC%A0%950811.jpg?type=w848"
+      ]
+    },
+    "description_text": "와콤원 펜2 교체용 악세서리 - 클립형 상단 라임 ACK44930EZ 14가지 색상 커스텀\n모델명: ACK44930EZ",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-06T22:36:10.113+09:00",
+    "checked_at": "2026-10-08T08:13:13+00:00",
+    "checked_epoch": 1791447193
+  },
+  "smartstore-13794870858": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261006_255/1791292168418yDMFM_JPEG/ACK44930WZ.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20230911_273/1694420839070k9CPp_JPEG/%EC%99%80%EC%BD%A4_%EC%9B%90_%ED%8E%9C_2_%EC%83%81%EB%8B%A8_%EC%88%98%EC%A0%950811.jpg?type=w848"
+      ]
+    },
+    "description_text": "와콤원 펜2 교체용 악세서리 - 클립형 상단 화이트 ACK44930WZ 14가지 색상 커스텀\n모델명: ACK44930WZ",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-06T22:36:10.112+09:00",
+    "checked_at": "2026-10-08T08:13:14+00:00",
+    "checked_epoch": 1791447194
   }
 }

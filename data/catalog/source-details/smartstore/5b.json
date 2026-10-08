@@ -17,9 +17,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:11:13.570+09:00",
-    "checked_at": "2026-09-07T05:22:12+00:00",
-    "checked_epoch": 1788758532
+    "source_modified_at": "2026-09-28T20:19:36.990+09:00",
+    "checked_at": "2026-10-08T08:17:49+00:00",
+    "checked_epoch": 1791447469
   },
   "smartstore-13744158694": {
     "images": {
@@ -44,9 +44,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-03T14:18:58.693+09:00",
-    "checked_at": "2026-09-07T05:24:52+00:00",
-    "checked_epoch": 1788758692
+    "source_modified_at": "2026-10-02T17:14:41.927+09:00",
+    "checked_at": "2026-10-08T08:20:27+00:00",
+    "checked_epoch": 1791447627
   },
   "smartstore-13744158498": {
     "images": {
@@ -69,9 +69,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-03T14:18:53.815+09:00",
-    "checked_at": "2026-09-07T05:25:11+00:00",
-    "checked_epoch": 1788758711
+    "source_modified_at": "2026-09-28T20:20:20.591+09:00",
+    "checked_at": "2026-10-08T08:20:44+00:00",
+    "checked_epoch": 1791447644
   },
   "smartstore-13740755027": {
     "images": {
@@ -91,9 +91,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:34:24.828+09:00",
-    "checked_at": "2026-09-07T05:28:27+00:00",
-    "checked_epoch": 1788758907
+    "source_modified_at": "2026-09-28T20:20:58.002+09:00",
+    "checked_at": "2026-10-08T08:24:08+00:00",
+    "checked_epoch": 1791447848
   },
   "smartstore-13740727177": {
     "images": {
@@ -109,13 +109,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 3000,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:06:49.885+09:00",
-    "checked_at": "2026-09-07T05:30:27+00:00",
-    "checked_epoch": 1788759027
+    "source_modified_at": "2026-09-28T20:22:10.086+09:00",
+    "checked_at": "2026-10-08T08:26:17+00:00",
+    "checked_epoch": 1791447977
   },
   "smartstore-13740633153": {
     "images": {
@@ -135,9 +135,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:26:13.110+09:00",
-    "checked_at": "2026-09-07T05:35:21+00:00",
-    "checked_epoch": 1788759321
+    "source_modified_at": "2026-09-28T20:23:40.128+09:00",
+    "checked_at": "2026-10-08T08:31:30+00:00",
+    "checked_epoch": 1791448290
   },
   "smartstore-13740321192": {
     "images": {
@@ -157,9 +157,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:21:59.579+09:00",
-    "checked_at": "2026-09-07T05:39:11+00:00",
-    "checked_epoch": 1788759551
+    "source_modified_at": "2026-09-28T20:25:31.128+09:00",
+    "checked_at": "2026-10-08T08:35:38+00:00",
+    "checked_epoch": 1791448538
   },
   "smartstore-13739631520": {
     "images": {
@@ -186,9 +186,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:20.924+09:00",
-    "checked_at": "2026-09-07T05:42:30+00:00",
-    "checked_epoch": 1788759750
+    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
+    "checked_at": "2026-10-08T08:39:12+00:00",
+    "checked_epoch": 1791448752
   },
   "smartstore-13523128288": {
     "images": {
@@ -232,13 +232,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 4200,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-07-23T17:13:36.224+09:00",
-    "checked_at": "2026-09-07T05:46:21+00:00",
-    "checked_epoch": 1788759981
+    "source_modified_at": "2026-09-28T19:22:57.981+09:00",
+    "checked_at": "2026-10-08T08:42:14+00:00",
+    "checked_epoch": 1791448934
   },
   "smartstore-13326138985": {
     "images": {
@@ -255,13 +255,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 4200,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-03-30T13:24:46.021+09:00",
-    "checked_at": "2026-09-07T05:46:33+00:00",
-    "checked_epoch": 1788759993
+    "source_modified_at": "2026-09-28T19:22:57.981+09:00",
+    "checked_at": "2026-10-08T08:42:18+00:00",
+    "checked_epoch": 1791448938
   },
   "smartstore-12997129399": {
     "images": {
@@ -361,13 +361,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 4500,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-03-16T15:32:56.467+09:00",
-    "checked_at": "2026-09-07T05:58:32+00:00",
-    "checked_epoch": 1788760712
+    "source_modified_at": "2026-09-28T19:33:47.672+09:00",
+    "checked_at": "2026-10-08T08:44:25+00:00",
+    "checked_epoch": 1791449065
   },
   "smartstore-8822380617": {
     "images": {
@@ -521,8 +521,30 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T21:21:40.484+09:00",
-    "checked_at": "2026-09-08T16:18:16+00:00",
-    "checked_epoch": 1788884296
+    "source_modified_at": "2026-09-28T20:18:16.500+09:00",
+    "checked_at": "2026-10-08T08:15:14+00:00",
+    "checked_epoch": 1791447314
+  },
+  "smartstore-13794869635": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261006_293/1791292167835uwCV0_JPEG/ACK44929GZ.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20230911_215/1694423044803zgAdr_JPEG/%EC%99%80%EC%BD%A4_%EC%9B%90_%ED%8E%9C_2_%ED%95%98%EB%8B%A8_%EC%88%98%EC%A0%950811.jpg?type=w848"
+      ]
+    },
+    "description_text": "와콤원 펜2 교체용 악세서리 - 하단 그레이 ACK44929GZ\n모델명: ACK44929GZ",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-06T22:36:10.104+09:00",
+    "checked_at": "2026-10-08T08:13:20+00:00",
+    "checked_epoch": 1791447200
   }
 }

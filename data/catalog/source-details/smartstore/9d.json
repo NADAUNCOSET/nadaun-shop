@@ -19,9 +19,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:11:28.692+09:00",
-    "checked_at": "2026-09-07T05:21:12+00:00",
-    "checked_epoch": 1788758472
+    "source_modified_at": "2026-09-28T20:18:41.210+09:00",
+    "checked_at": "2026-10-08T08:16:47+00:00",
+    "checked_epoch": 1791447407
   },
   "smartstore-13740734552": {
     "images": {
@@ -37,13 +37,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 3000,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:09:13.749+09:00",
-    "checked_at": "2026-09-07T05:29:59+00:00",
-    "checked_epoch": 1788758999
+    "source_modified_at": "2026-09-28T20:21:20.787+09:00",
+    "checked_at": "2026-10-08T08:25:46+00:00",
+    "checked_epoch": 1791447946
   },
   "smartstore-13740671873": {
     "images": {
@@ -63,9 +63,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:09:24.097+09:00",
-    "checked_at": "2026-09-07T05:31:58+00:00",
-    "checked_epoch": 1788759118
+    "source_modified_at": "2026-09-28T20:22:30.151+09:00",
+    "checked_at": "2026-10-08T08:27:54+00:00",
+    "checked_epoch": 1791448074
   },
   "smartstore-13740655688": {
     "images": {
@@ -85,9 +85,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:45:41.108+09:00",
-    "checked_at": "2026-09-07T05:33:39+00:00",
-    "checked_epoch": 1788759219
+    "source_modified_at": "2026-09-28T20:22:47.145+09:00",
+    "checked_at": "2026-10-08T08:29:40+00:00",
+    "checked_epoch": 1791448180
   },
   "smartstore-13740321010": {
     "images": {
@@ -107,9 +107,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:21:49.567+09:00",
-    "checked_at": "2026-09-07T05:39:56+00:00",
-    "checked_epoch": 1788759596
+    "source_modified_at": "2026-09-28T20:25:42.410+09:00",
+    "checked_at": "2026-10-08T08:36:25+00:00",
+    "checked_epoch": 1791448585
   },
   "smartstore-13739631817": {
     "images": {
@@ -133,9 +133,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:11.155+09:00",
-    "checked_at": "2026-09-07T05:41:13+00:00",
-    "checked_epoch": 1788759673
+    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
+    "checked_at": "2026-10-08T08:37:49+00:00",
+    "checked_epoch": 1791448669
   },
   "smartstore-13739631592": {
     "images": {
@@ -161,9 +161,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:20.924+09:00",
-    "checked_at": "2026-09-07T05:42:17+00:00",
-    "checked_epoch": 1788759737
+    "source_modified_at": "2026-09-28T20:26:47.184+09:00",
+    "checked_at": "2026-10-08T08:38:51+00:00",
+    "checked_epoch": 1791448731
   },
   "smartstore-13739631313": {
     "images": {
@@ -187,9 +187,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:32.048+09:00",
-    "checked_at": "2026-09-07T05:43:02+00:00",
-    "checked_epoch": 1788759782
+    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
+    "checked_at": "2026-10-08T08:39:47+00:00",
+    "checked_epoch": 1791448787
   },
   "smartstore-13667618072": {
     "images": {
@@ -259,9 +259,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:41:55.384+09:00",
-    "checked_at": "2026-09-07T05:49:42+00:00",
-    "checked_epoch": 1788760182
+    "source_modified_at": "2026-10-06T17:23:24.718+09:00",
+    "checked_at": "2026-10-08T08:43:19+00:00",
+    "checked_epoch": 1791448999
   },
   "smartstore-12054131821": {
     "images": {
@@ -304,9 +304,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-02T22:15:47.539+09:00",
-    "checked_at": "2026-09-07T05:54:37+00:00",
-    "checked_epoch": 1788760477
+    "source_modified_at": "2026-09-28T20:20:36.152+09:00",
+    "checked_at": "2026-10-08T08:21:43+00:00",
+    "checked_epoch": 1791447703
   },
   "smartstore-8794411871": {
     "images": {
@@ -486,11 +486,9 @@
         "https://shop-phinf.pstatic.net/20250526_127/17482407925315uBk6_PNG/82373760656140754_140578249.png",
         "https://shop-phinf.pstatic.net/20250526_82/1748240792682CPMIT_PNG/82373760780984335_1586953650.png"
       ],
-      "detail": [
-        "https://shop-phinf.pstatic.net/20250526_42/1748240894881H81rS_PNG/%EB%84%A4%EC%9D%B4%EB%B2%84-v16.6-%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80.PNG"
-      ]
+      "detail": []
     },
-    "description_text": "* 캡쳐원 'PRO' 범용, 영구 라이선스 상품입니다.\n​\n* 캡쳐원 프로\n- 구매전 확인사항\n'영구 라이선스' 의미와 범위 : 구매 일자를 기준으로 구매(활성화)한 버전에 한해 영구적으로 사용하며, 구매당시 지원하는 모든 카메라와 컴퓨터 운영체제의 범위 안에서만 지원됩니다.\n예) 16.2.0 구매시 16.2.0 → 16.2.# → 16.2.# 등의 소수점 2자리 이하의 서비스 릴리즈까지만 무료 업데이트 가능 (16.2.0 → 16.3.0(X) 업데이트 불가)\n본 라이선스는 컴퓨터 3대까지 동시 활성화가 가능합니다. (윈도우/맥 구분 없음)\n컴퓨터 설치 댓수는 제한이 없습니다. 즉 3대 활성화 이후에도 다른 컴퓨터로 손쉽게 이동이 가능합니다. (온라인 카운트 초기화 지원)\n최초 활성화 때 사용하는 1개의 이메일주소가 영구 소유권이 되어, 계속해서 등록된 라이선스의 모든 관리를 합니다.\n제작사 홈페이지에서 반드시 무료 시험판으로 성능과 지원을 모두 테스트 해보신 후 구매바랍니다.\n기타 궁금하신 사항은 문의글 남겨주시거나 고객센터로 문의 부탁드립니다.\n캡쳐원은 디지털 라이센스 키를 이메일로 전송드리는 ESD 상품입니다. 상품 특성상 코드가 발송된 후 단순 변심으로 인한 취소가 어렵습니다.\n🆕 Capture One 2025 최신 업데이트 도착!\n완전히 새로워진 색보정의 세계,\n이제는 LUT 없이도 영화 같은 무드를 완성하세요.\n🎨 AI 컬러 그레이딩\n한 번의 클릭으로 분위기를 결정짓는 톤 완성! 전문가급 룩을 누구나 손쉽게 구현합니다.\n🪄 스마트 마스크 자동 인식 기능\n피부, 배경, 헤어를 자동 분리! 보정 시간은 줄이고, 퀄리티는 올려보세요.\n⚡\n라이브 스타일 브라우저\n실시간 미리보기로 LUT 없이도 스타일 선택이 가능!\n당신의 감성을 가장 빠르게 시각화하는 도구.\n📁 클라우드 전송 & 원격 협업 기능\n어디서든 팀원과 연결되고, 고객과 빠르게 공유하세요. 포스트 프로덕션의 패러다임을 바꿀 혁신.\n​\n#캡쳐원 #CaptureOne #캡쳐원프로 #컬러그레이딩 #사진보정프로그램 #AI보정툴 #스튜디오필수템 #영상편집 #색보정툴 #포토그래퍼필수템 #컬러작업 #이미지편집툴 #캡쳐원2025 #색감보정 #마스크툴 #RAW현상프로그램 #포트레이트보정 #캡쳐원강의 #감성사진편집 #광고사진편집툴\n​\n​",
+    "description_text": "NADAUN SPACE · PHOTO WORKFLOW\nCapture One Pro\n촬영부터 RAW 보정, 최종 출력까지\n캡쳐원 프로 16.8.x · 데스크톱 영구 라이선스 · ESD\n구매 전, 라이선스부터 확인하세요\n이 상품은 Capture One Pro 범용 영구 라이선스입니다. 구독상품이 아니며, 구매한 라이선스가 지원하는 버전을 기간 제한 없이 사용할 수 있습니다.\n영구 사용 = 모든 미래 버전 무료 제공이 아닙니다.\n16.8 라이선스의 서비스 업데이트는 16.8.x 범위이며, 이후 기능 버전의 업그레이드는 별도 구매가 필요할 수 있습니다. 사용 가능한 정확한 버전은 발급받은 라이선스와 제작사 계정에서 확인해 주세요.\n2026년, 더 편리해진 사진 작업\n01 · Enhanced Denoise\n고감도 사진의 노이즈를 줄이면서 피부와 머리카락 등 디테일을 살리는 보정 기능입니다. 별도 앱으로 이동하는 과정을 줄이고 RAW 작업을 이어가세요.\n02 · 2세대 무선 테더링\n지원하는 Canon 카메라에서 개선된 무선 테더링을 사용할 수 있습니다. 촬영한 이미지를 컴퓨터에서 확인하며 작업할 수 있으며, 지원 모델·펌웨어·네트워크 환경에 따라 사용 가능 여부와 속도가 달라집니다.\n03 · Assisted Review (Beta)\n눈 감음, 초점이 맞지 않은 사진, 검은 프레임 등의 검토를 보조합니다. 자동 판단은 최종 선택을 대신하지 않으므로 촬영자가 결과를 확인해 주세요.\n04 · 정교한 선택과 보정\n마스크 결합과 인물 리터칭 도구로 필요한 영역을 세밀하게 조정하고, 네거티브 필름 변환 기능으로 필름 스캔 사진의 작업 흐름도 확장할 수 있습니다.\n05 · 촬영 장비 지원 확대\n카메라 파일 및 테더링 지원은 버전별로 다릅니다. RAW 파일을 열 수 있는 것과 유선·무선 테더링 지원은 별개이므로, 구매 전 자신의 카메라 모델을 반드시 확인하세요.\n기능 안내 확인일: 2026.09.22. Capture One 공식 업데이트 안내 기준. 기능은 설치 버전, 운영체제, 하드웨어 및 라이선스에 따라 달라질 수 있습니다. Beta 기능은 변경될 수 있습니다.\n이런 작업에 활용하세요\n• 인물·웨딩 사진의 색감과 톤 정리\n• 제품·광고 촬영의 테더링 및 현장 이미지 확인\n• RAW 이미지 현상과 일괄 보정\n• 촬영 프로젝트의 사진 선택 및 출력 준비\n포함 범위 안내\n이 페이지는 데스크톱 Capture One Pro 상품 안내입니다. Capture One mobile, Studio 및 팀·클라우드 서비스가 모두 포함된 상품을 의미하지 않습니다. 별도 제품 또는 요금제가 필요한 기능은 해당 조건을 확인해 주세요.\n설치·활성화 안내\n• 기존 판매조건 기준 컴퓨터 최대 3대 활성화를 지원합니다(Windows/macOS). 이는 3인용 라이선스를 뜻하지 않으며, 실제 사용 범위는 제작사 라이선스 약관을 따릅니다.\n• 구매자 본인의 Capture One 계정으로 등록하고 관리해 주세요.\n• 운영체제·카메라·그래픽 장치 호환 여부는 구매 전 공식 지원표와 시험판으로 확인해 주세요.\n• 새로운 OS나 카메라가 출시되더라도 기존 영구 버전에서 자동 지원되는 것은 아닙니다.\n배송 및 구매 안내\n디지털 라이선스 키를 이메일로 전달하는 ESD 상품입니다. 실물 패키지 배송 상품이 아닙니다.\n기존 판매 안내대로 코드 발송 후에는 단순 변심 취소가 어려울 수 있으므로, 발송 전 상품 종류와 호환 여부를 확인해 주세요. 오류·오발급 등 문제가 있는 경우 스토어 고객센터로 문의해 주세요.\n구매 및 발급 관련 문의는 네이버 톡톡 또는 이 상품의 문의글을 이용해 주세요.\n나다운 스페이스 · 레인보우베네",
     "option_groups": [],
     "options": [],
     "shipping": {
@@ -499,9 +497,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-07-02T17:17:15.431+09:00",
-    "checked_at": "2026-09-07T06:14:31+00:00",
-    "checked_epoch": 1788761671
+    "source_modified_at": "2026-09-22T21:19:22.440+09:00",
+    "checked_at": "2026-10-08T08:45:03+00:00",
+    "checked_epoch": 1791449103
   },
   "smartstore-5125293091": {
     "images": {
@@ -591,9 +589,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T21:37:52.697+09:00",
-    "checked_at": "2026-09-08T16:16:40+00:00",
-    "checked_epoch": 1788884200
+    "source_modified_at": "2026-09-28T20:17:52.510+09:00",
+    "checked_at": "2026-10-08T08:13:59+00:00",
+    "checked_epoch": 1791447239
   },
   "smartstore-13751891864": {
     "images": {
@@ -613,9 +611,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T21:37:50.784+09:00",
-    "checked_at": "2026-09-08T16:16:57+00:00",
-    "checked_epoch": 1788884217
+    "source_modified_at": "2026-09-28T20:17:52.510+09:00",
+    "checked_at": "2026-10-08T08:14:13+00:00",
+    "checked_epoch": 1791447253
   },
   "smartstore-13751891720": {
     "images": {
@@ -635,8 +633,30 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T21:37:45.196+09:00",
-    "checked_at": "2026-09-08T16:17:21+00:00",
-    "checked_epoch": 1788884241
+    "source_modified_at": "2026-09-28T20:18:04.474+09:00",
+    "checked_at": "2026-10-08T08:14:31+00:00",
+    "checked_epoch": 1791447271
+  },
+  "smartstore-13794869629": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261006_208/1791292169344DqK8u_JPEG/ACP501E.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20260514_3/1778722719996RI4Im_PNG/Wacom_Pro_Pen_3E_PDP.png?type=w848"
+      ]
+    },
+    "description_text": "와콤 프로 펜 3E ACP501E ( 프로펜3+지우개 )\n모델명: ACP501E",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-06T22:36:10.101+09:00",
+    "checked_at": "2026-10-08T08:13:21+00:00",
+    "checked_epoch": 1791447201
   }
 }

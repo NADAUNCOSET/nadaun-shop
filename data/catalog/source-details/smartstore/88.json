@@ -17,9 +17,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:34:32.486+09:00",
-    "checked_at": "2026-09-07T05:27:42+00:00",
-    "checked_epoch": 1788758862
+    "source_modified_at": "2026-09-28T20:20:47.094+09:00",
+    "checked_at": "2026-10-08T08:23:20+00:00",
+    "checked_epoch": 1791447800
   },
   "smartstore-13740734541": {
     "images": {
@@ -35,13 +35,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 3000,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:09:13.694+09:00",
-    "checked_at": "2026-09-07T05:30:03+00:00",
-    "checked_epoch": 1788759003
+    "source_modified_at": "2026-09-28T20:21:20.787+09:00",
+    "checked_at": "2026-10-08T08:25:52+00:00",
+    "checked_epoch": 1791447952
   },
   "smartstore-13740734513": {
     "images": {
@@ -57,13 +57,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 3000,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:09:12.119+09:00",
-    "checked_at": "2026-09-07T05:30:06+00:00",
-    "checked_epoch": 1788759006
+    "source_modified_at": "2026-09-28T20:21:20.787+09:00",
+    "checked_at": "2026-10-08T08:25:55+00:00",
+    "checked_epoch": 1791447955
   },
   "smartstore-13740726404": {
     "images": {
@@ -79,13 +79,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 3000,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:59:58.487+09:00",
-    "checked_at": "2026-09-07T05:31:08+00:00",
-    "checked_epoch": 1788759068
+    "source_modified_at": "2026-09-28T20:22:19.495+09:00",
+    "checked_at": "2026-10-08T08:27:01+00:00",
+    "checked_epoch": 1791448021
   },
   "smartstore-13740726308": {
     "images": {
@@ -101,13 +101,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 3000,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:59:54.922+09:00",
-    "checked_at": "2026-09-07T05:31:31+00:00",
-    "checked_epoch": 1788759091
+    "source_modified_at": "2026-09-28T20:22:19.495+09:00",
+    "checked_at": "2026-10-08T08:27:26+00:00",
+    "checked_epoch": 1791448046
   },
   "smartstore-13740623487": {
     "images": {
@@ -127,9 +127,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:17:46.792+09:00",
-    "checked_at": "2026-09-07T05:36:03+00:00",
-    "checked_epoch": 1788759363
+    "source_modified_at": "2026-09-28T20:23:50.654+09:00",
+    "checked_at": "2026-10-08T08:32:17+00:00",
+    "checked_epoch": 1791448337
   },
   "smartstore-13739631410": {
     "images": {
@@ -155,9 +155,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:20.924+09:00",
-    "checked_at": "2026-09-07T05:42:43+00:00",
-    "checked_epoch": 1788759763
+    "source_modified_at": "2026-09-28T20:26:47.184+09:00",
+    "checked_at": "2026-10-08T08:39:26+00:00",
+    "checked_epoch": 1791448766
   },
   "smartstore-13739630887": {
     "images": {
@@ -186,9 +186,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:47.077+09:00",
-    "checked_at": "2026-09-07T05:44:35+00:00",
-    "checked_epoch": 1788759875
+    "source_modified_at": "2026-09-28T20:27:15.289+09:00",
+    "checked_at": "2026-10-08T08:41:28+00:00",
+    "checked_epoch": 1791448888
   },
   "smartstore-13739630856": {
     "images": {
@@ -212,9 +212,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:47.077+09:00",
-    "checked_at": "2026-09-07T05:44:39+00:00",
-    "checked_epoch": 1788759879
+    "source_modified_at": "2026-09-28T20:27:15.289+09:00",
+    "checked_at": "2026-10-08T08:41:32+00:00",
+    "checked_epoch": 1791448892
   },
   "smartstore-13739553873": {
     "images": {
@@ -243,9 +243,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:17:15.301+09:00",
-    "checked_at": "2026-09-07T05:44:58+00:00",
-    "checked_epoch": 1788759898
+    "source_modified_at": "2026-09-28T20:27:15.289+09:00",
+    "checked_at": "2026-10-08T08:41:54+00:00",
+    "checked_epoch": 1791448914
   },
   "smartstore-13090032692": {
     "images": {
@@ -302,13 +302,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 4500,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-04-08T12:22:31.114+09:00",
-    "checked_at": "2026-09-07T05:47:55+00:00",
-    "checked_epoch": 1788760075
+    "source_modified_at": "2026-09-28T19:33:47.672+09:00",
+    "checked_at": "2026-10-08T08:42:26+00:00",
+    "checked_epoch": 1791448946
   },
   "smartstore-11995605904": {
     "images": {
@@ -595,9 +595,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T21:37:43.257+09:00",
-    "checked_at": "2026-09-08T16:17:27+00:00",
-    "checked_epoch": 1788884247
+    "source_modified_at": "2026-09-28T20:18:04.474+09:00",
+    "checked_at": "2026-10-08T08:14:36+00:00",
+    "checked_epoch": 1791447276
   },
   "smartstore-13751871904": {
     "images": {
@@ -617,8 +617,30 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T21:21:42.624+09:00",
-    "checked_at": "2026-09-08T16:18:03+00:00",
-    "checked_epoch": 1788884283
+    "source_modified_at": "2026-09-28T20:18:04.474+09:00",
+    "checked_at": "2026-10-08T08:15:04+00:00",
+    "checked_epoch": 1791447304
+  },
+  "smartstore-13794870897": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261006_116/1791292165050YLVV0_JPEG/ACK20001.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20210408_256/16178715350659vFAs_JPEG/ACK-200-01_(%EC%83%81%ED%92%88%EC%84%A4%EB%AA%85).jpg?type=w848"
+      ]
+    },
+    "description_text": "펜심 - ACK-200-01 WACOM 와콤 표준 펜심 5개입 프로펜 그립펜 뱀부펜 등 대부분의 와콤펜에서 사용할 수 있는 표준형\n모델명: ACK20001",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-06T22:36:10.123+09:00",
+    "checked_at": "2026-10-08T08:13:01+00:00",
+    "checked_epoch": 1791447181
   }
 }

@@ -20,9 +20,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:11:15.017+09:00",
-    "checked_at": "2026-09-07T05:22:04+00:00",
-    "checked_epoch": 1788758524
+    "source_modified_at": "2026-09-28T20:19:36.990+09:00",
+    "checked_at": "2026-10-08T08:17:41+00:00",
+    "checked_epoch": 1791447461
   },
   "smartstore-13745581765": {
     "images": {
@@ -45,9 +45,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:10:52.537+09:00",
-    "checked_at": "2026-09-07T05:23:48+00:00",
-    "checked_epoch": 1788758628
+    "source_modified_at": "2026-09-28T20:19:58.708+09:00",
+    "checked_at": "2026-10-08T08:19:25+00:00",
+    "checked_epoch": 1791447565
   },
   "smartstore-13742686836": {
     "images": {
@@ -67,9 +67,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-02T22:15:46.395+09:00",
-    "checked_at": "2026-09-07T05:26:11+00:00",
-    "checked_epoch": 1788758771
+    "source_modified_at": "2026-09-28T20:20:36.152+09:00",
+    "checked_at": "2026-10-08T08:21:52+00:00",
+    "checked_epoch": 1791447712
   },
   "smartstore-13740734576": {
     "images": {
@@ -85,13 +85,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 3000,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:09:15.396+09:00",
-    "checked_at": "2026-09-07T05:29:56+00:00",
-    "checked_epoch": 1788758996
+    "source_modified_at": "2026-09-28T20:21:20.787+09:00",
+    "checked_at": "2026-10-08T08:25:42+00:00",
+    "checked_epoch": 1791447942
   },
   "smartstore-13740721125": {
     "images": {
@@ -107,13 +107,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 3000,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:53:06.840+09:00",
-    "checked_at": "2026-09-07T05:31:45+00:00",
-    "checked_epoch": 1788759105
+    "source_modified_at": "2026-09-28T20:22:19.495+09:00",
+    "checked_at": "2026-10-08T08:27:40+00:00",
+    "checked_epoch": 1791448060
   },
   "smartstore-13740717341": {
     "images": {
@@ -129,13 +129,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 3000,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:48:06.627+09:00",
-    "checked_at": "2026-09-07T05:31:54+00:00",
-    "checked_epoch": 1788759114
+    "source_modified_at": "2026-09-28T20:22:19.495+09:00",
+    "checked_at": "2026-10-08T08:27:50+00:00",
+    "checked_epoch": 1791448070
   },
   "smartstore-13740671829": {
     "images": {
@@ -155,9 +155,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:02:00.466+09:00",
-    "checked_at": "2026-09-07T05:32:23+00:00",
-    "checked_epoch": 1788759143
+    "source_modified_at": "2026-09-28T20:22:30.151+09:00",
+    "checked_at": "2026-10-08T08:28:04+00:00",
+    "checked_epoch": 1791448084
   },
   "smartstore-13740633115": {
     "images": {
@@ -177,9 +177,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:26:11.677+09:00",
-    "checked_at": "2026-09-07T05:35:30+00:00",
-    "checked_epoch": 1788759330
+    "source_modified_at": "2026-09-28T20:23:40.128+09:00",
+    "checked_at": "2026-10-08T08:31:41+00:00",
+    "checked_epoch": 1791448301
   },
   "smartstore-13740623377": {
     "images": {
@@ -201,9 +201,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:17:42.526+09:00",
-    "checked_at": "2026-09-07T05:36:22+00:00",
-    "checked_epoch": 1788759382
+    "source_modified_at": "2026-09-28T20:23:50.654+09:00",
+    "checked_at": "2026-10-08T08:32:38+00:00",
+    "checked_epoch": 1791448358
   },
   "smartstore-13739631728": {
     "images": {
@@ -227,9 +227,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:11.155+09:00",
-    "checked_at": "2026-09-07T05:41:35+00:00",
-    "checked_epoch": 1788759695
+    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
+    "checked_at": "2026-10-08T08:38:12+00:00",
+    "checked_epoch": 1791448692
   },
   "smartstore-12827867682": {
     "images": {
@@ -295,9 +295,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:34:24.839+09:00",
-    "checked_at": "2026-09-07T05:54:40+00:00",
-    "checked_epoch": 1788760480
+    "source_modified_at": "2026-09-28T20:20:58.002+09:00",
+    "checked_at": "2026-10-08T08:24:07+00:00",
+    "checked_epoch": 1791447847
   },
   "smartstore-10817341033": {
     "images": {
@@ -522,8 +522,8 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T22:50:57.221+09:00",
-    "checked_at": "2026-09-08T16:16:04+00:00",
-    "checked_epoch": 1788884164
+    "source_modified_at": "2026-09-28T20:17:52.510+09:00",
+    "checked_at": "2026-10-08T08:13:31+00:00",
+    "checked_epoch": 1791447211
   }
 }

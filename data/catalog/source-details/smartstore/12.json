@@ -22,9 +22,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:33:29.330+09:00",
-    "checked_at": "2026-09-07T05:19:51+00:00",
-    "checked_epoch": 1788758391
+    "source_modified_at": "2026-09-28T20:18:16.500+09:00",
+    "checked_at": "2026-10-08T08:15:32+00:00",
+    "checked_epoch": 1791447332
   },
   "smartstore-13745584404": {
     "images": {
@@ -44,9 +44,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:12:38.617+09:00",
-    "checked_at": "2026-09-07T05:20:10+00:00",
-    "checked_epoch": 1788758410
+    "source_modified_at": "2026-09-28T20:18:16.500+09:00",
+    "checked_at": "2026-10-08T08:15:44+00:00",
+    "checked_epoch": 1791447344
   },
   "smartstore-13745582723": {
     "images": {
@@ -68,9 +68,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:11:24.440+09:00",
-    "checked_at": "2026-09-07T05:21:28+00:00",
-    "checked_epoch": 1788758488
+    "source_modified_at": "2026-09-28T20:18:41.210+09:00",
+    "checked_at": "2026-10-08T08:17:05+00:00",
+    "checked_epoch": 1791447425
   },
   "smartstore-13740754885": {
     "images": {
@@ -90,9 +90,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:34:18.068+09:00",
-    "checked_at": "2026-09-07T05:29:01+00:00",
-    "checked_epoch": 1788758941
+    "source_modified_at": "2026-09-28T20:21:09.083+09:00",
+    "checked_at": "2026-10-08T08:24:42+00:00",
+    "checked_epoch": 1791447882
   },
   "smartstore-13740726437": {
     "images": {
@@ -108,13 +108,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 3000,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:59:59.717+09:00",
-    "checked_at": "2026-09-07T05:30:58+00:00",
-    "checked_epoch": 1788759058
+    "source_modified_at": "2026-09-28T20:22:10.086+09:00",
+    "checked_at": "2026-10-08T08:26:52+00:00",
+    "checked_epoch": 1791448012
   },
   "smartstore-13740320924": {
     "images": {
@@ -134,9 +134,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:21:46.147+09:00",
-    "checked_at": "2026-09-07T05:40:10+00:00",
-    "checked_epoch": 1788759610
+    "source_modified_at": "2026-09-28T20:25:42.410+09:00",
+    "checked_at": "2026-10-08T08:36:41+00:00",
+    "checked_epoch": 1791448601
   },
   "smartstore-13740320872": {
     "images": {
@@ -156,9 +156,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:21:43.925+09:00",
-    "checked_at": "2026-09-07T05:40:27+00:00",
-    "checked_epoch": 1788759627
+    "source_modified_at": "2026-09-28T20:25:42.410+09:00",
+    "checked_at": "2026-10-08T08:36:59+00:00",
+    "checked_epoch": 1791448619
   },
   "smartstore-13739631461": {
     "images": {
@@ -182,9 +182,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:20.924+09:00",
-    "checked_at": "2026-09-07T05:42:36+00:00",
-    "checked_epoch": 1788759756
+    "source_modified_at": "2026-09-28T20:26:47.184+09:00",
+    "checked_at": "2026-10-08T08:39:18+00:00",
+    "checked_epoch": 1791448758
   },
   "smartstore-13739631401": {
     "images": {
@@ -209,9 +209,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:20.924+09:00",
-    "checked_at": "2026-09-07T05:42:48+00:00",
-    "checked_epoch": 1788759768
+    "source_modified_at": "2026-09-28T20:26:47.184+09:00",
+    "checked_at": "2026-10-08T08:39:31+00:00",
+    "checked_epoch": 1791448771
   },
   "smartstore-13739631124": {
     "images": {
@@ -237,9 +237,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:43.035+09:00",
-    "checked_at": "2026-09-07T05:43:46+00:00",
-    "checked_epoch": 1788759826
+    "source_modified_at": "2026-09-28T20:27:08.649+09:00",
+    "checked_at": "2026-10-08T08:40:36+00:00",
+    "checked_epoch": 1791448836
   },
   "smartstore-13739631048": {
     "images": {
@@ -263,9 +263,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:43.035+09:00",
-    "checked_at": "2026-09-07T05:44:00+00:00",
-    "checked_epoch": 1788759840
+    "source_modified_at": "2026-09-28T20:27:08.649+09:00",
+    "checked_at": "2026-10-08T08:40:51+00:00",
+    "checked_epoch": 1791448851
   },
   "smartstore-12107920858": {
     "images": {
@@ -460,13 +460,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 4500,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:50:18.246+09:00",
-    "checked_at": "2026-09-07T05:58:51+00:00",
-    "checked_epoch": 1788760731
+    "source_modified_at": "2026-09-28T19:33:55.654+09:00",
+    "checked_at": "2026-10-08T08:44:40+00:00",
+    "checked_epoch": 1791449080
   },
   "smartstore-10190364169": {
     "images": {
@@ -823,8 +823,30 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T21:37:52.670+09:00",
-    "checked_at": "2026-09-08T16:16:43+00:00",
-    "checked_epoch": 1788884203
+    "source_modified_at": "2026-09-28T20:17:52.510+09:00",
+    "checked_at": "2026-10-08T08:14:01+00:00",
+    "checked_epoch": 1791447241
+  },
+  "smartstore-13794870855": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261006_205/1791292167450JG0kA_JPEG/ACK4480603Z.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20231121_300/1700532096136eQ0m0_JPEG/%EC%99%80%EC%BD%A4_%EC%8B%A0%ED%8B%B0%ED%81%AC%ED%94%84%EB%A1%9C%EC%9A%A9_%EC%A0%84%EC%9B%90%EC%BC%80%EC%9D%B4%EB%B8%94_MINI.jpg?type=w848"
+      ]
+    },
+    "description_text": "Mini DP to DP 케이블 1.8M - ACK4480603Z WACOM 와콤 신티크 프로 전용 DTH167 DTH172 DTH227 DTH271 호환\n모델명: ACK4480603Z",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-06T22:36:10.111+09:00",
+    "checked_at": "2026-10-08T08:13:15+00:00",
+    "checked_epoch": 1791447195
   }
 }

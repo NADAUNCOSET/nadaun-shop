@@ -17,9 +17,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:35:43.606+09:00",
-    "checked_at": "2026-09-07T05:26:34+00:00",
-    "checked_epoch": 1788758794
+    "source_modified_at": "2026-09-28T20:20:36.152+09:00",
+    "checked_at": "2026-10-08T08:22:07+00:00",
+    "checked_epoch": 1791447727
   },
   "smartstore-13740717349": {
     "images": {
@@ -35,13 +35,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 3000,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:48:06.663+09:00",
-    "checked_at": "2026-09-07T05:31:52+00:00",
-    "checked_epoch": 1788759112
+    "source_modified_at": "2026-09-28T20:22:19.495+09:00",
+    "checked_at": "2026-10-08T08:27:46+00:00",
+    "checked_epoch": 1791448066
   },
   "smartstore-13740669969": {
     "images": {
@@ -72,9 +72,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:00:07.504+09:00",
-    "checked_at": "2026-09-07T05:32:34+00:00",
-    "checked_epoch": 1788759154
+    "source_modified_at": "2026-09-28T20:22:30.151+09:00",
+    "checked_at": "2026-10-08T08:28:31+00:00",
+    "checked_epoch": 1791448111
   },
   "smartstore-13740669796": {
     "images": {
@@ -105,9 +105,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:59:59.178+09:00",
-    "checked_at": "2026-09-07T05:33:06+00:00",
-    "checked_epoch": 1788759186
+    "source_modified_at": "2026-09-28T20:22:40.059+09:00",
+    "checked_at": "2026-10-08T08:29:05+00:00",
+    "checked_epoch": 1791448145
   },
   "smartstore-13740633064": {
     "images": {
@@ -127,9 +127,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:26:08.953+09:00",
-    "checked_at": "2026-09-07T05:35:37+00:00",
-    "checked_epoch": 1788759337
+    "source_modified_at": "2026-09-28T20:23:40.128+09:00",
+    "checked_at": "2026-10-08T08:31:48+00:00",
+    "checked_epoch": 1791448308
   },
   "smartstore-13740613650": {
     "images": {
@@ -152,9 +152,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:07:27.674+09:00",
-    "checked_at": "2026-09-07T05:36:48+00:00",
-    "checked_epoch": 1788759408
+    "source_modified_at": "2026-09-28T20:24:01.515+09:00",
+    "checked_at": "2026-10-08T08:33:05+00:00",
+    "checked_epoch": 1791448385
   },
   "smartstore-13740321853": {
     "images": {
@@ -174,9 +174,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:22:48.724+09:00",
-    "checked_at": "2026-09-07T05:38:36+00:00",
-    "checked_epoch": 1788759516
+    "source_modified_at": "2026-09-28T20:25:19.175+09:00",
+    "checked_at": "2026-10-08T08:35:00+00:00",
+    "checked_epoch": 1791448500
   },
   "smartstore-13740321006": {
     "images": {
@@ -196,9 +196,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:21:49.541+09:00",
-    "checked_at": "2026-09-07T05:39:57+00:00",
-    "checked_epoch": 1788759597
+    "source_modified_at": "2026-09-28T20:25:42.410+09:00",
+    "checked_at": "2026-10-08T08:36:27+00:00",
+    "checked_epoch": 1791448587
   },
   "smartstore-13740320968": {
     "images": {
@@ -219,9 +219,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T11:33:56.124+09:00",
-    "checked_at": "2026-09-08T16:18:29+00:00",
-    "checked_epoch": 1788884309
+    "source_modified_at": "2026-09-28T20:25:42.410+09:00",
+    "checked_at": "2026-10-08T08:36:40+00:00",
+    "checked_epoch": 1791448600
   },
   "smartstore-13740320398": {
     "images": {
@@ -246,9 +246,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:21:02.182+09:00",
-    "checked_at": "2026-09-07T05:40:39+00:00",
-    "checked_epoch": 1788759639
+    "source_modified_at": "2026-09-28T20:25:53.480+09:00",
+    "checked_at": "2026-10-08T08:37:13+00:00",
+    "checked_epoch": 1791448633
   },
   "smartstore-13740318515": {
     "images": {
@@ -270,9 +270,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:18:26.604+09:00",
-    "checked_at": "2026-09-07T05:41:10+00:00",
-    "checked_epoch": 1788759670
+    "source_modified_at": "2026-09-28T20:25:53.480+09:00",
+    "checked_at": "2026-10-08T08:37:46+00:00",
+    "checked_epoch": 1791448666
   },
   "smartstore-13739631409": {
     "images": {
@@ -298,9 +298,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:45:20.924+09:00",
-    "checked_at": "2026-09-07T05:42:43+00:00",
-    "checked_epoch": 1788759763
+    "source_modified_at": "2026-09-28T20:26:47.184+09:00",
+    "checked_at": "2026-10-08T08:39:27+00:00",
+    "checked_epoch": 1791448767
   },
   "smartstore-13523212500": {
     "images": {
@@ -697,8 +697,30 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T21:37:50.840+09:00",
-    "checked_at": "2026-09-08T16:16:52+00:00",
-    "checked_epoch": 1788884212
+    "source_modified_at": "2026-09-28T20:17:52.510+09:00",
+    "checked_at": "2026-10-08T08:14:08+00:00",
+    "checked_epoch": 1791447248
+  },
+  "smartstore-13794870849": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261006_152/1791292168716JeViX_JPEG/ACK45601Z.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20260402_155/1775090923741nMb32_PNG/Wacom_Pro_Pen_3_Custom_Kit_PDP_26Mar.png?type=w848"
+      ]
+    },
+    "description_text": "와콤 프로 펜 3 커스텀 키트 ACK45601Z - WACOM 와콤 프로 펜 3 ACP50000DZ 전용 신티크프로 무빙크 교체용\n모델명: ACK45601Z",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-06T22:36:10.107+09:00",
+    "checked_at": "2026-10-08T08:13:17+00:00",
+    "checked_epoch": 1791447197
   }
 }

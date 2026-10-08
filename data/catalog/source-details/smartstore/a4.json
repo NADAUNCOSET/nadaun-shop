@@ -20,9 +20,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-04T02:12:38.624+09:00",
-    "checked_at": "2026-09-07T05:20:06+00:00",
-    "checked_epoch": 1788758406
+    "source_modified_at": "2026-09-28T20:18:16.500+09:00",
+    "checked_at": "2026-10-08T08:15:43+00:00",
+    "checked_epoch": 1791447343
   },
   "smartstore-13740755132": {
     "images": {
@@ -42,9 +42,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T18:34:28.254+09:00",
-    "checked_at": "2026-09-07T05:28:05+00:00",
-    "checked_epoch": 1788758885
+    "source_modified_at": "2026-09-28T20:20:58.002+09:00",
+    "checked_at": "2026-10-08T08:23:41+00:00",
+    "checked_epoch": 1791447821
   },
   "smartstore-13740669873": {
     "images": {
@@ -64,9 +64,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T17:00:03.203+09:00",
-    "checked_at": "2026-09-07T05:32:51+00:00",
-    "checked_epoch": 1788759171
+    "source_modified_at": "2026-09-28T20:22:40.059+09:00",
+    "checked_at": "2026-10-08T08:28:50+00:00",
+    "checked_epoch": 1791448130
   },
   "smartstore-13740633194": {
     "images": {
@@ -86,9 +86,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:26:15.517+09:00",
-    "checked_at": "2026-09-07T05:35:14+00:00",
-    "checked_epoch": 1788759314
+    "source_modified_at": "2026-09-28T20:23:40.128+09:00",
+    "checked_at": "2026-10-08T08:31:23+00:00",
+    "checked_epoch": 1791448283
   },
   "smartstore-13740623484": {
     "images": {
@@ -108,9 +108,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:17:46.776+09:00",
-    "checked_at": "2026-09-07T05:36:05+00:00",
-    "checked_epoch": 1788759365
+    "source_modified_at": "2026-09-28T20:23:50.654+09:00",
+    "checked_at": "2026-10-08T08:32:19+00:00",
+    "checked_epoch": 1791448339
   },
   "smartstore-13740613652": {
     "images": {
@@ -132,9 +132,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T16:07:27.686+09:00",
-    "checked_at": "2026-09-07T05:36:47+00:00",
-    "checked_epoch": 1788759407
+    "source_modified_at": "2026-09-28T20:24:01.515+09:00",
+    "checked_at": "2026-10-08T08:33:04+00:00",
+    "checked_epoch": 1791448384
   },
   "smartstore-13740420721": {
     "images": {
@@ -154,9 +154,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-02T23:00:48.729+09:00",
-    "checked_at": "2026-09-07T05:37:11+00:00",
-    "checked_epoch": 1788759431
+    "source_modified_at": "2026-09-28T20:24:01.515+09:00",
+    "checked_at": "2026-10-08T08:33:30+00:00",
+    "checked_epoch": 1791448410
   },
   "smartstore-13740321004": {
     "images": {
@@ -178,9 +178,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T14:28:55.776+09:00",
-    "checked_at": "2026-09-08T16:18:27+00:00",
-    "checked_epoch": 1788884307
+    "source_modified_at": "2026-09-28T20:25:42.410+09:00",
+    "checked_at": "2026-10-08T08:36:28+00:00",
+    "checked_epoch": 1791448588
   },
   "smartstore-13740319988": {
     "images": {
@@ -202,9 +202,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T10:20:19.545+09:00",
-    "checked_at": "2026-09-07T05:40:58+00:00",
-    "checked_epoch": 1788759658
+    "source_modified_at": "2026-09-28T20:25:53.480+09:00",
+    "checked_at": "2026-10-08T08:37:32+00:00",
+    "checked_epoch": 1791448652
   },
   "smartstore-13000846225": {
     "images": {
@@ -344,13 +344,13 @@
     "options": [],
     "shipping": {
       "type": "PAID",
-      "base_fee": 4500,
+      "base_fee": 4800,
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T13:53:35.426+09:00",
-    "checked_at": "2026-09-07T05:53:39+00:00",
-    "checked_epoch": 1788760419
+    "source_modified_at": "2026-09-28T19:33:47.672+09:00",
+    "checked_at": "2026-10-08T08:44:18+00:00",
+    "checked_epoch": 1791449058
   },
   "smartstore-10817283764": {
     "images": {
@@ -508,5 +508,27 @@
     "source_modified_at": "2026-08-25T19:37:57.748+09:00",
     "checked_at": "2026-09-07T06:16:51+00:00",
     "checked_epoch": 1788761811
+  },
+  "smartstore-13794870881": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261006_251/1791292166177b0XVv_JPEG/ACK34801.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20221017_71/1666008604380IAlxN_JPEG/%ED%94%84%EB%A1%9C%ED%8E%9C_3_%EC%9D%BC%EC%9E%90%ED%98%95_%EA%B7%B8%EB%A6%BD_%EC%83%81%EC%84%B8%EC%9D%B4%EB%AF%B8%EC%A7%80_1.jpg?type=w848"
+      ]
+    },
+    "description_text": "프로펜3 교체용 악세서리 - 일자형 그립 ACK34801 WACOM 와콤 프로 펜 3 ACP50000DZ 전용 신티크프로 무빙크 교체용\n모델명: ACK34801",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-06T22:36:10.116+09:00",
+    "checked_at": "2026-10-08T08:13:09+00:00",
+    "checked_epoch": 1791447189
   }
 }
