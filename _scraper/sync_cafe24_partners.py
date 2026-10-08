@@ -193,12 +193,26 @@ def normalize_options(stock,offers,base_price,quote,global_soldout):
 
 
 def detail(doc,product,brand):
-    p=deepcopy(product);base,_=SITES[p['source']];sid=p['source_id'];schema=None
+    p=deepcopy(product);base,_=SITES[p['source']];sid=p['source_id'];schema=None;group=None
     for script in doc.select('script[type="application/ld+json"]'):
         try:obj=json.loads(script.get_text(),strict=False)
         except ValueError:continue
         rows=obj if isinstance(obj,list) else obj.get('@graph',[obj])
         schema=next((x for x in rows if x.get('@type')=='Product'),schema)
+        group=next((x for x in rows if x.get('@type')=='ProductGroup'),group)
+    if schema is None and group is not None:
+        # Cafe24 now publishes configurable products as ProductGroup. Keep
+        # every actual variant offer; option prices/stock are still reconciled
+        # against the shop's original option table below.
+        variants=group.get('hasVariant')
+        if product_id(group.get('@id',''))!=sid or not isinstance(variants,list) or not variants or any(v.get('@type')!='Product' for v in variants):
+            raise ValueError('Product group identity or variants missing')
+        offers=[];images=[]
+        for variant in variants:
+            offer=variant.get('offers');offers.extend(offer if isinstance(offer,list) else [offer])
+            image=variant.get('image') or [];images.extend(image if isinstance(image,list) else [image])
+        schema={'@type':'Product','name':group.get('name',''),'offers':offers,'image':list(dict.fromkeys(images)),
+                'brand':group.get('brand') or variants[0].get('brand'),'source_product_group':group}
     if not schema:raise ValueError('Product schema absent')
     if '\ufffd' in schema.get('name',''):raise ValueError('Invalid detail name encoding')
     offer=schema.get('offers') or {};variant_offers=offer if isinstance(offer,list) else []

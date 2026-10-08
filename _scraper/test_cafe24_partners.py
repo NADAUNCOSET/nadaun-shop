@@ -98,6 +98,19 @@ class Cafe24Tests(unittest.TestCase):
         self.assertEqual([(o['price'],o['disabled']) for o in p['options']],[(1000,False),(1200,True)])
         self.assertEqual(p['options'][1]['selection'],[{'name':'색상','value':'흰색'}])
 
+    def test_product_group_schema_keeps_verified_variant_prices_and_stock(self):
+        doc,_=variant_page();node=doc.select_one('script[type="application/ld+json"]');original=json.loads(node.string)
+        group={'@type':'ProductGroup','@id':'https://clmedia.co.kr/product/sample/10/','name':original['name'],
+               'hasVariant':[{'@type':'Product','image':original['image'],'offers':offer} for offer in original['offers']]}
+        node.string=json.dumps(group);p=self.parse(doc)
+        self.assertEqual(p['detail_status'],'verified')
+        self.assertEqual([(o['price'],o['disabled']) for o in p['options']],[(1000,False),(1200,True)])
+        group['hasVariant'][1]['offers']['url']='https://clmedia.co.kr/product/detail.html?product_no=11&item_code=P000A002'
+        node.string=json.dumps(group)
+        with self.assertRaises(ValueError):self.parse(doc)
+        group['@id']='https://clmedia.co.kr/product/sample/11/';node.string=json.dumps(group)
+        with self.assertRaises(ValueError):self.parse(doc)
+
     def test_variant_identity_and_contradictory_prices_are_rejected(self):
         for mutation in ('identity','price','delta'):
             doc,stocks=variant_page()
