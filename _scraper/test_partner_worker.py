@@ -10,6 +10,14 @@ import shop_sync
 
 
 class PublishBoundaryTest(unittest.TestCase):
+    def test_network_interruption_retries_without_releasing_protection_or_parser_guards(self):
+        import requests
+        from cafe24_worker import retryable_error
+        for error in [requests.ReadTimeout('timeout'),requests.ConnectionError('reset'),RuntimeError('Another catalogue sync')]:
+            self.assertTrue(retryable_error(error))
+        for error in [RuntimeError('Provider protection response; requests stopped'),requests.exceptions.SSLError('certificate'),ValueError('Product schema absent'),RuntimeError('Source HTTP 403'),RuntimeError('Source HTTP 429')]:
+            self.assertFalse(retryable_error(error))
+
     def assert_shared_guard_stops_build(self, error):
         with tempfile.TemporaryDirectory() as tmp,patch.object(shop_sync,'STATE',Path(tmp)),\
              patch.object(shop_sync,'command',return_value=''),patch.object(shop_sync,'managed_files',return_value=[]),\

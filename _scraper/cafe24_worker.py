@@ -9,6 +9,7 @@ import plistlib
 import shutil
 import subprocess
 import sys
+import requests
 
 from cafe24_publication import prepare, digest
 from sync_cafe24_partners import Collector, SITES, STATE, run_lock
@@ -17,6 +18,15 @@ from sync_shop_sources import ROOT, OUT, stamp, save_json
 
 def read(path):
     return json.loads(path.read_text()) if path.exists() else {}
+
+
+def retryable_error(exc):
+    # A connection reset or timeout is not a catalogue interpretation failure.
+    # The LaunchAgent retries after ten minutes; protection/schema errors stay
+    # latched for review. Never retry a 403/429 through this classification.
+    return (isinstance(exc, (requests.Timeout, requests.ConnectionError)) and
+            not isinstance(exc, requests.exceptions.SSLError)) or any(
+                text in str(exc) for text in ('Another catalogue sync','Code or operator','Uncommitted catalogue code'))
 
 
 def parser_revision():
@@ -153,7 +163,7 @@ if __name__=='__main__':
         except BlockingIOError:
             print('Existing partner operation is active',flush=True)
         except Exception as exc:
-            transient=any(text in str(exc) for text in ('Another catalogue sync','Code or operator','Uncommitted catalogue code'))
+            transient=retryable_error(exc)
             save_json(STATE/args.source/'worker-error.json',{'at':stamp(),'error':type(exc).__name__+': '+str(exc),
                 'requires_review':not transient,'parser_revision':parser_revision(),'published':False})
             raise
