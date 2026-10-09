@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "brands_checked": 271,
-  "input_count": 24073,
+  "input_count": 24075,
   "duplicate_group_count": 2765,
-  "duplicate_entries_removed": 4583,
+  "duplicate_entries_removed": 4581,
   "by_brand": {
     "tilta": 288,
     "avenger": 10,
@@ -17116,7 +17116,7 @@
         {
           "id": "onnoff-78",
           "name": "소니 ILME-FX30B (바디킷)",
-          "price": 2669000,
+          "price": 2729000,
           "source": "onnoff",
           "url": "https://onnoff.kr/product/detail.html?product_no=78"
         }
@@ -43101,20 +43101,6 @@
           "price": 14000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1606984496"
-        },
-        {
-          "id": "smartstore-13745581581",
-          "name": "1124 미니 슈퍼 클램프 미니 볼헤드",
-          "price": 14000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13745581581"
-        },
-        {
-          "id": "smartstore-8545837255",
-          "name": "SMALLRIG 미니슈퍼클램프+볼헤드 SR1124",
-          "price": 18000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8545837255"
         },
         {
           "id": "plthink-1915054",

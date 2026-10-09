@@ -1,14 +1,14 @@
 {
   "source": "smartstore",
   "source_url": "https://smartstore.naver.com/rainbowbene",
-  "collected_at": "2026-10-08T06:22:56+00:00",
+  "collected_at": "2026-10-08T23:01:28+00:00",
   "complete": true,
-  "origin_count": 7893,
-  "product_count": 6919,
+  "origin_count": 7891,
+  "product_count": 6917,
   "status_counts": {
-    "SALE/ON": 6495,
+    "SALE/ON": 6492,
     "SUSPENSION/ON": 29,
-    "OUTOFSTOCK/ON": 424,
+    "OUTOFSTOCK/ON": 425,
     "OUTOFSTOCK/SUSPENSION": 42,
     "SALE/SUSPENSION": 445,
     "SUSPENSION/SUSPENSION": 367,
@@ -26579,39 +26579,6 @@
         "카메라/캠코더용품",
         "삼각대/헤드",
         "삼각대액세서리"
-      ],
-      "source_modified_at": "2026-09-28T20:20:09.070+09:00"
-    },
-    "smartstore-13745581581": {
-      "id": "smartstore-13745581581",
-      "source": "smartstore",
-      "source_id": "13745581581",
-      "origin_id": "13684920790",
-      "name": "[ 스몰리그 레인보우베네 ] 1124 미니 슈퍼 클램프 미니 볼헤드",
-      "brand": "스몰리그",
-      "manufacturer": "SmallRig",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13745581581",
-      "price": 14000,
-      "sale_price": 14000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260904_261/1788455445211bJGe0_JPEG/4568c45df5ff3736eccf7740105c0b25.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002113",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001394",
-        "50002113"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
       ],
       "source_modified_at": "2026-09-28T20:20:09.070+09:00"
     },
@@ -167395,39 +167362,6 @@
       ],
       "source_modified_at": "2025-12-18T23:50:18.460+09:00"
     },
-    "smartstore-8545837255": {
-      "id": "smartstore-8545837255",
-      "source": "smartstore",
-      "source_id": "8545837255",
-      "origin_id": "8505089544",
-      "name": "[ 스몰리그 레인보우베네 ] SMALLRIG 미니슈퍼클램프+볼헤드 SR1124",
-      "brand": "스몰리그",
-      "manufacturer": "스몰리그",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/8545837255",
-      "price": 18000,
-      "sale_price": 18000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20230514_135/1684044311705XHKye_JPEG/12361973527662361_1004957868.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002076",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001389",
-        "50002076"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "삼각대/헤드",
-        "헤드"
-      ],
-      "source_modified_at": "2025-12-18T23:50:18.460+09:00"
-    },
     "smartstore-8545824412": {
       "id": "smartstore-8545824412",
       "source": "smartstore",
@@ -184665,7 +184599,7 @@
       "source_url": "https://smartstore.naver.com/rainbowbene/products/8237832366",
       "price": 195000,
       "sale_price": 195000,
-      "status": "sale",
+      "status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://shop-phinf.pstatic.net/20230314_178/1678787467010Epckn_JPEG/6090150884043989_115880933.jpg",
@@ -184685,7 +184619,7 @@
         "플래시/조명용품",
         "배경/노출용품"
       ],
-      "source_modified_at": "2025-12-18T23:53:01.053+09:00"
+      "source_modified_at": "2026-10-08T17:37:20.093+09:00"
     },
     "smartstore-8237830872": {
       "id": "smartstore-8237830872",

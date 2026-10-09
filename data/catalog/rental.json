@@ -177,8 +177,8 @@
   "meta": {
     "schema_version": 1,
     "source_counts": {
-      "kpp": 4039,
-      "smartstore": 6919,
+      "kpp": 4040,
+      "smartstore": 6917,
       "imweb-dji": 151,
       "imweb-promotions": 1,
       "l-mount": 345,
@@ -186,23 +186,23 @@
       "dji-official": 930,
       "clmedia": 2206,
       "cinemall": 1217,
-      "onnoff": 1064,
+      "onnoff": 1067,
       "avx": 1335
     },
     "detail_coverage": {
-      "kpp": 4039,
-      "smartstore": 6833,
+      "kpp": 4040,
+      "smartstore": 6831,
       "imweb-promotions": 1,
       "l-mount": 345,
       "plthink": 6236,
       "dji-official": 925,
       "clmedia": 2112,
       "cinemall": 1191,
-      "onnoff": 1064,
+      "onnoff": 1067,
       "avx": 1335
     },
-    "synced_at": "2026-10-08T08:49:24+00:00",
-    "merged_count": 4583,
+    "synced_at": "2026-10-08T23:11:14+00:00",
+    "merged_count": 4581,
     "product_count": 221,
     "category_browsing_enabled": true,
     "listing_count": 221,
@@ -210,9 +210,9 @@
     "deduplication": {
       "brands_checked": 271,
       "groups": 2765,
-      "removed": 4583
+      "removed": 4581
     },
-    "revision": "7dd8a4e60eb39c54",
+    "revision": "39d2189755d3d286",
     "view": "rental"
   },
   "brands": [
@@ -1730,8 +1730,8 @@
         "kpp:b:hoya:global:02",
         "kpp:b:hoya:global:0220"
       ],
-      "count": 376,
-      "purchase_count": 376,
+      "count": 377,
+      "purchase_count": 377,
       "rental_count": 0,
       "category_ids": [
         "kpp:b:hoya:40h0",
@@ -9664,8 +9664,8 @@
         "plthink:b:036:006",
         "plthink:b:036:007"
       ],
-      "count": 402,
-      "purchase_count": 385,
+      "count": 405,
+      "purchase_count": 388,
       "rental_count": 17,
       "category_ids": [
         "naver:b:sony:50000206",
@@ -32021,8 +32021,6 @@
     "plthink-1930392": "smartstore-13523035462",
     "clmedia-3098": "smartstore-13523035462",
     "clmedia-3099": "plthink-1930391",
-    "smartstore-13745581581": "kpp-1606984496",
-    "smartstore-8545837255": "kpp-1606984496",
     "plthink-1915054": "kpp-1606984496",
     "onnoff-976": "kpp-1606984496",
     "clmedia-31": "kpp-1606984496",
