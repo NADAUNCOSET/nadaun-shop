@@ -49,3 +49,9 @@ test('order HTML hides private business data and test shipment actions',()=>{
 test('payment information page strips redirect query and never opens a free-payment demo',async()=>{
  let cleaned;const r=runtime({location:{origin:'https://shop.nadaun.co',search:'?result=success&paymentKey=secret'},history:{replaceState(a,b,path){cleaned=path;}}});const holder={};r.main.querySelector=()=>holder;await r.context.paymentTest();assert.equal(cleaned,'/payment-test.html');assert.equal(r.sdkCalls.length,0);assert.ok(!holder.innerHTML.includes('secret'));assert.match(holder.innerHTML,/오픈을 준비/);
 });
+
+test('order submission includes only checked cart lines and strips selection metadata',()=>{
+ const rows=[{id:'legacy',option:'',quantity:2},{id:'unchecked',quantity:3,selected:false},{id:'checked',option:'Black',quantity:1,selected:true}];
+ const r=runtime({localStorage:{getItem:()=>JSON.stringify(rows)}});
+ assert.deepEqual(JSON.parse(JSON.stringify(r.context.checkoutItems())),[{id:'legacy',option:'',quantity:2},{id:'checked',option:'Black',quantity:1}]);
+});

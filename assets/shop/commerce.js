@@ -13,6 +13,10 @@ const config=()=>configRequest||(configRequest=api('config'));
 function message(target,text){target.textContent=text;target.hidden=!text;}
 const notice='<p class="commerce-note">이 브라우저에서 접수한 주문을 확인할 수 있습니다. 다른 기기에서 확인하거나 브라우저 데이터를 삭제한 경우에는 주문번호로 고객센터에 문의해주세요.</p>';
 const blocked='<div class="commerce-empty"><h2>온라인 주문 오픈 준비 중입니다.</h2><p>상품 구매와 견적은 상담으로 안내해드립니다.</p><a class="button-primary" href="https://pf.kakao.com/_pyNxnxb/chat" target="_blank" rel="noopener">카카오톡 구매 상담 ↗</a></div>';
+function checkoutItems(){
+ const rows=JSON.parse(localStorage.getItem('nadaun-shop-cart-v1')||'[]');if(!Array.isArray(rows))throw Error('장바구니 내용을 다시 확인해주세요.');
+ return rows.filter(row=>row&&row.selected!==false).map(({id,option,quantity})=>({id,option,quantity}));
+}
 async function mountCheckout(){
  const services=main.querySelector('.checkout-services');if(!services||main.querySelector('#delivery-form'))return;
  let ready;try{ready=await config();}catch{return;}if(!services.isConnected||main.querySelector('#delivery-form'))return;
@@ -32,7 +36,7 @@ async function mountCheckout(){
  form.addEventListener('submit',async event=>{
   event.preventDefault();const button=form.querySelector('button'),feedback=form.querySelector('.commerce-feedback');button.disabled=true;message(feedback,'주문을 접수하고 있습니다.');
   try{
-   if(!sentPayload){const fields=new FormData(form),items=JSON.parse(localStorage.getItem('nadaun-shop-cart-v1')||'[]');sentPayload={customer:Object.fromEntries(['name','phone','postcode','address','address_detail'].map(k=>[k,fields.get(k)])),items};sentPayload.customer.consent=fields.has('consent');sentPayload.evidence={kind:fields.get('evidence_kind')};if(sentPayload.evidence.kind==='tax_invoice')for(const k of ['corp_num','corp_name','ceo_name','address','biz_type','biz_class','email'])sentPayload.evidence[k]=fields.get('tax_'+k);}
+   if(!sentPayload){const fields=new FormData(form),items=checkoutItems();sentPayload={customer:Object.fromEntries(['name','phone','postcode','address','address_detail'].map(k=>[k,fields.get(k)])),items};sentPayload.customer.consent=fields.has('consent');sentPayload.evidence={kind:fields.get('evidence_kind')};if(sentPayload.evidence.kind==='tax_invoice')for(const k of ['corp_num','corp_name','ceo_name','address','biz_type','biz_class','email'])sentPayload.evidence[k]=fields.get('tax_'+k);}
    form.querySelectorAll('input,select').forEach(input=>input.disabled=true);
    await api('session',{});const {order}=await api('create',sentPayload,{'Idempotency-Key':key});location.assign('/orders.html#'+encodeURIComponent(order.id));
   }catch(error){message(feedback,error.message);if(error.status&&error.status<500&&error.status!==429){sentPayload=undefined;form.querySelectorAll('input,select').forEach(input=>input.disabled=false);evidenceSelect.onchange();}else{message(feedback,error.message+' 입력한 내용 그대로 다시 접수 버튼을 눌러주세요.');}button.disabled=false;}

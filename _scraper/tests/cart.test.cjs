@@ -5,7 +5,7 @@ const vm=require('node:vm');
 const source=fs.readFileSync('assets/shop/shipping.js','utf8').replaceAll('export ','')+'\n'+fs.readFileSync('assets/shop/cart.js','utf8').replace(/^import .*shipping\.js';\n/m,'').replaceAll('export ','');
 
 async function render(rows,{products,details,checkout=true}={}){
- const main={innerHTML:'',querySelectorAll:()=>[]};let fetched=0;
+ const main={innerHTML:'',querySelector:()=>null,querySelectorAll:()=>[]};let fetched=0;
  const context={
   document:{querySelector:()=>main,querySelectorAll:()=>[],dispatchEvent(){}},
   localStorage:{getItem:()=>JSON.stringify(rows)},window:{addEventListener(){}},
@@ -71,4 +71,20 @@ test('purchase controls label unavailable variants and refuse a stale forced sel
  assert.match(slot.innerHTML,/<option value="1" disabled>화이트 · 품절<\/option>/);
  handlers['#add-cart']();assert.equal(writes,0);assert.match(toast.textContent,/판매 상태/);
  selection.value='0';handlers['#add-cart']();assert.equal(writes,1);
+});
+
+test('unchecked cart lines stay saved but do not change selected totals or checkout shipping',async()=>{
+ const base={brand_id:'brand',kind:'purchase',status:'sale',price:30000,sale_price:30000,image:'https://example.test/p.jpg',detail_bucket:'00',offers:[]};
+ const products=[{...base,id:'p',name:'Selected filter',shipping_class:'standard'},{...base,id:'q',name:'Unchecked stand',shipping_class:'heavy_stand'}];
+ const rows=[{id:'p',option:'',quantity:2},{id:'q',option:'',quantity:3,selected:false}];
+ const settings={products,details:{p:{options:[]},q:{options:[]}}};
+ const cart=await render(rows,{...settings,checkout:false});
+ assert.match(cart.html,/Unchecked stand/);assert.match(cart.html,/data-select="0"[^>]* checked/);assert.match(cart.html,/data-select="1"[^>]*>/);assert.doesNotMatch(cart.html,/data-select="1"[^>]* checked/);
+ assert.match(cart.html,/order-total">64,500/);
+ const checkout=await render(rows,settings);assert.doesNotMatch(checkout.html,/Unchecked stand/);assert.match(checkout.html,/order-total">64,500/);assert.match(checkout.html,/4,500원/);
+});
+test('no selected lines disables cart checkout and direct checkout returns to selection',async()=>{
+ const rows=[{id:'p',option:'Black',quantity:2,selected:false}];
+ const cart=await render(rows,{checkout:false});assert.match(cart.html,/disabled>주문할 상품을 체크/);assert.doesNotMatch(cart.html,/href="\/checkout.html"/);
+ const checkout=await render(rows);assert.equal(checkout.fetched,0);assert.match(checkout.html,/주문할 상품을 선택/);assert.match(checkout.html,/href="\/cart.html"/);assert.doesNotMatch(checkout.html,/order-total|checkout-services/);
 });
