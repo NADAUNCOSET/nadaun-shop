@@ -187,7 +187,7 @@
       "clmedia": 2242,
       "cinemall": 1209,
       "onnoff": 1067,
-      "avx": 1358
+      "avx": 1359
     },
     "detail_coverage": {
       "kpp": 4040,
@@ -199,20 +199,20 @@
       "clmedia": 2146,
       "cinemall": 1183,
       "onnoff": 1067,
-      "avx": 1358
+      "avx": 1359
     },
-    "synced_at": "2026-10-09T07:00:36+00:00",
+    "synced_at": "2026-10-09T09:10:29+00:00",
     "merged_count": 4576,
     "product_count": 221,
     "category_browsing_enabled": true,
     "listing_count": 221,
     "option_family_count": 180,
     "deduplication": {
-      "brands_checked": 275,
+      "brands_checked": 276,
       "groups": 2765,
       "removed": 4576
     },
-    "revision": "012c247a8cca4d96",
+    "revision": "9de9c8fc599f4708",
     "view": "rental"
   },
   "brands": [
@@ -7044,6 +7044,31 @@
       "representative_image": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20250210/3f74cedfd1a96af096ff35586067aadb.jpg",
       "representative_name": "모페이지 타로스 11인치 댐핑 매직암 (블랙) TALOS-BL",
       "representative_alternate": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/extra/big/20250210/3e4b0e0bc72aa9b1a0cace7bc458eb5b.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "motion-impossible",
+      "name": "MOTION-IMPOSSIBLE",
+      "aliases": [
+        "Motion Impossible"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17915251083554list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:71f86513e98e07e6",
+        "avx:b:ab293e95bcaf2c90"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:ab293e95bcaf2c90",
+        "avx:b:71f86513e98e07e6"
+      ],
+      "representative_id": "avx-3146",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17915251083554view.jpg",
+      "representative_name": "모션임파서블 Motion Impossible AGITO Gen2 아지토 모듈형 리모트 카메라 달리 시스템",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17915251085796view.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
