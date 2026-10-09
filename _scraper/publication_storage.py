@@ -32,8 +32,12 @@ def promote_updates(updates, root, out, state, managed, save_json):
         raise RuntimeError('Source promotion requires ownership of the publication lock')
     if subprocess.check_output(['git', 'diff', '--cached', '--name-only'], cwd=root).strip():
         raise RuntimeError('Staged operator changes prevent source promotion')
+    # Only generated paths can block this promotion. Scanning unrelated NAS
+    # archives makes publication wait on every operator file. Keep the global
+    # staged-change check above, and inspect all tracked/untracked owned paths.
     raw = subprocess.check_output(['git', 'status', '--porcelain=v1', '-z',
-                                   '--untracked-files=all'], cwd=root)
+                                   '--no-renames', '--untracked-files=all',
+                                   '--', *managed], cwd=root, timeout=180)
     changed = {row[3:].decode() for row in raw.split(b'\0') if row}
     if changed & set(managed):
         raise RuntimeError('Existing generated edits require review before source promotion')

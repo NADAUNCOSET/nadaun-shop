@@ -74,6 +74,33 @@ class PublicationStorageTests(unittest.TestCase):
         self.assertEqual((self.root / 'operator.md').read_text(), 'operator update\n')
         self.assertEqual(self.cmd('git', 'diff', '--cached', '--name-only'), '')
 
+    def test_untracked_owned_source_and_moved_catalogue_still_block(self):
+        self.lock()
+        source = self.out / 'plthink.json'
+        source.write_text('unreviewed source\n')
+        with self.assertRaises(RuntimeError):
+            self.promote()
+        source.unlink()
+        (self.root / 'catalog.html').rename(self.root / 'operator-copy.html')
+        with self.assertRaises(RuntimeError):
+            self.promote()
+        self.assertEqual(self.writes, [])
+
+    def test_status_checks_exact_owned_paths_without_scanning_operator_archive(self):
+        self.lock()
+        archive = self.root / 'operator-archive'
+        archive.mkdir()
+        (archive / 'unrelated.md').write_text('operator original\n')
+        original = subprocess.check_output
+        with patch('publication_storage.subprocess.check_output', wraps=original) as calls:
+            self.promote()
+        status = next(c for c in calls.call_args_list if c.args[0][1] == 'status')
+        args = status.args[0]
+        self.assertEqual(args[args.index('--') + 1:],
+                         ['catalog.html', 'sources/plthink.json'])
+        self.assertEqual(status.kwargs['timeout'], 180)
+        self.assertEqual((archive / 'unrelated.md').read_text(), 'operator original\n')
+
     def test_all_candidates_validated_before_any_public_write(self):
         self.lock()
         bad = self.candidate | {'complete': False}
