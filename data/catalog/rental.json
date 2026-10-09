@@ -182,37 +182,37 @@
       "imweb-dji": 151,
       "imweb-promotions": 1,
       "l-mount": 345,
-      "plthink": 6630,
+      "plthink": 6653,
       "dji-official": 930,
-      "clmedia": 2206,
-      "cinemall": 1217,
+      "clmedia": 2242,
+      "cinemall": 1209,
       "onnoff": 1067,
-      "avx": 1335
+      "avx": 1358
     },
     "detail_coverage": {
       "kpp": 4040,
       "smartstore": 6831,
       "imweb-promotions": 1,
       "l-mount": 345,
-      "plthink": 6236,
+      "plthink": 6253,
       "dji-official": 925,
-      "clmedia": 2112,
-      "cinemall": 1191,
+      "clmedia": 2146,
+      "cinemall": 1183,
       "onnoff": 1067,
-      "avx": 1335
+      "avx": 1358
     },
     "synced_at": "2026-10-08T23:11:14+00:00",
-    "merged_count": 4581,
+    "merged_count": 4576,
     "product_count": 221,
     "category_browsing_enabled": true,
     "listing_count": 221,
-    "option_family_count": 181,
+    "option_family_count": 180,
     "deduplication": {
-      "brands_checked": 271,
+      "brands_checked": 275,
       "groups": 2765,
-      "removed": 4581
+      "removed": 4576
     },
-    "revision": "39d2189755d3d286",
+    "revision": "99dc81f74f997f64",
     "view": "rental"
   },
   "brands": [
@@ -984,8 +984,8 @@
         "plthink:b:084:017",
         "plthink:b:084:019"
       ],
-      "count": 1616,
-      "purchase_count": 1613,
+      "count": 1621,
+      "purchase_count": 1618,
       "rental_count": 3,
       "category_ids": [
         "kpp:b:smallrig:d210",
@@ -1456,11 +1456,13 @@
         "clmedia:b:455",
         "clmedia:b:472",
         "clmedia:b:495",
+        "clmedia:b:511",
         "clmedia:b:563",
         "clmedia:b:564",
         "clmedia:b:565",
         "clmedia:b:569",
         "clmedia:b:570",
+        "clmedia:b:571",
         "clmedia:b:573",
         "clmedia:b:574",
         "clmedia:b:575",
@@ -1536,8 +1538,8 @@
         "plthink:b:112:006",
         "plthink:b:112:007"
       ],
-      "count": 736,
-      "purchase_count": 735,
+      "count": 742,
+      "purchase_count": 741,
       "rental_count": 1,
       "category_ids": [
         "kpp:b:tilta:t210",
@@ -1652,13 +1654,13 @@
         "cinemall:b:399",
         "cinemall:b:241",
         "avx:b:671e8d440abf32f5",
+        "avx:b:a2cfbc7b055d0ec2",
         "avx:b:97490708d83da406",
         "avx:b:23da3d99a2e431dd",
         "avx:b:4f14a3c92dbd2d86",
         "avx:b:e493dbaf766e1b65",
         "avx:b:ede033475a273f64",
         "avx:b:28e09814b5e5d870",
-        "avx:b:a2cfbc7b055d0ec2",
         "avx:b:512cb2fa007477e2",
         "avx:b:c40ce46bdcecdaea",
         "avx:b:19576d3a948d2a2a",
@@ -2099,8 +2101,8 @@
         "plthink:b:095:012",
         "plthink:b:095:013"
       ],
-      "count": 441,
-      "purchase_count": 416,
+      "count": 440,
+      "purchase_count": 415,
       "rental_count": 25,
       "category_ids": [
         "naver:b:nanlite:50000206",
@@ -2170,11 +2172,12 @@
         "plthink:b:073:001",
         "plthink:b:073:002",
         "plthink:b:073:003",
+        "plthink:b:073:004",
         "plthink:b:073:005",
         "plthink:b:073:006"
       ],
-      "count": 786,
-      "purchase_count": 786,
+      "count": 788,
+      "purchase_count": 788,
       "rental_count": 0,
       "category_ids": [
         "naver:b:godox:50000206",
@@ -2187,6 +2190,7 @@
         "naver:b:godox:50002326",
         "naver:b:godox:50002082",
         "plthink:b:073",
+        "plthink:b:073:004",
         "plthink:b:073:001",
         "plthink:b:073:002",
         "plthink:b:073:003",
@@ -2255,8 +2259,8 @@
         "plthink:b:064:008",
         "plthink:b:064:009"
       ],
-      "count": 834,
-      "purchase_count": 828,
+      "count": 837,
+      "purchase_count": 831,
       "rental_count": 6,
       "category_ids": [
         "naver:b:kupo:50000206",
@@ -2316,10 +2320,8 @@
       ],
       "logo": "/assets/shop/brands/aputure-de3dcdb4e8.webp",
       "navigation_category_ids": [
-        "avx:b:02a4e5e22705181f",
         "avx:b:1eac61412cc2f0f2",
         "avx:b:29546610dc1192f6",
-        "avx:b:634aa27ced2b61bd",
         "avx:b:65e53513155c41e3",
         "avx:b:aputure:0020",
         "avx:b:aputure:00200001",
@@ -2345,15 +2347,10 @@
         "avx:b:aputure:002000070004",
         "avx:b:aputure:002000070005",
         "avx:b:aputure:002000070006",
-        "avx:b:aputure:002000070007",
-        "avx:b:c3fbc2c5354ec15c",
-        "avx:b:d10dc04e3f61745f",
-        "avx:b:ef362728ad120d42",
-        "avx:b:fad951a3b3751da2",
-        "avx:b:fc70f4be399c9a2e"
+        "avx:b:aputure:002000070007"
       ],
-      "count": 159,
-      "purchase_count": 150,
+      "count": 160,
+      "purchase_count": 151,
       "rental_count": 9,
       "category_ids": [
         "naver:b:aputure:50000206",
@@ -2379,41 +2376,34 @@
         "clmedia:b:547",
         "clmedia:b:548",
         "clmedia:b:549",
-        "avx:b:aputure:00200005",
-        "avx:b:aputure:0020",
-        "avx:b:aputure:002000010001",
-        "avx:b:aputure:00200001",
         "avx:b:aputure:002000010002",
-        "avx:b:aputure:002000060001",
+        "avx:b:aputure:00200001",
+        "avx:b:aputure:0020",
+        "avx:b:aputure:002000060002",
         "avx:b:aputure:00200006",
+        "avx:b:aputure:002000070001",
         "avx:b:aputure:00200007",
+        "avx:b:aputure:002000070002",
+        "avx:b:aputure:002000070005",
+        "avx:b:aputure:002000070007",
+        "avx:b:aputure:00200005",
+        "avx:b:aputure:002000010001",
+        "avx:b:aputure:002000020001",
+        "avx:b:aputure:00200002",
+        "avx:b:aputure:002000060001",
+        "avx:b:aputure:002000070004",
+        "avx:b:aputure:002000070003",
+        "avx:b:aputure:002000020002",
+        "avx:b:aputure:002000070006",
         "avx:b:aputure:002000030002",
         "avx:b:aputure:00200003",
-        "avx:b:aputure:002000070005",
-        "avx:b:aputure:002000020002",
-        "avx:b:aputure:00200002",
-        "avx:b:aputure:002000070001",
-        "avx:b:aputure:002000070002",
-        "avx:b:aputure:002000060002",
-        "avx:b:aputure:002000070006",
-        "avx:b:aputure:002000070004",
+        "avx:b:aputure:002000030001",
         "avx:b:aputure:002000040002",
         "avx:b:aputure:00200004",
-        "avx:b:aputure:002000070003",
         "avx:b:aputure:002000040001",
-        "avx:b:aputure:002000070007",
-        "avx:b:aputure:002000020001",
-        "avx:b:aputure:002000030001",
-        "avx:b:fad951a3b3751da2",
-        "avx:b:02a4e5e22705181f",
-        "avx:b:634aa27ced2b61bd",
         "avx:b:1eac61412cc2f0f2",
-        "avx:b:fc70f4be399c9a2e",
-        "avx:b:ef362728ad120d42",
-        "avx:b:c3fbc2c5354ec15c",
         "avx:b:65e53513155c41e3",
         "avx:b:29546610dc1192f6",
-        "avx:b:d10dc04e3f61745f",
         "rental-brand:aputure:4",
         "rental-brand:aputure:102",
         "rental-brand:aputure:103"
@@ -2421,7 +2411,7 @@
       "exclusive_purchase_categories": true,
       "representative_id": "avx-2013",
       "representative_image": "https://www.avx.co.kr/data/goods/1/2025/02/2013_temp_17391738524680view.png",
-      "representative_name": "어퓨쳐 Nova P600c Pole Operated Yoke 노바 P600C 폴요크",
+      "representative_name": "어퓨쳐 Aputure Nova P600c Pole Operated Yoke 노바 P600C 폴요크",
       "representative_alternate": "https://www.avx.co.kr/data/goods/1/2025/02/2013_temp_17391738539854view.png",
       "image_kind": "logo",
       "logo_dark": false
@@ -2943,10 +2933,12 @@
         "avx:b:176305fe0dab8c6e",
         "avx:b:51a26840c8300fa7",
         "avx:b:5239c53c5346824c",
+        "avx:b:96e3917f4bd1348b",
         "avx:b:9ea973ceb4f0fb03",
         "avx:b:c754e402fd567dad",
         "avx:b:c8390919da565a9f",
         "avx:b:c9992a77793b1d24",
+        "avx:b:fb2b33459b5589aa",
         "clmedia:b:124",
         "clmedia:b:125",
         "clmedia:b:126",
@@ -2965,8 +2957,8 @@
         "plthink:b:037:004",
         "plthink:b:037:006"
       ],
-      "count": 332,
-      "purchase_count": 317,
+      "count": 333,
+      "purchase_count": 318,
       "rental_count": 15,
       "category_ids": [
         "naver:b:hollyland:50000206",
@@ -2994,11 +2986,13 @@
         "avx:b:51a26840c8300fa7",
         "avx:b:c8390919da565a9f",
         "avx:b:c9992a77793b1d24",
+        "avx:b:96e3917f4bd1348b",
         "avx:b:0ea8c0b4be309bc0",
         "avx:b:5239c53c5346824c",
         "avx:b:176305fe0dab8c6e",
         "avx:b:c754e402fd567dad",
         "avx:b:9ea973ceb4f0fb03",
+        "avx:b:fb2b33459b5589aa",
         "avx:b:02632b98b90b6df3",
         "rental-brand:hollyland:5",
         "rental-brand:hollyland:368",
@@ -3093,6 +3087,31 @@
       "logo_dark": false
     },
     {
+      "id": "7artisans",
+      "name": "7ARTISANS",
+      "aliases": [
+        "7Artisans"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080010000223.jpg?1790727758",
+      "navigation_category_ids": [
+        "plthink:b:001",
+        "plthink:b:001:001"
+      ],
+      "count": 14,
+      "purchase_count": 14,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:001",
+        "plthink:b:001:001",
+        "plthink:b:001:002"
+      ],
+      "representative_id": "plthink-1930545",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080010000222.jpg?1790727758",
+      "representative_name": "[7Artisans] 7장인 AF85mm F1.8 풀프레임 렌즈 E 마운트",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "accsoon",
       "name": "ACCSOON",
       "aliases": [
@@ -3114,8 +3133,8 @@
         "plthink:b:056:002",
         "plthink:b:056:003"
       ],
-      "count": 65,
-      "purchase_count": 65,
+      "count": 67,
+      "purchase_count": 67,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:056",
@@ -3124,13 +3143,13 @@
         "plthink:b:056:002",
         "cinemall:b:458",
         "onnoff:b:274",
-        "avx:b:cba5c7bc51dd9aa9",
-        "avx:b:91b4b83bd5f489be",
-        "avx:b:2d9b1c52e0473bd2",
         "avx:b:4b14de7105bf4a27",
         "avx:b:ccdaf9d1128b96dd",
+        "avx:b:5ea805c297e03a74",
         "avx:b:90b92b110a77cf01",
-        "avx:b:5ea805c297e03a74"
+        "avx:b:cba5c7bc51dd9aa9",
+        "avx:b:91b4b83bd5f489be",
+        "avx:b:2d9b1c52e0473bd2"
       ],
       "representative_id": "plthink-1927728",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080560000132.jpg?1785481800",
@@ -3214,7 +3233,7 @@
       "aliases": [
         "amaran"
       ],
-      "logo": "https://www.avx.co.kr/data/goods/1/2026/09/3075_temp_17888592018108list1.png",
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/09/3075_temp_17913522264043list1.png",
       "navigation_category_ids": [
         "avx:b:27e52905a9342e02",
         "avx:b:2d6fc2e058b9c0ff",
@@ -3240,8 +3259,8 @@
         "avx:b:f56fd34a05cd4f9f",
         "avx:b:f78546a1b263c226"
       ],
-      "count": 65,
-      "purchase_count": 65,
+      "count": 69,
+      "purchase_count": 69,
       "rental_count": 0,
       "category_ids": [
         "avx:b:e67e718c9452c93d",
@@ -3269,9 +3288,9 @@
         "avx:b:5057f1f710e17185"
       ],
       "representative_id": "avx-3075",
-      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/09/3075_temp_17888592018108view.png",
-      "representative_name": "사전예약 5% 할인 amaran MIC",
-      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/09/3075_temp_17888592038147view.png",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/09/3075_temp_17913522264043view.png",
+      "representative_name": "아마란 Amaran MIC",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/09/3075_temp_17913522381522view.png",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -3523,7 +3542,6 @@
         "plthink:b:031:001",
         "plthink:b:031:002",
         "plthink:b:031:003",
-        "plthink:b:031:004",
         "plthink:b:031:005",
         "plthink:b:031:006",
         "plthink:b:031:007",
@@ -3629,8 +3647,8 @@
         "plthink:b:062:002",
         "plthink:b:062:003"
       ],
-      "count": 24,
-      "purchase_count": 24,
+      "count": 23,
+      "purchase_count": 23,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:062",
@@ -3673,15 +3691,16 @@
         "avx:b:ecbb0ae014553782",
         "avx:b:ef6895c3b0c781fc"
       ],
-      "count": 38,
-      "purchase_count": 38,
+      "count": 33,
+      "purchase_count": 33,
       "rental_count": 0,
       "category_ids": [
         "avx:b:314346e28f94029b",
         "avx:b:378da5c29a91603c",
         "avx:b:8bffda5b7a30e40d",
         "avx:b:00682a1d74aed1d1",
-        "avx:b:41874dc4bc62c9ba",
+        "avx:b:ef6895c3b0c781fc",
+        "avx:b:ecbb0ae014553782",
         "avx:b:8903c02bd2ca76f2",
         "avx:b:c25160d99995060f",
         "avx:b:d9026aef907e41db",
@@ -3692,9 +3711,8 @@
         "avx:b:0edbdc36e485ac2f",
         "avx:b:8350f49ade3ae655",
         "avx:b:5e215deab5e37138",
-        "avx:b:ef6895c3b0c781fc",
-        "avx:b:ecbb0ae014553782",
         "avx:b:9d8bd97bf490f3ea",
+        "avx:b:41874dc4bc62c9ba",
         "avx:b:814aa024ee069d3d",
         "avx:b:480f00a190aa789c"
       ],
@@ -3782,8 +3800,8 @@
         "plthink:b:117:001",
         "plthink:b:117:002"
       ],
-      "count": 26,
-      "purchase_count": 26,
+      "count": 30,
+      "purchase_count": 30,
       "rental_count": 0,
       "category_ids": [
         "naver:b:benq:50000153",
@@ -3865,13 +3883,15 @@
       ],
       "logo": "https://www.avx.co.kr/data/goods/1/2025/05/_temp_17470334560134list1.png",
       "navigation_category_ids": [
-        "avx:b:c077dba610a67c83"
+        "avx:b:d2e7fbde6b4b2436",
+        "avx:b:f4a80c7670123123"
       ],
       "count": 1,
       "purchase_count": 1,
       "rental_count": 0,
       "category_ids": [
-        "avx:b:c077dba610a67c83"
+        "avx:b:d2e7fbde6b4b2436",
+        "avx:b:f4a80c7670123123"
       ],
       "representative_id": "avx-2241",
       "representative_image": "https://www.avx.co.kr/data/goods/1/2025/05/_temp_17470334560134view.png",
@@ -3916,8 +3936,8 @@
         "plthink:b:101:001",
         "plthink:b:101:002"
       ],
-      "count": 4,
-      "purchase_count": 4,
+      "count": 3,
+      "purchase_count": 3,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:101",
@@ -4011,20 +4031,20 @@
       "aliases": [
         "CAMVATE"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081430000183.jpg?1761117870",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081430000183.jpg?1790576109",
       "navigation_category_ids": [
         "plthink:b:143",
         "plthink:b:143:001"
       ],
-      "count": 6,
-      "purchase_count": 6,
+      "count": 5,
+      "purchase_count": 5,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:143",
         "plthink:b:143:001"
       ],
       "representative_id": "plthink-1921953",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081430000182.jpg?1761117870",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081430000182.jpg?1790576109",
       "representative_name": "[CAMVATE] 캠베이트 C3086 미니 볼헤드 매직암",
       "image_kind": "product",
       "logo_dark": false
@@ -4265,7 +4285,7 @@
       "aliases": [
         "COMICA"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080470000473.jpg?1769386260",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080470000093.jpg?1769386173",
       "navigation_category_ids": [
         "plthink:b:047",
         "plthink:b:047:001",
@@ -4274,8 +4294,8 @@
         "plthink:b:047:004",
         "plthink:b:047:005"
       ],
-      "count": 58,
-      "purchase_count": 58,
+      "count": 57,
+      "purchase_count": 57,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:047",
@@ -4286,9 +4306,9 @@
         "plthink:b:047:002",
         "plthink:b:047:003"
       ],
-      "representative_id": "plthink-1916085",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080470000472.jpg?1769386260",
-      "representative_name": "[COMICA] 코미카 CVM-V01SP(UC) C타입 스마트폰 라발리에 핀마이크",
+      "representative_id": "plthink-1914856",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080470000092.jpg?1769386172",
+      "representative_name": "[COMICA] 코미카 CVM-MF1 소형마이크 전용 윈드스크린 윈드쉴드",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4419,8 +4439,8 @@
         "naver:b:datacolor:50002113",
         "plthink:b:033"
       ],
-      "count": 22,
-      "purchase_count": 22,
+      "count": 24,
+      "purchase_count": 24,
       "rental_count": 0,
       "category_ids": [
         "naver:b:datacolor:50000206",
@@ -4606,7 +4626,7 @@
         "디죠",
         "조프"
       ],
-      "logo": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20260910/609f256ab9f49d18366e16fe05a71080.jpg",
+      "logo": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20261006/28c727967371ff1b690f8a77f74f29c2.jpg",
       "navigation_category_ids": [
         "cinemall:b:schema-brand-dzofilm",
         "clmedia:b:430",
@@ -4645,9 +4665,9 @@
         "clmedia:b:436",
         "cinemall:b:schema-brand-dzofilm"
       ],
-      "representative_id": "clmedia-3360",
-      "representative_image": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20260910/609f256ab9f49d18366e16fe05a71080.jpg",
-      "representative_name": "디조필름 DZO-AZ25180I Arles Zoom T2.6 FF 시네 2렌즈 번들 (ARRI PL/Canon EF)",
+      "representative_id": "clmedia-3477",
+      "representative_image": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20261006/28c727967371ff1b690f8a77f74f29c2.jpg",
+      "representative_name": "디조필름 DZO-AZ25180I Arles Zoom T2.6 FF 시네 2렌즈 번들 (ARRI PL)",
       "representative_alternate": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/extra/big/20260910/a805403394d6af78bc765d8bf5e6e747.jpg",
       "image_kind": "product",
       "logo_dark": false
@@ -4890,8 +4910,8 @@
         "clmedia:b:54",
         "plthink:b:072"
       ],
-      "count": 78,
-      "purchase_count": 78,
+      "count": 77,
+      "purchase_count": 77,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:072",
@@ -4962,7 +4982,7 @@
       "aliases": [
         "FALCAM"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0081290001763.jpg?1788314071",
+      "logo": "https://www.plthink.com/shopimages/plthink/0081290000483.jpg?1790811185",
       "navigation_category_ids": [
         "plthink:b:129",
         "plthink:b:129:001",
@@ -4975,8 +4995,8 @@
         "plthink:b:129:008",
         "plthink:b:129:009"
       ],
-      "count": 124,
-      "purchase_count": 124,
+      "count": 120,
+      "purchase_count": 120,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:129",
@@ -4990,9 +5010,9 @@
         "plthink:b:129:002",
         "plthink:b:129:004"
       ],
-      "representative_id": "plthink-1923352",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0081290001762.jpg?1788314071",
-      "representative_name": "[FALCAM] 팔캠 FC3505 DJI 로닌용 퀵릴리즈 슬링 그립 연장암 F22 F38",
+      "representative_id": "plthink-1920858",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0081290000482.jpg?1790811184",
+      "representative_name": "[FALCAM] 팔캠 기어트리 FC2745 풀 모션 스위블 암",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -5012,8 +5032,8 @@
         "plthink:b:018:002",
         "plthink:b:018:003"
       ],
-      "count": 13,
-      "purchase_count": 12,
+      "count": 12,
+      "purchase_count": 11,
       "rental_count": 1,
       "category_ids": [
         "naver:b:farseeing:50000206",
@@ -5192,12 +5212,16 @@
       "navigation_category_ids": [
         "avx:b:0f1de070d9b15011",
         "avx:b:3161fde01e11c725",
+        "avx:b:3feb34eb66ed1211",
+        "avx:b:573c93447586342c",
         "avx:b:bc44b2a21c12d62a"
       ],
       "count": 3,
       "purchase_count": 3,
       "rental_count": 0,
       "category_ids": [
+        "avx:b:3feb34eb66ed1211",
+        "avx:b:573c93447586342c",
         "avx:b:3161fde01e11c725",
         "avx:b:bc44b2a21c12d62a",
         "avx:b:0f1de070d9b15011"
@@ -5247,8 +5271,8 @@
         "cinemall:b:60",
         "cinemall:b:84"
       ],
-      "count": 138,
-      "purchase_count": 138,
+      "count": 130,
+      "purchase_count": 130,
       "rental_count": 0,
       "category_ids": [
         "cinemall:b:60",
@@ -5259,7 +5283,6 @@
       "representative_id": "cinemall-2550",
       "representative_image": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/product/big/20260814/79ffa15da4690963f139391145225e34.jpg",
       "representative_name": "후지필름 FUJIFILM X-T30 III XC13-33mm KIT",
-      "representative_alternate": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/product/extra/big/20251203/b9d66c50e6d9a3ac2b5b9a6abb0a2544.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -5523,7 +5546,7 @@
       "representative_id": "plthink-1925148",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0081350000092.jpg?1787710408",
       "representative_name": "[GUTEK] 구텍 T-300 기내용 방수 20인치 촬영용 하드 케이스 폼 포함",
-      "representative_alternate": "https://www.plthink.com/shopimages/plthink/0081350000033.jpg?1769134707",
+      "representative_alternate": "https://www.plthink.com/shopimages/plthink/0081350000033.jpg?1790922396",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -5619,23 +5642,50 @@
       "logo_dark": false
     },
     {
+      "id": "hasselblad",
+      "name": "HASSELBLAD",
+      "aliases": [
+        "Hasselblad"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080030000533.jpg?1790811212",
+      "navigation_category_ids": [
+        "plthink:b:003",
+        "plthink:b:003:001",
+        "plthink:b:003:002"
+      ],
+      "count": 7,
+      "purchase_count": 7,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:003",
+        "plthink:b:003:001",
+        "plthink:b:003:002",
+        "plthink:b:003:003"
+      ],
+      "representative_id": "plthink-1930466",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080030000532.jpg?1790811212",
+      "representative_name": "[Hasselblad] 핫셀블라드 X2D II 100C 디지털 카메라 바디킷",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "healing-shield",
       "name": "HEALING-SHIELD",
       "aliases": [
         "Healing Shield"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080930000413.jpg?1782968788",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080930000453.jpg?1790905879",
       "navigation_category_ids": [
         "plthink:b:093"
       ],
-      "count": 24,
-      "purchase_count": 24,
+      "count": 28,
+      "purchase_count": 28,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:093"
       ],
       "representative_id": "plthink-1914621",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080930000092.jpg?1768461881",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080930000092.jpg?1790920898",
       "representative_name": "[힐링쉴드] 후지필름 X T30 올레포빅 액정 보호 필름 2매",
       "image_kind": "product",
       "logo_dark": false
@@ -5905,8 +5955,8 @@
         "plthink:b:098:003",
         "plthink:b:098:004"
       ],
-      "count": 97,
-      "purchase_count": 96,
+      "count": 95,
+      "purchase_count": 94,
       "rental_count": 1,
       "category_ids": [
         "naver:b:ifootage:50000206",
@@ -5930,6 +5980,31 @@
       "representative_image": "https://shop-phinf.pstatic.net/20250106_9/17361650382012guCK_PNG/62658344025365555_484801442.png",
       "representative_name": "IFootage S1A3 : Wireless Motion Controller",
       "image_kind": "logo",
+      "logo_dark": false
+    },
+    {
+      "id": "ignite-digi",
+      "name": "IGNITE-DIGI",
+      "aliases": [
+        "IGNITE DIGI"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17908402150730list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:44bb1a0feeee7550",
+        "avx:b:5757990d9ad5fc99"
+      ],
+      "count": 5,
+      "purchase_count": 5,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:44bb1a0feeee7550",
+        "avx:b:5757990d9ad5fc99"
+      ],
+      "representative_id": "avx-3134",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17908402150730view.jpg",
+      "representative_name": "IGNITE DIGI 이그나이트 디지 Servo Link 서보 링크 for Canon · Fujinon Servo Lenses",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17908402152979view.jpg",
+      "image_kind": "product",
       "logo_dark": false
     },
     {
@@ -5993,6 +6068,7 @@
         "avx:b:5346fb5182e1e278",
         "avx:b:5887f2e4281ebbfa",
         "avx:b:9b90f97a47123edd",
+        "avx:b:bea9d07dd70d4501",
         "avx:b:c5e533340c12a599",
         "avx:b:e5085a0c27bc0dd5",
         "clmedia:b:61",
@@ -6008,8 +6084,8 @@
         "naver:b:jackery:50003930",
         "naver:b:jackery:50017740"
       ],
-      "count": 47,
-      "purchase_count": 44,
+      "count": 48,
+      "purchase_count": 45,
       "rental_count": 3,
       "category_ids": [
         "naver:b:jackery:50000028",
@@ -6026,6 +6102,7 @@
         "clmedia:b:61",
         "avx:b:9b90f97a47123edd",
         "avx:b:5887f2e4281ebbfa",
+        "avx:b:bea9d07dd70d4501",
         "avx:b:c5e533340c12a599",
         "avx:b:e5085a0c27bc0dd5",
         "avx:b:5346fb5182e1e278",
@@ -6223,7 +6300,7 @@
         "KATELUO",
         "Kateluo"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080870000133.jpg?1768377867",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080870000133.jpg?1790813850",
       "navigation_category_ids": [
         "clmedia:b:272",
         "plthink:b:087",
@@ -6240,7 +6317,7 @@
         "clmedia:b:272"
       ],
       "representative_id": "plthink-1926221",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080870000132.jpg?1768377866",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080870000132.jpg?1790813850",
       "representative_name": "[Kateluo] 카텔로 KT-6 붐 바스켓 서스펜션 샷건 붐마이크 블림프",
       "image_kind": "product",
       "logo_dark": false
@@ -6256,17 +6333,17 @@
         "avx:b:01a4cbc735222e15",
         "avx:b:1e6c221c2611949d"
       ],
-      "count": 1,
-      "purchase_count": 1,
+      "count": 7,
+      "purchase_count": 7,
       "rental_count": 0,
       "category_ids": [
         "avx:b:01a4cbc735222e15",
         "avx:b:1e6c221c2611949d"
       ],
-      "representative_id": "avx-2823",
-      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/03/2823_temp_17738160255250view.jpg",
-      "representative_name": "KondorBlue D-Tap 미니 라이트 카메라 케이블 조명 45cm KB-CRL15-PRO",
-      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/03/2823_temp_17738160265504view.jpg",
+      "representative_id": "avx-2800",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/03/2800_temp_17730465877018view.png",
+      "representative_name": "콘도블루 D-Tap to 4포트 허브 전원 공급 파워 분배기 12V 메탈 스플리터 KB-DTAP-HUB",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/03/2800_temp_17730465884624view.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -6786,20 +6863,19 @@
       "aliases": [
         "MARSACE"
       ],
-      "logo": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/product/big/20250519/cd8928e95b5222d2aaf0b5ff5db48714.jpg",
+      "logo": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/product/big/20260918/316e7ca54de2f5d85474376aa6557748.jpg",
       "navigation_category_ids": [
         "cinemall:b:357"
       ],
-      "count": 16,
-      "purchase_count": 16,
+      "count": 20,
+      "purchase_count": 20,
       "rental_count": 0,
       "category_ids": [
         "cinemall:b:357"
       ],
-      "representative_id": "cinemall-2163",
-      "representative_image": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/product/big/20250519/cd8928e95b5222d2aaf0b5ff5db48714.jpg",
-      "representative_name": "마르사체 MARSACE XT-26S",
-      "representative_alternate": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/product/extra/big/20250519/49d13f5c43e72261a4234f8e9f563354.jpg",
+      "representative_id": "cinemall-2568",
+      "representative_image": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/product/big/20260918/316e7ca54de2f5d85474376aa6557748.jpg",
+      "representative_name": "마르사체 MARSACE ET-0541S",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -7067,15 +7143,13 @@
       "navigation_category_ids": [
         "avx:b:06f382d2a5c9a0eb",
         "avx:b:0b10823a523342c8",
-        "avx:b:1e184a32485eec2c",
         "avx:b:2dec069096181afb",
         "avx:b:39240e877532212f",
         "avx:b:4f82eee3f5b7268b",
         "avx:b:74adb2969fca5590",
         "avx:b:90a22c5833113dec",
         "avx:b:a65fc96d4cf5648d",
-        "avx:b:a85b82140b6379ef",
-        "avx:b:bdcebb155d83c365",
+        "avx:b:dfa63cd290f30587",
         "cinemall:b:147",
         "cinemall:b:223",
         "cinemall:b:224",
@@ -7090,8 +7164,8 @@
         "plthink:b:075:003",
         "plthink:b:075:004"
       ],
-      "count": 125,
-      "purchase_count": 125,
+      "count": 127,
+      "purchase_count": 127,
       "rental_count": 0,
       "category_ids": [
         "naver:b:movmax:50000206",
@@ -7113,11 +7187,9 @@
         "avx:b:2dec069096181afb",
         "avx:b:0b10823a523342c8",
         "avx:b:06f382d2a5c9a0eb",
-        "avx:b:1e184a32485eec2c",
-        "avx:b:bdcebb155d83c365",
-        "avx:b:a85b82140b6379ef",
         "avx:b:90a22c5833113dec",
-        "avx:b:39240e877532212f"
+        "avx:b:39240e877532212f",
+        "avx:b:dfa63cd290f30587"
       ],
       "representative_id": "smartstore-10190364169",
       "representative_image": "https://shop-phinf.pstatic.net/20240410_279/1712738158229pFpaV_JPEG/113874046944382268_1949880875.jpg",
@@ -7210,8 +7282,8 @@
         "plthink:b:106:003",
         "plthink:b:106:004"
       ],
-      "count": 111,
-      "purchase_count": 108,
+      "count": 112,
+      "purchase_count": 109,
       "rental_count": 3,
       "category_ids": [
         "naver:b:nanlux:50000206",
@@ -7472,8 +7544,8 @@
         "clmedia:b:494",
         "clmedia:b:75"
       ],
-      "count": 20,
-      "purchase_count": 20,
+      "count": 21,
+      "purchase_count": 21,
       "rental_count": 0,
       "category_ids": [
         "clmedia:b:75",
@@ -7637,10 +7709,9 @@
       ],
       "logo": "https://www.plthink.com/shopimages/plthink/0081270000133.jpg?1768279826",
       "navigation_category_ids": [
-        "avx:b:0325288385e8bb01",
         "avx:b:47698d3c4c7bdd8a",
+        "avx:b:4f083f03e52141a7",
         "avx:b:8289cdcbe7edee03",
-        "avx:b:f48a963f61ef7472",
         "plthink:b:127",
         "plthink:b:127:001",
         "plthink:b:127:002",
@@ -7656,8 +7727,7 @@
         "plthink:b:127:004",
         "plthink:b:127:002",
         "plthink:b:127:003",
-        "avx:b:0325288385e8bb01",
-        "avx:b:f48a963f61ef7472",
+        "avx:b:4f083f03e52141a7",
         "avx:b:47698d3c4c7bdd8a",
         "avx:b:8289cdcbe7edee03"
       ],
@@ -7748,8 +7818,8 @@
         "plthink:b:144:001",
         "plthink:b:144:002"
       ],
-      "count": 46,
-      "purchase_count": 46,
+      "count": 45,
+      "purchase_count": 45,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:144",
@@ -7868,8 +7938,11 @@
       ],
       "logo": "https://www.plthink.com/shopimages/plthink/0080200001403.jpg?1779863983",
       "navigation_category_ids": [
-        "avx:b:4f283399ff9caf74",
+        "avx:b:050a69b358f0b5d7",
+        "avx:b:46577780edcc8922",
         "clmedia:b:606",
+        "clmedia:b:607",
+        "clmedia:b:608",
         "clmedia:b:609",
         "clmedia:b:81",
         "plthink:b:020",
@@ -7881,8 +7954,8 @@
         "plthink:b:020:007",
         "plthink:b:020:008"
       ],
-      "count": 112,
-      "purchase_count": 112,
+      "count": 131,
+      "purchase_count": 131,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:020",
@@ -7898,7 +7971,8 @@
         "clmedia:b:607",
         "clmedia:b:608",
         "clmedia:b:609",
-        "avx:b:4f283399ff9caf74"
+        "avx:b:46577780edcc8922",
+        "avx:b:050a69b358f0b5d7"
       ],
       "representative_id": "plthink-1929652",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080200001402.jpg?1779863983",
@@ -8317,7 +8391,7 @@
         "rental-brand:profoto:103"
       ],
       "representative_id": "plthink-1925814",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080700003002.jpg?1788478317",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080700003002.jpg?1790748361",
       "representative_name": "[Profoto] 프로포토 Pro-B3 Single Kit 사진촬영 촬영용 플래시",
       "image_kind": "logo",
       "logo_dark": false
@@ -8328,7 +8402,7 @@
       "aliases": [
         "PROGAFF"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080940000143.jpg?1786427977",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080940000143.jpg?1789977206",
       "navigation_category_ids": [
         "plthink:b:094"
       ],
@@ -8339,7 +8413,7 @@
         "plthink:b:094"
       ],
       "representative_id": "plthink-1929538",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080940000142.jpg?1786427977",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080940000142.jpg?1789977206",
       "representative_name": "[PROGAFF] 프로게퍼 프로 게퍼테이프 포켓 1인치 5.4m",
       "image_kind": "product",
       "logo_dark": false
@@ -8408,22 +8482,23 @@
       "aliases": [
         "QFYS"
       ],
-      "logo": "https://www.avx.co.kr/data/goods/1/2026/04/2858_temp_17763080977385list1.jpg",
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/09/3108_temp_17906690145024list1.jpg",
       "navigation_category_ids": [
         "avx:b:4b32063f43a6db1e",
+        "avx:b:508671508b9fd790",
         "avx:b:68c9fabdd2f73037"
       ],
-      "count": 1,
-      "purchase_count": 1,
+      "count": 5,
+      "purchase_count": 5,
       "rental_count": 0,
       "category_ids": [
         "avx:b:4b32063f43a6db1e",
-        "avx:b:68c9fabdd2f73037"
+        "avx:b:68c9fabdd2f73037",
+        "avx:b:508671508b9fd790"
       ],
-      "representative_id": "avx-2858",
-      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/04/2858_temp_17763080977385view.jpg",
-      "representative_name": "QFYS TECHNO JIB 테크노 집 QF-Telescope 15",
-      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/04/2858_temp_17763080980521view.jpg",
+      "representative_id": "avx-3108",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/09/3108_temp_17906690145024view.jpg",
+      "representative_name": "QFYS QF-TELE-JIB",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -8735,8 +8810,8 @@
         "plthink:b:038:003",
         "plthink:b:038:004"
       ],
-      "count": 158,
-      "purchase_count": 157,
+      "count": 155,
+      "purchase_count": 154,
       "rental_count": 1,
       "category_ids": [
         "naver:b:rode:50000206",
@@ -8896,12 +8971,11 @@
         "plthink:b:021",
         "plthink:b:021:001",
         "plthink:b:021:002",
-        "plthink:b:021:003",
         "plthink:b:021:004",
         "plthink:b:021:005"
       ],
-      "count": 109,
-      "purchase_count": 109,
+      "count": 106,
+      "purchase_count": 106,
       "rental_count": 0,
       "category_ids": [
         "naver:b:samyang:50000206",
@@ -9131,11 +9205,10 @@
       "logo": "https://www.plthink.com/shopimages/plthink/0080990000093.jpg?1778459622",
       "navigation_category_ids": [
         "plthink:b:099",
-        "plthink:b:099:001",
-        "plthink:b:099:002"
+        "plthink:b:099:001"
       ],
-      "count": 12,
-      "purchase_count": 12,
+      "count": 10,
+      "purchase_count": 10,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:099",
@@ -9190,7 +9263,6 @@
       ],
       "logo": "https://www.avx.co.kr/data/goods/1/2025/07/2358_temp_17533368431161list1.jpg",
       "navigation_category_ids": [
-        "avx:b:2f6a5f98b25efcf1",
         "avx:b:4016449504f74cf5",
         "avx:b:a6d0323a86f28269"
       ],
@@ -9199,8 +9271,7 @@
       "rental_count": 0,
       "category_ids": [
         "avx:b:a6d0323a86f28269",
-        "avx:b:4016449504f74cf5",
-        "avx:b:2f6a5f98b25efcf1"
+        "avx:b:4016449504f74cf5"
       ],
       "representative_id": "avx-2358",
       "representative_image": "https://www.avx.co.kr/data/goods/1/2025/07/2358_temp_17533368431161view.jpg",
@@ -9416,7 +9487,7 @@
       "aliases": [
         "SIGMA"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080540000543.jpg?1777442831",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080540000563.jpg?1790748877",
       "navigation_category_ids": [
         "plthink:b:054",
         "plthink:b:054:001",
@@ -9425,8 +9496,8 @@
         "plthink:b:054:004",
         "plthink:b:054:005"
       ],
-      "count": 50,
-      "purchase_count": 50,
+      "count": 52,
+      "purchase_count": 52,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:054",
@@ -9437,9 +9508,9 @@
         "plthink:b:054:002",
         "clmedia:b:98"
       ],
-      "representative_id": "plthink-1929484",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080540000542.jpg?1777442831",
-      "representative_name": "[SIGMA] 시그마 200mm F2 DG OS Sports SE마운트 소니 망원렌즈",
+      "representative_id": "plthink-1930526",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080540000562.jpg?1790748876",
+      "representative_name": "[SIGMA] 시그마 85mm F1.2 DG Art 대구경 망원렌즈 L SE 마운트",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -9664,8 +9735,8 @@
         "plthink:b:036:006",
         "plthink:b:036:007"
       ],
-      "count": 405,
-      "purchase_count": 388,
+      "count": 402,
+      "purchase_count": 385,
       "rental_count": 17,
       "category_ids": [
         "naver:b:sony:50000206",
@@ -9887,6 +9958,28 @@
       "logo_dark": false
     },
     {
+      "id": "synco",
+      "name": "SYNCO",
+      "aliases": [
+        "SYNCO"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080130002733.jpg?1789964041",
+      "navigation_category_ids": [
+        "plthink:b:013"
+      ],
+      "count": 11,
+      "purchase_count": 11,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:013"
+      ],
+      "representative_id": "plthink-1930488",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080130002732.jpg?1789964041",
+      "representative_name": "[SYNCO] 싱코 Xtalk S1 무선 인터컴 이어셋 넥밴드형 단품 풀 듀플렉스",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "tarion",
       "name": "TARION",
       "aliases": [
@@ -9928,8 +10021,8 @@
         "plthink:b:142",
         "plthink:b:142:001"
       ],
-      "count": 21,
-      "purchase_count": 21,
+      "count": 20,
+      "purchase_count": 20,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:142",
@@ -10261,8 +10354,8 @@
         "naver:b:tvlogic:50002113",
         "plthink:b:083"
       ],
-      "count": 59,
-      "purchase_count": 58,
+      "count": 62,
+      "purchase_count": 61,
       "rental_count": 1,
       "category_ids": [
         "naver:b:tvlogic:50000206",
@@ -10332,8 +10425,8 @@
         "plthink:b:007:007",
         "plthink:b:007:008"
       ],
-      "count": 143,
-      "purchase_count": 143,
+      "count": 141,
+      "purchase_count": 141,
       "rental_count": 0,
       "category_ids": [
         "naver:b:ulanzi:50000206",
@@ -10465,13 +10558,17 @@
       ],
       "logo": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/product/big/20241106/90fb6eab9f079eb5c711b22449763aba.jpg",
       "navigation_category_ids": [
+        "avx:b:202c665b80d62dd4",
+        "avx:b:8385ef3901766083",
         "cinemall:b:63"
       ],
-      "count": 17,
-      "purchase_count": 17,
+      "count": 18,
+      "purchase_count": 18,
       "rental_count": 0,
       "category_ids": [
-        "cinemall:b:63"
+        "cinemall:b:63",
+        "avx:b:8385ef3901766083",
+        "avx:b:202c665b80d62dd4"
       ],
       "representative_id": "cinemall-1561",
       "representative_image": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/product/big/20241106/90fb6eab9f079eb5c711b22449763aba.jpg",
@@ -10820,7 +10917,7 @@
       "aliases": [
         "YCONION"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080710000683.jpg?1787641791",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080710000673.jpg?1789361970",
       "navigation_category_ids": [
         "plthink:b:071",
         "plthink:b:071:001",
@@ -10842,9 +10939,9 @@
         "plthink:b:071:004",
         "plthink:b:071:005"
       ],
-      "representative_id": "plthink-1930309",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080710000682.jpg?1787641791",
-      "representative_name": "[YC ONION] 파인타 피네타 프로 XL 페달베이스 모노포드 퀵릴리즈 고정 지지대",
+      "representative_id": "plthink-1930308",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080710000672.jpg?1789361970",
+      "representative_name": "[YC ONION] 파인타 피네타 프로 원터치 모노포드 XL 페달베이스 세트",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -10970,8 +11067,8 @@
         "naver:b:zgcine:50001394",
         "naver:b:zgcine:50002100"
       ],
-      "count": 28,
-      "purchase_count": 28,
+      "count": 29,
+      "purchase_count": 29,
       "rental_count": 0,
       "category_ids": [
         "naver:b:zgcine:50000206",
@@ -11002,8 +11099,8 @@
         "plthink:b:068:006",
         "plthink:b:068:007"
       ],
-      "count": 62,
-      "purchase_count": 62,
+      "count": 61,
+      "purchase_count": 61,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:068",
@@ -11031,11 +11128,9 @@
       "navigation_category_ids": [
         "avx:b:033c8c98bda38b31",
         "avx:b:0e9fbacc61e6ab71",
-        "avx:b:10e735f4ee62e124",
         "avx:b:113bb83ff2d4fe13",
         "avx:b:24887d2c32cf487c",
         "avx:b:84fbcd55d0822f02",
-        "avx:b:87a3daf8464bb30e",
         "avx:b:b00a96e330f58680",
         "avx:b:ee00e8915f896e11",
         "clmedia:b:594",
@@ -11044,8 +11139,8 @@
         "plthink:b:029:002",
         "plthink:b:029:003"
       ],
-      "count": 164,
-      "purchase_count": 163,
+      "count": 162,
+      "purchase_count": 161,
       "rental_count": 1,
       "category_ids": [
         "naver:b:zoom:50000206",
@@ -11063,11 +11158,9 @@
         "clmedia:b:620",
         "avx:b:ee00e8915f896e11",
         "avx:b:0e9fbacc61e6ab71",
-        "avx:b:b00a96e330f58680",
-        "avx:b:87a3daf8464bb30e",
-        "avx:b:10e735f4ee62e124",
         "avx:b:033c8c98bda38b31",
         "avx:b:84fbcd55d0822f02",
+        "avx:b:b00a96e330f58680",
         "avx:b:24887d2c32cf487c",
         "avx:b:113bb83ff2d4fe13",
         "avx:b:5da6648761fcfba5",
@@ -29457,7 +29550,6 @@
     "plthink-1927417": "smartstore-10817290315",
     "avx-1591": "smartstore-10817290315",
     "clmedia-2153": "smartstore-10817290315",
-    "cinemall-1387": "smartstore-10817290315",
     "kpp-1686557946": "smartstore-6961345452",
     "plthink-1927365": "smartstore-6961345452",
     "avx-1592": "smartstore-6961345452",
@@ -29614,6 +29706,8 @@
     "plthink-1928771": "kpp-1668562832",
     "avx-2991": "kpp-1668562832",
     "clmedia-2539": "kpp-1668562832",
+    "avx-3003": "smartstore-13740417138",
+    "avx-3004": "smartstore-13740417139",
     "avx-3011": "plthink-1928776",
     "clmedia-2537": "plthink-1928776",
     "avx-3013": "kpp-1731463015",
@@ -29661,6 +29755,12 @@
     "clmedia-2055": "kpp-1650848484",
     "clmedia-3349": "avx-3092",
     "clmedia-3348": "avx-3093",
+    "cinemall-2485": "avx-3120",
+    "cinemall-2491": "avx-3122",
+    "cinemall-2494": "avx-3124",
+    "cinemall-2511": "avx-3125",
+    "cinemall-2512": "avx-3126",
+    "cinemall-2492": "avx-3128",
     "avx-725": "kpp-1636611791",
     "avx-728": "plthink-1914801",
     "avx-749": "kpp-1635491880",
@@ -30526,8 +30626,7 @@
     "onnoff-645": "kpp-1729237652",
     "smartstore-13745582124": "kpp-1742363246",
     "clmedia-1158": "kpp-1742363246",
-    "plthink-1926718": "smartstore-13745582366",
-    "clmedia-1159": "smartstore-13745582366",
+    "clmedia-1159": "kpp-1742364126",
     "clmedia-1160": "smartstore-13745581931",
     "clmedia-1165": "smartstore-13742812753",
     "clmedia-1166": "smartstore-13742812752",
@@ -30605,7 +30704,6 @@
     "clmedia-1292": "smartstore-13742812705",
     "clmedia-1294": "smartstore-13742812704",
     "clmedia-1297": "smartstore-13742812703",
-    "clmedia-1298": "smartstore-13740420722",
     "clmedia-1302": "smartstore-13740420721",
     "clmedia-1308": "smartstore-13740420719",
     "clmedia-1313": "plthink-1923153",
@@ -30614,7 +30712,6 @@
     "clmedia-1323": "smartstore-13742812700",
     "clmedia-1325": "smartstore-13742812699",
     "clmedia-1326": "smartstore-13742812697",
-    "clmedia-1327": "smartstore-13742812696",
     "clmedia-1328": "smartstore-13742812695",
     "smartstore-13745581816": "kpp-1678941553",
     "onnoff-427": "kpp-1678941553",
@@ -30796,7 +30893,6 @@
     "clmedia-1673": "smartstore-13026860228",
     "onnoff-536": "smartstore-13168219266",
     "clmedia-170": "smartstore-13168219266",
-    "clmedia-1706": "smartstore-13742226372",
     "smartstore-8537759650": "kpp-1701844630",
     "plthink-1919150": "kpp-1701844630",
     "onnoff-893": "kpp-1701844630",
@@ -30859,7 +30955,6 @@
     "clmedia-1749": "smartstore-13027324930",
     "clmedia-1751": "smartstore-11888099636",
     "clmedia-1752": "smartstore-13027766660",
-    "clmedia-1753": "smartstore-13027758714",
     "smartstore-13745582202": "kpp-1721372797",
     "plthink-1925873": "kpp-1721372797",
     "clmedia-1754": "kpp-1721372797",
@@ -30914,7 +31009,6 @@
     "smartstore-8525756300": "smartstore-8545874839",
     "onnoff-538": "smartstore-8545874839",
     "clmedia-179": "smartstore-8545874839",
-    "clmedia-1791": "smartstore-13740796607",
     "smartstore-13745582575": "kpp-1750313618",
     "plthink-1926931": "kpp-1750313618",
     "clmedia-1797": "kpp-1750313618",
@@ -31254,11 +31348,6 @@
     "clmedia-2135": "kpp-1754544675",
     "smartstore-13745582729": "kpp-1758160545",
     "clmedia-2136": "kpp-1758160545",
-    "smartstore-13745581761": "kpp-1685498644",
-    "smartstore-8550542774": "kpp-1685498644",
-    "plthink-1922133": "kpp-1685498644",
-    "onnoff-993": "kpp-1685498644",
-    "clmedia-214": "kpp-1685498644",
     "smartstore-12306277943": "smartstore-13742812636",
     "clmedia-2143": "smartstore-13742812636",
     "clmedia-2144": "smartstore-12456590675",
@@ -31753,8 +31842,6 @@
     "smartstore-13745582944": "kpp-1761729303",
     "plthink-1929289": "kpp-1761729303",
     "clmedia-2689": "kpp-1761729303",
-    "onnoff-586": "kpp-1679364980",
-    "clmedia-269": "kpp-1679364980",
     "smartstore-13745582848": "kpp-1765348030",
     "plthink-1929293": "kpp-1765348030",
     "clmedia-2690": "kpp-1765348030",
@@ -31878,8 +31965,6 @@
     "clmedia-2848": "smartstore-13744158304",
     "clmedia-2849": "plthink-1929718",
     "clmedia-2857": "plthink-1930003",
-    "onnoff-433": "kpp-1606719988",
-    "clmedia-286": "kpp-1606719988",
     "clmedia-2860": "plthink-1930001",
     "clmedia-2865": "smartstore-13679054018",
     "plthink-1930098": "kpp-1763711792",
@@ -32104,7 +32189,6 @@
     "clmedia-3267": "smartstore-13745548941",
     "smartstore-13745318483": "kpp-1773371052",
     "clmedia-3269": "kpp-1773371052",
-    "clmedia-3270": "smartstore-13745586972",
     "clmedia-3271": "kpp-1788422908",
     "clmedia-3283": "smartstore-13740417130",
     "clmedia-3284": "smartstore-13740417129",
@@ -32160,12 +32244,15 @@
     "plthink-1917397": "kpp-1679364102",
     "onnoff-587": "kpp-1679364102",
     "clmedia-338": "kpp-1679364102",
+    "clmedia-3388": "smartstore-13523016467",
+    "clmedia-3405": "kpp-1786067624",
     "plthink-1925860": "smartstore-13745581646",
     "onnoff-903": "smartstore-13745581646",
     "clmedia-343": "smartstore-13745581646",
     "smartstore-13745581871": "kpp-1657763335",
     "onnoff-949": "kpp-1657763335",
     "clmedia-344": "kpp-1657763335",
+    "clmedia-3441": "kpp-1752463655",
     "smartstore-13745581868": "kpp-1665021561",
     "smartstore-8545749743": "kpp-1665021561",
     "plthink-1921902": "kpp-1665021561",
@@ -32237,7 +32324,6 @@
     "smartstore-8545580910": "kpp-1665038065",
     "plthink-1921298": "kpp-1665038065",
     "clmedia-404": "kpp-1665038065",
-    "clmedia-407": "onnoff-953",
     "smartstore-13742693084": "smartstore-13742686848",
     "clmedia-408": "smartstore-13742686848",
     "plthink-1907274": "smartstore-13745581579",
@@ -32457,7 +32543,6 @@
     "onnoff-550": "smartstore-13745581877",
     "smartstore-13745582194": "kpp-1719880526",
     "clmedia-735": "kpp-1719880526",
-    "clmedia-740": "kpp-1718875483",
     "smartstore-13745581884": "kpp-1694055649",
     "plthink-1923426": "kpp-1694055649",
     "clmedia-741": "kpp-1694055649",
@@ -32845,6 +32930,7 @@
     "clmedia-998": "smartstore-12306709588",
     "onnoff-557": "smartstore-12306709588",
     "kpp-1579572827": "smartstore-12959114500",
+    "onnoff-433": "kpp-1606719988",
     "smartstore-11428385879": "kpp-1606731769",
     "onnoff-426": "kpp-1606981849",
     "plthink-1916257": "kpp-1635494331",
@@ -32908,6 +32994,7 @@
     "kpp-1676275965": "smartstore-13426634503",
     "kpp-1676530375": "smartstore-13426630860",
     "kpp-1679044661": "smartstore-8285809808",
+    "onnoff-586": "kpp-1679364980",
     "plthink-1923174": "kpp-1681434839",
     "onnoff-912": "kpp-1681434839",
     "onnoff-1136": "kpp-1681441675",
@@ -32916,6 +33003,10 @@
     "kpp-1683090664": "smartstore-13426637499",
     "kpp-1683090748": "smartstore-13743897304",
     "onnoff-547": "kpp-1684222024",
+    "smartstore-13745581761": "kpp-1685498644",
+    "smartstore-8550542774": "kpp-1685498644",
+    "plthink-1922133": "kpp-1685498644",
+    "onnoff-993": "kpp-1685498644",
     "onnoff-955": "kpp-1685697567",
     "kpp-1686554310": "smartstore-13744158681",
     "onnoff-848": "kpp-1687921892",
@@ -33012,7 +33103,6 @@
     "onnoff-38": "smartstore-12054448101",
     "onnoff-39": "smartstore-5065004444",
     "onnoff-40": "smartstore-12054439844",
-    "onnoff-489": "plthink-1925828",
     "onnoff-944": "smartstore-13264968704",
     "onnoff-975": "plthink-1929734",
     "plthink-1028": "smartstore-13740721125",
@@ -33055,7 +33145,6 @@
     "plthink-1903986": "smartstore-4921016651",
     "plthink-1903987": "smartstore-4921015787",
     "plthink-1904382": "smartstore-13740669831",
-    "plthink-1904885": "smartstore-13740669744",
     "plthink-1906022": "smartstore-13740669873",
     "plthink-1906023": "smartstore-13740669872",
     "plthink-1906625": "smartstore-13742339662",
@@ -33509,8 +33598,6 @@
     "plthink-1923633": "smartstore-13740634228",
     "plthink-1923634": "smartstore-13740634209",
     "plthink-1923637": "smartstore-13740634191",
-    "plthink-1923642": "smartstore-13740755220",
-    "plthink-1923643": "smartstore-13740755165",
     "plthink-1923647": "smartstore-13740634159",
     "plthink-1923656": "smartstore-13740734495",
     "plthink-1923657": "smartstore-13740734494",
@@ -33718,6 +33805,7 @@
     "plthink-1926607": "smartstore-13740754990",
     "plthink-1926608": "smartstore-13740754988",
     "plthink-1926609": "smartstore-13740754989",
+    "plthink-1926718": "smartstore-13745582366",
     "plthink-1926743": "smartstore-12945395768",
     "plthink-1926837": "smartstore-13740754987",
     "plthink-1926926": "smartstore-13740754986",

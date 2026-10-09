@@ -1,27 +1,28 @@
 {
   "schema_version": 1,
-  "brands_checked": 271,
-  "input_count": 24075,
+  "brands_checked": 275,
+  "input_count": 24141,
   "duplicate_group_count": 2765,
-  "duplicate_entries_removed": 4581,
+  "duplicate_entries_removed": 4576,
   "by_brand": {
-    "tilta": 288,
+    "tilta": 289,
     "avenger": 10,
-    "smallrig": 827,
-    "hollyland": 113,
+    "smallrig": 826,
+    "hollyland": 112,
+    "accsoon": 6,
     "swit": 45,
     "canon": 2,
     "godox": 441,
     "sony": 19,
     "pmi": 2,
     "openmoon": 1,
-    "kupo": 73,
+    "kupo": 72,
     "ifootage": 2,
     "vsgo": 5,
     "gentree": 28,
     "blackmagic": 139,
-    "nanlite": 320,
-    "zgcine": 6,
+    "nanlite": 318,
+    "zgcine": 5,
     "farseeing": 1,
     "desview": 8,
     "kateluo": 2,
@@ -31,7 +32,7 @@
     "sachtler": 4,
     "kumkwang": 16,
     "valens": 149,
-    "aurora": 77,
+    "aurora": 76,
     "tethertools": 8,
     "rocknroller": 3,
     "benro": 7,
@@ -457,7 +458,7 @@
         {
           "id": "avx-1172",
           "name": "SmallRig 파나소닉 DC-BGH1 전용 케이지 3024",
-          "price": 154000,
+          "price": 100000,
           "source": "avx",
           "url": "https://www.avx.co.kr/goods/view?no=1172"
         }
@@ -1288,13 +1289,6 @@
           "price": 568000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2153"
-        },
-        {
-          "id": "cinemall-1387",
-          "name": "틸타 TILTA Basic Ring Grip Plus for DJIRonin Control Kit_TGA-PRG2",
-          "price": 585000,
-          "source": "cinemall",
-          "url": "https://www.cinemall.co.kr/product/detail.html?product_no=1387"
         }
       ]
     },
@@ -1466,7 +1460,7 @@
         {
           "id": "clmedia-2710",
           "name": "틸타 TA-BTP3-V-B PD 스마트 V마운트 배터리 플레이트",
-          "price": 250000,
+          "price": 258000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2710"
         }
@@ -2924,7 +2918,7 @@
         {
           "id": "plthink-1928694",
           "name": "[SmallRig] 스몰리그 SR5565 비디오 모노포드 카본 파이버 원터치 유압식 헤드 영상촬영",
-          "price": 617900,
+          "price": 512000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1928694"
         },
@@ -2938,7 +2932,7 @@
         {
           "id": "clmedia-2544",
           "name": "스몰리그 5565 유압 카본 파이버 비디오 모노포드",
-          "price": 617900,
+          "price": 512000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2544"
         }
@@ -3477,6 +3471,54 @@
           "price": 199000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2539"
+        }
+      ]
+    },
+    {
+      "brand_id": "hollyland",
+      "kind": "purchase",
+      "primary_id": "smartstore-13740417138",
+      "evidence": [
+        "name:무선탈리시스템4라이트wirelesstallysystem"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13740417138",
+          "name": "홀리랜드 무선 탈리 시스템 4라이트 Wireless Tally System",
+          "price": 1267000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13740417138"
+        },
+        {
+          "id": "avx-3003",
+          "name": "홀리랜드 무선 탈리 시스템 4라이트 Wireless Tally System",
+          "price": 1267000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3003"
+        }
+      ]
+    },
+    {
+      "brand_id": "hollyland",
+      "kind": "purchase",
+      "primary_id": "smartstore-13740417139",
+      "evidence": [
+        "name:무선탈리시스템8라이트wirelesstallysystem"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13740417139",
+          "name": "홀리랜드 무선 탈리 시스템 8라이트 Wireless Tally System",
+          "price": 1950000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13740417139"
+        },
+        {
+          "id": "avx-3004",
+          "name": "홀리랜드 무선 탈리 시스템 8라이트 Wireless Tally System",
+          "price": 1950000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3004"
         }
       ]
     },
@@ -4185,6 +4227,150 @@
       ]
     },
     {
+      "brand_id": "accsoon",
+      "kind": "purchase",
+      "primary_id": "avx-3120",
+      "evidence": [
+        "name:악순sidehandles"
+      ],
+      "members": [
+        {
+          "id": "avx-3120",
+          "name": "Accsoon 악순 Side Handles",
+          "price": 147000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3120"
+        },
+        {
+          "id": "cinemall-2485",
+          "name": "Accsoon 악순 Side Handles",
+          "price": 147000,
+          "source": "cinemall",
+          "url": "https://www.cinemall.co.kr/product/detail.html?product_no=2485"
+        }
+      ]
+    },
+    {
+      "brand_id": "accsoon",
+      "kind": "purchase",
+      "primary_id": "avx-3122",
+      "evidence": [
+        "name:악순monitorscreenprotector강화유리스크린보호필름"
+      ],
+      "members": [
+        {
+          "id": "avx-3122",
+          "name": "Accsoon 악순 Monitor Screen Protector 강화 유리 스크린 보호필름",
+          "price": 27800,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3122"
+        },
+        {
+          "id": "cinemall-2491",
+          "name": "Accsoon 악순 Monitor Screen Protector 강화 유리 스크린 보호필름",
+          "price": 27800,
+          "source": "cinemall",
+          "url": "https://www.cinemall.co.kr/product/detail.html?product_no=2491"
+        }
+      ]
+    },
+    {
+      "brand_id": "accsoon",
+      "kind": "purchase",
+      "primary_id": "avx-3124",
+      "evidence": [
+        "name:악순cineviewse4k무선영상송수신기"
+      ],
+      "members": [
+        {
+          "id": "avx-3124",
+          "name": "Accsoon 악순 CineView SE 4K 무선 영상 송수신기",
+          "price": 779000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3124"
+        },
+        {
+          "id": "cinemall-2494",
+          "name": "Accsoon 악순 CineView SE 4K 무선 영상 송수신기",
+          "price": 779000,
+          "source": "cinemall",
+          "url": "https://www.cinemall.co.kr/product/detail.html?product_no=2494"
+        }
+      ]
+    },
+    {
+      "brand_id": "accsoon",
+      "kind": "purchase",
+      "primary_id": "avx-3125",
+      "evidence": [
+        "name:악순cineviewse4ktx송신기"
+      ],
+      "members": [
+        {
+          "id": "avx-3125",
+          "name": "Accsoon 악순 CineView SE 4K TX 송신기",
+          "price": 420000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3125"
+        },
+        {
+          "id": "cinemall-2511",
+          "name": "Accsoon 악순 CineView SE 4K TX 송신기",
+          "price": 420000,
+          "source": "cinemall",
+          "url": "https://www.cinemall.co.kr/product/detail.html?product_no=2511"
+        }
+      ]
+    },
+    {
+      "brand_id": "accsoon",
+      "kind": "purchase",
+      "primary_id": "avx-3126",
+      "evidence": [
+        "name:악순cineviewse4krx수신기"
+      ],
+      "members": [
+        {
+          "id": "avx-3126",
+          "name": "Accsoon 악순 CineView SE 4K RX 수신기",
+          "price": 420000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3126"
+        },
+        {
+          "id": "cinemall-2512",
+          "name": "Accsoon 악순 CineView SE 4K RX 수신기",
+          "price": 420000,
+          "source": "cinemall",
+          "url": "https://www.cinemall.co.kr/product/detail.html?product_no=2512"
+        }
+      ]
+    },
+    {
+      "brand_id": "accsoon",
+      "kind": "purchase",
+      "primary_id": "avx-3128",
+      "evidence": [
+        "name:악순cineviewm7protriple-monitorkit트리플모니터키트"
+      ],
+      "members": [
+        {
+          "id": "avx-3128",
+          "name": "Accsoon 악순 CineView M7 Pro Triple-Monitor Kit 트리플 모니터 키트",
+          "price": 4490000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=3128"
+        },
+        {
+          "id": "cinemall-2492",
+          "name": "Accsoon 악순 CineView M7 Pro Triple-Monitor Kit 트리플 모니터 키트",
+          "price": 4490000,
+          "source": "cinemall",
+          "url": "https://www.cinemall.co.kr/product/detail.html?product_no=2492"
+        }
+      ]
+    },
+    {
       "brand_id": "smallrig",
       "kind": "purchase",
       "primary_id": "kpp-1636611791",
@@ -4202,7 +4388,7 @@
         {
           "id": "avx-725",
           "name": "SmallRig 스몰리그 미디움 사이즈 15mm 로드 클램프 Arri Locating Handle 2165",
-          "price": 87000,
+          "price": 43500,
           "source": "avx",
           "url": "https://www.avx.co.kr/goods/view?no=725"
         }
@@ -4322,7 +4508,7 @@
         {
           "id": "avx-755",
           "name": "Smallrig 스몰리그 슈 마운트 Shoe Mount 1593",
-          "price": 21000,
+          "price": 11000,
           "source": "avx",
           "url": "https://www.avx.co.kr/goods/view?no=755"
         }
@@ -4491,7 +4677,7 @@
         {
           "id": "avx-768",
           "name": "스몰리그 SmallRig HDMI Cable Clamp 1822",
-          "price": 36000,
+          "price": 20000,
           "source": "avx",
           "url": "https://www.avx.co.kr/goods/view?no=768"
         }
@@ -4635,7 +4821,7 @@
         {
           "id": "avx-776",
           "name": "스몰리그 메모리 카드 케이스 SmallRig Memory Card Case 2832",
-          "price": 14000,
+          "price": 10000,
           "source": "avx",
           "url": "https://www.avx.co.kr/goods/view?no=776"
         }
@@ -4738,7 +4924,7 @@
         {
           "id": "avx-895",
           "name": "스몰리그 Lightweight Fluid Video Head 3457",
-          "price": 147000,
+          "price": 145000,
           "source": "avx",
           "url": "https://www.avx.co.kr/goods/view?no=895"
         }
@@ -4784,7 +4970,7 @@
         {
           "id": "avx-896",
           "name": "SmallRig 베이스 플레이트 1798 Dual 15mm Rod Clamp",
-          "price": 88000,
+          "price": 70000,
           "source": "avx",
           "url": "https://www.avx.co.kr/goods/view?no=896"
         },
@@ -5010,7 +5196,7 @@
         {
           "id": "avx-902",
           "name": "SmallRig 로드 팩 1659",
-          "price": 44000,
+          "price": 35000,
           "source": "avx",
           "url": "https://www.avx.co.kr/goods/view?no=902"
         },
@@ -12120,7 +12306,7 @@
         },
         {
           "id": "clmedia-3060",
-          "name": "틸타 TA-XTH3-B NATO 타입 제노 탑 핸들",
+          "name": "틸타 TA-XTH3-B NATO 타입 제노 탑 핸들 (블랙)",
           "price": 68000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=3060"
@@ -16773,7 +16959,7 @@
         {
           "id": "clmedia-2709",
           "name": "틸타 MB-T12 4x5.65 카본 매트박스",
-          "price": 836000,
+          "price": 865000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2709"
         },
@@ -19501,7 +19687,7 @@
         {
           "id": "clmedia-1091",
           "name": "스몰리그 4988 아이폰16PRO용 FilMov 모바일 키트",
-          "price": 26950,
+          "price": 53900,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=1091"
         },
@@ -19540,7 +19726,7 @@
         {
           "id": "clmedia-1096",
           "name": "스몰리그 4827 아이폰16프로맥스 플래그십에디션 모바일 케이지",
-          "price": 45950,
+          "price": 91900,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=1096"
         },
@@ -19721,7 +19907,7 @@
         {
           "id": "clmedia-1116",
           "name": "스몰리그 5006 아이폰16프로맥스 베이직에디션 모바일 케이지",
-          "price": 38450,
+          "price": 76900,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=1116"
         },
@@ -20960,29 +21146,21 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "smartstore-13745582366",
+      "primary_id": "kpp-1742364126",
       "evidence": [
-        "model:5020",
-        "name:5020헤비듀티퀵락달리"
+        "model:5020B"
       ],
       "members": [
         {
-          "id": "smartstore-13745582366",
-          "name": "5020 헤비듀티 퀵락 달리",
+          "id": "kpp-1742364126",
+          "name": "스몰리그 5020B 퀵락 헤비듀티 비디오 삼각대 돌리",
           "price": 106900,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13745582366"
-        },
-        {
-          "id": "plthink-1926718",
-          "name": "[SmallRig] 스몰리그 SR5020 Quick Lock 퀵락 헤비듀티 삼각대 달리",
-          "price": 106900,
-          "source": "plthink",
-          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1926718"
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1742364126"
         },
         {
           "id": "clmedia-1159",
-          "name": "스몰리그 5020 헤비듀티 퀵락 달리",
+          "name": "스몰리그 5020B 퀵락 고하중 삼각대 이동용 달리",
           "price": 106900,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=1159"
@@ -22263,30 +22441,6 @@
     {
       "brand_id": "hollyland",
       "kind": "purchase",
-      "primary_id": "smartstore-13740420722",
-      "evidence": [
-        "name:hl-dt02디탭todc파워케이블"
-      ],
-      "members": [
-        {
-          "id": "smartstore-13740420722",
-          "name": "홀리랜드 HL-DT02 디탭 to DC 파워케이블",
-          "price": 44000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13740420722"
-        },
-        {
-          "id": "clmedia-1298",
-          "name": "홀리랜드 HL-DT02 디탭 to DC 파워케이블",
-          "price": 44000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=1298"
-        }
-      ]
-    },
-    {
-      "brand_id": "hollyland",
-      "kind": "purchase",
       "primary_id": "smartstore-13740420721",
       "evidence": [
         "name:lark-c1-ios-duo모바일ios1:2무선마이크시스템"
@@ -22456,30 +22610,6 @@
           "price": 44000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=1326"
-        }
-      ]
-    },
-    {
-      "brand_id": "hollyland",
-      "kind": "purchase",
-      "primary_id": "smartstore-13742812696",
-      "evidence": [
-        "name:hl-sp01mars-m1-enhanced강화유리보호필름2개"
-      ],
-      "members": [
-        {
-          "id": "smartstore-13742812696",
-          "name": "홀리랜드 HL-SP01 MARS-M1-ENHANCED 강화 유리 보호필름 2개",
-          "price": 35000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13742812696"
-        },
-        {
-          "id": "clmedia-1327",
-          "name": "홀리랜드 HL-SP01 MARS-M1-ENHANCED 강화 유리 보호필름 2개",
-          "price": 35000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=1327"
         }
       ]
     },
@@ -23228,7 +23358,7 @@
         {
           "id": "plthink-1924564",
           "name": "[Blackmagic Design] ATEM 1 M/E Constellation 4K",
-          "price": 2628000,
+          "price": 3278000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1924564"
         },
@@ -25527,30 +25657,6 @@
       ]
     },
     {
-      "brand_id": "zgcine",
-      "kind": "purchase",
-      "primary_id": "smartstore-13742226372",
-      "evidence": [
-        "name:dt-npfdtaptonp-f더미배터리케이블"
-      ],
-      "members": [
-        {
-          "id": "smartstore-13742226372",
-          "name": "ZGCINE DT-NPF DTAP to NP-F 더미배터리케이블",
-          "price": 30000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13742226372"
-        },
-        {
-          "id": "clmedia-1706",
-          "name": "ZGCINE DT-NPF DTAP to NP-F 더미배터리케이블",
-          "price": 30000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=1706"
-        }
-      ]
-    },
-    {
       "brand_id": "smallrig",
       "kind": "purchase",
       "primary_id": "kpp-1701844630",
@@ -26359,30 +26465,6 @@
       ]
     },
     {
-      "brand_id": "kupo",
-      "kind": "purchase",
-      "primary_id": "smartstore-13027758714",
-      "evidence": [
-        "name:bg5006m봉고타이-혼합색상"
-      ],
-      "members": [
-        {
-          "id": "smartstore-13027758714",
-          "name": "KUPO BG5006M 봉고타이 - 혼합색상",
-          "price": 13000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13027758714"
-        },
-        {
-          "id": "clmedia-1753",
-          "name": "쿠포 BG5006M 봉고타이 - 혼합색상",
-          "price": 14000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=1753"
-        }
-      ]
-    },
-    {
       "brand_id": "smallrig",
       "kind": "purchase",
       "primary_id": "kpp-1721372797",
@@ -27063,30 +27145,6 @@
           "price": 88000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=179"
-        }
-      ]
-    },
-    {
-      "brand_id": "hollyland",
-      "kind": "purchase",
-      "primary_id": "smartstore-13740796607",
-      "evidence": [
-        "name:lark-m2s-cb라크m2s콤보라이트닝케이블포함"
-      ],
-      "members": [
-        {
-          "id": "smartstore-13740796607",
-          "name": "홀리랜드 LARK-M2S-CB 라크M2S 콤보(라이트닝케이블 포함)",
-          "price": 168000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13740796607"
-        },
-        {
-          "id": "clmedia-1791",
-          "name": "홀리랜드 LARK-M2S-CB 라크M2S 콤보(라이트닝케이블 포함)",
-          "price": 168000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=1791"
         }
       ]
     },
@@ -31984,59 +32042,6 @@
           "price": 30900,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2136"
-        }
-      ]
-    },
-    {
-      "brand_id": "smallrig",
-      "kind": "purchase",
-      "primary_id": "kpp-1685498644",
-      "evidence": [
-        "model:3268",
-        "name:3268usb-ctodc케이블"
-      ],
-      "members": [
-        {
-          "id": "kpp-1685498644",
-          "name": "스몰리그 USB-C to DC 케이블 3268",
-          "price": 44000,
-          "source": "kpp",
-          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1685498644"
-        },
-        {
-          "id": "smartstore-13745581761",
-          "name": "3268 USB-C to DC 케이블",
-          "price": 44000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13745581761"
-        },
-        {
-          "id": "smartstore-8550542774",
-          "name": "SMALLRIG USB-C to DC 케이블 SR3268",
-          "price": 50000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8550542774"
-        },
-        {
-          "id": "plthink-1922133",
-          "name": "[SmallRig] 스몰리그 SR3268 USB-C to DC 케이블",
-          "price": 44000,
-          "source": "plthink",
-          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1922133"
-        },
-        {
-          "id": "onnoff-993",
-          "name": "스몰리그 3268 USB-C to DC 케이블",
-          "price": 44000,
-          "source": "onnoff",
-          "url": "https://onnoff.kr/product/detail.html?product_no=993"
-        },
-        {
-          "id": "clmedia-214",
-          "name": "스몰리그 3268 USB-C to DC 케이블",
-          "price": 44000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=214"
         }
       ]
     },
@@ -39055,37 +39060,6 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "kpp-1679364980",
-      "evidence": [
-        "model:2903B"
-      ],
-      "members": [
-        {
-          "id": "kpp-1679364980",
-          "name": "스몰리그 ARRI 스타일 조절식 모니터 마운트 2903B",
-          "price": 59000,
-          "source": "kpp",
-          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1679364980"
-        },
-        {
-          "id": "onnoff-586",
-          "name": "스몰리그 아리타입 조절식 모니터 마운트 홀더 2903B",
-          "price": 59000,
-          "source": "onnoff",
-          "url": "https://onnoff.kr/product/detail.html?product_no=586"
-        },
-        {
-          "id": "clmedia-269",
-          "name": "스몰리그 2903B 아리타입 조절식 모니터 마운트 홀더",
-          "price": 59000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=269"
-        }
-      ]
-    },
-    {
-      "brand_id": "smallrig",
-      "kind": "purchase",
       "primary_id": "kpp-1765348030",
       "evidence": [
         "model:5626",
@@ -40883,38 +40857,6 @@
       ]
     },
     {
-      "brand_id": "smallrig",
-      "kind": "purchase",
-      "primary_id": "kpp-1606719988",
-      "evidence": [
-        "model:3081B",
-        "name:3081b소니a7c케이지"
-      ],
-      "members": [
-        {
-          "id": "kpp-1606719988",
-          "name": "스몰리그 소니 A7C 케이지 3081B",
-          "price": 72000,
-          "source": "kpp",
-          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1606719988"
-        },
-        {
-          "id": "onnoff-433",
-          "name": "스몰리그 3081B 소니 A7C 케이지",
-          "price": 72000,
-          "source": "onnoff",
-          "url": "https://onnoff.kr/product/detail.html?product_no=433"
-        },
-        {
-          "id": "clmedia-286",
-          "name": "스몰리그 3081B 소니 A7C 케이지",
-          "price": 72000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=286"
-        }
-      ]
-    },
-    {
       "brand_id": "tilta",
       "kind": "purchase",
       "primary_id": "plthink-1930001",
@@ -41193,8 +41135,7 @@
       "kind": "purchase",
       "primary_id": "kpp-1784624203",
       "evidence": [
-        "model:6136",
-        "name:6136파나소닉루믹스l10전용l마운트플레이트"
+        "model:6136"
       ],
       "members": [
         {
@@ -41220,7 +41161,7 @@
         },
         {
           "id": "clmedia-2919",
-          "name": "스몰리그 6136 파나소닉 루믹스 L10 전용 L마운트 플레이트",
+          "name": "스몰리그 6136 파나소닉 루믹스 L10 전용 L마운트 플레이트(티타늄)",
           "price": 80900,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2919"
@@ -41402,7 +41343,7 @@
         {
           "id": "clmedia-296",
           "name": "스몰리그 SR3040 미니 to HDMI 케이블",
-          "price": 14000,
+          "price": 15000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=296"
         }
@@ -41976,8 +41917,7 @@
       "kind": "purchase",
       "primary_id": "smartstore-13745583004",
       "evidence": [
-        "model:5936",
-        "name:5936드론용접이식랜딩패드"
+        "model:5936"
       ],
       "members": [
         {
@@ -41996,7 +41936,7 @@
         },
         {
           "id": "clmedia-3027",
-          "name": "스몰리그 5936 드론용 접이식 랜딩 패드",
+          "name": "스몰리그 5936 드론 접이식 착륙 패드",
           "price": 45900,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=3027"
@@ -42807,8 +42747,7 @@
       "kind": "purchase",
       "primary_id": "kpp-1784683705",
       "evidence": [
-        "model:6004",
-        "name:6004dji오즈모포켓4/3•xtramuse호환마그네틱마운트서포트"
+        "model:6004"
       ],
       "members": [
         {
@@ -42827,7 +42766,7 @@
         },
         {
           "id": "clmedia-3074",
-          "name": "스몰리그 6004 DJI 오즈모 포켓 4 / 3 • Xtra Muse 호환 마그네틱 마운트 서포트",
+          "name": "스몰리그 6004 DJI 오즈모 포켓 4P / 4 / 3 • Xtra Muse 호환 마그네틱 마운트 서포트",
           "price": 53900,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=3074"
@@ -44154,7 +44093,7 @@
         {
           "id": "clmedia-3239",
           "name": "스몰리그 6286 Potato Jet TRIBEX PRO 플루이드 헤드 포함 카본 비디오 모노포드 (비디오 버전)",
-          "price": 691900,
+          "price": 617000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=3239"
         }
@@ -44509,31 +44448,6 @@
           "price": 20900,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=3269"
-        }
-      ]
-    },
-    {
-      "brand_id": "smallrig",
-      "kind": "purchase",
-      "primary_id": "smartstore-13745586972",
-      "evidence": [
-        "model:6361",
-        "name:6361dji오즈모포켓3/4/4p호환미니퀵릴리즈삼각대"
-      ],
-      "members": [
-        {
-          "id": "smartstore-13745586972",
-          "name": "6361 DJI 오즈모 포켓3 / 4 / 4P 호환 미니 퀵 릴리즈 삼각대",
-          "price": 48900,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13745586972"
-        },
-        {
-          "id": "clmedia-3270",
-          "name": "스몰리그 6361 DJI 오즈모 포켓3 / 4 / 4P 호환 미니 퀵 릴리즈 삼각대",
-          "price": 48900,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=3270"
         }
       ]
     },
@@ -45464,6 +45378,54 @@
       ]
     },
     {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "smartstore-13523016467",
+      "evidence": [
+        "model:WLC-T06-K1"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13523016467",
+          "name": "TILTA 뉴클리어스 M2 핸드 휠 키트 WLC-T06-K1",
+          "price": 1506000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13523016467"
+        },
+        {
+          "id": "clmedia-3388",
+          "name": "틸타 WLC-T06-K1 뉴클리어스 M II 무선 렌즈 컨트롤 핸드휠 키트",
+          "price": 1558000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3388"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "kpp-1786067624",
+      "evidence": [
+        "model:6924"
+      ],
+      "members": [
+        {
+          "id": "kpp-1786067624",
+          "name": "스몰리그 6924 소니 FX5 호크락 케이지 키트 듀얼 로드시스템 어드벤스드",
+          "price": 434900,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1786067624"
+        },
+        {
+          "id": "clmedia-3405",
+          "name": "스몰리그 6924 소니 FX5 호환 듀얼 로드 시스템 호크락 케이지 키트",
+          "price": 434900,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3405"
+        }
+      ]
+    },
+    {
       "brand_id": "smallrig",
       "kind": "purchase",
       "primary_id": "smartstore-13745581646",
@@ -45538,6 +45500,30 @@
           "price": 175000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=344"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "kpp-1752463655",
+      "evidence": [
+        "model:5075"
+      ],
+      "members": [
+        {
+          "id": "kpp-1752463655",
+          "name": "스몰리그 USB-C 데이터 케이블 Straight to Angled 35cm 5075",
+          "price": 29900,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1752463655"
+        },
+        {
+          "id": "clmedia-3441",
+          "name": "스몰리그 5075 USB-C to C ㄱ자 데이터 • 충전 케이블",
+          "price": 29900,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3441"
         }
       ]
     },
@@ -46444,30 +46430,6 @@
           "price": 99000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=404"
-        }
-      ]
-    },
-    {
-      "brand_id": "smallrig",
-      "kind": "purchase",
-      "primary_id": "onnoff-953",
-      "evidence": [
-        "name:3930ra-6090사각형소프트박스"
-      ],
-      "members": [
-        {
-          "id": "onnoff-953",
-          "name": "스몰리그 3930 RA-6090 사각형 소프트박스",
-          "price": 160000,
-          "source": "onnoff",
-          "url": "https://onnoff.kr/product/detail.html?product_no=953"
-        },
-        {
-          "id": "clmedia-407",
-          "name": "스몰리그 3930 RA-6090 사각형 소프트박스",
-          "price": 160000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=407"
         }
       ]
     },
@@ -48687,14 +48649,14 @@
         {
           "id": "plthink-1926158",
           "name": "[Kateluo] 카텔로 LY-300 마이크 붐폴 붐대 Boompole",
-          "price": 178000,
+          "price": 193000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1926158"
         },
         {
           "id": "clmedia-563",
           "name": "카텔로 LY-300 마이크 붐폴 붐대 Boompole",
-          "price": 178000,
+          "price": 193000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=563"
         }
@@ -48711,14 +48673,14 @@
         {
           "id": "plthink-1926162",
           "name": "[Kateluo] 카텔로 LY-300S 마이크 붐폴 붐대 Boompole",
-          "price": 237000,
+          "price": 252000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1926162"
         },
         {
           "id": "clmedia-564",
           "name": "카텔로 LY-300S 마이크 붐폴 붐대 Boompole",
-          "price": 237000,
+          "price": 252000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=564"
         }
@@ -49564,30 +49526,6 @@
           "price": 51900,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=735"
-        }
-      ]
-    },
-    {
-      "brand_id": "smallrig",
-      "kind": "purchase",
-      "primary_id": "kpp-1718875483",
-      "evidence": [
-        "model:4703"
-      ],
-      "members": [
-        {
-          "id": "kpp-1718875483",
-          "name": "스몰리그 파나소닉 S9 가죽 하프 케이스 4703",
-          "price": 59000,
-          "source": "kpp",
-          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1718875483"
-        },
-        {
-          "id": "clmedia-740",
-          "name": "스몰리그 4703 파나소닉 루믹스 S9 가죽 하프케이스키트",
-          "price": 59000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=740"
         }
       ]
     },
@@ -52816,7 +52754,7 @@
         {
           "id": "clmedia-932",
           "name": "스몰리그 4522 Night Eagle 니콘 Z6 III 케이지키트",
-          "price": 220000,
+          "price": 258900,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=932"
         }
@@ -54688,6 +54626,30 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
+      "primary_id": "kpp-1606719988",
+      "evidence": [
+        "model:3081B"
+      ],
+      "members": [
+        {
+          "id": "kpp-1606719988",
+          "name": "스몰리그 소니 A7C 케이지 3081B",
+          "price": 72000,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1606719988"
+        },
+        {
+          "id": "onnoff-433",
+          "name": "스몰리그 3081B 소니 A7C 케이지",
+          "price": 72000,
+          "source": "onnoff",
+          "url": "https://onnoff.kr/product/detail.html?product_no=433"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
       "primary_id": "kpp-1606731769",
       "evidence": [
         "model:2922",
@@ -56171,6 +56133,30 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
+      "primary_id": "kpp-1679364980",
+      "evidence": [
+        "model:2903B"
+      ],
+      "members": [
+        {
+          "id": "kpp-1679364980",
+          "name": "스몰리그 ARRI 스타일 조절식 모니터 마운트 2903B",
+          "price": 59000,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1679364980"
+        },
+        {
+          "id": "onnoff-586",
+          "name": "스몰리그 아리타입 조절식 모니터 마운트 홀더 2903B",
+          "price": 59000,
+          "source": "onnoff",
+          "url": "https://onnoff.kr/product/detail.html?product_no=586"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
       "primary_id": "kpp-1681434839",
       "evidence": [
         "model:4195"
@@ -56342,6 +56328,52 @@
           "price": 103000,
           "source": "onnoff",
           "url": "https://onnoff.kr/product/detail.html?product_no=547"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "kpp-1685498644",
+      "evidence": [
+        "model:3268",
+        "name:3268usb-ctodc케이블"
+      ],
+      "members": [
+        {
+          "id": "kpp-1685498644",
+          "name": "스몰리그 USB-C to DC 케이블 3268",
+          "price": 44000,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1685498644"
+        },
+        {
+          "id": "smartstore-13745581761",
+          "name": "3268 USB-C to DC 케이블",
+          "price": 44000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13745581761"
+        },
+        {
+          "id": "smartstore-8550542774",
+          "name": "SMALLRIG USB-C to DC 케이블 SR3268",
+          "price": 50000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8550542774"
+        },
+        {
+          "id": "plthink-1922133",
+          "name": "[SmallRig] 스몰리그 SR3268 USB-C to DC 케이블",
+          "price": 44000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1922133"
+        },
+        {
+          "id": "onnoff-993",
+          "name": "스몰리그 3268 USB-C to DC 케이블",
+          "price": 44000,
+          "source": "onnoff",
+          "url": "https://onnoff.kr/product/detail.html?product_no=993"
         }
       ]
     },
@@ -58610,30 +58642,6 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "plthink-1925828",
-      "evidence": [
-        "model:3578B"
-      ],
-      "members": [
-        {
-          "id": "plthink-1925828",
-          "name": "[SmallRig] 스몰리그 SR3578B 1.55X 모바일폰용 아나모픽렌즈 T마운트",
-          "price": 168900,
-          "source": "plthink",
-          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1925828"
-        },
-        {
-          "id": "onnoff-489",
-          "name": "스몰리그 3578B 1.55x 모바일폰용 아나모픽렌즈(T마운트)",
-          "price": 168900,
-          "source": "onnoff",
-          "url": "https://onnoff.kr/product/detail.html?product_no=489"
-        }
-      ]
-    },
-    {
-      "brand_id": "smallrig",
-      "kind": "purchase",
       "primary_id": "smartstore-13264968704",
       "evidence": [
         "name:3286bc미니라이트조명지속광촬영조명비디오led라이트"
@@ -59517,30 +59525,6 @@
           "price": 5000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1904382"
-        }
-      ]
-    },
-    {
-      "brand_id": "aurora",
-      "kind": "purchase",
-      "primary_id": "smartstore-13740669744",
-      "evidence": [
-        "name:clux씨룩스led조명"
-      ],
-      "members": [
-        {
-          "id": "smartstore-13740669744",
-          "name": "CLUX 씨룩스 LED 조명",
-          "price": 63000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13740669744"
-        },
-        {
-          "id": "plthink-1904885",
-          "name": "[Aurora] 오로라 CLUX 씨룩스 LED 조명",
-          "price": 63000,
-          "source": "plthink",
-          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1904885"
         }
       ]
     },
@@ -63684,7 +63668,7 @@
         {
           "id": "plthink-1920459",
           "name": "[Blackmagic Design] HyperDeck Studio 4K Pro",
-          "price": 2298000,
+          "price": 2868000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1920459"
         }
@@ -68266,7 +68250,7 @@
         {
           "id": "plthink-1923312",
           "name": "[Blackmagic Design] Studio Camera 4K Pro G2",
-          "price": 2628000,
+          "price": 3278000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1923312"
         }
@@ -69298,7 +69282,7 @@
         {
           "id": "plthink-1923634",
           "name": "[Blackmagic Design] HyperDeck Extreme 4K HDR",
-          "price": 4298000,
+          "price": 5368000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1923634"
         }
@@ -69325,54 +69309,6 @@
           "price": 9638000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1923637"
-        }
-      ]
-    },
-    {
-      "brand_id": "nanlite",
-      "kind": "purchase",
-      "primary_id": "smartstore-13740755220",
-      "evidence": [
-        "name:파보튜브ii60xr4라이트키트rgb조명/pavotubeii60xr"
-      ],
-      "members": [
-        {
-          "id": "smartstore-13740755220",
-          "name": "파보튜브II 60XR 4라이트 키트 RGB조명 / PavoTubeII 60XR",
-          "price": 6037000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13740755220"
-        },
-        {
-          "id": "plthink-1923642",
-          "name": "[NANLITE] 난라이트 파보튜브II 60XR 4라이트 키트 RGB조명 / PavoTubeII 60XR",
-          "price": 6037000,
-          "source": "plthink",
-          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1923642"
-        }
-      ]
-    },
-    {
-      "brand_id": "nanlite",
-      "kind": "purchase",
-      "primary_id": "smartstore-13740755165",
-      "evidence": [
-        "name:파보튜브ii60xr8라이트키트rgb조명/pavotubeii60xr"
-      ],
-      "members": [
-        {
-          "id": "smartstore-13740755165",
-          "name": "파보튜브II 60XR 8라이트 키트 RGB조명 / PavoTubeII 60XR",
-          "price": 13777000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13740755165"
-        },
-        {
-          "id": "plthink-1923643",
-          "name": "[NANLITE] 난라이트 파보튜브II 60XR 8라이트 키트 RGB조명 / PavoTubeII 60XR",
-          "price": 13777000,
-          "source": "plthink",
-          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1923643"
         }
       ]
     },
@@ -69706,7 +69642,7 @@
         {
           "id": "plthink-1923686",
           "name": "[Blackmagic Design] ATEM 4 M/E Constellation 4K",
-          "price": 13280000,
+          "price": 16580000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1923686"
         }
@@ -69754,7 +69690,7 @@
         {
           "id": "plthink-1923690",
           "name": "[Blackmagic Design] ATEM Television Studio 4K8",
-          "price": 6918000,
+          "price": 8648000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1923690"
         }
@@ -70138,7 +70074,7 @@
         {
           "id": "plthink-1923740",
           "name": "[Blackmagic Design] Ultimatte 12 4K",
-          "price": 3748000,
+          "price": 4688000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1923740"
         }
@@ -71987,7 +71923,7 @@
         {
           "id": "plthink-1924557",
           "name": "[Blackmagic Design] 2110 IP Converter 4x12G PWR",
-          "price": 2878000,
+          "price": 3598000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1924557"
         }
@@ -72155,7 +72091,7 @@
         {
           "id": "plthink-1924565",
           "name": "[Blackmagic Design] ATEM 2 M/E Constellation 4K",
-          "price": 6118000,
+          "price": 7638000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1924565"
         }
@@ -74226,6 +74162,30 @@
       ]
     },
     {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "smartstore-13745582366",
+      "evidence": [
+        "model:5020"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13745582366",
+          "name": "5020 헤비듀티 퀵락 달리",
+          "price": 106900,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13745582366"
+        },
+        {
+          "id": "plthink-1926718",
+          "name": "[SmallRig] 스몰리그 SR5020 Quick Lock 퀵락 헤비듀티 삼각대 달리",
+          "price": 106900,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1926718"
+        }
+      ]
+    },
+    {
       "brand_id": "nanlite",
       "kind": "purchase",
       "primary_id": "smartstore-12945395768",
@@ -75179,7 +75139,7 @@
         {
           "id": "plthink-1928096",
           "name": "[Blackmagic Design] Streaming Decoder 4K",
-          "price": 961800,
+          "price": 1208000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1928096"
         }
@@ -75203,7 +75163,7 @@
         {
           "id": "plthink-1928097",
           "name": "[Blackmagic Design] Streaming Encoder 4K",
-          "price": 961800,
+          "price": 1208000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1928097"
         }
@@ -76739,7 +76699,7 @@
         {
           "id": "plthink-1930433",
           "name": "[Blackmagic Design] HyperDeck Shuttle 4K Pro",
-          "price": 2088000,
+          "price": 2608000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930433"
         }
@@ -76763,7 +76723,7 @@
         {
           "id": "plthink-1930434",
           "name": "[Blackmagic Design] HyperDeck Shuttle 4K Pro 2TB",
-          "price": 4148000,
+          "price": 5188000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1930434"
         }
@@ -81050,14 +81010,6 @@
     },
     {
       "ids": [
-        "clmedia-1522",
-        "plthink-1908446"
-      ],
-      "identity": "name:ntg4초지향성샷건마이크",
-      "reason": "different_options"
-    },
-    {
-      "ids": [
         "clmedia-35",
         "kpp-1619409367"
       ],
@@ -81822,6 +81774,14 @@
         "smartstore-13523204353"
       ],
       "identity": "model:WLC-T06",
+      "reason": "unverified_option_equivalence"
+    },
+    {
+      "ids": [
+        "avx-2790",
+        "clmedia-3388"
+      ],
+      "identity": "model:WLC-T06-K1",
       "reason": "unverified_option_equivalence"
     },
     {
@@ -82986,13 +82946,6 @@
       "variant_ids": [
         "plthink-1921118",
         "clmedia-1456"
-      ]
-    },
-    {
-      "listing_id": "plthink-1908446",
-      "variant_ids": [
-        "plthink-1908446",
-        "clmedia-1522"
       ]
     },
     {
