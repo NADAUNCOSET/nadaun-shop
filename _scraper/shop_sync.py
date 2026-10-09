@@ -186,7 +186,7 @@ def run(publish=True,existing=False,source_updates=None):
         command('node','--check','assets/shop/shop.js')
         command('node','--check','assets/shop/cart.js')
         command('node','--check','assets/shop/motion.js')
-        command('node','--test','_scraper/tests/product-server.test.cjs','_scraper/tests/catalog-tools.test.mjs','_scraper/tests/discovery.test.cjs','_scraper/tests/cart.test.cjs','_scraper/tests/banners.test.mjs','_scraper/tests/motion.test.mjs','_scraper/tests/browse.test.mjs','_scraper/tests/scenes.test.mjs','_scraper/tests/commerce.test.cjs','_scraper/tests/commerce-ui.test.cjs','_scraper/tests/inicis.test.cjs')
+        command('node','--test','_scraper/tests/product-server.test.cjs','_scraper/tests/catalog-tools.test.mjs','_scraper/tests/discovery.test.cjs','_scraper/tests/cart.test.cjs','_scraper/tests/banners.test.mjs','_scraper/tests/motion.test.mjs','_scraper/tests/browse.test.mjs','_scraper/tests/scenes.test.mjs','_scraper/tests/commerce.test.cjs','_scraper/tests/commerce-ui.test.cjs','_scraper/tests/inicis.test.cjs','_scraper/tests/admin.test.cjs')
         if command('git','diff','--name-only','--',*CODE):
             raise RuntimeError('Uncommitted catalogue code changed during build; review before publication')
         if publish:

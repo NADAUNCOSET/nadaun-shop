@@ -8,7 +8,7 @@ const uuid=()=>crypto.randomUUID();
 function repository(db,clock=()=>Date.now()){
  const get=async id=>(await db.query('SELECT * FROM shop_orders WHERE id=?',[id]))[0]||null;
  async function patch(row,fields,actor,action,document=null){
-  const allowed=new Set(['state','lines_json','subtotal','shipping','total','quote_version','quote_expires','payment_key','payment_mode','payment_provider','payment_auth_cipher','payment_receipt_cipher','fulfillment','carrier','tracking']);
+  const allowed=new Set(['state','lines_json','subtotal','shipping','total','quote_version','quote_expires','payment_key','payment_mode','payment_provider','payment_auth_cipher','payment_receipt_cipher','paid_at','fulfillment','carrier','tracking']);
   const keys=Object.keys(fields);if(!keys.length||keys.some(k=>!allowed.has(k)))throw Error('Invalid internal order update');
   const now=clock(),version=row.version+1;
   const result=await db.batch([
@@ -74,7 +74,9 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
   async list(owner){return Promise.all((await repo.customer(owner)).map(r=>detailed(r)));},
   async get(id,owner){return detailed(await own(id,owner));},
   async adminList(){return Promise.all((await repo.list()).map(r=>detailed(r,true)));},
-  async retryDocument(id){if(!documents)throw new ShopError(503,'증빙 서비스를 확인해주세요.');await documents.retry(id);const row=await repo.get(id);return detailed(row,true);},
+  async adminDetail(row){return detailed(row,true);},
+  async adminGet(id){const row=await repo.get(id);if(!row)throw new ShopError(404,'주문을 찾을 수 없습니다.');return detailed(row,true);},
+  async retryDocument(id){if(!documents||!payment)throw new ShopError(503,'증빙 서비스를 확인해주세요.');await documents.retry(id);const row=await repo.get(id);return detailed(row,true);},
   async approve(id,input){
    const row=await repo.get(id);if(!row)throw new ShopError(404,'주문을 찾을 수 없습니다.');
    if(!['REQUESTED','APPROVED'].includes(row.state)||input.version!==row.version||input.stock_confirmed!==true)throw new ShopError(409,'주문 상태와 재고·납기 확인을 다시 확인해주세요.');
@@ -117,7 +119,7 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
     matchPayment(approved,{...row,payment_key:approved.paymentKey});
     const selection=cipher.decrypt(row.customer_cipher).evidence;
     const evidence=paymentEvidence(approved,selection,row.total);
-    row=await repo.patch(row,{state:'PAID',payment_key:approved.paymentKey,payment_receipt_cipher:cipher.encrypt({...approved,approvedAt:approved.approvedAt||clock()})},'payment','payment_done',{kind:evidence.kind,status:evidence.status,result_cipher:cipher.encrypt(evidence)});
+    row=await repo.patch(row,{state:'PAID',payment_key:approved.paymentKey,paid_at:clock(),payment_receipt_cipher:cipher.encrypt({...approved,approvedAt:approved.approvedAt||clock()})},'payment','payment_done',{kind:evidence.kind,status:evidence.status,result_cipher:cipher.encrypt(evidence)});
    }catch{
     // Resolve an ambiguous DB response before attempting compensation.
     let current;try{current=await repo.get(row.id);}catch{}
@@ -145,6 +147,7 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
    throw new ShopError(503,'이니시스 관리자에서 결제 결과를 확인해야 합니다.');
   },
   async ship(id,input){
+   if(!payment)throw new ShopError(503,'이니시스 결제 서비스 연결을 준비 중입니다.');
    const row=await repo.get(id);if(!row)throw new ShopError(404,'주문을 찾을 수 없습니다.');
    if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='inicis'||row.version!==input.version)throw new ShopError(409,'실결제가 확인된 최신 주문에서만 출고할 수 있습니다.');
    const verified=await applyPayment(row,await payment.get(row.payment_key));

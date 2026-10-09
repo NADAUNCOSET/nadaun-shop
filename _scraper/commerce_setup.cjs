@@ -27,9 +27,11 @@ async function main(){
  if(command==='schema'){
   const db=database(env);
   const sql=fs.readFileSync(path.join(root,'server/commerce/schema.sql'),'utf8').split(';').map(s=>s.trim()).filter(Boolean);
-  await db.batch(sql.map(sql=>({sql,params:[]})));
+  const indexes=sql.filter(s=>/^CREATE INDEX/i.test(s));
+  await db.batch(sql.filter(s=>!/^CREATE INDEX/i.test(s)).map(sql=>({sql,params:[]})));
   const columns=await db.query('PRAGMA table_info(shop_orders)');
-  for(const name of ['payment_provider','payment_auth_cipher','payment_receipt_cipher'])if(!columns.some(c=>c.name===name))await db.query('ALTER TABLE shop_orders ADD COLUMN '+name+' TEXT');
+  for(const name of ['payment_provider','payment_auth_cipher','payment_receipt_cipher','paid_at'])if(!columns.some(c=>c.name===name))await db.query('ALTER TABLE shop_orders ADD COLUMN '+name+(name==='paid_at'?' INTEGER':' TEXT'));
+  await db.batch(indexes.map(sql=>({sql,params:[]})));
   const tables=await db.query("SELECT name FROM sqlite_master WHERE type='table' AND name IN ('shop_orders','shop_order_events','shop_rate_limits','shop_documents')");
   if(tables.length!==4)throw Error('Schema verification failed.');
   process.stdout.write('Four private order tables verified. Orders remain gated by configuration.\n');return;

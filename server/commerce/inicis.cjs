@@ -50,7 +50,9 @@ function inicis(env,fetcher=fetch,clock=()=>Date.now()){
    const v=await call(host(auth.P_IDCNAME)+'/payment/v1/rest/payAppl.ini',{P_MID:mid,P_AUTH_TID:auth.P_AUTH_TID,P_AMT:String(order.total),P_CHARSET:'UTF-8'});
    if(v.P_STATUS!=='00'||v.P_MID!==mid||v.P_OID!==order.id||amount(v.P_AMT)!==order.total||v.P_AUTH_TID!==auth.P_AUTH_TID||!tid(v.P_APPL_TID)||!['CARD','BANK'].includes(v.P_TYPE))
     throw new ShopError(502,'이니시스 승인 결과와 주문 정보가 일치하지 않습니다.');
-   return {orderId:v.P_OID,paymentKey:v.P_APPL_TID,totalAmount:amount(v.P_AMT),currency:'KRW',status:'DONE',provider:'inicis',method:v.P_TYPE,approvalNumber:/^\d{1,20}$/.test(v.P_APPL_NO||'')?v.P_APPL_NO:null,cashReceipt:cashReceipt(v)};
+   const day=v.P_APPL_DT||'',date=/^20\d{6}$/.test(day)?day.slice(0,4)+'-'+day.slice(4,6)+'-'+day.slice(6):null;
+   const validDate=date&&Number.isFinite(Date.parse(date+'T00:00:00Z'))&&new Date(date+'T00:00:00Z').toISOString().slice(0,10)===date;
+   return {orderId:v.P_OID,paymentKey:v.P_APPL_TID,totalAmount:amount(v.P_AMT),currency:'KRW',status:'DONE',provider:'inicis',method:v.P_TYPE,approvalDate:validDate?date:null,approvalNumber:/^\d{1,20}$/.test(v.P_APPL_NO||'')?v.P_APPL_NO:null,cashReceipt:cashReceipt(v)};
   },
   async netCancel(auth,order){
    const v=await call(host(auth.P_IDCNAME)+'/payment/v1/rest/payNetCancel.ini',{P_MID:mid,P_AUTH_TID:auth.P_AUTH_TID,P_AMT:String(order.total),P_OID:order.id,P_CANCEL_MSG:'Order confirmation could not be persisted',P_CHARSET:'UTF-8',...signed(order)});

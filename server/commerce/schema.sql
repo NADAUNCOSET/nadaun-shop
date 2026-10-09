@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS shop_orders (
   payment_provider TEXT,
   payment_auth_cipher TEXT,
   payment_receipt_cipher TEXT,
+  paid_at INTEGER,
   payment_mode TEXT CHECK(payment_mode IN ('test','live')),
   confirm_key TEXT NOT NULL UNIQUE,
   fulfillment TEXT NOT NULL DEFAULT 'unfulfilled' CHECK(fulfillment IN ('unfulfilled','processing','shipped')),
@@ -27,6 +28,8 @@ CREATE TABLE IF NOT EXISTS shop_orders (
 );
 CREATE INDEX IF NOT EXISTS shop_orders_customer ON shop_orders(customer_hash,created_at DESC);
 CREATE INDEX IF NOT EXISTS shop_orders_state ON shop_orders(state,created_at DESC);
+CREATE INDEX IF NOT EXISTS shop_orders_created ON shop_orders(created_at DESC,id DESC);
+CREATE INDEX IF NOT EXISTS shop_orders_paid ON shop_orders(paid_at);
 CREATE TABLE IF NOT EXISTS shop_order_events (
   id TEXT PRIMARY KEY, order_id TEXT NOT NULL REFERENCES shop_orders(id),
   actor TEXT NOT NULL, action TEXT NOT NULL, created_at INTEGER NOT NULL, version INTEGER NOT NULL,

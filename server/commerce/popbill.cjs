@@ -23,6 +23,7 @@ function popbill(env,provided=null){
  function validate(value,key,order,buyer){
   if(value.invoicerMgtKey!==key||value.invoicerCorpNum!==env.SHOP_SELLER_CORP_NUM||value.invoiceeCorpNum!==buyer.corp_num||Number(value.totalAmount)!==order.total||value.taxType!=='과세')throw Error('Tax invoice identity mismatch');
  }
+ function amounts(value){const supply=Number(value.supplyCostTotal),tax=Number(value.taxTotal),total=Number(value.totalAmount);return Number.isSafeInteger(supply)&&Number.isSafeInteger(tax)&&supply>=0&&tax>=0&&supply+tax===total?{supply_cost:supply,tax_amount:tax,total_amount:total}:{};}
  return {mode,
   async lookup(key,order,buyer){
    const used=await call('checkMgtKeyInUse',env.SHOP_SELLER_CORP_NUM,'SELL',key);
@@ -32,7 +33,7 @@ function popbill(env,provided=null){
    validate(detail,key,order,buyer);
    const info=await call('getInfo',env.SHOP_SELLER_CORP_NUM,'SELL',key,env.SHOP_POPBILL_USER_ID);
    if(![300,301,302,303,304].includes(info.stateCode)||!/^\d{24}$/.test(info.ntsconfirmNum||''))throw Error('Tax invoice not issued or needs review');
-   return {issued:true,approval_number:info.ntsconfirmNum,issued_at:info.issueDT||null,nts_status:info.stateCode===304?'accepted':'pending'};
+   return {issued:true,approval_number:info.ntsconfirmNum,issued_at:info.issueDT||null,nts_status:info.stateCode===304?'accepted':'pending',...amounts(detail)};
   },
   async issue(key,order,buyer,approvedAt){
    if(!Number.isSafeInteger(approvedAt))throw Error('Verified payment date required');
@@ -47,7 +48,7 @@ function popbill(env,provided=null){
     detailList:[{serialNum:1,purchaseDT:writeDate,itemName:(lines[0].name+(lines.length>1?' 외 '+(lines.length-1)+'종':'')+' (배송비 포함)').slice(0,100),qty:'1',supplyCost:String(supply),tax:String(tax)}]};
    const result=await call('registIssue',env.SHOP_SELLER_CORP_NUM,invoice,false,false,'온라인 주문 '+order.id,'','',env.SHOP_POPBILL_USER_ID);
    if(result.code!==1||!/^\d{24}$/.test(result.ntsConfirmNum||''))throw Error('Tax invoice issue not confirmed');
-   return {issued:true,approval_number:result.ntsConfirmNum,issued_at:writeDate,nts_status:'pending'};
+   return {issued:true,approval_number:result.ntsConfirmNum,issued_at:writeDate,nts_status:'pending',supply_cost:supply,tax_amount:tax,total_amount:order.total};
   }
  };
 }

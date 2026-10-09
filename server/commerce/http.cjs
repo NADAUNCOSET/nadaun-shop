@@ -1,6 +1,6 @@
 'use strict';
 const {ShopError,hash,random,sessions,passwordMatches}=require('./security.cjs');
-function endpoint({service,repo,sessionKey,password,enabled=true,origin='https://shop.nadaun.co',clock=()=>Date.now()}){
+function endpoint({service,repo,adminService=null,sessionKey,password,enabled=true,origin='https://shop.nadaun.co',clock=()=>Date.now()}){
  const session=sessions(sessionKey,clock);
  const cookie=(role,token,seconds)=>`__Host-nadaun-${role}=${token}; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=${seconds}`;
  const cookies=req=>Object.fromEntries(String(req.headers.cookie||'').split(';').map(v=>v.trim().split('=')));
@@ -9,8 +9,7 @@ function endpoint({service,repo,sessionKey,password,enabled=true,origin='https:/
   try{
    const url=new URL(req.url,origin),action=url.searchParams.get('action')||'config';
    if(!['GET','POST'].includes(req.method)){res.setHeader('Allow','GET, POST');throw new ShopError(405,'허용되지 않은 요청입니다.');}
-   if(req.method==='GET'&&action==='config')return res.status(200).json({ordersEnabled:enabled,paymentProvider:'inicis',taxInvoiceEnabled:service.invoiceEnabled===true});
-   if(!enabled)throw new ShopError(503,'주문 서비스 연결을 준비 중입니다.');
+   if(req.method==='GET'&&action==='config')return res.status(200).json({ordersEnabled:enabled,adminEnabled:!!adminService,paymentProvider:'inicis',taxInvoiceEnabled:service.invoiceEnabled===true});
    if(req.method==='POST'&&req.headers.origin!==origin)throw new ShopError(403,'사이트에서 다시 요청해주세요.');
    const ip=String(req.headers['x-forwarded-for']||'unknown').split(',')[0].trim();
    await repo.limit(hash(sessionKey+ip),120,60);
@@ -30,7 +29,13 @@ function endpoint({service,repo,sessionKey,password,enabled=true,origin='https:/
    if(action==='logout'&&req.method==='POST'){res.setHeader('Set-Cookie',cookie('admin','',0));return res.status(200).json({authenticated:false});}
    if(action.startsWith('admin-')){
     if(!admin)throw new ShopError(401,'관리자 로그인이 필요합니다.');
-    if(action==='admin-orders'&&req.method==='GET')return res.status(200).json({orders:await service.adminList()});
+    if(action==='admin-orders'&&req.method==='GET')return res.status(200).json(adminService?await adminService.list(Object.fromEntries(url.searchParams)):{orders:await service.adminList()});
+    if(action==='admin-order'&&req.method==='GET'&&adminService)return res.status(200).json({order:await adminService.detail(url.searchParams.get('id'))});
+    if(action==='admin-export'&&req.method==='GET'&&adminService){
+     const value=await adminService.export(Object.fromEntries(url.searchParams));
+     if(value.body.length>4000000)throw new ShopError(413,'파일이 큽니다. 조회 기간을 나눠 다운로드해주세요.');
+     res.setHeader('Content-Type',value.type);res.setHeader('Content-Disposition','attachment; filename="'+value.filename+'"');return res.status(200).send(value.body);
+    }
     if(action==='admin-events'&&req.method==='GET')return res.status(200).json({events:await repo.events(url.searchParams.get('id'))});
     if(req.method==='POST'){
      const fn={'admin-approve':'approve','admin-ship':'ship','admin-reconcile':'reconcile','admin-document-retry':'retryDocument'}[action];
@@ -38,6 +43,7 @@ function endpoint({service,repo,sessionKey,password,enabled=true,origin='https:/
     }
     throw new ShopError(404,'요청을 찾을 수 없습니다.');
    }
+   if(!enabled)throw new ShopError(503,'주문 서비스 연결을 준비 중입니다.');
    if(action==='session'&&req.method==='POST'){
     if(!customer){customer=random();res.setHeader('Set-Cookie',cookie('customer',session.issue(customer,'customer',30*86400),30*86400));}
     return res.status(200).json({ready:true});
