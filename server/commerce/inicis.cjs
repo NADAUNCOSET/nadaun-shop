@@ -13,7 +13,7 @@ function cashReceipt(v){return {issued:v.P_CSHR_CODE==='0000'&&!!v.P_CSHR_AUTH_N
 function queryReceipt(v){if(!v)return {issued:false};return {issued:v.issueStatus==='APPROVAL'&&v.approvedResultCode==='COMPLETED',present:v.issueStatus==='APPROVAL',approvalNumber:v.approvedNumber||null,issuedAt:/^\d{8}$/.test(v.approvedDate||'')?v.approvedDate+(v.approvedTime||''):null};}
 function inicis(env,fetcher=fetch,clock=()=>Date.now()){
  const mode=env.SHOP_PAYMENT_MODE,mid=env.SHOP_INICIS_MID,key=env.SHOP_INICIS_HASH_KEY;
- if(!['test','live'].includes(mode)||!/^\w{10}$/.test(mid||'')||typeof key!=='string'||key.length<16||key.length>256||
+ if(!['test','live'].includes(mode)||!/^\w{10}$/.test(mid||'')||typeof key!=='string'||key.length<10||key.length>256||/\s/.test(key)||
     (mode==='test'&&mid!=='INIpayTest')||
     (mode==='live'&&(/test/i.test(mid)||env.SHOP_INICIS_LIVE_VERIFIED!=='true')))
   throw new ShopError(503,'이니시스 결제 서비스 연결을 준비 중입니다.');

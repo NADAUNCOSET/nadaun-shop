@@ -11,6 +11,11 @@ const approval={P_STATUS:'00',P_MID:'INIpayTest',P_OID:row.id,P_AMT:'11000',P_AU
 test('only known test MID is allowed in test mode; live requires explicit verified activation',()=>{
  assert.throws(()=>inicis({...env,SHOP_INICIS_MID:'LIVE123456'}));assert.throws(()=>inicis({...env,SHOP_PAYMENT_MODE:'live'}));assert.throws(()=>inicis({...env,SHOP_PAYMENT_MODE:'live',SHOP_INICIS_MID:'LIVE123456'}));assert.equal(inicis({...env,SHOP_PAYMENT_MODE:'live',SHOP_INICIS_MID:'LIVE123456',SHOP_INICIS_LIVE_VERIFIED:'true'}).mode,'live');
 });
+test('merchant-issued ten-character mobile Hash Key is accepted without changing its bytes',()=>{
+ const key='AbC123xyZ9',adapter=inicis({...env,SHOP_INICIS_HASH_KEY:key},undefined,()=>123456789);
+ assert.equal(adapter.prepare(row,customer,'token').fields.P_CHKFAKE,crypto.createHash('sha512').update('11000NS-wire-test123456789'+key).digest('base64'));
+ for(const invalid of ['',key.slice(1),' '+key])assert.throws(()=>inicis({...env,SHOP_INICIS_HASH_KEY:invalid}));
+});
 test('PRO digest matches official field order and evidence chooses exclusive payment methods',()=>{
  const adapter=inicis(env,undefined,()=>123456789),card=adapter.prepare(row,customer,'token');assert.equal(card.fields.P_CHKFAKE,crypto.createHash('sha512').update('11000NS-wire-test123456789'+env.SHOP_INICIS_HASH_KEY).digest('base64'));assert.equal(card.fields.P_PAY_TYPE,'CARD');
  const cash=adapter.prepare(row,{...customer,evidence:{kind:'cash_receipt'}},'token','MOBILE');assert.equal(cash.fields.P_PAY_TYPE,'BANK');assert.equal(cash.fields.P_DEVICE_TYPE,'MOBILE');assert.equal(JSON.parse(cash.fields.P_RESERVED).bank_receipt,undefined);
