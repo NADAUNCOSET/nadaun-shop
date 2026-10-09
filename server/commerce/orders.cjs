@@ -3,12 +3,13 @@ const crypto=require('node:crypto');
 const {ShopError,hash,protect,sessions}=require('./security.cjs');
 const {customerFields,quoteCatalog,positive}=require('./pricing.cjs');
 const {matchPayment}=require('./inicis.cjs');
+const {rentalSchedule,rentalCustomer,rentalQuote}=require('./rental.cjs');
 const {evidenceFields,paymentEvidence}=require('./evidence.cjs');
 const uuid=()=>crypto.randomUUID();
 function repository(db,clock=()=>Date.now()){
  const get=async id=>(await db.query('SELECT * FROM shop_orders WHERE id=?',[id]))[0]||null;
  async function patch(row,fields,actor,action,document=null){
-  const allowed=new Set(['state','lines_json','subtotal','shipping','total','quote_version','quote_expires','payment_key','payment_mode','payment_provider','payment_auth_cipher','payment_receipt_cipher','paid_at','fulfillment','carrier','tracking']);
+  const allowed=new Set(['state','lines_json','subtotal','shipping','total','quote_version','quote_expires','payment_key','payment_mode','payment_provider','payment_auth_cipher','payment_receipt_cipher','paid_at','fulfillment','carrier','tracking','customer_cipher']);
   const keys=Object.keys(fields);if(!keys.length||keys.some(k=>!allowed.has(k)))throw Error('Invalid internal order update');
   const now=clock(),version=row.version+1;
   const result=await db.batch([
@@ -44,7 +45,7 @@ function repository(db,clock=()=>Date.now()){
 }
 function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=null,documents=null,invoiceEnabled=false,clock=()=>Date.now()}){
  const cipher=protect(dataKey),returns=sessions(sessionKey,clock);
- const dto=(row,admin=false)=>({id:row.id,state:row.state,payment_mode:row.payment_mode,lines:JSON.parse(row.lines_json),subtotal:row.subtotal,shipping:row.shipping,total:row.total,quote_version:row.quote_version,quote_expires:row.quote_expires,fulfillment:row.fulfillment,carrier:row.carrier,tracking:row.tracking,created_at:row.created_at,updated_at:row.updated_at,version:row.version,evidence_kind:cipher.decrypt(row.customer_cipher).evidence?.kind||'card_receipt',...(admin?{customer:cipher.decrypt(row.customer_cipher)}:{})});
+ const dto=(row,admin=false)=>{const customer=cipher.decrypt(row.customer_cipher),rental=customer.rental||null;return({id:row.id,kind:rental?'rental':'purchase',rental,state:row.state,payment_mode:row.payment_mode,lines:JSON.parse(row.lines_json),subtotal:row.subtotal,shipping:row.shipping,total:row.total,quote_version:row.quote_version,quote_expires:row.quote_expires,fulfillment:row.fulfillment,carrier:row.carrier,tracking:row.tracking,created_at:row.created_at,updated_at:row.updated_at,version:row.version,evidence_kind:customer.evidence?.kind||'card_receipt',...(admin?{customer:customer}:{})})};
  async function detailed(row,admin=false){
   const document=documents?await documents.get(row.id):null;
   if(document?.status==='issued'&&document.kind!=='tax_invoice'&&row.payment_provider==='inicis'&&/^[a-zA-Z0-9_-]{10,40}$/.test(row.payment_key||''))document.receipt_url='https://iniweb.inicis.com/DefaultWebApp/mall/cr/cm/mCmReceipt_head.jsp?noTid='+encodeURIComponent(row.payment_key)+'&noMethod=1';
@@ -60,8 +61,19 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
   try{return await repo.patch(row,{state:next},'payment','payment_'+status.toLowerCase());}
   catch(error){if(error.status===409){const current=await repo.get(row.id);if(current?.state===next&&current.payment_key===row.payment_key&&current.total===row.total)return current;}throw error;}
  }
+ async function rentalMove(id,input,returning){
+  if(!payment)throw new ShopError(503,'이니시스 결제 서비스 연결을 준비 중입니다.');
+  const row=await repo.get(id);if(!row)throw new ShopError(404,'렌탈 요청을 찾을 수 없습니다.');
+  const customer=cipher.decrypt(row.customer_cipher);if(!customer.rental)throw new ShopError(409,'렌탈 요청에서만 방문 처리를 할 수 있습니다.');
+  if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='inicis'||row.version!==input.version||row.fulfillment!==(returning?'processing':'unfulfilled'))throw new ShopError(409,'실결제가 확인된 최신 렌탈 상태를 다시 확인해주세요.');
+  const verified=await applyPayment(row,await payment.get(row.payment_key));if(verified.state!=='PAID')throw new ShopError(409,'결제 취소 또는 변경 상태를 확인해주세요.');
+  customer.rental[returning?'actual_return_at':'actual_pickup_at']=clock();
+  return dto(await repo.patch(row,{fulfillment:returning?'shipped':'processing',customer_cipher:cipher.encrypt(customer)},'owner',returning?'rental_returned':'rental_picked_up'),true);
+ }
  return {
   dto,invoiceEnabled,
+  async pickup(id,input){return rentalMove(id,input,false);},
+  async rentalReturn(id,input){return rentalMove(id,input,true);},
   async create(owner,key,input){
    if(!/^[a-zA-Z0-9_-]{16,100}$/.test(key||''))throw new ShopError(400,'주문 요청 번호가 올바르지 않습니다.');
    const customer=customerFields(input.customer);customer.evidence=evidenceFields(input.evidence);
@@ -69,6 +81,14 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
    const q=quoteCatalog(catalog,detail,input.items,clock),now=clock();
    const fingerprint=hash(JSON.stringify({customer,items:q.lines.map(p=>[p.id,p.option,p.quantity])}));
    const row=await repo.insert({id:'NS-'+uuid(),customer_hash:owner,request_key:key,fingerprint,state:'REQUESTED',customer_cipher:cipher.encrypt(customer),lines_json:JSON.stringify(q.lines),subtotal:q.subtotal,shipping:q.shipping,total:q.total,confirm_key:uuid(),created_at:now,updated_at:now});
+   return dto(row);
+  },
+  async createRental(owner,key,input){
+   if(!/^[a-zA-Z0-9_-]{16,100}$/.test(key||''))throw new ShopError(400,'렌탈 요청 번호가 올바르지 않습니다.');
+   const customer=rentalCustomer(input.customer);customer.rental=rentalSchedule(input.rental,clock);customer.evidence=evidenceFields(input.evidence);
+   if(customer.evidence.kind==='tax_invoice'&&!invoiceEnabled)throw new ShopError(503,'전자세금계산서 발급 연결을 준비 중입니다.');
+   const q=rentalQuote(catalog,detail,input.items,null,clock),now=clock(),fingerprint=hash(JSON.stringify({kind:'rental',customer,items:q.lines.map(p=>[p.id,p.option,p.quantity])}));
+   const row=await repo.insert({id:'NS-'+uuid(),customer_hash:owner,request_key:key,fingerprint,state:'REQUESTED',customer_cipher:cipher.encrypt(customer),lines_json:JSON.stringify(q.lines),subtotal:null,shipping:0,total:null,confirm_key:uuid(),created_at:now,updated_at:now});
    return dto(row);
   },
   async list(owner){return Promise.all((await repo.customer(owner)).map(r=>detailed(r)));},
@@ -80,7 +100,9 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
   async approve(id,input){
    const row=await repo.get(id);if(!row)throw new ShopError(404,'주문을 찾을 수 없습니다.');
    if(!['REQUESTED','APPROVED'].includes(row.state)||input.version!==row.version||input.stock_confirmed!==true)throw new ShopError(409,'주문 상태와 재고·납기 확인을 다시 확인해주세요.');
-   const q=quoteCatalog(catalog,detail,JSON.parse(row.lines_json).map(p=>({id:p.id,option:p.option,quantity:p.quantity})),clock);
+   const customer=cipher.decrypt(row.customer_cipher);if(customer.rental)rentalSchedule(customer.rental,clock);
+   const rows=JSON.parse(row.lines_json).map(p=>({id:p.id,option:p.option,quantity:p.quantity}));
+   const q=customer.rental?rentalQuote(catalog,detail,rows,input.rental_prices??[],clock):quoteCatalog(catalog,detail,rows,clock);
    if(q.total===null)throw new ShopError(409,'금액 미확정 상품은 상담으로 견적을 확정해야 합니다.');
    return dto(await repo.patch(row,{state:'APPROVED',lines_json:JSON.stringify(q.lines),subtotal:q.subtotal,shipping:q.shipping,total:q.total,quote_version:row.quote_version+1,quote_expires:clock()+30*60*1000},'owner','quote_approved'),true);
   },
@@ -149,6 +171,7 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
   async ship(id,input){
    if(!payment)throw new ShopError(503,'이니시스 결제 서비스 연결을 준비 중입니다.');
    const row=await repo.get(id);if(!row)throw new ShopError(404,'주문을 찾을 수 없습니다.');
+   if(cipher.decrypt(row.customer_cipher).rental)throw new ShopError(409,'렌탈은 수령·반납 처리 버튼을 이용해주세요.');
    if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='inicis'||row.version!==input.version)throw new ShopError(409,'실결제가 확인된 최신 주문에서만 출고할 수 있습니다.');
    const verified=await applyPayment(row,await payment.get(row.payment_key));
    if(verified.state!=='PAID')throw new ShopError(409,'결제 취소 또는 변경 상태를 확인해주세요.');

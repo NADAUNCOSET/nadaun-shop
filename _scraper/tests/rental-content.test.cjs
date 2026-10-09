@@ -50,7 +50,7 @@ test('rental detail uses the source gallery and falls back to its own cached ima
  assert.ok(html.includes('src="'+d.images.main[0].replace(/&/g,'&amp;')+'"'));
  const events={},img={dataset:{rentalFallback:p.image},src:d.images.main[0],complete:false,
   getAttribute(){return this.src;},addEventListener(name,fn){events[name]=fn;}};
- rental.mount({querySelector(){return img;},querySelectorAll(){return [];}});
+ rental.mount({querySelector(selector){return selector==='[data-rental-request]'?null:img;},querySelectorAll(){return [];}});
  events.error();assert.equal(img.src,p.image);
  events.error();assert.equal(img.src,p.image);
 });

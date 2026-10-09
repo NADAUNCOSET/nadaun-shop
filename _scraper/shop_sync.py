@@ -47,8 +47,11 @@ CODE += ['_scraper/review_cafe24_checkpoint.py','_scraper/cafe24_publication.py'
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
+    # Full catalogue tests read thousands of verified NAS files. A cold SMB
+    # cache exceeds three minutes; keep every check and give it a bounded run.
+    timeout=900 if args[0]=='git' else 600 if '-m' in args and 'unittest' in args else 180
     try:
-        p=subprocess.run(args,cwd=ROOT,text=True,capture_output=True,timeout=900 if args[0]=='git' else 180)
+        p=subprocess.run(args,cwd=ROOT,text=True,capture_output=True,timeout=timeout)
     except subprocess.TimeoutExpired:
         raise RuntimeError(f'{args[0]} {args[1]} timed out; inspect NAS connectivity before retrying') from None
     if p.returncode:raise RuntimeError(f'{args[0]} {args[1]} failed: '+(p.stderr or p.stdout)[-1500:])
@@ -186,7 +189,7 @@ def run(publish=True,existing=False,source_updates=None):
         command('node','--check','assets/shop/shop.js')
         command('node','--check','assets/shop/cart.js')
         command('node','--check','assets/shop/motion.js')
-        command('node','--test','_scraper/tests/product-server.test.cjs','_scraper/tests/catalog-tools.test.mjs','_scraper/tests/discovery.test.cjs','_scraper/tests/cart.test.cjs','_scraper/tests/banners.test.mjs','_scraper/tests/motion.test.mjs','_scraper/tests/browse.test.mjs','_scraper/tests/scenes.test.mjs','_scraper/tests/commerce.test.cjs','_scraper/tests/commerce-ui.test.cjs','_scraper/tests/inicis.test.cjs','_scraper/tests/admin.test.cjs')
+        command('node','--test','_scraper/tests/product-server.test.cjs','_scraper/tests/catalog-tools.test.mjs','_scraper/tests/discovery.test.cjs','_scraper/tests/cart.test.cjs','_scraper/tests/banners.test.mjs','_scraper/tests/motion.test.mjs','_scraper/tests/browse.test.mjs','_scraper/tests/scenes.test.mjs','_scraper/tests/commerce.test.cjs','_scraper/tests/commerce-ui.test.cjs','_scraper/tests/inicis.test.cjs','_scraper/tests/admin.test.cjs','_scraper/tests/rental-request.test.cjs')
         if command('git','diff','--name-only','--',*CODE):
             raise RuntimeError('Uncommitted catalogue code changed during build; review before publication')
         if publish:

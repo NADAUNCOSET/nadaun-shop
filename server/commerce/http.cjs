@@ -1,6 +1,6 @@
 'use strict';
 const {ShopError,hash,random,sessions,passwordMatches}=require('./security.cjs');
-function endpoint({service,repo,adminService=null,sessionKey,password,enabled=true,origin='https://shop.nadaun.co',clock=()=>Date.now()}){
+function endpoint({service,repo,adminService=null,sessionKey,password,enabled=true,rentalEnabled=false,origin='https://shop.nadaun.co',clock=()=>Date.now()}){
  const session=sessions(sessionKey,clock);
  const cookie=(role,token,seconds)=>`__Host-nadaun-${role}=${token}; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=${seconds}`;
  const cookies=req=>Object.fromEntries(String(req.headers.cookie||'').split(';').map(v=>v.trim().split('=')));
@@ -9,7 +9,7 @@ function endpoint({service,repo,adminService=null,sessionKey,password,enabled=tr
   try{
    const url=new URL(req.url,origin),action=url.searchParams.get('action')||'config';
    if(!['GET','POST'].includes(req.method)){res.setHeader('Allow','GET, POST');throw new ShopError(405,'허용되지 않은 요청입니다.');}
-   if(req.method==='GET'&&action==='config')return res.status(200).json({ordersEnabled:enabled,adminEnabled:!!adminService,paymentProvider:'inicis',taxInvoiceEnabled:service.invoiceEnabled===true});
+   if(req.method==='GET'&&action==='config')return res.status(200).json({ordersEnabled:enabled,rentalRequestsEnabled:rentalEnabled,adminEnabled:!!adminService,paymentProvider:'inicis',taxInvoiceEnabled:service.invoiceEnabled===true});
    if(req.method==='POST'&&req.headers.origin!==origin)throw new ShopError(403,'사이트에서 다시 요청해주세요.');
    const ip=String(req.headers['x-forwarded-for']||'unknown').split(',')[0].trim();
    await repo.limit(hash(sessionKey+ip),120,60);
@@ -38,12 +38,14 @@ function endpoint({service,repo,adminService=null,sessionKey,password,enabled=tr
     }
     if(action==='admin-events'&&req.method==='GET')return res.status(200).json({events:await repo.events(url.searchParams.get('id'))});
     if(req.method==='POST'){
-     const fn={'admin-approve':'approve','admin-ship':'ship','admin-reconcile':'reconcile','admin-document-retry':'retryDocument'}[action];
+     const fn={'admin-approve':'approve','admin-ship':'ship','admin-reconcile':'reconcile','admin-document-retry':'retryDocument','admin-rental-pickup':'pickup','admin-rental-return':'rentalReturn'}[action];
      if(fn)return res.status(200).json({order:await service[fn](input.id,input)});
     }
     throw new ShopError(404,'요청을 찾을 수 없습니다.');
    }
-   if(!enabled)throw new ShopError(503,'주문 서비스 연결을 준비 중입니다.');
+   const rentalActions=['session','orders','order','rental-create'];
+   if(!enabled&&!(rentalEnabled&&rentalActions.includes(action)))throw new ShopError(503,'주문 서비스 연결을 준비 중입니다.');
+   if(action==='rental-create'&&!rentalEnabled)throw new ShopError(503,'렌탈 접수 연결을 준비 중입니다.');
    if(action==='session'&&req.method==='POST'){
     if(!customer){customer=random();res.setHeader('Set-Cookie',cookie('customer',session.issue(customer,'customer',30*86400),30*86400));}
     return res.status(200).json({ready:true});
@@ -56,6 +58,7 @@ function endpoint({service,repo,adminService=null,sessionKey,password,enabled=tr
     await repo.limit('create:'+owner,10,3600);
     return res.status(201).json({order:await service.create(owner,req.headers['idempotency-key'],input)});
    }
+   if(action==='rental-create'&&req.method==='POST'){await repo.limit('create:'+owner,10,3600);return res.status(201).json({order:await service.createRental(owner,req.headers['idempotency-key'],input)});}
    if(action==='start'&&req.method==='POST')return res.status(200).json(await service.start(input.id,owner,input.quote_version,input.device||'WEB'));
    throw new ShopError(404,'요청을 찾을 수 없습니다.');
   }catch(error){return res.status(error instanceof ShopError?error.status:503).json({error:error instanceof ShopError?error.message:'주문 처리를 확인하고 있습니다. 잠시 후 다시 시도해주세요.'});}

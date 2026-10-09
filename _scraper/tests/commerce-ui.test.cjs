@@ -55,3 +55,12 @@ test('order submission includes only checked cart lines and strips selection met
  const r=runtime({localStorage:{getItem:()=>JSON.stringify(rows)}});
  assert.deepEqual(JSON.parse(JSON.stringify(r.context.checkoutItems())),[{id:'legacy',option:'',quantity:2},{id:'checked',option:'Black',quantity:1}]);
 });
+
+test('rental admin shows requested visits and contact without shipping fields or a fabricated total',()=>{
+ const r=runtime(),order={id:'NS-rental',kind:'rental',state:'REQUESTED',created_at:0,lines:[{id:'r1',name:'조명',option:'24시간',quantity:2,unit_price:null}],subtotal:null,shipping:0,total:null,fulfillment:'unfulfilled',rental:{start_date:'2026-10-10',end_date:'2026-10-11',pickup_time:'09:15',return_time:'10:45'},customer:{name:'예약자<private>',phone:'01000000000'}};
+ const html=r.context.orderCard(order,true);assert.match(html,/2026-10-10 09:15/);assert.match(html,/2026-10-11 10:45/);assert.match(html,/예약자&lt;private&gt;/);assert.match(html,/전체 기간 1개당 확정 요금/);assert.doesNotMatch(html,/배송 정보 확인|commerce-shipping|운송장|배송 0원|undefined/);
+ assert.doesNotMatch(r.context.orderCard(order),/01000000000|예약자&lt;private&gt;/);
+});
+test('rental-only requests cannot display a payment button before PG activation',()=>{
+ const r=runtime();vm.runInContext('checkoutPaymentOpen=false',r.context);const html=r.context.customerActions({kind:'rental',state:'APPROVED',total:90000});assert.doesNotMatch(html,/data-pay/);assert.match(html,/온라인 결제 연결을 준비 중/);
+});

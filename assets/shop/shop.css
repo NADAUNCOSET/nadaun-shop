@@ -602,3 +602,14 @@ html.lenis{scroll-behavior:auto!important}
 .cart-quantity-control input::-webkit-inner-spin-button,.cart-quantity-control input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
 .cart-remove:focus-visible,.cart-quantity-control button:focus-visible,.cart-item-select input:focus-visible,.cart-selection-tools input:focus-visible{outline:3px solid #8d6d1e;outline-offset:3px}
 @media(max-width:700px){.cart-selection-tools>span{font-size:13px}.cart-item-bottom{align-items:flex-start}.cart-quantity-editor{gap:10px}.cart-quantity-control button{width:44px}.cart-quantity-control input{width:44px}}
+
+/* Exact rental dates and visit times. */
+.rental-request-form{margin:40px 0;padding:28px;border:1px solid var(--line,#d8d4cb);border-radius:20px;display:grid;gap:18px;min-width:0}
+.rental-request-form h2{margin:0}.rental-schedule-fields,.rental-customer-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.rental-request-form label{display:grid;gap:8px;min-width:0;font-size:15px}.rental-request-form input:not([type=checkbox]),.rental-request-form select{width:100%;min-width:0;box-sizing:border-box;min-height:48px;padding:12px;border:1px solid var(--line,#d8d4cb);border-radius:10px;background:#fff;color:inherit;font:inherit;font-size:16px}
+.rental-request-form input:focus-visible,.rental-request-form select:focus-visible{outline:2px solid var(--gold,#d4a747);outline-offset:2px}.rental-request-form button{min-height:48px;width:100%;justify-content:center}
+.rental-customer-fields>p,.rental-customer-fields>div,.rental-customer-fields>.rental-consent{grid-column:1/-1}.rental-request-form [hidden]{display:none!important}
+.rental-request-form .rental-consent{display:flex;align-items:flex-start;gap:12px;line-height:1.6}.rental-consent input{flex:0 0 24px;width:24px;height:24px;margin:2px 0;accent-color:var(--gold,#d4a747)}
+.rental-schedule-preview,.rental-request-feedback{margin:0;padding:14px 16px;background:var(--paper,#f3f2ed);border-radius:10px;line-height:1.6;overflow-wrap:anywhere}
+.rental-order-schedule{display:grid;gap:12px;padding:18px;background:#f3f2ed;border-radius:14px}.rental-order-schedule div{display:grid;grid-template-columns:minmax(120px,1fr) 2fr;gap:12px}.rental-order-schedule dt{font-size:13px;color:#666}.rental-order-schedule dd{margin:0;overflow-wrap:anywhere}
+@media(max-width:600px){.rental-request-form{padding:18px;margin:28px 0}.rental-schedule-fields,.rental-customer-fields{grid-template-columns:minmax(0,1fr)}.rental-order-schedule div{grid-template-columns:minmax(0,1fr);gap:4px}}
