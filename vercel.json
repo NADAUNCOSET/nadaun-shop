@@ -21,6 +21,16 @@
       "status": 404
     },
     {
+      "src": "^/$",
+      "has": [
+        {
+          "type": "host",
+          "value": "order\\.nadaun\\.co"
+        }
+      ],
+      "dest": "/admin.html"
+    },
+    {
       "src": "^/(admin|orders)$",
       "status": 308,
       "headers": {

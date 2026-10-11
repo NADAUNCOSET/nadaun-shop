@@ -1,6 +1,6 @@
 'use strict';
 const {ShopError,hash,random,sessions,passwordMatches}=require('./security.cjs');
-function endpoint({service,repo,adminService=null,sessionKey,password,enabled=true,rentalEnabled=false,origin='https://shop.nadaun.co',clock=()=>Date.now()}){
+function endpoint({service,repo,adminService=null,sessionKey,password,enabled=true,rentalEnabled=false,origin='https://shop.nadaun.co',adminOrigins=['https://order.nadaun.co'],clock=()=>Date.now()}){
  const session=sessions(sessionKey,clock);
  const cookie=(role,token,seconds)=>`__Host-nadaun-${role}=${token}; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=${seconds}`;
  const cookies=req=>Object.fromEntries(String(req.headers.cookie||'').split(';').map(v=>v.trim().split('=')));
@@ -10,7 +10,8 @@ function endpoint({service,repo,adminService=null,sessionKey,password,enabled=tr
    const url=new URL(req.url,origin),action=url.searchParams.get('action')||'config';
    if(!['GET','POST'].includes(req.method)){res.setHeader('Allow','GET, POST');throw new ShopError(405,'허용되지 않은 요청입니다.');}
    if(req.method==='GET'&&action==='config')return res.status(200).json({ordersEnabled:enabled,rentalRequestsEnabled:rentalEnabled,adminEnabled:!!adminService,paymentProvider:'inicis',taxInvoiceEnabled:service.invoiceEnabled===true});
-   if(req.method==='POST'&&req.headers.origin!==origin)throw new ShopError(403,'사이트에서 다시 요청해주세요.');
+   const adminAction=['login','logout'].includes(action)||action.startsWith('admin-');
+   if(req.method==='POST'&&req.headers.origin!==origin&&!(adminAction&&adminOrigins.includes(req.headers.origin)))throw new ShopError(403,'사이트에서 다시 요청해주세요.');
    const ip=String(req.headers['x-forwarded-for']||'unknown').split(',')[0].trim();
    await repo.limit(hash(sessionKey+ip),120,60);
    const stored=cookies(req);
