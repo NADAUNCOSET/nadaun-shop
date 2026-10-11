@@ -39,6 +39,8 @@ function repository(db,clock=()=>Date.now()){
   if(rows[0].attempts>max)throw new ShopError(429,'요청이 많습니다. 잠시 후 다시 시도해주세요.');
  }
  return {get,patch,insert,limit,
+  calendar:async id=>(await db.query('SELECT status,event_url,error_code,checked_at FROM shop_calendar_sync WHERE order_id=?',[id]))[0]||null,
+  calendarHealth:async()=>(await db.query("SELECT status,checked_at FROM shop_calendar_health WHERE id='calendar'"))[0]||null,
   customer:async owner=>db.query('SELECT * FROM shop_orders WHERE customer_hash=? ORDER BY created_at DESC LIMIT 50',[owner]),
   list:async()=>db.query('SELECT * FROM shop_orders ORDER BY created_at DESC LIMIT 100'),
   events:async id=>db.query('SELECT actor,action,created_at,version FROM shop_order_events WHERE order_id=? ORDER BY version',[id])};
@@ -49,7 +51,7 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
  async function detailed(row,admin=false){
   const document=documents?await documents.get(row.id):null;
   if(document?.status==='issued'&&document.kind!=='tax_invoice'&&row.payment_provider==='inicis'&&/^[a-zA-Z0-9_-]{10,40}$/.test(row.payment_key||''))document.receipt_url='https://iniweb.inicis.com/DefaultWebApp/mall/cr/cm/mCmReceipt_head.jsp?noTid='+encodeURIComponent(row.payment_key)+'&noMethod=1';
-  return {...dto(row,admin),document};
+  return {...dto(row,admin),document,...(admin&&repo.calendar?{calendar:await repo.calendar(row.id)}:{})};
  }
  async function own(id,owner){const row=await repo.get(id);if(!row||row.customer_hash!==owner)throw new ShopError(404,'주문을 찾을 수 없습니다. 주문한 브라우저에서 다시 확인해주세요.');return row;}
  async function applyPayment(row,remote){

@@ -38,7 +38,8 @@ async function main(){
  }
  if(command!=='check')throw Error('Use init, check or schema.');
  const result={configured:missing.length===0,missing,ordersEnabled:env.SHOP_ORDERS_ENABLED==='true',paymentMode:env.SHOP_PAYMENT_MODE||null,databaseVerified:false};
- if(!missing.length){inicis(env);const tables=await database(env).query("SELECT name FROM sqlite_master WHERE type='table' AND name IN ('shop_orders','shop_order_events','shop_rate_limits','shop_documents')");result.databaseVerified=tables.length===4;}
+ if(['SHOP_CF_ACCOUNT_ID','SHOP_D1_DATABASE_ID','SHOP_D1_API_TOKEN'].every(k=>env[k])){const tables=await database(env).query("SELECT name FROM sqlite_master WHERE type='table' AND name IN ('shop_orders','shop_order_events','shop_rate_limits','shop_documents')");result.databaseVerified=tables.length===4;}
+ result.paymentLiveVerified=env.SHOP_INICIS_LIVE_VERIFIED==='true';
  process.stdout.write(JSON.stringify(result)+'\n');
 }
 main().catch(()=>{process.stderr.write('Commerce setup could not complete. Check private configuration and service access; values are not logged.\n');process.exitCode=1;});

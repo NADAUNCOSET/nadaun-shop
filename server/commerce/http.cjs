@@ -30,6 +30,7 @@ function endpoint({service,repo,adminService=null,sessionKey,password,enabled=tr
    if(action==='logout'&&req.method==='POST'){res.setHeader('Set-Cookie',cookie('admin','',0));return res.status(200).json({authenticated:false});}
    if(action.startsWith('admin-')){
     if(!admin)throw new ShopError(401,'관리자 로그인이 필요합니다.');
+    if(action==='admin-calendar-health'&&req.method==='GET')return res.status(200).json({calendar:repo.calendarHealth?await repo.calendarHealth():null});
     if(action==='admin-orders'&&req.method==='GET')return res.status(200).json(adminService?await adminService.list(Object.fromEntries(url.searchParams)):{orders:await service.adminList()});
     if(action==='admin-order'&&req.method==='GET'&&adminService)return res.status(200).json({order:await adminService.detail(url.searchParams.get('id'))});
     if(action==='admin-export'&&req.method==='GET'&&adminService){

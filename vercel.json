@@ -31,6 +31,19 @@
       "dest": "/admin.html"
     },
     {
+      "src": "^/admin(?:\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "shop\\.nadaun\\.co"
+        }
+      ],
+      "status": 308,
+      "headers": {
+        "Location": "https://order.nadaun.co/"
+      }
+    },
+    {
       "src": "^/(admin|orders)$",
       "status": 308,
       "headers": {

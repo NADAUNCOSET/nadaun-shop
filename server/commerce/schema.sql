@@ -52,3 +52,21 @@ CREATE TABLE IF NOT EXISTS shop_documents (
   version INTEGER NOT NULL DEFAULT 0
 );
 CREATE INDEX IF NOT EXISTS shop_documents_due ON shop_documents(status,next_attempt);
+CREATE TABLE IF NOT EXISTS shop_calendar_sync (
+  order_id TEXT PRIMARY KEY REFERENCES shop_orders(id),
+  event_id TEXT NOT NULL UNIQUE,
+  status TEXT NOT NULL CHECK(status IN ('pending','synced','canceled','review','error','ignored')),
+  fingerprint TEXT,
+  event_url TEXT,
+  error_code TEXT,
+  order_version INTEGER NOT NULL DEFAULT -1,
+  next_attempt INTEGER NOT NULL DEFAULT 0,
+  checked_at INTEGER NOT NULL DEFAULT 0,
+  lease_owner TEXT,
+  lease_until INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS shop_calendar_due ON shop_calendar_sync(next_attempt,checked_at);
+CREATE TABLE IF NOT EXISTS shop_calendar_health (
+  id TEXT PRIMARY KEY, status TEXT NOT NULL CHECK(status IN ('connected','error')),
+  checked_at INTEGER NOT NULL
+);

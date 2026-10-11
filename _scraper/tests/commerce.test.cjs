@@ -131,7 +131,7 @@ test('persistent rate limits survive requests, reset by window and expire old bu
 test('HTTP authorizes admin and customer separately, enforces origin, uses private cookies',async()=>{
  const f=fixture(),password=await passwordHash('fixture password only 123!');const handler=endpoint({service:f.service,repo:f.repo,sessionKey:secret,password,clock:f.clock});
  async function call(action,method='GET',body,headers={}){const res={headers:{},setHeader(k,v){this.headers[k]=v;},status(n){this.code=n;return this;},json(v){this.body=v;return this;}};await handler({url:'/api/orders?action='+action,method,body,headers:{origin:'https://shop.nadaun.co',...headers}},res);return res;}
- assert.equal((await call('admin-orders')).code,401);assert.equal((await call('login','POST',{password:'fixture password only 123!'},{origin:'https://evil.invalid'})).code,403);
+ assert.equal((await call('admin-orders')).code,401);assert.equal((await call('admin-calendar-health')).code,401);assert.equal((await call('login','POST',{password:'fixture password only 123!'},{origin:'https://evil.invalid'})).code,403);
  assert.equal((await call('session','POST',{}, {origin:'https://order.nadaun.co'})).code,403);
  assert.equal((await call('login','POST',{password:'fixture password only 123!'},{origin:'https://shopin.nadaun.co'})).code,403);
  assert.equal((await call('login','POST',{password:'fixture password only 123!'},{origin:'https://order.nadaun.co'})).code,200);
