@@ -98,7 +98,7 @@ class PublicationStorageTests(unittest.TestCase):
         args = status.args[0]
         self.assertEqual(args[args.index('--') + 1:],
                          ['catalog.html', 'sources/plthink.json'])
-        self.assertEqual(status.kwargs['timeout'], 180)
+        self.assertEqual(status.kwargs['timeout'], 900)
         self.assertEqual((archive / 'unrelated.md').read_text(), 'operator original\n')
 
     def test_all_candidates_validated_before_any_public_write(self):

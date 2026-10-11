@@ -35,9 +35,11 @@ def promote_updates(updates, root, out, state, managed, save_json):
     # Only generated paths can block this promotion. Scanning unrelated NAS
     # archives makes publication wait on every operator file. Keep the global
     # staged-change check above, and inspect all tracked/untracked owned paths.
+    # The owned asset list includes thousands of NAS files. Match the publisher's
+    # bounded Git timeout without relaxing staging or generated-edit guards.
     raw = subprocess.check_output(['git', 'status', '--porcelain=v1', '-z',
                                    '--no-renames', '--untracked-files=all',
-                                   '--', *managed], cwd=root, timeout=180)
+                                   '--', *managed], cwd=root, timeout=900)
     changed = {row[3:].decode() for row in raw.split(b'\0') if row}
     if changed & set(managed):
         raise RuntimeError('Existing generated edits require review before source promotion')
