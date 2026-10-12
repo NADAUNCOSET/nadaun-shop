@@ -2,7 +2,7 @@ from copy import deepcopy
 import json
 from pathlib import Path
 import unittest
-from brand_category_policy import choose_navigation
+from brand_category_policy import choose_navigation, mirror_source_paths
 from catalog_dedup import conflict
 
 
@@ -79,11 +79,41 @@ class BrandNavigationTest(unittest.TestCase):
             if p['kind'] != 'purchase': continue
             self.assertIn('navigation_category_ids', p)
             ids = set(p['navigation_category_ids'])
+            self.assertTrue(ids, 'Purchase listing has no brand navigation: ' + p['id'])
             self.assertTrue(ids <= set(brands[p['brand_id']]['navigation_category_ids']))
             for cid in ids:
                 self.assertEqual(categories[cid]['brand_id'], p['brand_id'])
                 self.assertTrue(not categories[cid]['parent_id'] or categories[cid]['parent_id'] in ids)
         self.assertEqual(len({p.get('listing_id',p['id']) for p in data['products']}),data['meta']['listing_count'])
+
+
+class SourcePathMirrorTest(unittest.TestCase):
+    def test_dealer_mall_paths_keep_labels_ancestry_and_original_membership(self):
+        cats = {'kpp:mall:0': {'id':'kpp:mall:0','name':'액세서리','brand_id':'smallrig','parent_id':None},
+                'kpp:mall:1': {'id':'kpp:mall:1','name':'DJI','brand_id':'smallrig','parent_id':'kpp:mall:0'}}
+        original = deepcopy(cats)
+        ids = mirror_source_paths(['kpp:mall:1'], cats, 'pgytech', 'kpp:b:pgytech:mirror:')
+        self.assertEqual({cid:cats[cid] for cid in original}, original)
+        self.assertEqual(len(ids), 2)
+        for cid in ids:
+            node = cats[cid]; source = original[node['source_category_id']]
+            self.assertEqual(node['name'], source['name'])
+            self.assertEqual(node['brand_id'], 'pgytech')
+            self.assertTrue(node['parent_id'] is None or node['parent_id'] in ids)
+        self.assertEqual(mirror_source_paths(['kpp:mall:1'], cats, 'pgytech', 'kpp:b:pgytech:mirror:'), ids)
+
+    def test_promotion_uses_its_observed_label_without_guessing_product_type(self):
+        cats = {'imweb:promotion:1': {'id':'imweb:promotion:1','name':'할인 프로모션 모음','brand_id':None,'parent_id':None}}
+        ids = mirror_source_paths(['imweb:promotion:1'], cats, 'benro', 'imweb:b:benro:promotion:')
+        self.assertEqual(cats[ids[0]]['name'], '할인 프로모션 모음')
+        rows = [{'id':'p1','kind':'purchase','brand_id':'benro','category_ids':ids}]
+        self.assertEqual(choose_navigation(rows,cats,{'benro':{'name':'BENRO'}})['brands']['benro']['unclassified_products'], 0)
+
+    def test_missing_or_cyclic_source_ancestry_stops_mirroring(self):
+        for parent in ('missing','source:1'):
+            cats = {'source:1':{'id':'source:1','name':'원본 분류','parent_id':parent}}
+            with self.assertRaises(ValueError):
+                mirror_source_paths(['source:1'],cats,'brand','source:b:brand:mirror:')
 
 
 class PartnerDuplicateTest(unittest.TestCase):

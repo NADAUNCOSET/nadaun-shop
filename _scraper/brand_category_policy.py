@@ -18,6 +18,35 @@ GENERIC = {normalized(s) for s in (
     '디지털/가전', '카메라/캠코더', '기타', '액세서리', 'accessories')}
 
 
+def mirror_source_paths(category_ids, categories, brand_id, prefix):
+    """Expose verified supplier paths under the product's actual brand.
+
+    Dealers sometimes list another maker's product in their brand mall, and
+    promotions have no brand ancestor. Preserve those original memberships and
+    labels while adding addressable paths for the product's own brand.
+    """
+    required = set()
+    for cid in category_ids:
+        current, seen = cid, set()
+        while current:
+            if current in seen or current not in categories:
+                raise ValueError('Invalid source category ancestry: ' + cid)
+            seen.add(current); required.add(current)
+            current = categories[current].get('parent_id')
+    result = []
+    for cid in sorted(required):
+        source = categories[cid]
+        key = prefix + cid
+        mirrored = {'id': key, 'name': source['name'], 'brand_id': brand_id,
+                    'parent_id': prefix + source['parent_id'] if source.get('parent_id') else None,
+                    'source_category_id': cid}
+        if key in categories and categories[key] != mirrored:
+            raise ValueError('Conflicting mirrored category identity: ' + key)
+        categories[key] = mirrored
+        result.append(key)
+    return result
+
+
 def choose_navigation(products, categories, brands, overrides=None):
     """Annotate navigation only; leave offers, original paths and rentals intact."""
     overrides = overrides or {}

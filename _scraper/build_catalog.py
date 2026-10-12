@@ -14,6 +14,7 @@ from enrich_shop_sources import CACHE,shard,source_fingerprint
 from catalog_dedup import model_key,deduplicate,name_key,primary_key
 from storefront_pages import content as page_content
 from catalog_seo import product_discovery
+from brand_category_policy import mirror_source_paths
 
 PUBLIC=ROOT/'data/catalog'
 
@@ -184,8 +185,12 @@ def build(allow_pending=False):
                         parent=source_cat['parent_id']
                         categories.setdefault(key,{'id':key,'name':source_cat['name'],'parent_id':f'kpp:b:{bid}:global:'+parent.split(':')[-1] if parent else None,'brand_id':bid})
                         membership.append(key)
+                if membership and not any(categories[cid]['brand_id'] == bid for cid in membership):
+                    membership.extend(mirror_source_paths(membership, categories, bid, f'kpp:b:{bid}:mirror:'))
                 p['status']='soldout' if p.get('supplier_status')=='soldout' else 'inquiry'
-            elif source=='imweb-promotions': pass
+            elif source=='imweb-promotions':
+                membership=mirror_source_paths(['imweb:promotion:'+cid for cid in p.get('brand_category_ids',[])],
+                                               categories, bid, f'imweb:b:{bid}:promotion:')
             elif source=='imweb-dji': membership=['imweb:b:dji:'+cid for cid in p.get('brand_category_ids',[])]
             elif source=='l-mount': membership=['l-mount:b:ldl-mount:'+cid for cid in p.get('brand_category_ids',[])]
             elif source in ('plthink','avx','dji-official','clmedia','cinemall','onnoff'): membership=[source+':b:'+cid for cid in p.get('brand_category_ids',[])]
