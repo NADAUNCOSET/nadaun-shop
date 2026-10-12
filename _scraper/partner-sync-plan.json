@@ -88,6 +88,19 @@
       "request_interval_seconds": 5,
       "resume_interval_seconds": 600,
       "refresh_interval_seconds": 43200
+    },
+    "ldnet": {
+      "name": "엘디네트웍스 / ANYPORT",
+      "url": "https://ldnet.co.kr/",
+      "adapter": "cafe24",
+      "collection_adapter": "cafe24",
+      "scope": "All public categories and products; manufacturer schema supplies the brand, including ANYPORT omitted from the brand shop",
+      "status": "not_started",
+      "request_interval_seconds": 5,
+      "resume_interval_seconds": 600,
+      "refresh_interval_seconds": 43200,
+      "completion_gate": "Every source category count, full inventory union, manufacturer identity, details, options, stock, category tree reconciliation and deployed live offer IDs must pass",
+      "on_request_failure": "Preserve last verified snapshot; access protection latches immediately; incomplete inventory or content remains private"
     }
   }
 }

@@ -3,7 +3,7 @@ from copy import deepcopy
 import hashlib
 import json
 
-from sync_cafe24_partners import SITES
+from sync_cafe24_partners import SITES, WHOLE_SITE
 
 
 def validate_candidate(snapshot):
@@ -35,6 +35,40 @@ def validate_candidate(snapshot):
                 not product.get('brand') or product['brand'] == '미분류' or
                 not product.get('detail_checked_at')):
             raise ValueError('Unverified partner identity or content: ' + pid)
+    if source in WHOLE_SITE:
+        nodes={node['id']:node for node in raw_categories}
+        if not nodes[root].get('synthetic') or nodes[root]['parent_id'] is not None:
+            raise ValueError('Whole-site evidence root is missing')
+        union=next(row for row in coverage if row['id']==root)
+        if not union.get('derived_union') or union.get('pages')!=0:
+            raise ValueError('Whole-site union cannot be claimed as an advertised category')
+        counts={cid:0 for cid in nodes if cid!=root}
+        for product in products.values():
+            memberships=product.get('original_category_ids') if snapshot.get('normalized_for_shop') else product.get('brand_category_ids')
+            if not memberships or len(memberships)!=len(set(memberships)) or not set(memberships)<=set(counts):
+                raise ValueError('Whole-site product categories are unverified: '+product['id'])
+            for cid in memberships:counts[cid]+=1
+        if any(row['unique']!=counts[row['id']] for row in coverage if row['id']!=root):
+            raise ValueError('Whole-site membership differs from source category counts')
+        if snapshot.get('normalized_for_shop'):
+            from build_catalog import brand_id
+            expected=set()
+            for product in products.values():
+                bid=brand_id(product['brand']);original=product['original_category_ids']
+                if product['brand_category_ids']!=[bid+':'+cid for cid in original]:
+                    raise ValueError('Normalized product category identity changed')
+                for cid in original:
+                    cursor=cid;seen=set()
+                    while cursor!=root:
+                        if cursor in seen or cursor not in nodes:raise ValueError('Original source ancestry is invalid')
+                        seen.add(cursor);expected.add(bid+':'+cursor);cursor=nodes[cursor]['parent_id']
+            if {node['id'] for node in categories}!=expected or len(categories)!=len(expected):
+                raise ValueError('Normalized source paths are incomplete or duplicated')
+            for node in categories:
+                original=nodes.get(node.get('source_category_id'));bid=brand_id(node['brand'])
+                if not original or original['id']==root or (node['id'],node['name'],node['parent_id'])!=(
+                    bid+':'+original['id'],original['name'],bid+':'+original['parent_id'] if original['parent_id']!=root else None):
+                    raise ValueError('Normalized source label or ancestry changed')
     if not snapshot.get('collected_at'):
         raise ValueError('Missing source reconciliation timestamp')
 
@@ -47,6 +81,27 @@ def prepare(snapshot):
     result = deepcopy(snapshot)
     source = result['source']; root = SITES[source][1]
     nodes = {node['id']: node for node in result['categories']}
+    if source in WHOLE_SITE:
+        categories={}
+        for product in result['products'].values():
+            bid=brand_id(product['brand']);memberships=product['brand_category_ids']
+            product['original_category_ids']=list(memberships)
+            required=set()
+            for cid in memberships:
+                cursor=cid;seen=set()
+                while cursor!=root:
+                    if cursor in seen or cursor not in nodes:raise ValueError('Invalid whole-site source ancestry')
+                    seen.add(cursor);required.add(cursor);cursor=nodes[cursor]['parent_id']
+            for cid in sorted(required):
+                node=nodes[cid];key=bid+':'+cid
+                categories[key]={'id':key,'name':node['name'],'brand':product['brand'],
+                    'parent_id':bid+':'+node['parent_id'] if node['parent_id']!=root else None,
+                    'source_category_id':cid}
+            product['brand_category_ids']=[bid+':'+cid for cid in memberships]
+        result.update(original_categories=result['categories'],categories=list(categories.values()),
+            normalized_for_shop=True,scope='all',catalogue_complete=True,candidate_sha256=digest(snapshot))
+        validate_candidate(result)
+        return result
     brand_roots = {brand_id(node['name']): node['name'] for node in nodes.values() if node['parent_id'] == root}
     categories = []
     for cid, node in nodes.items():

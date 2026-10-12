@@ -47,6 +47,47 @@ def replace_stock(doc,stocks):
 
 
 class Cafe24Tests(unittest.TestCase):
+    def test_ldnet_whole_site_keeps_product_categories_outside_brand_shop(self):
+        values=[{'cate_no':cid,'parent_cate_no':parent,'name':name} for cid,parent,name in
+                [(534,1,'디지털/가전'),(46,534,'영상/음향'),(117,46,'ANYPORT 8K HDMI'),
+                 (581,1,'브랜드샵'),(582,581,'NEXT')]]
+        nodes=c.category_tree(values,'1',whole_site=True)
+        self.assertEqual(set(nodes),{'1','534','46','117','581','582'})
+        self.assertTrue(nodes['1']['synthetic'])
+        self.assertEqual(nodes['117']['parent_id'],'46')
+        detached=c.category_tree(values+[{'cate_no':530,'parent_cate_no':0,'name':'KVM 스위치/케이블'}],'1',whole_site=True)
+        self.assertEqual(detached['530']['source_parent_id'],'0')
+        self.assertEqual(detached['530']['parent_id'],'1')
+        with self.assertRaises(ValueError):c.category_tree(values+[{'cate_no':999,'parent_cate_no':998,'name':'분리'}],'1',whole_site=True)
+
+    def test_ldnet_inventory_is_unique_union_of_all_categories_not_brand_shop(self):
+        with tempfile.TemporaryDirectory() as tmp,patch.object(c,'STATE',Path(tmp)):
+            collector=c.Collector('ldnet')
+            nodes=c.category_tree([{'cate_no':534,'parent_cate_no':1,'name':'디지털/가전'},
+                {'cate_no':46,'parent_cate_no':534,'name':'영상/음향'},
+                {'cate_no':581,'parent_cate_no':1,'name':'브랜드샵'}],'1',whole_site=True)
+            collector.state('categories',nodes)
+            seen=[]
+            def page(cid,page):
+                seen.append(cid);ids={'534':['10','11'],'46':['10'],'581':['12']}[cid]
+                return {'products':{sid:{'id':'ldnet-'+sid,'source':'ldnet','source_id':sid} for sid in ids},'total':len(ids),'last':1,'children':[]}
+            try:
+                with patch.object(collector,'page',side_effect=page):result=collector.inventory()
+                self.assertEqual(seen,['534','46','581'])
+                self.assertEqual(result['product_count'],3)
+                self.assertEqual(result['products']['10']['brand_category_ids'],['534','46'])
+                self.assertEqual(result['products']['10']['brand'],'')
+                root=next(row for row in result['coverage'] if row['id']=='1')
+                self.assertEqual(root['unique'],3);self.assertTrue(root['derived_union'])
+            finally:collector.db.close()
+
+    def test_ldnet_manufacturer_schema_supplies_anyport_brand(self):
+        doc=product_page();node=doc.select_one('script[type="application/ld+json"]')
+        schema=json.loads(node.string);schema['brand']={'name':'애니포트'};schema['offers']['url']='https://ldnet.co.kr/product/sample/10/'
+        node.string=json.dumps(schema)
+        record,_=c.detail(c.soup(str(doc)),{'id':'ldnet-10','source':'ldnet','source_id':'10'},'')
+        self.assertEqual(record['brand'],'애니포트');self.assertEqual(record['detail_status'],'verified')
+
     def test_api_tree_contains_only_brand_descendants(self):
         values=[{'cate_no':i,'parent_cate_no':parent,'name':name} for i,parent,name in
                 [(24,1,'브랜드'),(30,24,'SmallRig'),(31,30,'케이지'),(50,1,'개인결제')]]

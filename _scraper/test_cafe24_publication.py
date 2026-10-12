@@ -22,6 +22,49 @@ def candidate():
 
 
 class PublicationTests(unittest.TestCase):
+    def ldnet_candidate(self):
+        raw=candidate();raw.update(source='ldnet',product_count=2)
+        raw['categories']=[{'id':'1','name':'전체 상품','parent_id':None,'synthetic':True},
+            {'id':'534','name':'디지털/가전','parent_id':'1'},
+            {'id':'46','name':'영상/음향','parent_id':'534'},
+            {'id':'117','name':'ANYPORT 8K HDMI','parent_id':'46'}]
+        raw['products']={}
+        for sid,brand in [('10','애니포트'),('11','NEXT')]:
+            product=deepcopy(candidate()['products']['onnoff-10'])
+            product.update(id='ldnet-'+sid,source='ldnet',source_id=sid,brand=brand,brand_category_ids=['534','46','117'])
+            raw['products'][product['id']]=product
+        raw['coverage']=[{'id':node['id'],'expected':2,'unique':2,'pages':1} for node in raw['categories'][1:]]
+        raw['coverage'].append({'id':'1','expected':2,'unique':2,'pages':0,'derived_union':True})
+        return raw
+
+    def test_ldnet_original_type_paths_are_preserved_under_each_manufacturer(self):
+        raw=self.ldnet_candidate();prepared=publication.prepare(raw)
+        self.assertEqual(prepared['original_categories'],raw['categories'])
+        nodes={n['id']:n for n in prepared['categories']}
+        self.assertEqual(nodes['anyport:46']['name'],'영상/음향')
+        self.assertEqual(nodes['anyport:46']['parent_id'],'anyport:534')
+        self.assertEqual(nodes['anyport:117']['brand'],'애니포트')
+        self.assertEqual(prepared['products']['ldnet-10']['original_category_ids'],['534','46','117'])
+        self.assertEqual(prepared['products']['ldnet-11']['brand_category_ids'],['next:534','next:46','next:117'])
+        self.assertEqual(publication.prepare(prepared),prepared)
+
+    def test_ldnet_incomplete_category_membership_or_fake_root_cannot_publish(self):
+        for change in ('membership','root','union'):
+            raw=self.ldnet_candidate()
+            if change=='membership':raw['products']['ldnet-10']['brand_category_ids'].remove('117')
+            elif change=='root':raw['categories'][0]['synthetic']=False
+            else:raw['coverage'][-1]['derived_union']=False
+            with self.subTest(change=change),self.assertRaises(ValueError):publication.prepare(raw)
+
+    def test_ldnet_normalized_label_ancestry_or_membership_corruption_is_rejected(self):
+        for change in ('label','parent','membership'):
+            prepared=publication.prepare(self.ldnet_candidate())
+            if change=='membership':prepared['products']['ldnet-10']['brand_category_ids']=['next:117']
+            else:
+                node=next(node for node in prepared['categories'] if node['id']=='anyport:117')
+                node['name' if change=='label' else 'parent_id']='wrong'
+            with self.subTest(change=change),self.assertRaises(ValueError):publication.prepare(prepared)
+
     def test_editor_blob_images_never_replace_valid_product_images(self):
         from build_catalog import public_remote_images
         valid='https://ecimg.cafe24img.com/product/detail.png'

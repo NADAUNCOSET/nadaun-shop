@@ -70,7 +70,7 @@ def managed_files():
     for source in ('smartstore','imweb-dji','imweb-promotions','kpp','l-mount','nadaun-gift'):
         files.append('data/catalog/sources/'+source+'.json')
     if (OUT/'plthink.json').exists():files.append('data/catalog/sources/plthink.json')
-    for source in ('avx','avx-aputure','avx-approved','dji-official','clmedia','cinemall','onnoff'):
+    for source in ('avx','avx-aputure','avx-approved','dji-official','clmedia','cinemall','onnoff','ldnet'):
         if (OUT/(source+'.json')).exists():files.append('data/catalog/sources/'+source+'.json')
     for source in ('smartstore','kpp'):
         base=ROOT/'data/catalog/source-details'/source

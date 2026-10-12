@@ -15,6 +15,9 @@ from catalog_dedup import model_key,deduplicate,name_key,primary_key
 from storefront_pages import content as page_content
 from catalog_seo import product_discovery
 from brand_category_policy import mirror_source_paths
+from sync_cafe24_partners import SITES as CAFE24_SITES
+
+CAFE24_SOURCES=tuple(CAFE24_SITES)
 
 PUBLIC=ROOT/'data/catalog'
 
@@ -85,7 +88,7 @@ def verified_sources():
     sources=['kpp','smartstore','imweb-dji','imweb-promotions','l-mount']
     if (OUT/'plthink.json').exists():sources.append('plthink')
     if (OUT/'dji-official.json').exists():sources.append('dji-official')
-    for partner in ('clmedia','cinemall','onnoff'):
+    for partner in CAFE24_SOURCES:
         if (OUT/(partner+'.json')).exists():sources.append(partner)
     snapshots={key:json.loads((OUT/(key+'.json')).read_text()) for key in sources}
     avx_path=next((OUT/name for name in ('avx-approved.json','avx.json','avx-aputure.json') if (OUT/name).exists()),None)
@@ -102,7 +105,7 @@ def verified_sources():
                 raise RuntimeError('AVX approved source partition is inconsistent')
         snapshots['avx']=snapshot
     if not all(s.get('complete') for s in snapshots.values()):raise RuntimeError('Incomplete source snapshot')
-    for partner in ('clmedia','cinemall','onnoff'):
+    for partner in CAFE24_SOURCES:
         if partner in snapshots:
             from cafe24_publication import validate_candidate
             from brand_source_policy import supplemental_source_approved
@@ -150,7 +153,7 @@ def build(allow_pending=False):
                 prefix='kpp:'+('b:'+bid if bid else 'p')+':'
             elif source=='imweb-promotions':bid=None;prefix='imweb:promotion:'
             elif source=='l-mount':bid='ldl-mount';prefix='l-mount:b:ldl-mount:'
-            elif source in ('plthink','avx','dji-official','clmedia','cinemall','onnoff'):bid=brand_id(c['brand']);prefix=source+':b:'
+            elif source in ('plthink','avx','dji-official',*CAFE24_SOURCES):bid=brand_id(c['brand']);prefix=source+':b:'
             else:bid='dji';prefix='imweb:b:dji:'
             if official_dji and bid=='dji' and source!='dji-official':continue
             c.update(id=prefix+c['id'],parent_id=prefix+c['parent_id'] if c['parent_id'] else None,brand_id=bid)
@@ -169,7 +172,7 @@ def build(allow_pending=False):
             if not purchase_source_allowed(p,source_choices):continue
             bid=p['brand_id'];membership=[];types=[]
             if p.get('kind')=='purchase':p['_preferred_source']=source_choices.get(bid,{}).get('source')
-            p['_supplemental_source']=source in ('clmedia','cinemall','onnoff')
+            p['_supplemental_source']=source in CAFE24_SOURCES
             if 'avx' in snapshots and source!='avx' and bid=='aputure' and p.get('kind')=='purchase':continue
             if source=='kpp':
                 for mall in p.get('brand_mall_ids',[]):
@@ -193,7 +196,7 @@ def build(allow_pending=False):
                                                categories, bid, f'imweb:b:{bid}:promotion:')
             elif source=='imweb-dji': membership=['imweb:b:dji:'+cid for cid in p.get('brand_category_ids',[])]
             elif source=='l-mount': membership=['l-mount:b:ldl-mount:'+cid for cid in p.get('brand_category_ids',[])]
-            elif source in ('plthink','avx','dji-official','clmedia','cinemall','onnoff'): membership=[source+':b:'+cid for cid in p.get('brand_category_ids',[])]
+            elif source in ('plthink','avx','dji-official',*CAFE24_SOURCES): membership=[source+':b:'+cid for cid in p.get('brand_category_ids',[])]
             else:
                 path=p.get('source_category_path') or [];ids=p.get('source_category_ids') or []
                 # Naver standard classifications are retained separately from
@@ -216,13 +219,13 @@ def build(allow_pending=False):
             if source=='kpp' and d.get('source_fingerprint')!=source_fingerprint(p0):
                 d={}
             if source.startswith('imweb-'):d={'detail_status':'verified','description_text':p.get('description_text',''),'images':p['images']}
-            if source in ('l-mount','plthink','avx','dji-official','clmedia','cinemall','onnoff'):d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation') if k in p}
+            if source in ('l-mount','plthink','avx','dji-official',*CAFE24_SOURCES):d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation') if k in p}
             if d.get('detail_status')=='verified':coverage[source]+=1
             elif not allow_pending:raise RuntimeError('Unverified product detail: '+pid)
             if d.get('unavailable'):
                 continue
             p['images'].update(d.get('images') or {})
-            if source in ('clmedia','cinemall','onnoff'):
+            if source in CAFE24_SOURCES:
                 for group in ('main','detail'):
                     p['images'][group]=public_remote_images(p['images'].get(group,[]))
                 if not p['images']['main']:raise RuntimeError('Unusable partner gallery: '+pid)

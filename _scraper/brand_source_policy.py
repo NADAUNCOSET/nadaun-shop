@@ -12,6 +12,7 @@ AUDIT=PRIVATE_DIRECTORY/'catalog'
 NAMES={'kpp':'KPP','smartstore':'우리 스마트스토어','imweb':'기존 아임웹','imweb-dji':'기존 아임웹 DJI','l-mount':'엘디엘마운트','plthink':'유쾌한생각','avx':'AVX','clmedia':'씨엘미디어','cinemall':'시네몰'}
 NAMES['dji-official']='DJI 공식 한국 스토어'
 NAMES['onnoff']='온앤오프미디어'
+NAMES['ldnet']='엘디네트웍스'
 
 
 def selections():
@@ -52,7 +53,7 @@ def snapshots(candidate=None):
     if candidate:
         result[candidate.get('source','avx')]=candidate
     else:
-        for source in ('avx','clmedia','cinemall','onnoff'):
+        for source in ('avx','clmedia','cinemall','onnoff','ldnet'):
             folder=ROOT/'_scraper/.sync-state'/source
             generation=folder/'generation.json'
             if generation.exists():folder=folder/json.loads(generation.read_text())['directory']

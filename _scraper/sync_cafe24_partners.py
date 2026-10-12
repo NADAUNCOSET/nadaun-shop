@@ -1,4 +1,4 @@
-"""Guarded, resumable public catalogue reads for the three Cafe24 partners.
+"""Guarded, resumable public catalogue reads for approved Cafe24 partners.
 
 Each generation must cover the advertised brand-root inventory and every
 descendant category. Partial data stays private; access denials never retry.
@@ -25,11 +25,13 @@ SITES={
     'clmedia':('https://clmedia.co.kr','24'),
     'cinemall':('https://www.cinemall.co.kr','56'),
     'onnoff':('https://onnoff.kr','23'),
+    'ldnet':('https://ldnet.co.kr','1'),
 }
+WHOLE_SITE={'ldnet'}
 STATE=ROOT/'_scraper/.sync-state'
 # Cinemall's default ranking changes between reads; its own menu exposes
 # sort_method=5 (newest). Keep this cache separate from the original pages.
-LISTING_SORT={'cinemall':'5'}
+LISTING_SORT={'cinemall':'5','ldnet':'5'}
 
 
 def category_id(url):
@@ -63,10 +65,18 @@ def category_menu(doc,parent):
     return list(rows.values())
 
 
-def category_tree(payload,root):
+def category_tree(payload,root,whole_site=False):
     if not isinstance(payload,list) or not payload:raise ValueError('Category API returned no tree')
     nodes={str(x['cate_no']):{'id':str(x['cate_no']),'name':clean(soup(x['name']).get_text()),
         'parent_id':str(x['parent_cate_no'])} for x in payload}
+    if whole_site:
+        if root in nodes:raise ValueError('Synthetic whole-site root collides with a source category')
+        # LDNET exposes two currently empty, parent=0 categories. Keep these
+        # independent source roots and their original parent evidence; do not
+        # invent an ancestry under a named product or brand category.
+        for node in nodes.values():
+            if node['parent_id']=='0':node.update(parent_id=root,source_parent_id='0')
+        nodes[root]={'id':root,'name':'전체 상품','parent_id':None,'synthetic':True}
     if root not in nodes:raise ValueError('Brand root absent from category API')
     result={root:{**nodes[root],'parent_id':None}}
     for cid,node in nodes.items():
@@ -75,6 +85,7 @@ def category_tree(payload,root):
             if current in seen:raise ValueError('Category cycle')
             seen.add(current);current=nodes[current]['parent_id']
         if current==root:result[cid]={**node,'parent_id':None if cid==root else node['parent_id']}
+        elif whole_site:raise ValueError('Source category is orphaned from the whole-site root: '+cid)
     return result
 
 
@@ -340,10 +351,12 @@ class Collector:
         nodes=self.state('categories')
         if nodes is None:
             raw=self.source.get('/exec/front/Product/SubCategory');payload=json.loads(raw)
-            if payload:nodes=category_tree(payload,self.root)
+            if payload:nodes=category_tree(payload,self.root,whole_site=self.name in WHOLE_SITE)
+            elif self.name in WHOLE_SITE:raise ValueError('Whole-site category tree is missing')
             else:nodes={self.root:{'id':self.root,'name':'브랜드','parent_id':None}}
             self.state('categories',nodes)
-        products={};memberships={};coverage=[];checked=set();queue=list(nodes)
+        products={};memberships={};coverage=[];checked=set()
+        queue=[cid for cid in nodes if self.name not in WHOLE_SITE or cid!=self.root]
         for cid in queue:
             p=1;end=1;found={};total=None
             while p<=end:
@@ -366,12 +379,18 @@ class Collector:
             coverage.append({'id':cid,'expected':total,'unique':len(found),'pages':end})
             checked.add(cid);self.state('categories',nodes)
             self.progress({'at':stamp(),'phase':'inventory','categories_verified':len(checked),'categories_found':len(nodes),'products_found':len(products),'complete':False})
+        if self.name in WHOLE_SITE:
+            # LDNET's brand shop omits ANYPORT and much of its inventory. The
+            # union of every reconciled public category is its actual scope;
+            # this synthetic root is evidence, never an advertised source menu.
+            coverage.append({'id':self.root,'expected':len(products),'unique':len(products),'pages':0,'derived_union':True})
+            for cats in memberships.values():cats.append(self.root)
         root_all={sid for sid,cats in memberships.items() if self.root in cats}
         extra=set(products)-root_all
         if extra:raise ValueError('Brand root does not cover all descendants: '+str(len(extra)))
         for sid,product in products.items():
             cats=memberships[sid]
-            product['brand']=inventory_brand(cats,nodes,self.root)
+            product['brand']='' if self.name in WHOLE_SITE else inventory_brand(cats,nodes,self.root)
             product['brand_category_ids']=[cid for cid in cats if cid!=self.root]
         result={'source':self.name,'at':stamp(),'listing_sort':LISTING_SORT.get(self.name),'categories':list(nodes.values()),'coverage':coverage,'products':products,'product_count':len(products),'inventory_complete':True,'complete':False}
         save_json(self.work/'inventory-candidate.json',result)
@@ -399,10 +418,14 @@ class Collector:
                 self.progress({'at':stamp(),'phase':'details','products_found':len(snapshot['products']),'details_checked':sum(counts),'details_parsed':counts[0],'detail_errors':counts[1],'complete':False})
             changed=[]
             for index,category in enumerate(snapshot['coverage']):
+                if category.get('derived_union'):continue
                 old=self.page(category['id'],1);new=self.page(category['id'],1,True)
                 if old['total']!=new['total'] or list(old['products'])!=list(new['products']):changed.append(category['id'])
                 self.progress({'at':stamp(),'phase':'reconciliation','products_found':snapshot['product_count'],
                     'categories_verified':index+1,'categories_found':len(snapshot['coverage']),'changed_categories':changed,'complete':False})
+            if self.name in WHOLE_SITE:
+                latest=category_tree(json.loads(self.source.get('/exec/front/Product/SubCategory')),self.root,whole_site=True)
+                if latest!={node['id']:node for node in snapshot['categories']}:changed.append('category-tree')
             rows={sid:json.loads(rec) for sid,rec in self.db.execute('SELECT id,record FROM details') if sid in snapshot['products']}
             errors={sid:error for sid,error in self.db.execute('SELECT id,error FROM errors') if sid in snapshot['products']}
             reviews={sid:p.get('content_issues',[]) for sid,p in rows.items() if p['detail_status']!='verified'}

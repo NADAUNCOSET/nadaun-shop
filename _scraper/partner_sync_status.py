@@ -40,7 +40,7 @@ def verified_receipt(source, out=OUT, state=STATE):
         expected=official_dji_ids(snapshot);expected_count=len(expected)
         if (receipt.get('held_other_brand_ids')!=sorted(set(snapshot['products'])-expected) or
             receipt.get('source_verified_products')!=count or receipt.get('policy_sha256')!=policy_fingerprint()):return False
-    if source in ('plthink','clmedia','cinemall','onnoff'):
+    if source in ('plthink','clmedia','cinemall','onnoff','ldnet'):
         from brand_source_policy import publishable_ids,policy_fingerprint
         expected=publishable_ids(snapshot)
         if (len(expected)!=count or 'excluded_ids' in receipt) and (receipt.get('policy_sha256')!=policy_fingerprint() or
