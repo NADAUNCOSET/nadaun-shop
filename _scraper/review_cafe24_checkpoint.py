@@ -7,6 +7,7 @@ import hashlib
 import json
 from pathlib import Path
 import sqlite3
+import shutil
 
 import sync_cafe24_partners as catalog
 
@@ -14,11 +15,18 @@ import sync_cafe24_partners as catalog
 def review(source, apply=False, work=None):
     work = Path(work) if work is not None else catalog.STATE / source
     database = work / 'checkpoint.sqlite3'
+    if source in catalog.WHOLE_SITE and work.is_relative_to(catalog.ROOT):
+        from catalog_checkpoint import runtime_root
+        runtime=runtime_root()/source/work.name/'checkpoint.sqlite3'
+        if runtime.exists():database=runtime
     inventory = json.loads((work / 'inventory-candidate.json').read_text())
     checked_at = catalog.stamp()
     report = {'source': source, 'at': checked_at, 'applied': apply,
               'supplier_requests': 0, 'published': False, 'results': {}}
     with catalog.run_lock(work) if apply else nullcontext():
+        if apply and source in catalog.WHOLE_SITE and work.is_relative_to(catalog.ROOT):
+            from catalog_checkpoint import restore
+            database=restore(work,source)
         db = sqlite3.connect(database.as_uri() + ('?mode=rw' if apply else '?mode=ro'), uri=True)
         try:
             if apply:
@@ -27,10 +35,12 @@ def review(source, apply=False, work=None):
                 backup = folder / (checked_at.replace(':', '-') + '.sqlite3')
                 if backup.exists():
                     raise FileExistsError(backup)
-                with closing(sqlite3.connect(backup)) as destination:
+                target=database.parent/backup.name if database!=work/'checkpoint.sqlite3' else backup
+                with closing(sqlite3.connect(target)) as destination:
                     db.backup(destination)
                     if destination.execute('PRAGMA quick_check').fetchone() != ('ok',):
                         raise RuntimeError('Checkpoint backup failed integrity check')
+                if target!=backup:shutil.copyfile(target,backup)
                 report['backup'] = str(backup.relative_to(catalog.ROOT))
             changes = []
             for path in sorted((work / 'review-pages').glob('*.html.gz')):
@@ -92,6 +102,9 @@ def review(source, apply=False, work=None):
                             'changed_categories': changed, 'complete': False, 'published': False}
                 catalog.save_json(work / 'progress.json', progress)
                 report['progress'] = progress
+                if database!=work/'checkpoint.sqlite3':
+                    from catalog_checkpoint import snapshot
+                    snapshot(db,work,database,source)
             report['summary'] = dict(Counter(row['status'] for row in report['results'].values()))
             if apply:
                 catalog.save_json(folder / (backup.stem + '-report.json'), report)

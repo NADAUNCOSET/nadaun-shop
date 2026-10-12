@@ -311,7 +311,11 @@ class Source:
 class Collector:
     def __init__(self,source,work=None):
         self.name=source;self.base,self.root=SITES[source];self.work=Path(work) if work is not None else STATE/source;self.work.mkdir(exist_ok=True,parents=True)
-        self.source=Source(source,STATE/source);self.db=sqlite3.connect(self.work/'checkpoint.sqlite3',timeout=30)
+        self.database_path=self.work/'checkpoint.sqlite3';self.next_snapshot=0
+        if source in WHOLE_SITE and self.work.is_relative_to(ROOT):
+            from catalog_checkpoint import restore
+            self.database_path=restore(self.work,source)
+        self.source=Source(source,STATE/source);self.db=sqlite3.connect(self.database_path,timeout=30)
         self.db.executescript('''
           CREATE TABLE IF NOT EXISTS state(key TEXT PRIMARY KEY,value TEXT NOT NULL);
           CREATE TABLE IF NOT EXISTS pages(category TEXT,page INTEGER,record TEXT NOT NULL,PRIMARY KEY(category,page));
@@ -320,9 +324,17 @@ class Collector:
           CREATE TABLE IF NOT EXISTS errors(id TEXT PRIMARY KEY,error TEXT NOT NULL,at TEXT NOT NULL);
         ''')
 
+    def checkpoint_snapshot(self,force=False):
+        if self.database_path==self.work/'checkpoint.sqlite3':return
+        if not force and time.monotonic()<self.next_snapshot:return
+        from catalog_checkpoint import snapshot
+        snapshot(self.db,self.work,self.database_path,self.name)
+        self.next_snapshot=time.monotonic()+120
+
     def state(self,key,value=None):
         if value is not None:
             with self.db:self.db.execute('INSERT OR REPLACE INTO state VALUES(?,?)',(key,json.dumps(value,ensure_ascii=False)))
+            self.checkpoint_snapshot()
             return value
         row=self.db.execute('SELECT value FROM state WHERE key=?',(key,)).fetchone()
         return json.loads(row[0]) if row else None
@@ -345,6 +357,7 @@ class Collector:
         if not fresh:
             insert='INSERT INTO ordered_pages VALUES(?,?,?,?)' if method else 'INSERT INTO pages VALUES(?,?,?)'
             with self.db:self.db.execute(insert,(*key,json.dumps(value,ensure_ascii=False)))
+            self.checkpoint_snapshot()
         return value
 
     def inventory(self):
@@ -416,6 +429,7 @@ class Collector:
                         (folder/(sid+'.html.gz')).write_bytes(gzip.compress(raw))
                 counts=self.db.execute('SELECT (SELECT COUNT(*) FROM details),(SELECT COUNT(*) FROM errors)').fetchone()
                 self.progress({'at':stamp(),'phase':'details','products_found':len(snapshot['products']),'details_checked':sum(counts),'details_parsed':counts[0],'detail_errors':counts[1],'complete':False})
+                self.checkpoint_snapshot()
             changed=[]
             for index,category in enumerate(snapshot['coverage']):
                 if category.get('derived_union'):continue

@@ -121,6 +121,14 @@ def work(source):
         collector = Collector(source,folder)
         try:
             candidate = collector.collect()
+        except Exception:
+            # Keep the source exception if a disconnected NAS cannot receive
+            # a final recovery snapshot. The live PC database remains intact.
+            try:collector.checkpoint_snapshot(force=True)
+            except OSError:pass
+            raise
+        else:
+            collector.checkpoint_snapshot(force=True)
         finally:
             collector.db.close()
         if not candidate['complete']:
