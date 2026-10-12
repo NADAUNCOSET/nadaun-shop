@@ -212,7 +212,7 @@
       "groups": 2765,
       "removed": 4576
     },
-    "revision": "3f63986f4bc95d33",
+    "revision": "f380c5b5483e96ab",
     "view": "rental"
   },
   "brands": [
@@ -969,6 +969,7 @@
         "kpp:b:smallrig:d2g0a0",
         "kpp:b:smallrig:global:06",
         "kpp:b:smallrig:global:0680",
+        "kpp:b:smallrig:mirror:kpp:b:leofoto:3080",
         "naver:b:smallrig:50000206",
         "naver:b:smallrig:50001389",
         "naver:b:smallrig:50001394",
@@ -1101,6 +1102,7 @@
         "kpp:b:smallrig:d2g0a0",
         "kpp:b:smallrig:global:06",
         "kpp:b:smallrig:global:0680",
+        "kpp:b:smallrig:mirror:kpp:b:leofoto:3080",
         "naver:b:smallrig:50000206",
         "naver:b:smallrig:50001394",
         "naver:b:smallrig:50002113",
@@ -1950,7 +1952,11 @@
         "kpp:b:pgytech:60b020",
         "kpp:b:pgytech:60b030",
         "kpp:b:pgytech:60b040",
-        "kpp:b:pgytech:60b050"
+        "kpp:b:pgytech:60b050",
+        "kpp:b:pgytech:mirror:kpp:b:smallrig:d260",
+        "kpp:b:pgytech:mirror:kpp:b:smallrig:d26060",
+        "kpp:b:pgytech:mirror:kpp:b:smallrig:d2g0",
+        "kpp:b:pgytech:mirror:kpp:b:smallrig:d2g070"
       ],
       "count": 289,
       "purchase_count": 289,
@@ -1996,7 +2002,11 @@
         "kpp:b:pgytech:6010",
         "kpp:b:pgytech:601010",
         "kpp:b:pgytech:601020",
-        "kpp:b:pgytech:601030"
+        "kpp:b:pgytech:601030",
+        "kpp:b:pgytech:mirror:kpp:b:smallrig:d260",
+        "kpp:b:pgytech:mirror:kpp:b:smallrig:d26060",
+        "kpp:b:pgytech:mirror:kpp:b:smallrig:d2g0",
+        "kpp:b:pgytech:mirror:kpp:b:smallrig:d2g070"
       ],
       "representative_id": "kpp-1664848290",
       "representative_image": "https://kppkpp.co.kr/data/item/1664848290/01.jpg",
@@ -3826,6 +3836,7 @@
       ],
       "logo": "/assets/shop/brands/benro-62b3e007b7.webp",
       "navigation_category_ids": [
+        "imweb:b:benro:promotion:imweb:promotion:s2025060223e3cf2541d28",
         "naver:b:benro:50000206",
         "naver:b:benro:50001382",
         "naver:b:benro:50001389",
@@ -3859,6 +3870,7 @@
         "naver:b:benro:50004610",
         "naver:b:benro:50004614",
         "naver:b:benro:50004609",
+        "imweb:b:benro:promotion:imweb:promotion:s2025060223e3cf2541d28",
         "plthink:b:061",
         "plthink:b:061:001",
         "plthink:b:061:006",
@@ -4908,12 +4920,16 @@
       "logo": "https://kppkpp.co.kr/data/item/1781855454/thumb-7ISs64Sk7J2867O17IKs_262x262.jpg",
       "navigation_category_ids": [
         "clmedia:b:54",
+        "kpp:b:etc:mirror:kpp:b:leofoto:30a0",
+        "kpp:b:etc:mirror:kpp:b:leofoto:30a050",
         "plthink:b:072"
       ],
       "count": 77,
       "purchase_count": 77,
       "rental_count": 0,
       "category_ids": [
+        "kpp:b:etc:mirror:kpp:b:leofoto:30a0",
+        "kpp:b:etc:mirror:kpp:b:leofoto:30a050",
         "plthink:b:072",
         "clmedia:b:54"
       ],
