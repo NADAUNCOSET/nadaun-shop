@@ -1,14 +1,14 @@
 {
   "source": "smartstore",
   "source_url": "https://smartstore.naver.com/rainbowbene",
-  "collected_at": "2026-10-11T23:03:39+00:00",
+  "collected_at": "2026-10-12T23:02:38+00:00",
   "complete": true,
   "origin_count": 7891,
-  "product_count": 6917,
+  "product_count": 6877,
   "status_counts": {
-    "SALE/ON": 6492,
-    "SUSPENSION/ON": 29,
-    "OUTOFSTOCK/ON": 425,
+    "SALE/ON": 6463,
+    "SUSPENSION/ON": 69,
+    "OUTOFSTOCK/ON": 414,
     "OUTOFSTOCK/SUSPENSION": 42,
     "SALE/SUSPENSION": 445,
     "SUSPENSION/SUSPENSION": 367,
@@ -116,270 +116,6 @@
       ],
       "source_modified_at": "2026-10-07T15:57:53.304+09:00"
     },
-    "smartstore-13794870905": {
-      "id": "smartstore-13794870905",
-      "source": "smartstore",
-      "source_id": "13794870905",
-      "origin_id": "13733758217",
-      "name": "[ 와콤 레인보우베네 ] 와콤 프로펜2용 펠트 펜심 10개입 ACK-222-13 거친 종이 느낌 신티크 인튜어스프로",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870905",
-      "price": 13000,
-      "sale_price": 13000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_65/1791292165685EAXgS_JPEG/ACK22213.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.125+09:00"
-    },
-    "smartstore-13794870898": {
-      "id": "smartstore-13794870898",
-      "source": "smartstore",
-      "source_id": "13794870898",
-      "origin_id": "13733758209",
-      "name": "[ 와콤 레인보우베네 ] 와콤 프로펜2 용 표준 펜심 10개입 ACK-222-11 신티크 인튜어스프로 KP504",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870898",
-      "price": 13000,
-      "sale_price": 13000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_63/1791292165572Id50U_JPEG/ACK22211.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.124+09:00"
-    },
-    "smartstore-13794870897": {
-      "id": "smartstore-13794870897",
-      "source": "smartstore",
-      "source_id": "13794870897",
-      "origin_id": "13733758208",
-      "name": "[ 와콤 레인보우베네 ] 펜심 - ACK-200-01 WACOM 와콤 표준 펜심 5개입 프로펜 그립펜 뱀부펜 등 대부분의 와콤펜에서 사용할 수 있는 표준형",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870897",
-      "price": 6500,
-      "sale_price": 6500,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_116/1791292165050YLVV0_JPEG/ACK20001.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.123+09:00"
-    },
-    "smartstore-13794870896": {
-      "id": "smartstore-13794870896",
-      "source": "smartstore",
-      "source_id": "13794870896",
-      "origin_id": "13733758207",
-      "name": "[ 와콤 레인보우베네 ] 펜심 - ACK-200-03 WACOM 와콤 거친느낌 하드 펠트 펜심 5개입 원바이와콤-인튜어스-인튜어스4_5-인튜어스프로-그립펜- 프로펜-클래식펜 용",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870896",
-      "price": 6600,
-      "sale_price": 6600,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_20/1791292165148W4DTr_JPEG/ACK20003.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.123+09:00"
-    },
-    "smartstore-13794870895": {
-      "id": "smartstore-13794870895",
-      "source": "smartstore",
-      "source_id": "13794870895",
-      "origin_id": "13733758206",
-      "name": "[ 와콤 레인보우베네 ] 와콤 플렉스 펜심 5개입 ACK20004 WACOM 인튜어스 인튜어스프로 그립펜 프로펜용",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870895",
-      "price": 6500,
-      "sale_price": 6500,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_286/1791292165247X4rWM_JPEG/ACK20004.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.122+09:00"
-    },
-    "smartstore-13794870894": {
-      "id": "smartstore-13794870894",
-      "source": "smartstore",
-      "source_id": "13794870894",
-      "origin_id": "13733758205",
-      "name": "[ 와콤 레인보우베네 ] 펜심 - ACK-200-06 WACOM 와콤 아트펜 KP-701E 전용 펜심 치즐 모양 송곳 모양 붓글씨 효과 10개입 For Art Pen Nibs",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870894",
-      "price": 14300,
-      "sale_price": 14300,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_129/1791292165364xApsR_JPEG/ACK20006.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.122+09:00"
-    },
-    "smartstore-13794870893": {
-      "id": "smartstore-13794870893",
-      "source": "smartstore",
-      "source_id": "13794870893",
-      "origin_id": "13733758204",
-      "name": "[ 와콤 레인보우베네 ] 펜심 - ACK-222-07 WACOM 와콤 볼 포인트펜 KP-133 용 펜심 볼펜심 3개입 인튜어스프로 페이퍼모드 전용 BallPoint Pen Nibs",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870893",
-      "price": 13000,
-      "sale_price": 13000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_241/17912921654749JTsp_JPEG/ACK22207.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.122+09:00"
-    },
-    "smartstore-13794870892": {
-      "id": "smartstore-13794870892",
-      "source": "smartstore",
-      "source_id": "13794870892",
-      "origin_id": "13733758203",
-      "name": "[ 와콤 레인보우베네 ] 시트 - ACK-122-313 거친타입 WACOM 와콤 정품 텍스처시트 대형 - 인튜어스 프로 대형 전용 - L 사이즈",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870892",
-      "price": 49800,
-      "sale_price": 49800,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_202/1791292164928pcHzi_JPEG/ACK122313.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.121+09:00"
-    },
     "smartstore-13794870891": {
       "id": "smartstore-13794870891",
       "source": "smartstore",
@@ -413,171 +149,6 @@
       ],
       "source_modified_at": "2026-10-06T22:36:10.121+09:00"
     },
-    "smartstore-13794870890": {
-      "id": "smartstore-13794870890",
-      "source": "smartstore",
-      "source_id": "13794870890",
-      "origin_id": "13733758200",
-      "name": "[ 와콤 레인보우베네 ] 3-in-1 케이블 와콤 신티크 16 용 ACK43912 WACOM DTK-1660 연결선",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870890",
-      "price": 49000,
-      "sale_price": 49000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_85/1791292166813eyd4W_JPEG/ACK43912.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.121+09:00"
-    },
-    "smartstore-13794870889": {
-      "id": "smartstore-13794870889",
-      "source": "smartstore",
-      "source_id": "13794870889",
-      "origin_id": "13733758199",
-      "name": "[ 와콤 레인보우베네 ] X-Shape 와콤원 케이블 ACK-44506 WACOM DTC-133 전용 연결선",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870889",
-      "price": 46000,
-      "sale_price": 46000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_220/1791292166914V2Uta_JPEG/ACK44506.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.120+09:00"
-    },
-    "smartstore-13794870888": {
-      "id": "smartstore-13794870888",
-      "source": "smartstore",
-      "source_id": "13794870888",
-      "origin_id": "13733758198",
-      "name": "[ 와콤 레인보우베네 ] 와콤 소프트케이스 중형 ACK52701 WACOM 신티크 모바일스튜디오프로13 인튜어스프로",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870888",
-      "price": 32000,
-      "sale_price": 32000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_189/1791292168811fJwz4_JPEG/ACK52701.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.120+09:00"
-    },
-    "smartstore-13794870887": {
-      "id": "smartstore-13794870887",
-      "source": "smartstore",
-      "source_id": "13794870887",
-      "origin_id": "13733758197",
-      "name": "[ 와콤 레인보우베네 ] 와콤 드로잉 장갑 3개입 ACK4472502Z WACOM 손보호 액정태블릿 신티크 프로",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870887",
-      "price": 24900,
-      "sale_price": 24900,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_265/1791292167132URpOL_JPEG/ACK4472502Z.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.119+09:00"
-    },
-    "smartstore-13794870886": {
-      "id": "smartstore-13794870886",
-      "source": "smartstore",
-      "source_id": "13794870886",
-      "origin_id": "13733758196",
-      "name": "[ 와콤 레인보우베네 ] 아답터 - ACK-43523Z WACOM 와콤 OTG 어댑터 원바이와콤 인튜어스 용",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870886",
-      "price": 14400,
-      "sale_price": 14400,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_300/1791292166598Xcvw1_JPEG/ACK43523Z.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.119+09:00"
-    },
     "smartstore-13794870885": {
       "id": "smartstore-13794870885",
       "source": "smartstore",
@@ -609,7 +180,7 @@
         "타블렛/액세서리",
         "타블렛액세서리"
       ],
-      "source_modified_at": "2026-10-06T22:36:10.118+09:00"
+      "source_modified_at": "2026-10-12T12:20:52.034+09:00"
     },
     "smartstore-13794870884": {
       "id": "smartstore-13794870884",
@@ -642,535 +213,7 @@
         "타블렛/액세서리",
         "타블렛액세서리"
       ],
-      "source_modified_at": "2026-10-06T22:36:10.118+09:00"
-    },
-    "smartstore-13794870883": {
-      "id": "smartstore-13794870883",
-      "source": "smartstore",
-      "source_id": "13794870883",
-      "origin_id": "13733758193",
-      "name": "[ 와콤 레인보우베네 ] 펜트레이 - ACK-44827 WACOM 와콤 프로펜3 ACP-50000DZ 용 신티크프로 무빙크 DTH-227 DTH-271",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870883",
-      "price": 42000,
-      "sale_price": 42000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_219/17912921677508qlXw_JPEG/ACK44827.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.117+09:00"
-    },
-    "smartstore-13794870882": {
-      "id": "smartstore-13794870882",
-      "source": "smartstore",
-      "source_id": "13794870882",
-      "origin_id": "13733758192",
-      "name": "[ 와콤 레인보우베네 ] 확장 테이블 - ACK44826 WACOM 와콤 신티크 프로용 익스텐션 테이블 - 22_27 전용 베젤트레이 액정타블렛 휴대폰 키보드 거치",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870882",
-      "price": 56000,
-      "sale_price": 56000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_146/1791292167646tkQFg_JPEG/ACK44826.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.117+09:00"
-    },
-    "smartstore-13794870881": {
-      "id": "smartstore-13794870881",
-      "source": "smartstore",
-      "source_id": "13794870881",
-      "origin_id": "13733758191",
-      "name": "[ 와콤 레인보우베네 ] 프로펜3 교체용 악세서리 - 일자형 그립 ACK34801 WACOM 와콤 프로 펜 3 ACP50000DZ 전용 신티크프로 무빙크 교체용",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870881",
-      "price": 28000,
-      "sale_price": 28000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_251/1791292166177b0XVv_JPEG/ACK34801.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.116+09:00"
-    },
-    "smartstore-13794870880": {
-      "id": "smartstore-13794870880",
-      "source": "smartstore",
-      "source_id": "13794870880",
-      "origin_id": "13733758190",
-      "name": "[ 와콤 레인보우베네 ] 와콤 드로잉 장갑 1개입 ACK4472501Z WACOM 손 보호 액정태블릿 신티크 프로",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870880",
-      "price": 12900,
-      "sale_price": 12900,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_58/17912921670146dpwH_JPEG/ACK4472501Z.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.116+09:00"
-    },
-    "smartstore-13794870879": {
-      "id": "smartstore-13794870879",
-      "source": "smartstore",
-      "source_id": "13794870879",
-      "origin_id": "13733758189",
-      "name": "[ 와콤 레인보우베네 ] 펜심 - ACK-230-16 WACOM 와콤 뱀부 Bamboo Sketch Tip 용 펜심",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870879",
-      "price": 6600,
-      "sale_price": 6600,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_222/1791292165772U1IuN_JPEG/ACK23016.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.115+09:00"
-    },
-    "smartstore-13794870864": {
-      "id": "smartstore-13794870864",
-      "source": "smartstore",
-      "source_id": "13794870864",
-      "origin_id": "13733758173",
-      "name": "[ 와콤 레인보우베네 ] 펜심 - ACK24911Z WACOM 와콤 와콤원펜2 용 기본 펜심 10개입",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870864",
-      "price": 14000,
-      "sale_price": 14000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_153/1791292165970leOaj_JPEG/ACK24911Z.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.115+09:00"
-    },
-    "smartstore-13794870863": {
-      "id": "smartstore-13794870863",
-      "source": "smartstore",
-      "source_id": "13794870863",
-      "origin_id": "13733758172",
-      "name": "[ 와콤 레인보우베네 ] 펜심 - ACK24918Z WACOM 와콤 와콤원펜2 용 탄성 펜심 10개입",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870863",
-      "price": 14000,
-      "sale_price": 14000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_28/1791292166068ThcPH_JPEG/ACK24918Z.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.114+09:00"
-    },
-    "smartstore-13794870862": {
-      "id": "smartstore-13794870862",
-      "source": "smartstore",
-      "source_id": "13794870862",
-      "origin_id": "13733758171",
-      "name": "[ 와콤 레인보우베네 ] 와콤원 펜2 교체용 악세서리 - 상단 우드 ACK44930CZ 14가지 색상 커스텀",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870862",
-      "price": 33000,
-      "sale_price": 33000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_161/1791292168021qRSOO_JPEG/ACK44930CZ.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.114+09:00"
-    },
-    "smartstore-13794870861": {
-      "id": "smartstore-13794870861",
-      "source": "smartstore",
-      "source_id": "13794870861",
-      "origin_id": "13733758170",
-      "name": "[ 와콤 레인보우베네 ] 와콤원 펜2 교체용 악세서리 - 클립형 상단 골드 ACK44930DZ 14가지 색상 커스텀",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870861",
-      "price": 28000,
-      "sale_price": 28000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_216/17912921681066KHIn_JPEG/ACK44930DZ.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.113+09:00"
-    },
-    "smartstore-13794870860": {
-      "id": "smartstore-13794870860",
-      "source": "smartstore",
-      "source_id": "13794870860",
-      "origin_id": "13733758169",
-      "name": "[ 와콤 레인보우베네 ] 와콤원 펜2 교체용 악세서리 - 클립형 상단 라임 ACK44930EZ 14가지 색상 커스텀",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870860",
-      "price": 28000,
-      "sale_price": 28000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_254/1791292168214EmXBc_JPEG/ACK44930EZ.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.113+09:00"
-    },
-    "smartstore-13794870859": {
-      "id": "smartstore-13794870859",
-      "source": "smartstore",
-      "source_id": "13794870859",
-      "origin_id": "13733758168",
-      "name": "[ 와콤 레인보우베네 ] 와콤원 펜2 교체용 악세서리 - 클립형 상단 그레이 ACK44930GZ 14가지 색상 커스텀",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870859",
-      "price": 15000,
-      "sale_price": 15000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_67/1791292168310GODSR_JPEG/ACK44930GZ.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.112+09:00"
-    },
-    "smartstore-13794870858": {
-      "id": "smartstore-13794870858",
-      "source": "smartstore",
-      "source_id": "13794870858",
-      "origin_id": "13733758167",
-      "name": "[ 와콤 레인보우베네 ] 와콤원 펜2 교체용 악세서리 - 클립형 상단 화이트 ACK44930WZ 14가지 색상 커스텀",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870858",
-      "price": 16000,
-      "sale_price": 16000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_255/1791292168418yDMFM_JPEG/ACK44930WZ.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.112+09:00"
-    },
-    "smartstore-13794870857": {
-      "id": "smartstore-13794870857",
-      "source": "smartstore",
-      "source_id": "13794870857",
-      "origin_id": "13733758166",
-      "name": "[ 와콤 레인보우베네 ] HDMI 케이블 1.8M - ACK4480602Z WACOM 와콤 신티크프로 전용 DTH167 DTH172 DTH227 DTH271 호환",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870857",
-      "price": 39600,
-      "sale_price": 39600,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_176/1791292167355GbFy8_JPEG/ACK4480602Z.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.111+09:00"
-    },
-    "smartstore-13794870855": {
-      "id": "smartstore-13794870855",
-      "source": "smartstore",
-      "source_id": "13794870855",
-      "origin_id": "13733758165",
-      "name": "[ 와콤 레인보우베네 ] Mini DP to DP 케이블 1.8M - ACK4480603Z WACOM 와콤 신티크 프로 전용 DTH167 DTH172 DTH227 DTH271 호환",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870855",
-      "price": 35000,
-      "sale_price": 35000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_205/1791292167450JG0kA_JPEG/ACK4480603Z.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.111+09:00"
-    },
-    "smartstore-13794870854": {
-      "id": "smartstore-13794870854",
-      "source": "smartstore",
-      "source_id": "13794870854",
-      "origin_id": "13733758164",
-      "name": "[ 와콤 레인보우베네 ] 와콤 USB-C 케이블 1.8M ACK44806Z WACOM 신티크 프로 연결선",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870854",
-      "price": 56000,
-      "sale_price": 56000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_292/1791292167534FQEFW_JPEG/ACK44806Z.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.110+09:00"
-    },
-    "smartstore-13794870853": {
-      "id": "smartstore-13794870853",
-      "source": "smartstore",
-      "source_id": "13794870853",
-      "origin_id": "13733758163",
-      "name": "[ 와콤 레인보우베네 ] 신티크 HDMI to Mini HDMI 케이블 1.8M ACK45106Z - 신티크 16 24 2025 호환",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870853",
-      "price": 39600,
-      "sale_price": 39600,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_90/1791292168516DCdTN_JPEG/ACK45106Z.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.110+09:00"
+      "source_modified_at": "2026-10-12T12:20:52.034+09:00"
     },
     "smartstore-13794870850": {
       "id": "smartstore-13794870850",
@@ -1205,39 +248,6 @@
       ],
       "source_modified_at": "2026-10-06T22:36:10.108+09:00"
     },
-    "smartstore-13794870849": {
-      "id": "smartstore-13794870849",
-      "source": "smartstore",
-      "source_id": "13794870849",
-      "origin_id": "13733758158",
-      "name": "[ 와콤 레인보우베네 ] 와콤 프로 펜 3 커스텀 키트 ACK45601Z - WACOM 와콤 프로 펜 3 ACP50000DZ 전용 신티크프로 무빙크 교체용",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870849",
-      "price": 39600,
-      "sale_price": 39600,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_152/1791292168716JeViX_JPEG/ACK45601Z.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.107+09:00"
-    },
     "smartstore-13794870848": {
       "id": "smartstore-13794870848",
       "source": "smartstore",
@@ -1269,172 +279,7 @@
         "타블렛/액세서리",
         "타블렛액세서리"
       ],
-      "source_modified_at": "2026-10-06T22:36:10.107+09:00"
-    },
-    "smartstore-13794870847": {
-      "id": "smartstore-13794870847",
-      "source": "smartstore",
-      "source_id": "13794870847",
-      "origin_id": "13733758156",
-      "name": "[ 와콤 레인보우베네 ] 프로펜3 교체용 악세서리 - 플레어형 그립 ACK34802 WACOM 와콤 프로 펜 3 ACP50000DZ 전용 신티크프로 무빙크 교체용",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870847",
-      "price": 28000,
-      "sale_price": 28000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_19/1791292166283Enhdc_JPEG/ACK34802.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.106+09:00"
-    },
-    "smartstore-13794870844": {
-      "id": "smartstore-13794870844",
-      "source": "smartstore",
-      "source_id": "13794870844",
-      "origin_id": "13733758154",
-      "name": "[ 와콤 레인보우베네 ] 와콤 프로펜3용 우드 그립 ACK35304Z 리얼나무 Wood 신티크프로 무빙크패드",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870844",
-      "price": 59000,
-      "sale_price": 59000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_18/1791292166381KfXYu_JPEG/ACK35304Z.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.105+09:00"
-    },
-    "smartstore-13794870843": {
-      "id": "smartstore-13794870843",
-      "source": "smartstore",
-      "source_id": "13794870843",
-      "origin_id": "13733758153",
-      "name": "[ 와콤 레인보우베네 ] 와콤 USB-C to A 케이블 1.8M ACK4480601Z 신티크 2025 용 연결선",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794870843",
-      "price": 39600,
-      "sale_price": 39600,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_213/1791292167250vNdsp_JPEG/ACK4480601Z.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.105+09:00"
-    },
-    "smartstore-13794869635": {
-      "id": "smartstore-13794869635",
-      "source": "smartstore",
-      "source_id": "13794869635",
-      "origin_id": "13733756954",
-      "name": "[ 와콤 레인보우베네 ] 와콤원 펜2 교체용 악세서리 - 하단 그레이 ACK44929GZ",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794869635",
-      "price": 29000,
-      "sale_price": 29000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_293/1791292167835uwCV0_JPEG/ACK44929GZ.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.104+09:00"
-    },
-    "smartstore-13794869634": {
-      "id": "smartstore-13794869634",
-      "source": "smartstore",
-      "source_id": "13794869634",
-      "origin_id": "13733756953",
-      "name": "[ 와콤 레인보우베네 ] 와콤원 펜2 교체용 악세서리 - 하단 화이트 ACK44929WZ",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794869634",
-      "price": 29000,
-      "sale_price": 29000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_27/1791292167919IVtKE_JPEG/ACK44929WZ.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.104+09:00"
+      "source_modified_at": "2026-10-12T12:20:52.034+09:00"
     },
     "smartstore-13794869633": {
       "id": "smartstore-13794869633",
@@ -1467,7 +312,7 @@
         "타블렛/액세서리",
         "타블렛액세서리"
       ],
-      "source_modified_at": "2026-10-06T22:36:10.103+09:00"
+      "source_modified_at": "2026-10-12T12:20:52.034+09:00"
     },
     "smartstore-13794869629": {
       "id": "smartstore-13794869629",
@@ -1500,40 +345,7 @@
         "타블렛/액세서리",
         "타블렛액세서리"
       ],
-      "source_modified_at": "2026-10-06T22:36:10.101+09:00"
-    },
-    "smartstore-13794869628": {
-      "id": "smartstore-13794869628",
-      "source": "smartstore",
-      "source_id": "13794869628",
-      "origin_id": "13733756948",
-      "name": "[ 와콤 레인보우베네 ] 와콤 신티크 2025 펜 스탠드 ACK45120Z",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13794869628",
-      "price": 33000,
-      "sale_price": 33000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20261006_49/1791292168622U3GvG_JPEG/ACK45120Z.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T22:36:10.101+09:00"
+      "source_modified_at": "2026-10-12T12:20:52.034+09:00"
     },
     "smartstore-13780294898": {
       "id": "smartstore-13780294898",
@@ -127504,138 +126316,6 @@
       ],
       "source_modified_at": "2026-07-24T00:08:05.059+09:00"
     },
-    "smartstore-12193473251": {
-      "id": "smartstore-12193473251",
-      "source": "smartstore",
-      "source_id": "12193473251",
-      "origin_id": "12137753234",
-      "name": "[ 와콤 레인보우베네 ] WACOM 펜심 - ACK-200-02 WACOM 와콤 브러쉬 느낌의 스트록 펜심 5개입 원바이와콤-인튜어스-인튜어스4_5-인튜어스프로-그립펜- 프로펜-클",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/12193473251",
-      "price": 16500,
-      "sale_price": 16500,
-      "status": "soldout",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20250802_265/1754146302392lvGvY_PNG/17133970329665407_1168146443.png",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T17:10:53.787+09:00"
-    },
-    "smartstore-12193464477": {
-      "id": "smartstore-12193464477",
-      "source": "smartstore",
-      "source_id": "12193464477",
-      "origin_id": "12137744466",
-      "name": "[ 와콤 레인보우베네 ] WACOM 펜심 - ACK-222-08 WACOM 와콤 파인팁펜 KP-132 용 펜심 볼펜심 5개 인튜어스프로 페이퍼모드 전용 검정젤잉크타입 Finetip",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/12193464477",
-      "price": 18400,
-      "sale_price": 18400,
-      "status": "soldout",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20250802_57/1754146117796TKr5J_PNG/29646350920808758_1978607324.png",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T17:10:53.787+09:00"
-    },
-    "smartstore-12193462689": {
-      "id": "smartstore-12193462689",
-      "source": "smartstore",
-      "source_id": "12193462689",
-      "origin_id": "12137742680",
-      "name": "[ 와콤 레인보우베네 ] WACOM 펜심 - ACK-24801 WACOM 와콤 프로펜3 ACP-50000DZ 용 스탠다드 펜심 5개입 신티크프로 무빙크",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/12193462689",
-      "price": 20000,
-      "sale_price": 20000,
-      "status": "soldout",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20250802_242/17541460695768lYI9_PNG/24672924419072370_1975278324.png",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T17:10:53.787+09:00"
-    },
-    "smartstore-12193456810": {
-      "id": "smartstore-12193456810",
-      "source": "smartstore",
-      "source_id": "12193456810",
-      "origin_id": "12137736805",
-      "name": "[ 와콤 레인보우베네 ] WACOM 펜심 - ACK-24819 WACOM 와콤 프로펜3 ACP-50000DZ 용 펠트 펜심 10개입 펠트 펜심 거친 종이느낌 신티크프로 인튜어스프로",
-      "brand": "와콤",
-      "manufacturer": "와콤",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/12193456810",
-      "price": 20000,
-      "sale_price": 20000,
-      "status": "soldout",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20250802_137/1754146000915ROY1n_PNG/8605939740801181_976257613.png",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002936",
-      "source_category_ids": [
-        "50000003",
-        "50000094",
-        "50001205",
-        "50002936"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "주변기기",
-        "타블렛/액세서리",
-        "타블렛액세서리"
-      ],
-      "source_modified_at": "2026-10-06T17:10:53.787+09:00"
-    },
     "smartstore-12193274137": {
       "id": "smartstore-12193274137",
       "source": "smartstore",
@@ -127647,7 +126327,7 @@
       "source_url": "https://smartstore.naver.com/rainbowbene/products/12193274137",
       "price": 104000,
       "sale_price": 104000,
-      "status": "soldout",
+      "status": "sale",
       "kind": "purchase",
       "images": {
         "thumb": "https://shop-phinf.pstatic.net/20250802_46/17541422203985Q08C_PNG/88275036519472308_903457967.png",
@@ -127667,7 +126347,7 @@
         "타블렛/액세서리",
         "타블렛액세서리"
       ],
-      "source_modified_at": "2026-10-06T17:10:53.787+09:00"
+      "source_modified_at": "2026-10-12T12:07:59.557+09:00"
     },
     "smartstore-12193269769": {
       "id": "smartstore-12193269769",
@@ -127680,7 +126360,7 @@
       "source_url": "https://smartstore.naver.com/rainbowbene/products/12193269769",
       "price": 34000,
       "sale_price": 34000,
-      "status": "soldout",
+      "status": "sale",
       "kind": "purchase",
       "images": {
         "thumb": "https://shop-phinf.pstatic.net/20250802_144/1754142122009fjyK8_PNG/29760175478027474_666430838.png",
@@ -127700,7 +126380,7 @@
         "타블렛/액세서리",
         "타블렛액세서리"
       ],
-      "source_modified_at": "2026-10-06T17:10:53.787+09:00"
+      "source_modified_at": "2026-10-12T12:07:59.557+09:00"
     },
     "smartstore-12193267195": {
       "id": "smartstore-12193267195",
@@ -127713,7 +126393,7 @@
       "source_url": "https://smartstore.naver.com/rainbowbene/products/12193267195",
       "price": 110000,
       "sale_price": 110000,
-      "status": "soldout",
+      "status": "sale",
       "kind": "purchase",
       "images": {
         "thumb": "https://shop-phinf.pstatic.net/20250802_196/17541420831964GNCO_PNG/24668938038679027_1178955422.png",
@@ -127733,7 +126413,7 @@
         "타블렛/액세서리",
         "타블렛액세서리"
       ],
-      "source_modified_at": "2026-10-06T17:10:53.787+09:00"
+      "source_modified_at": "2026-10-12T12:07:59.557+09:00"
     },
     "smartstore-12193264173": {
       "id": "smartstore-12193264173",
@@ -127746,7 +126426,7 @@
       "source_url": "https://smartstore.naver.com/rainbowbene/products/12193264173",
       "price": 27000,
       "sale_price": 27000,
-      "status": "soldout",
+      "status": "sale",
       "kind": "purchase",
       "images": {
         "thumb": "https://shop-phinf.pstatic.net/20250802_280/1754141403352Yc26r_PNG/88274272496128979_1068300505.png",
@@ -127766,7 +126446,7 @@
         "타블렛/액세서리",
         "타블렛액세서리"
       ],
-      "source_modified_at": "2026-10-06T17:10:53.787+09:00"
+      "source_modified_at": "2026-10-12T12:07:59.557+09:00"
     },
     "smartstore-12193208531": {
       "id": "smartstore-12193208531",
@@ -127779,7 +126459,7 @@
       "source_url": "https://smartstore.naver.com/rainbowbene/products/12193208531",
       "price": 39000,
       "sale_price": 39000,
-      "status": "soldout",
+      "status": "sale",
       "kind": "purchase",
       "images": {
         "thumb": "https://shop-phinf.pstatic.net/20250802_184/1754141063242Fkuv3_PNG/283435346144209_235428198.png",
@@ -127799,7 +126479,7 @@
         "타블렛/액세서리",
         "타블렛액세서리"
       ],
-      "source_modified_at": "2026-10-06T17:10:53.787+09:00"
+      "source_modified_at": "2026-10-12T12:07:59.557+09:00"
     },
     "smartstore-12193204847": {
       "id": "smartstore-12193204847",
@@ -127812,7 +126492,7 @@
       "source_url": "https://smartstore.naver.com/rainbowbene/products/12193204847",
       "price": 138000,
       "sale_price": 138000,
-      "status": "soldout",
+      "status": "sale",
       "kind": "purchase",
       "images": {
         "thumb": "https://shop-phinf.pstatic.net/20250802_236/1754141009376oDnrW_PNG/35409669530116639_1845575557.png",
@@ -127832,7 +126512,7 @@
         "타블렛/액세서리",
         "타블렛액세서리"
       ],
-      "source_modified_at": "2026-10-06T17:10:53.787+09:00"
+      "source_modified_at": "2026-10-12T12:07:59.557+09:00"
     },
     "smartstore-12193200751": {
       "id": "smartstore-12193200751",
@@ -127845,7 +126525,7 @@
       "source_url": "https://smartstore.naver.com/rainbowbene/products/12193200751",
       "price": 43000,
       "sale_price": 43000,
-      "status": "soldout",
+      "status": "sale",
       "kind": "purchase",
       "images": {
         "thumb": "https://shop-phinf.pstatic.net/20250802_155/1754140954582WXgEd_PNG/29641187707378686_1689604680.png",
@@ -127865,7 +126545,7 @@
         "타블렛/액세서리",
         "타블렛액세서리"
       ],
-      "source_modified_at": "2026-10-06T17:10:53.787+09:00"
+      "source_modified_at": "2026-10-12T12:07:59.557+09:00"
     },
     "smartstore-12193194532": {
       "id": "smartstore-12193194532",

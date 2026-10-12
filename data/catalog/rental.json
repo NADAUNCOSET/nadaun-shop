@@ -177,8 +177,8 @@
   "meta": {
     "schema_version": 1,
     "source_counts": {
-      "kpp": 4040,
-      "smartstore": 6917,
+      "kpp": 4039,
+      "smartstore": 6877,
       "imweb-dji": 151,
       "imweb-promotions": 1,
       "l-mount": 345,
@@ -190,8 +190,8 @@
       "avx": 1359
     },
     "detail_coverage": {
-      "kpp": 4040,
-      "smartstore": 6831,
+      "kpp": 4039,
+      "smartstore": 6791,
       "imweb-promotions": 1,
       "l-mount": 345,
       "plthink": 6253,
@@ -201,7 +201,7 @@
       "onnoff": 1067,
       "avx": 1359
     },
-    "synced_at": "2026-10-12T22:17:00+00:00",
+    "synced_at": "2026-10-12T23:12:10+00:00",
     "merged_count": 4576,
     "product_count": 221,
     "category_browsing_enabled": true,
@@ -212,7 +212,7 @@
       "groups": 2765,
       "removed": 4576
     },
-    "revision": "eb553dec9ed7f2dd",
+    "revision": "8fec574ab30cf600",
     "view": "rental"
   },
   "brands": [
@@ -1311,8 +1311,8 @@
         "kpp:b:leofoto:global:0120",
         "kpp:b:leofoto:global:0130"
       ],
-      "count": 740,
-      "purchase_count": 740,
+      "count": 739,
+      "purchase_count": 739,
       "rental_count": 0,
       "category_ids": [
         "kpp:b:leofoto:3010",
@@ -10048,7 +10048,7 @@
       ],
       "representative_id": "kpp-1762247902",
       "representative_image": "https://kppkpp.co.kr/data/item/1762247902/tarion_cart_01.jpg",
-      "representative_name": "[썸머 이벤트] TARION 타리온 타이탄 리그 접이식 경량 시네 카트",
+      "representative_name": "TARION 타리온 타이탄 리그 접이식 경량 시네 카트",
       "representative_alternate": "https://kppkpp.co.kr/data/item/1762247902/tarion_cart_02.jpg",
       "image_kind": "logo",
       "logo_dark": false
@@ -10762,8 +10762,8 @@
         "plthink:b:103:002",
         "plthink:b:103:003"
       ],
-      "count": 111,
-      "purchase_count": 111,
+      "count": 71,
+      "purchase_count": 71,
       "rental_count": 0,
       "category_ids": [
         "naver:b:wacom:50000094",
