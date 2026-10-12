@@ -201,7 +201,7 @@
       "onnoff": 1067,
       "avx": 1359
     },
-    "synced_at": "2026-10-12T05:29:17+00:00",
+    "synced_at": "2026-10-12T06:05:02+00:00",
     "merged_count": 4576,
     "product_count": 221,
     "category_browsing_enabled": true,
@@ -212,7 +212,7 @@
       "groups": 2765,
       "removed": 4576
     },
-    "revision": "9091f288c22633d0",
+    "revision": "a87e043ba0dae595",
     "view": "rental"
   },
   "brands": [
@@ -9332,6 +9332,7 @@
       "navigation_category_ids": [
         "avx:b:166ec2153ac18063",
         "avx:b:26001842f5534454",
+        "avx:b:2b7bf24b3cc717e2",
         "avx:b:39e42cff3977b8aa",
         "avx:b:46856d97a780e485",
         "avx:b:5f9be63ce96e5912",
@@ -9366,6 +9367,7 @@
         "avx:b:ee08c35a236709fb",
         "avx:b:6cb4420fe9b65454",
         "avx:b:26001842f5534454",
+        "avx:b:2b7bf24b3cc717e2",
         "avx:b:6a21204e7be3fe59",
         "rental-brand:sennheiser:5",
         "rental-brand:sennheiser:368"
