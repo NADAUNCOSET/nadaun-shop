@@ -1,5 +1,6 @@
-"""Collect, reconcile, publish and refresh the three approved Cafe24 partners."""
+"""Collect, reconcile, publish and refresh approved Cafe24 partners."""
 import argparse
+import errno
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -24,6 +25,12 @@ def retryable_error(exc):
     # A connection reset or timeout is not a catalogue interpretation failure.
     # The LaunchAgent retries after ten minutes; protection/schema errors stay
     # latched for review. Never retry a 403/429 through this classification.
+    # SMB can also report EIO while unlocking after a source timeout. Preserve
+    # the original classification rather than turning that timeout into a
+    # permanent schema-review latch. A standalone filesystem error still holds.
+    seen=set()
+    while isinstance(exc,OSError) and exc.errno==errno.EIO and exc.__context__ is not None and id(exc) not in seen:
+        seen.add(id(exc));exc=exc.__context__
     return (isinstance(exc, (requests.Timeout, requests.ConnectionError)) and
             not isinstance(exc, requests.exceptions.SSLError)) or any(
                 text in str(exc) for text in ('Another catalogue sync','Code or operator','Uncommitted catalogue code'))
@@ -132,7 +139,10 @@ def install(source):
     if subprocess.run(['launchctl','print',target],capture_output=True).returncode==0:
         subprocess.run(['launchctl','bootout',target],check=True)
     logs=Path.home()/'Library/Logs/NADAUN/shop';logs.mkdir(parents=True,exist_ok=True)
-    definition={'Label':label,'ProgramArguments':[shutil.which('caffeinate') or '/usr/bin/caffeinate','-i',sys.executable,str(Path(__file__).resolve()),source],
+    # A direct NAS script path can stall in CPython's zip-import probe before
+    # executing any code. Use the same NAS module through its normal importer.
+    entry="import runpy,sys;sys.path.insert(0,"+repr(str(ROOT/'_scraper'))+");runpy.run_module('cafe24_worker',run_name='__main__')"
+    definition={'Label':label,'ProgramArguments':[shutil.which('caffeinate') or '/usr/bin/caffeinate','-i',sys.executable,'-c',entry,source],
         'WorkingDirectory':str(Path.home()),'RunAtLoad':True,'StartInterval':600,'ProcessType':'Standard',
         'StandardOutPath':str(logs/(source+'.stdout.log')),'StandardErrorPath':str(logs/(source+'.stderr.log')),
         'EnvironmentVariables':{'PATH':os.environ.get('PATH','/usr/bin:/bin'),'PYTHONUNBUFFERED':'1'}}

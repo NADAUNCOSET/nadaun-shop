@@ -10,6 +10,19 @@ import shop_sync
 
 
 class PublishBoundaryTest(unittest.TestCase):
+    def test_smb_unlock_error_keeps_original_timeout_and_protection_classification(self):
+        import errno
+        import requests
+        from cafe24_worker import retryable_error
+        for original,expected in [(requests.ReadTimeout('timeout'),True),
+                (requests.exceptions.SSLError('certificate'),False),
+                (RuntimeError('Provider protection response; requests stopped'),False),
+                (ValueError('Product schema absent'),False)]:
+            first=OSError(errno.EIO,'SMB unlock failed');first.__context__=original
+            second=OSError(errno.EIO,'Outer SMB unlock failed');second.__context__=first
+            with self.subTest(original=type(original).__name__):self.assertEqual(retryable_error(second),expected)
+        self.assertFalse(retryable_error(OSError(errno.EIO,'Standalone NAS failure')))
+
     def test_network_interruption_retries_without_releasing_protection_or_parser_guards(self):
         import requests
         from cafe24_worker import retryable_error
