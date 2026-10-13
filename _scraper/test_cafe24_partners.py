@@ -61,6 +61,49 @@ def rendered_variant_page():
 
 
 class Cafe24Tests(unittest.TestCase):
+    def test_transport_retries_connection_reset_without_changing_identity_or_cookie(self):
+        with tempfile.TemporaryDirectory() as tmp,patch.object(c.time,'sleep') as sleep,patch.object(c.time,'monotonic',return_value=100):
+            source=c.Source('ldnet',Path(tmp));source.session.cookies.set('observed','same')
+            source.session.get=Mock(side_effect=[c.requests.ConnectionError('closed connection'),Mock(status_code=200,text='OK',content=b'ok')])
+            source.session.close=Mock()
+            self.assertEqual(source.get('/product/list.html'),b'ok')
+            self.assertEqual(source.session.get.call_count,2);source.session.close.assert_called_once()
+            self.assertEqual(source.session.cookies.get('observed'),'same')
+            self.assertEqual(source.session.headers['Connection'],'close')
+            self.assertGreaterEqual(sleep.call_args_list[-1].args[0],10)
+
+    def test_transport_never_retries_protection_or_certificate_errors(self):
+        with tempfile.TemporaryDirectory() as tmp,patch.object(c.time,'sleep'):
+            source=c.Source('ldnet',Path(tmp));source.session.get=Mock(return_value=Mock(status_code=429,text='Too many requests',content=b''))
+            with self.assertRaises(RuntimeError):source.get('/product/list.html')
+            with self.assertRaises(RuntimeError):source.get('/product/list.html')
+            self.assertEqual(source.session.get.call_count,1)
+        with tempfile.TemporaryDirectory() as tmp,patch.object(c.time,'sleep'):
+            source=c.Source('ldnet',Path(tmp));source.session.get=Mock(side_effect=c.requests.exceptions.SSLError('Certificate invalid'))
+            with self.assertRaises(c.requests.exceptions.SSLError):source.get('/product/list.html')
+            self.assertEqual(source.session.get.call_count,1)
+
+    def test_complete_inventory_checkpoint_requires_unchanged_pages_and_exact_saved_file(self):
+        with tempfile.TemporaryDirectory() as tmp,patch.object(c,'STATE',Path(tmp)):
+            collector=c.Collector('clmedia');collector.source.get=Mock(side_effect=AssertionError('Unexpected source request'))
+            collector.state('categories',{'24':{'id':'24','name':'브랜드','parent_id':None},'25':{'id':'25','name':'SmallRig','parent_id':'24'}})
+            record=self.parse(product_page());row={'products':{'10':record},'total':1,'last':1,'children':[]}
+            method=c.LISTING_SORT.get('clmedia')
+            def store(value):
+                with collector.db:
+                    for cid in ['24','25']:
+                        if method:collector.db.execute('INSERT OR REPLACE INTO ordered_pages VALUES(?,?,?,?)',(method,cid,1,json.dumps(value)))
+                        else:collector.db.execute('INSERT OR REPLACE INTO pages VALUES(?,?,?)',(cid,1,json.dumps(value)))
+            store(row);collector.progress=Mock()
+            self.assertEqual(collector.inventory()['product_count'],1);collector.progress.reset_mock()
+            self.assertEqual(collector.inventory()['product_count'],1)
+            self.assertEqual(collector.progress.call_args.args[0]['phase'],'inventory_checkpoint')
+            path=collector.work/'inventory-candidate.json';tampered=json.loads(path.read_text());tampered['products']['10']['name']='unverified';c.save_json(path,tampered)
+            self.assertNotEqual(collector.inventory()['products']['10']['name'],'unverified')
+            row['total']=2;row['products']['11']={**record,'id':'clmedia-11','source_id':'11'};store(row)
+            self.assertEqual(collector.inventory()['product_count'],2)
+            collector.db.close()
+
     def test_ldnet_whole_site_keeps_product_categories_outside_brand_shop(self):
         values=[{'cate_no':cid,'parent_cate_no':parent,'name':name} for cid,parent,name in
                 [(534,1,'디지털/가전'),(46,534,'영상/음향'),(117,46,'ANYPORT 8K HDMI'),

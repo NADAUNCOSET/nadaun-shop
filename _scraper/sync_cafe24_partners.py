@@ -323,13 +323,23 @@ class Source:
     def __init__(self,source,work,interval=5):
         self.source=source;self.work=work;self.base=SITES[source][0];self.next=0;self.interval=interval
         self.session=requests.Session();self.session.headers['User-Agent']='NADAUNShopCatalog/1.0 (+https://shop.nadaun.co)'
+        if source=='ldnet':self.session.headers['Connection']='close'
 
     def get(self,path,**params):
         latch=self.work/'source-suspended.json'
         if latch.exists() and json.loads(latch.read_text()).get('suspended',True):raise RuntimeError('Provider access suspended; manual review required')
-        time.sleep(max(0,self.next-time.monotonic()))
-        try:r=self.session.get(self.base+path,params=params,timeout=(10,40),allow_redirects=False)
-        finally:self.next=time.monotonic()+self.interval
+        for attempt in range(2):
+            time.sleep(max(0,self.next-time.monotonic()))
+            try:r=self.session.get(self.base+path,params=params,timeout=(10,40),allow_redirects=False)
+            except (requests.ConnectionError,requests.Timeout) as exc:
+                self.next=time.monotonic()+self.interval
+                if isinstance(exc,requests.exceptions.SSLError) or attempt:raise
+                self.session.close()
+                self.next=time.monotonic()+max(10,self.interval)
+                continue
+            else:
+                self.next=time.monotonic()+self.interval
+                break
         if r.status_code in (403,429) or re.search(r'접근\s*금지|차단된\s*(?:IP|아이피)|비정상적인 접근|서버보호차원',r.text,re.I):
             save_json(latch,{'suspended':True,'at':stamp(),'http_status':r.status_code,'automatic_resume':False})
             raise RuntimeError('Provider protection response; requests stopped')
@@ -390,6 +400,20 @@ class Collector:
         return value
 
     def inventory(self):
+        def cache_signature():
+            method=LISTING_SORT.get(self.name)
+            pages=self.db.execute('SELECT category,page,record FROM ordered_pages WHERE sort_method=? ORDER BY category,page',(method,)).fetchall() if method else self.db.execute('SELECT category,page,record FROM pages ORDER BY category,page').fetchall()
+            data=[self.name,method,self.state('categories'),pages]
+            return hashlib.sha256(json.dumps(data,ensure_ascii=False,separators=(',',':')).encode()).hexdigest()
+        checkpoint=self.work/'inventory-candidate.json';ready=self.state('inventory_ready') or {}
+        if checkpoint.exists() and ready.get('signature')==cache_signature():
+            raw=checkpoint.read_bytes()
+            if hashlib.sha256(raw).hexdigest()==ready.get('file_sha256'):
+                saved=json.loads(raw)
+                if saved.get('inventory_complete') is True and saved.get('product_count')==len(saved.get('products',{})):
+                    self.progress({'at':stamp(),'phase':'inventory_checkpoint','products_found':saved['product_count'],
+                                   'complete':False})
+                    return saved
         nodes=self.state('categories')
         if nodes is None:
             raw=self.source.get('/exec/front/Product/SubCategory');payload=json.loads(raw)
@@ -437,6 +461,8 @@ class Collector:
         result={'source':self.name,'at':stamp(),'listing_sort':LISTING_SORT.get(self.name),'categories':list(nodes.values()),'coverage':coverage,'products':products,'product_count':len(products),'inventory_complete':True,'complete':False}
         save_json(self.work/'inventory-candidate.json',result)
         self.state('inventory_complete',True)
+        self.state('inventory_ready',{'signature':cache_signature(),
+                   'file_sha256':hashlib.sha256(checkpoint.read_bytes()).hexdigest()})
         return result
 
     def collect(self):
