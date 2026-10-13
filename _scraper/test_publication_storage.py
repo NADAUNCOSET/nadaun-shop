@@ -54,6 +54,17 @@ class PublicationStorageTests(unittest.TestCase):
             self.promote()
         self.assertEqual(self.writes, [])
 
+    def test_ldnet_whole_site_promotes_only_after_deep_category_validation(self):
+        from test_cafe24_publication import PublicationTests
+        from cafe24_publication import prepare
+        candidate=prepare(PublicationTests().ldnet_candidate())
+        self.lock();self.promote({'ldnet':candidate})
+        self.assertEqual(self.writes,[(self.out/'ldnet.json',candidate)])
+        self.writes.clear()
+        candidate['products']['ldnet-10']['original_category_ids'].remove('117')
+        with self.assertRaises(ValueError):self.promote({'ldnet':candidate})
+        self.assertEqual(self.writes,[])
+
     def test_operator_staging_and_generated_edits_block_promotion(self):
         self.lock()
         (self.root / 'operator.md').write_text('operator update\n')
