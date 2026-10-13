@@ -46,6 +46,20 @@ def replace_stock(doc,stocks):
     doc.append(c.soup('<script>var option_stock_data='+repr(json.dumps(stocks))+';</script>'))
 
 
+def rendered_variant_page():
+    doc,stocks=variant_page()
+    for row in stocks.values():
+        row.pop('stock_number');row['is_auto_soldout']='F'
+    replace_stock(doc,stocks)
+    node=doc.select_one('script[type="application/ld+json"]');schema=json.loads(node.string)
+    schema['offers']={'url':'https://clmedia.co.kr/product/sample/10/',
+                      'priceCurrency':'KRW','price':1000,'availability':'https://schema.org/InStock'}
+    node.string=json.dumps(schema)
+    doc.append(c.soup('<select option_product_no="10" option_type="F" option_title="색상">'
+        '<option value="P000A001">검정</option><option value="P000A002">흰색 (+200원)</option></select>'))
+    return doc,stocks
+
+
 class Cafe24Tests(unittest.TestCase):
     def test_ldnet_whole_site_keeps_product_categories_outside_brand_shop(self):
         values=[{'cate_no':cid,'parent_cate_no':parent,'name':name} for cid,parent,name in
@@ -170,6 +184,39 @@ class Cafe24Tests(unittest.TestCase):
         replace_stock(doc,stocks);p=self.parse(doc)
         self.assertEqual(p['detail_status'],'review_required')
         self.assertTrue(all(o['disabled'] for o in p['options']))
+
+    def test_source_rendered_sku_choices_verify_sale_state_without_inventing_stock_counts(self):
+        doc,stocks=rendered_variant_page();p,evidence=c.detail(c.soup(str(doc)),{'id':'clmedia-10','source':'clmedia','source_id':'10'},'SMALLRIG')
+        self.assertEqual(p['detail_status'],'verified')
+        self.assertEqual([(o['price'],o['supplier_status']) for o in p['options']],[(1000,'available'),(1200,'available')])
+        self.assertEqual(evidence['rendered_option_states'],{'P000A001':'available','P000A002':'available'})
+        self.assertTrue(all('stock_number' not in row for row in evidence['option_stock'].values()))
+
+    def test_source_disabled_or_soldout_label_keeps_individual_sku_disabled(self):
+        for marker in ['disabled','label','select','group']:
+            doc,_=rendered_variant_page();option=doc.select_one('option[value="P000A002"]')
+            if marker=='disabled':option['disabled']=''
+            elif marker=='label':option.string='흰색 (+200원) [품절]'
+            elif marker=='select':option.parent['disabled']=''
+            else:
+                group=doc.new_tag('optgroup');group['disabled']='';option.wrap(group)
+            p=self.parse(doc);self.assertTrue(p['options'][1]['disabled'])
+            if marker!='select':self.assertFalse(p['options'][0]['disabled'])
+
+    def test_source_choice_identity_and_conflicting_duplicates_are_not_guessed(self):
+        doc,_=rendered_variant_page();doc.select_one('select')['option_product_no']='11'
+        self.assertEqual(self.parse(doc)['detail_status'],'review_required')
+        doc,_=rendered_variant_page();doc.select_one('option[value="P000A002"]').decompose()
+        self.assertEqual(self.parse(doc)['detail_status'],'review_required')
+        doc,_=rendered_variant_page();doc.append(c.soup('<select option_product_no="10" option_type="F"><option value="P000A001" disabled>검정</option></select>'))
+        with self.assertRaises(ValueError):self.parse(doc)
+
+    def test_rendered_choice_never_overrides_zero_stock_or_hidden_sku(self):
+        for field,value in [('stock_number',0),('is_display','F'),('is_selling','F'),('is_auto_soldout','T')]:
+            doc,stocks=rendered_variant_page();stocks['P000A001'][field]=value;replace_stock(doc,stocks)
+            self.assertTrue(self.parse(doc)['options'][0]['disabled'])
+        doc,_=rendered_variant_page();doc.append(c.soup('<script>var is_soldout_icon="T";</script>'))
+        self.assertTrue(all(o['disabled'] for o in self.parse(doc)['options']))
 
     def test_hidden_variants_and_global_soldout_cannot_be_purchased(self):
         doc,stocks=variant_page();stocks['P000A001']['is_display']='F';replace_stock(doc,stocks)

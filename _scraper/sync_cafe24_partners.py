@@ -161,7 +161,26 @@ def availability(stock,offer=None,global_soldout=None):
     return 'unknown'
 
 
-def normalize_options(stock,offers,base_price,quote,global_soldout):
+def rendered_option_states(doc,source_id,stock):
+    """Read source-rendered SKU choices; never infer variants from a global offer."""
+    states={}
+    for node in doc.select('select[option_product_no][option_type="F"]'):
+        if node.get('option_product_no')!=source_id:continue
+        for option in node.select('option'):
+            code=option.get('value','')
+            if code not in stock:continue
+            group=option.find_parent('optgroup')
+            disabled=(node.has_attr('disabled') or option.has_attr('disabled') or
+                      group is not None and group.has_attr('disabled') or
+                      re.search(r'\[\s*품절\s*\]|\(\s*품절\s*\)',option.get_text(' ',strip=True)))
+            state='soldout' if disabled else 'available'
+            if code in states and states[code]!=state:
+                raise ValueError('Source-rendered variant availability contradicts itself')
+            states[code]=state
+    return states
+
+
+def normalize_options(stock,offers,base_price,quote,global_soldout,rendered=None):
     by_code={}
     for offer in offers:
         codes=parse_qs(urlparse(offer['url']).query).get('item_code',[])
@@ -186,6 +205,15 @@ def normalize_options(stock,offers,base_price,quote,global_soldout):
             if delta!=delta.to_integral_value() or base_price+int(delta)!=amount:raise ValueError('Variant additional price is inconsistent')
         fallback=global_soldout if global_soldout=='T' or (len(active)==1 and code in active) else None
         status=availability(row,offer,fallback)
+        displayed_state=(rendered or {}).get(code)
+        if displayed_state=='soldout':status='soldout'
+        elif (status=='unknown' and displayed_state=='available' and global_soldout=='F' and
+              row.get('is_display')=='T' and row.get('is_selling')=='T' and
+              row.get('is_auto_soldout')=='F' and row.get('use_stock') is True and
+              row.get('use_soldout')=='T' and 'stock_number' not in row):
+            # Cafe24 may withhold stock counts while rendering each SKU as
+            # selectable. Preserve that explicit sale state without a count.
+            status='available'
         if status=='unknown':issues.append('variant_availability_requires_review')
         selection=[]
         for name,value in zip(names,values):
@@ -258,7 +286,7 @@ def detail(doc,product,brand):
         vals=[{'value':o.get('value'),'label':o.get_text(' ',strip=True)} for o in node.select('option') if o.get('value') not in ('','*','**',None)]
         groups.append({'name':node.get('option_title') or node.get('option_name') or node.get('name'),'values':vals})
     stock_raw=values.get('single_option_stock_data');stock=json.loads(stock_raw) if isinstance(stock_raw,str) and stock_raw else None
-    supplier='unknown';issues=[];options=[]
+    supplier='unknown';issues=[];options=[];rendered={}
     if stock:
         supplier=availability(stock,offer if isinstance(offer,dict) else None,values.get('is_soldout_icon'))
     elif values.get('option_stock_data'):
@@ -266,7 +294,8 @@ def detail(doc,product,brand):
         except (ValueError,TypeError):issues.append('option_stock_requires_review')
     option_raw=values.get('option_stock_data')
     if isinstance(stock,dict) and not stock_raw:
-        options,groups,supplier,option_issues=normalize_options(stock,variant_offers,price,quote,values.get('is_soldout_icon'))
+        rendered=rendered_option_states(doc,sid,stock)
+        options,groups,supplier,option_issues=normalize_options(stock,variant_offers,price,quote,values.get('is_soldout_icon'),rendered)
         issues.extend(option_issues)
     elif groups or variant_offers:issues.append('option_combinations_require_review')
     if supplier=='unknown':issues.append('availability_requires_review')
@@ -286,7 +315,7 @@ def detail(doc,product,brand):
         detail_status='verified' if not issues else 'review_required',content_issues=issues,
         detail_checked_at=stamp())
     # Preserve the source's option/stock evidence privately, never in public JSON.
-    return p,{'schema':schema,'option_stock':stock,'option_type':values.get('option_type'),
+    return p,{'schema':schema,'option_stock':stock,'rendered_option_states':rendered,'option_type':values.get('option_type'),
               'item_code':values.get('item_code'),'selling_price_content':values.get('product_price_content')}
 
 
