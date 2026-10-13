@@ -848,3 +848,40 @@ AVX원본상세가없는1700/1096두건을11:27 KST에실제상품/상세엔드�
 새모바일실기기화면검수는미실시. 기존열린관리자탭읽기에서조회/회계UI를확인했고, 새백그라운드탭생성은visibility미지원이라대표화면을바꾸지않았다. 새표시의활성상태/회귀검사와실제제공JavaScript일치를확인한범위로보고한다.
 
 최종근거: `_private/commerce/release-20261013-150853/final-live-proof.json`, `admin-live-before.json`, `backup-manifest.json`, `node-tests.log`, `shop-python-tests.log`. 이번공용문서정리commit은같은검증완료코드/카탈로그로배포하며최종저장소HEAD/Ready재조회는비공개영수증에남긴다.
+
+
+### 2026-10-13 후속 — 잔여 LDNET 검토 해결·전수 재대조 실행
+
+대표 “빨리 남은거 빨리해” 요청으로 계속 진행. LDNET65개/193옵션 모두원본HTML의개별SKU선택상태와실제공급처옵션코드를대조해판매가능/품절을확인하도록수집기보완. 전체상품InStock만으로개별옵션재고를추정하지않으며재고수량을만들지않는다. 숨김/판매중지/0재고/전체품절·disabled옵션은차단,잘못된상품번호·누락SKU·모순중복은보류한다. 원본Cafe24프런트코드의옵션표시/품절판정도확인했고NAS비공개근거에보존했다.
+
+코드a8c6d15d52f39b2f2514147003e3795e05d7b2ae커밋/푸시, cafe24수집33·공개14·체크포인트2검사통과. 오프라인65개재검증전부verified,백업후실행DB에적용. 원본분류271/188/55의변동은신규23771/23772/23773세상품추가다. 해당10페이지캐시와후보를보존하고변동3분류만다시구성하여360분류최종대조및정상공용publisher를실행중. 이번후보의실제READY/공개영수증전까지LDNET전체공개완료로표시하지않는다.
+
+PG기존키등록과새독립몰MID/실결제승인을구분. 요청서버IP미등록·live검증false재확인. 전자세금계산서PopbillLinkID/Secret/UserID·과세설정·live검증미등록. 지정NAS업무폴더에서인증서파일명을찾았으나30개.key는Keynote자료이며인식된X509인증서0개. 인증서가없다고전NAS/다른PC까지일반화하지않는다. 대표에게새MID/키저장위치와발급계정·사업자공동인증서NAS위치를비동기요청한상태.
+
+근거: shop/_private/catalog/ldnet-review-20261013-161532/의 applied-offline-review.json, html-option-evidence-coverage.json, changed-category-review.json, activation-blockers.json, continuation.log. LDNET자동워커의기존loaded상태를기록하고제어된검증중에만중지;finally복원/재조회한다.
+
+
+### LDNET 최종 대조 연결 중단 복구
+
+원본의 RemoteDisconnected/ConnectionError로 최종 대조가 중단됐다. 확인된 진행은 2026-10-13T07:57:30Z의 266/360개, 변동0건이며 실패와 원본 체크포인트를 보존했다. 자동 재시도가 전체 대조를 다시 시작하는 것을 확인하고 LDNET 작업만 제어해 복구했다.
+
+분류별 원본 입력의 source/sort/category/total/ordered IDs 지문과 실제 확인 결과를 DB에 저장하도록 보완했다. 동일 입력·변동없음·1시간 이내 결과만 재사용하고, 입력변동/불일치/만료는 원본을 다시 조회한다. 중단 후 재개, 입력 변경 및 만료 회귀 검사를 포함해 cafe24수집35·공개14·체크포인트2검사 통과. 코드41c629fb7 커밋/푸시.
+
+실제 도구에서 확인한 266개 진행 기록과 변경되지 않은 캐시 입력을 대조해 복구 근거를 저장하고, 기존 266개 확인에 대한 유효시간은 보수적으로07:33Z부터 계산했다. 재확인되지 않은 분류를 완료로 만들지 않는다. 남은94개와 분류 트리를 원본에서 확인한 뒤 정상 publisher가 전체 카탈로그 검사·커밋·푸시·READY·라이브 원장 대조를 수행한다.
+
+근거: shop/_private/catalog/ldnet-review-20261013-161532/의 continuation-error.json, observed-reconciliation-progress-recovery.json, before-reconciliation-recovery.sqlite3, recovered-category-checks.json 및 *.resume.log. 최초 실패는 이력으로 보존하며 성공 공개 영수증으로 해소한다.
+
+
+### 2026-10-13 잔여 LDNET 실제 공개 완료
+
+LDNET 원본360분류·3,072상품의 목록/상세/제조사/가격/옵션/판매상태 및 종료분류트리 대조를 완료했다. 검토65건/193옵션과 분류변동3곳을 해결했고, 오류0·내용검토0·분류변동0으로 원본후보complete=true(2026-10-13T08:32:01Z). 원본재고수량은추정하지않았다. 기존 수집 연결/보류 기록은 당시 사실로 보존한다.
+
+자동 공개 경로에서 LDNET 정상 promotion/deep검증 연결과 원본상품URL 허용목록 누락을 보완했다. Source ConnectionError 복구는 동일 입력·변동없음·1시간 내 실제 분류 대조만 재사용하며, HTTP 연결오류에만 10초 이상 간격으로 최대2회 시도한다. 보호응답403/429/SSL오류는 차단을 유지한다. 모든706캐시페이지와3,072상품을대조한 inventory 지문만 재사용한다. cafe24수집38·공개14·DB사본2·promotion11 및 정상 전체Python/Node/구문 검사를 통과했다. 전체판매사이트가새PG실거래를통과했다는뜻은아니다.
+
+공개commit `02356e3182969640bc1ac5fe02a6f68885effa04`, production `dpl_7fAAhNMvwdRtjYeWh2LywMjMKwjQ` READY, revision `5b1640063e18f8a0`, 실제공개전수대조 `2026-10-13T08:45:29+00:00`. 검증원본과공개LDNET offerID3,072건모두일치/제외0. 전체공개카탈로그22,588상품, ANYPORT466상품(기존2개와중복병합포함). 원본분류/가격/판매상태/출처정책의공개검증원장대조를통과했다. 새로운 모바일육안검수나 실거래는수행하지않았다.
+
+현재Mac LDNET LaunchAgent loaded복원·재조회, 처리완료후not running(대기) 확인. 기존 오류원문은보존하고검증완료공개영수증으로resolved처리했다. 실행SQLite는Mac로컬에유지하며NAS닫힌사본quick_check OK/SHA-256일치를확인했다. 다른PC실행은미검증.
+
+직전잔여3개중완료1개/미완료2개. PG실개통은새독립몰MID승인·키/요청서버조건과실거래·증빙·취소검증이남아있다. 현재요청서버IP값없음/live검증false이며고객주문·렌탈접수false를유지한다. 고객전자세금계산서는발급서비스계정/LinkID·Secret·UserID·과세설정·사업자공동인증서가미확보이고발급false다. 대표에게비공개설정/인증서NAS저장위치를비동기요청했다. 이니시스/토스PG변경이나계약·비용지불을진행하지않았다.
+
+근거: shop/_private/catalog/ldnet-review-20261013-161532/의 published-live-receipt.json, continuation-resolved.json, worker-restored.json, verified-inventory-checkpoint-recovery.json, activation-blockers.json 및 모든실패/복구원문. 최신기계상태는 _private/catalog/ldnet-20261012/latest-status.json. 최초전체백업은 _private/commerce/release-20261013-150853/이며추가최종bundle/닫힌원본상태/검증근거와SHA-256백업manifest를같은비공개폴더의followup-ldnet에보존한다. 공용문서최종commit/Ready와주문관리재조회근거는final-repository-and-deployment.json 및 admin-final-proof.json에저장한다.
