@@ -459,13 +459,25 @@ class Collector:
                 counts=self.db.execute('SELECT (SELECT COUNT(*) FROM details),(SELECT COUNT(*) FROM errors)').fetchone()
                 self.progress({'at':stamp(),'phase':'details','products_found':len(snapshot['products']),'details_checked':sum(counts),'details_parsed':counts[0],'detail_errors':counts[1],'complete':False})
                 self.checkpoint_snapshot()
-            changed=[]
+            changed=[];checks=self.state('reconciliation_checks') or {};reused=0
             for index,category in enumerate(snapshot['coverage']):
                 if category.get('derived_union'):continue
-                old=self.page(category['id'],1);new=self.page(category['id'],1,True)
-                if old['total']!=new['total'] or list(old['products'])!=list(new['products']):changed.append(category['id'])
+                cid=category['id'];old=self.page(cid,1)
+                signature=hashlib.sha256(json.dumps([self.name,LISTING_SORT.get(self.name),cid,
+                    old['total'],list(old['products'])],ensure_ascii=False,separators=(',',':')).encode()).hexdigest()
+                prior=checks.get(cid,{})
+                age=time.time()-prior.get('checked_at',0)
+                if prior.get('signature')==signature and prior.get('matches') is True and 0<=age<3600:
+                    reused+=1
+                else:
+                    new=self.page(cid,1,True)
+                    matches=old['total']==new['total'] and list(old['products'])==list(new['products'])
+                    checks[cid]={'signature':signature,'matches':matches,'checked_at':time.time()}
+                    self.state('reconciliation_checks',checks)
+                    if not matches:changed.append(cid)
                 self.progress({'at':stamp(),'phase':'reconciliation','products_found':snapshot['product_count'],
-                    'categories_verified':index+1,'categories_found':len(snapshot['coverage']),'changed_categories':changed,'complete':False})
+                    'categories_verified':index+1,'categories_found':len(snapshot['coverage']),
+                    'changed_categories':changed,'reused_categories':reused,'complete':False})
             if self.name in WHOLE_SITE:
                 latest=category_tree(json.loads(self.source.get('/exec/front/Product/SubCategory')),self.root,whole_site=True)
                 if latest!={node['id']:node for node in snapshot['categories']}:changed.append('category-tree')

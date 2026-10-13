@@ -315,6 +315,45 @@ class Cafe24Tests(unittest.TestCase):
             self.assertEqual(collector.db.execute('SELECT COUNT(*) FROM errors').fetchone()[0],1)
             collector.db.close()
 
+    def test_reconciliation_resumes_verified_categories_after_connection_reset(self):
+        with tempfile.TemporaryDirectory() as tmp,patch.object(c,'STATE',Path(tmp)):
+            collector=c.Collector('clmedia');record=self.parse(product_page());calls=[]
+            with collector.db:collector.db.execute('INSERT INTO details VALUES(?,?,?)',('10',json.dumps(record),'{}'))
+            collector.inventory=Mock(return_value={'products':{'10':record},'product_count':1,'coverage':[{'id':'25'},{'id':'26'}]})
+            failed=False
+            def page(cid,number,fresh=False):
+                nonlocal failed
+                if fresh:
+                    calls.append(cid)
+                    if cid=='26' and not failed:
+                        failed=True;raise ConnectionError('Original source connection reset')
+                return {'total':1,'products':{'10':record}}
+            collector.page=page
+            with patch.object(c.time,'time',return_value=10000):
+                with self.assertRaises(ConnectionError):collector.collect()
+            with patch.object(c.time,'time',return_value=10010):result=collector.collect()
+            self.assertTrue(result['complete']);self.assertEqual(calls,['25','26','26'])
+            collector.db.close()
+
+    def test_reconciliation_cache_rechecks_changed_baseline_and_expired_results(self):
+        with tempfile.TemporaryDirectory() as tmp,patch.object(c,'STATE',Path(tmp)):
+            collector=c.Collector('clmedia');record=self.parse(product_page());calls=[];old={'total':1,'products':{'10':record}}
+            with collector.db:collector.db.execute('INSERT INTO details VALUES(?,?,?)',('10',json.dumps(record),'{}'))
+            collector.inventory=Mock(return_value={'products':{'10':record},'product_count':1,'coverage':[{'id':'25'}]})
+            def page(cid,number,fresh=False):
+                if fresh:calls.append(cid)
+                return old
+            collector.page=page
+            for timestamp in [10000,10010]:
+                with patch.object(c.time,'time',return_value=timestamp):collector.collect()
+            self.assertEqual(len(calls),1)
+            old['total']=2
+            with patch.object(c.time,'time',return_value=10020):collector.collect()
+            self.assertEqual(len(calls),2)
+            with patch.object(c.time,'time',return_value=13620):collector.collect()
+            self.assertEqual(len(calls),3)
+            collector.db.close()
+
     def test_cached_review_backs_up_preserves_dates_and_requires_reconciliation(self):
         with tempfile.TemporaryDirectory() as tmp,patch.object(c,'STATE',Path(tmp)),patch.object(c,'ROOT',Path(tmp)):
             collector=c.Collector('clmedia');work=collector.work
