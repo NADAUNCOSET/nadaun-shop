@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "brands_checked": 276,
-  "input_count": 24101,
-  "duplicate_group_count": 2765,
-  "duplicate_entries_removed": 4576,
+  "brands_checked": 289,
+  "input_count": 27173,
+  "duplicate_group_count": 2774,
+  "duplicate_entries_removed": 4585,
   "by_brand": {
     "tilta": 289,
     "avenger": 10,
@@ -29,6 +29,10 @@
     "viltrox": 4,
     "leofoto": 3,
     "fxlion": 21,
+    "brand-1764b0442d": 5,
+    "brand-b7412172a9": 1,
+    "anyport": 2,
+    "brand-32b2c6f20c": 1,
     "sachtler": 4,
     "kumkwang": 16,
     "valens": 149,
@@ -57957,6 +57961,222 @@
           "price": 138900,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1927930"
+        }
+      ]
+    },
+    {
+      "brand_id": "brand-1764b0442d",
+      "kind": "purchase",
+      "primary_id": "ldnet-13050",
+      "evidence": [
+        "name:apcups정품배터리rbc106be400-kr교체배터리"
+      ],
+      "members": [
+        {
+          "id": "ldnet-13050",
+          "name": "APC UPS 정품배터리 RBC106 (BE400-KR 교체배터리)",
+          "price": 73000,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=13050"
+        },
+        {
+          "id": "ldnet-13041",
+          "name": "APC UPS 정품배터리 RBC106 (BE400-KR 교체배터리)",
+          "price": 73000,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=13041"
+        }
+      ]
+    },
+    {
+      "brand_id": "brand-1764b0442d",
+      "kind": "purchase",
+      "primary_id": "ldnet-4331",
+      "evidence": [
+        "name:tp-link티피링크archerc80ac1900무선공유기"
+      ],
+      "members": [
+        {
+          "id": "ldnet-4331",
+          "name": "[TP-LINK] 티피링크 Archer C80 AC1900 (무선공유기)",
+          "price": 54900,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=4331"
+        },
+        {
+          "id": "ldnet-1484",
+          "name": "[TP-LINK] 티피링크 Archer C80 AC1900 (무선공유기)",
+          "price": 54900,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=1484"
+        }
+      ]
+    },
+    {
+      "brand_id": "brand-b7412172a9",
+      "kind": "purchase",
+      "primary_id": "ldnet-4500",
+      "evidence": [
+        "name:rlorylora리피터loratolora중계기"
+      ],
+      "members": [
+        {
+          "id": "ldnet-4500",
+          "name": "시스템베이스 rLory LoRa 리피터 LoRa to LoRa 중계기",
+          "price": 126500,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=4500"
+        },
+        {
+          "id": "ldnet-1806",
+          "name": "시스템베이스 rLory LoRa 리피터 LoRa to LoRa 중계기",
+          "price": 126500,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=1806"
+        }
+      ]
+    },
+    {
+      "brand_id": "anyport",
+      "kind": "purchase",
+      "primary_id": "smartstore-12143548269",
+      "evidence": [
+        "name:ap-ctcd100w1.2mctocpd100w디스플레이안드로이드오토고속충전케이블"
+      ],
+      "members": [
+        {
+          "id": "smartstore-12143548269",
+          "name": "ANYPORT AP-CTCD100W 1.2M C TO C PD 100W 디스플레이 안드로이드오토 고속충전케이블",
+          "price": 14900,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12143548269"
+        },
+        {
+          "id": "ldnet-1830",
+          "name": "[AP-CTCD100W 1.2M] 애니포트 C TO C PD 100W 디스플레이 안드로이드오토 고속충전케이블",
+          "price": 14900,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=1830"
+        }
+      ]
+    },
+    {
+      "brand_id": "anyport",
+      "kind": "purchase",
+      "primary_id": "smartstore-12143551946",
+      "evidence": [
+        "name:ap-ctcd100w2mctocpd100w디스플레이안드로이드오토고속충전케이블"
+      ],
+      "members": [
+        {
+          "id": "smartstore-12143551946",
+          "name": "ANYPORT AP-CTCD100W 2M C TO C PD 100W 디스플레이 안드로이드오토 고속충전케이블",
+          "price": 15900,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12143551946"
+        },
+        {
+          "id": "ldnet-1831",
+          "name": "[AP-CTCD100W 2M] 애니포트 C TO C PD 100W 디스플레이 안드로이드오토 고속충전케이블",
+          "price": 15900,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=1831"
+        }
+      ]
+    },
+    {
+      "brand_id": "brand-32b2c6f20c",
+      "kind": "purchase",
+      "primary_id": "ldnet-22989",
+      "evidence": [
+        "name:지니큐책상탁상용미니선풍기자동회전형감성바람사무실엔틱미니무선bltc모터캠핑캠핑용fn-800m"
+      ],
+      "members": [
+        {
+          "id": "ldnet-22989",
+          "name": "지니큐 책상 탁상용 미니 선풍기 자동 회전형 감성바람 사무실 엔틱 미니무선 BLTC모터 캠핑 캠핑용 FN-800M",
+          "price": 31900,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=22989"
+        },
+        {
+          "id": "ldnet-22909",
+          "name": "지니큐 책상 탁상용 미니 선풍기 자동 회전형 감성바람 사무실 엔틱 미니무선 BLTC모터 캠핑 캠핑용 FN-800M",
+          "price": 31900,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=22909"
+        }
+      ]
+    },
+    {
+      "brand_id": "brand-1764b0442d",
+      "kind": "purchase",
+      "primary_id": "ldnet-4336",
+      "evidence": [
+        "name:tp-link티피링크ls1008g스위칭허브/8포트/1000mbps"
+      ],
+      "members": [
+        {
+          "id": "ldnet-4336",
+          "name": "[TP-LINK] 티피링크 LS1008G [스위칭허브/8포트/1000Mbps]",
+          "price": 21900,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=4336"
+        },
+        {
+          "id": "ldnet-3527",
+          "name": "[TP-LINK] 티피링크 LS1008G [스위칭허브/8포트/1000Mbps]",
+          "price": 25900,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=3527"
+        }
+      ]
+    },
+    {
+      "brand_id": "brand-1764b0442d",
+      "kind": "purchase",
+      "primary_id": "ldnet-4337",
+      "evidence": [
+        "name:tp-link티피링크ls1005g스위칭허브/5포트/1000mbps"
+      ],
+      "members": [
+        {
+          "id": "ldnet-4337",
+          "name": "[TP-LINK] 티피링크 LS1005G [스위칭허브/5포트/1000Mbps]",
+          "price": 10900,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=4337"
+        },
+        {
+          "id": "ldnet-3528",
+          "name": "[TP-LINK] 티피링크 LS1005G [스위칭허브/5포트/1000Mbps]",
+          "price": 14900,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=3528"
+        }
+      ]
+    },
+    {
+      "brand_id": "brand-1764b0442d",
+      "kind": "purchase",
+      "primary_id": "ldnet-3737",
+      "evidence": [
+        "name:tp-link티피링크tl-sg2428p스위칭허브/24포트/1000mbps/poe"
+      ],
+      "members": [
+        {
+          "id": "ldnet-3737",
+          "name": "[TP-LINK] 티피링크 TL-SG2428P [스위칭허브/24포트/1000Mbps/PoE]",
+          "price": 369000,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=3737"
+        },
+        {
+          "id": "ldnet-3529",
+          "name": "[TP-LINK] 티피링크 TL-SG2428P [스위칭허브/24포트/1000Mbps/PoE]",
+          "price": 369000,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=3529"
         }
       ]
     },
