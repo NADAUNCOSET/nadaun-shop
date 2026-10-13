@@ -188,7 +188,7 @@
       "cinemall": 1209,
       "onnoff": 1067,
       "ldnet": 3072,
-      "avx": 1359
+      "avx": 1365
     },
     "detail_coverage": {
       "kpp": 4039,
@@ -201,9 +201,9 @@
       "cinemall": 1183,
       "onnoff": 1067,
       "ldnet": 3072,
-      "avx": 1359
+      "avx": 1365
     },
-    "synced_at": "2026-10-13T15:10:42+00:00",
+    "synced_at": "2026-10-13T15:15:11+00:00",
     "merged_count": 4585,
     "product_count": 221,
     "category_browsing_enabled": true,
@@ -214,7 +214,7 @@
       "groups": 2774,
       "removed": 4585
     },
-    "revision": "e6cb1b9ee69dcb8d",
+    "revision": "62c20796bc5d0d62",
     "view": "rental"
   },
   "brands": [
@@ -6542,22 +6542,26 @@
       "aliases": [
         "IGNITE DIGI"
       ],
-      "logo": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17908402150730list1.jpg",
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17918956091524list1.jpg",
       "navigation_category_ids": [
+        "avx:b:1a7741b3cab38d90",
         "avx:b:44bb1a0feeee7550",
-        "avx:b:5757990d9ad5fc99"
+        "avx:b:5757990d9ad5fc99",
+        "avx:b:6c5900d74bbc296b"
       ],
-      "count": 5,
-      "purchase_count": 5,
+      "count": 11,
+      "purchase_count": 11,
       "rental_count": 0,
       "category_ids": [
+        "avx:b:1a7741b3cab38d90",
+        "avx:b:6c5900d74bbc296b",
         "avx:b:44bb1a0feeee7550",
         "avx:b:5757990d9ad5fc99"
       ],
-      "representative_id": "avx-3134",
-      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17908402150730view.jpg",
-      "representative_name": "IGNITE DIGI 이그나이트 디지 Servo Link 서보 링크 for Canon · Fujinon Servo Lenses",
-      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17908402152979view.jpg",
+      "representative_id": "avx-3154",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17918955058890view.jpg",
+      "representative_name": "IGNITE DIGI 이그나이트 디지 Quick Release Top Handle 퀵 릴리즈 탑 핸들 with Rod Mounts 로드 마운트 블랙",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17918955065987view.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
