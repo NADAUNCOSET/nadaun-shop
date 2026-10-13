@@ -132,13 +132,18 @@ async function orders(){
   if(location.hash){const id=decodeURIComponent(location.hash.slice(1));document.getElementById(id)?.scrollIntoView({block:'start'});}
  }catch(error){message(feedback,error.message);container.innerHTML='';}
 }
+function adminReadiness(ready){
+ const provider={inicis:'KG이니시스',toss:'토스페이먼츠'}[ready.paymentProvider]||'확인 필요';
+ const rows=[['현재 결제대행사',provider],['고객 주문·결제',ready.ordersEnabled===true?'접수 가능':'오픈 준비 중'],['렌탈 온라인 접수',ready.rentalRequestsEnabled===true?'접수 가능':'오픈 준비 중'],['전자세금계산서',ready.taxInvoiceEnabled===true?'발급 연결됨':'발급 연결 준비 중']];
+ return '<div class="commerce-admin-summary" aria-label="운영 연결 상태">'+rows.map(([label,value])=>'<div><span>'+esc(label)+'</span><strong>'+esc(value)+'</strong></div>').join('')+'</div><p class="commerce-note">현금영수증 소득공제·사업자 지출증빙은 결제대행사에서 처리합니다. 전자세금계산서는 별도 발급 연결이 필요합니다.</p>';
+}
 async function admin(){
  if(location.hostname==='order.nadaun.co'){
   for(const link of document.querySelectorAll('a[href^="/"]')){const href=link.getAttribute('href');if(!href.startsWith('/#'))link.href='https://shop.nadaun.co'+href;}
  }
  const container=main.querySelector('#commerce-content'),feedback=main.querySelector('#commerce-status');
  const year=new Date(Date.now()+9*3600000).getUTCFullYear();
- let filters={from:year+'-01-01',to:year+'-12-31',basis:'created',mode:'operational',state:'',fulfillment:'',document:'',search:'',page:1},busy=false;
+ let filters={from:year+'-01-01',to:year+'-12-31',basis:'created',mode:'operational',state:'',fulfillment:'',document:'',search:'',page:1},busy=false,readiness;
  const options=(rows,selected)=>rows.map(([value,label])=>`<option value="${esc(value)}" ${selected===value?'selected':''}>${esc(label)}</option>`).join('');
  const params=()=>new URLSearchParams(Object.entries(filters).map(([k,v])=>[k,String(v)]));
  async function download(format,button){
@@ -158,6 +163,7 @@ async function admin(){
   const s=value.summary;
   container.innerHTML='<div class="commerce-admin-tools"><span>기간 내 전체 '+s.orders.toLocaleString('ko-KR')+'건</span><a href="https://iniweb.inicis.com/security/login.do" target="_blank" rel="noopener noreferrer">이니시스 거래·환불 관리 ↗</a><button class="button-outline" data-refresh>새로고침</button><button class="button-outline" data-logout>로그아웃</button></div>'+`<form class="commerce-admin-filter"><label>시작일<input type="date" name="from" value="${esc(filters.from)}" required></label><label>종료일<input type="date" name="to" value="${esc(filters.to)}" required></label><label>기간 기준<select name="basis">${options([['created','주문접수일'],['paid','결제확정일']],filters.basis)}</select></label><label>결제 환경<select name="mode">${options([['operational','운영 주문 (테스트 제외)'],['live','실결제 주문'],['test','테스트 주문'],['all','전체']],filters.mode)}</select></label><label>주문 상태<select name="state">${options([['','전체'],...Object.entries(states)],filters.state)}</select></label><label>배송·렌탈 처리<select name="fulfillment">${options([['','전체'],['unfulfilled','출고·수령 예정'],['processing','처리 중·대여 중'],['shipped','출고·반납 완료']],filters.fulfillment)}</select></label><label>증빙<select name="document">${options([['','전체'],['queued','발급 대기'],['processing','발급 확인 중'],['issued','발급 완료'],['retry','재확인 중'],['review','확인 필요'],['voided','취소'],['missing','미발급']],filters.document)}</select></label><label class="commerce-admin-search">주문번호 · 결제 거래번호<input type="search" name="search" value="${esc(filters.search)}" maxlength="80" placeholder="NS- 주문번호 또는 PG 거래번호"></label><div class="commerce-admin-filter-actions"><button class="button-primary">조회하기</button><button type="button" class="button-outline" data-year>올해 결제 자료</button><button type="button" class="button-outline" data-last-year>작년 결제 자료</button></div></form>`+`<div class="commerce-admin-summary">${[['재고 확인 대기',s.requested+'건'],['출고 대기',s.toShip+'건'],['결제 확인 필요',s.paymentReview+'건'],['증빙 대기·확인',s.documentPending+'건'],['실결제 원 승인 누계',money(s.approvedTotal)],['전체 취소 주문 원 승인액',money(s.canceledOriginalTotal)]].map(([title,value])=>`<div><span>${title}</span><strong>${value}</strong></div>`).join('')}</div><div class="commerce-admin-export"><div><strong>회계·세무 자료</strong><p>전체 조회 결과를 받습니다. 엑셀에는 주문·상품·증빙·처리 이력이 함께 포함됩니다.</p></div><button class="button-outline" data-export="xlsx">엑셀 다운로드</button><button class="button-outline" data-export="csv">주문 CSV 다운로드</button></div><details class="commerce-admin-notes"><summary>자료 집계 기준 확인</summary>${value.notices.map(n=>'<p>'+esc(n)+'</p>').join('')}</details>`+value.orders.map(p=>orderCard(p,true).replace('</article>','<details class="commerce-history"><summary>처리 이력 확인</summary><div data-history></div></details></article>')).join('')+(value.orders.length?'':'<p class="commerce-empty">조회 조건에 해당하는 주문이 없습니다.</p>')+`<nav class="commerce-admin-pages" aria-label="주문 페이지"><button class="button-outline" data-prev ${value.page<=1?'disabled':''}>← 이전</button><span>${value.page} / ${value.pages} 페이지 · 페이지당 ${value.pageSize}건</span><button class="button-outline" data-next ${value.page>=value.pages?'disabled':''}>다음 →</button></nav>`;
   container.insertAdjacentHTML('afterbegin','<p class="commerce-calendar" role="status">'+esc(calendarStatus+calendarChecked)+'</p>');
+  container.insertAdjacentHTML('afterbegin',adminReadiness(readiness));
   container.querySelector('[data-refresh]').onclick=()=>list().catch(error=>message(feedback,error.message));
   container.querySelector('[data-logout]').onclick=async()=>{try{await api('logout',{});location.reload();}catch(error){message(feedback,error.message);}};
   const filterForm=container.querySelector('.commerce-admin-filter');filterForm.onsubmit=event=>{event.preventDefault();filters={...Object.fromEntries(new FormData(filterForm)),page:1};void list().catch(error=>message(feedback,error.message));};
@@ -176,7 +182,7 @@ async function admin(){
    const ship=card.querySelector('.commerce-shipping');if(ship)ship.onsubmit=event=>{event.preventDefault();change('admin-ship',Object.fromEntries(new FormData(ship)),ship.querySelector('button'));};
   }
  }
- try{const ready=await config();checkoutPaymentOpen=ready.ordersEnabled===true;if(!ready.adminEnabled){container.innerHTML='<div class="commerce-empty"><h2>주문 관리 연결 준비 중</h2><p>주문 저장소와 관리자 인증 설정을 완료한 뒤 이용할 수 있습니다.</p><p>연결 후 기간별 주문 조회, 재고·금액 확정, 출고·운송장 관리, 결제·증빙 확인과 연간 자료 다운로드를 이용할 수 있습니다.</p></div>';return;}await list();}
+ try{const ready=await config();readiness=ready;checkoutPaymentOpen=ready.ordersEnabled===true;if(!ready.adminEnabled){container.innerHTML='<div class="commerce-empty"><h2>주문 관리 연결 준비 중</h2><p>주문 저장소와 관리자 인증 설정을 완료한 뒤 이용할 수 있습니다.</p><p>연결 후 기간별 주문 조회, 재고·금액 확정, 출고·운송장 관리, 결제·증빙 확인과 연간 자료 다운로드를 이용할 수 있습니다.</p></div>';return;}await list();}
  catch(error){
   if(error.status!==401){message(feedback,error.message);return;}
   container.innerHTML='<form class="commerce-login"><label>관리자 비밀번호<input type="password" name="password" autocomplete="current-password" minlength="16" maxlength="128" required></label><button class="button-primary">로그인 →</button></form>';
