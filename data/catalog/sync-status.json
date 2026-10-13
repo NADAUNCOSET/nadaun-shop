@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source_counts": {
-    "kpp": 4039,
+    "kpp": 4042,
     "smartstore": 6877,
     "imweb-dji": 151,
     "imweb-promotions": 1,
@@ -15,7 +15,7 @@
     "avx": 1365
   },
   "detail_coverage": {
-    "kpp": 4039,
+    "kpp": 4042,
     "smartstore": 6791,
     "imweb-promotions": 1,
     "l-mount": 345,
@@ -27,16 +27,16 @@
     "ldnet": 3072,
     "avx": 1365
   },
-  "synced_at": "2026-10-13T15:15:11+00:00",
+  "synced_at": "2026-10-13T23:13:49+00:00",
   "merged_count": 4585,
-  "product_count": 22594,
+  "product_count": 22597,
   "category_browsing_enabled": true,
-  "listing_count": 22414,
+  "listing_count": 22417,
   "option_family_count": 180,
   "deduplication": {
     "brands_checked": 289,
     "groups": 2774,
     "removed": 4585
   },
-  "revision": "62c20796bc5d0d62"
+  "revision": "d5f964fc15cee2bf"
 }
