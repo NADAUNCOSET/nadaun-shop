@@ -837,3 +837,14 @@ AVX원본상세가없는1700/1096두건을11:27 KST에실제상품/상세엔드�
 - LDNET의 과거수집중 표시를 현재완료로 간주하지 않는다. 현재progress는3,069개 상세 파싱/3,004개검증/65개내용·판매가능확인대기, 분류변동3개, complete=false/published=false다. MacLaunchAgent는loaded/not running이며검토보류다. 이 자료를이번관리자배포와함께임의공개하지않는다.
 
 최종commit·productionREADY·라이브바이트/카탈로그대조는아래최종검증절및NAS비공개release영수증으로추가한다. 현재백업원본: `_private/commerce/release-20261013-150853/backup-manifest.json`, `admin-live-before.json`, `node-tests.log`, `ldnet-current-status.json`.
+
+
+### 2026-10-13 최종 공개 검증
+
+관리자 상태 표시 코드commit `c1a4104ca1cd3be1efeacfa3bab1780665ef9c8f`, production `dpl_D4jELnKqdfvSg26nujE635Zdic7R` READY, revision `01058954b96b07f1`, 라이브전수검증 `2026-10-13T06:16:07+00:00`. 기존공개전체카탈로그와출처검증원장대조통과; shop/order5개자산NAS바이트일치. 비공개설정·서버원본404, 비로그인주문/캘린더API401 확인. Node149/Python65 검사통과. 고객접수·결제·세금계산서개통플래그는실제false로확인했다.
+
+완료4개: 원본백업검증, 관리자운영실조회/엑셀·캘린더재검증, 활성상태화면보완, GitHub커밋·푸시/productionREADY·라이브대조. 미완료3개: PG실개통(새MID/키·서버조건·실거래/증빙/취소), 고객전자세금계산서발급연결, LDNET65개판매/옵션확인및분류변동3개재대조. 현재외부요금견적/개통일은대표답변대기이며PG전환을수행하지않았다.
+
+새모바일실기기화면검수는미실시. 기존열린관리자탭읽기에서조회/회계UI를확인했고, 새백그라운드탭생성은visibility미지원이라대표화면을바꾸지않았다. 새표시의활성상태/회귀검사와실제제공JavaScript일치를확인한범위로보고한다.
+
+최종근거: `_private/commerce/release-20261013-150853/final-live-proof.json`, `admin-live-before.json`, `backup-manifest.json`, `node-tests.log`, `shop-python-tests.log`. 이번공용문서정리commit은같은검증완료코드/카탈로그로배포하며최종저장소HEAD/Ready재조회는비공개영수증에남긴다.
