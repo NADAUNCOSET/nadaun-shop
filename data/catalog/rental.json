@@ -188,7 +188,7 @@
       "cinemall": 1209,
       "onnoff": 1067,
       "ldnet": 3072,
-      "avx": 1365
+      "avx": 1377
     },
     "detail_coverage": {
       "kpp": 4042,
@@ -201,9 +201,9 @@
       "cinemall": 1183,
       "onnoff": 1067,
       "ldnet": 3072,
-      "avx": 1365
+      "avx": 1377
     },
-    "synced_at": "2026-10-14T03:53:25+00:00",
+    "synced_at": "2026-10-14T07:55:51+00:00",
     "merged_count": 4585,
     "product_count": 221,
     "category_browsing_enabled": true,
@@ -214,7 +214,7 @@
       "groups": 2774,
       "removed": 4585
     },
-    "revision": "3663ed89357b5cf6",
+    "revision": "98ac389dfbb2ed23",
     "view": "rental"
   },
   "brands": [
@@ -4216,7 +4216,7 @@
       "aliases": [
         "AVX 기타"
       ],
-      "logo": "https://www.avx.co.kr/data/goods/1/2026/07/3026_temp_17846243525550list1.jpg",
+      "logo": "https://www.avx.co.kr/data/goods/1/2022/04/909_temp_16497330308030list1.jpg",
       "navigation_category_ids": [
         "avx:b:00682a1d74aed1d1",
         "avx:b:0edbdc36e485ac2f",
@@ -4239,8 +4239,8 @@
         "avx:b:ecbb0ae014553782",
         "avx:b:ef6895c3b0c781fc"
       ],
-      "count": 33,
-      "purchase_count": 33,
+      "count": 32,
+      "purchase_count": 32,
       "rental_count": 0,
       "category_ids": [
         "avx:b:314346e28f94029b",
@@ -4264,10 +4264,10 @@
         "avx:b:814aa024ee069d3d",
         "avx:b:480f00a190aa789c"
       ],
-      "representative_id": "avx-3026",
-      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/07/3026_temp_17846243525550view.jpg",
-      "representative_name": "[리퍼브상품-개봉상품] Aputure 호환 2.8M 스테인레스 조명 스탠드 SSS-280 (딱1개)",
-      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/07/3026_2026072116254482.jpg",
+      "representative_id": "avx-909",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2022/04/909_temp_16497330308030view.jpg",
+      "representative_name": "어퓨쳐 Aputure 호환 2.8M 스테인레스 조명 스탠드 SSS-280",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2022/04/909_temp_16497330388145view.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -6542,26 +6542,26 @@
       "aliases": [
         "IGNITE DIGI"
       ],
-      "logo": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17918956091524list1.jpg",
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17919614529363list1.jpg",
       "navigation_category_ids": [
         "avx:b:1a7741b3cab38d90",
         "avx:b:44bb1a0feeee7550",
         "avx:b:5757990d9ad5fc99",
         "avx:b:6c5900d74bbc296b"
       ],
-      "count": 11,
-      "purchase_count": 11,
+      "count": 24,
+      "purchase_count": 24,
       "rental_count": 0,
       "category_ids": [
-        "avx:b:1a7741b3cab38d90",
-        "avx:b:6c5900d74bbc296b",
         "avx:b:44bb1a0feeee7550",
-        "avx:b:5757990d9ad5fc99"
+        "avx:b:5757990d9ad5fc99",
+        "avx:b:1a7741b3cab38d90",
+        "avx:b:6c5900d74bbc296b"
       ],
-      "representative_id": "avx-3154",
-      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17918955058890view.jpg",
-      "representative_name": "IGNITE DIGI 이그나이트 디지 Quick Release Top Handle 퀵 릴리즈 탑 핸들 with Rod Mounts 로드 마운트 블랙",
-      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17918955065987view.jpg",
+      "representative_id": "avx-3167",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17919613899241view.jpg",
+      "representative_name": "IGNITE DIGI 이그나이트 디지 Power Breakout 파워 브레이크아웃 2핀 레모 전원 분배기 1입력 3출력 Ignite Orange",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17919613959086view.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
