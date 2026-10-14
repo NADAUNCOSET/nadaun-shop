@@ -258,6 +258,11 @@ def build(allow_pending=False):
     save_json(PUBLIC/'dedup-audit.json',dedup_audit)
     config_path=PUBLIC/'overrides.json'
     config=json.loads(config_path.read_text()) if config_path.exists() else {'products':{},'brand_order':[],'category_order':[],'category_browsing_enabled':False}
+    for cid,label in config.get('category_label_overrides',{}).items():
+        if cid not in categories or not isinstance(label,str) or not label.strip():
+            raise ValueError('Invalid reviewed category label: '+cid)
+        categories[cid].setdefault('source_name',categories[cid]['name'])
+        categories[cid]['name']=label
     for pid,override in config.get('products',{}).items():
         p=products.get(redirects.get(pid,pid))
         if p:
