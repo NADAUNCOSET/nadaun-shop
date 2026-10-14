@@ -177,6 +177,11 @@ def run(publish=True,existing=False,source_updates=None):
                 new=json.loads(path.read_text())['product_count']
                 if new<count*.85:raise RuntimeError(f'{source} count dropped more than 15%; keep live data and review')
             enrich('smartstore');enrich('kpp');prepare()
+        # Project only the verified saved gift inventory. This makes public
+        # availability corrections and later verified detail updates publish
+        # together, without making a source request or clearing its suspension.
+        from build_gift_catalog import build as build_gifts
+        build_gifts()
         build()
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_shop*.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_avx*.py')
