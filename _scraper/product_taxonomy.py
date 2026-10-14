@@ -159,7 +159,7 @@ def build_taxonomy(products,categories,overrides=None,ldnet_categories=None):
         if c['id'].startswith('kpp:p:'):
             add('kpp:'+c['id'].split(':')[-1],c['name'],'kpp:'+c['parent_id'].split(':')[-1] if c['parent_id'] else None,c['id'])
     for key,parent,name in EXTRA:add(key,name,parent)
-    for key,name in [('kpp:07','조명'),('kpp:08','케이블·테더링'),('kpp:h0','영상 송수신·모니터'),('kpp:c0','드론·액션캠·짐벌'),('kpp:09','촬영 액세서리')]:nodes['type:'+key]['name']=name
+    for key,name in [('kpp:03','카메라 렌즈·액세서리'),('kpp:07','조명'),('kpp:08','케이블·테더링'),('kpp:h0','영상 송수신·모니터'),('kpp:c0','드론·액션캠·짐벌'),('kpp:09','촬영 액세서리')]:nodes['type:'+key]['name']=name
     for key in ('0730','0740','0750'):nodes['type:kpp:'+key]['parent_id']='type:audio'
     nodes['type:kpp:0680']['parent_id']='type:power'
     nodes['type:kpp:0450'].update(parent_id='type:kpp:02',name='시네마·효과 필터')

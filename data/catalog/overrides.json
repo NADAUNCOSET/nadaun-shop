@@ -24,5 +24,10 @@
     "blackmagic"
   ],
   "category_order": [],
-  "category_browsing_enabled": true
+  "category_browsing_enabled": true,
+  "product_type_overrides": {
+    "kpp-1781662220": [
+      "kpp:0340"
+    ]
+  }
 }
