@@ -164587,9 +164587,6 @@
   "content_reviews": {},
   "changed_categories": [],
   "brand_classification_revision": "65d6c3040369cfd14d031c0f53410380b03791810db8970af982a8bc7f17cbb9",
-  "scope": "all",
-  "catalogue_complete": true,
-  "candidate_sha256": "08419241bde034a1333dd12289762f34ba7261d19355032143810fadf96fb76a",
   "original_categories": [
     {
       "id": "1",
@@ -166400,5 +166397,8 @@
       "parent_id": "581"
     }
   ],
-  "normalized_for_shop": true
+  "normalized_for_shop": true,
+  "scope": "all",
+  "catalogue_complete": true,
+  "candidate_sha256": "01333c3e5983f1372313590307b874d9a60c1b5017f0166ab97fac7351a02427"
 }
