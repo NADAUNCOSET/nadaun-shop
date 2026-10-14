@@ -55,6 +55,17 @@ class SaekiTests(unittest.TestCase):
   a={'id':'saeki-PD1','source_id':'PD1','source':'saeki','brand_id':'smallrig','kind':'purchase','name':'1234 adapter'}
   b={**a,'id':'saeki-PD2','source_id':'PD2'}
   self.assertEqual(conflict(a,b,{}),'distinct_saeki_source_skus')
+ def test_supplemental_supplier_stock_does_not_replace_primary_stock(self):
+  from catalog_dedup import deduplicate
+  a={'id':'smartstore-1','source_id':'1','source':'smartstore','brand_id':'sigma','kind':'purchase','name':'50mm F1.4',
+     'status':'sale','supplier_status':None,'source_url':'https://example.test/item','category_ids':[],'type_ids':[],'promotion_ids':[],'offers':[{'id':'smartstore-1'}]}
+  b={**a,'id':'saeki-PD1','source_id':'PD1','source':'saeki','status':'soldout','supplier_status':'soldout',
+     '_supplemental_source':True,'offers':[{'id':'saeki-PD1'}]}
+  rows={p['id']:p for p in [a,b]};details={pid:{'images':{'main':['image'],'detail':['detail']}}for pid in rows}
+  redirects,_=deduplicate(rows,details,{'sigma':{'name':'SIGMA'}})
+  self.assertEqual(redirects,{'saeki-PD1':'smartstore-1'})
+  self.assertIsNone(rows['smartstore-1']['supplier_status'])
+  self.assertEqual(rows['smartstore-1']['status'],'sale')
  def candidate(self):
   normal=self.parsed();point=self.parsed('PD00040026');rows={p['id']:p for p in [normal,point]}
   inv={'complete':True,'collected_at':'2026-10-15T00:00:00+09:00','brands':[{'id':'1'},{'id':'3'}],

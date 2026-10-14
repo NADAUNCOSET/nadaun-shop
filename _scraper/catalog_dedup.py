@@ -179,7 +179,9 @@ def deduplicate(products, details, brands, rules=None):
                 primary[field] = list(dict.fromkeys(primary.get(field,[])+duplicate.get(field,[])))
             seen = {o['id'] for o in primary['offers']}
             primary['offers'] += [deepcopy(o) for o in duplicate['offers'] if o['id'] not in seen]
-            if not primary.get('supplier_status'):
+            # Saeki is supplemental: its dealer stock must not overwrite the
+            # primary store's unspecified supplier stock after a model match.
+            if not primary.get('supplier_status') and duplicate.get('source')!='saeki':
                 primary['supplier_status'] = duplicate.get('supplier_status')
                 if '_provenance' in primary and '_provenance' in duplicate:
                     primary['_provenance']['fields']['supplier_status']=deepcopy(duplicate['_provenance']['fields']['supplier_status'])
