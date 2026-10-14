@@ -71,6 +71,9 @@ def inventory(candidate=None):
     overrides=json.loads((PUBLIC/'overrides.json').read_text()).get('brand_overrides',{})
     result=defaultdict(Counter)
     for source,snapshot in snapshots(candidate).items():
+        if source=='ldnet':
+            from cafe24_publication import prepare
+            snapshot=prepare(snapshot)
         for p in snapshot['products'].values():
             if p.get('kind')=='purchase':result[brand_id(reviewed_brand(p,overrides))][source]+=1
     return result
