@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "brands_checked": 289,
+  "brands_checked": 325,
   "input_count": 27194,
-  "duplicate_group_count": 2774,
-  "duplicate_entries_removed": 4585,
+  "duplicate_group_count": 2775,
+  "duplicate_entries_removed": 4586,
   "by_brand": {
     "tilta": 289,
     "avenger": 10,
@@ -29,10 +29,11 @@
     "viltrox": 4,
     "leofoto": 3,
     "fxlion": 21,
-    "brand-1764b0442d": 5,
+    "apc": 2,
+    "tp-link": 4,
     "brand-b7412172a9": 1,
     "anyport": 2,
-    "brand-32b2c6f20c": 1,
+    "brand-9f0dd01449": 1,
     "sachtler": 4,
     "kumkwang": 16,
     "valens": 149,
@@ -57965,11 +57966,35 @@
       ]
     },
     {
-      "brand_id": "brand-1764b0442d",
+      "brand_id": "apc",
+      "kind": "purchase",
+      "primary_id": "smartstore-12125633284",
+      "evidence": [
+        "name:bx950mi-gr무정전전원장치950va520w"
+      ],
+      "members": [
+        {
+          "id": "smartstore-12125633284",
+          "name": "APC BX950MI-GR 무정전 전원장치 950VA 520W",
+          "price": 185000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12125633284"
+        },
+        {
+          "id": "ldnet-12938",
+          "name": "APC BX950MI-GR 무정전 전원장치 950VA 520W",
+          "price": 185000,
+          "source": "ldnet",
+          "url": "https://ldnet.co.kr/product/detail.html?product_no=12938"
+        }
+      ]
+    },
+    {
+      "brand_id": "apc",
       "kind": "purchase",
       "primary_id": "ldnet-13050",
       "evidence": [
-        "name:apcups정품배터리rbc106be400-kr교체배터리"
+        "name:ups정품배터리rbc106be400-kr교체배터리"
       ],
       "members": [
         {
@@ -57989,11 +58014,11 @@
       ]
     },
     {
-      "brand_id": "brand-1764b0442d",
+      "brand_id": "tp-link",
       "kind": "purchase",
       "primary_id": "ldnet-4331",
       "evidence": [
-        "name:tp-link티피링크archerc80ac1900무선공유기"
+        "name:티피링크archerc80ac1900무선공유기"
       ],
       "members": [
         {
@@ -58085,11 +58110,11 @@
       ]
     },
     {
-      "brand_id": "brand-32b2c6f20c",
+      "brand_id": "brand-9f0dd01449",
       "kind": "purchase",
       "primary_id": "ldnet-22989",
       "evidence": [
-        "name:지니큐책상탁상용미니선풍기자동회전형감성바람사무실엔틱미니무선bltc모터캠핑캠핑용fn-800m"
+        "name:책상탁상용미니선풍기자동회전형감성바람사무실엔틱미니무선bltc모터캠핑캠핑용fn-800m"
       ],
       "members": [
         {
@@ -58109,11 +58134,11 @@
       ]
     },
     {
-      "brand_id": "brand-1764b0442d",
+      "brand_id": "tp-link",
       "kind": "purchase",
       "primary_id": "ldnet-4336",
       "evidence": [
-        "name:tp-link티피링크ls1008g스위칭허브/8포트/1000mbps"
+        "name:티피링크ls1008g스위칭허브/8포트/1000mbps"
       ],
       "members": [
         {
@@ -58133,11 +58158,11 @@
       ]
     },
     {
-      "brand_id": "brand-1764b0442d",
+      "brand_id": "tp-link",
       "kind": "purchase",
       "primary_id": "ldnet-4337",
       "evidence": [
-        "name:tp-link티피링크ls1005g스위칭허브/5포트/1000mbps"
+        "name:티피링크ls1005g스위칭허브/5포트/1000mbps"
       ],
       "members": [
         {
@@ -58157,11 +58182,11 @@
       ]
     },
     {
-      "brand_id": "brand-1764b0442d",
+      "brand_id": "tp-link",
       "kind": "purchase",
       "primary_id": "ldnet-3737",
       "evidence": [
-        "name:tp-link티피링크tl-sg2428p스위칭허브/24포트/1000mbps/poe"
+        "name:티피링크tl-sg2428p스위칭허브/24포트/1000mbps/poe"
       ],
       "members": [
         {
