@@ -246,11 +246,11 @@
     "listing_count": 213,
     "option_family_count": 180,
     "deduplication": {
-      "brands_checked": 357,
+      "brands_checked": 361,
       "groups": 2799,
       "removed": 4610
     },
-    "revision": "33086b15dd8405ab",
+    "revision": "6f69e69cc389aac1",
     "view": "rental"
   },
   "brands": [
@@ -4083,20 +4083,13 @@
         "avx:b:314346e28f94029b",
         "avx:b:378da5c29a91603c",
         "avx:b:41874dc4bc62c9ba",
-        "avx:b:480f00a190aa789c",
         "avx:b:73c8cf3b96214727",
-        "avx:b:814aa024ee069d3d",
         "avx:b:8903c02bd2ca76f2",
         "avx:b:8bffda5b7a30e40d",
-        "avx:b:9d8bd97bf490f3ea",
-        "avx:b:c25160d99995060f",
-        "avx:b:d9026aef907e41db",
-        "avx:b:dbe746f200caca68",
-        "avx:b:ecbb0ae014553782",
-        "avx:b:ef6895c3b0c781fc"
+        "avx:b:dbe746f200caca68"
       ],
-      "count": 25,
-      "purchase_count": 25,
+      "count": 6,
+      "purchase_count": 6,
       "rental_count": 0,
       "category_ids": [
         "avx:b:314346e28f94029b",
@@ -4404,6 +4397,28 @@
       "logo_dark": false
     },
     {
+      "id": "bongoties",
+      "name": "BONGOTIES",
+      "aliases": [
+        "BongoTies"
+      ],
+      "logo": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20250210/0c6e2d1254d98e6b9cc0034bcacc4607.jpg",
+      "navigation_category_ids": [
+        "clmedia:b:bongoties:reviewed:clmedia:b:50"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "clmedia:b:bongoties:reviewed:clmedia:b:50"
+      ],
+      "representative_id": "clmedia-78",
+      "representative_image": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20250210/0c6e2d1254d98e6b9cc0034bcacc4607.jpg",
+      "representative_name": "케이블 전선정리 타이 봉고타이(1팩 10개입)",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "boya",
       "name": "BOYA",
       "aliases": [
@@ -4633,6 +4648,29 @@
       "logo_dark": false
     },
     {
+      "id": "canvas-grip",
+      "name": "CANVAS-GRIP",
+      "aliases": [
+        "CANVAS GRIP"
+      ],
+      "logo": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20260112/e42bc5b2963151159623c66f5f1bd9cf.jpg",
+      "navigation_category_ids": [
+        "clmedia:b:canvas-grip:reviewed:clmedia:b:54"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "clmedia:b:canvas-grip:reviewed:clmedia:b:54"
+      ],
+      "representative_id": "clmedia-2488",
+      "representative_image": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20260112/e42bc5b2963151159623c66f5f1bd9cf.jpg",
+      "representative_name": "캔버스그립 ABPH 애플박스 시트커버 가로형",
+      "representative_alternate": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/extra/big/20260112/4db3514b6a6de8a9799383ac107939c3.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "captureone",
       "name": "CAPTUREONE",
       "aliases": [
@@ -4715,8 +4753,8 @@
       "navigation_category_ids": [
         "clmedia:b:50"
       ],
-      "count": 8,
-      "purchase_count": 8,
+      "count": 7,
+      "purchase_count": 7,
       "rental_count": 0,
       "category_ids": [
         "clmedia:b:50"
@@ -5219,8 +5257,8 @@
         "clmedia:b:590",
         "clmedia:b:591"
       ],
-      "count": 93,
-      "purchase_count": 93,
+      "count": 94,
+      "purchase_count": 94,
       "rental_count": 0,
       "category_ids": [
         "clmedia:b:53",
@@ -5318,18 +5356,23 @@
       "name": "EDELKRONE",
       "aliases": [
         "에델크론",
+        "EDELKRONE",
         "edelkrone"
       ],
       "logo": "/assets/shop/brands/edelkrone-1d01fa04e5.webp",
       "navigation_category_ids": [
+        "avx:b:edelkrone:reviewed:avx:b:00682a1d74aed1d1",
+        "avx:b:edelkrone:reviewed:avx:b:480f00a190aa789c",
+        "avx:b:edelkrone:reviewed:avx:b:814aa024ee069d3d",
+        "avx:b:edelkrone:reviewed:avx:b:c25160d99995060f",
         "naver:b:edelkrone:50000206",
         "naver:b:edelkrone:50001389",
         "naver:b:edelkrone:50001394",
         "naver:b:edelkrone:50002079",
         "naver:b:edelkrone:50002113"
       ],
-      "count": 19,
-      "purchase_count": 11,
+      "count": 21,
+      "purchase_count": 13,
       "rental_count": 8,
       "category_ids": [
         "naver:b:edelkrone:50000206",
@@ -5337,6 +5380,10 @@
         "naver:b:edelkrone:50002079",
         "naver:b:edelkrone:50001394",
         "naver:b:edelkrone:50002113",
+        "avx:b:edelkrone:reviewed:avx:b:814aa024ee069d3d",
+        "avx:b:edelkrone:reviewed:avx:b:c25160d99995060f",
+        "avx:b:edelkrone:reviewed:avx:b:00682a1d74aed1d1",
+        "avx:b:edelkrone:reviewed:avx:b:480f00a190aa789c",
         "rental-brand:edelkrone:7",
         "rental-brand:edelkrone:139",
         "rental-brand:edelkrone:133",
@@ -5519,13 +5566,12 @@
       ],
       "logo": "https://kppkpp.co.kr/data/item/1781855454/thumb-7ISs64Sk7J2867O17IKs_262x262.jpg",
       "navigation_category_ids": [
-        "clmedia:b:54",
         "kpp:b:etc:mirror:kpp:b:leofoto:30a0",
         "kpp:b:etc:mirror:kpp:b:leofoto:30a050",
         "plthink:b:072"
       ],
-      "count": 5,
-      "purchase_count": 5,
+      "count": 4,
+      "purchase_count": 4,
       "rental_count": 0,
       "category_ids": [
         "kpp:b:etc:mirror:kpp:b:leofoto:30a0",
@@ -5727,6 +5773,31 @@
       "representative_id": "smartstore-13739554663",
       "representative_image": "https://shop-phinf.pstatic.net/20260831_33/1788156005220eauCX_JPEG/f8d7d43b3e84c7d43feb2194d6e721e5.jpg",
       "representative_name": "Fender Studio Pro 12 Months 펜더 스튜디오 프로 12개월 라이선스 (구 스튜디오원)",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "flexilink",
+      "name": "FLEXILINK",
+      "aliases": [
+        "Flexilink"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/03/2802_temp_17730476932301list1.png",
+      "navigation_category_ids": [
+        "avx:b:flexilink:reviewed:avx:b:00682a1d74aed1d1",
+        "avx:b:flexilink:reviewed:avx:b:8903c02bd2ca76f2"
+      ],
+      "count": 9,
+      "purchase_count": 9,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:flexilink:reviewed:avx:b:00682a1d74aed1d1",
+        "avx:b:flexilink:reviewed:avx:b:8903c02bd2ca76f2"
+      ],
+      "representative_id": "avx-2802",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/03/2802_temp_17730476932301view.png",
+      "representative_name": "4K HDMI 케이블 v2.1 UHD 유연한 얇은 모니터선 A to A타입 60cm",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/03/2802_temp_17730476958901view.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -7819,13 +7890,17 @@
       ],
       "logo": "https://www.plthink.com/shopimages/plthink/0080720004093.jpg?1786318494",
       "navigation_category_ids": [
+        "avx:b:lit-systems:reviewed:avx:b:00682a1d74aed1d1",
+        "avx:b:lit-systems:reviewed:avx:b:8903c02bd2ca76f2",
         "plthink:b:lit-systems:reviewed:plthink:b:072"
       ],
-      "count": 1,
-      "purchase_count": 1,
+      "count": 2,
+      "purchase_count": 2,
       "rental_count": 0,
       "category_ids": [
-        "plthink:b:lit-systems:reviewed:plthink:b:072"
+        "plthink:b:lit-systems:reviewed:plthink:b:072",
+        "avx:b:lit-systems:reviewed:avx:b:00682a1d74aed1d1",
+        "avx:b:lit-systems:reviewed:avx:b:8903c02bd2ca76f2"
       ],
       "representative_id": "plthink-1930102",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080720004092.jpg?1786318494",
@@ -8694,6 +8769,31 @@
       "representative_id": "plthink-1922828",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080740000382.jpg?1783305746",
       "representative_name": "[NANUK] 나누크 Cubed Foam 폴리우레탄 폼 903-905",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "nb-stabilizer",
+      "name": "NB-STABILIZER",
+      "aliases": [
+        "NB Stabilizer"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/01/2735_temp_17696824638707list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:nb-stabilizer:reviewed:avx:b:c25160d99995060f",
+        "avx:b:nb-stabilizer:reviewed:avx:b:d9026aef907e41db"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:nb-stabilizer:reviewed:avx:b:c25160d99995060f",
+        "avx:b:nb-stabilizer:reviewed:avx:b:d9026aef907e41db"
+      ],
+      "representative_id": "avx-2735",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/01/2735_temp_17696824638707view.jpg",
+      "representative_name": "NB stabilizer Rock-a-bye_롤리그_스테디캠 수평유지",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/01/2735_temp_17696824645326view.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -9594,21 +9694,25 @@
       ],
       "logo": "/assets/shop/brands/pmi-54b2979ad8.webp",
       "navigation_category_ids": [
+        "avx:b:pmi:reviewed:avx:b:00682a1d74aed1d1",
+        "avx:b:pmi:reviewed:avx:b:8903c02bd2ca76f2",
         "cinemall:b:358",
         "naver:b:pmi:50000206",
         "naver:b:pmi:50001390",
         "naver:b:pmi:50002082",
         "onnoff:b:240"
       ],
-      "count": 31,
-      "purchase_count": 31,
+      "count": 33,
+      "purchase_count": 33,
       "rental_count": 0,
       "category_ids": [
         "naver:b:pmi:50000206",
         "naver:b:pmi:50001390",
         "naver:b:pmi:50002082",
         "cinemall:b:358",
-        "onnoff:b:240"
+        "onnoff:b:240",
+        "avx:b:pmi:reviewed:avx:b:00682a1d74aed1d1",
+        "avx:b:pmi:reviewed:avx:b:8903c02bd2ca76f2"
       ],
       "representative_id": "smartstore-12827926010",
       "representative_image": "https://shop-phinf.pstatic.net/20251215_69/1765795087658r8gd8_JPEG/45346672161202691_124176321.jpg",
@@ -13104,14 +13208,15 @@
         "avx:b:84fbcd55d0822f02",
         "avx:b:b00a96e330f58680",
         "avx:b:ee00e8915f896e11",
+        "avx:b:zoom:reviewed:avx:b:9d8bd97bf490f3ea",
         "clmedia:b:594",
         "plthink:b:029",
         "plthink:b:029:001",
         "plthink:b:029:002",
         "plthink:b:029:003"
       ],
-      "count": 162,
-      "purchase_count": 161,
+      "count": 165,
+      "purchase_count": 164,
       "rental_count": 1,
       "category_ids": [
         "naver:b:zoom:50000206",
@@ -13135,6 +13240,7 @@
         "avx:b:24887d2c32cf487c",
         "avx:b:113bb83ff2d4fe13",
         "avx:b:5da6648761fcfba5",
+        "avx:b:zoom:reviewed:avx:b:9d8bd97bf490f3ea",
         "rental-brand:zoom:5",
         "rental-brand:zoom:113"
       ],
