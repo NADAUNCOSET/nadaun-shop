@@ -29,7 +29,7 @@ function setup(conditions={motion:true,desktop:false,fine:false,mobile:false}){
  const effect=(target,vars)=>{const e={target,vars,killed:false};effects.push(e);activeScope?.push(e);return e};
  const gsap={registerPlugin(){},context:scope,fromTo(target,from,to){const e=effect(target,to);e.from=from;return e},to:effect,timeline(vars){const e=effect(null,vars);e.steps=[];e.fromTo=(target,from,to)=>{e.steps.push({target,from,to});return e};e.to=(target,to)=>{e.steps.push({target,to});return e};return e},matchMedia(){return {add(_queries,cb){mediaCallback=cb;mediaContext=scope(()=>{cleanup=cb({conditions})})},revert(){cleanup?.();mediaContext?.revert()}}}};
  const ticks=new Set();gsap.ticker={add:fn=>ticks.add(fn),remove:fn=>ticks.delete(fn)};
- const ST={refresh(){},update(){}};const env=new Element('window');env.setTimeout=fn=>{timers.set(++id,fn);return id};env.clearTimeout=id=>timers.delete(id);env.MutationObserver=class{constructor(fn){this.fn=fn;observers.push(this)}observe(target,options){this.target=target;this.options=options}disconnect(){this.disconnected=true}};
+ const ST={initialProgress:0,create(vars){const trigger=effect(null,vars);trigger.progress=this.initialProgress;return trigger},refresh(){},update(){}};const env=new Element('window');env.setTimeout=fn=>{timers.set(++id,fn);return id};env.clearTimeout=id=>timers.delete(id);env.MutationObserver=class{constructor(fn){this.fn=fn;observers.push(this)}observe(target,options){this.target=target;this.options=options}disconnect(){this.disconnected=true}};
  const mount=Lenis=>mountArtMotion(main,{gsap,ScrollTrigger:ST,Lenis},env);
  return {doc,main,photo,effects,observers,timers,ticks,ST,env,mount,Element,flush(){for(const [id,fn] of [...timers]){timers.delete(id);fn()}},change(next){cleanup?.();mediaContext.revert();conditions=next;mediaContext=scope(()=>{cleanup=mediaCallback({conditions})})}};
 }
@@ -93,9 +93,26 @@ test('alternate photos remain hidden until loaded and cannot replace the origina
  const s=setup();const {frame,image}=s.photo();frame.dataset.motionImage='https://example.com/same-product-angle.jpg';const dispose=s.mount();const plane=frame.firstElementChild,alternate=plane.children[1],second=alternate.firstElementChild;
  assert.equal(second.loading,'lazy');assert.equal(second.alt,'');assert.equal(alternate.attrs['aria-hidden'],'true');assert.equal(image.parentNode,plane);assert.equal(frame.classList.contains('has-motion-alternate'),false);
  second.emit('error');assert.equal(frame.classList.contains('has-motion-alternate'),false);assert.equal(image.parentNode,plane);
- second.naturalWidth=800;second.emit('load');assert.equal(frame.classList.contains('has-motion-alternate'),true);const effect=s.effects.find(e=>e.target===alternate);assert.ok(effect.vars.scrollTrigger.scrub);assert.equal(effect.vars.opacity,1);
+ second.naturalWidth=800;second.emit('load');assert.equal(frame.classList.contains('has-motion-alternate'),true);const effect=s.effects.find(e=>e.vars.trigger===frame);assert.ok(effect);assert.equal(effect.vars.scrub,undefined);assert.equal(frame.classList.contains('is-showing-alternate'),false);
  const count=s.effects.length;second.emit('load');assert.equal(s.effects.length,count);dispose();assert.equal(frame.firstElementChild,image);assert.equal(effect.killed,true);assert.equal(frame.classList.contains('has-motion-alternate'),false);
  second.emit('load');assert.equal(s.effects.length,count);
+});
+
+test('stopping or reversing halfway through a photo change selects one complete photo',()=>{
+ const s=setup();const {frame,image}=s.photo();frame.dataset.motionImage='/assets/angle.webp';s.ST.initialProgress=.8;
+ const dispose=s.mount(),alternate=frame.firstElementChild.children[1],second=alternate.firstElementChild;
+ assert.equal(frame.classList.contains('is-showing-alternate'),false);
+ second.naturalWidth=800;second.emit('load');
+ assert.equal(frame.classList.contains('is-showing-alternate'),true,'late loading selects the current scroll position');
+ const swap=s.effects.find(e=>e.vars.trigger===frame);
+ for(const progress of [1,.75,.5,.49,.25,0,.51]){
+  swap.progress=progress;swap.vars.onUpdate(swap);
+  assert.equal(frame.classList.contains('is-showing-alternate'),progress>=.5);
+ }
+ swap.progress=.2;swap.vars.onRefresh(swap);assert.equal(frame.classList.contains('is-showing-alternate'),false);
+ assert.equal(s.effects.some(e=>e.target===alternate),false,'no scrubbed opacity or clipped photo tween');
+ assert.equal(image.classList.contains('motion-primary'),true);
+ dispose();assert.equal(frame.classList.contains('is-showing-alternate'),false);assert.equal(image.classList.contains('motion-primary'),false);assert.equal(frame.firstElementChild,image);
 });
 
 test('malformed secondary image URLs never become network requests',()=>{

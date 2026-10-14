@@ -46,18 +46,24 @@ export function mountArtMotion(main,{gsap,ScrollTrigger:ST,Lenis,motionPreferenc
     timeline.fromTo(plane,{yPercent:distance,scale:home?.97:.88,rotation:tilt,clipPath:home?'inset(0%)':'inset(14% 0% 10% 0% round 18px)'},{yPercent:0,scale:1,rotation:0,clipPath:'inset(0% 0% 0% 0% round 0px)',duration:.38,ease:'power2.out'})
      .to(plane,{yPercent:-3,scale:1.025,rotation:0,duration:.34,ease:'none'})
      .to(plane,{yPercent:mobile?-9:-14,scale:1.04,rotation:-tilt*.2,duration:.28,ease:'none'});
-    // A real second view of the SAME product is revealed only after it loads.
-    // The original photo stays underneath throughout failure/slow connections.
+    // Select one complete view of the SAME product, only after it loads.
+    // Scrubbing opacity/clip leaves two photos superimposed when scrolling stops.
     const source=frame.dataset?.motionImage;
     let alternate,second,swapScope,loaded;
     if(source&&(/^(https?:\/\/)/.test(source)||(/^\/(?!\/)/.test(source)))){
+     img.classList.add('motion-primary');
      alternate=doc.createElement('span');alternate.className='motion-alternate';alternate.setAttribute('aria-hidden','true');
      second=doc.createElement('img');second.alt='';second.loading='lazy';second.decoding='async';second.referrerPolicy='no-referrer';
      loaded=()=>{
       if(disposed||!plane.isConnected||swapScope||!second.naturalWidth)return;
       frame.classList.add('has-motion-alternate');
       swapScope=gsap.context(()=>{
-       gsap.fromTo(alternate,{opacity:0,xPercent:mobile?5:9,clipPath:'inset(0% 100% 0% 0%)'},{opacity:1,xPercent:0,clipPath:'inset(0% 0% 0% 0%)',ease:'power1.inOut',scrollTrigger:scroll(frame,`top ${64-phase}%`,`top ${24-phase}%`)});
+       const selectPhoto=trigger=>{
+        if(trigger.progress>=.5)frame.classList.add('is-showing-alternate');
+        else frame.classList.remove('is-showing-alternate');
+       };
+       const swap=ST.create({trigger:frame,start:`top ${64-phase}%`,end:`top ${24-phase}%`,invalidateOnRefresh:true,onUpdate:selectPhoto,onRefresh:selectPhoto});
+       selectPhoto(swap);
       },main);
      };
      second.addEventListener('load',loaded);alternate.append(second);plane.append(alternate);second.src=source;
@@ -66,6 +72,7 @@ export function mountArtMotion(main,{gsap,ScrollTrigger:ST,Lenis,motionPreferenc
     return ()=>{
      if(second)second.removeEventListener('load',loaded);
      swapScope?.revert();alternate?.remove();frame.classList.remove('has-motion-alternate');
+     frame.classList.remove('is-showing-alternate');img.classList.remove('motion-primary');
      if(img.parentNode===plane)plane.replaceWith(img);else plane.remove();
     };
    });

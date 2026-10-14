@@ -533,12 +533,15 @@ body[data-mode="home"] .product-section{margin-top:0;padding-top:0}
 
 /* Smooth product entrances and same-product photo transitions. */
 .motion-plane{backface-visibility:hidden}
-.motion-alternate{display:block;position:absolute;inset:0;z-index:1;background:#fff;opacity:0;pointer-events:none;overflow:hidden}
+.motion-alternate{display:block;position:absolute;inset:0;z-index:1;background:#fff;visibility:hidden;pointer-events:none;overflow:hidden}
 .motion-alternate>img{display:block;width:100%;height:100%;object-fit:contain}
+.is-showing-alternate .motion-primary{visibility:hidden}
+.is-showing-alternate .motion-alternate{visibility:visible}
 .motion-section-head{position:relative}
 .motion-section-head::after{content:"";position:absolute;left:0;right:0;bottom:-13px;height:1px;background:#d7d8d2;transform:scaleX(var(--section-line,1));transform-origin:left;pointer-events:none}
 a:focus-visible .motion-plane{transform:none!important;clip-path:inset(0)!important}
-a:focus-visible .motion-alternate{opacity:0!important}
+a:focus-visible .motion-primary{visibility:visible!important}
+a:focus-visible .motion-alternate{visibility:hidden!important}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 @media(prefers-reduced-motion:reduce){body:not([data-motion-explicit="true"]) :is(.motion-plane,.product-image img){transform:none!important;clip-path:none!important;transition:none!important}body:not([data-motion-explicit="true"]) .motion-alternate{display:none!important}.motion-section-head::after{transform:none!important}}
 
