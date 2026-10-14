@@ -40,7 +40,9 @@ def purchase_source_allowed(product, choices=None):
 
 def publishable_ids(snapshot):
     choices=selections()
-    return {pid for pid,p in snapshot['products'].items() if purchase_source_allowed(p,choices)}
+    rules=json.loads((ROOT/'data/catalog/dedup-rules.json').read_text()).get('corrections',{})
+    hidden={pid for pid,rule in rules.items() if rule.get('hidden')}
+    return {pid for pid,p in snapshot['products'].items() if purchase_source_allowed(p,choices) and pid not in hidden}
 
 
 def snapshots(candidate=None):
@@ -65,11 +67,12 @@ def snapshots(candidate=None):
 
 
 def inventory(candidate=None):
-    from build_catalog import brand_id
+    from build_catalog import brand_id,reviewed_brand,PUBLIC
+    overrides=json.loads((PUBLIC/'overrides.json').read_text()).get('brand_overrides',{})
     result=defaultdict(Counter)
     for source,snapshot in snapshots(candidate).items():
         for p in snapshot['products'].values():
-            if p.get('kind')=='purchase':result[brand_id(p['brand'])][source]+=1
+            if p.get('kind')=='purchase':result[brand_id(reviewed_brand(p,overrides))][source]+=1
     return result
 
 

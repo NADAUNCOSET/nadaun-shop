@@ -44,6 +44,51 @@ BRANDS = {
     '포미니': ('포미니',), '오스템': ('오스템랩', '오스템'),
     '포인트탭': ('포인트탭',), '레벤트': ('레벤트',),
 }
+# Product logos/model labels visually reviewed 2026-10-14; exact titles and
+# source image URLs are guards against reused product IDs or changed evidence.
+REVIEWED_PRODUCTS = {'ldnet-23573': {'name': '플러온 W1 무선충전 3in1 거치대 스마트폰 워치 무선이어폰 3015FWC',
+                 'brand': 'NEXT',
+                 'image': 'https://img.ez-net.co.kr/product_images/3015FWC/images/3015FWC_WEBDB_01.jpg'},
+ 'ldnet-23572': {'name': '썬드라 BC2 도킹형 5000mAh 고속충전 보조배터리 베이지 1013QPB MINI',
+                 'brand': 'NEXT',
+                 'image': 'https://img.ez-net.co.kr/product_images/1013QPB MINI/images/1013QPB_MINI_01.jpg'},
+ 'ldnet-23569': {'name': '스프링 (코일) 타입 120W C TO C PD 고속충전 신축 데이터 케이블 5종',
+                 'brand': 'SOPLING',
+                 'image': 'https://image.fzonesports.co.kr/SOPLING/SPL-SC_1.jpg'},
+ 'ldnet-15571': {'name': '리우모 HDMI KVM over IP 비디오월 매트릭스 컨트롤 서버 HV996VW-CTL',
+                 'brand': 'NEXT',
+                 'image': 'https://www.ez-net.co.kr/ez-net/images/product_images/HV996VW-CTL '
+                          '리우모/images/HV996VW-CTL_WEBDB_01.jpg'},
+ 'ldnet-15552': {'name': '리거우 HDMI KVM over IP 비디오월 매트릭스 수신기 HV995HDCR-KVM',
+                 'brand': 'NEXT',
+                 'image': 'https://www.ez-net.co.kr/ez-net/images/product_images/HV995HDCR-KVM/images/HV995HDCR-KVM_WEBDB_01.jpg'},
+ 'ldnet-15527': {'name': '리우단 HDMI KVM over IP 비디오월 매트릭스 송신기 HV994HDCT-KVM',
+                 'brand': 'NEXT',
+                 'image': 'https://www.ez-net.co.kr/ez-net/images/product_images/HV994HDCT-KVM '
+                          '리우단/images/HV994HDCT-KVM_WEBDB_01.jpg'},
+ 'ldnet-15382': {'name': '미르킹 150M 무선 HDMI 수신기 KVM지원 FHD 디스플레이 미러링 4306HDW-R',
+                 'brand': 'NEXT',
+                 'image': 'https://www.ez-net.co.kr/ez-net/images/product_images/미르킹 '
+                          '4306HDW-R/images/4306HDW-R_WEBDB_01.jpg'},
+ 'ldnet-15366': {'name': '미르단 150M 무선 HDMI 송수신기 KVM지원 FHD 디스플레이 미러링 4305HDW',
+                 'brand': 'NEXT',
+                 'image': 'https://www.ez-net.co.kr/ez-net/images/product_images/미르단 '
+                          '4305HDW/images/4305HDW_WEBDB_01.jpg'},
+ 'ldnet-4537': {'name': '미니 광분배함, 4포트 4코어 [SC/PC]',
+                'brand': 'JMIT',
+                'image': 'https://ldnet.co.kr/web/upload/NNEditor/20240312/6e9ca50ef67e44cacb5077bdf33f43f01447192.jpg'},
+ 'ldnet-4534': {'name': '미니 광분배함, 4포트 8코어 [LC/PC]',
+                'brand': 'JMIT',
+                'image': 'https://ldnet.co.kr/web/upload/NNEditor/20240312/1004289680477589b06eea98478e93f51606342.jpg'},
+ 'ldnet-13036': {'name': '접촉기 TeSys LC1-D - 3극 - AC-3 440V 65 A - 코일 110VDC [LC1D65AFD]',
+                 'brand': 'Schneider Electric',
+                 'image': 'https://shop-phinf.pstatic.net/20250213_236/17394337782716TtMO_JPEG/page1_1.jpg',
+                 'reference': 'https://www.se.com/kr/ko/product/LC1D65AFD'},
+ 'ldnet-4783': {'name': 'APL-CE1100 천장형 연결봉 1100mm 연결봉 추가 상품 옵션',
+                'brand': '엘디엘마운트',
+                'image': 'https://ldnet.co.kr/web/upload/NNEditor/20240816/EC97B0EAB2B0EBB489.PNG',
+                'reference': 'https://www.l-mount.co.kr/goods/goods_list.php?cateCd=006'}}
+
 ALIASES = {alias.casefold(): brand for brand, aliases in BRANDS.items() for alias in aliases}
 TITLE_PREFIXES = sorted(ALIASES, key=len, reverse=True)
 
@@ -98,6 +143,12 @@ def resolve(product, nodes):
     if len(evidence) == 1:
         brand = next(iter(evidence))
         return brand, {'method': 'supplier-brand-detail-directory', 'url': evidence[brand]}
+    reviewed = REVIEWED_PRODUCTS.get(product.get('id'))
+    if reviewed and declared.strip().casefold() in SUPPLIER_NAMES:
+        if name != reviewed['name'] or reviewed['image'] not in images:
+            raise ValueError('Reviewed LDNET brand evidence changed: ' + product['id'])
+        return reviewed['brand'], {'method': 'reviewed-product-detail', 'url': reviewed['image'],
+                                   **({'reference': reviewed['reference']} if reviewed.get('reference') else {})}
     if declared.strip().casefold() not in SUPPLIER_NAMES and declared.strip():
         return ALIASES.get(declared.casefold(), declared), {'method': 'declared-brand'}
     if '26' in memberships and re.match(r'^\[?(?:LD(?:[-\s\]])|엘디네트웍스)', name, re.I):

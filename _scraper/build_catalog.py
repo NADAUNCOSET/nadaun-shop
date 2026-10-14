@@ -50,7 +50,7 @@ def brand_dictionary():
       'benro':['벤로'], 'libec':['리벡'], 'savage':['사베지'], 'valens':['발렌스'],
       'broncolor':['브론컬러'], 'arturia':['아투리아'], 'blackmagic':['blackmagic design','블랙매직디자인'],
       'kumkwang':['금광정밀'], 'tenba':['텐바'], 'teris':['테리스'], 'swit':['스위트'],
-      'wacom':['와콤'], 'lexar':['렉사'], 'fomex':['포멕스','포맥스'], 'visgo':['비스고'],
+      'wacom':['와콤'], 'lexar':['렉사'], 'fomex':['포멕스','포맥스'], 'vsgo':['비스고','visgo'],
       'samyang':['삼양옵틱스'], 'qon':['큐온'], 'edelkrone':['에델크론'],
       'hoverair':['호버에어'], 'fxlion':['에프엑스라이온'], 'sedona':['세도나'],
       'motion9':['모션나인'], 'xtar':['엑스타'], 'genelec':['제네렉'],
@@ -71,15 +71,33 @@ def brand_dictionary():
       'teradek':['테라덱'], 'zhiyun':['Zhiyun Tech'], 'zgcine':['ZGC'],
       'crystalprompter':['Crystal Prompter','CRYSTAL-PROMPTER','크리스탈프롬프터'],
       'iriver':['아이리버'],
+      'pelican':['펠리칸'], 'fujifilm':['후지필름'],
+      'pro-gaff':['PROGAFF','PRO GAFF','프로게퍼'],
+      'healing-shield':['HealingShield','Healing Shield','힐링쉴드'],
+      'yc-onion':['YCONION','YC Onion','YC ONION'], 'lugbox':['러그박스'],
+      'hyperthin':['하이퍼틴'], 'magmod':['맥모드'],
+      'schneider-electric':['Schneider Electric','슈나이더 일렉트릭'],
     }
     for key,names in extras.items():
         for name in names+[key]: aliases[name.casefold()]=key
     return aliases
 
 ALIASES=brand_dictionary()
-DISPLAY={'hy':'H&Y','eimage':'E-IMAGE','blackmagic':'Blackmagic Design','rainbowbene':'NADAUN','lee-filters':'LEE Filters','tokina-cinema':'TOKINA CINEMA','visgo':'VSGO','ldl-mount':'LDL-MOUNT'}
+DISPLAY={'hy':'H&Y','eimage':'E-IMAGE','blackmagic':'Blackmagic Design','rainbowbene':'NADAUN','lee-filters':'LEE Filters','tokina-cinema':'TOKINA CINEMA','vsgo':'VSGO','ldl-mount':'LDL-MOUNT'}
 
 def brand_id(raw): return ALIASES.get(clean(raw).casefold(),slug(raw or '기타 브랜드'))
+
+def reviewed_brand(product, overrides=None):
+    """Apply exact, evidence-backed corrections without mutating source records."""
+    if overrides is None:
+        overrides=json.loads((PUBLIC/'overrides.json').read_text()).get('brand_overrides',{})
+    rule=overrides.get(product['id'])
+    if not rule:return product['brand']
+    if (product['name']!=rule.get('expected_name') or product['brand']!=rule.get('expected_brand') or
+            not rule.get('brand') or not rule.get('evidence')):
+        raise ValueError('Reviewed brand evidence changed; recheck product: '+product['id'])
+    return rule['brand']
+
 
 def product_name(name):
     # Only remove the store's repeated prefix, preserving bundle/variant text.
@@ -137,6 +155,9 @@ def build(allow_pending=False):
             raise RuntimeError('Exclusive replacement is not verified yet: '+bid)
     official_dji=source_choices.get('dji',{}).get('source')=='dji-official' and 'dji-official' in snapshots
     partner_image_rules=json.loads((PUBLIC/'partner-image-rules.json').read_text())
+    config_path=PUBLIC/'overrides.json'
+    config=json.loads(config_path.read_text())
+    brand_overrides=config.get('brand_overrides',{})
     products={}; categories={}; brands={}; details={}; coverage=Counter()
     def add_brand(raw):
         bid=brand_id(raw)
@@ -169,7 +190,8 @@ def build(allow_pending=False):
                 products[pid]['promotion_ids']=['imweb:promotion:'+cid for cid in p0['brand_category_ids']]
                 coverage[source]+=1
                 continue
-            p=deepcopy(p0);p['brand_id']=add_brand(p['brand']);p['name']=product_name(p['name'])
+            p=deepcopy(p0);p['brand']=reviewed_brand(p,brand_overrides)
+            p['brand_id']=add_brand(p['brand']);p['name']=product_name(p['name'])
             if not purchase_source_allowed(p,source_choices):continue
             bid=p['brand_id'];membership=[];types=[]
             if p.get('kind')=='purchase':p['_preferred_source']=source_choices.get(bid,{}).get('source')
@@ -212,6 +234,8 @@ def build(allow_pending=False):
                     key='naver:p:'+ids[-1]
                     categories.setdefault(key,{'id':key,'name':path[-1],'parent_id':None,'brand_id':None})
                     types.append(key)
+            if pid in brand_overrides and membership and not any(categories[cid]['brand_id']==bid for cid in membership):
+                membership.extend(mirror_source_paths(membership,categories,bid,f'{source}:b:{bid}:reviewed:'))
             p['category_ids']=list(dict.fromkeys(membership));p['type_ids']=types
             p['promotion_ids']=['imweb:promotion:'+cid for cid in p.get('brand_category_ids',[])] if source=='imweb-promotions' else []
             d=cached.get(pid,{})
@@ -248,6 +272,9 @@ def build(allow_pending=False):
             details[pid]={k:d.get(k) for k in ('description_text','options','option_groups','shipping','options_require_confirmation','description_notice') if d.get(k)}
             details[pid]['images']=p['images'];details[pid]['source_id']=p['source_id']
             p['_provenance']=source_provenance(p,d,s)
+            if pid in brand_overrides:
+                p['_provenance']['fields']['brand']={'source':'reviewed_brand','file':'data/catalog/overrides.json',
+                    'product_id':pid,'original_brand':p0['brand'],'brand':p['brand'],'evidence':brand_overrides[pid]['evidence']}
             products[pid]=p
     for b in brands.values():
         b['aliases']=list(dict.fromkeys(b['aliases']+[alias for alias,key in ALIASES.items() if key==b['id']]))

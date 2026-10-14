@@ -1,6 +1,55 @@
 {
   "routes": [
     {
+      "src": "^/brands/visgo\\.html$",
+      "status": 308,
+      "headers": {
+        "Location": "/brands/vsgo.html"
+      }
+    },
+    {
+      "src": "^/brands/brand-9fd517d8de\\.html$",
+      "status": 308,
+      "headers": {
+        "Location": "/brands/pelican.html"
+      }
+    },
+    {
+      "src": "^/brands/brand-63ad1e5419\\.html$",
+      "status": 308,
+      "headers": {
+        "Location": "/brands/fujifilm.html"
+      }
+    },
+    {
+      "src": "^/brands/progaff\\.html$",
+      "status": 308,
+      "headers": {
+        "Location": "/brands/pro-gaff.html"
+      }
+    },
+    {
+      "src": "^/brands/healingshield\\.html$",
+      "status": 308,
+      "headers": {
+        "Location": "/brands/healing-shield.html"
+      }
+    },
+    {
+      "src": "^/brands/yconion\\.html$",
+      "status": 308,
+      "headers": {
+        "Location": "/brands/yc-onion.html"
+      }
+    },
+    {
+      "src": "^/brands/brand-33f2578e39\\.html$",
+      "status": 308,
+      "headers": {
+        "Location": "/brands/lugbox.html"
+      }
+    },
+    {
       "src": "^/rental\\.html$",
       "status": 308,
       "headers": {

@@ -104,6 +104,14 @@
       "evidence": [
         "https://smartstore.naver.com/rainbowbene/products/7139260678"
       ]
+    },
+    "ldnet-4868": {
+      "expected_name": "테스트",
+      "hidden": true,
+      "reason": "공급사 테스트 등록: 제목과 상세가 테스트뿐이고 실제 상품 정보 없음. 원본은 보존하고 공개 목록에서 제외.",
+      "evidence": [
+        "https://ldnet.co.kr/product/detail.html?product_no=4868"
+      ]
     }
   }
 }

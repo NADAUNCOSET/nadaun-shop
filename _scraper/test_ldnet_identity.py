@@ -2,7 +2,7 @@ from copy import deepcopy
 import unittest
 from unittest.mock import patch
 
-from ldnet_identity import classify, resolve, revision
+from ldnet_identity import classify, resolve, revision, REVIEWED_PRODUCTS
 import cafe24_publication as publication
 import cafe24_worker as worker
 import test_cafe24_publication as fixtures
@@ -46,6 +46,14 @@ class IdentityTests(unittest.TestCase):
         self.assertEqual(resolve(p, {})[0], '기타 브랜드')
         p['images']['detail'].append('https://image.fzonesports.co.kr/ANYPORT/TPP-AOC_1.jpg')
         self.assertEqual(resolve(p, {})[0], '애니포트')
+
+    def test_reviewed_product_logos_require_exact_id_title_and_image(self):
+        for pid,rule in REVIEWED_PRODUCTS.items():
+            p=self.product(rule['name'],images={'detail':[rule['image']]});p['id']=pid
+            self.assertEqual(resolve(p,{})[0],rule['brand'])
+            self.assertEqual(resolve({**p,'id':'ldnet-unknown'},{})[0],'기타 브랜드')
+            with self.assertRaises(ValueError):resolve({**p,'name':'다른 연결부품'},{})
+            with self.assertRaises(ValueError):resolve({**p,'images':{'detail':[]}},{})
 
     def test_normalization_migrates_brand_paths_without_changing_offer_fields(self):
         raw = fixtures.PublicationTests().ldnet_candidate()

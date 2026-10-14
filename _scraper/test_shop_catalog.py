@@ -17,6 +17,23 @@ class SourceRules(unittest.TestCase):
             self.assertIsNone(naver_public_product(self.channel(**changed)))
         self.assertEqual(naver_public_product(self.channel(statusType='OUTOFSTOCK'))['status'],'soldout')
         self.assertEqual(naver_public_product(self.channel())['kind'],'rental')
+    def test_reviewed_brand_aliases_join_sources_without_merging_different_makers(self):
+        for a,b in [('비스고','VSGO'),('visgo','VSGO'),('펠리칸','PELICAN'),
+                    ('후지필름','FUJIFILM'),('PROGAFF','PRO GAFF'),
+                    ('HealingShield','Healing Shield'),('YCONION','YC Onion'),('러그박스','LUGBOX')]:
+            with self.subTest(alias=a):self.assertEqual(brand_id(a),brand_id(b))
+        self.assertNotEqual(brand_id('SCHNEIDER'),brand_id('Schneider Electric'))
+
+    def test_reviewed_brand_fails_closed_and_preserves_source(self):
+        from build_catalog import reviewed_brand
+        p={'id':'source-1','name':'[Saramonic] microphone for Sony','brand':'ETC'}
+        rules={'source-1':{'expected_name':p['name'],'expected_brand':'ETC','brand':'Saramonic','evidence':['https://example.com/product/1']}}
+        self.assertEqual(reviewed_brand(p,rules),'Saramonic')
+        self.assertEqual(p['brand'],'ETC')
+        with self.assertRaises(ValueError):reviewed_brand({**p,'name':'Sony microphone'},rules)
+        with self.assertRaises(ValueError):reviewed_brand({**p,'brand':'Sony'},rules)
+        self.assertEqual(reviewed_brand({**p,'id':'unknown'},rules),'ETC')
+
     def test_imweb_public_discount_only(self):
         p={'price':635000,'product_discount_options':['period'],'period_discount_data':[{'group_type':'비회원+회원','dc_type':'price','dc_price':37300}]}
         self.assertEqual(imweb_public_price(p),597700)

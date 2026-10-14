@@ -32,5 +32,1087 @@
   },
   "category_label_overrides": {
     "kpp:b:hoya:global:02": "렌즈 액세서리"
+  },
+  "brand_overrides": {
+    "plthink-1923346": {
+      "expected_name": "[CANARE] 카나레 12G-SDI BNC 영상 신호 오디오 동축케이블",
+      "expected_brand": "PLTHINK",
+      "brand": "CANARE",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1923346"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T08:15:32+00:00"
+    },
+    "plthink-176": {
+      "expected_name": "[KUMKWANG] 금광 K-3300 고급 이동배경 풀세트 (종이 배경지 1롤 포함)",
+      "expected_brand": "PLTHINK",
+      "brand": "KUMKWANG",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=176"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T08:15:55+00:00"
+    },
+    "plthink-1904052": {
+      "expected_name": "[PHOISM] 촬영조명 8각 파라볼릭 소프트박스95 고독스 보웬스타입 호환 SB-FW95",
+      "expected_brand": "PLTHINK",
+      "brand": "PHOISM",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1904052"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T08:17:14+00:00"
+    },
+    "plthink-1919312": {
+      "expected_name": "[CANARE] 카나레 3G-SDI BNC 영상 신호 오디오 동축케이블",
+      "expected_brand": "PLTHINK",
+      "brand": "CANARE",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1919312"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T08:19:06+00:00"
+    },
+    "plthink-1916475": {
+      "expected_name": "[SAVAGE] 소품 촬영용 벽걸이형 유튜브 촬영 배경지 미국산 90 x 200cm",
+      "expected_brand": "PLTHINK",
+      "brand": "SAVAGE",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1916475"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T08:19:50+00:00"
+    },
+    "plthink-4946": {
+      "expected_name": "[PHOISM] 전동배경지 6단 배경 컨트롤박스 MBS6",
+      "expected_brand": "PLTHINK",
+      "brand": "PHOISM",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=4946"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T08:19:54+00:00"
+    },
+    "plthink-1912206": {
+      "expected_name": "[PHOISM] 대광량 LED Fresnel X3-3000WS 300W",
+      "expected_brand": "PLTHINK",
+      "brand": "PHOISM",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1912206"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T08:22:23+00:00"
+    },
+    "plthink-1038": {
+      "expected_name": "[NANLITE] 난라이트 전동배경 전동익스판 시스템 세트 롤배경지용",
+      "expected_brand": "PLTHINK",
+      "brand": "NANLITE",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1038"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T08:24:52+00:00"
+    },
+    "plthink-1910823": {
+      "expected_name": "[PHOISM] 촬영 조명 보웬스 타입 호환 스트로보 전용 리플렉터 반사갓 190mm",
+      "expected_brand": "PLTHINK",
+      "brand": "PHOISM",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1910823"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T08:25:35+00:00"
+    },
+    "plthink-1930338": {
+      "expected_name": "[TALIX] 탤릭스 Linxt 190W 대용량 보조배터리 일체형 휴대용 파워뱅크 고속충전 기내반입",
+      "expected_brand": "ETC.",
+      "brand": "TALIX",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1930338"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T11:28:58+00:00"
+    },
+    "plthink-1930337": {
+      "expected_name": "[TALIX] 탤릭스 Linxt 100W 대용량 보조배터리 일체형 휴대용 파워뱅크 고속충전 기내반입",
+      "expected_brand": "ETC.",
+      "brand": "TALIX",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1930337"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T11:29:14+00:00"
+    },
+    "plthink-1930336": {
+      "expected_name": "[TALIX] 탤릭스 Fluxo 125W 대용량 보조배터리 휴대용 파워뱅크 고속충전 기내반입",
+      "expected_brand": "ETC.",
+      "brand": "TALIX",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1930336"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T11:29:19+00:00"
+    },
+    "plthink-1930315": {
+      "expected_name": "[TALIX] 탤릭스 Fluxo 140W 대용량 보조배터리 휴대용 파워뱅크 고속충전 기내반입",
+      "expected_brand": "ETC.",
+      "brand": "TALIX",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1930315"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T11:29:27+00:00"
+    },
+    "plthink-1930314": {
+      "expected_name": "[TREZOR] 트레저 세이프7 콜드월렛 암호화폐 지갑 비트코인 테더 USDT 호환",
+      "expected_brand": "ETC.",
+      "brand": "TREZOR",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1930314"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T11:29:32+00:00"
+    },
+    "plthink-1930313": {
+      "expected_name": "[VAGO] 바고 Z 진공 압축팩 패딩 의류 압축 파우치 이불팩",
+      "expected_brand": "ETC.",
+      "brand": "VAGO",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1930313"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T11:29:37+00:00"
+    },
+    "plthink-1930312": {
+      "expected_name": "[VAGO] 바고 Z 진공 압축기 패딩 의류 압축팩 흡입기 휴대용 C타입 전원공급",
+      "expected_brand": "ETC.",
+      "brand": "VAGO",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1930312"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T11:29:42+00:00"
+    },
+    "plthink-1930102": {
+      "expected_name": "[LIT Systems] LIT DUO 1 올인원 멀티 디지털 노출계 컬러미터 조도계",
+      "expected_brand": "ETC.",
+      "brand": "LIT Systems",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1930102"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-11T11:29:47+00:00"
+    },
+    "plthink-1929495": {
+      "expected_name": "[RTcom] 알티컴 SPX-Extender 랜 리피터 4K HDMI 장거리 전송",
+      "expected_brand": "ETC.",
+      "brand": "RTcom",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1929495"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:29:51+00:00"
+    },
+    "plthink-1929494": {
+      "expected_name": "[RTcom] 알티컴 HD-D108U 영상 스플리터 분배기 1x8 4K HDMI",
+      "expected_brand": "ETC.",
+      "brand": "RTcom",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1929494"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:29:58+00:00"
+    },
+    "plthink-1929493": {
+      "expected_name": "[RTcom] 알티컴 HD-D104U 영상 스플리터 분배기 1x4 4K HDMI",
+      "expected_brand": "ETC.",
+      "brand": "RTcom",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1929493"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:30:03+00:00"
+    },
+    "plthink-1929492": {
+      "expected_name": "[RTcom] 알티컴 HD-D102U 영상 스플리터 분배기 1x2 4K HDMI",
+      "expected_brand": "ETC.",
+      "brand": "RTcom",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1929492"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:30:09+00:00"
+    },
+    "plthink-1929340": {
+      "expected_name": "[Robotics LAB] X-ble Shoulder 어깨 근력 보조 웨어러블 로봇 엑스블 숄더",
+      "expected_brand": "ETC.",
+      "brand": "Robotics LAB",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1929340"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:30:14+00:00"
+    },
+    "plthink-1929062": {
+      "expected_name": "[Saramonic] 사라모닉 무선마이크 2채널 UHF 유튜브 방송 UwMic9S KIT2",
+      "expected_brand": "ETC.",
+      "brand": "Saramonic",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1929062"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:30:19+00:00"
+    },
+    "plthink-1929063": {
+      "expected_name": "[Saramonic] 사라모닉 무선마이크 1채널 UHF 유튜브 방송 UwMic9S KIT1",
+      "expected_brand": "ETC.",
+      "brand": "Saramonic",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1929063"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:30:24+00:00"
+    },
+    "plthink-1928862": {
+      "expected_name": "[THRONMAX] 쓰론맥스 MS60 듀얼 모니터 암 데스크 거치대",
+      "expected_brand": "ETC.",
+      "brand": "THRONMAX",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1928862"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:30:29+00:00"
+    },
+    "plthink-1928861": {
+      "expected_name": "[THRONMAX] 쓰론맥스 S6 트위스트 마이크 암 거치대 관절형 스탠드 붐암 게임 스트리밍",
+      "expected_brand": "ETC.",
+      "brand": "THRONMAX",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1928861"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:30:38+00:00"
+    },
+    "plthink-1928860": {
+      "expected_name": "[THRONMAX] 쓰론맥스 S5 플렉스 마이크 암 거치대 관절형 스탠드 붐암 게임 스트리밍",
+      "expected_brand": "ETC.",
+      "brand": "THRONMAX",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1928860"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:30:44+00:00"
+    },
+    "plthink-1928859": {
+      "expected_name": "[THRONMAX] 쓰론맥스 S7 튠 마이크 암 거치대 관절형 스탠드 붐암 게임 스트리밍",
+      "expected_brand": "ETC.",
+      "brand": "THRONMAX",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1928859"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:30:50+00:00"
+    },
+    "plthink-1928858": {
+      "expected_name": "[THRONMAX] 쓰론맥스 S8 트윈스 마이크 암 거치대 관절형 스탠드 붐암 게임 스트리밍",
+      "expected_brand": "ETC.",
+      "brand": "THRONMAX",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1928858"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:30:55+00:00"
+    },
+    "plthink-1928857": {
+      "expected_name": "[THRONMAX] 쓰론맥스 MS25 싱글 모니터 암 데스크 거치대",
+      "expected_brand": "ETC.",
+      "brand": "THRONMAX",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1928857"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:30:59+00:00"
+    },
+    "plthink-1926004": {
+      "expected_name": "[웃는나무] 9050 원목 사이드 리프트업 1인 미니 촬영 테이블 직사각형",
+      "expected_brand": "ETC.",
+      "brand": "웃는나무",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1926004"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:31:04+00:00"
+    },
+    "plthink-1926005": {
+      "expected_name": "[웃는나무] 8040 원목 사이드 리프트업 1인 미니 촬영 테이블 직사각형",
+      "expected_brand": "ETC.",
+      "brand": "웃는나무",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1926005"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:31:14+00:00"
+    },
+    "plthink-1926006": {
+      "expected_name": "[웃는나무] 8040C 원목 사이드 리프트업 1인 미니 촬영 테이블 커브형",
+      "expected_brand": "ETC.",
+      "brand": "웃는나무",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1926006"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:31:26+00:00"
+    },
+    "plthink-1928359": {
+      "expected_name": "[ADAMelements] 아담엘리먼트 4in1 마그네틱 멀티 고속 충전 케이블 60W 지원",
+      "expected_brand": "ETC.",
+      "brand": "ADAMelements",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1928359"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:31:42+00:00"
+    },
+    "plthink-1928360": {
+      "expected_name": "[ADAMelements] 아담엘리먼트 Gen2 고속 충전 케이블 카플레이 1m C타입",
+      "expected_brand": "ETC.",
+      "brand": "ADAMelements",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1928360"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:31:51+00:00"
+    },
+    "plthink-1928358": {
+      "expected_name": "[Keybudz] 키버즈 에어케어 2.0 에어팟 청소 키트 클리너 카메라 노트북 키보드",
+      "expected_brand": "ETC.",
+      "brand": "Keybudz",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1928358"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:31:56+00:00"
+    },
+    "plthink-1927948": {
+      "expected_name": "[Megadap] 메가댑 ETZ21PRO+ 오토포커스 변환 어댑터 (소니 E to 니콘 Z)",
+      "expected_brand": "ETC.",
+      "brand": "Megadap",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1927948"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:32:02+00:00"
+    },
+    "plthink-1925657": {
+      "expected_name": "[CAMPSEASON] 캠프시즌 e편한 전동 촬영 장비 카트 신형 적재 하중 100kg",
+      "expected_brand": "ETC.",
+      "brand": "CAMPSEASON",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1925657"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:32:06+00:00"
+    },
+    "plthink-1927766": {
+      "expected_name": "[PIXEL] 픽셀 TS-MK10 PTZ 카메라 컨트롤러 옵스봇 캐논 호환",
+      "expected_brand": "ETC.",
+      "brand": "PIXEL",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1927766"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:32:12+00:00"
+    },
+    "plthink-1910820": {
+      "expected_name": "[Logitech] 로지텍 웹캠 C920 PRO HD WEBCAM 화상카메라",
+      "expected_brand": "ETC.",
+      "brand": "Logitech",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1910820"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:32:23+00:00"
+    },
+    "plthink-1911607": {
+      "expected_name": "[DEITY] 카메라 스마트폰 겸용 데이티 D3 초지향성 마이크",
+      "expected_brand": "ETC.",
+      "brand": "DEITY",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1911607"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:32:28+00:00"
+    },
+    "plthink-1926569": {
+      "expected_name": "[CAMPSEASON] 캠프시즌 e편한 전동 촬영 장비 카트 웨건 전용 배터리",
+      "expected_brand": "ETC.",
+      "brand": "CAMPSEASON",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1926569"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:32:33+00:00"
+    },
+    "plthink-1926781": {
+      "expected_name": "[CUBEMOA] 큐브모아 CUBE-L 공기압 조절식 에어쿠션 카메라 렌즈 가방",
+      "expected_brand": "ETC.",
+      "brand": "CUBEMOA",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1926781"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:32:37+00:00"
+    },
+    "plthink-1908549": {
+      "expected_name": "[맥모드] 카메라 플래시 밴드 Transmitter Band (3개1세트)",
+      "expected_brand": "ETC.",
+      "brand": "맥모드",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1908549"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:32:43+00:00"
+    },
+    "plthink-1906988": {
+      "expected_name": "[LAOWA]라오와 초 광각 렌즈 7.5mm f/2 MFT (Light-weight) 실버",
+      "expected_brand": "ETC.",
+      "brand": "LAOWA",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1906988"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:32:47+00:00"
+    },
+    "plthink-1909518": {
+      "expected_name": "[SORIGIO] 소리지오 에코 큐브333 ECHO CUBE 333 (2EA)",
+      "expected_brand": "ETC.",
+      "brand": "SORIGIO",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1909518"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:32:56+00:00"
+    },
+    "plthink-1926166": {
+      "expected_name": "[APLOFY] 어플로피 헤이저 포그 스모그 스프레이 제품 상품 무대 촬영용",
+      "expected_brand": "ETC.",
+      "brand": "APLOFY",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1926166"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:33:04+00:00"
+    },
+    "plthink-1926167": {
+      "expected_name": "[APLOFY] 어플로피 헤이저 포그 스모그 스프레이 제품 상품 무대 촬영용 2개 세트",
+      "expected_brand": "ETC.",
+      "brand": "APLOFY",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1926167"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:33:13+00:00"
+    },
+    "plthink-1926168": {
+      "expected_name": "[APLOFY] 어플로피 헤이저 포그 스모그 스프레이 제품 상품 무대 촬영용 5개 세트",
+      "expected_brand": "ETC.",
+      "brand": "APLOFY",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1926168"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:33:22+00:00"
+    },
+    "plthink-1926169": {
+      "expected_name": "[APLOFY] 어플로피 헤이저 포그 스모그 스프레이 제품 상품 무대 촬영용 번들 30개 세트",
+      "expected_brand": "ETC.",
+      "brand": "APLOFY",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1926169"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:33:33+00:00"
+    },
+    "plthink-1925630": {
+      "expected_name": "[CUBEMOA] 핀마이크 마그네틱 마그넷 자석 홀더 클립",
+      "expected_brand": "ETC.",
+      "brand": "CUBEMOA",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1925630"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:33:38+00:00"
+    },
+    "plthink-4628": {
+      "expected_name": "[MATIN] 매틴 등산백용 레인커버-S(M6495)",
+      "expected_brand": "ETC.",
+      "brand": "MATIN",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=4628"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:33:43+00:00"
+    },
+    "plthink-1913668": {
+      "expected_name": "[Saramonic] 사라모닉 스마트폰 마이크 SmartMic",
+      "expected_brand": "ETC.",
+      "brand": "Saramonic",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1913668"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:33:47+00:00"
+    },
+    "plthink-1917423": {
+      "expected_name": "[INNOREL] 이노엘 휴대용 미니삼각대 알루미늄 모노포드 PW50",
+      "expected_brand": "ETC.",
+      "brand": "INNOREL",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1917423"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:33:51+00:00"
+    },
+    "plthink-1913669": {
+      "expected_name": "[Saramonic] 사라모닉 스마트폰 핀 마이크 LavMicro",
+      "expected_brand": "ETC.",
+      "brand": "Saramonic",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1913669"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:33:57+00:00"
+    },
+    "plthink-1913665": {
+      "expected_name": "[Saramonic] 사라모닉 미니 지향성 마이크 Vmic Mini",
+      "expected_brand": "ETC.",
+      "brand": "Saramonic",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1913665"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:34:02+00:00"
+    },
+    "plthink-1913672": {
+      "expected_name": "[Saramonic] 사라모닉 2채널 XLR 오디오 어댑터 SmartRig+",
+      "expected_brand": "ETC.",
+      "brand": "Saramonic",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1913672"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:34:07+00:00"
+    },
+    "plthink-1909118": {
+      "expected_name": "[COMAN] 코만 비디오 삼각대 헤드 Q7-Plus",
+      "expected_brand": "ETC.",
+      "brand": "COMAN",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1909118"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:34:11+00:00"
+    },
+    "plthink-1924734": {
+      "expected_name": "[Hahnemuhle] 하네뮬레 프로텍티브 코팅 스프레이 400ml UV코팅 사진코팅",
+      "expected_brand": "ETC.",
+      "brand": "Hahnemuhle",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1924734"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:34:17+00:00"
+    },
+    "plthink-1922379": {
+      "expected_name": "[Sauber] 자우버 안티포그 티슈 50매 Lens tissue 다목적 클리닝 티슈",
+      "expected_brand": "ETC.",
+      "brand": "Sauber",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1922379"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:34:39+00:00"
+    },
+    "plthink-1922366": {
+      "expected_name": "[Sauber] 자우버 인덕션클리너 다목적 주방 클리닝 티슈 50매",
+      "expected_brand": "ETC.",
+      "brand": "Sauber",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1922366"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:35:00+00:00"
+    },
+    "plthink-1920342": {
+      "expected_name": "[FONKEN] FK-C100 USB 케이블 마그네틱 C to C 충전 어댑터 100w 꺾인타입 화이트",
+      "expected_brand": "ETC.",
+      "brand": "FONKEN",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1920342"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:35:06+00:00"
+    },
+    "plthink-1919668": {
+      "expected_name": "[Moment] 모멘트 맥세이프 차량용 환풍구 거치대 아이폰용 MT107-021",
+      "expected_brand": "ETC.",
+      "brand": "Moment",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1919668"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:35:11+00:00"
+    },
+    "plthink-1919662": {
+      "expected_name": "[Moment] 모멘트 맥세이프 삼각대 스마트폰 홀더 거치대 가로 세로형 MT107-016",
+      "expected_brand": "ETC.",
+      "brand": "Moment",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1919662"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:35:16+00:00"
+    },
+    "plthink-1917656": {
+      "expected_name": "[TRIDOT] 트라이닷 삼각대 렌즈보관 클링크백 Clink Bag",
+      "expected_brand": "ETC.",
+      "brand": "TRIDOT",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1917656"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:35:22+00:00"
+    },
+    "plthink-1916541": {
+      "expected_name": "[MUAMUA] USB TO C타입 고속 충전케이블 3M",
+      "expected_brand": "ETC.",
+      "brand": "MUAMUA",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1916541"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:35:26+00:00"
+    },
+    "plthink-1910036": {
+      "expected_name": "[Transcend] 트렌스샌드 TS-RDF8 멀티 카드리더기 USB 3.0",
+      "expected_brand": "ETC.",
+      "brand": "Transcend",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1910036"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:35:31+00:00"
+    },
+    "plthink-1910037": {
+      "expected_name": "[Transcend] 트렌스샌드 TS-RDF9 멀티 카드리더기 USB 3.1",
+      "expected_brand": "ETC.",
+      "brand": "Transcend",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1910037"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:35:41+00:00"
+    },
+    "plthink-1896181": {
+      "expected_name": "[고독스]디지털 타이머 카메라 릴리즈 UTR-N1(니콘,후지용)",
+      "expected_brand": "ETC.",
+      "brand": "고독스",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1896181"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:35:46+00:00"
+    },
+    "plthink-1896180": {
+      "expected_name": "[고독스]디지털 타이머 카메라 릴리즈 UTR-C3(캐논용)",
+      "expected_brand": "ETC.",
+      "brand": "고독스",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1896180"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:35:52+00:00"
+    },
+    "plthink-1827": {
+      "expected_name": "[BLUESTIK] 블루스틱 제품고정용 접착고무 소품 쥬얼리 접착 촬영용껌",
+      "expected_brand": "ETC.",
+      "brand": "BLUESTIK",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1827"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:35:58+00:00"
+    },
+    "plthink-716": {
+      "expected_name": "[TOSHIBA] 무선동조기 송신부 배터리 23A 12V (5개)",
+      "expected_brand": "ETC.",
+      "brand": "TOSHIBA",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=716"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:36:02+00:00"
+    },
+    "plthink-715": {
+      "expected_name": "[TOSHIBA] 무선동조기 송신부 배터리 23A 12V",
+      "expected_brand": "ETC.",
+      "brand": "TOSHIBA",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=715"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:36:06+00:00"
+    },
+    "plthink-1905330": {
+      "expected_name": "[유쾌한생각] 드론용 랜딩패드 방수 착륙패드 지름 55cm 75cm",
+      "expected_brand": "ETC.",
+      "brand": "유쾌한생각",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1905330"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:36:19+00:00"
+    },
+    "plthink-3792": {
+      "expected_name": "[KAMERAR] 카메라르 SUPER MRC-UV 필터 52 58 67 72 82mm",
+      "expected_brand": "ETC.",
+      "brand": "KAMERAR",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=3792"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:36:23+00:00"
+    },
+    "plthink-4967": {
+      "expected_name": "[고독스] 옴니바운스 PLO-600EX (CANON 600EX-RT 전용)",
+      "expected_brand": "ETC.",
+      "brand": "고독스",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=4967"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:36:29+00:00"
+    },
+    "plthink-130": {
+      "expected_name": "[Rembrandt] 램브란트 컬러 화이트밸런스 카드",
+      "expected_brand": "ETC.",
+      "brand": "Rembrandt",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=130"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:36:34+00:00"
+    },
+    "plthink-1927185": {
+      "expected_name": "[에스티원테크] GaN 25W USB 3.0 C타입 2포트 초고속 멀티 충전기",
+      "expected_brand": "ETC.",
+      "brand": "에스티원테크",
+      "evidence": [
+        "https://www.plthink.com/shop/shopdetail.html?branduid=1927185"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T11:36:39+00:00"
+    },
+    "clmedia-2584": {
+      "expected_name": "하이퍼틴 SAHTMM08BLACK 미니 to 미니 HDMI 케이블 80cm",
+      "expected_brand": "ETC",
+      "brand": "HYPERTHIN",
+      "evidence": [
+        "https://clmedia.co.kr/product/detail.html?product_no=2584"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T10:48:14+00:00"
+    },
+    "clmedia-1215": {
+      "expected_name": "모션나인 접이식 카트 M1",
+      "expected_brand": "CLMEDIA",
+      "brand": "MOTION9",
+      "evidence": [
+        "https://clmedia.co.kr/product/detail.html?product_no=1215"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T13:22:44+00:00"
+    },
+    "clmedia-1161": {
+      "expected_name": "모션나인 접이식 카트 M2",
+      "expected_brand": "CLMEDIA",
+      "brand": "MOTION9",
+      "evidence": [
+        "https://clmedia.co.kr/product/detail.html?product_no=1161"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T13:31:00+00:00"
+    },
+    "clmedia-441": {
+      "expected_name": "프로 크로마키테이프 Pro Gaff Chroma Key Tape 48mmx9m",
+      "expected_brand": "ETC",
+      "brand": "PRO GAFF",
+      "evidence": [
+        "https://clmedia.co.kr/product/detail.html?product_no=441"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T14:58:13+00:00"
+    },
+    "clmedia-52": {
+      "expected_name": "하이퍼틴 SAHTU30BLACK 마이크로 to HDMI 케이블 3m",
+      "expected_brand": "ETC",
+      "brand": "HYPERTHIN",
+      "evidence": [
+        "https://clmedia.co.kr/product/detail.html?product_no=52"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T15:38:33+00:00"
+    },
+    "avx-2710": {
+      "expected_name": "KUPO 161MB 슬라이더 전용 헤비듀티 스탠드 (로우 베이스, 최대 하중 36kg)",
+      "expected_brand": "AVX 기타",
+      "brand": "KUPO",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2710"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-14T04:54:25+00:00"
+    },
+    "avx-2628": {
+      "expected_name": "BLKBIRD MANTIS 블랙버드 멘티스",
+      "expected_brand": "AVX 기타",
+      "brand": "BLKBIRD",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2628"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-14T05:01:44+00:00"
+    },
+    "avx-2493": {
+      "expected_name": "JJC Air Blower 카메라 렌즈 에어블로워 클리너 청소도구",
+      "expected_brand": "AVX 기타",
+      "brand": "JJC",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2493"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-14T05:15:23+00:00"
+    },
+    "avx-2306": {
+      "expected_name": "GAZE 게이즈 GMK-KB02 컴팩트 OLED 4D 조이스틱 컨트롤",
+      "expected_brand": "AVX 기타",
+      "brand": "GAZE",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2306"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-14T05:31:41+00:00"
+    },
+    "avx-2305": {
+      "expected_name": "GAZE 게이즈 GMK-K320P Ai 자동추적 PTZ카메라 화상회의 강의용 (벽부형 브라켓 증정)",
+      "expected_brand": "AVX 기타",
+      "brand": "GAZE",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2305"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-14T05:31:48+00:00"
+    },
+    "avx-2225": {
+      "expected_name": "DZOFILM Octopus Adapter PL to E 디지오필름 마운트 어댑터",
+      "expected_brand": "AVX 기타",
+      "brand": "DZOFILM",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2225"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-14T05:38:13+00:00"
+    },
+    "avx-1094": {
+      "expected_name": "[KUPO] KS-207 KUPO - SWIVEL JUNIOR RECEIVER ADAPTER",
+      "expected_brand": "AVX 기타",
+      "brand": "KUPO",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=1094"
+      ],
+      "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": true,
+      "source_checked_at": "2026-10-14T06:57:33+00:00"
+    }
   }
 }
