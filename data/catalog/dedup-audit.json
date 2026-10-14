@@ -1,15 +1,16 @@
 {
   "schema_version": 1,
-  "brands_checked": 325,
-  "input_count": 27186,
-  "duplicate_group_count": 2775,
-  "duplicate_entries_removed": 4586,
+  "brands_checked": 357,
+  "input_count": 27185,
+  "duplicate_group_count": 2799,
+  "duplicate_entries_removed": 4610,
   "by_brand": {
     "tilta": 289,
     "avenger": 10,
     "smallrig": 826,
     "hollyland": 112,
     "accsoon": 6,
+    "fujifilm": 9,
     "swit": 45,
     "canon": 2,
     "godox": 441,
@@ -39,6 +40,7 @@
     "valens": 149,
     "aurora": 76,
     "tethertools": 8,
+    "pelican": 15,
     "rocknroller": 3,
     "benro": 7,
     "plthink": 1,
@@ -5314,6 +5316,30 @@
           "price": 3117000,
           "source": "avx",
           "url": "https://www.avx.co.kr/goods/view?no=996"
+        }
+      ]
+    },
+    {
+      "brand_id": "fujifilm",
+      "kind": "purchase",
+      "primary_id": "smartstore-12835022481",
+      "evidence": [
+        "name:gfx100sii"
+      ],
+      "members": [
+        {
+          "id": "smartstore-12835022481",
+          "name": "FUJIFILM GFX 100S II",
+          "price": 6999000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12835022481"
+        },
+        {
+          "id": "cinemall-1012",
+          "name": "후지필름 FUJIFILM GFX 100S II",
+          "price": 7699000,
+          "source": "cinemall",
+          "url": "https://www.cinemall.co.kr/product/detail.html?product_no=1012"
         }
       ]
     },
@@ -14404,6 +14430,54 @@
       ]
     },
     {
+      "brand_id": "fujifilm",
+      "kind": "purchase",
+      "primary_id": "smartstore-12827863044",
+      "evidence": [
+        "name:gfxeterna55"
+      ],
+      "members": [
+        {
+          "id": "smartstore-12827863044",
+          "name": "FUJIFILM GFX ETERNA 55",
+          "price": 22699000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12827863044"
+        },
+        {
+          "id": "cinemall-2336",
+          "name": "후지필름 FUJIFILM GFX ETERNA 55",
+          "price": 22699000,
+          "source": "cinemall",
+          "url": "https://www.cinemall.co.kr/product/detail.html?product_no=2336"
+        }
+      ]
+    },
+    {
+      "brand_id": "fujifilm",
+      "kind": "purchase",
+      "primary_id": "smartstore-12827867682",
+      "evidence": [
+        "name:gf32-90mmt3.5pzoiswr"
+      ],
+      "members": [
+        {
+          "id": "smartstore-12827867682",
+          "name": "FUJIFILM GF32-90mm T3.5 PZ OIS WR",
+          "price": 7599000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12827867682"
+        },
+        {
+          "id": "cinemall-2337",
+          "name": "후지필름 FUJIFILM GF32-90mm T3.5 PZ OIS WR",
+          "price": 7599000,
+          "source": "cinemall",
+          "url": "https://www.cinemall.co.kr/product/detail.html?product_no=2337"
+        }
+      ]
+    },
+    {
       "brand_id": "godox",
       "kind": "purchase",
       "primary_id": "smartstore-13739631528",
@@ -17122,6 +17196,30 @@
       ]
     },
     {
+      "brand_id": "fujifilm",
+      "kind": "purchase",
+      "primary_id": "smartstore-12835012225",
+      "evidence": [
+        "name:gf110mmf5.6t/smacro"
+      ],
+      "members": [
+        {
+          "id": "smartstore-12835012225",
+          "name": "FUJIFILM GF110mmF5.6 T/S Macro",
+          "price": 5099000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12835012225"
+        },
+        {
+          "id": "cinemall-605",
+          "name": "후지필름 FUJIFILM GF110mmF5.6 T/S Macro",
+          "price": 5099000,
+          "source": "cinemall",
+          "url": "https://www.cinemall.co.kr/product/detail.html?product_no=605"
+        }
+      ]
+    },
+    {
       "brand_id": "swit",
       "kind": "purchase",
       "primary_id": "smartstore-13740377569",
@@ -17574,6 +17672,126 @@
           "price": 1062000,
           "source": "cinemall",
           "url": "https://www.cinemall.co.kr/product/detail.html?product_no=74"
+        }
+      ]
+    },
+    {
+      "brand_id": "fujifilm",
+      "kind": "purchase",
+      "primary_id": "smartstore-12835018839",
+      "evidence": [
+        "name:gf80mmf1.7rwr"
+      ],
+      "members": [
+        {
+          "id": "smartstore-12835018839",
+          "name": "FUJIFILM GF80mmF1.7 R WR",
+          "price": 2999000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12835018839"
+        },
+        {
+          "id": "cinemall-84",
+          "name": "후지필름 FUJIFILM GF80mmF1.7 R WR",
+          "price": 2999000,
+          "source": "cinemall",
+          "url": "https://www.cinemall.co.kr/product/detail.html?product_no=84"
+        }
+      ]
+    },
+    {
+      "brand_id": "fujifilm",
+      "kind": "purchase",
+      "primary_id": "smartstore-12835009149",
+      "evidence": [
+        "name:gf20-35mmf4rwr"
+      ],
+      "members": [
+        {
+          "id": "smartstore-12835009149",
+          "name": "FUJIFILM GF20-35mmF4 R WR",
+          "price": 3399000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12835009149"
+        },
+        {
+          "id": "cinemall-88",
+          "name": "후지필름 FUJIFILM GF20-35mmF4 R WR",
+          "price": 3399000,
+          "source": "cinemall",
+          "url": "https://www.cinemall.co.kr/product/detail.html?product_no=88"
+        }
+      ]
+    },
+    {
+      "brand_id": "fujifilm",
+      "kind": "purchase",
+      "primary_id": "smartstore-12835014414",
+      "evidence": [
+        "name:gf32-64mmf4rlmwr"
+      ],
+      "members": [
+        {
+          "id": "smartstore-12835014414",
+          "name": "FUJIFILM GF32-64mmF4 R LM WR",
+          "price": 2899000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12835014414"
+        },
+        {
+          "id": "cinemall-89",
+          "name": "후지필름 FUJIFILM GF32-64mmF4 R LM WR",
+          "price": 2899000,
+          "source": "cinemall",
+          "url": "https://www.cinemall.co.kr/product/detail.html?product_no=89"
+        }
+      ]
+    },
+    {
+      "brand_id": "fujifilm",
+      "kind": "purchase",
+      "primary_id": "smartstore-12835016417",
+      "evidence": [
+        "name:gf45-100mmf4rlmoiswr"
+      ],
+      "members": [
+        {
+          "id": "smartstore-12835016417",
+          "name": "FUJIFILM GF45-100mmF4 R LM OIS WR",
+          "price": 2899000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12835016417"
+        },
+        {
+          "id": "cinemall-91",
+          "name": "후지필름 FUJIFILM GF45-100mmF4 R LM OIS WR",
+          "price": 2899000,
+          "source": "cinemall",
+          "url": "https://www.cinemall.co.kr/product/detail.html?product_no=91"
+        }
+      ]
+    },
+    {
+      "brand_id": "fujifilm",
+      "kind": "purchase",
+      "primary_id": "smartstore-12835006371",
+      "evidence": [
+        "name:gf100-200mmf5.6rlmoiswr"
+      ],
+      "members": [
+        {
+          "id": "smartstore-12835006371",
+          "name": "FUJIFILM GF100-200mmF5.6 R LM OIS WR",
+          "price": 2399000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12835006371"
+        },
+        {
+          "id": "cinemall-92",
+          "name": "후지필름 FUJIFILM GF100-200mmF5.6 R LM OIS WR",
+          "price": 2399000,
+          "source": "cinemall",
+          "url": "https://www.cinemall.co.kr/product/detail.html?product_no=92"
         }
       ]
     },
@@ -23011,7 +23229,7 @@
       "kind": "purchase",
       "primary_id": "plthink-1920394",
       "evidence": [
-        "name:비스고vs-a1e휴대용렌즈클리닝키트"
+        "name:vs-a1e휴대용렌즈클리닝키트"
       ],
       "members": [
         {
@@ -24307,7 +24525,7 @@
       "kind": "purchase",
       "primary_id": "plthink-1920395",
       "evidence": [
-        "name:비스고vs-a2e휴대용렌즈클리닝키트"
+        "name:vs-a2e휴대용렌즈클리닝키트"
       ],
       "members": [
         {
@@ -43800,7 +44018,7 @@
       "kind": "purchase",
       "primary_id": "plthink-1920398",
       "evidence": [
-        "name:비스고vs-a8e휴대용렌즈클리닝키트"
+        "name:vs-a8e휴대용렌즈클리닝키트"
       ],
       "members": [
         {
@@ -47648,7 +47866,7 @@
       "kind": "purchase",
       "primary_id": "plthink-1920399",
       "evidence": [
-        "name:비스고vs-bf01다기능클리닝브러쉬"
+        "name:vs-bf01다기능클리닝브러쉬"
       ],
       "members": [
         {
@@ -51066,7 +51284,7 @@
       "kind": "purchase",
       "primary_id": "plthink-1924921",
       "evidence": [
-        "name:비스고vs-br01다기능클리닝브러쉬라이트버전"
+        "name:vs-br01다기능클리닝브러쉬라이트버전"
       ],
       "members": [
         {
@@ -59698,6 +59916,366 @@
           "price": 54000,
           "source": "plthink",
           "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902048"
+        }
+      ]
+    },
+    {
+      "brand_id": "pelican",
+      "kind": "purchase",
+      "primary_id": "smartstore-13751981563",
+      "evidence": [
+        "name:1605air하드케이스withpaddeddividers"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13751981563",
+          "name": "1605 Air 하드케이스 (With Padded Dividers)",
+          "price": 768000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13751981563"
+        },
+        {
+          "id": "plthink-1902222",
+          "name": "[PELICAN] 펠리칸 1605 Air 하드케이스 With Padded Dividers",
+          "price": 768000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902222"
+        }
+      ]
+    },
+    {
+      "brand_id": "pelican",
+      "kind": "purchase",
+      "primary_id": "smartstore-13751891864",
+      "evidence": [
+        "name:1605air하드케이스withfoam"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13751891864",
+          "name": "1605 Air 하드케이스 (With Foam)",
+          "price": 592000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13751891864"
+        },
+        {
+          "id": "plthink-1902223",
+          "name": "[PELICAN] 펠리칸 1605 Air 하드케이스 With Foam",
+          "price": 592000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902223"
+        }
+      ]
+    },
+    {
+      "brand_id": "pelican",
+      "kind": "purchase",
+      "primary_id": "smartstore-13751997020",
+      "evidence": [
+        "name:1500wf미듐하드케이스withfoam"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13751997020",
+          "name": "1500wf 미듐 하드케이스 (With Foam)",
+          "price": 368000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13751997020"
+        },
+        {
+          "id": "plthink-1902502",
+          "name": "[PELICAN] 펠리칸 1500WF 미듐 하드케이스 With Foam",
+          "price": 368000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902502"
+        }
+      ]
+    },
+    {
+      "brand_id": "pelican",
+      "kind": "purchase",
+      "primary_id": "smartstore-13751981555",
+      "evidence": [
+        "name:1500wd미듐하드케이스withpaddeddividers"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13751981555",
+          "name": "1500wd 미듐 하드케이스 (With Padded Dividers)",
+          "price": 455000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13751981555"
+        },
+        {
+          "id": "plthink-1902503",
+          "name": "[PELICAN] 펠리칸 1500WD 미듐 하드케이스 With Padded Dividers",
+          "price": 455000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902503"
+        }
+      ]
+    },
+    {
+      "brand_id": "pelican",
+      "kind": "purchase",
+      "primary_id": "smartstore-13751981556",
+      "evidence": [
+        "name:1520wd미듐하드케이스withpaddeddividers"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13751981556",
+          "name": "1520wd 미듐 하드케이스 (With Padded Dividers)",
+          "price": 520000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13751981556"
+        },
+        {
+          "id": "plthink-1902509",
+          "name": "[PELICAN] 펠리칸 1520WD 미듐 하드케이스 With Padded Dividers",
+          "price": 520000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902509"
+        }
+      ]
+    },
+    {
+      "brand_id": "pelican",
+      "kind": "purchase",
+      "primary_id": "smartstore-13751981553",
+      "evidence": [
+        "name:1550wd미듐하드케이스withpaddeddividers"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13751981553",
+          "name": "1550wd 미듐 하드케이스 (With Padded Dividers)",
+          "price": 618000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13751981553"
+        },
+        {
+          "id": "plthink-1902511",
+          "name": "[PELICAN] 펠리칸 1550WD 미듐 하드케이스 With Padded Dividers",
+          "price": 618000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902511"
+        }
+      ]
+    },
+    {
+      "brand_id": "pelican",
+      "kind": "purchase",
+      "primary_id": "smartstore-13751997022",
+      "evidence": [
+        "name:1550wf미듐하드케이스withfoam"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13751997022",
+          "name": "1550wf 미듐 하드케이스 (With Foam)",
+          "price": 450000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13751997022"
+        },
+        {
+          "id": "plthink-1902512",
+          "name": "[PELICAN] 펠리칸 1550WF 미듐 하드케이스 With Foam",
+          "price": 450000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902512"
+        }
+      ]
+    },
+    {
+      "brand_id": "pelican",
+      "kind": "purchase",
+      "primary_id": "smartstore-13751891788",
+      "evidence": [
+        "name:1550tp미듐하드케이스withtrekpakdividersystem"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13751891788",
+          "name": "1550TP 미듐 하드케이스 (With TrekPak Divider System)",
+          "price": 690000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13751891788"
+        },
+        {
+          "id": "plthink-1902513",
+          "name": "[PELICAN] 펠리칸 1550TP 미듐 하드케이스 With TrekPak Divider System",
+          "price": 690000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902513"
+        }
+      ]
+    },
+    {
+      "brand_id": "pelican",
+      "kind": "purchase",
+      "primary_id": "smartstore-13751891792",
+      "evidence": [
+        "name:1640wf라지캐리온하드케이스withfoam"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13751891792",
+          "name": "1640WF 라지 캐리온 하드케이스 (With Foam)",
+          "price": 845000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13751891792"
+        },
+        {
+          "id": "plthink-1902538",
+          "name": "[PELICAN] 펠리칸 1640WF 라지 캐리온 하드케이스 With Foam",
+          "price": 845000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902538"
+        }
+      ]
+    },
+    {
+      "brand_id": "pelican",
+      "kind": "purchase",
+      "primary_id": "smartstore-13751981554",
+      "evidence": [
+        "name:1630wd라지캐리온하드케이스withpaddeddividers"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13751981554",
+          "name": "1630WD 라지 캐리온 하드케이스 (With Padded Dividers)",
+          "price": 1190000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13751981554"
+        },
+        {
+          "id": "plthink-1902539",
+          "name": "[PELICAN] 펠리칸 1630WD 라지 캐리온 하드케이스 With Padded Dividers",
+          "price": 1190000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902539"
+        }
+      ]
+    },
+    {
+      "brand_id": "pelican",
+      "kind": "purchase",
+      "primary_id": "smartstore-13751891734",
+      "evidence": [
+        "name:1630wf라지캐리온하드케이스withfoam"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13751891734",
+          "name": "1630WF 라지 캐리온 하드케이스 (With Foam)",
+          "price": 1040000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13751891734"
+        },
+        {
+          "id": "plthink-1902540",
+          "name": "[PELICAN] 펠리칸 1630WF 라지 캐리온 하드케이스 With Foam",
+          "price": 1040000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902540"
+        }
+      ]
+    },
+    {
+      "brand_id": "pelican",
+      "kind": "purchase",
+      "primary_id": "smartstore-13752020111",
+      "evidence": [
+        "name:1620m라지캐리온하드케이스mobilityversion"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13752020111",
+          "name": "1620M 라지 캐리온 하드케이스 (Mobility Version)",
+          "price": 1130000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13752020111"
+        },
+        {
+          "id": "plthink-1902541",
+          "name": "[PELICAN] 펠리칸 1620M 라지 캐리온 하드케이스 Mobility Version",
+          "price": 1130000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902541"
+        }
+      ]
+    },
+    {
+      "brand_id": "pelican",
+      "kind": "purchase",
+      "primary_id": "smartstore-13751981559",
+      "evidence": [
+        "name:1620wd라지캐리온하드케이스withpaddeddividers"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13751981559",
+          "name": "1620WD 라지 캐리온 하드케이스 (With Padded Dividers)",
+          "price": 1155000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13751981559"
+        },
+        {
+          "id": "plthink-1902542",
+          "name": "[PELICAN] 펠리칸 1620WD 라지 캐리온 하드케이스 With Padded Dividers",
+          "price": 1155000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902542"
+        }
+      ]
+    },
+    {
+      "brand_id": "pelican",
+      "kind": "purchase",
+      "primary_id": "smartstore-13751891735",
+      "evidence": [
+        "name:1620wf라지캐리온하드케이스withfoam"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13751891735",
+          "name": "1620WF 라지 캐리온 하드케이스 (With Foam)",
+          "price": 748000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13751891735"
+        },
+        {
+          "id": "plthink-1902543",
+          "name": "[PELICAN] 펠리칸 1620WF 라지 캐리온 하드케이스 With Foam",
+          "price": 748000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902543"
+        }
+      ]
+    },
+    {
+      "brand_id": "pelican",
+      "kind": "purchase",
+      "primary_id": "smartstore-13751981552",
+      "evidence": [
+        "name:1610wd라지캐리온하드케이스withpaddeddividers"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13751981552",
+          "name": "1610wd 라지 캐리온 하드케이스 (With Padded Dividers)",
+          "price": 844000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13751981552"
+        },
+        {
+          "id": "plthink-1902545",
+          "name": "[PELICAN] 펠리칸 1610WD 라지 캐리온 하드케이스 With Padded Dividers",
+          "price": 844000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902545"
         }
       ]
     },
@@ -82261,6 +82839,16 @@
       "reason": "2026-10-14 대표 지시: TVLogic 렌탈 중단, 해당 장비 포함 패키지도 제외",
       "evidence": [
         "https://smartstore.naver.com/rainbowbene/products/7139260678"
+      ]
+    },
+    {
+      "id": "ldnet-4868",
+      "before": "테스트",
+      "after": "테스트",
+      "hidden": true,
+      "reason": "공급사 테스트 등록: 제목과 상세가 테스트뿐이고 실제 상품 정보 없음. 원본은 보존하고 공개 목록에서 제외.",
+      "evidence": [
+        "https://ldnet.co.kr/product/detail.html?product_no=4868"
       ]
     }
   ],

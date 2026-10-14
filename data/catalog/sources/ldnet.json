@@ -249,38 +249,31 @@
       "source_category_id": "556"
     },
     {
-      "id": "brand-84f05699c3:172",
+      "id": "next:172",
       "name": "충전기",
-      "brand": "기타 브랜드",
-      "parent_id": "brand-84f05699c3:258",
+      "brand": "NEXT",
+      "parent_id": "next:258",
       "source_category_id": "172"
     },
     {
-      "id": "brand-84f05699c3:258",
+      "id": "next:258",
       "name": "휴대폰/태블릿 거치대",
-      "brand": "기타 브랜드",
-      "parent_id": "brand-84f05699c3:51",
+      "brand": "NEXT",
+      "parent_id": "next:51",
       "source_category_id": "258"
     },
     {
-      "id": "brand-84f05699c3:51",
+      "id": "next:51",
       "name": "모바일악세사리",
-      "brand": "기타 브랜드",
-      "parent_id": "brand-84f05699c3:534",
+      "brand": "NEXT",
+      "parent_id": "next:534",
       "source_category_id": "51"
     },
     {
-      "id": "brand-84f05699c3:534",
-      "name": "디지털/가전",
-      "brand": "기타 브랜드",
-      "parent_id": null,
-      "source_category_id": "534"
-    },
-    {
-      "id": "brand-84f05699c3:171",
+      "id": "next:171",
       "name": "보조배터리",
-      "brand": "기타 브랜드",
-      "parent_id": "brand-84f05699c3:51",
+      "brand": "NEXT",
+      "parent_id": "next:51",
       "source_category_id": "171"
     },
     {
@@ -291,11 +284,32 @@
       "source_category_id": "568"
     },
     {
-      "id": "brand-84f05699c3:174",
+      "id": "sopling:174",
       "name": "충전/데이터 케이블/변환젠더",
-      "brand": "기타 브랜드",
-      "parent_id": "brand-84f05699c3:258",
+      "brand": "SOPLING",
+      "parent_id": "sopling:258",
       "source_category_id": "174"
+    },
+    {
+      "id": "sopling:258",
+      "name": "휴대폰/태블릿 거치대",
+      "brand": "SOPLING",
+      "parent_id": "sopling:51",
+      "source_category_id": "258"
+    },
+    {
+      "id": "sopling:51",
+      "name": "모바일악세사리",
+      "brand": "SOPLING",
+      "parent_id": "sopling:534",
+      "source_category_id": "51"
+    },
+    {
+      "id": "sopling:534",
+      "name": "디지털/가전",
+      "brand": "SOPLING",
+      "parent_id": null,
+      "source_category_id": "534"
     },
     {
       "id": "ldl-mount:555",
@@ -438,17 +452,17 @@
       "source_category_id": "534"
     },
     {
-      "id": "brand-84f05699c3:519",
+      "id": "next:519",
       "name": "네트워크장비",
-      "brand": "기타 브랜드",
-      "parent_id": "brand-84f05699c3:534",
+      "brand": "NEXT",
+      "parent_id": "next:534",
       "source_category_id": "519"
     },
     {
-      "id": "brand-84f05699c3:533",
+      "id": "next:533",
       "name": "KVM스위치",
-      "brand": "기타 브랜드",
-      "parent_id": "brand-84f05699c3:519",
+      "brand": "NEXT",
+      "parent_id": "next:519",
       "source_category_id": "533"
     },
     {
@@ -540,27 +554,6 @@
       "name": "싱글형",
       "brand": "엘디엘마운트",
       "parent_id": "ldl-mount:544",
-      "source_category_id": "558"
-    },
-    {
-      "id": "brand-84f05699c3:49",
-      "name": "모니터/TV브라켓",
-      "brand": "기타 브랜드",
-      "parent_id": "brand-84f05699c3:534",
-      "source_category_id": "49"
-    },
-    {
-      "id": "brand-84f05699c3:544",
-      "name": "천장형 브라켓",
-      "brand": "기타 브랜드",
-      "parent_id": "brand-84f05699c3:49",
-      "source_category_id": "544"
-    },
-    {
-      "id": "brand-84f05699c3:558",
-      "name": "싱글형",
-      "brand": "기타 브랜드",
-      "parent_id": "brand-84f05699c3:544",
       "source_category_id": "558"
     },
     {
@@ -683,24 +676,17 @@
       "source_category_id": "82"
     },
     {
-      "id": "brand-84f05699c3:27",
-      "name": "광네트워크자재",
-      "brand": "기타 브랜드",
-      "parent_id": "brand-84f05699c3:534",
-      "source_category_id": "27"
-    },
-    {
-      "id": "brand-84f05699c3:387",
+      "id": "jmit:387",
       "name": "Mini FDF",
-      "brand": "기타 브랜드",
-      "parent_id": "brand-84f05699c3:80",
+      "brand": "JMIT",
+      "parent_id": "jmit:80",
       "source_category_id": "387"
     },
     {
-      "id": "brand-84f05699c3:80",
+      "id": "jmit:80",
       "name": "FDF/함체/아답타",
-      "brand": "기타 브랜드",
-      "parent_id": "brand-84f05699c3:27",
+      "brand": "JMIT",
+      "parent_id": "jmit:27",
       "source_category_id": "80"
     },
     {
@@ -1338,6 +1324,20 @@
       "name": "UPS",
       "brand": "기타 브랜드",
       "parent_id": "brand-84f05699c3:25",
+      "source_category_id": "32"
+    },
+    {
+      "id": "schneider-electric:25",
+      "name": "UPS 무정전전원장치",
+      "brand": "Schneider Electric",
+      "parent_id": null,
+      "source_category_id": "25"
+    },
+    {
+      "id": "schneider-electric:32",
+      "name": "UPS",
+      "brand": "Schneider Electric",
+      "parent_id": "schneider-electric:25",
       "source_category_id": "32"
     },
     {
@@ -7242,12 +7242,12 @@
         ]
       },
       "listing_checked_at": "2026-10-13T21:37:25+00:00",
-      "brand": "기타 브랜드",
+      "brand": "NEXT",
       "brand_category_ids": [
-        "brand-84f05699c3:534",
-        "brand-84f05699c3:258",
-        "brand-84f05699c3:172",
-        "brand-84f05699c3:51"
+        "next:534",
+        "next:258",
+        "next:172",
+        "next:51"
       ],
       "kind": "purchase",
       "price": 34200,
@@ -7264,7 +7264,8 @@
       "detail_checked_at": "2026-10-13T21:50:37+00:00",
       "source_manufacturer": "(주)엘디네트웍스",
       "brand_evidence": {
-        "method": "brand-not-specified"
+        "method": "reviewed-product-detail",
+        "url": "https://img.ez-net.co.kr/product_images/3015FWC/images/3015FWC_WEBDB_01.jpg"
       },
       "original_category_ids": [
         "534",
@@ -7306,11 +7307,11 @@
         ]
       },
       "listing_checked_at": "2026-10-13T21:37:25+00:00",
-      "brand": "기타 브랜드",
+      "brand": "NEXT",
       "brand_category_ids": [
-        "brand-84f05699c3:534",
-        "brand-84f05699c3:171",
-        "brand-84f05699c3:51"
+        "next:534",
+        "next:171",
+        "next:51"
       ],
       "kind": "purchase",
       "price": 15200,
@@ -7414,7 +7415,8 @@
       "detail_checked_at": "2026-10-13T21:50:42+00:00",
       "source_manufacturer": "(주)엘디네트웍스",
       "brand_evidence": {
-        "method": "brand-not-specified"
+        "method": "reviewed-product-detail",
+        "url": "https://img.ez-net.co.kr/product_images/1013QPB MINI/images/1013QPB_MINI_01.jpg"
       },
       "original_category_ids": [
         "534",
@@ -7493,12 +7495,12 @@
         ]
       },
       "listing_checked_at": "2026-10-13T21:37:25+00:00",
-      "brand": "기타 브랜드",
+      "brand": "SOPLING",
       "brand_category_ids": [
-        "brand-84f05699c3:534",
-        "brand-84f05699c3:258",
-        "brand-84f05699c3:174",
-        "brand-84f05699c3:51"
+        "sopling:534",
+        "sopling:258",
+        "sopling:174",
+        "sopling:51"
       ],
       "kind": "purchase",
       "price": 14900,
@@ -7622,7 +7624,8 @@
       "detail_checked_at": "2026-10-13T21:50:53+00:00",
       "source_manufacturer": "(주)엘디네트웍스",
       "brand_evidence": {
-        "method": "brand-not-specified"
+        "method": "reviewed-product-detail",
+        "url": "https://image.fzonesports.co.kr/SOPLING/SPL-SC_1.jpg"
       },
       "original_category_ids": [
         "534",
@@ -15916,11 +15919,11 @@
         ]
       },
       "listing_checked_at": "2026-10-13T21:36:22+00:00",
-      "brand": "기타 브랜드",
+      "brand": "NEXT",
       "brand_category_ids": [
-        "brand-84f05699c3:534",
-        "brand-84f05699c3:533",
-        "brand-84f05699c3:519"
+        "next:534",
+        "next:533",
+        "next:519"
       ],
       "kind": "purchase",
       "price": 259500,
@@ -15937,7 +15940,8 @@
       "detail_checked_at": "2026-10-13T22:04:49+00:00",
       "source_manufacturer": "(주)엘디네트웍스",
       "brand_evidence": {
-        "method": "brand-not-specified"
+        "method": "reviewed-product-detail",
+        "url": "https://www.ez-net.co.kr/ez-net/images/product_images/HV996VW-CTL 리우모/images/HV996VW-CTL_WEBDB_01.jpg"
       },
       "original_category_ids": [
         "534",
@@ -15981,11 +15985,11 @@
         ]
       },
       "listing_checked_at": "2026-10-13T21:36:22+00:00",
-      "brand": "기타 브랜드",
+      "brand": "NEXT",
       "brand_category_ids": [
-        "brand-84f05699c3:534",
-        "brand-84f05699c3:533",
-        "brand-84f05699c3:519"
+        "next:534",
+        "next:533",
+        "next:519"
       ],
       "kind": "purchase",
       "price": 205500,
@@ -16002,7 +16006,8 @@
       "detail_checked_at": "2026-10-13T22:04:54+00:00",
       "source_manufacturer": "(주)엘디네트웍스",
       "brand_evidence": {
-        "method": "brand-not-specified"
+        "method": "reviewed-product-detail",
+        "url": "https://www.ez-net.co.kr/ez-net/images/product_images/HV995HDCR-KVM/images/HV995HDCR-KVM_WEBDB_01.jpg"
       },
       "original_category_ids": [
         "534",
@@ -16046,11 +16051,11 @@
         ]
       },
       "listing_checked_at": "2026-10-13T21:36:22+00:00",
-      "brand": "기타 브랜드",
+      "brand": "NEXT",
       "brand_category_ids": [
-        "brand-84f05699c3:534",
-        "brand-84f05699c3:533",
-        "brand-84f05699c3:519"
+        "next:534",
+        "next:533",
+        "next:519"
       ],
       "kind": "purchase",
       "price": 205500,
@@ -16067,7 +16072,8 @@
       "detail_checked_at": "2026-10-13T22:05:00+00:00",
       "source_manufacturer": "(주)엘디네트웍스",
       "brand_evidence": {
-        "method": "brand-not-specified"
+        "method": "reviewed-product-detail",
+        "url": "https://www.ez-net.co.kr/ez-net/images/product_images/HV994HDCT-KVM 리우단/images/HV994HDCT-KVM_WEBDB_01.jpg"
       },
       "original_category_ids": [
         "534",
@@ -16110,11 +16116,11 @@
         ]
       },
       "listing_checked_at": "2026-10-13T21:36:22+00:00",
-      "brand": "기타 브랜드",
+      "brand": "NEXT",
       "brand_category_ids": [
-        "brand-84f05699c3:534",
-        "brand-84f05699c3:533",
-        "brand-84f05699c3:519"
+        "next:534",
+        "next:533",
+        "next:519"
       ],
       "kind": "purchase",
       "price": 124500,
@@ -16131,7 +16137,8 @@
       "detail_checked_at": "2026-10-13T22:05:06+00:00",
       "source_manufacturer": "(주)엘디네트웍스",
       "brand_evidence": {
-        "method": "brand-not-specified"
+        "method": "reviewed-product-detail",
+        "url": "https://www.ez-net.co.kr/ez-net/images/product_images/미르킹 4306HDW-R/images/4306HDW-R_WEBDB_01.jpg"
       },
       "original_category_ids": [
         "534",
@@ -16174,11 +16181,11 @@
         ]
       },
       "listing_checked_at": "2026-10-13T21:36:22+00:00",
-      "brand": "기타 브랜드",
+      "brand": "NEXT",
       "brand_category_ids": [
-        "brand-84f05699c3:534",
-        "brand-84f05699c3:533",
-        "brand-84f05699c3:519"
+        "next:534",
+        "next:533",
+        "next:519"
       ],
       "kind": "purchase",
       "price": 246000,
@@ -16195,7 +16202,8 @@
       "detail_checked_at": "2026-10-13T22:05:12+00:00",
       "source_manufacturer": "(주)엘디네트웍스",
       "brand_evidence": {
-        "method": "brand-not-specified"
+        "method": "reviewed-product-detail",
+        "url": "https://www.ez-net.co.kr/ez-net/images/product_images/미르단 4305HDW/images/4305HDW_WEBDB_01.jpg"
       },
       "original_category_ids": [
         "534",
@@ -20223,12 +20231,12 @@
         ]
       },
       "listing_checked_at": "2026-10-13T21:40:51+00:00",
-      "brand": "기타 브랜드",
+      "brand": "엘디엘마운트",
       "brand_category_ids": [
-        "brand-84f05699c3:534",
-        "brand-84f05699c3:544",
-        "brand-84f05699c3:49",
-        "brand-84f05699c3:558"
+        "ldl-mount:534",
+        "ldl-mount:544",
+        "ldl-mount:49",
+        "ldl-mount:558"
       ],
       "kind": "purchase",
       "price": 16000,
@@ -20245,7 +20253,9 @@
       "detail_checked_at": "2026-10-13T22:11:37+00:00",
       "source_manufacturer": "(주)엘디네트웍스",
       "brand_evidence": {
-        "method": "brand-not-specified"
+        "method": "reviewed-product-detail",
+        "url": "https://ldnet.co.kr/web/upload/NNEditor/20240816/EC97B0EAB2B0EBB489.PNG",
+        "reference": "https://www.l-mount.co.kr/goods/goods_list.php?cateCd=006"
       },
       "original_category_ids": [
         "534",
@@ -23700,12 +23710,12 @@
         ]
       },
       "listing_checked_at": "2026-10-13T21:36:33+00:00",
-      "brand": "기타 브랜드",
+      "brand": "JMIT",
       "brand_category_ids": [
-        "brand-84f05699c3:534",
-        "brand-84f05699c3:80",
-        "brand-84f05699c3:387",
-        "brand-84f05699c3:27"
+        "jmit:534",
+        "jmit:80",
+        "jmit:387",
+        "jmit:27"
       ],
       "kind": "purchase",
       "price": 8800,
@@ -23722,7 +23732,8 @@
       "detail_checked_at": "2026-10-13T22:17:39+00:00",
       "source_manufacturer": "(주)엘디네트웍스",
       "brand_evidence": {
-        "method": "brand-not-specified"
+        "method": "reviewed-product-detail",
+        "url": "https://ldnet.co.kr/web/upload/NNEditor/20240312/6e9ca50ef67e44cacb5077bdf33f43f01447192.jpg"
       },
       "original_category_ids": [
         "534",
@@ -23747,12 +23758,12 @@
         ]
       },
       "listing_checked_at": "2026-10-13T21:36:33+00:00",
-      "brand": "기타 브랜드",
+      "brand": "JMIT",
       "brand_category_ids": [
-        "brand-84f05699c3:534",
-        "brand-84f05699c3:80",
-        "brand-84f05699c3:387",
-        "brand-84f05699c3:27"
+        "jmit:534",
+        "jmit:80",
+        "jmit:387",
+        "jmit:27"
       ],
       "kind": "purchase",
       "price": 11000,
@@ -23769,7 +23780,8 @@
       "detail_checked_at": "2026-10-13T22:17:45+00:00",
       "source_manufacturer": "(주)엘디네트웍스",
       "brand_evidence": {
-        "method": "brand-not-specified"
+        "method": "reviewed-product-detail",
+        "url": "https://ldnet.co.kr/web/upload/NNEditor/20240312/1004289680477589b06eea98478e93f51606342.jpg"
       },
       "original_category_ids": [
         "534",
@@ -56828,10 +56840,10 @@
         ]
       },
       "listing_checked_at": "2026-10-13T20:56:47+00:00",
-      "brand": "기타 브랜드",
+      "brand": "Schneider Electric",
       "brand_category_ids": [
-        "brand-84f05699c3:25",
-        "brand-84f05699c3:32"
+        "schneider-electric:25",
+        "schneider-electric:32"
       ],
       "kind": "purchase",
       "price": 236500,
@@ -56848,7 +56860,9 @@
       "detail_checked_at": "2026-10-13T23:20:10+00:00",
       "source_manufacturer": "(주)엘디네트웍스",
       "brand_evidence": {
-        "method": "brand-not-specified"
+        "method": "reviewed-product-detail",
+        "url": "https://shop-phinf.pstatic.net/20250213_236/17394337782716TtMO_JPEG/page1_1.jpg",
+        "reference": "https://www.se.com/kr/ko/product/LC1D65AFD"
       },
       "original_category_ids": [
         "25",
@@ -164572,7 +164586,10 @@
   "detail_errors": {},
   "content_reviews": {},
   "changed_categories": [],
-  "brand_classification_revision": "72d4651c3b01a572f38cca5fb8a726e9af5d803d479a9485886352c5a36e0379",
+  "brand_classification_revision": "65d6c3040369cfd14d031c0f53410380b03791810db8970af982a8bc7f17cbb9",
+  "scope": "all",
+  "catalogue_complete": true,
+  "candidate_sha256": "08419241bde034a1333dd12289762f34ba7261d19355032143810fadf96fb76a",
   "original_categories": [
     {
       "id": "1",
@@ -166383,8 +166400,5 @@
       "parent_id": "581"
     }
   ],
-  "normalized_for_shop": true,
-  "scope": "all",
-  "catalogue_complete": true,
-  "candidate_sha256": "01333c3e5983f1372313590307b874d9a60c1b5017f0166ab97fac7351a02427"
+  "normalized_for_shop": true
 }

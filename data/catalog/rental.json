@@ -240,17 +240,17 @@
       "avx": 1377
     },
     "synced_at": "2026-10-14T07:55:51+00:00",
-    "merged_count": 4586,
+    "merged_count": 4610,
     "product_count": 213,
     "category_browsing_enabled": true,
     "listing_count": 213,
     "option_family_count": 180,
     "deduplication": {
-      "brands_checked": 325,
-      "groups": 2775,
-      "removed": 4586
+      "brands_checked": 357,
+      "groups": 2799,
+      "removed": 4610
     },
-    "revision": "79a6d07cbc069e64",
+    "revision": "8bb35e7a5dd345ab",
     "view": "rental"
   },
   "brands": [
@@ -2149,10 +2149,12 @@
         "plthink:b:095:010",
         "plthink:b:095:011",
         "plthink:b:095:012",
-        "plthink:b:095:013"
+        "plthink:b:095:013",
+        "plthink:b:nanlite:reviewed:plthink:b:016",
+        "plthink:b:nanlite:reviewed:plthink:b:016:005"
       ],
-      "count": 440,
-      "purchase_count": 415,
+      "count": 441,
+      "purchase_count": 416,
       "rental_count": 25,
       "category_ids": [
         "naver:b:nanlite:50000206",
@@ -2174,6 +2176,8 @@
         "plthink:b:095:004",
         "plthink:b:095:010",
         "plthink:b:095:005",
+        "plthink:b:nanlite:reviewed:plthink:b:016",
+        "plthink:b:nanlite:reviewed:plthink:b:016:005",
         "clmedia:b:72",
         "clmedia:b:365",
         "clmedia:b:366",
@@ -2224,10 +2228,11 @@
         "plthink:b:073:003",
         "plthink:b:073:004",
         "plthink:b:073:005",
-        "plthink:b:073:006"
+        "plthink:b:073:006",
+        "plthink:b:godox:reviewed:plthink:b:072"
       ],
-      "count": 788,
-      "purchase_count": 788,
+      "count": 791,
+      "purchase_count": 791,
       "rental_count": 0,
       "category_ids": [
         "naver:b:godox:50000206",
@@ -2246,6 +2251,7 @@
         "plthink:b:073:003",
         "plthink:b:073:005",
         "plthink:b:073:006",
+        "plthink:b:godox:reviewed:plthink:b:072",
         "cinemall:b:116",
         "cinemall:b:378",
         "cinemall:b:204",
@@ -2274,6 +2280,7 @@
       ],
       "logo": "/assets/shop/brands/kupo-f428114a1d.webp",
       "navigation_category_ids": [
+        "avx:b:kupo:reviewed:avx:b:314346e28f94029b",
         "clmedia:b:292",
         "clmedia:b:293",
         "clmedia:b:294",
@@ -2309,8 +2316,8 @@
         "plthink:b:064:008",
         "plthink:b:064:009"
       ],
-      "count": 837,
-      "purchase_count": 831,
+      "count": 839,
+      "purchase_count": 833,
       "rental_count": 6,
       "category_ids": [
         "naver:b:kupo:50000206",
@@ -2347,6 +2354,7 @@
         "clmedia:b:447",
         "clmedia:b:448",
         "clmedia:b:449",
+        "avx:b:kupo:reviewed:avx:b:314346e28f94029b",
         "rental-brand:kupo:4",
         "rental-brand:kupo:104",
         "rental-brand:kupo:8",
@@ -3210,6 +3218,28 @@
       "logo_dark": false
     },
     {
+      "id": "adamelements",
+      "name": "ADAMELEMENTS",
+      "aliases": [
+        "ADAMelements"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003823.jpg?1773117589",
+      "navigation_category_ids": [
+        "plthink:b:adamelements:reviewed:plthink:b:072"
+      ],
+      "count": 2,
+      "purchase_count": 2,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:adamelements:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1928359",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003822.jpg?1773117589",
+      "representative_name": "[ADAMelements] 아담엘리먼트 4in1 마그네틱 멀티 고속 충전 케이블 60W 지원",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "adicam",
       "name": "ADICAM",
       "aliases": [
@@ -3689,6 +3719,28 @@
       "logo_dark": false
     },
     {
+      "id": "aplofy",
+      "name": "APLOFY",
+      "aliases": [
+        "APLOFY"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003043.jpg?1738729784",
+      "navigation_category_ids": [
+        "plthink:b:aplofy:reviewed:plthink:b:072"
+      ],
+      "count": 4,
+      "purchase_count": 4,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:aplofy:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1926166",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003042.jpg?1738729784",
+      "representative_name": "[APLOFY] 어플로피 헤이저 포그 스모그 스프레이 제품 상품 무대 촬영용",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "arri",
       "name": "ARRI",
       "aliases": [
@@ -4027,17 +4079,13 @@
       "logo": "https://www.avx.co.kr/data/goods/1/2022/04/909_temp_16497330308030list1.jpg",
       "navigation_category_ids": [
         "avx:b:00682a1d74aed1d1",
-        "avx:b:0edbdc36e485ac2f",
         "avx:b:11218a417cea946c",
         "avx:b:314346e28f94029b",
         "avx:b:378da5c29a91603c",
         "avx:b:41874dc4bc62c9ba",
         "avx:b:480f00a190aa789c",
-        "avx:b:5e215deab5e37138",
-        "avx:b:605ea3ab95b02061",
         "avx:b:73c8cf3b96214727",
         "avx:b:814aa024ee069d3d",
-        "avx:b:8350f49ade3ae655",
         "avx:b:8903c02bd2ca76f2",
         "avx:b:8bffda5b7a30e40d",
         "avx:b:9d8bd97bf490f3ea",
@@ -4047,8 +4095,8 @@
         "avx:b:ecbb0ae014553782",
         "avx:b:ef6895c3b0c781fc"
       ],
-      "count": 32,
-      "purchase_count": 32,
+      "count": 25,
+      "purchase_count": 25,
       "rental_count": 0,
       "category_ids": [
         "avx:b:314346e28f94029b",
@@ -4283,6 +4331,31 @@
       "logo_dark": false
     },
     {
+      "id": "blkbird",
+      "name": "BLKBIRD",
+      "aliases": [
+        "BLKBIRD"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2025/11/2628_temp_17640618382861list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:blkbird:reviewed:avx:b:c25160d99995060f",
+        "avx:b:blkbird:reviewed:avx:b:d9026aef907e41db"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:blkbird:reviewed:avx:b:c25160d99995060f",
+        "avx:b:blkbird:reviewed:avx:b:d9026aef907e41db"
+      ],
+      "representative_id": "avx-2628",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2025/11/2628_temp_17640618382861view.jpg",
+      "representative_name": "BLKBIRD MANTIS 블랙버드 멘티스",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2025/11/2628_temp_17640618393522view.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "blue",
       "name": "BLUE",
       "aliases": [
@@ -4305,6 +4378,28 @@
       "representative_id": "plthink-1916398",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0081010000012.jpg?1635820376",
       "representative_name": "[BLUE] Snowball ICE 블루 스노우볼 아이스 콘덴서 마이크",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "bluestik",
+      "name": "BLUESTIK",
+      "aliases": [
+        "BLUESTIK"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003873.jpg?1769409421",
+      "navigation_category_ids": [
+        "plthink:b:bluestik:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:bluestik:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1827",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003872.jpg?1769409421",
+      "representative_name": "[BLUESTIK] 블루스틱 제품고정용 접착고무 소품 쥬얼리 접착 촬영용껌",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4384,6 +4479,28 @@
       "logo_dark": false
     },
     {
+      "id": "campseason",
+      "name": "CAMPSEASON",
+      "aliases": [
+        "CAMPSEASON"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003673.jpg?1768537241",
+      "navigation_category_ids": [
+        "plthink:b:campseason:reviewed:plthink:b:072"
+      ],
+      "count": 2,
+      "purchase_count": 2,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:campseason:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1925657",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003672.jpg?1768537241",
+      "representative_name": "[CAMPSEASON] 캠프시즌 e편한 전동 촬영 장비 카트 신형 적재 하중 100kg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "camvate",
       "name": "CAMVATE",
       "aliases": [
@@ -4404,6 +4521,30 @@
       "representative_id": "plthink-1921953",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0081430000182.jpg?1790576109",
       "representative_name": "[CAMVATE] 캠베이트 C3086 미니 볼헤드 매직암",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "canare",
+      "name": "CANARE",
+      "aliases": [
+        "CANARE"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080160047033.jpg?1691651108",
+      "navigation_category_ids": [
+        "plthink:b:canare:reviewed:plthink:b:016",
+        "plthink:b:canare:reviewed:plthink:b:016:003"
+      ],
+      "count": 2,
+      "purchase_count": 2,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:canare:reviewed:plthink:b:016",
+        "plthink:b:canare:reviewed:plthink:b:016:003"
+      ],
+      "representative_id": "plthink-1923346",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080160047032.jpg?1691651108",
+      "representative_name": "[CANARE] 카나레 12G-SDI BNC 영상 신호 오디오 동축케이블",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4574,8 +4715,8 @@
       "navigation_category_ids": [
         "clmedia:b:50"
       ],
-      "count": 10,
-      "purchase_count": 10,
+      "count": 8,
+      "purchase_count": 8,
       "rental_count": 0,
       "category_ids": [
         "clmedia:b:50"
@@ -4634,6 +4775,28 @@
       "representative_id": "plthink-1928384",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080820000782.jpg?1766469549",
       "representative_name": "[Colorama] 컬러라마 2.72 x 11m 스튜디오 촬영 롤 배경지 사진 누끼 풀사이즈",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "coman",
+      "name": "COMAN",
+      "aliases": [
+        "COMAN"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003533.jpg?1751269724",
+      "navigation_category_ids": [
+        "plthink:b:coman:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:coman:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1909118",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003532.jpg?1751269724",
+      "representative_name": "[COMAN] 코만 비디오 삼각대 헤드 Q7-Plus",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -4756,6 +4919,28 @@
       "logo_dark": false
     },
     {
+      "id": "cubemoa",
+      "name": "CUBEMOA",
+      "aliases": [
+        "CUBEMOA"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003293.jpg?1768371517",
+      "navigation_category_ids": [
+        "plthink:b:cubemoa:reviewed:plthink:b:072"
+      ],
+      "count": 2,
+      "purchase_count": 2,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:cubemoa:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1926781",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003292.jpg?1768371517",
+      "representative_name": "[CUBEMOA] 큐브모아 CUBE-L 공기압 조절식 에어쿠션 카메라 렌즈 가방",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "cura",
       "name": "CURA",
       "aliases": [
@@ -4871,7 +5056,7 @@
       "aliases": [
         "DEITY"
       ],
-      "logo": "https://www.avx.co.kr/data/goods/1/2026/08/3054_temp_17871991464879list1.png",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720000133.jpg?1761114577",
       "navigation_category_ids": [
         "avx:b:2d07d94f1ec531fe",
         "avx:b:3baeebdfc21645ec",
@@ -4886,12 +5071,14 @@
         "avx:b:b988c7dff51b9e83",
         "avx:b:ca61e1671295714f",
         "avx:b:da4721aa5f38b903",
-        "avx:b:e009f22eb5c4d8f2"
+        "avx:b:e009f22eb5c4d8f2",
+        "plthink:b:deity:reviewed:plthink:b:072"
       ],
-      "count": 77,
-      "purchase_count": 77,
+      "count": 78,
+      "purchase_count": 78,
       "rental_count": 0,
       "category_ids": [
+        "plthink:b:deity:reviewed:plthink:b:072",
         "avx:b:8b4bde5680e158f0",
         "avx:b:3baeebdfc21645ec",
         "avx:b:411d726cbcfe5cef",
@@ -4907,10 +5094,9 @@
         "avx:b:b988c7dff51b9e83",
         "avx:b:da4721aa5f38b903"
       ],
-      "representative_id": "avx-3054",
-      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/08/3054_temp_17871991464879view.png",
-      "representative_name": "DEITY PR-4 필드 오디오 백 (미니)",
-      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/08/3054_temp_17871991471211view.png",
+      "representative_id": "plthink-1911607",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720000132.jpg?1761114577",
+      "representative_name": "[DEITY] 카메라 스마트폰 겸용 데이티 D3 초지향성 마이크",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -5014,6 +5200,9 @@
       ],
       "logo": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20261006/28c727967371ff1b690f8a77f74f29c2.jpg",
       "navigation_category_ids": [
+        "avx:b:dzofilm:reviewed:avx:b:00682a1d74aed1d1",
+        "avx:b:dzofilm:reviewed:avx:b:ecbb0ae014553782",
+        "avx:b:dzofilm:reviewed:avx:b:ef6895c3b0c781fc",
         "cinemall:b:schema-brand-dzofilm",
         "clmedia:b:430",
         "clmedia:b:432",
@@ -5030,8 +5219,8 @@
         "clmedia:b:590",
         "clmedia:b:591"
       ],
-      "count": 92,
-      "purchase_count": 92,
+      "count": 93,
+      "purchase_count": 93,
       "rental_count": 0,
       "category_ids": [
         "clmedia:b:53",
@@ -5049,7 +5238,10 @@
         "clmedia:b:525",
         "clmedia:b:435",
         "clmedia:b:436",
-        "cinemall:b:schema-brand-dzofilm"
+        "cinemall:b:schema-brand-dzofilm",
+        "avx:b:dzofilm:reviewed:avx:b:00682a1d74aed1d1",
+        "avx:b:dzofilm:reviewed:avx:b:ecbb0ae014553782",
+        "avx:b:dzofilm:reviewed:avx:b:ef6895c3b0c781fc"
       ],
       "representative_id": "clmedia-3477",
       "representative_image": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20261006/28c727967371ff1b690f8a77f74f29c2.jpg",
@@ -5332,8 +5524,8 @@
         "kpp:b:etc:mirror:kpp:b:leofoto:30a050",
         "plthink:b:072"
       ],
-      "count": 77,
-      "purchase_count": 77,
+      "count": 5,
+      "purchase_count": 5,
       "rental_count": 0,
       "category_ids": [
         "kpp:b:etc:mirror:kpp:b:leofoto:30a0",
@@ -5628,6 +5820,28 @@
       "logo_dark": true
     },
     {
+      "id": "fonken",
+      "name": "FONKEN",
+      "aliases": [
+        "FONKEN"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720002453.jpg?1778485623",
+      "navigation_category_ids": [
+        "plthink:b:fonken:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:fonken:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1920342",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720002452.jpg?1778485623",
+      "representative_name": "[FONKEN] FK-C100 USB 케이블 마그네틱 C to C 충전 어댑터 100w 꺾인타입 화이트",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "fookus-pookus",
       "name": "FOOKUS-POOKUS",
       "aliases": [
@@ -5686,29 +5900,35 @@
       "id": "fujifilm",
       "name": "FUJIFILM",
       "aliases": [
+        "후지필름",
         "FUJIFILM",
-        "후지"
+        "후지",
+        "fujifilm"
       ],
-      "logo": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/product/big/20260814/79ffa15da4690963f139391145225e34.jpg",
+      "logo": "/assets/shop/brands/brand-63ad1e5419-0a4f8946e7.webp",
       "navigation_category_ids": [
         "cinemall:b:106",
         "cinemall:b:107",
         "cinemall:b:60",
-        "cinemall:b:84"
+        "cinemall:b:84",
+        "naver:b:fujifilm:50000206",
+        "naver:b:fujifilm:50000266"
       ],
-      "count": 130,
-      "purchase_count": 130,
+      "count": 131,
+      "purchase_count": 131,
       "rental_count": 0,
       "category_ids": [
+        "naver:b:fujifilm:50000206",
+        "naver:b:fujifilm:50000266",
         "cinemall:b:60",
         "cinemall:b:84",
         "cinemall:b:106",
         "cinemall:b:107"
       ],
-      "representative_id": "cinemall-2550",
-      "representative_image": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/product/big/20260814/79ffa15da4690963f139391145225e34.jpg",
-      "representative_name": "후지필름 FUJIFILM X-T30 III XC13-33mm KIT",
-      "image_kind": "product",
+      "representative_id": "smartstore-12835026286",
+      "representative_image": "https://shop-phinf.pstatic.net/20251216_94/1765893080621sKV1I_JPEG/100026004543713293_1648931224.jpg",
+      "representative_name": "FUJIFILM GFX 50SⅡ Body",
+      "image_kind": "logo",
       "logo_dark": false
     },
     {
@@ -5730,6 +5950,37 @@
       "representative_id": "plthink-1907142",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080810000012.jpg?1775614924",
       "representative_name": "후지쯔 AA / AAA 충전용 건전지 충전지",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "gaze",
+      "name": "GAZE",
+      "aliases": [
+        "GAZE"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2025/06/2306_temp_17506695817658list1.png",
+      "navigation_category_ids": [
+        "avx:b:gaze:reviewed:avx:b:00682a1d74aed1d1",
+        "avx:b:gaze:reviewed:avx:b:0edbdc36e485ac2f",
+        "avx:b:gaze:reviewed:avx:b:5e215deab5e37138",
+        "avx:b:gaze:reviewed:avx:b:605ea3ab95b02061",
+        "avx:b:gaze:reviewed:avx:b:8350f49ade3ae655"
+      ],
+      "count": 2,
+      "purchase_count": 2,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:gaze:reviewed:avx:b:00682a1d74aed1d1",
+        "avx:b:gaze:reviewed:avx:b:0edbdc36e485ac2f",
+        "avx:b:gaze:reviewed:avx:b:605ea3ab95b02061",
+        "avx:b:gaze:reviewed:avx:b:5e215deab5e37138",
+        "avx:b:gaze:reviewed:avx:b:8350f49ade3ae655"
+      ],
+      "representative_id": "avx-2306",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2025/06/2306_temp_17506695817658view.png",
+      "representative_name": "GAZE 게이즈 GMK-KB02 컴팩트 OLED 4D 조이스틱 컨트롤",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2025/06/2306_temp_17506695827517view.png",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -6033,6 +6284,28 @@
       "logo_dark": false
     },
     {
+      "id": "hahnemuhle",
+      "name": "HAHNEMUHLE",
+      "aliases": [
+        "Hahnemuhle"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720002873.jpg?1768195398",
+      "navigation_category_ids": [
+        "plthink:b:hahnemuhle:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:hahnemuhle:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1924734",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720002872.jpg?1768195398",
+      "representative_name": "[Hahnemuhle] 하네뮬레 프로텍티브 코팅 스프레이 400ml UV코팅 사진코팅",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "hanlong",
       "name": "HANLONG",
       "aliases": [
@@ -6153,48 +6426,32 @@
       "id": "healing-shield",
       "name": "HEALING-SHIELD",
       "aliases": [
-        "Healing Shield"
+        "Healing Shield",
+        "HealingShield",
+        "healingshield",
+        "healing shield",
+        "힐링쉴드",
+        "healing-shield"
       ],
       "logo": "https://www.plthink.com/shopimages/plthink/0080930000453.jpg?1790905879",
       "navigation_category_ids": [
+        "avx:b:0a8d8d4ac9a00c72",
+        "avx:b:31aeb118a6c2932e",
+        "avx:b:f3fa5caed1a49c23",
         "plthink:b:093"
       ],
-      "count": 28,
-      "purchase_count": 28,
+      "count": 39,
+      "purchase_count": 39,
       "rental_count": 0,
       "category_ids": [
-        "plthink:b:093"
+        "plthink:b:093",
+        "avx:b:31aeb118a6c2932e",
+        "avx:b:0a8d8d4ac9a00c72",
+        "avx:b:f3fa5caed1a49c23"
       ],
       "representative_id": "plthink-1914621",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080930000092.jpg?1790920898",
       "representative_name": "[힐링쉴드] 후지필름 X T30 올레포빅 액정 보호 필름 2매",
-      "image_kind": "product",
-      "logo_dark": false
-    },
-    {
-      "id": "healingshield",
-      "name": "HEALINGSHIELD",
-      "aliases": [
-        "HealingShield"
-      ],
-      "logo": "https://www.avx.co.kr/data/goods/1/2025/06/2312_temp_17509887053611list1.png",
-      "navigation_category_ids": [
-        "avx:b:0a8d8d4ac9a00c72",
-        "avx:b:31aeb118a6c2932e",
-        "avx:b:f3fa5caed1a49c23"
-      ],
-      "count": 11,
-      "purchase_count": 11,
-      "rental_count": 0,
-      "category_ids": [
-        "avx:b:31aeb118a6c2932e",
-        "avx:b:0a8d8d4ac9a00c72",
-        "avx:b:f3fa5caed1a49c23"
-      ],
-      "representative_id": "avx-2312",
-      "representative_image": "https://www.avx.co.kr/data/goods/1/2025/06/2312_temp_17509887053611view.png",
-      "representative_name": "DJI RC Pro 2 컨트롤러 올레포빅 액정보호필름",
-      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2025/06/2312_temp_17509887045977view.png",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -6445,21 +6702,25 @@
       "id": "hyperthin",
       "name": "HYPERTHIN",
       "aliases": [
-        "hyperthin"
+        "hyperthin",
+        "HYPERTHIN",
+        "하이퍼틴"
       ],
       "logo": "https://shop-phinf.pstatic.net/20220915_48/1663227923083OlsPO_JPEG/64363768798443951_93193403.jpg",
       "navigation_category_ids": [
+        "clmedia:b:hyperthin:reviewed:clmedia:b:54",
         "naver:b:hyperthin:50000206",
         "naver:b:hyperthin:50001394",
         "naver:b:hyperthin:50002113"
       ],
-      "count": 1,
-      "purchase_count": 1,
+      "count": 3,
+      "purchase_count": 3,
       "rental_count": 0,
       "category_ids": [
         "naver:b:hyperthin:50000206",
         "naver:b:hyperthin:50001394",
-        "naver:b:hyperthin:50002113"
+        "naver:b:hyperthin:50002113",
+        "clmedia:b:hyperthin:reviewed:clmedia:b:54"
       ],
       "representative_id": "smartstore-7191152185",
       "representative_image": "https://shop-phinf.pstatic.net/20220915_48/1663227923083OlsPO_JPEG/64363768798443951_93193403.jpg",
@@ -6545,6 +6806,28 @@
       "representative_image": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17919613899241view.jpg",
       "representative_name": "IGNITE DIGI 이그나이트 디지 Power Breakout 파워 브레이크아웃 2핀 레모 전원 분배기 1입력 3출력 Ignite Orange",
       "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17919613959086view.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "innorel",
+      "name": "INNOREL",
+      "aliases": [
+        "INNOREL"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720002833.jpg?1751269752",
+      "navigation_category_ids": [
+        "plthink:b:innorel:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:innorel:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1917423",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720002832.jpg?1751269752",
+      "representative_name": "[INNOREL] 이노엘 휴대용 미니삼각대 알루미늄 모노포드 PW50",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -6742,6 +7025,31 @@
       "logo_dark": false
     },
     {
+      "id": "jjc",
+      "name": "JJC",
+      "aliases": [
+        "JJC"
+      ],
+      "logo": "https://www.avx.co.kr/data/goods/1/2025/09/2493_temp_17586163841612list1.jpg",
+      "navigation_category_ids": [
+        "avx:b:jjc:reviewed:avx:b:00682a1d74aed1d1",
+        "avx:b:jjc:reviewed:avx:b:8903c02bd2ca76f2"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "avx:b:jjc:reviewed:avx:b:00682a1d74aed1d1",
+        "avx:b:jjc:reviewed:avx:b:8903c02bd2ca76f2"
+      ],
+      "representative_id": "avx-2493",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2025/09/2493_temp_17586163841612view.jpg",
+      "representative_name": "JJC Air Blower 카메라 렌즈 에어블로워 클리너 청소도구",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2025/09/2493_temp_17581629322664view.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "jmit",
       "name": "JMIT",
       "aliases": [
@@ -6752,16 +7060,20 @@
         "ldnet:b:jmit:27",
         "ldnet:b:jmit:34",
         "ldnet:b:jmit:375",
+        "ldnet:b:jmit:387",
         "ldnet:b:jmit:534",
+        "ldnet:b:jmit:80",
         "ldnet:b:jmit:82"
       ],
-      "count": 13,
-      "purchase_count": 13,
+      "count": 15,
+      "purchase_count": 15,
       "rental_count": 0,
       "category_ids": [
         "ldnet:b:jmit:27",
         "ldnet:b:jmit:534",
         "ldnet:b:jmit:82",
+        "ldnet:b:jmit:387",
+        "ldnet:b:jmit:80",
         "ldnet:b:jmit:34",
         "ldnet:b:jmit:375"
       ],
@@ -6831,6 +7143,28 @@
       "representative_image": "https://shop-phinf.pstatic.net/20260901_230/1788253203079KvhmS_JPEG/a5ee1937-390a-4ce8-9354-ddb8c428ec19.jpg",
       "representative_name": "PodZilla® Octo Suction Tripod (Gray)",
       "image_kind": "logo",
+      "logo_dark": false
+    },
+    {
+      "id": "kamerar",
+      "name": "KAMERAR",
+      "aliases": [
+        "KAMERAR"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720002373.jpg?1758242077",
+      "navigation_category_ids": [
+        "plthink:b:kamerar:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:kamerar:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-3792",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720002372.jpg?1758242077",
+      "representative_name": "[KAMERAR] 카메라르 SUPER MRC-UV 필터 52 58 67 72 82mm",
+      "image_kind": "product",
       "logo_dark": false
     },
     {
@@ -6934,6 +7268,28 @@
       "logo_dark": false
     },
     {
+      "id": "keybudz",
+      "name": "KEYBUDZ",
+      "aliases": [
+        "Keybudz"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003813.jpg?1766022281",
+      "navigation_category_ids": [
+        "plthink:b:keybudz:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:keybudz:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1928358",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003812.jpg?1766022281",
+      "representative_name": "[Keybudz] 키버즈 에어케어 2.0 에어팟 청소 키트 클리너 카메라 노트북 키보드",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "kondor-blue",
       "name": "KONDOR-BLUE",
       "aliases": [
@@ -6994,10 +7350,12 @@
         "naver:b:kumkwang:50001390",
         "naver:b:kumkwang:50001394",
         "naver:b:kumkwang:50002082",
-        "naver:b:kumkwang:50002113"
+        "naver:b:kumkwang:50002113",
+        "plthink:b:kumkwang:reviewed:plthink:b:016",
+        "plthink:b:kumkwang:reviewed:plthink:b:016:005"
       ],
-      "count": 58,
-      "purchase_count": 58,
+      "count": 59,
+      "purchase_count": 59,
       "rental_count": 0,
       "category_ids": [
         "naver:b:kumkwang:50000206",
@@ -7006,7 +7364,9 @@
         "naver:b:kumkwang:50001390",
         "naver:b:kumkwang:50002082",
         "plthink:b:145",
-        "plthink:b:145:001"
+        "plthink:b:145:001",
+        "plthink:b:kumkwang:reviewed:plthink:b:016",
+        "plthink:b:kumkwang:reviewed:plthink:b:016:005"
       ],
       "representative_id": "smartstore-13740721127",
       "representative_image": "https://shop-phinf.pstatic.net/20260901_131/1788252785739D1vbO_JPEG/0081450000082.jpg",
@@ -7018,7 +7378,8 @@
       "id": "laowa",
       "name": "LAOWA",
       "aliases": [
-        "라오와"
+        "라오와",
+        "LAOWA"
       ],
       "logo": "/assets/shop/brands/laowa-ab438160ff.webp",
       "navigation_category_ids": [
@@ -7026,10 +7387,11 @@
         "naver:b:laowa:50001381",
         "naver:b:laowa:50004604",
         "naver:b:laowa:50004605",
-        "naver:b:laowa:50004606"
+        "naver:b:laowa:50004606",
+        "plthink:b:laowa:reviewed:plthink:b:072"
       ],
-      "count": 125,
-      "purchase_count": 125,
+      "count": 126,
+      "purchase_count": 126,
       "rental_count": 0,
       "category_ids": [
         "naver:b:laowa:50000206",
@@ -7037,6 +7399,7 @@
         "naver:b:laowa:50004604",
         "naver:b:laowa:50004605",
         "naver:b:laowa:50004606",
+        "plthink:b:laowa:reviewed:plthink:b:072",
         "clmedia:b:65"
       ],
       "representative_id": "smartstore-12112672800",
@@ -7165,8 +7528,8 @@
         "ldnet:b:ldl-mount:572",
         "ldnet:b:ldl-mount:573"
       ],
-      "count": 692,
-      "purchase_count": 692,
+      "count": 693,
+      "purchase_count": 693,
       "rental_count": 0,
       "category_ids": [
         "l-mount:b:ldl-mount:category-e97f1539d15a",
@@ -7449,6 +7812,28 @@
       "logo_dark": false
     },
     {
+      "id": "lit-systems",
+      "name": "LIT-SYSTEMS",
+      "aliases": [
+        "LIT Systems"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720004093.jpg?1786318494",
+      "navigation_category_ids": [
+        "plthink:b:lit-systems:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:lit-systems:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1930102",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720004092.jpg?1786318494",
+      "representative_name": "[LIT Systems] LIT DUO 1 올인원 멀티 디지털 노출계 컬러미터 조도계",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "litra",
       "name": "LITRA",
       "aliases": [
@@ -7476,6 +7861,28 @@
       "representative_id": "plthink-1927637",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080350000522.jpg?1758249088",
       "representative_name": "[LITRA] 리트라 LPHG 허니컴 허니콤 리트라프로 전용",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "logitech",
+      "name": "LOGITECH",
+      "aliases": [
+        "Logitech"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003413.jpg?1635818726",
+      "navigation_category_ids": [
+        "plthink:b:logitech:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:logitech:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1910820",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003412.jpg?1635818726",
+      "representative_name": "[Logitech] 로지텍 웹캠 C920 PRO HD WEBCAM 화상카메라",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -7521,27 +7928,35 @@
       "id": "lugbox",
       "name": "LUGBOX",
       "aliases": [
-        "LUGBOX"
+        "러그박스",
+        "LUGBOX",
+        "lugbox"
       ],
-      "logo": "https://ldnet.co.kr/web/product/big/202507/c278ba807f52c2745c883da7f5dbdd59.jpg",
+      "logo": "https://shop-phinf.pstatic.net/20240617_73/1718603071990Gt9IX_PNG/52517765005330734_926064150.png",
       "navigation_category_ids": [
         "ldnet:b:lugbox:263",
         "ldnet:b:lugbox:264",
         "ldnet:b:lugbox:265",
-        "ldnet:b:lugbox:266"
+        "ldnet:b:lugbox:266",
+        "naver:b:lugbox:50000206",
+        "naver:b:lugbox:50001394",
+        "naver:b:lugbox:50002113"
       ],
-      "count": 22,
-      "purchase_count": 22,
+      "count": 23,
+      "purchase_count": 23,
       "rental_count": 0,
       "category_ids": [
+        "naver:b:lugbox:50000206",
+        "naver:b:lugbox:50001394",
+        "naver:b:lugbox:50002113",
         "ldnet:b:lugbox:263",
         "ldnet:b:lugbox:265",
         "ldnet:b:lugbox:266",
         "ldnet:b:lugbox:264"
       ],
-      "representative_id": "ldnet-23420",
-      "representative_image": "https://ldnet.co.kr/web/product/big/202507/c278ba807f52c2745c883da7f5dbdd59.jpg",
-      "representative_name": "러그박스 4구 캡형 멀티탭 휴대용 릴 20M LB-C20MBY 베이직 인디블루",
+      "representative_id": "smartstore-10463595528",
+      "representative_image": "https://shop-phinf.pstatic.net/20240617_73/1718603071990Gt9IX_PNG/52517765005330734_926064150.png",
+      "representative_name": "LUGBOX 릴선,촬영릴선,장비릴선,조명릴선,캠핑릴선",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -7564,6 +7979,29 @@
       "representative_id": "plthink-1930427",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080220000662.jpg?1789103811",
       "representative_name": "[LUMANTEK] 루먼텍 ez-UMD+ 4K 멀티 크로스 컨버터 SDI HDMI 양방향 동시출력",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "magmod",
+      "name": "MAGMOD",
+      "aliases": [
+        "맥모드",
+        "magmod"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003153.jpg?1751268061",
+      "navigation_category_ids": [
+        "plthink:b:magmod:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:magmod:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1908549",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003152.jpg?1751268061",
+      "representative_name": "[맥모드] 카메라 플래시 밴드 Transmitter Band (3개1세트)",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -7661,6 +8099,28 @@
       "logo_dark": false
     },
     {
+      "id": "matin",
+      "name": "MATIN",
+      "aliases": [
+        "MATIN"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720001923.jpg?1751271076",
+      "navigation_category_ids": [
+        "plthink:b:matin:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:matin:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-4628",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720001922.jpg?1751271076",
+      "representative_name": "[MATIN] 매틴 등산백용 레인커버-S(M6495)",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "matthews",
       "name": "MATTHEWS",
       "aliases": [
@@ -7696,21 +8156,24 @@
       "name": "MEGADAP",
       "aliases": [
         "메가뎁",
+        "Megadap",
         "megadap"
       ],
       "logo": "/assets/shop/brands/megadap-c1da403ad8.webp",
       "navigation_category_ids": [
         "naver:b:megadap:50000206",
         "naver:b:megadap:50001394",
-        "naver:b:megadap:50002100"
+        "naver:b:megadap:50002100",
+        "plthink:b:megadap:reviewed:plthink:b:072"
       ],
-      "count": 2,
-      "purchase_count": 2,
+      "count": 3,
+      "purchase_count": 3,
       "rental_count": 0,
       "category_ids": [
         "naver:b:megadap:50000206",
         "naver:b:megadap:50001394",
-        "naver:b:megadap:50002100"
+        "naver:b:megadap:50002100",
+        "plthink:b:megadap:reviewed:plthink:b:072"
       ],
       "representative_id": "smartstore-12959109310",
       "representative_image": "https://shop-phinf.pstatic.net/20260112_115/1768214683986dC01a_JPEG/48372303087691717_1949114202.jpg",
@@ -7829,6 +8292,28 @@
       "logo_dark": false
     },
     {
+      "id": "moment",
+      "name": "MOMENT",
+      "aliases": [
+        "Moment"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003743.jpg?1779147858",
+      "navigation_category_ids": [
+        "plthink:b:moment:reviewed:plthink:b:072"
+      ],
+      "count": 2,
+      "purchase_count": 2,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:moment:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1919668",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003742.jpg?1779147858",
+      "representative_name": "[Moment] 모멘트 맥세이프 차량용 환풍구 거치대 아이폰용 MT107-021",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "motion-impossible",
       "name": "MOTION-IMPOSSIBLE",
       "aliases": [
@@ -7858,11 +8343,13 @@
       "name": "MOTION9",
       "aliases": [
         "모션나인",
+        "MOTION9",
         "모션9",
         "motion9"
       ],
       "logo": "https://shop-phinf.pstatic.net/20260329_215/1774786858778WdSfH_JPEG/43446293659211493_584865494.jpg",
       "navigation_category_ids": [
+        "clmedia:b:motion9:reviewed:clmedia:b:50",
         "naver:b:motion9:50000078",
         "naver:b:motion9:50000206",
         "naver:b:motion9:50000915",
@@ -7870,8 +8357,8 @@
         "naver:b:motion9:50002703",
         "naver:b:motion9:50004633"
       ],
-      "count": 15,
-      "purchase_count": 15,
+      "count": 17,
+      "purchase_count": 17,
       "rental_count": 0,
       "category_ids": [
         "naver:b:motion9:50000206",
@@ -7879,7 +8366,8 @@
         "naver:b:motion9:50004633",
         "naver:b:motion9:50000078",
         "naver:b:motion9:50000915",
-        "naver:b:motion9:50002703"
+        "naver:b:motion9:50002703",
+        "clmedia:b:motion9:reviewed:clmedia:b:50"
       ],
       "representative_id": "smartstore-5125307000",
       "representative_image": "https://shop-phinf.pstatic.net/20260329_215/1774786858778WdSfH_JPEG/43446293659211493_584865494.jpg",
@@ -8048,6 +8536,28 @@
       "representative_id": "ldnet-1387",
       "representative_image": "https://ldnet.co.kr/web/product/big/202306/ac00ea44d8d8a9773cda18acb54818eb.jpg",
       "representative_name": "MOXA 목사 EDS-205 산업용 스위칭 허브/5포트/100Mbps",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "muamua",
+      "name": "MUAMUA",
+      "aliases": [
+        "MUAMUA"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720002203.jpg?1790055347",
+      "navigation_category_ids": [
+        "plthink:b:muamua:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:muamua:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1916541",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720002202.jpg?1790055347",
+      "representative_name": "[MUAMUA] USB TO C타입 고속 충전케이블 3M",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -8222,21 +8732,33 @@
       ],
       "logo": "https://ldnet.co.kr/web/product/big/202605/96ad2ae6fcd2edf156bf792631b53a35.jpg",
       "navigation_category_ids": [
+        "ldnet:b:next:171",
+        "ldnet:b:next:172",
+        "ldnet:b:next:258",
         "ldnet:b:next:484",
+        "ldnet:b:next:51",
+        "ldnet:b:next:519",
         "ldnet:b:next:521",
+        "ldnet:b:next:533",
         "ldnet:b:next:534",
         "ldnet:b:next:581",
         "ldnet:b:next:582",
         "ldnet:b:next:88"
       ],
-      "count": 266,
-      "purchase_count": 266,
+      "count": 273,
+      "purchase_count": 273,
       "rental_count": 0,
       "category_ids": [
         "ldnet:b:next:484",
         "ldnet:b:next:521",
         "ldnet:b:next:534",
         "ldnet:b:next:88",
+        "ldnet:b:next:172",
+        "ldnet:b:next:258",
+        "ldnet:b:next:51",
+        "ldnet:b:next:171",
+        "ldnet:b:next:519",
+        "ldnet:b:next:533",
         "ldnet:b:next:581",
         "ldnet:b:next:582"
       ],
@@ -8819,10 +9341,12 @@
       "id": "pelican",
       "name": "PELICAN",
       "aliases": [
+        "펠리칸",
         "PELICAN",
-        "Pelican"
+        "Pelican",
+        "pelican"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080200001403.jpg?1779863983",
+      "logo": "https://shop-phinf.pstatic.net/20260908_263/1788877699963ctfYP_JPEG/g201112271733_111_detail.jpg",
       "navigation_category_ids": [
         "avx:b:050a69b358f0b5d7",
         "avx:b:46577780edcc8922",
@@ -8831,6 +9355,11 @@
         "clmedia:b:608",
         "clmedia:b:609",
         "clmedia:b:81",
+        "naver:b:pelican:50000206",
+        "naver:b:pelican:50001387",
+        "naver:b:pelican:50001394",
+        "naver:b:pelican:50002113",
+        "naver:b:pelican:50004637",
         "plthink:b:020",
         "plthink:b:020:002",
         "plthink:b:020:003",
@@ -8840,10 +9369,15 @@
         "plthink:b:020:007",
         "plthink:b:020:008"
       ],
-      "count": 131,
-      "purchase_count": 131,
+      "count": 338,
+      "purchase_count": 338,
       "rental_count": 0,
       "category_ids": [
+        "naver:b:pelican:50000206",
+        "naver:b:pelican:50001387",
+        "naver:b:pelican:50004637",
+        "naver:b:pelican:50001394",
+        "naver:b:pelican:50002113",
         "plthink:b:020",
         "plthink:b:020:002",
         "plthink:b:020:005",
@@ -8860,9 +9394,9 @@
         "avx:b:46577780edcc8922",
         "avx:b:050a69b358f0b5d7"
       ],
-      "representative_id": "plthink-1929652",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080200001402.jpg?1779863983",
-      "representative_name": "[PELICAN] 펠리칸 하드케이스 패딩 디바이더 1595 1595TRVL 전용",
+      "representative_id": "smartstore-13752020115",
+      "representative_image": "https://shop-phinf.pstatic.net/20260908_263/1788877699963ctfYP_JPEG/g201112271733_111_detail.jpg",
+      "representative_name": "스톰케이스 iM2975 Black",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -8968,6 +9502,52 @@
       "logo_dark": false
     },
     {
+      "id": "phoism",
+      "name": "PHOISM",
+      "aliases": [
+        "PHOISM"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080160050543.jpg?1771808214",
+      "navigation_category_ids": [
+        "plthink:b:phoism:reviewed:plthink:b:016",
+        "plthink:b:phoism:reviewed:plthink:b:016:003"
+      ],
+      "count": 4,
+      "purchase_count": 4,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:phoism:reviewed:plthink:b:016",
+        "plthink:b:phoism:reviewed:plthink:b:016:003"
+      ],
+      "representative_id": "plthink-1904052",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080160050542.jpg?1771808214",
+      "representative_name": "[PHOISM] 촬영조명 8각 파라볼릭 소프트박스95 고독스 보웬스타입 호환 SB-FW95",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "pixel",
+      "name": "PIXEL",
+      "aliases": [
+        "PIXEL"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003783.jpg?1768869441",
+      "navigation_category_ids": [
+        "plthink:b:pixel:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:pixel:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1927766",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003782.jpg?1768869441",
+      "representative_name": "[PIXEL] 픽셀 TS-MK10 PTZ 카메라 컨트롤러 옵스봇 캐논 호환",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "plthink",
       "name": "PLTHINK",
       "aliases": [
@@ -8984,10 +9564,11 @@
         "plthink:b:016",
         "plthink:b:016:001",
         "plthink:b:016:003",
-        "plthink:b:016:005"
+        "plthink:b:016:005",
+        "plthink:b:plthink:reviewed:plthink:b:072"
       ],
-      "count": 197,
-      "purchase_count": 197,
+      "count": 189,
+      "purchase_count": 189,
       "rental_count": 0,
       "category_ids": [
         "naver:b:plthink:50000206",
@@ -8996,7 +9577,8 @@
         "plthink:b:016",
         "plthink:b:016:001",
         "plthink:b:016:005",
-        "plthink:b:016:003"
+        "plthink:b:016:003",
+        "plthink:b:plthink:reviewed:plthink:b:072"
       ],
       "representative_id": "smartstore-8241085468",
       "representative_image": "https://shop-phinf.pstatic.net/20230315_25/1678850278530kz8r6_JPEG/79986106360569501_757940277.jpg",
@@ -9205,23 +9787,32 @@
       "id": "pro-gaff",
       "name": "PRO-GAFF",
       "aliases": [
-        "PRO GAFF"
+        "PRO GAFF",
+        "PROGAFF",
+        "프로게퍼",
+        "progaff",
+        "pro gaff",
+        "pro-gaff"
       ],
       "logo": "https://shop-phinf.pstatic.net/20260208_289/1770557636962Ce67m_JPEG/99919254509269468_1231101369.jpg",
       "navigation_category_ids": [
         "clmedia:b:84",
+        "clmedia:b:pro-gaff:reviewed:clmedia:b:54",
         "naver:b:pro-gaff:50000206",
         "naver:b:pro-gaff:50001394",
-        "naver:b:pro-gaff:50002100"
+        "naver:b:pro-gaff:50002100",
+        "plthink:b:094"
       ],
-      "count": 8,
-      "purchase_count": 8,
+      "count": 15,
+      "purchase_count": 15,
       "rental_count": 0,
       "category_ids": [
         "naver:b:pro-gaff:50000206",
         "naver:b:pro-gaff:50001394",
         "naver:b:pro-gaff:50002100",
-        "clmedia:b:84"
+        "plthink:b:094",
+        "clmedia:b:84",
+        "clmedia:b:pro-gaff:reviewed:clmedia:b:54"
       ],
       "representative_id": "smartstore-13085817636",
       "representative_image": "https://shop-phinf.pstatic.net/20260208_289/1770557636962Ce67m_JPEG/99919254509269468_1231101369.jpg",
@@ -9278,28 +9869,6 @@
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080700003002.jpg?1790748361",
       "representative_name": "[Profoto] 프로포토 Pro-B3 Single Kit 사진촬영 촬영용 플래시",
       "image_kind": "logo",
-      "logo_dark": false
-    },
-    {
-      "id": "progaff",
-      "name": "PROGAFF",
-      "aliases": [
-        "PROGAFF"
-      ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080940000143.jpg?1789977206",
-      "navigation_category_ids": [
-        "plthink:b:094"
-      ],
-      "count": 6,
-      "purchase_count": 6,
-      "rental_count": 0,
-      "category_ids": [
-        "plthink:b:094"
-      ],
-      "representative_id": "plthink-1929538",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080940000142.jpg?1789977206",
-      "representative_name": "[PROGAFF] 프로게퍼 프로 게퍼테이프 포켓 1인치 5.4m",
-      "image_kind": "product",
       "logo_dark": false
     },
     {
@@ -9557,6 +10126,28 @@
       "logo_dark": false
     },
     {
+      "id": "rembrandt",
+      "name": "REMBRANDT",
+      "aliases": [
+        "Rembrandt"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720002893.jpg?1727161259",
+      "navigation_category_ids": [
+        "plthink:b:rembrandt:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:rembrandt:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-130",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720002892.jpg?1727161259",
+      "representative_name": "[Rembrandt] 램브란트 컬러 화이트밸런스 카드",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "rextron",
       "name": "REXTRON",
       "aliases": [
@@ -9672,6 +10263,28 @@
       "representative_name": "Robocup RC-02BK 블랙",
       "representative_alternate": "https://shop-phinf.pstatic.net/20250316_111/1742133268739NU0tn_JPEG/28990121858747936_1829717114.jpg",
       "image_kind": "logo",
+      "logo_dark": false
+    },
+    {
+      "id": "robotics-lab",
+      "name": "ROBOTICS-LAB",
+      "aliases": [
+        "Robotics LAB"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720004033.jpg?1775625104",
+      "navigation_category_ids": [
+        "plthink:b:robotics-lab:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:robotics-lab:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1929340",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720004032.jpg?1775625104",
+      "representative_name": "[Robotics LAB] X-ble Shoulder 어깨 근력 보조 웨어러블 로봇 엑스블 숄더",
+      "image_kind": "product",
       "logo_dark": false
     },
     {
@@ -9795,6 +10408,28 @@
       "representative_id": "plthink-1925615",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080670000352.jpg?1762737800",
       "representative_name": "[ROTOLIGHT] 로토라이트 NEOII Explorer KIT 스트로보 순간광 지속광 겸용 LED 조명",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "rtcom",
+      "name": "RTCOM",
+      "aliases": [
+        "RTcom"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720004083.jpg?1777445570",
+      "navigation_category_ids": [
+        "plthink:b:rtcom:reviewed:plthink:b:072"
+      ],
+      "count": 4,
+      "purchase_count": 4,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:rtcom:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1929495",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720004082.jpg?1777445569",
+      "representative_name": "[RTcom] 알티컴 SPX-Extender 랜 리피터 4K HDMI 장거리 전송",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -9984,22 +10619,25 @@
       "name": "SARAMONIC",
       "aliases": [
         "사라모닉",
+        "Saramonic",
         "saramonic"
       ],
       "logo": "/assets/shop/brands/saramonic-6d6963d3e8.webp",
       "navigation_category_ids": [
         "naver:b:saramonic:50000206",
         "naver:b:saramonic:50001394",
-        "naver:b:saramonic:50002102"
+        "naver:b:saramonic:50002102",
+        "plthink:b:saramonic:reviewed:plthink:b:072"
       ],
-      "count": 5,
-      "purchase_count": 4,
+      "count": 11,
+      "purchase_count": 10,
       "rental_count": 1,
       "category_ids": [
         "naver:b:saramonic:50000153",
         "naver:b:saramonic:50000206",
         "naver:b:saramonic:50001394",
         "naver:b:saramonic:50002102",
+        "plthink:b:saramonic:reviewed:plthink:b:072",
         "clmedia:b:93",
         "rental-brand:saramonic:5",
         "rental-brand:saramonic:210"
@@ -10009,6 +10647,28 @@
       "representative_name": "SARAMONIC Witalk9 SE 헤드셋 인터컴 2개 세트",
       "image_kind": "logo",
       "logo_dark": true
+    },
+    {
+      "id": "sauber",
+      "name": "SAUBER",
+      "aliases": [
+        "Sauber"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003613.jpg?1768869698",
+      "navigation_category_ids": [
+        "plthink:b:sauber:reviewed:plthink:b:072"
+      ],
+      "count": 2,
+      "purchase_count": 2,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:sauber:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1922379",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003612.jpg?1768869697",
+      "representative_name": "[Sauber] 자우버 안티포그 티슈 50매 Lens tissue 다목적 클리닝 티슈",
+      "image_kind": "product",
+      "logo_dark": false
     },
     {
       "id": "savage",
@@ -10026,10 +10686,12 @@
         "plthink:b:010",
         "plthink:b:010:001",
         "plthink:b:010:002",
-        "plthink:b:010:003"
+        "plthink:b:010:003",
+        "plthink:b:savage:reviewed:plthink:b:016",
+        "plthink:b:savage:reviewed:plthink:b:016:005"
       ],
-      "count": 180,
-      "purchase_count": 180,
+      "count": 181,
+      "purchase_count": 181,
       "rental_count": 0,
       "category_ids": [
         "naver:b:savage:50000206",
@@ -10038,7 +10700,9 @@
         "plthink:b:010",
         "plthink:b:010:001",
         "plthink:b:010:002",
-        "plthink:b:010:003"
+        "plthink:b:010:003",
+        "plthink:b:savage:reviewed:plthink:b:016",
+        "plthink:b:savage:reviewed:plthink:b:016:005"
       ],
       "representative_id": "smartstore-8238237042",
       "representative_image": "https://shop-phinf.pstatic.net/20230314_21/1678796990790QYSbN_JPEG/79932818620780865_994463525.jpg",
@@ -10067,6 +10731,33 @@
       "representative_id": "plthink-1919802",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0081220000332.jpg?1768264921",
       "representative_name": "[SCHNEIDER] 슈나이더 RHOdium FSND 1.2 카메라 ND 필터 4x5.65 오더베이스",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "schneider-electric",
+      "name": "SCHNEIDER-ELECTRIC",
+      "aliases": [
+        "Schneider Electric",
+        "schneider electric",
+        "슈나이더 일렉트릭",
+        "schneider-electric"
+      ],
+      "logo": "https://ldnet.co.kr/web/product/big/202505/83dded4e1dbb6feb199bbbb045e8fa50.jpg",
+      "navigation_category_ids": [
+        "ldnet:b:schneider-electric:25",
+        "ldnet:b:schneider-electric:32"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "ldnet:b:schneider-electric:25",
+        "ldnet:b:schneider-electric:32"
+      ],
+      "representative_id": "ldnet-13036",
+      "representative_image": "https://ldnet.co.kr/web/product/big/202505/83dded4e1dbb6feb199bbbb045e8fa50.jpg",
+      "representative_name": "접촉기 TeSys LC1-D - 3극 - AC-3 440V 65 A - 코일 110VDC [LC1D65AFD]",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -10826,6 +11517,56 @@
       "logo_dark": false
     },
     {
+      "id": "sopling",
+      "name": "SOPLING",
+      "aliases": [
+        "SOPLING"
+      ],
+      "logo": "https://ldnet.co.kr/web/product/big/202512/a1ca1e225a83d5bed9d7db199c0c9f3f.jpg",
+      "navigation_category_ids": [
+        "ldnet:b:sopling:174",
+        "ldnet:b:sopling:258",
+        "ldnet:b:sopling:51",
+        "ldnet:b:sopling:534"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "ldnet:b:sopling:174",
+        "ldnet:b:sopling:258",
+        "ldnet:b:sopling:51",
+        "ldnet:b:sopling:534"
+      ],
+      "representative_id": "ldnet-23569",
+      "representative_image": "https://ldnet.co.kr/web/product/big/202512/a1ca1e225a83d5bed9d7db199c0c9f3f.jpg",
+      "representative_name": "스프링 (코일) 타입 120W C TO C PD 고속충전 신축 데이터 케이블 5종",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "sorigio",
+      "name": "SORIGIO",
+      "aliases": [
+        "SORIGIO"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003133.jpg?1730094203",
+      "navigation_category_ids": [
+        "plthink:b:sorigio:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:sorigio:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1909518",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003132.jpg?1730094203",
+      "representative_name": "[SORIGIO] 소리지오 에코 큐브333 ECHO CUBE 333 (2EA)",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "sprig",
       "name": "SPRIG",
       "aliases": [
@@ -10989,6 +11730,28 @@
       "representative_id": "plthink-1930488",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080130002732.jpg?1789964041",
       "representative_name": "[SYNCO] 싱코 Xtalk S1 무선 인터컴 이어셋 넥밴드형 단품 풀 듀플렉스",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "talix",
+      "name": "TALIX",
+      "aliases": [
+        "TALIX"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720004163.jpg?1787895163",
+      "navigation_category_ids": [
+        "plthink:b:talix:reviewed:plthink:b:072"
+      ],
+      "count": 4,
+      "purchase_count": 4,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:talix:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1930338",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720004162.jpg?1787895163",
+      "representative_name": "[TALIX] 탤릭스 Linxt 190W 대용량 보조배터리 일체형 휴대용 파워뱅크 고속충전 기내반입",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -11230,6 +11993,28 @@
       "logo_dark": false
     },
     {
+      "id": "thronmax",
+      "name": "THRONMAX",
+      "aliases": [
+        "THRONMAX"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003953.jpg?1774497826",
+      "navigation_category_ids": [
+        "plthink:b:thronmax:reviewed:plthink:b:072"
+      ],
+      "count": 6,
+      "purchase_count": 6,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:thronmax:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1928862",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003952.jpg?1774497826",
+      "representative_name": "[THRONMAX] 쓰론맥스 MS60 듀얼 모니터 암 데스크 거치대",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "thypoch",
       "name": "THYPOCH",
       "aliases": [
@@ -11323,6 +12108,28 @@
       "logo_dark": false
     },
     {
+      "id": "toshiba",
+      "name": "TOSHIBA",
+      "aliases": [
+        "TOSHIBA"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003893.jpg?1635754089",
+      "navigation_category_ids": [
+        "plthink:b:toshiba:reviewed:plthink:b:072"
+      ],
+      "count": 2,
+      "purchase_count": 2,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:toshiba:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-716",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003892.jpg?1635754089",
+      "representative_name": "[TOSHIBA] 무선동조기 송신부 배터리 23A 12V (5개)",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "tp-link",
       "name": "TP-LINK",
       "aliases": [
@@ -11369,6 +12176,72 @@
       "representative_id": "ldnet-4646",
       "representative_image": "https://ldnet.co.kr/web/product/big/202403/72cffbab5ea19505b8f8669a39ac10a8.jpg",
       "representative_name": "[TP-LINK] 8채널 NVR 녹화기, VIGI NVR1008H [하드 미포함]",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "transcend",
+      "name": "TRANSCEND",
+      "aliases": [
+        "Transcend"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720000363.jpg?1768445932",
+      "navigation_category_ids": [
+        "plthink:b:transcend:reviewed:plthink:b:072"
+      ],
+      "count": 2,
+      "purchase_count": 2,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:transcend:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1910036",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720000362.jpg?1768445932",
+      "representative_name": "[Transcend] 트렌스샌드 TS-RDF8 멀티 카드리더기 USB 3.0",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "trezor",
+      "name": "TREZOR",
+      "aliases": [
+        "TREZOR"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720004123.jpg?1787877519",
+      "navigation_category_ids": [
+        "plthink:b:trezor:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:trezor:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1930314",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720004122.jpg?1787877519",
+      "representative_name": "[TREZOR] 트레저 세이프7 콜드월렛 암호화폐 지갑 비트코인 테더 USDT 호환",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "tridot",
+      "name": "TRIDOT",
+      "aliases": [
+        "TRIDOT"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003753.jpg?1635822137",
+      "navigation_category_ids": [
+        "plthink:b:tridot:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:tridot:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1917656",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003752.jpg?1635822137",
+      "representative_name": "[TRIDOT] 트라이닷 삼각대 렌즈보관 클링크백 Clink Bag",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -11588,6 +12461,28 @@
       "logo_dark": false
     },
     {
+      "id": "vago",
+      "name": "VAGO",
+      "aliases": [
+        "VAGO"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720004113.jpg?1787877645",
+      "navigation_category_ids": [
+        "plthink:b:vago:reviewed:plthink:b:072"
+      ],
+      "count": 2,
+      "purchase_count": 2,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:vago:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1930313",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720004112.jpg?1787877645",
+      "representative_name": "[VAGO] 바고 Z 진공 압축팩 패딩 의류 압축 파우치 이불팩",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "valens",
       "name": "VALENS",
       "aliases": [
@@ -11714,60 +12609,42 @@
       "logo_dark": false
     },
     {
-      "id": "visgo",
-      "name": "VSGO",
-      "aliases": [
-        "비스고",
-        "visgo"
-      ],
-      "logo": "https://shop-phinf.pstatic.net/20240819_148/17240562193080yFVO_JPEG/71015744130481502_554139982.jpg",
-      "navigation_category_ids": [
-        "naver:b:visgo:50000206",
-        "naver:b:visgo:50001390",
-        "naver:b:visgo:50001394",
-        "naver:b:visgo:50002082",
-        "naver:b:visgo:50002100",
-        "naver:b:visgo:50002112"
-      ],
-      "count": 26,
-      "purchase_count": 26,
-      "rental_count": 0,
-      "category_ids": [
-        "naver:b:visgo:50000206",
-        "naver:b:visgo:50001390",
-        "naver:b:visgo:50002082",
-        "naver:b:visgo:50001394",
-        "naver:b:visgo:50002100",
-        "naver:b:visgo:50002112"
-      ],
-      "representative_id": "smartstore-10760399364",
-      "representative_image": "https://shop-phinf.pstatic.net/20240819_148/17240562193080yFVO_JPEG/71015744130481502_554139982.jpg",
-      "representative_name": "VSGO Black snipe camera messenger bag 6L V-BP04",
-      "image_kind": "product",
-      "logo_dark": false
-    },
-    {
       "id": "vsgo",
       "name": "VSGO",
       "aliases": [
-        "VSGO"
+        "비스고",
+        "VSGO",
+        "visgo",
+        "vsgo"
       ],
-      "logo": "https://www.plthink.com/shopimages/plthink/0080250002453.jpg?1779152146",
+      "logo": "https://shop-phinf.pstatic.net/20240819_148/17240562193080yFVO_JPEG/71015744130481502_554139982.jpg",
       "navigation_category_ids": [
         "clmedia:b:108",
         "clmedia:b:346",
         "clmedia:b:347",
         "clmedia:b:527",
+        "naver:b:vsgo:50000206",
+        "naver:b:vsgo:50001390",
+        "naver:b:vsgo:50001394",
+        "naver:b:vsgo:50002082",
+        "naver:b:vsgo:50002100",
+        "naver:b:vsgo:50002112",
         "plthink:b:025",
         "plthink:b:025:001",
         "plthink:b:025:002",
         "plthink:b:025:003",
         "plthink:b:025:004"
       ],
-      "count": 88,
-      "purchase_count": 88,
+      "count": 114,
+      "purchase_count": 114,
       "rental_count": 0,
       "category_ids": [
+        "naver:b:vsgo:50000206",
+        "naver:b:vsgo:50001390",
+        "naver:b:vsgo:50002082",
+        "naver:b:vsgo:50001394",
+        "naver:b:vsgo:50002100",
+        "naver:b:vsgo:50002112",
         "plthink:b:025",
         "plthink:b:025:001",
         "plthink:b:025:002",
@@ -11778,9 +12655,9 @@
         "clmedia:b:347",
         "clmedia:b:527"
       ],
-      "representative_id": "plthink-1928983",
-      "representative_image": "https://www.plthink.com/shopimages/plthink/0080250002452.jpg?1779152146",
-      "representative_name": "[VSGO] 비스고 V-BP01-A14 카메라 융 자가접착 테크랩 카메라모티브 그래픽",
+      "representative_id": "smartstore-10760399364",
+      "representative_image": "https://shop-phinf.pstatic.net/20240819_148/17240562193080yFVO_JPEG/71015744130481502_554139982.jpg",
+      "representative_name": "VSGO Black snipe camera messenger bag 6L V-BP04",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -12001,35 +12878,16 @@
       "id": "yc-onion",
       "name": "YC-ONION",
       "aliases": [
-        "YC Onion"
-      ],
-      "logo": "https://www.avx.co.kr/data/goods/1/2026/03/2821_temp_17737945527374list1.png",
-      "navigation_category_ids": [
-        "avx:b:41d8176d5702160b",
-        "avx:b:d2706ae67b0f0dd5"
-      ],
-      "count": 16,
-      "purchase_count": 16,
-      "rental_count": 0,
-      "category_ids": [
-        "avx:b:41d8176d5702160b",
-        "avx:b:d2706ae67b0f0dd5"
-      ],
-      "representative_id": "avx-2821",
-      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/03/2821_temp_17737945527374view.png",
-      "representative_name": "YC Onion FH60S Fluid Head 와이씨어니언 파인타 프로 모노포드 유압식 헤드",
-      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/03/2821_temp_17737945529634view.png",
-      "image_kind": "product",
-      "logo_dark": false
-    },
-    {
-      "id": "yconion",
-      "name": "YCONION",
-      "aliases": [
-        "YCONION"
+        "YCONION",
+        "YC Onion",
+        "yconion",
+        "yc onion",
+        "yc-onion"
       ],
       "logo": "https://www.plthink.com/shopimages/plthink/0080710000673.jpg?1789361970",
       "navigation_category_ids": [
+        "avx:b:41d8176d5702160b",
+        "avx:b:d2706ae67b0f0dd5",
         "plthink:b:071",
         "plthink:b:071:001",
         "plthink:b:071:002",
@@ -12038,8 +12896,8 @@
         "plthink:b:071:005",
         "plthink:b:071:006"
       ],
-      "count": 27,
-      "purchase_count": 27,
+      "count": 43,
+      "purchase_count": 43,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:071",
@@ -12048,7 +12906,9 @@
         "plthink:b:071:006",
         "plthink:b:071:003",
         "plthink:b:071:004",
-        "plthink:b:071:005"
+        "plthink:b:071:005",
+        "avx:b:41d8176d5702160b",
+        "avx:b:d2706ae67b0f0dd5"
       ],
       "representative_id": "plthink-1930308",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080710000672.jpg?1789361970",
@@ -12372,53 +13232,23 @@
       "aliases": [
         "기타 브랜드"
       ],
-      "logo": "https://ldnet.co.kr/web/product/big/202512/aae97b9442b442faf58df92f1a8aa3a2.jpg",
+      "logo": "https://ldnet.co.kr/web/product/big/202505/f9663497a3e150c2ceadd16e7aca2647.jpg",
       "navigation_category_ids": [
         "ldnet:b:brand-84f05699c3:116",
         "ldnet:b:brand-84f05699c3:136",
         "ldnet:b:brand-84f05699c3:170",
-        "ldnet:b:brand-84f05699c3:171",
-        "ldnet:b:brand-84f05699c3:172",
-        "ldnet:b:brand-84f05699c3:174",
         "ldnet:b:brand-84f05699c3:25",
-        "ldnet:b:brand-84f05699c3:258",
-        "ldnet:b:brand-84f05699c3:263",
-        "ldnet:b:brand-84f05699c3:266",
         "ldnet:b:brand-84f05699c3:269",
-        "ldnet:b:brand-84f05699c3:27",
         "ldnet:b:brand-84f05699c3:32",
-        "ldnet:b:brand-84f05699c3:387",
         "ldnet:b:brand-84f05699c3:46",
         "ldnet:b:brand-84f05699c3:463",
         "ldnet:b:brand-84f05699c3:48",
-        "ldnet:b:brand-84f05699c3:49",
-        "ldnet:b:brand-84f05699c3:51",
-        "ldnet:b:brand-84f05699c3:519",
-        "ldnet:b:brand-84f05699c3:52",
-        "ldnet:b:brand-84f05699c3:533",
-        "ldnet:b:brand-84f05699c3:534",
-        "ldnet:b:brand-84f05699c3:544",
-        "ldnet:b:brand-84f05699c3:558",
-        "ldnet:b:brand-84f05699c3:80"
+        "ldnet:b:brand-84f05699c3:52"
       ],
-      "count": 25,
-      "purchase_count": 25,
+      "count": 12,
+      "purchase_count": 12,
       "rental_count": 0,
       "category_ids": [
-        "ldnet:b:brand-84f05699c3:172",
-        "ldnet:b:brand-84f05699c3:258",
-        "ldnet:b:brand-84f05699c3:51",
-        "ldnet:b:brand-84f05699c3:534",
-        "ldnet:b:brand-84f05699c3:171",
-        "ldnet:b:brand-84f05699c3:174",
-        "ldnet:b:brand-84f05699c3:519",
-        "ldnet:b:brand-84f05699c3:533",
-        "ldnet:b:brand-84f05699c3:49",
-        "ldnet:b:brand-84f05699c3:544",
-        "ldnet:b:brand-84f05699c3:558",
-        "ldnet:b:brand-84f05699c3:27",
-        "ldnet:b:brand-84f05699c3:387",
-        "ldnet:b:brand-84f05699c3:80",
         "ldnet:b:brand-84f05699c3:25",
         "ldnet:b:brand-84f05699c3:32",
         "ldnet:b:brand-84f05699c3:136",
@@ -12432,9 +13262,9 @@
         "ldnet:b:brand-84f05699c3:170",
         "ldnet:b:brand-84f05699c3:52"
       ],
-      "representative_id": "ldnet-23573",
-      "representative_image": "https://ldnet.co.kr/web/product/big/202512/aae97b9442b442faf58df92f1a8aa3a2.jpg",
-      "representative_name": "플러온 W1 무선충전 3in1 거치대 스마트폰 워치 무선이어폰 3015FWC",
+      "representative_id": "ldnet-4690",
+      "representative_image": "https://ldnet.co.kr/web/product/big/202403/8d0790c67efdb8739d8fb72983021a29.jpg",
+      "representative_name": "[붙이는 자동 소화기] 콘센트 화재예방 스티커 멀티탭 자동소화 스티커 화재방지 화재진압 2개입 1세트",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -12745,32 +13575,6 @@
       "logo_dark": false
     },
     {
-      "id": "brand-33f2578e39",
-      "name": "러그박스",
-      "aliases": [
-        "러그박스"
-      ],
-      "logo": "https://shop-phinf.pstatic.net/20240617_73/1718603071990Gt9IX_PNG/52517765005330734_926064150.png",
-      "navigation_category_ids": [
-        "naver:b:brand-33f2578e39:50000206",
-        "naver:b:brand-33f2578e39:50001394",
-        "naver:b:brand-33f2578e39:50002113"
-      ],
-      "count": 1,
-      "purchase_count": 1,
-      "rental_count": 0,
-      "category_ids": [
-        "naver:b:brand-33f2578e39:50000206",
-        "naver:b:brand-33f2578e39:50001394",
-        "naver:b:brand-33f2578e39:50002113"
-      ],
-      "representative_id": "smartstore-10463595528",
-      "representative_image": "https://shop-phinf.pstatic.net/20240617_73/1718603071990Gt9IX_PNG/52517765005330734_926064150.png",
-      "representative_name": "LUGBOX 릴선,촬영릴선,장비릴선,조명릴선,캠핑릴선",
-      "image_kind": "product",
-      "logo_dark": false
-    },
-    {
       "id": "brand-758347a83a",
       "name": "레벤트",
       "aliases": [
@@ -13050,6 +13854,28 @@
       "logo_dark": false
     },
     {
+      "id": "brand-20aae60be7",
+      "name": "에스티원테크",
+      "aliases": [
+        "에스티원테크"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003403.jpg?1753343737",
+      "navigation_category_ids": [
+        "plthink:b:brand-20aae60be7:reviewed:plthink:b:072"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:brand-20aae60be7:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1927185",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003402.jpg?1753343737",
+      "representative_name": "[에스티원테크] GaN 25W USB 3.0 C타입 2포트 초고속 멀티 충전기",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "brand-2970104b74",
       "name": "오스템",
       "aliases": [
@@ -13072,6 +13898,28 @@
       "representative_id": "ldnet-23755",
       "representative_image": "https://ldnet.co.kr/web/product/big/202607/4bdaa3c33fa6f1585065b74c6834612f.jpg",
       "representative_name": "옥치 구강 유산균 800mg x 30정",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "brand-d2fa333829",
+      "name": "웃는나무",
+      "aliases": [
+        "웃는나무"
+      ],
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720002963.jpg?1768293019",
+      "navigation_category_ids": [
+        "plthink:b:brand-d2fa333829:reviewed:plthink:b:072"
+      ],
+      "count": 3,
+      "purchase_count": 3,
+      "rental_count": 0,
+      "category_ids": [
+        "plthink:b:brand-d2fa333829:reviewed:plthink:b:072"
+      ],
+      "representative_id": "plthink-1926004",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720002962.jpg?1768293018",
+      "representative_name": "[웃는나무] 9050 원목 사이드 리프트업 1인 미니 촬영 테이블 직사각형",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -13288,36 +14136,6 @@
       "logo_dark": false
     },
     {
-      "id": "brand-9fd517d8de",
-      "name": "펠리칸",
-      "aliases": [
-        "펠리칸"
-      ],
-      "logo": "https://shop-phinf.pstatic.net/20260908_263/1788877699963ctfYP_JPEG/g201112271733_111_detail.jpg",
-      "navigation_category_ids": [
-        "naver:b:brand-9fd517d8de:50000206",
-        "naver:b:brand-9fd517d8de:50001387",
-        "naver:b:brand-9fd517d8de:50001394",
-        "naver:b:brand-9fd517d8de:50002113",
-        "naver:b:brand-9fd517d8de:50004637"
-      ],
-      "count": 222,
-      "purchase_count": 222,
-      "rental_count": 0,
-      "category_ids": [
-        "naver:b:brand-9fd517d8de:50000206",
-        "naver:b:brand-9fd517d8de:50001387",
-        "naver:b:brand-9fd517d8de:50004637",
-        "naver:b:brand-9fd517d8de:50001394",
-        "naver:b:brand-9fd517d8de:50002113"
-      ],
-      "representative_id": "smartstore-13752020115",
-      "representative_image": "https://shop-phinf.pstatic.net/20260908_263/1788877699963ctfYP_JPEG/g201112271733_111_detail.jpg",
-      "representative_name": "스톰케이스 iM2975 Black",
-      "image_kind": "product",
-      "logo_dark": false
-    },
-    {
       "id": "brand-6e7eeca797",
       "name": "포미니",
       "aliases": [
@@ -13379,30 +14197,6 @@
       "representative_image": "https://ldnet.co.kr/web/product/big/202606/a2d6364ff49afb393fb836b720fe5d8f.jpg",
       "representative_name": "포인트탭 국산 화재예방 자동소화멀티탭 개별스위치 16A 10구 접지 메인스위치",
       "image_kind": "product",
-      "logo_dark": false
-    },
-    {
-      "id": "brand-63ad1e5419",
-      "name": "후지필름",
-      "aliases": [
-        "후지필름"
-      ],
-      "logo": "/assets/shop/brands/brand-63ad1e5419-0a4f8946e7.webp",
-      "navigation_category_ids": [
-        "naver:b:brand-63ad1e5419:50000206",
-        "naver:b:brand-63ad1e5419:50000266"
-      ],
-      "count": 10,
-      "purchase_count": 10,
-      "rental_count": 0,
-      "category_ids": [
-        "naver:b:brand-63ad1e5419:50000206",
-        "naver:b:brand-63ad1e5419:50000266"
-      ],
-      "representative_id": "smartstore-12835026286",
-      "representative_image": "https://shop-phinf.pstatic.net/20251216_94/1765893080621sKV1I_JPEG/100026004543713293_1648931224.jpg",
-      "representative_name": "FUJIFILM GFX 50SⅡ Body",
-      "image_kind": "logo",
       "logo_dark": false
     }
   ],
@@ -19377,6 +20171,7 @@
           "모니터",
           "인터컴",
           "사라모닉",
+          "Saramonic",
           "saramonic",
           "촬영장비 대여",
           "장비 대여"
@@ -31415,6 +32210,7 @@
     "avx-947": "smartstore-4970332807",
     "avx-948": "smartstore-4970199658",
     "avx-996": "smartstore-11953114714",
+    "cinemall-1012": "smartstore-12835022481",
     "smartstore-13000841866": "smartstore-13523007428",
     "cinemall-1031": "smartstore-13523007428",
     "cinemall-1140": "smartstore-10824374237",
@@ -31811,6 +32607,8 @@
     "cinemall-2323": "smartstore-13739631353",
     "cinemall-2324": "smartstore-13739631402",
     "cinemall-2334": "smartstore-13739631401",
+    "cinemall-2336": "smartstore-12827863044",
+    "cinemall-2337": "smartstore-12827867682",
     "cinemall-2342": "smartstore-13739631528",
     "cinemall-2345": "smartstore-13739631001",
     "cinemall-2346": "smartstore-13739631212",
@@ -31938,6 +32736,7 @@
     "cinemall-58": "smartstore-10824469215",
     "cinemall-59": "smartstore-13740377570",
     "cinemall-60": "smartstore-13742566607",
+    "cinemall-605": "smartstore-12835012225",
     "cinemall-61": "smartstore-13740377569",
     "cinemall-615": "smartstore-13740377546",
     "cinemall-616": "smartstore-13740377540",
@@ -31957,6 +32756,11 @@
     "cinemall-72": "smartstore-10824399624",
     "cinemall-73": "smartstore-13740377541",
     "cinemall-74": "smartstore-10825050829",
+    "cinemall-84": "smartstore-12835018839",
+    "cinemall-88": "smartstore-12835009149",
+    "cinemall-89": "smartstore-12835014414",
+    "cinemall-91": "smartstore-12835016417",
+    "cinemall-92": "smartstore-12835006371",
     "cinemall-982": "smartstore-13739631011",
     "cinemall-983": "smartstore-13739631347",
     "cinemall-984": "smartstore-13739631304",
@@ -34741,6 +35545,21 @@
     "plthink-1901111": "smartstore-7831683213",
     "smartstore-7831815536": "smartstore-13740734685",
     "plthink-1902048": "smartstore-13740734685",
+    "plthink-1902222": "smartstore-13751981563",
+    "plthink-1902223": "smartstore-13751891864",
+    "plthink-1902502": "smartstore-13751997020",
+    "plthink-1902503": "smartstore-13751981555",
+    "plthink-1902509": "smartstore-13751981556",
+    "plthink-1902511": "smartstore-13751981553",
+    "plthink-1902512": "smartstore-13751997022",
+    "plthink-1902513": "smartstore-13751891788",
+    "plthink-1902538": "smartstore-13751891792",
+    "plthink-1902539": "smartstore-13751981554",
+    "plthink-1902540": "smartstore-13751891734",
+    "plthink-1902541": "smartstore-13752020111",
+    "plthink-1902542": "smartstore-13751981559",
+    "plthink-1902543": "smartstore-13751891735",
+    "plthink-1902545": "smartstore-13751981552",
     "plthink-1903986": "smartstore-4921016651",
     "plthink-1903987": "smartstore-4921015787",
     "plthink-1904382": "smartstore-13740669831",

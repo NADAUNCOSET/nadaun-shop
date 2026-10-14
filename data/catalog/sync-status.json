@@ -28,15 +28,15 @@
     "avx": 1377
   },
   "synced_at": "2026-10-14T07:55:51+00:00",
-  "merged_count": 4586,
-  "product_count": 22600,
+  "merged_count": 4610,
+  "product_count": 22575,
   "category_browsing_enabled": true,
-  "listing_count": 22420,
+  "listing_count": 22395,
   "option_family_count": 180,
   "deduplication": {
-    "brands_checked": 325,
-    "groups": 2775,
-    "removed": 4586
+    "brands_checked": 357,
+    "groups": 2799,
+    "removed": 4610
   },
-  "revision": "79a6d07cbc069e64"
+  "revision": "8bb35e7a5dd345ab"
 }
