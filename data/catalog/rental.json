@@ -215,8 +215,6 @@
     "source_counts": {
       "kpp": 4042,
       "smartstore": 6877,
-      "imweb-dji": 151,
-      "imweb-promotions": 1,
       "l-mount": 345,
       "plthink": 6653,
       "dji-official": 930,
@@ -229,7 +227,6 @@
     "detail_coverage": {
       "kpp": 4042,
       "smartstore": 6791,
-      "imweb-promotions": 1,
       "l-mount": 345,
       "plthink": 6253,
       "dji-official": 925,
@@ -250,7 +247,7 @@
       "groups": 2799,
       "removed": 4610
     },
-    "revision": "dadb91c13822209e",
+    "revision": "8781cb6104979f22",
     "view": "rental"
   },
   "brands": [
@@ -4217,13 +4214,11 @@
       "name": "BENRO",
       "aliases": [
         "벤로",
-        "Benro",
         "BENRO",
         "benro"
       ],
       "logo": "/assets/shop/brands/benro-62b3e007b7.webp",
       "navigation_category_ids": [
-        "imweb:b:benro:promotion:imweb:promotion:s2025060223e3cf2541d28",
         "naver:b:benro:50000206",
         "naver:b:benro:50001382",
         "naver:b:benro:50001389",
@@ -4242,8 +4237,8 @@
         "plthink:b:061:005",
         "plthink:b:061:006"
       ],
-      "count": 208,
-      "purchase_count": 205,
+      "count": 207,
+      "purchase_count": 204,
       "rental_count": 3,
       "category_ids": [
         "naver:b:benro:50000206",
@@ -4257,7 +4252,6 @@
         "naver:b:benro:50004610",
         "naver:b:benro:50004614",
         "naver:b:benro:50004609",
-        "imweb:b:benro:promotion:imweb:promotion:s2025060223e3cf2541d28",
         "plthink:b:061",
         "plthink:b:061:001",
         "plthink:b:061:006",
@@ -18308,7 +18302,6 @@
           "기타카메라/캠코더용품",
           "삼각대·모노포드·헤드",
           "벤로",
-          "Benro",
           "benro",
           "촬영장비 대여",
           "장비 대여"
@@ -25372,7 +25365,6 @@
           "기타카메라/캠코더용품",
           "삼각대·모노포드·헤드",
           "벤로",
-          "Benro",
           "benro",
           "촬영장비 대여",
           "장비 대여"
@@ -27624,7 +27616,6 @@
           "기타카메라/캠코더용품",
           "삼각대·모노포드·헤드",
           "벤로",
-          "Benro",
           "benro",
           "촬영장비 대여",
           "장비 대여"

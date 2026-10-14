@@ -3,8 +3,6 @@
   "source_counts": {
     "kpp": 4042,
     "smartstore": 6877,
-    "imweb-dji": 151,
-    "imweb-promotions": 1,
     "l-mount": 345,
     "plthink": 6653,
     "dji-official": 930,
@@ -17,7 +15,6 @@
   "detail_coverage": {
     "kpp": 4042,
     "smartstore": 6791,
-    "imweb-promotions": 1,
     "l-mount": 345,
     "plthink": 6253,
     "dji-official": 925,
@@ -29,14 +26,14 @@
   },
   "synced_at": "2026-10-14T07:55:51+00:00",
   "merged_count": 4610,
-  "product_count": 22575,
+  "product_count": 22574,
   "category_browsing_enabled": true,
-  "listing_count": 22395,
+  "listing_count": 22394,
   "option_family_count": 180,
   "deduplication": {
     "brands_checked": 361,
     "groups": 2799,
     "removed": 4610
   },
-  "revision": "dadb91c13822209e"
+  "revision": "8781cb6104979f22"
 }
