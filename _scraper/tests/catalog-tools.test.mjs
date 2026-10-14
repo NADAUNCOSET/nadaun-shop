@@ -27,17 +27,13 @@ test('every imported leaf has an accessible route to its parent',()=>{
  const discounted=data.products.filter(isDiscounted);assert.ok(discounted.length>0);
  console.log('Verified discounted products:',discounted.length);
 });
-test('promotion membership survives cross-store deduplication without inventing discounts',()=>{
+test('retired promotions stay archived and active promotions never invent discounts',()=>{
  const data=JSON.parse(fs.readFileSync('data/catalog/catalog.json','utf8'));
  const source=JSON.parse(fs.readFileSync('data/catalog/sources/imweb-promotions.json','utf8'));
- const map=new Map(data.products.map(p=>[p.id,p]));
- const policy=JSON.parse(fs.readFileSync('data/catalog/brand-source-policy.json','utf8'));
- for(const id of Object.keys(source.products)){
-  if(policy.brands.dji?.exclusive&&source.products[id].kind==='purchase'&&source.products[id].brand.toUpperCase()==='DJI'){assert.equal(map.has(id),false);continue}
-  const p=map.get(data.redirects[id]||id);assert.ok(p,id);assert.ok(isPromotion(p),id);
-  assert.ok(matchesBenefit(p,'all'));assert.ok(matchesBenefit(p,'promotion'));
- }
- const p={kind:'purchase',price:10000,sale_price:10000,offers:[{source:'imweb'}],promotion_ids:['original-category']};
+ assert.ok(Object.keys(source.products).length>0);
+ assert.ok(data.products.every(p=>p.offers.every(o=>o.source!=='imweb')));
+ assert.ok(data.categories.every(c=>!c.id.startsWith('imweb:')));
+ const p={kind:'purchase',price:10000,sale_price:10000,offers:[{source:'smartstore'}],promotion_ids:['original-category']};
  assert.equal(isDiscounted(p),false);assert.ok(matchesBenefit(p));assert.equal(matchesBenefit(p,'discount'),false);
  assert.equal(isPromotion({...p,kind:'rental'}),false);
  const html=benefitNavigation('promotion',key=>'/catalog.html?sale=1&benefit='+key);
