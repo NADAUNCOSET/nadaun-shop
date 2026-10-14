@@ -145,7 +145,7 @@ def reviewed_accessory_type(name, brand):
 def reviewed_effects_type(name, brand):
     """PMI Smoke NINJA is an effects machine, not an Atomos recorder."""
     if brand!='pmi':return None
-    if re.search(r'용액|formula|forrmula|노즐|nozzle|튜빙|tubing|chamber|챔버|vest|베스트',name,re.I):
+    if re.search(r'용액|formula|forrmula|노즐|nozzle|튜빙|tubing|chamber|챔버|vest|베스트|\bDMX\b',name,re.I):
         if re.search(r'케이블|cable|전원|power',name,re.I):return None
         return 'fog-parts'
     if re.search(r'smoke\s*ninja|스모크\s*닌자|포그머신|스모그머신',name,re.I):

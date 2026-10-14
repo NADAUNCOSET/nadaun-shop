@@ -49,6 +49,7 @@ class ShopTaxonomy(unittest.TestCase):
                ('pmi','PMI Cloud Formula 전용 용액 100ml','fog-parts'),
                ('pmi','PMI Smoke Shaping Nozzles 스모크 형성 노즐','fog-parts'),
                ('pmi','PMI Fog Chamber 2.0 포그 챔버','fog-parts'),
+               ('pmi','PMI Wireless DMX Receiver (CRMX Lumenradio) 무선 DMX 모듈 수신기','fog-parts'),
                ('pmi','PMI Chamber Power Extension Cable 챔버 파워 익스텐션 케이블','cable-parts'),
                ('pmi','PMI 18650 Battery Charger 배터리 충전기','chargers'),
                ('atomos','ATOMOS NINJA V 외장 레코더','video-recorder')]
