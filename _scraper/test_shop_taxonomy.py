@@ -24,6 +24,25 @@ class ShopTaxonomy(unittest.TestCase):
             self.assertEqual({k:v for k,v in a.items() if k not in ('type_ids','category_ids')},{k:v for k,v in b.items() if k not in ('type_ids','category_ids')})
         return rows,{**cats,**{c['id']:c for c in rentals}}
 
+    def test_reviewed_cleaning_and_protective_products_never_become_bodies(self):
+        cases=[('vsgo','비스고 V-S03E 풀프레임 카메라센서 세척봉','cleaning'),
+               ('vsgo','VSGO Optical Lens Cleaner V-C01E','cleaning'),
+               ('vsgo','비스고 VS-S02E APS-C 크롭바디용 카메라센서 키트','cleaning'),
+               ('vsgo','VSGO Air-Move Blower V-B02E','air-blower'),
+               ('vsgo','비스고 에어 블로워 카메라 렌즈 키보드 청소','air-blower'),
+               ('vsgo','비스고 V-BP01-A11 카메라 보호 융(화이트)','kpp:0550'),
+               ('healing-shield','힐링쉴드 리코카메라 GR4 액정보호필름 2매','screen-protection'),
+               ('healing-shield','DJI Osmo Action 5 Pro 올레포빅 액정보호필름','screen-protection'),
+               ('healing-shield','DJI 동영상 송신기 액정보호필름','screen-protection')]
+        for brand,name,target in cases:
+            rows=[dict(id='test',name=name,brand_id=brand,kind='purchase',type_ids=[],category_ids=[])]
+            build_taxonomy(rows,self.source_categories)
+            self.assertIn('type:'+target,rows[0]['type_ids'],name)
+            self.assertNotIn('type:camera',rows[0]['type_ids'],name)
+        from product_taxonomy import reviewed_accessory_type
+        self.assertIsNone(reviewed_accessory_type('Sony camera with cleaning kit','sony'))
+        self.assertIsNone(reviewed_accessory_type('VSGO camera cleaning kit bag','vsgo'))
+
     def test_accessories_do_not_become_camera_bodies(self):
         rows,_=self.classify(['SMALLRIG SONY FX3 케이지','소니 SONY FX3+28-135G','소니 SONY AX700+삼각대','캐논 R5+RF100500'],kind='rental')
         self.assertIn('rent:135',rows[0]['type_ids']);self.assertNotIn('rent:11',rows[0]['type_ids'])

@@ -28,7 +28,7 @@ EXTRA = [
  ('power',None,'배터리·전원'),('v-mount','kpp:0680','V마운트·방송용 배터리'),('camera-battery','kpp:0680','카메라·조명 배터리'),('chargers','power','충전기'),('power-station','power','파워뱅크·발전기'),('power-parts','power','배터리 플레이트·전원 어댑터'),
  ('video-wireless','kpp:h0','무선 영상 송수신기'),('monitor','kpp:h0','촬영·편집 모니터'),('video-recorder','kpp:h0','외장 레코더'),('switcher','kpp:h0','스위처·라이브 방송'),('converter','kpp:h0','컨버터·캡처·분배기'),('video-control','kpp:h0','영상 제어·컨트롤 패널'),
  ('gimbal-parts','kpp:c040','짐벌 액세서리'),('action-parts','kpp:c020','액션캠 액세서리'),('usb-cable','kpp:08','USB·테더 케이블'),('hdmi-cable','kpp:08','HDMI 케이블'),('sdi-cable','kpp:08','SDI·BNC 케이블'),('audio-cable','kpp:08','오디오 케이블'),('cable-parts','kpp:08','케이블·연결 액세서리'),
- ('air-blower','kpp:0940','에어블로워'),('cleaning','kpp:0940','클리닝 키트·천'),('tools','kpp:09','공구·멀티툴'),('remote','kpp:09','리모컨·릴리즈'),('storage','kpp:09','메모리·저장장치'),('sd-card','storage','SD·MicroSD'),('cf-card','storage','CF·CFexpress'),('ssd','storage','SSD·스토리지'),('other','kpp:09','기타 촬영용품'),
+ ('screen-protection','kpp:09','액정·외부 보호필름'),('air-blower','kpp:0940','에어블로워'),('cleaning','kpp:0940','클리닝 키트·천'),('tools','kpp:09','공구·멀티툴'),('remote','kpp:09','리모컨·릴리즈'),('storage','kpp:09','메모리·저장장치'),('sd-card','storage','SD·MicroSD'),('cf-card','storage','CF·CFexpress'),('ssd','storage','SSD·스토리지'),('other','kpp:09','기타 촬영용품'),
  ('display-mount',None,'모니터암·TV 거치대'),('software',None,'소프트웨어·편집 장비'),('editing-software','software','편집·컬러 소프트웨어'),('editing-control','software','편집 컨트롤러·태블릿'),('print-color',None,'프린트·컬러 관리'),('print','print-color','프린터·잉크·용지'),('color','print-color','컬러차트·캘리브레이션'),('studio',None,'스튜디오·촬영 서비스'),
 ]
 
@@ -125,6 +125,19 @@ def camera_accessory_type(name,brand):
     if brand in {'smallrig','tilta'} and re.search(r'(?:FX[369]|FX30).*?(?:키트|kit)',name,re.I):return 'kpp:0620'
     if brand=='edelkrone' and re.search(r'헤드|head|FlexTILT',name,re.I):return 'kpp:0120'
     if brand=='harlowe' and re.search(r'솔\s*5|SOL\s*5',name,re.I):return 'kpp:0710'
+    return None
+
+
+def reviewed_accessory_type(name, brand):
+    """Use confirmed accessory brands before compatible camera/keyboard names."""
+    if brand=='healing-shield' and re.search(r'보호\s*필름|screen\s*protect',name,re.I):
+        return 'screen-protection'
+    if brand!='vsgo':return None
+    # Protective wraps and bags are not cleaning cloths or camera bodies.
+    if re.search(r'테크랩|tech\s*wrap|보호\s*융',name,re.I):return 'kpp:0550'
+    if re.search(r'가방|백팩|파우치|\bbag\b|backpack|pouch',name,re.I):return None
+    if re.search(r'블로워|blower',name,re.I):return 'air-blower'
+    if re.search(r'클리닝|클리너|청소|세척봉|면봉|cleaning|cleaner|swab|lens\s*pen|카메라\s*센서\s*키트',name,re.I):return 'cleaning'
     return None
 
 
@@ -257,6 +270,8 @@ def build_taxonomy(products,categories,overrides=None,ldnet_categories=None):
         if p['kind']=='purchase' and any('type:camera' in path(cid) for cid in selected):
             accessory=camera_accessory_type(name,bid)
             if accessory:selected=['type:'+accessory];reason='camera-accessory:'+accessory
+        if p['kind']=='purchase' and (accessory:=reviewed_accessory_type(name,bid)):
+            selected=['type:'+accessory];reason='reviewed-accessory-purpose:'+accessory
         if p['kind']=='purchase' and bid=='aputure':
             selected=['type:'+aputure_type(name,p.get('category_ids',[]))];reason='aputure-lighting-purpose'
         if p['kind']=='purchase' and bid=='dji' and p['id'].startswith('dji-official-'):
