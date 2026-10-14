@@ -26,6 +26,11 @@ class SaekiTests(unittest.TestCase):
    with self.subTest(field=field),self.assertRaises(ValueError):parse_detail(body,{**listing,field:value},'now')
   for bad in [body.replace('data-status="PD004020"','data-status="PD004030"'),body.replace('cdn.saeki.co.kr','unrelated.invalid')]:
    with self.assertRaises(ValueError):parse_detail(bad,listing,'now')
+ def test_hidden_inquiry_amount_is_not_published_as_a_price(self):
+  body,listing=self.fixture('PD00043223')
+  p=parse_detail(body,{**listing,'slprc':25440000,'spprc':25440000},'now')
+  for key in ['price','sale_price','source_sale_price']:self.assertIsNone(p[key])
+  with self.assertRaises(ValueError):parse_detail(body,{**listing,'slprc':25440000,'prcExpsYn':'Y'},'now')
  def test_brand_is_not_the_company_or_compatible_mount(self):
   p={'brand':'RICOH','source_brand_id':'2','name':'HD PENTAX-FA 50mm F1.4'}
   self.assertEqual(actual_brand(p)[0],'PENTAX')

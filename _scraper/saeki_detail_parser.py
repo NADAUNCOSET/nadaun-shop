@@ -28,9 +28,10 @@ def parse_detail(body,listing,checked_at):
  if offer.get('priceCurrency')!='KRW':raise ValueError('Unexpected currency')
  rawprice=int(listing['slprc']);schema_price=float(offer['price'])
  quote=any(listing.get(k)=='Y' for k in ('prcInqYn','commingSoonYn','pointYn')) or listing.get('prcExpsYn')=='N'
- # The public ARRI inquiry page uses schema 0 and list placeholder 1.
- # Neither value is a sellable KRW price; require the visible inquiry action.
- placeholder=quote and rawprice<=1 and schema_price==0 and d.select_one('#btnPriceInquiry')
+ # Inquiry pages deliberately hide KRW pricing. The list API can contain
+ # either placeholder 1 or a hidden amount; never publish either as a price.
+ placeholder=(quote and listing.get('prcExpsYn')=='N' and listing.get('prcInqYn')=='Y'
+              and schema_price==0 and d.select_one('#btnPriceInquiry'))
  if schema_price!=rawprice and not placeholder:raise ValueError('Listing/detail price changed')
  if listing.get('itemClCd') not in {'PD002001','PD002002','PD002003','PD002006','PD002008','PD002009','PD002010'}:raise ValueError('Unknown source product class')
  if listing.get('uitemQty')!=1:raise ValueError('Multiple item SKUs need explicit option verification')
@@ -105,7 +106,7 @@ def parse_detail(body,listing,checked_at):
   'brand_category_ids':[bid,*[bid+':'+x['id'] for x in paths]],'source_category_path':[x['name'] for x in paths],
   'source_category_ids':[x['id'] for x in paths], 'source_brand_id':bid,'source_product_class':listing['itemClCd'],
   'source_display_flags':{k:listing.get(k) for k in ('prcExpsYn','prcInqYn','commingSoonYn','pointYn','finishYn','soldOutYn')},
-  'source_sale_price':rawprice,'source_sku':selected[0].get('data-uid') if selected else None,
+  'source_sale_price':None if quote else rawprice,'source_sku':selected[0].get('data-uid') if selected else None,
   'source_manufacturer':manufacturer,'manufacturer_code':clean(schema.get('mpn')),'source_variants':variants,'source_additional_products':additions,
   'images':{'thumb':main[0],'main':main,'detail':detail},'description_text':description,
   'description_notice':note,'detail_status':'verified','options':[],'option_groups':[],
