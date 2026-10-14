@@ -3,7 +3,7 @@ import json,re,html
 from urllib.parse import urljoin,urlparse,parse_qs
 from bs4 import BeautifulSoup
 BASE='https://www.saeki.co.kr'
-def clean(v):return re.sub(r'\s+',' ',html.unescape(str(v or ''))).strip()
+def clean(v):return re.sub(r'\s+',' ',re.sub(r'<br\s*/?>','',html.unescape(str(v or '')),flags=re.I)).strip()
 def photo(url):
  u=urljoin(BASE,url);p=urlparse(u)
  if p.scheme!='https' or p.hostname not in {'cdn.saeki.co.kr','www.saeki.co.kr','ai.esmplus.com','cdn.dev.saeki.co.kr'} or p.username or p.password:raise ValueError('Unexpected product image origin')

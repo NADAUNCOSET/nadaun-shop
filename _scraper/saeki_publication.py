@@ -41,10 +41,16 @@ def actual_brand(p):
  return CANONICAL.get(original,original),'source brand'
 
 
-def prepare(inventory,details):
+def prepare(inventory,details,holds=None):
  expected={'saeki-'+pid for pid in inventory['products']}
- if not inventory.get('complete') or set(details)!=expected:raise ValueError('Saeki inventory/detail coverage differs')
- products={};categories={};excluded={}
+ holds=holds or {}
+ if not inventory.get('complete') or set(details)|set(holds)!=expected or set(details)&set(holds):raise ValueError('Saeki inventory/detail coverage differs')
+ products={};categories={};excluded=deepcopy(holds)
+ for pid,rule in holds.items():
+  original=inventory['products'].get(pid.removeprefix('saeki-'),{})
+  if (rule.get('reason')!='source_content_unavailable' or rule.get('name')!=original.get('itemNm') or
+      rule.get('source_brand_id')!=str(original.get('brndId')) or not rule.get('evidence') or
+      not rule.get('checked_at') or not rule.get('html_sha256')):raise ValueError('Unreviewed Saeki content hold')
  for pid,raw in details.items():
   if raw.get('detail_status')!='verified':raise ValueError('Unverified Saeki detail')
   # Loyalty redemptions cannot be mirrored as products bought with KRW.
@@ -62,9 +68,10 @@ def prepare(inventory,details):
    categories[key]=node;members.append(key);parent=key
   p['brand_category_ids']=members;products[pid]=p
  candidate={'source':'saeki','scope':'all_shop_brands','complete':True,'normalized_for_shop':True,
+  'details_complete':not holds,'content_hold_count':len(holds),
   'collected_at':inventory['collected_at'],'product_count':len(products),'products':products,
   'brands':inventory['brands'],'coverage':inventory['coverage'],'categories':list(categories.values()),
-  'publication':{'source_product_count':len(expected),'accepted_product_count':len(products),'excluded':excluded},
+  'publication':{'full_collection_verified':True,'source_product_count':len(expected),'accepted_product_count':len(products),'excluded':excluded},
   'parser_revision':next(iter(details.values())).get('parser_revision'),
   'brand_classification_revision':hashlib.sha256(__import__('pathlib').Path(__file__).read_bytes()).hexdigest()}
  validate_candidate(candidate)
@@ -74,13 +81,18 @@ def prepare(inventory,details):
 def validate_candidate(s):
  if s.get('source')!='saeki' or s.get('complete')is not True or not s.get('normalized_for_shop'):raise ValueError('Saeki source not fully verified')
  products=s.get('products',{});coverage=s.get('coverage',[]);publication=s.get('publication',{})
- if (s.get('product_count')!=len(products)or not products or
+ if (publication.get('full_collection_verified')is not True or s.get('product_count')!=len(products)or not products or
      {x['id']for x in s.get('brands',[])}!={x['brand_id']for x in coverage}or
      any(x['expected']!=x['unique']for x in coverage)or
      sum(x['unique']for x in coverage)!=publication.get('source_product_count')or
      publication.get('accepted_product_count')!=len(products)or
      len(products)+len(publication.get('excluded',{}))!=publication.get('source_product_count')):
   raise ValueError('Saeki source partition or brand coverage is incomplete')
+ content_holds={pid:p for pid,p in publication.get('excluded',{}).items()if p.get('reason')=='source_content_unavailable'}
+ if s.get('content_hold_count')!=len(content_holds) or s.get('details_complete')!=(not content_holds):raise ValueError('Saeki content hold summary differs')
+ for pid,p in publication.get('excluded',{}).items():
+  if p.get('reason')not in {'source_loyalty_points_only','source_content_unavailable'}:raise ValueError('Unknown Saeki exclusion')
+  if p.get('reason')=='source_content_unavailable' and (not p.get('evidence')or not p.get('checked_at')or not p.get('html_sha256')):raise ValueError('Unverified content exclusion')
  from collections import Counter
  brand_counts=Counter(str(p['source_brand_id'])for p in products.values())
  brand_counts.update(str(p['source_brand_id'])for p in publication.get('excluded',{}).values())

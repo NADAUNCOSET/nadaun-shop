@@ -100,7 +100,7 @@ def report(plan_path=PLAN, out=OUT, state=STATE):
             'last_worker_error': read(folder / 'worker-error.json' if source in ('avx','dji-official','saeki') or collector_ready else state / (source + '-worker-error.json')) or None,
             'blocker': config.get('blocker') if not adapter_ready else None,
             'pending_brand_source_choices':len(source_choices.get('brands',[])),
-            'pending_source_content_reviews':len(source_choices.get('content_review_ids',{})),
+            'pending_source_content_reviews':receipt.get('content_hold_count',progress.get('content_held',0)) if source=='saeki' else len(source_choices.get('content_review_ids',{})),
             'held_other_brand_products':len(receipt.get('held_other_brand_ids',[])),
             'last_verified_published_products':receipt.get('verified_products'),
             'last_verified_source_products':receipt.get('source_verified_products'),

@@ -84,6 +84,22 @@ class SaekiTests(unittest.TestCase):
    with self.assertRaises(ValueError):validate_candidate(bad)
   bad=copy.deepcopy(s);next(iter(bad['products'].values()))['detail_status']='pending'
   with self.assertRaises(ValueError):validate_candidate(bad)
+ def test_reviewed_content_hold_does_not_claim_full_details(self):
+  normal=self.parsed();pid='saeki-PD00024065'
+  inv={'complete':True,'collected_at':'now','brands':[{'id':'1'},{'id':'85'}],
+   'coverage':[{'brand_id':'1','expected':1,'unique':1},{'brand_id':'85','expected':1,'unique':1}],
+   'products':{normal['source_id']:{},'PD00024065':{'itemNm':'Datacolor SpyderCheckr Video','brndId':85}}}
+  hold={pid:{'reason':'source_content_unavailable','name':'Datacolor SpyderCheckr Video','source_brand_id':'85',
+    'evidence':'source image response 403','checked_at':'now','html_sha256':'a'*64}}
+  s=prepare(inv,{normal['id']:normal},hold)
+  self.assertFalse(s['details_complete']);self.assertEqual(s['content_hold_count'],1)
+  self.assertEqual(s['product_count'],1);self.assertTrue(validate_candidate(s))
+  bad=copy.deepcopy(hold);bad[pid]['name']='Another product'
+  with self.assertRaises(ValueError):prepare(inv,{normal['id']:normal},bad)
+ def test_literal_break_markup_in_source_title_preserves_identity(self):
+  body,listing=self.fixture()
+  body=body.replace(listing['itemNm'],listing['itemNm'].replace(' | ','<br> | '))
+  self.assertEqual(parse_detail(body,listing,'now')['name'],listing['itemNm'])
  def test_empty_brand_response_must_identify_the_requested_brand(self):
   import tempfile
   with tempfile.TemporaryDirectory()as folder:

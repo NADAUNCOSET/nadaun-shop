@@ -42,13 +42,13 @@ def publish(candidate):
  actual={o['id']for p in live['products']for o in p['offers']if o['source']=='saeki'}
  expected=publishable_ids(candidate)
  if actual!=expected:raise ValueError('Live Saeki offers differ from verified source')
- receipt={**result,'source_verified_products':candidate['product_count'],'live_products':len(actual),'verified_products':len(actual),'scope':'all_shop_brands',
+ receipt={**result,'source_catalogue_products':candidate['publication']['source_product_count'],'content_hold_count':candidate['content_hold_count'],'source_verified_products':candidate['product_count'],'live_products':len(actual),'verified_products':len(actual),'scope':'verified_shop_products_with_reviewed_content_holds' if candidate['content_hold_count'] else 'all_shop_brands',
   'source_sha256':hashlib.sha256((OUT/'saeki.json').read_bytes()).hexdigest(),
   'excluded_ids':sorted(set(candidate['products'])-expected),
   'excluded_by_source':candidate['publication']['excluded'],'excluded_by_existing_owner_policy':sorted(set(candidate['products'])-expected),
   'candidate_sha256':digest(candidate),'policy_sha256':policy_fingerprint()}
  save_json(STATE/'published.json',receipt)
- save_json(STATE/'progress.json',{'at':stamp(),'phase':'live_verified','complete':True,'published':True,'live_products':len(actual),'revision':result['revision']})
+ save_json(STATE/'progress.json',{'at':stamp(),'phase':'live_verified','complete':True,'details_complete':candidate['details_complete'],'catalogue_complete':candidate['details_complete'],'content_held':candidate['content_hold_count'],'published':True,'live_products':len(actual),'revision':result['revision']})
  return receipt
 
 

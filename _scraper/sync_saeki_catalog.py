@@ -109,6 +109,7 @@ def collect_details(root,control=None,batch_size=100):
  products=[p for row in zip_longest(*groups.values())for p in row if p]
  revision=hashlib.sha256(Path(__file__).with_name('saeki_detail_parser.py').read_bytes()).hexdigest()
  errors={};processed=0
+ holds=json.loads((root/'reviewed-content-holds.json').read_text())if(root/'reviewed-content-holds.json').exists()else{}
  index_path=root/'detail-index.json'
  index=json.loads(index_path.read_text())if index_path.exists()else{}
  verified_ids=set(index.get('verified_ids',[]))if index.get('parser_revision')==revision else set()
@@ -117,11 +118,12 @@ def collect_details(root,control=None,batch_size=100):
   for path in existing.values():
    row=json.loads(path.read_text())
    if row.get('parser_revision')==revision:verified_ids.add(row['id'])
+ verified_ids.difference_update(holds)
  old_errors=json.loads((root/'detail-errors.json').read_text())if(root/'detail-errors.json').exists()else{}
  (root/'html').mkdir(exist_ok=True);(root/'details').mkdir(exist_ok=True)
  for p in products:
   pid=p['itemId'];raw=root/'html'/(pid+'.html.gz');parsed=root/'details'/(pid+'.json')
-  if 'saeki-'+pid in verified_ids:continue
+  if 'saeki-'+pid in verified_ids or 'saeki-'+pid in holds:continue
   if old_errors.get(pid,{}).get('parser_revision')==revision:continue
   if processed>=batch_size:continue
   checked_at=now()
@@ -141,14 +143,14 @@ def collect_details(root,control=None,batch_size=100):
    save_json(root/'detail-progress.json',{'at':now(),'phase':'details','total':len(products),'verified':len(verified_ids),'errors':len(errors),'published':False})
  old_errors.update(errors)
  for pid in list(old_errors):
-  if 'saeki-'+pid in verified_ids:del old_errors[pid]
+  if 'saeki-'+pid in verified_ids or 'saeki-'+pid in holds:del old_errors[pid]
  save_json(root/'detail-errors.json',old_errors)
- progress={'at':now(),'phase':'details','total':len(products),'verified':len(verified_ids),'errors':len(old_errors),'complete':len(verified_ids)==len(products),'processed_this_batch':processed,'published':False,'parser_revision':revision}
+ progress={'at':now(),'phase':'details','total':len(products),'verified':len(verified_ids),'errors':len(old_errors),'content_held':len(holds),'details_complete':len(verified_ids)==len(products),'complete':len(verified_ids)+len(holds)==len(products),'processed_this_batch':processed,'published':False,'parser_revision':revision}
  save_json(index_path,{'parser_revision':revision,'verified_ids':sorted(verified_ids)})
  save_json(root/'detail-progress.json',progress)
  if progress['complete']:
   verified={pid:json.loads((root/'details'/(pid.removeprefix('saeki-')+'.json')).read_text())for pid in verified_ids}
   from saeki_publication import prepare
-  candidate=prepare(inventory,verified)
+  candidate=prepare(inventory,verified,holds)
   save_json(root/'catalogue-candidate.json',candidate)
  return progress
