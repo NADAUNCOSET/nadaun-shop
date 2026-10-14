@@ -885,3 +885,14 @@ LDNET 원본360분류·3,072상품의 목록/상세/제조사/가격/옵션/판�
 직전잔여3개중완료1개/미완료2개. PG실개통은새독립몰MID승인·키/요청서버조건과실거래·증빙·취소검증이남아있다. 현재요청서버IP값없음/live검증false이며고객주문·렌탈접수false를유지한다. 고객전자세금계산서는발급서비스계정/LinkID·Secret·UserID·과세설정·사업자공동인증서가미확보이고발급false다. 대표에게비공개설정/인증서NAS저장위치를비동기요청했다. 이니시스/토스PG변경이나계약·비용지불을진행하지않았다.
 
 근거: shop/_private/catalog/ldnet-review-20261013-161532/의 published-live-receipt.json, continuation-resolved.json, worker-restored.json, verified-inventory-checkpoint-recovery.json, activation-blockers.json 및 모든실패/복구원문. 최신기계상태는 _private/catalog/ldnet-20261012/latest-status.json. 최초전체백업은 _private/commerce/release-20261013-150853/이며추가최종bundle/닫힌원본상태/검증근거와SHA-256백업manifest를같은비공개폴더의followup-ldnet에보존한다. 공용문서최종commit/Ready와주문관리재조회근거는final-repository-and-deployment.json 및 admin-final-proof.json에저장한다.
+
+
+### 2026-10-14 Windows에서 사진 겹침 제보 — 재현·수정·공개 확인
+
+대표가 Windows 자사몰에서 사진이 렉처럼 겹친다고 알려 확인을 요청했다. Chrome에서 prefers-reduced-motion:no-preference를 적용하자 브랜드 사진 전환이 스크롤 중간에 멈춘 채 두 장을 반투명 합성하는 현상을 재현했다. scrollY1667의 DJI 두 번째 사진 opacity0.4914/clip50.8621%, 사진 wrapper 중복0개. Windows 실기기나 GPU 원인을 확인한 것으로 확대하지 않는다.
+
+assets/shop/motion.js와 shop.css에서 두 번째 사진이 로드된 뒤 스크롤 임계값으로 한 장만 표시하도록 변경했다. 반투명 scrub/부분 clip을 제거하고 원본과 대체 사진 visibility를 한 상태로 선택한다. 기존 사진 이동·크기·스크롤/Lenis는 유지하며 키보드 포커스·이미지 실패·동작 줄이기 시 원본 사진을 보존한다. 중간 정지·역방향·늦은 이미지 로드·정리 회귀를 포함한 Node18검사/구문 통과.
+
+코드commit95bc04698eea234f51bc5db505066a75306fa450, production dpl_GMZfoc3Cb7B9Stq4XMdVyCAecnPF READY/실제shop.nadaun.co alias 확인. 공개JS/CSS는NAS와바이트일치, cache-control max-age0/must-revalidate 확인. 실제 Chrome에서 동일위치정지·아래/위스크롤·390폭 확인, 두사진동시표시0개. 동작줄이기 복귀 후 plane/alternate/primary marker0개. 탭의 임시폭·모션설정 원복. 현재Windows물리기기재검증은미완료다.
+
+원본백업·before/after PNG·tests.log·fix-receipt.json은 `_private/catalog/image-overlap-20261014/`. 자동카탈로그커밋530ddf38d 뒤의 소스3파일만 별도커밋했으며 수집데이터를 임의변경하지 않았다.
