@@ -46,6 +46,7 @@ CODE += ['_scraper/sync_cafe24_partners.py','_scraper/test_cafe24_partners.py']
 CODE += ['_scraper/review_cafe24_checkpoint.py','_scraper/cafe24_publication.py','_scraper/cafe24_worker.py','_scraper/test_cafe24_publication.py']
 CODE += ['_scraper/catalog_checkpoint.py','_scraper/test_catalog_checkpoint.py']
 CODE += ['_scraper/ldnet_identity.py','_scraper/test_ldnet_identity.py']
+CODE += ['_scraper/sync_saeki_catalog.py','_scraper/saeki_detail_parser.py','_scraper/saeki_publication.py','_scraper/saeki_categories.py','_scraper/saeki_worker.py','_scraper/test_saeki_catalog.py','_scraper/fixtures/saeki']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
@@ -72,7 +73,7 @@ def managed_files():
     for source in ('smartstore','imweb-dji','imweb-promotions','kpp','l-mount','nadaun-gift'):
         files.append('data/catalog/sources/'+source+'.json')
     if (OUT/'plthink.json').exists():files.append('data/catalog/sources/plthink.json')
-    for source in ('avx','avx-aputure','avx-approved','dji-official','clmedia','cinemall','onnoff','ldnet'):
+    for source in ('avx','avx-aputure','avx-approved','dji-official','clmedia','cinemall','onnoff','ldnet','saeki'):
         if (OUT/(source+'.json')).exists():files.append('data/catalog/sources/'+source+'.json')
     for source in ('smartstore','kpp'):
         base=ROOT/'data/catalog/source-details'/source
@@ -193,6 +194,7 @@ def run(publish=True,existing=False,source_updates=None):
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_partner_worker.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_cafe24*.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_ldnet_identity.py')
+        command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_saeki_catalog.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_catalog_checkpoint.py')
         command('node','--test','_scraper/tests/gift-search.test.cjs','_scraper/tests/rental-content.test.cjs')
         command('node','--check','assets/shop/shop.js')

@@ -101,6 +101,18 @@
       "refresh_interval_seconds": 43200,
       "completion_gate": "Every source category count, full inventory union, manufacturer identity, details, options, stock, category tree reconciliation and deployed live offer IDs must pass",
       "on_request_failure": "Preserve last verified snapshot; access protection latches immediately; incomplete inventory or content remains private"
+    },
+    "saeki": {
+      "name": "세기몰",
+      "url": "https://www.saeki.co.kr/main",
+      "brand_url": "https://www.saeki.co.kr/brand/main",
+      "adapter": "saeki",
+      "scope": "All shop brand menus; actual product brands and source categories; separate loyalty-only goods and existing exclusive source policy",
+      "refresh_interval_seconds": 43200,
+      "resume_interval_seconds": 600,
+      "request_interval_seconds": 2.1,
+      "completion_gate": "All brand pagination and detail identities, KRW prices, stock, options, source categories, normal tested publish and live offer-ID reconciliation",
+      "on_request_failure": "Keep last verified publication; access protection latches; schema failures remain private for review"
     }
   }
 }

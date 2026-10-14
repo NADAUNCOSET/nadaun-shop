@@ -13,6 +13,7 @@ NAMES={'kpp':'KPP','smartstore':'우리 스마트스토어','imweb':'기존 아�
 NAMES['dji-official']='DJI 공식 한국 스토어'
 NAMES['onnoff']='온앤오프미디어'
 NAMES['ldnet']='엘디네트웍스'
+NAMES['saeki']='세기몰'
 # Owner retired the old Imweb catalogue on 2026-10-15. Keep its snapshots
 # for recovery, but never use them for publication or source recommendations.
 RETIRED_SOURCES=frozenset({'imweb','imweb-dji','imweb-promotions'})

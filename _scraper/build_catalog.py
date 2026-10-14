@@ -106,6 +106,7 @@ def product_name(name):
 def verified_sources():
     sources=['kpp','smartstore','l-mount']
     if (OUT/'plthink.json').exists():sources.append('plthink')
+    if (OUT/'saeki.json').exists():sources.append('saeki')
     if (OUT/'dji-official.json').exists():sources.append('dji-official')
     for partner in CAFE24_SOURCES:
         if (OUT/(partner+'.json')).exists():sources.append(partner)
@@ -131,6 +132,11 @@ def verified_sources():
             validate_candidate(snapshots[partner])
             if not snapshots[partner].get('normalized_for_shop') or not supplemental_source_approved(partner):
                 raise RuntimeError('Partner source is not approved or normalized: '+partner)
+    if 'saeki' in snapshots:
+        from saeki_publication import validate_candidate
+        from brand_source_policy import supplemental_source_approved
+        validate_candidate(snapshots['saeki'])
+        if not supplemental_source_approved('saeki'):raise RuntimeError('Saeki approval missing')
     if 'dji-official' in snapshots:
         from sync_dji_official import validate_snapshot
         validate_snapshot(snapshots['dji-official'])
@@ -175,7 +181,7 @@ def build(allow_pending=False):
                 prefix='kpp:'+('b:'+bid if bid else 'p')+':'
             elif source=='imweb-promotions':bid=None;prefix='imweb:promotion:'
             elif source=='l-mount':bid='ldl-mount';prefix='l-mount:b:ldl-mount:'
-            elif source in ('plthink','avx','dji-official',*CAFE24_SOURCES):bid=brand_id(c['brand']);prefix=source+':b:'
+            elif source in ('plthink','avx','dji-official','saeki',*CAFE24_SOURCES):bid=brand_id(c['brand']);prefix=source+':b:'
             else:bid='dji';prefix='imweb:b:dji:'
             if official_dji and bid=='dji' and source!='dji-official':continue
             c.update(id=prefix+c['id'],parent_id=prefix+c['parent_id'] if c['parent_id'] else None,brand_id=bid)
@@ -195,7 +201,7 @@ def build(allow_pending=False):
             if not purchase_source_allowed(p,source_choices):continue
             bid=p['brand_id'];membership=[];types=[]
             if p.get('kind')=='purchase':p['_preferred_source']=source_choices.get(bid,{}).get('source')
-            p['_supplemental_source']=source in CAFE24_SOURCES
+            p['_supplemental_source']=source in (*CAFE24_SOURCES,'saeki')
             if 'avx' in snapshots and source!='avx' and bid=='aputure' and p.get('kind')=='purchase':continue
             if source=='kpp':
                 for mall in p.get('brand_mall_ids',[]):
@@ -219,7 +225,7 @@ def build(allow_pending=False):
                                                categories, bid, f'imweb:b:{bid}:promotion:')
             elif source=='imweb-dji': membership=['imweb:b:dji:'+cid for cid in p.get('brand_category_ids',[])]
             elif source=='l-mount': membership=['l-mount:b:ldl-mount:'+cid for cid in p.get('brand_category_ids',[])]
-            elif source in ('plthink','avx','dji-official',*CAFE24_SOURCES): membership=[source+':b:'+cid for cid in p.get('brand_category_ids',[])]
+            elif source in ('plthink','avx','dji-official','saeki',*CAFE24_SOURCES): membership=[source+':b:'+cid for cid in p.get('brand_category_ids',[])]
             else:
                 path=p.get('source_category_path') or [];ids=p.get('source_category_ids') or []
                 # Naver standard classifications are retained separately from
@@ -244,7 +250,8 @@ def build(allow_pending=False):
             if source=='kpp' and d.get('source_fingerprint')!=source_fingerprint(p0):
                 d={}
             if source.startswith('imweb-'):d={'detail_status':'verified','description_text':p.get('description_text',''),'images':p['images']}
-            if source in ('l-mount','plthink','avx','dji-official',*CAFE24_SOURCES):d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation') if k in p}
+            if source in ('l-mount','plthink','avx','dji-official','saeki',*CAFE24_SOURCES):d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation') if k in p}
+            if source=='saeki':d['description_notice']=p.get('description_notice','')
             if d.get('detail_status')=='verified':coverage[source]+=1
             elif not allow_pending:raise RuntimeError('Unverified product detail: '+pid)
             if d.get('unavailable'):
@@ -323,7 +330,7 @@ def build(allow_pending=False):
     from product_taxonomy import build_taxonomy
     from rental_taxonomy import build_rental_taxonomy
     type_nodes,type_audit=build_taxonomy(public_products,categories,config.get('product_type_overrides'),
-        snapshots.get('ldnet',{}).get('original_categories'))
+        snapshots.get('ldnet',{}).get('original_categories'),snapshots.get('saeki',{}).get('products'))
     categories.update({c['id']:c for c in type_nodes})
     rental_nodes,rental_audit=build_rental_taxonomy(public_products,categories)
     categories.update({c['id']:c for c in rental_nodes})

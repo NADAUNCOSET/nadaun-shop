@@ -66,6 +66,8 @@ def variants(product):
 def conflict(a, b, details):
     if (a['brand_id'],a['kind']) != (b['brand_id'],b['kind']):
         return 'different_brand_or_purchase_type'
+    if a.get('source')==b.get('source')=='saeki' and a['source_id']!=b['source_id']:
+        return 'distinct_saeki_source_skus'
     if a.get('source')==b.get('source')=='dji-official' and a.get('ean')!=b.get('ean'):
         return 'different_official_variant'
     if any(details.get(p['id'],{}).get('options_require_confirmation') for p in (a,b)):

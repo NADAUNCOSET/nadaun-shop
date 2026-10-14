@@ -217,7 +217,7 @@ def aputure_type(name, category_ids):
     return 'kpp:0710'
 
 
-def build_taxonomy(products,categories,overrides=None,ldnet_categories=None):
+def build_taxonomy(products,categories,overrides=None,ldnet_categories=None,saeki_products=None):
     nodes={}
     def add(key,name,parent=None,source=None):
         cid='type:'+key
@@ -226,6 +226,9 @@ def build_taxonomy(products,categories,overrides=None,ldnet_categories=None):
         if c['id'].startswith('kpp:p:'):
             add('kpp:'+c['id'].split(':')[-1],c['name'],'kpp:'+c['parent_id'].split(':')[-1] if c['parent_id'] else None,c['id'])
     for key,parent,name in EXTRA:add(key,name,parent)
+    if saeki_products:
+        from saeki_categories import EXTRA as SAEKI_EXTRA
+        for key,parent,name in SAEKI_EXTRA:add(key,name,parent)
     for key,name in [('kpp:03','카메라 렌즈·액세서리'),('kpp:07','조명'),('kpp:08','케이블·테더링'),('kpp:h0','영상 송수신·모니터'),('kpp:c0','드론·액션캠·짐벌'),('kpp:09','촬영 액세서리')]:nodes['type:'+key]['name']=name
     for key in ('0730','0740','0750'):nodes['type:kpp:'+key]['parent_id']='type:audio'
     nodes['type:kpp:0680']['parent_id']='type:power'
@@ -292,6 +295,9 @@ def build_taxonomy(products,categories,overrides=None,ldnet_categories=None):
         supplied = list(dict.fromkeys(ldnet_types[c] for c in p['category_ids'] if c in ldnet_types))
         reason='kpp-membership' if native else 'ldnet-source-category' if supplied else 'supplier-category' if mounted else ''
         selected=native or supplied or mounted
+        if not selected and p['id'] in (saeki_products or {}):
+            from saeki_categories import product_types
+            selected=['type:'+key for key in product_types({**saeki_products[p['id']],**p})];reason='saeki-source-category-and-purpose'
         ldnet_only = bool(p.get('offers')) and all(o['source']=='ldnet' for o in p['offers'])
         if not selected and ldnet_only:
             from ldnet_identity import type_hint

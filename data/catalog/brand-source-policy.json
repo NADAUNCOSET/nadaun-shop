@@ -79,6 +79,13 @@
       "confirmed_by": "owner",
       "confirmed_at": "2026-10-12",
       "reason": "대표 전체 미러링 지시 후 누락된 애니포트 원본을 https://ldnet.co.kr/ 로 지정. 전 공개 카테고리·제품을 확인하고 검증된 상품을 기존 상품별 주 출처 및 DJI·Aputure 고정 기준을 보존하며 보완."
+    },
+    "saeki": {
+      "scope": "all_brands",
+      "mode": "supplement_existing",
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-15",
+      "reason": "대표 지시: 세기도 미러링, 샵 제품 전부, 브랜드별 확인. 전 브랜드의 실제 상품 브랜드·제품 종류·가격·판매 상태를 검증해 보완. 기존 상품별 주 출처와 DJI 공식·Aputure AVX 및 렌탈 기준 유지."
     }
   }
 }

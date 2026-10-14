@@ -7,7 +7,7 @@ import subprocess
 
 def validate_updates(updates):
     cafe24_sources=('clmedia','cinemall','onnoff','ldnet')
-    sources = {'plthink': 'plthink', 'avx-approved': 'avx', 'dji-official': 'dji-official'}
+    sources = {'plthink': 'plthink', 'avx-approved': 'avx', 'dji-official': 'dji-official', 'saeki':'saeki'}
     sources.update({name:name for name in cafe24_sources})
     for name, snapshot in updates.items():
         if name not in sources or snapshot.get('source') != sources[name]:
@@ -18,6 +18,9 @@ def validate_updates(updates):
                 not isinstance(snapshot.get('products'), dict) or
                 count != len(snapshot['products'])):
             raise ValueError('A complete verified source candidate is required')
+        if name=='saeki':
+            from saeki_publication import validate_candidate
+            validate_candidate(snapshot)
         if name in cafe24_sources:
             from cafe24_publication import validate_candidate
             validate_candidate(snapshot)

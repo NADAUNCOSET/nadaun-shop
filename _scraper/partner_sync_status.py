@@ -40,7 +40,11 @@ def verified_receipt(source, out=OUT, state=STATE):
         expected=official_dji_ids(snapshot);expected_count=len(expected)
         if (receipt.get('held_other_brand_ids')!=sorted(set(snapshot['products'])-expected) or
             receipt.get('source_verified_products')!=count or receipt.get('policy_sha256')!=policy_fingerprint()):return False
-    if source in ('plthink','clmedia','cinemall','onnoff','ldnet'):
+    if source=='saeki':
+        from saeki_publication import validate_candidate
+        try:validate_candidate(snapshot)
+        except (ValueError,KeyError,TypeError):return False
+    if source in ('plthink','clmedia','cinemall','onnoff','ldnet','saeki'):
         from brand_source_policy import publishable_ids,policy_fingerprint
         expected=publishable_ids(snapshot)
         if (len(expected)!=count or 'excluded_ids' in receipt) and (receipt.get('policy_sha256')!=policy_fingerprint() or
@@ -64,12 +68,15 @@ def report(plan_path=PLAN, out=OUT, state=STATE):
         published = verified_receipt(source, out, state)
         dependency = config.get('after_live_verified')
         waiting = dependency if dependency and not verified_receipt(dependency, out, state) else None
-        adapter_ready = config.get('adapter') in ('plthink', 'avx', 'dji-official','cafe24')
+        adapter_ready = config.get('adapter') in ('plthink', 'avx', 'dji-official','cafe24','saeki')
         collector_ready = config.get('collection_adapter') == 'cafe24'
         if collector_ready:progress=progress|{'checked_at':progress.get('at')}
         if source == 'avx':
             progress = progress | {'checked_at':progress.get('at'),
                 'products_found':progress.get('expected'), 'details_verified':progress.get('verified_details')}
+        if source=='saeki':
+            progress=read(folder/'progress.json')
+            progress=progress|{'checked_at':progress.get('at'),'products_found':progress.get('total'),'details_verified':progress.get('verified'),'detail_errors':progress.get('errors')}
         if source=='dji-official':
             # DJI publishes current progress at provider level across generations.
             progress=read(folder/'progress.json')
@@ -90,7 +97,7 @@ def report(plan_path=PLAN, out=OUT, state=STATE):
             'refresh_interval_seconds': config.get('refresh_interval_seconds') if adapter_ready else None,
             'target_refresh_interval_seconds': config.get('target_refresh_interval_seconds'),
             'progress': {k: progress.get(k) for k in ('checked_at', 'brand_count', 'brands_checked', 'products_found', 'details_verified','categories_verified','categories_found','page','pages_in_category','details_parsed','detail_errors','content_reviews')},
-            'last_worker_error': read(folder / 'worker-error.json' if source in ('avx','dji-official') or collector_ready else state / (source + '-worker-error.json')) or None,
+            'last_worker_error': read(folder / 'worker-error.json' if source in ('avx','dji-official','saeki') or collector_ready else state / (source + '-worker-error.json')) or None,
             'blocker': config.get('blocker') if not adapter_ready else None,
             'pending_brand_source_choices':len(source_choices.get('brands',[])),
             'pending_source_content_reviews':len(source_choices.get('content_review_ids',{})),
