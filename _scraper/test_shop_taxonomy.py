@@ -43,6 +43,21 @@ class ShopTaxonomy(unittest.TestCase):
         self.assertIsNone(reviewed_accessory_type('Sony camera with cleaning kit','sony'))
         self.assertIsNone(reviewed_accessory_type('VSGO camera cleaning kit bag','vsgo'))
 
+    def test_smoke_ninja_is_not_a_video_recorder_and_parts_keep_their_purpose(self):
+        cases=[('pmi','PMI Smoke NINJA PRO 트라이던트 키트','fog-machine'),
+               ('pmi','PMI 스모크 닌자 프로 헤이저 키트 휴대용 포그머신','fog-machine'),
+               ('pmi','PMI Cloud Formula 전용 용액 100ml','fog-parts'),
+               ('pmi','PMI Smoke Shaping Nozzles 스모크 형성 노즐','fog-parts'),
+               ('pmi','PMI Fog Chamber 2.0 포그 챔버','fog-parts'),
+               ('pmi','PMI Chamber Power Extension Cable 챔버 파워 익스텐션 케이블','cable-parts'),
+               ('pmi','PMI 18650 Battery Charger 배터리 충전기','chargers'),
+               ('atomos','ATOMOS NINJA V 외장 레코더','video-recorder')]
+        for brand,name,target in cases:
+            rows=[dict(id='test',name=name,brand_id=brand,kind='purchase',type_ids=[],category_ids=[])]
+            build_taxonomy(rows,self.source_categories)
+            self.assertIn('type:'+target,rows[0]['type_ids'],name)
+            if brand=='pmi':self.assertNotIn('type:video-recorder',rows[0]['type_ids'],name)
+
     def test_accessories_do_not_become_camera_bodies(self):
         rows,_=self.classify(['SMALLRIG SONY FX3 케이지','소니 SONY FX3+28-135G','소니 SONY AX700+삼각대','캐논 R5+RF100500'],kind='rental')
         self.assertIn('rent:135',rows[0]['type_ids']);self.assertNotIn('rent:11',rows[0]['type_ids'])

@@ -16,6 +16,7 @@ EXTRA = [
  ('tv-display',None,'TV·디스플레이'),('tv','tv-display','TV'),('projector','tv-display','프로젝터·스크린'),('light-meter','kpp:0720','노출계·조명 동조기'),('jib','kpp:06','지브·크레인'),('turntable','kpp:06','턴테이블'),('camera',None,'카메라'),('mirrorless','camera','미러리스 카메라'),('dslr','camera','DSLR 카메라'),('cinema-camera','camera','시네마 카메라'),('camcorder','camera','캠코더'),('compact-camera','camera','컴팩트·즉석 카메라'),
  ('medium-camera','camera','중형 카메라'),('medium-lens','kpp:03','중형 렌즈'),('phone-lens','kpp:03','스마트폰 렌즈'),
  ('dolly','kpp:06b0','카메라 달리'),('apple-box','kpp:09','애플박스'),
+ ('fog-equipment','kpp:09','포그·스모크 장비'),('fog-machine','fog-equipment','포그·스모크 머신'),('fog-parts','fog-equipment','용액·노즐·포그 액세서리'),
  ('carbon','kpp:0110','카본 삼각대'),('aluminum','kpp:0110','알루미늄 삼각대'),('mini-tripod','kpp:0110','미니·테이블 삼각대'),('travel-tripod','kpp:0110','여행용 삼각대'),('monopod','kpp:01','모노포드'),
  ('ball-head','kpp:0120','볼헤드'),('video-head','kpp:0120','비디오 헤드'),('gear-head','kpp:0120','기어 헤드'),('gimbal-head','kpp:0120','짐벌 헤드'),('pan-head','kpp:0120','3WAY·파노라마 헤드'),
  ('uv','kpp:0210','UV·보호 필터'),('cpl','kpp:0210','CPL·편광 필터'),('vnd','kpp:0220','가변 ND 필터'),('fixed-nd','kpp:0220','고정 ND 필터'),('nd-pl','kpp:0220','ND·PL 복합 필터'),('mist','kpp:0230','미스트·소프트 필터'),('filter-parts','kpp:02','홀더·어댑터링·캡'),
@@ -138,6 +139,17 @@ def reviewed_accessory_type(name, brand):
     if re.search(r'가방|백팩|파우치|\bbag\b|backpack|pouch',name,re.I):return None
     if re.search(r'블로워|blower',name,re.I):return 'air-blower'
     if re.search(r'클리닝|클리너|청소|세척봉|면봉|cleaning|cleaner|swab|lens\s*pen|카메라\s*센서\s*키트',name,re.I):return 'cleaning'
+    return None
+
+
+def reviewed_effects_type(name, brand):
+    """PMI Smoke NINJA is an effects machine, not an Atomos recorder."""
+    if brand!='pmi':return None
+    if re.search(r'용액|formula|forrmula|노즐|nozzle|튜빙|tubing|chamber|챔버|vest|베스트',name,re.I):
+        if re.search(r'케이블|cable|전원|power',name,re.I):return None
+        return 'fog-parts'
+    if re.search(r'smoke\s*ninja|스모크\s*닌자|포그머신|스모그머신',name,re.I):
+        return 'fog-machine'
     return None
 
 
@@ -272,6 +284,8 @@ def build_taxonomy(products,categories,overrides=None,ldnet_categories=None):
             if accessory:selected=['type:'+accessory];reason='camera-accessory:'+accessory
         if p['kind']=='purchase' and (accessory:=reviewed_accessory_type(name,bid)):
             selected=['type:'+accessory];reason='reviewed-accessory-purpose:'+accessory
+        if p['kind']=='purchase' and (effects:=reviewed_effects_type(name,bid)):
+            selected=['type:'+effects];reason='reviewed-effects-purpose:'+effects
         if p['kind']=='purchase' and bid=='aputure':
             selected=['type:'+aputure_type(name,p.get('category_ids',[]))];reason='aputure-lighting-purpose'
         if p['kind']=='purchase' and bid=='dji' and p['id'].startswith('dji-official-'):

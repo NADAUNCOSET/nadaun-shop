@@ -28,6 +28,27 @@
   "product_type_overrides": {
     "kpp-1781662220": [
       "kpp:0340"
+    ],
+    "avx-3037": [
+      "light-meter"
+    ],
+    "avx-2735": [
+      "kpp:c040"
+    ],
+    "avx-453": [
+      "kpp:0120"
+    ],
+    "avx-1639": [
+      "audio"
+    ],
+    "avx-1638": [
+      "audio"
+    ],
+    "avx-1637": [
+      "audio"
+    ],
+    "plthink-1927658": [
+      "fog-machine"
     ]
   },
   "category_label_overrides": {
@@ -1113,6 +1134,274 @@
       "reviewed_at": "2026-10-14",
       "live_title_verified": true,
       "source_checked_at": "2026-10-14T06:57:33+00:00"
+    },
+    "avx-3104": {
+      "expected_name": "[사전예약] 디조필름 DZO-AZ25180I Arles Zoom T2.6 FF 시네 2렌즈 번들 (ARRI PL) / 10월 15일 이후 순차출고",
+      "expected_brand": "AVX 기타",
+      "brand": "DZOFILM",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=3104"
+      ],
+      "reason": "원본 상품명에 명시된 실제 브랜드로 공급사/기타 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T03:51:12+00:00"
+    },
+    "avx-3037": {
+      "expected_name": "[Lit system] LIT DUO 1",
+      "expected_brand": "AVX 기타",
+      "brand": "LIT Systems",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=3037"
+      ],
+      "reason": "원본 상품명에 명시된 실제 브랜드로 공급사/기타 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T03:58:05+00:00"
+    },
+    "avx-2931": {
+      "expected_name": "피엠아이 PMI Smoke NINJA PRO 스모크 닌자 프로 트라이던트 키트",
+      "expected_brand": "AVX 기타",
+      "brand": "PMI",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2931"
+      ],
+      "reason": "원본 상품명에 명시된 실제 브랜드로 공급사/기타 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T04:18:31+00:00"
+    },
+    "avx-2930": {
+      "expected_name": "피엠아이 PMI Smoke NINJA PRO 스모크 닌자 프로 헤이저 키트",
+      "expected_brand": "AVX 기타",
+      "brand": "PMI",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2930"
+      ],
+      "reason": "원본 상품명에 명시된 실제 브랜드로 공급사/기타 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T04:18:38+00:00"
+    },
+    "avx-2735": {
+      "expected_name": "NB stabilizer Rock-a-bye_롤리그_스테디캠 수평유지",
+      "expected_brand": "AVX 기타",
+      "brand": "NB Stabilizer",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2735"
+      ],
+      "reason": "원본 상품명에 명시된 실제 브랜드로 공급사/기타 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T04:51:47+00:00"
+    },
+    "avx-468": {
+      "expected_name": "WING 슬라이더",
+      "expected_brand": "AVX 기타",
+      "brand": "EDELKRONE",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=468",
+        "https://edelkrone.com/pages/6-genius-camera-gadgets"
+      ],
+      "reason": "원본 상세 설명과 공식 제조사의 정확한 모델명 대조",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T07:29:10+00:00"
+    },
+    "avx-453": {
+      "expected_name": "FlexTILT HEAD 2",
+      "expected_brand": "AVX 기타",
+      "brand": "EDELKRONE",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=453",
+        "https://edelkrone.com/pages/6-genius-camera-gadgets"
+      ],
+      "reason": "원본 상세 설명과 공식 제조사의 정확한 모델명 대조",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T07:29:37+00:00"
+    },
+    "avx-1639": {
+      "expected_name": "이벤트_H_6_E",
+      "expected_brand": "AVX 기타",
+      "brand": "ZOOM",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=1639",
+        "https://www.avx.co.kr/data/editor/goods/1/2024/05/1639_7555cb84a62276bf5e712b514ae2fe621501223.png"
+      ],
+      "reason": "원본 상세 이미지에 표시된 브랜드 로고를 직접 확인해 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T06:22:33+00:00"
+    },
+    "avx-1638": {
+      "expected_name": "이벤트_H_4_E",
+      "expected_brand": "AVX 기타",
+      "brand": "ZOOM",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=1638",
+        "https://www.avx.co.kr/data/editor/goods/1/2024/05/1638_d8917d09f828eb544aba7d379312c4de1456453.png"
+      ],
+      "reason": "원본 상세 이미지에 표시된 브랜드 로고를 직접 확인해 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T06:22:40+00:00"
+    },
+    "avx-1637": {
+      "expected_name": "이벤트_H_1_E",
+      "expected_brand": "AVX 기타",
+      "brand": "ZOOM",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=1637",
+        "https://www.avx.co.kr/data/editor/goods/1/2024/05/1637_39cd96569de79d0ac019972f72c0e86c1459223.png"
+      ],
+      "reason": "원본 상세 이미지에 표시된 브랜드 로고를 직접 확인해 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T06:22:54+00:00"
+    },
+    "clmedia-2488": {
+      "expected_name": "캔버스그립 ABPH 애플박스 시트커버 가로형",
+      "expected_brand": "ETC",
+      "brand": "CANVAS GRIP",
+      "evidence": [
+        "https://clmedia.co.kr/product/detail.html?product_no=2488",
+        "https://www.canvasgrip.com/p/ABPH.html"
+      ],
+      "reason": "원본 상품명에 명시된 실제 브랜드로 공급사/기타 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T10:59:21+00:00"
+    },
+    "clmedia-78": {
+      "expected_name": "케이블 전선정리 타이 봉고타이(1팩 10개입)",
+      "expected_brand": "CLMEDIA",
+      "brand": "BongoTies",
+      "evidence": [
+        "https://clmedia.co.kr/product/detail.html?product_no=78",
+        "https://bongoties.com/"
+      ],
+      "reason": "원본 상품명에 명시된 실제 브랜드로 공급사/기타 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-11T15:35:42+00:00"
+    },
+    "avx-2802": {
+      "expected_name": "4K HDMI 케이블 v2.1 UHD 유연한 얇은 모니터선 A to A타입 60cm",
+      "expected_brand": "AVX 기타",
+      "brand": "Flexilink",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2802",
+        "https://www.avx.co.kr/data/editor/goods/1/2026/03/2802_b87e66074333a377f4c511747546b38f1813101.jpg"
+      ],
+      "reason": "원본 상세 이미지에 표시된 브랜드 로고를 직접 확인해 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T04:46:51+00:00"
+    },
+    "avx-2786": {
+      "expected_name": "4K HDMI 케이블 v2.1 UHD 유연한 얇은 모니터선 A to A타입 180cm",
+      "expected_brand": "AVX 기타",
+      "brand": "Flexilink",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2786",
+        "https://www.avx.co.kr/data/editor/goods/1/2026/03/2786_f41c89d42be32db5ab6ab5604d334d421719172.jpg"
+      ],
+      "reason": "원본 상세 이미지에 표시된 브랜드 로고를 직접 확인해 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T04:48:10+00:00"
+    },
+    "avx-2785": {
+      "expected_name": "4K HDMI 케이블 v2.1 UHD 유연한 얇은 모니터선 A to A타입 90cm",
+      "expected_brand": "AVX 기타",
+      "brand": "Flexilink",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2785",
+        "https://www.avx.co.kr/data/editor/goods/1/2026/03/2785_f41c89d42be32db5ab6ab5604d334d421708432.jpg"
+      ],
+      "reason": "원본 상세 이미지에 표시된 브랜드 로고를 직접 확인해 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T04:48:17+00:00"
+    },
+    "avx-2784": {
+      "expected_name": "4K mini HDMI 케이블 v2.1 UHD 유연한 얇은 모니터선 A to C타입 90cm",
+      "expected_brand": "AVX 기타",
+      "brand": "Flexilink",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2784",
+        "https://www.avx.co.kr/data/editor/goods/1/2026/03/2784_f41c89d42be32db5ab6ab5604d334d421658432.jpg"
+      ],
+      "reason": "원본 상세 이미지에 표시된 브랜드 로고를 직접 확인해 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T04:48:24+00:00"
+    },
+    "avx-2783": {
+      "expected_name": "4K mini HDMI 케이블 v2.1 UHD 유연한 얇은 모니터선 A to C타입 180cm",
+      "expected_brand": "AVX 기타",
+      "brand": "Flexilink",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2783",
+        "https://www.avx.co.kr/data/editor/goods/1/2026/03/2783_f41c89d42be32db5ab6ab5604d334d421652562.jpg"
+      ],
+      "reason": "원본 상세 이미지에 표시된 브랜드 로고를 직접 확인해 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T04:48:31+00:00"
+    },
+    "avx-2782": {
+      "expected_name": "4K micro HDMI 케이블 v2.1 UHD 유연한 얇은 모니터선 A to D타입 90cm",
+      "expected_brand": "AVX 기타",
+      "brand": "Flexilink",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2782",
+        "https://www.avx.co.kr/data/editor/goods/1/2026/03/2782_f41c89d42be32db5ab6ab5604d334d421646262.jpg"
+      ],
+      "reason": "원본 상세 이미지에 표시된 브랜드 로고를 직접 확인해 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T04:48:37+00:00"
+    },
+    "avx-2781": {
+      "expected_name": "4K micro HDMI 케이블 v2.1 UHD 유연한 얇은 모니터선 A to D타입 180cm",
+      "expected_brand": "AVX 기타",
+      "brand": "Flexilink",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2781",
+        "https://www.avx.co.kr/data/editor/goods/1/2026/03/2781_f41c89d42be32db5ab6ab5604d334d421640592.jpg"
+      ],
+      "reason": "원본 상세 이미지에 표시된 브랜드 로고를 직접 확인해 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T04:48:44+00:00"
+    },
+    "avx-2780": {
+      "expected_name": "4K HDMI 케이블 v2.1 UHD 유연한 얇은 모니터선 A to A타입 꺾임 90cm",
+      "expected_brand": "AVX 기타",
+      "brand": "Flexilink",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2780",
+        "https://www.avx.co.kr/data/editor/goods/1/2026/03/2780_f41c89d42be32db5ab6ab5604d334d421633592.jpg"
+      ],
+      "reason": "원본 상세 이미지에 표시된 브랜드 로고를 직접 확인해 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T04:48:51+00:00"
+    },
+    "avx-2775": {
+      "expected_name": "4K HDMI 케이블 v2.1 UHD 유연한 얇은 모니터선 A to A타입 꺾임 180cm",
+      "expected_brand": "AVX 기타",
+      "brand": "Flexilink",
+      "evidence": [
+        "https://www.avx.co.kr/goods/view?no=2775",
+        "https://www.avx.co.kr/data/editor/f41c89d42be32db5ab6ab5604d334d421528192.jpg"
+      ],
+      "reason": "원본 상세 이미지에 표시된 브랜드 로고를 직접 확인해 분류 정정",
+      "reviewed_at": "2026-10-14",
+      "live_title_verified": false,
+      "source_checked_at": "2026-10-14T04:49:25+00:00"
     }
   }
 }
