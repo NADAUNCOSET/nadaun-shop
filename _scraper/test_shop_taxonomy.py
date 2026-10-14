@@ -80,6 +80,27 @@ class ShopTaxonomy(unittest.TestCase):
         self.assertEqual(p['category_ids'],['brand-path']);self.assertIn('kpp:p:0110',p['type_ids']);self.assertIn('type:kpp:01',p['type_ids']);self.assertIn('type:kpp:0110',p['type_ids'])
         self.assertEqual(audit['assignments'][0]['reason'],'kpp-membership')
 
+    def test_ldnet_product_tree_overrides_camera_keywords_and_preserves_source_membership(self):
+        categories = deepcopy(self.source_categories)
+        for sid, parent, name in [('534', None, '디지털/가전'), ('50', '534', '컴퓨터주변기기/소모품'), ('540', '50', '키보드/마우스')]:
+            cid = 'ldnet:b:iriver:'+sid
+            categories[cid] = dict(id=cid, parent_id='ldnet:b:iriver:'+parent if parent else None, name=name, brand_id='iriver')
+        rows = [dict(id='ldnet-test', name='아이리버 Air Light Fit 무선 마우스', kind='purchase', brand_id='iriver',
+                     category_ids=['ldnet:b:iriver:540'], type_ids=[], offers=[{'source':'ldnet'}])]
+        before = deepcopy(rows)
+        nodes, audit = build_taxonomy(rows, categories)
+        self.assertEqual(rows[0]['category_ids'], before[0]['category_ids'])
+        self.assertEqual(rows[0]['type_ids'], ['type:ldnet:534','type:ldnet:50','type:ldnet:540'])
+        self.assertEqual(audit['assignments'][0]['reason'], 'ldnet-source-category')
+        self.assertFalse(any(c['id']=='type:ldnet:581' for c in nodes))
+
+    def test_brand_shop_only_ldnet_mouse_does_not_fall_back_to_filming_accessories(self):
+        rows = [dict(id='ldnet-test', name='GDEVIL G100 게이밍 마우스', kind='purchase', brand_id='gdevil',
+                     category_ids=[], type_ids=[], offers=[{'source':'ldnet'}])]
+        build_taxonomy(rows, self.source_categories)
+        self.assertIn('type:ldnet:540',rows[0]['type_ids'])
+        self.assertNotIn('type:kpp:09',rows[0]['type_ids'])
+
     def test_all_slr_product_types_survive_and_brand_leaves_are_separate(self):
         reference=json.loads((ROOT/'_scraper/references/slrrent-categories.json').read_text())
         expected={c['id'] for c in reference['categories'] if c['depth']<2 or c['parent_id'] in ('13','26','120','140','56')}

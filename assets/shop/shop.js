@@ -91,7 +91,7 @@ function renderCatalog(){
  <div class="mobile-categories" style="display:none" ${applicable.length?'':'hidden'}><label class="sr" for="category-select">브랜드 세부 카테고리</label><select id="category-select"><option value="">브랜드 전체 카테고리</option>${rootOptions}</select></div>
  ${bid?`<div class="sidebar-list"><h2>${esc(brand.name)} 카테고리</h2><a href="${esc(catalogHref({cat:null}))}" class="${!cat?'active':''}">브랜드 전체 <small>${selection.base.filter(p=>!type||p.type_ids.includes(type)).length}</small></a>${roots.map(c=>nested(c)).join('')}</div>`:'<p class="brand-filter-help">브랜드를 선택하면 해당 브랜드의 세부 카테고리가 표시됩니다.</p>'}
  </aside><section class="catalog-results" aria-label="상품 목록">
- ${productTypeNavigation(selection.typeCategories,selection.typeCounts,type,id=>catalogHref({type:id}))}
+ ${productTypeNavigation(selection.typeCategories,selection.typeCounts,type,id=>catalogHref({type:id}),{hideEmpty:Boolean(bid)})}
  <div class="catalog-controls"><span>${selectedCat?esc(selectedCat.name)+' · ':''}총 <b>${filtered.length.toLocaleString('ko-KR')}</b>개</span><div class="filters-right"><label><input id="available-only" type="checkbox" ${params.has('available')?'checked':''}>품절 상품 제외</label><label class="sr" for="sort-select">상품 정렬</label><select id="sort-select"><option value="default">기본순</option><option value="low" ${sort==='low'?'selected':''}>낮은 가격순</option><option value="high" ${sort==='high'?'selected':''}>높은 가격순</option><option value="name" ${sort==='name'?'selected':''}>상품명순</option></select></div></div>
  ${discountOnly?benefitNavigation(benefit,key=>catalogHref({sale:'1',benefit:key==='all'?null:key,cat:null,type:null})):''}
  ${categoryControls(children,selectedCat,id=>catalogHref({cat:id}))}

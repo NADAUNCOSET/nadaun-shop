@@ -150,7 +150,7 @@ def aputure_type(name, category_ids):
     return 'kpp:0710'
 
 
-def build_taxonomy(products,categories,overrides=None):
+def build_taxonomy(products,categories,overrides=None,ldnet_categories=None):
     nodes={}
     def add(key,name,parent=None,source=None):
         cid='type:'+key
@@ -165,7 +165,44 @@ def build_taxonomy(products,categories,overrides=None):
     for c in list(categories.values()):
         if c['id'].startswith('l-mount:b:ldl-mount:'):
             add('mount:'+c['id'].split(':')[-1],c['name'],'mount:'+c['parent_id'].split(':')[-1] if c['parent_id'] else 'display-mount',c['id'])
+    # Mirror LDNET's actual product tree once, independent of its brand menus.
+    # This keeps office mice, UPS, racks and electrical parts out of camera
+    # accessory guesses. The original brand-specific paths remain unchanged.
+    ldnet_types = {}
+    for c in categories.values():
+        if not c['id'].startswith('ldnet:b:'):
+            continue
+        cursor = c; seen = set(); brand_menu = False
+        while cursor:
+            if cursor['id'] in seen:
+                raise ValueError('Invalid LDNET product category ancestry')
+            seen.add(cursor['id'])
+            if cursor['id'].split(':')[-1] == '581':
+                brand_menu = True; break
+            cursor = categories.get(cursor.get('parent_id'))
+        if brand_menu:
+            continue
+        sid = c['id'].split(':')[-1]
+        parent = 'ldnet:'+c['parent_id'].split(':')[-1] if c['parent_id'] else None
+        add('ldnet:'+sid, c['name'], parent, 'ldnet:'+sid)
+        ldnet_types[c['id']] = 'type:ldnet:'+sid
+    if ldnet_categories:
+        source_nodes = {c['id']:c for c in ldnet_categories}
+        for c in ldnet_categories:
+            cursor = c; seen = set(); brand_menu = False
+            while cursor and cursor['id'] != '1':
+                if cursor['id'] in seen:
+                    raise ValueError('Invalid LDNET original category ancestry')
+                seen.add(cursor['id'])
+                if cursor['id'] == '581':
+                    brand_menu = True; break
+                cursor = source_nodes.get(cursor.get('parent_id'))
+            if c['id']=='1' or brand_menu:
+                continue
+            parent = 'ldnet:'+c['parent_id'] if c['parent_id']!='1' else None
+            add('ldnet:'+c['id'], c['name'], parent, 'ldnet:'+c['id'])
     roots=['kpp:01','kpp:02','camera','kpp:03','kpp:04','kpp:05','kpp:06','kpp:07','audio','power','kpp:h0','kpp:c0','kpp:08','kpp:09','kpp:00','tv-display','display-mount','software','print-color','studio']
+    add('ldnet-other', '기타 디지털·생활용품')
     order={key:i for i,key in enumerate(roots)}
     def path(cid):
         result=[]
@@ -178,8 +215,15 @@ def build_taxonomy(products,categories,overrides=None):
         name=unicodedata.normalize('NFKC',p['name']);bid=p['brand_id']
         native=['type:kpp:'+c.split(':')[-1] for c in p['type_ids'] if c.startswith('kpp:p:')]
         mounted=['type:mount:'+c.split(':')[-1] for c in p['category_ids'] if c.startswith('l-mount:b:ldl-mount:')]
-        reason='kpp-membership' if native else 'supplier-category' if mounted else ''
-        selected=native or mounted
+        supplied = list(dict.fromkeys(ldnet_types[c] for c in p['category_ids'] if c in ldnet_types))
+        reason='kpp-membership' if native else 'ldnet-source-category' if supplied else 'supplier-category' if mounted else ''
+        selected=native or supplied or mounted
+        ldnet_only = bool(p.get('offers')) and all(o['source']=='ldnet' for o in p['offers'])
+        if not selected and ldnet_only:
+            from ldnet_identity import type_hint
+            hinted = type_hint(name, {cid.removeprefix('type:ldnet:') for cid in nodes if cid.startswith('type:ldnet:')})
+            if hinted:
+                selected = ['type:ldnet:'+hinted]; reason = 'ldnet-title-product-type'
         rental_model=None
         if p['kind']=='rental':
             for key,pattern in [
@@ -202,7 +246,7 @@ def build_taxonomy(products,categories,overrides=None):
                 if mapped:selected=['type:'+mapped];reason='naver-category'
                 elif bid in LIGHT_BRANDS:selected=['type:kpp:07'];reason='brand-family'
                 elif bid in GRIP_BRANDS:selected=['type:light-grip'];reason='brand-family'
-                else:selected=['type:other'];reason='general-review'
+                else:selected=['type:ldnet-other' if ldnet_only else 'type:other'];reason='general-review'
         if p['kind']=='purchase' and any('type:camera' in path(cid) for cid in selected):
             accessory=camera_accessory_type(name,bid)
             if accessory:selected=['type:'+accessory];reason='camera-accessory:'+accessory

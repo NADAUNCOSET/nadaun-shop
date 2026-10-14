@@ -52,6 +52,13 @@ def validate_candidate(snapshot):
             raise ValueError('Whole-site membership differs from source category counts')
         if snapshot.get('normalized_for_shop'):
             from build_catalog import brand_id
+            if source == 'ldnet' and snapshot.get('brand_classification_revision'):
+                from ldnet_identity import resolve, revision
+                if snapshot['brand_classification_revision'] == revision():
+                    for product in products.values():
+                        expected_brand, evidence = resolve(product, nodes)
+                        if product['brand'] != expected_brand or product.get('brand_evidence') != evidence:
+                            raise ValueError('LDNET product brand differs from source evidence: '+product['id'])
             expected=set()
             for product in products.values():
                 bid=brand_id(product['brand']);original=product['original_category_ids']
@@ -76,11 +83,26 @@ def validate_candidate(snapshot):
 def prepare(snapshot):
     validate_candidate(snapshot)
     if snapshot.get('normalized_for_shop'):
-        return deepcopy(snapshot)
+        if snapshot['source'] != 'ldnet':
+            return deepcopy(snapshot)
+        from ldnet_identity import revision
+        if snapshot.get('brand_classification_revision') == revision():
+            return deepcopy(snapshot)
+        # Rebuild the old manufacturer-based paths from preserved source IDs.
+        snapshot = deepcopy(snapshot)
+        snapshot['categories'] = snapshot.pop('original_categories')
+        snapshot.pop('normalized_for_shop')
+        for product in snapshot['products'].values():
+            product['brand_category_ids'] = product.pop('original_category_ids')
     from build_catalog import brand_id
     result = deepcopy(snapshot)
     source = result['source']; root = SITES[source][1]
     nodes = {node['id']: node for node in result['categories']}
+    if source == 'ldnet':
+        from ldnet_identity import classify, revision
+        for product in result['products'].values():
+            classify(product, nodes)
+        result['brand_classification_revision'] = revision()
     if source in WHOLE_SITE:
         categories={}
         for product in result['products'].values():

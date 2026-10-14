@@ -70,6 +70,7 @@ def brand_dictionary():
       'smallhd':['Small HD'], 'samyang':['삼양옵틱스','Samyang Optics'],
       'teradek':['테라덱'], 'zhiyun':['Zhiyun Tech'], 'zgcine':['ZGC'],
       'crystalprompter':['Crystal Prompter','CRYSTAL-PROMPTER','크리스탈프롬프터'],
+      'iriver':['아이리버'],
     }
     for key,names in extras.items():
         for name in names+[key]: aliases[name.casefold()]=key
@@ -289,7 +290,8 @@ def build(allow_pending=False):
     save_json(AUDIT/'rental-content-review.json',{'products_checked':len(rental_content_audit),'products':rental_content_audit})
     from product_taxonomy import build_taxonomy
     from rental_taxonomy import build_rental_taxonomy
-    type_nodes,type_audit=build_taxonomy(public_products,categories,config.get('product_type_overrides'))
+    type_nodes,type_audit=build_taxonomy(public_products,categories,config.get('product_type_overrides'),
+        snapshots.get('ldnet',{}).get('original_categories'))
     categories.update({c['id']:c for c in type_nodes})
     rental_nodes,rental_audit=build_rental_taxonomy(public_products,categories)
     categories.update({c['id']:c for c in rental_nodes})

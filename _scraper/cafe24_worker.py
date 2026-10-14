@@ -72,6 +72,7 @@ def record_publication(snapshot,result):
                'source_verified_products':snapshot['product_count'],'verified_products':len(actual),
                'excluded_ids':sorted(set(candidate['products'])-expected),
                'policy_sha256':policy_fingerprint(),'candidate_sha256':digest(snapshot),
+               'brand_classification_revision':candidate.get('brand_classification_revision'),
                'source_sha256':hashlib.sha256((OUT/(source+'.json')).read_bytes()).hexdigest()}
     save_json(STATE/source/'published.json',receipt)
     save_json(STATE/source/'progress.json',{'at':stamp(),'phase':'live_verified',
@@ -98,7 +99,9 @@ def work(source):
         receipt = read(root/'published.json')
         from brand_source_policy import policy_fingerprint
         if candidate.get('complete'):
+            from ldnet_identity import revision as brand_revision
             if (receipt.get('candidate_sha256') != digest(candidate) or
+                    (source == 'ldnet' and receipt.get('brand_classification_revision') != brand_revision()) or
                     receipt.get('policy_sha256') != policy_fingerprint()):
                 return publish(candidate)
             age = (datetime.now(timezone.utc)-datetime.fromisoformat(candidate['collected_at'])).total_seconds()

@@ -1,6 +1,11 @@
 {
   "routes": [
     {
+      "src": "^/brands/brand-1764b0442d\\.html$",
+      "status": 308,
+      "headers": { "Location": "/catalog.html" }
+    },
+    {
       "src": "/(.*)",
       "headers": {
         "X-Content-Type-Options": "nosniff",

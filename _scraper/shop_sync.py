@@ -45,6 +45,7 @@ CODE += ['_scraper/publication_storage.py','_scraper/test_publication_storage.py
 CODE += ['_scraper/sync_cafe24_partners.py','_scraper/test_cafe24_partners.py']
 CODE += ['_scraper/review_cafe24_checkpoint.py','_scraper/cafe24_publication.py','_scraper/cafe24_worker.py','_scraper/test_cafe24_publication.py']
 CODE += ['_scraper/catalog_checkpoint.py','_scraper/test_catalog_checkpoint.py']
+CODE += ['_scraper/ldnet_identity.py','_scraper/test_ldnet_identity.py']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
@@ -186,6 +187,7 @@ def run(publish=True,existing=False,source_updates=None):
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_publication_storage.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_partner_worker.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_cafe24*.py')
+        command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_ldnet_identity.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_catalog_checkpoint.py')
         command('node','--test','_scraper/tests/gift-search.test.cjs','_scraper/tests/rental-content.test.cjs')
         command('node','--check','assets/shop/shop.js')

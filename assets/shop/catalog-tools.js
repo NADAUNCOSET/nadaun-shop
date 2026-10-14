@@ -58,11 +58,12 @@ export function catalogSelection(data,{brand='',kind='purchase',cat='',type='',s
     rows:base.filter(p=>matchesCategory(p)&&(!type||p.type_ids.includes(type)))};
 }
 
-export function productTypeNavigation(categories,counts,selected,href){
+export function productTypeNavigation(categories,counts,selected,href,{hideEmpty=false}={}){
   if(!categories.length)return '';
-  const roots=categories.filter(c=>!c.parent_id);
   const index=new Map(categories.map(c=>[c.id,c]));const current=index.get(selected);
   const activePath=new Set(categoryTrail(index,selected).map(c=>c.id));
+  if(hideEmpty)categories=categories.filter(c=>counts.get(c.id)||activePath.has(c.id));
+  const roots=categories.filter(c=>!c.parent_id);
   const link=c=>`<a href="${escape(href(c.id))}" class="${activePath.has(c.id)?'active':''}${!counts.get(c.id)?' is-empty':''}" ${c.id===selected?'aria-current="page"':''}>${escape(c.name)} <small>${counts.get(c.id)||0}</small></a>`;
   const children=current?categories.filter(c=>c.parent_id===current.id):[];
   const descendants=id=>{const rows=categories.filter(c=>c.parent_id===id);return rows.length?`<ul>${rows.map(c=>`<li>${link(c)}${descendants(c.id)}</li>`).join('')}</ul>`:''};

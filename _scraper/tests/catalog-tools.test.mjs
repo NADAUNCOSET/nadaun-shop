@@ -93,6 +93,15 @@ test('brand switching preserves rental mode, product type and search but clears 
  assert.equal(new URL(brandSelectionHref('',url.search,'rental'),url.origin).pathname,'/catalog.html');
 });
 
+test('brand type navigation hides empty categories but keeps an empty selected path reachable',()=>{
+ const cats=[{id:'camera',name:'카메라',parent_id:null},{id:'pc',name:'디지털/가전',parent_id:null},{id:'mouse',name:'키보드/마우스',parent_id:'pc'}];
+ const counts=new Map([['pc',2],['mouse',2]]);
+ const nav=productTypeNavigation(cats,counts,'mouse',id=>'/catalog.html?type='+id,{hideEmpty:true});
+ assert.ok(!nav.includes('>카메라'));assert.ok(nav.includes('키보드/마우스'));
+ const selected=productTypeNavigation(cats,counts,'camera',id=>'/catalog.html?type='+id,{hideEmpty:true});
+ assert.ok(selected.includes('aria-current="page"'));assert.ok(selected.includes('카메라'));
+});
+
 test('preferred brand navigation avoids repeated source menus and preserves old links',()=>{
  const categories=[['kpp:r',null],['kpp:l','kpp:r'],['naver:r',null],['naver:l','naver:r']].map(([id,parent_id])=>({id,parent_id,name:id,brand_id:'b'}));
  const preferred=['kpp:r','kpp:l','naver:r'];
