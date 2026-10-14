@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "brands_checked": 361,
-  "input_count": 27184,
+  "input_count": 27186,
   "duplicate_group_count": 2799,
   "duplicate_entries_removed": 4610,
   "by_brand": {
@@ -2918,7 +2918,7 @@
         {
           "id": "smartstore-12994871401",
           "name": "SMALLRIG 5565 유압 카본 파이버 비디오 모노포드",
-          "price": 617900,
+          "price": 512000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/12994871401"
         },
@@ -4563,18 +4563,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1609739888"
         },
         {
+          "id": "smartstore-8550492421",
+          "name": "SMALLRIG HDMI 어댑터 케이블 SR3019",
+          "price": 15000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8550492421"
+        },
+        {
           "id": "smartstore-13745581750",
           "name": "3019 울트라 슬림 4K HDMI 어댑터 케이블(A to A)",
           "price": 15000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581750"
-        },
-        {
-          "id": "smartstore-8550492421",
-          "name": "SMALLRIG HDMI 어댑터 케이블 SR3019",
-          "price": 18000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8550492421"
         },
         {
           "id": "plthink-1917391",
@@ -4623,18 +4623,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1609739967"
         },
         {
+          "id": "smartstore-8550494497",
+          "name": "SMALLRIG Mini HDMI 어댑터 케이블 SR3020",
+          "price": 15000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8550494497"
+        },
+        {
           "id": "smartstore-13745581751",
           "name": "울트라 슬림 미니 to HDMI 어댑터 케이블 3020",
           "price": 15000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581751"
-        },
-        {
-          "id": "smartstore-8550494497",
-          "name": "SMALLRIG Mini HDMI 어댑터 케이블 SR3020",
-          "price": 18000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8550494497"
         },
         {
           "id": "plthink-1917392",
@@ -4767,18 +4767,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1609741914"
         },
         {
+          "id": "smartstore-8550497417",
+          "name": "SMALLRIG Micro HDMI 어댑터 케이블 SR3021",
+          "price": 15000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8550497417"
+        },
+        {
           "id": "smartstore-13745581752",
           "name": "울트라 슬림 마이크로 HDMI 어댑터 케이블 3021",
           "price": 15000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581752"
-        },
-        {
-          "id": "smartstore-8550497417",
-          "name": "SMALLRIG Micro HDMI 어댑터 케이블 SR3021",
-          "price": 18000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8550497417"
         },
         {
           "id": "plthink-1917393",
@@ -4954,18 +4954,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1664331928"
         },
         {
+          "id": "smartstore-8537734942",
+          "name": "SMALLRIG 베이스 플레이트 / 15mm 로드용 SR1798",
+          "price": 88000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8537734942"
+        },
+        {
           "id": "smartstore-13745581594",
           "name": "1798 베이스 플레이트 듀얼 15mm로드 클램프",
           "price": 88000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581594"
-        },
-        {
-          "id": "smartstore-8537734942",
-          "name": "SMALLRIG 베이스 플레이트 / 15mm 로드용 SR1798",
-          "price": 100000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8537734942"
         },
         {
           "id": "plthink-1907373",
@@ -5189,7 +5189,7 @@
         {
           "id": "smartstore-8550439749",
           "name": "SMALLRIG 직경15mm 알루미늄 로드 세트 SR1659",
-          "price": 52000,
+          "price": 44000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8550439749"
         },
@@ -19057,7 +19057,7 @@
         {
           "id": "smartstore-11387248782",
           "name": "SMALLRIG 후지 GFX100 II L플레이트 4514",
-          "price": 130000,
+          "price": 117000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11387248782"
         },
@@ -19864,7 +19864,7 @@
         {
           "id": "smartstore-13745582360",
           "name": "4987 아이폰16PRO Max 용 FilMov 모바일 키트",
-          "price": 26950,
+          "price": 53900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745582360"
         },
@@ -19903,7 +19903,7 @@
         {
           "id": "smartstore-13745582361",
           "name": "4988 아이폰16PRO용 FilMov 모바일 키트",
-          "price": 26950,
+          "price": 53900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745582361"
         },
@@ -19935,7 +19935,7 @@
         {
           "id": "smartstore-13745582264",
           "name": "4827 아이폰16프로맥스 플래그십에디션 모바일 케이지",
-          "price": 45950,
+          "price": 91900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745582264"
         },
@@ -19965,25 +19965,25 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "smartstore-13745586916",
+      "primary_id": "smartstore-8530534322",
       "evidence": [
         "model:1870",
         "name:1870익스텐션확장암로제트타입"
       ],
       "members": [
         {
+          "id": "smartstore-8530534322",
+          "name": "SMALLRIG 익스텐션 암 (길이조절) SR1870",
+          "price": 115000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8530534322"
+        },
+        {
           "id": "smartstore-13745586916",
           "name": "1870 익스텐션 확장 암 로제트 타입",
           "price": 115000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745586916"
-        },
-        {
-          "id": "smartstore-8530534322",
-          "name": "SMALLRIG 익스텐션 암 (길이조절) SR1870",
-          "price": 130000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8530534322"
         },
         {
           "id": "plthink-1909881",
@@ -20116,7 +20116,7 @@
         {
           "id": "smartstore-13745582363",
           "name": "5006 아이폰16프로맥스 베이직에디션 모바일 케이지",
-          "price": 38450,
+          "price": 76900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745582363"
         },
@@ -20225,14 +20225,14 @@
         {
           "id": "smartstore-8530525840",
           "name": "SMALLRIG V마운트 플레이트 SR2169",
-          "price": 235000,
+          "price": 219000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8530525840"
         },
         {
           "id": "smartstore-11387219022",
           "name": "SMALLRIG VCT-14 퀵릴리즈 V마운트 플레이트 2169",
-          "price": 243000,
+          "price": 219000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11387219022"
         },
@@ -20395,7 +20395,7 @@
         {
           "id": "smartstore-13689167275",
           "name": "SMALLRIG 4794 울트라슬림 4K HDMI 케이블 100cm (A to A)",
-          "price": 21000,
+          "price": 16900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13689167275"
         },
@@ -22033,25 +22033,25 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "smartstore-13745581716",
+      "primary_id": "smartstore-8545862618",
       "evidence": [
         "model:2804",
         "name:아리로제트마운트클램프2804"
       ],
       "members": [
         {
+          "id": "smartstore-8545862618",
+          "name": "SMALLRIG 아리 로제타 클램프 SR2804",
+          "price": 28000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8545862618"
+        },
+        {
           "id": "smartstore-13745581716",
           "name": "아리 로제트 마운트 클램프 2804",
           "price": 28000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581716"
-        },
-        {
-          "id": "smartstore-8545862618",
-          "name": "SMALLRIG 아리 로제타 클램프 SR2804",
-          "price": 34000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8545862618"
         },
         {
           "id": "plthink-1917016",
@@ -22182,7 +22182,7 @@
         {
           "id": "smartstore-13689163172",
           "name": "SMALLRIG 3043B 울트라슬림 4K용 HDMI to Micro 케이블 D to A 55cm",
-          "price": 19000,
+          "price": 15000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13689163172"
         },
@@ -24681,25 +24681,25 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "smartstore-13745581759",
+      "primary_id": "smartstore-8538134718",
       "evidence": [
         "model:3202",
         "name:3202클램프고정배터리플레이트"
       ],
       "members": [
         {
+          "id": "smartstore-8538134718",
+          "name": "SMALLRIG 클램프 고정타입 SR3202",
+          "price": 175000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8538134718"
+        },
+        {
           "id": "smartstore-13745581759",
           "name": "3202 클램프 고정 배터리 플레이트",
           "price": 175000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581759"
-        },
-        {
-          "id": "smartstore-8538134718",
-          "name": "SMALLRIG 클램프 고정타입 SR3202",
-          "price": 190000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8538134718"
         },
         {
           "id": "plthink-1919367",
@@ -25898,7 +25898,7 @@
         {
           "id": "smartstore-8537759650",
           "name": "SMALLRIG 경량 베이스플레이트 / 15mm 로드용 SR3067",
-          "price": 230000,
+          "price": 204000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8537759650"
         },
@@ -26588,7 +26588,7 @@
         {
           "id": "smartstore-11387177602",
           "name": "SMALLRIG VB99 PRO 미니 V마운트 배터리 마운팅 플레이트 키트 5046",
-          "price": 520000,
+          "price": 431000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11387177602"
         },
@@ -26753,7 +26753,7 @@
         {
           "id": "smartstore-11387180272",
           "name": "SMALLRIG VB99 PRO 미니 V마운트 배터리 로드클램프 키트 5047",
-          "price": 437000,
+          "price": 359000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11387180272"
         },
@@ -27117,7 +27117,7 @@
         {
           "id": "smartstore-13689165395",
           "name": "SMALLRIG 4963 코일형 HDMI 데이터 케이블(A to A)",
-          "price": 30000,
+          "price": 24900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13689165395"
         },
@@ -27163,7 +27163,7 @@
         {
           "id": "smartstore-13689173499",
           "name": "SMALLRIG 5079 3-in-1 USB-C 파워케이블",
-          "price": 33000,
+          "price": 27900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13689173499"
         },
@@ -27334,7 +27334,7 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "smartstore-8545874839",
+      "primary_id": "smartstore-8525756300",
       "evidence": [
         "model:3403",
         "name:fx6핸드그립용로제트어댑터sr3403",
@@ -27342,18 +27342,18 @@
       ],
       "members": [
         {
-          "id": "smartstore-8545874839",
-          "name": "SMALLRIG FX6 핸드그립용 로제트 어댑터 SR3403",
-          "price": 98000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8545874839"
-        },
-        {
           "id": "smartstore-8525756300",
           "name": "SMALLRIG FX6 핸드그립용 로제트 어댑터 SR3403",
-          "price": 100000,
+          "price": 88000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8525756300"
+        },
+        {
+          "id": "smartstore-8545874839",
+          "name": "SMALLRIG FX6 핸드그립용 로제트 어댑터 SR3403",
+          "price": 88000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8545874839"
         },
         {
           "id": "onnoff-538",
@@ -28175,25 +28175,25 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "smartstore-13745581766",
+      "primary_id": "smartstore-8537760867",
       "evidence": [
         "model:3357",
         "name:3357범용베이스플레이트"
       ],
       "members": [
         {
+          "id": "smartstore-8537760867",
+          "name": "SMALLRIG 15mm 로드클램프가 포함된 범용 베이스플레이트 SR3357",
+          "price": 72000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8537760867"
+        },
+        {
           "id": "smartstore-13745581766",
           "name": "3357 범용 베이스 플레이트",
           "price": 72000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581766"
-        },
-        {
-          "id": "smartstore-8537760867",
-          "name": "SMALLRIG 15mm 로드클램프가 포함된 범용 베이스플레이트 SR3357",
-          "price": 90000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8537760867"
         },
         {
           "id": "plthink-1919119",
@@ -28652,7 +28652,7 @@
         {
           "id": "smartstore-11387230099",
           "name": "SMALLRIG V마운트 배터리 어댑터 플레이트 3497",
-          "price": 194000,
+          "price": 168000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11387230099"
         },
@@ -28815,7 +28815,7 @@
         {
           "id": "smartstore-13689164637",
           "name": "SMALLRIG 5086 8K HDMI 데이터케이블 100cm",
-          "price": 30000,
+          "price": 24900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13689164637"
         },
@@ -29335,7 +29335,7 @@
         {
           "id": "smartstore-8537008100",
           "name": "SMALLRIG 로테이팅 나토 왼쪽 사이드핸들 SR3260",
-          "price": 160000,
+          "price": 119900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8537008100"
         },
@@ -29679,7 +29679,7 @@
         {
           "id": "smartstore-11428098742",
           "name": "SMALLRIG 듀얼 15mm 로드 클램프 V 마운트 배터리 어댑터 플레이트 3203B",
-          "price": 194000,
+          "price": 175000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11428098742"
         },
@@ -30769,7 +30769,7 @@
         {
           "id": "smartstore-11387183039",
           "name": "SMALLRIG VB99 미니 V마운트 배터리 마운팅 플레이트 키트 5048",
-          "price": 454000,
+          "price": 376000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11387183039"
         },
@@ -34592,18 +34592,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1619406180"
         },
         {
+          "id": "smartstore-8536977822",
+          "name": "SMALLRIG DSLR용 양방향 사이드 핸들 SR2913",
+          "price": 74000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8536977822"
+        },
+        {
           "id": "smartstore-13745581720",
           "name": "2913 나사고정 우드 미니 사이드핸들",
           "price": 74000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581720"
-        },
-        {
-          "id": "smartstore-8536977822",
-          "name": "SMALLRIG DSLR용 양방향 사이드 핸들 SR2913",
-          "price": 86000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8536977822"
         },
         {
           "id": "plthink-1917002",
@@ -34740,25 +34740,25 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "smartstore-13745581654",
+      "primary_id": "smartstore-8530353000",
       "evidence": [
         "model:2409",
         "name:아토모스쇼군7케이지+썬후드키트2409"
       ],
       "members": [
         {
+          "id": "smartstore-8530353000",
+          "name": "SMALLRIG 아토모스 쇼군7인치 케이지키트 SR2409",
+          "price": 204000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8530353000"
+        },
+        {
           "id": "smartstore-13745581654",
           "name": "아토모스 쇼군7 케이지+썬후드키트 2409",
           "price": 204000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581654"
-        },
-        {
-          "id": "smartstore-8530353000",
-          "name": "SMALLRIG 아토모스 쇼군7인치 케이지키트 SR2409",
-          "price": 210000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8530353000"
         },
         {
           "id": "plthink-1917790",
@@ -38258,7 +38258,7 @@
         {
           "id": "smartstore-8537664790",
           "name": "SMALLRIG 로닌 RS2/RSC2/RS3/RS3 PRO 듀얼핸드그립 SR3027",
-          "price": 160000,
+          "price": 145000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8537664790"
         },
@@ -38478,25 +38478,25 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "smartstore-13745581583",
+      "primary_id": "smartstore-8542626479",
       "evidence": [
         "model:1195B",
         "name:1195b70mm퀵릴리즈세이프티레일"
       ],
       "members": [
         {
+          "id": "smartstore-8542626479",
+          "name": "SMALLRIG 70mm 퀵릴리즈 세이프티레일 SR1195B",
+          "price": 15000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8542626479"
+        },
+        {
           "id": "smartstore-13745581583",
           "name": "1195B 70mm 퀵릴리즈 세이프티 레일",
           "price": 15000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581583"
-        },
-        {
-          "id": "smartstore-8542626479",
-          "name": "SMALLRIG 70mm 퀵릴리즈 세이프티레일 SR1195B",
-          "price": 20000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8542626479"
         },
         {
           "id": "plthink-1911158",
@@ -39393,25 +39393,25 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "smartstore-13745581588",
+      "primary_id": "smartstore-8542655622",
       "evidence": [
         "model:1631",
         "name:16311/4인치3/8인치콜드슈어댑터2개"
       ],
       "members": [
         {
+          "id": "smartstore-8542655622",
+          "name": "SMALLRIG 1/4 어댑터 (2ea) SR1631",
+          "price": 12000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8542655622"
+        },
+        {
           "id": "smartstore-13745581588",
           "name": "1631 1/4인치 3/8인치 콜드슈 어댑터 2개",
           "price": 12000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581588"
-        },
-        {
-          "id": "smartstore-8542655622",
-          "name": "SMALLRIG 1/4 어댑터 (2ea) SR1631",
-          "price": 18000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8542655622"
         },
         {
           "id": "plthink-1907269",
@@ -39749,14 +39749,14 @@
         {
           "id": "smartstore-8538127604",
           "name": "SMALLRIG 브이마운트 배터리 플레이트:로드장착타입 SR2991",
-          "price": 115000,
+          "price": 95000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8538127604"
         },
         {
           "id": "smartstore-11428251210",
           "name": "SMALLRIG V마운트 배터리 플레이트 로드형 2991",
-          "price": 106000,
+          "price": 95000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11428251210"
         },
@@ -39858,7 +39858,7 @@
         {
           "id": "smartstore-13745582942",
           "name": "5748 파나소닉 DMW-BLK22 호환배터리 4채널 충전기",
-          "price": 54900,
+          "price": 44000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745582942"
         },
@@ -40452,18 +40452,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1618201535"
         },
         {
+          "id": "smartstore-8530513535",
+          "name": "SMALLRIG 숄더리그 핸들 SR2002F",
+          "price": 292000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8530513535"
+        },
+        {
           "id": "smartstore-13745581638",
           "name": "2002F 숄더리그 핸들 키트",
           "price": 292000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581638"
-        },
-        {
-          "id": "smartstore-8530513535",
-          "name": "SMALLRIG 숄더리그 핸들 SR2002F",
-          "price": 310000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8530513535"
         },
         {
           "id": "plthink-1907374",
@@ -40631,7 +40631,7 @@
         {
           "id": "smartstore-13689160286",
           "name": "SMALLRIG 슬림 4K 60Hz HDMI 케이블 55cm 2957B",
-          "price": 19000,
+          "price": 15000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13689160286"
         },
@@ -41310,25 +41310,25 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "smartstore-13745581757",
+      "primary_id": "smartstore-8530708051",
       "evidence": [
         "model:3183",
         "name:경량가슴패드로드클램프포함3183"
       ],
       "members": [
         {
+          "id": "smartstore-8530708051",
+          "name": "SMALLRIG 경량형 가슴 패드 SR3183",
+          "price": 72000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8530708051"
+        },
+        {
           "id": "smartstore-13745581757",
           "name": "경량 가슴패드 로드클램프 포함 3183",
           "price": 72000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581757"
-        },
-        {
-          "id": "smartstore-8530708051",
-          "name": "SMALLRIG 경량형 가슴 패드 SR3183",
-          "price": 85000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8530708051"
         },
         {
           "id": "plthink-1918003",
@@ -41552,7 +41552,7 @@
         {
           "id": "smartstore-8550528824",
           "name": "SMALLRIG 미니 to HDMI SR3040",
-          "price": 18000,
+          "price": 15000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8550528824"
         },
@@ -42217,25 +42217,25 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "smartstore-13745581714",
+      "primary_id": "smartstore-8530275163",
       "evidence": [
         "model:2791B",
         "name:2791b범용스마트폰케이지"
       ],
       "members": [
         {
+          "id": "smartstore-8530275163",
+          "name": "SMALLRIG 유니버셜 모바일폰케이지 SR2791B",
+          "price": 54000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8530275163"
+        },
+        {
           "id": "smartstore-13745581714",
           "name": "2791B 범용 스마트폰 케이지",
           "price": 54000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581714"
-        },
-        {
-          "id": "smartstore-8530275163",
-          "name": "SMALLRIG 유니버셜 모바일폰케이지 SR2791B",
-          "price": 62000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8530275163"
         },
         {
           "id": "plthink-1917001",
@@ -42412,18 +42412,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1606730909"
         },
         {
+          "id": "smartstore-8545554472",
+          "name": "SMALLRIG 렌즈서포트 키트 V2 (15mm로드용) SR2681",
+          "price": 33000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8545554472"
+        },
+        {
           "id": "smartstore-13745581710",
           "name": "DSLR 카메라 렌즈 어댑터 조정가능 15mm LWS 범용 2681",
           "price": 33000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581710"
-        },
-        {
-          "id": "smartstore-8545554472",
-          "name": "SMALLRIG 렌즈서포트 키트 V2 (15mm로드용) SR2681",
-          "price": 44000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8545554472"
         },
         {
           "id": "plthink-1916431",
@@ -42688,25 +42688,25 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "smartstore-13745581652",
+      "primary_id": "smartstore-8545607394",
       "evidence": [
         "model:2352",
         "name:샷건마이크홀더콜드슈실리콘내장충격소음흡수2352"
       ],
       "members": [
         {
+          "id": "smartstore-8545607394",
+          "name": "SMALLRIG 샷건 마이크홀더 19-25mm SR2352",
+          "price": 59000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8545607394"
+        },
+        {
           "id": "smartstore-13745581652",
           "name": "샷건 마이크 홀더 콜드슈 실리콘 내장 충격 소음 흡수 2352",
           "price": 59000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581652"
-        },
-        {
-          "id": "smartstore-8545607394",
-          "name": "SMALLRIG 샷건 마이크홀더 19-25mm SR2352",
-          "price": 82000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8545607394"
         },
         {
           "id": "plthink-1917505",
@@ -43077,18 +43077,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1609739721"
         },
         {
+          "id": "smartstore-8550513658",
+          "name": "SMALLRIG Mini to HDMI케이블 SR3041",
+          "price": 15000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8550513658"
+        },
+        {
           "id": "smartstore-13745581754",
           "name": "울트라슬림 4K HDMI 케이블(C to A) 3041",
           "price": 15000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581754"
-        },
-        {
-          "id": "smartstore-8550513658",
-          "name": "SMALLRIG Mini to HDMI케이블 SR3041",
-          "price": 18000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8550513658"
         },
         {
           "id": "plthink-1917792",
@@ -43307,14 +43307,14 @@
         {
           "id": "smartstore-8538126520",
           "name": "SMALLRIG 브이마운트 배터리 플레이트 SR2989",
-          "price": 62000,
+          "price": 49000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8538126520"
         },
         {
           "id": "smartstore-11428340954",
           "name": "SMALLRIG 미니 V마운트 배터리 플레이트 클램프 2989",
-          "price": 54000,
+          "price": 49000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11428340954"
         },
@@ -44085,18 +44085,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1614839402"
         },
         {
+          "id": "smartstore-8538132241",
+          "name": "SMALLRIG 브이마운트 배터리 플레이트 SR3016",
+          "price": 59000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8538132241"
+        },
+        {
           "id": "smartstore-13745581729",
           "name": "3016 V마운트 배터리 어댑터 플레이트",
           "price": 59000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581729"
-        },
-        {
-          "id": "smartstore-8538132241",
-          "name": "SMALLRIG 브이마운트 배터리 플레이트 SR3016",
-          "price": 70000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8538132241"
         },
         {
           "id": "plthink-1919613",
@@ -44309,7 +44309,7 @@
         {
           "id": "smartstore-13745540539",
           "name": "6286 Potato Jet TRIBEX PRO 플루이드 헤드 포함 카본 비디오 모노포드 (비디오 버전)",
-          "price": 691900,
+          "price": 617000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745540539"
         },
@@ -45091,18 +45091,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1679365387"
         },
         {
+          "id": "smartstore-8550691198",
+          "name": "SMALLRIG 메모리카드케이스 SR3192",
+          "price": 25000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8550691198"
+        },
+        {
           "id": "smartstore-13745581758",
           "name": "3192 메모리 카드 케이스",
           "price": 25000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581758"
-        },
-        {
-          "id": "smartstore-8550691198",
-          "name": "SMALLRIG 메모리카드케이스 SR3192",
-          "price": 36000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8550691198"
         },
         {
           "id": "plthink-1921092",
@@ -45249,18 +45249,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1679294651"
         },
         {
+          "id": "smartstore-8536877590",
+          "name": "SMALLRIG 아리 로케이팅 탑핸들 SR3765",
+          "price": 44000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8536877590"
+        },
+        {
           "id": "smartstore-13745581827",
           "name": "3765 ARRI 로케이팅 탑핸들 3765",
           "price": 44000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581827"
-        },
-        {
-          "id": "smartstore-8536877590",
-          "name": "SMALLRIG 아리 로케이팅 탑핸들 SR3765",
-          "price": 54000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8536877590"
         },
         {
           "id": "plthink-1920612",
@@ -45477,18 +45477,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1665124194"
         },
         {
+          "id": "smartstore-8545592482",
+          "name": "SMALLRIG 카본 삼각대 SR4060",
+          "price": 204000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8545592482"
+        },
+        {
           "id": "smartstore-13745581878",
           "name": "4060 AP-10 카본 삼각대",
           "price": 204000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581878"
-        },
-        {
-          "id": "smartstore-8545592482",
-          "name": "SMALLRIG 카본 삼각대 SR4060",
-          "price": 210000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8545592482"
         },
         {
           "id": "clmedia-335",
@@ -45891,18 +45891,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1665040141"
         },
         {
+          "id": "smartstore-8550689579",
+          "name": "SMALLRIG 손목 스트랩 SR3848",
+          "price": 28000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8550689579"
+        },
+        {
           "id": "smartstore-13745581865",
           "name": "3848 블랙 맘바 핸드 스트랩",
           "price": 28000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581865"
-        },
-        {
-          "id": "smartstore-8550689579",
-          "name": "SMALLRIG 손목 스트랩 SR3848",
-          "price": 36000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8550689579"
         },
         {
           "id": "onnoff-1033",
@@ -45939,7 +45939,7 @@
         {
           "id": "smartstore-8537765990",
           "name": "SMALLRIG 8인치 ARRI 경량도브테일 SR3770",
-          "price": 120000,
+          "price": 116000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8537765990"
         },
@@ -45976,18 +45976,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1701845038"
         },
         {
+          "id": "smartstore-8536879573",
+          "name": "SMALLRIG 탑핸들 콜드슈마운트 라이트 SR3764",
+          "price": 44000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8536879573"
+        },
+        {
           "id": "smartstore-13745581826",
           "name": "탑핸들 콜드슈 마운트 라이트 3764",
           "price": 44000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581826"
-        },
-        {
-          "id": "smartstore-8536879573",
-          "name": "SMALLRIG 탑핸들 콜드슈마운트 라이트 SR3764",
-          "price": 54000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8536879573"
         },
         {
           "id": "onnoff-544",
@@ -46109,7 +46109,7 @@
         {
           "id": "smartstore-8541110572",
           "name": "SMALLRIG 나토클램프타입 모니터마운트 SR2906B",
-          "price": 70000,
+          "price": 59000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8541110572"
         },
@@ -46326,7 +46326,7 @@
         {
           "id": "smartstore-8536873198",
           "name": "SMALLRIG 나토타입 탑핸들 라이트 SR3766",
-          "price": 54000,
+          "price": 44000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8536873198"
         },
@@ -46426,25 +46426,25 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "smartstore-13745581728",
+      "primary_id": "smartstore-8550464557",
       "evidence": [
         "model:3011",
         "name:3011나토레일이있는로드클램프"
       ],
       "members": [
         {
+          "id": "smartstore-8550464557",
+          "name": "SMALLRIG 나토레일 로드클램프 SR3011",
+          "price": 30000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8550464557"
+        },
+        {
           "id": "smartstore-13745581728",
           "name": "3011 나토레일이 있는 로드클램프",
           "price": 30000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581728"
-        },
-        {
-          "id": "smartstore-8550464557",
-          "name": "SMALLRIG 나토레일 로드클램프 SR3011",
-          "price": 48000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8550464557"
         },
         {
           "id": "plthink-1920617",
@@ -46472,25 +46472,25 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "smartstore-13745581591",
+      "primary_id": "smartstore-8550686168",
       "evidence": [
         "model:1681",
         "name:1681치즈플레이트"
       ],
       "members": [
         {
+          "id": "smartstore-8550686168",
+          "name": "SMALLRIG 치즈플레이트 SR1681",
+          "price": 33000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8550686168"
+        },
+        {
           "id": "smartstore-13745581591",
           "name": "1681 치즈플레이트",
           "price": 33000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581591"
-        },
-        {
-          "id": "smartstore-8550686168",
-          "name": "SMALLRIG 치즈플레이트 SR1681",
-          "price": 38000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8550686168"
         },
         {
           "id": "plthink-1919195",
@@ -46636,7 +46636,7 @@
         {
           "id": "smartstore-8545580910",
           "name": "SMALLRIG 범용 삼각대 달리 SR3986",
-          "price": 120000,
+          "price": 99000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8545580910"
         },
@@ -46746,7 +46746,7 @@
         {
           "id": "smartstore-11428082502",
           "name": "SMALLRIG V마운트 배터리 마운트 플레이트 어드밴스 키트 4063B",
-          "price": 227000,
+          "price": 204000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11428082502"
         },
@@ -47002,7 +47002,7 @@
         {
           "id": "smartstore-8545757973",
           "name": "SMALLRIG 11인치 로제트암 SR3959",
-          "price": 63000,
+          "price": 53000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8545757973"
         },
@@ -47081,7 +47081,7 @@
         {
           "id": "smartstore-11428249044",
           "name": "SMALLRIG NP-F 배터리 어댑터 마운트 플레이트 3168B",
-          "price": 90000,
+          "price": 81000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11428249044"
         },
@@ -47291,25 +47291,25 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
-      "primary_id": "smartstore-13745581815",
+      "primary_id": "smartstore-8542131541",
       "evidence": [
         "model:3637",
         "name:3637hdmi케이블클램프"
       ],
       "members": [
         {
+          "id": "smartstore-8542131541",
+          "name": "SMALLRIG HDMI 클램프 SR3637",
+          "price": 25000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8542131541"
+        },
+        {
           "id": "smartstore-13745581815",
           "name": "3637 HDMI 케이블클램프",
           "price": 25000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581815"
-        },
-        {
-          "id": "smartstore-8542131541",
-          "name": "SMALLRIG HDMI 클램프 SR3637",
-          "price": 42000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8542131541"
         },
         {
           "id": "plthink-1920214",
@@ -47516,7 +47516,7 @@
         {
           "id": "smartstore-8538043466",
           "name": "SMALLRIG 알카타입 퀵릴리즈 플레이트 SR2146B",
-          "price": 42000,
+          "price": 30000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8538043466"
         },
@@ -47904,7 +47904,7 @@
         {
           "id": "smartstore-8542218312",
           "name": "SMALLRIG 후지 X-T5용 HDMI&USB-C 케이블 클램프 SR4147",
-          "price": 62000,
+          "price": 52000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8542218312"
         },
@@ -47949,18 +47949,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1684222400"
         },
         {
+          "id": "smartstore-11428283182",
+          "name": "SMALLRIG 컴팩트 V마운트 배터리 마운팅 시스템 4064B",
+          "price": 145000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/11428283182"
+        },
+        {
           "id": "smartstore-8538143570",
           "name": "Compact V-Mount Battery Mounting System 4064B 브이마운트",
           "price": 158000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8538143570"
-        },
-        {
-          "id": "smartstore-11428283182",
-          "name": "SMALLRIG 컴팩트 V마운트 배터리 마운팅 시스템 4064B",
-          "price": 161000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/11428283182"
         },
         {
           "id": "plthink-1923178",
@@ -48292,7 +48292,7 @@
         {
           "id": "smartstore-13745581996",
           "name": "4404 사이드핸들 퀵릴리즈 어댑터",
-          "price": 10000,
+          "price": 30000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581996"
         },
@@ -49282,18 +49282,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1626255264"
         },
         {
+          "id": "smartstore-8537741180",
+          "name": "SMALLRIG 15mm 로드 서포트 시스템 SR2092B",
+          "price": 189000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8537741180"
+        },
+        {
           "id": "smartstore-13745581644",
           "name": "2092B 15mm 로드 유니버셜 레일지지 시스템베이스 플레이트",
           "price": 189000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581644"
-        },
-        {
-          "id": "smartstore-8537741180",
-          "name": "SMALLRIG 15mm 로드 서포트 시스템 SR2092B",
-          "price": 210000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8537741180"
         },
         {
           "id": "plthink-1907524",
@@ -50651,7 +50651,7 @@
         {
           "id": "smartstore-11428110250",
           "name": "SMALLRIG NP-F 더미 배터리 어댑터 마운트 플레이트 키트 4341",
-          "price": 114000,
+          "price": 103000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11428110250"
         },
@@ -51119,18 +51119,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1619409201"
         },
         {
+          "id": "smartstore-8537749094",
+          "name": "SMALLRIG 라이트 베이스 플레이트 SR1674",
+          "price": 25000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8537749094"
+        },
+        {
           "id": "smartstore-13745581590",
           "name": "1674 라이트 베이스 플레이트",
           "price": 25000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581590"
-        },
-        {
-          "id": "smartstore-8537749094",
-          "name": "SMALLRIG 라이트 베이스 플레이트 SR1674",
-          "price": 35000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8537749094"
         },
         {
           "id": "plthink-1908583",
@@ -51535,7 +51535,7 @@
         {
           "id": "smartstore-11429098084",
           "name": "SMALLRIG 캐논 LP-E6NH 4채널 카메라 배터리 충전기 PD 60W 고속 충전지원 4838",
-          "price": 69000,
+          "price": 50000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11429098084"
         },
@@ -51949,7 +51949,7 @@
         {
           "id": "smartstore-13689175932",
           "name": "SMALLRIG 4908 USB-C 240W 전원 케이블 1m",
-          "price": 24000,
+          "price": 18900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13689175932"
         },
@@ -52254,7 +52254,7 @@
         {
           "id": "smartstore-13689172553",
           "name": "SMALLRIG 4792 USB-C 데이터/전원 케이블 - 코일형, 한쪽꺾임",
-          "price": 30000,
+          "price": 24900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13689172553"
         },
@@ -52324,7 +52324,7 @@
         {
           "id": "smartstore-13689171287",
           "name": "SMALLRIG 4793 USB-C 데이터/전원 케이블 - 코일형, 양쪽꺾임",
-          "price": 30000,
+          "price": 24900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13689171287"
         },
@@ -52370,7 +52370,7 @@
         {
           "id": "smartstore-13689170371",
           "name": "SMALLRIG 4788 USB-C 데이터/전원 케이블 35cm - 일반형",
-          "price": 25000,
+          "price": 19900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13689170371"
         },
@@ -52494,7 +52494,7 @@
         {
           "id": "smartstore-13689169799",
           "name": "SMALLRIG 4789 USB-C 데이터/전원 케이블 60cm - 일반형",
-          "price": 25000,
+          "price": 19900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13689169799"
         },
@@ -52572,7 +52572,7 @@
         {
           "id": "smartstore-13689169263",
           "name": "SMALLRIG 4790 USB-C 데이터/전원 케이블 35cm - 일반형, 한쪽꺾임",
-          "price": 25000,
+          "price": 19900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13689169263"
         },
@@ -52657,7 +52657,7 @@
         {
           "id": "smartstore-13689168452",
           "name": "SMALLRIG 4791 USB-C(스트레이트) to USBC-C(앵글) 케이블 60cm",
-          "price": 25000,
+          "price": 19900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13689168452"
         },
@@ -52821,7 +52821,7 @@
         {
           "id": "smartstore-11387163094",
           "name": "SMALLRIG VB50 미니 V마운트 배터리 그린 4872",
-          "price": 199000,
+          "price": 179000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11387163094"
         },
@@ -52900,7 +52900,7 @@
         {
           "id": "smartstore-11387164972",
           "name": "SMALLRIG VB50 미니 V마운트 배터리 오렌지 4871",
-          "price": 199000,
+          "price": 179000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11387164972"
         },
@@ -53003,7 +53003,7 @@
         {
           "id": "smartstore-11387167253",
           "name": "SMALLRIG VB50 미니 V마운트 배터리 블랙 3579B",
-          "price": 199000,
+          "price": 179000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11387167253"
         },
@@ -53089,7 +53089,7 @@
         {
           "id": "smartstore-11387172028",
           "name": "SMALLRIG VB99 PRO 미니 V마운트 배터리 고속 충전 4292",
-          "price": 378000,
+          "price": 340000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11387172028"
         },
@@ -53136,7 +53136,7 @@
         {
           "id": "smartstore-11386430002",
           "name": "SMALLRIG VB99 미니 V마운트 배터리 블랙 3580B",
-          "price": 303000,
+          "price": 273000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11386430002"
         },
@@ -53183,7 +53183,7 @@
         {
           "id": "smartstore-11386438980",
           "name": "SMALLRIG VB99 미니 V마운트 배터리 그린 4930",
-          "price": 303000,
+          "price": 273000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11386438980"
         },
@@ -56120,7 +56120,7 @@
         {
           "id": "smartstore-8536866764",
           "name": "SMALLRIG X3용 XLR 핸들 익스텐션 리그 SR3490",
-          "price": 68000,
+          "price": 43000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8536866764"
         }
@@ -56571,18 +56571,18 @@
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1685498644"
         },
         {
+          "id": "smartstore-8550542774",
+          "name": "SMALLRIG USB-C to DC 케이블 SR3268",
+          "price": 44000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8550542774"
+        },
+        {
           "id": "smartstore-13745581761",
           "name": "3268 USB-C to DC 케이블",
           "price": 44000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13745581761"
-        },
-        {
-          "id": "smartstore-8550542774",
-          "name": "SMALLRIG USB-C to DC 케이블 SR3268",
-          "price": 50000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8550542774"
         },
         {
           "id": "plthink-1922133",
@@ -57494,7 +57494,7 @@
         {
           "id": "smartstore-11429094972",
           "name": "SMALLRIG 소니 NP-F970 4채널 카메라 배터리 충전기 PD 100W 고속 충전지원 4837",
-          "price": 103000,
+          "price": 89000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11429094972"
         }
@@ -60911,7 +60911,7 @@
         {
           "id": "smartstore-8537753249",
           "name": "SMALLRIG 가로형 퀵릴리즈 베이스 플레이트 SR2280",
-          "price": 70000,
+          "price": 58000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8537753249"
         },
@@ -61711,7 +61711,7 @@
         {
           "id": "smartstore-8542628968",
           "name": "SMALLRIG 50mm 슬림형 나토레일 SR2468B",
-          "price": 30000,
+          "price": 20000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8542628968"
         },
