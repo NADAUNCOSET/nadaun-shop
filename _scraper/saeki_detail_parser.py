@@ -6,6 +6,10 @@ BASE='https://www.saeki.co.kr'
 def clean(v):return re.sub(r'\s+',' ',re.sub(r'<br\s*/?>','',html.unescape(str(v or '')),flags=re.I)).strip()
 def photo(url):
  u=urljoin(BASE,url);p=urlparse(u)
+ # This exact source notice is still linked over HTTP. Its HTTPS JPEG was
+ # verified directly; do not upgrade arbitrary unreviewed external URLs.
+ if p.scheme=='http' and p.netloc=='ai.esmplus.com' and p.path=='/kppshop/KPP/as_guide/as_guide.jpg' and not p.query and not p.fragment:
+  u='https:'+u[5:];p=urlparse(u)
  if p.scheme!='https' or p.hostname not in {'cdn.saeki.co.kr','www.saeki.co.kr','ai.esmplus.com','cdn.dev.saeki.co.kr'} or p.username or p.password:raise ValueError('Unexpected product image origin')
  return u
 

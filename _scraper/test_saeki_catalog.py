@@ -26,6 +26,12 @@ class SaekiTests(unittest.TestCase):
    with self.subTest(field=field),self.assertRaises(ValueError):parse_detail(body,{**listing,field:value},'now')
   for bad in [body.replace('data-status="PD004020"','data-status="PD004030"'),body.replace('cdn.saeki.co.kr','unrelated.invalid')]:
    with self.assertRaises(ValueError):parse_detail(bad,listing,'now')
+ def test_verified_http_image_notice_uses_https(self):
+  from saeki_detail_parser import photo
+  url='http://ai.esmplus.com/kppshop/KPP/as_guide/as_guide.jpg'
+  self.assertEqual(photo(url),'https:'+url[5:])
+  for bad in [url.replace('ai.esmplus.com','unrelated.invalid'),url.replace('as_guide.jpg','unknown.jpg'),url.replace('ai.esmplus.com','user@ai.esmplus.com')]:
+   with self.assertRaises(ValueError):photo(bad)
  def test_hidden_inquiry_amount_is_not_published_as_a_price(self):
   body,listing=self.fixture('PD00043223')
   p=parse_detail(body,{**listing,'slprc':25440000,'spprc':25440000},'now')
