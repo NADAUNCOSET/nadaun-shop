@@ -5,7 +5,7 @@
         "id": "rent:11",
         "name": "시네마 카메라",
         "kind": "rental",
-        "count": 11,
+        "count": 10,
         "image": "https://shop-phinf.pstatic.net/20251222_164/17663733326542U2zL_JPEG/100506318771679434_680260237.jpg",
         "product_id": "smartstore-12862311891",
         "href": "/catalog.html?kind=rental&type=rent%3A11"
@@ -23,7 +23,7 @@
         "id": "rent:3",
         "name": "렌즈",
         "kind": "rental",
-        "count": 18,
+        "count": 12,
         "image": "https://shop-phinf.pstatic.net/20240729_144/1722245936861CFlAI_JPEG/55718805667238227_602117845.jpg",
         "product_id": "smartstore-12728374567",
         "href": "/catalog.html?kind=rental&type=rent%3A3"
@@ -110,13 +110,49 @@
         "href": "/catalog.html?kind=rental&type=rent%3A46"
       },
       {
-        "id": "rent:145",
-        "name": "모니터·레코더·영상 송수신",
+        "id": "rent:6",
+        "name": "TV·디스플레이",
         "kind": "rental",
-        "count": 29,
+        "count": 30,
         "image": "https://shop-phinf.pstatic.net/20260806_36/1786024265077eQQLf_PNG/16371003758326315_1282086820.png",
         "product_id": "smartstore-13704050446",
-        "href": "/catalog.html?kind=rental&type=rent%3A145"
+        "href": "/catalog.html?kind=rental&type=rent%3A6"
+      },
+      {
+        "id": "rent:monitor",
+        "name": "촬영·디렉터 모니터",
+        "kind": "rental",
+        "count": 20,
+        "image": "https://shop-phinf.pstatic.net/20251028_39/1761656222904iVUrx_PNG/9632215922234377_1009653174.png",
+        "product_id": "smartstore-12603154462",
+        "href": "/catalog.html?kind=rental&type=rent%3Amonitor"
+      },
+      {
+        "id": "rent:monitor-recorder",
+        "name": "모니터 레코더",
+        "kind": "rental",
+        "count": 2,
+        "image": "https://shop-phinf.pstatic.net/20220905_52/1662354655598Xbxqa_JPEG/63490490433602741_1344697421.jpg",
+        "product_id": "smartstore-8790689054",
+        "href": "/catalog.html?kind=rental&type=rent%3Amonitor-recorder"
+      },
+      {
+        "id": "rent:232",
+        "name": "프롬프터",
+        "kind": "rental",
+        "count": 2,
+        "image": "https://shop-phinf.pstatic.net/20240302_181/1709390665328LVtvM_PNG/110526445050887204_368288941.png",
+        "product_id": "smartstore-10349210253",
+        "href": "/catalog.html?kind=rental&type=rent%3A232"
+      },
+      {
+        "id": "rent:video-wireless",
+        "name": "무선 영상 송수신기",
+        "kind": "rental",
+        "count": 6,
+        "image": "https://shop-phinf.pstatic.net/20260806_36/1786024265077eQQLf_PNG/16371003758326315_1282086820.png",
+        "product_id": "smartstore-13704050446",
+        "href": "/catalog.html?kind=rental&type=rent%3Avideo-wireless"
       },
       {
         "id": "rent:146",
@@ -205,16 +241,16 @@
     },
     "synced_at": "2026-10-14T07:55:51+00:00",
     "merged_count": 4586,
-    "product_count": 221,
+    "product_count": 213,
     "category_browsing_enabled": true,
-    "listing_count": 221,
+    "listing_count": 213,
     "option_family_count": 180,
     "deduplication": {
       "brands_checked": 325,
       "groups": 2775,
       "removed": 4586
     },
-    "revision": "ccc2a43a362d6437",
+    "revision": "858c8830c05ac33d",
     "view": "rental"
   },
   "brands": [
@@ -786,9 +822,11 @@
         "dji-official:b:refurbished:refurbished-product-section-osmo-1",
         "rental-brand:dji:2",
         "rental-brand:dji:27",
-        "rental-brand:dji:8",
+        "rental-brand:dji:6",
         "rental-brand:dji:145",
+        "rental-brand:dji:video-wireless",
         "rental-brand:dji:25",
+        "rental-brand:dji:monitor",
         "rental-brand:dji:7",
         "rental-brand:dji:135",
         "rental-brand:dji:132"
@@ -3008,8 +3046,10 @@
         "avx:b:02632b98b90b6df3",
         "rental-brand:hollyland:5",
         "rental-brand:hollyland:368",
-        "rental-brand:hollyland:8",
-        "rental-brand:hollyland:145"
+        "rental-brand:hollyland:6",
+        "rental-brand:hollyland:145",
+        "rental-brand:hollyland:monitor",
+        "rental-brand:hollyland:video-wireless"
       ],
       "representative_id": "smartstore-13742812762",
       "representative_image": "https://shop-phinf.pstatic.net/20260902_176/1788358607274NfSqh_JPEG/280cf71ffcb80c996ea0a6e49216f4d0.jpg",
@@ -3828,8 +3868,9 @@
         "clmedia:b:45",
         "avx:b:e2425e994d4cac5b",
         "avx:b:a6aa6f71682aaeb5",
-        "rental-brand:atomos:8",
-        "rental-brand:atomos:145"
+        "rental-brand:atomos:6",
+        "rental-brand:atomos:145",
+        "rental-brand:atomos:monitor-recorder"
       ],
       "representative_id": "clmedia-1353",
       "representative_image": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20260615/1bc16748220060d9bb7e00da6acc9394.jpg",
@@ -5456,8 +5497,9 @@
         "naver:b:feelworld:50002113",
         "avx:b:c3c56c3cd563961a",
         "avx:b:4da9a5a600bc2979",
-        "rental-brand:feelworld:8",
-        "rental-brand:feelworld:145"
+        "rental-brand:feelworld:6",
+        "rental-brand:feelworld:145",
+        "rental-brand:feelworld:monitor"
       ],
       "representative_id": "avx-3059",
       "representative_image": "https://www.avx.co.kr/data/goods/1/2026/08/3059_temp_17876497267761view.png",
@@ -6668,7 +6710,7 @@
         "naver:b:jcprom:50000206",
         "naver:b:jcprom:50001394",
         "naver:b:jcprom:50002113",
-        "rental-brand:jcprom:8",
+        "rental-brand:jcprom:6",
         "rental-brand:jcprom:232"
       ],
       "representative_id": "smartstore-10021610398",
@@ -8063,7 +8105,7 @@
         "naver:b:rainbowbene:50002082",
         "rental-brand:rainbowbene:9",
         "rental-brand:rainbowbene:studio",
-        "rental-brand:rainbowbene:8",
+        "rental-brand:rainbowbene:6",
         "rental-brand:rainbowbene:232",
         "rental-brand:rainbowbene:4",
         "rental-brand:rainbowbene:103",
@@ -8900,14 +8942,14 @@
         "phase one",
         "phaseone"
       ],
-      "logo": "https://shop-phinf.pstatic.net/20230827_131/1693122757006sIfQL_JPEG/4048874868569018_937277811.jpg",
+      "logo": "https://shop-phinf.pstatic.net/20220905_256/16623529277612B8xX_PNG/63488773469455090_1299101758.png",
       "navigation_category_ids": [
         "naver:b:phaseone:50000099",
         "naver:b:phaseone:50001516"
       ],
-      "count": 8,
+      "count": 2,
       "purchase_count": 1,
-      "rental_count": 7,
+      "rental_count": 1,
       "category_ids": [
         "naver:b:phaseone:50000206",
         "naver:b:phaseone:50001381",
@@ -8915,8 +8957,6 @@
         "naver:b:phaseone:50000265",
         "naver:b:phaseone:50000099",
         "naver:b:phaseone:50001516",
-        "rental-brand:phaseone:3",
-        "rental-brand:phaseone:medium-lens",
         "rental-brand:phaseone:2",
         "rental-brand:phaseone:medium-camera"
       ],
@@ -9489,15 +9529,15 @@
       "aliases": [
         "RED"
       ],
-      "logo": "https://shop-phinf.pstatic.net/20230909_13/1694186953703Kl1MO_JPEG/9695844498059201_1338105273.jpg",
+      "logo": "https://shop-phinf.pstatic.net/20230909_206/169418685700930xqo_JPEG/7466258850115148_1650754363.jpg",
       "navigation_category_ids": [
         "cinemall:b:118",
         "cinemall:b:214",
         "cinemall:b:215"
       ],
-      "count": 7,
+      "count": 6,
       "purchase_count": 4,
-      "rental_count": 3,
+      "rental_count": 2,
       "category_ids": [
         "naver:b:red:50000206",
         "naver:b:red:50001394",
@@ -10514,8 +10554,9 @@
         "naver:b:smallhd:50000153",
         "clmedia:b:99",
         "cinemall:b:90",
-        "rental-brand:smallhd:8",
-        "rental-brand:smallhd:145"
+        "rental-brand:smallhd:6",
+        "rental-brand:smallhd:145",
+        "rental-brand:smallhd:monitor"
       ],
       "representative_id": "clmedia-1416",
       "representative_image": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20250311/86b778b6e640dbbb233fc53ac4986f8d.jpg",
@@ -11061,8 +11102,10 @@
         "naver:b:teradek:50002113",
         "clmedia:b:103",
         "cinemall:b:96",
-        "rental-brand:teradek:8",
-        "rental-brand:teradek:145"
+        "rental-brand:teradek:6",
+        "rental-brand:teradek:145",
+        "rental-brand:teradek:monitor",
+        "rental-brand:teradek:video-wireless"
       ],
       "representative_id": "clmedia-1430",
       "representative_image": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20250311/b218ce05fda074f46b0c1a981606fbef.jpg",
@@ -11376,9 +11419,9 @@
         "naver:b:tvlogic:50002113",
         "plthink:b:083"
       ],
-      "count": 62,
+      "count": 61,
       "purchase_count": 61,
-      "rental_count": 1,
+      "rental_count": 0,
       "category_ids": [
         "naver:b:tvlogic:50000206",
         "naver:b:tvlogic:50001394",
@@ -11391,9 +11434,7 @@
         "clmedia:b:513",
         "clmedia:b:284",
         "clmedia:b:285",
-        "clmedia:b:286",
-        "rental-brand:tvlogic:8",
-        "rental-brand:tvlogic:145"
+        "clmedia:b:286"
       ],
       "representative_id": "smartstore-7862625910",
       "representative_image": "https://shop-phinf.pstatic.net/20230104_215/167281911266761JWP_JPEG/73955011362305171_1923888004.jpg",
@@ -14171,18 +14212,6 @@
       "brand_id": "phaseone"
     },
     {
-      "id": "naver:b:phaseone:50001381",
-      "name": "카메라렌즈",
-      "parent_id": "naver:b:phaseone:50000206",
-      "brand_id": "phaseone"
-    },
-    {
-      "id": "naver:b:phaseone:50004606",
-      "name": "망원렌즈",
-      "parent_id": "naver:b:phaseone:50001381",
-      "brand_id": "phaseone"
-    },
-    {
       "id": "naver:b:canon:50004604",
       "name": "표준렌즈",
       "parent_id": "naver:b:canon:50001381",
@@ -14351,24 +14380,6 @@
       "brand_id": "atomos"
     },
     {
-      "id": "naver:b:tvlogic:50000206",
-      "name": "카메라/캠코더용품",
-      "parent_id": null,
-      "brand_id": "tvlogic"
-    },
-    {
-      "id": "naver:b:tvlogic:50001394",
-      "name": "카메라/캠코더 관련용품",
-      "parent_id": "naver:b:tvlogic:50000206",
-      "brand_id": "tvlogic"
-    },
-    {
-      "id": "naver:b:tvlogic:50002113",
-      "name": "기타카메라/캠코더용품",
-      "parent_id": "naver:b:tvlogic:50001394",
-      "brand_id": "tvlogic"
-    },
-    {
       "id": "naver:b:peribounce:50000206",
       "name": "카메라/캠코더용품",
       "parent_id": null,
@@ -14525,14 +14536,6 @@
       "brand_id": null,
       "scope": "product",
       "source_id": "kpp:p:0320"
-    },
-    {
-      "id": "type:medium-lens",
-      "name": "중형 렌즈",
-      "parent_id": "type:kpp:03",
-      "brand_id": null,
-      "scope": "product",
-      "source_id": null
     },
     {
       "id": "type:kpp:04",
@@ -15646,20 +15649,22 @@
     {
       "id": "rent:232",
       "name": "프롬프터",
-      "parent_id": "rent:8",
+      "parent_id": "rent:6",
       "brand_id": null,
       "scope": "rental-product",
       "source_id": "232",
-      "source_name": "Prompter"
+      "source_name": "Prompter",
+      "source_parent_id": "rent:8"
     },
     {
       "id": "rent:145",
       "name": "모니터·레코더·영상 송수신",
-      "parent_id": "rent:8",
+      "parent_id": "rent:6",
       "brand_id": null,
       "scope": "rental-product",
       "source_id": "145",
-      "source_name": "Monitor · Recorder"
+      "source_name": "Monitor · Recorder",
+      "source_parent_id": "rent:8"
     },
     {
       "id": "rent:146",
@@ -15814,6 +15819,30 @@
       "source_id": null
     },
     {
+      "id": "rent:monitor",
+      "name": "촬영·디렉터 모니터",
+      "parent_id": "rent:145",
+      "brand_id": null,
+      "scope": "rental-product",
+      "source_id": null
+    },
+    {
+      "id": "rent:monitor-recorder",
+      "name": "모니터 레코더",
+      "parent_id": "rent:145",
+      "brand_id": null,
+      "scope": "rental-product",
+      "source_id": null
+    },
+    {
+      "id": "rent:video-wireless",
+      "name": "무선 영상 송수신기",
+      "parent_id": "rent:145",
+      "brand_id": null,
+      "scope": "rental-product",
+      "source_id": null
+    },
+    {
       "id": "rent:medium-camera",
       "name": "중형 카메라",
       "parent_id": "rent:2",
@@ -15858,8 +15887,8 @@
       "scope": "rental-brand"
     },
     {
-      "id": "rental-brand:dji:8",
-      "name": "촬영 액세서리",
+      "id": "rental-brand:dji:6",
+      "name": "TV·디스플레이",
       "parent_id": null,
       "brand_id": "dji",
       "scope": "rental-brand"
@@ -15867,7 +15896,14 @@
     {
       "id": "rental-brand:dji:145",
       "name": "모니터·레코더·영상 송수신",
-      "parent_id": "rental-brand:dji:8",
+      "parent_id": "rental-brand:dji:6",
+      "brand_id": "dji",
+      "scope": "rental-brand"
+    },
+    {
+      "id": "rental-brand:dji:video-wireless",
+      "name": "무선 영상 송수신기",
+      "parent_id": "rental-brand:dji:145",
       "brand_id": "dji",
       "scope": "rental-brand"
     },
@@ -16138,8 +16174,8 @@
       "scope": "rental-brand"
     },
     {
-      "id": "rental-brand:hollyland:8",
-      "name": "촬영 액세서리",
+      "id": "rental-brand:hollyland:6",
+      "name": "TV·디스플레이",
       "parent_id": null,
       "brand_id": "hollyland",
       "scope": "rental-brand"
@@ -16147,7 +16183,14 @@
     {
       "id": "rental-brand:hollyland:145",
       "name": "모니터·레코더·영상 송수신",
-      "parent_id": "rental-brand:hollyland:8",
+      "parent_id": "rental-brand:hollyland:6",
+      "brand_id": "hollyland",
+      "scope": "rental-brand"
+    },
+    {
+      "id": "rental-brand:hollyland:monitor",
+      "name": "촬영·디렉터 모니터",
+      "parent_id": "rental-brand:hollyland:145",
       "brand_id": "hollyland",
       "scope": "rental-brand"
     },
@@ -16163,6 +16206,13 @@
       "name": "인터컴",
       "parent_id": "rental-brand:saramonic:5",
       "brand_id": "saramonic",
+      "scope": "rental-brand"
+    },
+    {
+      "id": "rental-brand:dji:monitor",
+      "name": "촬영·디렉터 모니터",
+      "parent_id": "rental-brand:dji:145",
+      "brand_id": "dji",
       "scope": "rental-brand"
     },
     {
@@ -16222,8 +16272,8 @@
       "scope": "rental-brand"
     },
     {
-      "id": "rental-brand:smallhd:8",
-      "name": "촬영 액세서리",
+      "id": "rental-brand:smallhd:6",
+      "name": "TV·디스플레이",
       "parent_id": null,
       "brand_id": "smallhd",
       "scope": "rental-brand"
@@ -16231,13 +16281,20 @@
     {
       "id": "rental-brand:smallhd:145",
       "name": "모니터·레코더·영상 송수신",
-      "parent_id": "rental-brand:smallhd:8",
+      "parent_id": "rental-brand:smallhd:6",
       "brand_id": "smallhd",
       "scope": "rental-brand"
     },
     {
-      "id": "rental-brand:teradek:8",
-      "name": "촬영 액세서리",
+      "id": "rental-brand:smallhd:monitor",
+      "name": "촬영·디렉터 모니터",
+      "parent_id": "rental-brand:smallhd:145",
+      "brand_id": "smallhd",
+      "scope": "rental-brand"
+    },
+    {
+      "id": "rental-brand:teradek:6",
+      "name": "TV·디스플레이",
       "parent_id": null,
       "brand_id": "teradek",
       "scope": "rental-brand"
@@ -16245,7 +16302,14 @@
     {
       "id": "rental-brand:teradek:145",
       "name": "모니터·레코더·영상 송수신",
-      "parent_id": "rental-brand:teradek:8",
+      "parent_id": "rental-brand:teradek:6",
+      "brand_id": "teradek",
+      "scope": "rental-brand"
+    },
+    {
+      "id": "rental-brand:teradek:monitor",
+      "name": "촬영·디렉터 모니터",
+      "parent_id": "rental-brand:teradek:145",
       "brand_id": "teradek",
       "scope": "rental-brand"
     },
@@ -16320,6 +16384,13 @@
       "scope": "rental-brand"
     },
     {
+      "id": "rental-brand:hollyland:video-wireless",
+      "name": "무선 영상 송수신기",
+      "parent_id": "rental-brand:hollyland:145",
+      "brand_id": "hollyland",
+      "scope": "rental-brand"
+    },
+    {
       "id": "rental-brand:fxlion:8",
       "name": "촬영 액세서리",
       "parent_id": null,
@@ -16383,8 +16454,8 @@
       "scope": "rental-brand"
     },
     {
-      "id": "rental-brand:rainbowbene:8",
-      "name": "촬영 액세서리",
+      "id": "rental-brand:rainbowbene:6",
+      "name": "TV·디스플레이",
       "parent_id": null,
       "brand_id": "rainbowbene",
       "scope": "rental-brand"
@@ -16392,7 +16463,7 @@
     {
       "id": "rental-brand:rainbowbene:232",
       "name": "프롬프터",
-      "parent_id": "rental-brand:rainbowbene:8",
+      "parent_id": "rental-brand:rainbowbene:6",
       "brand_id": "rainbowbene",
       "scope": "rental-brand"
     },
@@ -16467,8 +16538,8 @@
       "scope": "rental-brand"
     },
     {
-      "id": "rental-brand:jcprom:8",
-      "name": "촬영 액세서리",
+      "id": "rental-brand:jcprom:6",
+      "name": "TV·디스플레이",
       "parent_id": null,
       "brand_id": "jcprom",
       "scope": "rental-brand"
@@ -16476,7 +16547,7 @@
     {
       "id": "rental-brand:jcprom:232",
       "name": "프롬프터",
-      "parent_id": "rental-brand:jcprom:8",
+      "parent_id": "rental-brand:jcprom:6",
       "brand_id": "jcprom",
       "scope": "rental-brand"
     },
@@ -16537,20 +16608,6 @@
       "scope": "rental-brand"
     },
     {
-      "id": "rental-brand:phaseone:3",
-      "name": "렌즈",
-      "parent_id": null,
-      "brand_id": "phaseone",
-      "scope": "rental-brand"
-    },
-    {
-      "id": "rental-brand:phaseone:medium-lens",
-      "name": "중형 렌즈",
-      "parent_id": "rental-brand:phaseone:3",
-      "brand_id": "phaseone",
-      "scope": "rental-brand"
-    },
-    {
       "id": "rental-brand:edelkrone:7",
       "name": "삼각대·서포트",
       "parent_id": null,
@@ -16583,6 +16640,13 @@
       "name": "시네마 렌즈",
       "parent_id": "rental-brand:canon:1",
       "brand_id": "canon",
+      "scope": "rental-brand"
+    },
+    {
+      "id": "rental-brand:teradek:video-wireless",
+      "name": "무선 영상 송수신기",
+      "parent_id": "rental-brand:teradek:145",
+      "brand_id": "teradek",
       "scope": "rental-brand"
     },
     {
@@ -16726,8 +16790,8 @@
       "scope": "rental-brand"
     },
     {
-      "id": "rental-brand:feelworld:8",
-      "name": "촬영 액세서리",
+      "id": "rental-brand:feelworld:6",
+      "name": "TV·디스플레이",
       "parent_id": null,
       "brand_id": "feelworld",
       "scope": "rental-brand"
@@ -16735,13 +16799,20 @@
     {
       "id": "rental-brand:feelworld:145",
       "name": "모니터·레코더·영상 송수신",
-      "parent_id": "rental-brand:feelworld:8",
+      "parent_id": "rental-brand:feelworld:6",
       "brand_id": "feelworld",
       "scope": "rental-brand"
     },
     {
-      "id": "rental-brand:atomos:8",
-      "name": "촬영 액세서리",
+      "id": "rental-brand:feelworld:monitor",
+      "name": "촬영·디렉터 모니터",
+      "parent_id": "rental-brand:feelworld:145",
+      "brand_id": "feelworld",
+      "scope": "rental-brand"
+    },
+    {
+      "id": "rental-brand:atomos:6",
+      "name": "TV·디스플레이",
       "parent_id": null,
       "brand_id": "atomos",
       "scope": "rental-brand"
@@ -16749,7 +16820,14 @@
     {
       "id": "rental-brand:atomos:145",
       "name": "모니터·레코더·영상 송수신",
-      "parent_id": "rental-brand:atomos:8",
+      "parent_id": "rental-brand:atomos:6",
+      "brand_id": "atomos",
+      "scope": "rental-brand"
+    },
+    {
+      "id": "rental-brand:atomos:monitor-recorder",
+      "name": "모니터 레코더",
+      "parent_id": "rental-brand:atomos:145",
       "brand_id": "atomos",
       "scope": "rental-brand"
     },
@@ -16856,20 +16934,6 @@
       "name": "애플박스",
       "parent_id": "rental-brand:kupo:56",
       "brand_id": "kupo",
-      "scope": "rental-brand"
-    },
-    {
-      "id": "rental-brand:tvlogic:8",
-      "name": "촬영 액세서리",
-      "parent_id": null,
-      "brand_id": "tvlogic",
-      "scope": "rental-brand"
-    },
-    {
-      "id": "rental-brand:tvlogic:145",
-      "name": "모니터·레코더·영상 송수신",
-      "parent_id": "rental-brand:tvlogic:8",
-      "brand_id": "tvlogic",
       "scope": "rental-brand"
     },
     {
@@ -17099,15 +17163,17 @@
         "naver:b:dji:50000206",
         "naver:b:dji:50001394",
         "naver:b:dji:50002113",
-        "rental-brand:dji:8",
-        "rental-brand:dji:145"
+        "rental-brand:dji:6",
+        "rental-brand:dji:145",
+        "rental-brand:dji:video-wireless"
       ],
       "type_ids": [
         "naver:p:50002113",
         "type:kpp:h0",
         "type:video-wireless",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:video-wireless"
       ],
       "promotion_ids": [],
       "offers": [
@@ -17138,7 +17204,7 @@
           "DJI",
           "장비 렌탈",
           "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신",
+          "무선 영상 송수신기",
           "디제이아이",
           "dji",
           "디지아이",
@@ -17147,7 +17213,7 @@
         ],
         "categories": [
           "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신"
+          "무선 영상 송수신기"
         ],
         "description": "디지아이 트랜스미션 콤보 DJI SDR Transmission Combo 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -19142,15 +19208,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:hollyland:50000153",
-        "rental-brand:hollyland:8",
-        "rental-brand:hollyland:145"
+        "rental-brand:hollyland:6",
+        "rental-brand:hollyland:145",
+        "rental-brand:hollyland:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:monitor",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -19181,7 +19249,7 @@
           "HOLLYLAND",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "Hollyland",
           "홀리랜드",
           "촬영장비 대여",
@@ -19189,7 +19257,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "홀리랜드 Hollyland Pyro5 무선영상모니터 5.5인치 파이로5 홀리랜드 파이로 모니터 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -19204,15 +19272,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:hollyland:50000153",
-        "rental-brand:hollyland:8",
-        "rental-brand:hollyland:145"
+        "rental-brand:hollyland:6",
+        "rental-brand:hollyland:145",
+        "rental-brand:hollyland:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:monitor",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -19243,7 +19313,7 @@
           "HOLLYLAND",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "Hollyland",
           "홀리랜드",
           "촬영장비 대여",
@@ -19251,7 +19321,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "홀리랜드 Hollyland Pyro5+Pyro7 무선영상모니터(5+7인치) 홀리랜드 파이로 모 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -19460,15 +19530,17 @@
         "naver:b:dji:50000206",
         "naver:b:dji:50001394",
         "naver:b:dji:50002113",
-        "rental-brand:dji:8",
-        "rental-brand:dji:145"
+        "rental-brand:dji:6",
+        "rental-brand:dji:145",
+        "rental-brand:dji:video-wireless"
       ],
       "type_ids": [
         "naver:p:50002113",
         "type:kpp:h0",
         "type:video-wireless",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:video-wireless"
       ],
       "promotion_ids": [],
       "offers": [
@@ -19501,7 +19573,7 @@
           "장비 렌탈",
           "스탠드",
           "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신",
+          "무선 영상 송수신기",
           "디제이아이",
           "dji",
           "디지아이",
@@ -19510,7 +19582,7 @@
         ],
         "categories": [
           "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신"
+          "무선 영상 송수신기"
         ],
         "description": "디지아이 트랜스미션 스탠다드 콤보 DJI Transmission Standard Combo 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -19527,15 +19599,17 @@
         "naver:b:dji:50000206",
         "naver:b:dji:50001394",
         "naver:b:dji:50002113",
-        "rental-brand:dji:8",
-        "rental-brand:dji:145"
+        "rental-brand:dji:6",
+        "rental-brand:dji:145",
+        "rental-brand:dji:monitor"
       ],
       "type_ids": [
         "naver:p:50002113",
         "type:kpp:h0",
         "type:video-wireless",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -19566,7 +19640,7 @@
           "DJI",
           "장비 렌탈",
           "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "디제이아이",
           "dji",
           "디지아이",
@@ -19575,7 +19649,7 @@
         ],
         "categories": [
           "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "디지아이 트랜스미션 모니터 콤보 DJI Transmission Monitor Combo 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -20518,15 +20592,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:smallhd:50000153",
-        "rental-brand:smallhd:8",
-        "rental-brand:smallhd:145"
+        "rental-brand:smallhd:6",
+        "rental-brand:smallhd:145",
+        "rental-brand:smallhd:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:monitor",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -20557,7 +20633,7 @@
           "SMALLHD",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "SmallHD",
           "Small HD",
           "small hd",
@@ -20567,7 +20643,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "스몰에이치디 SmallHD 703 BOLT 7인치 모니터 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -20582,15 +20658,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:teradek:50000153",
-        "rental-brand:teradek:8",
-        "rental-brand:teradek:145"
+        "rental-brand:teradek:6",
+        "rental-brand:teradek:145",
+        "rental-brand:teradek:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:video-wireless",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -20621,7 +20699,7 @@
           "TERADEK",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "테라덱",
           "teradek",
           "촬영장비 대여",
@@ -20629,7 +20707,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "테라덱 볼트 TERADEK BOLT 3000 1:4 SMALLHD 703 KIT 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -20644,15 +20722,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:teradek:50000153",
-        "rental-brand:teradek:8",
-        "rental-brand:teradek:145"
+        "rental-brand:teradek:6",
+        "rental-brand:teradek:145",
+        "rental-brand:teradek:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:video-wireless",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -20683,7 +20763,7 @@
           "TERADEK",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "테라덱",
           "teradek",
           "촬영장비 대여",
@@ -20691,7 +20771,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "테라덱 볼트 TERADEK BOLT 3000 1:3 SMALLHD 703 KIT 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -20706,15 +20786,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:teradek:50000153",
-        "rental-brand:teradek:8",
-        "rental-brand:teradek:145"
+        "rental-brand:teradek:6",
+        "rental-brand:teradek:145",
+        "rental-brand:teradek:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:video-wireless",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -20745,7 +20827,7 @@
           "TERADEK",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "테라덱",
           "teradek",
           "촬영장비 대여",
@@ -20753,7 +20835,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "테라덱 볼트 TERADEK BOLT 3000 1:2 SMALLHD 703 KIT 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -20768,15 +20850,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:teradek:50000153",
-        "rental-brand:teradek:8",
-        "rental-brand:teradek:145"
+        "rental-brand:teradek:6",
+        "rental-brand:teradek:145",
+        "rental-brand:teradek:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:video-wireless",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -20807,7 +20891,7 @@
           "TERADEK",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "테라덱",
           "teradek",
           "촬영장비 대여",
@@ -20815,7 +20899,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "테라덱 볼트 TERADEK BOLT 3000 1:1 SMALLHD 703 KIT 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -20830,15 +20914,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:teradek:50000153",
-        "rental-brand:teradek:8",
-        "rental-brand:teradek:145"
+        "rental-brand:teradek:6",
+        "rental-brand:teradek:145",
+        "rental-brand:teradek:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:video-wireless",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -20869,7 +20955,7 @@
           "TERADEK",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "테라덱",
           "teradek",
           "촬영장비 대여",
@@ -20877,7 +20963,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "테라덱 볼트 TERADEK BOLT 1000 1:4 SMALLHD 703 KIT 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -20892,15 +20978,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:teradek:50000153",
-        "rental-brand:teradek:8",
-        "rental-brand:teradek:145"
+        "rental-brand:teradek:6",
+        "rental-brand:teradek:145",
+        "rental-brand:teradek:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:video-wireless",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -20931,7 +21019,7 @@
           "TERADEK",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "테라덱",
           "teradek",
           "촬영장비 대여",
@@ -20939,7 +21027,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "테라덱 볼트 TERADEK BOLT 1000 1:3 SMALLHD 703 KIT 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -20954,15 +21042,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:teradek:50000153",
-        "rental-brand:teradek:8",
-        "rental-brand:teradek:145"
+        "rental-brand:teradek:6",
+        "rental-brand:teradek:145",
+        "rental-brand:teradek:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:video-wireless",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -20993,7 +21083,7 @@
           "TERADEK",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "테라덱",
           "teradek",
           "촬영장비 대여",
@@ -21001,7 +21091,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "테라덱 볼트 TERADEK BOLT 1000 1:2 SMALLHD 703 KIT 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -21016,15 +21106,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:teradek:50000153",
-        "rental-brand:teradek:8",
-        "rental-brand:teradek:145"
+        "rental-brand:teradek:6",
+        "rental-brand:teradek:145",
+        "rental-brand:teradek:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:video-wireless",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -21055,7 +21147,7 @@
           "TERADEK",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "테라덱",
           "teradek",
           "촬영장비 대여",
@@ -21063,7 +21155,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "테라덱 볼트 TERADEK BOLT 1000 1:1 SMALLHD 703 KIT 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -21212,15 +21304,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:hollyland:50000153",
-        "rental-brand:hollyland:8",
-        "rental-brand:hollyland:145"
+        "rental-brand:hollyland:6",
+        "rental-brand:hollyland:145",
+        "rental-brand:hollyland:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:monitor",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -21251,7 +21345,7 @@
           "HOLLYLAND",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "Hollyland",
           "홀리랜드",
           "촬영장비 대여",
@@ -21259,7 +21353,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "홀리랜드 파이로 Hollyland Pyro7 DUO + Pyoro S 송수신기 키트 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -22732,15 +22826,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:hollyland:50000153",
-        "rental-brand:hollyland:8",
-        "rental-brand:hollyland:145"
+        "rental-brand:hollyland:6",
+        "rental-brand:hollyland:145",
+        "rental-brand:hollyland:video-wireless"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:video-wireless",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:video-wireless"
       ],
       "promotion_ids": [],
       "offers": [
@@ -22771,7 +22867,7 @@
           "HOLLYLAND",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "무선 영상 송수신기",
           "Hollyland",
           "홀리랜드",
           "촬영장비 대여",
@@ -22779,7 +22875,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "무선 영상 송수신기"
         ],
         "description": "홀리랜드 Hollyland Pyro S 홀리랜드 파이로 S 송수신기 키트 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -22794,15 +22890,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:hollyland:50000153",
-        "rental-brand:hollyland:8",
-        "rental-brand:hollyland:145"
+        "rental-brand:hollyland:6",
+        "rental-brand:hollyland:145",
+        "rental-brand:hollyland:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:monitor",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -22833,7 +22931,7 @@
           "HOLLYLAND",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "Hollyland",
           "홀리랜드",
           "촬영장비 대여",
@@ -22841,7 +22939,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "홀리랜드 Hollyland Pyro 7 Monitor DUO 홀리랜드 파이로 모니터 듀오키트 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -22856,15 +22954,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:hollyland:50000153",
-        "rental-brand:hollyland:8",
-        "rental-brand:hollyland:145"
+        "rental-brand:hollyland:6",
+        "rental-brand:hollyland:145",
+        "rental-brand:hollyland:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:monitor",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -22895,7 +22995,7 @@
           "HOLLYLAND",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "Hollyland",
           "홀리랜드",
           "촬영장비 대여",
@@ -22903,7 +23003,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "홀리랜드 Hollyland Pyro 7 Monitor 홀리랜드 파이로 모니터 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -22918,15 +23018,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:hollyland:50000153",
-        "rental-brand:hollyland:8",
-        "rental-brand:hollyland:145"
+        "rental-brand:hollyland:6",
+        "rental-brand:hollyland:145",
+        "rental-brand:hollyland:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:video-wireless",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -22957,7 +23059,7 @@
           "HOLLYLAND",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "Hollyland",
           "홀리랜드",
           "촬영장비 대여",
@@ -22965,7 +23067,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "홀리랜드 Hollyland Pyro 7+Pyro S bundle Kit 홀리랜드 파이로 모니터 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -23382,15 +23484,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:hollyland:50000153",
-        "rental-brand:hollyland:8",
-        "rental-brand:hollyland:145"
+        "rental-brand:hollyland:6",
+        "rental-brand:hollyland:145",
+        "rental-brand:hollyland:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:monitor",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -23421,7 +23525,7 @@
           "HOLLYLAND",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "Hollyland",
           "홀리랜드",
           "촬영장비 대여",
@@ -23429,7 +23533,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "홀리랜드 Hollyland M1 홀리랜드 엠원 모니터 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -23444,15 +23548,17 @@
       "status": "sale",
       "category_ids": [
         "naver:b:hollyland:50000153",
-        "rental-brand:hollyland:8",
-        "rental-brand:hollyland:145"
+        "rental-brand:hollyland:6",
+        "rental-brand:hollyland:145",
+        "rental-brand:hollyland:monitor"
       ],
       "type_ids": [
         "naver:p:50000153",
         "type:kpp:h0",
         "type:monitor",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -23483,7 +23589,7 @@
           "HOLLYLAND",
           "장비 렌탈",
           "모니터",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "Hollyland",
           "홀리랜드",
           "촬영장비 대여",
@@ -23491,7 +23597,7 @@
         ],
         "categories": [
           "모니터",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "홀리랜드 Hollyland M1 DUO 홀리랜드 엠원듀오 모니터 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -23508,14 +23614,14 @@
         "naver:b:rainbowbene:50000206",
         "naver:b:rainbowbene:50001394",
         "naver:b:rainbowbene:50002113",
-        "rental-brand:rainbowbene:8",
+        "rental-brand:rainbowbene:6",
         "rental-brand:rainbowbene:232"
       ],
       "type_ids": [
         "naver:p:50002113",
         "type:kpp:06",
         "type:teleprompter",
-        "rent:8",
+        "rent:6",
         "rent:232"
       ],
       "promotion_ids": [],
@@ -24527,14 +24633,14 @@
         "naver:b:jcprom:50000206",
         "naver:b:jcprom:50001394",
         "naver:b:jcprom:50002113",
-        "rental-brand:jcprom:8",
+        "rental-brand:jcprom:6",
         "rental-brand:jcprom:232"
       ],
       "type_ids": [
         "naver:p:50002113",
         "type:kpp:06",
         "type:teleprompter",
-        "rent:8",
+        "rent:6",
         "rent:232"
       ],
       "promotion_ids": [],
@@ -24838,72 +24944,6 @@
           "스튜디오 대여"
         ],
         "description": "[ 대여 나다운 영등포 스튜디오 ] 자연광 호리존 배경지 10롤 스튜디오 공간대여 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
-      }
-    },
-    {
-      "id": "smartstore-9186569758",
-      "name": "RED GEMINI+TVLOGIC 171S+DJI TRANSMISSION COMBO",
-      "brand_id": "red",
-      "kind": "rental",
-      "price": 200000,
-      "sale_price": 200000,
-      "status": "sale",
-      "category_ids": [
-        "naver:b:red:50000206",
-        "naver:b:red:50001394",
-        "naver:b:red:50002113",
-        "rental-brand:red:1",
-        "rental-brand:red:11",
-        "rental-brand:red:10"
-      ],
-      "type_ids": [
-        "naver:p:50002113",
-        "type:camera",
-        "type:cinema-camera",
-        "rent:1",
-        "rent:11",
-        "rent:10"
-      ],
-      "promotion_ids": [],
-      "offers": [
-        {
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/9186569758",
-          "status": "sale",
-          "price": 200000,
-          "id": "smartstore-9186569758"
-        }
-      ],
-      "supplier_status": null,
-      "image": "https://shop-phinf.pstatic.net/20230909_13/1694186953703Kl1MO_JPEG/9695844498059201_1338105273.jpg",
-      "detail_bucket": "a8",
-      "shipping_class": null,
-      "rental": {
-        "service": "equipment",
-        "price": 200000,
-        "period": "12시간",
-        "rate_count": 2
-      },
-      "discovery": {
-        "tags": [
-          "RED",
-          "장비 렌탈"
-        ],
-        "search_terms": [
-          "RED",
-          "장비 렌탈",
-          "기타카메라/캠코더용품",
-          "시네마 카메라",
-          "시네마 패키지",
-          "촬영장비 대여",
-          "장비 대여"
-        ],
-        "categories": [
-          "기타카메라/캠코더용품",
-          "시네마 카메라",
-          "시네마 패키지"
-        ],
-        "description": "RED GEMINI+TVLOGIC 171S+DJI TRANSMISSION COMBO 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
     },
     {
@@ -25228,414 +25268,6 @@
           "미러리스"
         ],
         "description": "CANON 캐논 R5 팬싸,팬미팅 카메라 대여 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
-      }
-    },
-    {
-      "id": "smartstore-9117869363",
-      "name": "PHASEONE LS 35mm F3.5",
-      "brand_id": "phaseone",
-      "kind": "rental",
-      "price": 60000,
-      "sale_price": 60000,
-      "status": "sale",
-      "category_ids": [
-        "naver:b:phaseone:50000206",
-        "naver:b:phaseone:50001381",
-        "naver:b:phaseone:50004606",
-        "rental-brand:phaseone:3",
-        "rental-brand:phaseone:medium-lens"
-      ],
-      "type_ids": [
-        "naver:p:50004606",
-        "type:kpp:03",
-        "type:medium-lens",
-        "rent:3",
-        "rent:medium-lens"
-      ],
-      "promotion_ids": [],
-      "offers": [
-        {
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/9117869363",
-          "status": "sale",
-          "price": 60000,
-          "id": "smartstore-9117869363"
-        }
-      ],
-      "supplier_status": null,
-      "image": "https://shop-phinf.pstatic.net/20230827_131/1693122757006sIfQL_JPEG/4048874868569018_937277811.jpg",
-      "detail_bucket": "93",
-      "shipping_class": null,
-      "rental": {
-        "service": "equipment",
-        "price": 60000,
-        "period": null,
-        "rate_count": 0
-      },
-      "discovery": {
-        "tags": [
-          "PHASEONE",
-          "장비 렌탈",
-          "렌즈"
-        ],
-        "search_terms": [
-          "PHASEONE",
-          "장비 렌탈",
-          "렌즈",
-          "망원렌즈",
-          "중형 렌즈",
-          "페이즈원",
-          "Phase One",
-          "phase one",
-          "phaseone",
-          "촬영장비 대여",
-          "장비 대여"
-        ],
-        "categories": [
-          "망원렌즈",
-          "중형 렌즈"
-        ],
-        "description": "PHASEONE LS 35mm F3.5 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
-      }
-    },
-    {
-      "id": "smartstore-9117868128",
-      "name": "PHASEONE LS 45mm F3.5",
-      "brand_id": "phaseone",
-      "kind": "rental",
-      "price": 60000,
-      "sale_price": 60000,
-      "status": "sale",
-      "category_ids": [
-        "naver:b:phaseone:50000206",
-        "naver:b:phaseone:50001381",
-        "naver:b:phaseone:50004606",
-        "rental-brand:phaseone:3",
-        "rental-brand:phaseone:medium-lens"
-      ],
-      "type_ids": [
-        "naver:p:50004606",
-        "type:kpp:03",
-        "type:medium-lens",
-        "rent:3",
-        "rent:medium-lens"
-      ],
-      "promotion_ids": [],
-      "offers": [
-        {
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/9117868128",
-          "status": "sale",
-          "price": 60000,
-          "id": "smartstore-9117868128"
-        }
-      ],
-      "supplier_status": null,
-      "image": "https://shop-phinf.pstatic.net/20230827_279/1693122726444n5AKP_JPEG/668903429548414_56483565.jpg",
-      "detail_bucket": "9c",
-      "shipping_class": null,
-      "rental": {
-        "service": "equipment",
-        "price": 60000,
-        "period": null,
-        "rate_count": 0
-      },
-      "discovery": {
-        "tags": [
-          "PHASEONE",
-          "장비 렌탈",
-          "렌즈"
-        ],
-        "search_terms": [
-          "PHASEONE",
-          "장비 렌탈",
-          "렌즈",
-          "망원렌즈",
-          "중형 렌즈",
-          "페이즈원",
-          "Phase One",
-          "phase one",
-          "phaseone",
-          "촬영장비 대여",
-          "장비 대여"
-        ],
-        "categories": [
-          "망원렌즈",
-          "중형 렌즈"
-        ],
-        "description": "PHASEONE LS 45mm F3.5 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
-      }
-    },
-    {
-      "id": "smartstore-9117863625",
-      "name": "PHASEONE LS 80mm F2.8",
-      "brand_id": "phaseone",
-      "kind": "rental",
-      "price": 60000,
-      "sale_price": 60000,
-      "status": "sale",
-      "category_ids": [
-        "naver:b:phaseone:50000206",
-        "naver:b:phaseone:50001381",
-        "naver:b:phaseone:50004606",
-        "rental-brand:phaseone:3",
-        "rental-brand:phaseone:medium-lens"
-      ],
-      "type_ids": [
-        "naver:p:50004606",
-        "type:kpp:03",
-        "type:medium-lens",
-        "rent:3",
-        "rent:medium-lens"
-      ],
-      "promotion_ids": [],
-      "offers": [
-        {
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/9117863625",
-          "status": "sale",
-          "price": 60000,
-          "id": "smartstore-9117863625"
-        }
-      ],
-      "supplier_status": null,
-      "image": "https://shop-phinf.pstatic.net/20200506_275/1588758654809N9N78_JPEG/26118489358113230_757959794.jpg",
-      "detail_bucket": "a2",
-      "shipping_class": null,
-      "rental": {
-        "service": "equipment",
-        "price": 60000,
-        "period": null,
-        "rate_count": 0
-      },
-      "discovery": {
-        "tags": [
-          "PHASEONE",
-          "장비 렌탈",
-          "렌즈"
-        ],
-        "search_terms": [
-          "PHASEONE",
-          "장비 렌탈",
-          "렌즈",
-          "망원렌즈",
-          "중형 렌즈",
-          "페이즈원",
-          "Phase One",
-          "phase one",
-          "phaseone",
-          "촬영장비 대여",
-          "장비 대여"
-        ],
-        "categories": [
-          "망원렌즈",
-          "중형 렌즈"
-        ],
-        "description": "PHASEONE LS 80mm F2.8 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
-      }
-    },
-    {
-      "id": "smartstore-9117859056",
-      "name": "PHASEONE LS 110mm F2.8",
-      "brand_id": "phaseone",
-      "kind": "rental",
-      "price": 70000,
-      "sale_price": 70000,
-      "status": "sale",
-      "category_ids": [
-        "naver:b:phaseone:50000206",
-        "naver:b:phaseone:50001381",
-        "naver:b:phaseone:50004606",
-        "rental-brand:phaseone:3",
-        "rental-brand:phaseone:medium-lens"
-      ],
-      "type_ids": [
-        "naver:p:50004606",
-        "type:kpp:03",
-        "type:medium-lens",
-        "rent:3",
-        "rent:medium-lens"
-      ],
-      "promotion_ids": [],
-      "offers": [
-        {
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/9117859056",
-          "status": "sale",
-          "price": 70000,
-          "id": "smartstore-9117859056"
-        }
-      ],
-      "supplier_status": null,
-      "image": "https://shop-phinf.pstatic.net/20230827_226/1693122534406gAvue_JPEG/39139118236186045_622519621.jpg",
-      "detail_bucket": "ae",
-      "shipping_class": null,
-      "rental": {
-        "service": "equipment",
-        "price": 70000,
-        "period": null,
-        "rate_count": 0
-      },
-      "discovery": {
-        "tags": [
-          "PHASEONE",
-          "장비 렌탈",
-          "렌즈"
-        ],
-        "search_terms": [
-          "PHASEONE",
-          "장비 렌탈",
-          "렌즈",
-          "망원렌즈",
-          "중형 렌즈",
-          "페이즈원",
-          "Phase One",
-          "phase one",
-          "phaseone",
-          "촬영장비 대여",
-          "장비 대여"
-        ],
-        "categories": [
-          "망원렌즈",
-          "중형 렌즈"
-        ],
-        "description": "PHASEONE LS 110mm F2.8 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
-      }
-    },
-    {
-      "id": "smartstore-9117855714",
-      "name": "PHASEONE LS 120mm Macro F4",
-      "brand_id": "phaseone",
-      "kind": "rental",
-      "price": 70000,
-      "sale_price": 70000,
-      "status": "sale",
-      "category_ids": [
-        "naver:b:phaseone:50000206",
-        "naver:b:phaseone:50001381",
-        "naver:b:phaseone:50004606",
-        "rental-brand:phaseone:3",
-        "rental-brand:phaseone:medium-lens"
-      ],
-      "type_ids": [
-        "naver:p:50004606",
-        "type:kpp:03",
-        "type:medium-lens",
-        "rent:3",
-        "rent:medium-lens"
-      ],
-      "promotion_ids": [],
-      "offers": [
-        {
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/9117855714",
-          "status": "sale",
-          "price": 70000,
-          "id": "smartstore-9117855714"
-        }
-      ],
-      "supplier_status": null,
-      "image": "https://shop-phinf.pstatic.net/20230827_2/1693122481520iR69N_JPEG/38962518340002747_72467670.jpg",
-      "detail_bucket": "6c",
-      "shipping_class": null,
-      "rental": {
-        "service": "equipment",
-        "price": 70000,
-        "period": null,
-        "rate_count": 0
-      },
-      "discovery": {
-        "tags": [
-          "PHASEONE",
-          "장비 렌탈",
-          "렌즈"
-        ],
-        "search_terms": [
-          "PHASEONE",
-          "장비 렌탈",
-          "렌즈",
-          "망원렌즈",
-          "중형 렌즈",
-          "페이즈원",
-          "Phase One",
-          "phase one",
-          "phaseone",
-          "촬영장비 대여",
-          "장비 대여"
-        ],
-        "categories": [
-          "망원렌즈",
-          "중형 렌즈"
-        ],
-        "description": "PHASEONE LS 120mm Macro F4 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
-      }
-    },
-    {
-      "id": "smartstore-9117852551",
-      "name": "PHASEONE LS 75-150mm F4-5.6",
-      "brand_id": "phaseone",
-      "kind": "rental",
-      "price": 80000,
-      "sale_price": 80000,
-      "status": "sale",
-      "category_ids": [
-        "naver:b:phaseone:50000206",
-        "naver:b:phaseone:50001381",
-        "naver:b:phaseone:50004606",
-        "rental-brand:phaseone:3",
-        "rental-brand:phaseone:medium-lens"
-      ],
-      "type_ids": [
-        "naver:p:50004606",
-        "type:kpp:03",
-        "type:medium-lens",
-        "rent:3",
-        "rent:medium-lens"
-      ],
-      "promotion_ids": [],
-      "offers": [
-        {
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/9117852551",
-          "status": "sale",
-          "price": 80000,
-          "id": "smartstore-9117852551"
-        }
-      ],
-      "supplier_status": null,
-      "image": "https://shop-phinf.pstatic.net/20230827_95/1693122363483RwKk7_JPEG/4048481315468498_1806961461.jpg",
-      "detail_bucket": "c9",
-      "shipping_class": null,
-      "rental": {
-        "service": "equipment",
-        "price": 80000,
-        "period": null,
-        "rate_count": 0
-      },
-      "discovery": {
-        "tags": [
-          "PHASEONE",
-          "장비 렌탈",
-          "렌즈"
-        ],
-        "search_terms": [
-          "PHASEONE",
-          "장비 렌탈",
-          "렌즈",
-          "망원렌즈",
-          "중형 렌즈",
-          "페이즈원",
-          "Phase One",
-          "phase one",
-          "phaseone",
-          "촬영장비 대여",
-          "장비 대여"
-        ],
-        "categories": [
-          "망원렌즈",
-          "중형 렌즈"
-        ],
-        "description": "PHASEONE LS 75-150mm F4-5.6 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
     },
     {
@@ -25971,15 +25603,17 @@
         "naver:b:teradek:50000206",
         "naver:b:teradek:50001394",
         "naver:b:teradek:50002113",
-        "rental-brand:teradek:8",
-        "rental-brand:teradek:145"
+        "rental-brand:teradek:6",
+        "rental-brand:teradek:145",
+        "rental-brand:teradek:video-wireless"
       ],
       "type_ids": [
         "naver:p:50002113",
         "type:kpp:h0",
         "type:video-wireless",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:video-wireless"
       ],
       "promotion_ids": [],
       "offers": [
@@ -26010,7 +25644,7 @@
           "TERADEK",
           "장비 렌탈",
           "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신",
+          "무선 영상 송수신기",
           "테라덱",
           "teradek",
           "촬영장비 대여",
@@ -26018,7 +25652,7 @@
         ],
         "categories": [
           "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신"
+          "무선 영상 송수신기"
         ],
         "description": "TERADEK BOLT 600 1:1 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -27450,15 +27084,17 @@
         "naver:b:feelworld:50000206",
         "naver:b:feelworld:50001394",
         "naver:b:feelworld:50002113",
-        "rental-brand:feelworld:8",
-        "rental-brand:feelworld:145"
+        "rental-brand:feelworld:6",
+        "rental-brand:feelworld:145",
+        "rental-brand:feelworld:monitor"
       ],
       "type_ids": [
         "naver:p:50002113",
         "type:kpp:h0",
         "type:monitor",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -27489,13 +27125,13 @@
           "FEELWORLD",
           "장비 렌탈",
           "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "촬영장비 대여",
           "장비 대여"
         ],
         "categories": [
           "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "SEETEC ATEM215S 디렉터모니터 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -27512,15 +27148,17 @@
         "naver:b:feelworld:50000206",
         "naver:b:feelworld:50001394",
         "naver:b:feelworld:50002113",
-        "rental-brand:feelworld:8",
-        "rental-brand:feelworld:145"
+        "rental-brand:feelworld:6",
+        "rental-brand:feelworld:145",
+        "rental-brand:feelworld:monitor"
       ],
       "type_ids": [
         "naver:p:50002113",
         "type:kpp:h0",
         "type:monitor",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor"
       ],
       "promotion_ids": [],
       "offers": [
@@ -27551,13 +27189,13 @@
           "FEELWORLD",
           "장비 렌탈",
           "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신",
+          "촬영·디렉터 모니터",
           "촬영장비 대여",
           "장비 대여"
         ],
         "categories": [
           "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신"
+          "촬영·디렉터 모니터"
         ],
         "description": "FEELWORLD L7S 필드모니터 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -27641,15 +27279,17 @@
         "naver:b:atomos:50000206",
         "naver:b:atomos:50001394",
         "naver:b:atomos:50002113",
-        "rental-brand:atomos:8",
-        "rental-brand:atomos:145"
+        "rental-brand:atomos:6",
+        "rental-brand:atomos:145",
+        "rental-brand:atomos:monitor-recorder"
       ],
       "type_ids": [
         "naver:p:50002113",
         "type:kpp:h0",
         "type:video-recorder",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor-recorder"
       ],
       "promotion_ids": [],
       "offers": [
@@ -27680,7 +27320,7 @@
           "ATOMOS",
           "장비 렌탈",
           "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신",
+          "모니터 레코더",
           "아토모스",
           "Atomos",
           "촬영장비 대여",
@@ -27688,7 +27328,7 @@
         ],
         "categories": [
           "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신"
+          "모니터 레코더"
         ],
         "description": "Atomos Ninja V+ 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -31156,72 +30796,6 @@
       }
     },
     {
-      "id": "smartstore-7139260678",
-      "name": "TVLogic LVM-171S",
-      "brand_id": "tvlogic",
-      "kind": "rental",
-      "price": 25000,
-      "sale_price": 25000,
-      "status": "sale",
-      "category_ids": [
-        "naver:b:tvlogic:50000206",
-        "naver:b:tvlogic:50001394",
-        "naver:b:tvlogic:50002113",
-        "rental-brand:tvlogic:8",
-        "rental-brand:tvlogic:145"
-      ],
-      "type_ids": [
-        "naver:p:50002113",
-        "type:kpp:h0",
-        "type:monitor",
-        "rent:8",
-        "rent:145"
-      ],
-      "promotion_ids": [],
-      "offers": [
-        {
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/7139260678",
-          "status": "sale",
-          "price": 25000,
-          "id": "smartstore-7139260678"
-        }
-      ],
-      "supplier_status": null,
-      "image": "https://shop-phinf.pstatic.net/20220921_300/1663723761543yBtFI_JPEG/64859595349922211_819326644.jpg",
-      "detail_bucket": "56",
-      "shipping_class": null,
-      "rental": {
-        "service": "equipment",
-        "price": 25000,
-        "period": "12시간",
-        "rate_count": 2
-      },
-      "discovery": {
-        "tags": [
-          "TVLOGIC",
-          "장비 렌탈"
-        ],
-        "search_terms": [
-          "TVLOGIC",
-          "장비 렌탈",
-          "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신",
-          "티비로직",
-          "티브이로직",
-          "TVLogic",
-          "tvlogic",
-          "촬영장비 대여",
-          "장비 대여"
-        ],
-        "categories": [
-          "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신"
-        ],
-        "description": "TVLogic LVM-171S 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
-      }
-    },
-    {
       "id": "smartstore-7139220052",
       "name": "Atomos Ninja V",
       "brand_id": "atomos",
@@ -31233,15 +30807,17 @@
         "naver:b:atomos:50000206",
         "naver:b:atomos:50001394",
         "naver:b:atomos:50002113",
-        "rental-brand:atomos:8",
-        "rental-brand:atomos:145"
+        "rental-brand:atomos:6",
+        "rental-brand:atomos:145",
+        "rental-brand:atomos:monitor-recorder"
       ],
       "type_ids": [
         "naver:p:50002113",
         "type:kpp:h0",
         "type:video-recorder",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:monitor-recorder"
       ],
       "promotion_ids": [],
       "offers": [
@@ -31272,7 +30848,7 @@
           "ATOMOS",
           "장비 렌탈",
           "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신",
+          "모니터 레코더",
           "아토모스",
           "Atomos",
           "촬영장비 대여",
@@ -31280,7 +30856,7 @@
         ],
         "categories": [
           "기타카메라/캠코더용품",
-          "모니터·레코더·영상 송수신"
+          "모니터 레코더"
         ],
         "description": "Atomos Ninja V 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -31297,15 +30873,17 @@
         "naver:b:hollyland:50000206",
         "naver:b:hollyland:50001394",
         "naver:b:hollyland:50002101",
-        "rental-brand:hollyland:8",
-        "rental-brand:hollyland:145"
+        "rental-brand:hollyland:6",
+        "rental-brand:hollyland:145",
+        "rental-brand:hollyland:video-wireless"
       ],
       "type_ids": [
         "naver:p:50002101",
         "type:kpp:h0",
         "type:video-wireless",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:video-wireless"
       ],
       "promotion_ids": [],
       "offers": [
@@ -31336,7 +30914,7 @@
           "HOLLYLAND",
           "장비 렌탈",
           "GPS/무선송수신",
-          "모니터·레코더·영상 송수신",
+          "무선 영상 송수신기",
           "Hollyland",
           "홀리랜드",
           "촬영장비 대여",
@@ -31344,7 +30922,7 @@
         ],
         "categories": [
           "GPS/무선송수신",
-          "모니터·레코더·영상 송수신"
+          "무선 영상 송수신기"
         ],
         "description": "Hollyland Cosmo C1 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }
@@ -31361,15 +30939,17 @@
         "naver:b:hollyland:50000206",
         "naver:b:hollyland:50001394",
         "naver:b:hollyland:50002101",
-        "rental-brand:hollyland:8",
-        "rental-brand:hollyland:145"
+        "rental-brand:hollyland:6",
+        "rental-brand:hollyland:145",
+        "rental-brand:hollyland:video-wireless"
       ],
       "type_ids": [
         "naver:p:50002101",
         "type:kpp:h0",
         "type:video-wireless",
-        "rent:8",
-        "rent:145"
+        "rent:6",
+        "rent:145",
+        "rent:video-wireless"
       ],
       "promotion_ids": [],
       "offers": [
@@ -31400,7 +30980,7 @@
           "HOLLYLAND",
           "장비 렌탈",
           "GPS/무선송수신",
-          "모니터·레코더·영상 송수신",
+          "무선 영상 송수신기",
           "Hollyland",
           "홀리랜드",
           "촬영장비 대여",
@@ -31408,7 +30988,7 @@
         ],
         "categories": [
           "GPS/무선송수신",
-          "모니터·레코더·영상 송수신"
+          "무선 영상 송수신기"
         ],
         "description": "Hollyland MARS 400S PRO 렌탈·대여 안내. 일정과 장비 구성을 확인하세요."
       }

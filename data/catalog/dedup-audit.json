@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "brands_checked": 325,
-  "input_count": 27194,
+  "input_count": 27186,
   "duplicate_group_count": 2775,
   "duplicate_entries_removed": 4586,
   "by_brand": {
@@ -82181,6 +82181,86 @@
       "reason": "제목은 160W 패널, 상세는 각각 220W와 110W로 상충하여 상품 구성 확인 전 공개 보류. 중복으로 합치지 않음.",
       "evidence": [
         "https://smartstore.naver.com/rainbowbene/products/11669016975"
+      ]
+    },
+    {
+      "id": "smartstore-9186569758",
+      "before": "RED GEMINI+TVLOGIC 171S+DJI TRANSMISSION COMBO",
+      "after": "RED GEMINI+TVLOGIC 171S+DJI TRANSMISSION COMBO",
+      "hidden": true,
+      "reason": "2026-10-14 대표 지시: TVLogic 렌탈 중단, 해당 장비 포함 패키지도 제외",
+      "evidence": [
+        "https://smartstore.naver.com/rainbowbene/products/9186569758"
+      ]
+    },
+    {
+      "id": "smartstore-9117869363",
+      "before": "PHASEONE LS 35mm F3.5",
+      "after": "PHASEONE LS 35mm F3.5",
+      "hidden": true,
+      "reason": "2026-10-14 대표 지시: 페이즈원 렌탈 렌즈 제외",
+      "evidence": [
+        "https://smartstore.naver.com/rainbowbene/products/9117869363"
+      ]
+    },
+    {
+      "id": "smartstore-9117868128",
+      "before": "PHASEONE LS 45mm F3.5",
+      "after": "PHASEONE LS 45mm F3.5",
+      "hidden": true,
+      "reason": "2026-10-14 대표 지시: 페이즈원 렌탈 렌즈 제외",
+      "evidence": [
+        "https://smartstore.naver.com/rainbowbene/products/9117868128"
+      ]
+    },
+    {
+      "id": "smartstore-9117863625",
+      "before": "PHASEONE LS 80mm F2.8",
+      "after": "PHASEONE LS 80mm F2.8",
+      "hidden": true,
+      "reason": "2026-10-14 대표 지시: 페이즈원 렌탈 렌즈 제외",
+      "evidence": [
+        "https://smartstore.naver.com/rainbowbene/products/9117863625"
+      ]
+    },
+    {
+      "id": "smartstore-9117859056",
+      "before": "PHASEONE LS 110mm F2.8",
+      "after": "PHASEONE LS 110mm F2.8",
+      "hidden": true,
+      "reason": "2026-10-14 대표 지시: 페이즈원 렌탈 렌즈 제외",
+      "evidence": [
+        "https://smartstore.naver.com/rainbowbene/products/9117859056"
+      ]
+    },
+    {
+      "id": "smartstore-9117855714",
+      "before": "PHASEONE LS 120mm Macro F4",
+      "after": "PHASEONE LS 120mm Macro F4",
+      "hidden": true,
+      "reason": "2026-10-14 대표 지시: 페이즈원 렌탈 렌즈 제외",
+      "evidence": [
+        "https://smartstore.naver.com/rainbowbene/products/9117855714"
+      ]
+    },
+    {
+      "id": "smartstore-9117852551",
+      "before": "PHASEONE LS 75-150mm F4-5.6",
+      "after": "PHASEONE LS 75-150mm F4-5.6",
+      "hidden": true,
+      "reason": "2026-10-14 대표 지시: 페이즈원 렌탈 렌즈 제외",
+      "evidence": [
+        "https://smartstore.naver.com/rainbowbene/products/9117852551"
+      ]
+    },
+    {
+      "id": "smartstore-7139260678",
+      "before": "TVLogic LVM-171S",
+      "after": "TVLogic LVM-171S",
+      "hidden": true,
+      "reason": "2026-10-14 대표 지시: TVLogic 렌탈 중단, 해당 장비 포함 패키지도 제외",
+      "evidence": [
+        "https://smartstore.naver.com/rainbowbene/products/7139260678"
       ]
     }
   ],
