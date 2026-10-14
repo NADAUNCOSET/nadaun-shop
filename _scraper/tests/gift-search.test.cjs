@@ -75,3 +75,16 @@ test('SSR handlers deliver HTML, metadata, HEAD, 404 and method restrictions',()
   }
  }
 });
+
+// Missing details must not assert available stock; source snapshots are quotes.
+test('gift availability and choices are confirmed through consultation',()=>{
+ assert(gift.data.products.filter(p=>!p.detail_available).every(p=>p.soldout===null));
+ const notice='재고·납기·인쇄 가능 여부와 최종 가격은 상담 후 확정됩니다.';
+ assert(gift.directory(new URLSearchParams()).body.includes(notice));
+ for(const verified of [true,false]){
+  const p=gift.data.products.find(p=>p.detail_available===verified);
+  const d=gift.detail(p.id);
+  assert(d.body.includes(notice));assert(!d.body.includes('선택 가능한 사양'));
+  assert(!d.schema.offers);
+ }
+});

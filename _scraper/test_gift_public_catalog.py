@@ -41,6 +41,7 @@ class PublicGiftTests(unittest.TestCase):
         for forbidden in ('private@example.com','factory_price','price_tiers','supplier','1234','4567','999'):
             self.assertNotIn(forbidden,encoded)
         self.assertTrue(next(p for p in catalog['products'] if p['id']=='101')['soldout'])
+        self.assertIsNone(next(p for p in catalog['products'] if p['id']=='102')['soldout'])
         self.assertEqual(details['101']['choices'],[{'color':'화이트','size':'','printing':'1도'}])
 
     def test_incomplete_inventory_and_orphan_memberships_fail_closed(self):

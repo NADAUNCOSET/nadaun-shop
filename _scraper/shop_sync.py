@@ -15,7 +15,7 @@ import tempfile
 import time
 from urllib.parse import urlencode
 from bs4 import BeautifulSoup
-from sync_shop_sources import ROOT,OUT,collect_smartstore,collect_imweb_dji,request,save_json,stamp
+from sync_shop_sources import ROOT,OUT,collect_smartstore,request,save_json,stamp
 from sync_kpp_catalog import collect as collect_kpp
 from sync_partner_catalogs import collect_lmount,collect_gift
 from enrich_shop_sources import collect as enrich
@@ -163,7 +163,7 @@ def run(publish=True,existing=False,source_updates=None):
             promote_updates(source_updates,ROOT,OUT,STATE,managed_files(),save_json)
         if not existing:
             previous=json.loads((ROOT/'data/catalog/sync-status.json').read_text()) if (ROOT/'data/catalog/sync-status.json').exists() else {}
-            collect_smartstore();collect_imweb_dji();collect_imweb_dji(promotion=True);collect_kpp();collect_lmount()
+            collect_smartstore();collect_kpp();collect_lmount()
             try: ensure_source_access()
             except GiftSourceSuspended:
                 # Preserve the linked-store snapshot without blocking other sources.

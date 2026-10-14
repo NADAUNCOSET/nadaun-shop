@@ -104,7 +104,7 @@ def product_name(name):
     return re.sub(r'^\[\s*[^\]]*레인보우베네\s*\]\s*','',name).strip()
 
 def verified_sources():
-    sources=['kpp','smartstore','imweb-dji','imweb-promotions','l-mount']
+    sources=['kpp','smartstore','l-mount']
     if (OUT/'plthink.json').exists():sources.append('plthink')
     if (OUT/'dji-official.json').exists():sources.append('dji-official')
     for partner in CAFE24_SOURCES:

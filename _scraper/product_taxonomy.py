@@ -10,6 +10,8 @@ from collections import Counter
 
 # New leaves supplement the KPP groups; their names describe product types.
 EXTRA = [
+ ('monitor-parts','kpp:h0','모니터·뷰파인더 액세서리'),('video-rack','kpp:h0','영상 장비 랙·설치 부품'),
+ ('camera-cooling','kpp:09','카메라 냉각 액세서리'),('camera-rig','kpp:06','카메라 지지대·리그'),
  ('robot-vacuum',None,'로봇 청소기'),('robot-vacuum-body','robot-vacuum','로봇 청소기 본체'),('robot-vacuum-parts','robot-vacuum','로봇 청소기 소모품·액세서리'),
  ('mini-light','kpp:0710','미니 라이트'),('mat-light','kpp:0710','매트 라이트'),('car-mount','kpp:06','카마운팅'),('light-power','kpp:0720','조명 케이블·전원'),('light-bag','kpp:0720','조명 가방·케이스'),
  ('mount-adapter','kpp:0690','마운팅 어댑터'),('audio-adapter','kpp:0740','오디오 변환 어댑터'),('camera-markers','kpp:09','카메라 마커·현장 소모품'),('dry-cabinet','kpp:09','제습함·보관용품'),('drone-parts','kpp:c010','드론 부품'),
@@ -96,6 +98,7 @@ def camera_accessory_type(name,brand):
     """
     if re.search(r'필름카메라.*필터.*키트|(?:카메라|바디).*(?:사은품|증정)',name,re.I):
         return None
+    if re.search(r'PTZ.*(?:컨트롤러|controller)|조이스틱',name,re.I):return 'video-control'
     rules=[
       ('power-parts',r'(?:전원|배터리|power|battery|\bAC\b).*(?:어[댑뎁]터|adapto?r)'),
       ('audio-adapter',r'(?:3[.]5\s*mm|TRRS|TRS|XLR).*(?:어[댑뎁]터|adapto?r)'),
@@ -104,13 +107,22 @@ def camera_accessory_type(name,brand):
       ('mount-adapter',r'어[댑뎁]터|어[댑뎁]타|\badapto?r\b'),
       ('kpp:0620',r'케이지|\bcage\b'),('kpp:0140',r'플레이트|\bplate\b|퀵\s*릴리즈|quick\s*release'),
       ('kpp:0650',r'핸드그립|우든그립|\bgrip\b'),
+      ('kpp:0650',r'카메라\s*손잡이'),
+      ('rig-rods',r'\d+\s*mm.{0,15}로드'),
+      ('camera-cooling',r'카메라\s*쿨러|camera\s*cool'),
+      ('remote',r'(?:카메라|LANC).*(?:컨트롤러|원격제어)|remote\s*controller'),
+      ('camera-rig',r'카메라\s*받침|camera\s*rig|카메라\s*회전\s*리그'),
+      ('rig-carts',r'릭샤|rickshaw|인력거'),
+      ('camera-rig',r'카메라.*리모트\s*헤드'),
+      ('kpp:0510',r'back[- ]?pack'),('equipment-bag',r'\bbags?\b'),
+      ('monitor-parts',r'sunhood|썬\s*후드'),
       ('cf-card',r'CF\s*익스프레스|CFexpress'),('sd-card',r'\bSDXXD\b|\bSDXC\b|\bSDHC\b'),('storage',r'메모리|\bmemory\b'),
       ('cleaning',r'청소|클리너|극세사|면봉|cleaner|swab'),
       ('kpp:0340',r'링캡|보호캡|렌즈\s*캡'),
       ('kpp:02',r'필터|\bfilter\b'),
-      ('dry-cabinet',r'제습함|dry\s*cabinet'),
+      ('dry-cabinet',r'제습함|dry\s*cabinet|카메라\s*보관함'),
       ('equipment-bag',r'파우치|pouch'),('kpp:0530',r'레인커버|rain\s*cover'),
-      ('camera-markers',r'티마커|아이마커|camera\s*(?:T\s*)?marker'),
+      ('camera-markers',r'티마커|아이마커|(?:camera|카메라)\s*(?:T\s*)?(?:marker|마커)'),
       ('rig-mounts',r'카메라\s*(?:스탠드|라이저)|camera\s*(?:riser|platform)|콜드슈|연장암'),
       ('rig-mounts',r'피벗\s*조인트'),('pan-head',r'팬헤드|팬틸트\s*헤드|PAN.*HEAD'),
       ('jib',r'지미집|\bjib\b|크레인|\bcrane\b'),
@@ -126,6 +138,36 @@ def camera_accessory_type(name,brand):
     if brand in {'smallrig','tilta'} and re.search(r'(?:FX[369]|FX30).*?(?:키트|kit)',name,re.I):return 'kpp:0620'
     if brand=='edelkrone' and re.search(r'헤드|head|FlexTILT',name,re.I):return 'kpp:0120'
     if brand=='harlowe' and re.search(r'솔\s*5|SOL\s*5',name,re.I):return 'kpp:0710'
+    if brand=='falcam' and re.search(r'FC-1SE\b',name,re.I):return 'kpp:0140'
+    if brand=='sony' and re.search(r'\bSEL2860\b',name,re.I):return 'kpp:0320'
+    if brand=='aten' and re.search(r'\bUC3310\b',name,re.I):return 'switcher'
+    if brand=='sennheiser' and re.search(r'\bMKE\s*200\b',name,re.I):return 'wired-mic'
+    # URSA sound accessories are not Blackmagic URSA cinema cameras.
+    if brand=='ursa' and re.search(r'Sticky|Tape|Soft|Shorties|Plush|Fur',name,re.I):return 'kpp:0740'
+    return None
+
+
+def reviewed_device_type(name, brand, selected):
+    """Separate device accessories from the compatible models in their names.
+
+    Constrain corrections to the affected device groups. Body bundles, rental
+    packages and unrelated source categories keep their existing assignments.
+    """
+    groups=set(selected)
+    if groups & {'type:monitor','type:video-recorder','type:tv'}:
+        if re.search(r'보호\s*필름|액정\s*보호|screen\s*protector',name,re.I):return 'screen-protection'
+        if re.search(r'HyperDeck\s+Extreme\s+Rack\s+Kit',name,re.I):return 'video-rack'
+        if re.search(r'\bEVF-TL1\b',name,re.I):return 'monitor-parts'
+        if re.search(r'모니터\s*암|monitor\s*arm',name,re.I):return 'display-mount'
+        if brand=='tvlogic':
+            if re.search(r'후드|hood|액세서리|악세사리',name,re.I):return 'monitor-parts'
+            if re.search(r'모니터|monitor',name,re.I):return 'monitor'
+        if brand=='kupo' and re.search(r'커플러|coupler',name,re.I):return 'light-grip'
+        if brand=='savage' and re.search(r'TV\s*Gray',name,re.I):return 'background'
+    if 'type:kpp:c010' in groups:
+        if re.search(r'충전\s*허브|charging\s*hub',name,re.I):return 'chargers'
+        if re.search(r'프로펠러|propeller|보관\s*커버|액세서리\s*콤보|악세서리\s*콤보',name,re.I):return 'drone-parts'
+    if brand=='z-cam' and re.search(r'Z\s*CAM\s*E2\s*F[68]\s*\+\s*XEEN',name,re.I):return 'cinema-camera'
     return None
 
 
@@ -282,6 +324,8 @@ def build_taxonomy(products,categories,overrides=None,ldnet_categories=None):
         if p['kind']=='purchase' and any('type:camera' in path(cid) for cid in selected):
             accessory=camera_accessory_type(name,bid)
             if accessory:selected=['type:'+accessory];reason='camera-accessory:'+accessory
+        if p['kind']=='purchase' and (device:=reviewed_device_type(name,bid,selected)):
+            selected=['type:'+device];reason='reviewed-device-purpose:'+device
         if p['kind']=='purchase' and (accessory:=reviewed_accessory_type(name,bid)):
             selected=['type:'+accessory];reason='reviewed-accessory-purpose:'+accessory
         if p['kind']=='purchase' and (effects:=reviewed_effects_type(name,bid)):

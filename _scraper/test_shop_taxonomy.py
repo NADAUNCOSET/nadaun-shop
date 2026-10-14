@@ -24,6 +24,44 @@ class ShopTaxonomy(unittest.TestCase):
             self.assertEqual({k:v for k,v in a.items() if k not in ('type_ids','category_ids')},{k:v for k,v in b.items() if k not in ('type_ids','category_ids')})
         return rows,{**cats,**{c['id']:c for c in rentals}}
 
+    def test_compatible_devices_do_not_turn_accessories_into_bodies(self):
+        cases=[
+            ('blackmagic','HyperDeck Extreme Rack Kit','video-rack'),
+            ('blackmagic','Video Assist 7인치 액정보호필름','screen-protection'),
+            ('tvlogic','티비로직 F-10H 필드모니터 액세서리 모음','monitor-parts'),
+            ('tvlogic','티비로직 SVM-183S 필드 모니터','monitor'),
+            ('kupo','KUPO KCP-874 Half Quick TV Coupler','light-grip'),
+            ('savage','SAVAGE #61 TV Gray','background'),
+            ('fujifilm','FUJIFILM EVF-TL1','monitor-parts'),
+            ('dji','DJI Mini 5 Pro 양방향 충전 허브','chargers'),
+            ('dji','DJI Neo 2 프로펠러 가드','drone-parts'),
+            ('ursa','URSA 얼사 Sticky Circles 스티키 서클','kpp:0740'),
+            ('sennheiser','MKE 200 / DSLR,미러리스카메라,스마트폰호환','wired-mic'),
+            ('sony','소니 SEL2860 미러리스 풀프레임 표준 줌렌즈','kpp:0320'),
+            ('goodsgood','굿스굿 카메라 보관함 CH-ION-70D','dry-cabinet'),
+            ('tilta','틸타 카메라 쿨러 냉각 시스템','camera-cooling'),
+            ('libec','Libec ZFC-L 카메라 컨트롤러 LANC 원격제어','remote'),
+            ('canon','캐논 RC-IP100 PTZ 카메라 컨트롤러','video-control'),
+            ('aten','ATEN UC3310 CAMLIVE MX UVC 카메라 매트릭스','switcher'),
+        ]
+        for brand,name,target in cases:
+            with self.subTest(name=name):
+                rows=[dict(id='x',name=name,brand_id=brand,kind='purchase',type_ids=[],category_ids=[])]
+                build_taxonomy(rows,self.source_categories)
+                self.assertIn('type:'+target,rows[0]['type_ids'])
+                self.assertNotIn('type:camera',rows[0]['type_ids'])
+
+    def test_actual_bodies_and_body_bundles_remain_devices(self):
+        cases=[('blackmagic','Blackmagic URSA Mini Pro','cinema-camera'),
+               ('dji','DJI Mini 5 Pro Fly More Combo','kpp:c010'),
+               ('blackmagic','Blackmagic PYXIS Monitor EVF Kit','monitor'),
+               ('lg','LG OLED 65인치 TV','tv'),
+               ('z-cam','Z CAM E2 F6 + XEEN CF 시네마 렌즈 세트','cinema-camera')]
+        for brand,name,target in cases:
+            rows=[dict(id='x',name=name,brand_id=brand,kind='purchase',type_ids=[],category_ids=[])]
+            build_taxonomy(rows,self.source_categories)
+            self.assertIn('type:'+target,rows[0]['type_ids'],name)
+
     def test_reviewed_cleaning_and_protective_products_never_become_bodies(self):
         cases=[('vsgo','비스고 V-S03E 풀프레임 카메라센서 세척봉','cleaning'),
                ('vsgo','VSGO Optical Lens Cleaner V-C01E','cleaning'),

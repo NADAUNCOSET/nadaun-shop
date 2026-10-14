@@ -69,7 +69,7 @@ def project(db, source_categories):
         verified=bool(d.get('detail_complete'))
         photo=image_url((d.get('main_images') or [p['image']])[0])
         record={'id':pid,'name':text(d.get('name') or p['name']),'image':photo,
-            'category_ids':ids,'detail_available':verified,'soldout':bool(d.get('soldout'))}
+            'category_ids':ids,'detail_available':verified,'soldout':bool(d.get('soldout')) if verified else None}
         products.append(record)
         observations.append(p['observed_at'])
         if verified:

@@ -12,6 +12,15 @@ class SourcePolicyTests(unittest.TestCase):
         approval=patch.object(policy,'supplemental_source_approved',return_value=False)
         self.approval=approval.start();self.addCleanup(approval.stop)
 
+    def test_retired_imweb_snapshots_are_preserved_but_never_selected(self):
+        for source in policy.RETIRED_SOURCES:
+            self.assertFalse(policy.purchase_source_allowed({'source':source,'kind':'purchase'},{}))
+        with tempfile.TemporaryDirectory() as folder,patch.object(policy,'OUT',Path(folder)):
+            p=Path(folder)/'imweb-dji.json';p.write_text('{"historical":true}')
+            self.assertNotIn('imweb-dji',policy.snapshots())
+            self.assertEqual(p.read_text(),'{"historical":true}')
+            with self.assertRaises(ValueError):policy.snapshots({'source':'imweb','products':{}})
+
     def test_owner_all_brand_approval_resolves_avx_overlap_without_changing_primary(self):
         self.approval.side_effect=lambda source:source=='avx'
         counts={'smallrig':{'avx':1,'kpp':2},'sony':{'avx':1,'smartstore':2}}

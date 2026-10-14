@@ -13,6 +13,9 @@ NAMES={'kpp':'KPP','smartstore':'우리 스마트스토어','imweb':'기존 아�
 NAMES['dji-official']='DJI 공식 한국 스토어'
 NAMES['onnoff']='온앤오프미디어'
 NAMES['ldnet']='엘디네트웍스'
+# Owner retired the old Imweb catalogue on 2026-10-15. Keep its snapshots
+# for recovery, but never use them for publication or source recommendations.
+RETIRED_SOURCES=frozenset({'imweb','imweb-dji','imweb-promotions'})
 
 
 def selections():
@@ -32,6 +35,7 @@ def policy_fingerprint():
 
 def purchase_source_allowed(product, choices=None):
     """An explicit exclusive purchase selection cannot replace rental stock."""
+    if product.get('source') in RETIRED_SOURCES:return False
     if product.get('kind') != 'purchase':return True
     from build_catalog import brand_id
     choice=(choices if choices is not None else selections()).get(brand_id(product['brand']),{})
@@ -49,9 +53,12 @@ def snapshots(candidate=None):
     """Published snapshots plus the current verified candidate, never old generations."""
     result={}
     for source in NAMES:
+        if source in RETIRED_SOURCES:continue
         path=OUT/(source+'.json')
         if source=='avx':path=next((p for p in (OUT/'avx-approved.json',OUT/'avx.json',OUT/'avx-aputure.json') if p.exists()),path)
         if path.exists():result[source]=json.loads(path.read_text())
+    if candidate and candidate.get('source') in RETIRED_SOURCES:
+        raise ValueError('Retired source cannot be promoted')
     if candidate:
         result[candidate.get('source','avx')]=candidate
     else:
