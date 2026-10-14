@@ -26,6 +26,16 @@ class SaekiTests(unittest.TestCase):
    with self.subTest(field=field),self.assertRaises(ValueError):parse_detail(body,{**listing,field:value},'now')
   for bad in [body.replace('data-status="PD004020"','data-status="PD004030"'),body.replace('cdn.saeki.co.kr','unrelated.invalid')]:
    with self.assertRaises(ValueError):parse_detail(bad,listing,'now')
+ def test_source_text_only_description_is_preserved(self):
+  p=self.parsed('PD00007514')
+  self.assertEqual(p['sale_price'],31000)
+  self.assertEqual(p['images']['detail'],[])
+  self.assertIn('실크 그레이 카드',p['description_text'])
+  self.assertEqual(actual_brand(p)[0],'GINICHI')
+  from bs4 import BeautifulSoup
+  body,listing=self.fixture('PD00007514');doc=BeautifulSoup(body,'lxml')
+  doc.select_one('.detail-img').clear()
+  with self.assertRaises(ValueError):parse_detail(str(doc),listing,'now')
  def test_verified_http_image_notice_uses_https(self):
   from saeki_detail_parser import photo
   url='http://ai.esmplus.com/kppshop/KPP/as_guide/as_guide.jpg'

@@ -62,7 +62,7 @@ def parse_detail(body,listing,checked_at):
  detail=list(dict.fromkeys(photo(x.get('src') or x.get('data-src')) for x in d.select('.detail-img img[src],.detail-img img[data-src]')))
  if not main:raise ValueError('Product gallery missing')
  if schema.get('image') and photo(schema['image'][0]) not in main:raise ValueError('Schema image differs from gallery')
- description=clean(' '.join(x.get_text(' ',strip=True) for x in d.select('.edit-type.editor-cont')))
+ description=clean(' '.join(x.get_text(' ',strip=True) for x in d.select('.edit-type.editor-cont, .detail-img')))
  if not detail and not description:raise ValueError('Product description missing')
  # Related mount/colour variants are distinct source products; never collapse
  # them into price-less purchase options or merge their identities.
