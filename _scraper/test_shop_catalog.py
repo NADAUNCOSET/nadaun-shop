@@ -166,7 +166,9 @@ class SourceRules(unittest.TestCase):
                 self.assertIn(p['listing_id'],ids)
                 detail=json.loads((ROOT/'data/catalog/details'/(p['detail_bucket']+'.json')).read_text())[p['id']]
                 self.assertTrue(any(v['id']==p['id'] for v in detail['related_variants']))
-        self.assertGreater(d['meta']['source_counts']['imweb-dji'],0)
+        self.assertNotIn('imweb-dji',d['meta']['source_counts'])
+        self.assertNotIn('imweb-promotions',d['meta']['source_counts'])
+        self.assertFalse(any(o['source']=='imweb' for p in d['products'] for o in p['offers']))
 
     def test_avx_source_conservation_and_aputure_replacement(self):
         base=ROOT/'data/catalog/sources'
