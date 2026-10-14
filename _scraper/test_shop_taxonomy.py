@@ -80,6 +80,27 @@ class ShopTaxonomy(unittest.TestCase):
         self.assertEqual(p['category_ids'],['brand-path']);self.assertIn('kpp:p:0110',p['type_ids']);self.assertIn('type:kpp:01',p['type_ids']);self.assertIn('type:kpp:0110',p['type_ids'])
         self.assertEqual(audit['assignments'][0]['reason'],'kpp-membership')
 
+    def test_reparented_source_leaves_do_not_keep_unrelated_old_roots(self):
+        cases=[('호야 MIST DIFFUSER 필터',['02','0230','04','0450'],'type:kpp:02','type:kpp:04'),
+               ('무선 마이크',['07','0730'],'type:audio','type:kpp:07'),
+               ('방송용 배터리',['06','0680'],'type:power','type:kpp:06')]
+        for name,source,expected,unrelated in cases:
+            p=dict(id='fixture',name=name,brand_id='test',kind='purchase',type_ids=['kpp:p:'+x for x in source],category_ids=[])
+            build_taxonomy([p],self.source_categories)
+            self.assertIn(expected,p['type_ids']);self.assertNotIn(unrelated,p['type_ids'])
+            self.assertTrue(set('kpp:p:'+x for x in source)<=set(p['type_ids']))
+
+    def test_monitors_recorders_and_prompters_are_discoverable_under_displays(self):
+        names=['SmallHD 703 BOLT 모니터','Atomos Ninja V+','크리스탈프롬프터 KSH-17',
+               'Hollyland Pyro 7+Pyro S bundle Kit','DJI SDR Transmission Combo',
+               'RED GEMINI+DJI TRANSMISSION HIGH BRIGHT MONITOR COMBO']
+        rows,cats=self.classify(names,kind='rental')
+        for p,leaf in zip(rows[:5],['monitor','monitor-recorder','232','monitor','video-wireless']):
+            self.assertIn('rent:6',p['type_ids']);self.assertIn('rent:'+leaf,p['type_ids'])
+            self.assertNotIn('rent:8',p['type_ids'])
+        self.assertIn('rent:11',rows[-1]['type_ids']);self.assertNotIn('rent:6',rows[-1]['type_ids'])
+        self.assertEqual(cats['rent:232']['source_parent_id'],'rent:8')
+
     def test_ldnet_product_tree_overrides_camera_keywords_and_preserves_source_membership(self):
         categories = deepcopy(self.source_categories)
         for sid, parent, name in [('534', None, '디지털/가전'), ('50', '534', '컴퓨터주변기기/소모품'), ('540', '50', '키보드/마우스')]:

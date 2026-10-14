@@ -166,8 +166,10 @@ class SourceRules(unittest.TestCase):
                 self.assertFalse({'type:camera','type:lens','type:cinema-lens'} & set(p['type_ids']))
         original=json.loads((base/'smartstore.json').read_text())['products']
         rentals={pid for pid,p in original.items() if p['kind']=='rental'}
+        corrections=json.loads((ROOT/'data/catalog/dedup-rules.json').read_text())['corrections']
+        excluded={pid for pid,rule in corrections.items() if rule.get('hidden')}
         actual={o['id'] for p in products if p['kind']=='rental' for o in p['offers']}
-        self.assertEqual(actual,rentals)
+        self.assertEqual(actual,rentals-excluded)
 
     def test_partner_coverage_options_and_brand_images(self):
         from sync_partner_catalogs import normalize_ldl_options,ldl_categories

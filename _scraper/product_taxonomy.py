@@ -162,6 +162,7 @@ def build_taxonomy(products,categories,overrides=None,ldnet_categories=None):
     for key,name in [('kpp:07','조명'),('kpp:08','케이블·테더링'),('kpp:h0','영상 송수신·모니터'),('kpp:c0','드론·액션캠·짐벌'),('kpp:09','촬영 액세서리')]:nodes['type:'+key]['name']=name
     for key in ('0730','0740','0750'):nodes['type:kpp:'+key]['parent_id']='type:audio'
     nodes['type:kpp:0680']['parent_id']='type:power'
+    nodes['type:kpp:0450'].update(parent_id='type:kpp:02',name='시네마·효과 필터')
     for c in list(categories.values()):
         if c['id'].startswith('l-mount:b:ldl-mount:'):
             add('mount:'+c['id'].split(':')[-1],c['name'],'mount:'+c['parent_id'].split(':')[-1] if c['parent_id'] else 'display-mount',c['id'])
@@ -213,7 +214,13 @@ def build_taxonomy(products,categories,overrides=None,ldnet_categories=None):
     audit=[]
     for p in products:
         name=unicodedata.normalize('NFKC',p['name']);bid=p['brand_id']
-        native=['type:kpp:'+c.split(':')[-1] for c in p['type_ids'] if c.startswith('kpp:p:')]
+        # Source snapshots include ancestors as memberships. Keep them as raw
+        # evidence, but rebuild customer paths from leaves after reparenting.
+        # Otherwise microphones retain the old lighting root and filters the
+        # cinema-lens root even though their display node has moved.
+        source_types=[c for c in p['type_ids'] if c.startswith('kpp:p:')]
+        source_parents={categories[c].get('parent_id') for c in source_types}
+        native=['type:kpp:'+c.split(':')[-1] for c in source_types if c not in source_parents]
         mounted=['type:mount:'+c.split(':')[-1] for c in p['category_ids'] if c.startswith('l-mount:b:ldl-mount:')]
         supplied = list(dict.fromkeys(ldnet_types[c] for c in p['category_ids'] if c in ldnet_types))
         reason='kpp-membership' if native else 'ldnet-source-category' if supplied else 'supplier-category' if mounted else ''

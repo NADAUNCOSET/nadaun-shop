@@ -26,6 +26,7 @@ TYPE_MAP={
  'kpp:07':'4','kpp:0710':'102','flash':'47','kpp:0720':'103','light-stand':'104','background':'104','power':'46','kpp:0680':'46',
  'audio':'5','kpp:0730':'54','wireless-mic':'368','kpp:0740':'117','audio-recorder':'113','audio-mixer':'113','speakers':'114','intercom':'210','kpp:0750':'116','apple-box':'270',
  'kpp:h0':'145','kpp:c0':'27','kpp:c010':'28','kpp:c020':'27','kpp:c040':'132','kpp:0670':'132',
+ 'monitor':'monitor','video-recorder':'monitor-recorder','video-wireless':'video-wireless',
  'kpp:05':'147','kpp:08':'271','kpp:09':'56','storage':'146','kpp:0960':'146','other':'160','tv-display':'120','projector':'119','color':'124','print':'158','studio':'studio',
 }
 
@@ -38,6 +39,14 @@ def build_rental_taxonomy(products,categories):
         key='rent:'+c['id']
         nodes[key]={'id':key,'name':LABELS.get(c['id'],c['name']),'parent_id':'rent:'+c['parent_id'] if c['parent_id'] else None,'brand_id':None,'scope':'rental-product','source_id':c['id'],'source_name':c['name']}
     nodes['rent:studio']={'id':'rent:studio','name':'스튜디오 대여','parent_id':'rent:9','brand_id':None,'scope':'rental-product','source_id':None}
+    # NADAUN's display inventory is browsed under TV/display. Retain the
+    # reference IDs and original parent as evidence, not as the navigation.
+    for key in ('145','232'):
+        node=nodes['rent:'+key]
+        node['source_parent_id']=node['parent_id']
+        node['parent_id']='rent:6'
+    for key,name in [('monitor','촬영·디렉터 모니터'),('monitor-recorder','모니터 레코더'),('video-wireless','무선 영상 송수신기')]:
+        nodes['rent:'+key]={'id':'rent:'+key,'name':name,'parent_id':'rent:145','brand_id':None,'scope':'rental-product','source_id':None}
     for key,name,parent in [('medium-camera','중형 카메라','2'),('medium-lens','중형 렌즈','3')]:
         nodes['rent:'+key]={'id':'rent:'+key,'name':name,'parent_id':'rent:'+parent,'brand_id':None,'scope':'rental-product','source_id':None}
     audit=[];brand_nodes={}
@@ -54,6 +63,10 @@ def build_rental_taxonomy(products,categories):
                 if key:destinations.append('rent:'+key);break
                 current=categories[current]['parent_id']
         name=p['name']
+        # A monitor bundled with a transmitter still belongs in monitor browse;
+        # camera packages keep their camera classification.
+        if 'rent:video-wireless' in destinations and re.search(r'모니터|monitor|Pyro\s*7|SMALLHD\s*703',name,re.I):
+            destinations=['rent:monitor']
         if re.search(r'ARRI\s*True\s*Blue',name,re.I):destinations=['rent:401']
         if re.search(r'오즈모\s*360|osmo\s*360',name,re.I):destinations=['rent:25']
         if re.search(r'시네새들',name):destinations=['rent:140']

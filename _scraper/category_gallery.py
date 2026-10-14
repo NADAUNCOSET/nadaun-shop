@@ -9,7 +9,7 @@ PURCHASE = ['type:camera','type:kpp:0110','type:kpp:02','type:mini-tripod',
     'type:kpp:0630','type:kpp:0640','type:kpp:0660','type:kpp:0690','type:kpp:06a0',
     'type:kpp:0670','type:kpp:0140','type:rig-carts','type:kpp:08','type:kpp:h0']
 RENTAL = ['rent:11','rent:24','rent:3','rent:12','rent:102','rent:47','rent:5',
-    'rent:127','rent:132','rent:133','rent:28','rent:27','rent:46','rent:145',
+    'rent:127','rent:132','rent:133','rent:28','rent:27','rent:46','rent:6','rent:monitor','rent:monitor-recorder','rent:232','rent:video-wireless',
     'rent:146','rent:135','rent:134','rent:104','rent:147','rent:56']
 
 

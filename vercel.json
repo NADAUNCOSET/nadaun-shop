@@ -1,9 +1,18 @@
 {
   "routes": [
     {
+      "src": "^/rental\\.html$",
+      "status": 308,
+      "headers": {
+        "Location": "/catalog.html?kind=rental"
+      }
+    },
+    {
       "src": "^/brands/brand-1764b0442d\\.html$",
       "status": 308,
-      "headers": { "Location": "/catalog.html" }
+      "headers": {
+        "Location": "/catalog.html"
+      }
     },
     {
       "src": "/(.*)",
