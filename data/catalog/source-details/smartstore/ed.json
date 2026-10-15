@@ -108,9 +108,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:21:09.083+09:00",
-    "checked_at": "2026-10-08T08:24:38+00:00",
-    "checked_epoch": 1791447878
+    "source_modified_at": "2026-10-15T12:32:05.407+09:00",
+    "checked_at": "2026-10-15T07:58:35+00:00",
+    "checked_epoch": 1792051115
   },
   "smartstore-13740721117": {
     "images": {
@@ -193,9 +193,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:23:40.128+09:00",
-    "checked_at": "2026-10-08T08:31:16+00:00",
-    "checked_epoch": 1791448276
+    "source_modified_at": "2026-10-15T12:34:29.319+09:00",
+    "checked_at": "2026-10-15T07:59:39+00:00",
+    "checked_epoch": 1792051179
   },
   "smartstore-13740623557": {
     "images": {
@@ -633,9 +633,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.053+09:00",
-    "checked_at": "2026-09-07T06:08:00+00:00",
-    "checked_epoch": 1788761280
+    "source_modified_at": "2026-10-15T12:46:38.901+09:00",
+    "checked_at": "2026-10-15T08:03:13+00:00",
+    "checked_epoch": 1792051393
   },
   "smartstore-7831701309": {
     "images": {
@@ -856,5 +856,27 @@
     "source_modified_at": "2026-09-28T20:18:04.474+09:00",
     "checked_at": "2026-10-08T08:14:20+00:00",
     "checked_epoch": 1791447260
+  },
+  "smartstore-13812282153": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_143/1792042778092ksumj_JPEG/56767334234835445_634270115.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20250405_192/1743821530582hr8bv_JPEG/2199626864517296_306875344.jpg?type=o1000"
+      ]
+    },
+    "description_text": "APC BE650G2-GR\nBack-UPS 무정전 전원장치\n650VA / 400W · 230V · USB Type-A 충전 포트\n정전 시 배터리 백업과 서지 보호를 제공하는 UPS 본체입니다.\n8개 Schuko 타입 출력 소켓 · 사용자 교체형 배터리\n정격 용량: 650VA / 400W\n모델명: BE650G2-GR\n제조사: APC / Schneider Electric\n원산지: 필리핀\n전기용품 안전확인: YU10588-20001\n연결 장비의 소비전력 합계와 플러그 규격을 확인해 주세요.\n백업 시간은 부하와 배터리 상태에 따라 달라집니다.\n상품 및 A/S 문의: 02-6053-6231",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T14:44:20.817+09:00",
+    "checked_at": "2026-10-15T07:58:00+00:00",
+    "checked_epoch": 1792051080
   }
 }

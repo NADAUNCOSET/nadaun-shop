@@ -154,9 +154,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:23:50.654+09:00",
-    "checked_at": "2026-10-08T08:31:56+00:00",
-    "checked_epoch": 1791448316
+    "source_modified_at": "2026-10-15T12:35:25.218+09:00",
+    "checked_at": "2026-10-15T08:00:14+00:00",
+    "checked_epoch": 1792051214
   },
   "smartstore-13740420713": {
     "images": {
@@ -176,9 +176,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:24:01.515+09:00",
-    "checked_at": "2026-10-08T08:33:34+00:00",
-    "checked_epoch": 1791448414
+    "source_modified_at": "2026-10-15T12:35:25.218+09:00",
+    "checked_at": "2026-10-15T08:00:20+00:00",
+    "checked_epoch": 1792051220
   },
   "smartstore-13740321107": {
     "images": {
@@ -854,5 +854,28 @@
     "source_modified_at": "2025-11-19T14:02:27.130+09:00",
     "checked_at": "2026-09-07T06:15:48+00:00",
     "checked_epoch": 1788761748
+  },
+  "smartstore-13812378909": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_243/1792045909226FBhIU_JPEG/6755808029314788_2042071370.jpg"
+      ],
+      "detail": [
+        "https://cdn-optimized.imweb.me/upload/S202003260980ebc19a2ea/a75c87f81f94b.png?w=1536",
+        "https://cdn-optimized.imweb.me/upload/S202003260980ebc19a2ea/d30593987ec33.png?w=1536"
+      ]
+    },
+    "description_text": "NiSi JMPMBK95 제트맥 프로 매트박스 키트 95MAG\n95MAG 키트 구성\n제트맥 프로 매트박스, 카본 파이버 탑 플래그, 82mm-95MAG 어댑터링, 86mm-95MAG 어댑터링, 95mm-95MAG 어댑터링, 전용 가방.\n호환 시스템: 제트맥 프로 95MAG. 제품 코드: JMPMBK95.\n95mm 시네마 렌즈용 어댑터링은 별매이며 카메라·렌즈·필터 등 촬영 예시 장비는 포함되지 않습니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T15:32:27.676+09:00",
+    "checked_at": "2026-10-15T07:57:56+00:00",
+    "checked_epoch": 1792051076
   }
 }

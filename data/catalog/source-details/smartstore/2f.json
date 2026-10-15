@@ -86,9 +86,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:22:47.145+09:00",
-    "checked_at": "2026-10-08T08:29:44+00:00",
-    "checked_epoch": 1791448184
+    "source_modified_at": "2026-10-15T12:32:17.580+09:00",
+    "checked_at": "2026-10-15T07:58:51+00:00",
+    "checked_epoch": 1792051131
   },
   "smartstore-13740634116": {
     "images": {
@@ -202,9 +202,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
-    "checked_at": "2026-10-08T08:40:01+00:00",
-    "checked_epoch": 1791448801
+    "source_modified_at": "2026-10-15T12:36:27.505+09:00",
+    "checked_at": "2026-10-15T08:01:07+00:00",
+    "checked_epoch": 1792051267
   },
   "smartstore-13678650720": {
     "images": {
@@ -512,9 +512,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.053+09:00",
-    "checked_at": "2026-09-07T06:07:56+00:00",
-    "checked_epoch": 1788761276
+    "source_modified_at": "2026-10-15T12:46:33.429+09:00",
+    "checked_at": "2026-10-15T08:03:10+00:00",
+    "checked_epoch": 1792051390
   },
   "smartstore-5121701470": {
     "images": {
@@ -586,5 +586,28 @@
     "source_modified_at": "2026-10-06T22:36:10.111+09:00",
     "checked_at": "2026-10-08T08:13:15+00:00",
     "checked_epoch": 1791447195
+  },
+  "smartstore-13812507400": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_140/1792050037503zEDYx_JPEG/64982168781998539_1730508313.jpg"
+      ],
+      "detail": [
+        "https://samyangtechmall.com/web/upload/NNEditor/20251112/22714CF_01.jpg",
+        "https://samyangtechmall.com/web/upload/NNEditor/20251112/22714CF_05.jpg"
+      ]
+    },
+    "description_text": "TERIS TS-22714CF 헤드 포함 키트\n헤드 지지하중 14kg. 삼각대 다리 지지하중 70kg과 구분해 사용하세요.\n카본 삼각대와 14kg 헤드 포함 세트. TS-227CF 단품 및 7kg/20kg 헤드 세트와 다릅니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T16:40:43.105+09:00",
+    "checked_at": "2026-10-15T07:57:49+00:00",
+    "checked_epoch": 1792051069
   }
 }

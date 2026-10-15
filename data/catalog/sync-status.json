@@ -2,7 +2,7 @@
   "schema_version": 1,
   "source_counts": {
     "kpp": 4044,
-    "smartstore": 6877,
+    "smartstore": 6874,
     "l-mount": 345,
     "plthink": 6653,
     "saeki": 7452,
@@ -15,7 +15,7 @@
   },
   "detail_coverage": {
     "kpp": 4044,
-    "smartstore": 6791,
+    "smartstore": 6788,
     "l-mount": 345,
     "plthink": 6253,
     "saeki": 7437,
@@ -26,16 +26,16 @@
     "ldnet": 3072,
     "avx": 1377
   },
-  "synced_at": "2026-10-15T05:28:46+00:00",
+  "synced_at": "2026-10-15T07:55:04+00:00",
   "merged_count": 5128,
-  "product_count": 29495,
+  "product_count": 29492,
   "category_browsing_enabled": true,
-  "listing_count": 29223,
+  "listing_count": 29220,
   "option_family_count": 272,
   "deduplication": {
-    "brands_checked": 413,
-    "groups": 3210,
+    "brands_checked": 410,
+    "groups": 3209,
     "removed": 5128
   },
-  "revision": "3dcbef82d0462e3c"
+  "revision": "52cd92369d3da619"
 }

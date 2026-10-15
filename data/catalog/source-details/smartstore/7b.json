@@ -281,9 +281,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-29T10:23:52.683+09:00",
-    "checked_at": "2026-10-08T08:41:30+00:00",
-    "checked_epoch": 1791448890
+    "source_modified_at": "2026-10-15T12:36:48.445+09:00",
+    "checked_at": "2026-10-15T08:01:32+00:00",
+    "checked_epoch": 1792051292
   },
   "smartstore-13689175932": {
     "images": {
@@ -490,9 +490,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:04.147+09:00",
-    "checked_at": "2026-09-07T05:57:43+00:00",
-    "checked_epoch": 1788760663
+    "source_modified_at": "2026-10-15T12:38:40.657+09:00",
+    "checked_at": "2026-10-15T08:02:45+00:00",
+    "checked_epoch": 1792051365
   },
   "smartstore-8597793783": {
     "images": {
@@ -837,5 +837,27 @@
     "source_modified_at": "2026-10-07T16:04:17.272+09:00",
     "checked_at": "2026-10-08T08:12:58+00:00",
     "checked_epoch": 1791447178
+  },
+  "smartstore-13812459279": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_281/179204835817900v73_PNG/126181260329504412_54721336.png"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20261015_66/1792048365740rgIIT_PNG/image.png"
+      ]
+    },
+    "description_text": "구성품\nCFE-A Type Card 320GB // 1ea\nReader // 1ea\n​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "FREE",
+      "base_fee": 0,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T16:12:50.919+09:00",
+    "checked_at": "2026-10-15T07:57:52+00:00",
+    "checked_epoch": 1792051072
   }
 }

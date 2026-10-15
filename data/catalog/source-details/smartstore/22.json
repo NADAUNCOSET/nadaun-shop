@@ -196,9 +196,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:22:47.145+09:00",
-    "checked_at": "2026-10-08T08:30:05+00:00",
-    "checked_epoch": 1791448205
+    "source_modified_at": "2026-10-15T12:33:45.663+09:00",
+    "checked_at": "2026-10-15T07:59:08+00:00",
+    "checked_epoch": 1792051148
   },
   "smartstore-13740634043": {
     "images": {
@@ -240,9 +240,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:23:40.128+09:00",
-    "checked_at": "2026-10-08T08:31:50+00:00",
-    "checked_epoch": 1791448310
+    "source_modified_at": "2026-10-15T12:35:02.898+09:00",
+    "checked_at": "2026-10-15T08:00:11+00:00",
+    "checked_epoch": 1792051211
   },
   "smartstore-13740320879": {
     "images": {
@@ -319,9 +319,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-29T10:23:52.683+09:00",
-    "checked_at": "2026-10-08T08:40:41+00:00",
-    "checked_epoch": 1791448841
+    "source_modified_at": "2026-10-15T12:36:33.632+09:00",
+    "checked_at": "2026-10-15T08:01:20+00:00",
+    "checked_epoch": 1792051280
   },
   "smartstore-13673744135": {
     "images": {
@@ -736,5 +736,27 @@
     "source_modified_at": "2026-09-28T20:17:52.510+09:00",
     "checked_at": "2026-10-08T08:13:49+00:00",
     "checked_epoch": 1791447229
+  },
+  "smartstore-13812317445": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_131/1792043947978t4Ehf_JPEG/126176850133820593_1532810361.jpg"
+      ],
+      "detail": [
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20261014/788a7c76038ebac3d9fa7185e067f93a.jpg"
+      ]
+    },
+    "description_text": "스몰리그 2797 안전 잠금 버튼 멀티 콜드슈 마운트\n구성: 콜드슈 마운트 1개, 육각 렌치 1개. 촬영 예시 장비는 포함되지 않습니다.\n주의: 하단 금속 접점 핀이 있는 플래시에는 사용할 수 없습니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T14:59:27.929+09:00",
+    "checked_at": "2026-10-15T07:58:00+00:00",
+    "checked_epoch": 1792051080
   }
 }

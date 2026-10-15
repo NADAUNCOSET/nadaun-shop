@@ -302,9 +302,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:22:47.145+09:00",
-    "checked_at": "2026-10-08T08:29:59+00:00",
-    "checked_epoch": 1791448199
+    "source_modified_at": "2026-10-15T12:33:45.663+09:00",
+    "checked_at": "2026-10-15T07:59:04+00:00",
+    "checked_epoch": 1792051144
   },
   "smartstore-13740634066": {
     "images": {
@@ -324,9 +324,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:23:29.547+09:00",
-    "checked_at": "2026-10-08T08:30:46+00:00",
-    "checked_epoch": 1791448246
+    "source_modified_at": "2026-10-15T12:34:14.451+09:00",
+    "checked_at": "2026-10-15T07:59:23+00:00",
+    "checked_epoch": 1792051163
   },
   "smartstore-13740633250": {
     "images": {
@@ -532,9 +532,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-07-27T18:29:17.762+09:00",
-    "checked_at": "2026-09-07T05:50:38+00:00",
-    "checked_epoch": 1788760238
+    "source_modified_at": "2026-10-15T12:37:51.773+09:00",
+    "checked_at": "2026-10-15T08:02:05+00:00",
+    "checked_epoch": 1792051325
   },
   "smartstore-11938362716": {
     "images": {
@@ -832,5 +832,27 @@
     "source_modified_at": "2026-02-27T15:35:18.541+09:00",
     "checked_at": "2026-09-07T06:16:37+00:00",
     "checked_epoch": 1788761797
+  },
+  "smartstore-13812480470": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_239/1792049126312lBpDT_JPEG/46642494261531055_2068218998.jpg"
+      ],
+      "detail": [
+        "https://samyangtechmall.com/web/upload/NNEditor/20260116/100T.jpg"
+      ]
+    },
+    "description_text": "TERIS TS100T 삼각대 단품\n헤드는 포함되지 않습니다. 상세사진 속 헤드는 사용 예시입니다.\n알루미늄 비디오 삼각대 · 그라운드 스프레더",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T16:25:30.640+09:00",
+    "checked_at": "2026-10-15T07:57:50+00:00",
+    "checked_epoch": 1792051070
   }
 }

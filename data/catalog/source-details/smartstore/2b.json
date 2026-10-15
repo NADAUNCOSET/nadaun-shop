@@ -184,9 +184,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:22:40.059+09:00",
-    "checked_at": "2026-10-08T08:29:27+00:00",
-    "checked_epoch": 1791448167
+    "source_modified_at": "2026-10-15T12:32:17.580+09:00",
+    "checked_at": "2026-10-15T07:58:46+00:00",
+    "checked_epoch": 1792051126
   },
   "smartstore-13740320886": {
     "images": {
@@ -718,5 +718,29 @@
     "source_modified_at": "2026-09-01T09:59:04.147+09:00",
     "checked_at": "2026-09-07T06:13:09+00:00",
     "checked_epoch": 1788761589
+  },
+  "smartstore-13812361146": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_52/1792045338697HGLq4_JPEG/17812112798871642_1178629387.jpg"
+      ],
+      "detail": [
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20260923/b25864906a242ca34f0c0bb0ceb9ea20.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20260923/28ca426d3774ae5853f042f076761ed2.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20260923/81b7e0eb4bfeb2a41fd62d6287d27d8a.jpg"
+      ]
+    },
+    "description_text": "DZOFILM DZO-AZ25180I Arles Zoom 2렌즈 번들 ARRI PL\n25-75mm T2.6 FF 및 65-180mm T2.6 FF 렌즈 2종 번들입니다. 기본 ARRI PL 마운트이며 카메라 등 촬영 예시 장비는 별매입니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T15:22:39.244+09:00",
+    "checked_at": "2026-10-15T07:57:57+00:00",
+    "checked_epoch": 1792051077
   }
 }

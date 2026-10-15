@@ -1,4 +1,85 @@
 {
+  "smartstore-13812461548": {
+    "rental": {
+      "rates": [],
+      "components": [
+        {
+          "name": "CFE-A Type Card 512GB",
+          "quantity": 1
+        },
+        {
+          "name": "Reader",
+          "quantity": 1
+        }
+      ],
+      "notes": [],
+      "packing_confirmation_required": false,
+      "period_confirmation_required": true
+    },
+    "images": {
+      "thumb": "https://shop-phinf.pstatic.net/20261015_175/1792048428843GsVlY_PNG/18917634694914534_1881961725.png",
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_175/1792048428843GsVlY_PNG/18917634694914534_1881961725.png"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20261015_234/1792048433467wx8C6_PNG/image.png"
+      ]
+    }
+  },
+  "smartstore-13812459279": {
+    "rental": {
+      "rates": [],
+      "components": [
+        {
+          "name": "CFE-A Type Card 320GB",
+          "quantity": 1
+        },
+        {
+          "name": "Reader",
+          "quantity": 1
+        }
+      ],
+      "notes": [],
+      "packing_confirmation_required": false,
+      "period_confirmation_required": true
+    },
+    "images": {
+      "thumb": "https://shop-phinf.pstatic.net/20261015_281/179204835817900v73_PNG/126181260329504412_54721336.png",
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_281/179204835817900v73_PNG/126181260329504412_54721336.png"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20261015_66/1792048365740rgIIT_PNG/image.png"
+      ]
+    }
+  },
+  "smartstore-13812451915": {
+    "rental": {
+      "rates": [],
+      "components": [
+        {
+          "name": "CFE-A Type Card 160GB",
+          "quantity": 1
+        },
+        {
+          "name": "Reader",
+          "quantity": 1
+        }
+      ],
+      "notes": [],
+      "packing_confirmation_required": false,
+      "period_confirmation_required": true
+    },
+    "images": {
+      "thumb": "https://shop-phinf.pstatic.net/20261015_56/1792048151134hoT8P_PNG/18917356976657423_293793587.png",
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_56/1792048151134hoT8P_PNG/18917356976657423_293793587.png"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20261015_137/17920481588867NMM1_PNG/image.png"
+      ]
+    }
+  },
   "smartstore-13762129935": {
     "rental": {
       "rates": [

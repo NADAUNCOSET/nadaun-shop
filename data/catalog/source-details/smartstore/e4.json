@@ -112,9 +112,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:20:58.002+09:00",
-    "checked_at": "2026-10-08T08:24:19+00:00",
-    "checked_epoch": 1791447859
+    "source_modified_at": "2026-10-15T12:31:29.721+09:00",
+    "checked_at": "2026-10-15T07:58:27+00:00",
+    "checked_epoch": 1792051107
   },
   "smartstore-13740754945": {
     "images": {
@@ -244,9 +244,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:23:40.128+09:00",
-    "checked_at": "2026-10-08T08:31:42+00:00",
-    "checked_epoch": 1791448302
+    "source_modified_at": "2026-10-15T12:35:02.898+09:00",
+    "checked_at": "2026-10-15T08:00:04+00:00",
+    "checked_epoch": 1792051204
   },
   "smartstore-13740417175": {
     "images": {
@@ -532,9 +532,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-04-27T15:13:50.898+09:00",
-    "checked_at": "2026-09-07T06:06:57+00:00",
-    "checked_epoch": 1788761217
+    "source_modified_at": "2026-10-15T12:39:15.091+09:00",
+    "checked_at": "2026-10-15T08:03:01+00:00",
+    "checked_epoch": 1792051381
   },
   "smartstore-8237826420": {
     "images": {
@@ -554,9 +554,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.053+09:00",
-    "checked_at": "2026-09-07T06:07:59+00:00",
-    "checked_epoch": 1788761279
+    "source_modified_at": "2026-10-15T12:46:38.901+09:00",
+    "checked_at": "2026-10-15T08:03:12+00:00",
+    "checked_epoch": 1792051392
   },
   "smartstore-8140138360": {
     "images": {
@@ -646,8 +646,31 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:12.343+09:00",
-    "checked_at": "2026-09-07T06:19:07+00:00",
-    "checked_epoch": 1788761947
+    "source_modified_at": "2026-10-15T12:41:09.749+09:00",
+    "checked_at": "2026-10-15T08:03:46+00:00",
+    "checked_epoch": 1792051426
+  },
+  "smartstore-13812509882": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_267/1792050116674kJYwn_JPEG/55028644334456355_709212084.jpg"
+      ],
+      "detail": [
+        "https://samyangtechmall.com/web/upload/NNEditor/20251112/22720CF_01.jpg",
+        "https://samyangtechmall.com/web/upload/NNEditor/20251112/22720CF_05.jpg"
+      ]
+    },
+    "description_text": "TERIS TS-22720CF 헤드 포함 키트\n헤드 지지하중 20kg. 삼각대 다리 지지하중 70kg과 구분해 사용하세요.\n카본 삼각대와 20kg 헤드 포함 세트. TS-227CF 단품 및 7kg/14kg 헤드 세트와 다릅니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T16:42:01.999+09:00",
+    "checked_at": "2026-10-15T07:57:48+00:00",
+    "checked_epoch": 1792051068
   }
 }

@@ -86,9 +86,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:22:47.145+09:00",
-    "checked_at": "2026-10-08T08:29:43+00:00",
-    "checked_epoch": 1791448183
+    "source_modified_at": "2026-10-15T12:32:17.580+09:00",
+    "checked_at": "2026-10-15T07:58:50+00:00",
+    "checked_epoch": 1792051130
   },
   "smartstore-13740634269": {
     "images": {
@@ -209,9 +209,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-31T16:17:15.301+09:00",
-    "checked_at": "2026-09-07T05:45:27+00:00",
-    "checked_epoch": 1788759927
+    "source_modified_at": "2026-10-15T12:37:31.999+09:00",
+    "checked_at": "2026-10-15T08:01:41+00:00",
+    "checked_epoch": 1792051301
   },
   "smartstore-13026862509": {
     "images": {
@@ -324,9 +324,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:50:18.105+09:00",
-    "checked_at": "2026-09-07T05:57:51+00:00",
-    "checked_epoch": 1788760671
+    "source_modified_at": "2026-10-15T12:38:40.657+09:00",
+    "checked_at": "2026-10-15T08:02:48+00:00",
+    "checked_epoch": 1792051368
   },
   "smartstore-10703716487": {
     "images": {
@@ -676,5 +676,29 @@
     "source_modified_at": "2026-09-28T20:17:52.510+09:00",
     "checked_at": "2026-10-08T08:13:24+00:00",
     "checked_epoch": 1791447204
+  },
+  "smartstore-13812326103": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_258/1792044232148m2ejX_JPEG/55022759812867709_2090160991.jpg"
+      ],
+      "detail": [
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20261006/0fab708908a2e5f3787054069dd1bd3c.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20261006/a9c74f03748d8f090b59b1e94b8a19f7.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20261006/9b288fe976bb64981401eb2d59fa33fb.jpg"
+      ]
+    },
+    "description_text": "스몰리그 6715 DJI Osmo 360 II 케이지 어드밴스드 에디션\n구성: 케이지 1개, 실리콘 보호 커버 1개, 보증서 1개. 카메라 등 촬영 예시 장비는 별매입니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T15:04:04.157+09:00",
+    "checked_at": "2026-10-15T07:57:59+00:00",
+    "checked_epoch": 1792051079
   }
 }

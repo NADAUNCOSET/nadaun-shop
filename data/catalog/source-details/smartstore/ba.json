@@ -286,9 +286,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
-    "checked_at": "2026-10-08T08:38:00+00:00",
-    "checked_epoch": 1791448680
+    "source_modified_at": "2026-10-15T12:35:49.426+09:00",
+    "checked_at": "2026-10-15T08:00:30+00:00",
+    "checked_epoch": 1792051230
   },
   "smartstore-13739631715": {
     "images": {
@@ -707,8 +707,32 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T15:28:06.576+09:00",
-    "checked_at": "2026-09-08T16:20:07+00:00",
-    "checked_epoch": 1788884407
+    "source_modified_at": "2026-10-15T12:41:19.085+09:00",
+    "checked_at": "2026-10-15T08:03:48+00:00",
+    "checked_epoch": 1792051428
+  },
+  "smartstore-13812320681": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_167/1792044072737U34Xs_JPEG/189609734667882_1331298926.jpg"
+      ],
+      "detail": [
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20261013/5715aba9628b328eec72a2562c02f13d.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20261013/44680dcfed0e98e540390c4298d244b7.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20261013/00712127b0584e30df914076c609cfb4.jpg"
+      ]
+    },
+    "description_text": "스몰리그 6439 DJI RS 시리즈용 퀵릴리즈 마운트 플레이트\n구성: 퀵릴리즈 플레이트 1개. 카메라·짐벌 등 촬영 예시 장비는 포함되지 않습니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T15:01:21.406+09:00",
+    "checked_at": "2026-10-15T07:57:59+00:00",
+    "checked_epoch": 1792051079
   }
 }

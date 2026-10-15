@@ -459,9 +459,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
-    "checked_at": "2026-10-08T08:40:04+00:00",
-    "checked_epoch": 1791448804
+    "source_modified_at": "2026-10-15T12:36:27.505+09:00",
+    "checked_at": "2026-10-15T08:01:08+00:00",
+    "checked_epoch": 1792051268
   },
   "smartstore-13739631161": {
     "images": {
@@ -823,5 +823,27 @@
     "source_modified_at": "2025-11-19T14:02:26.465+09:00",
     "checked_at": "2026-09-07T06:17:21+00:00",
     "checked_epoch": 1788761841
+  },
+  "smartstore-13812403556": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_139/17920466978787vFoc_JPEG/13589045709540102_592407766.jpg"
+      ],
+      "detail": [
+        "https://samyangtechmall.com/web/upload/NNEditor/20260116/TS-TRAVEL20720PRO_01.jpg"
+      ]
+    },
+    "description_text": "TERIS TS-TRAVEL 7 PRO\n카본 비디오 삼각대 · 지지하중 7kg\nTSN6 PLUS 헤드 + TS-L75CF 삼각대 / 전용 가방 포함",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T15:45:22.984+09:00",
+    "checked_at": "2026-10-15T07:57:54+00:00",
+    "checked_epoch": 1792051074
   }
 }

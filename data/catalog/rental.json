@@ -158,9 +158,9 @@
         "id": "rent:146",
         "name": "메모리·스토리지",
         "kind": "rental",
-        "count": 6,
-        "image": "https://shop-phinf.pstatic.net/20260209_225/1770606435579GSY8d_PNG/104739256713553997_1630995191.png",
-        "product_id": "smartstore-13088223160",
+        "count": 9,
+        "image": "https://shop-phinf.pstatic.net/20261015_175/1792048428843GsVlY_PNG/18917634694914534_1881961725.png",
+        "product_id": "smartstore-13812461548",
         "href": "/catalog.html?kind=rental&type=rent%3A146"
       },
       {
@@ -214,7 +214,7 @@
     "schema_version": 1,
     "source_counts": {
       "kpp": 4044,
-      "smartstore": 6877,
+      "smartstore": 6874,
       "l-mount": 345,
       "plthink": 6653,
       "saeki": 7452,
@@ -227,7 +227,7 @@
     },
     "detail_coverage": {
       "kpp": 4044,
-      "smartstore": 6791,
+      "smartstore": 6788,
       "l-mount": 345,
       "plthink": 6253,
       "saeki": 7437,
@@ -238,18 +238,18 @@
       "ldnet": 3072,
       "avx": 1377
     },
-    "synced_at": "2026-10-15T05:28:46+00:00",
+    "synced_at": "2026-10-15T07:55:04+00:00",
     "merged_count": 5128,
-    "product_count": 213,
+    "product_count": 216,
     "category_browsing_enabled": true,
-    "listing_count": 213,
+    "listing_count": 216,
     "option_family_count": 272,
     "deduplication": {
-      "brands_checked": 413,
-      "groups": 3210,
+      "brands_checked": 410,
+      "groups": 3209,
       "removed": 5128
     },
-    "revision": "3dcbef82d0462e3c",
+    "revision": "52cd92369d3da619",
     "view": "rental"
   },
   "brands": [
@@ -1038,8 +1038,8 @@
         "saeki:b:smallrig:100257",
         "saeki:b:smallrig:root"
       ],
-      "count": 1629,
-      "purchase_count": 1626,
+      "count": 1632,
+      "purchase_count": 1629,
       "rental_count": 3,
       "category_ids": [
         "kpp:b:smallrig:d210",
@@ -2370,8 +2370,8 @@
       "id": "kupo",
       "name": "KUPO",
       "aliases": [
-        "쿠포",
-        "KUPO"
+        "KUPO",
+        "쿠포"
       ],
       "logo": "/assets/shop/brands/kupo-f428114a1d.webp",
       "navigation_category_ids": [
@@ -2416,10 +2416,10 @@
       "rental_count": 6,
       "category_ids": [
         "naver:b:kupo:50000206",
-        "naver:b:kupo:50001390",
-        "naver:b:kupo:50002082",
         "naver:b:kupo:50001394",
         "naver:b:kupo:50002113",
+        "naver:b:kupo:50001390",
+        "naver:b:kupo:50002082",
         "naver:b:kupo:50001389",
         "naver:b:kupo:50002076",
         "naver:b:kupo:50002079",
@@ -2456,9 +2456,9 @@
         "rental-brand:kupo:56",
         "rental-brand:kupo:270"
       ],
-      "representative_id": "smartstore-13796129995",
-      "representative_image": "https://shop-phinf.pstatic.net/20261007_177/1791355749427L5At1_JPEG/14309389298293070_1627620649.jpg",
-      "representative_name": "KUPO CS-40MB 40인치 슬라이딩 다리 C스탠드 블랙 단품",
+      "representative_id": "smartstore-13812350366",
+      "representative_image": "https://shop-phinf.pstatic.net/20261015_68/1792044980659ihFG2_JPEG/9245942578563062_465410561.jpg",
+      "representative_name": "CS-30MKB 30인치 마스터 C스탠드 슬라이딩 레그 키트 블랙",
       "image_kind": "logo",
       "logo_dark": true
     },
@@ -3168,8 +3168,8 @@
         "saeki:b:hollyland:100270",
         "saeki:b:hollyland:root"
       ],
-      "count": 336,
-      "purchase_count": 321,
+      "count": 337,
+      "purchase_count": 322,
       "rental_count": 15,
       "category_ids": [
         "naver:b:hollyland:50000206",
@@ -3992,13 +3992,16 @@
       "aliases": [
         "APC"
       ],
-      "logo": "https://shop-phinf.pstatic.net/20250719_270/1752916278578dsfya_PNG/23180947700983131_697270666.png",
+      "logo": "https://shop-phinf.pstatic.net/20261015_143/1792042778092ksumj_JPEG/56767334234835445_634270115.jpg",
       "navigation_category_ids": [
         "ldnet:b:apc:25",
-        "ldnet:b:apc:32"
+        "ldnet:b:apc:32",
+        "naver:b:apc:50000097",
+        "naver:b:apc:50001221",
+        "naver:b:apc:50003113"
       ],
-      "count": 132,
-      "purchase_count": 132,
+      "count": 134,
+      "purchase_count": 134,
       "rental_count": 0,
       "category_ids": [
         "naver:b:apc:50000097",
@@ -4007,9 +4010,9 @@
         "ldnet:b:apc:25",
         "ldnet:b:apc:32"
       ],
-      "representative_id": "smartstore-12125633284",
-      "representative_image": "https://shop-phinf.pstatic.net/20250719_270/1752916278578dsfya_PNG/23180947700983131_697270666.png",
-      "representative_name": "APC BX950MI-GR 무정전 전원장치 950VA 520W",
+      "representative_id": "smartstore-13812282153",
+      "representative_image": "https://shop-phinf.pstatic.net/20261015_143/1792042778092ksumj_JPEG/56767334234835445_634270115.jpg",
+      "representative_name": "APC BE650G2-GR 무정전 전원장치 UPS 650VA 400W",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -6053,7 +6056,7 @@
         "디죠",
         "조프"
       ],
-      "logo": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20261006/28c727967371ff1b690f8a77f74f29c2.jpg",
+      "logo": "https://shop-phinf.pstatic.net/20261015_52/1792045338697HGLq4_JPEG/17812112798871642_1178629387.jpg",
       "navigation_category_ids": [
         "avx:b:dzofilm:reviewed:avx:b:00682a1d74aed1d1",
         "avx:b:dzofilm:reviewed:avx:b:ecbb0ae014553782",
@@ -6072,12 +6075,18 @@
         "clmedia:b:525",
         "clmedia:b:53",
         "clmedia:b:590",
-        "clmedia:b:591"
+        "clmedia:b:591",
+        "naver:b:dzofilm:50000206",
+        "naver:b:dzofilm:50001381",
+        "naver:b:dzofilm:50004604"
       ],
-      "count": 94,
-      "purchase_count": 94,
+      "count": 95,
+      "purchase_count": 95,
       "rental_count": 0,
       "category_ids": [
+        "naver:b:dzofilm:50000206",
+        "naver:b:dzofilm:50001381",
+        "naver:b:dzofilm:50004604",
         "clmedia:b:53",
         "clmedia:b:430",
         "clmedia:b:432",
@@ -6098,10 +6107,9 @@
         "avx:b:dzofilm:reviewed:avx:b:ecbb0ae014553782",
         "avx:b:dzofilm:reviewed:avx:b:ef6895c3b0c781fc"
       ],
-      "representative_id": "clmedia-3477",
-      "representative_image": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20261006/28c727967371ff1b690f8a77f74f29c2.jpg",
-      "representative_name": "디조필름 DZO-AZ25180I Arles Zoom T2.6 FF 시네 2렌즈 번들 (ARRI PL)",
-      "representative_alternate": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/extra/big/20260910/a805403394d6af78bc765d8bf5e6e747.jpg",
+      "representative_id": "smartstore-13812361146",
+      "representative_image": "https://shop-phinf.pstatic.net/20261015_52/1792045338697HGLq4_JPEG/17812112798871642_1178629387.jpg",
+      "representative_name": "DZO-AZ25180I Arles Zoom T2.6 FF 2렌즈 번들 PL",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -7447,37 +7455,6 @@
       "logo_dark": false
     },
     {
-      "id": "hahnel",
-      "name": "HAHNEL",
-      "aliases": [
-        "하넬",
-        "hahnel"
-      ],
-      "logo": "/assets/shop/brands/hahnel-9021d741a9.webp",
-      "navigation_category_ids": [
-        "naver:b:hahnel:50000206",
-        "naver:b:hahnel:50001391",
-        "naver:b:hahnel:50001394",
-        "naver:b:hahnel:50002084",
-        "naver:b:hahnel:50002113"
-      ],
-      "count": 5,
-      "purchase_count": 5,
-      "rental_count": 0,
-      "category_ids": [
-        "naver:b:hahnel:50000206",
-        "naver:b:hahnel:50001394",
-        "naver:b:hahnel:50002113",
-        "naver:b:hahnel:50001391",
-        "naver:b:hahnel:50002084"
-      ],
-      "representative_id": "smartstore-4928656152",
-      "representative_image": "https://shop-phinf.pstatic.net/20200513_20/1589366365227tQolF_JPEG/26729753744867465_1988234766.jpg",
-      "representative_name": "하넬 프로큐브2 for 후지/파나소닉",
-      "image_kind": "logo",
-      "logo_dark": false
-    },
-    {
       "id": "hahnemuhle",
       "name": "HAHNEMUHLE",
       "aliases": [
@@ -7851,7 +7828,7 @@
       "aliases": [
         "HOMAN"
       ],
-      "logo": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/product/big/20241111/69f4e05b9cb80d3e1b3f1041e03e6f4a.jpg",
+      "logo": "https://shop-phinf.pstatic.net/20261015_175/1792048428843GsVlY_PNG/18917634694914534_1881961725.png",
       "navigation_category_ids": [
         "avx:b:557c144f4c65bb83",
         "avx:b:f04c76e8ee56bb9c",
@@ -7867,9 +7844,9 @@
         "naver:b:homan:50004625",
         "onnoff:b:57"
       ],
-      "count": 87,
+      "count": 88,
       "purchase_count": 87,
-      "rental_count": 0,
+      "rental_count": 1,
       "category_ids": [
         "naver:b:homan:50000206",
         "naver:b:homan:50001394",
@@ -7883,7 +7860,9 @@
         "cinemall:b:187",
         "onnoff:b:57",
         "avx:b:557c144f4c65bb83",
-        "avx:b:f04c76e8ee56bb9c"
+        "avx:b:f04c76e8ee56bb9c",
+        "rental-brand:homan:8",
+        "rental-brand:homan:146"
       ],
       "representative_id": "cinemall-384",
       "representative_image": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/web/product/big/20241111/69f4e05b9cb80d3e1b3f1041e03e6f4a.jpg",
@@ -9099,9 +9078,9 @@
         "saeki:b:laowa:100278",
         "clmedia:b:65"
       ],
-      "representative_id": "smartstore-12112672800",
+      "representative_id": "smartstore-12112623940",
       "representative_image": "https://shop-phinf.pstatic.net/20250716_246/1752667330403jMdYI_PNG/86800131896169791_990157988.png",
-      "representative_name": "Laowa 12-24mm F5.6 Zoom Shift CF 후지 X",
+      "representative_name": "Laowa 12-24mm F5.6 Zoom Shift CF 캐논 EF-M",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -9333,41 +9312,14 @@
       "logo_dark": false
     },
     {
-      "id": "lemark",
-      "name": "LEMARK",
-      "aliases": [
-        "르마크",
-        "lemark"
-      ],
-      "logo": "https://shop-phinf.pstatic.net/20220516_25/16527113977719NqMX_JPEG/53847243486932486_9783186.jpg",
-      "navigation_category_ids": [
-        "naver:b:lemark:50000206",
-        "naver:b:lemark:50001394",
-        "naver:b:lemark:50002100"
-      ],
-      "count": 4,
-      "purchase_count": 4,
-      "rental_count": 0,
-      "category_ids": [
-        "naver:b:lemark:50000206",
-        "naver:b:lemark:50001394",
-        "naver:b:lemark:50002100"
-      ],
-      "representative_id": "smartstore-6680553064",
-      "representative_image": "https://shop-phinf.pstatic.net/20220516_25/16527113977719NqMX_JPEG/53847243486932486_9783186.jpg",
-      "representative_name": "Gaff Tape 2 inch",
-      "image_kind": "product",
-      "logo_dark": false
-    },
-    {
       "id": "lexar",
       "name": "LEXAR",
       "aliases": [
-        "렉사",
         "Lexar",
+        "렉사",
         "lexar"
       ],
-      "logo": "https://shop-phinf.pstatic.net/20260720_54/17845457842257yA7B_PNG/69730750015773906_1384909945.png",
+      "logo": "https://shop-phinf.pstatic.net/20261015_281/179204835817900v73_PNG/126181260329504412_54721336.png",
       "navigation_category_ids": [
         "avx:b:ebfad338e41d598f",
         "avx:b:f54723a0dfe816d2",
@@ -9387,11 +9339,13 @@
         "saeki:b:lexar:100259",
         "saeki:b:lexar:root"
       ],
-      "count": 94,
+      "count": 95,
       "purchase_count": 94,
-      "rental_count": 0,
+      "rental_count": 1,
       "category_ids": [
         "naver:b:lexar:50000206",
+        "naver:b:lexar:50001394",
+        "naver:b:lexar:50002113",
         "naver:b:lexar:50001386",
         "naver:b:lexar:50004630",
         "naver:b:lexar:50001385",
@@ -9407,7 +9361,9 @@
         "saeki:b:lexar:100023",
         "saeki:b:lexar:100114",
         "avx:b:ebfad338e41d598f",
-        "avx:b:f54723a0dfe816d2"
+        "avx:b:f54723a0dfe816d2",
+        "rental-brand:lexar:8",
+        "rental-brand:lexar:146"
       ],
       "representative_id": "smartstore-13673774003",
       "representative_image": "https://shop-phinf.pstatic.net/20260720_54/17845457842257yA7B_PNG/69730750015773906_1384909945.png",
@@ -11046,31 +11002,36 @@
       "id": "nisi",
       "name": "NISI",
       "aliases": [
+        "NiSi",
         "NISI",
         "니시",
         "nisi"
       ],
-      "logo": "https://shop-phinf.pstatic.net/20250922_49/1758521016432HWD4r_PNG/6390510157002117_550773575.png",
+      "logo": "https://shop-phinf.pstatic.net/20261015_244/1792046065866fxc0e_JPEG/7130011989745829_2077924038.jpg",
       "navigation_category_ids": [
         "naver:b:nisi:50000206",
         "naver:b:nisi:50001381",
         "naver:b:nisi:50001382",
+        "naver:b:nisi:50001394",
+        "naver:b:nisi:50002113",
         "naver:b:nisi:50004604",
         "naver:b:nisi:50004609"
       ],
-      "count": 8,
-      "purchase_count": 8,
+      "count": 10,
+      "purchase_count": 10,
       "rental_count": 0,
       "category_ids": [
         "naver:b:nisi:50000206",
+        "naver:b:nisi:50001394",
+        "naver:b:nisi:50002113",
         "naver:b:nisi:50001382",
         "naver:b:nisi:50004609",
         "naver:b:nisi:50001381",
         "naver:b:nisi:50004604"
       ],
-      "representative_id": "smartstore-12443644922",
-      "representative_image": "https://shop-phinf.pstatic.net/20250922_49/1758521016432HWD4r_PNG/6390510157002117_550773575.png",
-      "representative_name": "NISI 제트맥프로 시네마 키트 95MAG용",
+      "representative_id": "smartstore-13812383011",
+      "representative_image": "https://shop-phinf.pstatic.net/20261015_244/1792046065866fxc0e_JPEG/7130011989745829_2077924038.jpg",
+      "representative_name": "JMPMBK82 제트맥 프로 매트박스 키트 82MAG",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -11470,29 +11431,22 @@
       "id": "osram",
       "name": "OSRAM",
       "aliases": [
-        "osram",
         "OSRAM",
         "오스람"
       ],
       "logo": "/assets/shop/brands/osram-417858aff2.webp",
       "navigation_category_ids": [
-        "clmedia:b:77",
-        "naver:b:osram:50000206",
-        "naver:b:osram:50001394",
-        "naver:b:osram:50002113"
-      ],
-      "count": 19,
-      "purchase_count": 19,
-      "rental_count": 0,
-      "category_ids": [
-        "naver:b:osram:50000206",
-        "naver:b:osram:50001394",
-        "naver:b:osram:50002113",
         "clmedia:b:77"
       ],
-      "representative_id": "smartstore-12115139198",
-      "representative_image": "https://shop-phinf.pstatic.net/20250717_243/1752722347272i56zg_JPEG/40788609119183153_1090139505.jpg",
-      "representative_name": "Osram 650W GX6.35 230V (64540)",
+      "count": 4,
+      "purchase_count": 4,
+      "rental_count": 0,
+      "category_ids": [
+        "clmedia:b:77"
+      ],
+      "representative_id": "clmedia-1560",
+      "representative_image": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/product/big/20250317/0d3ae425233f1a0f76ba0d6e0783e5ec.jpg",
+      "representative_name": "오스람 HMI18000W/SE GX38, 아리조명 MAX18/12, 데이라이트 18/12 사용",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -14486,9 +14440,9 @@
       "id": "sony",
       "name": "SONY",
       "aliases": [
+        "Sony",
         "SONY",
-        "소니",
-        "Sony"
+        "소니"
       ],
       "logo": "/assets/shop/brands/sony-267a08e067.webp",
       "navigation_category_ids": [
@@ -14549,9 +14503,9 @@
         "saeki:b:sony:100260",
         "saeki:b:sony:root"
       ],
-      "count": 416,
+      "count": 417,
       "purchase_count": 399,
-      "rental_count": 17,
+      "rental_count": 18,
       "category_ids": [
         "naver:b:sony:50000206",
         "naver:b:sony:50001394",
@@ -14622,6 +14576,8 @@
         "avx:b:5911708e2836f827",
         "avx:b:2372d20d8d71a76d",
         "avx:b:41494a18b5b1128e",
+        "rental-brand:sony:8",
+        "rental-brand:sony:146",
         "rental-brand:sony:3",
         "rental-brand:sony:90",
         "rental-brand:sony:2",
@@ -15122,8 +15078,8 @@
         "plthink:b:136:002",
         "plthink:b:136:003"
       ],
-      "count": 78,
-      "purchase_count": 78,
+      "count": 88,
+      "purchase_count": 88,
       "rental_count": 0,
       "category_ids": [
         "naver:b:teris:50000206",
@@ -15138,9 +15094,9 @@
         "plthink:b:136:003",
         "clmedia:b:104"
       ],
-      "representative_id": "smartstore-7083137527",
-      "representative_image": "https://shop-phinf.pstatic.net/20220824_272/1661342685474sbUF1_JPEG/62478581210721852_1164400722.jpg",
-      "representative_name": "TERIS TS1060AL",
+      "representative_id": "smartstore-13812509882",
+      "representative_image": "https://shop-phinf.pstatic.net/20261015_267/1792050116674kJYwn_JPEG/55028644334456355_709212084.jpg",
+      "representative_name": "TERIS TS-22720CF 카본 비디오 삼각대 헤드 키트 헤드하중 20kg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -15667,12 +15623,12 @@
       "id": "ulanzi",
       "name": "ULANZI",
       "aliases": [
-        "울란지",
         "ULANZI",
         "Ulanzi",
+        "울란지",
         "ulanzi"
       ],
-      "logo": "https://shop-phinf.pstatic.net/20250611_51/1749626253726tLQWW_JPEG/100323778754221663_1549868442.jpg",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080070003593.jpg?1787272161",
       "navigation_category_ids": [
         "avx:b:88d89969e78b27df",
         "avx:b:d0f12ca0ec5af44c",
@@ -15712,11 +15668,6 @@
       "purchase_count": 178,
       "rental_count": 0,
       "category_ids": [
-        "naver:b:ulanzi:50000206",
-        "naver:b:ulanzi:50001389",
-        "naver:b:ulanzi:50002079",
-        "naver:b:ulanzi:50001394",
-        "naver:b:ulanzi:50002113",
         "plthink:b:007",
         "plthink:b:007:001",
         "plthink:b:007:002",
@@ -15751,9 +15702,9 @@
         "avx:b:efbe5283bcd00532",
         "avx:b:88d89969e78b27df"
       ],
-      "representative_id": "smartstore-11952613026",
-      "representative_image": "https://shop-phinf.pstatic.net/20250611_51/1749626253726tLQWW_JPEG/100323778754221663_1549868442.jpg",
-      "representative_name": "ULANZI ST-02S 메탈 콜드슈 스마트폰 홀더",
+      "representative_id": "plthink-1930284",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080070003592.jpg?1787272161",
+      "representative_name": "[Ulanzi] 울란지 SK28 테슬라 모니터 스마트폰 거치대 맥세이프 마운트",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -17295,32 +17246,6 @@
       "logo_dark": false
     },
     {
-      "id": "brand-37cde4a591",
-      "name": "스탠리 팻맥스",
-      "aliases": [
-        "스탠리 팻맥스"
-      ],
-      "logo": "/assets/shop/brands/brand-37cde4a591-137ef6c4ec.webp",
-      "navigation_category_ids": [
-        "naver:b:brand-37cde4a591:50000206",
-        "naver:b:brand-37cde4a591:50001394",
-        "naver:b:brand-37cde4a591:50002100"
-      ],
-      "count": 1,
-      "purchase_count": 1,
-      "rental_count": 0,
-      "category_ids": [
-        "naver:b:brand-37cde4a591:50000206",
-        "naver:b:brand-37cde4a591:50001394",
-        "naver:b:brand-37cde4a591:50002100"
-      ],
-      "representative_id": "smartstore-6680568635",
-      "representative_image": "https://shop-phinf.pstatic.net/20220516_219/165271209923496bmi_JPEG/53847934070204431_129706285.jpg",
-      "representative_name": "Tape Measure (inch, ft)",
-      "image_kind": "logo",
-      "logo_dark": false
-    },
-    {
       "id": "brand-7226ee717c",
       "name": "시네트리",
       "aliases": [
@@ -17773,10 +17698,118 @@
   ],
   "categories": [
     {
+      "id": "naver:b:homan:50000206",
+      "name": "카메라/캠코더용품",
+      "parent_id": null,
+      "brand_id": "homan"
+    },
+    {
+      "id": "naver:b:homan:50001394",
+      "name": "카메라/캠코더 관련용품",
+      "parent_id": "naver:b:homan:50000206",
+      "brand_id": "homan"
+    },
+    {
+      "id": "naver:b:homan:50002113",
+      "name": "기타카메라/캠코더용품",
+      "parent_id": "naver:b:homan:50001394",
+      "brand_id": "homan"
+    },
+    {
+      "id": "naver:p:50002113",
+      "name": "기타카메라/캠코더용품",
+      "parent_id": null,
+      "brand_id": null
+    },
+    {
+      "id": "naver:b:lexar:50000206",
+      "name": "카메라/캠코더용품",
+      "parent_id": null,
+      "brand_id": "lexar"
+    },
+    {
+      "id": "naver:b:lexar:50001394",
+      "name": "카메라/캠코더 관련용품",
+      "parent_id": "naver:b:lexar:50000206",
+      "brand_id": "lexar"
+    },
+    {
+      "id": "naver:b:lexar:50002113",
+      "name": "기타카메라/캠코더용품",
+      "parent_id": "naver:b:lexar:50001394",
+      "brand_id": "lexar"
+    },
+    {
+      "id": "naver:b:sony:50000206",
+      "name": "카메라/캠코더용품",
+      "parent_id": null,
+      "brand_id": "sony"
+    },
+    {
+      "id": "naver:b:sony:50001394",
+      "name": "카메라/캠코더 관련용품",
+      "parent_id": "naver:b:sony:50000206",
+      "brand_id": "sony"
+    },
+    {
+      "id": "naver:b:sony:50002113",
+      "name": "기타카메라/캠코더용품",
+      "parent_id": "naver:b:sony:50001394",
+      "brand_id": "sony"
+    },
+    {
+      "id": "naver:b:hollyland:50000206",
+      "name": "카메라/캠코더용품",
+      "parent_id": null,
+      "brand_id": "hollyland"
+    },
+    {
+      "id": "naver:b:hollyland:50001394",
+      "name": "카메라/캠코더 관련용품",
+      "parent_id": "naver:b:hollyland:50000206",
+      "brand_id": "hollyland"
+    },
+    {
+      "id": "naver:p:50004604",
+      "name": "표준렌즈",
+      "parent_id": null,
+      "brand_id": null
+    },
+    {
       "id": "naver:b:kupo:50000206",
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "kupo"
+    },
+    {
+      "id": "naver:b:kupo:50001394",
+      "name": "카메라/캠코더 관련용품",
+      "parent_id": "naver:b:kupo:50000206",
+      "brand_id": "kupo"
+    },
+    {
+      "id": "naver:b:kupo:50002113",
+      "name": "기타카메라/캠코더용품",
+      "parent_id": "naver:b:kupo:50001394",
+      "brand_id": "kupo"
+    },
+    {
+      "id": "naver:b:smallrig:50000206",
+      "name": "카메라/캠코더용품",
+      "parent_id": null,
+      "brand_id": "smallrig"
+    },
+    {
+      "id": "naver:b:smallrig:50001394",
+      "name": "카메라/캠코더 관련용품",
+      "parent_id": "naver:b:smallrig:50000206",
+      "brand_id": "smallrig"
+    },
+    {
+      "id": "naver:b:smallrig:50002113",
+      "name": "기타카메라/캠코더용품",
+      "parent_id": "naver:b:smallrig:50001394",
+      "brand_id": "smallrig"
     },
     {
       "id": "naver:p:50002082",
@@ -17801,30 +17834,6 @@
       "name": "기타카메라/캠코더용품",
       "parent_id": "naver:b:dji:50001394",
       "brand_id": "dji"
-    },
-    {
-      "id": "naver:p:50002113",
-      "name": "기타카메라/캠코더용품",
-      "parent_id": null,
-      "brand_id": null
-    },
-    {
-      "id": "naver:b:smallrig:50000206",
-      "name": "카메라/캠코더용품",
-      "parent_id": null,
-      "brand_id": "smallrig"
-    },
-    {
-      "id": "naver:b:smallrig:50001394",
-      "name": "카메라/캠코더 관련용품",
-      "parent_id": "naver:b:smallrig:50000206",
-      "brand_id": "smallrig"
-    },
-    {
-      "id": "naver:b:smallrig:50002113",
-      "name": "기타카메라/캠코더용품",
-      "parent_id": "naver:b:smallrig:50001394",
-      "brand_id": "smallrig"
     },
     {
       "id": "naver:b:tilta:50000206",
@@ -17861,18 +17870,6 @@
       "name": "기타카메라/캠코더용품",
       "parent_id": "naver:b:fxlion:50001394",
       "brand_id": "fxlion"
-    },
-    {
-      "id": "naver:b:hollyland:50000206",
-      "name": "카메라/캠코더용품",
-      "parent_id": null,
-      "brand_id": "hollyland"
-    },
-    {
-      "id": "naver:b:hollyland:50001394",
-      "name": "카메라/캠코더 관련용품",
-      "parent_id": "naver:b:hollyland:50000206",
-      "brand_id": "hollyland"
     },
     {
       "id": "naver:b:gentree:50000206",
@@ -18017,18 +18014,6 @@
       "name": "기타카메라/캠코더용품",
       "parent_id": "naver:b:nanlux:50001394",
       "brand_id": "nanlux"
-    },
-    {
-      "id": "naver:b:kupo:50001394",
-      "name": "카메라/캠코더 관련용품",
-      "parent_id": "naver:b:kupo:50000206",
-      "brand_id": "kupo"
-    },
-    {
-      "id": "naver:b:kupo:50002113",
-      "name": "기타카메라/캠코더용품",
-      "parent_id": "naver:b:kupo:50001394",
-      "brand_id": "kupo"
     },
     {
       "id": "naver:b:avenger:50000206",
@@ -18229,24 +18214,6 @@
       "brand_id": "canon"
     },
     {
-      "id": "naver:b:sony:50000206",
-      "name": "카메라/캠코더용품",
-      "parent_id": null,
-      "brand_id": "sony"
-    },
-    {
-      "id": "naver:b:sony:50001394",
-      "name": "카메라/캠코더 관련용품",
-      "parent_id": "naver:b:sony:50000206",
-      "brand_id": "sony"
-    },
-    {
-      "id": "naver:b:sony:50002113",
-      "name": "기타카메라/캠코더용품",
-      "parent_id": "naver:b:sony:50001394",
-      "brand_id": "sony"
-    },
-    {
       "id": "naver:b:ecoflow:50000028",
       "name": "캠핑",
       "parent_id": null,
@@ -18321,12 +18288,6 @@
     {
       "id": "naver:p:50001968",
       "name": "방송음향기기",
-      "parent_id": null,
-      "brand_id": null
-    },
-    {
-      "id": "naver:p:50004604",
-      "name": "표준렌즈",
       "parent_id": null,
       "brand_id": null
     },
@@ -20224,6 +20185,48 @@
       "source_id": null
     },
     {
+      "id": "rental-brand:homan:8",
+      "name": "촬영 액세서리",
+      "parent_id": null,
+      "brand_id": "homan",
+      "scope": "rental-brand"
+    },
+    {
+      "id": "rental-brand:homan:146",
+      "name": "메모리·스토리지",
+      "parent_id": "rental-brand:homan:8",
+      "brand_id": "homan",
+      "scope": "rental-brand"
+    },
+    {
+      "id": "rental-brand:lexar:8",
+      "name": "촬영 액세서리",
+      "parent_id": null,
+      "brand_id": "lexar",
+      "scope": "rental-brand"
+    },
+    {
+      "id": "rental-brand:lexar:146",
+      "name": "메모리·스토리지",
+      "parent_id": "rental-brand:lexar:8",
+      "brand_id": "lexar",
+      "scope": "rental-brand"
+    },
+    {
+      "id": "rental-brand:sony:8",
+      "name": "촬영 액세서리",
+      "parent_id": null,
+      "brand_id": "sony",
+      "scope": "rental-brand"
+    },
+    {
+      "id": "rental-brand:sony:146",
+      "name": "메모리·스토리지",
+      "parent_id": "rental-brand:sony:8",
+      "brand_id": "sony",
+      "scope": "rental-brand"
+    },
+    {
       "id": "rental-brand:dji:2",
       "name": "카메라",
       "parent_id": null,
@@ -21317,6 +21320,224 @@
     }
   ],
   "products": [
+    {
+      "id": "smartstore-13812461548",
+      "name": "CFE-A타입 메모리카드 512GB 대여",
+      "brand_id": "homan",
+      "kind": "rental",
+      "price": 30000,
+      "sale_price": 30000,
+      "status": "sale",
+      "category_ids": [
+        "naver:b:homan:50000206",
+        "naver:b:homan:50001394",
+        "naver:b:homan:50002113",
+        "rental-brand:homan:8",
+        "rental-brand:homan:146"
+      ],
+      "type_ids": [
+        "naver:p:50002113",
+        "type:kpp:09",
+        "type:storage",
+        "type:cf-card",
+        "rent:8",
+        "rent:146"
+      ],
+      "promotion_ids": [],
+      "offers": [
+        {
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13812461548",
+          "status": "sale",
+          "price": 30000,
+          "id": "smartstore-13812461548"
+        }
+      ],
+      "supplier_status": null,
+      "image": "https://shop-phinf.pstatic.net/20261015_175/1792048428843GsVlY_PNG/18917634694914534_1881961725.png",
+      "detail_bucket": "42",
+      "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 30000,
+        "period": null,
+        "rate_count": 0
+      },
+      "discovery": {
+        "tags": [
+          "HOMAN",
+          "장비 렌탈"
+        ],
+        "search_terms": [
+          "HOMAN",
+          "장비 렌탈",
+          "기타카메라/캠코더용품",
+          "메모리·스토리지",
+          "CFexpress Type A",
+          "CFexpress A",
+          "CFE-A",
+          "CF익스프레스 A타입",
+          "씨에프익스프레스 A",
+          "촬영장비 대여",
+          "장비 대여",
+          "나다운 스페이스",
+          "영등포 렌탈샵",
+          "영등포 촬영장비 대여"
+        ],
+        "categories": [
+          "기타카메라/캠코더용품",
+          "메모리·스토리지"
+        ],
+        "description": "CFE-A타입 메모리카드 512GB 대여 렌탈·대여 안내. 영등포 나다운 스페이스에서 구성·일정 상담."
+      }
+    },
+    {
+      "id": "smartstore-13812459279",
+      "name": "CFE-A타입 메모리카드 320GB 대여",
+      "brand_id": "lexar",
+      "kind": "rental",
+      "price": 20000,
+      "sale_price": 20000,
+      "status": "sale",
+      "category_ids": [
+        "naver:b:lexar:50000206",
+        "naver:b:lexar:50001394",
+        "naver:b:lexar:50002113",
+        "rental-brand:lexar:8",
+        "rental-brand:lexar:146"
+      ],
+      "type_ids": [
+        "naver:p:50002113",
+        "type:kpp:09",
+        "type:storage",
+        "type:cf-card",
+        "rent:8",
+        "rent:146"
+      ],
+      "promotion_ids": [],
+      "offers": [
+        {
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13812459279",
+          "status": "sale",
+          "price": 20000,
+          "id": "smartstore-13812459279"
+        }
+      ],
+      "supplier_status": null,
+      "image": "https://shop-phinf.pstatic.net/20261015_281/179204835817900v73_PNG/126181260329504412_54721336.png",
+      "detail_bucket": "7b",
+      "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": null,
+        "rate_count": 0
+      },
+      "discovery": {
+        "tags": [
+          "LEXAR",
+          "장비 렌탈"
+        ],
+        "search_terms": [
+          "LEXAR",
+          "장비 렌탈",
+          "기타카메라/캠코더용품",
+          "메모리·스토리지",
+          "Lexar",
+          "렉사",
+          "lexar",
+          "CFexpress Type A",
+          "CFexpress A",
+          "CFE-A",
+          "CF익스프레스 A타입",
+          "씨에프익스프레스 A",
+          "촬영장비 대여",
+          "장비 대여",
+          "나다운 스페이스",
+          "영등포 렌탈샵",
+          "영등포 촬영장비 대여"
+        ],
+        "categories": [
+          "기타카메라/캠코더용품",
+          "메모리·스토리지"
+        ],
+        "description": "CFE-A타입 메모리카드 320GB 대여 렌탈·대여 안내. 영등포 나다운 스페이스에서 구성·일정 상담."
+      }
+    },
+    {
+      "id": "smartstore-13812451915",
+      "name": "CFE-A타입 메모리카드 160GB 대여",
+      "brand_id": "sony",
+      "kind": "rental",
+      "price": 10000,
+      "sale_price": 10000,
+      "status": "sale",
+      "category_ids": [
+        "naver:b:sony:50000206",
+        "naver:b:sony:50001394",
+        "naver:b:sony:50002113",
+        "rental-brand:sony:8",
+        "rental-brand:sony:146"
+      ],
+      "type_ids": [
+        "naver:p:50002113",
+        "type:kpp:09",
+        "type:storage",
+        "type:cf-card",
+        "rent:8",
+        "rent:146"
+      ],
+      "promotion_ids": [],
+      "offers": [
+        {
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13812451915",
+          "status": "sale",
+          "price": 10000,
+          "id": "smartstore-13812451915"
+        }
+      ],
+      "supplier_status": null,
+      "image": "https://shop-phinf.pstatic.net/20261015_56/1792048151134hoT8P_PNG/18917356976657423_293793587.png",
+      "detail_bucket": "db",
+      "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 10000,
+        "period": null,
+        "rate_count": 0
+      },
+      "discovery": {
+        "tags": [
+          "SONY",
+          "장비 렌탈"
+        ],
+        "search_terms": [
+          "SONY",
+          "장비 렌탈",
+          "기타카메라/캠코더용품",
+          "메모리·스토리지",
+          "Sony",
+          "소니",
+          "CFexpress Type A",
+          "CFexpress A",
+          "CFE-A",
+          "CF익스프레스 A타입",
+          "씨에프익스프레스 A",
+          "촬영장비 대여",
+          "장비 대여",
+          "나다운 스페이스",
+          "영등포 렌탈샵",
+          "영등포 촬영장비 대여"
+        ],
+        "categories": [
+          "기타카메라/캠코더용품",
+          "메모리·스토리지"
+        ],
+        "description": "CFE-A타입 메모리카드 160GB 대여 렌탈·대여 안내. 영등포 나다운 스페이스에서 구성·일정 상담."
+      }
+    },
     {
       "id": "smartstore-13762129935",
       "name": "디지아이 DJI Osmo Pocket 4P 오즈모포켓4P 스탠더드",
@@ -22961,6 +23182,11 @@
           "기타카메라/캠코더용품",
           "메모리·스토리지",
           "니콘",
+          "CFexpress Type B",
+          "CFexpress B",
+          "CFE-B",
+          "CF익스프레스 B타입",
+          "씨에프익스프레스 B",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -22979,8 +23205,8 @@
       "name": "CFE-B타입 메모리카드 512GB 대여",
       "brand_id": "nikon",
       "kind": "rental",
-      "price": 15000,
-      "sale_price": 15000,
+      "price": 30000,
+      "sale_price": 30000,
       "status": "sale",
       "category_ids": [
         "naver:b:nikon:50000206",
@@ -23003,7 +23229,7 @@
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/12869292156",
           "status": "sale",
-          "price": 15000,
+          "price": 30000,
           "id": "smartstore-12869292156"
         }
       ],
@@ -23013,7 +23239,7 @@
       "shipping_class": null,
       "rental": {
         "service": "equipment",
-        "price": 15000,
+        "price": 30000,
         "period": null,
         "rate_count": 0
       },
@@ -23028,6 +23254,11 @@
           "기타카메라/캠코더용품",
           "메모리·스토리지",
           "니콘",
+          "CFexpress Type B",
+          "CFexpress B",
+          "CFE-B",
+          "CF익스프레스 B타입",
+          "씨에프익스프레스 B",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -23044,6 +23275,78 @@
     {
       "id": "smartstore-12869286852",
       "name": "CFE-B타입 메모리카드 256GB 대여",
+      "brand_id": "nikon",
+      "kind": "rental",
+      "price": 20000,
+      "sale_price": 20000,
+      "status": "sale",
+      "category_ids": [
+        "naver:b:nikon:50000206",
+        "naver:b:nikon:50001394",
+        "naver:b:nikon:50002113",
+        "rental-brand:nikon:8",
+        "rental-brand:nikon:146"
+      ],
+      "type_ids": [
+        "naver:p:50002113",
+        "type:kpp:09",
+        "type:storage",
+        "type:cf-card",
+        "rent:8",
+        "rent:146"
+      ],
+      "promotion_ids": [],
+      "offers": [
+        {
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12869286852",
+          "status": "sale",
+          "price": 20000,
+          "id": "smartstore-12869286852"
+        }
+      ],
+      "supplier_status": null,
+      "image": "https://shop-phinf.pstatic.net/20251223_206/17664794583692hFVR_JPEG/100612299498739474_1250467517.jpg",
+      "detail_bucket": "0c",
+      "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": null,
+        "rate_count": 0
+      },
+      "discovery": {
+        "tags": [
+          "NIKON",
+          "장비 렌탈"
+        ],
+        "search_terms": [
+          "NIKON",
+          "장비 렌탈",
+          "기타카메라/캠코더용품",
+          "메모리·스토리지",
+          "니콘",
+          "CFexpress Type B",
+          "CFexpress B",
+          "CFE-B",
+          "CF익스프레스 B타입",
+          "씨에프익스프레스 B",
+          "촬영장비 대여",
+          "장비 대여",
+          "나다운 스페이스",
+          "영등포 렌탈샵",
+          "영등포 촬영장비 대여"
+        ],
+        "categories": [
+          "기타카메라/캠코더용품",
+          "메모리·스토리지"
+        ],
+        "description": "CFE-B타입 메모리카드 256GB 대여 렌탈·대여 안내. 영등포 나다운 스페이스에서 구성·일정 상담."
+      }
+    },
+    {
+      "id": "smartstore-12869281376",
+      "name": "CFE-B타입 메모리카드 128GB 대여",
       "brand_id": "nikon",
       "kind": "rental",
       "price": 10000,
@@ -23068,15 +23371,15 @@
       "offers": [
         {
           "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/12869286852",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12869281376",
           "status": "sale",
           "price": 10000,
-          "id": "smartstore-12869286852"
+          "id": "smartstore-12869281376"
         }
       ],
       "supplier_status": null,
-      "image": "https://shop-phinf.pstatic.net/20251223_206/17664794583692hFVR_JPEG/100612299498739474_1250467517.jpg",
-      "detail_bucket": "0c",
+      "image": "https://shop-phinf.pstatic.net/20251223_149/1766479353836DCnWf_JPEG/100612339949665384_1213709725.jpg",
+      "detail_bucket": "d9",
       "shipping_class": null,
       "rental": {
         "service": "equipment",
@@ -23095,73 +23398,11 @@
           "기타카메라/캠코더용품",
           "메모리·스토리지",
           "니콘",
-          "촬영장비 대여",
-          "장비 대여",
-          "나다운 스페이스",
-          "영등포 렌탈샵",
-          "영등포 촬영장비 대여"
-        ],
-        "categories": [
-          "기타카메라/캠코더용품",
-          "메모리·스토리지"
-        ],
-        "description": "CFE-B타입 메모리카드 256GB 대여 렌탈·대여 안내. 영등포 나다운 스페이스에서 구성·일정 상담."
-      }
-    },
-    {
-      "id": "smartstore-12869281376",
-      "name": "CFE-B타입 메모리카드 128GB 대여",
-      "brand_id": "nikon",
-      "kind": "rental",
-      "price": 5000,
-      "sale_price": 5000,
-      "status": "sale",
-      "category_ids": [
-        "naver:b:nikon:50000206",
-        "naver:b:nikon:50001394",
-        "naver:b:nikon:50002113",
-        "rental-brand:nikon:8",
-        "rental-brand:nikon:146"
-      ],
-      "type_ids": [
-        "naver:p:50002113",
-        "type:kpp:09",
-        "type:storage",
-        "type:cf-card",
-        "rent:8",
-        "rent:146"
-      ],
-      "promotion_ids": [],
-      "offers": [
-        {
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/12869281376",
-          "status": "sale",
-          "price": 5000,
-          "id": "smartstore-12869281376"
-        }
-      ],
-      "supplier_status": null,
-      "image": "https://shop-phinf.pstatic.net/20251223_149/1766479353836DCnWf_JPEG/100612339949665384_1213709725.jpg",
-      "detail_bucket": "d9",
-      "shipping_class": null,
-      "rental": {
-        "service": "equipment",
-        "price": 5000,
-        "period": null,
-        "rate_count": 0
-      },
-      "discovery": {
-        "tags": [
-          "NIKON",
-          "장비 렌탈"
-        ],
-        "search_terms": [
-          "NIKON",
-          "장비 렌탈",
-          "기타카메라/캠코더용품",
-          "메모리·스토리지",
-          "니콘",
+          "CFexpress Type B",
+          "CFexpress B",
+          "CFE-B",
+          "CF익스프레스 B타입",
+          "씨에프익스프레스 B",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -23374,8 +23615,8 @@
           "렌즈",
           "기타카메라/캠코더용품",
           "미러리스 렌즈",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -23443,8 +23684,8 @@
           "렌즈",
           "기타카메라/캠코더용품",
           "미러리스 렌즈",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -24692,8 +24933,8 @@
           "트라이포드",
           "캠코더",
           "카메라 패키지",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -24757,8 +24998,8 @@
           "SONY",
           "장비 렌탈",
           "캠코더",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -26006,8 +26247,8 @@
           "기타카메라/캠코더용품",
           "시네마 카메라",
           "시네마 패키지",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -26077,8 +26318,8 @@
           "기타카메라/캠코더용품",
           "시네마 카메라",
           "시네마 패키지",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -26148,8 +26389,8 @@
           "기타카메라/캠코더용품",
           "시네마 카메라",
           "시네마 패키지",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -26219,8 +26460,8 @@
           "기타카메라/캠코더용품",
           "시네마 카메라",
           "시네마 패키지",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -26290,8 +26531,8 @@
           "기타카메라/캠코더용품",
           "시네마 카메라",
           "시네마 패키지",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -26361,8 +26602,8 @@
           "기타카메라/캠코더용품",
           "시네마 카메라",
           "시네마 패키지",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -29560,8 +29801,8 @@
           "렌즈",
           "기타카메라/캠코더용품",
           "미러리스 렌즈",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -32812,8 +33053,8 @@
           "렌즈",
           "광각렌즈",
           "미러리스 렌즈",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -32949,8 +33190,8 @@
           "렌즈",
           "기타카메라/캠코더용품",
           "미러리스 렌즈",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -33018,8 +33259,8 @@
           "렌즈",
           "기타카메라/캠코더용품",
           "미러리스 렌즈",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -33087,8 +33328,8 @@
           "렌즈",
           "기타카메라/캠코더용품",
           "미러리스 렌즈",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -33156,8 +33397,8 @@
           "렌즈",
           "기타카메라/캠코더용품",
           "미러리스 렌즈",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -33223,8 +33464,8 @@
           "장비 렌탈",
           "기타카메라/캠코더용품",
           "시네마 카메라",
-          "소니",
           "Sony",
+          "소니",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -36164,11 +36405,11 @@
     "clmedia-3044": "smartstore-13744759901",
     "cinemall-545": "smartstore-13744759901",
     "avx-1344": "smartstore-11952846174",
-    "smartstore-11952856711": "smartstore-13000416436",
-    "kpp-1666143912": "smartstore-13000416436",
-    "plthink-1928797": "smartstore-13000416436",
-    "avx-1351": "smartstore-13000416436",
-    "clmedia-2605": "smartstore-13000416436",
+    "smartstore-13000416436": "smartstore-11952856711",
+    "kpp-1666143912": "smartstore-11952856711",
+    "plthink-1928797": "smartstore-11952856711",
+    "avx-1351": "smartstore-11952856711",
+    "clmedia-2605": "smartstore-11952856711",
     "avx-1379": "kpp-1713752455",
     "avx-1386": "smartstore-11952764989",
     "kpp-1722490119": "smartstore-11952769814",
@@ -36409,6 +36650,7 @@
     "avx-728": "plthink-1914801",
     "avx-749": "kpp-1635491880",
     "avx-750": "kpp-1606730228",
+    "smartstore-13812317445": "kpp-1606730610",
     "avx-754": "kpp-1606730610",
     "avx-755": "kpp-1636613880",
     "avx-758": "kpp-1609735998",
@@ -38970,6 +39212,7 @@
     "onnoff-949": "kpp-1657763335",
     "clmedia-344": "kpp-1657763335",
     "clmedia-3441": "kpp-1752463655",
+    "clmedia-3478": "smartstore-13812350366",
     "smartstore-13745581868": "kpp-1665021561",
     "smartstore-8545749743": "kpp-1665021561",
     "plthink-1921902": "kpp-1665021561",
@@ -39984,7 +40227,6 @@
     "plthink-1911812": "smartstore-13740669867",
     "plthink-1911813": "smartstore-13740669866",
     "plthink-1911922": "smartstore-8537753249",
-    "plthink-1913797": "smartstore-11952613026",
     "saeki-PD00040577": "plthink-1915254",
     "plthink-1915261": "smartstore-13740756269",
     "plthink-1915648": "smartstore-13740756268",
@@ -40301,8 +40543,8 @@
     "plthink-1921462": "smartstore-13740623434",
     "smartstore-9354238326": "smartstore-13740623423",
     "plthink-1921463": "smartstore-13740623423",
-    "smartstore-7539081363": "smartstore-9694740602",
-    "plthink-1921464": "smartstore-9694740602",
+    "smartstore-9694740602": "smartstore-7539081363",
+    "plthink-1921464": "smartstore-7539081363",
     "plthink-1921534": "smartstore-13740734623",
     "plthink-1921575": "smartstore-13740734578",
     "smartstore-7832173820": "smartstore-13740734577",
@@ -40310,8 +40552,8 @@
     "plthink-1921577": "smartstore-13740734576",
     "plthink-1921633": "smartstore-13740734575",
     "plthink-1921634": "smartstore-13740734574",
-    "smartstore-7832101425": "smartstore-13740734573",
-    "plthink-1921688": "smartstore-13740734573",
+    "smartstore-13740734573": "smartstore-7832101425",
+    "plthink-1921688": "smartstore-7832101425",
     "plthink-1921732": "smartstore-13740755167",
     "plthink-1921733": "smartstore-13740755168",
     "plthink-1921735": "smartstore-13740756104",
@@ -40655,7 +40897,6 @@
     "plthink-1926384": "smartstore-13740623559",
     "plthink-1926420": "smartstore-13740623558",
     "plthink-1926421": "smartstore-13740623421",
-    "plthink-1926456": "smartstore-11952610235",
     "plthink-1926606": "smartstore-13740754991",
     "plthink-1926607": "smartstore-13740754990",
     "plthink-1926608": "smartstore-13740754988",
@@ -41174,17 +41415,17 @@
     "saeki-PD00043386": "smartstore-13740726272",
     "saeki-PD00043387": "smartstore-13740726271",
     "saeki-PD00043388": "smartstore-13740726277",
-    "smartstore-5089432645": "smartstore-10781269963",
+    "smartstore-10781269963": "smartstore-5089432645",
     "smartstore-10817338957": "smartstore-6961350645",
     "smartstore-10817343290": "smartstore-6961372587",
     "smartstore-11668039658": "smartstore-11669013361",
     "smartstore-12084361679": "smartstore-12084364259",
     "smartstore-12085645442": "smartstore-12085653091",
-    "smartstore-12086012875": "smartstore-12112597205",
-    "smartstore-12086015287": "smartstore-12112600054",
-    "smartstore-12112616390": "smartstore-12112672800",
-    "smartstore-12086017366": "smartstore-12112672800",
-    "smartstore-12086024197": "smartstore-12112619071",
+    "smartstore-12112597205": "smartstore-12086012875",
+    "smartstore-12112600054": "smartstore-12086015287",
+    "smartstore-12112616390": "smartstore-12086017366",
+    "smartstore-12112672800": "smartstore-12086017366",
+    "smartstore-12112619071": "smartstore-12086024197",
     "smartstore-12086030311": "smartstore-12112621182",
     "smartstore-12086061713": "smartstore-12112623940",
     "smartstore-12107391483": "smartstore-12107412318",
@@ -41201,15 +41442,15 @@
     "smartstore-13742686832": "smartstore-13740393584",
     "smartstore-13742693069": "smartstore-13740393591",
     "smartstore-13742686833": "smartstore-13740393591",
-    "smartstore-8262993357": "smartstore-13740633121",
-    "smartstore-9336885649": "smartstore-13740655688",
-    "smartstore-9336870581": "smartstore-13740655689",
-    "smartstore-9336856403": "smartstore-13740655690",
-    "smartstore-9336861736": "smartstore-13740655691",
+    "smartstore-13740633121": "smartstore-8262993357",
+    "smartstore-13740655688": "smartstore-9336885649",
+    "smartstore-13740655689": "smartstore-9336870581",
+    "smartstore-13740655690": "smartstore-9336856403",
+    "smartstore-13740655691": "smartstore-9336861736",
     "smartstore-9336864131": "smartstore-13740655692",
-    "smartstore-9336866274": "smartstore-13740655693",
-    "smartstore-9336849395": "smartstore-13740655694",
-    "smartstore-9336851997": "smartstore-13740655695",
+    "smartstore-13740655693": "smartstore-9336866274",
+    "smartstore-13740655694": "smartstore-9336849395",
+    "smartstore-13740655695": "smartstore-9336851997",
     "smartstore-9334708091": "smartstore-13740655714",
     "smartstore-9334705838": "smartstore-13740655715",
     "smartstore-9334702249": "smartstore-13740655716",

@@ -178,9 +178,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:20:58.002+09:00",
-    "checked_at": "2026-10-08T08:23:53+00:00",
-    "checked_epoch": 1791447833
+    "source_modified_at": "2026-10-15T12:29:02.588+09:00",
+    "checked_at": "2026-10-15T07:58:15+00:00",
+    "checked_epoch": 1792051095
   },
   "smartstore-13740755085": {
     "images": {
@@ -200,9 +200,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:20:58.002+09:00",
-    "checked_at": "2026-10-08T08:23:56+00:00",
-    "checked_epoch": 1791447836
+    "source_modified_at": "2026-10-15T12:30:52.375+09:00",
+    "checked_at": "2026-10-15T07:58:18+00:00",
+    "checked_epoch": 1792051098
   },
   "smartstore-13740755040": {
     "images": {
@@ -222,9 +222,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:20:58.002+09:00",
-    "checked_at": "2026-10-08T08:24:02+00:00",
-    "checked_epoch": 1791447842
+    "source_modified_at": "2026-10-15T12:30:52.375+09:00",
+    "checked_at": "2026-10-15T07:58:22+00:00",
+    "checked_epoch": 1792051102
   },
   "smartstore-13740726409": {
     "images": {
@@ -314,9 +314,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
-    "checked_at": "2026-10-08T08:38:44+00:00",
-    "checked_epoch": 1791448724
+    "source_modified_at": "2026-10-15T12:36:03.667+09:00",
+    "checked_at": "2026-10-15T08:00:47+00:00",
+    "checked_epoch": 1792051247
   },
   "smartstore-13498631102": {
     "images": {
@@ -382,9 +382,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-07-27T18:29:17.762+09:00",
-    "checked_at": "2026-09-07T05:50:38+00:00",
-    "checked_epoch": 1788760238
+    "source_modified_at": "2026-10-15T12:37:51.773+09:00",
+    "checked_at": "2026-10-15T08:02:02+00:00",
+    "checked_epoch": 1792051322
   },
   "smartstore-11952846174": {
     "images": {
@@ -675,9 +675,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.382+09:00",
-    "checked_at": "2026-09-07T06:10:39+00:00",
-    "checked_epoch": 1788761439
+    "source_modified_at": "2026-10-15T12:39:58.014+09:00",
+    "checked_at": "2026-10-15T08:03:22+00:00",
+    "checked_epoch": 1792051402
   },
   "smartstore-13751891869": {
     "images": {
@@ -700,5 +700,29 @@
     "source_modified_at": "2026-09-28T20:17:52.510+09:00",
     "checked_at": "2026-10-08T08:14:10+00:00",
     "checked_epoch": 1791447250
+  },
+  "smartstore-13812350366": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_68/1792044980659ihFG2_JPEG/9245942578563062_465410561.jpg"
+      ],
+      "detail": [
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20261006/50fe78e576a398a48debbc8e27c5a6fc.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20261006/5b9ff182ef8185058f4198e505fe9ce5.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20261006/25c97e4be00cba1172b4ac3bbf8e94e0.jpg"
+      ]
+    },
+    "description_text": "KUPO CS-30MKB 30인치 마스터 C스탠드 슬라이딩 레그 키트 블랙\n블랙 스탠드·2.5인치 그립헤드·40인치 그립암 구성의 키트입니다. 조명 등 촬영 예시 장비는 포함되지 않습니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T15:16:35.703+09:00",
+    "checked_at": "2026-10-15T07:57:58+00:00",
+    "checked_epoch": 1792051078
   }
 }

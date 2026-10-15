@@ -331,9 +331,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-29T10:23:52.683+09:00",
-    "checked_at": "2026-10-08T08:40:44+00:00",
-    "checked_epoch": 1791448844
+    "source_modified_at": "2026-10-15T12:36:33.632+09:00",
+    "checked_at": "2026-10-15T08:01:21+00:00",
+    "checked_epoch": 1792051281
   },
   "smartstore-13739631082": {
     "images": {
@@ -383,9 +383,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-29T10:23:52.683+09:00",
-    "checked_at": "2026-10-08T08:41:01+00:00",
-    "checked_epoch": 1791448861
+    "source_modified_at": "2026-10-15T12:36:41.267+09:00",
+    "checked_at": "2026-10-15T08:01:24+00:00",
+    "checked_epoch": 1792051284
   },
   "smartstore-13739630849": {
     "images": {
@@ -705,5 +705,27 @@
     "source_modified_at": "2026-09-28T20:18:04.474+09:00",
     "checked_at": "2026-10-08T08:14:41+00:00",
     "checked_epoch": 1791447281
+  },
+  "smartstore-13812400315": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_300/1792046598208XNVa3_JPEG/126179538986198023_1920434831.jpg"
+      ],
+      "detail": [
+        "https://samyangtechmall.com/web/upload/NNEditor/20260202/TS95AL.jpg"
+      ]
+    },
+    "description_text": "TERIS TS95AL\n알루미늄 비디오 삼각대 · 지지하중 15kg · 그라운드 스프레더",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T15:43:37.751+09:00",
+    "checked_at": "2026-10-15T07:57:55+00:00",
+    "checked_epoch": 1792051075
   }
 }

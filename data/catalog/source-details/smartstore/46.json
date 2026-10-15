@@ -160,9 +160,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:20:58.002+09:00",
-    "checked_at": "2026-10-08T08:23:46+00:00",
-    "checked_epoch": 1791447826
+    "source_modified_at": "2026-10-15T12:29:02.588+09:00",
+    "checked_at": "2026-10-15T07:58:13+00:00",
+    "checked_epoch": 1792051093
   },
   "smartstore-13740754960": {
     "images": {
@@ -182,9 +182,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:21:09.083+09:00",
-    "checked_at": "2026-10-08T08:24:22+00:00",
-    "checked_epoch": 1791447862
+    "source_modified_at": "2026-10-15T12:31:29.721+09:00",
+    "checked_at": "2026-10-15T07:58:28+00:00",
+    "checked_epoch": 1792051108
   },
   "smartstore-13740669877": {
     "images": {
@@ -226,9 +226,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:22:47.145+09:00",
-    "checked_at": "2026-10-08T08:29:52+00:00",
-    "checked_epoch": 1791448192
+    "source_modified_at": "2026-10-15T12:33:11.211+09:00",
+    "checked_at": "2026-10-15T07:58:59+00:00",
+    "checked_epoch": 1792051139
   },
   "smartstore-13740633261": {
     "images": {
@@ -248,9 +248,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:23:40.128+09:00",
-    "checked_at": "2026-10-08T08:31:10+00:00",
-    "checked_epoch": 1791448270
+    "source_modified_at": "2026-10-15T12:34:21.988+09:00",
+    "checked_at": "2026-10-15T07:59:33+00:00",
+    "checked_epoch": 1792051173
   },
   "smartstore-13740633148": {
     "images": {
@@ -270,9 +270,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:23:40.128+09:00",
-    "checked_at": "2026-10-08T08:31:33+00:00",
-    "checked_epoch": 1791448293
+    "source_modified_at": "2026-10-15T12:34:55.646+09:00",
+    "checked_at": "2026-10-15T07:59:55+00:00",
+    "checked_epoch": 1792051195
   },
   "smartstore-13739631566": {
     "images": {
@@ -356,9 +356,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-29T10:23:52.683+09:00",
-    "checked_at": "2026-10-08T08:41:08+00:00",
-    "checked_epoch": 1791448868
+    "source_modified_at": "2026-10-15T12:36:41.267+09:00",
+    "checked_at": "2026-10-15T08:01:26+00:00",
+    "checked_epoch": 1792051286
   },
   "smartstore-13689172553": {
     "images": {
@@ -465,9 +465,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-10-13T17:20:49.239+09:00",
-    "checked_at": "2026-10-13T23:14:19+00:00",
-    "checked_epoch": 1791933259
+    "source_modified_at": "2026-10-15T16:15:19.595+09:00",
+    "checked_at": "2026-10-15T08:01:56+00:00",
+    "checked_epoch": 1792051316
   },
   "smartstore-12443626173": {
     "images": {
@@ -520,9 +520,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-07-27T18:29:17.762+09:00",
-    "checked_at": "2026-09-07T05:50:39+00:00",
-    "checked_epoch": 1788760239
+    "source_modified_at": "2026-10-15T12:37:51.773+09:00",
+    "checked_at": "2026-10-15T08:02:07+00:00",
+    "checked_epoch": 1792051327
   },
   "smartstore-11443253496": {
     "images": {
@@ -595,9 +595,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:04.147+09:00",
-    "checked_at": "2026-09-07T05:57:23+00:00",
-    "checked_epoch": 1788760643
+    "source_modified_at": "2026-10-15T12:38:33.439+09:00",
+    "checked_at": "2026-10-15T08:02:40+00:00",
+    "checked_epoch": 1792051360
   },
   "smartstore-10482139683": {
     "images": {
@@ -942,8 +942,8 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T09:59:12.343+09:00",
-    "checked_at": "2026-09-07T06:19:04+00:00",
-    "checked_epoch": 1788761944
+    "source_modified_at": "2026-10-15T12:41:09.749+09:00",
+    "checked_at": "2026-10-15T08:03:44+00:00",
+    "checked_epoch": 1792051424
   }
 }

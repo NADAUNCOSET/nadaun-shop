@@ -84,9 +84,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:20:58.002+09:00",
-    "checked_at": "2026-10-08T08:24:00+00:00",
-    "checked_epoch": 1791447840
+    "source_modified_at": "2026-10-15T12:30:52.375+09:00",
+    "checked_at": "2026-10-15T07:58:20+00:00",
+    "checked_epoch": 1792051100
   },
   "smartstore-13740669835": {
     "images": {
@@ -802,5 +802,29 @@
     "source_modified_at": "2026-10-06T22:36:10.122+09:00",
     "checked_at": "2026-10-08T08:13:02+00:00",
     "checked_epoch": 1791447182
+  },
+  "smartstore-13812329407": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_198/1792044336777mfsRy_JPEG/56768892923202772_1409036617.jpg"
+      ],
+      "detail": [
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20260930/afa5c720c60d17576ce5810bdc638221.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20260930/5b4940274b13bded124652ba544b4198.jpg",
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20260930/009c18405ed634f64997f86277235dde.jpg"
+      ]
+    },
+    "description_text": "스몰리그 6716 DJI Osmo 360 II 케이지 베이직 에디션\n구성: 케이지 1개, 실리콘 보호 커버 1개, 보증서 1개. 카메라 등 촬영 예시 장비는 별매입니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T15:05:44.243+09:00",
+    "checked_at": "2026-10-15T07:57:58+00:00",
+    "checked_epoch": 1792051078
   }
 }

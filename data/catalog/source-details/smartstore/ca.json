@@ -480,5 +480,29 @@
     "source_modified_at": "2026-09-28T20:18:04.474+09:00",
     "checked_at": "2026-10-08T08:14:55+00:00",
     "checked_epoch": 1791447295
+  },
+  "smartstore-13812483606": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_106/1792049224855GIb4d_JPEG/34662441778271992_725085233.jpg"
+      ],
+      "detail": [
+        "https://samyangtechmall.com/web/upload/NNEditor/20251112/1.jpg",
+        "https://samyangtechmall.com/web/upload/NNEditor/20251112/3.jpg",
+        "https://samyangtechmall.com/web/upload/NNEditor/20251112/9.jpg"
+      ]
+    },
+    "description_text": "TERIS TS-227CF 삼각대 단품\n헤드 미포함. 헤드 포함 TS-2277CF / TS-22714CF / TS-22720CF 세트와 다릅니다.\n24mm 카본 튜브 · 삼각대 지지하중 70kg · 높이 85~205cm · 무게 5.6kg · 100mm 볼 규격 · 다리 2단",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T16:27:09.143+09:00",
+    "checked_at": "2026-10-15T07:57:50+00:00",
+    "checked_epoch": 1792051070
   }
 }

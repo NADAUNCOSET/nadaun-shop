@@ -118,9 +118,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:23:29.547+09:00",
-    "checked_at": "2026-10-08T08:30:37+00:00",
-    "checked_epoch": 1791448237
+    "source_modified_at": "2026-10-15T12:34:14.451+09:00",
+    "checked_at": "2026-10-15T07:59:19+00:00",
+    "checked_epoch": 1792051159
   },
   "smartstore-13740321123": {
     "images": {
@@ -193,9 +193,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
-    "checked_at": "2026-10-08T08:38:21+00:00",
-    "checked_epoch": 1791448701
+    "source_modified_at": "2026-10-15T12:35:49.426+09:00",
+    "checked_at": "2026-10-15T08:00:38+00:00",
+    "checked_epoch": 1792051238
   },
   "smartstore-13168204183": {
     "images": {
@@ -328,9 +328,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:50:18.105+09:00",
-    "checked_at": "2026-09-07T05:57:57+00:00",
-    "checked_epoch": 1788760677
+    "source_modified_at": "2026-10-15T12:38:55.544+09:00",
+    "checked_at": "2026-10-15T08:02:54+00:00",
+    "checked_epoch": 1792051374
   },
   "smartstore-10760022094": {
     "images": {
@@ -767,5 +767,27 @@
     "source_modified_at": "2026-09-28T20:18:04.474+09:00",
     "checked_at": "2026-10-08T08:14:37+00:00",
     "checked_epoch": 1791447277
+  },
+  "smartstore-13812461548": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_175/1792048428843GsVlY_PNG/18917634694914534_1881961725.png"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20261015_234/1792048433467wx8C6_PNG/image.png"
+      ]
+    },
+    "description_text": "구성품\nCFE-A Type Card 512GB // 1ea\nReader // 1ea\n​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "FREE",
+      "base_fee": 0,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T16:14:07.785+09:00",
+    "checked_at": "2026-10-15T07:57:51+00:00",
+    "checked_epoch": 1792051071
   }
 }

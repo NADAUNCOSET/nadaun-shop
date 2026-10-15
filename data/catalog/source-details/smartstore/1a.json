@@ -359,9 +359,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
-    "checked_at": "2026-10-08T08:38:36+00:00",
-    "checked_epoch": 1791448716
+    "source_modified_at": "2026-10-15T12:35:56.705+09:00",
+    "checked_at": "2026-10-15T08:00:42+00:00",
+    "checked_epoch": 1792051242
   },
   "smartstore-13739631452": {
     "images": {
@@ -385,9 +385,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
-    "checked_at": "2026-10-08T08:39:23+00:00",
-    "checked_epoch": 1791448763
+    "source_modified_at": "2026-10-15T12:36:11.995+09:00",
+    "checked_at": "2026-10-15T08:00:58+00:00",
+    "checked_epoch": 1792051258
   },
   "smartstore-13673774003": {
     "images": {
@@ -412,9 +412,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-10-06T16:30:04.190+09:00",
-    "checked_at": "2026-10-08T08:41:57+00:00",
-    "checked_epoch": 1791448917
+    "source_modified_at": "2026-10-15T13:15:00.045+09:00",
+    "checked_at": "2026-10-15T08:01:43+00:00",
+    "checked_epoch": 1792051303
   },
   "smartstore-13523030959": {
     "images": {
@@ -580,9 +580,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-07-27T18:29:17.721+09:00",
-    "checked_at": "2026-09-07T05:51:02+00:00",
-    "checked_epoch": 1788760262
+    "source_modified_at": "2026-10-15T12:38:18.780+09:00",
+    "checked_at": "2026-10-15T08:02:21+00:00",
+    "checked_epoch": 1792051341
   },
   "smartstore-11952757645": {
     "images": {
@@ -982,5 +982,27 @@
     "source_modified_at": "2026-10-12T12:20:52.034+09:00",
     "checked_at": "2026-10-12T23:12:43+00:00",
     "checked_epoch": 1791846763
+  },
+  "smartstore-13812278589": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_38/1792038273317nO2Db_JPEG/64359353466562550_1095483547.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20250405_135/1743821706719AHQh7_JPEG/6735795840340987_831474410.jpg?type=o1000"
+      ]
+    },
+    "description_text": "APC BE850G2-GR\nBack-UPS 무정전 전원장치\n850VA / 520W · 230V · USB-A + USB-C 충전 포트\n정전 시 배터리 백업과 서지 보호를 제공하는 UPS 본체입니다.\n8개 Schuko 타입 출력 소켓 · 사용자 교체형 배터리\n정격 용량: 850VA / 520W\n모델명: BE850G2-GR\n제조사: APC / Schneider Electric\n원산지: 필리핀\n전기용품 안전확인: YU10588-20001\n연결할 장비의 소비전력 합계와 플러그 규격을 확인해 주세요.\n백업 시간은 부하와 배터리 상태에 따라 달라집니다.\n상품 및 A/S 문의: 02-6053-6231",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T14:45:07.752+09:00",
+    "checked_at": "2026-10-15T07:58:01+00:00",
+    "checked_epoch": 1792051081
   }
 }

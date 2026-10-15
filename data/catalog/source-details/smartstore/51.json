@@ -136,9 +136,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:23:29.547+09:00",
-    "checked_at": "2026-10-08T08:30:55+00:00",
-    "checked_epoch": 1791448255
+    "source_modified_at": "2026-10-15T12:34:21.988+09:00",
+    "checked_at": "2026-10-15T07:59:29+00:00",
+    "checked_epoch": 1792051169
   },
   "smartstore-13740633138": {
     "images": {
@@ -158,9 +158,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:23:40.128+09:00",
-    "checked_at": "2026-10-08T08:31:34+00:00",
-    "checked_epoch": 1791448294
+    "source_modified_at": "2026-10-15T12:34:55.646+09:00",
+    "checked_at": "2026-10-15T07:59:56+00:00",
+    "checked_epoch": 1792051196
   },
   "smartstore-13740623555": {
     "images": {
@@ -759,5 +759,27 @@
     "source_modified_at": "2026-09-28T20:18:04.474+09:00",
     "checked_at": "2026-10-08T08:14:41+00:00",
     "checked_epoch": 1791447281
+  },
+  "smartstore-13812445049": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_183/1792048065890SNqnt_JPEG/6757964694888928_181533151.jpg"
+      ],
+      "detail": [
+        "https://samyangtechmall.com/web/upload/NNEditor/20260116/TS-RH100W.jpg"
+      ]
+    },
+    "description_text": "TERIS TS-RH100W\n로우앵글 하이햇 삼각대 · 최대하중 50kg · 높이 160mm · 100mm 헤드 규격\n바퀴(TS-WS100), 75mm 변환 어댑터 및 헤드는 별매입니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T16:07:52.351+09:00",
+    "checked_at": "2026-10-15T07:57:53+00:00",
+    "checked_epoch": 1792051073
   }
 }

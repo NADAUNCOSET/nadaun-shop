@@ -239,9 +239,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-07-27T18:29:17.721+09:00",
-    "checked_at": "2026-09-07T05:51:19+00:00",
-    "checked_epoch": 1788760279
+    "source_modified_at": "2026-10-15T12:38:26.048+09:00",
+    "checked_at": "2026-10-15T08:02:30+00:00",
+    "checked_epoch": 1792051350
   },
   "smartstore-11669021232": {
     "images": {
@@ -485,5 +485,27 @@
     "source_modified_at": "2025-11-19T14:03:39.665+09:00",
     "checked_at": "2026-09-07T06:17:38+00:00",
     "checked_epoch": 1788761858
+  },
+  "smartstore-13812449330": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_280/1792048129196fExQj_JPEG/7132075363617800_556330739.jpg"
+      ],
+      "detail": [
+        "https://samyangtechmall.com/web/upload/NNEditor/20260116/TS-RH100.jpg"
+      ]
+    },
+    "description_text": "TERIS TS-RH100\n롤링 하이햇 삼각대 · 탈부착 바퀴 3개 포함\n최대하중 50kg · 높이 160mm · 100mm 헤드 규격\n헤드와 75mm 변환 어댑터는 별매입니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T16:08:53.726+09:00",
+    "checked_at": "2026-10-15T07:57:53+00:00",
+    "checked_epoch": 1792051073
   }
 }

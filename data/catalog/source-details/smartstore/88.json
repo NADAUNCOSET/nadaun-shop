@@ -642,5 +642,27 @@
     "source_modified_at": "2026-10-06T22:36:10.123+09:00",
     "checked_at": "2026-10-08T08:13:01+00:00",
     "checked_epoch": 1791447181
+  },
+  "smartstore-13812366219": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_125/1792045504128TVb3T_JPEG/34658721050554553_1472167315.jpg"
+      ],
+      "detail": [
+        "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20261002/4f50479ac6a2906c0007faa01f3602e0.jpg"
+      ]
+    },
+    "description_text": "Hollyland HL-DUAL-BATV Pyro Ultra 전용 듀얼 V마운트 배터리 플레이트\n플레이트 1개 구성입니다. 배터리와 Pyro Ultra 본체는 포함되지 않습니다. 구매 전 사용 장비 모델을 확인해 주세요.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T15:25:16.515+09:00",
+    "checked_at": "2026-10-15T07:57:57+00:00",
+    "checked_epoch": 1792051077
   }
 }

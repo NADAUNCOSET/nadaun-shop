@@ -291,9 +291,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-29T10:23:48.261+09:00",
-    "checked_at": "2026-10-08T08:38:09+00:00",
-    "checked_epoch": 1791448689
+    "source_modified_at": "2026-10-15T12:35:49.426+09:00",
+    "checked_at": "2026-10-15T08:00:33+00:00",
+    "checked_epoch": 1792051233
   },
   "smartstore-13739631213": {
     "images": {
@@ -386,9 +386,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T19:23:07.741+09:00",
-    "checked_at": "2026-10-08T08:43:32+00:00",
-    "checked_epoch": 1791449012
+    "source_modified_at": "2026-10-15T11:24:00.482+09:00",
+    "checked_at": "2026-10-15T08:02:00+00:00",
+    "checked_epoch": 1792051320
   },
   "smartstore-11952776212": {
     "images": {
@@ -631,5 +631,28 @@
     "source_modified_at": "2026-09-28T20:18:16.500+09:00",
     "checked_at": "2026-10-08T08:15:08+00:00",
     "checked_epoch": 1791447308
+  },
+  "smartstore-13812485570": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_260/1792049297778FWEi0_JPEG/126182276906526438_1637520163.jpg"
+      ],
+      "detail": [
+        "https://samyangtechmall.com/web/upload/NNEditor/20251112/2277CF_01.jpg",
+        "https://samyangtechmall.com/web/upload/NNEditor/20251112/2277CF_05.jpg"
+      ]
+    },
+    "description_text": "TERIS TS-2277CF 헤드 포함 키트\n헤드 지지하중 7kg. 삼각대 다리 지지하중 70kg과 구분해 사용하세요.\nTS-227CF 카본 삼각대 + 7kg 헤드 + 75mm 변환 어댑터 구성. 헤드 포함 세트이며 TS-227CF 단품과 다릅니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T16:28:23.116+09:00",
+    "checked_at": "2026-10-15T07:57:49+00:00",
+    "checked_epoch": 1792051069
   }
 }

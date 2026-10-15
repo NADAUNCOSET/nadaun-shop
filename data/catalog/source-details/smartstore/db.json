@@ -132,9 +132,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T20:22:47.145+09:00",
-    "checked_at": "2026-10-08T08:29:56+00:00",
-    "checked_epoch": 1791448196
+    "source_modified_at": "2026-10-15T12:33:45.663+09:00",
+    "checked_at": "2026-10-15T07:59:01+00:00",
+    "checked_epoch": 1792051141
   },
   "smartstore-13739554662": {
     "images": {
@@ -406,9 +406,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:50:18.105+09:00",
-    "checked_at": "2026-09-07T05:57:56+00:00",
-    "checked_epoch": 1788760676
+    "source_modified_at": "2026-10-15T12:38:40.657+09:00",
+    "checked_at": "2026-10-15T08:02:53+00:00",
+    "checked_epoch": 1792051373
   },
   "smartstore-10345536489": {
     "images": {
@@ -486,9 +486,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:50:18.604+09:00",
-    "checked_at": "2026-09-07T06:00:05+00:00",
-    "checked_epoch": 1788760805
+    "source_modified_at": "2026-10-15T12:39:15.091+09:00",
+    "checked_at": "2026-10-15T08:02:56+00:00",
+    "checked_epoch": 1792051376
   },
   "smartstore-7832179463": {
     "images": {
@@ -750,9 +750,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-08T14:50:51.169+09:00",
-    "checked_at": "2026-09-08T16:19:58+00:00",
-    "checked_epoch": 1788884398
+    "source_modified_at": "2026-10-15T12:41:09.749+09:00",
+    "checked_at": "2026-10-15T08:03:40+00:00",
+    "checked_epoch": 1792051420
   },
   "smartstore-13751915668": {
     "images": {
@@ -797,5 +797,27 @@
     "source_modified_at": "2026-09-28T20:18:04.474+09:00",
     "checked_at": "2026-10-08T08:14:29+00:00",
     "checked_epoch": 1791447269
+  },
+  "smartstore-13812451915": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_56/1792048151134hoT8P_PNG/18917356976657423_293793587.png"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20261015_137/17920481588867NMM1_PNG/image.png"
+      ]
+    },
+    "description_text": "구성품\nCFE-A Type Card 160GB // 1ea\nReader // 1ea\n​",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "FREE",
+      "base_fee": 0,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T16:09:42.602+09:00",
+    "checked_at": "2026-10-15T07:57:52+00:00",
+    "checked_epoch": 1792051072
   }
 }
