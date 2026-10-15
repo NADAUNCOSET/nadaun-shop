@@ -1115,3 +1115,14 @@ HOMAN CFexpress Type A256GB 렌탈20,000원을네이버공식API로생성/재조
 자사몰 공개 rental.json에서도 같은 상품이 rental, 20,000원, rent:146(메모리·스토리지)에 포함된 것을 확인했다. 네이버 API의 표준 상품분류와 판매자 전시 카테고리를 혼동하지 않는다. 앞으로 네이버 신규 상품 등록 완료 조건에 실제 고객용 메뉴의 상품ID·가격·렌탈/판매 구분 확인을 포함한다. 공식 커머스API 담당자도 전시 카테고리는 판매자센터 관리 대상이라고 안내한다: https://github.com/commerce-api-naver/commerce-api/discussions/3670 .
 
 공개 확인: https://smartstore.naver.com/rainbowbene/category/9f6ed1fc08f44810aad94d2bb8487753?cp=1 . 근거는 `_private/catalog/homan256-toss-20261015/naver-memory-proof.json`, `naver-memory-before.txt`, `naver-category-editor-before.txt`, `naver-memory-final.txt`, `naver-memory-live.png`, `own-memory-category-proof.json`. 이번 변경은 네이버 전시 연결이며 자사몰 코드·배포 변경은 없다.
+
+
+### 2026-10-15 23:29 KST — HOMAN 256GB 리더기 1개 기본 포함
+
+대표가 256GB 렌탈에 리더기도 1개 같이 제공한다고 확정했다. 네이버 원상품13751715557/채널13812942061 및 자사몰 smartstore-13812942061의 구성은 **HOMAN CFexpress Type A 256GB 카드 1개 + CFexpress Type A 리더기 1개**, 렌탈료 **20,000원 유지**다. 리더기 모델·제조사·케이블 등 추가 사양은 확정하지 않았다. 이전 ‘카드만/리더기는 추가 상담’ 기록은 당시 정보이며 이번 대표 지시로 대체한다.
+
+네이버 공식 원상품 수정 API로 상세HTML과 검색설명만 변경했다. 수정 전 전체비공개백업, PUT성공, GET전체필드차이2개 확인. 상품명·가격·재고·상태·표준분류·채널정보는 보존했다. 고객용 상품페이지에서 카드/리더기 각1개와20,000원 실제 표시 확인. 자사몰 원본 상세캐시는 검증된 이1상품만 갱신했고 자동수집도 수정된 네이버 원본을 읽는다. 포함구성품2행으로 표시하며 다른29,493상품의 목록객체·가격·분류 변경0, 같은상세shard의다른상품변경0. rent:146 메모리·스토리지 유지. 전체 원본 재수집은 하지 않았다.
+
+정상 publisher 전체필수검사 통과, commit `3d64bc6cc0e3ce9cbb910ac8cc31503d0018893d`, deployment `dpl_HovKbA41J1MZ7fruSWNRAE5s6aeB` READY, live검증 `2026-10-15T14:28:39+00:00`. 상품목록데이터가같아 revision `15149d77c5c301de`는유지되었으므로 revision만으로완료판단하지않고 새commit배포와실제공개details/e3.json의해당상품전체객체NAS일치·브라우저구성품2행을대조했다. 주문/PG설정과기존실주문은수정하지않았다.
+
+근거: `_private/catalog/homan256-reader-20261015/`의 update-receipt.json, release.json, live-proof.json, naver-live.png/txt, own-live.png/txt. 공개 https://smartstore.naver.com/rainbowbene/products/13812942061 · https://shop.nadaun.co/item.html?id=smartstore-13812942061 .
