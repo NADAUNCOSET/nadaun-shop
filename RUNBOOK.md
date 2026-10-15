@@ -1158,3 +1158,20 @@ HOMAN CFexpress Type A256GB 렌탈20,000원을네이버공식API로생성/재조
 **미완료와막힌원인:** 토스‘심사중’은대표전달이며상점포털직접확인은아니다. 브라우저제어의request-header-policy연결오류가정상재시도에도반복되어로그인성공·신청도메인·승인·자체상점키확보·실제테스트창개방/승인/취소를검증하지못했다. 토스비밀번호오류가관찰된것은아니다. 운영환경재조회에서토스운영3키/테스트3키와팝빌3키모두없음. 공식샘플상점키로대체하지않는다. ordersEnabled=false/rentalRequestsEnabled=false/taxInvoiceEnabled=false,adminEnabled=true/paymentProvider=toss유지. 토스승인알림이우리환경변수/주문스위치를자동변경하지않는다. 자체상점키등록→해당상점카드/계좌이체·현금영수증·취소·구매/렌탈·모바일검수→실운영전환이남았다. 전자세금계산서는별도발급서비스계정/API키/인증서/포인트/과세프로필/실발급·국세청전송검수가필요하며기존계정여부를대표에게질문했다. 신규유료계약가입·실제고객결제·발급0건. Windows실기기/새안내브라우저시각검수는이번도구오류로미검증이다.
 
 원본근거: `_private/commerce/release-20261016-test-seo/`의 release.json/live-proof.json/seo-live-audit.json/crosslink-audit.json/backup-manifest.json/environment-readiness.json/merchant-access-blocker.json/ldnet-publication-reconciliation.json 및 최종 final-backup/backup-manifest.json. 계정문서검증은 `_private/commerce/toss-review-20261016/account-document-receipt.json`과지정비공개문서폴더QA에보존했다. MacNAS자동기록complete/errors[]/installation존재확인. 다른PC실행검증은아니다.
+
+
+### 2026-10-16 SEO 후속 — 실제 구글 등록과 검색 수집 접수
+
+대표가 “seo”로 검색 작업을 재지정했다. 이번에는 브라우저 정상 연결을 복구해 실제 기존 로그인 계정의 Google Search Console·네이버 서치어드바이저 목록을 확인했다. Collective/사진/영상/블로그 등의 기존 등록은 있었으나 shop.nadaun.co는 두 서비스 모두 목록에 없었다. 과거 내부 SEO 검사 완료를 실제 검색 등록 완료로 확대하지 않는다.
+
+자사몰 속성에서 직접 발급한 Google/Naver HTML 메타태그를 공통 원본 page.html에 추가했다. 다른 도메인의 확인값을 복사하지 않았고 상품 갱신 후에도 유지한다. 파일 다운로드 도구가 시간초과/재초기화되어 정상 제공되는 HTML 태그 방식으로 전환했다. Google은 ‘소유권이 확인됨’ 실제 화면을 확인했다. 홈페이지 URL 검사 최초 상태는 Google에 아직 알려지지 않은 URL, 실시간 검사는 ‘URL을 Google에 등록할 수 있음’ 통과, 색인 생성 요청은 우선순위 크롤링 대기열 접수까지 확인했다. 접수는 실제 색인·검색순위 상승 완료가 아니다.
+
+기존 sitemap.xml은 공통3주소만 담는 URL목록이었다. 이를 장비 catalog-sitemap.xml과 기프트 실제2개 분할 XML을 직접 가리키는 통합 sitemapindex로 변경했다. 기프트 인덱스 안에 인덱스를 중첩하지 않으며 build_catalog가 매번 실제 분할목록으로 갱신한다. 상품분류 catalog_category.html 누락도 추가했다. 검증된 장비29496/기프트71941의 상품URL 전체가 포함되고 고유URL 102198개, 자식XML별29920/40000/32279주소·최대6.29MB·HTTP200/application/xml·동일도메인·유효XML을 전수 확인했다. gifts.html 공통랜딩이 두카탈로그에중복되는1건은 정상범위로기록하며 상품ID 중복·누락0. 첫 엄격 감사는 이공통랜딩중복을금지해실패했고 실제대상범위로수정해통과했다. 장비상품29496의객체는사전기준과추가/누락/값변경0. 신규SEO검사와정상publisher전체필수검사통과.
+
+공개commit `95e0cb21e29a8bc7bff53cbd070d877408b50635`, deployment `dpl_3LMpai1D3Do6JxTMhUnCN8sWp8cC` READY, revision `b468ed00d8fea420`, 공개검증 `2026-10-15T17:28:30+00:00`. Google의 자사몰 통합 사이트맵 제출 알림 접수는 확인했지만, 이후 목록의 상태는 ‘알 수 없음/가져올 수 없음/발견0’으로 수집 성공 미확인이다. 공개 XML 정상과 Google 실시간 홈페이지 접근 성공만으로 사이트맵 수집 완료를 주장하지 않는다. 다음은 Search Console에서 재처리 결과를 확인하고 지속 오류면 실제 크롤링 응답 원인을 점검하는 것이다. 같은 URL 반복 제출로 우선순위를 올리지 않는다.
+
+Collective도 기존Google속성은있었지만사이트맵제출0건·색인0페이지였다. 정상공개272byte XML(홈1주소)을Google에제출했다. 기존홈검사에는8/6 스마트폰Googlebot가져오기성공/크롤링허용·색인허용예,‘크롤링됨-현재색인이생성되지않음’이표시됐다. 새홈페이지 재색인요청은우선순위크롤링대기열접수확인. 사이트맵상태는읽을수없음으로별도후속이며실제색인완료가아니다. 블로그스팟은기존사이트맵수집성공/211주소발견/최근읽음10/15를확인했고,개요보고서색인16·미색인296은진단값으로보존했다. 미색인296모두오류라고단정하지않는다. 최신글3개의정확한self-canonical/H1단일/index허용도확인했고불필요한재제출·템플릿수정은하지않았다.
+
+네이버는자사몰전용태그공개확인후소유확인버튼에서보안문자가표시됐다. 브라우저도구의CAPTCHA처리시점확인규칙에따라대표에게대신읽고입력해도되는지질문했고아직응답대기다. CAPTCHA입력/소유확인완료/사이트맵제출은아직하지않았다. handoff탭1900918168을보존했다. 확인후소유확인→통합sitemap.xml제출→홈·핵심장비안내수집요청을이어간다. 보안문자를이유로구글이나독립작업을중단하지않았다.
+
+근거는 `_private/commerce/release-20261016-test-seo/search-registration/`의 release.json/registration-status.json/public-sitemap-proof.json, Google소유권·실시간테스트·색인요청·사이트맵접수PNG/TXT, Collective와Blogspot진단, naver-captcha-pending.png. 브라우저복구는검색관리화면에서확인했으며이사실을토스로그인·상점키확보완료로확대하지않는다. 검색상위노출보장·시장검색량측정·실제순위상승완료는아니다. NAS공용RUNBOOK·당일기록·사용Obsidian볼트를갱신하고 최종기록커밋/기존검증백업에연결한증분bundle을보존한다.
