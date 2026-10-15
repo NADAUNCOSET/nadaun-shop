@@ -5,7 +5,7 @@ const {database}=require('./d1.cjs');
 const {repository,orderService}=require('./orders.cjs');
 const {documentService}=require('./documents.cjs');
 const {popbill}=require('./popbill.cjs');
-const {inicis}=require('./inicis.cjs');
+const {toss}=require('./toss.cjs');
 const {adminService}=require('./admin.cjs');
 const {adminDraftService}=require('./admin-drafts.cjs');
 const {goodsflow}=require('./goodsflow.cjs');
@@ -21,7 +21,7 @@ function runtime(env=process.env){
  }
  const db=database(env),repo=repository(db);
  let payment=null,invoice=null;
- if(env.SHOP_ORDERS_ENABLED==='true'){payment=inicis(env);invoice=popbill(env);}
+ if(env.SHOP_ORDERS_ENABLED==='true'){payment=toss(env);invoice=popbill(env);}
  const documents=documentService({db,repo,dataKey:env.SHOP_ORDER_DATA_KEY,payment,invoice});
  const service=orderService({repo,catalog,detail,dataKey:env.SHOP_ORDER_DATA_KEY,sessionKey:env.SHOP_SESSION_KEY,payment,documents,labelProvider:goodsflow(env),invoiceEnabled:!!invoice});
  const admin=adminService({db,service,dataKey:env.SHOP_ORDER_DATA_KEY});

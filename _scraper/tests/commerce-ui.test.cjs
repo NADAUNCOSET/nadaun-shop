@@ -6,31 +6,29 @@ const source=fs.readFileSync(require('node:path').join(process.cwd(),'assets/sho
 function runtime(overrides={}){
  const feedback={},requests=[],sdkCalls=[],elements=[],main={querySelector(){return null;}};
  let paymentForm,close;
- const INIPayPro={requestPayment(form,callback){paymentForm=form;close=callback;sdkCalls.push('pay');}};
+ const TossPayments=key=>({payment({customerKey}){assert.equal(customerKey,'ANONYMOUS');assert.equal(key,'test_ck_fixture');return {requestPayment(request){paymentForm=request;sdkCalls.push('pay');return new Promise((resolve,reject)=>{close=()=>reject(Error('closed'));});}};}});TossPayments.ANONYMOUS='ANONYMOUS';
  function createElement(tag){const node={tag,isConnected:true,children:[],append(child){this.children.push(child);},remove(){this.isConnected=false;}};elements.push(node);return node;}
- const document={body:{dataset:{mode:'unit'},append(){}},querySelector(){return main;},createElement,head:{append(script){assert.equal(script.src,'https://paypro.inicis.com/std/payment/js/INIPayPro_v2.js');sdkCalls.push('load');script.onload();}}};
- const value={provider:'inicis',mode:'test',orderId:'NS-fixture',amount:24500,fields:{P_AMT:'24500',P_OID:'NS-fixture',P_NEXT_URL:'https://shop.nadaun.co/api/inicis-return',P_NOTI:'opaque-return-token'}};
- const context=vm.createContext({document,window:{INIPayPro},URLSearchParams,console,crypto:require('node:crypto').webcrypto,navigator:{userAgent:'Macintosh',maxTouchPoints:0},location:{origin:'https://shop.nadaun.co',search:''},history:{replaceState(){}},fetch:async(url,options)=>{requests.push({url,options});return{ok:true,json:async()=>value};},...overrides});vm.runInContext(source,context);
+ const document={body:{dataset:{mode:'unit'},append(){}},querySelector(){return main;},createElement,head:{append(script){assert.equal(script.src,'https://js.tosspayments.com/v2/standard');sdkCalls.push('load');script.onload();}}};
+ const value={provider:'toss',mode:'test',clientKey:'test_ck_fixture',orderId:'NS-fixture',amount:24500,request:{method:'CARD',amount:{currency:'KRW',value:24500},orderId:'NS-fixture',orderName:'test',successUrl:'https://shop.nadaun.co/api/toss-return?token=opaque',failUrl:'https://shop.nadaun.co/orders.html?result=closed'}};
+ const context=vm.createContext({document,window:{TossPayments},URL,URLSearchParams,console,crypto:require('node:crypto').webcrypto,navigator:{userAgent:'Macintosh',maxTouchPoints:0},location:{origin:'https://shop.nadaun.co',search:''},history:{replaceState(){}},fetch:async(url,options)=>{requests.push({url,options});return{ok:true,json:async()=>value};},...overrides});vm.runInContext(source,context);
  return {context,requests,sdkCalls,elements,feedback,main,value,get paymentForm(){return paymentForm;},close:()=>close()};
 }
 const card=(r,checked=true)=>({querySelector:s=>s.includes('consent')?{checked}:r.feedback});
-test('INICIS form uses only server-confirmed fields, not client totals; double clicks do not repeat',async()=>{
- const r=runtime(),button={disabled:false};await r.context.pay({id:'NS-fixture',quote_version:2,total:1},card(r),button);await r.context.pay({id:'NS-fixture',quote_version:2},card(r),button);
- assert.deepEqual(JSON.parse(r.requests[0].options.body),{id:'NS-fixture',quote_version:2,device:'WEB'});
- assert.equal(r.requests.length,1);assert.equal(r.paymentForm.children.find(p=>p.name==='P_AMT').value,'24500');assert.deepEqual(r.sdkCalls,['load','pay']);
- r.close();assert.equal(button.disabled,false);assert.equal(r.paymentForm.isConnected,false);assert.match(r.feedback.textContent,/닫았/);
+const paymentOrder={id:'NS-fixture',quote_version:2,total:24500};
+const tick=()=>new Promise(resolve=>setImmediate(resolve));
+test('Toss uses only the approved server amount; double clicks cannot repeat checkout',async()=>{
+ const r=runtime(),button={};const pending=r.context.pay(paymentOrder,card(r),button);await tick();await r.context.pay(paymentOrder,card(r),button);
+ assert.deepEqual(JSON.parse(r.requests[0].options.body),{id:'NS-fixture',quote_version:2,device:'WEB'});assert.equal(r.requests.length,1);assert.equal(r.paymentForm.amount.value,24500);assert.deepEqual(r.sdkCalls,['load','pay']);r.close();await pending;assert.equal(button.disabled,false);assert.match(r.feedback.textContent,/닫혔/);
 });
-test('payment requires final quote consent',async()=>{const r=runtime();await r.context.pay({id:'NS-fixture'},card(r,false),{});assert.equal(r.requests.length,0);assert.equal(r.sdkCalls.length,0);});
-test('untrusted amount, provider, callback or malformed fields cannot open payment',async()=>{
- for(const mutate of [v=>v.amount=1,v=>v.provider='other',v=>v.fields.P_NEXT_URL='https://evil.invalid',v=>v.fields.bad='x',v=>v.fields.P_NOTI={x:1}]){const r=runtime();mutate(r.value);await r.context.pay({id:'NS-fixture'},card(r),{});assert.equal(r.paymentForm,undefined);}
+test('payment requires final quote consent',async()=>{const r=runtime();await r.context.pay(paymentOrder,card(r,false),{});assert.equal(r.requests.length,0);assert.equal(r.sdkCalls.length,0);});
+test('tampered amount, order, provider, key or callback cannot open payment',async()=>{
+ for(const mutate of [v=>v.amount=1,v=>v.request.amount.value=1,v=>v.orderId='foreign',v=>v.provider='other',v=>v.clientKey='live_ck_fixture',v=>v.request.successUrl='https://evil.invalid/',v=>v.request.failUrl='https://evil.invalid/']){const r=runtime();mutate(r.value);await r.context.pay(paymentOrder,card(r),{});assert.equal(r.paymentForm,undefined);}
 });
 test('mobile and touch iPad payments select MOBILE',()=>{
- for(const navigator of [{userAgent:'Android',maxTouchPoints:1},{userAgent:'iPhone',maxTouchPoints:1},{userAgent:'Macintosh',maxTouchPoints:5}])assert.equal(runtime({navigator}).context.deviceType(),'MOBILE');
- assert.equal(runtime().context.deviceType(),'WEB');
+ for(const navigator of [{userAgent:'Android',maxTouchPoints:1},{userAgent:'iPhone',maxTouchPoints:1},{userAgent:'Macintosh',maxTouchPoints:5}])assert.equal(runtime({navigator}).context.deviceType(),'MOBILE');assert.equal(runtime().context.deviceType(),'WEB');
 });
 test('SDK errors remain retryable and never expose provider messages',async()=>{
- const r=runtime();let count=0;r.context.document.head.append=script=>{if(count++===0)script.onerror();else script.onload();};
- const button={};await r.context.pay({id:'NS-fixture'},card(r),button);assert.equal(button.disabled,false);assert.equal(r.paymentForm,undefined);await r.context.pay({id:'NS-fixture'},card(r),button);assert.ok(r.paymentForm);
+ const r=runtime();let count=0;r.context.document.head.append=script=>{if(count++===0)script.onerror();else script.onload();};const button={};await r.context.pay(paymentOrder,card(r),button);assert.equal(button.disabled,false);assert.equal(r.paymentForm,undefined);const pending=r.context.pay(paymentOrder,card(r),button);await tick();assert.ok(r.paymentForm);r.close();await pending;
 });
 test('disabled checkout does not collect delivery or business information or load PG scripts',async()=>{
  const r=runtime({fetch:async()=>({ok:true,json:async()=>({ordersEnabled:false})})});let inserted=false;r.main.querySelector=s=>s==='.checkout-services'?{isConnected:true,before(){inserted=true;}}:null;
@@ -38,8 +36,8 @@ test('disabled checkout does not collect delivery or business information or loa
 });
 test('admin readiness separates enabled administration from pending customer payments and invoices',()=>{
  const r=runtime();
- const pending=r.context.adminReadiness({adminEnabled:true,paymentProvider:'inicis',ordersEnabled:false,rentalRequestsEnabled:false,taxInvoiceEnabled:false});
- assert.match(pending,/KG이니시스/);assert.equal((pending.match(/오픈 준비 중/g)||[]).length,2);assert.match(pending,/발급 연결 준비 중/);assert.doesNotMatch(pending,/접수 가능|<strong>발급 연결됨/);
+ const pending=r.context.adminReadiness({adminEnabled:true,paymentProvider:'toss',ordersEnabled:false,rentalRequestsEnabled:false,taxInvoiceEnabled:false});
+ assert.match(pending,/토스페이먼츠/);assert.equal((pending.match(/오픈 준비 중/g)||[]).length,2);assert.match(pending,/발급 연결 준비 중/);assert.doesNotMatch(pending,/접수 가능|<strong>발급 연결됨/);
  const enabled=r.context.adminReadiness({paymentProvider:'toss',ordersEnabled:true,rentalRequestsEnabled:true,taxInvoiceEnabled:true});
  assert.match(enabled,/토스페이먼츠/);assert.equal((enabled.match(/접수 가능/g)||[]).length,2);assert.match(enabled,/<strong>발급 연결됨/);
  assert.match(r.context.adminReadiness({paymentProvider:'<script>bad</script>',ordersEnabled:'true'}),/확인 필요/);assert.doesNotMatch(r.context.adminReadiness({ordersEnabled:'true'}),/접수 가능/);

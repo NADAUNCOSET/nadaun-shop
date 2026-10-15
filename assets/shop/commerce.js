@@ -44,7 +44,7 @@ async function mountCheckout(){
  });
 }
 function evidenceForm(taxEnabled){
- return '<fieldset class="commerce-evidence"><legend>결제 방법과 증빙</legend><label>증빙 선택<select name="evidence_kind"><option value="card_receipt">카드 결제 · 카드 매출전표</option><option value="cash_receipt">계좌이체 · 현금영수증 (소득공제 / 지출증빙)</option>'+(taxEnabled?'<option value="tax_invoice">계좌이체 · 전자세금계산서</option>':'')+'</select></label><p class="commerce-note">현금영수증은 이니시스 결제창에서 소득공제 또는 사업자 지출증빙을 선택하고 발급 정보를 입력해주세요. 세금계산서를 선택하면 현금영수증은 함께 발급하지 않습니다.</p>'+(taxEnabled?'':'<p class="commerce-note">전자세금계산서 발급 연결을 준비 중입니다. 필요한 경우 구매 전 상담해주세요.</p>')+'<div class="commerce-fields" data-tax-fields hidden>'+[
+ return '<fieldset class="commerce-evidence"><legend>결제 방법과 증빙</legend><label>증빙 선택<select name="evidence_kind"><option value="card_receipt">카드 결제 · 카드 매출전표</option><option value="cash_receipt">계좌이체 · 현금영수증 (소득공제 / 지출증빙)</option>'+(taxEnabled?'<option value="tax_invoice">계좌이체 · 전자세금계산서</option>':'')+'</select></label><p class="commerce-note">현금영수증은 토스페이먼츠 결제창에서 소득공제 또는 사업자 지출증빙을 선택하고 발급 정보를 입력해주세요. 세금계산서를 선택하면 현금영수증은 함께 발급하지 않습니다.</p>'+(taxEnabled?'':'<p class="commerce-note">전자세금계산서 발급 연결을 준비 중입니다. 필요한 경우 구매 전 상담해주세요.</p>')+'<div class="commerce-fields" data-tax-fields hidden>'+[
   ['corp_num','사업자등록번호 (숫자 10자리)','text',10],['corp_name','상호','text',200],['ceo_name','대표자명','text',100],['address','사업장 주소','text',300],['biz_type','업태','text',100],['biz_class','종목','text',100],['email','세금계산서 수신 이메일','email',100]
  ].map(([key,label,type,max])=>`<label>${label}<input name="tax_${key}" type="${type}" maxlength="${max}" disabled ${key==='corp_num'?'inputmode="numeric" pattern="[0-9]{10}"':''}></label>`).join('')+'</div></fieldset>';
 }
@@ -52,7 +52,7 @@ function documentCard(doc){
  if(!doc)return '';
  const kind={card_receipt:'카드 매출전표',cash_receipt:doc.purpose==='business'?'현금영수증 · 지출증빙':doc.purpose==='income'?'현금영수증 · 소득공제':'현금영수증',tax_invoice:'전자세금계산서'}[doc.kind]||'결제 증빙';
  const status={queued:'발급 대기',processing:'발급 확인 중',retry:'발급 결과 확인 중',review:'발급 확인 필요',issued:'발급 완료',voided:'취소'}[doc.status]||'확인 중';
- const receipt=typeof doc.receipt_url==='string'&&/^https:\/\/iniweb\.inicis\.com\/DefaultWebApp\/mall\/cr\/cm\/mCmReceipt_head\.jsp\?noTid=[a-zA-Z0-9_-]+&noMethod=1$/.test(doc.receipt_url)?`<p><a href="${esc(doc.receipt_url)}" target="_blank" rel="noopener noreferrer">영수증 조회 · 인쇄 ↗</a></p>`:'';
+ const receipt=safeReceiptUrl(doc.receipt_url)?`<p><a href="${esc(doc.receipt_url)}" target="_blank" rel="noopener noreferrer">영수증 조회 · 인쇄 ↗</a></p>`:'';
  return `<div class="commerce-document"><strong>${esc(kind)} · ${esc(status)}</strong>${doc.approval_number?`<p>승인번호 ${esc(doc.approval_number)}</p>`:''}${doc.kind==='tax_invoice'&&doc.status==='issued'?'<p>입력하신 이메일로 발급 안내가 전송됩니다. '+(doc.nts_status==='accepted'?'국세청 전송이 완료되었습니다.':'국세청 전송 결과는 확인 중입니다.')+'</p>':''}${receipt}${doc.status==='review'?'<p>결제 상태와 증빙을 별도로 확인하고 있습니다. 고객센터에 주문번호를 알려주세요.</p>':''}</div>`;
 }
 function calendarInfo(order,admin){
@@ -127,38 +127,32 @@ function adminActions(order){
  return approve+visits+ship+reconcile+receipt+cancel+canceled+memo;
 }
 let sdk;
-function loadInicis(){return sdk||(sdk=new Promise((resolve,reject)=>{
- const script=document.createElement('script');script.src='https://paypro.inicis.com/std/payment/js/INIPayPro_v2.js';
- script.onload=()=>{if(window.INIPayPro?.requestPayment)resolve(window.INIPayPro);else{sdk=null;script.remove();reject(Error('이니시스 결제창을 불러오지 못했습니다.'));}};
+function loadToss(){return sdk||(sdk=new Promise((resolve,reject)=>{
+ const script=document.createElement('script');script.src='https://js.tosspayments.com/v2/standard';
+ script.onload=()=>{if(typeof window.TossPayments==='function')resolve(window.TossPayments);else{sdk=null;script.remove();reject(Error('토스페이먼츠 결제창을 불러오지 못했습니다.'));}};
  script.onerror=()=>{sdk=null;script.remove();reject(Error('결제창을 불러오지 못했습니다. 다시 시도해주세요.'));};document.head.append(script);
 }).catch(error=>{sdk=null;throw error;}));}
 function deviceType(){return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(/Macintosh/i.test(navigator.userAgent)&&navigator.maxTouchPoints>1)?'MOBILE':'WEB';}
-function paymentForm(value){
- if(value.provider!=='inicis'||!['test','live'].includes(value.mode)||!Number.isSafeInteger(value.amount)||value.amount<1||value.amount>100000000||value.fields?.P_AMT!==String(value.amount)||value.fields?.P_OID!==value.orderId||value.fields?.P_NEXT_URL!==location.origin+'/api/inicis-return')throw Error('결제 요청 정보를 확인해주세요.');
- const form=document.createElement('form');form.id='inicis-payment-'+crypto.randomUUID();form.method='post';form.acceptCharset='UTF-8';form.hidden=true;
- for(const [name,fieldValue] of Object.entries(value.fields)){
-  if(!/^P_[A-Z_]+$/.test(name)||typeof fieldValue!=='string')throw Error('결제 요청 형식을 확인해주세요.');
-  const input=document.createElement('input');input.type='hidden';input.name=name;input.value=fieldValue;form.append(input);
- }
- return form;
+function paymentRequest(value,order){
+ const r=value.request,success=new URL(r?.successUrl||'',location.origin);
+ if(value.provider!=='toss'||!['test','live'].includes(value.mode)||!new RegExp('^'+value.mode+'_ck_[a-zA-Z0-9_-]+$').test(value.clientKey||'')||!Number.isSafeInteger(value.amount)||value.amount<1||value.amount>100000000||value.orderId!==order.id||value.amount!==order.total||r?.amount?.currency!=='KRW'||r.amount.value!==value.amount||r.orderId!==value.orderId||!['CARD','TRANSFER'].includes(r.method)||success.origin!==location.origin||success.pathname!=='/api/toss-return'||!success.searchParams.get('token')||r.failUrl!==location.origin+'/orders.html?result=closed')throw Error('결제 요청 정보를 확인해주세요.');
+ return r;
 }
+function safeReceiptUrl(value){try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password&&!u.port&&['dashboard.tosspayments.com','pgweb.tosspayments.com','receipt.tosspayments.com'].includes(u.hostname)?u.href:null;}catch{return null;}}
 async function paymentTest(){
  if(location.search)history.replaceState(null,'','/payment-test.html');
- const holder=main.querySelector('#payment-demo');
- let enabled=false;try{enabled=(await config()).ordersEnabled;}catch{}
- holder.innerHTML='<h2>KG이니시스</h2><p>'+(enabled?'확정된 주문의 결제 버튼을 누르면 이니시스 결제창으로 연결됩니다.':'온라인 결제 오픈을 준비하고 있습니다. 상품 구매와 견적은 상담으로 안내해드립니다.')+'</p><a class="button-primary" href="/checkout.html">주문서 확인 →</a>';
+ const holder=main.querySelector('#payment-demo');let enabled=false;try{enabled=(await config()).ordersEnabled;}catch{}
+ holder.innerHTML='<h2>토스페이먼츠</h2><p>'+(enabled?'확정된 구매·렌탈 주문의 결제 버튼을 누르면 토스페이먼츠 결제창으로 연결됩니다.':'온라인 결제 오픈을 준비하고 있습니다. 상품 구매와 렌탈 일정은 상담으로 안내해드립니다.')+'</p><a class="button-primary" href="/checkout.html">주문서 확인 →</a>';
 }
 async function pay(order,card,button){
  if(button.disabled)return;
  const feedback=card.querySelector('.commerce-feedback');
  if(!card.querySelector('[data-quote-consent]').checked){message(feedback,'확정 금액을 확인하고 동의해주세요.');return;}
- button.disabled=true;message(feedback,'이니시스 결제창으로 연결하고 있습니다.');let form;
+ button.disabled=true;message(feedback,'토스페이먼츠 결제창으로 연결하고 있습니다.');
  try{
-  const provider=await loadInicis();
-  const value=await api('start',{id:order.id,quote_version:order.quote_version,device:deviceType()});
-  form=paymentForm(value);document.body.append(form);
-  provider.requestPayment(form,()=>{form.remove();button.disabled=false;message(feedback,'결제창을 닫았습니다. 주문 상태를 확인해주세요.');});
- }catch{form?.remove();message(feedback,'결제창 연결을 확인하지 못했습니다. 주문 상태를 확인한 뒤 다시 시도해주세요.');button.disabled=false;}
+  const provider=await loadToss(),value=await api('start',{id:order.id,quote_version:order.quote_version,device:deviceType()}),request=paymentRequest(value,order);
+  await provider(value.clientKey).payment({customerKey:provider.ANONYMOUS}).requestPayment(request);
+ }catch{message(feedback,'결제창이 닫혔거나 연결을 완료하지 못했습니다. 주문 상태를 확인한 뒤 다시 시도해주세요.');button.disabled=false;}
 }
 async function orders(){
  const container=main.querySelector('#commerce-content'),feedback=main.querySelector('#commerce-status');
@@ -175,7 +169,7 @@ async function orders(){
  }catch(error){message(feedback,error.message);container.innerHTML='';}
 }
 function adminReadiness(ready){
- const provider={inicis:'KG이니시스',toss:'토스페이먼츠'}[ready.paymentProvider]||'확인 필요';
+ const provider={toss:'토스페이먼츠'}[ready.paymentProvider]||'확인 필요';
  const rows=[['현재 결제대행사',provider],['고객 주문·결제',ready.ordersEnabled===true?'접수 가능':'오픈 준비 중'],['렌탈 온라인 접수',ready.rentalRequestsEnabled===true?'접수 가능':'오픈 준비 중'],['전자세금계산서',ready.taxInvoiceEnabled===true?'발급 연결됨':'발급 연결 준비 중']];
  return '<div class="commerce-admin-summary" aria-label="운영 연결 상태">'+rows.map(([label,value])=>'<div><span>'+esc(label)+'</span><strong>'+esc(value)+'</strong></div>').join('')+'</div><p class="commerce-note">현금영수증 소득공제·사업자 지출증빙은 결제대행사에서 처리합니다. 전자세금계산서는 별도 발급 연결이 필요합니다.</p>';
 }
@@ -512,7 +506,7 @@ async function admin(){
    currentOrders=value.orders;for(const id of selected)if(!currentOrders.some(o=>o.id===id))selected.delete(id);
    const s=value.summary,w=value.workload||s;
    const calendarStatus=health?.status==='connected'&&Date.now()-health.checked_at<180000?'캘린더 연결 확인':health?'캘린더 연결 점검 필요':'캘린더 연결 확인 중';
-   const pg=readiness.paymentProvider==='inicis'?'<a href="https://iniweb.inicis.com/security/login.do" target="_blank" rel="noopener noreferrer">결제사 거래·환불 관리 ↗</a>':'';
+   const pg=readiness.paymentProvider==='toss'?'<a href="https://app.tosspayments.com/" target="_blank" rel="noopener noreferrer">결제사 거래·환불 관리 ↗</a>':'';
    container.innerHTML=`<div class="commerce-admin-tools"><div><strong>주문 작업실</strong><span>마지막 조회 ${esc(new Date().toLocaleTimeString('ko-KR',{timeZone:'Asia/Seoul'}))}</span></div><button class="button-outline" data-open-drafts>수기 견적</button><button class="button-outline" data-refresh>새로고침</button><button class="button-outline" data-logout>로그아웃</button></div><nav class="commerce-work-tabs" aria-label="처리할 주문">${adminTabs.map(tab=>`<button type="button" data-worktab="${tab.id}" aria-pressed="${selectedTab===tab.id}"><span>${tab.label}</span>${Number.isFinite(w[tab.count])?'<strong>'+w[tab.count].toLocaleString('ko-KR')+'</strong>':''}</button>`).join('')}</nav><details class="commerce-filter-section" data-admin-filters ${preferences.filtersOpen?'open':''}><summary>조회 조건 <span>${esc(filters.from)} — ${esc(filters.to)}</span></summary>${adminPresetControls(preferences)}<form class="commerce-admin-filter"><label>시작일<input type="date" name="from" value="${esc(filters.from)}" required></label><label>종료일<input type="date" name="to" value="${esc(filters.to)}" required></label><label>기간 기준<select name="basis">${options([['created','주문접수일'],['paid','결제확정일']],filters.basis)}</select></label><label>주문 유형<select name="kind">${options([['','구매·렌탈 전체'],['purchase','구매'],['rental','렌탈']],filters.kind)}</select></label><label>주문 상태<select name="state">${options([['','전체'],...Object.entries(states)],filters.state)}</select></label><label>배송·렌탈 처리<select name="fulfillment">${options([['','전체'],['unfulfilled','출고·수령 예정'],['processing','처리 중·대여 중'],['shipped','출고·반납 완료']],filters.fulfillment)}</select></label><label>결제 환경<select name="mode">${options([['operational','운영 주문 (테스트 제외)'],['live','실결제 주문'],['test','테스트 주문'],['all','전체']],filters.mode)}</select></label><label>증빙<select name="document">${options([['','전체'],['queued','발급 대기'],['processing','발급 확인 중'],['issued','발급 완료'],['retry','재확인 중'],['review','확인 필요'],['voided','취소'],['missing','미발급']],filters.document)}</select></label><label>검색 범위<select name="searchField">${options([['all','전체'],['order','주문번호·결제 거래번호'],['customer','고객 이름·연락처'],['tracking','운송장번호']],filters.searchField)}</select></label><label class="commerce-admin-search">주문 · 고객 · 송장 검색<input type="search" name="search" value="${esc(filters.search)}" maxlength="80" placeholder="주문번호, 고객 이름·전화번호, 송장번호"></label><div class="commerce-admin-filter-actions"><button class="button-primary">조회하기</button><button type="button" class="button-outline" data-days="7">최근 7일</button><button type="button" class="button-outline" data-days="30">최근 30일</button><button type="button" class="button-outline" data-year>올해 결제 자료</button><button type="button" class="button-outline" data-last-year>작년 결제 자료</button></div></form></details><div class="commerce-result-heading"><div><h2>조회 결과 <strong>${s.orders.toLocaleString('ko-KR')}</strong></h2><p>${esc(filters.from)} — ${esc(filters.to)} · ${selectedTab==='custom'?'상세 조건':adminTabs.find(t=>t.id===selectedTab)?.label||'전체 주문'}</p></div><div>${adminViewControls(preferences)}<button class="button-outline" data-export="xlsx">전체 조회 엑셀</button><button class="button-outline" data-export="csv">CSV</button></div></div><section class="commerce-selection-tools" aria-label="선택 주문 작업"><div><strong>선택 <span data-selection-count>0</span>건</strong><span>현재 페이지에서 선택 · 조회 조건이나 페이지를 바꾸면 해제됩니다.</span></div><div class="commerce-selection-actions"><button type="button" class="button-outline" data-selected-export="xlsx" disabled>선택 엑셀</button><button type="button" class="button-outline" data-selected-export="csv" disabled>선택 CSV</button><button type="button" class="button-outline" data-print-orders="order" disabled>주문서 인쇄</button><button type="button" class="button-outline" data-print-orders="statement" disabled>거래명세서 인쇄</button><button type="button" class="button-outline" data-clear-selection disabled>선택 해제</button></div><div class="commerce-bulk-workflow"><label>선택 주문 배송 단계<select data-bulk-stage><option value="preparing">상품 준비</option><option value="ready">배송 대기</option><option value="delivered">배송 완료 · 고객 수령 확인</option></select></label><label class="commerce-check" hidden><input type="checkbox" data-bulk-confirm><span>선택 주문 전체 상품의 고객 수령을 확인했습니다.</span></label><button type="button" class="button-outline" data-bulk-workflow disabled>선택 단계 저장</button><span>최대 25주문 · 적용할 수 없는 주문은 사유를 안내합니다.</span></div></section>${adminTable(value.orders,expandedId,preferences,selected)}<nav class="commerce-admin-pages" aria-label="주문 페이지"><button class="button-outline" data-prev ${value.page<=1?'disabled':''}>← 이전</button><span>${value.page} / ${value.pages} 페이지 · 페이지당 ${value.pageSize}건</span><button class="button-outline" data-next ${value.page>=value.pages?'disabled':''}>다음 →</button></nav>${adminShippingPanel(shippingStatus)}${adminInvoicePanel()}<details class="commerce-admin-connection"><summary>운영 연결 · 결제 · 자료 집계</summary>${adminReadiness(readiness)}<p class="commerce-calendar">${esc(calendarStatus)}</p><div class="commerce-admin-tools">${pg}<span>기프트는 수량·인쇄·납기 상담 후 진행합니다.</span></div><div class="commerce-admin-summary"><div><span>조회 주문의 실결제 원 승인 누계</span><strong>${money(s.approvedTotal)}</strong></div><div><span>취소 주문의 원 승인액</span><strong>${money(s.canceledOriginalTotal)}</strong></div><div><span>증빙 대기·확인</span><strong>${s.documentPending}건</strong></div></div><div class="commerce-admin-notes">${value.notices.map(n=>'<p>'+esc(n)+'</p>').join('')}</div></details>`;
    container.querySelector('[data-refresh]').onclick=refresh;
    container.querySelector('[data-open-drafts]').onclick=()=>{if(actionBusy)return;clearSelection();void adminDrafts(container,feedback,()=>void refresh());};

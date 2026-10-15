@@ -114,7 +114,7 @@ function adminService({db,service,dataKey,clock=()=>Date.now()}){
  function records(row){
   const customer=cipher.decrypt(row.customer_cipher),doc=row.doc_result?cipher.decrypt(row.doc_result):null;
   let receipt=null;if(row.payment_receipt_cipher)receipt=cipher.decrypt(row.payment_receipt_cipher);
-  const verified=!!receipt&&receipt.provider==='inicis'&&receipt.orderId===row.id&&receipt.paymentKey===row.payment_key&&receipt.totalAmount===row.total&&receipt.currency==='KRW'&&receipt.status==='DONE';
+  const verified=!!receipt&&receipt.provider==='toss'&&receipt.orderId===row.id&&receipt.paymentKey===row.payment_key&&receipt.totalAmount===row.total&&receipt.currency==='KRW'&&receipt.status==='DONE';
   const paidAt=row.paid_at||row.confirmed_at||null;
   return {row,customer,doc,receipt,verified,paidAt};
  }
@@ -197,7 +197,7 @@ function adminService({db,service,dataKey,clock=()=>Date.now()}){
   '결제확정일 기준은 서버에 승인 성공을 저장한 시각(한국 시간)입니다. PG 승인일은 별도 열에 표시합니다.',
   '기본 운영 조회 및 다운로드는 테스트 결제를 제외합니다. 테스트 자료는 별도 조건에서 확인하세요.',
   '승인 누계와 취소 주문의 원 승인액은 별도 값입니다. 취소 발생일/부분 환불액/PG 수수료/실입금액은 PG 정산명세와 대조해야 합니다.',
-  '이 자료는 주문·결제·발급 처리 내역입니다. 세무 신고 및 이니시스 정산명세를 대체하지 않습니다.',
+  '이 자료는 주문·결제·발급 처리 내역입니다. 세무 신고 및 토스페이먼츠 정산명세를 대체하지 않습니다.',
   '필터에 해당하는 전체 주문 또는 명시적으로 선택한 주문을 다운로드합니다.',
   '반품·교환의 기록 종결은 환불 완료를 뜻하지 않습니다. 실제 환불은 PG 거래 내역과 별도로 대조하세요.'
  ];

@@ -210,7 +210,7 @@
     "api/search.js": {
       "includeFiles": "{search.html,data/gift/catalog.json,data/catalog/catalog.json,server/gift-catalog.cjs,server/shop-search.cjs,assets/shop/rental-content.js}"
     },
-    "api/inicis-return.js": {
+    "api/toss-return.js": {
       "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,server/commerce/**}",
       "maxDuration": 60
     },

@@ -1,7 +1,7 @@
 'use strict';
 const crypto=require('node:crypto');
 const {protect,ShopError}=require('./security.cjs');
-const {matchPayment}=require('./inicis.cjs');
+const {matchPayment}=require('./toss.cjs');
 const {paymentEvidence}=require('./evidence.cjs');
 const managementKey=id=>'NS'+crypto.createHash('sha256').update(id).digest('hex').slice(0,22);
 function documentService({db,repo,dataKey,payment,invoice=null,clock=()=>Date.now()}){
@@ -25,7 +25,7 @@ function documentService({db,repo,dataKey,payment,invoice=null,clock=()=>Date.no
   try{
    const order=await repo.get(id);
    if(!order||order.state!=='PAID')return finish(job,'review',{reason:'payment_not_paid'});
-   if(order.payment_mode!==payment.mode||order.payment_provider!=='inicis')return finish(job,'review',{reason:'payment_environment_mismatch'});
+   if(order.payment_mode!==payment.mode||order.payment_provider!=='toss')return finish(job,'review',{reason:'payment_environment_mismatch'});
    const customer=cipher.decrypt(order.customer_cipher),stored=cipher.decrypt(order.payment_receipt_cipher);
    // Before any delayed external issue, recheck the transaction with the PG.
    const remote=await payment.get(order.payment_key);

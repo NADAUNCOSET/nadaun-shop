@@ -33,7 +33,7 @@ function calendarService({db,dataKey,client,clock=()=>Date.now()}){
     if(event&&event.status!=='cancelled')await client.remove(saved.event_id,event.etag);
     return await finish('canceled');
    }
-   if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='inicis'||!row.paid_at||!row.payment_key)return await finish('ignored');
+   if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='toss'||!row.paid_at||!row.payment_key)return await finish('ignored');
    const body=rentalEvent(row,customer),desired=fingerprint(body);
    if(customer.rental.return_at<now-2*86400000)return await finish('ignored');
    if(event&&event.status!=='cancelled'&&saved.fingerprint&&fingerprint(event)!==saved.fingerprint)return await finish('review',{error:'calendar_manually_changed'});

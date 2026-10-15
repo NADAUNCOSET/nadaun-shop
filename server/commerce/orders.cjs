@@ -2,7 +2,7 @@
 const crypto=require('node:crypto');
 const {ShopError,hash,protect,sessions}=require('./security.cjs');
 const {customerFields,quoteCatalog,positive}=require('./pricing.cjs');
-const {matchPayment}=require('./inicis.cjs');
+const {matchPayment,receiptUrl}=require('./toss.cjs');
 const {rentalSchedule,rentalCustomer,rentalQuote}=require('./rental.cjs');
 const {evidenceFields,paymentEvidence}=require('./evidence.cjs');
 const fulfillment=require('./fulfillment.cjs');
@@ -58,7 +58,7 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
  };
  async function detailed(row,admin=false){
   const document=documents?await documents.get(row.id):null;
-  if(document?.status==='issued'&&document.kind!=='tax_invoice'&&row.payment_provider==='inicis'&&/^[a-zA-Z0-9_-]{10,40}$/.test(row.payment_key||''))document.receipt_url='https://iniweb.inicis.com/DefaultWebApp/mall/cr/cm/mCmReceipt_head.jsp?noTid='+encodeURIComponent(row.payment_key)+'&noMethod=1';
+  if(document?.status==='issued'&&document.kind!=='tax_invoice'&&row.payment_provider==='toss'&&row.payment_receipt_cipher){const url=receiptUrl(cipher.decrypt(row.payment_receipt_cipher).receiptUrl);if(url)document.receipt_url=url;}
   return {...dto(row,admin),document,...(admin&&repo.calendar?{calendar:await repo.calendar(row.id)}:{})};
  }
  async function own(id,owner){const row=await repo.get(id);if(!row||row.customer_hash!==owner)throw new ShopError(404,'주문을 찾을 수 없습니다. 주문한 브라우저에서 다시 확인해주세요.');return row;}
@@ -72,10 +72,10 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
   catch(error){if(error.status===409){const current=await repo.get(row.id);if(current?.state===next&&current.payment_key===row.payment_key&&current.total===row.total)return current;}throw error;}
  }
  async function rentalMove(id,input,returning,actor){
-  if(!payment)throw new ShopError(503,'이니시스 결제 서비스 연결을 준비 중입니다.');
+  if(!payment)throw new ShopError(503,'토스페이먼츠 결제 서비스 연결을 준비 중입니다.');
   const row=await repo.get(id);if(!row)throw new ShopError(404,'렌탈 요청을 찾을 수 없습니다.');
   const customer=cipher.decrypt(row.customer_cipher);if(!customer.rental)throw new ShopError(409,'렌탈 요청에서만 방문 처리를 할 수 있습니다.');
-  if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='inicis'||row.version!==input.version||row.fulfillment!==(returning?'processing':'unfulfilled'))throw new ShopError(409,'실결제가 확인된 최신 렌탈 상태를 다시 확인해주세요.');
+  if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='toss'||row.version!==input.version||row.fulfillment!==(returning?'processing':'unfulfilled'))throw new ShopError(409,'실결제가 확인된 최신 렌탈 상태를 다시 확인해주세요.');
   const verified=await applyPayment(row,await payment.get(row.payment_key),actor);if(verified.state!=='PAID')throw new ShopError(409,'결제 취소 또는 변경 상태를 확인해주세요.');
   customer.rental[returning?'actual_return_at':'actual_pickup_at']=clock();
   return dto(await repo.patch(row,{fulfillment:returning?'shipped':'processing',customer_cipher:cipher.encrypt(customer)},actor,returning?'rental_returned':'rental_picked_up'),true);
@@ -92,8 +92,8 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
  }
  function purchaseCustomer(row){const customer=cipher.decrypt(row.customer_cipher);if(customer.rental)throw new ShopError(409,'렌탈은 방문 수령·반납 처리 기능을 이용해주세요.');return customer;}
  async function verifiedForShipping(row,actor){
-  if(!payment)throw new ShopError(503,'이니시스 결제 서비스 연결을 준비 중입니다.');
-  if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='inicis')throw new ShopError(409,'실결제가 확인된 최신 주문에서만 출고할 수 있습니다.');
+  if(!payment)throw new ShopError(503,'토스페이먼츠 결제 서비스 연결을 준비 중입니다.');
+  if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='toss')throw new ShopError(409,'실결제가 확인된 최신 주문에서만 출고할 수 있습니다.');
   if((await applyPayment(row,await payment.get(row.payment_key),actor)).state!=='PAID')throw new ShopError(409,'결제 취소 또는 변경 상태를 확인해주세요.');
  }
  function rememberImport(customer,identity){
@@ -153,7 +153,7 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
    }
    if(labelPending(customer))throw new ShopError(409,'자동 송장이 접수된 주문입니다. 송장 결과 조회를 이용해주세요.');
    if(input.operation!=='ship')throw new ShopError(400,'출고 또는 운송정보 수정 작업을 선택해주세요.');
-   if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='inicis')throw new ShopError(409,'실결제 완료된 구매 주문만 출고할 수 있습니다.');
+   if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='toss')throw new ShopError(409,'실결제 완료된 구매 주문만 출고할 수 있습니다.');
    if(row.fulfillment==='processing'&&!history.length)throw new ShopError(409,'기존 부분 출고의 품목 수량을 먼저 확인해주세요.');
    return {duplicate:false,items:fulfillment.selectItems(input.items,fulfillment.originalRemaining(row,history),{optional:true})};
   },
@@ -249,28 +249,27 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
    return dto(await repo.patch(row,{state:'APPROVED',lines_json:JSON.stringify(q.lines),subtotal:q.subtotal,shipping:q.shipping,total:q.total,quote_version:row.quote_version+1,quote_expires:clock()+30*60*1000},actor,'quote_approved'),true);
   },
   async start(id,owner,version,device='WEB'){
-   if(!payment)throw new ShopError(503,'이니시스 결제 서비스 연결을 준비 중입니다.');
+   if(!payment)throw new ShopError(503,'토스페이먼츠 결제 서비스 연결을 준비 중입니다.');
    let row=await own(id,owner);
    if(!['APPROVED','PAYMENT_PENDING'].includes(row.state)||row.quote_version!==version||row.quote_expires<=clock()||!positive(row.total))throw new ShopError(409,'확정 금액과 결제 가능 시간을 다시 확인해주세요.');
    if(!['WEB','MOBILE'].includes(device))throw new ShopError(400,'결제 기기 정보를 확인해주세요.');
-   if(row.state==='APPROVED')row=await repo.patch(row,{state:'PAYMENT_PENDING',payment_mode:payment.mode,payment_provider:'inicis'},'customer','payment_started');
-   if(row.payment_mode!==payment.mode||row.payment_provider!=='inicis')throw new ShopError(409,'결제 환경이 변경되었습니다. 고객센터에 주문번호를 알려주세요.');
+   if(row.state==='APPROVED')row=await repo.patch(row,{state:'PAYMENT_PENDING',payment_mode:payment.mode,payment_provider:'toss'},'customer','payment_started');
+   if(row.payment_mode!==payment.mode||row.payment_provider!=='toss')throw new ShopError(409,'결제 환경이 변경되었습니다. 고객센터에 주문번호를 알려주세요.');
    const token=returns.issue(row.id+'|'+row.confirm_key+'|'+payment.mode,'payment',Math.max(1,Math.floor((row.quote_expires-clock())/1000)));
    const customer=cipher.decrypt(row.customer_cipher);
    if(customer.evidence?.kind==='tax_invoice'&&!invoiceEnabled)throw new ShopError(503,'전자세금계산서 설정 확인이 필요합니다.');
    return payment.prepare(row,customer,token,device);
   },
   async acceptReturn(input){
-   if(!payment)throw new ShopError(503,'이니시스 결제 서비스 연결을 준비 중입니다.');
-   const subject=returns.read(input.P_NOTI,'payment');
+   if(!payment)throw new ShopError(503,'토스페이먼츠 결제 서비스 연결을 준비 중입니다.');
+   const subject=returns.read(input.token,'payment');
    if(!subject)throw new ShopError(401,'결제 인증 유효 시간이 지났습니다. 주문 상태를 확인해주세요.');
    const [id,nonce,mode]=subject.split('|');let row=await repo.get(id);
-   if(!row||row.confirm_key!==nonce||row.payment_mode!==mode||payment.mode!==mode||row.payment_provider!=='inicis')throw new ShopError(409,'주문의 결제 환경 확인이 필요합니다.');
-   if(input.P_STATUS!=='00')return dto(row);
+   if(!row||row.confirm_key!==nonce||row.payment_mode!==mode||payment.mode!==mode||row.payment_provider!=='toss')throw new ShopError(409,'주문의 결제 환경 확인이 필요합니다.');
    const auth=payment.validateAuthentication(input,row);
    if(row.payment_auth_cipher){
     const original=cipher.decrypt(row.payment_auth_cipher);
-    if(original.P_AUTH_TID!==auth.P_AUTH_TID||original.P_IDCNAME!==auth.P_IDCNAME)throw new ShopError(409,'이미 다른 결제 인증이 연결된 주문입니다.');
+    if(original.paymentKey!==auth.paymentKey||original.orderId!==auth.orderId||original.amount!==auth.amount)throw new ShopError(409,'이미 다른 결제 인증이 연결된 주문입니다.');
     // A duplicate callback must never send a second approval or cancel a
     // concurrent approval. Recovery is a separate operator inquiry/cancellation.
     return dto(row);
@@ -297,18 +296,18 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
    return detailed(row);
   },
   async reconcile(id,input={},actor='owner'){
-   if(!payment)throw new ShopError(503,'이니시스 결제 서비스 연결을 준비 중입니다.');
+   if(!payment)throw new ShopError(503,'토스페이먼츠 결제 서비스 연결을 준비 중입니다.');
    const row=await repo.get(id);if(!row)throw new ShopError(404,'확인할 결제 정보가 없습니다.');
-   if(row.payment_mode!==payment.mode||row.payment_provider!=='inicis')throw new ShopError(409,'주문의 결제 환경 확인이 필요합니다.');
+   if(row.payment_mode!==payment.mode||row.payment_provider!=='toss')throw new ShopError(409,'주문의 결제 환경 확인이 필요합니다.');
    if(row.payment_key)return dto(await applyPayment(row,await payment.get(row.payment_key),actor),true);
    if(row.state==='CANCELED')return dto(row,true);
-   // A crashed approval has no trusted approval TID. Do not reapprove it.
+   // A crashed approval has no trusted persisted approval. Do not reapprove it.
    if(row.payment_auth_cipher&&['CONFIRMING','PAYMENT_REVIEW'].includes(row.state)){
     if(clock()-row.updated_at<60000)throw new ShopError(409,'승인 요청이 진행 중입니다. 잠시 후 다시 확인해주세요.');
     const canceled=await payment.netCancel(cipher.decrypt(row.payment_auth_cipher),row);
     if(canceled.canceled)return dto(await repo.patch(row,{state:'CANCELED'},actor,'payment_net_canceled'),true);
    }
-   throw new ShopError(503,'이니시스 관리자에서 결제 결과를 확인해야 합니다.');
+   throw new ShopError(503,'토스페이먼츠 관리자에서 결제 결과를 확인해야 합니다.');
   },
   async ship(id,input,actor='owner',identity=null){
    const row=await editable(id,input),customer=purchaseCustomer(row),history=fulfillment.shipments(row,customer);

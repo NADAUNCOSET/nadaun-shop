@@ -60,14 +60,14 @@ test('rental-only activation cannot enable purchases, payments or unauthenticate
  test('rental handover and return keep visit history and reject duplicate or canceled processing',async()=>{
  const f=fixture(),remote={},payment={mode:'live',async get(){return {...remote};}},service=orderService({repo:f.repo,catalog:f.catalog,detail:f.detail,dataKey:secret,payment,clock});
  const request=await service.createRental(owner,'rental_visits_key_004',input),approved=await service.approve(request.id,{version:0,stock_confirmed:true,rental_prices:[{id:'r1',option:'24시간',unit_price:45000}]});
- let row=await f.repo.get(approved.id);row=await f.repo.patch(row,{state:'PAID',payment_mode:'live',payment_provider:'inicis',payment_key:'rental_pg_fixture'},'verification','payment_done');
- Object.assign(remote,{provider:'inicis',orderId:row.id,paymentKey:row.payment_key,totalAmount:row.total,currency:'KRW',status:'DONE'});
+ let row=await f.repo.get(approved.id);row=await f.repo.patch(row,{state:'PAID',payment_mode:'live',payment_provider:'toss',payment_key:'rental_pg_fixture'},'verification','payment_done');
+ Object.assign(remote,{provider:'toss',orderId:row.id,paymentKey:row.payment_key,totalAmount:row.total,currency:'KRW',status:'DONE'});
  await assert.rejects(service.rentalReturn(row.id,{version:row.version}),{status:409});
  const picked=await service.pickup(row.id,{version:row.version});assert.equal(picked.fulfillment,'processing');assert.equal(picked.rental.actual_pickup_at,clock());assert.equal(picked.rental.pickup_time,'09:15');
  await assert.rejects(service.pickup(row.id,{version:picked.version}),{status:409});
  const returned=await service.rentalReturn(row.id,{version:picked.version});assert.equal(returned.fulfillment,'shipped');assert.equal(returned.rental.actual_return_at,clock());
  assert.deepEqual((await f.repo.events(row.id)).slice(-2).map(e=>e.action),['rental_picked_up','rental_returned']);
  const other=await service.createRental(owner,'rental_visits_key_005',input),q=await service.approve(other.id,{version:0,stock_confirmed:true,rental_prices:[{id:'r1',option:'24시간',unit_price:40000}]});
- let canceled=await f.repo.get(q.id);canceled=await f.repo.patch(canceled,{state:'PAID',payment_mode:'live',payment_provider:'inicis',payment_key:'rental_pg_canceled'},'verification','payment_done');Object.assign(remote,{orderId:canceled.id,paymentKey:canceled.payment_key,totalAmount:canceled.total,status:'CANCELED'});
+ let canceled=await f.repo.get(q.id);canceled=await f.repo.patch(canceled,{state:'PAID',payment_mode:'live',payment_provider:'toss',payment_key:'rental_pg_canceled'},'verification','payment_done');Object.assign(remote,{orderId:canceled.id,paymentKey:canceled.payment_key,totalAmount:canceled.total,status:'CANCELED'});
  await assert.rejects(service.pickup(canceled.id,{version:canceled.version}),{status:409});assert.equal((await f.repo.get(canceled.id)).fulfillment,'unfulfilled');
  });

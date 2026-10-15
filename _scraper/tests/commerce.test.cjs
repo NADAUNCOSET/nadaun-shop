@@ -11,7 +11,7 @@ const {endpoint}=require('../../server/commerce/http.cjs');
 const {database}=require('../../server/commerce/d1.cjs');
 const {documentService,managementKey}=require('../../server/commerce/documents.cjs');
 const {evidenceFields}=require('../../server/commerce/evidence.cjs');
-const {inicis}=require('../../server/commerce/inicis.cjs');
+const {toss}=require('../../server/commerce/toss.cjs');
 const secret='ab'.repeat(32),owner=hash('customer-one'),other=hash('customer-two');
 const customer={name:'테스트 고객',phone:'010-0000-0000',postcode:'01234',address:'테스트시 테스트로 123',address_detail:'테스트동',consent:true};
 const item={id:'p1',option:'블랙',quantity:2};
@@ -30,12 +30,12 @@ function fixture({invoice=null,evidence}={}){
   {id:'p2',kind:'purchase',name:'중량 스탠드',status:'inquiry',price:20000,sale_price:10000,offers:[{source:'kpp'}],shipping_class:'heavy_stand',image:'/stand.jpg'}]};
  const details={p1:{options:[{name:'블랙',additional_price:1000}]},p2:{}};
  const repo=repository(db,clock),calls=[],remote={};
- const adapter=inicis({SHOP_PAYMENT_MODE:'test',SHOP_INICIS_MID:'INIpayTest',SHOP_INICIS_HASH_KEY:'fixture-hash-key-only'},undefined,clock);
- const payment={...adapter,async approve(auth,row){calls.push({action:'approve',auth});Object.assign(remote,{provider:'inicis',orderId:row.id,paymentKey:'approval_fixture_123',totalAmount:row.total,currency:'KRW',status:'DONE',method:evidence&&evidence.kind!=='card_receipt'?'BANK':'CARD'});return {...remote};},async netCancel(){calls.push({action:'cancel'});return {canceled:true};},async get(){calls.push({action:'get'});return {...remote};}};
+ const adapter=toss({SHOP_PAYMENT_MODE:'test',SHOP_TOSS_CLIENT_KEY:'test_ck_fixture',SHOP_TOSS_SECRET_KEY:'test_sk_fixture'},undefined,clock);
+ const payment={...adapter,async approve(auth,row){calls.push({action:'approve',auth});Object.assign(remote,{provider:'toss',orderId:row.id,paymentKey:'approval_fixture_123',totalAmount:row.total,currency:'KRW',status:'DONE',method:evidence&&evidence.kind!=='card_receipt'?'BANK':'CARD'});return {...remote};},async netCancel(){calls.push({action:'cancel'});return {canceled:true};},async get(){calls.push({action:'get'});return {...remote};}};
  const documents=documentService({db,repo,dataKey:secret,payment,invoice,clock});
  const service=orderService({repo,catalog,detail:p=>details[p.id],dataKey:secret,payment,documents,invoiceEnabled:!!invoice,clock});
  const create=()=>service.create(owner,'idempotency_fixture',{customer,items:[item],total:1,...(evidence?{evidence}:{})});
- async function started(){let order=await create();order=await service.approve(order.id,{version:order.version,stock_confirmed:true});const prepared=await service.start(order.id,owner,order.quote_version);const row=await repo.get(order.id);row.callback={P_STATUS:'00',P_MID:'INIpayTest',P_OID:row.id,P_AMT:String(row.total),P_AUTH_TID:'authentication_fixture_123',P_IDCNAME:'fc',P_NOTI:prepared.fields.P_NOTI};return row;}
+ async function started(){let order=await create();order=await service.approve(order.id,{version:order.version,stock_confirmed:true});const prepared=await service.start(order.id,owner,order.quote_version);const row=await repo.get(order.id);row.callback={orderId:row.id,amount:String(row.total),paymentKey:'approval_fixture_123',token:new URL(prepared.request.successUrl).searchParams.get('token')};return row;}
  return {sql,db,repo,catalog,details,clock,advance:ms=>now+=ms,service,payment,calls,remote,create,started,documents};
 }
 test('server prices, option quantity and once-per-order shipping override client totals',()=>{
@@ -75,10 +75,10 @@ test('authenticated provider approval is stored once; test orders cannot ship',a
  assert.equal((await f.service.acceptReturn(a.callback)).state,'PAID');assert.equal(f.calls.filter(x=>x.action==='approve').length,1);
  assert.equal((await f.repo.events(a.id)).filter(x=>x.action==='payment_done').length,1);
  await assert.rejects(f.service.ship(a.id,{version:paid.version,carrier:'CJ대한통운',tracking:'123456789012'}),{status:409});
- assert.ok(!(await f.repo.get(a.id)).payment_auth_cipher.includes(a.callback.P_AUTH_TID));
+ assert.ok(!(await f.repo.get(a.id)).payment_auth_cipher.includes(a.callback.paymentKey));
 });
 test('foreign order, amount and invalid signed callback never reach approval',async()=>{
- for(const change of [{P_OID:'foreign_order'},{P_AMT:'1'},{P_MID:'FOREIGNMID'},{P_IDCNAME:'evil.invalid'},{P_NOTI:'forged'}]){
+ for(const change of [{orderId:'foreign_order'},{amount:'1'},{paymentKey:'bad/key'},{token:'forged'}]){
   const f=fixture(),a=await f.started();await assert.rejects(f.service.acceptReturn({...a.callback,...change}));assert.equal(f.calls.length,0);assert.equal((await f.repo.get(a.id)).state,'PAYMENT_PENDING');
  }
 });
@@ -89,7 +89,7 @@ test('expired callback and changed environment cannot approve',async()=>{
 test('simultaneous callbacks cannot double approve; a different auth token is rejected',async()=>{
  const f=fixture(),a=await f.started();const results=await Promise.allSettled([f.service.acceptReturn(a.callback),f.service.acceptReturn(a.callback)]);
  assert.ok(results.some(r=>r.status==='fulfilled'));assert.equal(f.calls.filter(x=>x.action==='approve').length,1);
- await assert.rejects(f.service.acceptReturn({...a.callback,P_AUTH_TID:'different_authentication_123'}),{status:409});
+ await assert.rejects(f.service.acceptReturn({...a.callback,paymentKey:'different_payment_123'}),{status:409});
 });
 test('approval timeout is compensated; an uncertain cancellation stays in review',async()=>{
  for(const cancelFails of [false,true]){
@@ -99,7 +99,7 @@ test('approval timeout is compensated; an uncertain cancellation stays in review
  }
 });
 test('unbound approval results are not accepted and invoke compensation',async()=>{
- const f=fixture(),a=await f.started();f.payment.approve=async()=>({provider:'inicis',orderId:'foreign',paymentKey:'approval_fixture_123',totalAmount:a.total,currency:'KRW',status:'DONE'});
+ const f=fixture(),a=await f.started();f.payment.approve=async()=>({provider:'toss',orderId:'foreign',paymentKey:'approval_fixture_123',totalAmount:a.total,currency:'KRW',status:'DONE'});
  await assert.rejects(f.service.acceptReturn(a.callback),{status:503});assert.equal((await f.repo.get(a.id)).state,'CANCELED');assert.equal(f.calls[0].action,'cancel');
 });
 test('DB failure after approval invokes net cancellation; a lost committed DB response does not',async()=>{

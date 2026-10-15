@@ -14,12 +14,12 @@ function fixture(labelProvider=null){
  const db={async batch(statements){sql.exec('BEGIN');try{const out=statements.map(s=>sql.prepare(s.sql).all(...(s.params||[])));sql.exec('COMMIT');return out;}catch(error){sql.exec('ROLLBACK');throw error;}},async query(s,p=[]){return (await this.batch([{sql:s,params:p}]))[0];}};
  const catalog={meta:{synced_at:new Date(now).toISOString(),revision:'workflow-fixture'},redirects:{},products:[{id:'purchase',kind:'purchase',name:'검증 구매',status:'sale',price:10000,shipping_class:'standard',offers:[{source:'smartstore'}]},{id:'rental',kind:'rental',name:'검증 렌탈',status:'sale'}]};
  const detail=()=>({rental:{rates:[{label:'24시간',price:10000}]}}),calls=[];
- const payment={mode:'live',prepare(row){calls.push('prepare');return {id:row.id};},async get(key){calls.push('get');const row=(await db.query('SELECT * FROM shop_orders WHERE payment_key=?',[key]))[0];return {provider:'inicis',orderId:row.id,paymentKey:key,totalAmount:row.total,currency:'KRW',status:'DONE'};}};
+ const payment={mode:'live',prepare(row){calls.push('prepare');return {id:row.id};},async get(key){calls.push('get');const row=(await db.query('SELECT * FROM shop_orders WHERE payment_key=?',[key]))[0];return {provider:'toss',orderId:row.id,paymentKey:key,totalAmount:row.total,currency:'KRW',status:'DONE'};}};
  const repo=repository(db,clock),service=orderService({repo,catalog,detail,dataKey:secret,sessionKey:secret,payment,labelProvider,clock}),admin=adminService({db,service,dataKey:secret,clock});
  let key=0;
  const create=()=>service.create(owner,'workflow_request_'+String(++key).padStart(5,'0'),{customer,items:[{id:'purchase',option:'',quantity:1}]});
  const rental=()=>service.createRental(owner,'workflow_request_'+String(++key).padStart(5,'0'),{customer,rental:{start_date:'2026-10-16',end_date:'2026-10-17',pickup_time:'12:00',return_time:'12:00'},items:[{id:'rental',option:'24시간',quantity:1}]});
- async function paid(order,fulfillment='unfulfilled',mode='live'){const row=await repo.get(order.id);await repo.patch(row,{state:'PAID',payment_mode:mode,payment_provider:'inicis',payment_key:'workflow_payment_'+row.id,fulfillment,total:14500},'fixture','fixture_paid');return service.adminGet(row.id);}
+ async function paid(order,fulfillment='unfulfilled',mode='live'){const row=await repo.get(order.id);await repo.patch(row,{state:'PAID',payment_mode:mode,payment_provider:'toss',payment_key:'workflow_payment_'+row.id,fulfillment,total:14500},'fixture','fixture_paid');return service.adminGet(row.id);}
  return {sql,db,repo,service,admin,clock,create,rental,paid,calls,advance:ms=>now+=ms};
 }
 function request(handler,action,method='GET',body,headers={}){

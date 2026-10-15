@@ -11,7 +11,7 @@ function endpoint({service,repo,adminService=null,draftService=null,sessionKey,p
   try{
    const url=new URL(req.url,origin),action=url.searchParams.get('action')||'config';
    if(!['GET','POST'].includes(req.method)){res.setHeader('Allow','GET, POST');throw new ShopError(405,'허용되지 않은 요청입니다.');}
-   if(req.method==='GET'&&action==='config')return res.status(200).json({ordersEnabled:enabled,rentalRequestsEnabled:rentalEnabled,adminEnabled:!!adminService,adminDraftsEnabled:!!draftService,adminLoginRequiresEmail:!!configuredEmail,paymentProvider:'inicis',taxInvoiceEnabled:service.invoiceEnabled===true});
+   if(req.method==='GET'&&action==='config')return res.status(200).json({ordersEnabled:enabled,rentalRequestsEnabled:rentalEnabled,adminEnabled:!!adminService,adminDraftsEnabled:!!draftService,adminLoginRequiresEmail:!!configuredEmail,paymentProvider:'toss',taxInvoiceEnabled:service.invoiceEnabled===true});
    const adminAction=['login','logout'].includes(action)||action.startsWith('admin-');
    if(req.method==='POST'&&req.headers.origin!==origin&&!(adminAction&&adminOrigins.includes(req.headers.origin)))throw new ShopError(403,'사이트에서 다시 요청해주세요.');
    const ip=String(req.headers['x-forwarded-for']||'unknown').split(',')[0].trim();
