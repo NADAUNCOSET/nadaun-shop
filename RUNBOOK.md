@@ -896,3 +896,8 @@ assets/shop/motion.js와 shop.css에서 두 번째 사진이 로드된 뒤 스�
 코드commit95bc04698eea234f51bc5db505066a75306fa450, production dpl_GMZfoc3Cb7B9Stq4XMdVyCAecnPF READY/실제shop.nadaun.co alias 확인. 공개JS/CSS는NAS와바이트일치, cache-control max-age0/must-revalidate 확인. 실제 Chrome에서 동일위치정지·아래/위스크롤·390폭 확인, 두사진동시표시0개. 동작줄이기 복귀 후 plane/alternate/primary marker0개. 탭의 임시폭·모션설정 원복. 현재Windows물리기기재검증은미완료다.
 
 원본백업·before/after PNG·tests.log·fix-receipt.json은 `_private/catalog/image-overlap-20261014/`. 자동카탈로그커밋530ddf38d 뒤의 소스3파일만 별도커밋했으며 수집데이터를 임의변경하지 않았다.
+
+
+## 2026-10-15 Windows 화면 겹침 수정 · PG 배송 안내
+
+대표가 Windows에서 본 화면 갈라짐의 원인과 검증·백업·커밋·공개를 요청했다. 공용 진행·실행 방법은 [_scraper/references/windows-layout-pg-20261015.md](_scraper/references/windows-layout-pg-20261015.md), 백업·전후 검증·배포 영수증은 `_private/windows-layout-pg-20261015/`를 읽는다. 같은 NAS 원본과 게시 잠금을 사용하며 다른 PC의 미커밋 변경을 포함하지 않는다. 구매 배송완료 1주일 안내를 반영하고, 렌탈 최대기간은 2주/1개월 선택 답변 대기다.

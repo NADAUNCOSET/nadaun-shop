@@ -98,7 +98,8 @@ body[data-motion-active="false"] .brand-object img{animation:none!important}
 .category-gallery h2,.browse-brands h2{font-size:clamp(22px,2vw,32px);line-height:1.2}
 .category-image-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px 14px}
 .category-image-tile{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;min-width:0}
-.category-image{display:grid;place-items:center;width:100%;aspect-ratio:1.3;overflow:hidden;background:#fff}
+.category-image{position:relative;display:grid;place-items:center;width:100%;aspect-ratio:1.3;overflow:hidden;background:#fff}
+.category-image>.motion-plane{display:grid;place-items:center}
 .category-image img{width:86%;height:86%;object-fit:contain;transition:transform .45s cubic-bezier(.16,1,.3,1)}
 .category-image-tile strong{font-size:14px;line-height:1.4;font-weight:650;word-break:keep-all}
 .category-image-tile:hover img,.category-image-tile:focus-visible img{transform:translateY(-3px) scale(1.08)}
