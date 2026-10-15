@@ -1,4 +1,4 @@
-// NAS worker: recovers persisted document jobs after callbacks/timeouts.
+// NAS worker: recovers payment documents and polls existing shipping bookings.
 // Private configuration is never logged; every external issue requires PAID.
 const fs=require('node:fs');
 const path=require('node:path');
@@ -11,7 +11,8 @@ async function main(){
  let result={state:'disabled',processed:0};
  if(env.SHOP_ORDERS_ENABLED==='true'){
   const {runtime}=require('../server/commerce/runtime.cjs');
-  result={state:'checked',...await runtime(env).documents.drain(10)};
+  const current=runtime(env);
+  result={state:'checked',...await current.documents.drain(10),shipping:await current.service.labelDrain()};
  }
  fs.writeFileSync(path.join(folder,'jobs-status.json'),JSON.stringify({checked_at:new Date().toISOString(),...result})+'\n',{mode:0o600});
 }
