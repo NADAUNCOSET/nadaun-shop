@@ -901,3 +901,8 @@ assets/shop/motion.js와 shop.css에서 두 번째 사진이 로드된 뒤 스�
 ## 2026-10-15 Windows 화면 겹침 수정 · PG 배송 안내
 
 대표가 Windows에서 본 화면 갈라짐의 원인과 검증·백업·커밋·공개를 요청했다. 공용 진행·실행 방법은 [_scraper/references/windows-layout-pg-20261015.md](_scraper/references/windows-layout-pg-20261015.md), 백업·전후 검증·배포 영수증은 `_private/windows-layout-pg-20261015/`를 읽는다. 같은 NAS 원본과 게시 잠금을 사용하며 다른 PC의 미커밋 변경을 포함하지 않는다. 구매 배송완료 1주일 안내를 반영하고, 렌탈 최대기간은 2주/1개월 선택 답변 대기다.
+
+
+## 2026-10-15 PG 렌탈 최대기간 확정 — 2주(14일)
+
+대표 후속 지시 “최대 2주로 해”에 따라 렌탈 제품의 최대 대여기간을 2주(14일)로 확정하고 `shipping.html#rental-period` 및 생성 템플릿에 기재한다. 앞선 2주/1개월 선택 답변 대기는 종료됐다. 이번 백업·검증·커밋·배포 영수증은 `_private/pg-rental-period-20261015/`, 공용 원문은 [_scraper/references/windows-layout-pg-20261015.md](_scraper/references/windows-layout-pg-20261015.md)다. Mac·Windows는 같은 NAS 원본에서 이어간다.
