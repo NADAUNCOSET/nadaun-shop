@@ -1126,3 +1126,14 @@ HOMAN CFexpress Type A256GB 렌탈20,000원을네이버공식API로생성/재조
 정상 publisher 전체필수검사 통과, commit `3d64bc6cc0e3ce9cbb910ac8cc31503d0018893d`, deployment `dpl_HovKbA41J1MZ7fruSWNRAE5s6aeB` READY, live검증 `2026-10-15T14:28:39+00:00`. 상품목록데이터가같아 revision `15149d77c5c301de`는유지되었으므로 revision만으로완료판단하지않고 새commit배포와실제공개details/e3.json의해당상품전체객체NAS일치·브라우저구성품2행을대조했다. 주문/PG설정과기존실주문은수정하지않았다.
 
 근거: `_private/catalog/homan256-reader-20261015/`의 update-receipt.json, release.json, live-proof.json, naver-live.png/txt, own-live.png/txt. 공개 https://smartstore.naver.com/rainbowbene/products/13812942061 · https://shop.nadaun.co/item.html?id=smartstore-13812942061 .
+
+
+### 2026-10-16 01:20 KST — 주문관리 비밀번호 대표 지정값으로 변경
+
+대표가 https://order.nadaun.co/ 관리자 비밀번호를 새 지정값으로 변경하고 기록도 다시 하라고 요청했다. 운영 Vercel의 SHOP_ADMIN_PASSWORD_HASH 값만 기존 scrypt 방식으로 갱신했고 Sensitive 환경변수 유형·다른 운영 설정·주문 DB 암호화키·세션키는 보존했다. 초기 API 요청은 Sensitive 변수의 type/key 항목 재전송으로 HTTP400 거절되었으며, value만 수정하는 공식 API 요청으로 완료했다. 새 production deployment `dpl_8XLgPXxv2gPgBdwWjGKZ55k8KzqT` READY.
+
+실제 order/shop 두 도메인에서 비로그인 관리자401 → 이전 비밀번호 로그인401 → 새 비밀번호 로그인200 → 관리자 주문조회200(0건) → 검증 세션 로그아웃200 → 다시401을 확인했다. 현재 별도ID 없이 비밀번호 로그인 방식. 고객주문·렌탈접수·실PG·세금계산서 OFF 설정은 유지했다. 실제 주문 변경0건.
+
+지정 NAS 비밀번호 확인_나다운 디자인.docx의 나다운 주문관리 행(47) 비밀번호만 갱신했다. 기존223행 중 나머지222행 동일, word/document.xml 외 ZIP 구성원 동일, 같은 폴더에 이전본 백업. 새 값과 private owner-login 원본의 일치를 검증했다. 문서 전체7페이지 렌더·민감정보 가린 시각검수, 새 비밀번호가2페이지 비밀번호 열 안에 표시되는 것을 확인했다. 비밀번호 본문은 공용기록·Git에 쓰지 않는다.
+
+근거: shop `_private/commerce/password-20261016/`의 environment-updated.json, live-proof.json, document-receipt.json, 비공개 문서 폴더의 _검증_주문관리_20261016/verification.json. Mac에서 확인했으며 다른PC 실행은 미확인이다.
