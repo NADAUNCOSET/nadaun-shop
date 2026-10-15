@@ -460,13 +460,15 @@ def build(allow_pending=False):
       ('item.html','상품 상세 | 나다운 샵','나다운 샵 촬영장비의 상품 정보와 이미지를 확인하고 구매 상담을 받아보세요.','item'),
       ('cart.html','장바구니 | 나다운 샵','선택한 촬영장비와 옵션, 수량을 확인하세요.','cart'),
       ('checkout.html','주문서 | 나다운 샵','선택한 촬영장비의 주문 내용을 확인하세요.','checkout'),
-      ('payment-test.html','토스페이먼츠 결제 안내 | 나다운 샵','나다운 샵의 토스페이먼츠 결제와 주문 확인 방법을 안내합니다.','payment-test'),
+      ('payment-test.html','토스페이먼츠 테스트 결제 | 나다운 샵','실제 대금 청구 없이 나다운 샵의 토스 테스트 결제창과 승인·취소 연결을 확인합니다.','payment-test'),
       ('orders.html','주문 조회 | 나다운 샵','접수한 주문과 결제·배송 상태를 확인하세요.','orders'),
       ('admin.html','주문 관리 | 나다운 샵','나다운 샵 관리자 전용 주문 처리 화면입니다.','admin'),
       ('terms.html','이용약관 | 나다운 샵','나다운 샵의 상품 정보, 구매와 서비스 이용에 관한 약관입니다.','policy'),
       ('privacy.html','개인정보처리방침 | 나다운 샵','나다운 샵의 개인정보 처리 목적과 항목, 보유기간 및 권리 행사 방법을 안내합니다.','policy'),
       ('studio.html','영등포 자연광·호리존 스튜디오 대여 | 나다운 스튜디오','서울 영등포 나다운 스튜디오. 자연광·호리존·전동 배경지와 룩북·제품 촬영 공간, 시설 및 예약 방법을 안내합니다.','studio'),
       ('rental-guide.html','영등포 렌탈샵 | 나다운 스페이스','나다운 스페이스의 촬영장비 렌탈 이용안내입니다.','guide'),
+      ('equipment-guide.html','카메라·시네마카메라·촬영조명 구매와 렌탈 | 나다운 스페이스','사진·영상 촬영장비와 기자재를 준비하세요. 카메라, 시네마카메라, 조명, 렌즈와 모니터의 구매·렌탈 선택 기준과 카테고리를 안내합니다.','guide'),
+      ('billing-guide.html','영수증·전자세금계산서 안내 | 나다운 스페이스','카드 매출전표, 소득공제·지출증빙 현금영수증과 전자세금계산서의 신청·조회 방법을 안내합니다.','guide'),
       ('about.html','회사소개 | 나다운 샵','레인보우베네가 운영하는 나다운 샵. 사진·영상 촬영장비 구매와 렌탈, 기프트·굿즈를 안내합니다.','about'),
       ('services.html','촬영장비 구매·렌탈·협찬·사진영상 제작 안내 | 나다운 샵','카메라·조명·삼각대 구매, 서울 영등포 장비 렌탈, 협찬·브랜드 협업과 사진·영상 촬영 제작 문의를 안내합니다.','guide'),
       ('gift-item.html','기프트 상품 상세 | 나다운 샵','기프트·굿즈의 상품 정보와 수량·인쇄 조건을 확인하세요.','gift-item'),
@@ -495,7 +497,7 @@ def build(allow_pending=False):
         page=page.replace('{{STRUCTURED_DATA}}',page_structured_data('brands/'+b['id']+'.html',title,description,canonical,brand=True))
         page=page.replace('{{CONTENT}}',page_content('catalog',brand_list,public_products,b))
         (brand_dir/(b['id']+'.html')).write_text(page)
-    urls=['https://shop.nadaun.co/','https://shop.nadaun.co/catalog.html','https://shop.nadaun.co/brands.html']+['https://shop.nadaun.co/brands/'+b['id']+'.html' for b in brand_list]+['https://shop.nadaun.co/'+p for p in ('studio.html','rental-guide.html','about.html','terms.html','privacy.html','shipping.html','services.html','gifts.html')]+['https://shop.nadaun.co/item.html?id='+p['id'] for p in public_products]
+    urls=['https://shop.nadaun.co/','https://shop.nadaun.co/catalog.html','https://shop.nadaun.co/brands.html']+['https://shop.nadaun.co/brands/'+b['id']+'.html' for b in brand_list]+['https://shop.nadaun.co/'+p for p in ('studio.html','rental-guide.html','equipment-guide.html','billing-guide.html','about.html','terms.html','privacy.html','shipping.html','services.html','gifts.html')]+['https://shop.nadaun.co/item.html?id='+p['id'] for p in public_products]
     images={'https://shop.nadaun.co/item.html?id='+p['id']:urljoin('https://shop.nadaun.co/',p['image']) for p in public_products}
     entries=''.join('<url><loc>'+html.escape(u)+'</loc>'+('<image:image><image:loc>'+html.escape(images[u])+'</image:loc></image:image>' if u in images else '')+'</url>' for u in urls)
     (ROOT/'catalog-sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+entries+'</urlset>\n')

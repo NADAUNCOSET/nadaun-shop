@@ -25,6 +25,7 @@ function popbill(env,provided=null){
  }
  function amounts(value){const supply=Number(value.supplyCostTotal),tax=Number(value.taxTotal),total=Number(value.totalAmount);return Number.isSafeInteger(supply)&&Number.isSafeInteger(tax)&&supply>=0&&tax>=0&&supply+tax===total?{supply_cost:supply,tax_amount:tax,total_amount:total}:{};}
  return {mode,
+  async customerPrint(key){return call('getEPrintURL',env.SHOP_SELLER_CORP_NUM,'SELL',key,env.SHOP_POPBILL_USER_ID);},
   async lookup(key,order,buyer){
    const used=await call('checkMgtKeyInUse',env.SHOP_SELLER_CORP_NUM,'SELL',key);
    if(used===false)return null;

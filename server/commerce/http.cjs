@@ -99,6 +99,11 @@ function endpoint({service,repo,adminService=null,draftService=null,sessionKey,p
    if(!customer)throw new ShopError(401,'주문한 브라우저에서 다시 접속해주세요.');
    const owner=hash(customer);
    if(action==='orders'&&req.method==='GET')return res.status(200).json({orders:await service.list(owner)});
+   if(['document-refresh','document-print'].includes(action)&&req.method==='POST'){
+    await repo.limit('document:'+owner,6,60);
+    const result=await service.customerDocument(input.id,owner,action==='document-print');
+    return res.status(200).json(action==='document-print'?result:{order:result});
+   }
    if(action==='order'&&req.method==='GET')return res.status(200).json({order:await service.get(url.searchParams.get('id'),owner)});
    if(action==='create'&&req.method==='POST'){
     await repo.limit('create:'+owner,10,3600);

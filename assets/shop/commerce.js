@@ -68,6 +68,7 @@ function orderCard(order,admin=false){
  return `<article class="commerce-order" id="${esc(order.id)}"><header><div><span class="section-index">${esc(order.id)}</span><h2>${order.payment_mode==='test'?'테스트 · ':''}${esc(order.kind==='rental'&&order.state==='REQUESTED'?'대여 일정·요금 확인 중':order.kind==='rental'&&order.state==='APPROVED'&&!checkoutPaymentOpen?'대여 요금 확인 완료':states[order.state]||'상태 확인 필요')}</h2></div><time>${esc(new Date(order.created_at).toLocaleString('ko-KR'))}</time></header><ul class="commerce-lines">${order.lines.map(p=>`<li><a href="/item.html?id=${encodeURIComponent(p.id)}">${esc(p.name)}<small>${esc(p.option||'기본 구성')} · ${p.quantity}개</small></a><strong>${money(p.unit_price===null?null:p.unit_price*p.quantity)}</strong></li>`).join('')}</ul><div class="commerce-totals"><span>${order.kind==='rental'?'전체 기간 대여료 '+money(order.subtotal)+' · 방문 수령':'상품 '+money(order.subtotal)+' + 배송 '+money(order.shipping)}</span><strong>${money(order.total)}</strong></div>${order.kind!=='rental'&&order.fulfillment==='shipped'?`<p class="commerce-shipped">출고 완료 · ${esc(order.carrier)} ${esc(order.tracking)}</p>`:''}${admin&&order.rental&&customer?`<details class="commerce-address"><summary>예약자 정보 확인</summary><p>${esc(customer.name)} · ${esc(customer.phone)}</p></details>`:''}${order.rental?`<dl class="rental-order-schedule"><div><dt>대여 시작일 · 수령 방문</dt><dd>${esc(order.rental.start_date)} ${esc(order.rental.pickup_time)}</dd></div><div><dt>대여 종료일 · 반납 방문</dt><dd>${esc(order.rental.end_date)} ${esc(order.rental.return_time)}</dd></div><div><dt>수령·반납 상태</dt><dd>${order.fulfillment==='shipped'?'반납 완료':order.fulfillment==='processing'?'대여 중':'방문 수령 예정'}</dd></div>${order.rental.actual_pickup_at?`<div><dt>실제 수령 처리</dt><dd>${esc(new Date(order.rental.actual_pickup_at).toLocaleString('ko-KR',{timeZone:'Asia/Seoul'}))}</dd></div>`:''}${order.rental.actual_return_at?`<div><dt>실제 반납 처리</dt><dd>${esc(new Date(order.rental.actual_return_at).toLocaleString('ko-KR',{timeZone:'Asia/Seoul'}))}</dd></div>`:''}</dl>`:''}${calendarInfo(order,admin)}${admin&&customer&&!order.rental?`<details class="commerce-address"><summary>배송 정보 확인</summary><p>${esc(customer.name)} · ${esc(customer.phone)}<br>(${esc(customer.postcode)}) ${esc(customer.address)} ${esc(customer.address_detail)}</p></details>`:''}${admin&&customer?.evidence?.kind==='tax_invoice'?`<details class="commerce-address"><summary>세금계산서 요청 정보</summary><p>${esc(customer.evidence.corp_name)} · ${esc(customer.evidence.corp_num)}<br>대표 ${esc(customer.evidence.ceo_name)}<br>${esc(customer.evidence.address)}<br>${esc(customer.evidence.biz_type)} / ${esc(customer.evidence.biz_class)}<br>수신 ${esc(customer.evidence.email)}</p></details>`:''}${!admin?customerShipments(order):''}${documentCard(order.document)}<div class="commerce-actions">${admin?adminActions(order):customerActions(order)}</div><p class="commerce-feedback" role="status" hidden></p></article>`;
 }
 function customerActions(order){
+ if(order.state==='PAID'&&order.document)return '<button type="button" class="button-outline" data-customer-document="refresh">증빙 상태 새로고침</button>'+(order.document.kind==='tax_invoice'&&order.document.status==='issued'?'<button type="button" class="button-outline" data-customer-document="print">세금계산서 조회 · 인쇄 ↗</button>':'');
  if(['APPROVED','PAYMENT_PENDING'].includes(order.state)&&!checkoutPaymentOpen)return '<p>일정과 요금이 확인되었습니다. 온라인 결제 연결을 준비 중입니다.</p>';
  if(['APPROVED','PAYMENT_PENDING'].includes(order.state))return `<p>결제 가능 시간: ${esc(new Date(order.quote_expires).toLocaleString('ko-KR'))}까지</p><label class="commerce-check"><input type="checkbox" data-quote-consent><span>${order.kind==='rental'?'대여 구성·방문 일정과 전체 기간 요금':'상품 구성과 배송비를 포함한 확정 금액'} ${money(order.total)}을 확인했습니다.</span></label><button type="button" class="button-primary" data-pay="${esc(order.id)}">${money(order.total)} 결제하기 →</button>`;
  if(order.state==='REQUESTED')return order.kind==='rental'?'<p>재고와 방문 일정 확인 후 전체 기간 요금을 안내해드립니다. 아직 예약이 확정되지 않았습니다.</p>':'<p>재고·납기 확인 후 결제가 열립니다.</p>';
@@ -140,10 +141,29 @@ function paymentRequest(value,order){
 }
 function safeReceiptUrl(value){try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password&&!u.port&&['dashboard.tosspayments.com','pgweb.tosspayments.com','receipt.tosspayments.com'].includes(u.hostname)?u.href:null;}catch{return null;}}
 async function paymentTest(){
- if(location.search)history.replaceState(null,'','/payment-test.html');
- const holder=main.querySelector('#payment-demo');let enabled=false;try{enabled=(await config()).ordersEnabled;}catch{}
- holder.innerHTML='<h2>토스페이먼츠</h2><p>'+(enabled?'확정된 구매·렌탈 주문의 결제 버튼을 누르면 토스페이먼츠 결제창으로 연결됩니다.':'온라인 결제 오픈을 준비하고 있습니다. 상품 구매와 렌탈 일정은 상담으로 안내해드립니다.')+'</p><a class="button-primary" href="/checkout.html">주문서 확인 →</a>';
+ const holder=main.querySelector('#payment-demo'),feedback=main.querySelector('#preview-result');
+ const closed=new URLSearchParams(location.search).get('result')==='closed';if(location.search)history.replaceState(null,'','/payment-test.html');
+ if(closed)message(feedback,'테스트 결제창을 닫았습니다. 다시 테스트할 수 있습니다.');
+ try{
+  const response=await fetch('/api/toss-review?action=config',{cache:'no-store'}),ready=await response.json();if(!response.ok||ready.mode!=='test'||!Array.isArray(ready.products))throw Error('테스트 연결 상태를 확인하지 못했습니다.');
+  holder.innerHTML='<h2>토스페이먼츠 테스트 결제</h2><p>실제 금액은 청구되지 않으며 상품 주문이나 렌탈 예약이 생성되지 않습니다.</p><label>테스트 상품<select data-review-product>'+ready.products.map(p=>'<option value="'+esc(p.id)+'">'+esc((p.kind==='rental'?'렌탈':'구매')+' · '+p.name)+'</option>').join('')+'</select></label><p data-review-amount></p><div class="commerce-actions"><button type="button" class="button-primary" data-review-method="CARD" disabled>카드 테스트 결제창</button><button type="button" class="button-outline" data-review-method="TRANSFER" disabled>계좌이체 테스트 결제창</button></div><p data-review-status role="status">'+(ready.configured?'안전한 테스트 결제창을 불러오고 있습니다.':'테스트 상점 연결 대기 중입니다. 연결이 완료되면 이 화면에서 결제창과 승인·취소 결과를 확인할 수 있습니다.')+'</p><p><a href="/terms.html">이용약관</a> · <a href="/privacy.html">개인정보 처리 안내</a> · <a href="/shipping.html">배송·교환·반품 안내</a></p>';
+  const select=holder.querySelector('[data-review-product]'),status=holder.querySelector('[data-review-status]'),buttons=[...holder.querySelectorAll('[data-review-method]')];
+  const update=()=>{const p=ready.products.find(p=>p.id===select.value);holder.querySelector('[data-review-amount]').textContent=p?'테스트 금액 '+money(p.amount):'테스트 가능한 상품을 확인하고 있습니다.';};select.onchange=update;update();
+  if(!ready.configured||!ready.products.length)return;
+  const provider=await loadToss();buttons.forEach(b=>b.disabled=false);status.textContent='결제수단을 선택하면 토스 테스트 결제창이 열립니다.';
+  for(const button of buttons)button.onclick=async()=>{
+   buttons.forEach(b=>b.disabled=true);status.textContent='토스 테스트 결제창으로 연결하고 있습니다.';
+   try{
+    const product=ready.products.find(p=>p.id===select.value),response=await fetch('/api/toss-review?action=prepare',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:product.id,method:button.dataset.reviewMethod})}),value=await response.json();
+    if(!response.ok)throw Error(value.error||'테스트 요청을 확인해주세요.');
+    const r=value.request,success=new URL(r?.successUrl||'',location.origin);
+    if(value.mode!=='test'||value.provider!=='toss'||!/^test_ck_[a-zA-Z0-9_-]+$/.test(value.clientKey||'')||value.amount!==product.amount||!Number.isSafeInteger(product.amount)||product.amount<1||r?.amount?.value!==product.amount||r.amount.currency!=='KRW'||r.orderId!==value.orderId||!/^NDTEST_[a-f0-9]{24}$/.test(value.orderId)||r.method!==button.dataset.reviewMethod||success.origin!=='https://shop.nadaun.co'||success.pathname!=='/api/toss-review'||success.searchParams.get('action')!=='return'||!success.searchParams.get('token')||r.failUrl!=='https://shop.nadaun.co/payment-test.html?result=closed')throw Error('안전한 테스트 결제 요청을 확인하지 못했습니다.');
+    await provider(value.clientKey).payment({customerKey:provider.ANONYMOUS}).requestPayment(r);
+   }catch(error){status.textContent=error?.code==='USER_CANCEL'?'테스트 결제창을 닫았습니다. 다시 테스트할 수 있습니다.':error.message||'테스트 결제창 연결을 확인해주세요.';buttons.forEach(b=>b.disabled=false);}
+  };
+ }catch(error){holder.innerHTML='<h2>토스페이먼츠 테스트 결제</h2><p>테스트 연결을 확인하고 있습니다. 잠시 후 다시 확인해주세요.</p>';message(feedback,error.message);}
 }
+
 async function pay(order,card,button){
  if(button.disabled)return;
  const feedback=card.querySelector('.commerce-feedback');
@@ -164,7 +184,15 @@ async function orders(){
   if(params.get('result')==='closed')message(feedback,'결제창을 닫았습니다. 아래 주문 상태를 확인해주세요.');
   else if(params.has('result'))message(feedback,'서버에 저장된 주문·결제 상태를 확인해주세요.');
   const {orders:list}=await api('orders');container.innerHTML=list.length?list.map(p=>orderCard(p)).join(''):'<div class="commerce-empty"><h2>접수한 주문이 없습니다.</h2><a href="/catalog.html">상품 둘러보기 →</a></div>';
-  for(const order of list){const card=document.getElementById(order.id),button=card.querySelector('[data-pay]');if(button)button.onclick=()=>pay(order,card,button);}
+  for(const order of list){const card=document.getElementById(order.id),button=card.querySelector('[data-pay]');if(button)button.onclick=()=>pay(order,card,button);
+   for(const control of card.querySelectorAll('[data-customer-document]'))control.onclick=async()=>{
+    control.disabled=true;const feedback=card.querySelector('.commerce-feedback');message(feedback,'증빙 상태를 확인하고 있습니다.');
+    try{const result=await api(control.dataset.customerDocument==='print'?'document-print':'document-refresh',{id:order.id});
+     if(control.dataset.customerDocument==='print'){const url=new URL(result.url);if(url.protocol!=='https:'||url.username||url.password||url.port||!['www.popbill.com','test.popbill.com'].includes(url.hostname))throw Error('안전한 세금계산서 주소를 확인하지 못했습니다.');location.assign(url.href);}
+     else {await orders();message(main.querySelector('#commerce-status'),'최신 증빙 상태를 확인했습니다.');}
+    }catch(error){message(feedback,error.message);control.disabled=false;}
+   }
+  }
   if(location.hash){const id=decodeURIComponent(location.hash.slice(1));document.getElementById(id)?.scrollIntoView({block:'start'});}
  }catch(error){message(feedback,error.message);container.innerHTML='';}
 }

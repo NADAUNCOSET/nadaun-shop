@@ -55,6 +55,18 @@ function documentService({db,repo,dataKey,payment,invoice=null,clock=()=>Date.no
   }
  }
  return {get:async id=>dto(await get(id)),process,
+  async customerPrint(id){
+   const job=await get(id),order=await repo.get(id);
+   if(!job||job.kind!=='tax_invoice'||job.status!=='issued'||!order||order.state!=='PAID')throw new ShopError(409,'발급 완료된 세금계산서를 확인해주세요.');
+   if(!invoice?.customerPrint||invoice.mode!==order.payment_mode||order.payment_provider!=='toss'||payment?.mode!==order.payment_mode)throw new ShopError(503,'세금계산서 연결을 확인하고 있습니다.');
+   const remote=await payment.get(order.payment_key),buyer=cipher.decrypt(order.customer_cipher).evidence;
+   if(matchPayment(remote,order)!=='DONE'||remote.method!=='BANK'||remote.cashReceipt?.present||remote.cashReceipt?.issued)throw new ShopError(409,'결제와 증빙 상태를 확인해주세요.');
+   const key=managementKey(id),result=await invoice.lookup(key,order,buyer);
+   if(!result?.issued||result.approval_number!==cipher.decrypt(job.result_cipher).approval_number)throw new ShopError(409,'세금계산서 발급 결과를 확인해주세요.');
+   const value=await invoice.customerPrint(key),url=new URL(value);
+   if(url.protocol!=='https:'||url.username||url.password||url.port||!['www.popbill.com','test.popbill.com'].includes(url.hostname))throw new ShopError(503,'세금계산서 인쇄 연결을 확인해주세요.');
+   return url.href;
+  },
   async drain(limit=4){const rows=await db.query("SELECT order_id FROM shop_documents WHERE status IN ('queued','retry','processing','issued') AND next_attempt<=? AND lease_until<=? ORDER BY next_attempt,created_at LIMIT ?",[clock(),clock(),Math.min(10,limit)]);for(const row of rows)await process(row.order_id);return {processed:rows.length};},
   async retry(id){const row=await get(id);if(!row)throw new ShopError(404,'증빙 요청이 없습니다.');if(row.status==='issued'||row.status==='voided'||row.lease_until>clock())return dto(row);await db.query("UPDATE shop_documents SET status='retry',next_attempt=0,attempts=0,version=version+1 WHERE order_id=? AND version=?",[id,row.version]);return process(id);}
  };

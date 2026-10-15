@@ -22,3 +22,15 @@
 개통 전 카드·계좌이체·현금영수증 두 용도·취소·모바일·구매/렌탈의 주문 종단 흐름을 실제 해당 상점에서 확인해야 한다. 세금계산서 미개통만으로 카드 결제를 막는 조건은 아니다. 기존 관리자 비밀번호와 주문 DB 암호화 키는 변경하지 않는다.
 
 공식 근거: https://docs.tosspayments.com/guides/v2/payment-window/integration · https://docs.tosspayments.com/sdk/v2/js/payment · https://docs.tosspayments.com/reference
+
+## 2026-10-16 승인 전 준비와 고객 증빙
+
+대표는 토스 심사 중이라고 전달했다. 승인 상태는 상점 포털에서 아직 확인하지 못했다. 브라우저 제어 연결 오류이며 비밀번호 오류로 판정하지 않는다. 계정은 대표 지정 NAS 비공개 Word 문서에 저장/대조했다. 승인 알림만으로 우리몰 환경변수나 주문 스위치가 자동 변경되지는 않는다.
+
+`/payment-test.html`은 별도 테스트 상점 연동이다. `SHOP_TOSS_TEST_CLIENT_KEY`(test_ck_), `SHOP_TOSS_TEST_SECRET_KEY`(test_sk_), 선택 `SHOP_TOSS_TEST_MID`를 사용한다. 운영키를 받지 않고 운영 주문/예약 DB에 쓰지 않는다. 서버 상품금액·서명·승인·취소 조회를 검증한다. 운영 주문이 OFF여도 테스트키 설정 후 결제창을 확인할 수 있다. 공개 샘플키를 우리 상점키로 대신하지 않는다. 테스트 창을 실제 열고 카드/계좌이체 승인·취소를 확인하기 전 실검수 완료로 기록하지 않는다.
+
+고객은 주문 시 카드전표/현금영수증/전자세금계산서(발급 서비스 개통 후)를 선택하고, 주문조회에서 영수증 인쇄·증빙 상태 갱신·세금계산서 공급받는자 인쇄를 사용할 수 있다. 본인 주문 세션·결제 완료·금액/거래/발급번호를 재검증한다. 인쇄는 문서 한 건 전용 30초 URL이며 팝빌 로그인 문서함 URL을 제공하지 않는다. 카드·현금영수증과 별도 세금계산서의 중복 발행을 막는다.
+
+전자세금계산서는 기존 팝빌 어댑터를 사용하며 별도 계정·LinkID/비밀키·인증서·포인트·과세 프로필·실발급/국세청 전송 검수가 필요하다. 토스 승인과 별개이며 이 조건 전 taxInvoiceEnabled=false를 유지한다. 사업자/세무정보를 추정하여 활성화하지 않는다. 고객의 세금 신고 전체를 대행하는 기능이 아니라 주문별 증빙 신청·발급·조회를 제공한다.
+
+공식 근거: https://docs.tosspayments.com/guides/v2/get-started/environment · https://docs.tosspayments.com/guides/v2/get-started/payment-products · https://docs.tosspayments.com/reference · https://developers.popbill.com/reference/taxinvoice/node/api/view .

@@ -235,6 +235,13 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
   },
   async list(owner){return Promise.all((await repo.customer(owner)).map(r=>detailed(r)));},
   async get(id,owner){return detailed(await own(id,owner));},
+  async customerDocument(id,owner,print=false){
+   const row=await own(id,owner);
+   if(!documents||!payment)throw new ShopError(503,'증빙 연결을 확인하고 있습니다.');
+   if(row.state!=='PAID')throw new ShopError(409,'결제 완료 주문의 증빙만 확인할 수 있습니다.');
+   if(print)return {url:await documents.customerPrint(id)};
+   await documents.process(id);return detailed(await own(id,owner));
+  },
   async adminList(){return Promise.all((await repo.list()).map(r=>detailed(r,true)));},
   async adminDetail(row){return detailed(row,true);},
   async adminGet(id){const row=await repo.get(id);if(!row)throw new ShopError(404,'주문을 찾을 수 없습니다.');return detailed(row,true);},

@@ -52,8 +52,8 @@ test('order HTML hides private business data and test shipment actions',()=>{
  const r=runtime(),order={id:'NS-fixture',state:'PAID',payment_mode:'test',created_at:0,lines:[{id:'p',name:'<img src=x onerror=alert(1)>',option:'<script>x</script>',quantity:1,unit_price:100}],subtotal:100,shipping:4500,total:4600,customer:{name:'<svg onload=x>',phone:'000',address:'address',evidence:{corp_num:'secret-business-id'}}};
  const html=r.context.orderCard(order,true);assert.ok(!html.includes('<img src=x'));assert.ok(!html.includes('<script>'));assert.ok(!html.includes('commerce-shipping'));const customer=r.context.orderCard(order);assert.ok(!customer.includes('secret-business-id'));assert.ok(!customer.includes('commerce-address'));
 });
-test('payment information page strips redirect query and never opens a free-payment demo',async()=>{
- let cleaned;const r=runtime({location:{origin:'https://shop.nadaun.co',search:'?result=success&paymentKey=secret'},history:{replaceState(a,b,path){cleaned=path;}}});const holder={};r.main.querySelector=()=>holder;await r.context.paymentTest();assert.equal(cleaned,'/payment-test.html');assert.equal(r.sdkCalls.length,0);assert.ok(!holder.innerHTML.includes('secret'));assert.match(holder.innerHTML,/오픈을 준비/);
+test('test payment page strips sensitive redirect query and fails closed on invalid merchant configuration',async()=>{
+ let cleaned;const r=runtime({location:{origin:'https://shop.nadaun.co',search:'?result=success&paymentKey=secret'},history:{replaceState(a,b,path){cleaned=path;}}});const holder={};r.main.querySelector=()=>holder;await r.context.paymentTest();assert.equal(cleaned,'/payment-test.html');assert.equal(r.sdkCalls.length,0);assert.ok(!holder.innerHTML.includes('secret'));assert.match(holder.innerHTML,/테스트 연결을 확인/);
 });
 
 test('order submission includes only checked cart lines and strips selection metadata',()=>{
