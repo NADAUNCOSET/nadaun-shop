@@ -898,6 +898,137 @@ assets/shop/motion.js와 shop.css에서 두 번째 사진이 로드된 뒤 스�
 원본백업·before/after PNG·tests.log·fix-receipt.json은 `_private/catalog/image-overlap-20261014/`. 자동카탈로그커밋530ddf38d 뒤의 소스3파일만 별도커밋했으며 수집데이터를 임의변경하지 않았다.
 
 
+### 2026-10-14 엘디네트웍스 공급사·제품 브랜드 분리 — 수정 진행
+
+대표가 상품명에 표시된 애니포트·아이리버를 회사명 (주)엘디네트웍스로 묶은 오류를 지적하고 원본 카테고리 기준 수정을 지시했다. 공개 원본 3,072개 중 제조사 필드가 회사명인 1,605개를 확인했다. 기존 수집·전수 수량 검증은 의미상 브랜드 분류 검증을 대신하지 못했다. 실제 상품명/명시적 브랜드관/공급사 제품 상세 근거를 분리하고 원문 제조사는 보존한다. 원본 제품종류 트리를 고객 필터에 연결하고, 브랜드관에만 있는 상품은 명시적 제품명으로 보완한다. 불명확한 브랜드는 임의 추정하지 않고 기타 브랜드에 유지한다. 진행 근거 `_private/catalog/ldnet-brand-fix-20261014/`. 아직 배포 완료로 보고하지 않는다.
+
+같은 대화에서 대표가 토스페이먼츠와 협의 중이며 아직 답변이 없다고 전달했다. 상태는 대표 진술 기준 협의 중·회신 대기이며 메일/업체 포털을 독립 확인한 것은 아니다. 현재 실제 `/api/orders?action=config`는 ordersEnabled=false, rentalRequestsEnabled=false, adminEnabled=true, paymentProvider=inicis, taxInvoiceEnabled=false. PG 변경·키 등록·결제 개통·외부 연락은 진행하지 않았다. 회신 후 승인 조건과 실제 연결 가능 상태를 대조한다.
+
+
+### 2026-10-14 담당자·렌탈 제외·분류 후속 지시와 원인 확인
+
+대표 정정: 개인정보처리담당자는 김기현이며 김기헌이 아니다. 자사몰 공통 footer/개인정보처리방침 생성 원본을 정정한다. 페이즈원 렌탈 렌즈 6개, TVLogic LVM-171S 및 해당 장비를 포함한 RED GEMINI 패키지 2개를 자사몰 공개에서 제외한다. 원본 스마트스토어 삭제 지시로 확대하지 않으며 검증 소스는 보존하고 공개 제외 규칙을 기록한다. 페이즈원 카메라 KIT와 TVLogic 구매 상품은 이번 제외 범위 밖이다.
+
+대표 제공 스마트스토어 모니터&프롬프터 분류를 실제 Chrome DOM에서 확인: 15상품, 그중 TVLogic 1상품. 나머지 14개는 기존 자사몰에 이미 등록돼 있으나 촬영 액세서리 아래에 배치되어 TV·디스플레이에서 찾지 못하는 문제를 확인했다. 렌탈 TV·디스플레이 안에 모니터·모니터 레코더·프롬프터·영상 송수신을 연결하고 이미지 분류 진입점도 갱신한다. 원본 URL https://smartstore.naver.com/rainbowbene/category/f116a3cf705c4375905eda46cdfcd4a5?cp=1 .
+
+호야 377개는 KPP 단일 출처다. KPP 실제 브랜드 메뉴와 자사몰 UI를 확인했고, 미스트/소프트필터 21개가 시네마렌즈에도 노출되는 오류를 발견했다. 원본 상위 분류를 고객용 분류 이동 후에도 중복 적용하는 문제다. 원본 category/type ID는 보존하며 고객 탐색 경로는 원본 leaf로부터 다시 계산한다. 동일 원인의 오디오/배터리도 전체 카탈로그 대조 대상으로 포함한다. 현재 수정/검증 중이며 아직 후속 배포 완료 아님. 근거 shop/_private/catalog/rental-category-fix-20261014/ 및 ldnet-brand-fix-20261014/rental-source-display-proof.json.
+
+
+### 2026-10-14 전체 분류 재점검 — 호야 원본 대조와 검증 범위
+
+KPP 호야 brandmall의 실제 메뉴45개를 저장 원본과 이름·부모까지 대조하여 일치 확인. KPP 호야 분류19페이지의376개 원본ID는 자사몰에 전부 있으며 누락0. 추가1개(kpp-1781662220, 호야 멀티 렌즈후드67mm)는 KPP 필터 전체 분류에만 등록되어 있고 상세 실제 제목/브랜드를 확인했다. 공개 전체377개는 필터376개와 렌즈 액세서리1개로 구분하며, 후드는 명시적 제품종류/브랜드 메뉴 라벨 override로 정정한다. 원문ID·원본 분류이름은 source_name/검증 소스에 보존한다.
+
+공개후보22,600개/325브랜드의 모든 category/type/navigation 참조·상위경로·브랜드 일치 검사 통과. 구매320브랜드 탐색 누락0. 종전22,608개 대비 대표 제외8개만 감소하고 다른 상품명·가격·판매가·상태·이미지·offer·배송·렌탈안내 불변 확인. 상품 종류 경로280개를 정정했으며 잘못 남은 원본 상위 연결은 시네마렌즈66·조명11·영상장비172건 제거. 이것은 전체 참조/구조 대조와 확인된 의미 오류 수정이며22,600상품을 각각 새로 육안/원본상세 검토했다는 뜻은 아니다.
+
+렌탈213개. TV·디스플레이30개(촬영·디렉터모니터20, 모니터레코더2, 프롬프터2, 무선영상송수신6). 대표 원본 모니터&프롬프터15개 중 TVLogic 제외한14개 전부 포함. 최초 후속배포f316d7cf7/858c8830c05ac33d 실제검증 완료; 렌즈후드 추가정정 최종revision79a6d07cbc069e64의 공개 확인은 후속 영수증으로 확정한다. PC 화면/프롬프터 필터2개/390px 가로넘침 없음 확인, 임시 viewport 원복. Windows 실기기 검증은 미실시.
+
+근거 `_private/catalog/rental-category-fix-20261014/`의 `catalog-conservation-and-category-audit.json`, `hoya-live-source-proof.json`, `owner-exclusions.json`, 공개 PNG와 publication logs.
+
+
+### 2026-10-14 브랜드·렌탈·담당자 분류 수정 최종 공개 완료
+
+- LDNET 회사명 브랜드 분리를 먼저 정상배포 검증했다(aa24f2dab1/ccc2a43a362d6437/dpl_8AcCebvE5UapH7v6MpdwnXQ41P1r, 09:56:33Z). 원본3,072개 offerID/가격/옵션/원본360분류는 보존했다. 실제근거로3,047개를51브랜드에 분리,25개는 근거부족으로 기타 브랜드 유지. ANYPORT 공개645개, IRIVER6개. 제조사 원문과 분류 근거 별도 보존. 회사명 브랜드 경로는 카탈로그로308. IRIVER 공개6상품/키보드마우스 필터2개 확인. 분류규칙 revision으로 다음 자동수집에도 재적용한다.
+- LDNET 최초생성 중 기존 파생 source-matches.json UTF-8 손상을 발견했다. 손상바이트193,014,590개를 gzip보존/복원해시 확인 후 파생원장만 재생성하여 정상 전체검사를 통과했다. 원인OS/NAS는 단정하지 않는다. 실패로그와 audit-recovery.json은 보존했고 자동LDNET작업은loaded복원 확인.
+- 후속최종commit `585b0918f2059cdbebff4fae234c6a43807f1696`, production `dpl_DEAG3rKVoLZF4xfBM4w636z8KK72` READY, 공개revision `79a6d07cbc069e64`, 전체공개대조 `2026-10-14T10:12:14+00:00`. NAS HEAD=origin/main 일치. 정상 publisher의 전체 Python/Node/구문검사 통과. 분류회귀16개 포함.
+- 개인정보처리담당자 김기현을 공통footer/개인정보처리방침에 반영. 이전 rental.html은 현재 렌탈목록으로308하여 오래된 문구/목록 노출을 차단했다. 공개privacy/HOYA본문의김기헌0 확인.
+- 페이즈원렌즈6개 + TVLogic단품/포함패키지2개 공개제외, 해당8개 item주소404 확인. 렌탈213개·TV디스플레이30개 실제JSON/화면일치. 원본스마트스토어는수정하지 않았다.
+- 호야공개UI에서필터376/카메라렌즈·액세서리1, 추가렌즈액세서리메뉴와클릭후렌즈후드1상품표시 확인. 기존시네마렌즈21개오분류없음. KPP원본45메뉴/19페이지상품대조완료.
+- 대표컴퓨터입력/포커스에간섭하지않고기존작업탭으로검수. 390px 임시폭원복, Windows물리기기검증미실시. 실제화면PNG와최종HTTP/분류/보존증거는 `_private/catalog/rental-category-fix-20261014/final-live-proof.json` 및 같은폴더.
+
+이번요청완료: 브랜드분리, 모니터/프롬프터탐색복구, 전체분류경로검사/확인된오류수정, 렌탈8개제외, 담당자정정, GitHub/production공개확인. 남은한계: 근거없는LDNET25개브랜드확정, Windows실기기후속검증, PG/전자세금계산서실개통은별도미완료. 토스페이먼츠는대표진술상협의중/회신대기이며현PG/주문개통플래그를바꾸지않았다.
+
+
+### 2026-10-14 상품 리스트업 매칭 후속 — 브랜드 통합·명시 브랜드 정정
+
+대표 “지금 리스트 업 어디까지 되어있지 사이트?”, “매칭 빨리 다 시켜야해”에 따라 현재 공개22,420카드/22,600레코드부터 실제 재조회했다. LDNET 미확정25개 전체 원본 상세를 다시 확인하여 NEXT7·SOPLING1·JMIT2·Schneider Electric1·LDL-MOUNT1의12개 브랜드를 확정했다. 상세 이미지의 실제 로고/모델과 공식 모델 자료를 근거로 원문 제목·이미지URL 일치 guard를 적용한다. 광학 SCHNEIDER와 전기 Schneider Electric을 분리한다. 테스트 상품ldnet-4868은 공개제외하고 검증 소스에는 유지한다. 나머지12개는 원본 브랜드 근거 부족으로 기타 브랜드 유지, 상세목록은 _private/catalog/matching-20261014/remaining-brand-review.md.
+
+펠리칸/PELICAN, 후지필름/FUJIFILM, 비스고/VSGO, PROGAFF/PRO GAFF, HealingShield/Healing Shield, YCONION/YC Onion, 러그박스/LUGBOX7쌍 통합과 구주소308을 적용했다. ETC/공급사에 들어있던90상품을 원본의 명시 브랜드에 연결했다. 원본 제목·기존 브랜드가 바뀌면 임의 재적용하지 않고 실패하도록 guard; 원본 스냅샷과 이전 분류는 보존한다. 90개 중24개의 현재 원본 제목을 확인했고66개는 접근 제한/빈응답 등으로 기존 검증 원본을 사용했다. 원본 접근 제한을 우회하지 않았다. 브랜드 카테고리는 원본 경로를 보존하고 해당 실제 브랜드 아래 탐색 경로를 추가한다.
+
+초기공개1f6b281804e7d46491ed36537afe2e556c8a7907 / dpl_BN6cmNS9bm25GqnXx95EhsE3PMf9 READY / revision8bb35e7a5dd345ab / 13:09:52Z. 중복24개(펠리칸15·후지필름9) 추가병합, 기존 대표 판매가격/상품명/상태/이미지/렌탈정보 보존, 각 공급처offer27,185개 전부 동일. 테스트1개만제외, 공급처원본LDNET3,072개 및 원분류361노드(실제360+합성root1) 보존. 기존브랜드가바뀐공개레코드405개. 구매22,362+렌탈213=22,575레코드, 카드22,395개, 브랜드분류357개, 총중복병합4,610개. 공급처선택대기는 상품미매칭 수가 아닌 우선구매출처 미지정 기록이며 기존정책을 임의변경하지 않는다.
+
+초기 보존 검사의 supplier_status24개 변경은 새 병합상품의 종전빈필드를 실제 연결공급처 재고상태로 보완한 기존 동작이었다. 원본필드출처·동일offerID·상품별값을검증하고그외가격/판매상태불변확인후공개했다. 실패로그원문 보존. 전체 Python/Node/구문검사 통과. 브라우저 확인 중 추가로 비스고14개와 힐링쉴드39개의 액세서리가 카메라/렌즈/장비로 잡힌 오류를 발견하여 용도에 맞게 정정, 회귀17개 통과하고 최종배포중이다. 최종완료는 후속공개영수증으로 확정한다.
+
+근거: _private/catalog/matching-20261014/의 backup-manifest.json, reviewed-brand-live-proof.json, conservation-and-matching-proof.json, accessory-type-review.json, initial-live-receipt.json, publication*.log. 원본 상품가격/옵션/외부스토어 상품은 변경하지 않았다. 이 작업은전체상품을새로육안재검수했다는뜻이아니다.
+
+
+### 2026-10-14 상품 매칭 후속 최종 공개 — 22:30 KST
+
+대표의 “매칭 빨리 다 시켜야해” 후속 결과. 최종 commit `7ada8d9587fac3c44a10f9882176d3b4f14035cd`, production `dpl_3oHoytoqLf2eqJ82tHf5FF5Hx5vT` READY, revision `dadb91c13822209e`, 공개검증 2026-10-14T13:29:57+00:00. NAS HEAD/origin/main 일치, 정상 publisher 전체 Python/Node/구문검사 통과(분류 회귀18개). 13:30:29Z 실제 HTTP 카탈로그 22,575개 전체가 NAS 생성본과 완전히 일치했다. 구매22,362+렌탈213, 옵션묶음 적용 상품카드22,395, 브랜드361개. 이것은 전체 구조/출처/데이터 대조이며 모든 상품 상세를 각각 새로 육안 검수했다는 뜻은 아니다.
+
+- 이번 브랜드 개별 정정123개: LDNET12 + ETC/공급사90 + 마지막21. 마지막21은 AVX19(DZOFILM·LIT Systems·PMI·NB Stabilizer·EDELKRONE·ZOOM·Flexilink)와 CLMEDIA2(CANVAS GRIP·BongoTies). 제목/원본 상세 로고/공식 정확한 모델명 근거, 기존 제목·기존 브랜드 불일치 시 실패하는 guard를 적용했다. 호환 SONY/Aputure/INSTAX만 적힌 상품을 그 브랜드로 오인하지 않았다. 원문 스냅샷은 보존했다.
+- 중복 브랜드7쌍 통합 및 구주소308 유지. 동일상품24개(펠리칸15·후지필름9) 추가병합. 원본 공급처offer27,185개 값은 모두 그대로이며 테스트 ldnet-4868 1개만 공개제외. 총 기존 중복 병합수4,610. 이번 기존 공개레코드426개의 brand_id가 정정/통합됐다. 가격·판매가·판매상태·배송·이미지·렌탈정보·원본옵션 보존 검증 통과.
+- 제품종류87개 정정: 비스고 클리닝/보호융14, 힐링쉴드 보호필름39, 후속 포그머신/용액·노즐·DMX 등28 및 LIT 노출계1·NB 안정화장비1·FlexTILT 헤드1·ZOOM 오디오3. PMI Smoke NINJA를 Atomos 외장레코더로 오인한 패턴과 PMI DMX수신기의 배경지/기타 오분류를 제거했다. PMI 실제공개33개에서 포그머신8·포그액세서리19·충전기2·케이블2·리모컨2 확인. 포그머신 필터 클릭후8상품, 힐링쉴드39개 전부 보호필름, VSGO 카메라/렌즈/소프트웨어 오분류 없음 확인.
+- 브랜드 미확정 잔여22개: LDNET12, AVX6, ETC4. 원본 브랜드 정보 부족 또는 호환 대상만 표기됨. 자세한 IDs/URL/이유는 remaining-generic-brands.json 및 remaining-brand-review.md. CLMEDIA7/PLTHINK189개는 원본 자체제작/패키지 브랜드를 별도로 유지하며 제3자 제조사까지 모두 재검증했다고 하지 않는다. 원장상 우선구매처 미지정40브랜드는 등록 누락이 아니며 기존 상품별 가격·출처와 승인 보완 공급처를 유지한다. 동일 모델명처럼 보이더라도 구성/옵션 동등성이 확인되지 않은 공급처 패키지를 무리하게 추가병합하지 않았다.
+- 자동 LDNET LaunchAgent 복원. 예전 09:52Z의 generated-edits 검토 대기 오류가 남아 있음을 발견했다. 원문을 worker-error-before-review.json에 보존하고 전체 관리파일/코드 clean, 정상 공개영수증, 라이브 전체 대조를 확인한 뒤 해당 해결 상태만 기록했다. 정상 LaunchAgent 재실행 결과 phase=current, 후보/영수증 SHA 일치. 접근제한/스키마 보호를 해제한 것이 아니며 별도 외부 공급사 수정·메일발송·PG변경 없음.
+
+근거: `_private/catalog/matching-20261014/`의 published-live-receipt.json, final-live-proof.json, conservation-and-matching-proof.json, final-misc-brand-review.json, final-misc-type-review.json, remaining-brand-review.md, worker-restored.json, live-pmi-fog.png, live-healing-shield.png, dmx-final-publication.log. 이전 초기 publication 실패 및 supplier_status 빈값24개 보완 검증 원문도 보존. 과거 initial-live-receipt.json은 publication-resume.log의 실제 COMPLETE 영수증에서 추출해 저장·재조회했다.
+
+
+### 2026-10-14 현재 미러링 원본 사이트 목록 재조회
+
+대표 “지금 사이트 나열해봐 뭐뭐 미러링 되었는지”에 대해 실제 공개 카탈로그를 2026-10-14T13:55:14.971519+00:00 재조회했다. revision dadb91c13822209e 유지, 장비·렌탈 원본11사이트의 공개 offer 합계27,185개: avx 1,377, cinemall 1,183, clmedia 2,146, dji-official 925, imweb 1, kpp 4,036, l-mount 345, ldnet 3,071, onnoff 1,067, plthink 6,253, smartstore 6,781. 스마트스토어6,781은 구매6,568+렌탈213. 이 수량은 공급처별 원본상품이므로 중복통합 후22,575레코드/옵션묶음22,395카드와 구분한다. 각 원본사이트 전체 크롤링100%완료를 의미하지 않는다.
+
+기프트는 별도 나다운기프트(www.nadaun-gift.com) 원본. 실제공개 manifest를 NAS와 대조해 목록71,941개, 상세3,430개, details_complete=false, automatic_source_refresh=false, 관측일2026-09-07, revision4c8fb3cf2da7e1a2 확인. 목록반영과 전체상세/최신동기화완료를 구분해 안내한다. 사이트별주소·정확수량·확인시각근거는 shop/_private/catalog/matching-20261014/current-source-sites.json. 이번질의에서 상품/배포는변경하지 않았다.
+
+
+## 2026-10-15 — 고객 오인 방지·아임웹 제외·기프트 갱신·세기 추가 (진행 중)
+
+대표 요청: 기프트 자동 갱신, 기존 아임웹 제외, 고객이 오해하지 않도록 정확한 카테고리, 이어서 세기몰 https://www.saeki.co.kr/main 의 샵 전체 상품을 브랜드 기준으로 미러링. 기존 브랜드/동일 모델 중복은 검증 후 통합하고 판매상태·옵션·가격·원문 분류를 보존한다. 세기P&C를 개별 제품 브랜드로 표시하지 않는다.
+
+- 아임웹 수집 호출/빌드/구매출처 추천 제외, 원본 JSON 보존. 현재 유일 공개상품 imweb-13641 제외 예정. 코드 d86a23f9b, 회귀 갱신41a5cf16e. 공개는 아직 이전 revision dadb91c13822209e.
+- 카메라로 오인된 URSA 음향 액세서리·보관함·쿨러, 티비로직 모니터/후드의 TV 오분류, 드론 충전허브/프로펠러, 보호필름 등을 구매 용도로 정정. 렌탈 재고/패키지는 보존. 신규 회귀20건 통과. 상세 증거 _private/catalog/customer-clarity-20261015/.
+- 기프트 source-suspended.json 유지. 2026-09-08 운영사 차단 해제·자사몰 소유 대표 확인은 기록되어 있으나 허용 API/피드/수집 제한 확인은 없음. 현재 launchctl에 gift-sync 미등록, plist만 남아 있음. 기존 워커는 초기 목록 완료 후 누락 상세만 채우며 기존상품 변경 갱신/공개 자동연결이 없었음. API/피드/허용 조건을 비동기로 질문, 추가 원본 요청/보호 해제/실행 활성화 없음. 미검증 상세의 soldout=false를 null로 분리하고 고객에게 재고·납기·인쇄 가능 여부/최종가격 상담 확정 안내.
+- 세기 현재 브랜드 메뉴, 브랜드별 공개 목록 POST(읽기전용), 실제 상세 JSON-LD/이미지/식별정보를 확인. 첫 SIGMA 목록 561개. 과거7월 saeki.py는 구분류 캐시와 제한/완료 검증이 부족하므로 그대로 실행하지 않음. 현재 검증 근거 _private/catalog/saeki-20261015/.
+- 통합검사에서 옛 imweb-dji 필수회귀를 새 제외회귀로 수정. 기프트 공개 투영이 기존 shop_sync 빌드에서 호출되지 않는 누락 발견, 검증 저장본 투영을 통합 중. 실패 로그 원문 보존. 아직 새 수정/세기 전체 공개 완료가 아님.
+
+### 고객 오인 방지 수정 공개 확인
+
+2026-10-15 01:30 KST commit `2a9bed43bd1b30695d0afb5759c0b0970699b741`, deployment `dpl_9UTkogfuypKn5f8DqGbEa4VzvGuJ`, revision `8781cb6104979f22` 공개 및 NAS/remote/live 전수 대조 완료. 장비22574레코드/22394카드/원본offer27184, 아임웹1상품 제외·과거원본SHA보존. 카테고리132상품 정정. 전체 가격·상태·이미지·원본offer 보존, 렌탈213개 가격/구성/분류동일(벤로3개 검색어 대소문자중복만 제거). Python/Node 필수검사 통과. 실제Chrome에서 TVLOGIC 모니터 액세서리4개가 본체/TV와분리됨 확인.
+
+기프트공개투영 revision `aec3a79416e59ed4`: 목록71941/상세3430 그대로, 상세미확인상품 soldout=null. 목록/상세에 재고·납기·인쇄가능여부·최종가격상담확정안내, 사양선택가능단정제거. 실제manifest NAS일치/브라우저안내확인. 이것은 기프트원본자동갱신재개가 아님(automatic_source_refresh=false,source중지유지). 정상publisher에 build_gifts 저장본투영을연결하여 이후검증된상세변경도배포에반영하도록보완.
+
+근거 `_private/catalog/customer-clarity-20261015/`: live-release.json, conservation.json, category-corrections.json, gift-live-manifest.json, tvlogic-accessories-live.png, gift-confirmation-live.png. 통합검사초기실패로그4개보존. 옛아임웹필수회귀2개를퇴역제외검사로갱신; 실제실패원인은보존했으며생성물검증을우회하지않음. 세기수집은별도계속진행중.
+
+
+### 세기몰 전체 브랜드 수집·검증 연결 (2026-10-15)
+
+대표 추가 확정: “세기것도 미러링”, “샵 제품들 다 올리면되”, “브랜드 보면 되 세기것도”. 공식 브랜드 메뉴99개를 고유ID로 확인, 각100개 페이지의 총수·중복·재조회 및 끝난 브랜드 메뉴 대조를 통과하여 목록7,475개/분류 조합156개 확보(원본 목록의 빈 분류8개는 실제 상세 breadcrumb의 선물하기 경로로 복원). 비어 있는 브랜드 응답은 요청 브랜드ID가 같은 명시적 빈 목록만0개로 처리했다. 마지막 Z CAM104 소개 페이지는 원본 soft-404이지만 정상 공개 브랜드 검색에서1상품을 확인했으며 다른 계정/IP/인증 우회를 사용하지 않았다.
+
+코드 `009a1a29d` 커밋·푸시. 원본 목록/상세 상품ID·이름·Product JSON-LD·선택SKU 가격/품절·이미지·옵션·카테고리를 대조한다. 가격문의0/1원은 판매가null, 원본 특별주문/예약/전시·박스훼손은 고객안내 구분, 포인트 전용4건은 공개 현금상품에서 제외하는 사유 원장을 보존한다. PENTAX를 RICOH 상위메뉴에서 분리하고 ETC 내 SWIT/Aputure/삼성/OBSBOT 등 제목·제조사근거를 사용한다. 실제 마운트/색상별 서로 다른 세기SKU는 합치지 않는다. 기존 DJI 공식·Aputure AVX 단독 출처와 렌탈 보존.
+
+신규8개 회귀(9실제원문형태), 기존상품20·분류20·공개promotion11·출처정책9·상태5검사 통과. 정상publisher의 후보검증/필수검사/정확한파일커밋/공개 offer 전수대조에 연결. 최초 전체 상세/공개는 아직 미완료. 새공급처 스냅샷을 일부만complete로 만들어 배포하지 않았다.
+
+Mac LaunchAgent `co.nadaun.shop.saeki-sync` 실제 설치. NAS `_scraper/saeki_worker.py`, 초기원본 `_private/catalog/saeki-20261015`, 현재세대포인터/진행 `_scraper/.sync-state/saeki/`. 2.1초 요청간격, 100건마다 재개저장,403/429/접근거부는영구보호중지,내용오류는검토보류,10분재개,성공공개12시간후새전체세대. 목록/상세저장과공개완료는별개. PC실행은Mac만확인. 코드수정중구수집기에서정상종료후재개한기록과오류원문은보존했고, NAS메타데이터전수반복비용을줄이는ID색인을추가했다.
+
+진행 조회: `_scraper/.sync-state/saeki/progress.json`, `_private/catalog/saeki-20261015/detail-progress.json`, `detail-errors.json`, `source-suspended.json` 및 최종 `published.json`. 공개완료조건은 후보검증·기존정상전체검사·실제사이트offerID일치. 이후필요한내용수정은저장HTML로재검증해불필요한원본재요청을줄인다. 기프트중지는별도유지.
+
+
+세기 추가 통합 검증: commit `8bb908b07d96714c946ed2df04b8ed7da08b28e7`. 공개와 분리한 메모리 내 실제 상세436개 샘플 빌드에서 세기 허용offer433개, 기존22,574개 상품의 이름·브랜드·가격·판매상태·이미지·배송 필드 보존을 확인했다. 렌탈213개 가격/구성/분류 동일,9개 검색어의 브랜드 대소문자 중복 추가만 확인했고 casefold집합은 같았다. 검증 중 세기 중복상품의 공급처재고가 기존 주출처의 미확인값을 채우는 경로를 발견하여 세기 보완출처에 한해 차단했다. 신규 회귀9개/기존 상품20개 재통과. 실제 전수공개가 아닌436개 상세 기반 비공개 통합검증이다. 근거 `integration-preview-proof.json`, 실패원문 `integration-preview-differences.json`, `integration-rental-differences.json`.
+
+최종 진행 스냅샷 `2026-10-14T17:06:34.856120+00:00`: 세기 상세 검증 467/7,475, 해당 진행 오류 2, 공개0개. Mac 워커 실행 중. NAS/사용 Obsidian 볼트 재조회 완료(다른 PC 실행 미확인).
+
+
+### 세기 원본 예외와 공개 범위·운영 복구
+
+후속 코드 `5de3a7cd1`까지 커밋·푸시, 신규회귀12개 통과. 원본 이름의 리터럴 `<br>`와 인치기호 HTML 누락을 독립 상품 schema/ID 대조를 유지하며 처리했다. NSH 문의상품의 숨겨진 목록 금액은 실제 schema0/가격문의 버튼과 함께 확인하여 표시가격과 공개 원본의 금액 모두null로 보존한다.
+
+Datacolor SpyderCheckr Video(PD00024065)는 원문상세에서 외부 mustcolor2 이미지3개를 참조한다. 연결된 안내이미지에 대한 정상 HTTPS HEAD가403이어서 상세이미지는검증하지않고,그세대의 `reviewed-content-holds.json`에 이름/브랜드/원문SHA/근거를고정해1건보류한다. 헤더·IP·요청방식을바꿔재시도하지않는다. 나머지전수처리후검증상품을공개할수있되,보류1건과포인트전용4건을제외원장에표시하고 `details_complete=false`를유지한다. 미확인에러를자동보류로대체하지않으며새세대에서이보류를자동복사하지않는다.
+
+동시 자동 publisher가 생성물을 stage하는 순간 파서수정커밋 b4f44986b에 생성물384개가 함께 포함됐다.384개전부정상관리파일범위,기존상품/가격/렌탈보존,실제공개revision2d9eea6026554fe3·deployment dpl_BRfWKzByYZ6Au1ijzq3nDP5C35LV를17:10:33Z전수검증했다. PLTHINK공개6,253 offer도원본전체정책범위와재대조하여영수증을복원했고기존git commit실패원문은resolved표시로보존했다. 관련없는파일을되돌리거나공개검사를생략하지않았다. 이후수동코드커밋도정상publisher의run.lock을소유하고전체stage목록이자기범위인지검사후커밋하도록적용했다. 근거 publication-index-concurrency-review.json, concurrent-publication-live-proof.json, plthink-publication-reconciled.json.
+
+현재세기목록7,475개전체확보,최초상세검증계속진행중·실제세기공개0개. 파서보완시이미확보한HTML만재검증하며외부재요청하지않는다. 기프트자동갱신OFF는변함없다.
+
+
+### 세기 후속 원문 형식 검증과 보류 목록 — 2026-10-15 02:30 KST
+
+- 코드 `aedfd51ff56073d9e7b3d677678ef5f7e3e1836c`까지 GitHub 저장. 실제 원문 형태 10종과 회귀 14개 통과. FXLION 원문이 HTTP로 연결한 특정 안내 이미지의 HTTPS JPEG 응답(200, 36,980바이트)을 확인하여 해당 경로만 HTTPS로 정규화했다. 텍스트만 있는 GINICHI 그레이카드 설명도 원본의 `.detail-img` 영역에서 보존하도록 수정했다. 원문에 설명이 없는 경우는 계속 실패한다.
+- Datacolor 20개를 기존 수집 작업의 정상 체크포인트 종료 후 별도 소스 잠금 아래 확인했다. 저장 HTML은 재사용하고 누락 10개 상세만 정상 공개 경로로 수집했다. 7개 상세 검증 통과, 13개는 상세 이미지 확인 보류. 이미 403을 반환한 mustcolor2.openhost.cafe24.com의 안내 이미지와 같은 호스트에 상세 이미지가 있으며, 해당 이미지 호스트에 추가 요청하거나 우회하지 않았다. 13개 상품 이미지 각각이 403이었다는 뜻은 아니다. 현재 세대에만 적용하는 상품ID·이름·브랜드·원문 SHA 근거를 reviewed-content-holds.json에 보존했다. 20=7+13 대조 검사 통과, 포인트 전용 4개는 별도 제외다.
+- 백그라운드 Mac LaunchAgent를 새 코드로 재개했다. 최신 진행 원본은 `_scraper/.sync-state/saeki/progress.json`; 기존 저장 HTML을 재검증한 뒤 미수집 상세를 이어간다. 실제 세기 공개는 아직 0개이며 전체 목록 처리·후보 검사·정상 publisher 검사·공개 offer 대조 전에는 완료로 표시하지 않는다. 미래의 알 수 없는 원문 오류는 자동 보류로 넘기지 않고 검토 항목으로 남긴다.
+- 기존 공개 재조회: revision `2d9eea6026554fe3`, 상품 22,574개/렌탈 213개/기존 10개 출처 offer 27,184개. 가장 최근 정상 publisher 영수증은 commit `4a69bb47618fb56b01687db51a03b1c4c29cb7cd`, deployment `dpl_AHkq6Ja1aouJQdyp6ugFvgFpd2T4`, 검증 `2026-10-14T17:23:06+00:00`. 새 코드 커밋과 세기 상품 공개를 구분한다. 기프트 원본 자동갱신은 여전히 OFF, 제공 API/피드/허용 수집 조건 응답 대기다.
+
+근거: `_private/catalog/saeki-20261015/`의 `current-live-proof.json`, `fxlion-https-image-check.json`, `datacolor-content-review.json`, `datacolor-partition-test.json`, `reviewed-content-holds.json`. 수동 코드 커밋은 공용 publisher 잠금 소유·자기 파일만 stage 확인 후 수행했다.
+
+
 ## 2026-10-15 Windows 화면 겹침 수정 · PG 배송 안내
 
 대표가 Windows에서 본 화면 갈라짐의 원인과 검증·백업·커밋·공개를 요청했다. 공용 진행·실행 방법은 [_scraper/references/windows-layout-pg-20261015.md](_scraper/references/windows-layout-pg-20261015.md), 백업·전후 검증·배포 영수증은 `_private/windows-layout-pg-20261015/`를 읽는다. 같은 NAS 원본과 게시 잠금을 사용하며 다른 PC의 미커밋 변경을 포함하지 않는다. 구매 배송완료 1주일 안내를 반영하고, 렌탈 최대기간은 2주/1개월 선택 답변 대기다.
@@ -906,3 +1037,70 @@ assets/shop/motion.js와 shop.css에서 두 번째 사진이 로드된 뒤 스�
 ## 2026-10-15 PG 렌탈 최대기간 확정 — 2주(14일)
 
 대표 후속 지시 “최대 2주로 해”에 따라 렌탈 제품의 최대 대여기간을 2주(14일)로 확정하고 `shipping.html#rental-period` 및 생성 템플릿에 기재한다. 앞선 2주/1개월 선택 답변 대기는 종료됐다. 이번 백업·검증·커밋·배포 영수증은 `_private/pg-rental-period-20261015/`, 공용 원문은 [_scraper/references/windows-layout-pg-20261015.md](_scraper/references/windows-layout-pg-20261015.md)다. Mac·Windows는 같은 NAS 원본에서 이어간다.
+
+
+## 2026-10-15 14:08 KST — 주문관리·공유·SEO 개편 및 세기 최초 공개
+
+대표의 REA 활용/나다운 업무에 맞춘 주문관리 요청에 따라 구매 출고와 렌탈 방문 수령·반납을 분리한 작업실을 배포했다. 목록 탭/필터/상세, 암호화 내부 메모, 미결제 취소 사유, 처리자 이력, 부분출고·출고별 운송정보 수정, 반품/동일상품 교환·교환품 재출고, 7시트 Excel을 연결했다. 실제 서비스 모듈+메모리SQLite 가상주문에서 전체 흐름과 320/390px 가로넘침 없음 확인. 실고객 변경0건. 결제 취소 뒤에도 이미 보낸 상품의 반품접수는 유지하며 새 출고는 허용하지 않는다. 서버 렌탈기간14일 검증도 적용했다.
+
+코드01f4dd6b8·4c0ffcd86, 생성물ad33a3aab·최종e5132fa9cf9d2c955f52f541fcb140e4d77d0195; production dpl_39fGRTbBEP37nhEUnKtxMS2QZNiq READY, revision fd7494b71810bf12, 전체 공개 검증 2026-10-15T05:06:16+00:00. shop/order 관리자 HTML·JS·CSS 6자산 NAS 바이트 일치, 운영 관리자 실제 브라우저 로그인/목록0건 확인, 비로그인401, Excel13113bytes 생성. 관리자 이메일 설정 기능은 구현했으나 대표 지정 이메일 답변 전이라 기존 비밀번호 계정을 유지한다. 공개 config ordersEnabled=false/rentalRequestsEnabled=false/adminEnabled=true/adminLoginRequiresEmail=false/taxInvoiceEnabled=false/paymentProvider=inicis. 토스페이먼츠 답변/PG개통·실거래·환불·증빙 검수는 별도 남은 단계다.
+
+상품 공유는 구매/렌탈/기프트 모두 상품별 초기HTML OG를 자사도메인 JPEG1200×630으로 연결했다. 실제 공개3종 GET/HEAD200, product(로고fallback아님), JPEG1200×630 확인. 전체상품에 공통코드 적용; 모든 원본이미지를 전수 다운로드하거나 카카오앱 실공유를 확인한 것은 아니다. 영등포 렌탈샵 안내 /rental-guide.html, 정식 canonical·80자이내 설명·사이트맵·내부링크 공개 확인. 검색 순위/검색량 상승을 확인했다는 뜻은 아니다.
+
+세기 최초 공개: 원본99브랜드 메뉴·7475개=검증7456+보류19. 포인트4제외 후보7452, 기존독점출처 DJI3/Aputure12제외 실제7437 offer 전수 일치. 출시예정7개 가격null/구매차단/Offer없는 구조화정보 공개 확인. 기존7416검증상품 값 변경0, 기존공개22576상품 핵심필드 변경0/ID누락0, 렌탈213 보존. 최종카탈로그29495상품·413브랜드. Datacolor13과빈설명2/404이미지4를별도근거로보류; 전체원본분할complete=true지만상세전수details_complete=false다.
+
+Mac co.nadaun.shop.saeki-sync를 원본plist로 복구·loaded 재조회(2026-10-15T05:06:52Z), 10분 재개/성공공개12시간 후 전체갱신. 과거 worker-error.json은 이전parser fingerprint의 오류 원문으로 보존; 최신 published/progress를 기준으로 읽는다. 기프트는 기존71941목록/3430상세공개유지, 원본자동갱신OFF/보호중지 그대로다.
+
+REA는 로그인페이지에 이미로드된공통JS3개 정적분석 성공이며, 로그인된아임웹주문관리전체획득아님. 로그인후추가대조는대기중. 별도HTTP403후우회없음; SMB무결성불안정은같은SHA의로컬임시사본으로분석했다.
+
+검증 원본: _private/catalog/sharing-admin-20261015/ 아래 publication-receipt.json, live-release-proof.json, admin-ui-proof.json, admin-live.png, saeki-final-validation.json, saeki-built-preservation.json, saeki-worker-maintenance.json. 전체필수Python/Node검사통과; Node전체196 및후속UI19통과. 사전검사중WindowsCRLF만존재한배송정책은원본백업·내용HEAD동일확인후LF정규화, 내용/14일정책보존. 사전생성물가드중단은검토된생성물정확범위커밋으로해결후정상publisher를재실행했으며가드를끄지않았다. 타PC런타임검수는하지않았다.
+
+
+### 2026-10-15 17:22 KST — OMS 후속·CFexpress A 공개 완료
+
+최종 commit `fb82d82c32ec872339d2a6db676aa96626006b60`, deployment `dpl_6dqjjhbJnL8KjbecXpUpQwnztbhH` READY, revision `5b671ceb05bf96c0`, live 검증 `2026-10-15T08:20:18+00:00`. 정상 publisher 전체 필수 Python/Node 검사 통과 후 정확한 생성물만 커밋/푸시했다. 코드 커밋92f5802c6, 검색 후속3f6c5c7c2. 다른 공급처 offer 추가/삭제/값변경0건. 기존clmedia-3478은 새네이버동일상품 smartstore-13812350366에통합되었고 기존offer/가격/판매상태/redirect보존으로 재확인했다. 최초 보존검사의 canonical ID삭제 경고는 이이유로해결했으며 원문 built-verification.json 보존.
+
+공개 장비 카탈로그29492개, 렌탈216개. CFexpress A160/320/512GB 각1/2/3만원, Sony/Lexar/HOMAN 이미지브랜드 확인. 렌탈 메모리·스토리지 rent:146 포함. 각카드1+리더1 원문구성보존. 스마트스토어전체공개6874상품/현재수정시각에맞는상세6874개, 변경상세654개 검증. 원본/상세 231버킷 백업 후반영. 기존타입B128/256/512GB1/2/3만원과2TB4만원도최신네이버값으로반영.
+
+실제통합검색에서 CFexpress A가 B도포함하는단일문자부분일치오류발견, 웹목록/서버검색공용으로CFexpress와A/B를한검색단위로처리하고discovery검색어를서버에도반영했다. 회귀7개통과, 실제공개A3개/B4개로분리됨확인. screenshot cfexpress-a-live.png, live-search-final.json. 실제상품3개초기HTML가격/SEO설명·OG1200x630 JPEG응답200및product헤더확인. 카카오톡앱실공유는별도미확인.
+
+운영order.nadaun.co기존인증세션으로새배송단계·선택처리·수기견적목록0건열림확인. 실고객테스트변경0건, shop/order의commerce.js/css4자산NAS바이트일치. 비로그인주문/견적API401,private경로404. config ordersEnabled=false,rentalRequestsEnabled=false,adminEnabled=true,adminDraftsEnabled=true,adminLoginRequiresEmail=false,taxInvoiceEnabled=false,paymentProvider=inicis. PG/고객온라인주문·렌탈접수/세금계산서개통을완료로보지않는다. 대표지정계정이메일미확정으로기존로그인유지. 가상QA서버정상종료.
+
+SEO재조회:shop렌탈안내/Collective/Blogspot모두200,제목/설명/canonical존재,Collective와Blogspot의쇼핑몰href는https://shop.nadaun.co/. 실제검색색인·순위·검색량상승미확인. 기프트원본자동갱신OFF/보호중지유지. Windows실기기런타임검수와나다운전체연계사이트의전체기능검수를이번결과로확대해보고하지않는다.
+
+근거: `_private/catalog/rental-cfexpress-a-20261015/`의search-release.json/live-search-final.json/live-product-admin-proof.json/built-verification-final.json, `_private/catalog/sharing-admin-20261015/seo-crosslink-live-20261015.json`, rea-authenticated/admin-live-oms.png/admin-live-drafts.png/synthetic-ui-proof-final.json. NASMac자동기록상태08:13:12Z complete/errors[]/1850files확인. 다른PC실행은미확인.
+
+
+### 2026-10-15 19시 — 관리자 비밀번호 원본 저장과 자동 송장 구현
+
+대표 지정 NAS `_PP/_nadaun work/_개인자료/문서화 저장/비밀번호 확인_나다운 디자인.docx`에 나다운 주문관리 로그인 정보를 기존 아임웹 행 다음에 추가했다. 현재 ID 없이 비밀번호 로그인, 주소 https://order.nadaun.co/ 를 구분해 기록했다. 기존222행을 그대로 보존하고223행으로 저장, 다른DOCX ZIP구성원 동일/실제private로그인값 일치/백업/모드600/한글7페이지 렌더 시각검수 확인. 비밀번호 본문은 공용기록에 남기지 않는다. `CLAUDE.md` 상단에 앞으로의 아이디·비밀번호 저장원본 규칙도 반영했다. 기존잠금파일은 보존했고 다른PC의문서실행은확인하지않았다.
+
+대표의 굿스플로처럼 송장 출력 요청에 따라 공식 Sellers Open API용 접수/인쇄URI/번호조회/배송단계 자동반영을 구현했다. 실제 로그인된아임웹 배송설정에서CJ대한통운·로젠승인완료/기본로젠확인. 이는우리몰API키와별도이며아임웹토큰재사용없음. 운영DB에송장조회큐1테이블추가,기존주문0/새큐0건재확인. 관리자로그인·실결제·배송대기·승인계약 검증,중복접수방지,응답유실시같은요청번호조회,인쇄와집하분리,배송완료탭집계/엑셀출처 반영.
+
+외부통신차단실서비스/메모리SQLite 가상주문2건 접수→PRINTED→PICKUP→COMPLETED 검증,기존수동완료1건과합계3건확인. Windows프린터/실제운송장발급은미검증. 320/390px 가로넘침없음. 가상검증서버종료. 최초코드61f00afc4/공개d285c5fea/deployment dpl_8B9dw73Ppi8ZcHgisxeShtmC62tW/revision d22c7596de798b3f,필수검사통과,live검증10:43:56Z. shop/order두도메인새API5종비로그인401,정상로그인후연결대기표시,주문0건,JS바이트일치확인후해당검증세션로그아웃.
+
+현재실제발급은우리몰API키미확보로OFF. 대표에게기존발급여부/저장위치를문의했고응답대기. 고객주문/렌탈접수/PG개통/세금계산서도여전히OFF. Mac기존60초예약작업의송장조회연결과입력창스타일후속배포진행중이며최종영수증은후속기록으로확정한다.
+
+근거원본: shop/_private/commerce/goodsflow-20261015/ 및 _scraper/references/goodsflow-shipping-20261015.md. 비밀번호DOCX검증은해당비공개문서폴더의 _검증_주문관리_20261015/verification.json. Mac자동기록10:41:36Z complete/errors[]/1850files,설치원본확인. 다른PC런타임은미확인.
+
+
+### 2026-10-15 19:49 KST — 송장 기능 최종 공개 검증
+
+후속코드8897306ad까지백업/커밋하고정상publisher전체필수검사를다시통과했다. Mac60초로컬예약실행기에도송장조회호출을연결했고, 송장계약/박스입력창을기존주문관리스타일·44px터치규격으로마감했다. 최종commit `ebce6be79cdfce21e80a6eb167d705838969d8c3`, deployment `dpl_A7v4MfwCcVQqJTJDiiKDCSx8H4z2` READY, revision `3b4196f2f3041ff7`, 공개검증 `2026-10-15T10:48:35+00:00`. shop/order두도메인JS/CSS4자산NAS바이트일치,고객주문·렌탈접수·세금계산서OFF/관리자ON/비밀번호로그인설정유지. 실제송장API키미확보로자동접수/발급은OFF,실제프린터검수미완료. 운영테스트접수0건. 가상검증서버정상종료,새운영API인증검증세션로그아웃. 완료와연결대기를분리해인계한다.
+
+근거: `shop/_private/commerce/goodsflow-20261015/final-live-proof.json`, `live-proof.json`, `worker-ui-release.json`, `http-qa-proof.json`, `browser-qa-proof.json`. NAS공용지침·지정비밀번호DOCX·프로젝트RUNBOOK·당일노트저장후재조회했다. Obsidian기존타업무충돌3개는보존했으며이번당일노트는사용볼트에반영한다.
+
+
+### 2026-10-15 22:27 KST — 이니시스 제거·토스 전환 및 HOMAN 256GB 공개 완료
+
+대표 확정에 따라 구매·렌탈 PG 실행 연동을 토스페이먼츠로 변경했다. 코드2be0b02f8, 검색검증3a9101be6, 안내메타데이터e496db197, 최종공개commit `d4cc3e914bca0dc5bdf5159c71fc5bc6b45a6450`, deployment `dpl_4ybMRumwAacULPEPqUQNGPAt3NSU` READY, revision `15149d77c5c301de`, 공개검증 `2026-10-15T13:25:53+00:00`. 정상publisher 전체필수Python/Node검사 통과. 초기Gitindex잠금은활성작업종료후재실행했으며강제제거없음. 검색검증의이전A3개고정조건을실제A256상품·타입분리·웹/서버결과일치로보완했다. 추가점검에서남은결제페이지제목/OG문구도토스로변경후재배포했다.
+
+이니시스실행어댑터/콜백/API와로컬설정6개·운영환경변수5개제거,이전설정은private백업. shop/order두도메인실제config.paymentProvider=toss,이전콜백404/잘못된새콜백303,JS3종+결제안내HTML총8자산NAS바이트일치. 비로그인관리자401/기존비밀번호로그인후주문0건/검증세션로그아웃후401재확인. 관리자/DB암호화키변경없음.
+
+HOMAN CFexpress Type A256GB 렌탈20,000원을네이버공식API로생성/재조회하고자사몰에도공개했다. 원상품13751715557/채널13812942061,자사ID smartstore-13812942061,네이버 https://smartstore.naver.com/rainbowbene/products/13812942061 · 자사몰 https://shop.nadaun.co/item.html?id=smartstore-13812942061 . 브랜드HOMAN/렌탈메모리rent:146/카드1개. 실제공개이미지·가격·검색1건·canonical·OG JPEG1200x630 product응답확인,카카오앱실공유는미검증. 장비29493/렌탈217,기존29492상품객체변경0·누락0. 기존전체수집시각을유지한1상품증분추가이며전체원본재수집완료아님.
+
+미완료:실토스MID·API개별연동키·개통/결제/취소/현금영수증검수. 토스로그인화면로그아웃/지정문서계정없음으로대표로그인요청대기. TossShopping마켓플레이스키와혼용없음. ordersEnabled=false/rentalRequestsEnabled=false/taxInvoiceEnabled=false,adminEnabled=true/adminDraftsEnabled=true유지. 렌탈은일정·재고/전체기간요금승인후결제하며최대14일. PG배포를실결제개통으로보고하지않는다.
+
+실제로그인된아임웹에서CJ·로젠승인계약과계약번호/출고지를확인하고비공개보존,기본로젠. 신규택배승인을받아야한다는단정대신기존계약을사용할Sellers계정/API/서비스연결확인이남은상태다. 자사몰굿스플로enabled=false/configured=false,실송장발급·프린터검수미완료. 외부계약변경/유료플랜가입/고객주문변경0건.
+
+근거: `_private/catalog/homan256-toss-20261015/`의release.json/live-proof.json/catalog-preservation.json/registration-receipt.json/pg-settings-receipt.json/live-product.png/live-toss.png. 상세원문 `_scraper/references/toss-homan256-20261015.md`, 현재설정안내TOSS-SETUP.md. Mac자동기록complete/errors[]/1850files와installation존재확인. 다른PC실행미검증.
