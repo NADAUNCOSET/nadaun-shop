@@ -21,5 +21,5 @@ class EquipmentGuide(unittest.TestCase):
    self.assertTrue(footer.select_one('a[href="/'+filename+'"]'))
   billing=BeautifulSoup((ROOT/'_scraper/shop_templates/billing-guide.html').read_text(),'html.parser')
   self.assertEqual(len(billing.select('h1')),1);self.assertIn('현금영수증',billing.get_text())
-  self.assertIn('연결을 준비',billing.get_text());self.assertIn('주문한 브라우저',billing.get_text())
+  self.assertIn('연결이 완료된 경우',billing.get_text());self.assertIn('주문한 브라우저',billing.get_text())
 if __name__=='__main__':unittest.main()

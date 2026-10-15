@@ -103,10 +103,13 @@ def reviewed_brand(product, overrides=None):
         overrides=json.loads((PUBLIC/'overrides.json').read_text()).get('brand_overrides',{})
     rule=overrides.get(product['id'])
     if not rule:return product['brand']
-    if (product['name']!=rule.get('expected_name') or product['brand']!=rule.get('expected_brand') or
-            not rule.get('brand') or not rule.get('evidence')):
-        raise ValueError('Reviewed brand evidence changed; recheck product: '+product['id'])
-    return rule['brand']
+    # Preserve exact evidence for published and newly reviewed source versions.
+    # An unreviewed title/brand combination must still stop publication.
+    for version in [rule, *rule.get('reviewed_versions', [])]:
+        if (product['name']==version.get('expected_name') and product['brand']==version.get('expected_brand')
+                and version.get('brand') and version.get('evidence')):
+            return version['brand']
+    raise ValueError('Reviewed brand evidence changed; recheck product: '+product['id'])
 
 
 def product_name(name):
