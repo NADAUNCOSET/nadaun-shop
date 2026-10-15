@@ -9,6 +9,11 @@ const root=path.resolve(__dirname,'..');
 const directory=path.join(root,'_private','commerce');
 const file=path.join(directory,'configuration.json');
 const fields=['SHOP_CF_ACCOUNT_ID','SHOP_D1_DATABASE_ID','SHOP_D1_API_TOKEN','SHOP_ORDER_DATA_KEY','SHOP_SESSION_KEY','SHOP_ADMIN_PASSWORD_HASH','SHOP_PAYMENT_MODE','SHOP_INICIS_MID','SHOP_INICIS_HASH_KEY','SHOP_INICIS_API_KEY','SHOP_INICIS_CLIENT_IP'];
+const requiredTables=['shop_orders','shop_order_events','shop_rate_limits','shop_documents','shop_calendar_sync','shop_calendar_health','shop_admin_drafts','shop_admin_draft_events'];
+async function schemaVerified(db){
+ const tables=await db.query("SELECT name FROM sqlite_master WHERE type='table'");
+ return requiredTables.every(name=>tables.some(table=>table.name===name));
+}
 async function main(){
  const command=process.argv[2]||'check';
  if(command==='init'){
@@ -32,13 +37,12 @@ async function main(){
   const columns=await db.query('PRAGMA table_info(shop_orders)');
   for(const name of ['payment_provider','payment_auth_cipher','payment_receipt_cipher','paid_at'])if(!columns.some(c=>c.name===name))await db.query('ALTER TABLE shop_orders ADD COLUMN '+name+(name==='paid_at'?' INTEGER':' TEXT'));
   await db.batch(indexes.map(sql=>({sql,params:[]})));
-  const tables=await db.query("SELECT name FROM sqlite_master WHERE type='table' AND name IN ('shop_orders','shop_order_events','shop_rate_limits','shop_documents')");
-  if(tables.length!==4)throw Error('Schema verification failed.');
-  process.stdout.write('Four private order tables verified. Orders remain gated by configuration.\n');return;
+  if(!await schemaVerified(db))throw Error('Schema verification failed.');
+  process.stdout.write('Eight private order, calendar and draft tables verified. Orders remain gated by configuration.\n');return;
  }
  if(command!=='check')throw Error('Use init, check or schema.');
  const result={configured:missing.length===0,missing,ordersEnabled:env.SHOP_ORDERS_ENABLED==='true',paymentMode:env.SHOP_PAYMENT_MODE||null,databaseVerified:false};
- if(['SHOP_CF_ACCOUNT_ID','SHOP_D1_DATABASE_ID','SHOP_D1_API_TOKEN'].every(k=>env[k])){const tables=await database(env).query("SELECT name FROM sqlite_master WHERE type='table' AND name IN ('shop_orders','shop_order_events','shop_rate_limits','shop_documents')");result.databaseVerified=tables.length===4;}
+ if(['SHOP_CF_ACCOUNT_ID','SHOP_D1_DATABASE_ID','SHOP_D1_API_TOKEN'].every(k=>env[k]))result.databaseVerified=await schemaVerified(database(env));
  result.paymentLiveVerified=env.SHOP_INICIS_LIVE_VERIFIED==='true';
  process.stdout.write(JSON.stringify(result)+'\n');
 }

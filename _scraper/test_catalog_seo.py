@@ -53,6 +53,20 @@ class CatalogSEO(unittest.TestCase):
             self.assertTrue(2 <= len(discovery['tags']) <= 7, product['id'])
             self.assertNotRegex(' '.join(discovery['tags']), r'검색량|검색순위')
 
+    def test_memory_rental_abbreviations_are_searchable_without_crossing_card_types(self):
+        brand = {'name': 'SONY', 'aliases': ['소니']}
+        for card_type in ['A', 'B']:
+            for name in [f'CFE-{card_type}타입 메모리카드 320GB 대여',
+                         f'CFexpress 4.0 Type {card_type} 카드',
+                         f'CF EXPRESS {card_type} TYPE 메모리카드']:
+                with self.subTest(name=name):
+                    result = product_discovery({'name': name, 'category_ids': [], 'kind': 'rental'}, brand, {})
+                    self.assertIn(f'CFexpress {card_type}', result['search_terms'])
+                    self.assertIn(f'CF익스프레스 {card_type}타입', result['search_terms'])
+                    self.assertNotIn(f'CFexpress {"B" if card_type == "A" else "A"}', result['search_terms'])
+        unrelated = product_discovery({'name': 'E-IMAGE TYPE A STAND', 'category_ids': [], 'kind': 'purchase'}, brand, {})
+        self.assertFalse(any('CFexpress' in term for term in unrelated['search_terms']))
+
     def test_home_website_identity_and_page_breadcrumb(self):
         title, desc = PAGE_METADATA['index.html']
         graph = self.schemas(page_structured_data('index.html', title, desc, SITE))[0]['@graph']

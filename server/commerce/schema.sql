@@ -70,3 +70,34 @@ CREATE TABLE IF NOT EXISTS shop_calendar_health (
   id TEXT PRIMARY KEY, status TEXT NOT NULL CHECK(status IN ('connected','error')),
   checked_at INTEGER NOT NULL
 );
+CREATE TABLE IF NOT EXISTS shop_admin_drafts (
+  id TEXT PRIMARY KEY,
+  request_key TEXT NOT NULL,
+  request_fingerprint TEXT NOT NULL,
+  kind TEXT NOT NULL CHECK(kind IN ('purchase','rental')),
+  state TEXT NOT NULL CHECK(state IN ('draft','reviewed','voided')),
+  private_cipher TEXT NOT NULL,
+  lines_json TEXT NOT NULL,
+  subtotal INTEGER CHECK(subtotal IS NULL OR subtotal > 0),
+  shipping INTEGER NOT NULL CHECK(shipping >= 0),
+  total INTEGER CHECK(total IS NULL OR (total > 0 AND total <= 100000000)),
+  created_by TEXT NOT NULL,
+  updated_by TEXT NOT NULL,
+  created_at INTEGER NOT NULL,
+  updated_at INTEGER NOT NULL,
+  reviewed_at INTEGER,
+  version INTEGER NOT NULL DEFAULT 0 CHECK(version >= 0),
+  CHECK((subtotal IS NULL AND total IS NULL) OR (subtotal IS NOT NULL AND total IS NOT NULL AND total = subtotal + shipping)),
+  UNIQUE(created_by,request_key)
+);
+CREATE INDEX IF NOT EXISTS shop_admin_drafts_updated ON shop_admin_drafts(updated_at DESC,id DESC);
+CREATE INDEX IF NOT EXISTS shop_admin_drafts_state ON shop_admin_drafts(state,updated_at DESC);
+CREATE TABLE IF NOT EXISTS shop_admin_draft_events (
+  id TEXT PRIMARY KEY,
+  draft_id TEXT NOT NULL REFERENCES shop_admin_drafts(id),
+  actor TEXT NOT NULL,
+  action TEXT NOT NULL,
+  created_at INTEGER NOT NULL,
+  version INTEGER NOT NULL,
+  UNIQUE(draft_id,version)
+);

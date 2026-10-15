@@ -50,7 +50,7 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
  const cipher=protect(dataKey),returns=sessions(sessionKey,clock);
  const dto=(row,admin=false)=>{
   const stored=cipher.decrypt(row.customer_cipher),customer=Object.fromEntries(Object.entries(stored).filter(([key])=>!key.startsWith('_admin_'))),rental=customer.rental||null,history=fulfillment.shipments(row,stored);
-  return {id:row.id,kind:rental?'rental':'purchase',rental,state:row.state,payment_mode:row.payment_mode,lines:JSON.parse(row.lines_json),subtotal:row.subtotal,shipping:row.shipping,total:row.total,quote_version:row.quote_version,quote_expires:row.quote_expires,fulfillment:row.fulfillment,carrier:row.carrier,tracking:row.tracking,shipments:fulfillment.publicShipments(history),created_at:row.created_at,updated_at:row.updated_at,version:row.version,evidence_kind:customer.evidence?.kind||'card_receipt',...(admin?{customer,admin_note:stored._admin_note||null,admin_cancellation:stored._admin_cancellation||null,admin_cases:fulfillment.adminCases(stored._admin_cases||[],history)}:{})};
+  return {id:row.id,kind:rental?'rental':'purchase',rental,purchase_workflow:fulfillment.purchaseWorkflow(row,stored),state:row.state,payment_mode:row.payment_mode,lines:JSON.parse(row.lines_json),subtotal:row.subtotal,shipping:row.shipping,total:row.total,quote_version:row.quote_version,quote_expires:row.quote_expires,fulfillment:row.fulfillment,carrier:row.carrier,tracking:row.tracking,shipments:fulfillment.publicShipments(history),created_at:row.created_at,updated_at:row.updated_at,version:row.version,evidence_kind:customer.evidence?.kind||'card_receipt',...(admin?{customer,admin_note:stored._admin_note||null,admin_cancellation:stored._admin_cancellation||null,admin_cases:fulfillment.adminCases(stored._admin_cases||[],history)}:{})};
  };
  async function detailed(row,admin=false){
   const document=documents?await documents.get(row.id):null;
@@ -92,7 +92,13 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
   if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='inicis')throw new ShopError(409,'실결제가 확인된 최신 주문에서만 출고할 수 있습니다.');
   if((await applyPayment(row,await payment.get(row.payment_key),actor)).state!=='PAID')throw new ShopError(409,'결제 취소 또는 변경 상태를 확인해주세요.');
  }
- async function correctShipment(row,input,actor){
+ function rememberImport(customer,identity){
+  if(!identity)return;
+  const previous=customer._admin_imports||[];
+  if(previous.length>=500)throw new ShopError(409,'이 주문의 파일 처리 이력이 500건에 도달했습니다. 개별 처리 기능을 이용해주세요.');
+  customer._admin_imports=[...previous,{key:identity.key,fingerprint:identity.fingerprint,created_at:clock()}];
+ }
+ async function correctShipment(row,input,actor,identity){
   const customer=purchaseCustomer(row),history=fulfillment.shipments(row,customer),shipment=history.find(item=>item.id===input.shipment_id),shipping=fulfillment.tracking(input);
   if(!shipment)throw new ShopError(404,'수정할 출고 내역을 찾을 수 없습니다.');
   if(input.items!==undefined)throw new ShopError(400,'운송정보 수정으로 출고 품목이나 수량을 바꿀 수 없습니다.');
@@ -100,11 +106,56 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
   Object.assign(shipment,shipping,{updated_at:clock(),updated_by:actor});
   shipment.corrections=[...(shipment.corrections||[]),{...before,changed_at:clock(),actor}];
   customer._admin_shipments=history;
+  rememberImport(customer,identity);
   const lastOriginal=history.filter(item=>item.purpose==='original').at(-1);
   return detailed(await repo.patch(row,{customer_cipher:cipher.encrypt(customer),...(lastOriginal?.id===shipment.id?shipping:{})},actor,'order_tracking_updated'),true);
  }
  return {
   dto,invoiceEnabled,
+  async workflow(id,input,actor='owner'){
+   if(!['preparing','ready','delivered'].includes(input.stage))throw new ShopError(400,'상품 준비·배송 대기·배송 완료 중 처리 단계를 선택해주세요.');
+   const row=await editable(id,input),customer=purchaseCustomer(row),history=fulfillment.shipments(row,customer);
+   if(row.state!=='PAID'||row.payment_mode!=='live')throw new ShopError(409,'실결제 완료된 구매 주문에서만 배송 단계를 처리할 수 있습니다.');
+   if(input.stage==='delivered'){
+    if(row.fulfillment!=='shipped'||!history.length||fulfillment.originalRemaining(row,history).length)throw new ShopError(409,'주문 상품을 모두 출고한 뒤 배송 완료를 확인해주세요.');
+    if(history.filter(s=>s.purpose==='original').every(s=>s.delivered_at))throw new ShopError(409,'이미 배송 완료를 기록한 주문입니다.');
+    for(const shipment of history.filter(s=>s.purpose==='original')){shipment.delivered_at=shipment.delivered_at||clock();shipment.delivery_confirmed_by=actor;shipment.delivery_source='manual';}
+    customer._admin_shipments=history;
+   }else if(row.fulfillment!=='unfulfilled'||history.length)throw new ShopError(409,'출고 전 주문만 준비·대기 단계로 변경할 수 있습니다.');
+   if(input.stage!=='delivered'&&fulfillment.purchaseWorkflow(row,customer)?.stage===input.stage)throw new ShopError(409,'이미 같은 배송 단계입니다.');
+   customer._admin_purchase_workflow={stage:input.stage,updated_at:clock(),actor};
+   return detailed(await repo.patch(row,{customer_cipher:cipher.encrypt(customer)},actor,'purchase_'+input.stage),true);
+  },
+  async workflowBulk(input,actor='owner'){
+   if(!['preparing','ready','delivered'].includes(input.stage)||!Array.isArray(input.orders)||!input.orders.length||input.orders.length>25)throw new ShopError(400,'한 번에 1~25건의 배송 단계만 처리할 수 있습니다.');
+   const ids=new Set();for(const item of input.orders){if(!item||typeof item.id!=='string'||!/^NS-[a-zA-Z0-9_-]{1,40}$/.test(item.id)||!Number.isSafeInteger(item.version)||item.version<0||ids.has(item.id))throw new ShopError(400,'선택 주문번호·버전과 중복을 확인해주세요.');ids.add(item.id);}
+   const results=[];
+   for(const item of input.orders){try{results.push({id:item.id,ok:true,order:await this.workflow(item.id,{version:item.version,stage:input.stage},actor)});}catch(error){results.push({id:item.id,ok:false,status:error instanceof ShopError?error.status:503,error:error instanceof ShopError?error.message:'처리 결과를 다시 확인해주세요.'});}}
+   return {results,succeeded:results.filter(r=>r.ok).length,failed:results.filter(r=>!r.ok).length};
+  },
+  async previewInvoice(id,input,identity){
+   const row=await repo.get(id);if(!row)throw new ShopError(404,'주문을 찾을 수 없습니다.');
+   const customer=purchaseCustomer(row),previous=(customer._admin_imports||[]).find(item=>item.key===identity.key);
+   if(previous){if(previous.fingerprint!==identity.fingerprint)throw new ShopError(409,'동일 파일 작업의 내용이 달라졌습니다.');return {duplicate:true,items:input.items||[]};}
+   if(row.version!==input.version)throw new ShopError(409,'주문 버전이 변경되었습니다. 최신 주문으로 파일을 다시 확인해주세요.');
+   fulfillment.tracking(input);const history=fulfillment.shipments(row,customer);
+   if(input.operation==='update'){
+    if(!history.some(s=>s.id===input.shipment_id))throw new ShopError(404,'수정할 출고 내역을 찾을 수 없습니다.');
+    if(input.items!==undefined)throw new ShopError(400,'운송정보 수정은 상품 수량을 바꿀 수 없습니다.');
+    return {duplicate:false,items:[]};
+   }
+   if(input.operation!=='ship')throw new ShopError(400,'출고 또는 운송정보 수정 작업을 선택해주세요.');
+   if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='inicis')throw new ShopError(409,'실결제 완료된 구매 주문만 출고할 수 있습니다.');
+   if(row.fulfillment==='processing'&&!history.length)throw new ShopError(409,'기존 부분 출고의 품목 수량을 먼저 확인해주세요.');
+   return {duplicate:false,items:fulfillment.selectItems(input.items,fulfillment.originalRemaining(row,history),{optional:true})};
+  },
+  async importInvoice(id,input,actor,identity){
+   const check=await this.previewInvoice(id,input,identity);
+   if(check.duplicate)return {duplicate:true,order:await this.adminGet(id)};
+   const next={...input,...(input.operation==='ship'?{items:check.items}:{})};
+   const order=input.operation==='ship'?await this.ship(id,next,actor,identity):await correctShipment(await editable(id,next),next,actor,identity);
+   return {duplicate:false,order};
+  },
   async pickup(id,input,actor='owner'){return rentalMove(id,input,false,actor);},
   async rentalReturn(id,input,actor='owner'){return rentalMove(id,input,true,actor);},
   async saveNote(id,input,actor='owner'){
@@ -251,7 +302,7 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
    }
    throw new ShopError(503,'이니시스 관리자에서 결제 결과를 확인해야 합니다.');
   },
-  async ship(id,input,actor='owner'){
+  async ship(id,input,actor='owner',identity=null){
    const row=await editable(id,input),customer=purchaseCustomer(row),history=fulfillment.shipments(row,customer);
    // Preserve the legacy completed-order tracking edit without creating another
    // shipment. New history must always identify the shipment being corrected.
@@ -261,7 +312,7 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
    const remaining=fulfillment.originalRemaining(row,history);if(!remaining.length)throw new ShopError(409,'이미 전량 출고되었습니다. 출고 내역에서 운송정보를 수정해주세요.');
    const items=fulfillment.selectItems(input.items,remaining,{optional:true}),shipping=fulfillment.tracking(input);
    await verifiedForShipping(row,actor);
-   history.push({id:'SH-'+uuid(),purpose:'original',items,...shipping,created_at:clock(),updated_at:clock(),actor,updated_by:actor});customer._admin_shipments=history;
+   history.push({id:'SH-'+uuid(),purpose:'original',items,...shipping,created_at:clock(),updated_at:clock(),actor,updated_by:actor});customer._admin_shipments=history;rememberImport(customer,identity);
    const complete=fulfillment.originalRemaining(row,history).length===0;
    return detailed(await repo.patch(row,{fulfillment:complete?'shipped':'processing',...shipping,customer_cipher:cipher.encrypt(customer)},actor,complete?'order_shipped':'order_partially_shipped'),true);
   }

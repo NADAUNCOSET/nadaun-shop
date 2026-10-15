@@ -1402,6 +1402,30 @@
       "reviewed_at": "2026-10-14",
       "live_title_verified": false,
       "source_checked_at": "2026-10-14T04:49:25+00:00"
+    },
+    "smartstore-13812459279": {
+      "expected_name": "[ 대여 레인보우베네 ] CFE-A타입 메모리카드 320GB 대여",
+      "expected_brand": "Sony",
+      "brand": "Lexar",
+      "evidence": [
+        "https://smartstore.naver.com/rainbowbene/products/13812459279",
+        "https://shop-phinf.pstatic.net/20261015_281/179204835817900v73_PNG/126181260329504412_54721336.png"
+      ],
+      "reason": "원본 대표 이미지의 브랜드 표기를 직접 확인하여 공통 Sony 메타데이터 오류 정정",
+      "reviewed_at": "2026-10-15",
+      "source_image_verified": true
+    },
+    "smartstore-13812461548": {
+      "expected_name": "[ 대여 레인보우베네 ] CFE-A타입 메모리카드 512GB 대여",
+      "expected_brand": "Sony",
+      "brand": "HOMAN",
+      "evidence": [
+        "https://smartstore.naver.com/rainbowbene/products/13812461548",
+        "https://shop-phinf.pstatic.net/20261015_175/1792048428843GsVlY_PNG/18917634694914534_1881961725.png"
+      ],
+      "reason": "원본 대표 이미지의 브랜드 표기를 직접 확인하여 공통 Sony 메타데이터 오류 정정",
+      "reviewed_at": "2026-10-15",
+      "source_image_verified": true
     }
   }
 }

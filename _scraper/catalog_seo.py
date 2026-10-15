@@ -82,6 +82,17 @@ TOPICS = [
 ]
 
 
+def storage_search_terms(name):
+    """Connect source abbreviations to customer queries without mixing A/B cards."""
+    match = re.search(r'(?:\bCFE|\bCF\s*EXPRESS|CF\s*익스프레스)(?:\s*[24]\.0)?\s*[- ]?\s*(?:TYPE\s*)?([AB])(?:\s*타입|\b)', name, re.I)
+    if not match:
+        return []
+    card_type = match[1].upper()
+    return [f'CFexpress Type {card_type}', f'CFexpress {card_type}',
+            f'CFE-{card_type}', f'CF익스프레스 {card_type}타입',
+            f'씨에프익스프레스 {card_type}']
+
+
 def product_discovery(product, brand, categories):
     rows = [categories[c] for c in product['category_ids'] if c in categories]
     parent_ids = {c['parent_id'] for c in rows}
@@ -92,6 +103,7 @@ def product_discovery(product, brand, categories):
     action = '장비 렌탈' if product['kind'] == 'rental' else '제품 구매'
     tags = list(dict.fromkeys([brand['name'], action, *topics]))[:7]
     terms = list(dict.fromkeys([*tags, *leaves, *brand['aliases'],
+                               *storage_search_terms(product['name']),
                                *(['촬영장비 대여', '장비 대여'] if product['kind'] == 'rental' else [])]))
     if product.get('release_status') == 'coming_soon':
         terms.extend(['출시 예정', '가격 미공개'])
