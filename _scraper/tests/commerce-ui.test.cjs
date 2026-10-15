@@ -94,3 +94,8 @@ test('customer shipment summary exposes shipment facts without internal claim re
  const r=runtime(),o={kind:'purchase',shipments:[{id:'s1',purpose:'original',carrier:'로젠',tracking:'12345678',items:[{id:'a',name:'Camera',quantity:1}],actor:'internal-actor'}],admin_cases:[{reason:'private-case-reason'}]};
  const html=r.context.customerShipments(o);assert.match(html,/12345678/);assert.match(html,/Camera 1개/);assert.doesNotMatch(html,/internal-actor|private-case-reason/);
 });
+
+test('shipped orders retain returns and tracking correction after PG cancellation without enabling new shipments',()=>{
+ const r=runtime(),base={kind:'purchase',payment_mode:'live',fulfillment:'processing',lines:[{id:'p',name:'상품',option:'',quantity:2}],shipments:[{id:'s',purpose:'original',items:[{id:'p',name:'상품',option:'',quantity:1}],carrier:'택배',tracking:'1234567'}]};
+ for(const state of ['PAID','PAYMENT_REVIEW','CANCELED']){const html=r.context.adminShipping({...base,state});assert.match(html,/data-case-create=/);assert.match(html,/data-shipment-update=/);if(state!=='PAID')assert.doesNotMatch(html,/data-shipment-create/);}
+});
