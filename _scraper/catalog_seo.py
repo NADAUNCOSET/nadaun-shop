@@ -48,6 +48,10 @@ def page_structured_data(filename, title, description, canonical, *, brand=False
             'isPartOf': {'@id': SITE+'#website'}}
     graph = [page]
     if filename == 'index.html':
+        page['about']={'@id': SITE+'#store'}
+        page['relatedLink']=['https://collective.nadaun.co/', 'https://photo.nadaun.co/',
+                             'https://video.nadaun.co/', 'https://smartstore.naver.com/rainbowbene',
+                             SITE+'services-guide.html']
         graph.append({'@type': 'WebSite', '@id': SITE+'#website', 'url': SITE,
                       'name': '나다운 스페이스', 'alternateName': ['나다운 샵', 'NADAUN SPACE', 'NADAUN SHOP'],
                       'inLanguage': 'ko-KR', 'publisher': {'@id': SITE+'#store'}})
