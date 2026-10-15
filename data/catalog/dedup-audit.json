@@ -94268,6 +94268,26 @@
       "evidence": [
         "https://ldnet.co.kr/product/detail.html?product_no=4868"
       ]
+    },
+    {
+      "id": "saeki-PD00041928",
+      "before": "GR IIIx 프로 패키지",
+      "after": "GR IIIx 프로 액세서리 패키지 (카메라 미포함)",
+      "hidden": false,
+      "reason": "세기 원본 구성품 확인: 카메라가 없는 액세서리 패키지를 본체와 구분",
+      "evidence": [
+        "https://www.saeki.co.kr/item/itemDetail?itemId=PD00041928"
+      ]
+    },
+    {
+      "id": "saeki-PD00041927",
+      "before": "GR IIIx 망원 렌즈 패키지",
+      "after": "GR IIIx GT-2 망원 컨버터·GA-2 어댑터 패키지 (카메라 미포함)",
+      "hidden": false,
+      "reason": "세기 원본 구성품 확인: 카메라가 없는 액세서리 패키지를 본체와 구분",
+      "evidence": [
+        "https://www.saeki.co.kr/item/itemDetail?itemId=PD00041927"
+      ]
     }
   ],
   "option_families": [
