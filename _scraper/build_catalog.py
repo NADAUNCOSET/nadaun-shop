@@ -316,6 +316,8 @@ def build(allow_pending=False):
     for pid,override in config.get('products',{}).items():
         p=products.get(redirects.get(pid,pid))
         if p:
+            if override.get('expected_name') and p['name']!=override['expected_name']:
+                raise ValueError('Owner override product identity changed; review before publication: '+pid)
             for key in ('name','price','sale_price','hidden','category_ids','type_ids','status','shipping_class'):
                 if key in override:
                     p[key]=deepcopy(override[key])

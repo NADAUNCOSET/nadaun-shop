@@ -115,6 +115,22 @@ class SaekiTests(unittest.TestCase):
   _,audit=build_taxonomy([row],categories,saeki_products={source['id']:source})
   self.assertIn('type:kpp:0320',row['type_ids'])
   self.assertEqual(audit['assignments'][0]['reason'],'saeki-source-category-and-purpose')
+ def test_merged_primary_keeps_saeki_category_evidence(self):
+  from product_taxonomy import build_taxonomy
+  root=Path(__file__).resolve().parents[1]
+  catalog=json.loads((root/'data/catalog/catalog.json').read_text())
+  categories={c['id']:c for c in catalog['categories']if c.get('scope')not in ('product','rental-product','rental-brand')}
+  row={'id':'smartstore-merged','name':'CANON EOS RP (BODY)','brand_id':'canon','kind':'purchase',
+       'type_ids':[],'category_ids':[],'offers':[{'id':'saeki-camera','source':'saeki'}]}
+  source={'id':'saeki-camera','name':row['name'],'source_category_ids':['100001','100020','100101']}
+  build_taxonomy([row],categories,saeki_products={'saeki-camera':source})
+  self.assertIn('type:mirrorless',row['type_ids'])
+ def test_monitor_accessories_and_optical_finders_are_not_monitors(self):
+  for name,target in [('하이퍼씬 MICRO HDMI TO HDMI 케이블 (3M)','hdmi-cable'),
+      ('SMALLHD Micro Battery Plate for Ultra Series 12V (V-MOUNT)','power-parts'),
+      ('RICOH GV-3 외장 미니 뷰파인더','optical-viewfinder'),
+      ('LCD VIEWFINDER LVF-11','optical-viewfinder')]:
+   with self.subTest(name=name):self.assertEqual(product_types({'name':name,'source_category_ids':['100006','100055']}),[target])
  def test_distinct_source_skus_are_never_merged_by_model_number(self):
   from catalog_dedup import conflict
   a={'id':'saeki-PD1','source_id':'PD1','source':'saeki','brand_id':'smallrig','kind':'purchase','name':'1234 adapter'}

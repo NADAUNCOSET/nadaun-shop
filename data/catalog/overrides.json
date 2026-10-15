@@ -1,5 +1,42 @@
 {
-  "products": {},
+  "products": {
+    "smartstore-12837690697": {
+      "expected_name": "GR4",
+      "price": 2600000,
+      "sale_price": 2600000,
+      "reason": "대표 지시: 동일 GR 모델의 나다운 스페이스 판매가 적용. 다른 구성과 액세서리는 제외.",
+      "reference_product_id": "smartstore-12837690697",
+      "reference_url": "https://smartstore.naver.com/rainbowbene/products/12837690697",
+      "reference_checked_at": "2026-10-15T18:54:33+00:00"
+    },
+    "saeki-PD00041564": {
+      "expected_name": "RICOH GR IV",
+      "price": 2600000,
+      "sale_price": 2600000,
+      "reason": "대표 지시: 동일 GR 모델의 나다운 스페이스 판매가 적용. 다른 구성과 액세서리는 제외.",
+      "reference_product_id": "smartstore-12837690697",
+      "reference_url": "https://smartstore.naver.com/rainbowbene/products/12837690697",
+      "reference_checked_at": "2026-10-15T18:54:33+00:00"
+    },
+    "smartstore-13452266335": {
+      "expected_name": "GR4 HDF",
+      "price": 2800000,
+      "sale_price": 2800000,
+      "reason": "대표 지시: 동일 GR 모델의 나다운 스페이스 판매가 적용. 다른 구성과 액세서리는 제외.",
+      "reference_product_id": "smartstore-13452266335",
+      "reference_url": "https://smartstore.naver.com/rainbowbene/products/13452266335",
+      "reference_checked_at": "2026-10-15T18:54:33+00:00"
+    },
+    "saeki-PD00042145": {
+      "expected_name": "RICOH GR IV HDF",
+      "price": 2800000,
+      "sale_price": 2800000,
+      "reason": "대표 지시: 동일 GR 모델의 나다운 스페이스 판매가 적용. 다른 구성과 액세서리는 제외.",
+      "reference_product_id": "smartstore-13452266335",
+      "reference_url": "https://smartstore.naver.com/rainbowbene/products/13452266335",
+      "reference_checked_at": "2026-10-15T18:54:33+00:00"
+    }
+  },
   "brand_order": [
     "dji",
     "smallrig",
@@ -49,6 +86,13 @@
     ],
     "plthink-1927658": [
       "fog-machine"
+    ],
+    "saeki-PD00041928": [
+      "optical-viewfinder",
+      "flash"
+    ],
+    "saeki-PD00041927": [
+      "kpp:0330"
     ]
   },
   "category_label_overrides": {

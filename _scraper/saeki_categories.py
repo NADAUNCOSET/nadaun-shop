@@ -24,7 +24,7 @@ GROUPS={
  'light-stand':'100199','light-grip':'100200 100203 100208 100209','kpp:06':'100201',
  'background':'100204 100205 100206','kpp:0640':'100218','camera-rig':'100220',
  'kpp:06b0':'100221','jib':'100222','kpp:c040':'100223','switcher':'100279',
- 'monitor':'100055 100112','kpp:0730':'100270','kpp:0740':'100271','kpp:0750':'100269',
+ 'monitor':'100055','optical-viewfinder':'100112','kpp:0730':'100270','kpp:0740':'100271','kpp:0750':'100269',
  'sd-card':'100115 100258','cf-card':'100259 100260','binoculars':'100231 100256','scope':'100232','kpp:0040':'100233',
  'print':'100263','film':'100234 100235','photo-paper':'100236','photo-chemicals':'100237',
  'darkroom':'100238 100239 100240 100241 100242 100243 100245 100246 100290 100250',
@@ -55,6 +55,14 @@ def product_types(p):
  if '100050'in ids and leaf!='100265':return ['kpp:04']
  # Concrete accessory nouns override coarse device source categories.
  overrides=[
+  ('optical-viewfinder',r'^(?:RICOH\s+)?GV-[123]\b|^LCD VIEWFINDER LVF-11\b|울란지 VF01'),
+  ('power-parts',r'battery\s*plate'),
+  ('hdmi-cable',r'HDMI.*(?:cable|케이블)'),
+  ('sdi-cable',r'(?:SDI|BNC).*(?:cable|케이블)'),
+  ('rig-arms',r'friction\s*arm'),
+  ('light-grip',r'\bAUTOPOLE\b'),
+  ('kpp:0140',r'VIDEO QUICK RELEASE ADAPTER'),
+  ('kpp:0340',r'\bHOT\s*SHOE\s*COVER\b|핫슈\s*커버'),
   ('kpp:0340',r'body cap|ring cap|링캡'),('kpp:0650',r'hand grip|cogrip|엄지그립'),
   ('monitor-parts',r'eye\s*cup'),('power-parts',r'AC ADAPT[EO]R|DC CONNECTOR|DC 커플러'),
   ('chargers',r'충전스테이션|charging hub'),('camera-battery',r'충전지|^D-LI\d+|^DB-110$'),
@@ -73,6 +81,14 @@ def product_types(p):
  ]
  for target,pattern in overrides:
   if re.search(pattern,name,re.I):return [target]
+ if brand=='joby':
+  if re.search(r'Wavo.*(?:Lav|라발리에)',name,re.I) and leaf=='100271':return ['wired-mic']
+  if re.search(r'Wavo.*Windjammer|Wavo.*마운팅|Wavo.*Mounting',name,re.I):return ['kpp:0740']
+  if re.search(r'Beamo.*Cold Shoe|Cold Shoe PRO',name,re.I):return ['rig-mounts']
+ if brand=='blackmagic':
+  if re.search(r'Ultimatte|MultiView',name,re.I):return ['switcher']
+  if re.search(r'Cloud Pod',name,re.I):return ['ssd']
+  if re.search(r'(?:Zoom|Focus) Demand',name,re.I):return ['remote']
  selected=MAPPING.get(leaf)
  if selected in {'mirrorless','dslr','compact-camera','cinema-camera','camcorder'}:
   accessory=camera_accessory_type(name,p.get('brand_id',''))

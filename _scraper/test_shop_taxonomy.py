@@ -235,3 +235,13 @@ class ShopTaxonomy(unittest.TestCase):
     def test_invalid_review_override_fails_instead_of_losing_items(self):
         p=dict(id='fixture',name='unknown',brand_id='test',kind='purchase',type_ids=[],category_ids=[])
         with self.assertRaises(ValueError):build_taxonomy([p],self.source_categories,{'fixture':['missing-category']})
+
+    def test_ricoh_camera_kits_and_compatible_accessories_are_distinct(self):
+        from product_taxonomy import reviewed_device_type
+        for name in ['GR3x HDF','RICOH GR IV HDF',
+                     '[RICOH] 리코 GR IV GR4 카메라 외장 플래시 세트',
+                     '[RICOH] 리코 GR IIIx GR3x 카메라 배터리 세트']:
+            self.assertEqual(reviewed_device_type(name,'ricoh',[]),'compact-camera',name)
+        for name in ['GR IIIx 프로 패키지','RICOH GR IV 배터리','GR IIIx 망원 렌즈 패키지',
+                     '[RICOH] 리코 DB-120 배터리 GR IV GR4 카메라 전용']:
+            self.assertIsNone(reviewed_device_type(name,'ricoh',[]),name)

@@ -10,7 +10,7 @@ from collections import Counter
 
 # New leaves supplement the KPP groups; their names describe product types.
 EXTRA = [
- ('monitor-parts','kpp:h0','모니터·뷰파인더 액세서리'),('video-rack','kpp:h0','영상 장비 랙·설치 부품'),
+ ('monitor-parts','kpp:h0','모니터·뷰파인더 액세서리'),('optical-viewfinder','kpp:09','광학 뷰파인더·확대경'),('video-rack','kpp:h0','영상 장비 랙·설치 부품'),
  ('camera-cooling','kpp:09','카메라 냉각 액세서리'),('camera-rig','kpp:06','카메라 지지대·리그'),
  ('robot-vacuum',None,'로봇 청소기'),('robot-vacuum-body','robot-vacuum','로봇 청소기 본체'),('robot-vacuum-parts','robot-vacuum','로봇 청소기 소모품·액세서리'),
  ('mini-light','kpp:0710','미니 라이트'),('mat-light','kpp:0710','매트 라이트'),('car-mount','kpp:06','카마운팅'),('light-power','kpp:0720','조명 케이블·전원'),('light-bag','kpp:0720','조명 가방·케이스'),
@@ -148,6 +148,15 @@ def camera_accessory_type(name,brand):
 
 
 def reviewed_device_type(name, brand, selected):
+    if brand=='ricoh':
+        # Only complete body/kit titles qualify. Compatible GR batteries,
+        # grips, caps and the accessory-only Pro package do not match.
+        body=re.sub(r'^\[[^\]]+\]\s*','',name)
+        body=re.sub(r'^(?:(?:RICOH|리코)\s+)+','',body,flags=re.I)
+        if re.fullmatch(r'GR\s*(?:IIIx?|IV|3x?|4)(?:\s+GR\s*(?:3x?|4))?'
+            r'(?:\s*(?:HDF|모노크롬|Monochrome|어반\s*에디션|Urban(?:\s*Edition)?|'
+            r'30th\s*Anniversary\s*Edition\s*Kit|하이엔드|디지털|카메라|흑백전용|'
+            r'외장\s*플래시\s*세트|배터리\s*세트))*',body,re.I):return 'compact-camera'
     """Separate device accessories from the compatible models in their names.
 
     Constrain corrections to the affected device groups. Body bundles, rental
@@ -295,9 +304,15 @@ def build_taxonomy(products,categories,overrides=None,ldnet_categories=None,saek
         supplied = list(dict.fromkeys(ldnet_types[c] for c in p['category_ids'] if c in ldnet_types))
         reason='kpp-membership' if native else 'ldnet-source-category' if supplied else 'supplier-category' if mounted else ''
         selected=native or supplied or mounted
-        if not selected and p['id'] in (saeki_products or {}):
+        # A verified merged offer still carries its source category evidence.
+        # The public primary ID can be Smartstore/Cinemall rather than Saeki.
+        saeki_matches=[saeki_products[o['id']] for o in p.get('offers',[])
+                       if o.get('source')=='saeki' and o.get('id') in (saeki_products or {})]
+        saeki_source=(saeki_products or {}).get(p['id'])
+        if not saeki_source and len(saeki_matches)==1:saeki_source=saeki_matches[0]
+        if not selected and saeki_source:
             from saeki_categories import product_types
-            selected=['type:'+key for key in product_types({**saeki_products[p['id']],**p})];reason='saeki-source-category-and-purpose'
+            selected=['type:'+key for key in product_types({**saeki_source,**p})];reason='saeki-source-category-and-purpose'
         ldnet_only = bool(p.get('offers')) and all(o['source']=='ldnet' for o in p['offers'])
         if not selected and ldnet_only:
             from ldnet_identity import type_hint
