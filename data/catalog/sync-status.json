@@ -11,7 +11,7 @@
     "cinemall": 1209,
     "onnoff": 1067,
     "ldnet": 3075,
-    "avx": 1377
+    "avx": 1390
   },
   "detail_coverage": {
     "kpp": 4044,
@@ -24,18 +24,18 @@
     "cinemall": 1183,
     "onnoff": 1067,
     "ldnet": 3075,
-    "avx": 1377
+    "avx": 1390
   },
-  "synced_at": "2026-10-15T16:22:27+00:00",
-  "merged_count": 5128,
-  "product_count": 29496,
+  "synced_at": "2026-10-15T16:44:40+00:00",
+  "merged_count": 5127,
+  "product_count": 29510,
   "category_browsing_enabled": true,
-  "listing_count": 29224,
+  "listing_count": 29238,
   "option_family_count": 272,
   "deduplication": {
     "brands_checked": 410,
     "groups": 3209,
-    "removed": 5128
+    "removed": 5127
   },
-  "revision": "b468ed00d8fea420"
+  "revision": "5048ab3450af4475"
 }

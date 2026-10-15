@@ -223,7 +223,7 @@
       "cinemall": 1209,
       "onnoff": 1067,
       "ldnet": 3075,
-      "avx": 1377
+      "avx": 1390
     },
     "detail_coverage": {
       "kpp": 4044,
@@ -236,10 +236,10 @@
       "cinemall": 1183,
       "onnoff": 1067,
       "ldnet": 3075,
-      "avx": 1377
+      "avx": 1390
     },
-    "synced_at": "2026-10-15T16:22:27+00:00",
-    "merged_count": 5128,
+    "synced_at": "2026-10-15T16:44:40+00:00",
+    "merged_count": 5127,
     "product_count": 217,
     "category_browsing_enabled": true,
     "listing_count": 217,
@@ -247,9 +247,9 @@
     "deduplication": {
       "brands_checked": 410,
       "groups": 3209,
-      "removed": 5128
+      "removed": 5127
     },
-    "revision": "b468ed00d8fea420",
+    "revision": "5048ab3450af4475",
     "view": "rental"
   },
   "brands": [
@@ -4899,27 +4899,27 @@
       "logo_dark": false
     },
     {
-      "id": "blkbird",
-      "name": "BLKBIRD",
+      "id": "blkbrd",
+      "name": "BLKBRD",
       "aliases": [
-        "BLKBIRD"
+        "BLKBRD"
       ],
-      "logo": "https://www.avx.co.kr/data/goods/1/2025/11/2628_temp_17640618382861list1.jpg",
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/10/3182_temp_17920547701927list1.jpg",
       "navigation_category_ids": [
-        "avx:b:blkbird:reviewed:avx:b:c25160d99995060f",
-        "avx:b:blkbird:reviewed:avx:b:d9026aef907e41db"
+        "avx:b:83b36fdfa2f9f62f",
+        "avx:b:e8bed3a9fd985b07"
       ],
-      "count": 1,
-      "purchase_count": 1,
+      "count": 8,
+      "purchase_count": 8,
       "rental_count": 0,
       "category_ids": [
-        "avx:b:blkbird:reviewed:avx:b:c25160d99995060f",
-        "avx:b:blkbird:reviewed:avx:b:d9026aef907e41db"
+        "avx:b:e8bed3a9fd985b07",
+        "avx:b:83b36fdfa2f9f62f"
       ],
-      "representative_id": "avx-2628",
-      "representative_image": "https://www.avx.co.kr/data/goods/1/2025/11/2628_temp_17640618382861view.jpg",
-      "representative_name": "BLKBIRD MANTIS 블랙버드 멘티스",
-      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2025/11/2628_temp_17640618393522view.jpg",
+      "representative_id": "avx-3182",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/10/3182_temp_17920547701927view.jpg",
+      "representative_name": "BLKBRD MANTIS for Ready Rig Bundle 블랙버드 멘티스 레디리그 번들",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/10/3182_temp_17920547711219view.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -8108,15 +8108,15 @@
       "aliases": [
         "IGNITE DIGI"
       ],
-      "logo": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17919614529363list1.jpg",
+      "logo": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17920480269667list1.jpg",
       "navigation_category_ids": [
         "avx:b:1a7741b3cab38d90",
         "avx:b:44bb1a0feeee7550",
         "avx:b:5757990d9ad5fc99",
         "avx:b:6c5900d74bbc296b"
       ],
-      "count": 24,
-      "purchase_count": 24,
+      "count": 25,
+      "purchase_count": 25,
       "rental_count": 0,
       "category_ids": [
         "avx:b:44bb1a0feeee7550",
@@ -8124,10 +8124,10 @@
         "avx:b:1a7741b3cab38d90",
         "avx:b:6c5900d74bbc296b"
       ],
-      "representative_id": "avx-3167",
-      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17919613899241view.jpg",
-      "representative_name": "IGNITE DIGI 이그나이트 디지 Power Breakout 파워 브레이크아웃 2핀 레모 전원 분배기 1입력 3출력 Ignite Orange",
-      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17919613959086view.jpg",
+      "representative_id": "avx-3179",
+      "representative_image": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17920480269667view.jpg",
+      "representative_name": "IGNITE DIGI 이그나이트 디지 CANBUSTER 캔버스터 for NODO Inertia Wheels",
+      "representative_alternate": "https://www.avx.co.kr/data/goods/1/2026/10/_temp_17920480501437view.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -10559,8 +10559,8 @@
         "plthink:b:075:003",
         "plthink:b:075:004"
       ],
-      "count": 127,
-      "purchase_count": 127,
+      "count": 133,
+      "purchase_count": 133,
       "rental_count": 0,
       "category_ids": [
         "naver:b:movmax:50000206",
@@ -10577,14 +10577,14 @@
         "cinemall:b:244",
         "cinemall:b:224",
         "avx:b:74adb2969fca5590",
+        "avx:b:dfa63cd290f30587",
         "avx:b:a65fc96d4cf5648d",
         "avx:b:4f82eee3f5b7268b",
         "avx:b:2dec069096181afb",
         "avx:b:0b10823a523342c8",
         "avx:b:06f382d2a5c9a0eb",
         "avx:b:90a22c5833113dec",
-        "avx:b:39240e877532212f",
-        "avx:b:dfa63cd290f30587"
+        "avx:b:39240e877532212f"
       ],
       "representative_id": "smartstore-10190364169",
       "representative_image": "https://shop-phinf.pstatic.net/20240410_279/1712738158229pFpaV_JPEG/113874046944382268_1949880875.jpg",
@@ -36527,7 +36527,6 @@
     "avx-1845": "smartstore-11952871704",
     "cinemall-2133": "smartstore-11952871704",
     "avx-1846": "smartstore-11952874954",
-    "avx-3079": "kpp-1737440391",
     "avx-1849": "kpp-1737440391",
     "avx-1871": "plthink-1930029",
     "clmedia-2987": "plthink-1930029",
