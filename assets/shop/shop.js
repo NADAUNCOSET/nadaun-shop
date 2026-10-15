@@ -1,4 +1,5 @@
 import './rental-content.js';
+import './product-search.js';
 import {isDiscounted,isPromotion,matchesBenefit,benefitNavigation,categoryTrail,categoryControls,catalogSelection,productTypeNavigation,brandSelectionHref} from './catalog-tools.js';
 import {mountPurchase,renderCart,rentalGuide} from './cart.js';
 import {mountBanners} from './banners.js';
@@ -71,8 +72,8 @@ function renderCatalog(){
  const nested=(c,depth=0)=>{const children=applicable.filter(x=>x.parent_id===c.id&&relevant(x));return children.length?`<details ${cat===c.id||isAncestor(c.id,cat)?'open':''}><summary>${esc(c.name)}</summary><div>${catLink(c,depth)}${children.map(x=>nested(x,depth+1)).join('')}</div></details>`:catLink(c,depth)};
  const rootOptions=applicable.filter(relevant).map(c=>`<option value="${esc(c.id)}" ${cat===c.id?'selected':''}>${'　'.repeat(Math.max(0,categoryTrail(categoryMap,c.id).length-1))}${esc(c.name)} (${categoryCounts.get(c.id)||0})</option>`).join('');
  const query=params.get('q')||'';document.querySelector('#search-input').value=query;
- const tokens=query.split(/[\s,，]+/).map(normalize).filter(Boolean);
- let filtered=selection.rows.filter(p=>(!params.has('available')||(p.status!=='soldout'&&p.release_status!=='coming_soon'))&&tokens.every(t=>normalize(p.name+' '+(brandMap.get(p.brand_id)?.name||'')+' '+(p.discovery?.search_terms||[]).join(' ')).includes(t)));
+ const tokens=globalThis.NadaunProductSearch.tokens(query);
+ let filtered=selection.rows.filter(p=>(!params.has('available')||(p.status!=='soldout'&&p.release_status!=='coming_soon'))&&tokens.every(t=>globalThis.NadaunProductSearch.normalize(p.name+' '+(brandMap.get(p.brand_id)?.name||'')+' '+(p.discovery?.search_terms||[]).join(' ')).includes(t)));
  const sort=params.get('sort')||'default';
  if(sort==='low'||sort==='high')filtered.sort((a,b)=>{const av=money(a),bv=money(b);if(av===null)return 1;if(bv===null)return-1;return sort==='low'?av-bv:bv-av});
  else if(sort==='name')filtered.sort((a,b)=>a.name.localeCompare(b.name,'ko'));

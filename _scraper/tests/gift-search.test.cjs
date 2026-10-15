@@ -88,3 +88,21 @@ test('gift availability and choices are confirmed through consultation',()=>{
   assert(!d.schema.offers);
  }
 });
+
+
+test('CFexpress aliases keep A/B types separate in unified and browser search',()=>{
+ const matching=require('../../assets/shop/product-search.js');
+ const catalog=JSON.parse(fs.readFileSync('data/catalog/catalog.json','utf8'));
+ for(const [type,count] of [['A',3],['B',4]]){
+  for(const query of [`CFexpress ${type}`,`CFE-${type}`,`CFexpress Type ${type}`,`CF익스프레스 ${type}타입`]){
+   const rows=search.results(query).filter(p=>p.kind==='rental');
+   assert.equal(rows.length,count,query);
+   assert(rows.every(p=>p.name.includes(`CFE-${type}타입`)),query);
+   const tokens=matching.tokens(query);
+   const local=catalog.products.filter(p=>p.kind==='rental'&&tokens.every(t=>matching.normalize(p.name+' '+p.discovery.search_terms.join(' ')).includes(t)));
+   assert.deepEqual(local.map(p=>p.id).sort(),rows.map(p=>p.id).sort());
+  }
+ }
+ assert.deepEqual(matching.tokens('CFexpress A 320GB'),['cfexpressa','320gb']);
+ assert.equal(search.results('CFexpress A 320GB').filter(p=>p.kind==='rental').length,1);
+});
