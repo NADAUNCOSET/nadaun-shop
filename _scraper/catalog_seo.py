@@ -5,6 +5,8 @@ terms on the rental/studio service pages rather than every purchase product.
 """
 import json
 import re
+import xml.etree.ElementTree as ET
+import html
 
 SITE = 'https://shop.nadaun.co/'
 PAGE_METADATA = {
@@ -118,3 +120,21 @@ def product_discovery(product, brand, categories):
         suffix = ' 구매 안내. 나다운 스페이스에서 옵션·재고·납기 상담.'
     return {'tags': tags, 'search_terms': terms, 'categories': leaves,
             'description': product['name'][:80-len(suffix)] + suffix}
+
+
+def root_sitemap(gift_index):
+    """A single submission covers equipment and all gift shards, without nesting indexes."""
+    namespace = '{http://www.sitemaps.org/schemas/sitemap/0.9}'
+    root = ET.fromstring(gift_index)
+    if root.tag != namespace+'sitemapindex':
+        raise ValueError('Gift sitemap index expected')
+    parts = [node.text for node in root.iter(namespace+'loc')]
+    if not parts or len(parts) != len(set(parts)) or any(
+            not re.fullmatch(r'https://shop\.nadaun\.co/gift-sitemap-[1-9][0-9]*\.xml', value or '')
+            for value in parts):
+        raise ValueError('Gift sitemap shard URL is not canonical')
+    maps = [SITE+'catalog-sitemap.xml', *parts]
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+
+            ''.join('<sitemap><loc>'+html.escape(url)+'</loc></sitemap>' for url in maps)+
+            '</sitemapindex>\n')

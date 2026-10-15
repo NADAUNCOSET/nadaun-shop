@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
 from bs4 import BeautifulSoup
-from catalog_seo import PAGE_METADATA, SITE, page_metadata, page_structured_data, product_discovery
+from catalog_seo import PAGE_METADATA, SITE, page_metadata, page_structured_data, product_discovery, root_sitemap
 
 ROOT = Path(__file__).resolve().parents[1]
 TEMPLATES = ROOT / '_scraper/shop_templates'
@@ -123,6 +123,23 @@ class CatalogSEO(unittest.TestCase):
         guide = (TEMPLATES / 'services.html').read_text()
         self.assertNotIn('선택하면 나다운기프트로 연결됩니다', guide)
         self.assertIn('최종 가격은 상담으로 확정', guide)
+
+    def test_one_root_sitemap_covers_equipment_and_gift_shards_without_nested_indexes(self):
+        import xml.etree.ElementTree as ET
+        ns = '{http://www.sitemaps.org/schemas/sitemap/0.9}'
+        source = '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>https://shop.nadaun.co/gift-sitemap-1.xml</loc></sitemap><sitemap><loc>https://shop.nadaun.co/gift-sitemap-2.xml</loc></sitemap></sitemapindex>'
+        root = ET.fromstring(root_sitemap(source))
+        self.assertEqual(root.tag, ns+'sitemapindex')
+        self.assertEqual([node.text for node in root.iter(ns+'loc')], [SITE+'catalog-sitemap.xml', SITE+'gift-sitemap-1.xml', SITE+'gift-sitemap-2.xml'])
+        for invalid in [source.replace('shop.nadaun.co', 'other.invalid'), source.replace('gift-sitemap-1.xml','gift-sitemap.xml'), source.replace('gift-sitemap-2.xml','gift-sitemap-1.xml')]:
+            with self.assertRaises(ValueError):root_sitemap(invalid)
+
+    def test_merchant_home_verification_is_in_the_source_head_and_survives_rebuilds(self):
+        page = BeautifulSoup((TEMPLATES/'page.html').read_text(), 'html.parser')
+        for name in ['google-site-verification', 'naver-site-verification']:
+            tags = page.head.select('meta[name="'+name+'"]')
+            self.assertEqual(len(tags), 1)
+            self.assertTrue(tags[0]['content'])
 
     @staticmethod
     def schemas(html):
