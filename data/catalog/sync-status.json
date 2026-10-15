@@ -5,6 +5,7 @@
     "smartstore": 6877,
     "l-mount": 345,
     "plthink": 6653,
+    "saeki": 7452,
     "dji-official": 930,
     "clmedia": 2242,
     "cinemall": 1209,
@@ -17,6 +18,7 @@
     "smartstore": 6791,
     "l-mount": 345,
     "plthink": 6253,
+    "saeki": 7437,
     "dji-official": 925,
     "clmedia": 2146,
     "cinemall": 1183,
@@ -25,15 +27,15 @@
     "avx": 1377
   },
   "synced_at": "2026-10-14T23:42:38+00:00",
-  "merged_count": 4610,
-  "product_count": 22576,
+  "merged_count": 5128,
+  "product_count": 29495,
   "category_browsing_enabled": true,
-  "listing_count": 22396,
-  "option_family_count": 180,
+  "listing_count": 29223,
+  "option_family_count": 272,
   "deduplication": {
-    "brands_checked": 361,
-    "groups": 2799,
-    "removed": 4610
+    "brands_checked": 413,
+    "groups": 3210,
+    "removed": 5128
   },
-  "revision": "e44f3abca3cfe7b9"
+  "revision": "fd7494b71810bf12"
 }
