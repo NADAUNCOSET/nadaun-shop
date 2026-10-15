@@ -1104,3 +1104,14 @@ HOMAN CFexpress Type A256GB 렌탈20,000원을네이버공식API로생성/재조
 실제로그인된아임웹에서CJ·로젠승인계약과계약번호/출고지를확인하고비공개보존,기본로젠. 신규택배승인을받아야한다는단정대신기존계약을사용할Sellers계정/API/서비스연결확인이남은상태다. 자사몰굿스플로enabled=false/configured=false,실송장발급·프린터검수미완료. 외부계약변경/유료플랜가입/고객주문변경0건.
 
 근거: `_private/catalog/homan256-toss-20261015/`의release.json/live-proof.json/catalog-preservation.json/registration-receipt.json/pg-settings-receipt.json/live-product.png/live-toss.png. 상세원문 `_scraper/references/toss-homan256-20261015.md`, 현재설정안내TOSS-SETUP.md. Mac자동기록complete/errors[]/1850files와installation존재확인. 다른PC실행미검증.
+
+
+### 2026-10-15 23:06 KST — 네이버 렌탈 메모리 전시 누락 수정
+
+대표가 “렌탈 메모리 카테고리에 잘 넣어놨어?”, “스토어는 확인잘해야지”라고 지적하고 실제 카테고리 URL을 지정했다. 재조회 결과 자사몰 rent:146에는 정상 포함되어 있었으나 네이버의 `렌탈서비스 → 카메라 → 메모리` 전시 메뉴에는 기존 9개만 있었고 신규 HOMAN 256GB는 누락되어 있었다. 상품 등록 성공/SALE·ON 확인과 스토어 메뉴 연결은 별개이며 앞선 완료 보고에서 메뉴 확인을 빠뜨린 점을 정정한다.
+
+현재 로그인된 네이버 아이디의 간편 로그인을 사용해 정상 판매자센터에 진입했다. 카테고리&메뉴 관리의 메모리(ID 9f6ed1fc08f44810aad94d2bb8487753)는 ‘개별상품 단위로 연결’ 방식이었다. 기존 9개 ID를 저장하고 신규 채널상품 13812942061만 선택·추가·적용했다. 실제 고객 페이지를 새로고침하여 총 10개, HOMAN CFexpress Type A 256GB 렌탈 20,000원 표시, 기존 9개 누락 0을 전수 대조했다. 다른 카테고리/가격/주문/재고는 변경하지 않았다.
+
+자사몰 공개 rental.json에서도 같은 상품이 rental, 20,000원, rent:146(메모리·스토리지)에 포함된 것을 확인했다. 네이버 API의 표준 상품분류와 판매자 전시 카테고리를 혼동하지 않는다. 앞으로 네이버 신규 상품 등록 완료 조건에 실제 고객용 메뉴의 상품ID·가격·렌탈/판매 구분 확인을 포함한다. 공식 커머스API 담당자도 전시 카테고리는 판매자센터 관리 대상이라고 안내한다: https://github.com/commerce-api-naver/commerce-api/discussions/3670 .
+
+공개 확인: https://smartstore.naver.com/rainbowbene/category/9f6ed1fc08f44810aad94d2bb8487753?cp=1 . 근거는 `_private/catalog/homan256-toss-20261015/naver-memory-proof.json`, `naver-memory-before.txt`, `naver-category-editor-before.txt`, `naver-memory-final.txt`, `naver-memory-live.png`, `own-memory-category-proof.json`. 이번 변경은 네이버 전시 연결이며 자사몰 코드·배포 변경은 없다.
