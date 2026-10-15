@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Allow: /share-image.jpg
 Disallow: /cart.html
 Disallow: /checkout.html
 Disallow: /api/

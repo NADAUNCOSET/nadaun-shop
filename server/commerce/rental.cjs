@@ -9,6 +9,7 @@ function rentalSchedule(raw,clock=()=>Date.now()){
  result.pickup_at=instant(result.start_date,result.pickup_time);result.return_at=instant(result.end_date,result.return_time);
  if(result.pickup_at<clock())throw new ShopError(400,'수령 방문 일시가 지났습니다. 새 일정을 선택해주세요.');
  if(result.return_at<=result.pickup_at)throw new ShopError(400,'반납 방문 일시는 수령 방문 일시보다 늦어야 합니다.');
+ if(result.return_at-result.pickup_at>14*86400000)throw new ShopError(400,'최대 대여기간은 2주(14일)입니다. 수령·반납 방문 일시를 확인해주세요.');
  return result;
 }
 function rentalCustomer(raw){

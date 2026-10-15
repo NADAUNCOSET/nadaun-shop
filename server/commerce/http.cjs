@@ -1,7 +1,9 @@
 'use strict';
-const {ShopError,hash,random,sessions,passwordMatches}=require('./security.cjs');
-function endpoint({service,repo,adminService=null,sessionKey,password,enabled=true,rentalEnabled=false,origin='https://shop.nadaun.co',adminOrigins=['https://order.nadaun.co'],clock=()=>Date.now()}){
+const {ShopError,hash,random,sessions,passwordMatches,adminEmail,identityMatches}=require('./security.cjs');
+function endpoint({service,repo,adminService=null,sessionKey,password,email='',enabled=true,rentalEnabled=false,origin='https://shop.nadaun.co',adminOrigins=['https://order.nadaun.co'],clock=()=>Date.now()}){
  const session=sessions(sessionKey,clock);
+ const configuredEmail=email?adminEmail(email):null;
+ if(email&&!configuredEmail)throw new ShopError(503,'관리자 로그인 설정을 확인해주세요.');
  const cookie=(role,token,seconds)=>`__Host-nadaun-${role}=${token}; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=${seconds}`;
  const cookies=req=>Object.fromEntries(String(req.headers.cookie||'').split(';').map(v=>v.trim().split('=')));
  return async function handler(req,res){
@@ -9,13 +11,14 @@ function endpoint({service,repo,adminService=null,sessionKey,password,enabled=tr
   try{
    const url=new URL(req.url,origin),action=url.searchParams.get('action')||'config';
    if(!['GET','POST'].includes(req.method)){res.setHeader('Allow','GET, POST');throw new ShopError(405,'허용되지 않은 요청입니다.');}
-   if(req.method==='GET'&&action==='config')return res.status(200).json({ordersEnabled:enabled,rentalRequestsEnabled:rentalEnabled,adminEnabled:!!adminService,paymentProvider:'inicis',taxInvoiceEnabled:service.invoiceEnabled===true});
+   if(req.method==='GET'&&action==='config')return res.status(200).json({ordersEnabled:enabled,rentalRequestsEnabled:rentalEnabled,adminEnabled:!!adminService,adminLoginRequiresEmail:!!configuredEmail,paymentProvider:'inicis',taxInvoiceEnabled:service.invoiceEnabled===true});
    const adminAction=['login','logout'].includes(action)||action.startsWith('admin-');
    if(req.method==='POST'&&req.headers.origin!==origin&&!(adminAction&&adminOrigins.includes(req.headers.origin)))throw new ShopError(403,'사이트에서 다시 요청해주세요.');
    const ip=String(req.headers['x-forwarded-for']||'unknown').split(',')[0].trim();
    await repo.limit(hash(sessionKey+ip),120,60);
    const stored=cookies(req);
-   const admin=session.read(stored['__Host-nadaun-admin'],'admin');
+   const adminSubject=session.read(stored['__Host-nadaun-admin'],'admin');
+   const admin=adminSubject&&(!configuredEmail||adminSubject===configuredEmail)?adminSubject:null;
    let customer=session.read(stored['__Host-nadaun-customer'],'customer');
    let input=req.body;
    if(req.method==='POST'){
@@ -24,8 +27,10 @@ function endpoint({service,repo,adminService=null,sessionKey,password,enabled=tr
    }
    if(action==='login'&&req.method==='POST'){
     await repo.limit('login:'+hash(sessionKey+ip),10,900);
-    if(!await passwordMatches(input.password,password))throw new ShopError(401,'로그인 정보를 확인해주세요.');
-    res.setHeader('Set-Cookie',cookie('admin',session.issue('owner','admin',8*3600),8*3600));return res.status(200).json({authenticated:true});
+    // Always perform the password check even when the supplied email is wrong.
+    const validPassword=await passwordMatches(input.password,password);
+    if(!validPassword||configuredEmail&&!identityMatches(input.email,configuredEmail))throw new ShopError(401,'로그인 정보를 확인해주세요.');
+    res.setHeader('Set-Cookie',cookie('admin',session.issue(configuredEmail||'owner','admin',8*3600),8*3600));return res.status(200).json({authenticated:true});
    }
    if(action==='logout'&&req.method==='POST'){res.setHeader('Set-Cookie',cookie('admin','',0));return res.status(200).json({authenticated:false});}
    if(action.startsWith('admin-')){
@@ -40,8 +45,9 @@ function endpoint({service,repo,adminService=null,sessionKey,password,enabled=tr
     }
     if(action==='admin-events'&&req.method==='GET')return res.status(200).json({events:await repo.events(url.searchParams.get('id'))});
     if(req.method==='POST'){
-     const fn={'admin-approve':'approve','admin-ship':'ship','admin-reconcile':'reconcile','admin-document-retry':'retryDocument','admin-rental-pickup':'pickup','admin-rental-return':'rentalReturn'}[action];
-     if(fn)return res.status(200).json({order:await service[fn](input.id,input)});
+     const fn={'admin-approve':'approve','admin-ship':'ship','admin-shipment-update':'updateShipment','admin-case-create':'createCase','admin-case-update':'updateCase','admin-exchange-ship':'exchangeShip','admin-reconcile':'reconcile','admin-document-retry':'retryDocument','admin-rental-pickup':'pickup','admin-rental-return':'rentalReturn','admin-note':'saveNote','admin-cancel-request':'cancelRequest'}[action];
+     // The actor is derived exclusively from the verified session, never input.actor.
+     if(fn)return res.status(200).json({order:await service[fn](input.id,input,admin)});
     }
     throw new ShopError(404,'요청을 찾을 수 없습니다.');
    }

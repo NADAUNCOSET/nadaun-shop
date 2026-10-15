@@ -26,7 +26,7 @@ from source_refresh_state import recent_refresh,record_refresh
 
 STATE=ROOT/'_scraper/.sync-state'
 SITE='https://shop.nadaun.co'
-GENERATED=['data/catalog','assets/shop/thumbnails','brands','brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','payment-test.html','orders.html','admin.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','catalog-sitemap.xml']
+GENERATED=['data/catalog','assets/shop/thumbnails','brands','brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','payment-test.html','orders.html','admin.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','rental-guide.html','catalog-sitemap.xml']
 CODE=['_scraper/shipping_policy.py','_scraper/test_shop_shipping.py','assets/shop/shipping.js','_scraper/test_shop_taxonomy.py','_scraper/product_taxonomy.py','_scraper/rental_taxonomy.py','_scraper/references/slrrent-categories.json','assets/shop/motion.js','assets/shop/departments','assets/shop/banners.js','data/catalog/banners.json','assets/shop/studio','_scraper/brand_products.py','assets/shop/vendor','assets/shop/brands','data/catalog/partner-image-rules.json','_scraper/sync_partner_catalogs.py','data/catalog/brand-assets.json','_scraper/catalog_seo.py','assets/shop/catalog-tools.js','_scraper/tests','_scraper/test_shop_catalog.py','api','assets/shop/cart.js','_scraper/storefront_pages.py','_scraper/sync_shop_sources.py','_scraper/sync_kpp_catalog.py','_scraper/enrich_shop_sources.py','_scraper/build_catalog.py','_scraper/catalog_dedup.py','_scraper/shop_sync.py','_scraper/prepare_shop_assets.py','_scraper/shop_templates','assets/shop/shop.js','assets/shop/shop.css','data/catalog/overrides.json','data/catalog/dedup-rules.json','vercel.json']
 
 CODE += ['_scraper/gift_product_details.py','_scraper/source_transport.py','_scraper/plthink_checkpoint.py','_scraper/sync_plthink_catalog.py',
@@ -36,6 +36,7 @@ CODE += ['_scraper/brand_category_policy.py','_scraper/partner_sync_status.py','
 CODE += ['assets/shop/storefront.css','assets/shop/scenes.js','assets/shop/browse.js','_scraper/category_gallery.py','_scraper/sync_avx_catalog.py','_scraper/avx_worker.py','_scraper/test_avx_catalog.py']
 CODE += ['_scraper/test_partner_sync_status.py']
 CODE += ['_scraper/build_gift_catalog.py','_scraper/brand_source_policy.py','_scraper/test_gift_public_catalog.py','_scraper/test_brand_source_policy.py','data/catalog/brand-source-policy.json','server/gift-catalog.cjs','server/shop-search.cjs']
+CODE += ['_scraper/test_catalog_seo.py','_scraper/test_release_status.py','server/share-image.cjs','server/share-metadata.cjs','robots.txt']
 CODE += ['_scraper/source_refresh_state.py','_scraper/test_source_refresh_state.py']
 CODE += ['_scraper/avx_publication.py','_scraper/test_avx_publication.py']
 CODE += ['_scraper/rental_content.py','_scraper/test_shop_rental_content.py','assets/shop/rental-content.js']
@@ -64,7 +65,7 @@ def api(path):return json.loads(command('vercel','api',path,'--raw'))
 
 def managed_files():
     """Stage exact generated files, never an arbitrary file in those folders."""
-    files=['brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','payment-test.html','orders.html','admin.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','catalog-sitemap.xml',
+    files=['brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','payment-test.html','orders.html','admin.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','rental-guide.html','catalog-sitemap.xml',
            'data/catalog/catalog.json','data/catalog/rental.json','data/catalog/brands.json','data/catalog/sync-status.json','data/catalog/asset-manifest.json','data/catalog/dedup-audit.json']
     files += ['gift-item.html','search.html','gift-sitemap.xml','data/gift/catalog.json','data/gift/manifest.json']
     files += ['data/catalog/rental-details.json']
@@ -196,11 +197,13 @@ def run(publish=True,existing=False,source_updates=None):
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_ldnet_identity.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_saeki_catalog.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_catalog_checkpoint.py')
+        command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_catalog_seo.py')
+        command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_release_status.py')
         command('node','--test','_scraper/tests/gift-search.test.cjs','_scraper/tests/rental-content.test.cjs')
         command('node','--check','assets/shop/shop.js')
         command('node','--check','assets/shop/cart.js')
         command('node','--check','assets/shop/motion.js')
-        command('node','--test','_scraper/tests/product-server.test.cjs','_scraper/tests/catalog-tools.test.mjs','_scraper/tests/discovery.test.cjs','_scraper/tests/cart.test.cjs','_scraper/tests/banners.test.mjs','_scraper/tests/motion.test.mjs','_scraper/tests/browse.test.mjs','_scraper/tests/scenes.test.mjs','_scraper/tests/commerce.test.cjs','_scraper/tests/commerce-ui.test.cjs','_scraper/tests/inicis.test.cjs','_scraper/tests/admin.test.cjs','_scraper/tests/rental-request.test.cjs','_scraper/tests/calendar.test.cjs')
+        command('node','--test','_scraper/tests/product-server.test.cjs','_scraper/tests/catalog-tools.test.mjs','_scraper/tests/discovery.test.cjs','_scraper/tests/cart.test.cjs','_scraper/tests/banners.test.mjs','_scraper/tests/motion.test.mjs','_scraper/tests/browse.test.mjs','_scraper/tests/scenes.test.mjs','_scraper/tests/commerce.test.cjs','_scraper/tests/commerce-ui.test.cjs','_scraper/tests/inicis.test.cjs','_scraper/tests/admin.test.cjs','_scraper/tests/rental-request.test.cjs','_scraper/tests/calendar.test.cjs','_scraper/tests/sharing.test.cjs','_scraper/tests/admin-workflow.test.cjs','_scraper/tests/fulfillment.test.cjs','_scraper/tests/release-status.test.cjs')
         if command('git','diff','--name-only','--',*CODE):
             raise RuntimeError('Uncommitted catalogue code changed during build; review before publication')
         if publish:

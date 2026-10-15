@@ -3,9 +3,36 @@ import json,re,html
 from urllib.parse import urljoin,urlparse,parse_qs
 from bs4 import BeautifulSoup
 BASE='https://www.saeki.co.kr'
+# Exact source-linked JPEGs verified on 2026-10-15. The HTTP entries have
+# independently verified identical HTTPS paths; this is not a host-wide upgrade.
+# Request/status/dimensions/SHA evidence: private catalogue sharing-admin-20261015
+# /saeki-image-verification.json. Unreviewed paths on these hosts remain blocked.
+REVIEWED_IMAGE_URLS = {'https://photonart747.godohosting.com/data/goods/polaroid/pl_all_end.jpg': 'https://photonart747.godohosting.com/data/goods/polaroid/pl_all_end.jpg',
+ 'https://photonart747.godohosting.com/data/goods/durix_paper/05_pm230_all.jpg': 'https://photonart747.godohosting.com/data/goods/durix_paper/05_pm230_all.jpg',
+ 'https://photonart747.godohosting.com/data/goods/durix_paper/04_glacier_all.jpg': 'https://photonart747.godohosting.com/data/goods/durix_paper/04_glacier_all.jpg',
+ 'https://photonart747.godohosting.com/data/goods/durix_paper/02_satin_all.jpg': 'https://photonart747.godohosting.com/data/goods/durix_paper/02_satin_all.jpg',
+ 'https://photonart747.godohosting.com/data/goods/durix_paper/01_glossy_all.jpg': 'https://photonart747.godohosting.com/data/goods/durix_paper/01_glossy_all.jpg',
+ 'https://shop-phinf.pstatic.net/20241125_181/1732527109692esO4T_JPEG/fx.jpg?type=w860': 'https://shop-phinf.pstatic.net/20241125_181/1732527109692esO4T_JPEG/fx.jpg?type=w860',
+ 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_01.jpg': 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_01.jpg',
+ 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_02.jpg': 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_02.jpg',
+ 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_03.jpg': 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_03.jpg',
+ 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_04.jpg': 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_04.jpg',
+ 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_05.jpg': 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_05.jpg',
+ 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_06.jpg': 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_06.jpg',
+ 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_07.jpg': 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_07.jpg',
+ 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_08.jpg': 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_08.jpg',
+ 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_09.jpg': 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_09.jpg',
+ 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_10.jpg': 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_10.jpg',
+ 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_11.jpg': 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_11.jpg',
+ 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_12.jpg': 'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_12.jpg',
+ 'http://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/2014_contents_img/140609_LL_LS2352N_777_01.jpg': 'https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/2014_contents_img/140609_LL_LS2352N_777_01.jpg',
+ 'http://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/2014_contents_img/140609_LL_LS2352N_777_02.jpg': 'https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/2014_contents_img/140609_LL_LS2352N_777_02.jpg',
+ 'http://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/2014_contents_img/140609_LL_LS2352N_777_04.jpg': 'https://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/2014_contents_img/140609_LL_LS2352N_777_04.jpg'}
 def clean(v):return re.sub(r'\s+',' ',re.sub(r'<br\s*/?>','',html.unescape(str(v or '')),flags=re.I)).strip()
 def photo(url):
- u=urljoin(BASE,url);p=urlparse(u)
+ u=urljoin(BASE,url)
+ if u in REVIEWED_IMAGE_URLS:return REVIEWED_IMAGE_URLS[u]
+ p=urlparse(u)
  # This exact source notice is still linked over HTTP. Its HTTPS JPEG was
  # verified directly; do not upgrade arbitrary unreviewed external URLs.
  if p.scheme=='http' and p.netloc=='ai.esmplus.com' and p.path=='/kppshop/KPP/as_guide/as_guide.jpg' and not p.query and not p.fragment:
@@ -34,8 +61,13 @@ def parse_detail(body,listing,checked_at):
  quote=any(listing.get(k)=='Y' for k in ('prcInqYn','commingSoonYn','pointYn')) or listing.get('prcExpsYn')=='N'
  # Inquiry pages deliberately hide KRW pricing. The list API can contain
  # either placeholder 1 or a hidden amount; never publish either as a price.
- placeholder=(quote and listing.get('prcExpsYn')=='N' and listing.get('prcInqYn')=='Y'
-              and schema_price==0 and d.select_one('#btnPriceInquiry'))
+ coming_soon=listing.get('commingSoonYn')=='Y'
+ if coming_soon:
+  visible=[clean(n.get_text()) for n in d.select('.btn-area.type-ui.w100 a.btn')]
+  if (listing.get('prcExpsYn')!='N' or schema_price!=0 or '출시예정상품' not in visible
+      or d.select_one('#orderItemArea')):raise ValueError('Unverified coming-soon state')
+ placeholder=(coming_soon or (quote and listing.get('prcExpsYn')=='N' and listing.get('prcInqYn')=='Y'
+              and schema_price==0 and d.select_one('#btnPriceInquiry')))
  if schema_price!=rawprice and not placeholder:raise ValueError('Listing/detail price changed')
  if listing.get('itemClCd') not in {'PD002001','PD002002','PD002003','PD002006','PD002008','PD002009','PD002010'}:raise ValueError('Unknown source product class')
  if listing.get('uitemQty')!=1:raise ValueError('Multiple item SKUs need explicit option verification')
@@ -95,23 +127,24 @@ def parse_detail(body,listing,checked_at):
   label=row.select_one('th');value=row.select_one('td')
   if label and value and clean(label.get_text())=='제조사/수입사':manufacturer=clean(value.get_text()).split('/',1)[0].strip()
  bid=str(listing['brndId']);brand=clean(listing['brndNm'])
- status='soldout' if known_soldout else 'inquiry';sale=None if quote else rawprice
+ status='soldout' if known_soldout and not coming_soon else 'inquiry';sale=None if quote else rawprice
  if sale is not None and sale<=1:raise ValueError('Placeholder sale price without explicit inquiry condition')
  price=None if quote else max(int(listing.get('spprc') or 0),rawprice)
  note='재고와 납기는 상담 후 확정됩니다.'
- if listing.get('commingSoonYn')=='Y':note='출시 예정 상품입니다. 출시 일정과 판매 조건은 상담 후 확인됩니다.'
+ if coming_soon:note='출시 예정 상품입니다. 가격은 아직 공개되지 않았으며 현재 구매할 수 없습니다. 출시 일정은 상담으로 확인해 주세요.'
  elif listing['itemClCd'] in {'PD002002','PD002010'}:note='예약 판매 상품입니다. 입고 일정과 주문 조건은 상담 후 확정됩니다.'
  elif listing['itemClCd']=='PD002009':note='스페셜 오더 상품입니다. 주문 가능 여부와 납기는 상담 후 확정됩니다.'
  elif listing['itemClCd']=='PD002008':note='전시·리퍼 또는 박스 훼손 상품입니다. 상품명에 표시된 상태와 실제 구성을 상담에서 확인해 주세요.'
  if additions:note+=' 추가 구성품은 별도 상품이며 기본 구성에 포함되지 않습니다.'
  return {'id':'saeki-'+pid,'source':'saeki','source_id':pid,'source_url':BASE+'/item/itemDetail?itemId='+pid,
   'name':clean(listing['itemNm']),'brand':brand,'kind':'purchase','price':price,'sale_price':sale,'status':status,
-  'supplier_status':'soldout' if known_soldout else 'inquiry' if quote or listing['itemClCd'] in {'PD002002','PD002009','PD002010'} else 'available',
+  'supplier_status':'inquiry' if coming_soon else 'soldout' if known_soldout else 'inquiry' if quote or listing['itemClCd'] in {'PD002002','PD002009','PD002010'} else 'available',
   'brand_category_ids':[bid,*[bid+':'+x['id'] for x in paths]],'source_category_path':[x['name'] for x in paths],
   'source_category_ids':[x['id'] for x in paths], 'source_brand_id':bid,'source_product_class':listing['itemClCd'],
+  **({'release_status':'coming_soon'} if coming_soon else {}),
   'source_display_flags':{k:listing.get(k) for k in ('prcExpsYn','prcInqYn','commingSoonYn','pointYn','finishYn','soldOutYn')},
   'source_sale_price':None if quote else rawprice,'source_sku':selected[0].get('data-uid') if selected else None,
   'source_manufacturer':manufacturer,'manufacturer_code':clean(schema.get('mpn')),'source_variants':variants,'source_additional_products':additions,
   'images':{'thumb':main[0],'main':main,'detail':detail},'description_text':description,
   'description_notice':note,'detail_status':'verified','options':[],'option_groups':[],
-  'options_require_confirmation':bool(additions),'detail_checked_at':checked_at}
+  'options_require_confirmation':bool(additions) or coming_soon,'detail_checked_at':checked_at}

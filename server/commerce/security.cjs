@@ -23,4 +23,14 @@ function sessions(secret,clock=()=>Date.now()){
 }
 async function passwordHash(value){if(typeof value!=='string'||value.length<16||value.length>128)throw new ShopError(400,'관리자 비밀번호는 16~128자로 지정해주세요.');const salt=random();return salt+':'+(await scrypt(value,salt,64)).toString('hex');}
 async function passwordMatches(value,stored){if(typeof value!=='string'||value.length>128||typeof stored!=='string')return false;const [salt,hex]=stored.split(':');if(!salt||!/^[a-f0-9]{128}$/.test(hex||''))return false;const computed=await scrypt(value,salt,64);return crypto.timingSafeEqual(computed,Buffer.from(hex,'hex'));}
-module.exports={ShopError,hash,random,protect,sessions,passwordHash,passwordMatches};
+function adminEmail(value){
+ if(typeof value!=='string')return null;
+ const normalized=value.trim().toLowerCase();
+ if(normalized.length>254||!/^[-a-z0-9.!#$%&'*+/=?^_`{|}~]+@[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?\.[a-z]{2,63}$/.test(normalized))return null;
+ return normalized;
+}
+function identityMatches(value,expected){
+ const normalized=adminEmail(value);
+ return !!normalized&&crypto.timingSafeEqual(Buffer.from(hash(normalized),'hex'),Buffer.from(hash(expected),'hex'));
+}
+module.exports={ShopError,hash,random,protect,sessions,passwordHash,passwordMatches,adminEmail,identityMatches};

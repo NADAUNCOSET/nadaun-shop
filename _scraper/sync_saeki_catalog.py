@@ -96,12 +96,12 @@ def collect_inventory(root,control=None):
  return json.loads((ROOT/'inventory.json').read_text())
 
 
-def collect_details(root,control=None,batch_size=100):
- """One bounded, resumable batch. Failed details never become verified records."""
+def collect_details(root,control=None,batch_size=100,offline_only=False):
+ """One bounded batch. Offline revalidation cannot fetch missing source HTML."""
  import gzip,hashlib
  from itertools import zip_longest
  from saeki_detail_parser import parse_detail
- root=Path(root);source=Source(root,control)
+ root=Path(root);source=None if offline_only else Source(root,control)
  inventory=json.loads((root/'inventory.json').read_text())
  if not inventory.get('complete'):raise ValueError('Complete inventory required')
  groups={b['id']:[]for b in inventory['brands']}
@@ -120,6 +120,11 @@ def collect_details(root,control=None,batch_size=100):
    if row.get('parser_revision')==revision:verified_ids.add(row['id'])
  verified_ids.difference_update(holds)
  old_errors=json.loads((root/'detail-errors.json').read_text())if(root/'detail-errors.json').exists()else{}
+ if offline_only:
+  missing=[p['itemId']for p in products if 'saeki-'+p['itemId']not in holds
+           and not(root/'html'/(p['itemId']+'.html.gz')).exists()
+           and not(root/('detail-'+p['itemId']+'.html')).exists()]
+  if missing:raise ValueError('Offline revalidation needs cached HTML: '+', '.join(missing[:10]))
  (root/'html').mkdir(exist_ok=True);(root/'details').mkdir(exist_ok=True)
  for p in products:
   pid=p['itemId'];raw=root/'html'/(pid+'.html.gz');parsed=root/'details'/(pid+'.json')
@@ -133,6 +138,7 @@ def collect_details(root,control=None,batch_size=100):
    elif (root/('detail-'+pid+'.html')).exists():
     sample=root/('detail-'+pid+'.html');body=sample.read_text();checked_at=datetime.fromtimestamp(sample.stat().st_mtime,timezone.utc).isoformat()
    else:
+    if offline_only:raise ValueError('Cached HTML disappeared during offline revalidation')
     body=source.request('GET','/item/itemDetail',params={'itemId':pid}).text
     raw.write_bytes(gzip.compress(body.encode(),mtime=0))
    result=parse_detail(body,p,checked_at);result['parser_revision']=revision

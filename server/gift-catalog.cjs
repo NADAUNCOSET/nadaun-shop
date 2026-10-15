@@ -1,6 +1,7 @@
 const fs=require('node:fs');
 const path=require('node:path');
 const root=process.cwd(), origin='https://shop.nadaun.co';
+const {shareImageURL,socialMetadata}=require('./share-metadata.cjs');
 const data=JSON.parse(fs.readFileSync(path.join(root,'data/gift/catalog.json'),'utf8'));
 const categories=new Map(data.categories.map(c=>[c.id,c]));
 const products=new Map(data.products.map(p=>[p.id,p]));
@@ -51,18 +52,22 @@ function detail(id){
  const choices=(d?.choices||[]).map(s=>Object.values(s).filter(Boolean).join(' / ')).filter(Boolean);
  const images=[...new Set([p.image,...(d?.images||[])])];
  const body=`<div class="breadcrumb"><a href="/">홈</a><span>›</span><a href="/gifts.html">기프트 구매</a><span>›</span><a href="${href({category:leaf.id})}">${esc(leaf.name)}</a></div>${kinds()}<section class="detail-layout gift-detail"><div class="gallery-main"><img src="${esc(images[0])}" alt="${esc(p.name)}" fetchpriority="high" referrerpolicy="no-referrer"></div><div class="detail-info"><p class="detail-brand">상품번호 ${p.id}</p><h1>${esc(p.name)}</h1><p class="detail-price">${p.soldout?'입고 확인 후 견적':'수량별 견적'}</p><p class="purchase-help">수량, 인쇄와 포장에 따라 판매가격이 달라집니다. 원하시는 제작 조건을 알려주세요.</p><p class="purchase-help">재고·납기·인쇄 가능 여부와 최종 가격은 상담 후 확정됩니다.</p>${d?.minimum_quantity?`<p class="gift-minimum">안내 주문 수량 <strong>${Number(d.minimum_quantity).toLocaleString('ko-KR')}개</strong> · 소량 주문 별도 상담</p>`:''}${choices.length?`<details class="gift-choice-list"><summary>등록된 사양 보기</summary><ul>${choices.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details>`:''}<div class="gift-detail-actions"><a class="button-primary" href="https://pf.kakao.com/_pyNxnxb/chat" target="_blank" rel="noopener">수량·인쇄 상담</a><a class="button-outline" href="https://talk.naver.com/ct/w4w1o8" target="_blank" rel="noopener">네이버 톡톡 상담</a></div><p class="gift-reference">상담하실 때 상품번호 <strong>${p.id}</strong>를 알려주세요.</p><a class="text-button" href="${href({category:leaf.id})}">같은 종류 상품 보기 →</a></div></section><section class="gift-description"><h2>상품 상세</h2>${specs?`<table><tbody>${specs}</tbody></table>`:''}${d?images.slice(1).map(u=>`<img src="${esc(u)}" alt="${esc(p.name)} 상세 이미지" loading="lazy" decoding="async" referrerpolicy="no-referrer">`).join(''):'<p>상세 사양과 인쇄 가능 범위는 상품번호로 문의해 주세요.</p>'}</section>`;
- const description=(p.name+' · 기프트·굿즈 수량별 견적과 인쇄 상담. 나다운 샵.').slice(0,80);
- return {status:200,title:p.name+' | 나다운 샵',description,canonical:origin+'/gift-item.html?id='+p.id,image:p.image,body,
+ const description=Array.from(p.name+' · 나다운 기프트의 수량별 견적과 인쇄 상담. 재고·납기는 상담 후 확정됩니다.').slice(0,80).join('');
+ return {status:200,title:p.name+' | 나다운 기프트',description,canonical:origin+'/gift-item.html?id='+p.id,image:shareImageURL('gift',p),imageAlt:p.name,imageWidth:1200,imageHeight:630,body,
   schema:{'@context':'https://schema.org','@type':'Product',name:p.name,sku:p.id,image:images.slice(0,5),description,category:leaf.name,url:origin+'/gift-item.html?id='+p.id}};
 }
 function page(template,result){
- let html=template.replace(/<title>.*?<\/title>/,()=>`<title>${esc(result.title)}</title>`)
-  .replace(/(<meta (?:name="description"|property="og:description") content=")[^"]*"/g,(_,p)=>p+esc(result.description||result.title)+'"')
-  .replace(/(<meta property="og:title" content=")[^"]*"/,(_,p)=>p+esc(result.title)+'"')
-  .replace(/(<meta property="og:url" content=")[^"]*"/,(_,p)=>p+esc(result.canonical||origin+'/gifts.html')+'"')
-  .replace(/(<link rel="canonical" href=")[^"]*"/,(_,p)=>p+esc(result.canonical||origin+'/gifts.html')+'"')
-  .replace(/(<main id="main"[^>]*>)[\s\S]*?<\/main>/,(_,p)=>p+result.body+'</main>');
- if(result.image)html=html.replace(/(<meta property="og:image" content=")[^"]*"/,(_,p)=>p+esc(result.image)+'"');
+ let html=template;
+ if(result.image){
+  html=socialMetadata(html,{title:result.title,description:result.description,canonical:result.canonical,image:result.image,imageAlt:result.imageAlt,width:result.imageWidth,height:result.imageHeight,siteName:'나다운 기프트'});
+ }else{
+  html=html.replace(/<title>.*?<\/title>/,()=>`<title>${esc(result.title)}</title>`)
+   .replace(/(<meta (?:name="description"|property="og:description") content=")[^"]*"/g,(_,p)=>p+esc(result.description||result.title)+'"')
+   .replace(/(<meta property="og:title" content=")[^"]*"/,(_,p)=>p+esc(result.title)+'"')
+   .replace(/(<meta property="og:url" content=")[^"]*"/,(_,p)=>p+esc(result.canonical||origin+'/gifts.html')+'"')
+   .replace(/(<link rel="canonical" href=")[^"]*"/,(_,p)=>p+esc(result.canonical||origin+'/gifts.html')+'"');
+ }
+ html=html.replace(/(<main id="main"[^>]*>)[\s\S]*?<\/main>/,(_,p)=>p+result.body+'</main>');
  if(result.noindex||result.status!==200)html=html.replace('index,follow,max-image-preview:large','noindex,follow');
  if(result.schema)html=html.replace('</head>',()=>'<script type="application/ld+json">'+JSON.stringify(result.schema).replace(/</g,'\\u003c')+'</script></head>');
  return html;

@@ -7,13 +7,14 @@ const brandMap=new Map(catalog.brands.map(b=>[b.id,b]));
 const categoryMap=new Map(catalog.categories.map(c=>[c.id,c]));
 const index=catalog.products.filter(p=>!p.listing_id||p.listing_id===p.id).map(p=>({p,text:gift.normalize([
  p.id,p.name,brandMap.get(p.brand_id)?.name,...(brandMap.get(p.brand_id)?.aliases||[]),
- ...p.type_ids.map(id=>categoryMap.get(id)?.name)].join(' '))}));
+ ...(p.release_status==='coming_soon'?['출시 예정','가격 미공개']:[]),...p.type_ids.map(id=>categoryMap.get(id)?.name)].join(' '))}));
 const labels={all:'전체',purchase:'제품 구매',rental:'제품 렌탈',gift:'기프트 구매'};
 function url(q,scope='all',page=1){const p=new URLSearchParams({q});if(scope!=='all')p.set('scope',scope);if(page>1)p.set('page',page);return '/search.html?'+p;}
 function card(p){
  if(p.search_kind==='gift')return gift.card(p);
- const price=p.offers.some(o=>['smartstore','imweb'].includes(o.source))?(p.sale_price??p.price):p.price;
- return `<a class="product-card" href="/item.html?id=${encodeURIComponent(p.id)}"><div class="product-image"><img src="${gift.esc(p.image)}" alt="${gift.esc(p.name)}" loading="lazy" referrerpolicy="no-referrer">${p.status==='soldout'?'<span class="badge">품절</span>':p.kind==='rental'?'<span class="badge rental">렌탈</span>':''}</div><p class="product-brand">${gift.esc(brandMap.get(p.brand_id)?.name)}</p><h3 class="product-name">${gift.esc(p.name)}</h3><p class="product-price">${p.kind==='rental'?rental.priceHTML(p):price==null?'가격 문의':price.toLocaleString('ko-KR')+'원'}</p></a>`;
+ const coming=p.release_status==='coming_soon';
+ const price=coming?null:p.offers.some(o=>['smartstore','imweb'].includes(o.source))?(p.sale_price??p.price):p.price;
+ return `<a class="product-card" href="/item.html?id=${encodeURIComponent(p.id)}"><div class="product-image"><img src="${gift.esc(p.image)}" alt="${gift.esc(p.name)}" loading="lazy" referrerpolicy="no-referrer">${coming?'<span class="badge">출시 예정</span>':p.status==='soldout'?'<span class="badge">품절</span>':p.kind==='rental'?'<span class="badge rental">렌탈</span>':''}</div><p class="product-brand">${gift.esc(brandMap.get(p.brand_id)?.name)}</p><h3 class="product-name">${gift.esc(p.name)}</h3><p class="product-price">${coming?'출시 예정 · 가격 미공개':p.kind==='rental'?rental.priceHTML(p):price==null?'가격 문의':price.toLocaleString('ko-KR')+'원'}</p>${coming?'<p class="card-note">출시 일정 상담</p>':''}</a>`;
 }
 function results(q){
  const words=gift.tokens(q);

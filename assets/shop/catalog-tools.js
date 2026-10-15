@@ -1,11 +1,11 @@
 const escape=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export function isDiscounted(p){
-  return p.kind==='purchase'&&!!p.offers?.some(o=>['smartstore','imweb'].includes(o.source))&&Number.isFinite(p.price)&&Number.isFinite(p.sale_price)&&p.price>0&&p.sale_price>=0&&p.sale_price<p.price;
+  return p.release_status!=='coming_soon'&&p.kind==='purchase'&&!!p.offers?.some(o=>['smartstore','imweb'].includes(o.source))&&Number.isFinite(p.price)&&Number.isFinite(p.sale_price)&&p.price>0&&p.sale_price>=0&&p.sale_price<p.price;
 }
 
 export function isPromotion(p){
-  return p.kind==='purchase'&&Array.isArray(p.promotion_ids)&&p.promotion_ids.length>0;
+  return p.release_status!=='coming_soon'&&p.kind==='purchase'&&Array.isArray(p.promotion_ids)&&p.promotion_ids.length>0;
 }
 
 export function matchesBenefit(p,mode='all'){

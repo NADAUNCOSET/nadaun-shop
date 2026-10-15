@@ -110,6 +110,12 @@ def validate_candidate(s):
   if url.scheme!='https' or url.netloc!='www.saeki.co.kr' or url.path!='/item/itemDetail' or parse_qs(url.query).get('itemId')!=[p['source_id']]:raise ValueError('Invalid Saeki product URL')
   if p.get('source_display_flags',{}).get('pointYn')=='Y':raise ValueError('Loyalty item in KRW shop')
   if p['sale_price']is not None and p['sale_price']<=1:raise ValueError('Placeholder Saeki price')
+  if p.get('release_status') not in {None,'coming_soon'}:raise ValueError('Unknown Saeki release state')
+  if p.get('source_display_flags',{}).get('commingSoonYn')=='Y' or p.get('release_status')=='coming_soon':
+   if (p.get('release_status')!='coming_soon' or p.get('source_display_flags',{}).get('commingSoonYn')!='Y'
+       or any(p.get(k)is not None for k in ('price','sale_price','source_sale_price'))
+       or p['status']!='inquiry' or p['supplier_status']!='inquiry' or p.get('options_require_confirmation')is not True):
+    raise ValueError('Coming-soon product exposed as purchasable or priced')
  for c in categories.values():
   seen=set();cursor=c
   while cursor:

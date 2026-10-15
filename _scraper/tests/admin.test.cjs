@@ -30,7 +30,7 @@ test('paged UI and complete annual export include orders beyond the old 100 row 
  const f=fixture(1203),list=await f.admin.list({});assert.equal(list.summary.orders,1203);assert.equal(list.orders.length,25);assert.equal(list.pages,49);
  assert.equal((await f.admin.list({page:49})).orders.length,3);
  const output=await f.admin.export({format:'xlsx'}),ExcelJS=require('exceljs'),book=new ExcelJS.Workbook();await book.xlsx.load(output.body);
- assert.deepEqual(book.worksheets.map(w=>w.name),['안내와합계','주문결제','상품','증빙','처리이력']);assert.equal(book.getWorksheet('주문결제').rowCount,1204);assert.equal(book.getWorksheet('상품').rowCount,1204);assert.equal(book.getWorksheet('처리이력').rowCount,1204);
+ assert.deepEqual(book.worksheets.map(w=>w.name),['안내와합계','주문결제','상품','증빙','처리이력','출고내역','반품교환']);assert.equal(book.getWorksheet('주문결제').rowCount,1204);assert.equal(book.getWorksheet('상품').rowCount,1204);assert.equal(book.getWorksheet('처리이력').rowCount,1204);
  assert.equal(book.getWorksheet('주문결제').getRow(1204).getCell(8).value,'=HYPERLINK("https://evil.invalid")');assert.equal(book.getWorksheet('주문결제').getRow(1204).getCell(8).type,ExcelJS.ValueType.String);assert.equal(book.getWorksheet('주문결제').getRow(1204).getCell(10).value,'01234');
  assert.equal(book.getWorksheet('주문결제').getRow(1204).getCell(15).value,14500);
 });

@@ -47,6 +47,50 @@ class SaekiTests(unittest.TestCase):
   p=parse_detail(body,{**listing,'slprc':25440000,'spprc':25440000},'now')
   for key in ['price','sale_price','source_sale_price']:self.assertIsNone(p[key])
   with self.assertRaises(ValueError):parse_detail(body,{**listing,'slprc':25440000,'prcExpsYn':'Y'},'now')
+ def test_coming_soon_is_distinct_from_soldout_and_price_inquiry(self):
+  for pid in ('PD00043508','PD00043461'):
+   with self.subTest(pid=pid):
+    p=self.parsed(pid)
+    self.assertEqual(p['release_status'],'coming_soon')
+    self.assertEqual(p['status'],'inquiry');self.assertEqual(p['supplier_status'],'inquiry')
+    self.assertTrue(p['options_require_confirmation'])
+    self.assertIn('출시 예정',p['description_notice'])
+    for key in ('price','sale_price','source_sale_price'):self.assertIsNone(p[key])
+  body,listing=self.fixture('PD00043461')
+  self.assertEqual(listing['slprc'],710000)
+  for badbody,badlisting in [(body.replace('출시예정상품','품절상품'),listing),
+      (body,{**listing,'prcExpsYn':'Y'}),(body,{**listing,'commingSoonYn':'N'}),
+      (body+'<div id="orderItemArea"></div>',listing)]:
+   with self.assertRaises(ValueError):parse_detail(badbody,badlisting,'now')
+  self.assertNotIn('release_status',self.parsed('PD00043223'))
+ def test_exact_reviewed_image_paths_do_not_allow_the_whole_host(self):
+  from saeki_detail_parser import photo,REVIEWED_IMAGE_URLS
+  self.assertEqual(len(REVIEWED_IMAGE_URLS),21)
+  for source,target in REVIEWED_IMAGE_URLS.items():self.assertEqual(photo(source),target)
+  for bad in [
+    'https://photonart747.godohosting.com/data/goods/unknown.jpg',
+    'https://muhan88.imghost.cafe24.com/homepage/muhanmedia/escura/heisei_99.jpg',
+    'https://shop-phinf.pstatic.net/20241125_181/1732527109692esO4T_JPEG/fx.jpg',
+    'http://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/2014_contents_img/unknown.jpg',
+    'http://www.saeki.co.kr/brand/2011_contents_img/Avenger_C462_01.jpg',
+    'https://saekiserver.cafe24.com/2019_contents_img/Ricoh_theta_z1_btn.jpg']:
+   with self.subTest(url=bad),self.assertRaises(ValueError):photo(bad)
+  self.assertTrue(all(u.startswith('https://')for u in self.parsed('PD00007371')['images']['detail']))
+ def test_empty_actual_portfolio_descriptions_remain_unverified(self):
+  for pid in ('PD00009203','PD00009201'):
+   with self.subTest(pid=pid),self.assertRaisesRegex(ValueError,'Product description missing'):
+    parse_detail(*self.fixture('invalid/'+pid),'now')
+ def test_coming_soon_candidate_rejects_hidden_prices_or_purchase_states(self):
+  p=self.parsed('PD00043461')
+  inv={'complete':True,'collected_at':'now','brands':[{'id':p['source_brand_id']}],
+    'coverage':[{'brand_id':p['source_brand_id'],'expected':1,'unique':1}],
+    'products':{p['source_id']:{}}}
+  s=prepare(inv,{p['id']:p});self.assertTrue(validate_candidate(s))
+  for key,value in [('price',710000),('sale_price',710000),('source_sale_price',710000),
+      ('release_status',None),('status','soldout'),('supplier_status','available'),
+      ('options_require_confirmation',False)]:
+   bad=copy.deepcopy(s);bad['products'][p['id']][key]=value
+   with self.subTest(key=key),self.assertRaises(ValueError):validate_candidate(bad)
  def test_brand_is_not_the_company_or_compatible_mount(self):
   p={'brand':'RICOH','source_brand_id':'2','name':'HD PENTAX-FA 50mm F1.4'}
   self.assertEqual(actual_brand(p)[0],'PENTAX')
@@ -116,6 +160,22 @@ class SaekiTests(unittest.TestCase):
   body,listing=self.fixture()
   body=body.replace(listing['itemNm'],listing['itemNm'].replace(' | ','<br> | '))
   self.assertEqual(parse_detail(body,listing,'now')['name'],listing['itemNm'])
+ def test_offline_revalidation_uses_cached_html_and_never_constructs_network_source(self):
+  import tempfile,gzip
+  from unittest.mock import patch
+  from sync_saeki_catalog import collect_details
+  body,listing=self.fixture();pid=listing['itemId'];bid=str(listing['brndId'])
+  inv={'complete':True,'collected_at':'now','brands':[{'id':bid}],
+    'coverage':[{'brand_id':bid,'expected':1,'unique':1}],'products':{pid:listing}}
+  with tempfile.TemporaryDirectory()as folder,patch('sync_saeki_catalog.Source',side_effect=AssertionError('network constructed')):
+   root=Path(folder);(root/'inventory.json').write_text(json.dumps(inv));(root/'html').mkdir()
+   with self.assertRaisesRegex(ValueError,'Offline revalidation needs cached HTML'):
+    collect_details(root,offline_only=True)
+   self.assertFalse((root/'detail-index.json').exists())
+   (root/'html'/(pid+'.html.gz')).write_bytes(gzip.compress(body.encode()))
+   result=collect_details(root,offline_only=True)
+   self.assertTrue(result['complete']);self.assertEqual(result['verified'],1)
+   self.assertTrue(validate_candidate(json.loads((root/'catalogue-candidate.json').read_text())))
  def test_empty_brand_response_must_identify_the_requested_brand(self):
   import tempfile
   with tempfile.TemporaryDirectory()as folder:

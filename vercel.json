@@ -186,12 +186,16 @@
       }
     },
     {
+      "src": "^/share-image\\.jpg$",
+      "dest": "/api/share-image"
+    },
+    {
       "handle": "filesystem"
     }
   ],
   "functions": {
     "api/product.js": {
-      "includeFiles": "{item.html,data/catalog/catalog.json,data/catalog/rental-details.json,assets/shop/rental-content.js}"
+      "includeFiles": "{item.html,data/catalog/catalog.json,data/catalog/rental-details.json,assets/shop/rental-content.js,server/share-metadata.cjs}"
     },
     "api/orders.js": {
       "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,server/commerce/**}",
@@ -201,7 +205,7 @@
       "includeFiles": "{gifts.html,data/gift/catalog.json,server/gift-catalog.cjs}"
     },
     "api/gift-product.js": {
-      "includeFiles": "{gift-item.html,data/gift/**,server/gift-catalog.cjs}"
+      "includeFiles": "{gift-item.html,data/gift/**,server/gift-catalog.cjs,server/share-metadata.cjs}"
     },
     "api/search.js": {
       "includeFiles": "{search.html,data/gift/catalog.json,data/catalog/catalog.json,server/gift-catalog.cjs,server/shop-search.cjs,assets/shop/rental-content.js}"
@@ -213,6 +217,10 @@
     "api/commerce-jobs.js": {
       "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,server/commerce/**}",
       "maxDuration": 60
+    },
+    "api/share-image.js": {
+      "includeFiles": "{data/catalog/catalog.json,data/gift/catalog.json,assets/shop/nadaun-logo.png,assets/shop/images/**,server/share-image.cjs,server/share-metadata.cjs}",
+      "maxDuration": 15
     }
   }
 }

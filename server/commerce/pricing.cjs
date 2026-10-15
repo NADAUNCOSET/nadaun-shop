@@ -22,6 +22,7 @@ function quoteCatalog(catalog,detail,rows,clock=()=>Date.now()){
   if(!row||typeof row.id!=='string'||!positive(row.quantity,99)||typeof row.option!=='string'||row.option.length>300)throw new ShopError(400,'상품과 수량을 다시 선택해주세요.');
   const id=catalog.redirects[row.id]||row.id,p=products.get(id);
   if(!p||p.kind!=='purchase'||p.status==='soldout')throw new ShopError(409,'판매 상태가 변경된 상품이 있습니다. 장바구니를 확인해주세요.');
+  if(p.release_status==='coming_soon')throw new ShopError(409,'출시 예정 상품은 온라인 주문할 수 없습니다. 출시 일정과 구매 가능 여부를 상담으로 확인해주세요.');
   const d=detail(p),options=d.options||[];
   if(d.options_require_confirmation)throw new ShopError(409,'옵션 구성을 상담으로 확인해야 하는 상품입니다.');
   const matches=options.filter(o=>o.name===row.option);

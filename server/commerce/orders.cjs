@@ -5,6 +5,7 @@ const {customerFields,quoteCatalog,positive}=require('./pricing.cjs');
 const {matchPayment}=require('./inicis.cjs');
 const {rentalSchedule,rentalCustomer,rentalQuote}=require('./rental.cjs');
 const {evidenceFields,paymentEvidence}=require('./evidence.cjs');
+const fulfillment=require('./fulfillment.cjs');
 const uuid=()=>crypto.randomUUID();
 function repository(db,clock=()=>Date.now()){
  const get=async id=>(await db.query('SELECT * FROM shop_orders WHERE id=?',[id]))[0]||null;
@@ -47,35 +48,115 @@ function repository(db,clock=()=>Date.now()){
 }
 function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=null,documents=null,invoiceEnabled=false,clock=()=>Date.now()}){
  const cipher=protect(dataKey),returns=sessions(sessionKey,clock);
- const dto=(row,admin=false)=>{const customer=cipher.decrypt(row.customer_cipher),rental=customer.rental||null;return({id:row.id,kind:rental?'rental':'purchase',rental,state:row.state,payment_mode:row.payment_mode,lines:JSON.parse(row.lines_json),subtotal:row.subtotal,shipping:row.shipping,total:row.total,quote_version:row.quote_version,quote_expires:row.quote_expires,fulfillment:row.fulfillment,carrier:row.carrier,tracking:row.tracking,created_at:row.created_at,updated_at:row.updated_at,version:row.version,evidence_kind:customer.evidence?.kind||'card_receipt',...(admin?{customer:customer}:{})})};
+ const dto=(row,admin=false)=>{
+  const stored=cipher.decrypt(row.customer_cipher),customer=Object.fromEntries(Object.entries(stored).filter(([key])=>!key.startsWith('_admin_'))),rental=customer.rental||null,history=fulfillment.shipments(row,stored);
+  return {id:row.id,kind:rental?'rental':'purchase',rental,state:row.state,payment_mode:row.payment_mode,lines:JSON.parse(row.lines_json),subtotal:row.subtotal,shipping:row.shipping,total:row.total,quote_version:row.quote_version,quote_expires:row.quote_expires,fulfillment:row.fulfillment,carrier:row.carrier,tracking:row.tracking,shipments:fulfillment.publicShipments(history),created_at:row.created_at,updated_at:row.updated_at,version:row.version,evidence_kind:customer.evidence?.kind||'card_receipt',...(admin?{customer,admin_note:stored._admin_note||null,admin_cancellation:stored._admin_cancellation||null,admin_cases:fulfillment.adminCases(stored._admin_cases||[],history)}:{})};
+ };
  async function detailed(row,admin=false){
   const document=documents?await documents.get(row.id):null;
   if(document?.status==='issued'&&document.kind!=='tax_invoice'&&row.payment_provider==='inicis'&&/^[a-zA-Z0-9_-]{10,40}$/.test(row.payment_key||''))document.receipt_url='https://iniweb.inicis.com/DefaultWebApp/mall/cr/cm/mCmReceipt_head.jsp?noTid='+encodeURIComponent(row.payment_key)+'&noMethod=1';
   return {...dto(row,admin),document,...(admin&&repo.calendar?{calendar:await repo.calendar(row.id)}:{})};
  }
  async function own(id,owner){const row=await repo.get(id);if(!row||row.customer_hash!==owner)throw new ShopError(404,'주문을 찾을 수 없습니다. 주문한 브라우저에서 다시 확인해주세요.');return row;}
- async function applyPayment(row,remote){
+ async function applyPayment(row,remote,actor='payment'){
   const status=matchPayment(remote,row);
   const next=status==='DONE'?'PAID':status==='CANCELED'?'CANCELED':status==='PARTIAL_CANCELED'?'PAYMENT_REVIEW':null;
   if(!next)throw new ShopError(503,'결제 결과를 확인 중입니다. 중복 결제하지 말고 잠시 후 주문 상태를 확인해주세요.');
   if(row.state===next)return row;
   if(row.state==='CANCELED')throw new ShopError(409,'취소된 결제의 상태 확인이 필요합니다.');
-  try{return await repo.patch(row,{state:next},'payment','payment_'+status.toLowerCase());}
+  try{return await repo.patch(row,{state:next},actor,'payment_'+status.toLowerCase());}
   catch(error){if(error.status===409){const current=await repo.get(row.id);if(current?.state===next&&current.payment_key===row.payment_key&&current.total===row.total)return current;}throw error;}
  }
- async function rentalMove(id,input,returning){
+ async function rentalMove(id,input,returning,actor){
   if(!payment)throw new ShopError(503,'이니시스 결제 서비스 연결을 준비 중입니다.');
   const row=await repo.get(id);if(!row)throw new ShopError(404,'렌탈 요청을 찾을 수 없습니다.');
   const customer=cipher.decrypt(row.customer_cipher);if(!customer.rental)throw new ShopError(409,'렌탈 요청에서만 방문 처리를 할 수 있습니다.');
   if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='inicis'||row.version!==input.version||row.fulfillment!==(returning?'processing':'unfulfilled'))throw new ShopError(409,'실결제가 확인된 최신 렌탈 상태를 다시 확인해주세요.');
-  const verified=await applyPayment(row,await payment.get(row.payment_key));if(verified.state!=='PAID')throw new ShopError(409,'결제 취소 또는 변경 상태를 확인해주세요.');
+  const verified=await applyPayment(row,await payment.get(row.payment_key),actor);if(verified.state!=='PAID')throw new ShopError(409,'결제 취소 또는 변경 상태를 확인해주세요.');
   customer.rental[returning?'actual_return_at':'actual_pickup_at']=clock();
-  return dto(await repo.patch(row,{fulfillment:returning?'shipped':'processing',customer_cipher:cipher.encrypt(customer)},'owner',returning?'rental_returned':'rental_picked_up'),true);
+  return dto(await repo.patch(row,{fulfillment:returning?'shipped':'processing',customer_cipher:cipher.encrypt(customer)},actor,returning?'rental_returned':'rental_picked_up'),true);
+ }
+ async function editable(id,input){
+  if(typeof id!=='string'||!/^NS-[a-zA-Z0-9_-]{1,40}$/.test(id))throw new ShopError(400,'주문번호를 확인해주세요.');
+  const row=await repo.get(id);if(!row)throw new ShopError(404,'주문을 찾을 수 없습니다.');
+  if(!Number.isSafeInteger(input.version)||input.version<0||input.version!==row.version)throw new ShopError(409,'주문 상태가 변경되었습니다. 새로고침 후 다시 확인해주세요.');
+  return row;
+ }
+ function privateText(value,max,label,required=false){
+  if(typeof value!=='string'||value.length>max||/[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]/.test(value))throw new ShopError(400,label+'을 확인해주세요.');
+  const text=value.trim();if(required&&text.length<2)throw new ShopError(400,label+'을 2자 이상 입력해주세요.');return text;
+ }
+ function purchaseCustomer(row){const customer=cipher.decrypt(row.customer_cipher);if(customer.rental)throw new ShopError(409,'렌탈은 방문 수령·반납 처리 기능을 이용해주세요.');return customer;}
+ async function verifiedForShipping(row,actor){
+  if(!payment)throw new ShopError(503,'이니시스 결제 서비스 연결을 준비 중입니다.');
+  if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='inicis')throw new ShopError(409,'실결제가 확인된 최신 주문에서만 출고할 수 있습니다.');
+  if((await applyPayment(row,await payment.get(row.payment_key),actor)).state!=='PAID')throw new ShopError(409,'결제 취소 또는 변경 상태를 확인해주세요.');
+ }
+ async function correctShipment(row,input,actor){
+  const customer=purchaseCustomer(row),history=fulfillment.shipments(row,customer),shipment=history.find(item=>item.id===input.shipment_id),shipping=fulfillment.tracking(input);
+  if(!shipment)throw new ShopError(404,'수정할 출고 내역을 찾을 수 없습니다.');
+  if(input.items!==undefined)throw new ShopError(400,'운송정보 수정으로 출고 품목이나 수량을 바꿀 수 없습니다.');
+  const before={carrier:shipment.carrier,tracking:shipment.tracking};
+  Object.assign(shipment,shipping,{updated_at:clock(),updated_by:actor});
+  shipment.corrections=[...(shipment.corrections||[]),{...before,changed_at:clock(),actor}];
+  customer._admin_shipments=history;
+  const lastOriginal=history.filter(item=>item.purpose==='original').at(-1);
+  return detailed(await repo.patch(row,{customer_cipher:cipher.encrypt(customer),...(lastOriginal?.id===shipment.id?shipping:{})},actor,'order_tracking_updated'),true);
  }
  return {
   dto,invoiceEnabled,
-  async pickup(id,input){return rentalMove(id,input,false);},
-  async rentalReturn(id,input){return rentalMove(id,input,true);},
+  async pickup(id,input,actor='owner'){return rentalMove(id,input,false,actor);},
+  async rentalReturn(id,input,actor='owner'){return rentalMove(id,input,true,actor);},
+  async saveNote(id,input,actor='owner'){
+   const text=privateText(input.note,2000,'내부 메모'),row=await editable(id,input);
+   // Payment approval persists against this version. Do not create unrelated
+   // conflicts while an external approval may still be in flight.
+   if(['PAYMENT_PENDING','CONFIRMING'].includes(row.state))throw new ShopError(409,'결제 진행이 끝난 뒤 내부 메모를 저장해주세요.');
+   const customer=cipher.decrypt(row.customer_cipher);customer._admin_note={text,updated_at:clock(),actor};
+   return detailed(await repo.patch(row,{customer_cipher:cipher.encrypt(customer)},actor,text?'admin_note_updated':'admin_note_cleared'),true);
+  },
+  async cancelRequest(id,input,actor='owner'){
+   const reason=privateText(input.reason,500,'접수 취소 사유',true),row=await editable(id,input);
+   if(!['REQUESTED','APPROVED'].includes(row.state)||row.fulfillment!=='unfulfilled'||row.carrier||row.tracking||['payment_key','payment_mode','payment_provider','payment_auth_cipher','payment_receipt_cipher','paid_at'].some(key=>row[key]!=null))throw new ShopError(409,'결제가 시작되지 않은 미결제 접수만 취소할 수 있습니다. 결제·환불 상태는 별도로 확인해주세요.');
+   const customer=cipher.decrypt(row.customer_cipher);customer._admin_cancellation={reason,created_at:clock(),actor};
+   return detailed(await repo.patch(row,{state:'CANCELED',quote_expires:null,customer_cipher:cipher.encrypt(customer)},actor,'request_canceled'),true);
+  },
+  async updateShipment(id,input,actor='owner'){return correctShipment(await editable(id,input),input,actor);},
+  async createCase(id,input,actor='owner'){
+   const row=await editable(id,input),customer=purchaseCustomer(row),history=fulfillment.shipments(row,customer),cases=customer._admin_cases||[];
+   if(!['return','exchange'].includes(input.kind))throw new ShopError(400,'반품 또는 교환을 선택해주세요.');
+   if(row.payment_mode!=='live'||!['PAID','PAYMENT_REVIEW','CANCELED'].includes(row.state))throw new ShopError(409,'실제 출고한 구매 주문에서 반품·교환을 기록해주세요.');
+   const shipment=history.find(s=>s.id===input.shipment_id);if(!shipment)throw new ShopError(404,'반품·교환 대상 출고 내역을 선택해주세요.');
+   if(cases.length>=100)throw new ShopError(409,'반품·교환 기록이 많습니다. 기존 사건 내역을 먼저 확인해주세요.');
+   const reason=privateText(input.reason,1000,'반품·교환 사유',true),items=fulfillment.selectItems(input.items,fulfillment.caseRemaining(shipment,cases)),now=clock();
+   cases.push({id:'CS-'+uuid(),kind:input.kind,status:'requested',shipment_id:shipment.id,items,reason,note:'',return_carrier:'',return_tracking:'',created_at:now,updated_at:now,actor,updated_by:actor,history:[{status:'requested',note:'',created_at:now,actor}]});
+   customer._admin_cases=cases;
+   return detailed(await repo.patch(row,{customer_cipher:cipher.encrypt(customer)},actor,input.kind+'_case_created'),true);
+  },
+  async updateCase(id,input,actor='owner'){
+   const row=await editable(id,input),customer=purchaseCustomer(row),cases=customer._admin_cases||[],item=cases.find(c=>c.id===input.case_id);
+   if(!item)throw new ShopError(404,'반품·교환 기록을 찾을 수 없습니다.');
+   const transitions={requested:['approved','rejected'],approved:['returning','received','rejected'],returning:['received','rejected'],received:['closed'],closed:[],rejected:[]};
+   if(input.status!==item.status&&!transitions[item.status]?.includes(input.status))throw new ShopError(409,'현재 반품·교환 상태에서 가능한 다음 단계를 선택해주세요.');
+   if(!Object.hasOwn(transitions,input.status))throw new ShopError(400,'반품·교환 상태를 확인해주세요.');
+   const note=input.note===undefined?'':privateText(input.note,1000,'처리 메모');
+   if(input.status!==item.status&&['closed','rejected'].includes(input.status)&&note.length<2)throw new ShopError(400,'기록 종결 또는 거절 사유를 처리 메모에 입력해주세요.');
+   if(item.kind==='exchange'&&input.status==='closed'&&fulfillment.replacementRemaining(item,fulfillment.shipments(row,customer)).length)throw new ShopError(409,'교환품의 남은 수량을 출고한 뒤 기록을 종결해주세요.');
+   if(input.carrier!==undefined||input.tracking!==undefined){const shipping=fulfillment.tracking(input);item.return_carrier=shipping.carrier;item.return_tracking=shipping.tracking;}
+   const now=clock();item.status=input.status;item.note=note;item.updated_at=now;item.updated_by=actor;item.history.push({status:input.status,note,created_at:now,actor});
+   customer._admin_cases=cases;
+   return detailed(await repo.patch(row,{customer_cipher:cipher.encrypt(customer)},actor,'case_'+input.status),true);
+  },
+  async exchangeShip(id,input,actor='owner'){
+   const row=await editable(id,input),customer=purchaseCustomer(row),history=fulfillment.shipments(row,customer),item=(customer._admin_cases||[]).find(c=>c.id===input.case_id);
+   if(!item||item.kind!=='exchange'||item.status!=='received')throw new ShopError(409,'회수가 확인된 교환 기록에서 교환품을 출고해주세요.');
+   const remaining=fulfillment.replacementRemaining(item,history);if(!remaining.length)throw new ShopError(409,'교환품이 이미 전량 출고되었습니다. 운송정보 수정 기능을 이용해주세요.');
+   const items=fulfillment.selectItems(input.items,remaining,{optional:true}),shipping=fulfillment.tracking(input);
+   await verifiedForShipping(row,actor);
+   history.push({id:'SH-'+uuid(),purpose:'exchange',case_id:item.id,items,...shipping,created_at:clock(),updated_at:clock(),actor,updated_by:actor});customer._admin_shipments=history;
+   item.updated_at=clock();item.updated_by=actor;item.history.push({status:item.status,note:'교환품 출고 기록',created_at:clock(),actor});
+   return detailed(await repo.patch(row,{customer_cipher:cipher.encrypt(customer)},actor,'exchange_shipped'),true);
+  },
   async create(owner,key,input){
    if(!/^[a-zA-Z0-9_-]{16,100}$/.test(key||''))throw new ShopError(400,'주문 요청 번호가 올바르지 않습니다.');
    const customer=customerFields(input.customer);customer.evidence=evidenceFields(input.evidence);
@@ -99,14 +180,14 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
   async adminDetail(row){return detailed(row,true);},
   async adminGet(id){const row=await repo.get(id);if(!row)throw new ShopError(404,'주문을 찾을 수 없습니다.');return detailed(row,true);},
   async retryDocument(id){if(!documents||!payment)throw new ShopError(503,'증빙 서비스를 확인해주세요.');await documents.retry(id);const row=await repo.get(id);return detailed(row,true);},
-  async approve(id,input){
+  async approve(id,input,actor='owner'){
    const row=await repo.get(id);if(!row)throw new ShopError(404,'주문을 찾을 수 없습니다.');
    if(!['REQUESTED','APPROVED'].includes(row.state)||input.version!==row.version||input.stock_confirmed!==true)throw new ShopError(409,'주문 상태와 재고·납기 확인을 다시 확인해주세요.');
    const customer=cipher.decrypt(row.customer_cipher);if(customer.rental)rentalSchedule(customer.rental,clock);
    const rows=JSON.parse(row.lines_json).map(p=>({id:p.id,option:p.option,quantity:p.quantity}));
    const q=customer.rental?rentalQuote(catalog,detail,rows,input.rental_prices??[],clock):quoteCatalog(catalog,detail,rows,clock);
    if(q.total===null)throw new ShopError(409,'금액 미확정 상품은 상담으로 견적을 확정해야 합니다.');
-   return dto(await repo.patch(row,{state:'APPROVED',lines_json:JSON.stringify(q.lines),subtotal:q.subtotal,shipping:q.shipping,total:q.total,quote_version:row.quote_version+1,quote_expires:clock()+30*60*1000},'owner','quote_approved'),true);
+   return dto(await repo.patch(row,{state:'APPROVED',lines_json:JSON.stringify(q.lines),subtotal:q.subtotal,shipping:q.shipping,total:q.total,quote_version:row.quote_version+1,quote_expires:clock()+30*60*1000},actor,'quote_approved'),true);
   },
   async start(id,owner,version,device='WEB'){
    if(!payment)throw new ShopError(503,'이니시스 결제 서비스 연결을 준비 중입니다.');
@@ -156,29 +237,33 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
    if(documents){try{await documents.process(row.id);}catch{}}
    return detailed(row);
   },
-  async reconcile(id){
+  async reconcile(id,input={},actor='owner'){
    if(!payment)throw new ShopError(503,'이니시스 결제 서비스 연결을 준비 중입니다.');
    const row=await repo.get(id);if(!row)throw new ShopError(404,'확인할 결제 정보가 없습니다.');
    if(row.payment_mode!==payment.mode||row.payment_provider!=='inicis')throw new ShopError(409,'주문의 결제 환경 확인이 필요합니다.');
-   if(row.payment_key)return dto(await applyPayment(row,await payment.get(row.payment_key)),true);
+   if(row.payment_key)return dto(await applyPayment(row,await payment.get(row.payment_key),actor),true);
    if(row.state==='CANCELED')return dto(row,true);
    // A crashed approval has no trusted approval TID. Do not reapprove it.
    if(row.payment_auth_cipher&&['CONFIRMING','PAYMENT_REVIEW'].includes(row.state)){
     if(clock()-row.updated_at<60000)throw new ShopError(409,'승인 요청이 진행 중입니다. 잠시 후 다시 확인해주세요.');
     const canceled=await payment.netCancel(cipher.decrypt(row.payment_auth_cipher),row);
-    if(canceled.canceled)return dto(await repo.patch(row,{state:'CANCELED'},'owner','payment_net_canceled'),true);
+    if(canceled.canceled)return dto(await repo.patch(row,{state:'CANCELED'},actor,'payment_net_canceled'),true);
    }
    throw new ShopError(503,'이니시스 관리자에서 결제 결과를 확인해야 합니다.');
   },
-  async ship(id,input){
-   if(!payment)throw new ShopError(503,'이니시스 결제 서비스 연결을 준비 중입니다.');
-   const row=await repo.get(id);if(!row)throw new ShopError(404,'주문을 찾을 수 없습니다.');
-   if(cipher.decrypt(row.customer_cipher).rental)throw new ShopError(409,'렌탈은 수령·반납 처리 버튼을 이용해주세요.');
-   if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='inicis'||row.version!==input.version)throw new ShopError(409,'실결제가 확인된 최신 주문에서만 출고할 수 있습니다.');
-   const verified=await applyPayment(row,await payment.get(row.payment_key));
-   if(verified.state!=='PAID')throw new ShopError(409,'결제 취소 또는 변경 상태를 확인해주세요.');
-   if(!/^[가-힣a-zA-Z0-9 .-]{2,40}$/.test(input.carrier||'')||!/^\d[\d-]{5,29}$/.test(input.tracking||''))throw new ShopError(400,'택배사와 운송장 번호를 확인해주세요.');
-   return dto(await repo.patch(row,{fulfillment:'shipped',carrier:input.carrier,tracking:input.tracking},'owner','order_shipped'),true);
+  async ship(id,input,actor='owner'){
+   const row=await editable(id,input),customer=purchaseCustomer(row),history=fulfillment.shipments(row,customer);
+   // Preserve the legacy completed-order tracking edit without creating another
+   // shipment. New history must always identify the shipment being corrected.
+   const originals=history.filter(s=>s.purpose==='original');
+   if(row.fulfillment==='shipped'&&originals.length===1&&originals[0].id==='legacy'&&input.items===undefined)return correctShipment(row,{...input,shipment_id:'legacy'},actor);
+   if(row.fulfillment==='processing'&&!history.length)throw new ShopError(409,'기존 부분 출고의 품목 수량을 먼저 확인해주세요.');
+   const remaining=fulfillment.originalRemaining(row,history);if(!remaining.length)throw new ShopError(409,'이미 전량 출고되었습니다. 출고 내역에서 운송정보를 수정해주세요.');
+   const items=fulfillment.selectItems(input.items,remaining,{optional:true}),shipping=fulfillment.tracking(input);
+   await verifiedForShipping(row,actor);
+   history.push({id:'SH-'+uuid(),purpose:'original',items,...shipping,created_at:clock(),updated_at:clock(),actor,updated_by:actor});customer._admin_shipments=history;
+   const complete=fulfillment.originalRemaining(row,history).length===0;
+   return detailed(await repo.patch(row,{fulfillment:complete?'shipped':'processing',...shipping,customer_cipher:cipher.encrypt(customer)},actor,complete?'order_shipped':'order_partially_shipped'),true);
   }
  };
 }

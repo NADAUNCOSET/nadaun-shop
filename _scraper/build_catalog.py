@@ -13,13 +13,23 @@ from sync_shop_sources import ROOT,OUT,clean,save_json
 from enrich_shop_sources import CACHE,shard,source_fingerprint
 from catalog_dedup import model_key,deduplicate,name_key,primary_key
 from storefront_pages import content as page_content
-from catalog_seo import product_discovery
+from catalog_seo import product_discovery, page_metadata, page_structured_data
 from brand_category_policy import mirror_source_paths
 from sync_cafe24_partners import SITES as CAFE24_SITES
 
 CAFE24_SOURCES=tuple(CAFE24_SITES)
 
 PUBLIC=ROOT/'data/catalog'
+
+def public_release_fields(product):
+    """Publish a reviewed pre-release state only with undisclosed prices."""
+    release=product.get('release_status')
+    if not release:return {}
+    if (release!='coming_soon' or product.get('kind')!='purchase'
+        or product.get('price') is not None or product.get('sale_price') is not None
+        or product.get('status')!='inquiry' or product.get('supplier_status')!='inquiry'):
+        raise ValueError('Inconsistent unpublished product release state: '+str(product.get('id')))
+    return {'release_status':release}
 
 def public_remote_images(values):
     """Keep persistent remote images; an editor's blob URL is not a public asset."""
@@ -251,7 +261,9 @@ def build(allow_pending=False):
                 d={}
             if source.startswith('imweb-'):d={'detail_status':'verified','description_text':p.get('description_text',''),'images':p['images']}
             if source in ('l-mount','plthink','avx','dji-official','saeki',*CAFE24_SOURCES):d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation') if k in p}
-            if source=='saeki':d['description_notice']=p.get('description_notice','')
+            if source=='saeki':
+                d['description_notice']=p.get('description_notice','')
+                d.update(public_release_fields(p))
             if d.get('detail_status')=='verified':coverage[source]+=1
             elif not allow_pending:raise RuntimeError('Unverified product detail: '+pid)
             if d.get('unavailable'):
@@ -276,7 +288,8 @@ def build(allow_pending=False):
                 p['images']['detail']=[u for u in p['images'].get('detail',[]) if '/shop/images/' not in u]
             if source=='kpp' and d.get('detail_status')=='verified':p['price']=d['price'];p['sale_price']=d['sale_price']
             p['offers']=[{'source':p['source'],'url':p['source_url'],'status':p['status'],'price':p.get('sale_price'),'id':pid}]
-            details[pid]={k:d.get(k) for k in ('description_text','options','option_groups','shipping','options_require_confirmation','description_notice') if d.get(k)}
+            if p.get('release_status'):p['offers'][0].update(public_release_fields(p))
+            details[pid]={k:d.get(k) for k in ('description_text','options','option_groups','shipping','options_require_confirmation','description_notice','release_status') if d.get(k)}
             details[pid]['images']=p['images'];details[pid]['source_id']=p['source_id']
             p['_provenance']=source_provenance(p,d,s)
             if pid in brand_overrides:
@@ -316,6 +329,7 @@ def build(allow_pending=False):
             thumb='/'+assets[pid]['path']
         if not thumb:raise RuntimeError('Missing product thumbnail: '+pid)
         public_row={k:p.get(k) for k in ('id','name','brand_id','kind','price','sale_price','status','category_ids','type_ids','promotion_ids','offers','supplier_status')}|{'image':thumb,'detail_bucket':shard(pid),'shipping_class':shipping_class(p,p.get('shipping_class'))}
+        public_row.update(public_release_fields(p))
         if p['kind']=='rental':
             from rental_content import presentation as rental_presentation
             summary,content,audit=rental_presentation(p,details[pid])
@@ -452,6 +466,7 @@ def build(allow_pending=False):
       ('terms.html','이용약관 | 나다운 샵','나다운 샵의 상품 정보, 구매와 서비스 이용에 관한 약관입니다.','policy'),
       ('privacy.html','개인정보처리방침 | 나다운 샵','나다운 샵의 개인정보 처리 목적과 항목, 보유기간 및 권리 행사 방법을 안내합니다.','policy'),
       ('studio.html','영등포 자연광·호리존 스튜디오 대여 | 나다운 스튜디오','서울 영등포 나다운 스튜디오. 자연광·호리존·전동 배경지와 룩북·제품 촬영 공간, 시설 및 예약 방법을 안내합니다.','studio'),
+      ('rental-guide.html','영등포 렌탈샵 | 나다운 스페이스','나다운 스페이스의 촬영장비 렌탈 이용안내입니다.','guide'),
       ('about.html','회사소개 | 나다운 샵','레인보우베네가 운영하는 나다운 샵. 사진·영상 촬영장비 구매와 렌탈, 기프트·굿즈를 안내합니다.','about'),
       ('services.html','촬영장비 구매·렌탈·협찬·사진영상 제작 안내 | 나다운 샵','카메라·조명·삼각대 구매, 서울 영등포 장비 렌탈, 협찬·브랜드 협업과 사진·영상 촬영 제작 문의를 안내합니다.','guide'),
       ('gift-item.html','기프트 상품 상세 | 나다운 샵','기프트·굿즈의 상품 정보와 수량·인쇄 조건을 확인하세요.','gift-item'),
@@ -459,7 +474,10 @@ def build(allow_pending=False):
       ('gifts.html','기프트·굿즈 | 나다운 샵','나다운기프트의 기업 선물, 브랜드 굿즈와 판촉물을 만나보세요. 상품별 수량·인쇄·제작 조건을 확인할 수 있습니다.','gift'),
       ('shipping.html','배송·교환·반품 안내 | 나다운 샵','상품별 배송 조건, 교환과 반품 접수, 환급 및 고객센터를 안내합니다.','policy'),
     ]:
-        page=template.replace('{{TITLE}}',title).replace('{{DESCRIPTION}}',description).replace('{{CANONICAL}}','https://shop.nadaun.co/'+('' if filename=='index.html' else filename)).replace('{{MODE}}',mode).replace('{{BRAND}}','').replace('{{REVISION}}',revision)
+        title,description=page_metadata(filename,title,description)
+        canonical='https://shop.nadaun.co/'+('' if filename=='index.html' else filename)
+        page=template.replace('{{TITLE}}',html.escape(title)).replace('{{DESCRIPTION}}',html.escape(description)).replace('{{CANONICAL}}',canonical).replace('{{MODE}}',mode).replace('{{BRAND}}','').replace('{{REVISION}}',revision)
+        page=page.replace('{{STRUCTURED_DATA}}',page_structured_data(filename,title,description,canonical))
         body=(ROOT/'_scraper/shop_templates/policies'/filename).read_text() if mode=='policy' else (ROOT/'_scraper/shop_templates'/filename).read_text() if mode in ('guide','about','studio','payment-test') else page_content(mode,brand_list,public_products,category_galleries=category_galleries)
         page=page.replace('{{CONTENT}}',body)
         if mode=='studio':page=page.replace('https://shop.nadaun.co/assets/shop/nadaun-logo.png','https://shop.nadaun.co/assets/shop/studio/space-09.jpg')
@@ -470,10 +488,14 @@ def build(allow_pending=False):
         (ROOT/filename).write_text(page)
     brand_dir=ROOT/'brands';brand_dir.mkdir(exist_ok=True)
     for b in brand_list:
-        page=template.replace('{{TITLE}}',html.escape(b['name']+' 브랜드몰 | 나다운 샵')).replace('{{DESCRIPTION}}',html.escape(b['name']+' 제품을 나다운 샵에서 만나보세요. 브랜드별 세부 분류와 상품 정보, 구매 상담.')).replace('{{CANONICAL}}','https://shop.nadaun.co/brands/'+b['id']+'.html').replace('{{MODE}}','catalog').replace('{{BRAND}}',b['id']).replace('{{REVISION}}',revision)
+        title=b['name']+' 브랜드몰 | 나다운 스페이스'
+        description=b['name']+(' 장비 렌탈 안내. 나다운 스페이스에서 대여 구성과 일정을 상담하세요.' if not b['purchase_count'] else ' 제품 구매 안내. 나다운 스페이스에서 모델·옵션·규격과 재고·납기를 확인하세요.')
+        canonical='https://shop.nadaun.co/brands/'+b['id']+'.html'
+        page=template.replace('{{TITLE}}',html.escape(title)).replace('{{DESCRIPTION}}',html.escape(description)).replace('{{CANONICAL}}',canonical).replace('{{MODE}}','catalog').replace('{{BRAND}}',b['id']).replace('{{REVISION}}',revision)
+        page=page.replace('{{STRUCTURED_DATA}}',page_structured_data('brands/'+b['id']+'.html',title,description,canonical,brand=True))
         page=page.replace('{{CONTENT}}',page_content('catalog',brand_list,public_products,b))
         (brand_dir/(b['id']+'.html')).write_text(page)
-    urls=['https://shop.nadaun.co/','https://shop.nadaun.co/catalog.html','https://shop.nadaun.co/brands.html']+['https://shop.nadaun.co/brands/'+b['id']+'.html' for b in brand_list]+['https://shop.nadaun.co/'+p for p in ('studio.html','about.html','terms.html','privacy.html','shipping.html','services.html','gifts.html')]+['https://shop.nadaun.co/item.html?id='+p['id'] for p in public_products]
+    urls=['https://shop.nadaun.co/','https://shop.nadaun.co/catalog.html','https://shop.nadaun.co/brands.html']+['https://shop.nadaun.co/brands/'+b['id']+'.html' for b in brand_list]+['https://shop.nadaun.co/'+p for p in ('studio.html','rental-guide.html','about.html','terms.html','privacy.html','shipping.html','services.html','gifts.html')]+['https://shop.nadaun.co/item.html?id='+p['id'] for p in public_products]
     images={'https://shop.nadaun.co/item.html?id='+p['id']:urljoin('https://shop.nadaun.co/',p['image']) for p in public_products}
     entries=''.join('<url><loc>'+html.escape(u)+'</loc>'+('<image:image><image:loc>'+html.escape(images[u])+'</image:loc></image:image>' if u in images else '')+'</url>' for u in urls)
     (ROOT/'catalog-sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+entries+'</urlset>\n')

@@ -72,3 +72,25 @@ test('rental admin shows requested visits and contact without shipping fields or
 test('rental-only requests cannot display a payment button before PG activation',()=>{
  const r=runtime();vm.runInContext('checkoutPaymentOpen=false',r.context);const html=r.context.customerActions({kind:'rental',state:'APPROVED',total:90000});assert.doesNotMatch(html,/data-pay/);assert.match(html,/온라인 결제 연결을 준비 중/);
 });
+
+test('admin table separates next actions and safely renders hostile customer/product strings',()=>{
+ const r=runtime(),o={id:'NS-test',kind:'purchase',state:'PAID',payment_mode:'live',fulfillment:'unfulfilled',created_at:0,lines:[{id:'a',name:'<img src=x>',option:'',quantity:2,unit_price:10}],customer:{name:'<svg onload=x>'},subtotal:20,shipping:0,total:20};
+ const html=r.context.adminTable([o],'NS-test');assert.doesNotMatch(html,/<svg|<img src=x/);assert.match(html,/aria-expanded="true"/);assert.match(html,/출고·운송장 입력/);assert.match(html,/선택 수량 출고 처리/);
+ assert.equal(r.context.adminNext({...o,kind:'rental',fulfillment:'processing'}),'방문 반납 확인');assert.equal(r.context.adminNext({...o,payment_mode:'test'}),'테스트 결제');assert.equal(r.context.adminNext({...o,admin_cases:[{status:'received'}]}),'반품·교환 확인');
+});
+test('shipment quantities exclude exchange re-shipments and protect legacy completed deliveries',()=>{
+ const r=runtime(),o={kind:'purchase',fulfillment:'processing',lines:[{id:'a',option:'Black',quantity:3}],shipments:[{id:'s1',purpose:'original',items:[{id:'a',option:'Black',quantity:1}]},{id:'s2',purpose:'exchange',items:[{id:'a',option:'Black',quantity:1}]}]};
+ assert.equal(r.context.remainingShipmentItems(o)[0].quantity,2);
+ assert.equal(r.context.remainingShipmentItems({...o,shipments:[],fulfillment:'shipped'}).length,0);
+ assert.equal(r.context.caseRemaining({...o,admin_cases:[{shipment_id:'s1',status:'closed',items:[{id:'a',option:'Black',quantity:1}]}]},o.shipments[0]).length,0);
+ assert.equal(r.context.caseRemaining({...o,admin_cases:[{shipment_id:'s1',status:'rejected',items:[{id:'a',option:'Black',quantity:1}]}]},o.shipments[0])[0].quantity,1);
+});
+test('internal notes and cancellations stay out of customer cards and payment-stage notes are disabled',()=>{
+ const r=runtime(),o={id:'NS-fixture',state:'PAYMENT_PENDING',kind:'purchase',created_at:0,lines:[],subtotal:0,shipping:0,total:0,admin_note:{text:'internal-secret<script>'},admin_cancellation:{reason:'private-reason'}};
+ const own=r.context.orderCard(o);assert.doesNotMatch(own,/internal-secret|private-reason|data-admin-note/);
+ const admin=r.context.orderCard(o,true);assert.match(admin,/internal-secret&lt;script&gt;/);assert.match(admin,/결제 진행 중에는 메모를 변경할 수 없습니다/);assert.doesNotMatch(admin,/data-cancel-request/);
+});
+test('customer shipment summary exposes shipment facts without internal claim reasons or actors',()=>{
+ const r=runtime(),o={kind:'purchase',shipments:[{id:'s1',purpose:'original',carrier:'로젠',tracking:'12345678',items:[{id:'a',name:'Camera',quantity:1}],actor:'internal-actor'}],admin_cases:[{reason:'private-case-reason'}]};
+ const html=r.context.customerShipments(o);assert.match(html,/12345678/);assert.match(html,/Camera 1개/);assert.doesNotMatch(html,/internal-actor|private-case-reason/);
+});
