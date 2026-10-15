@@ -1137,3 +1137,24 @@ HOMAN CFexpress Type A256GB 렌탈20,000원을네이버공식API로생성/재조
 지정 NAS 비밀번호 확인_나다운 디자인.docx의 나다운 주문관리 행(47) 비밀번호만 갱신했다. 기존223행 중 나머지222행 동일, word/document.xml 외 ZIP 구성원 동일, 같은 폴더에 이전본 백업. 새 값과 private owner-login 원본의 일치를 검증했다. 문서 전체7페이지 렌더·민감정보 가린 시각검수, 새 비밀번호가2페이지 비밀번호 열 안에 표시되는 것을 확인했다. 비밀번호 본문은 공용기록·Git에 쓰지 않는다.
 
 근거: shop `_private/commerce/password-20261016/`의 environment-updated.json, live-proof.json, document-receipt.json, 비공개 문서 폴더의 _검증_주문관리_20261016/verification.json. Mac에서 확인했으며 다른PC 실행은 미확인이다.
+
+
+### 2026-10-16 토스 승인 후 개통 준비·고객 증빙·촬영장비 SEO
+
+대표는 토스 승인 후 바로 사용할 수 있게 구매·렌탈 결제와 고객 증빙 처리를 준비하고, 사진·영상 촬영장비/카메라/시네마카메라/조명 검색 노출을 보강하라고 요청했다. 검색 1위 보장과 실제 검색량·색인 확인을 기술 SEO 설정과 구분한다.
+
+토스 계정을 대표 지정 NAS 비공개 Word 문서의 나다운 주문관리 다음 행에 추가했다. 기존223행과 다른ZIP구성원 보존/224행/계정 원문 대조/모드600/같은폴더 사전백업을 확인했다. 자격정보를 가린 한글7페이지 렌더를 전부 시각검수했다. 아이디·비밀번호·키 본문은 공용 기록/Git에 남기지 않는다. 기존 order.nadaun.co의 새 관리자 비밀번호도 shop/order두도메인에서 정상로그인·주문0·로그아웃후401로 재확인했다.
+
+별도 상점 테스트키용 `/payment-test.html`과 `/api/toss-review`를 구현했다. 서버에 저장된 구매/렌탈 상품 금액, 만료 서명, 원점·거래·금액·키·결제수단·승인·취소 조회를 검증한다. 운영 주문/렌탈 DB를 열거나 쓰지 않는다. 운영키를 테스트키로 받지 않고, 키 없으면 버튼 비활성/준비요청503. 운영 주문OFF와 독립하여 심사용 테스트 창을 준비했다. 테스트키 필드3개만 비공개 설정에 빈값으로 추가했고 기존설정은 보존했다.
+
+고객 증빙 선택·카드전표·현금영수증 소득공제/지출증빙 안내, 사업자 정보 입력에 더해 본인 결제완료 주문의 증빙 상태 갱신·전자세금계산서 공급받는자 조회/인쇄를 보강했다. 인쇄 전 실제PG거래/금액/환경/증빙번호를 다시 확인하고 팝빌 한문서용30초 URL만 제공한다. 관리자 문서함 세션은 제공하지 않는다. 위조·다른고객·환불·발급번호불일치·위험URL 차단과 중복발급방지를 검사했다. 새 결제/증빙 회귀 포함59검사 및 정상publisher 전체필수Python/Node검사를 통과했다. 가상 공급자 검사는 실제 토스 거래/실제 세금계산서 발급의 증거가 아니다.
+
+카메라·시네마카메라·촬영조명과 기자재의 선택기준, 구매/렌탈 구분, 실제 카테고리를 연결한 `/equipment-guide.html` 및 `/billing-guide.html`을 추가했다. 기존 서비스용 반응형 글꼴/2열 구성, 홈·푸터 내부링크, canonical/OG/구조화정보/사이트맵에 반영했다. 비어있는 옛 rent:38대신 실제 촬영·디렉터모니터 rent:monitor로 연결했다. 공개16페이지 메타데이터/H1/JSON-LD, 전체29496상품 설명과217렌탈, 사이트맵29919URL, 구매·렌탈·기프트OG JPEG1200x630을 확인했고 오류0이다. Collective·Blogspot의 shop.nadaun.co연결도200으로 확인했다. SearchConsole/네이버서치어드바이저 실제등록·색인·검색순위와 카카오앱 실공유는 미검증이다. 1등 노출을 보장하지 않는다.
+
+일반배포 중 최신AVX후보 avx-2628의 상품명/브랜드 변경으로 정확근거가드가 중단했다. AVX실제페이지 제목과BLKBRD브랜드메뉴를 대조해 새정확원문 버전만 추가했고 과거공개원문의 검토값은 보존했다. 미검토 조합은 계속중단하는 회귀검사 통과. 최초 인프로세스 점검은 수정 전 캐시모듈을 읽어 실패했고 새인터프리터로 전후모든정확근거를 재검사해 해결했다. 실패원문은 private에 보존한다. 기존상품29496의객체 누락/추가/변경0·렌탈217보존을 대조했다. 앞서LDNET읽기전용Git검사만중단한 기록은 정상전체publisher와원본3075개/실제공개offer 3074개의ID·정규원본전수대조 후에만 해결표시했다. 정상worker current/LaunchAgent loaded 재확인. 다른보호중지·기프트원본자동갱신OFF는 보존한다.
+
+공개commit `dd5d46fc773a9d554cbc336bc6670da8a42ad39b`, deployment `dpl_xUhgfGCwPVuP6i9ECpEG28mWEcA4` READY, revision `76285452f7b7f934`, 공개확인 `2026-10-15T17:11:54+00:00`. 정확한코드/생성물만커밋·푸시했고 기존레거시별도수정은보존했다. 사전전체Gitbundle/작업패치/미추적파일/운영비공개설정백업 검증. 최종기록커밋 후 원본bundle을검증재사용하는증분bundle과최종작업패치/비공개설정을별도검증백업한다.
+
+**미완료와막힌원인:** 토스‘심사중’은대표전달이며상점포털직접확인은아니다. 브라우저제어의request-header-policy연결오류가정상재시도에도반복되어로그인성공·신청도메인·승인·자체상점키확보·실제테스트창개방/승인/취소를검증하지못했다. 토스비밀번호오류가관찰된것은아니다. 운영환경재조회에서토스운영3키/테스트3키와팝빌3키모두없음. 공식샘플상점키로대체하지않는다. ordersEnabled=false/rentalRequestsEnabled=false/taxInvoiceEnabled=false,adminEnabled=true/paymentProvider=toss유지. 토스승인알림이우리환경변수/주문스위치를자동변경하지않는다. 자체상점키등록→해당상점카드/계좌이체·현금영수증·취소·구매/렌탈·모바일검수→실운영전환이남았다. 전자세금계산서는별도발급서비스계정/API키/인증서/포인트/과세프로필/실발급·국세청전송검수가필요하며기존계정여부를대표에게질문했다. 신규유료계약가입·실제고객결제·발급0건. Windows실기기/새안내브라우저시각검수는이번도구오류로미검증이다.
+
+원본근거: `_private/commerce/release-20261016-test-seo/`의 release.json/live-proof.json/seo-live-audit.json/crosslink-audit.json/backup-manifest.json/environment-readiness.json/merchant-access-blocker.json/ldnet-publication-reconciliation.json 및 최종 final-backup/backup-manifest.json. 계정문서검증은 `_private/commerce/toss-review-20261016/account-document-receipt.json`과지정비공개문서폴더QA에보존했다. MacNAS자동기록complete/errors[]/installation존재확인. 다른PC실행검증은아니다.
