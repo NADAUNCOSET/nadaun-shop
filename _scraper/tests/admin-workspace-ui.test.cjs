@@ -74,3 +74,11 @@ test('draft search disables consultation-only products and unsafe options while 
  assert.doesNotMatch(html,/<img|<script>|<bad>/);assert.equal((html.match(/disabled>추가/g)||[]).length,2);assert.match(html,/렌탈 · 기간 단가 직접 확인/);assert.match(html,/&lt;script&gt;/);
  const rows=r.context.adminDraftRows([{id:'r',name:'<svg>',option:'',quantity:1,unit_price:null}],'rental');assert.match(rows,/value="" min="1" max="100000000"/);assert.match(rows,/전체 기간 1개당 단가/);assert.doesNotMatch(rows,/<svg>|value="0"/);
 });
+test('automatic label UI distinguishes connection, printing and actual delivery without exposing keys',()=>{
+ const r=runtime(),disabled=r.context.adminShippingPanel({enabled:false,message:'연결 대기',apiKey:'secret'});
+ assert.match(disabled,/API 연결과 우리몰 계약 확인/);assert.doesNotMatch(disabled,/data-label-register|secret/);
+ const html=r.context.adminShippingPanel({enabled:true,message:'연결됨',contracts:[{id:'contract',carrier_name:'<script>',center_name:'<img>'}]});assert.match(html,/선택 송장 인쇄/);assert.match(html,/이미 발급된 송장 재인쇄/);assert.doesNotMatch(html,/<script>|<img>/);
+ assert.match(r.context.adminShipmentSummary(order({admin_shipping_label:{status:'printed',carrier:'로젠택배',tracking:'0123456789'}})),/발급 완료 · 집하 전/);
+ assert.match(r.context.adminWorkflowForm(order({purchase_workflow:{stage:'delivered',delivery_source:'goodsflow'}})),/택배사에서 확인한 배송 완료/);
+ const booked=order({state:'PAID',payment_mode:'live',admin_shipping_label:{status:'printed'},purchase_workflow:{stage:'ready'}});assert.equal(r.context.adminNext(booked),'택배사 집하 대기');assert.doesNotMatch(r.context.adminShipping(booked),/data-shipment-create/);
+});

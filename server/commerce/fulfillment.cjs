@@ -9,14 +9,14 @@ function shipments(row,customer){
  return [];
 }
 function publicShipments(rows){
- return rows.map(s=>({id:s.id,purpose:s.purpose,case_id:s.case_id||null,items:s.items.map(lineView),carrier:s.carrier,tracking:s.tracking,created_at:s.created_at,updated_at:s.updated_at,delivery_status:s.delivered_at?'delivered':'in_transit',delivered_at:s.delivered_at||null,delivery_source:s.delivered_at?'manual':null}));
+ return rows.map(s=>({id:s.id,purpose:s.purpose,case_id:s.case_id||null,items:s.items.map(lineView),carrier:s.carrier,tracking:s.tracking,created_at:s.created_at,updated_at:s.updated_at,delivery_status:s.delivered_at?'delivered':'in_transit',delivered_at:s.delivered_at||null,delivery_source:s.delivered_at?(s.delivery_source||'manual'):null}));
 }
 function purchaseWorkflow(row,customer){
  if(customer.rental||row.state!=='PAID'||row.payment_mode!=='live')return null;
  const history=shipments(row,customer),originals=history.filter(s=>s.purpose==='original');
  const delivered=row.fulfillment==='shipped'&&originals.length>0&&originalRemaining(row,history).length===0&&originals.every(s=>s.delivered_at);
  const stage=delivered?'delivered':row.fulfillment!=='unfulfilled'?'in_transit':customer._admin_purchase_workflow?.stage==='ready'?'ready':'preparing';
- return {stage,partial:row.fulfillment==='processing',delivered_at:delivered?Math.max(...originals.map(s=>s.delivered_at)):null,delivery_source:delivered?'manual':null};
+ return {stage,partial:row.fulfillment==='processing',delivered_at:delivered?Math.max(...originals.map(s=>s.delivered_at)):null,delivery_source:delivered?(originals.every(s=>s.delivery_source==='goodsflow')?'goodsflow':'manual'):null};
 }
 function remaining(allowed,used=[]){
  const counts=new Map();

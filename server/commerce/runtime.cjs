@@ -8,6 +8,7 @@ const {popbill}=require('./popbill.cjs');
 const {inicis}=require('./inicis.cjs');
 const {adminService}=require('./admin.cjs');
 const {adminDraftService}=require('./admin-drafts.cjs');
+const {goodsflow}=require('./goodsflow.cjs');
 let cached;
 function runtime(env=process.env){
  if(cached)return cached;
@@ -22,7 +23,7 @@ function runtime(env=process.env){
  let payment=null,invoice=null;
  if(env.SHOP_ORDERS_ENABLED==='true'){payment=inicis(env);invoice=popbill(env);}
  const documents=documentService({db,repo,dataKey:env.SHOP_ORDER_DATA_KEY,payment,invoice});
- const service=orderService({repo,catalog,detail,dataKey:env.SHOP_ORDER_DATA_KEY,sessionKey:env.SHOP_SESSION_KEY,payment,documents,invoiceEnabled:!!invoice});
+ const service=orderService({repo,catalog,detail,dataKey:env.SHOP_ORDER_DATA_KEY,sessionKey:env.SHOP_SESSION_KEY,payment,documents,labelProvider:goodsflow(env),invoiceEnabled:!!invoice});
  const admin=adminService({db,service,dataKey:env.SHOP_ORDER_DATA_KEY});
  const drafts=adminDraftService({db,catalog,detail,dataKey:env.SHOP_ORDER_DATA_KEY});
  cached={repo,service,payment,documents,admin,drafts};return cached;

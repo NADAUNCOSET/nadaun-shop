@@ -37,6 +37,13 @@ function endpoint({service,repo,adminService=null,draftService=null,sessionKey,p
    if(action==='logout'&&req.method==='POST'){res.setHeader('Set-Cookie',cookie('admin','',0));return res.status(200).json({authenticated:false});}
    if(action.startsWith('admin-')){
     if(!admin)throw new ShopError(401,'관리자 로그인이 필요합니다.');
+    if(action==='admin-label-status'&&req.method==='GET')return res.status(200).json(await service.labelStatus());
+    if(req.method==='POST'){
+     if(action==='admin-label-preview')return res.status(200).json(await service.labelPreview(input));
+     if(action==='admin-label-register')return res.status(200).json(await service.labelRegister(input,admin));
+     if(action==='admin-label-sync')return res.status(200).json(await service.labelSync(input.id,admin));
+     if(action==='admin-label-print')return res.status(200).json(await service.labelPrint(input,admin));
+    }
     if(draftService){
      if(action==='admin-draft-products'&&req.method==='GET')return res.status(200).json(await draftService.products(Object.fromEntries(url.searchParams),admin));
      if(action==='admin-drafts'){

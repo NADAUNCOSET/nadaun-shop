@@ -6,16 +6,18 @@ const {matchPayment}=require('./inicis.cjs');
 const {rentalSchedule,rentalCustomer,rentalQuote}=require('./rental.cjs');
 const {evidenceFields,paymentEvidence}=require('./evidence.cjs');
 const fulfillment=require('./fulfillment.cjs');
+const {shippingLabels,labelView,labelPending}=require('./shipping-labels.cjs');
 const uuid=()=>crypto.randomUUID();
 function repository(db,clock=()=>Date.now()){
  const get=async id=>(await db.query('SELECT * FROM shop_orders WHERE id=?',[id]))[0]||null;
- async function patch(row,fields,actor,action,document=null){
+ async function patch(row,fields,actor,action,document=null,shippingJob=null){
   const allowed=new Set(['state','lines_json','subtotal','shipping','total','quote_version','quote_expires','payment_key','payment_mode','payment_provider','payment_auth_cipher','payment_receipt_cipher','paid_at','fulfillment','carrier','tracking','customer_cipher']);
   const keys=Object.keys(fields);if(!keys.length||keys.some(k=>!allowed.has(k)))throw Error('Invalid internal order update');
   const now=clock(),version=row.version+1;
   const result=await db.batch([
    {sql:`UPDATE shop_orders SET ${keys.map(k=>k+'=?').join(',')},updated_at=?,version=version+1 WHERE id=? AND version=? RETURNING *`,params:[...keys.map(k=>fields[k]),now,row.id,row.version]},
    {sql:'INSERT INTO shop_order_events(id,order_id,actor,action,created_at,version) SELECT ?,?,?,?,?,? WHERE changes()=1',params:[uuid(),row.id,actor,action,now,version]},
+   ...(shippingJob?[{sql:'INSERT INTO shop_shipping_sync(order_id,next_attempt) SELECT ?,? WHERE changes()=1 ON CONFLICT(order_id) DO UPDATE SET next_attempt=excluded.next_attempt',params:[row.id,shippingJob.next_attempt]}]:[]),
    ...(document?[{sql:'INSERT INTO shop_documents(order_id,kind,status,result_cipher,created_at,updated_at,next_attempt) SELECT ?,?,?,?,?,?,? FROM shop_orders WHERE id=? AND version=? AND state=\'PAID\' ON CONFLICT(order_id) DO NOTHING',params:[row.id,document.kind,document.status,document.result_cipher,now,now,document.status==='issued'?now+86400000:0,row.id,version]}]:[]),
    ...(['CANCELED','PAYMENT_REVIEW'].includes(fields.state)?[{sql:"UPDATE shop_documents SET status='review',updated_at=?,version=version+1 WHERE order_id=? AND EXISTS(SELECT 1 FROM shop_orders WHERE id=? AND version=?)",params:[now,row.id,row.id,version]}]:[])
   ]);
@@ -40,17 +42,19 @@ function repository(db,clock=()=>Date.now()){
   if(rows[0].attempts>max)throw new ShopError(429,'요청이 많습니다. 잠시 후 다시 시도해주세요.');
  }
  return {get,patch,insert,limit,
+  shippingDue:async now=>db.query('SELECT order_id FROM shop_shipping_sync WHERE next_attempt IS NOT NULL AND next_attempt<=? ORDER BY next_attempt LIMIT 2',[now]),
+  scheduleShipping:async(id,next)=>db.query('UPDATE shop_shipping_sync SET next_attempt=? WHERE order_id=?',[next,id]),
   calendar:async id=>(await db.query('SELECT status,event_url,error_code,checked_at FROM shop_calendar_sync WHERE order_id=?',[id]))[0]||null,
   calendarHealth:async()=>(await db.query("SELECT status,checked_at FROM shop_calendar_health WHERE id='calendar'"))[0]||null,
   customer:async owner=>db.query('SELECT * FROM shop_orders WHERE customer_hash=? ORDER BY created_at DESC LIMIT 50',[owner]),
   list:async()=>db.query('SELECT * FROM shop_orders ORDER BY created_at DESC LIMIT 100'),
   events:async id=>db.query('SELECT actor,action,created_at,version FROM shop_order_events WHERE order_id=? ORDER BY version',[id])};
 }
-function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=null,documents=null,invoiceEnabled=false,clock=()=>Date.now()}){
+function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=null,documents=null,labelProvider=null,invoiceEnabled=false,clock=()=>Date.now()}){
  const cipher=protect(dataKey),returns=sessions(sessionKey,clock);
  const dto=(row,admin=false)=>{
   const stored=cipher.decrypt(row.customer_cipher),customer=Object.fromEntries(Object.entries(stored).filter(([key])=>!key.startsWith('_admin_'))),rental=customer.rental||null,history=fulfillment.shipments(row,stored);
-  return {id:row.id,kind:rental?'rental':'purchase',rental,purchase_workflow:fulfillment.purchaseWorkflow(row,stored),state:row.state,payment_mode:row.payment_mode,lines:JSON.parse(row.lines_json),subtotal:row.subtotal,shipping:row.shipping,total:row.total,quote_version:row.quote_version,quote_expires:row.quote_expires,fulfillment:row.fulfillment,carrier:row.carrier,tracking:row.tracking,shipments:fulfillment.publicShipments(history),created_at:row.created_at,updated_at:row.updated_at,version:row.version,evidence_kind:customer.evidence?.kind||'card_receipt',...(admin?{customer,admin_note:stored._admin_note||null,admin_cancellation:stored._admin_cancellation||null,admin_cases:fulfillment.adminCases(stored._admin_cases||[],history)}:{})};
+  return {id:row.id,kind:rental?'rental':'purchase',rental,purchase_workflow:fulfillment.purchaseWorkflow(row,stored),state:row.state,payment_mode:row.payment_mode,lines:JSON.parse(row.lines_json),subtotal:row.subtotal,shipping:row.shipping,total:row.total,quote_version:row.quote_version,quote_expires:row.quote_expires,fulfillment:row.fulfillment,carrier:row.carrier,tracking:row.tracking,shipments:fulfillment.publicShipments(history),created_at:row.created_at,updated_at:row.updated_at,version:row.version,evidence_kind:customer.evidence?.kind||'card_receipt',...(admin?{customer,admin_shipping_label:labelView(stored._admin_shipping_label),admin_note:stored._admin_note||null,admin_cancellation:stored._admin_cancellation||null,admin_cases:fulfillment.adminCases(stored._admin_cases||[],history)}:{})};
  };
  async function detailed(row,admin=false){
   const document=documents?await documents.get(row.id):null;
@@ -102,6 +106,7 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
   const customer=purchaseCustomer(row),history=fulfillment.shipments(row,customer),shipment=history.find(item=>item.id===input.shipment_id),shipping=fulfillment.tracking(input);
   if(!shipment)throw new ShopError(404,'수정할 출고 내역을 찾을 수 없습니다.');
   if(input.items!==undefined)throw new ShopError(400,'운송정보 수정으로 출고 품목이나 수량을 바꿀 수 없습니다.');
+  if(shipment.actor==='goodsflow')throw new ShopError(409,'자동 발급 송장은 굿스플로 조회로 확인해주세요.');
   const before={carrier:shipment.carrier,tracking:shipment.tracking};
   Object.assign(shipment,shipping,{updated_at:clock(),updated_by:actor});
   shipment.corrections=[...(shipment.corrections||[]),{...before,changed_at:clock(),actor}];
@@ -112,10 +117,12 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
  }
  return {
   dto,invoiceEnabled,
+  ...shippingLabels({repo,cipher,provider:labelProvider,editable,purchaseCustomer,verifiedForShipping,detailed,clock}),
   async workflow(id,input,actor='owner'){
    if(!['preparing','ready','delivered'].includes(input.stage))throw new ShopError(400,'상품 준비·배송 대기·배송 완료 중 처리 단계를 선택해주세요.');
    const row=await editable(id,input),customer=purchaseCustomer(row),history=fulfillment.shipments(row,customer);
    if(row.state!=='PAID'||row.payment_mode!=='live')throw new ShopError(409,'실결제 완료된 구매 주문에서만 배송 단계를 처리할 수 있습니다.');
+   if(labelPending(customer)&&input.stage!=='delivered')throw new ShopError(409,'자동 송장 접수 후에는 배송 상태 조회를 이용해주세요.');
    if(input.stage==='delivered'){
     if(row.fulfillment!=='shipped'||!history.length||fulfillment.originalRemaining(row,history).length)throw new ShopError(409,'주문 상품을 모두 출고한 뒤 배송 완료를 확인해주세요.');
     if(history.filter(s=>s.purpose==='original').every(s=>s.delivered_at))throw new ShopError(409,'이미 배송 완료를 기록한 주문입니다.');
@@ -144,6 +151,7 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
     if(input.items!==undefined)throw new ShopError(400,'운송정보 수정은 상품 수량을 바꿀 수 없습니다.');
     return {duplicate:false,items:[]};
    }
+   if(labelPending(customer))throw new ShopError(409,'자동 송장이 접수된 주문입니다. 송장 결과 조회를 이용해주세요.');
    if(input.operation!=='ship')throw new ShopError(400,'출고 또는 운송정보 수정 작업을 선택해주세요.');
    if(row.state!=='PAID'||row.payment_mode!=='live'||row.payment_provider!=='inicis')throw new ShopError(409,'실결제 완료된 구매 주문만 출고할 수 있습니다.');
    if(row.fulfillment==='processing'&&!history.length)throw new ShopError(409,'기존 부분 출고의 품목 수량을 먼저 확인해주세요.');
@@ -304,6 +312,7 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
   },
   async ship(id,input,actor='owner',identity=null){
    const row=await editable(id,input),customer=purchaseCustomer(row),history=fulfillment.shipments(row,customer);
+   if(labelPending(customer))throw new ShopError(409,'자동 송장이 접수된 주문입니다. 송장 결과 조회를 이용해주세요.');
    // Preserve the legacy completed-order tracking edit without creating another
    // shipment. New history must always identify the shipment being corrected.
    const originals=history.filter(s=>s.purpose==='original');

@@ -101,3 +101,9 @@ CREATE TABLE IF NOT EXISTS shop_admin_draft_events (
   version INTEGER NOT NULL,
   UNIQUE(draft_id,version)
 );
+
+CREATE TABLE IF NOT EXISTS shop_shipping_sync (
+  order_id TEXT PRIMARY KEY REFERENCES shop_orders(id),
+  next_attempt INTEGER
+);
+CREATE INDEX IF NOT EXISTS shop_shipping_due ON shop_shipping_sync(next_attempt);
