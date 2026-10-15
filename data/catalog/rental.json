@@ -158,7 +158,7 @@
         "id": "rent:146",
         "name": "메모리·스토리지",
         "kind": "rental",
-        "count": 9,
+        "count": 10,
         "image": "https://shop-phinf.pstatic.net/20261015_175/1792048428843GsVlY_PNG/18917634694914534_1881961725.png",
         "product_id": "smartstore-13812461548",
         "href": "/catalog.html?kind=rental&type=rent%3A146"
@@ -214,7 +214,7 @@
     "schema_version": 1,
     "source_counts": {
       "kpp": 4044,
-      "smartstore": 6874,
+      "smartstore": 6875,
       "l-mount": 345,
       "plthink": 6653,
       "saeki": 7452,
@@ -227,7 +227,7 @@
     },
     "detail_coverage": {
       "kpp": 4044,
-      "smartstore": 6788,
+      "smartstore": 6789,
       "l-mount": 345,
       "plthink": 6253,
       "saeki": 7437,
@@ -240,16 +240,16 @@
     },
     "synced_at": "2026-10-15T07:55:04+00:00",
     "merged_count": 5128,
-    "product_count": 216,
+    "product_count": 217,
     "category_browsing_enabled": true,
-    "listing_count": 216,
+    "listing_count": 217,
     "option_family_count": 272,
     "deduplication": {
       "brands_checked": 410,
       "groups": 3209,
       "removed": 5128
     },
-    "revision": "3b4196f2f3041ff7",
+    "revision": "15149d77c5c301de",
     "view": "rental"
   },
   "brands": [
@@ -7844,9 +7844,9 @@
         "naver:b:homan:50004625",
         "onnoff:b:57"
       ],
-      "count": 88,
+      "count": 89,
       "purchase_count": 87,
-      "rental_count": 1,
+      "rental_count": 2,
       "category_ids": [
         "naver:b:homan:50000206",
         "naver:b:homan:50001394",
@@ -36345,6 +36345,77 @@
           "중형 카메라"
         ],
         "description": "PHASEONE XF IQ2 60MP KIT (카메라+디지털백+렌즈 택1) 렌탈·대여 안내. 영등포 나다운 스페이스에서 구성·일정 상담."
+      }
+    },
+    {
+      "id": "smartstore-13812942061",
+      "name": "[ 대여 나다운 스페이스 ] HOMAN CFexpress Type A 256GB 메모리카드 렌탈",
+      "brand_id": "homan",
+      "kind": "rental",
+      "price": 20000,
+      "sale_price": 20000,
+      "status": "sale",
+      "category_ids": [
+        "naver:b:homan:50000206",
+        "naver:b:homan:50001394",
+        "naver:b:homan:50002113",
+        "rental-brand:homan:8",
+        "rental-brand:homan:146"
+      ],
+      "type_ids": [
+        "naver:p:50002113",
+        "type:kpp:09",
+        "type:storage",
+        "type:cf-card",
+        "rent:8",
+        "rent:146"
+      ],
+      "promotion_ids": [],
+      "offers": [
+        {
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13812942061",
+          "status": "sale",
+          "price": 20000,
+          "id": "smartstore-13812942061"
+        }
+      ],
+      "supplier_status": null,
+      "image": "https://shop-phinf.pstatic.net/20261015_26/1792068633313FsYbs_JPEG/73111115732776381_1113875548.jpg",
+      "detail_bucket": "e3",
+      "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": null,
+        "rate_count": 0
+      },
+      "discovery": {
+        "tags": [
+          "HOMAN",
+          "장비 렌탈"
+        ],
+        "search_terms": [
+          "HOMAN",
+          "장비 렌탈",
+          "기타카메라/캠코더용품",
+          "메모리·스토리지",
+          "CFexpress Type A",
+          "CFexpress A",
+          "CFE-A",
+          "CF익스프레스 A타입",
+          "씨에프익스프레스 A",
+          "촬영장비 대여",
+          "장비 대여",
+          "나다운 스페이스",
+          "영등포 렌탈샵",
+          "영등포 촬영장비 대여"
+        ],
+        "categories": [
+          "기타카메라/캠코더용품",
+          "메모리·스토리지"
+        ],
+        "description": "[ 대여 나다운 스페이스 ] HOMAN CFexpress Type A 256GB  렌탈·대여 안내. 영등포 나다운 스페이스에서 구성·일정 상담."
       }
     }
   ],

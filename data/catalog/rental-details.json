@@ -10441,5 +10441,33 @@
       ],
       "detail": []
     }
+  },
+  "smartstore-13812942061": {
+    "rental": {
+      "rates": [],
+      "components": [],
+      "notes": [
+        "HOMAN CFexpress Type A 256GB 렌탈",
+        "나다운 스페이스 · 메모리카드 대여",
+        "렌탈료 20,000원",
+        "대여 구성: HOMAN CFexpress Type A 256GB 카드 1개.",
+        "Type A 슬롯을 사용하는 장비용입니다. Type B 카드와 규격이 다르므로 카메라 모델과 호환 여부를 확인해주세요.",
+        "방문 수령·반납 안내",
+        "대여 시작일·종료일과 방문 시간을 입력해주세요. 예약 전 재고, 일정, 필요한 구성품과 전체 기간 요금을 확인합니다. 최대 대여기간은 14일입니다.",
+        "렌탈 상품이며 메모리카드 판매 상품이 아닙니다. 리더기 등 추가 구성은 예약 상담 시 확인해주세요.",
+        "문의: 나다운 스페이스 02-6053-6231"
+      ],
+      "packing_confirmation_required": true,
+      "period_confirmation_required": true
+    },
+    "images": {
+      "thumb": "https://shop-phinf.pstatic.net/20261015_26/1792068633313FsYbs_JPEG/73111115732776381_1113875548.jpg",
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_26/1792068633313FsYbs_JPEG/73111115732776381_1113875548.jpg"
+      ],
+      "detail": [
+        "https://shop-phinf.pstatic.net/20261015_26/1792068633313FsYbs_JPEG/73111115732776381_1113875548.jpg"
+      ]
+    }
   }
 }

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "source_counts": {
     "kpp": 4044,
-    "smartstore": 6874,
+    "smartstore": 6875,
     "l-mount": 345,
     "plthink": 6653,
     "saeki": 7452,
@@ -15,7 +15,7 @@
   },
   "detail_coverage": {
     "kpp": 4044,
-    "smartstore": 6788,
+    "smartstore": 6789,
     "l-mount": 345,
     "plthink": 6253,
     "saeki": 7437,
@@ -28,14 +28,14 @@
   },
   "synced_at": "2026-10-15T07:55:04+00:00",
   "merged_count": 5128,
-  "product_count": 29492,
+  "product_count": 29493,
   "category_browsing_enabled": true,
-  "listing_count": 29220,
+  "listing_count": 29221,
   "option_family_count": 272,
   "deduplication": {
     "brands_checked": 410,
     "groups": 3209,
     "removed": 5128
   },
-  "revision": "3b4196f2f3041ff7"
+  "revision": "15149d77c5c301de"
 }

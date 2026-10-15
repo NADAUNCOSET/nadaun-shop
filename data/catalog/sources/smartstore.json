@@ -3,10 +3,10 @@
   "source_url": "https://smartstore.naver.com/rainbowbene",
   "collected_at": "2026-10-15T07:55:04+00:00",
   "complete": true,
-  "origin_count": 7888,
-  "product_count": 6874,
+  "origin_count": 7889,
+  "product_count": 6875,
   "status_counts": {
-    "SALE/ON": 6460,
+    "SALE/ON": 6461,
     "SUSPENSION/ON": 69,
     "OUTOFSTOCK/ON": 414,
     "OUTOFSTOCK/SUSPENSION": 42,
@@ -226470,6 +226470,47 @@
         "그래픽/멀티미디어"
       ],
       "source_modified_at": "2026-09-22T21:20:54.064+09:00"
+    },
+    "smartstore-13812942061": {
+      "id": "smartstore-13812942061",
+      "source": "smartstore",
+      "source_id": "13812942061",
+      "origin_id": "13751715557",
+      "name": "[ 대여 나다운 스페이스 ] HOMAN CFexpress Type A 256GB 메모리카드 렌탈",
+      "brand": "HOMAN",
+      "manufacturer": "HOMAN",
+      "source_url": "https://smartstore.naver.com/rainbowbene/products/13812942061",
+      "price": 20000,
+      "sale_price": 20000,
+      "status": "sale",
+      "kind": "rental",
+      "images": {
+        "thumb": "https://shop-phinf.pstatic.net/20261015_26/1792068633313FsYbs_JPEG/73111115732776381_1113875548.jpg",
+        "main": [],
+        "detail": []
+      },
+      "source_category_id": "50002113",
+      "source_category_ids": [
+        "50000003",
+        "50000206",
+        "50001394",
+        "50002113"
+      ],
+      "source_category_path": [
+        "디지털/가전",
+        "카메라/캠코더용품",
+        "카메라/캠코더 관련용품",
+        "기타카메라/캠코더용품"
+      ],
+      "source_modified_at": "2026-10-15T21:52:43.027+09:00"
     }
-  }
+  },
+  "incremental_updates": [
+    {
+      "id": "smartstore-13812942061",
+      "verified_at": "2026-10-15T13:10:19+00:00",
+      "action": "user_authorized_new_rental",
+      "full_snapshot_timestamp_preserved": true
+    }
+  ]
 }
