@@ -222,7 +222,7 @@
       "clmedia": 2242,
       "cinemall": 1209,
       "onnoff": 1067,
-      "ldnet": 3072,
+      "ldnet": 3075,
       "avx": 1377
     },
     "detail_coverage": {
@@ -235,10 +235,10 @@
       "clmedia": 2146,
       "cinemall": 1183,
       "onnoff": 1067,
-      "ldnet": 3072,
+      "ldnet": 3075,
       "avx": 1377
     },
-    "synced_at": "2026-10-15T07:55:04+00:00",
+    "synced_at": "2026-10-15T16:22:27+00:00",
     "merged_count": 5128,
     "product_count": 217,
     "category_browsing_enabled": true,
@@ -249,7 +249,7 @@
       "groups": 3209,
       "removed": 5128
     },
-    "revision": "15149d77c5c301de",
+    "revision": "76285452f7b7f934",
     "view": "rental"
   },
   "brands": [
@@ -3840,14 +3840,19 @@
         "ldnet:b:anyport:88",
         "ldnet:b:anyport:99"
       ],
-      "count": 645,
-      "purchase_count": 645,
+      "count": 648,
+      "purchase_count": 648,
       "rental_count": 0,
       "category_ids": [
         "naver:b:anyport:50000205",
         "naver:b:anyport:50000252",
+        "ldnet:b:anyport:153",
+        "ldnet:b:anyport:308",
         "ldnet:b:anyport:50",
         "ldnet:b:anyport:534",
+        "ldnet:b:anyport:305",
+        "ldnet:b:anyport:175",
+        "ldnet:b:anyport:51",
         "ldnet:b:anyport:540",
         "ldnet:b:anyport:488",
         "ldnet:b:anyport:521",
@@ -3858,9 +3863,6 @@
         "ldnet:b:anyport:423",
         "ldnet:b:anyport:424",
         "ldnet:b:anyport:484",
-        "ldnet:b:anyport:175",
-        "ldnet:b:anyport:51",
-        "ldnet:b:anyport:153",
         "ldnet:b:anyport:309",
         "ldnet:b:anyport:27",
         "ldnet:b:anyport:82",
@@ -3872,7 +3874,6 @@
         "ldnet:b:anyport:386",
         "ldnet:b:anyport:34",
         "ldnet:b:anyport:474",
-        "ldnet:b:anyport:308",
         "ldnet:b:anyport:306",
         "ldnet:b:anyport:160",
         "ldnet:b:anyport:172",
@@ -3887,7 +3888,6 @@
         "ldnet:b:anyport:165",
         "ldnet:b:anyport:311",
         "ldnet:b:anyport:307",
-        "ldnet:b:anyport:305",
         "ldnet:b:anyport:427",
         "ldnet:b:anyport:167",
         "ldnet:b:anyport:313",
@@ -3980,9 +3980,9 @@
         "ldnet:b:anyport:170",
         "ldnet:b:anyport:52"
       ],
-      "representative_id": "ldnet-23770",
-      "representative_image": "https://ldnet.co.kr/web/product/big/202610/4f9597c300ff145753677837ebd05157.jpg",
-      "representative_name": "애니포트 AP-KMP500 유선 키보드 & 마우스 & 마우스 패드 세트",
+      "representative_id": "ldnet-23776",
+      "representative_image": "https://ldnet.co.kr/web/product/big/202610/782b98ff2b6a220ac056767771eecaba.jpg",
+      "representative_name": "애니포트 AP-TC71UHP 7 IN 1 Type-C타입허브",
       "image_kind": "product",
       "logo_dark": false
     },
