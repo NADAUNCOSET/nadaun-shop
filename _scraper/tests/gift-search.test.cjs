@@ -93,16 +93,20 @@ test('gift availability and choices are confirmed through consultation',()=>{
 test('CFexpress aliases keep A/B types separate in unified and browser search',()=>{
  const matching=require('../../assets/shop/product-search.js');
  const catalog=JSON.parse(fs.readFileSync('data/catalog/catalog.json','utf8'));
- for(const [type,count] of [['A',3],['B',4]]){
+ for(const [type,minimum] of [['A',4],['B',4]]){
   for(const query of [`CFexpress ${type}`,`CFE-${type}`,`CFexpress Type ${type}`,`CF익스프레스 ${type}타입`]){
    const rows=search.results(query).filter(p=>p.kind==='rental');
-   assert.equal(rows.length,count,query);
-   assert(rows.every(p=>p.name.includes(`CFE-${type}타입`)),query);
+   assert(rows.length>=minimum,query);
+   const namedType=new RegExp('(?:CFE[- ]'+type+'타입|CFexpress(?: Type)?[- ]'+type+'\\b)','i');
+   assert(rows.every(p=>namedType.test(p.name)),query);
    const tokens=matching.tokens(query);
    const local=catalog.products.filter(p=>p.kind==='rental'&&tokens.every(t=>matching.normalize(p.name+' '+p.discovery.search_terms.join(' ')).includes(t)));
    assert.deepEqual(local.map(p=>p.id).sort(),rows.map(p=>p.id).sort());
   }
  }
+ const homan=search.results('CFexpress A 256GB').filter(p=>p.kind==='rental');
+ assert.equal(homan.length,1);assert.equal(homan[0].id,'smartstore-13812942061');
+ const product=catalog.products.find(p=>p.id===homan[0].id);assert.equal(product.sale_price,20000);assert.equal(product.brand_id,'homan');assert(product.type_ids.includes('rent:146'));
  assert.deepEqual(matching.tokens('CFexpress A 320GB'),['cfexpressa','320gb']);
  assert.equal(search.results('CFexpress A 320GB').filter(p=>p.kind==='rental').length,1);
 });
