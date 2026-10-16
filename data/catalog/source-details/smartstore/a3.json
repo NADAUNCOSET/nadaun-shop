@@ -205,9 +205,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-10-15T12:36:27.505+09:00",
-    "checked_at": "2026-10-15T08:01:08+00:00",
-    "checked_epoch": 1792051268
+    "source_modified_at": "2026-10-16T15:07:02.804+09:00",
+    "checked_at": "2026-10-16T23:13:22+00:00",
+    "checked_epoch": 1792192402
   },
   "smartstore-13739631216": {
     "images": {
@@ -741,8 +741,8 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-01-20T16:02:06.769+09:00",
-    "checked_at": "2026-09-07T06:18:37+00:00",
-    "checked_epoch": 1788761917
+    "source_modified_at": "2026-10-16T12:44:17.367+09:00",
+    "checked_at": "2026-10-16T23:14:08+00:00",
+    "checked_epoch": 1792192448
   }
 }

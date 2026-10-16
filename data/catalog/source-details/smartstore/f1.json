@@ -573,7 +573,7 @@
       },
       {
         "name": "3.05M",
-        "additional_price": 65000
+        "additional_price": 58000
       }
     ],
     "shipping": {
@@ -582,9 +582,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.053+09:00",
-    "checked_at": "2026-09-07T06:08:00+00:00",
-    "checked_epoch": 1788761280
+    "source_modified_at": "2026-10-16T12:41:20.302+09:00",
+    "checked_at": "2026-10-16T23:14:07+00:00",
+    "checked_epoch": 1792192447
   },
   "smartstore-7832484108": {
     "images": {

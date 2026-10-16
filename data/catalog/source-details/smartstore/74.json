@@ -183,9 +183,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-10-15T12:36:41.267+09:00",
-    "checked_at": "2026-10-15T08:01:28+00:00",
-    "checked_epoch": 1792051288
+    "source_modified_at": "2026-10-16T16:19:32.344+09:00",
+    "checked_at": "2026-10-16T23:13:48+00:00",
+    "checked_epoch": 1792192428
   },
   "smartstore-13426612877": {
     "images": {
@@ -554,7 +554,7 @@
     "options": [
       {
         "name": "풀사이즈",
-        "additional_price": 10000
+        "additional_price": 9000
       },
       {
         "name": "미디엄사이즈",
@@ -567,9 +567,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.053+09:00",
-    "checked_at": "2026-09-07T06:07:51+00:00",
-    "checked_epoch": 1788761271
+    "source_modified_at": "2026-10-16T12:33:48.846+09:00",
+    "checked_at": "2026-10-16T23:14:05+00:00",
+    "checked_epoch": 1792192445
   },
   "smartstore-7083113926": {
     "images": {

@@ -214,7 +214,7 @@
     "schema_version": 1,
     "source_counts": {
       "kpp": 4044,
-      "smartstore": 6896,
+      "smartstore": 6860,
       "l-mount": 345,
       "plthink": 6653,
       "saeki": 7452,
@@ -227,7 +227,7 @@
     },
     "detail_coverage": {
       "kpp": 4044,
-      "smartstore": 6810,
+      "smartstore": 6774,
       "l-mount": 345,
       "plthink": 6253,
       "saeki": 7437,
@@ -238,18 +238,18 @@
       "ldnet": 3075,
       "avx": 1392
     },
-    "synced_at": "2026-10-16T19:40:45+00:00",
-    "merged_count": 5135,
+    "synced_at": "2026-10-16T23:12:11+00:00",
+    "merged_count": 5133,
     "product_count": 217,
     "category_browsing_enabled": true,
     "listing_count": 217,
     "option_family_count": 272,
     "deduplication": {
       "brands_checked": 411,
-      "groups": 3217,
-      "removed": 5135
+      "groups": 3215,
+      "removed": 5133
     },
-    "revision": "df8bafbd324ad85f",
+    "revision": "6297a4fbd199b7aa",
     "view": "rental"
   },
   "brands": [
@@ -2733,9 +2733,9 @@
         "kpp:b:tokina-cinema:2050",
         "kpp:b:tokina-cinema:205010"
       ],
-      "representative_id": "kpp-1572416153",
-      "representative_image": "https://kppkpp.co.kr/data/item/1572416153/12367CU64CQ65SU7J6Q7J241120_PL_2removebgpreview.png",
-      "representative_name": "CINEMA 11-20mm T2.9 PL MOUNT",
+      "representative_id": "kpp-1572416204",
+      "representative_image": "https://kppkpp.co.kr/data/item/1572416204/01.jpg",
+      "representative_name": "TOKINA VISTA 18mm T1.5 PL 시네마 렌즈",
       "image_kind": "logo",
       "logo_dark": true
     },
@@ -3073,10 +3073,9 @@
         "rental-brand:fxlion:8",
         "rental-brand:fxlion:46"
       ],
-      "representative_id": "kpp-1646980198",
-      "representative_image": "https://kppkpp.co.kr/data/item/1646980198/64KY64W47YisV66eI7Jq07Yq467Cw7YSw66as98Wh.jpg",
-      "representative_name": "FXLION 나노 투 V마운트 배터리 98Wh",
-      "representative_alternate": "https://kppkpp.co.kr/data/item/1646980198/nano_two_mini_02.jpg",
+      "representative_id": "smartstore-13740388388",
+      "representative_image": "https://shop-phinf.pstatic.net/20260901_119/1788230778241lnYPD_JPEG/d18aa4fc6f1d722f3b0d808762798422.jpg",
+      "representative_name": "FXLION 나노 투 V마운트 배터리 100Wh 10A 대용량",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -6486,7 +6485,7 @@
         "ETC",
         "ETC."
       ],
-      "logo": "https://kppkpp.co.kr/data/item/1781855454/thumb-7ISs64Sk7J2867O17IKs_262x262.jpg",
+      "logo": "https://www.plthink.com/shopimages/plthink/0080720003773.jpg?1787549915",
       "navigation_category_ids": [
         "kpp:b:etc:mirror:kpp:b:leofoto:30a0",
         "kpp:b:etc:mirror:kpp:b:leofoto:30a050",
@@ -6501,10 +6500,9 @@
         "plthink:b:072",
         "clmedia:b:54"
       ],
-      "representative_id": "kpp-1781855454",
-      "representative_image": "https://kppkpp.co.kr/data/item/1781855454/7ISs64Sk7J2867O17IKs.jpg",
-      "representative_name": "지게백 삼각대 K-캐리어 A프레임 삼각대 운반 가방",
-      "representative_alternate": "https://kppkpp.co.kr/data/item/1781855454/7KeA6rKM67Cx64yA7ZGc7J206647KeA.jpg",
+      "representative_id": "plthink-1927658",
+      "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003772.jpg?1787549915",
+      "representative_name": "Smoke Go 휴대용 포그머신 스모그머신 촬영 안개 영상",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -11777,8 +11775,8 @@
         "saeki:b:pelican:100259",
         "saeki:b:pelican:root"
       ],
-      "count": 510,
-      "purchase_count": 510,
+      "count": 476,
+      "purchase_count": 476,
       "rental_count": 0,
       "category_ids": [
         "naver:b:pelican:50000206",
@@ -40312,8 +40310,6 @@
     "smartstore-7831815536": "smartstore-13740734685",
     "plthink-1902048": "smartstore-13740734685",
     "saeki-PD00000185": "plthink-1902049",
-    "plthink-1902222": "smartstore-13751981563",
-    "plthink-1902223": "smartstore-13751891864",
     "plthink-1902502": "smartstore-13751997020",
     "plthink-1902503": "smartstore-13751981555",
     "plthink-1902509": "smartstore-13751981556",

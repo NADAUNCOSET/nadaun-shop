@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "brands_checked": 411,
-  "input_count": 34660,
-  "duplicate_group_count": 3217,
-  "duplicate_entries_removed": 5135,
+  "input_count": 34624,
+  "duplicate_group_count": 3215,
+  "duplicate_entries_removed": 5133,
   "by_brand": {
     "tilta": 291,
     "avenger": 115,
@@ -42,7 +42,7 @@
     "valens": 149,
     "aurora": 76,
     "tethertools": 8,
-    "pelican": 15,
+    "pelican": 13,
     "metabones": 3,
     "rocknroller": 3,
     "benro": 7,
@@ -5431,7 +5431,7 @@
         {
           "id": "smartstore-12835022481",
           "name": "FUJIFILM GFX 100S II",
-          "price": 6999000,
+          "price": 7699000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/12835022481"
         },
@@ -5679,7 +5679,7 @@
         {
           "id": "smartstore-4934925270",
           "name": "RF 50mm F1.2L USM",
-          "price": 3259000,
+          "price": 3199000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/4934925270"
         },
@@ -6529,7 +6529,7 @@
         {
           "id": "smartstore-13739631816",
           "name": "고독스 Godox FP200 F200Bi용 팬케이크 랜턴 디퓨저",
-          "price": 37000,
+          "price": 40000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631816"
         },
@@ -6553,7 +6553,7 @@
         {
           "id": "smartstore-13739631009",
           "name": "고독스 Godox FP400 F400Bi용 팬케이크 랜턴 디퓨저",
-          "price": 56000,
+          "price": 65000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631009"
         },
@@ -6577,7 +6577,7 @@
         {
           "id": "smartstore-13739630900",
           "name": "고독스 Godox FP600 F600Bi용 팬케이크 랜턴 디퓨저",
-          "price": 74000,
+          "price": 85000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630900"
         },
@@ -6649,7 +6649,7 @@
         {
           "id": "smartstore-13739631175",
           "name": "고독스 Godox ML-L15 렌즈 리플렉터",
-          "price": 18000,
+          "price": 29000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631175"
         },
@@ -6673,7 +6673,7 @@
         {
           "id": "smartstore-13739631452",
           "name": "고독스 Godox ML-L36 렌즈 리플렉터",
-          "price": 18000,
+          "price": 29000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631452"
         },
@@ -6697,7 +6697,7 @@
         {
           "id": "smartstore-13739631521",
           "name": "고독스 Godox ML-GB 보웬스 마운트 어댑터",
-          "price": 15000,
+          "price": 20000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631521"
         },
@@ -6721,7 +6721,7 @@
         {
           "id": "smartstore-13739631451",
           "name": "고독스 GODOX ML-CS30 접이식 랜턴 소프트박스",
-          "price": 33000,
+          "price": 35000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631451"
         },
@@ -6752,7 +6752,7 @@
         {
           "id": "smartstore-13739631314",
           "name": "고독스 GODOX ML-SF50 OCTA 팔각형 접이식 소프트박스",
-          "price": 53000,
+          "price": 59000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631314"
         },
@@ -6776,7 +6776,7 @@
         {
           "id": "smartstore-13739631805",
           "name": "고독스 GODOX PH01 파워 뱅크 홀더",
-          "price": 18000,
+          "price": 20000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631805"
         },
@@ -6800,7 +6800,7 @@
         {
           "id": "smartstore-13739631804",
           "name": "고독스 Godox CB-141 ML100Bi용 라이트 캐리백",
-          "price": 18000,
+          "price": 20000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631804"
         },
@@ -6872,7 +6872,7 @@
         {
           "id": "smartstore-13739631646",
           "name": "고독스 GODOX SB-BW-95 OCTA 옥타곤 소프트 박스 95cm",
-          "price": 43000,
+          "price": 49000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631646"
         },
@@ -6896,7 +6896,7 @@
         {
           "id": "smartstore-13739631645",
           "name": "고독스 GODOX SB-BW-120 OCTA 옥타곤 소프트 박스 120cm",
-          "price": 52000,
+          "price": 55000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631645"
         },
@@ -6920,7 +6920,7 @@
         {
           "id": "smartstore-13739631644",
           "name": "고독스 GODOX SB-BW-140 OCTA 옥타곤 소프트 박스 140cm",
-          "price": 60000,
+          "price": 80000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631644"
         },
@@ -6992,7 +6992,7 @@
         {
           "id": "smartstore-13739631341",
           "name": "고독스 GODOX SB-BW-70100 직사각형 소프트 박스 70x100cm",
-          "price": 36000,
+          "price": 40000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631341"
         },
@@ -7040,7 +7040,7 @@
         {
           "id": "smartstore-13739631551",
           "name": "고독스 GODOX SB-FW-120 OCTA 팔각형 그리드 소프트박스 120cm",
-          "price": 84000,
+          "price": 90000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631551"
         },
@@ -7064,7 +7064,7 @@
         {
           "id": "smartstore-13739631802",
           "name": "고독스 GODOX SB-FW-140 OCTA 팔각형 그리드 소프트박스 140cm",
-          "price": 99000,
+          "price": 120000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631802"
         },
@@ -7088,7 +7088,7 @@
         {
           "id": "smartstore-13739631643",
           "name": "고독스 GODOX SB-FW-6060 정사각형 그리드 소프트박스 60x60cm",
-          "price": 43000,
+          "price": 45000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631643"
         },
@@ -7112,7 +7112,7 @@
         {
           "id": "smartstore-13739631520",
           "name": "고독스 GODOX SB-FW-6090 직사각형 그리드 소프트박스 60x90cm",
-          "price": 52000,
+          "price": 55000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631520"
         },
@@ -7136,7 +7136,7 @@
         {
           "id": "smartstore-13739631642",
           "name": "고독스 GODOX SB-FW-30120 스트립형 그리드 소프트 박스 30x120cm",
-          "price": 48000,
+          "price": 59000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631642"
         },
@@ -7256,7 +7256,7 @@
         {
           "id": "smartstore-13739631800",
           "name": "고독스 GODOX QR-P60T 퀵 릴리스 파라볼릭 소프트박스 60cm",
-          "price": 101000,
+          "price": 120000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631800"
         },
@@ -7280,7 +7280,7 @@
         {
           "id": "smartstore-13739631640",
           "name": "고독스 GODOX QR-P70T 퀵 릴리스 파라볼릭 소프트박스 70cm",
-          "price": 116000,
+          "price": 120000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631640"
         },
@@ -7304,7 +7304,7 @@
         {
           "id": "smartstore-13739631519",
           "name": "고독스 GODOX QR-P90T",
-          "price": 125000,
+          "price": 145000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631519"
         },
@@ -7328,7 +7328,7 @@
         {
           "id": "smartstore-13739631309",
           "name": "고독스 GODOX QR-P120T",
-          "price": 149000,
+          "price": 170000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631309"
         },
@@ -7352,7 +7352,7 @@
         {
           "id": "smartstore-13739631799",
           "name": "고독스 GODOX QR-P150T 퀵 릴리스 파라볼릭 소프트박스 150cm",
-          "price": 166000,
+          "price": 200000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631799"
         },
@@ -7376,7 +7376,7 @@
         {
           "id": "smartstore-13739631449",
           "name": "고독스 GODOX QR-P60T 소프트박스용 그리드 QR-P60T-G",
-          "price": 16000,
+          "price": 20000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631449"
         },
@@ -7400,7 +7400,7 @@
         {
           "id": "smartstore-13739631518",
           "name": "고독스 GODOX QR-P70T 소프트박스용 그리드 QR-P70T-G",
-          "price": 20000,
+          "price": 25000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631518"
         },
@@ -7424,7 +7424,7 @@
         {
           "id": "smartstore-13739631639",
           "name": "고독스 GODOX QR-P90T 소프트박스용 그리드 QR-P90TG",
-          "price": 30000,
+          "price": 35000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631639"
         },
@@ -7448,7 +7448,7 @@
         {
           "id": "smartstore-13739631798",
           "name": "고독스 GODOX QR-P120T 소프트박스용 그리드 QR-P120T-G",
-          "price": 39000,
+          "price": 45000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631798"
         },
@@ -7472,7 +7472,7 @@
         {
           "id": "smartstore-13739631797",
           "name": "고독스 GODOX QR-P150T 소프트박스용 그리드 QR-P150T-G",
-          "price": 51000,
+          "price": 60000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631797"
         },
@@ -7496,7 +7496,7 @@
         {
           "id": "smartstore-13739631174",
           "name": "고독스 GODOX 260T 에어쿠션 라이트 스탠드",
-          "price": 37000,
+          "price": 50000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631174"
         },
@@ -7544,7 +7544,7 @@
         {
           "id": "smartstore-13739631173",
           "name": "고독스 GODOX 302 라이트 스탠드",
-          "price": 19000,
+          "price": 35000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631173"
         },
@@ -7568,7 +7568,7 @@
         {
           "id": "smartstore-13739631090",
           "name": "고독스 GODOX 303 라이트 스탠드",
-          "price": 34000,
+          "price": 50000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631090"
         },
@@ -7592,7 +7592,7 @@
         {
           "id": "smartstore-13739631049",
           "name": "고독스 Godox AK-B01 배터리 핸드그립",
-          "price": 48000,
+          "price": 50000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631049"
         },
@@ -7616,7 +7616,7 @@
         {
           "id": "smartstore-13739631271",
           "name": "고독스 Godox AK-B02 배터리 핸드그립",
-          "price": 48000,
+          "price": 50000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631271"
         },
@@ -7688,7 +7688,7 @@
         {
           "id": "smartstore-13739631637",
           "name": "고독스 GODOX SB-FW-70100 직사각형 그리드 소프트박스 70x100cm",
-          "price": 60000,
+          "price": 65000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631637"
         },
@@ -7712,7 +7712,7 @@
         {
           "id": "smartstore-13739631270",
           "name": "고독스 GODOX SB-FW-80120 직사각형 그리드 소프트박스 80x120cm",
-          "price": 70000,
+          "price": 75000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631270"
         },
@@ -8000,7 +8000,7 @@
         {
           "id": "smartstore-13739631635",
           "name": "고독스 Godox AD-E2 스탠드 홀더",
-          "price": 12000,
+          "price": 25000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631635"
         },
@@ -8467,7 +8467,7 @@
         {
           "id": "smartstore-13739631634",
           "name": "고독스 Godox ML-AK ML시리즈용 액세서리 키트",
-          "price": 51000,
+          "price": 65000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631634"
         },
@@ -8539,7 +8539,7 @@
         {
           "id": "smartstore-13739631395",
           "name": "고독스 Godox LC-D01 LC500 Mini / LC500R Mini용 디퓨저",
-          "price": 6000,
+          "price": 9000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631395"
         },
@@ -8707,7 +8707,7 @@
         {
           "id": "smartstore-13739631787",
           "name": "고독스 Godox WMS 레일 마운트 스터드",
-          "price": 19000,
+          "price": 25000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631787"
         },
@@ -8731,7 +8731,7 @@
         {
           "id": "smartstore-13739631267",
           "name": "고독스 Godox WMR 레일 마운트 리시버",
-          "price": 21000,
+          "price": 25000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631267"
         },
@@ -8779,7 +8779,7 @@
         {
           "id": "smartstore-13739631786",
           "name": "고독스 Godox M200D LED 라이트",
-          "price": 1122000,
+          "price": 1590000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631786"
         },
@@ -8803,7 +8803,7 @@
         {
           "id": "smartstore-13739631770",
           "name": "고독스 Godox M200Bi Bi-color LED 라이트",
-          "price": 1323000,
+          "price": 1590000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631770"
         },
@@ -8827,7 +8827,7 @@
         {
           "id": "smartstore-13739631608",
           "name": "고독스 Godox KNOWLED M300D",
-          "price": 1438000,
+          "price": 1890000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631608"
         },
@@ -8851,7 +8851,7 @@
         {
           "id": "smartstore-13739630892",
           "name": "고독스 Godox KNOWLED M300Bi",
-          "price": 1638000,
+          "price": 2090000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630892"
         },
@@ -8971,7 +8971,7 @@
         {
           "id": "smartstore-13739631394",
           "name": "고독스 Godox FLS8 프레넬 렌즈",
-          "price": 222000,
+          "price": 250000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631394"
         },
@@ -8995,7 +8995,7 @@
         {
           "id": "smartstore-13739631607",
           "name": "고독스 Godox FLS10 프레넬 렌즈",
-          "price": 273000,
+          "price": 320000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631607"
         },
@@ -9194,7 +9194,7 @@
         {
           "id": "smartstore-13739630855",
           "name": "고독스 Godox VSA-GS1 고보세트",
-          "price": 48000,
+          "price": 59000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630855"
         },
@@ -9218,7 +9218,7 @@
         {
           "id": "smartstore-13739631265",
           "name": "고독스 Godox VSA-GS2 고보세트",
-          "price": 48000,
+          "price": 59000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631265"
         },
@@ -9242,7 +9242,7 @@
         {
           "id": "smartstore-13739631166",
           "name": "고독스 Godox VSA-GS3 고보세트",
-          "price": 48000,
+          "price": 59000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631166"
         },
@@ -9266,7 +9266,7 @@
         {
           "id": "smartstore-13739631313",
           "name": "고독스 Godox VSA-GS4 고보세트",
-          "price": 48000,
+          "price": 59000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631313"
         },
@@ -9290,7 +9290,7 @@
         {
           "id": "smartstore-13739630884",
           "name": "고독스 Godox VSA-11C 컬러 이펙트 필터세트",
-          "price": 42000,
+          "price": 49000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630884"
         },
@@ -9314,7 +9314,7 @@
         {
           "id": "smartstore-13739630844",
           "name": "고독스 Godox VSA-11T 색온도 조절 필터세트",
-          "price": 42000,
+          "price": 49000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630844"
         },
@@ -9338,7 +9338,7 @@
         {
           "id": "smartstore-13739631344",
           "name": "고독스 Godox VSA-ID 조명부착용 다이어프램",
-          "price": 137000,
+          "price": 159000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631344"
         },
@@ -9386,7 +9386,7 @@
         {
           "id": "smartstore-13739630843",
           "name": "고독스 Godox LITEMONS MTH03",
-          "price": 27000,
+          "price": 29000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630843"
         },
@@ -9410,7 +9410,7 @@
         {
           "id": "smartstore-13739630898",
           "name": "고독스 Godox LITEMONS MT03",
-          "price": 21000,
+          "price": 25000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630898"
         },
@@ -9640,7 +9640,7 @@
         {
           "id": "smartstore-13739631547",
           "name": "고독스 GODOX MLP-ID 아이리스 다이어프램",
-          "price": 76000,
+          "price": 89000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631547"
         },
@@ -9712,7 +9712,7 @@
         {
           "id": "smartstore-13739631393",
           "name": "고독스 Godox QR-P90",
-          "price": 172000,
+          "price": 189000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631393"
         },
@@ -9736,7 +9736,7 @@
         {
           "id": "smartstore-13739631535",
           "name": "고독스 GODOX QR-P120 퀵 릴리스 파라볼릭 소프트박스 120cm",
-          "price": 202000,
+          "price": 220000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631535"
         },
@@ -9760,7 +9760,7 @@
         {
           "id": "smartstore-13739631765",
           "name": "고독스 GODOX QR-P70 소프트박스용 그리드 P70G",
-          "price": 22000,
+          "price": 25000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631765"
         },
@@ -10144,7 +10144,7 @@
         {
           "id": "smartstore-13739630891",
           "name": "고독스 Godox P600RH30 P600R용 허니콤 (30°)",
-          "price": 65000,
+          "price": 69000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630891"
         },
@@ -10504,7 +10504,7 @@
         {
           "id": "smartstore-13739631756",
           "name": "고독스 Godox RFT-13 프로 스탠다드 리플렉터 65°",
-          "price": 31000,
+          "price": 39000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631756"
         },
@@ -10528,7 +10528,7 @@
         {
           "id": "smartstore-13739631755",
           "name": "고독스 Godox RFT-14 프로 리플렉터 60°",
-          "price": 42000,
+          "price": 50000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631755"
         },
@@ -10552,7 +10552,7 @@
         {
           "id": "smartstore-13739631600",
           "name": "고독스 Godox RFT-17 프로 엄브렐러 리플렉터 110°",
-          "price": 33000,
+          "price": 40000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631600"
         },
@@ -10576,7 +10576,7 @@
         {
           "id": "smartstore-13739631599",
           "name": "고독스 Godox RFT-18 프로 백그라운드 리플렉터",
-          "price": 101000,
+          "price": 120000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631599"
         },
@@ -10607,7 +10607,7 @@
         {
           "id": "smartstore-13739631463",
           "name": "고독스 Godox RFT-19 프로 리플렉터 30°",
-          "price": 21000,
+          "price": 25000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631463"
         },
@@ -10703,7 +10703,7 @@
         {
           "id": "smartstore-13739631598",
           "name": "고독스 Godox TP-FS60",
-          "price": 31000,
+          "price": 32000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631598"
         },
@@ -10751,7 +10751,7 @@
         {
           "id": "smartstore-13739630896",
           "name": "고독스 GODOX AF40SS 플렉서블 암 40cm",
-          "price": 62000,
+          "price": 70000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630896"
         },
@@ -10775,7 +10775,7 @@
         {
           "id": "smartstore-13739631753",
           "name": "고독스 Godox AF40RS 플렉서블 암 40cm",
-          "price": 62000,
+          "price": 70000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631753"
         },
@@ -10799,7 +10799,7 @@
         {
           "id": "smartstore-13739630846",
           "name": "고독스 GODOX AF30SS 플렉서블 암 30cm",
-          "price": 59000,
+          "price": 70000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630846"
         },
@@ -10823,7 +10823,7 @@
         {
           "id": "smartstore-13739631752",
           "name": "고독스 GODOX AF30RS 플렉서블 암 30cm",
-          "price": 59000,
+          "price": 70000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631752"
         },
@@ -10871,7 +10871,7 @@
         {
           "id": "smartstore-13739631261",
           "name": "고독스 GODOX AB30SS02 볼 조인트 암",
-          "price": 77000,
+          "price": 90000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631261"
         },
@@ -10895,7 +10895,7 @@
         {
           "id": "smartstore-13739631750",
           "name": "고독스 GODOX AB10RS 볼 조인트 암",
-          "price": 59000,
+          "price": 70000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631750"
         },
@@ -10943,7 +10943,7 @@
         {
           "id": "smartstore-13739631160",
           "name": "고독스 Godox GK25 멀티 리플렉터 어레이 그립 키트",
-          "price": 689000,
+          "price": 840000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631160"
         },
@@ -10991,7 +10991,7 @@
         {
           "id": "smartstore-13739631749",
           "name": "고독스 GODOX UB-85S 실버 파라볼릭 엄브렐러 85cm",
-          "price": 37000,
+          "price": 50000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631749"
         },
@@ -11039,7 +11039,7 @@
         {
           "id": "smartstore-13739631729",
           "name": "고독스 GODOX UB-105S 실버 파라볼릭 엄브렐러 105cm",
-          "price": 53000,
+          "price": 70000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631729"
         },
@@ -11063,7 +11063,7 @@
         {
           "id": "smartstore-13739631728",
           "name": "고독스 GODOX UB-130S 실버 파라볼릭 엄브렐러 130cm",
-          "price": 75000,
+          "price": 99000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631728"
         },
@@ -11087,7 +11087,7 @@
         {
           "id": "smartstore-13739631597",
           "name": "고독스 GODOX UB-165S 실버 파라볼릭 엄브렐러 165cm",
-          "price": 80000,
+          "price": 120000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631597"
         },
@@ -11111,7 +11111,7 @@
         {
           "id": "smartstore-13739631727",
           "name": "고독스 GODOX UB-85W 화이트 파라볼릭 엄브렐러 85cm",
-          "price": 39000,
+          "price": 55000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631727"
         },
@@ -11135,7 +11135,7 @@
         {
           "id": "smartstore-13739631596",
           "name": "고독스 GODOX UB-105W 화이트 파라볼릭 엄브렐러 105cm",
-          "price": 59000,
+          "price": 75000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631596"
         },
@@ -11159,7 +11159,7 @@
         {
           "id": "smartstore-13739631595",
           "name": "고독스 GODOX UB-130W 화이트 파라볼릭 엄브렐러 130cm",
-          "price": 79000,
+          "price": 110000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631595"
         },
@@ -11183,7 +11183,7 @@
         {
           "id": "smartstore-13739631726",
           "name": "고독스 GODOX UB-165W 화이트 파라볼릭 엄브렐러 165cm",
-          "price": 85000,
+          "price": 130000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631726"
         },
@@ -11207,7 +11207,7 @@
         {
           "id": "smartstore-13739631258",
           "name": "고독스 GODOX TP-B8 픽셀 튜브 라이트용 브래킷(8개 조명)",
-          "price": 357000,
+          "price": 379000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631258"
         },
@@ -11231,7 +11231,7 @@
         {
           "id": "smartstore-13739631257",
           "name": "고독스 GODOX TP-B4 픽셀 튜브 라이트용 브래킷(4개 조명)",
-          "price": 261000,
+          "price": 279000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631257"
         },
@@ -11255,7 +11255,7 @@
         {
           "id": "smartstore-13739631139",
           "name": "고독스 GODOX TP-B2 픽셀 튜브 라이트용 브래킷(2개 조명)",
-          "price": 163000,
+          "price": 179000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631139"
         },
@@ -11327,7 +11327,7 @@
         {
           "id": "smartstore-13739631138",
           "name": "고독스 GODOX KNOWLED MG1200Bi",
-          "price": 5674000,
+          "price": 5950000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631138"
         },
@@ -11399,7 +11399,7 @@
         {
           "id": "smartstore-13739631044",
           "name": "고독스 Godox KNOWLED Projection Attachment GP36K",
-          "price": 2421000,
+          "price": 2490000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631044"
         },
@@ -11423,7 +11423,7 @@
         {
           "id": "smartstore-13739631229",
           "name": "고독스 Godox KNOWLED Projection Attachment GP26K",
-          "price": 2421000,
+          "price": 2490000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631229"
         },
@@ -11447,7 +11447,7 @@
         {
           "id": "smartstore-13739631228",
           "name": "고독스 Godox KNOWLED Projection Attachment GP19K",
-          "price": 2540000,
+          "price": 2590000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631228"
         },
@@ -11567,7 +11567,7 @@
         {
           "id": "smartstore-13739631594",
           "name": "고독스 Godox AD-S60S 소프트박스",
-          "price": 65000,
+          "price": 89000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631594"
         },
@@ -11591,7 +11591,7 @@
         {
           "id": "smartstore-13739631725",
           "name": "고독스 Godox FP50 FH50Bi, FH50R용 팬케이크 랜턴 소프트박스",
-          "price": 13000,
+          "price": 18000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631725"
         },
@@ -11615,7 +11615,7 @@
         {
           "id": "smartstore-13739631227",
           "name": "고독스 Godox GP-GS5 고보세트",
-          "price": 77000,
+          "price": 79000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631227"
         },
@@ -11639,7 +11639,7 @@
         {
           "id": "smartstore-13739631226",
           "name": "고독스 Godox GP-GS4 고보세트",
-          "price": 77000,
+          "price": 79000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631226"
         },
@@ -11663,7 +11663,7 @@
         {
           "id": "smartstore-13739630931",
           "name": "고독스 Godox GP-GS3 고보세트",
-          "price": 77000,
+          "price": 79000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630931"
         },
@@ -11687,7 +11687,7 @@
         {
           "id": "smartstore-13739631225",
           "name": "고독스 Godox GP-GS2 고보세트",
-          "price": 77000,
+          "price": 79000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631225"
         },
@@ -11711,7 +11711,7 @@
         {
           "id": "smartstore-13739631084",
           "name": "고독스 Godox GP-GS1 고보세트",
-          "price": 77000,
+          "price": 79000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631084"
         },
@@ -11735,7 +11735,7 @@
         {
           "id": "smartstore-13739631224",
           "name": "고독스 Godox GP-ID 아이리스 다이어프램",
-          "price": 312000,
+          "price": 359000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631224"
         },
@@ -11831,7 +11831,7 @@
         {
           "id": "smartstore-13739631137",
           "name": "고독스 Godox KNOWLED GP-SKID",
-          "price": 386000,
+          "price": 399000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631137"
         },
@@ -11855,7 +11855,7 @@
         {
           "id": "smartstore-13739631223",
           "name": "고독스 Godox KNOWLED GP-QB",
-          "price": 357000,
+          "price": 379000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631223"
         },
@@ -11951,7 +11951,7 @@
         {
           "id": "smartstore-13739631355",
           "name": "고독스 Godox GS44 사각 소프트박스 120x120cm",
-          "price": 425000,
+          "price": 530000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631355"
         },
@@ -12047,7 +12047,7 @@
         {
           "id": "smartstore-13739631083",
           "name": "고독스 Godox GL3 랜턴 소프트박스 90cm",
-          "price": 365000,
+          "price": 495000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631083"
         },
@@ -12071,7 +12071,7 @@
         {
           "id": "smartstore-13739630930",
           "name": "고독스 Godox GO5 옥타 소프트박스 150cm",
-          "price": 502000,
+          "price": 549000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630930"
         },
@@ -12095,7 +12095,7 @@
         {
           "id": "smartstore-13739630941",
           "name": "고독스 Godox GO4 옥타 소프트박스 120cm",
-          "price": 425000,
+          "price": 429000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630941"
         },
@@ -12263,7 +12263,7 @@
         {
           "id": "smartstore-13739630854",
           "name": "고독스 Godox GRK 리플렉터 키트 15° 30° 60°",
-          "price": 793000,
+          "price": 799000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630854"
         },
@@ -12383,7 +12383,7 @@
         {
           "id": "smartstore-13739631135",
           "name": "고독스 GODOX P600BHSS 스페이스 라이트 소프트박스",
-          "price": 107000,
+          "price": 129000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631135"
         },
@@ -13382,7 +13382,7 @@
         {
           "id": "smartstore-13739631408",
           "name": "고독스 Godox 420LB 라이트 붐 스탠드",
-          "price": 157000,
+          "price": 179000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631408"
         },
@@ -13622,7 +13622,7 @@
         {
           "id": "smartstore-13739631530",
           "name": "고독스 Godox 90F 접이식 플로어 라이트 스탠드",
-          "price": 29000,
+          "price": 40000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631530"
         },
@@ -13646,7 +13646,7 @@
         {
           "id": "smartstore-13739631714",
           "name": "고독스 Godox 210F 라이트 스탠드",
-          "price": 45000,
+          "price": 55000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631714"
         },
@@ -13670,7 +13670,7 @@
         {
           "id": "smartstore-13739631713",
           "name": "고독스 Godox 240F 라이트 스탠드",
-          "price": 48000,
+          "price": 59000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631713"
         },
@@ -13694,7 +13694,7 @@
         {
           "id": "smartstore-13739631712",
           "name": "고독스 Godox 300F 라이트 스탠드",
-          "price": 56000,
+          "price": 69000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631712"
         },
@@ -13718,7 +13718,7 @@
         {
           "id": "smartstore-13739631711",
           "name": "고독스 Godox 290F 고중량 라이트 스탠드",
-          "price": 74000,
+          "price": 89000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631711"
         },
@@ -13742,7 +13742,7 @@
         {
           "id": "smartstore-13739631710",
           "name": "고독스 Godox 380F 고중량 라이트 스탠드",
-          "price": 86000,
+          "price": 120000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631710"
         },
@@ -13766,7 +13766,7 @@
         {
           "id": "smartstore-13739631690",
           "name": "고독스 Godox 190F 다리조절식 라이트 스탠드",
-          "price": 59000,
+          "price": 70000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631690"
         },
@@ -14294,7 +14294,7 @@
         {
           "id": "smartstore-13739631681",
           "name": "고독스 Godox VC26T 멀티 배터리 충전기",
-          "price": 51000,
+          "price": 55000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631681"
         },
@@ -14325,7 +14325,7 @@
         {
           "id": "smartstore-13739631680",
           "name": "고독스 Godox VB30 플래시 헤드용 리튬이온 배터리",
-          "price": 65000,
+          "price": 79000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631680"
         },
@@ -14860,7 +14860,7 @@
         {
           "id": "smartstore-13739631679",
           "name": "고독스 GODOX UB-85D 반투명 파라볼릭 엄브렐러 85cm",
-          "price": 28000,
+          "price": 35000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631679"
         },
@@ -14884,7 +14884,7 @@
         {
           "id": "smartstore-13739631300",
           "name": "고독스 GODOX UB-105D 반투명 파라볼릭 엄브렐러 105cm",
-          "price": 34000,
+          "price": 45000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631300"
         },
@@ -14908,7 +14908,7 @@
         {
           "id": "smartstore-13739631353",
           "name": "고독스 GODOX UB-130D 반투명 파라볼릭 엄브렐러 130cm",
-          "price": 48000,
+          "price": 65000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631353"
         },
@@ -14932,7 +14932,7 @@
         {
           "id": "smartstore-13739631402",
           "name": "고독스 GODOX UB-165D 반투명 파라볼릭 엄브렐러 165cm",
-          "price": 53000,
+          "price": 69000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631402"
         },
@@ -16307,7 +16307,7 @@
         {
           "id": "smartstore-13739631553",
           "name": "고독스 GODOX ML-SF3030 사각형 소프트박스 그리드포함",
-          "price": 49000,
+          "price": 59000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631553"
         },
@@ -16499,7 +16499,7 @@
         {
           "id": "smartstore-13739630852",
           "name": "고독스 Godox EazyFlow Rect 60x90 이지플로우 직사각 접이식 소프트박스",
-          "price": 74000,
+          "price": 90000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630852"
         },
@@ -16739,7 +16739,7 @@
         {
           "id": "smartstore-13739630997",
           "name": "고독스 Godox EazyFlow Rect 30x45 이지플로우 직사각 접이식 소프트박스",
-          "price": 55000,
+          "price": 65000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630997"
         },
@@ -16763,7 +16763,7 @@
         {
           "id": "smartstore-13739630923",
           "name": "고독스 Godox EazyFlow Rect 45x60 이지플로우 직사각 접이식 소프트박스",
-          "price": 65000,
+          "price": 79000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630923"
         },
@@ -16787,7 +16787,7 @@
         {
           "id": "smartstore-13739631033",
           "name": "고독스 Godox EazyFlow Rect 40x90 이지플로우 스트립 직사각 접이식 소프트박스",
-          "price": 68000,
+          "price": 80000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631033"
         },
@@ -16811,7 +16811,7 @@
         {
           "id": "smartstore-13739631032",
           "name": "고독스 Godox EazyFlow Rect 40x40 이지플로우 정사각 접이식 소프트박스",
-          "price": 57000,
+          "price": 69000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631032"
         },
@@ -16835,7 +16835,7 @@
         {
           "id": "smartstore-13739631092",
           "name": "고독스 Godox EazyFlow Rect 60x60 이지플로우 정사각 접이식 소프트박스",
-          "price": 65000,
+          "price": 79000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631092"
         },
@@ -16859,7 +16859,7 @@
         {
           "id": "smartstore-13739631050",
           "name": "고독스 Godox EazyFlow Rect 90x90 이지플로우 정사각 접이식 소프트박스",
-          "price": 86000,
+          "price": 105000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631050"
         },
@@ -16883,7 +16883,7 @@
         {
           "id": "smartstore-13739631091",
           "name": "고독스 Godox EazyFlow Ocra 120 이지플로우 옥타 팔각 접이식 소프트박스",
-          "price": 120000,
+          "price": 145000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631091"
         },
@@ -16907,7 +16907,7 @@
         {
           "id": "smartstore-13739630894",
           "name": "고독스 Godox EazyFlow Ocra 150 이지플로우 옥타 팔각 접이식 소프트박스",
-          "price": 138000,
+          "price": 169000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630894"
         },
@@ -16931,7 +16931,7 @@
         {
           "id": "smartstore-13739630996",
           "name": "고독스 Godox EazyFlow Ocra 90 이지플로우 옥타 팔각 접이식 소프트박스",
-          "price": 88000,
+          "price": 109000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630996"
         },
@@ -16955,7 +16955,7 @@
         {
           "id": "smartstore-13739630995",
           "name": "고독스 Godox EazyFlow Ocra 60 이지플로우 옥타 팔각 접이식 소프트박스",
-          "price": 72000,
+          "price": 85000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739630995"
         },
@@ -18497,7 +18497,7 @@
         {
           "id": "smartstore-13739631817",
           "name": "고독스 Godox CS-65D 랜턴 소프트박스",
-          "price": 65000,
+          "price": 79000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631817"
         },
@@ -18521,7 +18521,7 @@
         {
           "id": "smartstore-13739631453",
           "name": "고독스 Godox CS-85D 랜턴 소프트박스",
-          "price": 73000,
+          "price": 99000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631453"
         },
@@ -18545,7 +18545,7 @@
         {
           "id": "smartstore-13739631648",
           "name": "고독스 Godox ES-TMR 텔레스코픽 마운팅 로드",
-          "price": 48000,
+          "price": 49000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13739631648"
         },
@@ -58583,7 +58583,7 @@
         {
           "id": "kpp-1715320196",
           "name": "FXLION 나노 원 와이어리스 V마운트 배터리 50Wh / 8A 스마트폰 무선충전",
-          "price": 179000,
+          "price": 161000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1715320196"
         }
@@ -58607,7 +58607,7 @@
         {
           "id": "kpp-1715320375",
           "name": "FXLION 나노 투 와이어리스 V마운트 배터리 100Wh / 10A 스마트폰 무선충전 기능 탑재",
-          "price": 249000,
+          "price": 224000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1715320375"
         }
@@ -58631,7 +58631,7 @@
         {
           "id": "kpp-1715320398",
           "name": "FXLION 나노 쓰리 와이어리스 V마운트 배터리 150Wh / 10A 스마트폰 무선충전",
-          "price": 359000,
+          "price": 323000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1715320398"
         }
@@ -59521,7 +59521,7 @@
         {
           "id": "kpp-1757308877",
           "name": "FXLION 나노 프로 V마운트 배터리 98Wh",
-          "price": 279000,
+          "price": 251000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1757308877"
         },
@@ -59697,7 +59697,7 @@
         {
           "id": "kpp-1767680956",
           "name": "FXLION 넥서스 스마트 V마운트 배터리 BP-300SL 300Wh 18A",
-          "price": 499000,
+          "price": 449000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1767680956"
         },
@@ -59778,7 +59778,7 @@
         {
           "id": "kpp-1774943790",
           "name": "FXLION 26V BP-7S270 V마운트 배터리 270Wh",
-          "price": 550000,
+          "price": 495000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1774943790"
         },
@@ -59978,7 +59978,7 @@
         {
           "id": "kpp-1778485458",
           "name": "FXLION 넥서스 스마트 V마운트 배터리 BP-190SL 190Wh 15A",
-          "price": 399000,
+          "price": 359000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1778485458"
         },
@@ -60777,7 +60777,7 @@
         {
           "id": "smartstore-11995908859",
           "name": "GODOX C7R 8Kit / 엠비언트 라이트 RGB 풀컬러 미니포켓 패널조명 스튜디오 방송 영상 제품 소품 촬영",
-          "price": 1129000,
+          "price": 1250000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11995908859"
         },
@@ -62108,54 +62108,6 @@
           "price": 22180,
           "source": "saeki",
           "url": "https://www.saeki.co.kr/item/itemDetail?itemId=PD00000185"
-        }
-      ]
-    },
-    {
-      "brand_id": "pelican",
-      "kind": "purchase",
-      "primary_id": "smartstore-13751981563",
-      "evidence": [
-        "name:1605air하드케이스withpaddeddividers"
-      ],
-      "members": [
-        {
-          "id": "smartstore-13751981563",
-          "name": "1605 Air 하드케이스 (With Padded Dividers)",
-          "price": 768000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13751981563"
-        },
-        {
-          "id": "plthink-1902222",
-          "name": "[PELICAN] 펠리칸 1605 Air 하드케이스 With Padded Dividers",
-          "price": 768000,
-          "source": "plthink",
-          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902222"
-        }
-      ]
-    },
-    {
-      "brand_id": "pelican",
-      "kind": "purchase",
-      "primary_id": "smartstore-13751891864",
-      "evidence": [
-        "name:1605air하드케이스withfoam"
-      ],
-      "members": [
-        {
-          "id": "smartstore-13751891864",
-          "name": "1605 Air 하드케이스 (With Foam)",
-          "price": 592000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13751891864"
-        },
-        {
-          "id": "plthink-1902223",
-          "name": "[PELICAN] 펠리칸 1605 Air 하드케이스 With Foam",
-          "price": 592000,
-          "source": "plthink",
-          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1902223"
         }
       ]
     },

@@ -1,19 +1,19 @@
 {
   "source": "smartstore",
   "source_url": "https://smartstore.naver.com/rainbowbene",
-  "collected_at": "2026-10-15T23:10:13+00:00",
+  "collected_at": "2026-10-16T23:02:52+00:00",
   "complete": true,
-  "origin_count": 7910,
-  "product_count": 6896,
+  "origin_count": 7888,
+  "product_count": 6860,
   "status_counts": {
-    "SALE/ON": 6482,
+    "SALE/ON": 6446,
     "SUSPENSION/ON": 69,
+    "UNADMISSION/ON": 37,
     "OUTOFSTOCK/ON": 414,
     "OUTOFSTOCK/SUSPENSION": 42,
     "SALE/SUSPENSION": 445,
-    "SUSPENSION/SUSPENSION": 367,
+    "SUSPENSION/SUSPENSION": 345,
     "PROHIBITION/ON": 85,
-    "UNADMISSION/ON": 1,
     "CLOSE/SUSPENSION": 5
   },
   "products": {
@@ -2055,39 +2055,6 @@
       ],
       "source_modified_at": "2026-09-28T20:17:52.510+09:00"
     },
-    "smartstore-13752020112": {
-      "id": "smartstore-13752020112",
-      "source": "smartstore",
-      "source_id": "13752020112",
-      "origin_id": "13691288841",
-      "name": "[ 펠리칸 레인보우베네 ] 0550WF 하드케이스",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13752020112",
-      "price": 2600000,
-      "sale_price": 2600000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_19/1788877699672EfYaf_JPEG/2552_tmp_78d3b2d0dfaa8498ff3de05e08c29bb82422view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:17:52.510+09:00"
-    },
     "smartstore-13752020111": {
       "id": "smartstore-13752020111",
       "source": "smartstore",
@@ -2103,39 +2070,6 @@
       "kind": "purchase",
       "images": {
         "thumb": "https://shop-phinf.pstatic.net/20260908_44/1788877699668UPLA2_JPEG/2769_15121339view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:17:52.510+09:00"
-    },
-    "smartstore-13752020110": {
-      "id": "smartstore-13752020110",
-      "source": "smartstore",
-      "source_id": "13752020110",
-      "origin_id": "13691288839",
-      "name": "[ 펠리칸 레인보우베네 ] 0550NF 하드케이스",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13752020110",
-      "price": 1973000,
-      "sale_price": 1973000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_71/1788877699958EjHzM_JPEG/12227_tmp_4534cdb8f8905c0e9a0a23eb29475f640319view.jpg",
         "main": [],
         "detail": []
       },
@@ -2268,204 +2202,6 @@
       "kind": "purchase",
       "images": {
         "thumb": "https://shop-phinf.pstatic.net/20260908_159/1788876288045jkWCR_JPEG/43_30114449view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:17:52.510+09:00"
-    },
-    "smartstore-13751997019": {
-      "id": "smartstore-13751997019",
-      "source": "smartstore",
-      "source_id": "13751997019",
-      "origin_id": "13691266033",
-      "name": "[ 펠리칸 레인보우베네 ] 1650 이지클릭 몰리패널 EZ Click MOLLE PANEL",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751997019",
-      "price": 130000,
-      "sale_price": 130000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_140/1788876288392jMdHo_JPEG/11309_tmp_85eeb9dcbba6a9db1ba11a21de2460367419view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002113",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001394",
-        "50002113"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
-      ],
-      "source_modified_at": "2026-09-28T20:17:52.510+09:00"
-    },
-    "smartstore-13751997018": {
-      "id": "smartstore-13751997018",
-      "source": "smartstore",
-      "source_id": "13751997018",
-      "origin_id": "13691266032",
-      "name": "[ 펠리칸 레인보우베네 ] 1610/1620 이지클릭 몰리패널 EZ Click MOLLE PANEL",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751997018",
-      "price": 119000,
-      "sale_price": 119000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_48/1788876288043Pyrhg_JPEG/11308_tmp_a00ef69c3132acd915f427f62b064c834472view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002113",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001394",
-        "50002113"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
-      ],
-      "source_modified_at": "2026-09-28T20:17:52.510+09:00"
-    },
-    "smartstore-13751997017": {
-      "id": "smartstore-13751997017",
-      "source": "smartstore",
-      "source_id": "13751997017",
-      "origin_id": "13691266031",
-      "name": "[ 펠리칸 레인보우베네 ] 1560 이지클릭 몰리패널 EZ Click MOLLE PANEL",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751997017",
-      "price": 119000,
-      "sale_price": 119000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_199/1788876288040J9b5Y_JPEG/11307_tmp_692ba164a9cff47ad972771a9b9c9bf59334view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002113",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001394",
-        "50002113"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
-      ],
-      "source_modified_at": "2026-09-28T20:17:52.510+09:00"
-    },
-    "smartstore-13751997016": {
-      "id": "smartstore-13751997016",
-      "source": "smartstore",
-      "source_id": "13751997016",
-      "origin_id": "13691266030",
-      "name": "[ 펠리칸 레인보우베네 ] 1535 이지클릭 몰리패널 EZ Click MOLLE PANEL",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751997016",
-      "price": 87000,
-      "sale_price": 87000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_293/1788876288050R3BMy_JPEG/11306_tmp_210af3deb494cb302e1d87e9c3e3571c4742view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002113",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001394",
-        "50002113"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
-      ],
-      "source_modified_at": "2026-09-28T20:17:52.510+09:00"
-    },
-    "smartstore-13751997015": {
-      "id": "smartstore-13751997015",
-      "source": "smartstore",
-      "source_id": "13751997015",
-      "origin_id": "13691266029",
-      "name": "[ 펠리칸 레인보우베네 ] 1510 이지클릭 몰리패널 EZ Click MOLLE PANEL",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751997015",
-      "price": 87000,
-      "sale_price": 87000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_11/1788876288042puTcE_JPEG/11305_tmp_8feab2d5b134d3870bf5bba8dec2c7f02179view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50002113",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001394",
-        "50002113"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라/캠코더 관련용품",
-        "기타카메라/캠코더용품"
-      ],
-      "source_modified_at": "2026-09-28T20:17:52.510+09:00"
-    },
-    "smartstore-13751981563": {
-      "id": "smartstore-13751981563",
-      "source": "smartstore",
-      "source_id": "13751981563",
-      "origin_id": "13691250746",
-      "name": "[ 펠리칸 레인보우베네 ] 1605 Air 하드케이스 (With Padded Dividers)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751981563",
-      "price": 768000,
-      "sale_price": 768000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_101/1788875456566DuSjS_JPEG/5615_tmp_99f7265e929853ada32db861d991536d8007view.jpg",
         "main": [],
         "detail": []
       },
@@ -4629,39 +4365,6 @@
       ],
       "source_modified_at": "2026-09-28T20:17:52.510+09:00"
     },
-    "smartstore-13751891878": {
-      "id": "smartstore-13751891878",
-      "source": "smartstore",
-      "source_id": "13751891878",
-      "origin_id": "13691162040",
-      "name": "[ 펠리칸 레인보우베네 ] 1556 Air 롱/딥 하드케이스 (No Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891878",
-      "price": 460000,
-      "sale_price": 460000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_30/1788871069096BYHeh_JPEG/11106_tmp_9294e2a47fcee95026bdf96f35f491654075view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:17:52.510+09:00"
-    },
     "smartstore-13751891877": {
       "id": "smartstore-13751891877",
       "source": "smartstore",
@@ -4677,72 +4380,6 @@
       "kind": "purchase",
       "images": {
         "thumb": "https://shop-phinf.pstatic.net/20260908_204/17888710689617errI_JPEG/10033_2020031914152573.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:17:52.510+09:00"
-    },
-    "smartstore-13751891876": {
-      "id": "smartstore-13751891876",
-      "source": "smartstore",
-      "source_id": "13751891876",
-      "origin_id": "13691162037",
-      "name": "[ 펠리칸 레인보우베네 ] 1506 Air 롱/딥 하드케이스 (No Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891876",
-      "price": 329000,
-      "sale_price": 329000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_90/1788871068838VfQmn_JPEG/11102_tmp_d30622707f1ba9e5845aa72097d6b00b2082view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:17:52.510+09:00"
-    },
-    "smartstore-13751891875": {
-      "id": "smartstore-13751891875",
-      "source": "smartstore",
-      "source_id": "13751891875",
-      "origin_id": "13691162036",
-      "name": "[ 펠리칸 레인보우베네 ] 1626 Air 롱/딥 하드케이스 (With Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891875",
-      "price": 740000,
-      "sale_price": 740000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_276/1788871069337h40c8_JPEG/10020_tmp_e74e970d5ce5fcf4f25be5f6cbfedbc35426view.jpg",
         "main": [],
         "detail": []
       },
@@ -4794,39 +4431,6 @@
       ],
       "source_modified_at": "2026-09-28T20:17:52.510+09:00"
     },
-    "smartstore-13751891873": {
-      "id": "smartstore-13751891873",
-      "source": "smartstore",
-      "source_id": "13751891873",
-      "origin_id": "13691162033",
-      "name": "[ 펠리칸 레인보우베네 ] 1556 Air 롱/딥 하드케이스 (With Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891873",
-      "price": 540000,
-      "sale_price": 540000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_80/1788871069324kFr8J_JPEG/10017_tmp_2459852a1018030b13cac597a93991a19078view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:17:52.510+09:00"
-    },
     "smartstore-13751891872": {
       "id": "smartstore-13751891872",
       "source": "smartstore",
@@ -4842,39 +4446,6 @@
       "kind": "purchase",
       "images": {
         "thumb": "https://shop-phinf.pstatic.net/20260908_243/1788871069230FngaY_JPEG/10016_tmp_3b13d40d1ab939ef372fff3b7603cd313256view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:17:52.510+09:00"
-    },
-    "smartstore-13751891871": {
-      "id": "smartstore-13751891871",
-      "source": "smartstore",
-      "source_id": "13751891871",
-      "origin_id": "13691162031",
-      "name": "[ 펠리칸 레인보우베네 ] 1605 Air 하드케이스 (No Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891871",
-      "price": 509000,
-      "sale_price": 509000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_153/1788871068840oUdGd_JPEG/11108_tmp_f0d74616e5708dfc9744cf38f90829169154view.jpg",
         "main": [],
         "detail": []
       },
@@ -5091,105 +4662,6 @@
       ],
       "source_modified_at": "2026-09-28T20:17:52.510+09:00"
     },
-    "smartstore-13751891864": {
-      "id": "smartstore-13751891864",
-      "source": "smartstore",
-      "source_id": "13751891864",
-      "origin_id": "13691162023",
-      "name": "[ 펠리칸 레인보우베네 ] 1605 Air 하드케이스 (With Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891864",
-      "price": 592000,
-      "sale_price": 592000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_100/17888710694379bX1A_JPEG/5614_tmp_d76722399a4ce64399e2512a7b494e8e0104view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:17:52.510+09:00"
-    },
-    "smartstore-13751891863": {
-      "id": "smartstore-13751891863",
-      "source": "smartstore",
-      "source_id": "13751891863",
-      "origin_id": "13691162022",
-      "name": "[ 펠리칸 레인보우베네 ] 1465 Air 하드케이스 (With Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891863",
-      "price": 509000,
-      "sale_price": 509000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_145/1788871069698E6IqB_JPEG/9578_tmp_a3c35e6d7d408341ef26729049495fb79479view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:17:52.510+09:00"
-    },
-    "smartstore-13751891862": {
-      "id": "smartstore-13751891862",
-      "source": "smartstore",
-      "source_id": "13751891862",
-      "origin_id": "13691162021",
-      "name": "[ 펠리칸 레인보우베네 ] 1745 Air WF 롱 하드케이스 (With Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891862",
-      "price": 851000,
-      "sale_price": 851000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_273/1788871069097rPifU_JPEG/9579_tmp_b942ebb9b37d7d649f2529ccd40c48ef6186view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:17:52.510+09:00"
-    },
     "smartstore-13751891800": {
       "id": "smartstore-13751891800",
       "source": "smartstore",
@@ -5388,39 +4860,6 @@
       ],
       "source_modified_at": "2026-09-28T20:18:04.474+09:00"
     },
-    "smartstore-13751891793": {
-      "id": "smartstore-13751891793",
-      "source": "smartstore",
-      "source_id": "13751891793",
-      "origin_id": "13691161957",
-      "name": "[ 펠리칸 레인보우베네 ] 1670WF Protector 케이스 (With Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891793",
-      "price": 879000,
-      "sale_price": 879000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_78/1788871065633n44oW_JPEG/5648_tmp_b3e20a9a9794c95e559e7fcd9c5e4eda5435view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
     "smartstore-13751891792": {
       "id": "smartstore-13751891792",
       "source": "smartstore",
@@ -5487,72 +4926,6 @@
       ],
       "source_modified_at": "2026-09-28T20:18:04.474+09:00"
     },
-    "smartstore-13751891790": {
-      "id": "smartstore-13751891790",
-      "source": "smartstore",
-      "source_id": "13751891790",
-      "origin_id": "13691161953",
-      "name": "[ 펠리칸 레인보우베네 ] 0340WF 큐브 하드케이스 (With Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891790",
-      "price": 935000,
-      "sale_price": 935000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_70/1788871066346xKsd1_JPEG/5673_tmp_9e5b2ca54d8961dd8ee3eea5040b825f6597view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
-    "smartstore-13751891789": {
-      "id": "smartstore-13751891789",
-      "source": "smartstore",
-      "source_id": "13751891789",
-      "origin_id": "13691161952",
-      "name": "[ 펠리칸 레인보우베네 ] 0350WF 큐브 하드케이스 (With Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891789",
-      "price": 955000,
-      "sale_price": 955000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_68/1788871067582u3cgo_JPEG/5677_tmp_6c363ef70df1d1395df9a7a2af60e24f5763view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
     "smartstore-13751891788": {
       "id": "smartstore-13751891788",
       "source": "smartstore",
@@ -5568,39 +4941,6 @@
       "kind": "purchase",
       "images": {
         "thumb": "https://shop-phinf.pstatic.net/20260908_82/1788871066998aGMEW_JPEG/5745_tmp_14785717311880view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
-    "smartstore-13751891787": {
-      "id": "smartstore-13751891787",
-      "source": "smartstore",
-      "source_id": "13751891787",
-      "origin_id": "13691161950",
-      "name": "[ 펠리칸 레인보우베네 ] 0370WF 큐브 하드케이스 (With Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891787",
-      "price": 1150000,
-      "sale_price": 1150000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_19/1788871065865dKXup_JPEG/5678_tmp_61dacb852aec03ea294c72b37eaa1a469410view.jpg",
         "main": [],
         "detail": []
       },
@@ -5850,105 +5190,6 @@
       ],
       "source_modified_at": "2026-09-28T20:18:04.474+09:00"
     },
-    "smartstore-13751891733": {
-      "id": "smartstore-13751891733",
-      "source": "smartstore",
-      "source_id": "13751891733",
-      "origin_id": "13691161898",
-      "name": "[ 펠리칸 레인보우베네 ] 1690WF Protector 운반 케이스 (With Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891733",
-      "price": 1160000,
-      "sale_price": 1160000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_168/17888710637122QkCx_JPEG/2551_tmp_f8fd9c3afb07ddfb5efb8b3b61c2b9399351view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
-    "smartstore-13751891732": {
-      "id": "smartstore-13751891732",
-      "source": "smartstore",
-      "source_id": "13751891732",
-      "origin_id": "13691161897",
-      "name": "[ 펠리칸 레인보우베네 ] 1646 Air NF 하드케이스 (No FOAM)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891732",
-      "price": 770000,
-      "sale_price": 770000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_52/178887106363922s7J_JPEG/11702_tmp_e65821f04fcd0f4436babc852b84bace3662view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
-    "smartstore-13751891731": {
-      "id": "smartstore-13751891731",
-      "source": "smartstore",
-      "source_id": "13751891731",
-      "origin_id": "13691161896",
-      "name": "[ 펠리칸 레인보우베네 ] 1646 Air WF 하드케이스 (With FOAM)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891731",
-      "price": 880000,
-      "sale_price": 880000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_300/1788871064183c65fu_JPEG/11703_tmp_da774f931e7f91fc0b2edfbf031c0bb39213view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
     "smartstore-13751891730": {
       "id": "smartstore-13751891730",
       "source": "smartstore",
@@ -5964,171 +5205,6 @@
       "kind": "purchase",
       "images": {
         "thumb": "https://shop-phinf.pstatic.net/20260908_12/1788871064510dQ8gp_JPEG/11717_tmp_bf74c70495a1d2addfbb68175418701a5298view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
-    "smartstore-13751891729": {
-      "id": "smartstore-13751891729",
-      "source": "smartstore",
-      "source_id": "13751891729",
-      "origin_id": "13691161893",
-      "name": "[ 펠리칸 레인보우베네 ] 1535 Air 데저트탄 NF 한정판 (No Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891729",
-      "price": 452000,
-      "sale_price": 452000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_141/1788871063897utx3P_JPEG/12170_2022120210492815.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
-    "smartstore-13751891728": {
-      "id": "smartstore-13751891728",
-      "source": "smartstore",
-      "source_id": "13751891728",
-      "origin_id": "13691161892",
-      "name": "[ 펠리칸 레인보우베네 ] 1755 Air WF 롱 하드케이스 (With Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891728",
-      "price": 930000,
-      "sale_price": 930000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_11/1788871063649A1yjF_JPEG/12219_tmp_a5dc195ea9c8a7b179f4a505c4aa9e0a3908view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
-    "smartstore-13751891727": {
-      "id": "smartstore-13751891727",
-      "source": "smartstore",
-      "source_id": "13751891727",
-      "origin_id": "13691161891",
-      "name": "[ 펠리칸 레인보우베네 ] 0370NF 큐브 하드케이스 (No Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891727",
-      "price": 1055000,
-      "sale_price": 1055000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_197/1788871063881TLKa5_JPEG/12228_tmp_49298a9e793926bb4658520536f7c4929977view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
-    "smartstore-13751891726": {
-      "id": "smartstore-13751891726",
-      "source": "smartstore",
-      "source_id": "13751891726",
-      "origin_id": "13691161890",
-      "name": "[ 펠리칸 레인보우베네 ] 0350NF 큐브 하드케이스 (No Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891726",
-      "price": 889000,
-      "sale_price": 889000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_256/1788871063906IcUVk_JPEG/12229_tmp_cc50e4c2083bb3549f22e96c9b7fe7323807view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
-    "smartstore-13751891725": {
-      "id": "smartstore-13751891725",
-      "source": "smartstore",
-      "source_id": "13751891725",
-      "origin_id": "13691161889",
-      "name": "[ 펠리칸 레인보우베네 ] 0340NF 큐브 하드케이스 (No Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891725",
-      "price": 825000,
-      "sale_price": 825000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_12/17888710636437XBvR_JPEG/12230_tmp_058151f6c84c7096883876389af331363429view.jpg",
         "main": [],
         "detail": []
       },
@@ -6261,105 +5337,6 @@
       "kind": "purchase",
       "images": {
         "thumb": "https://shop-phinf.pstatic.net/20260908_3/1788871064167GXxJP_JPEG/12234_tmp_1c7ceb4c2086d55dd73c563f3e182e4f8949view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
-    "smartstore-13751891719": {
-      "id": "smartstore-13751891719",
-      "source": "smartstore",
-      "source_id": "13751891719",
-      "origin_id": "13691161883",
-      "name": "[ 펠리칸 레인보우베네 ] 1670NF Protector 케이스 (No Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891719",
-      "price": 770000,
-      "sale_price": 770000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_228/1788871063922uq4Cd_JPEG/12269_tmp_ca1e3982b8e5ac4195865c072c9be2b12960view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
-    "smartstore-13751891718": {
-      "id": "smartstore-13751891718",
-      "source": "smartstore",
-      "source_id": "13751891718",
-      "origin_id": "13691161882",
-      "name": "[ 펠리칸 레인보우베네 ] 1660NF Protector 케이스 (No Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891718",
-      "price": 940000,
-      "sale_price": 940000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_59/17888710636417YB2s_JPEG/12270_tmp_d6dcf6fdd15be14465da5f726948db943917view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
-    "smartstore-13751891717": {
-      "id": "smartstore-13751891717",
-      "source": "smartstore",
-      "source_id": "13751891717",
-      "origin_id": "13691161881",
-      "name": "[ 펠리칸 레인보우베네 ] 1755 Air NF 롱 하드케이스 (No Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891717",
-      "price": 798000,
-      "sale_price": 798000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_31/1788871063926u0I7r_JPEG/12373_tmp_7a02fc847894fd16cfa9aaf65202be4b5325view.jpg",
         "main": [],
         "detail": []
       },
@@ -6774,105 +5751,6 @@
       ],
       "source_modified_at": "2026-09-28T20:18:04.474+09:00"
     },
-    "smartstore-13751891648": {
-      "id": "smartstore-13751891648",
-      "source": "smartstore",
-      "source_id": "13751891648",
-      "origin_id": "13691161818",
-      "name": "[ 펠리칸 레인보우베네 ] 1505TP Air 하드케이스 (Trekpak System)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891648",
-      "price": 592000,
-      "sale_price": 592000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_61/1788871061530psn9Q_JPEG/13037_tmp_5e4594ffe5fef415fe361721dfa8d1789549view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
-    "smartstore-13751891647": {
-      "id": "smartstore-13751891647",
-      "source": "smartstore",
-      "source_id": "13751891647",
-      "origin_id": "13691161815",
-      "name": "[ 펠리칸 레인보우베네 ] 1505WF Air 하드케이스 (With Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891647",
-      "price": 427000,
-      "sale_price": 427000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_225/1788871061766OenC2_JPEG/13036_tmp_e04cf05f20ded06104575646cf2259fe3493view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
-    "smartstore-13751891646": {
-      "id": "smartstore-13751891646",
-      "source": "smartstore",
-      "source_id": "13751891646",
-      "origin_id": "13691161813",
-      "name": "[ 펠리칸 레인보우베네 ] 1505 Air 하드케이스 (No Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891646",
-      "price": 372000,
-      "sale_price": 372000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_177/1788871061820Di9FV_JPEG/13035_tmp_01876d785f8138ff0c0f31fb501257b81896view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
     "smartstore-13751891645": {
       "id": "smartstore-13751891645",
       "source": "smartstore",
@@ -6921,72 +5799,6 @@
       "kind": "purchase",
       "images": {
         "thumb": "https://shop-phinf.pstatic.net/20260908_228/1788871062545CclAv_JPEG/12621_tmp_e8afa3da2fe2202a8c4f1b0621af77cd5021view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
-    "smartstore-13751891643": {
-      "id": "smartstore-13751891643",
-      "source": "smartstore",
-      "source_id": "13751891643",
-      "origin_id": "13691161809",
-      "name": "[ 펠리칸 레인보우베네 ] 1535 Air WD 데저트탄 한정판 (With Divider)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891643",
-      "price": 679000,
-      "sale_price": 679000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_64/178887106179423oLK_JPEG/12169_tmp_e25160193da33e0585aca83d9b0ef28b3784view.jpg",
-        "main": [],
-        "detail": []
-      },
-      "source_category_id": "50004637",
-      "source_category_ids": [
-        "50000003",
-        "50000206",
-        "50001387",
-        "50004637"
-      ],
-      "source_category_path": [
-        "디지털/가전",
-        "카메라/캠코더용품",
-        "카메라가방/케이스",
-        "기타카메라가방/케이스"
-      ],
-      "source_modified_at": "2026-09-28T20:18:04.474+09:00"
-    },
-    "smartstore-13751891642": {
-      "id": "smartstore-13751891642",
-      "source": "smartstore",
-      "source_id": "13751891642",
-      "origin_id": "13691161807",
-      "name": "[ 펠리칸 레인보우베네 ] 1535 Air WF 데저트탄 한정판 (With Foam)",
-      "brand": "펠리칸",
-      "manufacturer": "펠리칸",
-      "source_url": "https://smartstore.naver.com/rainbowbene/products/13751891642",
-      "price": 529000,
-      "sale_price": 529000,
-      "status": "sale",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://shop-phinf.pstatic.net/20260908_41/1788871061570eJICF_JPEG/12168_tmp_9d2746eae62a142cca65f9fcad3c92b11424view.jpg",
         "main": [],
         "detail": []
       },
@@ -94824,8 +93636,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631817",
-      "price": 65000,
-      "sale_price": 65000,
+      "price": 79000,
+      "sale_price": 79000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -94846,7 +93658,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:32.785+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.467+09:00"
     },
     "smartstore-13739631816": {
       "id": "smartstore-13739631816",
@@ -94857,8 +93669,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631816",
-      "price": 37000,
-      "sale_price": 37000,
+      "price": 40000,
+      "sale_price": 40000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -94879,7 +93691,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:32.785+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.467+09:00"
     },
     "smartstore-13739631805": {
       "id": "smartstore-13739631805",
@@ -94890,8 +93702,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631805",
-      "price": 18000,
-      "sale_price": 18000,
+      "price": 20000,
+      "sale_price": 20000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -94912,7 +93724,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:32.785+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.467+09:00"
     },
     "smartstore-13739631804": {
       "id": "smartstore-13739631804",
@@ -94923,8 +93735,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631804",
-      "price": 18000,
-      "sale_price": 18000,
+      "price": 20000,
+      "sale_price": 20000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -94945,7 +93757,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:32.785+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.467+09:00"
     },
     "smartstore-13739631803": {
       "id": "smartstore-13739631803",
@@ -94989,8 +93801,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631802",
-      "price": 99000,
-      "sale_price": 99000,
+      "price": 120000,
+      "sale_price": 120000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -95011,7 +93823,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:32.785+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.466+09:00"
     },
     "smartstore-13739631801": {
       "id": "smartstore-13739631801",
@@ -95055,8 +93867,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631800",
-      "price": 101000,
-      "sale_price": 101000,
+      "price": 120000,
+      "sale_price": 120000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -95077,7 +93889,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:32.785+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.466+09:00"
     },
     "smartstore-13739631799": {
       "id": "smartstore-13739631799",
@@ -95088,8 +93900,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631799",
-      "price": 166000,
-      "sale_price": 166000,
+      "price": 200000,
+      "sale_price": 200000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -95110,7 +93922,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:32.785+09:00"
+      "source_modified_at": "2026-10-16T15:07:02.804+09:00"
     },
     "smartstore-13739631798": {
       "id": "smartstore-13739631798",
@@ -95121,8 +93933,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631798",
-      "price": 39000,
-      "sale_price": 39000,
+      "price": 45000,
+      "sale_price": 45000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -95143,7 +93955,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:32.785+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.466+09:00"
     },
     "smartstore-13739631797": {
       "id": "smartstore-13739631797",
@@ -95154,8 +93966,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631797",
-      "price": 51000,
-      "sale_price": 51000,
+      "price": 60000,
+      "sale_price": 60000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -95176,7 +93988,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:32.785+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.465+09:00"
     },
     "smartstore-13739631796": {
       "id": "smartstore-13739631796",
@@ -95484,8 +94296,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631787",
-      "price": 19000,
-      "sale_price": 19000,
+      "price": 25000,
+      "sale_price": 25000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -95506,7 +94318,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:32.785+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.465+09:00"
     },
     "smartstore-13739631786": {
       "id": "smartstore-13739631786",
@@ -95517,8 +94329,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631786",
-      "price": 1122000,
-      "sale_price": 1122000,
+      "price": 1590000,
+      "sale_price": 1590000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -95539,7 +94351,7 @@
         "플래시/조명용품",
         "플래시/라이트/조명"
       ],
-      "source_modified_at": "2026-10-15T12:35:49.426+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.465+09:00"
     },
     "smartstore-13739631770": {
       "id": "smartstore-13739631770",
@@ -95550,8 +94362,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631770",
-      "price": 1323000,
-      "sale_price": 1323000,
+      "price": 1590000,
+      "sale_price": 1590000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -95572,7 +94384,7 @@
         "플래시/조명용품",
         "플래시/라이트/조명"
       ],
-      "source_modified_at": "2026-10-15T12:35:49.426+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.465+09:00"
     },
     "smartstore-13739631769": {
       "id": "smartstore-13739631769",
@@ -95605,7 +94417,7 @@
         "플래시/조명용품",
         "플래시/라이트/조명"
       ],
-      "source_modified_at": "2026-09-28T20:26:04.098+09:00"
+      "source_modified_at": "2026-10-16T15:04:20.879+09:00"
     },
     "smartstore-13739631768": {
       "id": "smartstore-13739631768",
@@ -95715,8 +94527,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631765",
-      "price": 22000,
-      "sale_price": 22000,
+      "price": 25000,
+      "sale_price": 25000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -95737,7 +94549,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:49.426+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.464+09:00"
     },
     "smartstore-13739631764": {
       "id": "smartstore-13739631764",
@@ -95803,7 +94615,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-09-28T20:26:04.098+09:00"
+      "source_modified_at": "2026-10-16T15:04:20.879+09:00"
     },
     "smartstore-13739631761": {
       "id": "smartstore-13739631761",
@@ -95946,8 +94758,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631756",
-      "price": 31000,
-      "sale_price": 31000,
+      "price": 39000,
+      "sale_price": 39000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -95968,7 +94780,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:49.426+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.464+09:00"
     },
     "smartstore-13739631755": {
       "id": "smartstore-13739631755",
@@ -95979,8 +94791,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631755",
-      "price": 42000,
-      "sale_price": 42000,
+      "price": 50000,
+      "sale_price": 50000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -96001,7 +94813,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:49.426+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.464+09:00"
     },
     "smartstore-13739631754": {
       "id": "smartstore-13739631754",
@@ -96045,8 +94857,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631753",
-      "price": 62000,
-      "sale_price": 62000,
+      "price": 70000,
+      "sale_price": 70000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -96067,7 +94879,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:49.426+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.464+09:00"
     },
     "smartstore-13739631752": {
       "id": "smartstore-13739631752",
@@ -96078,8 +94890,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631752",
-      "price": 59000,
-      "sale_price": 59000,
+      "price": 70000,
+      "sale_price": 70000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -96100,7 +94912,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:49.426+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.463+09:00"
     },
     "smartstore-13739631751": {
       "id": "smartstore-13739631751",
@@ -96133,7 +94945,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-09-28T20:26:04.098+09:00"
+      "source_modified_at": "2026-10-16T15:04:20.879+09:00"
     },
     "smartstore-13739631750": {
       "id": "smartstore-13739631750",
@@ -96144,8 +94956,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631750",
-      "price": 59000,
-      "sale_price": 59000,
+      "price": 70000,
+      "sale_price": 70000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -96166,7 +94978,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:49.426+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.463+09:00"
     },
     "smartstore-13739631749": {
       "id": "smartstore-13739631749",
@@ -96177,8 +94989,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631749",
-      "price": 37000,
-      "sale_price": 37000,
+      "price": 50000,
+      "sale_price": 50000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -96199,7 +95011,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-09-28T20:26:04.098+09:00"
+      "source_modified_at": "2026-10-16T17:30:24.386+09:00"
     },
     "smartstore-13739631729": {
       "id": "smartstore-13739631729",
@@ -96210,8 +95022,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631729",
-      "price": 53000,
-      "sale_price": 53000,
+      "price": 70000,
+      "sale_price": 70000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -96232,7 +95044,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:49.426+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.463+09:00"
     },
     "smartstore-13739631728": {
       "id": "smartstore-13739631728",
@@ -96243,8 +95055,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631728",
-      "price": 75000,
-      "sale_price": 75000,
+      "price": 99000,
+      "sale_price": 99000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -96265,7 +95077,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:49.426+09:00"
+      "source_modified_at": "2026-10-16T16:20:07.462+09:00"
     },
     "smartstore-13739631727": {
       "id": "smartstore-13739631727",
@@ -96276,8 +95088,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631727",
-      "price": 39000,
-      "sale_price": 39000,
+      "price": 55000,
+      "sale_price": 55000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -96298,7 +95110,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-09-28T20:26:04.098+09:00"
+      "source_modified_at": "2026-10-16T17:30:24.386+09:00"
     },
     "smartstore-13739631726": {
       "id": "smartstore-13739631726",
@@ -96309,8 +95121,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631726",
-      "price": 85000,
-      "sale_price": 85000,
+      "price": 130000,
+      "sale_price": 130000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -96331,7 +95143,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:49.426+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.211+09:00"
     },
     "smartstore-13739631725": {
       "id": "smartstore-13739631725",
@@ -96342,8 +95154,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631725",
-      "price": 13000,
-      "sale_price": 13000,
+      "price": 18000,
+      "sale_price": 18000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -96364,7 +95176,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:49.426+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.210+09:00"
     },
     "smartstore-13739631724": {
       "id": "smartstore-13739631724",
@@ -96705,8 +95517,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631714",
-      "price": 45000,
-      "sale_price": 45000,
+      "price": 55000,
+      "sale_price": 55000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -96727,7 +95539,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:49.426+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.210+09:00"
     },
     "smartstore-13739631713": {
       "id": "smartstore-13739631713",
@@ -96738,8 +95550,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631713",
-      "price": 48000,
-      "sale_price": 48000,
+      "price": 59000,
+      "sale_price": 59000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -96760,7 +95572,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:49.426+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.209+09:00"
     },
     "smartstore-13739631712": {
       "id": "smartstore-13739631712",
@@ -96771,8 +95583,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631712",
-      "price": 56000,
-      "sale_price": 56000,
+      "price": 69000,
+      "sale_price": 69000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -96793,7 +95605,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:49.426+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.209+09:00"
     },
     "smartstore-13739631711": {
       "id": "smartstore-13739631711",
@@ -96804,8 +95616,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631711",
-      "price": 74000,
-      "sale_price": 74000,
+      "price": 89000,
+      "sale_price": 89000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -96826,7 +95638,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:49.426+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.208+09:00"
     },
     "smartstore-13739631710": {
       "id": "smartstore-13739631710",
@@ -96837,8 +95649,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631710",
-      "price": 86000,
-      "sale_price": 86000,
+      "price": 120000,
+      "sale_price": 120000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -96859,7 +95671,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:56.705+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.208+09:00"
     },
     "smartstore-13739631690": {
       "id": "smartstore-13739631690",
@@ -96870,8 +95682,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631690",
-      "price": 59000,
-      "sale_price": 59000,
+      "price": 70000,
+      "sale_price": 70000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -96892,7 +95704,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:56.705+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.207+09:00"
     },
     "smartstore-13739631689": {
       "id": "smartstore-13739631689",
@@ -97167,8 +95979,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631681",
-      "price": 51000,
-      "sale_price": 51000,
+      "price": 55000,
+      "sale_price": 55000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -97189,7 +96001,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:56.705+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.207+09:00"
     },
     "smartstore-13739631680": {
       "id": "smartstore-13739631680",
@@ -97200,8 +96012,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631680",
-      "price": 65000,
-      "sale_price": 65000,
+      "price": 79000,
+      "sale_price": 79000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -97222,7 +96034,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:56.705+09:00"
+      "source_modified_at": "2026-10-16T15:07:02.804+09:00"
     },
     "smartstore-13739631679": {
       "id": "smartstore-13739631679",
@@ -97233,8 +96045,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631679",
-      "price": 28000,
-      "sale_price": 28000,
+      "price": 35000,
+      "sale_price": 35000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -97255,7 +96067,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-09-28T20:26:04.098+09:00"
+      "source_modified_at": "2026-10-16T17:30:24.385+09:00"
     },
     "smartstore-13739631678": {
       "id": "smartstore-13739631678",
@@ -97596,8 +96408,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631648",
-      "price": 48000,
-      "sale_price": 48000,
+      "price": 49000,
+      "sale_price": 49000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -97618,7 +96430,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:56.705+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.206+09:00"
     },
     "smartstore-13739631647": {
       "id": "smartstore-13739631647",
@@ -97662,8 +96474,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631646",
-      "price": 43000,
-      "sale_price": 43000,
+      "price": 49000,
+      "sale_price": 49000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -97684,7 +96496,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:56.705+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.206+09:00"
     },
     "smartstore-13739631645": {
       "id": "smartstore-13739631645",
@@ -97695,8 +96507,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631645",
-      "price": 52000,
-      "sale_price": 52000,
+      "price": 55000,
+      "sale_price": 55000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -97717,7 +96529,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:56.705+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.205+09:00"
     },
     "smartstore-13739631644": {
       "id": "smartstore-13739631644",
@@ -97728,8 +96540,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631644",
-      "price": 60000,
-      "sale_price": 60000,
+      "price": 80000,
+      "sale_price": 80000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -97750,7 +96562,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:56.705+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.205+09:00"
     },
     "smartstore-13739631643": {
       "id": "smartstore-13739631643",
@@ -97761,8 +96573,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631643",
-      "price": 43000,
-      "sale_price": 43000,
+      "price": 45000,
+      "sale_price": 45000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -97783,7 +96595,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:56.705+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.204+09:00"
     },
     "smartstore-13739631642": {
       "id": "smartstore-13739631642",
@@ -97794,8 +96606,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631642",
-      "price": 48000,
-      "sale_price": 48000,
+      "price": 59000,
+      "sale_price": 59000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -97816,7 +96628,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:56.705+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.204+09:00"
     },
     "smartstore-13739631641": {
       "id": "smartstore-13739631641",
@@ -97860,8 +96672,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631640",
-      "price": 116000,
-      "sale_price": 116000,
+      "price": 120000,
+      "sale_price": 120000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -97882,7 +96694,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:56.705+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.203+09:00"
     },
     "smartstore-13739631639": {
       "id": "smartstore-13739631639",
@@ -97893,8 +96705,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631639",
-      "price": 30000,
-      "sale_price": 30000,
+      "price": 35000,
+      "sale_price": 35000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -97915,7 +96727,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:56.705+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.203+09:00"
     },
     "smartstore-13739631638": {
       "id": "smartstore-13739631638",
@@ -97959,8 +96771,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631637",
-      "price": 60000,
-      "sale_price": 60000,
+      "price": 65000,
+      "sale_price": 65000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -97981,7 +96793,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:56.705+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.202+09:00"
     },
     "smartstore-13739631636": {
       "id": "smartstore-13739631636",
@@ -98025,8 +96837,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631635",
-      "price": 12000,
-      "sale_price": 12000,
+      "price": 25000,
+      "sale_price": 25000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -98047,7 +96859,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:56.705+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.202+09:00"
     },
     "smartstore-13739631634": {
       "id": "smartstore-13739631634",
@@ -98058,8 +96870,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631634",
-      "price": 51000,
-      "sale_price": 51000,
+      "price": 65000,
+      "sale_price": 65000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -98080,7 +96892,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:56.705+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.201+09:00"
     },
     "smartstore-13739631633": {
       "id": "smartstore-13739631633",
@@ -98190,8 +97002,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631608",
-      "price": 1438000,
-      "sale_price": 1438000,
+      "price": 1890000,
+      "sale_price": 1890000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -98212,7 +97024,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:35:56.705+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.201+09:00"
     },
     "smartstore-13739631607": {
       "id": "smartstore-13739631607",
@@ -98223,8 +97035,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631607",
-      "price": 273000,
-      "sale_price": 273000,
+      "price": 320000,
+      "sale_price": 320000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -98245,7 +97057,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:03.667+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.200+09:00"
     },
     "smartstore-13739631606": {
       "id": "smartstore-13739631606",
@@ -98454,8 +97266,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631600",
-      "price": 33000,
-      "sale_price": 33000,
+      "price": 40000,
+      "sale_price": 40000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -98476,7 +97288,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:03.667+09:00"
+      "source_modified_at": "2026-10-16T16:17:21.777+09:00"
     },
     "smartstore-13739631599": {
       "id": "smartstore-13739631599",
@@ -98487,8 +97299,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631599",
-      "price": 101000,
-      "sale_price": 101000,
+      "price": 120000,
+      "sale_price": 120000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -98509,7 +97321,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:03.667+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.200+09:00"
     },
     "smartstore-13739631598": {
       "id": "smartstore-13739631598",
@@ -98520,8 +97332,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631598",
-      "price": 31000,
-      "sale_price": 31000,
+      "price": 32000,
+      "sale_price": 32000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -98542,7 +97354,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:03.667+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.199+09:00"
     },
     "smartstore-13739631597": {
       "id": "smartstore-13739631597",
@@ -98553,8 +97365,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631597",
-      "price": 80000,
-      "sale_price": 80000,
+      "price": 120000,
+      "sale_price": 120000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -98575,7 +97387,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:03.667+09:00"
+      "source_modified_at": "2026-10-16T16:20:03.199+09:00"
     },
     "smartstore-13739631596": {
       "id": "smartstore-13739631596",
@@ -98586,8 +97398,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631596",
-      "price": 59000,
-      "sale_price": 59000,
+      "price": 75000,
+      "sale_price": 75000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -98608,7 +97420,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:03.667+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.831+09:00"
     },
     "smartstore-13739631595": {
       "id": "smartstore-13739631595",
@@ -98619,8 +97431,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631595",
-      "price": 79000,
-      "sale_price": 79000,
+      "price": 110000,
+      "sale_price": 110000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -98641,7 +97453,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:03.667+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.831+09:00"
     },
     "smartstore-13739631594": {
       "id": "smartstore-13739631594",
@@ -98652,8 +97464,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631594",
-      "price": 65000,
-      "sale_price": 65000,
+      "price": 89000,
+      "sale_price": 89000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -98674,7 +97486,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:03.667+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.830+09:00"
     },
     "smartstore-13739631593": {
       "id": "smartstore-13739631593",
@@ -99279,8 +98091,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631553",
-      "price": 49000,
-      "sale_price": 49000,
+      "price": 59000,
+      "sale_price": 59000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -99301,7 +98113,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:03.667+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.830+09:00"
     },
     "smartstore-13739631552": {
       "id": "smartstore-13739631552",
@@ -99345,8 +98157,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631551",
-      "price": 84000,
-      "sale_price": 84000,
+      "price": 90000,
+      "sale_price": 90000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -99367,7 +98179,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:03.667+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.830+09:00"
     },
     "smartstore-13739631550": {
       "id": "smartstore-13739631550",
@@ -99477,8 +98289,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631547",
-      "price": 76000,
-      "sale_price": 76000,
+      "price": 89000,
+      "sale_price": 89000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -99499,7 +98311,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:03.667+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.829+09:00"
     },
     "smartstore-13739631535": {
       "id": "smartstore-13739631535",
@@ -99510,8 +98322,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631535",
-      "price": 202000,
-      "sale_price": 202000,
+      "price": 220000,
+      "sale_price": 220000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -99532,7 +98344,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:03.667+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.829+09:00"
     },
     "smartstore-13739631534": {
       "id": "smartstore-13739631534",
@@ -99598,7 +98410,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-09-28T20:26:47.184+09:00"
+      "source_modified_at": "2026-10-16T16:19:26.600+09:00"
     },
     "smartstore-13739631532": {
       "id": "smartstore-13739631532",
@@ -99675,8 +98487,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631530",
-      "price": 29000,
-      "sale_price": 29000,
+      "price": 40000,
+      "sale_price": 40000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -99697,7 +98509,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:03.667+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.829+09:00"
     },
     "smartstore-13739631529": {
       "id": "smartstore-13739631529",
@@ -99939,8 +98751,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631521",
-      "price": 15000,
-      "sale_price": 15000,
+      "price": 20000,
+      "sale_price": 20000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -99961,7 +98773,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:03.667+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.829+09:00"
     },
     "smartstore-13739631520": {
       "id": "smartstore-13739631520",
@@ -99972,8 +98784,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631520",
-      "price": 52000,
-      "sale_price": 52000,
+      "price": 55000,
+      "sale_price": 55000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -99994,7 +98806,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:03.667+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.828+09:00"
     },
     "smartstore-13739631519": {
       "id": "smartstore-13739631519",
@@ -100005,8 +98817,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631519",
-      "price": 125000,
-      "sale_price": 125000,
+      "price": 145000,
+      "sale_price": 145000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -100027,7 +98839,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:03.667+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.828+09:00"
     },
     "smartstore-13739631518": {
       "id": "smartstore-13739631518",
@@ -100038,8 +98850,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631518",
-      "price": 20000,
-      "sale_price": 20000,
+      "price": 25000,
+      "sale_price": 25000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -100060,7 +98872,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:11.995+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.828+09:00"
     },
     "smartstore-13739631516": {
       "id": "smartstore-13739631516",
@@ -100302,8 +99114,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631463",
-      "price": 21000,
-      "sale_price": 21000,
+      "price": 25000,
+      "sale_price": 25000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -100324,7 +99136,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:11.995+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.827+09:00"
     },
     "smartstore-13739631462": {
       "id": "smartstore-13739631462",
@@ -100632,8 +99444,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631453",
-      "price": 73000,
-      "sale_price": 73000,
+      "price": 99000,
+      "sale_price": 99000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -100654,7 +99466,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:11.995+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.827+09:00"
     },
     "smartstore-13739631452": {
       "id": "smartstore-13739631452",
@@ -100665,8 +99477,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631452",
-      "price": 18000,
-      "sale_price": 18000,
+      "price": 29000,
+      "sale_price": 29000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -100687,7 +99499,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:11.995+09:00"
+      "source_modified_at": "2026-10-16T15:07:02.804+09:00"
     },
     "smartstore-13739631451": {
       "id": "smartstore-13739631451",
@@ -100698,8 +99510,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631451",
-      "price": 33000,
-      "sale_price": 33000,
+      "price": 35000,
+      "sale_price": 35000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -100720,7 +99532,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:11.995+09:00"
+      "source_modified_at": "2026-10-16T15:07:02.804+09:00"
     },
     "smartstore-13739631450": {
       "id": "smartstore-13739631450",
@@ -100764,8 +99576,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631449",
-      "price": 16000,
-      "sale_price": 16000,
+      "price": 20000,
+      "sale_price": 20000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -100786,7 +99598,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:11.995+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.827+09:00"
     },
     "smartstore-13739631448": {
       "id": "smartstore-13739631448",
@@ -100962,8 +99774,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631408",
-      "price": 157000,
-      "sale_price": 157000,
+      "price": 179000,
+      "sale_price": 179000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -100984,7 +99796,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:11.995+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.826+09:00"
     },
     "smartstore-13739631407": {
       "id": "smartstore-13739631407",
@@ -101160,8 +99972,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631402",
-      "price": 53000,
-      "sale_price": 53000,
+      "price": 69000,
+      "sale_price": 69000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -101182,7 +99994,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:11.995+09:00"
+      "source_modified_at": "2026-10-16T15:07:02.804+09:00"
     },
     "smartstore-13739631401": {
       "id": "smartstore-13739631401",
@@ -101391,8 +100203,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631395",
-      "price": 6000,
-      "sale_price": 6000,
+      "price": 9000,
+      "sale_price": 9000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -101413,7 +100225,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:11.995+09:00"
+      "source_modified_at": "2026-10-16T15:07:02.804+09:00"
     },
     "smartstore-13739631394": {
       "id": "smartstore-13739631394",
@@ -101424,8 +100236,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631394",
-      "price": 222000,
-      "sale_price": 222000,
+      "price": 250000,
+      "sale_price": 250000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -101446,7 +100258,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:11.995+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.826+09:00"
     },
     "smartstore-13739631393": {
       "id": "smartstore-13739631393",
@@ -101457,8 +100269,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631393",
-      "price": 172000,
-      "sale_price": 172000,
+      "price": 189000,
+      "sale_price": 189000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -101479,7 +100291,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:11.995+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.826+09:00"
     },
     "smartstore-13739631358": {
       "id": "smartstore-13739631358",
@@ -101589,8 +100401,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631355",
-      "price": 425000,
-      "sale_price": 425000,
+      "price": 530000,
+      "sale_price": 530000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -101611,7 +100423,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:11.995+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.825+09:00"
     },
     "smartstore-13739631354": {
       "id": "smartstore-13739631354",
@@ -101655,8 +100467,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631353",
-      "price": 48000,
-      "sale_price": 48000,
+      "price": 65000,
+      "sale_price": 65000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -101677,7 +100489,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-09-28T20:26:47.184+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.825+09:00"
     },
     "smartstore-13739631352": {
       "id": "smartstore-13739631352",
@@ -101952,8 +100764,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631344",
-      "price": 137000,
-      "sale_price": 137000,
+      "price": 159000,
+      "sale_price": 159000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -101974,7 +100786,7 @@
         "플래시/조명용품",
         "배경/노출용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:11.995+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.825+09:00"
     },
     "smartstore-13739631343": {
       "id": "smartstore-13739631343",
@@ -102051,8 +100863,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631341",
-      "price": 36000,
-      "sale_price": 36000,
+      "price": 40000,
+      "sale_price": 40000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -102073,7 +100885,7 @@
         "플래시/조명용품",
         "배경/노출용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:11.995+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.824+09:00"
     },
     "smartstore-13739631340": {
       "id": "smartstore-13739631340",
@@ -102150,8 +100962,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631314",
-      "price": 53000,
-      "sale_price": 53000,
+      "price": 59000,
+      "sale_price": 59000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -102172,7 +100984,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:11.995+09:00"
+      "source_modified_at": "2026-10-16T15:07:02.804+09:00"
     },
     "smartstore-13739631313": {
       "id": "smartstore-13739631313",
@@ -102183,8 +100995,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631313",
-      "price": 48000,
-      "sale_price": 48000,
+      "price": 59000,
+      "sale_price": 59000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -102205,7 +101017,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:11.995+09:00"
+      "source_modified_at": "2026-10-16T15:07:02.804+09:00"
     },
     "smartstore-13739631312": {
       "id": "smartstore-13739631312",
@@ -102315,8 +101127,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631309",
-      "price": 149000,
-      "sale_price": 149000,
+      "price": 170000,
+      "sale_price": 170000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -102337,7 +101149,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:27.505+09:00"
+      "source_modified_at": "2026-10-16T15:07:02.804+09:00"
     },
     "smartstore-13739631308": {
       "id": "smartstore-13739631308",
@@ -102612,8 +101424,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631300",
-      "price": 34000,
-      "sale_price": 34000,
+      "price": 45000,
+      "sale_price": 45000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -102634,7 +101446,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:27.505+09:00"
+      "source_modified_at": "2026-10-16T14:49:56.438+09:00"
     },
     "smartstore-13739631299": {
       "id": "smartstore-13739631299",
@@ -102942,8 +101754,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631271",
-      "price": 48000,
-      "sale_price": 48000,
+      "price": 50000,
+      "sale_price": 50000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -102964,7 +101776,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:27.505+09:00"
+      "source_modified_at": "2026-10-16T15:07:02.804+09:00"
     },
     "smartstore-13739631270": {
       "id": "smartstore-13739631270",
@@ -102975,8 +101787,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631270",
-      "price": 70000,
-      "sale_price": 70000,
+      "price": 75000,
+      "sale_price": 75000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -102997,7 +101809,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:27.505+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.824+09:00"
     },
     "smartstore-13739631269": {
       "id": "smartstore-13739631269",
@@ -103074,8 +101886,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631267",
-      "price": 21000,
-      "sale_price": 21000,
+      "price": 25000,
+      "sale_price": 25000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -103096,7 +101908,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:27.505+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.824+09:00"
     },
     "smartstore-13739631266": {
       "id": "smartstore-13739631266",
@@ -103129,7 +101941,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-09-28T20:26:57.046+09:00"
+      "source_modified_at": "2026-10-16T16:19:26.599+09:00"
     },
     "smartstore-13739631265": {
       "id": "smartstore-13739631265",
@@ -103140,8 +101952,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631265",
-      "price": 48000,
-      "sale_price": 48000,
+      "price": 59000,
+      "sale_price": 59000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -103162,7 +101974,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:27.505+09:00"
+      "source_modified_at": "2026-10-16T15:07:02.804+09:00"
     },
     "smartstore-13739631264": {
       "id": "smartstore-13739631264",
@@ -103272,8 +102084,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631261",
-      "price": 77000,
-      "sale_price": 77000,
+      "price": 90000,
+      "sale_price": 90000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -103294,7 +102106,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:27.505+09:00"
+      "source_modified_at": "2026-10-16T16:19:58.823+09:00"
     },
     "smartstore-13739631260": {
       "id": "smartstore-13739631260",
@@ -103338,8 +102150,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631258",
-      "price": 357000,
-      "sale_price": 357000,
+      "price": 379000,
+      "sale_price": 379000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -103360,7 +102172,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:27.505+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.885+09:00"
     },
     "smartstore-13739631257": {
       "id": "smartstore-13739631257",
@@ -103371,8 +102183,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631257",
-      "price": 261000,
-      "sale_price": 261000,
+      "price": 279000,
+      "sale_price": 279000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -103393,7 +102205,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:27.505+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.885+09:00"
     },
     "smartstore-13739631256": {
       "id": "smartstore-13739631256",
@@ -103470,8 +102282,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631229",
-      "price": 2421000,
-      "sale_price": 2421000,
+      "price": 2490000,
+      "sale_price": 2490000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -103492,7 +102304,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:27.505+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.885+09:00"
     },
     "smartstore-13739631228": {
       "id": "smartstore-13739631228",
@@ -103503,8 +102315,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631228",
-      "price": 2540000,
-      "sale_price": 2540000,
+      "price": 2590000,
+      "sale_price": 2590000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -103525,7 +102337,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:27.505+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.884+09:00"
     },
     "smartstore-13739631227": {
       "id": "smartstore-13739631227",
@@ -103536,8 +102348,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631227",
-      "price": 77000,
-      "sale_price": 77000,
+      "price": 79000,
+      "sale_price": 79000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -103558,7 +102370,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:27.505+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.884+09:00"
     },
     "smartstore-13739631226": {
       "id": "smartstore-13739631226",
@@ -103569,8 +102381,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631226",
-      "price": 77000,
-      "sale_price": 77000,
+      "price": 79000,
+      "sale_price": 79000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -103591,7 +102403,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:27.505+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.884+09:00"
     },
     "smartstore-13739631225": {
       "id": "smartstore-13739631225",
@@ -103602,8 +102414,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631225",
-      "price": 77000,
-      "sale_price": 77000,
+      "price": 79000,
+      "sale_price": 79000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -103624,7 +102436,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:27.505+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.884+09:00"
     },
     "smartstore-13739631224": {
       "id": "smartstore-13739631224",
@@ -103635,8 +102447,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631224",
-      "price": 312000,
-      "sale_price": 312000,
+      "price": 359000,
+      "sale_price": 359000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -103657,7 +102469,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:27.505+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.883+09:00"
     },
     "smartstore-13739631223": {
       "id": "smartstore-13739631223",
@@ -103668,8 +102480,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631223",
-      "price": 357000,
-      "sale_price": 357000,
+      "price": 379000,
+      "sale_price": 379000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -103690,7 +102502,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:27.505+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.883+09:00"
     },
     "smartstore-13739631222": {
       "id": "smartstore-13739631222",
@@ -104229,8 +103041,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631175",
-      "price": 18000,
-      "sale_price": 18000,
+      "price": 29000,
+      "sale_price": 29000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -104251,7 +103063,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:33.632+09:00"
+      "source_modified_at": "2026-10-16T15:07:02.804+09:00"
     },
     "smartstore-13739631174": {
       "id": "smartstore-13739631174",
@@ -104262,8 +103074,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631174",
-      "price": 37000,
-      "sale_price": 37000,
+      "price": 50000,
+      "sale_price": 50000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -104284,7 +103096,7 @@
         "플래시/조명용품",
         "배경/노출용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:33.632+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.883+09:00"
     },
     "smartstore-13739631173": {
       "id": "smartstore-13739631173",
@@ -104295,8 +103107,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631173",
-      "price": 19000,
-      "sale_price": 19000,
+      "price": 35000,
+      "sale_price": 35000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -104317,7 +103129,7 @@
         "플래시/조명용품",
         "배경/노출용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:33.632+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.882+09:00"
     },
     "smartstore-13739631172": {
       "id": "smartstore-13739631172",
@@ -104526,8 +103338,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631166",
-      "price": 48000,
-      "sale_price": 48000,
+      "price": 59000,
+      "sale_price": 59000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -104548,7 +103360,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:33.632+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.882+09:00"
     },
     "smartstore-13739631165": {
       "id": "smartstore-13739631165",
@@ -104724,8 +103536,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631160",
-      "price": 689000,
-      "sale_price": 689000,
+      "price": 840000,
+      "sale_price": 840000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -104746,7 +103558,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:33.632+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.882+09:00"
     },
     "smartstore-13739631139": {
       "id": "smartstore-13739631139",
@@ -104757,8 +103569,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631139",
-      "price": 163000,
-      "sale_price": 163000,
+      "price": 179000,
+      "sale_price": 179000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -104779,7 +103591,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:33.632+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.882+09:00"
     },
     "smartstore-13739631138": {
       "id": "smartstore-13739631138",
@@ -104790,8 +103602,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631138",
-      "price": 5674000,
-      "sale_price": 5674000,
+      "price": 5950000,
+      "sale_price": 5950000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -104812,7 +103624,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:33.632+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.881+09:00"
     },
     "smartstore-13739631137": {
       "id": "smartstore-13739631137",
@@ -104823,8 +103635,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631137",
-      "price": 386000,
-      "sale_price": 386000,
+      "price": 399000,
+      "sale_price": 399000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -104845,7 +103657,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:33.632+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.881+09:00"
     },
     "smartstore-13739631136": {
       "id": "smartstore-13739631136",
@@ -104889,8 +103701,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631135",
-      "price": 107000,
-      "sale_price": 107000,
+      "price": 129000,
+      "sale_price": 129000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -104911,7 +103723,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:33.632+09:00"
+      "source_modified_at": "2026-10-16T15:07:02.804+09:00"
     },
     "smartstore-13739631134": {
       "id": "smartstore-13739631134",
@@ -105516,8 +104328,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631092",
-      "price": 65000,
-      "sale_price": 65000,
+      "price": 79000,
+      "sale_price": 79000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -105538,7 +104350,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:33.632+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.881+09:00"
     },
     "smartstore-13739631091": {
       "id": "smartstore-13739631091",
@@ -105549,8 +104361,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631091",
-      "price": 120000,
-      "sale_price": 120000,
+      "price": 145000,
+      "sale_price": 145000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -105571,7 +104383,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:33.632+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.881+09:00"
     },
     "smartstore-13739631090": {
       "id": "smartstore-13739631090",
@@ -105582,8 +104394,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631090",
-      "price": 34000,
-      "sale_price": 34000,
+      "price": 50000,
+      "sale_price": 50000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -105604,7 +104416,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:33.632+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.880+09:00"
     },
     "smartstore-13739631089": {
       "id": "smartstore-13739631089",
@@ -105780,8 +104592,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631084",
-      "price": 77000,
-      "sale_price": 77000,
+      "price": 79000,
+      "sale_price": 79000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -105802,7 +104614,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:33.632+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.880+09:00"
     },
     "smartstore-13739631083": {
       "id": "smartstore-13739631083",
@@ -105813,8 +104625,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631083",
-      "price": 365000,
-      "sale_price": 365000,
+      "price": 495000,
+      "sale_price": 495000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -105835,7 +104647,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:33.632+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.880+09:00"
     },
     "smartstore-13739631082": {
       "id": "smartstore-13739631082",
@@ -106143,8 +104955,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631050",
-      "price": 86000,
-      "sale_price": 86000,
+      "price": 105000,
+      "sale_price": 105000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -106165,7 +104977,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:33.632+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.880+09:00"
     },
     "smartstore-13739631049": {
       "id": "smartstore-13739631049",
@@ -106176,8 +104988,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631049",
-      "price": 48000,
-      "sale_price": 48000,
+      "price": 50000,
+      "sale_price": 50000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -106198,7 +105010,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:33.632+09:00"
+      "source_modified_at": "2026-10-16T15:07:30.187+09:00"
     },
     "smartstore-13739631048": {
       "id": "smartstore-13739631048",
@@ -106308,8 +105120,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631044",
-      "price": 2421000,
-      "sale_price": 2421000,
+      "price": 2490000,
+      "sale_price": 2490000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -106330,7 +105142,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:41.267+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.879+09:00"
     },
     "smartstore-13739631043": {
       "id": "smartstore-13739631043",
@@ -106429,7 +105241,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-09-28T20:27:08.649+09:00"
+      "source_modified_at": "2026-10-16T16:19:26.599+09:00"
     },
     "smartstore-13739631040": {
       "id": "smartstore-13739631040",
@@ -106671,8 +105483,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631033",
-      "price": 68000,
-      "sale_price": 68000,
+      "price": 80000,
+      "sale_price": 80000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -106693,7 +105505,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:41.267+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.879+09:00"
     },
     "smartstore-13739631032": {
       "id": "smartstore-13739631032",
@@ -106704,8 +105516,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631032",
-      "price": 57000,
-      "sale_price": 57000,
+      "price": 69000,
+      "sale_price": 69000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -106726,7 +105538,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:41.267+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.879+09:00"
     },
     "smartstore-13739631011": {
       "id": "smartstore-13739631011",
@@ -106803,8 +105615,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739631009",
-      "price": 56000,
-      "sale_price": 56000,
+      "price": 65000,
+      "sale_price": 65000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -106825,7 +105637,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:41.267+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.346+09:00"
     },
     "smartstore-13739631008": {
       "id": "smartstore-13739631008",
@@ -107199,8 +106011,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630997",
-      "price": 55000,
-      "sale_price": 55000,
+      "price": 65000,
+      "sale_price": 65000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -107221,7 +106033,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:41.267+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.345+09:00"
     },
     "smartstore-13739630996": {
       "id": "smartstore-13739630996",
@@ -107232,8 +106044,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630996",
-      "price": 88000,
-      "sale_price": 88000,
+      "price": 109000,
+      "sale_price": 109000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -107254,7 +106066,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:41.267+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.345+09:00"
     },
     "smartstore-13739630995": {
       "id": "smartstore-13739630995",
@@ -107265,8 +106077,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630995",
-      "price": 72000,
-      "sale_price": 72000,
+      "price": 85000,
+      "sale_price": 85000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -107287,7 +106099,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:41.267+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.345+09:00"
     },
     "smartstore-13739630994": {
       "id": "smartstore-13739630994",
@@ -107430,8 +106242,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630941",
-      "price": 425000,
-      "sale_price": 425000,
+      "price": 429000,
+      "sale_price": 429000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -107452,7 +106264,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:41.267+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.345+09:00"
     },
     "smartstore-13739630940": {
       "id": "smartstore-13739630940",
@@ -107617,7 +106429,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-09-28T20:27:08.649+09:00"
+      "source_modified_at": "2026-10-16T16:19:26.599+09:00"
     },
     "smartstore-13739630935": {
       "id": "smartstore-13739630935",
@@ -107760,8 +106572,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630931",
-      "price": 77000,
-      "sale_price": 77000,
+      "price": 79000,
+      "sale_price": 79000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -107782,7 +106594,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:41.267+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.344+09:00"
     },
     "smartstore-13739630930": {
       "id": "smartstore-13739630930",
@@ -107793,8 +106605,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630930",
-      "price": 502000,
-      "sale_price": 502000,
+      "price": 549000,
+      "sale_price": 549000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -107815,7 +106627,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:41.267+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.344+09:00"
     },
     "smartstore-13739630929": {
       "id": "smartstore-13739630929",
@@ -108024,8 +106836,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630923",
-      "price": 65000,
-      "sale_price": 65000,
+      "price": 79000,
+      "sale_price": 79000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -108046,7 +106858,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:41.267+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.344+09:00"
     },
     "smartstore-13739630901": {
       "id": "smartstore-13739630901",
@@ -108090,8 +106902,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630900",
-      "price": 74000,
-      "sale_price": 74000,
+      "price": 85000,
+      "sale_price": 85000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -108112,7 +106924,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:41.267+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.344+09:00"
     },
     "smartstore-13739630899": {
       "id": "smartstore-13739630899",
@@ -108156,8 +106968,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630898",
-      "price": 21000,
-      "sale_price": 21000,
+      "price": 25000,
+      "sale_price": 25000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -108178,7 +106990,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:41.267+09:00"
+      "source_modified_at": "2026-10-16T15:07:30.187+09:00"
     },
     "smartstore-13739630897": {
       "id": "smartstore-13739630897",
@@ -108222,8 +107034,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630896",
-      "price": 62000,
-      "sale_price": 62000,
+      "price": 70000,
+      "sale_price": 70000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -108244,7 +107056,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:41.267+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.343+09:00"
     },
     "smartstore-13739630895": {
       "id": "smartstore-13739630895",
@@ -108288,8 +107100,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630894",
-      "price": 138000,
-      "sale_price": 138000,
+      "price": 169000,
+      "sale_price": 169000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -108310,7 +107122,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:41.267+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.343+09:00"
     },
     "smartstore-13739630893": {
       "id": "smartstore-13739630893",
@@ -108354,8 +107166,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630892",
-      "price": 1638000,
-      "sale_price": 1638000,
+      "price": 2090000,
+      "sale_price": 2090000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -108376,7 +107188,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:41.267+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.343+09:00"
     },
     "smartstore-13739630891": {
       "id": "smartstore-13739630891",
@@ -108387,8 +107199,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630891",
-      "price": 65000,
-      "sale_price": 65000,
+      "price": 69000,
+      "sale_price": 69000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -108409,7 +107221,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:48.445+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.343+09:00"
     },
     "smartstore-13739630890": {
       "id": "smartstore-13739630890",
@@ -108618,8 +107430,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630884",
-      "price": 42000,
-      "sale_price": 42000,
+      "price": 49000,
+      "sale_price": 49000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -108640,7 +107452,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:48.445+09:00"
+      "source_modified_at": "2026-10-16T15:07:30.187+09:00"
     },
     "smartstore-13739630883": {
       "id": "smartstore-13739630883",
@@ -108816,8 +107628,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630855",
-      "price": 48000,
-      "sale_price": 48000,
+      "price": 59000,
+      "sale_price": 59000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -108838,7 +107650,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:48.445+09:00"
+      "source_modified_at": "2026-10-16T15:07:30.187+09:00"
     },
     "smartstore-13739630854": {
       "id": "smartstore-13739630854",
@@ -108849,8 +107661,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630854",
-      "price": 793000,
-      "sale_price": 793000,
+      "price": 799000,
+      "sale_price": 799000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -108871,7 +107683,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:48.445+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.342+09:00"
     },
     "smartstore-13739630853": {
       "id": "smartstore-13739630853",
@@ -108915,8 +107727,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630852",
-      "price": 74000,
-      "sale_price": 74000,
+      "price": 90000,
+      "sale_price": 90000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -108937,7 +107749,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:48.445+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.342+09:00"
     },
     "smartstore-13739630851": {
       "id": "smartstore-13739630851",
@@ -109113,8 +107925,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630846",
-      "price": 59000,
-      "sale_price": 59000,
+      "price": 70000,
+      "sale_price": 70000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -109135,7 +107947,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:48.445+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.342+09:00"
     },
     "smartstore-13739630845": {
       "id": "smartstore-13739630845",
@@ -109179,8 +107991,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630844",
-      "price": 42000,
-      "sale_price": 42000,
+      "price": 49000,
+      "sale_price": 49000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -109201,7 +108013,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:48.445+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.342+09:00"
     },
     "smartstore-13739630843": {
       "id": "smartstore-13739630843",
@@ -109212,8 +108024,8 @@
       "brand": "GODOX",
       "manufacturer": "Godox",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/13739630843",
-      "price": 27000,
-      "sale_price": 27000,
+      "price": 29000,
+      "sale_price": 29000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -109234,7 +108046,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-10-15T12:36:48.445+09:00"
+      "source_modified_at": "2026-10-16T15:07:30.187+09:00"
     },
     "smartstore-13739630842": {
       "id": "smartstore-13739630842",
@@ -122895,8 +121707,8 @@
       "brand": "후지필름",
       "manufacturer": "후지필름",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/12835022481",
-      "price": 6999000,
-      "sale_price": 6999000,
+      "price": 7699000,
+      "sale_price": 7699000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -122915,7 +121727,7 @@
         "카메라/캠코더용품",
         "미러리스디카"
       ],
-      "source_modified_at": "2025-12-18T23:41:54.726+09:00"
+      "source_modified_at": "2026-10-16T12:35:54.150+09:00"
     },
     "smartstore-12835018839": {
       "id": "smartstore-12835018839",
@@ -137717,8 +136529,8 @@
       "brand": "고독스",
       "manufacturer": "고독스",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/11995908859",
-      "price": 1129000,
-      "sale_price": 1129000,
+      "price": 1250000,
+      "sale_price": 1250000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -137739,7 +136551,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-08-24T11:55:57.691+09:00"
+      "source_modified_at": "2026-10-16T16:19:32.341+09:00"
     },
     "smartstore-11995848871": {
       "id": "smartstore-11995848871",
@@ -138333,7 +137145,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-08-24T11:55:57.691+09:00"
+      "source_modified_at": "2026-10-16T16:19:26.598+09:00"
     },
     "smartstore-11995626673": {
       "id": "smartstore-11995626673",
@@ -138366,7 +137178,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-08-24T11:55:57.691+09:00"
+      "source_modified_at": "2026-10-16T16:19:26.598+09:00"
     },
     "smartstore-11995619469": {
       "id": "smartstore-11995619469",
@@ -138399,7 +137211,7 @@
         "카메라/캠코더 관련용품",
         "기타카메라/캠코더용품"
       ],
-      "source_modified_at": "2026-08-24T11:55:57.691+09:00"
+      "source_modified_at": "2026-10-16T16:19:26.598+09:00"
     },
     "smartstore-11995611041": {
       "id": "smartstore-11995611041",
@@ -183634,8 +182446,8 @@
       "brand": "사베지",
       "manufacturer": "사베지",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/8237940320",
-      "price": 99000,
-      "sale_price": 99000,
+      "price": 104000,
+      "sale_price": 104000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -183656,7 +182468,7 @@
         "플래시/조명용품",
         "배경/노출용품"
       ],
-      "source_modified_at": "2025-12-18T23:53:01.053+09:00"
+      "source_modified_at": "2026-10-16T12:28:13.569+09:00"
     },
     "smartstore-8237938382": {
       "id": "smartstore-8237938382",
@@ -183667,8 +182479,8 @@
       "brand": "사베지",
       "manufacturer": "사베지",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/8237938382",
-      "price": 99000,
-      "sale_price": 99000,
+      "price": 104000,
+      "sale_price": 104000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -183689,7 +182501,7 @@
         "플래시/조명용품",
         "배경/노출용품"
       ],
-      "source_modified_at": "2025-12-18T23:53:01.053+09:00"
+      "source_modified_at": "2026-10-16T12:30:20.083+09:00"
     },
     "smartstore-8237936059": {
       "id": "smartstore-8237936059",
@@ -183700,8 +182512,8 @@
       "brand": "사베지",
       "manufacturer": "사베지",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/8237936059",
-      "price": 99000,
-      "sale_price": 99000,
+      "price": 104000,
+      "sale_price": 104000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -183722,7 +182534,7 @@
         "플래시/조명용품",
         "배경/노출용품"
       ],
-      "source_modified_at": "2025-12-18T23:53:01.053+09:00"
+      "source_modified_at": "2026-10-16T12:31:20.756+09:00"
     },
     "smartstore-8237933406": {
       "id": "smartstore-8237933406",
@@ -183733,8 +182545,8 @@
       "brand": "사베지",
       "manufacturer": "사베지",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/8237933406",
-      "price": 99000,
-      "sale_price": 99000,
+      "price": 104000,
+      "sale_price": 104000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -183755,7 +182567,7 @@
         "플래시/조명용품",
         "배경/노출용품"
       ],
-      "source_modified_at": "2025-12-18T23:53:01.053+09:00"
+      "source_modified_at": "2026-10-16T12:32:11.635+09:00"
     },
     "smartstore-8237930378": {
       "id": "smartstore-8237930378",
@@ -183766,8 +182578,8 @@
       "brand": "사베지",
       "manufacturer": "사베지",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/8237930378",
-      "price": 99000,
-      "sale_price": 99000,
+      "price": 104000,
+      "sale_price": 104000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -183788,7 +182600,7 @@
         "플래시/조명용품",
         "배경/노출용품"
       ],
-      "source_modified_at": "2025-12-18T23:53:01.053+09:00"
+      "source_modified_at": "2026-10-16T12:32:56.475+09:00"
     },
     "smartstore-8237920824": {
       "id": "smartstore-8237920824",
@@ -183832,8 +182644,8 @@
       "brand": "사베지",
       "manufacturer": "사베지",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/8237918262",
-      "price": 138000,
-      "sale_price": 138000,
+      "price": 135000,
+      "sale_price": 135000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -183854,7 +182666,7 @@
         "플래시/조명용품",
         "배경/노출용품"
       ],
-      "source_modified_at": "2025-12-18T23:53:01.053+09:00"
+      "source_modified_at": "2026-10-16T12:39:39.770+09:00"
     },
     "smartstore-8237912148": {
       "id": "smartstore-8237912148",
@@ -183865,8 +182677,8 @@
       "brand": "사베지",
       "manufacturer": "사베지",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/8237912148",
-      "price": 89000,
-      "sale_price": 89000,
+      "price": 95000,
+      "sale_price": 95000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -183887,7 +182699,7 @@
         "플래시/조명용품",
         "배경/노출용품"
       ],
-      "source_modified_at": "2025-12-18T23:53:01.053+09:00"
+      "source_modified_at": "2026-10-16T12:33:48.846+09:00"
     },
     "smartstore-8237909429": {
       "id": "smartstore-8237909429",
@@ -183898,8 +182710,8 @@
       "brand": "사베지",
       "manufacturer": "사베지",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/8237909429",
-      "price": 89000,
-      "sale_price": 89000,
+      "price": 95000,
+      "sale_price": 95000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -183920,7 +182732,7 @@
         "플래시/조명용품",
         "배경/노출용품"
       ],
-      "source_modified_at": "2025-12-18T23:53:01.053+09:00"
+      "source_modified_at": "2026-10-16T12:34:52.709+09:00"
     },
     "smartstore-8237875742": {
       "id": "smartstore-8237875742",
@@ -184426,8 +183238,8 @@
       "brand": "사베지",
       "manufacturer": "사베지",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/8237817387",
-      "price": 330000,
-      "sale_price": 330000,
+      "price": 325000,
+      "sale_price": 325000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -184448,7 +183260,7 @@
         "플래시/조명용품",
         "배경/노출용품"
       ],
-      "source_modified_at": "2025-12-18T23:53:01.053+09:00"
+      "source_modified_at": "2026-10-16T12:41:20.302+09:00"
     },
     "smartstore-8237815528": {
       "id": "smartstore-8237815528",
@@ -184558,8 +183370,8 @@
       "brand": "사베지",
       "manufacturer": "사베지",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/8237808241",
-      "price": 325000,
-      "sale_price": 325000,
+      "price": 337000,
+      "sale_price": 337000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -184580,7 +183392,7 @@
         "플래시/조명용품",
         "배경/노출용품"
       ],
-      "source_modified_at": "2025-12-18T23:53:01.053+09:00"
+      "source_modified_at": "2026-10-16T12:38:04.702+09:00"
     },
     "smartstore-8214913110": {
       "id": "smartstore-8214913110",
@@ -223803,8 +222615,8 @@
       "brand": "캐논",
       "manufacturer": "캐논",
       "source_url": "https://smartstore.naver.com/rainbowbene/products/4934925270",
-      "price": 3259000,
-      "sale_price": 3259000,
+      "price": 3199000,
+      "sale_price": 3199000,
       "status": "sale",
       "kind": "purchase",
       "images": {
@@ -223825,7 +222637,7 @@
         "카메라렌즈",
         "표준렌즈"
       ],
-      "source_modified_at": "2026-01-20T16:02:06.769+09:00"
+      "source_modified_at": "2026-10-16T12:44:17.367+09:00"
     },
     "smartstore-4934920843": {
       "id": "smartstore-4934920843",
