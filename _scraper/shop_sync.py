@@ -201,7 +201,7 @@ def run(publish=True,existing=False,source_updates=None):
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_catalog_seo.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_release_status.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_equipment_guide.py')
-        command('node','--test','_scraper/tests/gift-search.test.cjs','_scraper/tests/rental-content.test.cjs')
+        command('node','--test','_scraper/tests/gift-search.test.cjs','_scraper/tests/rental-content.test.cjs','_scraper/tests/rental-date-window.test.cjs')
         command('node','--check','assets/shop/shop.js')
         command('node','--check','assets/shop/cart.js')
         command('node','--check','assets/shop/motion.js')

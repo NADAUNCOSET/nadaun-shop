@@ -9,9 +9,17 @@
   return {value,label:period?period+' 기준':product.rental?.service==='studio'?'이용시간 확인':'대여기간 확인'};
  }
  function priceHTML(product){const p=price(product);return `${p.value==null?'요금 상담':won(p.value)+'<small>원</small>'}<span class="rental-period-label">${esc(p.label)}</span>`;}
+ function calendarMonthLimit(day){
+  if(!/^20\d{2}-\d{2}-\d{2}$/.test(day||''))return '';
+  const date=new Date(day+'T00:00:00Z');
+  if(!Number.isFinite(date.getTime())||date.toISOString().slice(0,10)!==day)return '';
+  const next=new Date(Date.UTC(date.getUTCFullYear(),date.getUTCMonth()+1,1));
+  const last=new Date(Date.UTC(next.getUTCFullYear(),next.getUTCMonth()+1,0)).getUTCDate();
+  return new Date(Date.UTC(next.getUTCFullYear(),next.getUTCMonth(),Math.min(date.getUTCDate(),last))).toISOString().slice(0,10);
+ }
  function requestForm(product,rental,studio){
   const rates=rental.rates||[];
-  return `<form class="rental-request-form" data-rental-request data-product-id="${esc(product.id)}"><h2>${studio?'이용 일정':'대여 일정'} 선택</h2><div class="rental-schedule-fields"><label>대여 시작일 (월/일)<input type="date" name="start_date" required></label><label>대여 종료일 (월/일)<input type="date" name="end_date" required></label><label>${studio?'입실':'수령'} 방문 시간<input type="time" name="pickup_time" step="60" required></label><label>${studio?'퇴실':'반납'} 방문 시간<input type="time" name="return_time" step="60" required></label></div><label>수량<input type="number" name="quantity" min="1" max="99" step="1" value="1" inputmode="numeric" required></label>${rates.length?`<label>희망 요금 구성<select name="option" aria-label="희망 요금 구성"><option value="">방문 일정에 맞춰 요금 확인 요청</option>${rates.map(rate=>`<option value="${esc(rate.label)}">${esc(rate.label)} · ${won(rate.price)}원</option>`).join('')}</select></label>`:'<input type="hidden" name="option" value="">'}<p class="rental-schedule-preview" data-rental-preview role="status">시작·종료 날짜와 방문 시간을 정확히 선택해주세요.</p><button type="button" class="button-outline" data-rental-save>선택 일정 저장</button><div class="rental-customer-fields" data-rental-customer hidden><label>예약자 이름<input name="name" type="text" minlength="2" maxlength="60" autocomplete="name" disabled required></label><label>연락처<input name="phone" type="tel" maxlength="20" autocomplete="tel" disabled required></label><label>결제·증빙 선택<select name="evidence_kind" aria-label="결제·증빙 선택" disabled><option value="card_receipt">카드 결제 · 카드 매출전표</option><option value="cash_receipt">계좌이체 · 현금영수증 / 지출증빙</option></select></label><div data-rental-tax hidden></div><p>현금영수증 용도와 발급 정보는 토스페이먼츠 결제창에서 선택합니다. 전자세금계산서는 발급 연결 후 선택할 수 있습니다.</p><label class="rental-consent"><input type="checkbox" name="consent" disabled required><span>렌탈 일정·요금 확인과 선택한 증빙 처리를 위한 이름·연락처·방문 일정 및 입력한 사업자 정보 수집·이용에 동의합니다. <a href="/privacy.html" target="_blank" rel="noopener">개인정보 처리 안내</a></span></label></div><button type="submit" class="button-primary" data-rental-submit disabled>온라인 렌탈 접수 준비 중</button><p class="rental-request-feedback" data-rental-feedback role="status" hidden></p><p class="rental-note">일정 저장은 예약 확정이 아닙니다. 재고와 방문 일정을 확인한 후 전체 대여 기간의 요금을 안내해드립니다.</p></form>`;
+  return `<form class="rental-request-form" data-rental-request data-product-id="${esc(product.id)}"><h2>${studio?'이용 일정':'대여 일정'} 선택</h2><div class="rental-schedule-fields"><label>대여 시작일 (월/일)<input type="date" name="start_date" required></label><label>대여 종료일 (월/일)<input type="date" name="end_date" disabled required></label><label>${studio?'입실':'수령'} 방문 시간<input type="time" name="pickup_time" step="60" required></label><label>${studio?'퇴실':'반납'} 방문 시간<input type="time" name="return_time" step="60" required></label></div><label>수량<input type="number" name="quantity" min="1" max="99" step="1" value="1" inputmode="numeric" required></label>${rates.length?`<label>희망 요금 구성<select name="option" aria-label="희망 요금 구성"><option value="">방문 일정에 맞춰 요금 확인 요청</option>${rates.map(rate=>`<option value="${esc(rate.label)}">${esc(rate.label)} · ${won(rate.price)}원</option>`).join('')}</select></label>`:'<input type="hidden" name="option" value="">'}<p class="rental-note" data-rental-window>대여 시작일을 먼저 선택해주세요. 반납일 달력은 시작일부터 한 달 이내로 표시되며, 실제 최대 대여기간은 2주(14일)입니다.</p><p class="rental-schedule-preview" data-rental-preview role="status">시작·종료 날짜와 방문 시간을 정확히 선택해주세요.</p><button type="button" class="button-outline" data-rental-save>선택 일정 저장</button><div class="rental-customer-fields" data-rental-customer hidden><label>예약자 이름<input name="name" type="text" minlength="2" maxlength="60" autocomplete="name" disabled required></label><label>연락처<input name="phone" type="tel" maxlength="20" autocomplete="tel" disabled required></label><label>결제·증빙 선택<select name="evidence_kind" aria-label="결제·증빙 선택" disabled><option value="card_receipt">카드 결제 · 카드 매출전표</option><option value="cash_receipt">계좌이체 · 현금영수증 / 지출증빙</option></select></label><div data-rental-tax hidden></div><p>현금영수증 용도와 발급 정보는 토스페이먼츠 결제창에서 선택합니다. 전자세금계산서는 발급 연결 후 선택할 수 있습니다.</p><label class="rental-consent"><input type="checkbox" name="consent" disabled required><span>렌탈 일정·요금 확인과 선택한 증빙 처리를 위한 이름·연락처·방문 일정 및 입력한 사업자 정보 수집·이용에 동의합니다. <a href="/privacy.html" target="_blank" rel="noopener">개인정보 처리 안내</a></span></label></div><button type="submit" class="button-primary" data-rental-submit disabled>온라인 렌탈 접수 준비 중</button><p class="rental-request-feedback" data-rental-feedback role="status" hidden></p><p class="rental-note">일정 저장은 예약 확정이 아닙니다. 재고와 방문 일정을 확인한 후 전체 대여 기간의 요금을 안내해드립니다.</p></form>`;
  }
  async function mountRequest(form){
   if(!form||form.dataset.mounted)return;form.dataset.mounted='true';
@@ -19,7 +27,18 @@
   const today=new Date(Date.now()+9*3600000).toISOString().slice(0,10),scheduleNames=['start_date','end_date','pickup_time','return_time'];
   field('start_date').min=today;field('end_date').min=today;
   const message=text=>{feedback.textContent=text;feedback.hidden=!text;};
-  function update(){field('end_date').min=field('start_date').value||today;const start=Date.parse(field('start_date').value+'T'+field('pickup_time').value+':00+09:00'),end=Date.parse(field('end_date').value+'T'+field('return_time').value+':00+09:00');field('return_time').setCustomValidity(Number.isFinite(start)&&Number.isFinite(end)&&end<=start?'반납 일시는 수령 일시보다 늦어야 합니다.':'');preview.textContent=Number.isFinite(start)&&Number.isFinite(end)?field('start_date').value+' '+field('pickup_time').value+' 수령 → '+field('end_date').value+' '+field('return_time').value+' 반납':'시작·종료 날짜와 방문 시간을 정확히 선택해주세요.';}
+  function update(){
+   const day=field('start_date').value,limit=calendarMonthLimit(day),endField=field('end_date');
+   endField.min=day||today;endField.max=limit;endField.disabled=!limit;
+   const dateError=limit&&endField.value&&endField.value>limit?'반납일은 대여 시작일부터 한 달 이내에서 선택해주세요.':'';
+   endField.setCustomValidity(dateError);
+   const start=Date.parse(day+'T'+field('pickup_time').value+':00+09:00'),end=Date.parse(endField.value+'T'+field('return_time').value+':00+09:00');
+   const durationError=Number.isFinite(start)&&Number.isFinite(end)?end<=start?'반납 일시는 수령 일시보다 늦어야 합니다.':end-start>14*86400000?'최대 대여기간은 2주(14일)입니다. 수령·반납 방문 일시를 확인해주세요.':'':'';
+   field('return_time').setCustomValidity(durationError);
+   const window=form.querySelector('[data-rental-window]');
+   if(window)window.textContent=limit?'반납일 달력: '+day+' ~ '+limit+' · 실제 최대 대여기간은 2주(14일)입니다.':'대여 시작일을 먼저 선택해주세요. 반납일 달력은 시작일부터 한 달 이내로 표시되며, 실제 최대 대여기간은 2주(14일)입니다.';
+   preview.textContent=dateError||durationError||(Number.isFinite(start)&&Number.isFinite(end)?day+' '+field('pickup_time').value+' 수령 → '+endField.value+' '+field('return_time').value+' 반납':'시작·종료 날짜와 방문 시간을 정확히 선택해주세요.');
+  }
   try{const saved=JSON.parse(localStorage.getItem(key)||'null');if(saved){for(const name of [...scheduleNames,'quantity','option'])if(typeof saved[name]==='string')field(name).value=saved[name];}}catch{}
   for(const name of scheduleNames)field(name).addEventListener('change',update);update();
   function draft(){update();for(const name of [...scheduleNames,'quantity'])if(!field(name).reportValidity())return null;return Object.fromEntries([...scheduleNames,'quantity','option'].map(name=>[name,field(name).value]));}
@@ -66,7 +85,7 @@
    for(const item of container.querySelectorAll('[data-rental-image]')){item.classList.toggle('active',item===button);item.setAttribute('aria-pressed',String(item===button));}
   });
  }
- const api={price,priceHTML,render,mount,requestForm};
+ const api={price,priceHTML,render,mount,requestForm,calendarMonthLimit};
  if(typeof module==='object'&&module.exports)module.exports=api;
  else root.NadaunRental=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
