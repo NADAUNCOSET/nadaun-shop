@@ -159,8 +159,8 @@
         "name": "메모리·스토리지",
         "kind": "rental",
         "count": 10,
-        "image": "https://shop-phinf.pstatic.net/20261015_175/1792048428843GsVlY_PNG/18917634694914534_1881961725.png",
-        "product_id": "smartstore-13812461548",
+        "image": "https://shop-phinf.pstatic.net/20261015_26/1792068633313FsYbs_JPEG/73111115732776381_1113875548.jpg",
+        "product_id": "smartstore-13812942061",
         "href": "/catalog.html?kind=rental&type=rent%3A146"
       },
       {
@@ -214,7 +214,7 @@
     "schema_version": 1,
     "source_counts": {
       "kpp": 4044,
-      "smartstore": 6875,
+      "smartstore": 6896,
       "l-mount": 345,
       "plthink": 6653,
       "saeki": 7452,
@@ -227,7 +227,7 @@
     },
     "detail_coverage": {
       "kpp": 4044,
-      "smartstore": 6789,
+      "smartstore": 6810,
       "l-mount": 345,
       "plthink": 6253,
       "saeki": 7437,
@@ -238,18 +238,18 @@
       "ldnet": 3075,
       "avx": 1390
     },
-    "synced_at": "2026-10-15T18:16:39+00:00",
-    "merged_count": 5127,
+    "synced_at": "2026-10-15T23:20:36+00:00",
+    "merged_count": 5135,
     "product_count": 217,
     "category_browsing_enabled": true,
     "listing_count": 217,
     "option_family_count": 272,
     "deduplication": {
-      "brands_checked": 410,
-      "groups": 3209,
-      "removed": 5127
+      "brands_checked": 411,
+      "groups": 3217,
+      "removed": 5135
     },
-    "revision": "06bac28ee96f4b87",
+    "revision": "a7f85e377f15ef3d",
     "view": "rental"
   },
   "brands": [
@@ -1390,10 +1390,15 @@
         "kpp:b:leofoto:30b030",
         "kpp:b:leofoto:global:01",
         "kpp:b:leofoto:global:0120",
-        "kpp:b:leofoto:global:0130"
+        "kpp:b:leofoto:global:0130",
+        "naver:b:leofoto:50000206",
+        "naver:b:leofoto:50001387",
+        "naver:b:leofoto:50001394",
+        "naver:b:leofoto:50002113",
+        "naver:b:leofoto:50004634"
       ],
-      "count": 740,
-      "purchase_count": 740,
+      "count": 744,
+      "purchase_count": 744,
       "rental_count": 0,
       "category_ids": [
         "kpp:b:leofoto:3010",
@@ -1493,13 +1498,18 @@
         "kpp:b:leofoto:global:0120",
         "kpp:b:leofoto:global:0130",
         "naver:b:leofoto:50000206",
+        "naver:b:leofoto:50001387",
+        "naver:b:leofoto:50004635",
+        "naver:b:leofoto:50004634",
+        "naver:b:leofoto:50001394",
+        "naver:b:leofoto:50002113",
         "naver:b:leofoto:50001389",
         "naver:b:leofoto:50002076"
       ],
-      "representative_id": "kpp-1561081891",
-      "representative_image": "https://kppkpp.co.kr/data/item/1561081891/nfedgpha.jpg",
-      "representative_name": "레오포토 레인저 LS-324C 카본삼각대 3 시리즈",
-      "representative_alternate": "https://kppkpp.co.kr/data/item/1561081891/02.jpg",
+      "representative_id": "kpp-1561081215",
+      "representative_image": "https://kppkpp.co.kr/data/item/1561081215/afabdsk1.jpg",
+      "representative_name": "레오포토 레인저 LS-365C 카본삼각대 4 시리즈",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1561081215/02.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -2608,14 +2618,16 @@
         "kpp:b:tokina:global:0420",
         "naver:b:tokina:50000206",
         "naver:b:tokina:50001381",
+        "naver:b:tokina:50001382",
         "naver:b:tokina:50001390",
         "naver:b:tokina:50002082",
         "naver:b:tokina:50004604",
         "naver:b:tokina:50004605",
-        "naver:b:tokina:50004606"
+        "naver:b:tokina:50004606",
+        "naver:b:tokina:50004609"
       ],
-      "count": 71,
-      "purchase_count": 71,
+      "count": 72,
+      "purchase_count": 72,
       "rental_count": 0,
       "category_ids": [
         "kpp:b:tokina:1010",
@@ -2638,6 +2650,8 @@
         "kpp:b:tokina:global:04",
         "kpp:b:tokina:global:0420",
         "naver:b:tokina:50000206",
+        "naver:b:tokina:50001382",
+        "naver:b:tokina:50004609",
         "naver:b:tokina:50001390",
         "naver:b:tokina:50002082",
         "naver:b:tokina:50001381",
@@ -7247,6 +7261,9 @@
         "avx:b:1d9592a776356f0a",
         "avx:b:dcc842507d05de24",
         "avx:b:e14317c0cdf962dd",
+        "naver:b:gitzo:50000206",
+        "naver:b:gitzo:50001394",
+        "naver:b:gitzo:50002113",
         "saeki:b:gitzo:100001",
         "saeki:b:gitzo:100003",
         "saeki:b:gitzo:100004",
@@ -7282,11 +7299,13 @@
         "saeki:b:gitzo:100625",
         "saeki:b:gitzo:root"
       ],
-      "count": 126,
-      "purchase_count": 126,
+      "count": 127,
+      "purchase_count": 127,
       "rental_count": 0,
       "category_ids": [
         "naver:b:gitzo:50000206",
+        "naver:b:gitzo:50001394",
+        "naver:b:gitzo:50002113",
         "naver:b:gitzo:50001389",
         "naver:b:gitzo:50002076",
         "naver:b:gitzo:50002074",
@@ -7828,7 +7847,7 @@
       "aliases": [
         "HOMAN"
       ],
-      "logo": "https://shop-phinf.pstatic.net/20261015_175/1792048428843GsVlY_PNG/18917634694914534_1881961725.png",
+      "logo": "https://shop-phinf.pstatic.net/20261015_26/1792068633313FsYbs_JPEG/73111115732776381_1113875548.jpg",
       "navigation_category_ids": [
         "avx:b:557c144f4c65bb83",
         "avx:b:f04c76e8ee56bb9c",
@@ -8319,8 +8338,8 @@
         "naver:b:jackery:50003930",
         "naver:b:jackery:50017740"
       ],
-      "count": 48,
-      "purchase_count": 45,
+      "count": 49,
+      "purchase_count": 46,
       "rental_count": 3,
       "category_ids": [
         "naver:b:jackery:50000028",
@@ -8344,9 +8363,9 @@
         "rental-brand:jackery:8",
         "rental-brand:jackery:46"
       ],
-      "representative_id": "smartstore-12005533325",
-      "representative_image": "https://shop-phinf.pstatic.net/20251121_111/1763694611900osCr4_PNG/97827497317253713_1721860578.png",
-      "representative_name": "JACKERY 2000Plus 인산철 올인원 파워뱅크+확장 배터리 세트",
+      "representative_id": "smartstore-13812983085",
+      "representative_image": "https://shop-phinf.pstatic.net/20261015_115/1792070258190teQYy_JPEG/18939464042063354_799642297.jpg",
+      "representative_name": "JACKERY 2000v2 2042Wh 인산철 파워뱅크 2200W",
       "image_kind": "logo",
       "logo_dark": true
     },
@@ -11804,8 +11823,10 @@
         "PENTAX",
         "pentax"
       ],
-      "logo": "https://shop-phinf.pstatic.net/20260602_34/17804058901514Oqj3_JPEG/127039673391260713_1829165998.jpg",
+      "logo": "https://shop-phinf.pstatic.net/20261015_85/1792061065370msAV6_JPEG/206602368432923_1491915958.jpg",
       "navigation_category_ids": [
+        "naver:b:pentax:50000207",
+        "naver:b:pentax:50002010",
         "saeki:b:pentax:100001",
         "saeki:b:pentax:100002",
         "saeki:b:pentax:100007",
@@ -11835,10 +11856,12 @@
         "saeki:b:pentax:100626",
         "saeki:b:pentax:root"
       ],
-      "count": 103,
-      "purchase_count": 103,
+      "count": 106,
+      "purchase_count": 106,
       "rental_count": 0,
       "category_ids": [
+        "naver:b:pentax:50000207",
+        "naver:b:pentax:50002010",
         "naver:b:pentax:50000206",
         "naver:b:pentax:50000266",
         "naver:b:pentax:50000267",
@@ -11873,9 +11896,9 @@
         "saeki:b:pentax:100010",
         "saeki:b:pentax:100067"
       ],
-      "representative_id": "smartstore-13621002857",
-      "representative_image": "https://shop-phinf.pstatic.net/20260602_34/17804058901514Oqj3_JPEG/127039673391260713_1829165998.jpg",
-      "representative_name": "PENTAX WG-1000 그레이",
+      "representative_id": "smartstore-13812773401",
+      "representative_image": "https://shop-phinf.pstatic.net/20261015_85/1792061065370msAV6_JPEG/206602368432923_1491915958.jpg",
+      "representative_name": "파필리오 III 6.5x21 WR 쌍안경 블랙",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -12815,8 +12838,8 @@
         "saeki:b:ricoh:100625",
         "saeki:b:ricoh:root"
       ],
-      "count": 133,
-      "purchase_count": 133,
+      "count": 132,
+      "purchase_count": 132,
       "rental_count": 0,
       "category_ids": [
         "naver:b:ricoh:50000206",
@@ -12858,9 +12881,9 @@
         "saeki:b:ricoh:100009",
         "saeki:b:ricoh:100064"
       ],
-      "representative_id": "smartstore-13688196024",
-      "representative_image": "https://shop-phinf.pstatic.net/20260730_245/1785403071298VVw9R_JPEG/111432556573340200_1762296074.jpg",
-      "representative_name": "GR3x HDF",
+      "representative_id": "smartstore-13452266335",
+      "representative_image": "https://shop-phinf.pstatic.net/20251217_164/1765940617893HiuUw_JPEG/3157400723410346_383840484.jpg",
+      "representative_name": "GR4 HDF",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -16371,12 +16394,14 @@
         "자이스",
         "ZEISS"
       ],
-      "logo": "https://shop-phinf.pstatic.net/20251212_66/1765514902472AzYp1_JPEG/18440964007300131_2144965810.jpg",
+      "logo": "https://shop-phinf.pstatic.net/20261015_193/1792061532656kkq5y_JPEG/68548840781497869_360619169.jpg",
       "navigation_category_ids": [
         "clmedia:b:109",
         "naver:b:zeiss:50000206",
+        "naver:b:zeiss:50001381",
         "naver:b:zeiss:50001390",
         "naver:b:zeiss:50002082",
+        "naver:b:zeiss:50004604",
         "plthink:b:026",
         "plthink:b:026:001",
         "saeki:b:zeiss:100001",
@@ -16415,11 +16440,13 @@
         "saeki:b:zeiss:100233",
         "saeki:b:zeiss:root"
       ],
-      "count": 254,
-      "purchase_count": 254,
+      "count": 256,
+      "purchase_count": 256,
       "rental_count": 0,
       "category_ids": [
         "naver:b:zeiss:50000206",
+        "naver:b:zeiss:50001381",
+        "naver:b:zeiss:50004604",
         "naver:b:zeiss:50001390",
         "naver:b:zeiss:50002082",
         "plthink:b:026",
@@ -16461,9 +16488,9 @@
         "saeki:b:zeiss:100233",
         "clmedia:b:109"
       ],
-      "representative_id": "smartstore-12813898611",
-      "representative_image": "https://shop-phinf.pstatic.net/20251212_66/1765514902472AzYp1_JPEG/18440964007300131_2144965810.jpg",
-      "representative_name": "ZEISS Lens Gear 렌즈기어링 라지",
+      "representative_id": "smartstore-13812782834",
+      "representative_image": "https://shop-phinf.pstatic.net/20261015_193/1792061532656kkq5y_JPEG/68548840781497869_360619169.jpg",
+      "representative_name": "ZEISS OTUS ML 35mm F1.4 캐논 RF마운트 수동초점 렌즈",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -17124,6 +17151,32 @@
       "logo_dark": false
     },
     {
+      "id": "brand-a604cbd640",
+      "name": "로우프로",
+      "aliases": [
+        "로우프로"
+      ],
+      "logo": "https://shop-phinf.pstatic.net/20261015_43/1792061953475817l5_JPEG/46655321418912210_581939088.jpg",
+      "navigation_category_ids": [
+        "naver:b:brand-a604cbd640:50000206",
+        "naver:b:brand-a604cbd640:50001387",
+        "naver:b:brand-a604cbd640:50004635"
+      ],
+      "count": 2,
+      "purchase_count": 2,
+      "rental_count": 0,
+      "category_ids": [
+        "naver:b:brand-a604cbd640:50000206",
+        "naver:b:brand-a604cbd640:50001387",
+        "naver:b:brand-a604cbd640:50004635"
+      ],
+      "representative_id": "smartstore-13812790411",
+      "representative_image": "https://shop-phinf.pstatic.net/20261015_43/1792061953475817l5_JPEG/46655321418912210_581939088.jpg",
+      "representative_name": "패스트팩 BP 150 AW IV 카메라 백팩 블랙 16L",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "brand-fefa1215c1",
       "name": "미피",
       "aliases": [
@@ -17698,6 +17751,24 @@
   ],
   "categories": [
     {
+      "id": "naver:b:jackery:50000028",
+      "name": "캠핑",
+      "parent_id": null,
+      "brand_id": "jackery"
+    },
+    {
+      "id": "naver:b:jackery:50017740",
+      "name": "파워뱅크",
+      "parent_id": "naver:b:jackery:50000028",
+      "brand_id": "jackery"
+    },
+    {
+      "id": "naver:p:50017740",
+      "name": "파워뱅크",
+      "parent_id": null,
+      "brand_id": null
+    },
+    {
       "id": "naver:b:homan:50000206",
       "name": "카메라/캠코더용품",
       "parent_id": null,
@@ -17718,6 +17789,12 @@
     {
       "id": "naver:p:50002113",
       "name": "기타카메라/캠코더용품",
+      "parent_id": null,
+      "brand_id": null
+    },
+    {
+      "id": "naver:p:50004604",
+      "name": "표준렌즈",
       "parent_id": null,
       "brand_id": null
     },
@@ -17768,12 +17845,6 @@
       "name": "카메라/캠코더 관련용품",
       "parent_id": "naver:b:hollyland:50000206",
       "brand_id": "hollyland"
-    },
-    {
-      "id": "naver:p:50004604",
-      "name": "표준렌즈",
-      "parent_id": null,
-      "brand_id": null
     },
     {
       "id": "naver:b:kupo:50000206",
@@ -18022,12 +18093,6 @@
       "brand_id": "avenger"
     },
     {
-      "id": "naver:p:50000266",
-      "name": "미러리스디카",
-      "parent_id": null,
-      "brand_id": null
-    },
-    {
       "id": "naver:b:benro:50000206",
       "name": "카메라/캠코더용품",
       "parent_id": null,
@@ -18072,6 +18137,12 @@
     {
       "id": "naver:p:50000153",
       "name": "모니터",
+      "parent_id": null,
+      "brand_id": null
+    },
+    {
+      "id": "naver:p:50000266",
+      "name": "미러리스디카",
       "parent_id": null,
       "brand_id": null
     },
@@ -18226,28 +18297,10 @@
       "brand_id": "ecoflow"
     },
     {
-      "id": "naver:p:50017740",
-      "name": "파워뱅크",
-      "parent_id": null,
-      "brand_id": null
-    },
-    {
       "id": "naver:b:saramonic:50000153",
       "name": "모니터",
       "parent_id": null,
       "brand_id": "saramonic"
-    },
-    {
-      "id": "naver:b:jackery:50000028",
-      "name": "캠핑",
-      "parent_id": null,
-      "brand_id": "jackery"
-    },
-    {
-      "id": "naver:b:jackery:50017740",
-      "name": "파워뱅크",
-      "parent_id": "naver:b:jackery:50000028",
-      "brand_id": "jackery"
     },
     {
       "id": "naver:b:sony:50000268",
@@ -21320,6 +21373,77 @@
     }
   ],
   "products": [
+    {
+      "id": "smartstore-13812942061",
+      "name": "[ 대여 나다운 스페이스 ] HOMAN CFexpress Type A 256GB 메모리카드 렌탈",
+      "brand_id": "homan",
+      "kind": "rental",
+      "price": 20000,
+      "sale_price": 20000,
+      "status": "sale",
+      "category_ids": [
+        "naver:b:homan:50000206",
+        "naver:b:homan:50001394",
+        "naver:b:homan:50002113",
+        "rental-brand:homan:8",
+        "rental-brand:homan:146"
+      ],
+      "type_ids": [
+        "naver:p:50002113",
+        "type:kpp:09",
+        "type:storage",
+        "type:cf-card",
+        "rent:8",
+        "rent:146"
+      ],
+      "promotion_ids": [],
+      "offers": [
+        {
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13812942061",
+          "status": "sale",
+          "price": 20000,
+          "id": "smartstore-13812942061"
+        }
+      ],
+      "supplier_status": null,
+      "image": "https://shop-phinf.pstatic.net/20261015_26/1792068633313FsYbs_JPEG/73111115732776381_1113875548.jpg",
+      "detail_bucket": "e3",
+      "shipping_class": null,
+      "rental": {
+        "service": "equipment",
+        "price": 20000,
+        "period": null,
+        "rate_count": 0
+      },
+      "discovery": {
+        "tags": [
+          "HOMAN",
+          "장비 렌탈"
+        ],
+        "search_terms": [
+          "HOMAN",
+          "장비 렌탈",
+          "기타카메라/캠코더용품",
+          "메모리·스토리지",
+          "CFexpress Type A",
+          "CFexpress A",
+          "CFE-A",
+          "CF익스프레스 A타입",
+          "씨에프익스프레스 A",
+          "촬영장비 대여",
+          "장비 대여",
+          "나다운 스페이스",
+          "영등포 렌탈샵",
+          "영등포 촬영장비 대여"
+        ],
+        "categories": [
+          "기타카메라/캠코더용품",
+          "메모리·스토리지"
+        ],
+        "description": "[ 대여 나다운 스페이스 ] HOMAN CFexpress Type A 256GB  렌탈·대여 안내. 영등포 나다운 스페이스에서 구성·일정 상담."
+      }
+    },
     {
       "id": "smartstore-13812461548",
       "name": "CFE-A타입 메모리카드 512GB 대여",
@@ -36346,77 +36470,6 @@
         ],
         "description": "PHASEONE XF IQ2 60MP KIT (카메라+디지털백+렌즈 택1) 렌탈·대여 안내. 영등포 나다운 스페이스에서 구성·일정 상담."
       }
-    },
-    {
-      "id": "smartstore-13812942061",
-      "name": "[ 대여 나다운 스페이스 ] HOMAN CFexpress Type A 256GB 메모리카드 렌탈",
-      "brand_id": "homan",
-      "kind": "rental",
-      "price": 20000,
-      "sale_price": 20000,
-      "status": "sale",
-      "category_ids": [
-        "naver:b:homan:50000206",
-        "naver:b:homan:50001394",
-        "naver:b:homan:50002113",
-        "rental-brand:homan:8",
-        "rental-brand:homan:146"
-      ],
-      "type_ids": [
-        "naver:p:50002113",
-        "type:kpp:09",
-        "type:storage",
-        "type:cf-card",
-        "rent:8",
-        "rent:146"
-      ],
-      "promotion_ids": [],
-      "offers": [
-        {
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13812942061",
-          "status": "sale",
-          "price": 20000,
-          "id": "smartstore-13812942061"
-        }
-      ],
-      "supplier_status": null,
-      "image": "https://shop-phinf.pstatic.net/20261015_26/1792068633313FsYbs_JPEG/73111115732776381_1113875548.jpg",
-      "detail_bucket": "e3",
-      "shipping_class": null,
-      "rental": {
-        "service": "equipment",
-        "price": 20000,
-        "period": null,
-        "rate_count": 0
-      },
-      "discovery": {
-        "tags": [
-          "HOMAN",
-          "장비 렌탈"
-        ],
-        "search_terms": [
-          "HOMAN",
-          "장비 렌탈",
-          "기타카메라/캠코더용품",
-          "메모리·스토리지",
-          "CFexpress Type A",
-          "CFexpress A",
-          "CFE-A",
-          "CF익스프레스 A타입",
-          "씨에프익스프레스 A",
-          "촬영장비 대여",
-          "장비 대여",
-          "나다운 스페이스",
-          "영등포 렌탈샵",
-          "영등포 촬영장비 대여"
-        ],
-        "categories": [
-          "기타카메라/캠코더용품",
-          "메모리·스토리지"
-        ],
-        "description": "[ 대여 나다운 스페이스 ] HOMAN CFexpress Type A 256GB  렌탈·대여 안내. 영등포 나다운 스페이스에서 구성·일정 상담."
-      }
     }
   ],
   "redirects": {
@@ -40165,6 +40218,14 @@
     "saeki-PD00042945": "kpp-1776841182",
     "kpp-1778485458": "smartstore-13743934798",
     "saeki-PD00043001": "smartstore-13743934798",
+    "kpp-1786323040": "smartstore-13812640585",
+    "kpp-1786323466": "smartstore-13812638806",
+    "kpp-1786323912": "smartstore-13812636524",
+    "kpp-1786324173": "smartstore-13812634636",
+    "kpp-1786324289": "smartstore-13812632679",
+    "kpp-1786324490": "smartstore-13812631031",
+    "kpp-1786324791": "smartstore-13812629260",
+    "kpp-1786324966": "smartstore-13812627424",
     "plthink-1927930": "kpp-1790930613",
     "ldnet-12938": "smartstore-12125633284",
     "ldnet-13041": "ldnet-13050",
@@ -41542,10 +41603,10 @@
     "smartstore-7441596233": "smartstore-7441609404",
     "smartstore-7441794225": "smartstore-7441978357",
     "smartstore-7441885305": "smartstore-7441888449",
-    "smartstore-8237989318": "smartstore-8237990015",
+    "smartstore-8237990015": "smartstore-8237989318",
     "smartstore-8822091206": "smartstore-8824831321",
     "smartstore-8822408117": "smartstore-8822413531",
-    "smartstore-8822474445": "smartstore-8824829198",
+    "smartstore-8824829198": "smartstore-8822474445",
     "smartstore-8822797468": "smartstore-8824835900"
   }
 }

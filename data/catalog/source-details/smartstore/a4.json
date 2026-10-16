@@ -444,11 +444,11 @@
       },
       {
         "name": "미디엄사이즈",
-        "additional_price": -10000
+        "additional_price": -9000
       },
       {
         "name": "하프사이즈",
-        "additional_price": -34000
+        "additional_price": -35000
       }
     ],
     "shipping": {
@@ -457,9 +457,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.053+09:00",
-    "checked_at": "2026-09-07T06:07:36+00:00",
-    "checked_epoch": 1788761256
+    "source_modified_at": "2026-10-15T23:57:08.166+09:00",
+    "checked_at": "2026-10-15T23:23:29+00:00",
+    "checked_epoch": 1792106609
   },
   "smartstore-7831716015": {
     "images": {
@@ -530,5 +530,29 @@
     "source_modified_at": "2026-10-06T22:36:10.116+09:00",
     "checked_at": "2026-10-08T08:13:09+00:00",
     "checked_epoch": 1791447189
+  },
+  "smartstore-13812627424": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_78/1792054633235xFjW7_JPEG/18923839087308164_1188619529.jpg"
+      ],
+      "detail": [
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/daily_lite/daily_lite_01.jpg",
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/daily_lite/daily_lite_02.jpg",
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/daily_lite/daily_lite_05.jpg"
+      ]
+    },
+    "description_text": "레오포토 데일리 라이트 카메라 백팩 23L 그린 인서트 키트\n본 상품은 23L 그린 백팩과 카메라 인서트 키트입니다. UPA-23B / 약1.28kg(큐브 포함) / 540×340×250mm / 큐브180×255×140mm. 100% 재활용 폴리에스터 복합 섬유, 발수 기능.\n공용 설명에는 다른 용량·색상이 함께 등장합니다. 촬영 예시의 카메라·렌즈·노트북·삼각대 등은 포함되지 않습니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T17:57:19.134+09:00",
+    "checked_at": "2026-10-15T23:21:48+00:00",
+    "checked_epoch": 1792106508
   }
 }

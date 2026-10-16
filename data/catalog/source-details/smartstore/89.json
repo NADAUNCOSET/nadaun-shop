@@ -910,7 +910,7 @@
       },
       {
         "name": "E",
-        "additional_price": 0
+        "additional_price": -300000
       },
       {
         "name": "MFT",
@@ -923,9 +923,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-11-19T14:02:27.145+09:00",
-    "checked_at": "2026-09-07T06:15:31+00:00",
-    "checked_epoch": 1788761731
+    "source_modified_at": "2026-10-15T23:14:31.651+09:00",
+    "checked_at": "2026-10-15T23:24:13+00:00",
+    "checked_epoch": 1792106653
   },
   "smartstore-5043262174": {
     "images": {

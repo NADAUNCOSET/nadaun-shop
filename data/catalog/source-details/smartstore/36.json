@@ -421,5 +421,29 @@
     "source_modified_at": "2026-08-25T19:37:57.748+09:00",
     "checked_at": "2026-09-07T06:16:58+00:00",
     "checked_epoch": 1788761818
+  },
+  "smartstore-13812788570": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_127/17920618461269hJyy_JPEG/83809638043109852_1878880768.jpg"
+      ],
+      "detail": [
+        "https://cdn.saeki.co.kr/malluploadfile/public/images/editor/2026/202607/ea855067-c5de-4200-8fcc-afbc668eb95d.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/images/editor/2026/202607/07ec648d-86f9-4d79-adaa-c248d4ed3295.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/images/editor/2026/202607/e0a80a5f-0b94-492a-be7c-8bbd11581d56.jpg"
+      ]
+    },
+    "description_text": "Lowepro Fastpack BP 250 AW IV Black 22L\n로우프로 패스트팩 BP 250 AW IV · 블랙 · 22L · LP37507-PWW\n무게 약 1.17kg / 외부 크기 48 × 31 × 20.5cm / 카메라 수납부 21 × 30 × 15cm\n본 상품은 백팩입니다. 촬영 예시의 카메라·렌즈·삼각대·물병·노트북 등 장비와 소품은 포함되지 않습니다.\n150/450 및 이전 III 세대와 구분해 주문해 주세요.\n제조사 Lowepro / 수입사 세기P&C(주) / 제조국 중국",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T19:57:40.080+09:00",
+    "checked_at": "2026-10-15T23:21:38+00:00",
+    "checked_epoch": 1792106498
   }
 }

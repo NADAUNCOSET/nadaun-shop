@@ -558,9 +558,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-05-20T11:22:35.671+09:00",
-    "checked_at": "2026-09-07T06:01:02+00:00",
-    "checked_epoch": 1788760862
+    "source_modified_at": "2026-10-15T20:16:37.524+09:00",
+    "checked_at": "2026-10-15T23:22:26+00:00",
+    "checked_epoch": 1792106546
   },
   "smartstore-8537021578": {
     "images": {
@@ -725,5 +725,29 @@
     "source_modified_at": "2025-11-19T14:03:39.165+09:00",
     "checked_at": "2026-09-07T06:18:29+00:00",
     "checked_epoch": 1788761909
+  },
+  "smartstore-13812636524": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_40/1792055006079Dd0xS_JPEG/6764904885714698_465124419.jpg"
+      ],
+      "detail": [
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/daily_lite/daily_lite_01.jpg",
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/daily_lite/daily_lite_02.jpg",
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/daily_lite/daily_lite_05.jpg"
+      ]
+    },
+    "description_text": "레오포토 데일리 라이트 카메라 백팩 17L 블랙 인서트 키트\n본 상품은 17L 블랙 백팩과 카메라 인서트 키트입니다. UPA-17B / 약1.16kg(큐브 포함) / 540×340×250mm / 큐브180×255×140mm. 100% 재활용 폴리에스터 복합 섬유, 발수 기능.\n공용 설명에는 다른 용량·색상이 함께 등장합니다. 촬영 예시의 카메라·렌즈·노트북·삼각대 등은 포함되지 않습니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T18:03:32.888+09:00",
+    "checked_at": "2026-10-15T23:21:45+00:00",
+    "checked_epoch": 1792106505
   }
 }

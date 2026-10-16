@@ -419,11 +419,11 @@
     "options": [
       {
         "name": "블랙",
-        "additional_price": -1000
+        "additional_price": 0
       },
       {
         "name": "화이트",
-        "additional_price": -1000
+        "additional_price": 0
       },
       {
         "name": "그레이",
@@ -435,23 +435,23 @@
       },
       {
         "name": "형광옐로우",
-        "additional_price": 0
+        "additional_price": 3300
       },
       {
         "name": "형광오렌지",
-        "additional_price": 0
+        "additional_price": 3300
       },
       {
         "name": "형광그린",
-        "additional_price": 0
+        "additional_price": 3300
       },
       {
         "name": "형광핑크",
-        "additional_price": 0
+        "additional_price": 3300
       },
       {
         "name": "형광블루",
-        "additional_price": 0
+        "additional_price": 3300
       }
     ],
     "shipping": {
@@ -460,9 +460,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-07-14T16:14:55.672+09:00",
-    "checked_at": "2026-09-07T05:59:39+00:00",
-    "checked_epoch": 1788760779
+    "source_modified_at": "2026-10-15T20:07:00.028+09:00",
+    "checked_at": "2026-10-15T23:22:17+00:00",
+    "checked_epoch": 1792106537
   },
   "smartstore-8524170112": {
     "images": {
@@ -675,5 +675,29 @@
     "source_modified_at": "2025-11-19T14:02:29.904+09:00",
     "checked_at": "2026-09-07T06:12:34+00:00",
     "checked_epoch": 1788761554
+  },
+  "smartstore-13812632679": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_213/1792054865933bbl1e_JPEG/64986997216568705_1786431298.jpg"
+      ],
+      "detail": [
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/daily_lite/daily_lite_01.jpg",
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/daily_lite/daily_lite_02.jpg",
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/daily_lite/daily_lite_05.jpg"
+      ]
+    },
+    "description_text": "레오포토 데일리 라이트 카메라 백팩 17L 그린 인서트 키트\n본 상품은 17L 그린 백팩과 카메라 인서트 키트입니다. UPA-17B / 약1.16kg(큐브 포함) / 540×340×250mm / 큐브180×255×140mm. 100% 재활용 폴리에스터 복합 섬유, 발수 기능.\n공용 설명에는 다른 용량·색상이 함께 등장합니다. 촬영 예시의 카메라·렌즈·노트북·삼각대 등은 포함되지 않습니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T18:01:11.706+09:00",
+    "checked_at": "2026-10-15T23:21:46+00:00",
+    "checked_epoch": 1792106506
   }
 }

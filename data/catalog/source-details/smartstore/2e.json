@@ -467,23 +467,23 @@
       },
       {
         "name": "형광 옐로우",
-        "additional_price": 0
+        "additional_price": 1100
       },
       {
         "name": "형광 오렌지",
-        "additional_price": 0
+        "additional_price": 1100
       },
       {
         "name": "형광 그린",
-        "additional_price": 0
+        "additional_price": 1100
       },
       {
         "name": "형광 핑크",
-        "additional_price": 0
+        "additional_price": 1100
       },
       {
         "name": "형광 블루",
-        "additional_price": 0
+        "additional_price": 1100
       }
     ],
     "shipping": {
@@ -492,9 +492,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-07-14T16:14:36.022+09:00",
-    "checked_at": "2026-09-07T05:59:39+00:00",
-    "checked_epoch": 1788760779
+    "source_modified_at": "2026-10-15T20:05:01.762+09:00",
+    "checked_at": "2026-10-15T23:22:18+00:00",
+    "checked_epoch": 1792106538
   },
   "smartstore-8537764392": {
     "images": {
@@ -563,11 +563,11 @@
       },
       {
         "name": "미디엄사이즈",
-        "additional_price": -10000
+        "additional_price": -9000
       },
       {
         "name": "하프사이즈",
-        "additional_price": -34000
+        "additional_price": -35000
       }
     ],
     "shipping": {
@@ -576,9 +576,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.053+09:00",
-    "checked_at": "2026-09-07T06:07:35+00:00",
-    "checked_epoch": 1788761255
+    "source_modified_at": "2026-10-15T23:55:40.869+09:00",
+    "checked_at": "2026-10-15T23:23:28+00:00",
+    "checked_epoch": 1792106608
   },
   "smartstore-8237980571": {
     "images": {
@@ -602,11 +602,11 @@
       },
       {
         "name": "미디엄사이즈",
-        "additional_price": -10000
+        "additional_price": -9000
       },
       {
         "name": "하프사이즈",
-        "additional_price": -34000
+        "additional_price": -35000
       }
     ],
     "shipping": {
@@ -615,9 +615,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.053+09:00",
-    "checked_at": "2026-09-07T06:07:37+00:00",
-    "checked_epoch": 1788761257
+    "source_modified_at": "2026-10-15T23:59:09.341+09:00",
+    "checked_at": "2026-10-15T23:23:31+00:00",
+    "checked_epoch": 1792106611
   },
   "smartstore-8237848863": {
     "images": {

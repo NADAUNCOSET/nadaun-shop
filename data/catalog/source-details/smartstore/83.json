@@ -591,11 +591,11 @@
       },
       {
         "name": "미디엄사이즈",
-        "additional_price": -10000
+        "additional_price": -9000
       },
       {
         "name": "하프사이즈",
-        "additional_price": -34000
+        "additional_price": -35000
       }
     ],
     "shipping": {
@@ -604,9 +604,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.053+09:00",
-    "checked_at": "2026-09-07T06:07:38+00:00",
-    "checked_epoch": 1788761258
+    "source_modified_at": "2026-10-16T00:00:52.967+09:00",
+    "checked_at": "2026-10-15T23:23:32+00:00",
+    "checked_epoch": 1792106612
   },
   "smartstore-5981432001": {
     "images": {
@@ -696,5 +696,28 @@
     "source_modified_at": "2026-09-28T20:17:52.510+09:00",
     "checked_at": "2026-10-08T08:14:09+00:00",
     "checked_epoch": 1791447249
+  },
+  "smartstore-13812782834": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_193/1792061532656kkq5y_JPEG/68548840781497869_360619169.jpg"
+      ],
+      "detail": [
+        "https://cdn.saeki.co.kr/malluploadfile/public/images/editor/2026/202607/b5e9d254-2e86-454b-b619-5f9aeac8d55e.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/images/editor/2026/202607/e6681e1a-6766-4546-a4be-67d60b1cb884.jpg"
+      ]
+    },
+    "description_text": "ZEISS Otus ML 1.4/35 (RF)\n35mm F1.4 · 캐논 RF마운트 · 풀프레임 · 수동초점(MF)\n본 상품은 캐논 RF마운트 35mm 렌즈 1개입니다. E/Z마운트 및 50mm/85mm 제품과 구분해 주문해 주세요. 카메라 본체는 포함되지 않습니다.\n제조사 ZEISS / 수입사 세기P&C / 제조국 일본. 공급사 고시 기준 KC 인증 해당 없음.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T19:52:19.512+09:00",
+    "checked_at": "2026-10-15T23:21:39+00:00",
+    "checked_epoch": 1792106499
   }
 }

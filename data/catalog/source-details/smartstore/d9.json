@@ -647,11 +647,11 @@
     "options": [
       {
         "name": "PL",
-        "additional_price": 0
+        "additional_price": -300000
       },
       {
         "name": "EF",
-        "additional_price": 0
+        "additional_price": -300000
       },
       {
         "name": "F",
@@ -659,7 +659,7 @@
       },
       {
         "name": "E",
-        "additional_price": 0
+        "additional_price": -300000
       },
       {
         "name": "MFT",
@@ -672,9 +672,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-11-19T14:02:27.143+09:00",
-    "checked_at": "2026-09-07T06:15:34+00:00",
-    "checked_epoch": 1788761734
+    "source_modified_at": "2026-10-15T23:12:03.759+09:00",
+    "checked_at": "2026-10-15T23:24:16+00:00",
+    "checked_epoch": 1792106656
   },
   "smartstore-4998860403": {
     "images": {

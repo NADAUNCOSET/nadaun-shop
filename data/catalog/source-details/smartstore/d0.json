@@ -504,9 +504,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:50:18.246+09:00",
-    "checked_at": "2026-09-07T05:57:58+00:00",
-    "checked_epoch": 1788760678
+    "source_modified_at": "2026-10-15T19:10:42.533+09:00",
+    "checked_at": "2026-10-15T23:22:15+00:00",
+    "checked_epoch": 1792106535
   },
   "smartstore-8900348223": {
     "images": {
@@ -548,9 +548,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-05-20T11:22:35.671+09:00",
-    "checked_at": "2026-09-07T06:01:01+00:00",
-    "checked_epoch": 1788760861
+    "source_modified_at": "2026-10-15T20:16:37.524+09:00",
+    "checked_at": "2026-10-15T23:22:25+00:00",
+    "checked_epoch": 1792106545
   },
   "smartstore-8521881950": {
     "images": {
@@ -597,11 +597,11 @@
       },
       {
         "name": "미디엄사이즈",
-        "additional_price": -10000
+        "additional_price": -9000
       },
       {
         "name": "하프사이즈",
-        "additional_price": -34000
+        "additional_price": -35000
       }
     ],
     "shipping": {
@@ -610,9 +610,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.053+09:00",
-    "checked_at": "2026-09-07T06:07:46+00:00",
-    "checked_epoch": 1788761266
+    "source_modified_at": "2026-10-16T00:12:37.492+09:00",
+    "checked_at": "2026-10-15T23:23:42+00:00",
+    "checked_epoch": 1792106622
   },
   "smartstore-7539739473": {
     "images": {

@@ -881,5 +881,29 @@
     "source_modified_at": "2026-09-28T20:18:04.474+09:00",
     "checked_at": "2026-10-08T08:14:35+00:00",
     "checked_epoch": 1791447275
+  },
+  "smartstore-13812622754": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_211/1792054419389Xyp51_JPEG/10263838217805875_382389257.jpg"
+      ],
+      "detail": [
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/opa_11s/opa_11s_01.jpg",
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/opa_11s/opa_11s_02.jpg",
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/opa_11s/opa_11s_06.jpg"
+      ]
+    },
+    "description_text": "레오포토 BACKUP 카메라 슬링백 11L 베이지\n본 상품 색상은 베이지입니다. 11L에서 15L로 확장되며 나일론·PU·합성섬유 소재입니다. 약0.77kg(디바이더 포함), 245×370×150mm(확장 전).\n가방 상품이며 촬영 예시의 카메라·렌즈·태블릿·드론·삼각대·캐리어·장식품은 포함되지 않습니다. 아래 공용 설명에 다른 색상이 함께 등장합니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T17:53:45.761+09:00",
+    "checked_at": "2026-10-15T23:21:50+00:00",
+    "checked_epoch": 1792106510
   }
 }

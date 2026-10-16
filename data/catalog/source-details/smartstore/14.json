@@ -612,5 +612,29 @@
     "source_modified_at": "2025-11-19T14:03:39.815+09:00",
     "checked_at": "2026-09-07T06:17:35+00:00",
     "checked_epoch": 1788761855
+  },
+  "smartstore-13812619046": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_247/17920542471739Ntoy_JPEG/105989928133270226_1155718906.jpg"
+      ],
+      "detail": [
+        "https://gi.esmplus.com/kppshop/kpp/leofoto/Acc/Strap/Strap_LS_LM/Strap_LS_LM_01.jpg",
+        "https://gi.esmplus.com/kppshop/kpp/leofoto/Acc/Strap/Strap_LS_LM/Strap_LS_LM_04.jpg",
+        "https://gi.esmplus.com/kppshop/kpp/leofoto/Acc/Strap/Strap_LS_LM/Strap_LS_LM_05.jpg"
+      ]
+    },
+    "description_text": "레오포토 Strap-LM40 써밋 시리즈 전용 삼각대 스트랩\n본 상품은 써밋 LM 시리즈용 40mm 규격입니다. 최대 길이 1400mm, 폭 31mm. 삼각대는 포함되지 않습니다.\n아래 공용 설명에는 LS형과 다른 튜브 규격이 함께 등장합니다. 구매 상품은 Strap-LM40이며 다른 규격과 혼동하지 않도록 확인해 주세요.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T17:50:59.840+09:00",
+    "checked_at": "2026-10-15T23:21:50+00:00",
+    "checked_epoch": 1792106510
   }
 }

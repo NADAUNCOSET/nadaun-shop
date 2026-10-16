@@ -488,11 +488,11 @@
     "options": [
       {
         "name": "RCP Glossy 245g 4x6 100매",
-        "additional_price": -7600
+        "additional_price": -9800
       },
       {
         "name": "RCP Glossy 245g 5x7 100매",
-        "additional_price": -4200
+        "additional_price": -4700
       },
       {
         "name": "RCP Glossy 245g A4 50매",
@@ -500,7 +500,7 @@
       },
       {
         "name": "RCP Glossy 245g A3 25매",
-        "additional_price": 4000
+        "additional_price": 3500
       }
     ],
     "shipping": {
@@ -509,9 +509,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-05-20T11:22:35.654+09:00",
-    "checked_at": "2026-09-07T06:01:25+00:00",
-    "checked_epoch": 1788760885
+    "source_modified_at": "2026-10-15T20:24:32.357+09:00",
+    "checked_at": "2026-10-15T23:22:49+00:00",
+    "checked_epoch": 1792106569
   },
   "smartstore-8524266450": {
     "images": {
@@ -559,11 +559,11 @@
       },
       {
         "name": "미디엄사이즈",
-        "additional_price": -10000
+        "additional_price": -9000
       },
       {
         "name": "하프사이즈",
-        "additional_price": -34000
+        "additional_price": -35000
       }
     ],
     "shipping": {
@@ -572,9 +572,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.134+09:00",
-    "checked_at": "2026-09-07T06:07:22+00:00",
-    "checked_epoch": 1788761242
+    "source_modified_at": "2026-10-15T23:26:33.161+09:00",
+    "checked_at": "2026-10-15T23:23:11+00:00",
+    "checked_epoch": 1792106591
   },
   "smartstore-7441669123": {
     "images": {

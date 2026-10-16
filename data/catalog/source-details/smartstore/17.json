@@ -654,5 +654,28 @@
     "source_modified_at": "2026-10-15T16:28:23.116+09:00",
     "checked_at": "2026-10-15T07:57:49+00:00",
     "checked_epoch": 1792051069
+  },
+  "smartstore-13812640585": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_235/1792055195058nxqhd_JPEG/55036297841539916_1319658755.jpg"
+      ],
+      "detail": [
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/opa_25b/opa_25b_01.jpg",
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/opa_25b/opa_25b_02.jpg"
+      ]
+    },
+    "description_text": "레오포토 BACKUP 카메라 백팩 25L 블랙 인서트 M 키트\n본 상품은 블랙 백팩 + 인서트 M 구성입니다. 약2.2kg / 백팩480×335×240mm / 인서트M315×290×160mm. 파티션A2개·B2개·파티션고정스트랩1개 구성. 나일론·PU·합성섬유 소재.\n공용 설명에는 단품과 인서트 L, 다른 색상이 함께 등장합니다. 구매 구성은 블랙/인서트 M이며 촬영 예시의 카메라·렌즈·드론·삼각대 등은 포함되지 않습니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T18:06:43.041+09:00",
+    "checked_at": "2026-10-15T23:21:44+00:00",
+    "checked_epoch": 1792106504
   }
 }

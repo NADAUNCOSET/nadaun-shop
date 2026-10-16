@@ -336,9 +336,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-03-22T16:31:30.615+09:00",
-    "checked_at": "2026-09-07T05:56:20+00:00",
-    "checked_epoch": 1788760580
+    "source_modified_at": "2026-10-15T19:17:20.254+09:00",
+    "checked_at": "2026-10-15T23:22:14+00:00",
+    "checked_epoch": 1792106534
   },
   "smartstore-10824399624": {
     "images": {
@@ -431,9 +431,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-05-20T11:22:35.666+09:00",
-    "checked_at": "2026-09-07T06:01:08+00:00",
-    "checked_epoch": 1788760868
+    "source_modified_at": "2026-10-15T20:23:22.795+09:00",
+    "checked_at": "2026-10-15T23:22:32+00:00",
+    "checked_epoch": 1792106552
   },
   "smartstore-8794364892": {
     "images": {
@@ -622,7 +622,7 @@
       },
       {
         "name": "E",
-        "additional_price": 0
+        "additional_price": -300000
       },
       {
         "name": "MFT",
@@ -635,9 +635,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-11-19T14:02:27.144+09:00",
-    "checked_at": "2026-09-07T06:15:34+00:00",
-    "checked_epoch": 1788761734
+    "source_modified_at": "2026-10-15T23:13:17.333+09:00",
+    "checked_at": "2026-10-15T23:24:15+00:00",
+    "checked_epoch": 1792106655
   },
   "smartstore-4995748697": {
     "images": {
@@ -708,5 +708,28 @@
     "source_modified_at": "2026-09-28T20:18:04.474+09:00",
     "checked_at": "2026-10-08T08:14:50+00:00",
     "checked_epoch": 1791447290
+  },
+  "smartstore-13812758894": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_28/1792060351482VRGRy_JPEG/55041454266822489_2026618591.jpg"
+      ],
+      "detail": [
+        "https://ai.esmplus.com/cinek04/05_2_tokina_cinema/filter/hydrophilic_coating_filter/hydrophilic_coating_filter_01.jpg",
+        "https://ai.esmplus.com/cinek04/05_2_tokina_cinema/filter/hydrophilic_coating_filter/hydrophilic_coating_filter_02.jpg"
+      ]
+    },
+    "description_text": "토키나 시네마 친수 코팅 필터 82mm\nHydrophilic Coating Filter · 82mm 렌즈 보호용 필터\n친수 코팅으로 표면의 물방울이 얇은 수막으로 퍼지도록 설계된 광학 유리 필터입니다.\n본 상품은 82mm 필터 1개입니다.\n아래 공통 설명 이미지의 105mm 및 127mm 제품과 촬영 예시의 카메라·렌즈는 포함되지 않습니다.\n주문 전 렌즈의 필터 장착 규격이 82mm인지 확인해 주세요. 카메라 또는 렌즈 자체를 방수 처리하는 제품이 아닙니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T19:33:05.096+09:00",
+    "checked_at": "2026-10-15T23:21:42+00:00",
+    "checked_epoch": 1792106502
   }
 }

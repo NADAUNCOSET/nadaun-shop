@@ -321,9 +321,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:41:55.461+09:00",
-    "checked_at": "2026-09-07T05:53:26+00:00",
-    "checked_epoch": 1788760406
+    "source_modified_at": "2026-10-15T22:24:17.735+09:00",
+    "checked_at": "2026-10-15T23:22:11+00:00",
+    "checked_epoch": 1792106531
   },
   "smartstore-10573802906": {
     "images": {
@@ -431,5 +431,28 @@
     "source_modified_at": "2026-08-25T19:37:57.748+09:00",
     "checked_at": "2026-09-07T06:16:13+00:00",
     "checked_epoch": 1788761773
+  },
+  "smartstore-13812780494": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_262/1792061418015osnFu_JPEG/64382498140845841_1565494034.jpg"
+      ],
+      "detail": [
+        "https://cdn.saeki.co.kr/malluploadfile/public/images/editor/2026/202607/7389c920-9a1b-4e32-91e1-c0623fd5d4d1.jpg",
+        "https://cdn.saeki.co.kr/malluploadfile/public/images/editor/2026/202607/6a415875-9a4f-4ea6-b3e2-44dac817378a.jpg"
+      ]
+    },
+    "description_text": "ZEISS Otus ML 1.4/35 (E)\n35mm F1.4 · 소니 E마운트 · 풀프레임 · 수동초점(MF)\n본 상품은 소니 E마운트 35mm 렌즈 1개입니다. RF/Z마운트 및 50mm/85mm 제품과 구분해 주문해 주세요. 카메라 본체는 포함되지 않습니다.\n제조사 ZEISS / 수입사 세기P&C / 제조국 일본. 공급사 고시 기준 KC 인증 해당 없음.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T19:50:27.353+09:00",
+    "checked_at": "2026-10-15T23:21:40+00:00",
+    "checked_epoch": 1792106500
   }
 }

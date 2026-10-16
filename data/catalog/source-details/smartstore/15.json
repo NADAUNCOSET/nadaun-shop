@@ -573,7 +573,7 @@
       },
       {
         "name": "5x7/ 100매",
-        "additional_price": 5000
+        "additional_price": 8500
       }
     ],
     "shipping": {
@@ -582,9 +582,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-05-20T11:22:35.720+09:00",
-    "checked_at": "2026-09-07T06:00:55+00:00",
-    "checked_epoch": 1788760855
+    "source_modified_at": "2026-10-15T21:22:26.826+09:00",
+    "checked_at": "2026-10-15T23:22:19+00:00",
+    "checked_epoch": 1792106539
   },
   "smartstore-8011002848": {
     "images": {

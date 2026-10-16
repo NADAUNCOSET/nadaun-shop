@@ -625,11 +625,11 @@
     "options": [
       {
         "name": "PL",
-        "additional_price": 0
+        "additional_price": -850000
       },
       {
         "name": "EF",
-        "additional_price": 0
+        "additional_price": -850000
       },
       {
         "name": "F",
@@ -650,9 +650,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-11-19T14:02:27.145+09:00",
-    "checked_at": "2026-09-07T06:15:32+00:00",
-    "checked_epoch": 1788761732
+    "source_modified_at": "2026-10-15T23:06:29.817+09:00",
+    "checked_at": "2026-10-15T23:24:13+00:00",
+    "checked_epoch": 1792106653
   },
   "smartstore-4970368826": {
     "images": {

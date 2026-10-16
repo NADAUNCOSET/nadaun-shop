@@ -431,7 +431,7 @@
       },
       {
         "name": "RCP Satin 270g A3+/25매",
-        "additional_price": 5200
+        "additional_price": 7300
       }
     ],
     "shipping": {
@@ -440,9 +440,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-05-20T11:22:35.659+09:00",
-    "checked_at": "2026-09-07T06:01:19+00:00",
-    "checked_epoch": 1788760879
+    "source_modified_at": "2026-10-15T21:24:53.904+09:00",
+    "checked_at": "2026-10-15T23:22:42+00:00",
+    "checked_epoch": 1792106562
   },
   "smartstore-8522075047": {
     "images": {
@@ -489,11 +489,11 @@
       },
       {
         "name": "미디엄사이즈",
-        "additional_price": -10000
+        "additional_price": -9000
       },
       {
         "name": "하프사이즈",
-        "additional_price": -34000
+        "additional_price": -35000
       }
     ],
     "shipping": {
@@ -502,9 +502,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.053+09:00",
-    "checked_at": "2026-09-07T06:07:31+00:00",
-    "checked_epoch": 1788761251
+    "source_modified_at": "2026-10-15T23:48:56.215+09:00",
+    "checked_at": "2026-10-15T23:23:23+00:00",
+    "checked_epoch": 1792106603
   },
   "smartstore-7505078145": {
     "images": {

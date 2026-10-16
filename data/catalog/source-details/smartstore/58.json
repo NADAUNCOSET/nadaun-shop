@@ -422,7 +422,7 @@
     "options": [
       {
         "name": "샌드옐로우",
-        "additional_price": 0
+        "additional_price": -1000
       },
       {
         "name": "올리브그린",
@@ -435,9 +435,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:50:18.105+09:00",
-    "checked_at": "2026-09-07T05:57:59+00:00",
-    "checked_epoch": 1788760679
+    "source_modified_at": "2026-10-15T19:13:34.855+09:00",
+    "checked_at": "2026-10-15T23:22:16+00:00",
+    "checked_epoch": 1792106536
   },
   "smartstore-9334962845": {
     "images": {
@@ -550,9 +550,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-11-19T14:02:27.860+09:00",
-    "checked_at": "2026-09-07T06:14:54+00:00",
-    "checked_epoch": 1788761694
+    "source_modified_at": "2026-10-15T18:27:46.885+09:00",
+    "checked_at": "2026-10-15T23:24:10+00:00",
+    "checked_epoch": 1792106650
   },
   "smartstore-5048112988": {
     "images": {

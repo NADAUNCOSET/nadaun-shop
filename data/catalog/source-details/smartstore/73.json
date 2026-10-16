@@ -603,11 +603,11 @@
       },
       {
         "name": "미디엄사이즈",
-        "additional_price": -10000
+        "additional_price": -9000
       },
       {
         "name": "하프사이즈",
-        "additional_price": -34000
+        "additional_price": -35000
       }
     ],
     "shipping": {
@@ -616,9 +616,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.134+09:00",
-    "checked_at": "2026-09-07T06:07:29+00:00",
-    "checked_epoch": 1788761249
+    "source_modified_at": "2026-10-15T23:42:53.061+09:00",
+    "checked_at": "2026-10-15T23:23:21+00:00",
+    "checked_epoch": 1792106601
   },
   "smartstore-8010917796": {
     "images": {
@@ -660,9 +660,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:00.981+09:00",
-    "checked_at": "2026-09-07T06:08:39+00:00",
-    "checked_epoch": 1788761319
+    "source_modified_at": "2026-10-15T19:11:43.780+09:00",
+    "checked_at": "2026-10-15T23:23:55+00:00",
+    "checked_epoch": 1792106635
   },
   "smartstore-4979733771": {
     "images": {

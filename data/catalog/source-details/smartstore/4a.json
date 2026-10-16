@@ -772,5 +772,27 @@
     "source_modified_at": "2026-09-01T09:59:12.343+09:00",
     "checked_at": "2026-09-07T06:19:20+00:00",
     "checked_epoch": 1788761960
+  },
+  "smartstore-13812683009": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_257/1792057001597Txu2E_JPEG/64378081752397018_662476966.jpg"
+      ],
+      "detail": [
+        "https://cdn.saeki.co.kr/malluploadfile/public/images/editor/2024/202405/5f7ec6f7-2047-4f0a-81d0-151a59deca37.jpg"
+      ]
+    },
+    "description_text": "짓죠 G532 시리즈 2 래피드 알루미늄 래터럴 암\n삼각대에 수평 90도로 장착하는 촬영 보조 암입니다. 알루미늄 소재, 무게 0.51kg, 접었을 때 길이 45.5cm. 1/4인치 및 3/8인치 양면 장착 스터드 포함.\nG532 래터럴 암 제품이며 촬영 예시의 삼각대, 헤드, 카메라는 포함되지 않습니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T18:36:52.464+09:00",
+    "checked_at": "2026-10-15T23:21:43+00:00",
+    "checked_epoch": 1792106503
   }
 }

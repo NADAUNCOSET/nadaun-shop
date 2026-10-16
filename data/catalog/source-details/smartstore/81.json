@@ -676,5 +676,28 @@
     "source_modified_at": "2026-09-28T20:18:04.474+09:00",
     "checked_at": "2026-10-08T08:15:03+00:00",
     "checked_epoch": 1791447303
+  },
+  "smartstore-13812983085": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_115/1792070258190teQYy_JPEG/18939464042063354_799642297.jpg"
+      ],
+      "detail": [
+        "https://gi.esmplus.com/ecorobo3/jackery/2000v2/09.jpg",
+        "https://gi.esmplus.com/ecorobo3/jackery/2000v2/10.jpg"
+      ]
+    },
+    "description_text": "Jackery 2000v2\nJE-2000D · 리튬인산철 2042Wh · AC 출력 최대 2200W\n구성: 본품, AC 충전 케이블, 사용자 매뉴얼. 태양광 패널과 추가 배터리는 별매입니다.\nAC 입력 220–240V~60Hz · 크기 335×264×292mm\nKC: JU10281-26001 / R-R-jCk-JE-2000D",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T22:19:23.537+09:00",
+    "checked_at": "2026-10-15T23:21:36+00:00",
+    "checked_epoch": 1792106496
   }
 }

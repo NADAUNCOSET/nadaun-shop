@@ -492,5 +492,27 @@
     "source_modified_at": "2026-10-15T12:41:09.749+09:00",
     "checked_at": "2026-10-15T08:03:37+00:00",
     "checked_epoch": 1792051417
+  },
+  "smartstore-13812769366": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_266/1792060849968jLSoe_JPEG/9261811881091158_1161931828.jpg"
+      ],
+      "detail": [
+        "https://cdn.saeki.co.kr/malluploadfile/public/images/editor/2025/202511/5c950748-5f6a-4465-9936-fcca9bc08259.jpg"
+      ]
+    },
+    "description_text": "PENTAX PAPILIO III 8.5x21 WR Black\n펜탁스 파필리오 III 8.5배 쌍안경 · 대물렌즈 21mm · 블랙\n약 50cm 초근접 관찰이 가능한 Porro 프리즘 방식의 컴팩트 쌍안경입니다.\n본 상품은 8.5x21 WR 블랙 제품입니다. 아래 공통 설명의 올리브 색상은 별도 상품이며 함께 제공되지 않습니다.\n제조사 RICOH / 수입사 세기P&C(주) / 제조국 중국",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T19:41:16.986+09:00",
+    "checked_at": "2026-10-15T23:21:42+00:00",
+    "checked_epoch": 1792106502
   }
 }

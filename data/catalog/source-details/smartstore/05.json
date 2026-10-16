@@ -719,11 +719,11 @@
       },
       {
         "name": "미디엄사이즈",
-        "additional_price": -10000
+        "additional_price": -9000
       },
       {
         "name": "하프사이즈",
-        "additional_price": -34000
+        "additional_price": -35000
       }
     ],
     "shipping": {
@@ -732,9 +732,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.134+09:00",
-    "checked_at": "2026-09-07T06:07:26+00:00",
-    "checked_epoch": 1788761246
+    "source_modified_at": "2026-10-15T23:37:15.078+09:00",
+    "checked_at": "2026-10-15T23:23:16+00:00",
+    "checked_epoch": 1792106596
   },
   "smartstore-5981390279": {
     "images": {
@@ -913,5 +913,27 @@
     "source_modified_at": "2026-10-06T22:36:10.105+09:00",
     "checked_at": "2026-10-08T08:13:19+00:00",
     "checked_epoch": 1791447199
+  },
+  "smartstore-13812773401": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_85/1792061065370msAV6_JPEG/206602368432923_1491915958.jpg"
+      ],
+      "detail": [
+        "https://cdn.saeki.co.kr/malluploadfile/public/images/editor/2025/202511/da252410-fac1-49d1-844b-bdbf9667c282.jpg"
+      ]
+    },
+    "description_text": "PENTAX PAPILIO III 6.5x21 WR Black\n펜탁스 파필리오 III 6.5배 쌍안경 · 대물렌즈 21mm · 블랙\n약 50cm 초근접 관찰이 가능한 Porro 프리즘 방식의 컴팩트 쌍안경입니다.\n본 상품은 6.5x21 WR 블랙 제품입니다. 아래 공통 설명의 올리브 색상은 별도 상품이며 함께 제공되지 않습니다.\n제조사 RICOH / 수입사 세기P&C(주) / 제조국 중국",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T19:44:33.143+09:00",
+    "checked_at": "2026-10-15T23:21:40+00:00",
+    "checked_epoch": 1792106500
   }
 }

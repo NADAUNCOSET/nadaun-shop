@@ -405,11 +405,11 @@
       },
       {
         "name": "2.5m",
-        "additional_price": 13000
+        "additional_price": 5000
       },
       {
         "name": "3.0m",
-        "additional_price": 15000
+        "additional_price": 17000
       }
     ],
     "shipping": {
@@ -418,9 +418,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.382+09:00",
-    "checked_at": "2026-09-07T06:11:01+00:00",
-    "checked_epoch": 1788761461
+    "source_modified_at": "2026-10-15T18:41:06.902+09:00",
+    "checked_at": "2026-10-15T23:23:57+00:00",
+    "checked_epoch": 1792106637
   },
   "smartstore-7139997060": {
     "images": {

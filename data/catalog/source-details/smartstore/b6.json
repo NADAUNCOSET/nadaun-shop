@@ -64,9 +64,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-28T19:22:57.981+09:00",
-    "checked_at": "2026-10-08T08:22:01+00:00",
-    "checked_epoch": 1791447721
+    "source_modified_at": "2026-10-15T16:59:28.178+09:00",
+    "checked_at": "2026-10-15T23:21:58+00:00",
+    "checked_epoch": 1792106518
   },
   "smartstore-13740734724": {
     "images": {
@@ -451,15 +451,15 @@
     "options": [
       {
         "name": "Handle Bar",
-        "additional_price": 0
+        "additional_price": 22000
       },
       {
         "name": "Handle Pole 200",
-        "additional_price": -10000
+        "additional_price": 11000
       },
       {
         "name": "Handle Pole 500",
-        "additional_price": -24000
+        "additional_price": 0
       }
     ],
     "shipping": {
@@ -468,9 +468,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-11-19T14:02:27.863+09:00",
-    "checked_at": "2026-09-07T06:14:51+00:00",
-    "checked_epoch": 1788761691
+    "source_modified_at": "2026-10-15T18:21:49.092+09:00",
+    "checked_at": "2026-10-15T23:24:07+00:00",
+    "checked_epoch": 1792106647
   },
   "smartstore-5059078279": {
     "images": {
@@ -493,9 +493,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-09-01T11:19:18.263+09:00",
-    "checked_at": "2026-09-07T06:15:35+00:00",
-    "checked_epoch": 1788761735
+    "source_modified_at": "2026-10-15T17:12:29.464+09:00",
+    "checked_at": "2026-10-15T23:24:17+00:00",
+    "checked_epoch": 1792106657
   },
   "smartstore-4926949948": {
     "images": {

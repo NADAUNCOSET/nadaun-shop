@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "brands_checked": 410,
-  "input_count": 34637,
-  "duplicate_group_count": 3209,
-  "duplicate_entries_removed": 5127,
+  "brands_checked": 411,
+  "input_count": 34658,
+  "duplicate_group_count": 3217,
+  "duplicate_entries_removed": 5135,
   "by_brand": {
     "tilta": 291,
     "avenger": 115,
@@ -29,7 +29,7 @@
     "fxlion": 30,
     "kateluo": 2,
     "viltrox": 4,
-    "leofoto": 3,
+    "leofoto": 11,
     "apc": 2,
     "tp-link": 4,
     "brand-b7412172a9": 1,
@@ -213,7 +213,7 @@
         {
           "id": "kpp-1672365421",
           "name": "틸타 DJI 트랜스미션 모니터 서포트 사이드 핸들 TGA-MSH",
-          "price": 104300,
+          "price": 119200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1672365421"
         },
@@ -523,7 +523,7 @@
         {
           "id": "kpp-1617259740",
           "name": "스몰리그 파나소닉 루믹스 시네마 BCH1 케이지 3024",
-          "price": 112000,
+          "price": 160000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1617259740"
         },
@@ -554,7 +554,7 @@
         {
           "id": "kpp-1782450278",
           "name": "틸타 DJI 로닌 4D 탑핸들 ES-T09-TH",
-          "price": 97300,
+          "price": 139000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1782450278"
         },
@@ -1127,7 +1127,7 @@
         {
           "id": "kpp-1701313189",
           "name": "틸타 소니 A7C II / A7C R 하프 케이지 탑핸들 키트 블랙 TA-T60-B-B",
-          "price": 105000,
+          "price": 120000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1701313189"
         },
@@ -1158,7 +1158,7 @@
         {
           "id": "kpp-1701312976",
           "name": "틸타 소니 A7C II / A7C R 케이지 탑핸들 키트 블랙 TA-T60-A-B",
-          "price": 182000,
+          "price": 208000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1701312976"
         },
@@ -1382,7 +1382,7 @@
         {
           "id": "kpp-1686557946",
           "name": "틸타 소프트쉘 어드밴드 링그립 케이스 TGA-ARG-SSC",
-          "price": 72800,
+          "price": 104000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1686557946"
         },
@@ -1666,7 +1666,7 @@
         {
           "id": "kpp-1737440391",
           "name": "틸타 히드라 에일리언 미니 핸드헬드 키트 HDA-T15-B-TG",
-          "price": 164500,
+          "price": 188000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1737440391"
         },
@@ -1736,7 +1736,7 @@
         {
           "id": "kpp-1708571898",
           "name": "틸타 액세서리 멀티 클램프 TA-AMC-B",
-          "price": 21000,
+          "price": 24000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1708571898"
         },
@@ -2179,7 +2179,7 @@
         {
           "id": "kpp-1782450396",
           "name": "틸타 블랙매직 PYXIS 6K 프로 케이지 키트 ES-T21-B-V",
-          "price": 454300,
+          "price": 649000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1782450396"
         },
@@ -2290,7 +2290,7 @@
         {
           "id": "kpp-1650848601",
           "name": "틸타 V 마운트 배터리 플레이트 V2- Tilta Grey TA-BTP2-V-G",
-          "price": 146300,
+          "price": 209000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1650848601"
         },
@@ -2451,7 +2451,7 @@
         {
           "id": "kpp-1672366087",
           "name": "틸타 맨프로토 퀵릴리즈 플레이트 어댑터 GSS-T01-QPA",
-          "price": 169400,
+          "price": 242000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1672366087"
         },
@@ -3691,7 +3691,7 @@
         {
           "id": "kpp-1782450205",
           "name": "틸타 소니 FX6 V마운트 배터리 플레이트 ES-T20-BTP-V",
-          "price": 174300,
+          "price": 249000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1782450205"
         },
@@ -3715,7 +3715,7 @@
         {
           "id": "kpp-1737440617",
           "name": "틸타 미니 PD V마운트 배터리 플레이트 TA-BTP4-V-B",
-          "price": 132300,
+          "price": 189000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1737440617"
         },
@@ -3860,7 +3860,7 @@
         {
           "id": "kpp-1650848710",
           "name": "틸타 포켓 V 마운트 배터리 플레이트 TA-PBP-V",
-          "price": 25900,
+          "price": 37000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1650848710"
         },
@@ -6337,7 +6337,7 @@
         {
           "id": "kpp-1650848714",
           "name": "틸타 유니버셜 배터리 플레이트 V마운트 UBP-V",
-          "price": 315700,
+          "price": 360800,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1650848714"
         },
@@ -17043,7 +17043,7 @@
         {
           "id": "kpp-1664860839",
           "name": "틸타 파나소닉 GH6 HDMI 클램프 TA-T15-CC1-B",
-          "price": 6400,
+          "price": 9100,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1664860839"
         },
@@ -17375,7 +17375,7 @@
         {
           "id": "kpp-1664869231",
           "name": "틸타 15mm 싱글로드 홀더 블랙 TA-BSRA-15-B",
-          "price": 11900,
+          "price": 13600,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1664869231"
         },
@@ -17508,7 +17508,7 @@
         {
           "id": "kpp-1649566450",
           "name": "틸타 컴팩트 나토 탑 핸들 Black TA-QRTH7-B",
-          "price": 41300,
+          "price": 59000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649566450"
         },
@@ -17681,7 +17681,7 @@
         {
           "id": "kpp-1664867730",
           "name": "틸타 레프트 파워 사이드 핸들 TA-LRH-57-B",
-          "price": 104300,
+          "price": 149000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1664867730"
         },
@@ -19280,7 +19280,7 @@
         {
           "id": "kpp-1735625659",
           "name": "스몰리그 후지 X100VI / X100V 플레이트 우드 그립 블랙 4805",
-          "price": 63810,
+          "price": 70900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1735625659"
         },
@@ -19603,7 +19603,7 @@
         {
           "id": "kpp-1721019390",
           "name": "스몰리그 소니 A7R5 / A7R4 / A7S3 호크락 퀵 릴리즈 케이지 키트 4538",
-          "price": 153300,
+          "price": 219000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1721019390"
         },
@@ -19635,7 +19635,7 @@
         {
           "id": "kpp-1712902221",
           "name": "스몰리그 후지 GFX100 II L플레이트 4514",
-          "price": 93600,
+          "price": 117000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1712902221"
         },
@@ -20307,7 +20307,7 @@
         {
           "id": "kpp-1712905459",
           "name": "스몰리그 소니 A9M3 카메라 케이지 4533",
-          "price": 112000,
+          "price": 160000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1712905459"
         },
@@ -20470,7 +20470,7 @@
         {
           "id": "kpp-1729227068",
           "name": "스몰리그 FilMov 아이폰16 프로 맥스 경량 케이스 키트 4987",
-          "price": 43120,
+          "price": 53900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1729227068"
         },
@@ -20923,7 +20923,7 @@
         {
           "id": "kpp-1702458944",
           "name": "스몰리그 액션캠 마운팅 석션컵 4347",
-          "price": 24000,
+          "price": 30000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1702458944"
         },
@@ -21358,7 +21358,7 @@
         {
           "id": "kpp-1696409220",
           "name": "스몰리그 마운트 높이 조절형 플레이트 키트 4233",
-          "price": 128000,
+          "price": 160000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1696409220"
         },
@@ -21612,7 +21612,7 @@
         {
           "id": "kpp-1729226304",
           "name": "스몰리그 캐논 EOS R5 Mark II 케이지 키트 호크락 퀵릴리즈 5029",
-          "price": 147600,
+          "price": 210900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1729226304"
         },
@@ -21881,7 +21881,7 @@
         {
           "id": "kpp-1712643218",
           "name": "스몰리그 PH8 프로페셔널 유압식 비디오헤드 4287",
-          "price": 511700,
+          "price": 731000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1712643218"
         },
@@ -21920,7 +21920,7 @@
         {
           "id": "kpp-1729237652",
           "name": "스몰리그 필터 서포트 4654",
-          "price": 32900,
+          "price": 23000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1729237652"
         },
@@ -26613,7 +26613,7 @@
         {
           "id": "kpp-1748322898",
           "name": "스몰리그 나토 클램프 회전 탑핸들 4152",
-          "price": 86320,
+          "price": 107900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1748322898"
         },
@@ -28757,7 +28757,7 @@
         {
           "id": "kpp-1750315066",
           "name": "스몰리그 나이트 이글 니콘 Z5II / Z7II / Z6II 케이지 키트 5259",
-          "price": 248310,
+          "price": 275900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1750315066"
         },
@@ -28906,7 +28906,7 @@
         {
           "id": "kpp-1754541601",
           "name": "스몰리그 캐논 EOS R50 V 케이지 실버 5428",
-          "price": 78320,
+          "price": 97900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1754541601"
         },
@@ -29009,7 +29009,7 @@
         {
           "id": "kpp-1750313360",
           "name": "스몰리그 후지필름 GFX100RF 가죽 케이스 키트 블랙 5267",
-          "price": 91120,
+          "price": 113900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1750313360"
         },
@@ -29569,7 +29569,7 @@
         {
           "id": "kpp-1754545150",
           "name": "스몰리그 우드 사이드 핸들 아리 타입 로케이팅 스크류 5238",
-          "price": 72810,
+          "price": 80900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1754545150"
         },
@@ -30461,7 +30461,7 @@
         {
           "id": "kpp-1752471569",
           "name": "스몰리그 우드 사이드핸들 아리 로제트 좌측 5162",
-          "price": 143120,
+          "price": 125200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1752471569"
         },
@@ -30507,7 +30507,7 @@
         {
           "id": "kpp-1752469415",
           "name": "스몰리그 후지 X-M5 그립 플레이트 실버 5261",
-          "price": 69210,
+          "price": 76900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1752469415"
         },
@@ -30924,7 +30924,7 @@
         {
           "id": "kpp-1754549291",
           "name": "스몰리그 후지필름 X half 마그네틱 UV 필터 블랙 5214",
-          "price": 26320,
+          "price": 26300,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1754549291"
         },
@@ -31189,7 +31189,7 @@
         {
           "id": "kpp-1754543243",
           "name": "스몰리그 후지 X half 그립 플레이트 차콜실버 5394",
-          "price": 51920,
+          "price": 64900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1754543243"
         },
@@ -32432,7 +32432,7 @@
         {
           "id": "kpp-1754541833",
           "name": "스몰리그 소니 FX2 케이지 탑핸들 키트 5589",
-          "price": 220720,
+          "price": 275900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1754541833"
         },
@@ -32478,7 +32478,7 @@
         {
           "id": "kpp-1754541916",
           "name": "스몰리그 소니 FX2 어드밴스드 케이지 배터리 플레이트 키트 5590",
-          "price": 259120,
+          "price": 323900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1754541916"
         },
@@ -32524,7 +32524,7 @@
         {
           "id": "kpp-1754547895",
           "name": "스몰리그 소니 FX2 케이지용 USB-C 멀티 케이블 클램프 5592",
-          "price": 29610,
+          "price": 32900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1754547895"
         },
@@ -32648,7 +32648,7 @@
         {
           "id": "kpp-1752472008",
           "name": "스몰리그 DJI 오즈모 액션 5 Pro / 액션 4 ND 필터 키트 5411",
-          "price": 51920,
+          "price": 64900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1752472008"
         },
@@ -32694,7 +32694,7 @@
         {
           "id": "kpp-1752472447",
           "name": "스몰리그 DJI 오즈모 액션 5 Pro / 액션 4 필터 키트 5412",
-          "price": 88110,
+          "price": 97900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1752472447"
         },
@@ -33262,7 +33262,7 @@
         {
           "id": "kpp-1752468795",
           "name": "스몰리그 소니 A7 IV 케이지 하이브리드 모듈형 4798",
-          "price": 72810,
+          "price": 80900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1752468795"
         },
@@ -33568,7 +33568,7 @@
         {
           "id": "kpp-1762148828",
           "name": "스몰리그 5390 시그마BF L그립 플레이트 실버",
-          "price": 61520,
+          "price": 76900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1762148828"
         },
@@ -34697,7 +34697,7 @@
         {
           "id": "kpp-1606983993",
           "name": "스몰리그 후지필름 X-T4 카메라 케이지 2761",
-          "price": 91700,
+          "price": 65500,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1606983993"
         },
@@ -34909,7 +34909,7 @@
         {
           "id": "kpp-1761728599",
           "name": "스몰리그 5519 범블비에디션 스위블 틸트 조절식 콜드슈 모니터 마운트",
-          "price": 32800,
+          "price": 46900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1761728599"
         },
@@ -35305,7 +35305,7 @@
         {
           "id": "kpp-1619406180",
           "name": "스몰리그 우드 미니 사이드 핸들 2913",
-          "price": 66600,
+          "price": 74000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1619406180"
         },
@@ -36331,7 +36331,7 @@
         {
           "id": "kpp-1763712696",
           "name": "스몰리그 5541 아이폰17 프로 맥스 듀얼 핸드헬드 키트",
-          "price": 185900,
+          "price": 130100,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1763712696"
         },
@@ -37222,7 +37222,7 @@
         {
           "id": "kpp-1763712851",
           "name": "스몰리그 5545 아이폰17 프로 베이직 비디오 케이지",
-          "price": 62320,
+          "price": 77900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1763712851"
         },
@@ -37458,7 +37458,7 @@
         {
           "id": "kpp-1761727860",
           "name": "스몰리그 5596 액션캠 퀵릴리즈 넥마운트",
-          "price": 23920,
+          "price": 29900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1761727860"
         },
@@ -38567,7 +38567,7 @@
         {
           "id": "kpp-1664875280",
           "name": "틸타 19mm 도브테일 숄더 마운트 TT-0506-A19",
-          "price": 959000,
+          "price": 1096000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1664875280"
         },
@@ -39570,7 +39570,7 @@
         {
           "id": "kpp-1754552923",
           "name": "틸타 캐논 R50 V 케이지 탑핸들 키트 블랙 TA-T83-A-B",
-          "price": 104300,
+          "price": 119200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1754552923"
         },
@@ -39672,7 +39672,7 @@
         {
           "id": "kpp-1773296920",
           "name": "스몰리그 6026 소니 A7 5 / A7R5 / A7 4 케이지 키트 어드밴스드",
-          "price": 180720,
+          "price": 225900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1773296920"
         },
@@ -39884,7 +39884,7 @@
         {
           "id": "kpp-1664858548",
           "name": "틸타 19mm 베이스 플레이트 TT-C06-D",
-          "price": 511700,
+          "price": 584800,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1664858548"
         },
@@ -41264,7 +41264,7 @@
         {
           "id": "kpp-1618201535",
           "name": "스몰리그 숄더 마운트 쉐이킹 핸들 세트 2002F",
-          "price": 233600,
+          "price": 292000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1618201535"
         },
@@ -45452,7 +45452,7 @@
         {
           "id": "kpp-1785996301",
           "name": "스몰리그 6776 소니 FX5 카메라 케이지 호크락",
-          "price": 123160,
+          "price": 144900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1785996301"
         },
@@ -45789,7 +45789,7 @@
         {
           "id": "kpp-1785996595",
           "name": "스몰리그 6774 소니 FX5 호크락 케이지 어드벤스드",
-          "price": 163960,
+          "price": 192900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1785996595"
         },
@@ -45821,7 +45821,7 @@
         {
           "id": "kpp-1785996479",
           "name": "스몰리그 6775 소니 FX5 호크락 핸드헬드 케이지 키트 어드벤스드",
-          "price": 273610,
+          "price": 321900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1785996479"
         },
@@ -45885,7 +45885,7 @@
         {
           "id": "kpp-1785995994",
           "name": "스몰리그 6778 소니 FX5 호크락 핸드헬드 케이지 키트",
-          "price": 219210,
+          "price": 257900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1785995994"
         },
@@ -45916,7 +45916,7 @@
         {
           "id": "kpp-1785995465",
           "name": "스몰리그 6779 소니 FX5 호크락 V마운트 플레이트 핸드헬드 케이지 키트",
-          "price": 328010,
+          "price": 385900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1785995465"
         },
@@ -48658,7 +48658,7 @@
         {
           "id": "kpp-1684474552",
           "name": "스몰리그 실리콘 기어 3852",
-          "price": 12000,
+          "price": 15000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1684474552"
         },
@@ -49207,7 +49207,7 @@
         {
           "id": "kpp-1694740232",
           "name": "스몰리그 사이드 핸들 퀵 릴리스 어댑터 4404",
-          "price": 21000,
+          "price": 24000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1694740232"
         },
@@ -50976,7 +50976,7 @@
         {
           "id": "kpp-1699864345",
           "name": "스몰리그 후지필름 GFX100 II L플레이트 세로그립 4203",
-          "price": 92800,
+          "price": 116000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1699864345"
         },
@@ -51181,7 +51181,7 @@
         {
           "id": "kpp-1718939524",
           "name": "스몰리그 후지 X-T50 그립 플레이트 실버 4735",
-          "price": 47200,
+          "price": 59000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1718939524"
         },
@@ -51423,7 +51423,7 @@
         {
           "id": "kpp-1691130850",
           "name": "스몰리그 소니 ZV-E1 베이스 플레이트 4314",
-          "price": 35200,
+          "price": 44000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1691130850"
         },
@@ -51671,7 +51671,7 @@
         {
           "id": "kpp-1689843166",
           "name": "스몰리그 소니 A6700 듀얼 콜드슈 마운트 플레이트 4339",
-          "price": 21000,
+          "price": 30000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1689843166"
         },
@@ -51909,7 +51909,7 @@
         {
           "id": "kpp-1742362526",
           "name": "스몰리그 가변 ND2-9 UV 렌즈필터 키트 82mm 4781",
-          "price": 135120,
+          "price": 168900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1742362526"
         },
@@ -52156,7 +52156,7 @@
         {
           "id": "kpp-1695187688",
           "name": "스몰리그 소니 A7C2 / A7CR 회전식 플레이트 키트 4424",
-          "price": 64800,
+          "price": 81000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1695187688"
         },
@@ -53069,7 +53069,7 @@
         {
           "id": "kpp-1698039841",
           "name": "스몰리그 DJI RS 3 / RS 3프로 / RS 2 숄더스트랩 4118C",
-          "price": 54900,
+          "price": 64900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1698039841"
         },
@@ -53458,7 +53458,7 @@
         {
           "id": "kpp-1735024829",
           "name": "스몰리그 USB-C to USB-C 데이터 케이블 35cm 4788",
-          "price": 10000,
+          "price": 19900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1735024829"
         },
@@ -54390,7 +54390,7 @@
         {
           "id": "kpp-1721018511",
           "name": "스몰리그 블랙매직 시네마 6K 케이지 베이직 키트 4574",
-          "price": 183400,
+          "price": 262000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1721018511"
         },
@@ -54953,7 +54953,7 @@
         {
           "id": "kpp-1735625193",
           "name": "스몰리그 니콘 Z fc 플레이트 우드 그립 실버 4803",
-          "price": 63810,
+          "price": 70900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1735625193"
         },
@@ -55226,7 +55226,7 @@
         {
           "id": "kpp-1719881169",
           "name": "스몰리그 AD-50 Lite 비디오 삼각대 키트 4684",
-          "price": 145250,
+          "price": 152900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1719881169"
         },
@@ -55336,7 +55336,7 @@
         {
           "id": "kpp-1729236918",
           "name": "스몰리그 다기능 VND 필터 트레이 키트 4415",
-          "price": 122320,
+          "price": 152900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1729236918"
         },
@@ -55963,7 +55963,7 @@
         {
           "id": "smartstore-12959114500",
           "name": "VILTROX EF-Z AF 렌즈 변환어댑터 니콘 Z바디 캐논 EF렌즈",
-          "price": 250000,
+          "price": 269000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/12959114500"
         },
@@ -56043,7 +56043,7 @@
         {
           "id": "kpp-1606981849",
           "name": "스몰리그 소니 A6600 L플레이트 2503B",
-          "price": 51800,
+          "price": 44400,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1606981849"
         },
@@ -56170,7 +56170,7 @@
         {
           "id": "kpp-1649415435",
           "name": "틸타 블랙매직 BMPCC 6K Pro용 풀 카메라 케이지 Black TA-T11-FCC-B",
-          "price": 104300,
+          "price": 119200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649415435"
         }
@@ -56194,7 +56194,7 @@
         {
           "id": "kpp-1649416312",
           "name": "틸타 15mm LWS 베이스 플레이트 타입 I Tilta Grey TA-BSP-15-G",
-          "price": 125300,
+          "price": 143200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649416312"
         }
@@ -56218,7 +56218,7 @@
         {
           "id": "kpp-1649416528",
           "name": "틸타 15mm LWS 베이스 플레이트 타입 II Tilta Grey TA-BSP2-15-G",
-          "price": 125300,
+          "price": 143200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649416528"
         }
@@ -56242,7 +56242,7 @@
         {
           "id": "kpp-1649416718",
           "name": "틸타 15mm LWS 베이스 플레이트 타입 III Tilta Grey TA-BSP3-15-G",
-          "price": 139300,
+          "price": 159200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649416718"
         }
@@ -56266,7 +56266,7 @@
         {
           "id": "kpp-1649417662",
           "name": "틸타 15mm LWS 베이스 플레이트 RED Komodo용 타입 I Black TA-T08-APT-B",
-          "price": 9100,
+          "price": 10400,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649417662"
         }
@@ -56290,7 +56290,7 @@
         {
           "id": "kpp-1649417826",
           "name": "틸타 15mm LWS 베이스 플레이트 RED Komodo용 타입 I Tactical Gray TA-T08-APT",
-          "price": 9100,
+          "price": 10400,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649417826"
         }
@@ -56314,7 +56314,7 @@
         {
           "id": "kpp-1649417987",
           "name": "틸타 ARCA 퀵 릴리스 플레이트 Tilta Gray TA-QRBP2-G",
-          "price": 9100,
+          "price": 10400,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649417987"
         }
@@ -56338,7 +56338,7 @@
         {
           "id": "kpp-1649418185",
           "name": "틸타 맨프로토 퀵 릴리스 플레이트 Black version TA-QRBP1-B",
-          "price": 9100,
+          "price": 10400,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649418185"
         }
@@ -56362,7 +56362,7 @@
         {
           "id": "kpp-1649418284",
           "name": "틸타 맨프로토 퀵 릴리스 플레이트 Tilta Gray TA-QRBP1-G",
-          "price": 9100,
+          "price": 10400,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649418284"
         }
@@ -56386,7 +56386,7 @@
         {
           "id": "kpp-1649418375",
           "name": "틸타 맨프로토 퀵 릴리스 플레이트 타입 II Black TA-QRBP3-B",
-          "price": 9800,
+          "price": 11200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649418375"
         }
@@ -56410,7 +56410,7 @@
         {
           "id": "kpp-1649418440",
           "name": "틸타 맨프로토 퀵 릴리스 플레이트 타입 II Tilta Gray TA-QRBP3-G",
-          "price": 9800,
+          "price": 11200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649418440"
         }
@@ -56434,7 +56434,7 @@
         {
           "id": "kpp-1649418622",
           "name": "틸타 소니 7C용 맨프로토 퀵 릴리스 플레이트 Black TA-T19-QRBP1-B",
-          "price": 9800,
+          "price": 11200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649418622"
         }
@@ -56458,7 +56458,7 @@
         {
           "id": "kpp-1649418696",
           "name": "틸타 소니 7C용 맨프로토 퀵 릴리스 플레이트 Tilta Gray TA-T19-QRBP1-G",
-          "price": 11900,
+          "price": 13600,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649418696"
         }
@@ -56482,7 +56482,7 @@
         {
           "id": "kpp-1649418754",
           "name": "틸타 소니 A7S III용 ARCA 퀵 릴리스 플레이트 Black TA-T18-QRBP4-B",
-          "price": 9800,
+          "price": 11200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649418754"
         }
@@ -56506,7 +56506,7 @@
         {
           "id": "kpp-1649418815",
           "name": "틸타 소니 A7S III용 ARCA 퀵 릴리스 플레이트 Tilta Gray TA-T18-QRBP4-G",
-          "price": 9100,
+          "price": 10400,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649418815"
         }
@@ -56530,7 +56530,7 @@
         {
           "id": "kpp-1649418883",
           "name": "틸타 소니 A7S III용 맨프로토 퀵 릴리스 플레이트 Black TA-T18-QRBP3-B",
-          "price": 9800,
+          "price": 11200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649418883"
         }
@@ -56554,7 +56554,7 @@
         {
           "id": "kpp-1649418951",
           "name": "틸타 소니 A7S III용 맨프로토 퀵 릴리스 플레이트 Tilta Gray TA-T18-QRBP3-G",
-          "price": 9800,
+          "price": 11200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649418951"
         }
@@ -56578,7 +56578,7 @@
         {
           "id": "kpp-1649565913",
           "name": "틸타 각도 조절 탑 핸들 Tactical Gray TA-QRTH4",
-          "price": 93800,
+          "price": 107200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649565913"
         }
@@ -56602,7 +56602,7 @@
         {
           "id": "kpp-1649566324",
           "name": "틸타 초경량 퀵 릴리즈 탑 핸들 Tilta Gray TA-QRTH3-G",
-          "price": 83300,
+          "price": 95200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649566324"
         }
@@ -56626,7 +56626,7 @@
         {
           "id": "kpp-1649566722",
           "name": "틸타 퀵 릴리즈 탑 핸들 Tilta Grey TA-QRTH-G",
-          "price": 83300,
+          "price": 95200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649566722"
         }
@@ -56914,7 +56914,7 @@
         {
           "id": "kpp-1649572307",
           "name": "틸타 소니 A7S3 PL 마운트 렌즈 어댑터 틸타그레이 TA-T18-LAS-G",
-          "price": 11900,
+          "price": 13600,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649572307"
         }
@@ -56938,7 +56938,7 @@
         {
           "id": "kpp-1649572461",
           "name": "틸타 미니 V마운트 배터리 플레이트 로드 어댑터 TA-MBP-RA",
-          "price": 14000,
+          "price": 20000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649572461"
         }
@@ -56962,7 +56962,7 @@
         {
           "id": "kpp-1649573623",
           "name": "틸타 소니 A1 HDMI 케이블 클램프 블랙 TA-T30-CC2-B",
-          "price": 9800,
+          "price": 11200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649573623"
         }
@@ -56986,7 +56986,7 @@
         {
           "id": "kpp-1649589962",
           "name": "틸타 소니 A7S3 PL 마운트 렌즈 어댑터 블랙 TA-T18-LAS-B",
-          "price": 9800,
+          "price": 11200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1649589962"
         }
@@ -57034,7 +57034,7 @@
         {
           "id": "kpp-1664859199",
           "name": "틸타 파나소닉 S5 USB케이블 클램프 TA-T39-CC1-G",
-          "price": 11900,
+          "price": 13600,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1664859199"
         }
@@ -57058,7 +57058,7 @@
         {
           "id": "kpp-1664859578",
           "name": "틸타 파나소닉 S5 USB케이블 클램프 TA-T39-CC1-B",
-          "price": 11900,
+          "price": 13600,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1664859578"
         }
@@ -57130,7 +57130,7 @@
         {
           "id": "kpp-1664866347",
           "name": "틸타 레드 코모도 탑플레이트 택티컬 그레이 TA-T08-TP",
-          "price": 16800,
+          "price": 19200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1664866347"
         }
@@ -57154,7 +57154,7 @@
         {
           "id": "kpp-1664869474",
           "name": "틸타 사이드 핸들 우측 어댑터 그레이 TA-AHA6-R-G",
-          "price": 18900,
+          "price": 21600,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1664869474"
         }
@@ -57178,7 +57178,7 @@
         {
           "id": "kpp-1664869906",
           "name": "틸타 사이드 핸들 우측 어댑터 블랙 TA-AHA6-R-B",
-          "price": 18900,
+          "price": 21600,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1664869906"
         }
@@ -57202,7 +57202,7 @@
         {
           "id": "kpp-1664870942",
           "name": "틸타 어드밴스 우측핸들 어댑터4 그레이 TA-AHA4-R-G",
-          "price": 20300,
+          "price": 23200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1664870942"
         }
@@ -57226,7 +57226,7 @@
         {
           "id": "kpp-1664871219",
           "name": "틸타 어드밴스 우측핸들 어댑터4 블랙 TA-AHA4-R-B",
-          "price": 20300,
+          "price": 23200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1664871219"
         }
@@ -57346,7 +57346,7 @@
         {
           "id": "kpp-1671188017",
           "name": "스몰리그 후지필름 X-E4 L플레이트 4137",
-          "price": 69600,
+          "price": 87000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1671188017"
         },
@@ -57432,7 +57432,7 @@
         {
           "id": "kpp-1672365948",
           "name": "틸타 어드밴스드 좌측핸들 어댑터4 블랙 TA-AHA4-L-B",
-          "price": 20300,
+          "price": 23200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1672365948"
         }
@@ -57464,7 +57464,7 @@
         {
           "id": "kpp-1672366277",
           "name": "틸타 플로트 핸드헬드 서포트 시스템 GSS-T02",
-          "price": 1134000,
+          "price": 1620000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1672366277"
         }
@@ -57809,7 +57809,7 @@
         {
           "id": "kpp-1683090748",
           "name": "FXLION B마운트 배터리 BM-HV300",
-          "price": 799000,
+          "price": 719100,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1683090748"
         },
@@ -57934,7 +57934,7 @@
         {
           "id": "kpp-1686554310",
           "name": "틸타 어드밴스 사이드핸들 좌측 타입8 블랙 TA-AHA8-L-B",
-          "price": 30800,
+          "price": 35200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1686554310"
         }
@@ -58151,7 +58151,7 @@
         {
           "id": "kpp-1701309573",
           "name": "틸타 DJI 오즈모 액션3 케이지 그레이 TA-T40-FCC-TG",
-          "price": 42000,
+          "price": 48000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1701309573"
         }
@@ -58175,7 +58175,7 @@
         {
           "id": "kpp-1701310958",
           "name": "틸타 DJI 오즈모 액션3 케이지 TA-T40-A",
-          "price": 56000,
+          "price": 64000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1701310958"
         }
@@ -58264,7 +58264,7 @@
         {
           "id": "smartstore-12959144488",
           "name": "VILTROX EF-GFX PRO 마운트 어댑터",
-          "price": 359000,
+          "price": 399000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/12959144488"
         },
@@ -58343,7 +58343,7 @@
         {
           "id": "kpp-1711610003",
           "name": "FXLION 나노 V마운트 배터리 어댑터 NP-F 14.8V",
-          "price": 79000,
+          "price": 63200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1711610003"
         }
@@ -58583,7 +58583,7 @@
         {
           "id": "kpp-1715320196",
           "name": "FXLION 나노 원 와이어리스 V마운트 배터리 50Wh / 8A 스마트폰 무선충전",
-          "price": 161000,
+          "price": 179000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1715320196"
         }
@@ -58607,7 +58607,7 @@
         {
           "id": "kpp-1715320375",
           "name": "FXLION 나노 투 와이어리스 V마운트 배터리 100Wh / 10A 스마트폰 무선충전 기능 탑재",
-          "price": 224000,
+          "price": 249000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1715320375"
         }
@@ -58631,7 +58631,7 @@
         {
           "id": "kpp-1715320398",
           "name": "FXLION 나노 쓰리 와이어리스 V마운트 배터리 150Wh / 10A 스마트폰 무선충전",
-          "price": 323000,
+          "price": 359000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1715320398"
         }
@@ -58827,7 +58827,7 @@
         {
           "id": "kpp-1725871492",
           "name": "틸타 니콘 Z8 케이지 그레이 TA-T55-FCC-TG",
-          "price": 69300,
+          "price": 79200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1725871492"
         }
@@ -58868,7 +58868,7 @@
         {
           "id": "kpp-1729236128",
           "name": "스몰리그 매트박스 서포트 스윙 타입 4414",
-          "price": 41900,
+          "price": 59900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1729236128"
         },
@@ -59115,7 +59115,7 @@
         {
           "id": "kpp-1735204408",
           "name": "스몰리그 매트박스 CPL+VND 필터 키트 5011",
-          "price": 211300,
+          "price": 301900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1735204408"
         },
@@ -59146,7 +59146,7 @@
         {
           "id": "kpp-1737437755",
           "name": "틸타 히드라 에일리언 미니 석션컵 자동차 마운팅 시스템 HDA-T15-TG",
-          "price": 181300,
+          "price": 207200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1737437755"
         }
@@ -59171,7 +59171,7 @@
         {
           "id": "kpp-1741574683",
           "name": "FXLION V마운트 핫스왑 플레이트 FX-VS40",
-          "price": 599000,
+          "price": 539100,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1741574683"
         },
@@ -59195,7 +59195,7 @@
         {
           "id": "kpp-1742362339",
           "name": "스몰리그 소니 부라노 케이지 키트 4571",
-          "price": 909410,
+          "price": 1069900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1742362339"
         },
@@ -59401,7 +59401,7 @@
         {
           "id": "kpp-1754552867",
           "name": "틸타 캐논 R50 V 케이지 실버 TA-T83-FCC-S",
-          "price": 80500,
+          "price": 92000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1754552867"
         }
@@ -59425,7 +59425,7 @@
         {
           "id": "kpp-1754552990",
           "name": "틸타 캐논 R50 V 케이지 탑핸들 키트 실버 TA-T83-A-S",
-          "price": 104300,
+          "price": 119200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1754552990"
         }
@@ -59442,7 +59442,7 @@
         {
           "id": "smartstore-12959146783",
           "name": "VILTROX EF-GFX II 렌즈 마운트 어댑터",
-          "price": 359000,
+          "price": 399000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/12959146783"
         },
@@ -59697,7 +59697,7 @@
         {
           "id": "kpp-1767680956",
           "name": "FXLION 넥서스 스마트 V마운트 배터리 BP-300SL 300Wh 18A",
-          "price": 449000,
+          "price": 499000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1767680956"
         },
@@ -59778,7 +59778,7 @@
         {
           "id": "kpp-1774943790",
           "name": "FXLION 26V BP-7S270 V마운트 배터리 270Wh",
-          "price": 495000,
+          "price": 550000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1774943790"
         },
@@ -59978,7 +59978,7 @@
         {
           "id": "kpp-1778485458",
           "name": "FXLION 넥서스 스마트 V마운트 배터리 BP-190SL 190Wh 15A",
-          "price": 359000,
+          "price": 399000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1778485458"
         },
@@ -59988,6 +59988,198 @@
           "price": 399000,
           "source": "saeki",
           "url": "https://www.saeki.co.kr/item/itemDetail?itemId=PD00043001"
+        }
+      ]
+    },
+    {
+      "brand_id": "leofoto",
+      "kind": "purchase",
+      "primary_id": "smartstore-13812640585",
+      "evidence": [
+        "name:backup카메라백팩25l블랙인서트m키트"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13812640585",
+          "name": "BACKUP 카메라 백팩 25L 블랙 인서트 M 키트",
+          "price": 298000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13812640585"
+        },
+        {
+          "id": "kpp-1786323040",
+          "name": "레오포토 BACKUP 카메라 백팩 25L 블랙 인서트 M 키트",
+          "price": 268200,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1786323040"
+        }
+      ]
+    },
+    {
+      "brand_id": "leofoto",
+      "kind": "purchase",
+      "primary_id": "smartstore-13812638806",
+      "evidence": [
+        "name:backup카메라백팩25l그린인서트m키트"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13812638806",
+          "name": "BACKUP 카메라 백팩 25L 그린 인서트 M 키트",
+          "price": 298000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13812638806"
+        },
+        {
+          "id": "kpp-1786323466",
+          "name": "레오포토 BACKUP 카메라 백팩 25L 그린 인서트 M 키트",
+          "price": 268200,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1786323466"
+        }
+      ]
+    },
+    {
+      "brand_id": "leofoto",
+      "kind": "purchase",
+      "primary_id": "smartstore-13812636524",
+      "evidence": [
+        "name:데일리라이트카메라백팩17l블랙인서트키트"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13812636524",
+          "name": "데일리 라이트 카메라 백팩 17L 블랙 인서트 키트",
+          "price": 159000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13812636524"
+        },
+        {
+          "id": "kpp-1786323912",
+          "name": "레오포토 데일리 라이트 카메라 백팩 17L 블랙 인서트 키트",
+          "price": 143100,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1786323912"
+        }
+      ]
+    },
+    {
+      "brand_id": "leofoto",
+      "kind": "purchase",
+      "primary_id": "smartstore-13812634636",
+      "evidence": [
+        "name:데일리라이트카메라백팩17l그레이인서트키트"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13812634636",
+          "name": "데일리 라이트 카메라 백팩 17L 그레이 인서트 키트",
+          "price": 159000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13812634636"
+        },
+        {
+          "id": "kpp-1786324173",
+          "name": "레오포토 데일리 라이트 카메라 백팩 17L 그레이 인서트 키트",
+          "price": 143100,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1786324173"
+        }
+      ]
+    },
+    {
+      "brand_id": "leofoto",
+      "kind": "purchase",
+      "primary_id": "smartstore-13812632679",
+      "evidence": [
+        "name:데일리라이트카메라백팩17l그린인서트키트"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13812632679",
+          "name": "데일리 라이트 카메라 백팩 17L 그린 인서트 키트",
+          "price": 159000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13812632679"
+        },
+        {
+          "id": "kpp-1786324289",
+          "name": "레오포토 데일리 라이트 카메라 백팩 17L 그린 인서트 키트",
+          "price": 143100,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1786324289"
+        }
+      ]
+    },
+    {
+      "brand_id": "leofoto",
+      "kind": "purchase",
+      "primary_id": "smartstore-13812631031",
+      "evidence": [
+        "name:데일리라이트카메라백팩23l블랙인서트키트"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13812631031",
+          "name": "데일리 라이트 카메라 백팩 23L 블랙 인서트 키트",
+          "price": 189000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13812631031"
+        },
+        {
+          "id": "kpp-1786324490",
+          "name": "레오포토 데일리 라이트 카메라 백팩 23L 블랙 인서트 키트",
+          "price": 170100,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1786324490"
+        }
+      ]
+    },
+    {
+      "brand_id": "leofoto",
+      "kind": "purchase",
+      "primary_id": "smartstore-13812629260",
+      "evidence": [
+        "name:데일리라이트카메라백팩23l그레이인서트키트"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13812629260",
+          "name": "데일리 라이트 카메라 백팩 23L 그레이 인서트 키트",
+          "price": 189000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13812629260"
+        },
+        {
+          "id": "kpp-1786324791",
+          "name": "레오포토 데일리 라이트 카메라 백팩 23L 그레이 인서트 키트",
+          "price": 170100,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1786324791"
+        }
+      ]
+    },
+    {
+      "brand_id": "leofoto",
+      "kind": "purchase",
+      "primary_id": "smartstore-13812627424",
+      "evidence": [
+        "name:데일리라이트카메라백팩23l그린인서트키트"
+      ],
+      "members": [
+        {
+          "id": "smartstore-13812627424",
+          "name": "데일리 라이트 카메라 백팩 23L 그린 인서트 키트",
+          "price": 189000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13812627424"
+        },
+        {
+          "id": "kpp-1786324966",
+          "name": "레오포토 데일리 라이트 카메라 백팩 23L 그린 인서트 키트",
+          "price": 170100,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1786324966"
         }
       ]
     },
@@ -60002,7 +60194,7 @@
         {
           "id": "kpp-1790930613",
           "name": "스몰리그 5766 캐논 EOS R50 V 케이지 키트 블랙",
-          "price": 138900,
+          "price": 97200,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1790930613"
         },
@@ -62482,7 +62674,7 @@
         {
           "id": "smartstore-13742339663",
           "name": "락앤롤러 멀티카트 R8RT Mid",
-          "price": 395000,
+          "price": 418000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13742339663"
         },
@@ -62506,7 +62698,7 @@
         {
           "id": "smartstore-13742339666",
           "name": "락앤롤러 멀티카트 R12RT All Terrain",
-          "price": 522000,
+          "price": 550000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13742339666"
         },
@@ -66017,7 +66209,7 @@
         {
           "id": "smartstore-8390114565",
           "name": "XTAR 캐논 LP-E8 배터리 모듈 (SN4 호환)",
-          "price": 13000,
+          "price": 12000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8390114565"
         },
@@ -66041,7 +66233,7 @@
         {
           "id": "smartstore-8390107621",
           "name": "XTAR 캐논 LP-E17 듀얼 배터리 모듈 (SN4 호환)",
-          "price": 13000,
+          "price": 12000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8390107621"
         },
@@ -66065,7 +66257,7 @@
         {
           "id": "smartstore-8390068141",
           "name": "XTAR SN4 소니 F타입 듀얼 고속 배터리 충전기",
-          "price": 60000,
+          "price": 59000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8390068141"
         },
@@ -66089,7 +66281,7 @@
         {
           "id": "smartstore-8390122882",
           "name": "XTAR 소니 카메라 NP-FZ100 듀얼 배터리 모듈 SN4호환",
-          "price": 13000,
+          "price": 12000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8390122882"
         },
@@ -66113,7 +66305,7 @@
         {
           "id": "smartstore-8390039513",
           "name": "XTAR 45W 고속 충전 전원 어댑터 PD45II (SN4 호환)",
-          "price": 41000,
+          "price": 40000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8390039513"
         },
@@ -66137,7 +66329,7 @@
         {
           "id": "smartstore-8390127843",
           "name": "XTAR 캐논 LP-E6 E6N 배터리 모듈 충전기 (SN4호환)",
-          "price": 13000,
+          "price": 12000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8390127843"
         },
@@ -66161,7 +66353,7 @@
         {
           "id": "smartstore-8390079676",
           "name": "XTAR 소니 NP-F타입 배터리 듀얼 모듈 충전기 (SN4 호환)",
-          "price": 14000,
+          "price": 13000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8390079676"
         },
@@ -66185,7 +66377,7 @@
         {
           "id": "smartstore-8390134246",
           "name": "XTAR 소니 NP-FW50 배터리 듀얼 모듈 충전기 (SN4 호환)",
-          "price": 13000,
+          "price": 12000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8390134246"
         },
@@ -67469,7 +67661,7 @@
         {
           "id": "smartstore-8390018598",
           "name": "XTAR 파나소닉 카메라 DMW-BLK22 듀얼 배터리 모듈 / DC-S5,S5K",
-          "price": 13000,
+          "price": 12000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8390018598"
         },
@@ -67493,7 +67685,7 @@
         {
           "id": "smartstore-8390011982",
           "name": "XTAR 라이카 카메라 BP-SCL4 듀얼 배터리 모듈 / SL,SL2,Q2,SL2-S",
-          "price": 13000,
+          "price": 12000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8390011982"
         },
@@ -67517,7 +67709,7 @@
         {
           "id": "smartstore-8390008437",
           "name": "XTAR 후지필름 카메라 NP-W126 듀얼 배터리 모듈 / X-PRO,X-T,X-E",
-          "price": 13000,
+          "price": 12000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8390008437"
         },
@@ -67541,7 +67733,7 @@
         {
           "id": "smartstore-8390005241",
           "name": "XTAR 후지필름 카메라 NP-W235 듀얼 배터리 모듈 / GFX50SII,GFX100S,X-T4",
-          "price": 13000,
+          "price": 12000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8390005241"
         },
@@ -71431,7 +71623,7 @@
         {
           "id": "smartstore-11326142911",
           "name": "XTAR SN4-FZ100 소니 배터리 듀얼 고속 충전기",
-          "price": 60000,
+          "price": 59000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/11326142911"
         },
@@ -91178,24 +91370,24 @@
     {
       "brand_id": "savage",
       "kind": "purchase",
-      "primary_id": "smartstore-8237990015",
+      "primary_id": "smartstore-8237989318",
       "evidence": [
         "name:#76mocha"
       ],
       "members": [
         {
-          "id": "smartstore-8237990015",
-          "name": "SAVAGE #76 Mocha",
-          "price": 99000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8237990015"
-        },
-        {
           "id": "smartstore-8237989318",
           "name": "SAVAGE #76 Mocha",
-          "price": 99000,
+          "price": 104000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8237989318"
+        },
+        {
+          "id": "smartstore-8237990015",
+          "name": "SAVAGE #76 Mocha",
+          "price": 104000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8237990015"
         }
       ]
     },
@@ -91210,14 +91402,14 @@
         {
           "id": "smartstore-8824831321",
           "name": "DURIX A4 50매 양면인화지 사틴 250g 두릭스 반광택 포토용지 독일정품 RCP 인화지 스튜디오용",
-          "price": 32330,
+          "price": 38900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8824831321"
         },
         {
           "id": "smartstore-8822091206",
           "name": "DURIX A4 50매 양면인화지 사틴 250g 두릭스 반광택 포토용지 독일정품 RCP 인화지 스튜디오용",
-          "price": 32330,
+          "price": 38900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8822091206"
         }
@@ -91234,14 +91426,14 @@
         {
           "id": "smartstore-8822413531",
           "name": "DURIX 5x7/100매 글라시어 300g 두릭스 반광택+펄코팅 포토용지 독일정품 RCP 인화지 스튜디오용",
-          "price": 23080,
+          "price": 22700,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8822413531"
         },
         {
           "id": "smartstore-8822408117",
           "name": "DURIX 5x7/100매 글라시어 300g 두릭스 반광택+펄코팅 포토용지 독일정품 RCP 인화지 스튜디오용",
-          "price": 24240,
+          "price": 22700,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8822408117"
         }
@@ -91250,24 +91442,24 @@
     {
       "brand_id": "durix",
       "kind": "purchase",
-      "primary_id": "smartstore-8824829198",
+      "primary_id": "smartstore-8822474445",
       "evidence": [
         "name:4x6/5x7100매양면인화지사틴250g두릭스반광택포토용지독일정품rcp인화지스튜디오용"
       ],
       "members": [
         {
-          "id": "smartstore-8824829198",
-          "name": "DURIX 4x6/5x7 100매 양면인화지 사틴 250g 두릭스 반광택 포토용지 독일정품 RCP 인화지 스튜디오용",
-          "price": 18460,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/8824829198"
-        },
-        {
           "id": "smartstore-8822474445",
           "name": "DURIX 4x6/5x7 100매 양면인화지 사틴 250g 두릭스 반광택 포토용지 독일정품 RCP 인화지 스튜디오용",
-          "price": 17650,
+          "price": 19900,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8822474445"
+        },
+        {
+          "id": "smartstore-8824829198",
+          "name": "DURIX 4x6/5x7 100매 양면인화지 사틴 250g 두릭스 반광택 포토용지 독일정품 RCP 인화지 스튜디오용",
+          "price": 19900,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/8824829198"
         }
       ]
     },

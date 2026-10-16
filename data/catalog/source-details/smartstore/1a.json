@@ -640,9 +640,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:41:55.545+09:00",
-    "checked_at": "2026-09-07T05:53:30+00:00",
-    "checked_epoch": 1788760410
+    "source_modified_at": "2026-10-15T22:24:17.735+09:00",
+    "checked_at": "2026-10-15T23:22:09+00:00",
+    "checked_epoch": 1792106529
   },
   "smartstore-10744451616": {
     "images": {
@@ -718,7 +718,7 @@
       },
       {
         "name": "Glacier 300g A3+/25매",
-        "additional_price": 5800
+        "additional_price": 6600
       }
     ],
     "shipping": {
@@ -727,9 +727,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-05-20T11:22:35.659+09:00",
-    "checked_at": "2026-09-07T06:01:19+00:00",
-    "checked_epoch": 1788760879
+    "source_modified_at": "2026-10-15T21:26:39.760+09:00",
+    "checked_at": "2026-10-15T23:22:43+00:00",
+    "checked_epoch": 1792106563
   },
   "smartstore-8542634419": {
     "images": {

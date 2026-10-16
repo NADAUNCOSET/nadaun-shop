@@ -420,9 +420,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2026-08-24T12:50:16.631+09:00",
-    "checked_at": "2026-09-07T05:48:13+00:00",
-    "checked_epoch": 1788760093
+    "source_modified_at": "2026-10-16T04:22:32.114+09:00",
+    "checked_at": "2026-10-15T23:22:04+00:00",
+    "checked_epoch": 1792106524
   },
   "smartstore-12115485512": {
     "images": {
@@ -615,11 +615,11 @@
       },
       {
         "name": "미디엄사이즈",
-        "additional_price": -10000
+        "additional_price": -9000
       },
       {
         "name": "하프사이즈",
-        "additional_price": -34000
+        "additional_price": -35000
       }
     ],
     "shipping": {
@@ -628,9 +628,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:01.053+09:00",
-    "checked_at": "2026-09-07T06:07:41+00:00",
-    "checked_epoch": 1788761261
+    "source_modified_at": "2026-10-16T00:04:09.612+09:00",
+    "checked_at": "2026-10-15T23:23:35+00:00",
+    "checked_epoch": 1792106615
   },
   "smartstore-7873957363": {
     "images": {
@@ -650,9 +650,9 @@
       "free_threshold": null
     },
     "detail_status": "verified",
-    "source_modified_at": "2025-12-18T23:53:00.981+09:00",
-    "checked_at": "2026-09-07T06:08:35+00:00",
-    "checked_epoch": 1788761315
+    "source_modified_at": "2026-10-15T19:11:43.780+09:00",
+    "checked_at": "2026-10-15T23:23:49+00:00",
+    "checked_epoch": 1792106629
   },
   "smartstore-5981014380": {
     "images": {
@@ -748,5 +748,52 @@
     "source_modified_at": "2026-09-01T09:59:12.343+09:00",
     "checked_at": "2026-09-07T06:19:13+00:00",
     "checked_epoch": 1788761953
+  },
+  "smartstore-13812638806": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_241/1792055116344kcgRz_JPEG/64376196497451338_1528613046.jpg"
+      ],
+      "detail": [
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/opa_25b/opa_25b_01.jpg",
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/opa_25b/opa_25b_02.jpg"
+      ]
+    },
+    "description_text": "레오포토 BACKUP 카메라 백팩 25L 그린 인서트 M 키트\n본 상품은 그린 백팩 + 인서트 M 구성입니다. 약2.2kg / 백팩480×335×240mm / 인서트M315×290×160mm. 파티션A2개·B2개·파티션고정스트랩1개 구성. 나일론·PU·합성섬유 소재.\n공용 설명에는 단품과 인서트 L, 다른 색상이 함께 등장합니다. 구매 구성은 그린/인서트 M이며 촬영 예시의 카메라·렌즈·드론·삼각대 등은 포함되지 않습니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T18:05:22.386+09:00",
+    "checked_at": "2026-10-15T23:21:44+00:00",
+    "checked_epoch": 1792106504
+  },
+  "smartstore-13812631031": {
+    "images": {
+      "main": [
+        "https://shop-phinf.pstatic.net/20261015_83/1792054792629FduKd_JPEG/68542100760983098_462398172.jpg"
+      ],
+      "detail": [
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/daily_lite/daily_lite_01.jpg",
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/daily_lite/daily_lite_02.jpg",
+        "https://ai.esmplus.com/cinek04/01_leofoto/04_acc/09_bag/daily_lite/daily_lite_05.jpg"
+      ]
+    },
+    "description_text": "레오포토 데일리 라이트 카메라 백팩 23L 블랙 인서트 키트\n본 상품은 23L 블랙 백팩과 카메라 인서트 키트입니다. UPA-23B / 약1.28kg(큐브 포함) / 540×340×250mm / 큐브180×255×140mm. 100% 재활용 폴리에스터 복합 섬유, 발수 기능.\n공용 설명에는 다른 용량·색상이 함께 등장합니다. 촬영 예시의 카메라·렌즈·노트북·삼각대 등은 포함되지 않습니다.",
+    "option_groups": [],
+    "options": [],
+    "shipping": {
+      "type": "PAID",
+      "base_fee": 4800,
+      "free_threshold": null
+    },
+    "detail_status": "verified",
+    "source_modified_at": "2026-10-15T17:59:59.136+09:00",
+    "checked_at": "2026-10-15T23:21:47+00:00",
+    "checked_epoch": 1792106507
   }
 }
