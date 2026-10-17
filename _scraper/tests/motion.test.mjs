@@ -125,7 +125,9 @@ test('reduced motion restores both photos and leaves no extra download or event 
 });
 
 test('payment and checkout screens do not initialize scroll animations',()=>{
- const source=fs.readFileSync('assets/shop/shop.js','utf8');assert.ok(source.includes("if(!['policy','cart','checkout','orders','admin','payment-test'].includes(mode))enhanceArtMotion()"));assert.ok(source.includes("image.closest('.motion-alternate')"));
+ const source=fs.readFileSync('assets/shop/shop.js','utf8'),guard=source.match(/if\(!(?<modes>\[[^\n]+\])\.includes\(mode\)\)enhanceArtMotion\(\)/);assert.ok(guard);
+ const excluded=JSON.parse(guard.groups.modes.replace(/'/g,'"'));for(const mode of ['policy','cart','checkout','orders','admin','payment-test','account','test-shop','members-admin'])assert.ok(excluded.includes(mode),'transaction/account forms must remain visible: '+mode);
+ for(const mode of ['home','catalog','item'])assert.ok(!excluded.includes(mode),'preserve storefront motion: '+mode);assert.ok(source.includes("image.closest('.motion-alternate')"));
 });
 
 test('desktop smoothing uses one ticker and preserves anchors, nested panels and native touch',()=>{
