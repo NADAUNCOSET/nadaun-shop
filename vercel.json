@@ -203,6 +203,10 @@
       "dest": "/api/share-image"
     },
     {
+      "src": "^/auth/(kakao|google|naver)/callback$",
+      "dest": "/api/member-oauth?action=callback&provider=$1"
+    },
+    {
       "handle": "filesystem"
     }
   ],
@@ -240,6 +244,10 @@
       "maxDuration": 60
     },
     "api/members.js": {
+      "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,server/commerce/**}",
+      "maxDuration": 60
+    },
+    "api/member-oauth.js": {
       "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,server/commerce/**}",
       "maxDuration": 60
     },

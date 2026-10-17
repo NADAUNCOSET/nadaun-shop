@@ -126,3 +126,19 @@ CREATE TABLE IF NOT EXISTS shop_points (
  source_order TEXT REFERENCES shop_orders(id), created_at INTEGER NOT NULL
 );
 CREATE INDEX IF NOT EXISTS shop_points_member ON shop_points(member_id,created_at DESC);
+
+CREATE TABLE IF NOT EXISTS shop_social_identities (
+ provider TEXT NOT NULL CHECK(provider IN ('kakao','google','naver')),
+ subject_hash TEXT NOT NULL, member_id TEXT NOT NULL REFERENCES shop_members(id), created_at INTEGER NOT NULL,
+ PRIMARY KEY(provider,subject_hash), UNIQUE(member_id,provider)
+);
+CREATE TABLE IF NOT EXISTS shop_oauth_attempts (
+ state_hash TEXT PRIMARY KEY, provider TEXT NOT NULL, binding_hash TEXT NOT NULL,
+ private_cipher TEXT NOT NULL, expires_at INTEGER NOT NULL, created_at INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS shop_oauth_expiry ON shop_oauth_attempts(expires_at);
+CREATE TABLE IF NOT EXISTS shop_social_enrollments (
+ ticket_hash TEXT PRIMARY KEY, private_cipher TEXT NOT NULL,
+ expires_at INTEGER NOT NULL, created_at INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS shop_social_enrollment_expiry ON shop_social_enrollments(expires_at);
