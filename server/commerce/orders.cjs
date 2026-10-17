@@ -19,7 +19,8 @@ function repository(db,clock=()=>Date.now()){
    {sql:'INSERT INTO shop_order_events(id,order_id,actor,action,created_at,version) SELECT ?,?,?,?,?,? WHERE changes()=1',params:[uuid(),row.id,actor,action,now,version]},
    ...(shippingJob?[{sql:'INSERT INTO shop_shipping_sync(order_id,next_attempt) SELECT ?,? WHERE changes()=1 ON CONFLICT(order_id) DO UPDATE SET next_attempt=excluded.next_attempt',params:[row.id,shippingJob.next_attempt]}]:[]),
    ...(document?[{sql:'INSERT INTO shop_documents(order_id,kind,status,result_cipher,created_at,updated_at,next_attempt) SELECT ?,?,?,?,?,?,? FROM shop_orders WHERE id=? AND version=? AND state=\'PAID\' ON CONFLICT(order_id) DO NOTHING',params:[row.id,document.kind,document.status,document.result_cipher,now,now,document.status==='issued'?now+86400000:0,row.id,version]}]:[]),
-   ...(['CANCELED','PAYMENT_REVIEW'].includes(fields.state)?[{sql:"UPDATE shop_documents SET status='review',updated_at=?,version=version+1 WHERE order_id=? AND EXISTS(SELECT 1 FROM shop_orders WHERE id=? AND version=?)",params:[now,row.id,row.id,version]}]:[])
+   ...(['CANCELED','PAYMENT_REVIEW'].includes(fields.state)?[{sql:"UPDATE shop_documents SET status='review',updated_at=?,version=version+1 WHERE order_id=? AND EXISTS(SELECT 1 FROM shop_orders WHERE id=? AND version=?)",params:[now,row.id,row.id,version]},
+    {sql:"INSERT INTO shop_points(id,member_id,amount,reason,kind,request_key,fingerprint,actor,source_order,created_at) SELECT ?,member_id,-amount,'주문 취소·환불 확인에 따른 적립 회수','reversal','reverse:'||source_order,?, ?,source_order,? FROM shop_points WHERE source_order=? AND kind='purchase' AND EXISTS(SELECT 1 FROM shop_orders WHERE id=? AND version=? AND state IN ('CANCELED','PAYMENT_REVIEW')) ON CONFLICT(request_key) DO NOTHING",params:[uuid(),hash(row.id),actor,now,row.id,row.id,version]}]:[])
   ]);
   if(!result[0].length)throw new ShopError(409,'주문 상태가 변경되었습니다. 새로고침 후 다시 확인해주세요.');
   return result[0][0];
@@ -50,7 +51,7 @@ function repository(db,clock=()=>Date.now()){
   list:async()=>db.query('SELECT * FROM shop_orders ORDER BY created_at DESC LIMIT 100'),
   events:async id=>db.query('SELECT actor,action,created_at,version FROM shop_order_events WHERE order_id=? ORDER BY version',[id])};
 }
-function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=null,documents=null,labelProvider=null,invoiceEnabled=false,clock=()=>Date.now()}){
+function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=null,documents=null,labelProvider=null,invoiceEnabled=false,testing=false,clock=()=>Date.now()}){
  const cipher=protect(dataKey),returns=sessions(sessionKey,clock);
  const dto=(row,admin=false)=>{
   const stored=cipher.decrypt(row.customer_cipher),customer=Object.fromEntries(Object.entries(stored).filter(([key])=>!key.startsWith('_admin_'))),rental=customer.rental||null,history=fulfillment.shipments(row,stored);
@@ -232,6 +233,18 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
    const q=rentalQuote(catalog,detail,input.items,null,clock),now=clock(),fingerprint=hash(JSON.stringify({kind:'rental',customer,items:q.lines.map(p=>[p.id,p.option,p.quantity])}));
    const row=await repo.insert({id:'NS-'+uuid(),customer_hash:owner,request_key:key,fingerprint,state:'REQUESTED',customer_cipher:cipher.encrypt(customer),lines_json:JSON.stringify(q.lines),subtotal:null,shipping:0,total:null,confirm_key:uuid(),created_at:now,updated_at:now});
    return dto(row);
+  },
+  async qaDeliver(id,input,actor){
+   if(!testing)throw new ShopError(404,'요청을 찾을 수 없습니다.');const row=await editable(id,input),customer=purchaseCustomer(row);
+   if(row.state!=='PAID'||row.payment_mode!=='test')throw new ShopError(409,'테스트 결제 완료 주문에서만 사용할 수 있습니다.');
+   customer._admin_shipments=[{id:'SH-QA-'+uuid(),purpose:'original',items:JSON.parse(row.lines_json).map(({id,option,name,quantity})=>({id,option,name,quantity})),carrier:'테스트 배송',tracking:'0000000000',created_at:clock(),updated_at:clock(),delivered_at:clock(),delivery_source:'qa',actor,updated_by:actor}];
+   return detailed(await repo.patch(row,{fulfillment:'shipped',customer_cipher:cipher.encrypt(customer)},actor,'qa_delivery_simulated'),true);
+  },
+  async qaCancel(id,input,actor){
+   if(!testing||payment?.mode!=='test')throw new ShopError(404,'요청을 찾을 수 없습니다.');const row=await editable(id,input);
+   if(row.payment_mode!=='test'||!row.payment_key||!['PAID','CANCELED'].includes(row.state))throw new ShopError(409,'테스트 결제 완료 주문을 확인해주세요.');
+   await payment.netCancel({paymentKey:row.payment_key,orderId:row.id,amount:row.total},row,'나다운 쇼핑몰 전체 흐름 테스트 취소');
+   if(row.state==='CANCELED')return detailed(row,true);return detailed(await repo.patch(row,{state:'CANCELED'},actor,'qa_payment_canceled'),true);
   },
   async list(owner){return Promise.all((await repo.customer(owner)).map(r=>detailed(r)));},
   async get(id,owner){return detailed(await own(id,owner));},

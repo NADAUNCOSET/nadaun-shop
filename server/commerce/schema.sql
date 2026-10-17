@@ -107,3 +107,22 @@ CREATE TABLE IF NOT EXISTS shop_shipping_sync (
   next_attempt INTEGER
 );
 CREATE INDEX IF NOT EXISTS shop_shipping_due ON shop_shipping_sync(next_attempt);
+
+CREATE TABLE IF NOT EXISTS shop_members (
+ id TEXT PRIMARY KEY, email_hash TEXT NOT NULL UNIQUE, owner_hash TEXT NOT NULL UNIQUE,
+ profile_cipher TEXT NOT NULL, password_hash TEXT NOT NULL, recovery_hash TEXT NOT NULL,
+ terms_version TEXT NOT NULL, consented_at INTEGER NOT NULL, created_at INTEGER NOT NULL,
+ status TEXT NOT NULL CHECK(status IN ('active','closed')), closed_at INTEGER
+);
+CREATE TABLE IF NOT EXISTS shop_member_sessions (
+ token_hash TEXT PRIMARY KEY, member_id TEXT NOT NULL REFERENCES shop_members(id),
+ expires_at INTEGER NOT NULL, created_at INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS shop_member_sessions_expiry ON shop_member_sessions(expires_at);
+CREATE TABLE IF NOT EXISTS shop_points (
+ id TEXT PRIMARY KEY, member_id TEXT NOT NULL REFERENCES shop_members(id), amount INTEGER NOT NULL CHECK(amount<>0),
+ reason TEXT NOT NULL, kind TEXT NOT NULL CHECK(kind IN ('adjustment','purchase','reversal')),
+ request_key TEXT NOT NULL UNIQUE, fingerprint TEXT NOT NULL, actor TEXT NOT NULL,
+ source_order TEXT REFERENCES shop_orders(id), created_at INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS shop_points_member ON shop_points(member_id,created_at DESC);

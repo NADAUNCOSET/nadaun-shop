@@ -1,25 +1,26 @@
 'use strict';
 const {ShopError,hash,random,sessions,passwordMatches,adminEmail,identityMatches}=require('./security.cjs');
-function endpoint({service,repo,adminService=null,draftService=null,sessionKey,password,email='',enabled=true,rentalEnabled=false,origin='https://shop.nadaun.co',adminOrigins=['https://order.nadaun.co'],clock=()=>Date.now()}){
+function endpoint({service,repo,adminService=null,draftService=null,members=null,cookiePrefix='nadaun',testing=false,sessionKey,password,email='',enabled=true,rentalEnabled=false,origin='https://shop.nadaun.co',adminOrigins=['https://order.nadaun.co'],clock=()=>Date.now()}){
  const session=sessions(sessionKey,clock);
  const configuredEmail=email?adminEmail(email):null;
  if(email&&!configuredEmail)throw new ShopError(503,'관리자 로그인 설정을 확인해주세요.');
- const cookie=(role,token,seconds)=>`__Host-nadaun-${role}=${token}; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=${seconds}`;
+ const cookie=(role,token,seconds)=>`__Host-${cookiePrefix}-${role}=${token}; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age=${seconds}`;
  const cookies=req=>Object.fromEntries(String(req.headers.cookie||'').split(';').map(v=>v.trim().split('=')));
  return async function handler(req,res){
   res.setHeader('Cache-Control','no-store');res.setHeader('X-Robots-Tag','noindex');res.setHeader('Content-Type','application/json; charset=utf-8');
   try{
    const url=new URL(req.url,origin),action=url.searchParams.get('action')||'config';
    if(!['GET','POST'].includes(req.method)){res.setHeader('Allow','GET, POST');throw new ShopError(405,'허용되지 않은 요청입니다.');}
-   if(req.method==='GET'&&action==='config')return res.status(200).json({ordersEnabled:enabled,rentalRequestsEnabled:rentalEnabled,adminEnabled:!!adminService,adminDraftsEnabled:!!draftService,adminLoginRequiresEmail:!!configuredEmail,paymentProvider:'toss',taxInvoiceEnabled:service.invoiceEnabled===true});
+   if(req.method==='GET'&&action==='config')return res.status(200).json({ordersEnabled:enabled,rentalRequestsEnabled:rentalEnabled,adminEnabled:!!adminService,adminDraftsEnabled:!!draftService,adminLoginRequiresEmail:!!configuredEmail,paymentProvider:'toss',taxInvoiceEnabled:service.invoiceEnabled===true,membersEnabled:members?.enabled===true,testing});
    const adminAction=['login','logout'].includes(action)||action.startsWith('admin-');
    if(req.method==='POST'&&req.headers.origin!==origin&&!(adminAction&&adminOrigins.includes(req.headers.origin)))throw new ShopError(403,'사이트에서 다시 요청해주세요.');
    const ip=String(req.headers['x-forwarded-for']||'unknown').split(',')[0].trim();
    await repo.limit(hash(sessionKey+ip),120,60);
    const stored=cookies(req);
-   const adminSubject=session.read(stored['__Host-nadaun-admin'],'admin');
+   const adminSubject=session.read(stored['__Host-'+cookiePrefix+'-admin'],'admin');
    const admin=adminSubject&&(!configuredEmail||adminSubject===configuredEmail)?adminSubject:null;
-   let customer=session.read(stored['__Host-nadaun-customer'],'customer');
+   let customer=session.read(stored['__Host-'+cookiePrefix+'-customer'],'customer');
+   const member=members?await members.authenticate(stored['__Host-'+cookiePrefix+'-member']):null;
    let input=req.body;
    if(req.method==='POST'){
     const limit=admin&&['admin-invoice-preview','admin-invoice-apply'].includes(action)?1500000:32768;
@@ -37,6 +38,8 @@ function endpoint({service,repo,adminService=null,draftService=null,sessionKey,p
    if(action==='logout'&&req.method==='POST'){res.setHeader('Set-Cookie',cookie('admin','',0));return res.status(200).json({authenticated:false});}
    if(action.startsWith('admin-')){
     if(!admin)throw new ShopError(401,'관리자 로그인이 필요합니다.');
+    if(testing&&action==='admin-qa-deliver'&&req.method==='POST')return res.status(200).json({order:await service.qaDeliver(input.id,input,admin)});
+    if(testing&&action==='admin-qa-cancel'&&req.method==='POST')return res.status(200).json({order:await service.qaCancel(input.id,input,admin)});
     if(action==='admin-label-status'&&req.method==='GET')return res.status(200).json(await service.labelStatus());
     if(req.method==='POST'){
      if(action==='admin-label-preview')return res.status(200).json(await service.labelPreview(input));
@@ -90,14 +93,14 @@ function endpoint({service,repo,adminService=null,draftService=null,sessionKey,p
     throw new ShopError(404,'요청을 찾을 수 없습니다.');
    }
    const rentalActions=['session','orders','order','rental-create'];
-   if(!enabled&&!(rentalEnabled&&rentalActions.includes(action)))throw new ShopError(503,'주문 서비스 연결을 준비 중입니다.');
+   if(!enabled&&!(rentalEnabled&&rentalActions.includes(action))&&!(['orders','order'].includes(action)||member&&action==='session'))throw new ShopError(503,'주문 서비스 연결을 준비 중입니다.');
    if(action==='rental-create'&&!rentalEnabled)throw new ShopError(503,'렌탈 접수 연결을 준비 중입니다.');
    if(action==='session'&&req.method==='POST'){
-    if(!customer){customer=random();res.setHeader('Set-Cookie',cookie('customer',session.issue(customer,'customer',30*86400),30*86400));}
+    if(!customer&&!member){customer=random();res.setHeader('Set-Cookie',cookie('customer',session.issue(customer,'customer',30*86400),30*86400));}
     return res.status(200).json({ready:true});
    }
-   if(!customer)throw new ShopError(401,'주문한 브라우저에서 다시 접속해주세요.');
-   const owner=hash(customer);
+   if(!customer&&!member)throw new ShopError(401,'회원 로그인 또는 주문한 브라우저에서 다시 접속해주세요.');
+   const owner=member?member.owner:hash(customer);
    if(action==='orders'&&req.method==='GET')return res.status(200).json({orders:await service.list(owner)});
    if(['document-refresh','document-print'].includes(action)&&req.method==='POST'){
     await repo.limit('document:'+owner,6,60);

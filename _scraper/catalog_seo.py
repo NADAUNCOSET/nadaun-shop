@@ -38,7 +38,7 @@ def page_metadata(filename, title, description):
 def page_structured_data(filename, title, description, canonical, *, brand=False):
     """Describe indexable pages, without asserting inventory, ratings or rank."""
     if filename in {'item.html', 'gift-item.html', 'cart.html', 'checkout.html',
-                    'orders.html', 'admin.html', 'payment-test.html', 'search.html'}:
+                    'orders.html', 'admin.html', 'payment-test.html', 'search.html', 'account.html', 'test-shop.html', 'test-admin.html', 'members-admin.html'}:
         # Product/search endpoints supply their own request-specific metadata.
         return ''
     page_type = 'CollectionPage' if brand or filename in {

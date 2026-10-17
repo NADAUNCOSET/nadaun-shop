@@ -225,6 +225,14 @@
     "api/toss-review.js": {
       "includeFiles": "{data/catalog/catalog.json,server/commerce/toss-review.cjs,server/commerce/security.cjs,server/commerce/toss.cjs}",
       "maxDuration": 60
+    },
+    "api/members.js": {
+      "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,server/commerce/**}",
+      "maxDuration": 60
+    },
+    "api/shop-test.js": {
+      "includeFiles": "{server/commerce/**}",
+      "maxDuration": 60
     }
   }
 }

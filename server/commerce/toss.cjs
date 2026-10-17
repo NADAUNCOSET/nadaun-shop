@@ -55,12 +55,12 @@ function toss(env,fetcher=fetch){
    if(v.status!=='DONE')throw new ShopError(502,'결제 승인이 완료되지 않았습니다.');
    return v;
   },
-  async netCancel(auth,order){
+  async netCancel(auth,order,reason='주문 승인 저장 실패로 자동 취소'){
    // Resolve by authenticated GET before compensation; never cancel a foreign transaction.
    let remote=await get(auth.paymentKey);matchPayment(remote,{...order,payment_key:auth.paymentKey});
    if(remote.status==='CANCELED')return {canceled:true,paymentKey:auth.paymentKey};
    if(remote.status!=='DONE')throw new ShopError(503,'결제 취소 결과를 확인해주세요.');
-   remote=normalized(await call('POST','/'+encodeURIComponent(auth.paymentKey)+'/cancel',{cancelReason:'주문 승인 저장 실패로 자동 취소'},stable('compensate',order.id)));
+   remote=normalized(await call('POST','/'+encodeURIComponent(auth.paymentKey)+'/cancel',{cancelReason:reason},stable('compensate',order.id)));
    matchPayment(remote,{...order,payment_key:auth.paymentKey});
    if(remote.status!=='CANCELED')throw new ShopError(503,'결제 취소 결과를 확인해주세요.');
    return {canceled:true,paymentKey:auth.paymentKey};

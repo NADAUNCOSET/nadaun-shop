@@ -1,0 +1,58 @@
+'use strict';
+const crypto=require('node:crypto');
+const {promisify}=require('node:util');
+const {ShopError,protect,hash,random,passwordMatches,adminEmail}=require('./security.cjs');
+const scrypt=promisify(crypto.scrypt);
+const VERSION='2026-10-17';
+function memberService({db,repo,dataKey,sessionKey,enabled=false,earnBasisPoints=0,testing=false,clock=()=>Date.now()}){
+ const cipher=protect(dataKey),digest=value=>crypto.createHmac('sha256',sessionKey).update(value).digest('hex');
+ const emailKey=value=>{const email=adminEmail(value);if(!email)throw new ShopError(400,'이메일 주소를 확인해주세요.');return digest('email:'+email);};
+ const find=async id=>(await db.query('SELECT * FROM shop_members WHERE id=? AND status=\'active\'',[id]))[0]||null;
+ const profile=row=>({id:row.id,...cipher.decrypt(row.profile_cipher),email_verified:false,created_at:row.created_at});
+ const owner=id=>hash('member:'+id);
+ const check=()=>{if(!enabled)throw new ShopError(503,'회원 서비스를 준비하고 있습니다.');};
+ const pass=async value=>{if(typeof value!=='string'||value.length<12||value.length>128||!value.trim())throw new ShopError(400,'비밀번호는 12~128자로 입력해주세요.');const salt=random();return salt+':'+(await scrypt(value,salt,64)).toString('hex');};
+ async function balance(id){return (await db.query('SELECT COALESCE(SUM(amount),0) AS balance FROM shop_points WHERE member_id=?',[id]))[0].balance;}
+ async function issue(row){const token=random(),now=clock();const result=await db.batch([{sql:'DELETE FROM shop_member_sessions WHERE expires_at<=? OR member_id IN (SELECT id FROM shop_members WHERE status<>\'active\')',params:[now]},{sql:'INSERT INTO shop_member_sessions(token_hash,member_id,expires_at,created_at) SELECT ?,id,?,? FROM shop_members WHERE id=? AND status=\'active\' AND password_hash=? RETURNING token_hash',params:[digest('session:'+token),now+7*86400000,now,row.id,row.password_hash]}]);if(!result[1].length)throw new ShopError(401,'계정 정보가 변경됐습니다. 다시 로그인해주세요.');return {member:profile(row),token};}
+ async function authenticate(token){if(!enabled||typeof token!=='string'||!/^[a-zA-Z0-9_-]{43}$/.test(token))return null;const row=(await db.query('SELECT m.* FROM shop_member_sessions s JOIN shop_members m ON m.id=s.member_id WHERE s.token_hash=? AND s.expires_at>? AND m.status=\'active\'',[digest('session:'+token),clock()]))[0];return row?{...profile(row),owner:owner(row.id)}:null;}
+ function policy(){return {earn_enabled:earnBasisPoints>0,earn_basis_points:earnBasisPoints,redemption_enabled:false,version:VERSION,testing};}
+ return {enabled,authenticate,owner,policy,
+  async signup(input){check();if(input.terms!==true||input.privacy!==true||input.age14!==true)throw new ShopError(400,'만 14세 이상 확인과 필수 약관에 동의해주세요.');
+   const email=adminEmail(input.email),emailHash=emailKey(input.email),name=typeof input.name==='string'?input.name.trim():'';
+   if(name.length<2||name.length>60||/[\x00-\x1f\x7f]/.test(name))throw new ShopError(400,'이름은 2~60자로 입력해주세요.');
+   const password=await pass(input.password),id='NM-'+crypto.randomUUID(),recovery=random(),now=clock();
+   const row={id,email_hash:emailHash,owner_hash:owner(id),profile_cipher:cipher.encrypt({email,name}),password_hash:password,recovery_hash:digest('recovery:'+recovery),created_at:now};
+   await db.query('INSERT INTO shop_members(id,email_hash,owner_hash,profile_cipher,password_hash,recovery_hash,terms_version,consented_at,created_at,status) VALUES(?,?,?,?,?,?,?,?,?,\'active\') ON CONFLICT(email_hash) DO NOTHING',[id,emailHash,row.owner_hash,row.profile_cipher,password,row.recovery_hash,VERSION,now,now]);
+   if(!(await find(id)))throw new ShopError(409,'가입 정보를 확인해주세요. 이미 가입했다면 로그인 또는 계정 복구를 이용해주세요.');
+   return {...await issue(row),recovery_code:recovery};
+  },
+  async login(input){check();const key=emailKey(input.email),row=(await db.query('SELECT * FROM shop_members WHERE email_hash=? AND status=\'active\'',[key]))[0];
+   const matched=await passwordMatches(input.password,row?.password_hash||'membership-dummy-salt:'+('0'.repeat(128)));if(!row||!matched)throw new ShopError(401,'이메일 또는 비밀번호를 확인해주세요.');return issue(row);
+  },
+  async logout(token){if(token)await db.query('DELETE FROM shop_member_sessions WHERE token_hash=?',[digest('session:'+token)]);return {authenticated:false};},
+  async me(member){if(!member)return {authenticated:false,enabled,policy:policy()};return {authenticated:true,member:{id:member.id,email:member.email,name:member.name,email_verified:false},points:{balance:await balance(member.id),history:await db.query('SELECT amount,reason,kind,created_at FROM shop_points WHERE member_id=? ORDER BY created_at DESC,id DESC LIMIT 50',[member.id])},policy:policy()};},
+  async changePassword(member,input){if(!member)throw new ShopError(401,'로그인이 필요합니다.');const row=await find(member.id);if(!await passwordMatches(input.current_password,row?.password_hash))throw new ShopError(401,'현재 비밀번호를 확인해주세요.');const password=await pass(input.password),recovery=random();
+   const result=await db.batch([{sql:'UPDATE shop_members SET password_hash=?,recovery_hash=? WHERE id=? AND password_hash=? RETURNING id',params:[password,digest('recovery:'+recovery),row.id,row.password_hash]},{sql:'DELETE FROM shop_member_sessions WHERE member_id=? AND EXISTS(SELECT 1 FROM shop_members WHERE id=? AND password_hash=?)',params:[row.id,row.id,password]}]);if(!result[0].length)throw new ShopError(409,'계정 정보가 변경됐습니다. 다시 로그인해주세요.');return {changed:true,recovery_code:recovery};
+  },
+  async recover(input){check();const key=emailKey(input.email),code=typeof input.recovery_code==='string'?input.recovery_code:'';if(!/^[a-zA-Z0-9_-]{43}$/.test(code))throw new ShopError(400,'가입할 때 저장한 복구 코드를 확인해주세요.');const password=await pass(input.password),recovery=random(),old=digest('recovery:'+code);
+   const rows=await db.batch([{sql:'UPDATE shop_members SET password_hash=?,recovery_hash=? WHERE email_hash=? AND recovery_hash=? AND status=\'active\' RETURNING id',params:[password,digest('recovery:'+recovery),key,old]},{sql:'DELETE FROM shop_member_sessions WHERE member_id IN (SELECT id FROM shop_members WHERE email_hash=? AND recovery_hash=?)',params:[key,digest('recovery:'+recovery)]}]);if(!rows[0].length)throw new ShopError(401,'이메일 또는 복구 코드를 확인해주세요.');return {changed:true,recovery_code:recovery};
+  },
+  async close(member,input){if(!member)throw new ShopError(401,'로그인이 필요합니다.');const row=await find(member.id);if(input.confirmed!==true||!await passwordMatches(input.password,row?.password_hash))throw new ShopError(400,'비밀번호와 탈퇴 동의를 확인해주세요.');
+   if((await db.query("SELECT id FROM shop_orders WHERE customer_hash=? AND state NOT IN ('CANCELED','PAID') LIMIT 1",[member.owner])).length)throw new ShopError(409,'진행 중인 주문이 있습니다. 고객센터에서 주문 처리 후 탈퇴해주세요.');
+   const erased=cipher.encrypt({name:'탈퇴 회원',email:''}),marker='closed:'+random();const result=await db.batch([{sql:"UPDATE shop_members SET status='closed',email_hash=?,profile_cipher=?,password_hash='',recovery_hash='',closed_at=? WHERE id=? AND status='active' AND password_hash=? RETURNING id",params:[marker,erased,clock(),row.id,row.password_hash]},{sql:"DELETE FROM shop_member_sessions WHERE member_id=? AND EXISTS(SELECT 1 FROM shop_members WHERE id=? AND status='closed')",params:[row.id,row.id]}]);if(!result[0].length)throw new ShopError(409,'계정 정보가 변경됐습니다. 다시 확인해주세요.');return {closed:true};
+  },
+  async adminList(){check();const rows=await db.query("SELECT m.*,COALESCE((SELECT SUM(amount) FROM shop_points p WHERE p.member_id=m.id),0) AS balance FROM shop_members m WHERE status='active' ORDER BY created_at DESC LIMIT 100");return {members:rows.map(row=>({...profile(row),balance:row.balance})),policy:policy()};},
+  async adjust(input,actor){check();if(!/^NM-[a-f0-9-]{36}$/.test(input.id||'')||!Number.isSafeInteger(input.amount)||input.amount===0||Math.abs(input.amount)>1000000||typeof input.reason!=='string'||input.reason.trim().length<2||input.reason.length>200||!/^[-a-zA-Z0-9_]{16,80}$/.test(input.request_key||''))throw new ShopError(400,'회원과 적립금·조정 사유를 확인해주세요.');
+   const reason=input.reason.trim(),fingerprint=hash(JSON.stringify([input.id,input.amount,reason])),key='manual:'+input.request_key;
+   await db.query("INSERT INTO shop_points(id,member_id,amount,reason,kind,request_key,fingerprint,actor,created_at) SELECT ?,?,?,?,?,?,?,?,? FROM shop_members WHERE id=? AND status='active' AND (? > 0 OR COALESCE((SELECT SUM(amount) FROM shop_points WHERE member_id=?),0)>=-?) ON CONFLICT(request_key) DO NOTHING",[crypto.randomUUID(),input.id,input.amount,reason,'adjustment',key,fingerprint,actor,clock(),input.id,input.amount,input.id,input.amount]);
+   const saved=(await db.query('SELECT fingerprint FROM shop_points WHERE request_key=?',[key]))[0];if(!saved||saved.fingerprint!==fingerprint)throw new ShopError(409,'잔액 또는 요청 정보를 확인해주세요.');return {saved:true,balance:await balance(input.id)};
+  },
+  async confirm(member,input){if(!member)throw new ShopError(401,'로그인이 필요합니다.');if(!earnBasisPoints)throw new ShopError(409,'적립 기준을 준비하고 있습니다.');const row=await repo.get(input.id);if(!row||row.customer_hash!==member.owner)throw new ShopError(404,'주문을 찾을 수 없습니다.');const customer=cipher.decrypt(row.customer_cipher);
+   if(row.state!=='PAID'||row.payment_mode!==(testing?'test':'live')||customer.rental||row.fulfillment!=='shipped'||(customer._admin_cases||[]).some(c=>!['closed','rejected'].includes(c.status)))throw new ShopError(409,'배송 완료 및 반품·교환 상태를 확인해주세요.');
+   const shipments=customer._admin_shipments||[],originals=shipments.filter(s=>s.purpose==='original');if(!originals.length||originals.some(s=>!s.delivered_at))throw new ShopError(409,'배송 완료 확인 후 구매확정할 수 있습니다.');
+   const amount=Math.floor(Math.max(0,Math.min(row.subtotal,row.total-row.shipping))*earnBasisPoints/10000);if(!Number.isSafeInteger(amount)||amount<1)throw new ShopError(409,'적립 대상 금액이 없습니다.');
+   await db.query("INSERT INTO shop_points(id,member_id,amount,reason,kind,request_key,fingerprint,actor,source_order,created_at) SELECT ?,?,?,?,'purchase',?,?,?,id,? FROM shop_orders WHERE id=? AND version=? AND state='PAID' ON CONFLICT(request_key) DO NOTHING",[crypto.randomUUID(),member.id,amount,'상품 구매확정 적립','earn:'+row.id,hash(row.id),'customer',clock(),row.id,row.version]);return {confirmed:true,balance:await balance(member.id)};
+  }
+ };
+}
+module.exports={memberService};

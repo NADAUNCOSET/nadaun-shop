@@ -57,7 +57,7 @@ def content(mode, brands, products, brand=None, category_galleries=None):
     if mode in ('orders','admin'):
         title='주문 조회' if mode=='orders' else '나다운 주문관리'
         description='접수한 주문과 결제·배송 상태를 확인하세요.' if mode=='orders' else '재고 확인부터 구매 출고, 렌탈 수령과 반납까지.'
-        note='<p class="commerce-note">주문한 브라우저에서 조회할 수 있습니다. 다른 기기에서는 주문번호로 고객센터에 문의해주세요.</p>' if mode=='orders' else ''
+        note='<p class="commerce-note"><a href="/account.html">로그인</a>하면 다른 기기에서도 회원 주문을 확인할 수 있습니다. 비회원 주문은 주문한 브라우저에서 조회할 수 있습니다.</p>' if mode=='orders' else ''
         return f'<section class="commerce-shell"><header class="commerce-heading"><div><span class="section-index">NADAUN SHOP / ORDERS</span><h1>{title}</h1><p>{description}</p></div><a href="/catalog.html">상품 둘러보기 ↗</a></header>{note}<p id="commerce-status" class="commerce-feedback" role="status" hidden></p><div id="commerce-content" aria-live="polite"><p>주문 서비스 연결을 확인하고 있습니다.</p></div><noscript>주문 조회에는 자바스크립트가 필요합니다.</noscript></section>'
     if mode=='brands':
         cards=''.join(brand_tile(b) for b in brands)
