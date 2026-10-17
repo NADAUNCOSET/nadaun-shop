@@ -77,7 +77,7 @@ test('test namespace isolates OAuth attempts, identity bindings and enrollments 
 });
 test('member UI distinguishes all three readiness states and explicitly links logged-in accounts',()=>{
  const vm=require('node:vm'),source=fs.readFileSync('assets/shop/members.js','utf8').replace('export async function memberApi','async function memberApi').replace('void navigation();void account();void testShop();void adminMembers();',''),context=vm.createContext({window:{},URL,location:{href:'https://shop.nadaun.co/account.html'}});vm.runInContext(source,context);
- const state={providers:[{id:'kakao',name:'카카오',ready:false},{id:'google',name:'Google',ready:true},{id:'naver',name:'네이버',ready:true}]};const html=context.socialButtons(state);assert.match(html,/data-social="kakao" disabled/);assert.match(html,/카카오로 계속하기/);assert.match(html,/준비 중/);assert.match(html,/data-social="google" >/);assert.match(html,/네이버로 계속하기/);
+ const state={providers:[{id:'kakao',name:'카카오',ready:false},{id:'google',name:'Google',ready:true},{id:'naver',name:'네이버',ready:true}]};const html=context.socialButtons(state);assert.match(html,/data-social="kakao" disabled/);assert.match(html,/카카오 로그인/);assert.match(html,/준비 중/);assert.match(html,/data-social="google" >/);assert.match(html,/네이버로 계속하기/);
  const linked=context.socialButtons(state,['google'],true);assert.match(linked,/Google · 연결됨/);assert.match(linked,/네이버 연결하기/);assert.match(linked,/data-social="google" disabled/);
 });
 test('KakaoTalk uses official SDK authorization without putting external tokens in browser storage',async()=>{
