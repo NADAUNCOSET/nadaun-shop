@@ -91,6 +91,19 @@
       "status": 404
     },
     {
+      "src": "^/(account|test-shop|test-admin)\\.html$",
+      "has": [
+        {
+          "type": "host",
+          "value": "order\\.nadaun\\.co"
+        }
+      ],
+      "status": 308,
+      "headers": {
+        "Location": "https://shop.nadaun.co/$1.html"
+      }
+    },
+    {
       "src": "^/$",
       "has": [
         {
