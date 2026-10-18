@@ -256,5 +256,6 @@
       "maxDuration": 60
     }
   },
-  "buildCommand": "node server/catalog-release-check.cjs"
+  "buildCommand": "node server/catalog-release-check.cjs",
+  "outputDirectory": "."
 }
