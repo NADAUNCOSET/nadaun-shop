@@ -1716,5 +1716,13 @@
       "reviewed_at": "2026-10-15",
       "source_image_verified": true
     }
+  },
+  "retired_product_redirects": {
+    "smartstore-8237990015": {
+      "target_id": "smartstore-8237989318",
+      "expected_brand_id": "savage",
+      "expected_kind": "purchase",
+      "evidence": "API verified identical source and option contents before owner-authorized duplicate removal; 2026-10-19"
+    }
   }
 }
