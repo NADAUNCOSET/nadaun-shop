@@ -14,6 +14,16 @@ test('brand wrappers and new/best collections do not obscure real product catego
  assert.deepEqual(view.rows.map(p=>p.id),['p']);assert.deepEqual(data,before);
  assert.deepEqual(categoryTrail(new Map(view.brandCategories.map(c=>[c.id,c])),'h:m').map(c=>c.name),['스위처','ATEM Mini']);
 });
+test('supplemental brand-name wrappers flatten while leaf-only and rental paths remain reachable',()=>{
+ const categories=[{id:'s:r',name:'Blackmagic Design(블랙매직디자인)',brand_id:'b'},
+ {id:'s:l',name:'캡쳐 및 재생',brand_id:'b',parent_id:'s:r'},
+ {id:'x:r',name:'Blackmagic Design',brand_id:'b'}];
+ const data={categories,brands:[{id:'b',name:'Blackmagic Design',aliases:['블랙매직디자인']}],products:[]};
+ assert.deepEqual(catalogSelection(data,{brand:'b'}).brandCategories.map(c=>[c.id,c.parent_id]),[['s:l',undefined],['x:r',undefined]]);
+ assert.equal(categories[1].parent_id,'s:r');
+ const rental={...data,categories:categories.map(c=>({...c,scope:'rental-brand'}))};
+ assert.equal(catalogSelection(rental,{brand:'b',kind:'rental'}).brandCategories.length,3);
+});
 const map=new Map([{id:'a',name:'카메라',parent_id:null},{id:'b',name:'케이지',parent_id:'a'},{id:'c',name:'소니',parent_id:'b'}].map(c=>[c.id,c]));
 test('deepest category keeps the parent link when there are no children',()=>{
  const trail=categoryTrail(map,'c');assert.deepEqual(trail.map(c=>c.id),['a','b','c']);

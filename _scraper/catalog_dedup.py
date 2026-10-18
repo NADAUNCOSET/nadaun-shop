@@ -8,6 +8,7 @@ from copy import deepcopy
 from datetime import datetime
 import re
 import unicodedata
+import html
 
 
 def text(value):
@@ -22,7 +23,21 @@ def name_key(product, brand=None):
     if product.get('source')=='hipixel' or product.get('id','').startswith('hipixel-'):
         value=re.sub(r'\[(?:신제품|오더베이스|가격할인)\]','',value)
     if product.get('brand_id')=='blackmagic':
-        value=re.sub(r'(video\s+assist\s+[57])["″]',r'\1',value)
+        value=html.unescape(value)
+        # These observed Korean labels repeat the immediately following
+        # manufacturer family; never discard a standalone specification.
+        for korean,english in (
+            ('스마트비디오허브',r'smart\s+videohub'),('다빈치리졸브',r'davinci\s+resolve'),
+            ('덱링크',r'decklink'),('울트라스튜디오',r'ultrastudio'),
+            ('얼사미니프로',r'ursa\s+mini\s+pro'),('얼사',r'ursa'),
+            ('포켓시네마카메라',r'pocket\s+cinema\s+camera'),
+            ('비디오어시스트',r'video\s+assist'),('테라넥스미니',r'teranex\s+mini'),
+            ('미니컨버터',r'mini\s+converter'),('마이크로컨버터',r'micro\s+converter'),
+            ('에이템미니프로',r'atem\s+mini\s+pro'),('에이템미니익스트림',r'atem\s+mini\s+extreme')):
+            value=re.sub(korean+r'\s+(?='+english+r'\b)','',value)
+        value=re.sub(r'(video\s+assist\s+[57])(?:["″]|inch\b)',r'\1',value)
+        value=re.sub(r'\b(mini\s+converter)\s+-\s+',r'\1 ',value)
+        value=re.sub(r'\[오더베이스\]','',value)
     if brand:
         aliases = sorted(set([brand['name'], *brand.get('aliases', [])]), key=len, reverse=True)
         for alias in aliases:

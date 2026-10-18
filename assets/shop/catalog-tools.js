@@ -48,8 +48,13 @@ export function catalogSelection(data,{brand='',kind='purchase',cat='',type='',s
   const legacy=Array.isArray(preferred)&&!!cat&&!preferred.includes(cat);
   const navigation=Array.isArray(preferred)&&!legacy?new Set(preferred):null;
   const originalCategories=brand?data.categories.filter(c=>c.brand_id===brand&&(kind==='rental'?c.scope==='rental-brand':c.scope!=='rental-brand')&&(!navigation||navigation.has(c.id))):[];
-  const wrappers=new Map(originalCategories.filter(c=>c.navigation_role==='wrapper').map(c=>[c.id,c]));
-  const brandCategories=originalCategories.filter(c=>!['wrapper','collection'].includes(c.navigation_role)).map(c=>{
+  const brandInfo=data.brands?.find(b=>b.id===brand);
+  const normalized=v=>String(v||'').normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');
+  const aliases=[brandInfo?.name,brand,...(brandInfo?.aliases||[])].filter(Boolean).map(normalized);
+  const repeatsBrand=c=>{let name=normalized(c.name);for(const alias of [...aliases].sort((a,b)=>b.length-a.length))name=name.split(alias).join('');return !name;};
+  const parents=new Set(originalCategories.map(c=>c.parent_id));
+  const wrappers=new Map(originalCategories.filter(c=>c.navigation_role==='wrapper'||(kind==='purchase'&&parents.has(c.id)&&repeatsBrand(c))).map(c=>[c.id,c]));
+  const brandCategories=originalCategories.filter(c=>!wrappers.has(c.id)&&c.navigation_role!=='collection').map(c=>{
     let parent=c.parent_id;const seen=new Set();
     while(wrappers.has(parent)&&!seen.has(parent)){seen.add(parent);parent=wrappers.get(parent).parent_id}
     return parent===c.parent_id?c:{...c,parent_id:parent};

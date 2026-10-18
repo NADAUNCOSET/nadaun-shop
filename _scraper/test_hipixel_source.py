@@ -78,8 +78,15 @@ class HiPixelTests(unittest.TestCase):
         def p(name):return {'id':'hipixel-1','brand_id':'blackmagic','kind':'purchase','name':name}
         self.assertEqual(name_key(p('[신제품] ATEM Mini')),name_key(p('ATEM Mini')))
         self.assertEqual(name_key(p('Video Assist 5" 3G')),name_key(p('Video Assist 5 3G')))
+        for a,b in [('Video Assist 7&quot; 3G','Video Assist 7 3G'),
+                    ('덱링크 DeckLink Quad 2','DeckLink Quad 2'),
+                    ('비디오어시스트 Video Assist 5Inch 12G HDR','Video Assist 5 12G HDR'),
+                    ('미니컨버터 Mini Converter Optical Fiber 12G','Mini Converter - Optical Fiber 12G')]:
+            self.assertEqual(name_key(p(a)),name_key(p(b)))
         for a,b in [('ATEM Television Studio 4K8','ATEM Television Studio 4K8 2TB'),
-                    ('PYXIS 6K PL','PYXIS 6K EF'),('Speed Editor','Speed Editor [인증코드 미포함]')]:
+                    ('PYXIS 6K PL','PYXIS 6K EF'),('Speed Editor','Speed Editor [인증코드 미포함]'),
+                    ('DaVinci Resolve Mini Panel [다빈치리졸브 라이센스 포함]','DaVinci Resolve Mini Panel'),
+                    ('Video Assist 7 3G','Video Assist 7인치 액정보호필름(×3장)')]:
             self.assertNotEqual(name_key(p(a)),name_key(p(b)))
 
     def test_teris_model_suffixes_and_compatible_accessories_never_collapse(self):
