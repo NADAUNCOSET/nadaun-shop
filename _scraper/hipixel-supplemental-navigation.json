@@ -723,5 +723,143 @@
     "category_id": "hipixel:b:tvlogic:76",
     "basis": "Reviewed same product purpose in the unified brand menu; original supplier category membership is preserved.",
     "product_type": "monitor"
+  },
+  "plthink-1928132": {
+    "expected_name": "[TERIS] 테리스 TS-22720CF 비디오 삼각대 키트 중계용 카본 하중 70kg",
+    "brand_id": "teris",
+    "category_id": "hipixel:b:teris:80",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group smartstore-13812509882; preserve reviewed category after dealer source priority change.",
+    "product_type": "kpp:0110"
+  },
+  "plthink-1928133": {
+    "expected_name": "[TERIS] 테리스 TS-22714CF 비디오 삼각대 키트 중계용 카본 하중 70kg",
+    "brand_id": "teris",
+    "category_id": "hipixel:b:teris:80",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group smartstore-13812507400; preserve reviewed category after dealer source priority change.",
+    "product_type": "kpp:0110"
+  },
+  "plthink-1928134": {
+    "expected_name": "[TERIS] 테리스 TS-2277CF 비디오 삼각대 키트 중계용 카본 하중 70kg",
+    "brand_id": "teris",
+    "category_id": "hipixel:b:teris:80",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group smartstore-13812485570; preserve reviewed category after dealer source priority change.",
+    "product_type": "kpp:0110"
+  },
+  "plthink-1928135": {
+    "expected_name": "[TERIS] 테리스 TS-227CF 비디오 삼각대 중계용 카본 하중 70kg 볼규격 100mm",
+    "brand_id": "teris",
+    "category_id": "hipixel:b:teris:80",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group smartstore-13812483606; preserve reviewed category after dealer source priority change.",
+    "product_type": "kpp:0110"
+  },
+  "plthink-1927509": {
+    "expected_name": "[TERIS] 테리스 TS-RH100 카메라 비디오 삼각대 롤링 하이햇 로우앵글 촬영",
+    "brand_id": "teris",
+    "category_id": "hipixel:b:teris:80",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group smartstore-13812449330; preserve reviewed category after dealer source priority change.",
+    "product_type": "kpp:0110"
+  },
+  "plthink-1928046": {
+    "expected_name": "[TERIS] 테리스 TS-RH100W 카메라 비디오 삼각대 로우앵글 하이햇",
+    "brand_id": "teris",
+    "category_id": "hipixel:b:teris:80",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group smartstore-13812445049; preserve reviewed category after dealer source priority change.",
+    "product_type": "kpp:0110"
+  },
+  "plthink-1930417": {
+    "expected_name": "[TERIS] 테리스 TS95AL 카메라 비디오 삼각대 유압식 헤드 그라운드 스프레더 키트",
+    "brand_id": "teris",
+    "category_id": "hipixel:b:teris:80",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group smartstore-13812400315; preserve reviewed category after dealer source priority change.",
+    "product_type": "kpp:0110"
+  },
+  "plthink-1924557": {
+    "expected_name": "[Blackmagic Design] 2110 IP Converter 4x12G PWR",
+    "brand_id": "blackmagic",
+    "category_id": "hipixel:b:blackmagic:106",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group smartstore-13740634279; preserve reviewed category after dealer source priority change."
+  },
+  "plthink-1923634": {
+    "expected_name": "[Blackmagic Design] HyperDeck Extreme 4K HDR",
+    "brand_id": "blackmagic",
+    "category_id": "hipixel:b:blackmagic:66",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group smartstore-13740634209; preserve reviewed category after dealer source priority change."
+  },
+  "plthink-1923312": {
+    "expected_name": "[Blackmagic Design] Studio Camera 4K Pro G2",
+    "brand_id": "blackmagic",
+    "category_id": "hipixel:b:blackmagic:68",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group smartstore-13740633201; preserve reviewed category after dealer source priority change."
+  },
+  "plthink-1920459": {
+    "expected_name": "[Blackmagic Design] HyperDeck Studio 4K Pro",
+    "brand_id": "blackmagic",
+    "category_id": "hipixel:b:blackmagic:66",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group smartstore-13740633195; preserve reviewed category after dealer source priority change."
+  },
+  "plthink-1928096": {
+    "expected_name": "[Blackmagic Design] Streaming Decoder 4K",
+    "brand_id": "blackmagic",
+    "category_id": "hipixel:b:blackmagic:48",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group smartstore-13740633067; preserve reviewed category after dealer source priority change."
+  },
+  "plthink-1928097": {
+    "expected_name": "[Blackmagic Design] Streaming Encoder 4K",
+    "brand_id": "blackmagic",
+    "category_id": "hipixel:b:blackmagic:48",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group smartstore-13740633066; preserve reviewed category after dealer source priority change."
+  },
+  "plthink-1916765": {
+    "expected_name": "[Blackmagic Design] Video Assist 5 12G HDR",
+    "brand_id": "blackmagic",
+    "category_id": "hipixel:b:blackmagic:91",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group smartstore-8258348896; preserve reviewed category after dealer source priority change."
+  },
+  "plthink-1916764": {
+    "expected_name": "[Blackmagic Design] Video Assist 7 12G HDR",
+    "brand_id": "blackmagic",
+    "category_id": "hipixel:b:blackmagic:91",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group smartstore-8258343810; preserve reviewed category after dealer source priority change."
+  },
+  "saeki-PD00020512": {
+    "expected_name": "티브이로직 F-5A 5.5인치 Full HD 모니터",
+    "brand_id": "tvlogic",
+    "category_id": "hipixel:b:tvlogic:75",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group smartstore-6520497454; preserve reviewed category after dealer source priority change.",
+    "product_type": "monitor"
+  },
+  "saeki-PD00021409": {
+    "expected_name": "Blackmagic Zoom Demand",
+    "brand_id": "blackmagic",
+    "category_id": "hipixel:b:blackmagic:105",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group plthink-1923317; preserve reviewed category after dealer source priority change."
+  },
+  "clmedia-2822": {
+    "expected_name": "티비로직 SVM-183S 18.5인치 12G-SDI FHD 모니터",
+    "brand_id": "tvlogic",
+    "category_id": "hipixel:b:tvlogic:75",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group plthink-1929719; preserve reviewed category after dealer source priority change.",
+    "product_type": "monitor"
+  },
+  "clmedia-2821": {
+    "expected_name": "티비로직 SVM-243S 24인치 12G-SDI FHD 모니터",
+    "brand_id": "tvlogic",
+    "category_id": "hipixel:b:tvlogic:75",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group plthink-1929720; preserve reviewed category after dealer source priority change.",
+    "product_type": "monitor"
+  },
+  "clmedia-1357": {
+    "expected_name": "티비로직 LUM-550M3 55인치 4K/UHD HDR LCD 모니터",
+    "brand_id": "tvlogic",
+    "category_id": "hipixel:b:tvlogic:78",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group plthink-1926192; preserve reviewed category after dealer source priority change.",
+    "product_type": "monitor"
+  },
+  "clmedia-1352": {
+    "expected_name": "티비로직 LXM-320P 32인치 4K/UHD 12G HDR 모니터",
+    "brand_id": "tvlogic",
+    "category_id": "hipixel:b:tvlogic:78",
+    "basis": "Verified identical offer in baseline 0cb09924587c3c6d group plthink-1926187; preserve reviewed category after dealer source priority change.",
+    "product_type": "monitor"
   }
 }
