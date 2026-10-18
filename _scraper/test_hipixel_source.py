@@ -101,6 +101,7 @@ class HiPixelTests(unittest.TestCase):
             p={'id':'hipixel-'+sid,'name':REVIEWED_TYPES[sid]['expected_name']}
             self.assertEqual(product_types(p,{}),[target])
             with self.assertRaises(ValueError):product_types({**p,'name':p['name']+' new variant'}, {})
+        self.assertEqual(product_types({'id':'hipixel-273','name':'TERIS SB-135'},{}),['equipment-bag'])
 
     def test_price_inquiry_is_preserved_without_inventing_a_different_model(self):
         a={'id':'hipixel-1','brand_id':'tvlogic','kind':'purchase','name':'LUM-242H','price_inquiry':True,'detail_status':'verified'}

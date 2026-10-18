@@ -126,7 +126,7 @@ def product_types(product,categories):
     if product['id'].startswith('hipixel-'):source_ids.add(product['id'].removeprefix('hipixel-'))
     if not source_ids:return []
     own_id=product['id'].removeprefix('hipixel-') if product['id'].startswith('hipixel-') else None
-    if own_id in REVIEWED_TYPES and product['name']!=REVIEWED_TYPES[own_id]['expected_name']:
+    if own_id in REVIEWED_TYPES and ' '.join(product['name'].split())!=' '.join(REVIEWED_TYPES[own_id]['expected_name'].split()):
         raise ValueError('HiPixel reviewed product title changed: '+product['id'])
     specific={TYPE_BY_PRODUCT[sid] for sid in source_ids if sid in TYPE_BY_PRODUCT}
     if len(specific)>1:raise ValueError('Conflicting HiPixel reviewed product purposes: '+product['id'])
