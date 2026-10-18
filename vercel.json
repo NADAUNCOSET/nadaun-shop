@@ -111,7 +111,7 @@
           "value": "order\\.nadaun\\.co"
         }
       ],
-      "dest": "/admin.html"
+      "dest": "/manage.html"
     },
     {
       "src": "^/admin(?:\\.html)?$",

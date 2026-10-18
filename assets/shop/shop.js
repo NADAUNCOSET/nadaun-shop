@@ -1,3 +1,4 @@
+import './i18n.js?v=20261018';
 import './rental-content.js';
 import './product-search.js';
 import {isDiscounted,isPromotion,matchesBenefit,benefitNavigation,categoryTrail,categoryControls,catalogSelection,productTypeNavigation,brandSelectionHref} from './catalog-tools.js';

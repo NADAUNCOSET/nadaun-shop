@@ -1,7 +1,7 @@
 'use strict';
 const {ShopError,hash,sessions,adminEmail}=require('./security.cjs');
 const {cookieValue}=require('./test-context.cjs');
-function memberEndpoint({members,repo,sessionKey,adminPasswordEmail='',cookiePrefix='nadaun',testing=false}){
+function memberEndpoint({members,repo,crm=null,sessionKey,adminPasswordEmail='',cookiePrefix='nadaun',testing=false}){
  const tokenName='__Host-'+cookiePrefix+'-member',signed=sessions(sessionKey),email=adminPasswordEmail?adminEmail(adminPasswordEmail):null;
  const cookie=(token,seconds)=>tokenName+'='+token+'; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age='+seconds;
  return async(req,res)=>{
@@ -14,6 +14,14 @@ function memberEndpoint({members,repo,sessionKey,adminPasswordEmail='',cookiePre
    const token=cookieValue(req,tokenName),member=await members.authenticate(token);
    if(action==='me'&&req.method==='GET')return res.status(200).json({...await members.me(member),testing});
    if(adminAction){const admin=signed.read(cookieValue(req,'__Host-'+cookiePrefix+'-admin'),'admin');if(!admin||email&&admin!==email)throw new ShopError(401,'관리자 로그인이 필요합니다.');
+    if(crm){
+     if(action==='admin-overview'&&req.method==='GET')return res.status(200).json(await crm.overview());
+     if(action==='admin-customers'&&req.method==='POST')return res.status(200).json(await crm.list(input));
+     if(action==='admin-customer'&&req.method==='GET')return res.status(200).json(await crm.detail(url.searchParams.get('id')));
+     if(action==='admin-customer-note'&&req.method==='POST')return res.status(200).json(await crm.saveNote(input,admin));
+     if(action==='admin-campaigns'&&req.method==='GET')return res.status(200).json(await crm.campaigns());
+     if(action==='admin-campaign-save'&&req.method==='POST')return res.status(200).json(await crm.saveCampaign(input,admin));
+    }
     if(action==='admin-members'&&req.method==='GET')return res.status(200).json(await members.adminList());
     if(action==='admin-points'&&req.method==='POST')return res.status(200).json(await members.adjust(input,admin));
    }

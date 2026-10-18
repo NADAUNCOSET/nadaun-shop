@@ -11,6 +11,7 @@ const {adminDraftService}=require('./admin-drafts.cjs');
 const {goodsflow}=require('./goodsflow.cjs');
 const {memberService}=require('./members.cjs');
 const {socialService}=require('./social.cjs');
+const {crmService}=require('./crm.cjs');
 const cached=new Map();
 function runtime(env=process.env){
  const cacheKey=env.SHOP_TEST_CONTEXT==='true'?'qa':'live';if(cached.has(cacheKey))return cached.get(cacheKey);
@@ -31,6 +32,7 @@ function runtime(env=process.env){
  const bps=Number(env.SHOP_POINTS_EARN_BPS||0);if(!Number.isSafeInteger(bps)||bps<0||bps>1000)throw Error('Invalid points policy');
  const members=memberService({db,repo,dataKey:env.SHOP_ORDER_DATA_KEY,sessionKey:env.SHOP_SESSION_KEY,enabled:env.SHOP_MEMBERS_ENABLED==='true',earnBasisPoints:bps,testing:cacheKey==='qa'});
  const social=socialService({db,members,dataKey:env.SHOP_ORDER_DATA_KEY,sessionKey:env.SHOP_SESSION_KEY,env});
- const value={repo,service,payment,documents,admin,drafts,members,social};cached.set(cacheKey,value);return value;
+ const crm=crmService({db,dataKey:env.SHOP_ORDER_DATA_KEY,testing:cacheKey==='qa'});
+ const value={repo,service,payment,documents,admin,drafts,members,social,crm};cached.set(cacheKey,value);return value;
 }
 module.exports={runtime};

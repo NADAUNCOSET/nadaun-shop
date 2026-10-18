@@ -433,7 +433,7 @@ def build(allow_pending=False):
     output={'category_gallery':category_galleries,'meta':meta,'brands':brand_list,'categories':list(categories.values()),'products':public_products,'redirects':redirects}
     presentation=''.join(p.read_text() for pattern in ('*.html','policies/*.html') for p in sorted((ROOT/'_scraper/shop_templates').glob(pattern)))
     presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/shop.js','assets/shop/shop.css','assets/shop/cart.js','assets/shop/banners.js','assets/shop/motion.js','_scraper/product_taxonomy.py','_scraper/rental_taxonomy.py','_scraper/references/slrrent-categories.json','data/catalog/banners.json','assets/shop/catalog-tools.js','_scraper/storefront_pages.py','_scraper/catalog_seo.py','api/product.js'))
-    presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/commerce.js','assets/shop/commerce.css','assets/shop/members.js','assets/shop/members.css','api/members.js','api/member-oauth.js','api/shop-test.js'))
+    presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/commerce.js','assets/shop/commerce.css','assets/shop/members.js','assets/shop/members.css','assets/shop/admin-workspace.js','assets/shop/admin-workspace.css','assets/shop/i18n.js','assets/shop/i18n-data.js','assets/shop/i18n.css','api/members.js','api/member-oauth.js','api/shop-test.js'))
     presentation+=(ROOT/'assets/shop/browse.js').read_text()+(ROOT/'_scraper/category_gallery.py').read_text()
     presentation+=(ROOT/'assets/shop/storefront.css').read_text()+(ROOT/'assets/shop/scenes.js').read_text()
     presentation+=(ROOT/'assets/shop/rental-content.js').read_text()+(ROOT/'_scraper/rental_content.py').read_text()
@@ -466,9 +466,10 @@ def build(allow_pending=False):
       ('cart.html','장바구니 | 나다운 샵','선택한 촬영장비와 옵션, 수량을 확인하세요.','cart'),
       ('checkout.html','주문서 | 나다운 샵','선택한 촬영장비의 주문 내용을 확인하세요.','checkout'),
       ('payment-test.html','토스페이먼츠 테스트 결제 | 나다운 샵','실제 대금 청구 없이 나다운 샵의 토스 테스트 결제창과 승인·취소 연결을 확인합니다.','payment-test'),
+      ('global.html','글로벌 고객 안내 | NADAUN SPACE','International accounts, language, pricing and shipping enquiries.','guide'),
       ('account.html','마이페이지 | 나다운 샵','회원가입과 로그인, 내 주문 및 적립금 조회.','account'),
       ('test-shop.html','전체 구매 테스트 | 나다운 샵','회원가입부터 가결제와 관리자 주문 확인까지 테스트합니다.','test-shop'),
-      ('members-admin.html','회원·적립금 관리 | 나다운 샵','관리자 전용 회원·적립금 관리.','members-admin'),
+      ('members-admin.html','고객관리 | 나다운 통합몰','고객·주문·적립금 통합 관리.','members-admin'),
       ('test-admin.html','테스트 주문 관리 | 나다운 샵','관리자 전용 테스트 주문 처리.','admin'),
       ('orders.html','주문 조회 | 나다운 샵','접수한 주문과 결제·배송 상태를 확인하세요.','orders'),
       ('admin.html','주문 관리 | 나다운 샵','나다운 샵 관리자 전용 주문 처리 화면입니다.','admin'),
@@ -494,6 +495,9 @@ def build(allow_pending=False):
         if mode=='studio':page=page.replace('https://shop.nadaun.co/assets/shop/nadaun-logo.png','https://shop.nadaun.co/assets/shop/studio/space-09.jpg')
         if mode in ('orders','admin','checkout','payment-test','account','test-shop','members-admin'):
             page=page.replace('</head>',f'<link rel="stylesheet" href="/assets/shop/commerce.css?v={revision}"><script type="module" src="/assets/shop/commerce.js?v={revision}"></script></head>')
+        if mode in ('admin','members-admin'):
+            page=page.replace('</head>',f'<link rel="stylesheet" href="/assets/shop/admin-workspace.css?v={revision}"><script type="module" src="/assets/shop/admin-workspace.js?v={revision}"></script></head>')
+            if mode=='members-admin':page=page.replace('data-mode="members-admin"','data-mode="members-admin" data-crm-view="customers"')
         if mode in ('cart','checkout','item','orders','admin','payment-test','account','test-shop','members-admin'):
             page=page.replace('index,follow,max-image-preview:large','noindex,follow')
         (ROOT/filename).write_text(page)

@@ -142,3 +142,18 @@ CREATE TABLE IF NOT EXISTS shop_social_enrollments (
  expires_at INTEGER NOT NULL, created_at INTEGER NOT NULL
 );
 CREATE INDEX IF NOT EXISTS shop_social_enrollment_expiry ON shop_social_enrollments(expires_at);
+
+CREATE TABLE IF NOT EXISTS shop_member_activity (
+ member_id TEXT PRIMARY KEY REFERENCES shop_members(id), last_login_at INTEGER NOT NULL,
+ login_count INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS shop_member_activity_recent ON shop_member_activity(last_login_at DESC);
+CREATE TABLE IF NOT EXISTS shop_member_crm (
+ member_id TEXT PRIMARY KEY REFERENCES shop_members(id), private_cipher TEXT NOT NULL,
+ version INTEGER NOT NULL, updated_at INTEGER NOT NULL, updated_by TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS shop_marketing_drafts (
+ id TEXT PRIMARY KEY, private_cipher TEXT NOT NULL,
+ status TEXT NOT NULL CHECK(status IN ('draft','archived')), version INTEGER NOT NULL,
+ created_by TEXT NOT NULL, updated_by TEXT NOT NULL, created_at INTEGER NOT NULL, updated_at INTEGER NOT NULL
+);
