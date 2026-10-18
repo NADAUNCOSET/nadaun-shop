@@ -28,10 +28,11 @@ export function translate(source,locale){
   else if(key==='개 선택')result=pick(locale,'selected','点選択中','件已选');
   else if((match=key.match(/^제품 종류와 브랜드를 선택해 필요한 (상품|대여 장비)를 찾아보세요\.$/)))result=pick(locale,'Choose a category and brand to find your equipment.','種類とブランドを選んで、お探しの機材を見つけてください。','选择类别和品牌，寻找所需器材。');
  }
+ if(result===undefined&&key.endsWith(' | 나다운 샵')){const base=key.split(' | ')[0];if(translations[base]?.[locale])result=translations[base][locale]+' | NADAUN SHOP';}
  if(result===undefined&&/[→↗]$/.test(key)){const base=key.slice(0,-1).trim();if(translations[base]?.[locale])result=translations[base][locale]+' '+key.slice(-1);}
  return result===undefined?source:source.slice(0,source.length-source.trimStart().length)+result+source.slice(source.trimEnd().length);
 }
-const blocked='script,style,noscript,code,pre,svg,[translate="no"],[data-no-translate],.product-name,.detail-info>h1,.cart-item-info>a,.member-data,.member-ledger,.commerce-lines a,.commerce-address p,.crm-content';
+const blocked='script,style,noscript,code,pre,svg,[translate="no"],[data-no-translate],.product-name,.detail-info>h1,.cart-item-info>a,.member-data,.commerce-lines a,.commerce-address p,.crm-content';
 const attributes=['placeholder','aria-label','title'];
 export function mountLanguageUI(doc=document,win=window){
  if(doc.body.dataset.mode?.includes('admin')||doc.body.dataset.crmView||/\/(manage|test-admin|shop-test|payment-test)\.html$/.test(win.location.pathname))return;
@@ -39,7 +40,7 @@ export function mountLanguageUI(doc=document,win=window){
  let stored;try{stored=win.localStorage.getItem(languageKey);}catch{}
  let locale=resolveLanguage({query:new URLSearchParams(win.location.search).get('lang'),stored,browser:win.navigator.languages||[win.navigator.language]});
  try{win.localStorage.setItem(languageKey,locale);}catch{}
- const originalText=new WeakMap(),originalAttributes=new WeakMap();
+ const originalText=new WeakMap(),originalAttributes=new WeakMap();let titleSource=doc.title,titleOutput=doc.title;
  const excluded=el=>!el||el.closest(blocked);
  function text(node){if(excluded(node.parentElement)||node.parentElement.closest('input,textarea'))return;const previous=originalText.get(node);const source=previous&&previous.output===node.data?previous.source:node.data;const output=translate(source,locale);originalText.set(node,{source,output});if(node.data!==output)node.data=output;}
  function attr(el){if(excluded(el))return;let saved=originalAttributes.get(el);if(!saved){saved={};originalAttributes.set(el,saved);}for(const name of attributes){if(!el.hasAttribute(name))continue;const value=el.getAttribute(name),previous=saved[name],source=previous&&previous.output===value?previous.source:value,output=translate(source,locale);saved[name]={source,output};if(output!==value)el.setAttribute(name,output);}}
@@ -53,7 +54,7 @@ export function mountLanguageUI(doc=document,win=window){
  const css=doc.createElement('link');css.rel='stylesheet';css.href='/assets/shop/i18n.css?v=20261018';doc.head.append(css);
  const observer=new win.MutationObserver(records=>{observer.disconnect();for(const record of records){if(record.type==='characterData')text(record.target);else if(record.type==='attributes')attr(record.target);else for(const node of record.addedNodes)walk(node);}observe();});
  function observe(){observer.observe(doc.body,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:attributes});}
- function apply(persist){observer.disconnect();doc.documentElement.lang=locale;doc.documentElement.dataset.language=locale;select.value=locale;help.textContent=translate('글로벌 고객 안내',locale);walk(doc.body);if(persist){try{win.localStorage.setItem(languageKey,locale);}catch{}const url=new URL(win.location.href);url.searchParams.set('lang',locale);win.history.replaceState(win.history.state,'',url);}observe();doc.dispatchEvent(new win.CustomEvent('shop:language-changed',{detail:{language:locale}}));}
+ function apply(persist){observer.disconnect();doc.documentElement.lang=locale;doc.documentElement.dataset.language=locale;select.value=locale;help.textContent=translate('글로벌 고객 안내',locale);walk(doc.body);if(doc.title!==titleOutput)titleSource=doc.title;titleOutput=translate(titleSource,locale);doc.title=titleOutput;if(persist){try{win.localStorage.setItem(languageKey,locale);}catch{}const url=new URL(win.location.href);url.searchParams.set('lang',locale);win.history.replaceState(win.history.state,'',url);}observe();doc.dispatchEvent(new win.CustomEvent('shop:language-changed',{detail:{language:locale}}));}
  select.addEventListener('change',()=>{locale=select.value;apply(true);});
  win.addEventListener('storage',event=>{if(event.key===languageKey&&languageIds.has(event.newValue)){locale=event.newValue;apply(false);}});
  apply(false);return {get language(){return locale;},disconnect(){observer.disconnect();}};
