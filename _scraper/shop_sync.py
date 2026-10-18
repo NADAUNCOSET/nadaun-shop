@@ -19,7 +19,6 @@ from sync_shop_sources import ROOT,OUT,collect_smartstore,request,save_json,stam
 from sync_kpp_catalog import collect as collect_kpp
 from sync_partner_catalogs import collect_lmount,collect_gift
 from enrich_shop_sources import collect as enrich
-from prepare_shop_assets import prepare
 from build_catalog import build
 from sync_gift_inventory import ensure_source_access, GiftSourceSuspended
 from source_refresh_state import recent_refresh,record_refresh
@@ -27,7 +26,7 @@ from source_refresh_state import recent_refresh,record_refresh
 STATE=ROOT/'_scraper/.sync-state'
 SITE='https://shop.nadaun.co'
 GENERATED=['global.html','data/catalog','assets/shop/thumbnails','brands','brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','payment-test.html','orders.html','admin.html','account.html','test-shop.html','test-admin.html','members-admin.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','rental-guide.html','equipment-guide.html','billing-guide.html','sitemap.xml','catalog-sitemap.xml']
-CODE=['_scraper/shipping_policy.py','_scraper/test_shop_shipping.py','assets/shop/shipping.js','_scraper/test_shop_taxonomy.py','_scraper/product_taxonomy.py','_scraper/rental_taxonomy.py','_scraper/references/slrrent-categories.json','assets/shop/motion.js','assets/shop/departments','assets/shop/banners.js','data/catalog/banners.json','assets/shop/studio','_scraper/brand_products.py','assets/shop/vendor','assets/shop/brands','data/catalog/partner-image-rules.json','_scraper/sync_partner_catalogs.py','data/catalog/brand-assets.json','_scraper/catalog_seo.py','assets/shop/catalog-tools.js','_scraper/tests','_scraper/test_shop_catalog.py','api','assets/shop/cart.js','_scraper/storefront_pages.py','_scraper/sync_shop_sources.py','_scraper/sync_kpp_catalog.py','_scraper/enrich_shop_sources.py','_scraper/build_catalog.py','_scraper/catalog_dedup.py','_scraper/shop_sync.py','_scraper/prepare_shop_assets.py','_scraper/shop_templates','assets/shop/shop.js','assets/shop/shop.css','data/catalog/overrides.json','data/catalog/dedup-rules.json','vercel.json']
+CODE=['_scraper/shipping_policy.py','_scraper/test_shop_shipping.py','assets/shop/shipping.js','_scraper/test_shop_taxonomy.py','_scraper/product_taxonomy.py','_scraper/rental_taxonomy.py','_scraper/references/slrrent-categories.json','assets/shop/motion.js','assets/shop/departments','assets/shop/banners.js','data/catalog/banners.json','assets/shop/studio','_scraper/brand_products.py','assets/shop/vendor','assets/shop/brands','data/catalog/partner-image-rules.json','_scraper/sync_partner_catalogs.py','data/catalog/brand-assets.json','_scraper/catalog_seo.py','assets/shop/catalog-tools.js','_scraper/tests','_scraper/test_shop_catalog.py','api','assets/shop/cart.js','_scraper/storefront_pages.py','_scraper/sync_shop_sources.py','_scraper/sync_kpp_catalog.py','_scraper/enrich_shop_sources.py','_scraper/build_catalog.py','_scraper/catalog_dedup.py','_scraper/shop_sync.py','_scraper/shop_templates','assets/shop/shop.js','assets/shop/shop.css','data/catalog/overrides.json','data/catalog/dedup-rules.json','vercel.json']
 
 CODE += ['_scraper/gift_product_details.py','_scraper/source_transport.py','_scraper/plthink_checkpoint.py','_scraper/sync_plthink_catalog.py',
          '_scraper/sync_gift_inventory.py','_scraper/partner_worker.py','_scraper/install_partner_workers.py']
@@ -39,7 +38,7 @@ CODE += ['_scraper/build_gift_catalog.py','_scraper/brand_source_policy.py','_sc
 CODE += ['_scraper/test_catalog_seo.py','_scraper/test_release_status.py','server/share-image.cjs','server/share-metadata.cjs','robots.txt']
 CODE += ['assets/shop/auth','assets/shop/product-search.js','assets/shop/members.js','assets/shop/members.css']
 CODE += ['manage.html','assets/shop/admin-workspace.js','assets/shop/admin-workspace.css','assets/shop/i18n.js','assets/shop/i18n-data.js','assets/shop/i18n.css']
-CODE += ['_scraper/source_refresh_state.py','_scraper/test_source_refresh_state.py']
+CODE += ['_scraper/source_refresh_state.py','_scraper/test_source_refresh_state.py','_scraper/owned_assets.py','_scraper/owned-asset-map.json','_scraper/test_owned_assets.py']
 CODE += ['_scraper/avx_publication.py','_scraper/test_avx_publication.py']
 CODE += ['_scraper/rental_content.py','_scraper/test_shop_rental_content.py','assets/shop/rental-content.js']
 CODE += ['_scraper/sync_dji_official.py','_scraper/dji_worker.py','_scraper/test_shop_dji_official.py']
@@ -73,7 +72,7 @@ def managed_files():
     files += ['data/catalog/rental-details.json']
     files.extend(p.relative_to(ROOT).as_posix() for p in (ROOT/'data/gift/details').glob('??.json'))
     files.extend(p.relative_to(ROOT).as_posix() for p in ROOT.glob('gift-sitemap-[0-9]*.xml'))
-    for source in ('smartstore','imweb-dji','imweb-promotions','kpp','l-mount','nadaun-gift'):
+    for source in ('smartstore','kpp','l-mount','nadaun-gift'):
         files.append('data/catalog/sources/'+source+'.json')
     if (OUT/'plthink.json').exists():files.append('data/catalog/sources/plthink.json')
     for source in ('avx','avx-aputure','avx-approved','dji-official','clmedia','cinemall','onnoff','ldnet','saeki'):
@@ -180,7 +179,7 @@ def run(publish=True,existing=False,source_updates=None):
                 if source=='avx':path=next(p for p in (OUT/'avx-approved.json',OUT/'avx.json',OUT/'avx-aputure.json') if p.exists())
                 new=json.loads(path.read_text())['product_count']
                 if new<count*.85:raise RuntimeError(f'{source} count dropped more than 15%; keep live data and review')
-            enrich('smartstore');enrich('kpp');prepare()
+            enrich('smartstore');enrich('kpp')
         # Project only the verified saved gift inventory. This makes public
         # availability corrections and later verified detail updates publish
         # together, without making a source request or clearing its suspension.

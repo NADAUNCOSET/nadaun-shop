@@ -29,7 +29,6 @@ ROOT = Path(__file__).resolve().parents[1]
 HUB = ROOT.parents[1] / "_claude"
 OUT = ROOT / "data" / "catalog" / "sources"
 NAVER = "https://api.commerce.naver.com/external"
-IMWEB = "https://api.imweb.me/v2"
 KPP = "https://kppkpp.co.kr"
 STORE = "https://smartstore.naver.com/rainbowbene"
 _naver_rate_lock = threading.Lock()
@@ -173,12 +172,6 @@ def collect_smartstore():
     return out
 
 
-def imweb_headers():
-    cfg = credentials()
-    auth = request("GET", IMWEB + "/auth", params={"key": cfg["IMWEB_API_KEY"], "secret": cfg["IMWEB_API_SECRET"]}).json()
-    if not auth.get("access_token"):
-        raise RuntimeError("Imweb authentication failed")
-    return {"access-token": auth["access_token"]}
 
 
 def flatten_categories(nodes, parents=()):
@@ -210,90 +203,13 @@ def imweb_public_price(item):
     return price
 
 
-def collect_imweb_dji(promotion=False):
-    headers = imweb_headers()
-    body = request("GET", IMWEB + "/shop/categories", headers=headers).json()
-    if body.get("code") != 200:
-        raise RuntimeError("Imweb category query was unsuccessful")
-    all_cats = flatten_categories(body["data"])
-    roots = [c for c in all_cats if c["parent_id"] is None
-             and (bool(re.search(r"프로모션|promotion",c["name"],re.I)) if promotion else clean(c["name"]).casefold() in {"dji", "디지아이", "디제이아이"})]
-    if len(roots) != 1:
-        raise RuntimeError(f"Expected exactly one DJI category root, found {len(roots)}")
-    root = roots[0]
-    cats = [c for c in all_cats if root["id"] in c["path_ids"]]
-    products, seen = {}, set()
-    page = 1
-    expected = None
-    while True:
-        # Imweb's offset is a one-based PAGE number, not a row offset.
-        # The root category query includes descendants; memberships are read
-        # from each product's actual category IDs, not inferred from its name.
-        b = request("GET", IMWEB + "/shop/products", headers=headers,
-                    params={"category": root["id"], "limit": 100, "offset": page}).json()
-        if b.get("code") != 200:
-            raise RuntimeError(f"Imweb product query returned code {b.get('code')}")
-        data = b.get("data") or {}
-        pagination = data.get("pagenation") or {}
-        total = int(pagination["data_count"])
-        if expected is None:
-            expected = total
-        elif total != expected:
-            raise RuntimeError("DJI inventory changed during collection")
-        for item in data.get("list", []):
-            iid = str(item["no"])
-            if iid in seen:
-                raise RuntimeError("Imweb pagination repeated a product")
-            seen.add(iid)
-            if item.get("prod_status") not in ("sale", "soldout"):
-                continue
-            iu = item.get("image_url") or {}
-            images = ["https://cdn.imweb.me/upload/" + str(v).lstrip("/") for v in iu.values()] if isinstance(iu, dict) else []
-            content = BeautifulSoup(item.get("content") or "", "lxml")
-            detail = [im.get("src") for im in content.select("img[src]") if im.get("src", "").startswith("https://")]
-            membership = [c for c in cats if c["id"] in (item.get("categories") or [])]
-            if not membership:
-                raise RuntimeError(f"DJI product {iid} has no membership under the DJI root")
-            ids = list(dict.fromkeys(i for c in membership for i in c["path_ids"]))
-            pid = "imweb-" + iid
-            products[pid] = {
-                "id": pid, "source": "imweb", "source_id": iid,
-                "name": clean(item.get("name")), "brand": clean(re.split(r"[,/]",item.get("brand") or "")[0]) if promotion else "DJI", "manufacturer": clean(item.get("brand")) if promotion else "DJI",
-                "source_url": "https://rainbowshop.imweb.me/shop_view/" + iid,
-                "price": None if item.get('price_none') else item.get("price"), "sale_price": imweb_public_price(item),
-                "status": item["prod_status"], "kind": "purchase",
-                "images": {"thumb": images[0] if images else "", "main": images, "detail": detail},
-                "description_text": item.get("content_plain") or "",
-                "brand_category_ids": ids, "source_category_paths": [c["path"] for c in membership],
-                "source_modified_at": item.get("edit_time"),
-            }
-        print(f"Imweb DJI: page {page}/{pagination['total_page']}, {len(seen)}/{expected} records", flush=True)
-        if page >= int(pagination["total_page"]):
-            break
-        page += 1
-        time.sleep(0.3)
-    if len(seen) != expected:
-        raise RuntimeError("Imweb DJI count mismatch")
-    if not products:
-        raise RuntimeError("DJI collection was empty")
-    verify = request("GET", IMWEB + "/shop/categories/" + root["id"], headers=headers).json()
-    if verify.get("code") != 200:
-        raise RuntimeError("Imweb final category re-query failed")
-    out = {"source": "imweb", "source_url": "https://rainbowshop.imweb.me/", "brand": "mixed" if promotion else "DJI",
-           "collected_at": stamp(), "complete": True, "categories": cats,
-           "product_count": len(products), "products": products}
-    save_json(OUT / ("imweb-promotions.json" if promotion else "imweb-dji.json"), out)
-    return out
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("source", choices=["smartstore", "imweb-dji"])
+    parser.add_argument("source", choices=["smartstore"])
     args = parser.parse_args()
-    if args.source == "smartstore":
-        collect_smartstore()
-    else:
-        collect_imweb_dji()
+    collect_smartstore()
 
 
 if __name__ == "__main__":

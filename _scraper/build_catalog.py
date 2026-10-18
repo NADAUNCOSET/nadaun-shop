@@ -16,6 +16,7 @@ from storefront_pages import content as page_content
 from catalog_seo import product_discovery, page_metadata, page_structured_data, root_sitemap
 from brand_category_policy import mirror_source_paths
 from sync_cafe24_partners import SITES as CAFE24_SITES
+from owned_assets import resolve_assets
 
 CAFE24_SOURCES=tuple(CAFE24_SITES)
 
@@ -328,6 +329,8 @@ def build(allow_pending=False):
     from shipping_policy import shipping_class
     for pid,p in products.items():
         if p.get('hidden'):continue
+        p['images']=resolve_assets(p['images'])
+        details[pid]['images']=p['images']
         main=p['images'].get('main') or []
         thumb=p['images'].get('thumb') or (main[0] if main else '')
         if pid in assets and assets[pid]['source_url']==thumb:

@@ -25,7 +25,7 @@ function shippingLabels({repo,cipher,provider,editable,purchaseCustomer,verified
  }
  return {
   async labelStatus(){
-   if(!provider?.enabled)return {enabled:false,configured:provider?.configured===true,mode:provider?.mode||'test',contracts:[],message:'우리몰 굿스플로 API 연결 대기 · 아임웹 승인과 별도'};
+   if(!provider?.enabled)return {enabled:false,configured:provider?.configured===true,mode:provider?.mode||'test',contracts:[],message:'우리몰 굿스플로 API 연결 대기'};
    const contracts=await provider.contracts();
    return {enabled:true,mode:provider.mode,contracts:contracts.map(c=>({id:c.contractId,carrier:c.transporter,carrier_name:provider.carrierNames[c.transporter],center_name:c.center.name,boxes:c.boxes.map(b=>({code:b.boxSize,name:b.boxSizeName}))})),message:contracts.length?'승인된 택배 계약 연결됨':'사용 가능한 승인 계약이 없습니다.'};
   },

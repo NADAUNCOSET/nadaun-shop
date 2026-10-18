@@ -4,7 +4,7 @@ const {imageURL}=require('./share-metadata.cjs');
 const WIDTH=1200,HEIGHT=630,MAX_BYTES=6*1024*1024;
 // Sources already approved for public product media. An ID can never turn this
 // endpoint into an arbitrary URL proxy; each redirect is checked again.
-const IMAGE_HOSTS=new Set(['kppkpp.co.kr','shop-phinf.pstatic.net','www.l-mount.co.kr','image.fzonesports.co.kr','image3.compuzone.co.kr','www.plthink.com','se-cdn.djiits.com','stormsend1.djicdn.com','ecimg.cafe24img.com','onnoff.kr','ldnet.co.kr','comsmart.co.kr','cdn.imweb.me','img.echosting.cafe24.com','www.avx.co.kr','cloudfront.imggift.com','cdn.saeki.co.kr','cdn.dev.saeki.co.kr','www.saeki.co.kr','ai.esmplus.com']);
+const IMAGE_HOSTS=new Set(['media.nadaun.co','kppkpp.co.kr','shop-phinf.pstatic.net','www.l-mount.co.kr','image.fzonesports.co.kr','image3.compuzone.co.kr','www.plthink.com','se-cdn.djiits.com','stormsend1.djicdn.com','ecimg.cafe24img.com','onnoff.kr','ldnet.co.kr','comsmart.co.kr','cdn.imweb.me','img.echosting.cafe24.com','www.avx.co.kr','cloudfront.imggift.com','cdn.saeki.co.kr','cdn.dev.saeki.co.kr','www.saeki.co.kr','ai.esmplus.com']);
 function allowedRemote(value){
  const normalized=imageURL(value);if(!normalized)return null;
  const u=new URL(normalized);
