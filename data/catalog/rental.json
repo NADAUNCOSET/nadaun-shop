@@ -214,7 +214,7 @@
     "schema_version": 1,
     "source_counts": {
       "kpp": 4044,
-      "smartstore": 6860,
+      "smartstore": 6859,
       "l-mount": 345,
       "plthink": 6653,
       "saeki": 7452,
@@ -230,7 +230,7 @@
     },
     "detail_coverage": {
       "kpp": 3999,
-      "smartstore": 5832,
+      "smartstore": 5831,
       "l-mount": 345,
       "plthink": 5488,
       "saeki": 7335,
@@ -244,7 +244,7 @@
       "motion9": 24,
       "funomad": 51
     },
-    "synced_at": "2026-10-18T17:17:16+00:00",
+    "synced_at": "2026-10-18T18:17:10+00:00",
     "merged_count": 3583,
     "retired_redirect_count": 1930,
     "product_count": 217,
@@ -256,7 +256,7 @@
       "groups": 2966,
       "removed": 3583
     },
-    "revision": "94d8d7e815c2e7a6",
+    "revision": "2c53ffd21acc39bf",
     "view": "rental"
   },
   "brands": [
@@ -9193,8 +9193,8 @@
       "category_ids": [
         "l-mount:b:ldl-mount:category-e97f1539d15a",
         "l-mount:b:ldl-mount:category-eb27563e7c36",
-        "l-mount:b:ldl-mount:category-b71e2ada0641",
         "l-mount:b:ldl-mount:category-4f972c4be820",
+        "l-mount:b:ldl-mount:category-b71e2ada0641",
         "l-mount:b:ldl-mount:category-4036f6debdcf",
         "ldnet:b:ldl-mount:49",
         "ldnet:b:ldl-mount:534",
@@ -9238,7 +9238,7 @@
         "ldnet:b:ldl-mount:52"
       ],
       "representative_id": "ldl-1000000381",
-      "representative_image": "https://www.l-mount.co.kr/엘디엘마운트_DB/APL-44PRO/썸네일/로고썸네일/1.jpg",
+      "representative_image": "https://www.l-mount.co.kr/_img/m/db-9c69e40f-800.webp",
       "representative_name": "엘디엘마운트 APL-44PRO TV벽걸이듀얼관절암브라켓 32-75인치",
       "representative_alternate": "https://www.l-mount.co.kr/_img/g/db-9c69e40f-200.webp",
       "image_kind": "logo",

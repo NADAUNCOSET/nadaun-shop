@@ -2,7 +2,7 @@
   "schema_version": 1,
   "source_counts": {
     "kpp": 4044,
-    "smartstore": 6860,
+    "smartstore": 6859,
     "l-mount": 345,
     "plthink": 6653,
     "saeki": 7452,
@@ -18,7 +18,7 @@
   },
   "detail_coverage": {
     "kpp": 3999,
-    "smartstore": 5832,
+    "smartstore": 5831,
     "l-mount": 345,
     "plthink": 5488,
     "saeki": 7335,
@@ -32,7 +32,7 @@
     "motion9": 24,
     "funomad": 51
   },
-  "synced_at": "2026-10-18T17:17:16+00:00",
+  "synced_at": "2026-10-18T18:17:10+00:00",
   "merged_count": 3583,
   "retired_redirect_count": 1930,
   "product_count": 28973,
@@ -44,5 +44,5 @@
     "groups": 2966,
     "removed": 3583
   },
-  "revision": "94d8d7e815c2e7a6"
+  "revision": "2c53ffd21acc39bf"
 }

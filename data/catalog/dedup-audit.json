@@ -78529,17 +78529,6 @@
       "evidence": [
         "https://www.saeki.co.kr/item/itemDetail?itemId=PD00041927"
       ]
-    },
-    {
-      "id": "smartstore-8237990015",
-      "before": "SAVAGE #76 Mocha",
-      "after": "SAVAGE #76 Mocha",
-      "hidden": true,
-      "reason": "대표 승인 중복 삭제. 2026-10-19 현재 스마트스토어 원상품·상세·옵션·가격·배송 조건 완전일치 확인 후 API 삭제 및 부재 확인. 기존 등록8237989318 보존.",
-      "evidence": [
-        "https://smartstore.naver.com/rainbowbene/products/8237989318",
-        "_private/catalog/owner-review-20261019/smartstore-duplicate-audit/deletion-receipt.json"
-      ]
     }
   ],
   "option_families": [
