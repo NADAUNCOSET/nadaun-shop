@@ -12,7 +12,7 @@
     "onnoff": 1067,
     "ldnet": 3075,
     "hipixel": 334,
-    "avx": 1392,
+    "avx": 1286,
     "motion9": 24,
     "funomad": 51
   },
@@ -44,5 +44,5 @@
     "groups": 2966,
     "removed": 3583
   },
-  "revision": "01d522352414c5bb"
+  "revision": "0854b7ce348e47f9"
 }
