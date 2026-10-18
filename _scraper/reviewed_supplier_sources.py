@@ -74,3 +74,16 @@ def reference_price_overrides(products,redirects,snapshots,overrides):
         if not isinstance(amount,int) or amount<=0:raise ValueError('Owner price reference unavailable: '+rid)
         p.update(price=amount,sale_price=amount)
         for key in ('price','sale_price'):p['_provenance']['fields'][key]={'source':'smartstore','product_id':rid,'url':r['source_url'],'rule':'owner_reference_price'}
+
+
+def apply_retired_redirects(products,redirects,rules):
+    for old,rule in rules.items():
+        target=redirects.get(rule['target_id'],rule['target_id'])
+        item=products.get(target)
+        if old in products and not products[old].get('hidden'):
+            raise ValueError('Retired product unexpectedly active: '+old)
+        if (not item or item.get('hidden') or item['brand_id']!=rule['expected_brand_id']
+            or item['kind']!=rule['expected_kind'] or not rule.get('evidence')
+            or (rule.get('expected_target_name') and item['name']!=rule['expected_target_name'])):
+            raise ValueError('Retired product replacement needs review: '+old)
+        redirects[old]=target

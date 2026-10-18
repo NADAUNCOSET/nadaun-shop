@@ -1,6 +1,10 @@
 {
   "routes": [
     {
+      "src": "^/favicon\\.ico$",
+      "dest": "/brand/favicon.ico"
+    },
+    {
       "src": "^/brands/visgo\\.html$",
       "status": 308,
       "headers": {

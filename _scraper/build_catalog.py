@@ -345,14 +345,8 @@ def build(allow_pending=False):
                 if key in override:
                     p[key]=deepcopy(override[key])
                     p['_provenance']['fields'][key]={'source':'owner_override','file':'data/catalog/overrides.json','product_id':pid}
-    for old,rule in config.get('retired_product_redirects',{}).items():
-        target=redirects.get(rule['target_id'],rule['target_id'])
-        item=products.get(target)
-        if old in products and not products[old].get('hidden'):
-            raise ValueError('Retired product unexpectedly active: '+old)
-        if not item or item.get('hidden') or item['brand_id']!=rule['expected_brand_id'] or item['kind']!=rule['expected_kind'] or not rule.get('evidence'):
-            raise ValueError('Retired product replacement needs review: '+old)
-        redirects[old]=target
+    from reviewed_supplier_sources import apply_retired_redirects
+    apply_retired_redirects(products,redirects,config.get('retired_product_redirects',{}))
     merge_count=len(redirects)
     reference_price_overrides(products,redirects,snapshots,config.get('products',{}))
     asset_path=PUBLIC/'asset-manifest.json'

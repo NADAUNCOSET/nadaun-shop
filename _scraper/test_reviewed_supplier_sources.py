@@ -28,4 +28,13 @@ class PricingRules(unittest.TestCase):
   self.assertLess(primary_key(own),primary_key(supplier))
  def test_partial_source_rejected(self):
   with self.assertRaises(ValueError):validate_snapshot({'source':'funomad','complete':False})
+ def test_retired_link_requires_exact_reviewed_target(self):
+  from reviewed_supplier_sources import apply_retired_redirects
+  p={'new':{'name':'Model A','brand_id':'brand','kind':'purchase'}}
+  rule={'old':{'target_id':'new','expected_target_name':'Model A','expected_brand_id':'brand','expected_kind':'purchase','evidence':'reviewed same offer'}};redirects={}
+  apply_retired_redirects(p,redirects,rule);self.assertEqual(redirects,{'old':'new'})
+  p['new']['name']='Model B'
+  with self.assertRaises(ValueError):apply_retired_redirects(p,{},rule)
+  p['old']={'hidden':False}
+  with self.assertRaises(ValueError):apply_retired_redirects(p,{},rule)
 if __name__=='__main__':unittest.main()

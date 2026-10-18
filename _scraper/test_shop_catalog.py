@@ -146,7 +146,7 @@ class SourceRules(unittest.TestCase):
             self.assertTrue(set(p['category_ids']+p['type_ids'])<=cats,p['id'])
             self.assertNotIn(p['id'],d['redirects'])
             for offer in p['offers']:
-                self.assertTrue(offer['url'].startswith(('https://smartstore.naver.com/rainbowbene/','https://rainbowshop.imweb.me/','https://kppkpp.co.kr/','https://www.l-mount.co.kr/goods/goods_view.php?goodsNo=','https://www.l-mount.co.kr/products/','https://www.plthink.com/shop/shopdetail.html?branduid=','https://www.avx.co.kr/goods/view?no=','https://store.dji.com/kr/product/','https://clmedia.co.kr/product/','https://www.cinemall.co.kr/product/','https://onnoff.kr/product/','https://ldnet.co.kr/product/','https://www.saeki.co.kr/item/itemDetail?itemId=','https://hipixelplus.co.kr/product/')),offer['id'])
+                self.assertTrue(offer['url'].startswith(('https://smartstore.naver.com/rainbowbene/','https://rainbowshop.imweb.me/','https://kppkpp.co.kr/','https://www.l-mount.co.kr/goods/goods_view.php?goodsNo=','https://www.l-mount.co.kr/products/','https://www.plthink.com/shop/shopdetail.html?branduid=','https://www.avx.co.kr/goods/view?no=','https://store.dji.com/kr/product/','https://clmedia.co.kr/product/','https://www.cinemall.co.kr/product/','https://onnoff.kr/product/','https://ldnet.co.kr/product/','https://www.saeki.co.kr/item/itemDetail?itemId=','https://hipixelplus.co.kr/product/','https://motionnine.cafe24.com/product/','https://funomad.com/')),offer['id'])
         self.assertTrue(set(d['redirects'].values())<=ids)
         offers=[o['id'] for p in d['products'] for o in p['offers']]
         self.assertEqual(len(offers),len(set(offers)))
@@ -177,8 +177,10 @@ class SourceRules(unittest.TestCase):
         source=json.loads(path.read_text())
         products=json.loads((ROOT/'data/catalog/catalog.json').read_text())['products']
         offers=[o['id'] for p in products for o in p['offers'] if o['source']=='avx']
-        self.assertEqual(set(offers),set(source['products']))
-        self.assertEqual(len(offers),source['product_count'])
+        from brand_source_policy import publishable_ids
+        expected=publishable_ids(source)
+        self.assertEqual(set(offers),expected)
+        self.assertEqual(len(offers),len(expected))
         for p in products:
             if p['brand_id']=='aputure' and p['kind']=='purchase':
                 self.assertTrue(all(o['source']=='avx' for o in p['offers']))
