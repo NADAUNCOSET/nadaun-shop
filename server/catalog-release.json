@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "0854b7ce348e47f9",
+  "revision": "9a56108d31e85412",
   "require_positions": true,
   "brand_order": [
     "blackmagic",
@@ -643,8 +643,8 @@
     "assets/shop/supplier-details/motion9/f1ef5f85fc99e320edcf123e9447530b296d153d03a5bf4d3d37d40e3d17d47c.jpg": "f1ef5f85fc99e320edcf123e9447530b296d153d03a5bf4d3d37d40e3d17d47c",
     "assets/shop/supplier-details/motion9/f4f5ea53f2ad60fef900f9dd9fd9b72fadcc03b35db2942d902b471b84d36b64.jpg": "f4f5ea53f2ad60fef900f9dd9fd9b72fadcc03b35db2942d902b471b84d36b64",
     "assets/shop/supplier-details/motion9/fd43b8071a40d1ccf7b164f4c7b07b378d54139795cdb4813bfeedc91c606f1a.jpg": "fd43b8071a40d1ccf7b164f4c7b07b378d54139795cdb4813bfeedc91c606f1a",
-    "data/catalog/brands.json": "9a176c9d04fb3bfde0d7cf47b4fe839f2c8bfe647ccdf0dd735dc585b9b4a775",
-    "data/catalog/catalog.json": "43a7c4dc5178fa4a2f6d176f503a3149425abcd6a98b0631fda67c3d36619400",
+    "data/catalog/brands.json": "67776df7ef39d452cdb71ca0ff53fda6cfc69a72aa9c9ec8ba170ea2cf3be991",
+    "data/catalog/catalog.json": "28a21136bd1708d868fa6bfbd7fef287b65ba0178c4b6812c355828cea7b0c04",
     "data/catalog/details/00.json": "2570ba4fde08fd5cb45f9a38c88ba01c698b19734d5b20b11eae416e614b4f9e",
     "data/catalog/details/01.json": "423289b9ca30e170ac440f3ff0a6e06b45742cb71e814ea14243870223eed830",
     "data/catalog/details/02.json": "ff20a0bb4b5a3fef39bd57136c529b4332df495c219c7f59b158c2f79cc20a54",
@@ -901,7 +901,7 @@
     "data/catalog/details/fd.json": "b3436ca230439dd221bb3d81659bd1ee5d8f7befcb65cc3747ab2ec14217e1b5",
     "data/catalog/details/fe.json": "b19202b6cbf9c4f681e769ee37782271cf641366ee71cc2b7c954e216a7906ae",
     "data/catalog/details/ff.json": "43e7970e54df059794a7d7e202f7081ccd297e9101cca7b6aa2c712ba712e089",
-    "data/catalog/rental.json": "001cb401fa23b372227a59d9ab7e08521633ff306e16f616a50f52d90848a2eb",
-    "data/catalog/sync-status.json": "45ac77e9ef2f05b0fd1bdd5b79a0fb6116d86ec9ba47865fcfe6b9a09830097b"
+    "data/catalog/rental.json": "d106e9aac05ca29ed7ae6f7ac01014fd2c53dcd7a7b59052cc2ddd351c000986",
+    "data/catalog/sync-status.json": "44567740b1ab545bc10ae94d59affa6b14f0e196fd7483f11106d2389bd93e54"
   }
 }
