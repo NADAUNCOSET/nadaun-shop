@@ -150,7 +150,10 @@ class SourceRules(unittest.TestCase):
         self.assertTrue(set(d['redirects'].values())<=ids)
         offers=[o['id'] for p in d['products'] for o in p['offers']]
         self.assertEqual(len(offers),len(set(offers)))
-        self.assertEqual(set(offers),ids|set(d['redirects']))
+        retired=set(json.loads((ROOT/'data/catalog/overrides.json').read_text()).get('retired_product_redirects',{}))
+        self.assertTrue(retired<=set(d['redirects']))
+        self.assertEqual(set(offers),ids|(set(d['redirects'])-retired))
+        self.assertEqual(d['meta']['retired_redirect_count'],len(retired))
         self.assertEqual(len(offers),len(ids)+d['meta']['merged_count'])
         audit=json.loads((ROOT/'data/catalog/dedup-audit.json').read_text())
         self.assertEqual(audit['input_count'],len(offers))

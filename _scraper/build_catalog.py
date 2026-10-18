@@ -347,7 +347,7 @@ def build(allow_pending=False):
                     p['_provenance']['fields'][key]={'source':'owner_override','file':'data/catalog/overrides.json','product_id':pid}
     from reviewed_supplier_sources import apply_retired_redirects
     apply_retired_redirects(products,redirects,config.get('retired_product_redirects',{}))
-    merge_count=len(redirects)
+    retired_redirect_count=len(redirects)-merge_count
     reference_price_overrides(products,redirects,snapshots,config.get('products',{}))
     asset_path=PUBLIC/'asset-manifest.json'
     assets=json.loads(asset_path.read_text()) if asset_path.exists() else {}
@@ -461,7 +461,7 @@ def build(allow_pending=False):
     from catalog_navigation import arrange_categories
     categories=arrange_categories(categories,brand_list,navigation_audit)
     meta={'schema_version':1,'source_counts':{k:s['product_count'] for k,s in snapshots.items()},'detail_coverage':dict(coverage),
-          'synced_at':max(s['collected_at'] for s in snapshots.values()),'merged_count':merge_count,
+          'synced_at':max(s['collected_at'] for s in snapshots.values()),'merged_count':merge_count,'retired_redirect_count':retired_redirect_count,
           'product_count':len(public_products),'category_browsing_enabled':config.get('category_browsing_enabled',False),
           'listing_count':len(listing_products),'option_family_count':len(family_audit),
           'deduplication':{'brands_checked':len(brands),'groups':dedup_audit['duplicate_group_count'],'removed':merge_count}}
