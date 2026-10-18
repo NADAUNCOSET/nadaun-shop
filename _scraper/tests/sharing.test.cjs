@@ -38,7 +38,10 @@ test('every published equipment and gift item receives a distinct valid canonica
   const url=new URL(shareImageURL(kind,p));assert.equal(url.origin,'https://shop.nadaun.co');assert.equal(url.pathname,'/share-image.jpg');
   assert.equal(url.searchParams.get('id'),p.id);assert.equal(url.searchParams.get('kind'),kind);assert.match(url.searchParams.get('v'),/^[a-f0-9]{16}$/);
   assert.ok(!seen.has(url.href),p.id);seen.add(url.href);
-  assert.ok(allowedRemote(p.image)||p.image.startsWith('/assets/'),p.id+': '+p.image);
+  const image=new URL(p.image,'https://shop.nadaun.co');
+  const local=image.origin==='https://shop.nadaun.co'&&image.pathname.startsWith('/assets/');
+  assert.ok(allowedRemote(p.image)||local,p.id+': '+p.image);
+  if(local)assert.ok(fs.existsSync('.'+image.pathname),'Missing local share source '+p.id);
  }
 });
 
@@ -76,3 +79,15 @@ test('client hydration preserves the initial social image rather than replacing 
  const code=fs.readFileSync('assets/shop/shop.js','utf8');assert.ok(!code.includes('document.querySelector(\'meta[property="og:image"]\').content=new URL(p.image'));
  assert.ok(code.includes("' | 나다운 스페이스'"));
 });
+
+ test('new supplier originals render as real product previews and ship with the image function',async()=>{
+  const sharp=require('sharp'),config=JSON.parse(fs.readFileSync('vercel.json'));
+  assert.ok(config.functions['api/share-image.js'].includeFiles.includes('assets/shop/supplier-details/**'));
+  for(const id of ['motion9-258','funomad-indie5']){
+   const p=catalog.products.find(p=>p.id===id);assert.ok(p);
+   const handler=createImageHandler({productFor:()=>p,fetchImpl:async()=>{throw Error('Local source must not fetch network')}}),res=response();
+   await handler({url:'/share-image.jpg?kind=product&id='+id,method:'GET'},res);
+   assert.equal(res.code,200);assert.equal(res.headers['X-Nadaun-Share-Image'],'product');
+   const info=await sharp(res.body).metadata();assert.equal(info.width,1200);assert.equal(info.height,630);
+  }
+ });

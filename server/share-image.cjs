@@ -1,7 +1,7 @@
 const fs=require('node:fs');
 const path=require('node:path');
 const {imageURL}=require('./share-metadata.cjs');
-const WIDTH=1200,HEIGHT=630,MAX_BYTES=6*1024*1024;
+const WIDTH=1200,HEIGHT=630,MAX_BYTES=6*1024*1024,MAX_LOCAL_BYTES=8*1024*1024;
 // Sources already approved for public product media. An ID can never turn this
 // endpoint into an arbitrary URL proxy; each redirect is checked again.
 const IMAGE_HOSTS=new Set(['media.nadaun.co','kppkpp.co.kr','shop-phinf.pstatic.net','www.l-mount.co.kr','image.fzonesports.co.kr','image3.compuzone.co.kr','www.plthink.com','se-cdn.djiits.com','stormsend1.djicdn.com','ecimg.cafe24img.com','onnoff.kr','ldnet.co.kr','comsmart.co.kr','cdn.imweb.me','img.echosting.cafe24.com','www.avx.co.kr','cloudfront.imggift.com','cdn.saeki.co.kr','cdn.dev.saeki.co.kr','www.saeki.co.kr','ai.esmplus.com']);
@@ -60,7 +60,7 @@ function createImageHandler({productFor,fetchImpl=fetch,render=jpeg,fallback=()=
      const relative=decodeURIComponent(new URL(source).pathname).slice(1);
      const asset=path.resolve(process.cwd(),relative),assetRoot=path.resolve(process.cwd(),'assets')+path.sep;
      if(!asset.startsWith(assetRoot))throw Error('invalid_local_image');
-     const local=fs.readFileSync(asset);if(local.length>MAX_BYTES||!isRaster(local))throw Error('invalid_local_image');bytes=await render(local);
+     const local=fs.readFileSync(asset);if(local.length>MAX_LOCAL_BYTES||!isRaster(local))throw Error('invalid_local_image');bytes=await render(local);
     }else bytes=await render(await fetchImage(source,fetchImpl));
    }catch(error){
     denied=[401,403,429].includes(error.status);

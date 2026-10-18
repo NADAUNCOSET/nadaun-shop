@@ -240,7 +240,7 @@
       "maxDuration": 60
     },
     "api/share-image.js": {
-      "includeFiles": "{data/catalog/catalog.json,data/gift/catalog.json,assets/shop/nadaun-logo.png,assets/shop/images/**,server/share-image.cjs,server/share-metadata.cjs}",
+      "includeFiles": "{data/catalog/catalog.json,data/gift/catalog.json,assets/shop/nadaun-logo.png,assets/shop/images/**,assets/shop/supplier-details/**,server/share-image.cjs,server/share-metadata.cjs}",
       "maxDuration": 15
     },
     "api/toss-review.js": {
