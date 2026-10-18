@@ -1,5 +1,10 @@
 const escape=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
+export function catalogDefaultOrder(brand){
+ const rank=p=>brand?.primary_source&&p.kind==='purchase'?Number(!p.offers?.some(o=>o.id===p.id&&o.source===brand.primary_source)):0;
+ return (a,b)=>Number(a.status==='soldout')-Number(b.status==='soldout')||rank(a)-rank(b);
+}
+
 export function isDiscounted(p){
   return p.release_status!=='coming_soon'&&p.kind==='purchase'&&!!p.offers?.some(o=>['smartstore','imweb'].includes(o.source))&&Number.isFinite(p.price)&&Number.isFinite(p.sale_price)&&p.price>0&&p.sale_price>=0&&p.sale_price<p.price;
 }

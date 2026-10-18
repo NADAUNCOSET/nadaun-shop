@@ -42,6 +42,13 @@ def name_key(product, brand=None):
         aliases = sorted(set([brand['name'], *brand.get('aliases', [])]), key=len, reverse=True)
         for alias in aliases:
             value = re.sub(r'(?<![a-z0-9])'+re.escape(text(alias))+r'(?![a-z0-9])', ' ', value)
+    if product.get('brand_id')=='blackmagic':
+        # Manufacturer PYXIS tech specs identify the unsuffixed 6K/12K
+        # as L-Mount; EF and PL remain separate models. Full-name matching
+        # prevents a monitor, kit, or other accessory becoming a camera.
+        match=re.fullmatch(r'\s*pyxis\s+(6k|12k)\s*(?:(l|ef|pl)\s*)?(?:\((l|ef|pl)마운트\))?\s*',value)
+        if match and (not match[2] or not match[3] or match[2]==match[3]):
+            value='pyxis '+match[1]+' '+(match[2] or match[3] or 'l')
     # Keep signs, decimals, slashes and model suffixes: 1.4 is not 14,
     # 70-200 is not 70200, and a kit with + components is not a bare product.
     return re.sub(r'[\s_\[\](),]+', '', value)

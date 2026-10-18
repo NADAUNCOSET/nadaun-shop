@@ -92,9 +92,10 @@
   },
   "306": {
     "expected_name": "Blackmagic PYXIS Rosette Plate",
-    "type": "kpp:0140",
+    "type": "camera-rig",
     "evidence": [
-      "https://hipixelplus.co.kr/product/detail.html?product_no=306"
+      "https://hipixelplus.co.kr/product/detail.html?product_no=306",
+      "https://www.blackmagicdesign.com/products/blackmagicpyxis/accessories"
     ]
   },
   "194": {

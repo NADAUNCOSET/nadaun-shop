@@ -29,13 +29,14 @@ PREFERRED = {
 ACCESSORY = re.compile(r'케이블|어댑터|플레이트|나사|교체용|센터컬럼|디퓨저|가방 휠|부품|커넥터|리모컨|배터리 커버|고무발|보호필름', re.I)
 
 
-def representative(brand_id, products, preferred_id=None):
+def representative(brand_id, products, preferred_id=None, preferred_source=None):
     candidates = [p for p in products if p['brand_id'] == brand_id and p.get('image')]
     if not candidates:
         raise RuntimeError('Brand has no representative product: ' + brand_id)
     pattern = PREFERRED.get(brand_id)
     def rank(p):
         return (p['id'] != preferred_id, p['status'] == 'soldout',
+                bool(preferred_source and not any(o['id']==p['id'] and o['source']==preferred_source for o in p.get('offers',[]))),
                 not bool(pattern and re.search(pattern, p['name'], re.I)), p['kind'] == 'rental',
                 bool(ACCESSORY.search(p['name'])), not p['image'].startswith('/assets/'))
     return min(candidates, key=rank)

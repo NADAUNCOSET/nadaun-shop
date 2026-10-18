@@ -1,7 +1,7 @@
 import './i18n.js?v=20261018';
 import './rental-content.js';
 import './product-search.js';
-import {isDiscounted,isPromotion,matchesBenefit,benefitNavigation,categoryTrail,categoryControls,catalogSelection,productTypeNavigation,brandSelectionHref} from './catalog-tools.js';
+import {isDiscounted,isPromotion,matchesBenefit,benefitNavigation,categoryTrail,categoryControls,catalogSelection,productTypeNavigation,brandSelectionHref,catalogDefaultOrder} from './catalog-tools.js';
 import {mountPurchase,renderCart,rentalGuide} from './cart.js';
 import {mountBanners} from './banners.js';
 import {browseDirectoryHtml} from './browse.js';
@@ -79,7 +79,7 @@ function renderCatalog(){
  const sort=params.get('sort')||'default';
  if(sort==='low'||sort==='high')filtered.sort((a,b)=>{const av=money(a),bv=money(b);if(av===null)return 1;if(bv===null)return-1;return sort==='low'?av-bv:bv-av});
  else if(sort==='name')filtered.sort((a,b)=>a.name.localeCompare(b.name,'ko'));
- else filtered.sort((a,b)=>Number(a.status==='soldout')-Number(b.status==='soldout'));
+ else filtered.sort(catalogDefaultOrder(brand));
  const size=24,pages=Math.max(1,Math.ceil(filtered.length/size));const requested=Number(params.get('page'));const page=Math.min(pages,Math.max(1,Number.isFinite(requested)?Math.floor(requested):1));
  const current=filtered.slice((page-1)*size,page*size);const trail=selectedCat?categoryTrail(visibleCategoryMap,cat):[];
  const children=selectedCat?applicable.filter(c=>c.parent_id===cat&&relevant(c)):[];

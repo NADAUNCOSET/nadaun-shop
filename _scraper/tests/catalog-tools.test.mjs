@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {categoryTrail,categoryControls,isDiscounted,isPromotion,matchesBenefit,benefitNavigation,catalogSelection,productTypeNavigation,brandSelectionHref} from '../../assets/shop/catalog-tools.js';
+import {categoryTrail,categoryControls,isDiscounted,isPromotion,matchesBenefit,benefitNavigation,catalogSelection,productTypeNavigation,brandSelectionHref,catalogDefaultOrder} from '../../assets/shop/catalog-tools.js';
 test('brand wrappers and new/best collections do not obscure real product categories',()=>{
  const categories=[{id:'h:b',name:'Blackmagic',brand_id:'b',parent_id:null,navigation_role:'wrapper'},
   {id:'h:s',name:'스위처',brand_id:'b',parent_id:'h:b'},
@@ -135,4 +135,11 @@ test('preferred brand navigation avoids repeated source menus and preserves old 
  assert.deepEqual(legacy.rows.map(p=>p.id),['1']);assert.equal(legacy.brandCategories.length,4);
  assert.equal(categoryTrail(new Map(legacy.brandCategories.map(c=>[c.id,c])),'naver:l').length,2);
  const all=catalogSelection(data,{brand:'b'});assert.equal(all.rows.length,2);
+});
+
+test('default brand order prefers its primary source within the same stock group',()=>{
+ const p=(id,source,status='inquiry')=>({id,kind:'purchase',status,offers:[{id,source}]});
+ const rows=[p('other','smartstore'),p('sold','hipixel','soldout'),p('main','hipixel')];
+ assert.deepEqual([...rows].sort(catalogDefaultOrder({primary_source:'hipixel'})).map(p=>p.id),['main','other','sold']);
+ assert.deepEqual([...rows].sort(catalogDefaultOrder()).map(p=>p.id),['other','main','sold']);
 });

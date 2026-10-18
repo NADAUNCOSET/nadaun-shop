@@ -77,6 +77,10 @@ class HiPixelTests(unittest.TestCase):
     def test_marketing_labels_do_not_hide_identical_models_but_specs_and_licences_remain(self):
         def p(name):return {'id':'hipixel-1','brand_id':'blackmagic','kind':'purchase','name':name}
         self.assertEqual(name_key(p('[신제품] ATEM Mini')),name_key(p('ATEM Mini')))
+        self.assertEqual(name_key(p('PYXIS 6K(L마운트)')),name_key(p('PYXIS 6K')))
+        self.assertEqual(name_key(p('PYXIS 6K(EF마운트)')),name_key(p('PYXIS 6K EF')))
+        self.assertNotEqual(name_key(p('PYXIS 6K')),name_key(p('PYXIS 6K PL')))
+        self.assertNotEqual(name_key(p('PYXIS 6K EF')),name_key(p('PYXIS 6K EF Kit')))
         self.assertEqual(name_key(p('Video Assist 5" 3G')),name_key(p('Video Assist 5 3G')))
         for a,b in [('Video Assist 7&quot; 3G','Video Assist 7 3G'),
                     ('덱링크 DeckLink Quad 2','DeckLink Quad 2'),
@@ -142,7 +146,7 @@ class HiPixelTests(unittest.TestCase):
 
     def test_manufacturer_families_do_not_match_printer_or_studio_rental_words(self):
         for name,target in [('DeckLink 8K Pro','video-capture'),('UltraStudio 4K Mini','video-capture'),
-            ('URSA Cine Mount B4','kpp:0330'),('URSA Live Encoder','video-streaming')]:
+            ('URSA Cine Mount B4','kpp:0330'),('URSA Live Encoder','video-streaming'),('PYXIS Rosette Plate','camera-rig')]:
             self.assertEqual(blackmagic_type(name),target)
         for sid in ('224','225'):
             self.assertEqual(product_types({'id':'hipixel-'+sid,'name':REVIEWED_TYPES[sid]['expected_name']},{}),['monitor'])

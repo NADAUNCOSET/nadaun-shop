@@ -414,13 +414,15 @@ def build(allow_pending=False):
         b['count']=counts[b['id']]
         b['purchase_count']=kind_counts[(b['id'],'purchase')]
         b['rental_count']=kind_counts[(b['id'],'rental')]
+        if source_choices.get(b['id'],{}).get('source')=='hipixel':
+            b['primary_source']='hipixel'
         b['category_ids']=[c['id'] for c in categories.values() if c['brand_id']==b['id']]
         if source_choices.get(b['id'],{}).get('exclusive'):
             b['exclusive_purchase_categories']=True
     from brand_products import representative
     brand_assets=json.loads((PUBLIC/'brand-assets.json').read_text())
     for b in brands.values():
-        featured=representative(b['id'],listing_products,(config.get('brand_featured_products') or {}).get(b['id']))
+        featured=representative(b['id'],listing_products,(config.get('brand_featured_products') or {}).get(b['id']),b.get('primary_source'))
         gallery=(public_details[featured['detail_bucket']][featured['id']].get('images') or {}).get('main') or []
         photo=featured['image'] if featured['image'].startswith('/assets/') else next(iter(gallery),featured['image'])
         b.update(representative_id=featured['id'],representative_image=photo,representative_name=featured['name'])

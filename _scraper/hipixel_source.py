@@ -169,7 +169,7 @@ def blackmagic_type(name):
         ('kpp:0330',r'(?:PL|LPL|EF|B4|F)\s+Mount|Mount\s+(?:PL|LPL|EF|B4|F)\b|Shim\s+Kit'),
         ('kpp:0650',r'\bHandle\b|Pro\s+Grip'),
         ('video-rack',r'Rack\s+(?:Kit|Shelf)|랙.*(?:키트|브라켓)'),
-        ('kpp:0140',r'Rosette\s+Plate'),('kpp:0740',r'Mic\s+Mount'),
+        ('camera-rig',r'Rosette\s+Plate'),('kpp:0740',r'Mic\s+Mount'),
         ('remote',r'(?:Zoom|Focus)\s+Demand'),('camera-rig',r'Broadcast\s+ENG\s+Kit'),
         ('camera-expansion',r'Camera\s+ProDock'),('storage-dock',r'Media\s+Dock|MultiDock'),
         ('ssd',r'Media\s+Module'),('video-control',r'Arduino\s+Shield|GPI\s+and\s+Tally'),
