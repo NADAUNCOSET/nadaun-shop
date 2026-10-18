@@ -8,6 +8,10 @@ def write_manifest(root,catalog,snapshots,choices):
     from brand_source_policy import publishable_ids
     files=['data/catalog/catalog.json','data/catalog/brands.json','data/catalog/rental.json','data/catalog/sync-status.json']
     files += [str(p.relative_to(root)) for p in (root/'data/catalog/details').glob('??.json')]
+    import json
+    from inline_product_images import referenced_paths
+    details={Path(p).stem:json.loads((root/p).read_text()) for p in files if p.startswith('data/catalog/details/')}
+    files += referenced_paths(catalog['products'],details)
     # Private source data is excluded from the deployment. Only identities and
     # digests needed to prove completeness are copied into the server manifest.
     inventories={}

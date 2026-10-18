@@ -8,6 +8,12 @@ from brand_category_policy import choose_navigation
 from cafe24_publication import prepare,validate_candidate
 from catalog_dedup import name_key,model_key,conflict
 from hipixel_source import product_types,REVIEWED_TYPES,apply_review,blackmagic_type,add_reviewed_navigation
+import base64
+from io import BytesIO
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from PIL import Image
+from inline_product_images import materialize
 
 
 class HiPixelTests(unittest.TestCase):
@@ -132,6 +138,27 @@ class HiPixelTests(unittest.TestCase):
             self.assertEqual(blackmagic_type(name),target)
         for sid in ('224','225'):
             self.assertEqual(product_types({'id':'hipixel-'+sid,'name':REVIEWED_TYPES[sid]['expected_name']},{}),['monitor'])
+
+    def test_inline_raster_detail_is_preserved_but_placeholder_or_script_is_rejected(self):
+        buf=BytesIO();Image.new('RGB',(64,128),'white').save(buf,format='PNG')
+        raw=buf.getvalue();uri='data:image/png;base64,'+base64.b64encode(raw).decode()
+        with TemporaryDirectory() as folder:
+            url=materialize(uri,'hipixel',root=folder)
+            target=Path(folder)/url.removeprefix('https://shop.nadaun.co/')
+            self.assertEqual(target.read_bytes(),raw)
+            self.assertEqual(materialize(uri,'hipixel',root=folder),url)
+            for bad in ['data:image/svg+xml;base64,PHN2Zz4=',uri.replace('png','jpeg'),'data:image/png;base64,YWJj']:
+                with self.assertRaises((ValueError,OSError)):materialize(bad,'hipixel',root=folder)
+
+    def test_missing_supplier_description_uses_labelled_manufacturer_summary_only(self):
+        p={'source_id':'249','name':'TERIS TS50CF','brand':'TERIS','brand_category_ids':['57','80','28'],
+           'content_issues':['description_missing'],'price':714000,'status':'inquiry'}
+        apply_review(p,{})
+        self.assertEqual(p['price'],714000)
+        self.assertEqual(p['status'],'inquiry')
+        self.assertIn('2021',p['description_notice'])
+        self.assertEqual(p['description_evidence']['source'],'manufacturer_brochure_summary')
+        with self.assertRaises(ValueError):apply_review({**p,'name':'TERIS TS50AL','content_issues':['description_missing']},{})
 
 
 if __name__=='__main__':unittest.main()

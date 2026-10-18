@@ -89,6 +89,17 @@ def add_reviewed_navigation(product,categories):
 
 def apply_review(record,schema):
     sid=str(record['source_id'])
+    if sid=='249' and 'description_missing' in record['content_issues']:
+        if record['name']!='TERIS TS50CF' or record['brand']!='TERIS' or set(record['brand_category_ids'])!={'57','80','28'}:
+            raise ValueError('Reviewed TS50CF description identity changed')
+        record['description_text']='TERIS TS50CF는 TS50 유체 헤드와 카본 삼각대로 구성된 시스템입니다. 제조사 카탈로그 기준 최대 지지하중은 5kg이며 75mm 볼을 사용합니다. 헤드는 고정 드래그와 고정 카운터밸런스를 제공합니다.'
+        record['description_notice']='제조사 카탈로그(2021) 기준 요약입니다. 현재 구성품과 상세 사양은 구매 상담에서 확인해 주세요.'
+        record['description_evidence']={'source':'manufacturer_brochure_summary','year':2021,
+            'url':'https://www.dedoweigertfilm.de/dwf-wAssets/img/Products/Teris/Teris_product_brochure_2021_V3.pdf',
+            'verified_via':'indexed manufacturer brochure excerpt; direct PDF download unavailable',
+            'reason':'HiPixel source description area is empty; no supplier specs invented'}
+        record['content_issues'].remove('description_missing')
+        record['detail_status']='verified' if not record['content_issues'] else 'review_required'
     if sid not in UNBRANDED_REVIEW_IDS:return
     expected=REVIEWED_TYPES[sid]
     declared=schema.get('brand',{})

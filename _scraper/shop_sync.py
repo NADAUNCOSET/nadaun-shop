@@ -50,6 +50,7 @@ CODE += ['_scraper/catalog_checkpoint.py','_scraper/test_catalog_checkpoint.py']
 CODE += ['_scraper/ldnet_identity.py','_scraper/test_ldnet_identity.py']
 CODE += ['_scraper/hipixel_source.py','_scraper/test_hipixel_source.py','_scraper/catalog_navigation.py','_scraper/catalog_release.py','server/catalog-release-check.cjs','CATALOG-RULES.md']
 CODE += ['_scraper/hipixel-reviewed-types.json','.vercelignore']
+CODE += ['_scraper/inline_product_images.py']
 CODE += ['_scraper/sync_saeki_catalog.py','_scraper/saeki_detail_parser.py','_scraper/saeki_publication.py','_scraper/saeki_categories.py','_scraper/saeki_worker.py','_scraper/test_saeki_catalog.py','_scraper/fixtures/saeki']
 
 def command(*args):
@@ -72,6 +73,9 @@ def managed_files():
            'data/catalog/catalog.json','data/catalog/rental.json','data/catalog/brands.json','data/catalog/sync-status.json','data/catalog/asset-manifest.json','data/catalog/dedup-audit.json']
     files += ['gift-item.html','search.html','gift-sitemap.xml','data/gift/catalog.json','data/gift/manifest.json']
     files += ['data/catalog/rental-details.json','server/catalog-release.json']
+    manifest=ROOT/'server/catalog-release.json'
+    if manifest.exists():
+        files.extend(p for p in json.loads(manifest.read_text())['files'] if p.startswith('assets/shop/supplier-details/'))
     files.extend(p.relative_to(ROOT).as_posix() for p in (ROOT/'data/gift/details').glob('??.json'))
     files.extend(p.relative_to(ROOT).as_posix() for p in ROOT.glob('gift-sitemap-[0-9]*.xml'))
     for source in ('smartstore','kpp','l-mount','nadaun-gift'):

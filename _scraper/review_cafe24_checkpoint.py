@@ -61,6 +61,9 @@ def review(source, apply=False, work=None):
                 product = dict(product)
                 nodes = {node['id']: node for node in inventory.get('categories', [])}
                 product['brand'] = '' if source in catalog.WHOLE_SITE else catalog.inventory_brand(product.get('brand_category_ids', []), nodes, catalog.SITES[source][1]) or product.get('brand', '')
+                if source=='hipixel':
+                    from hipixel_source import category_brand
+                    product['brand']=category_brand(product['brand_category_ids'],nodes)
                 try:
                     record, evidence = catalog.detail(catalog.soup(raw), product, product['brand'])
                 except (ValueError, KeyError, TypeError) as exc:

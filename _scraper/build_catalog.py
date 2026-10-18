@@ -301,6 +301,8 @@ def build(allow_pending=False):
             details[pid]={k:d.get(k) for k in ('description_text','options','option_groups','shipping','options_require_confirmation','description_notice','release_status') if d.get(k)}
             details[pid]['images']=p['images'];details[pid]['source_id']=p['source_id']
             p['_provenance']=source_provenance(p,d,s)
+            if source=='hipixel' and p.get('description_evidence'):
+                p['_provenance']['fields']['description_text']=deepcopy(p['description_evidence'])
             if source=='hipixel':
                 from hipixel_source import add_reviewed_navigation
                 for cid in add_reviewed_navigation(p,categories):

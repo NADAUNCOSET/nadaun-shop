@@ -292,6 +292,9 @@ def detail(doc,product,brand):
     if body:
         for i in body.select('img'):
             value=i.get('ec-data-src') or i.get('data-src') or i.get('src') or ''
+            if value.startswith('data:image/') and p['source']=='hipixel':
+                from inline_product_images import materialize
+                value=materialize(value,p['source'])
             if value and not value.startswith('data:'):descriptions.append(urljoin(base,value))
     groups=[]
     for node in doc.select('select[option_select_element], select[id^="product_option_id"]'):
