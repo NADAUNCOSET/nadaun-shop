@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "2c53ffd21acc39bf",
+  "revision": "01d522352414c5bb",
   "require_positions": true,
   "brand_order": [
     "blackmagic",
@@ -643,8 +643,8 @@
     "assets/shop/supplier-details/motion9/f1ef5f85fc99e320edcf123e9447530b296d153d03a5bf4d3d37d40e3d17d47c.jpg": "f1ef5f85fc99e320edcf123e9447530b296d153d03a5bf4d3d37d40e3d17d47c",
     "assets/shop/supplier-details/motion9/f4f5ea53f2ad60fef900f9dd9fd9b72fadcc03b35db2942d902b471b84d36b64.jpg": "f4f5ea53f2ad60fef900f9dd9fd9b72fadcc03b35db2942d902b471b84d36b64",
     "assets/shop/supplier-details/motion9/fd43b8071a40d1ccf7b164f4c7b07b378d54139795cdb4813bfeedc91c606f1a.jpg": "fd43b8071a40d1ccf7b164f4c7b07b378d54139795cdb4813bfeedc91c606f1a",
-    "data/catalog/brands.json": "b5d07f86139bff4a59ba0d29131e8e3b3e5be4eb8f06b52a5b39c2f16f176fb7",
-    "data/catalog/catalog.json": "baf4c982d5b5d478b5f71f0c6dc110ce9acedbf63f75d2eb69516a880adc7457",
+    "data/catalog/brands.json": "2f6a90cf278f8473261389f3fa2bb248304650b6a351bb188a0ccb61447a5c38",
+    "data/catalog/catalog.json": "bc175b06a26d0ad59e2e5610f2438c76549d80b3d344cc3889f89c4e9d251d14",
     "data/catalog/details/00.json": "2570ba4fde08fd5cb45f9a38c88ba01c698b19734d5b20b11eae416e614b4f9e",
     "data/catalog/details/01.json": "423289b9ca30e170ac440f3ff0a6e06b45742cb71e814ea14243870223eed830",
     "data/catalog/details/02.json": "ff20a0bb4b5a3fef39bd57136c529b4332df495c219c7f59b158c2f79cc20a54",
@@ -676,7 +676,7 @@
     "data/catalog/details/1c.json": "9dcf90e9a6b56a7a682d11759dcba23db39621acf3bca5fad40a34476c1113c0",
     "data/catalog/details/1d.json": "5264dc10d66580f16ca6fbaa042aa3fcf4a36b9d86a118bf562cebc9a9ded43b",
     "data/catalog/details/1e.json": "3527a3debc6736771127b81d44006a816fe4587c8f93e69ce1d18a388ac53f05",
-    "data/catalog/details/1f.json": "0af1709beb5cc563a205459453b699d78f7532f48239505adb71946e83093478",
+    "data/catalog/details/1f.json": "44a9c934b16b6c9c33a766c189f977f4a40c568b2544d5411122aa6429d5bb40",
     "data/catalog/details/20.json": "1ebf8e921cd495ff1f1eea361279551f9f22235ddb8f49b32eaebdc297634ed4",
     "data/catalog/details/21.json": "996b1487f64810e65916816ec14b06eafb0c8072ebdc0cbcb6e9018d3f545b0d",
     "data/catalog/details/22.json": "720239425ce9e12ae21912f083b06672aad9628710db83a83d35e44df0600be2",
@@ -893,7 +893,7 @@
     "data/catalog/details/f5.json": "033fe8145850783a27ff6dcbaf81909bfb5419f183bf5934e65c956eeb9326d2",
     "data/catalog/details/f6.json": "0b917034cc4b62be3ab5e281d12e6412670ff9bc4230411ca87ac8d1f443fe90",
     "data/catalog/details/f7.json": "823eaed5c419d6930be8bbda5da0a50f68a20e83d19847ed5931b9d1c5f42072",
-    "data/catalog/details/f8.json": "1c76861dfc808262d22a315062844cde491aeab75b29f0274a756641fbfd4c4e",
+    "data/catalog/details/f8.json": "24d87ad35f73c502e7ba2416c5a057e7bd57c306da5119ab992c4002b6806239",
     "data/catalog/details/f9.json": "b8dd18b82d8577b209152075784e3449cb0817fe3c86d885183c5f307a62f19c",
     "data/catalog/details/fa.json": "9c104a4a224d7d0d347678b57427a1e15f1940374f5689deaa57572d02d0d3ac",
     "data/catalog/details/fb.json": "6d8b64e045e7c37458bd2f3ce584d2c3200a24c7f83b43ca0943b8a12ab5d54a",
@@ -901,7 +901,7 @@
     "data/catalog/details/fd.json": "b3436ca230439dd221bb3d81659bd1ee5d8f7befcb65cc3747ab2ec14217e1b5",
     "data/catalog/details/fe.json": "b19202b6cbf9c4f681e769ee37782271cf641366ee71cc2b7c954e216a7906ae",
     "data/catalog/details/ff.json": "43e7970e54df059794a7d7e202f7081ccd297e9101cca7b6aa2c712ba712e089",
-    "data/catalog/rental.json": "61806dd2c04b9369650d28d8f0bd3fc60ed18cf822be5cf800423ab4605c5878",
-    "data/catalog/sync-status.json": "f3d0b272ec2f85634fbda54829e0286d7eadafaf18345b044e2598cb7753d2f3"
+    "data/catalog/rental.json": "cdf010cdf60495d30175bab6d065f1412c2c06ab2335a3e0ce91174cf42efd03",
+    "data/catalog/sync-status.json": "25fb1871d3f42e346fb0946781cac98d9adccd89502aff5098cf76986d4fcce2"
   }
 }

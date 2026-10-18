@@ -244,7 +244,7 @@
       "motion9": 24,
       "funomad": 51
     },
-    "synced_at": "2026-10-18T18:17:10+00:00",
+    "synced_at": "2026-10-18T23:04:36+00:00",
     "merged_count": 3583,
     "retired_redirect_count": 1930,
     "product_count": 217,
@@ -256,7 +256,7 @@
       "groups": 2966,
       "removed": 3583
     },
-    "revision": "2c53ffd21acc39bf",
+    "revision": "01d522352414c5bb",
     "view": "rental"
   },
   "brands": [
@@ -2520,9 +2520,9 @@
         "naver:b:kupo:50001389",
         "naver:b:kupo:50002076",
         "naver:b:kupo:50002079",
+        "naver:b:kupo:50002077",
         "naver:b:kupo:50000093",
         "naver:b:kupo:50006203",
-        "naver:b:kupo:50002077",
         "plthink:b:064",
         "plthink:b:064:005",
         "plthink:b:064:006",
@@ -20347,70 +20347,70 @@
       "name": "모니터",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1015
+      "navigation_position": 1016
     },
     {
       "id": "naver:p:50000266",
       "name": "미러리스디카",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1016
+      "navigation_position": 1017
     },
     {
       "id": "naver:p:50000268",
       "name": "캠코더",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1019
+      "navigation_position": 1020
     },
     {
       "id": "naver:p:50002320",
       "name": "스피커단품",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1020
+      "navigation_position": 1021
     },
     {
       "id": "naver:p:50004605",
       "name": "광각렌즈",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1024
+      "navigation_position": 1025
     },
     {
       "id": "naver:p:50001968",
       "name": "방송음향기기",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1031
+      "navigation_position": 1032
     },
     {
       "id": "naver:p:50004606",
       "name": "망원렌즈",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1035
+      "navigation_position": 1036
     },
     {
       "id": "naver:p:50007304",
       "name": "사진/영상 촬영",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1038
+      "navigation_position": 1039
     },
     {
       "id": "naver:p:50002101",
       "name": "GPS/무선송수신",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1044
+      "navigation_position": 1045
     },
     {
       "id": "naver:p:50000265",
       "name": "DSLR카메라",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1045
+      "navigation_position": 1046
     },
     {
       "id": "type:kpp:01",
