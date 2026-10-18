@@ -46,7 +46,7 @@ def name_key(product, brand=None):
         # Manufacturer PYXIS tech specs identify the unsuffixed 6K/12K
         # as L-Mount; EF and PL remain separate models. Full-name matching
         # prevents a monitor, kit, or other accessory becoming a camera.
-        match=re.fullmatch(r'\s*pyxis\s+(6k|12k)\s*(?:(l|ef|pl)\s*)?(?:\((l|ef|pl)마운트\))?\s*',value)
+        match=re.fullmatch(r'\s*pyxis\s+(6k|12k)\s*(?:(l|ef|pl)\s*)?(?:\((l|ef|pl)마운트\))?\s*',re.sub(r'[\[\]]',' ',value))
         if match and (not match[2] or not match[3] or match[2]==match[3]):
             value='pyxis '+match[1]+' '+(match[2] or match[3] or 'l')
     # Keep signs, decimals, slashes and model suffixes: 1.4 is not 14,

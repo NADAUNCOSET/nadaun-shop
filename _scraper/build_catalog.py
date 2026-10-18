@@ -403,6 +403,8 @@ def build(allow_pending=False):
         if any(p['brand_id']==bid and p['kind']=='purchase' and any(cid.startswith(selected+':') and categories[cid].get('brand_id')==bid for cid in p['category_ids']) for p in public_products):
             navigation_choices[bid]=selected
     navigation_audit=choose_navigation(public_products,categories,brands,navigation_choices)
+    from catalog_navigation import unify_reviewed_navigation
+    unify_reviewed_navigation(public_products,categories,brands,navigation_audit)
     save_json(ROOT/'_scraper/.sync-state/brand-category-selection.json',navigation_audit)
     for p in public_products:
         p['discovery']=product_discovery(p,brands[p['brand_id']],categories)

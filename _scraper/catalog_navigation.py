@@ -1,6 +1,50 @@
 """Deterministic brand menus and a reviewable, NAS-only supplier register."""
 from collections import Counter, defaultdict
 import json
+from pathlib import Path
+
+SUPPLEMENTAL_REVIEW=json.loads(Path(__file__).with_name('hipixel-supplemental-navigation.json').read_text())
+
+
+def reviewed_product_type(product):
+    rule=SUPPLEMENTAL_REVIEW.get(product['id'])
+    if not rule:return None
+    if product['name']!=rule['expected_name'] or product['brand_id']!=rule['brand_id']:
+        raise ValueError('Reviewed supplemental product identity changed: '+product['id'])
+    return rule.get('product_type')
+
+
+def unify_reviewed_navigation(products,categories,brands,audit):
+    """Our menu mapping, never a claim of membership in a supplier inventory."""
+    for bid in ('blackmagic','tvlogic','teris'):
+        report=audit['brands'].get(bid,{})
+        if report.get('preferred_source')!='hipixel':continue
+        rows=[p for p in products if p['brand_id']==bid and p['kind']=='purchase']
+        mapped=[]
+        for p in rows:
+            rule=SUPPLEMENTAL_REVIEW.get(p['id'])
+            jib=bid=='teris' and 'type:jib' in p['type_ids']
+            if any(c.startswith('hipixel:') for c in p['navigation_category_ids']) and not jib:continue
+            if jib:
+                target='hipixel:b:teris:purpose:jib'
+                categories.setdefault(target,{'id':target,'name':'크레인·지미집','brand_id':bid,
+                    'parent_id':'hipixel:b:teris:28','position':998,'navigation_role':'reviewed-category'})
+            elif rule:
+                reviewed_product_type(p)  # Exact-title and brand guard.
+                target=rule['category_id']
+            else:
+                raise ValueError('New supplemental brand menu requires review: '+p['id'])
+            path=[];cursor=target
+            while cursor:
+                if cursor in path or cursor not in categories or categories[cursor].get('brand_id')!=bid:
+                    raise ValueError('Invalid reviewed navigation target: '+target)
+                path.insert(0,cursor);cursor=categories[cursor].get('parent_id')
+            mapped.append({'product_id':p['id'],'original_navigation':p['navigation_category_ids'],
+                'reviewed_navigation':path,'basis':'reviewed_product_purpose','rule_file':'_scraper/hipixel-supplemental-navigation.json'})
+            p['navigation_category_ids']=path
+        brands[bid]['navigation_category_ids']=list(dict.fromkeys(cid for p in rows for cid in p['navigation_category_ids']))
+        report['reviewed_navigation']=mapped
+        report['fallback_products']=len({p.get('listing_id',p['id']) for p in rows if not any(c.startswith('hipixel:') for c in p['navigation_category_ids'])})
 
 
 def arrange_categories(categories, brands, navigation_audit):

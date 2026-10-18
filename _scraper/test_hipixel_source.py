@@ -174,3 +174,20 @@ class HiPixelTests(unittest.TestCase):
 
 
 if __name__=='__main__':unittest.main()
+
+class SupplementalNavigationTests(unittest.TestCase):
+    def test_reviewed_menu_preserves_source_membership_and_rejects_unknown_products(self):
+        from catalog_navigation import unify_reviewed_navigation,SUPPLEMENTAL_REVIEW
+        rule=SUPPLEMENTAL_REVIEW['smartstore-13740634279']
+        root='hipixel:b:blackmagic:24';group='hipixel:b:blackmagic:30';leaf=rule['category_id']
+        cats={cid:{'id':cid,'brand_id':'blackmagic','parent_id':parent} for cid,parent in [(root,None),(group,root),(leaf,group)]}
+        p={'id':'smartstore-13740634279','name':rule['expected_name'],'brand_id':'blackmagic','kind':'purchase','category_ids':['original:1'],'navigation_category_ids':['original:1'],'type_ids':['type:converter']}
+        brands={'blackmagic':{}};audit={'brands':{'blackmagic':{'preferred_source':'hipixel'}}}
+        unify_reviewed_navigation([p],cats,brands,audit)
+        self.assertEqual(p['category_ids'],['original:1'])
+        self.assertEqual(p['navigation_category_ids'],[root,group,leaf])
+        self.assertEqual(audit['brands']['blackmagic']['fallback_products'],0)
+        unknown={**p,'id':'new-unknown','navigation_category_ids':['original:1']}
+        with self.assertRaises(ValueError):unify_reviewed_navigation([unknown],cats,brands,audit)
+        changed={**p,'name':p['name']+' revised','navigation_category_ids':['original:1']}
+        with self.assertRaises(ValueError):unify_reviewed_navigation([changed],cats,brands,audit)

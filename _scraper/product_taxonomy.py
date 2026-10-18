@@ -320,6 +320,9 @@ def build_taxonomy(products,categories,overrides=None,ldnet_categories=None,saek
                 from hipixel_source import blackmagic_type
                 known=blackmagic_type(name)
                 if known:selected=['type:'+known];reason='blackmagic-manufacturer-family'
+            from catalog_navigation import reviewed_product_type
+            reviewed=reviewed_product_type(p)
+            if reviewed:selected=['type:'+reviewed];reason='reviewed-supplemental-product-purpose'
         # A verified merged offer still carries its source category evidence.
         # The public primary ID can be Smartstore/Cinemall rather than Saeki.
         saeki_matches=[saeki_products[o['id']] for o in p.get('offers',[])
