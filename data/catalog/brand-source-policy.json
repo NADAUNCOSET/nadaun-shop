@@ -2,16 +2,29 @@
   "version": 2,
   "brands": {
     "tilta": {
-      "source": "smartstore",
+      "source": "avx",
       "sources": [
-        "smartstore",
-        "clmedia",
-        "cinemall"
+        "avx",
+        "clmedia"
       ],
       "scope": "purchase",
       "confirmed_by": "owner",
       "preserve_existing": true,
-      "reason": "우리 기존 틸타 본사 상품을 메인으로 유지하고 씨엘미디어·시네몰 상품 보완"
+      "reason": "대표 지정: TILTA는 AVX와 씨엘미디어가 공동 주 기준. 기존 스마트스토어 메인 지시를 대체. 두 주 기준에 없는 고유 상품은 기존 보완 정책을 유지하며 씨네몰의 별도 승인·중지 조건은 해제하지 않음.",
+      "main_sources": [
+        "avx",
+        "clmedia"
+      ],
+      "exclusive": false,
+      "confirmed_at": "2026-10-19",
+      "navigation_source": "kpp",
+      "reference_sources": [
+        "kpp"
+      ],
+      "image_reference_sources": [
+        "kpp"
+      ],
+      "reference_note": "2026-10-19 대표 추가: KPP의 잘 정리된 상품·카테고리·이미지도 비교하고 활용. 기존 AVX·씨엘미디어 공동 주 기준은 유지."
     },
     "dji": {
       "source": "dji-official",
@@ -34,7 +47,9 @@
       ],
       "scope": "purchase",
       "confirmed_by": "owner",
-      "reason": "KPP와 씨엘미디어 통합, 동일 모델·색상·구성은 중복 표시하지 않음"
+      "reason": "대표 지정: 스몰리그는 KPP와 씨엘미디어만 확인. 다른 공급처의 해당 브랜드 구매 상품은 검토·편입 대상에서 제외. 원본 스냅샷과 렌탈은 보존.",
+      "exclusive": true,
+      "confirmed_at": "2026-10-19"
     },
     "aputure": {
       "source": "avx",
@@ -87,6 +102,89 @@
       "confirmed_at": "2026-10-18",
       "preserve_existing": true,
       "reason": "하이픽셀 전 상품 주 기준 지시에 포함된 제조사 미표기 범용 케이블·랙 부품 4종. 블랙매직 호환과 블랙매직 제조를 구분하며 다른 공급처와 제조사 추정 병합 금지."
+    },
+    "leofoto": {
+      "source": "kpp",
+      "sources": [
+        "kpp"
+      ],
+      "scope": "purchase",
+      "exclusive": true,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-19",
+      "reason": "대표 지정: 레오포트(기존 등록 LEOFOTO/레오포토)는 KPP 기준으로 확인. 원본 스냅샷과 렌탈은 보존."
+    },
+    "wandrd": {
+      "source": "saeki",
+      "sources": [
+        "saeki"
+      ],
+      "navigation_source": "saeki",
+      "scope": "purchase",
+      "exclusive": true,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-19",
+      "reason": "대표 지정: WANDRD는 세기만 참고. 다른 구매 출처는 편입 제외하며 렌탈과 원본 증거는 보존."
+    },
+    "fxlion": {
+      "source": "kpp",
+      "sources": [
+        "kpp"
+      ],
+      "navigation_source": "kpp",
+      "scope": "purchase",
+      "exclusive": true,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-19",
+      "reason": "대표 지정: FXLION은 KPP만 미러링. 다른 구매 출처는 편입 제외하며 렌탈과 원본 증거는 보존."
+    },
+    "hollyland": {
+      "source": "clmedia",
+      "sources": [
+        "clmedia"
+      ],
+      "navigation_source": "clmedia",
+      "scope": "purchase",
+      "exclusive": true,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-19",
+      "reason": "대표 지정: 홀리랜드는 씨엘미디어만 확인. 다른 구매 출처는 편입 제외하며 렌탈과 원본 증거는 보존."
+    },
+    "motion9": {
+      "source": "motion9",
+      "navigation_source": "motion9",
+      "scope": "purchase",
+      "exclusive": true,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-19",
+      "reason": "모션나인 공식 현재24상품/6분류를 기준으로5% 인상 적용. 렌탈 보존."
+    },
+    "teradek": {
+      "source": "funomad",
+      "navigation_source": "funomad",
+      "scope": "purchase",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-19",
+      "reason": "펀노마드 제품·분류 미러링. 펀노마드 신규 상품은 가격 문의. 확인되지 않은 기존 고유 구성은 삭제 보류."
+    },
+    "smallhd": {
+      "source": "funomad",
+      "navigation_source": "funomad",
+      "scope": "purchase",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-19",
+      "reason": "펀노마드 제품·분류 미러링. 펀노마드 신규 상품은 가격 문의. 확인되지 않은 기존 고유 구성은 삭제 보류."
+    },
+    "wooden-camera": {
+      "source": "funomad",
+      "navigation_source": "funomad",
+      "scope": "purchase",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-19",
+      "reason": "펀노마드 제품·분류 미러링. 펀노마드 신규 상품은 가격 문의. 확인되지 않은 기존 고유 구성은 삭제 보류."
     }
   },
   "source_approvals": {
@@ -138,6 +236,45 @@
       "confirmed_by": "owner",
       "confirmed_at": "2026-10-18",
       "reason": "대표가 하이픽셀 플러스 취급 제품 전체를 메인으로 승인. 전체 원본 검증 후 동일 상품 중복은 하이픽셀을 우선하고 고유 상품·기존 주소는 보존."
+    },
+    "motion9": {
+      "scope": "all_brands",
+      "mode": "prefer_verified_matches",
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-19",
+      "reason": "대표 주력 취급 브랜드. 공식 현재 제품과 구성·분류·이미지를 미러링하고 판매가에 5% 인상."
+    },
+    "funomad": {
+      "scope": "all_brands",
+      "mode": "prefer_verified_matches",
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-19",
+      "reason": "대표 전 제품 미러링 지시. 제품·카테고리·이미지·구성을 보존하고 가격은 문의로 표시."
     }
+  },
+  "business_model": {
+    "confirmed_by": "owner",
+    "confirmed_at": "2026-10-19",
+    "rental_and_hire_are_same": true,
+    "independently_operated_business": "rental",
+    "purchase_role": "dealer",
+    "purchase_reference": "main_supplier",
+    "cleanup_authorized_channels": [
+      "shop",
+      "smartstore"
+    ],
+    "remove_when": "duplicate exact identity or confirmed absent from main supplier; incomplete snapshots, soldout and request failures are not absence evidence",
+    "price_exceptions": [
+      "smartstore-12837690697",
+      "smartstore-13452266335"
+    ],
+    "primary_handled_brands": [
+      "captureone",
+      "tilta",
+      "motion9"
+    ],
+    "motion9_requested_source": "https://motionnine.cafe24.com/",
+    "motion9_price_multiplier": "1.05",
+    "funomad_price_mode": "inquiry_only"
   }
 }

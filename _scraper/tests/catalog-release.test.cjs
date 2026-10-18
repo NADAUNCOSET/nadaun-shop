@@ -22,3 +22,8 @@ for(const [name,mutate,expected] of [
 ])test(name+' blocks deployment',()=>{const c=fixture();mutate(c);assert(validateCatalog(c,{require_positions:true}).some(e=>e.includes(expected)))});
 test('a changed supplier inventory cannot pass the approved source digest',()=>assert(validateCatalog(fixture(),{source_inventories:{h:{count:2,sha256:idsDigest(['h-1','h-2'])}}}).some(e=>e.includes('Incomplete source inventory'))));
 test('a lower-priority duplicate cannot become canonical',()=>{const c=fixture();c.products[0].offers.push({id:'hipixel-1',source:'hipixel'});assert(validateCatalog(c,{primary_sources:{b:'hipixel'}}).some(e=>e.includes('Wrong preferred supplier')))});
+test('either confirmed main supplier is accepted while supplemental cannot win',()=>{
+ const c=fixture();c.products[0].offers.push({id:'avx-1',source:'avx'});
+ assert.deepEqual(validateCatalog(c,{primary_sources:{b:'avx'},main_sources:{b:['avx','h']}}),[]);
+ assert(validateCatalog(c,{primary_sources:{b:'avx'},main_sources:{b:['avx','clmedia']}}).some(e=>e.includes('Wrong preferred supplier')));
+});

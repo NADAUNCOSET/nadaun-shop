@@ -10,6 +10,8 @@ def validate_updates(updates):
     cafe24_sources=tuple(SITES)
     sources = {'plthink': 'plthink', 'avx-approved': 'avx', 'dji-official': 'dji-official', 'saeki':'saeki'}
     sources.update({name:name for name in cafe24_sources})
+    from reviewed_supplier_sources import SOURCES, validate_snapshot
+    sources.update({name:name for name in SOURCES})
     for name, snapshot in updates.items():
         if name not in sources or snapshot.get('source') != sources[name]:
             raise ValueError('Unsupported source promotion')
@@ -19,6 +21,7 @@ def validate_updates(updates):
                 not isinstance(snapshot.get('products'), dict) or
                 count != len(snapshot['products'])):
             raise ValueError('A complete verified source candidate is required')
+        if name in SOURCES:validate_snapshot(snapshot)
         if name=='saeki':
             from saeki_publication import validate_candidate
             validate_candidate(snapshot)

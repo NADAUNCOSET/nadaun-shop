@@ -15,6 +15,8 @@ NAMES['onnoff']='온앤오프미디어'
 NAMES['ldnet']='엘디네트웍스'
 NAMES['saeki']='세기몰'
 NAMES['hipixel']='하이픽셀 플러스'
+NAMES['motion9']='모션나인'
+NAMES['funomad']='펀노마드'
 # Owner retired the old Imweb catalogue on 2026-10-15. Keep its snapshots
 # for recovery, but never use them for publication or source recommendations.
 RETIRED_SOURCES=frozenset({'imweb','imweb-dji','imweb-promotions'})
@@ -41,7 +43,8 @@ def purchase_source_allowed(product, choices=None):
     if product.get('kind') != 'purchase':return True
     from build_catalog import brand_id
     choice=(choices if choices is not None else selections()).get(brand_id(product['brand']),{})
-    return not choice.get('exclusive') or product.get('source')==choice['source']
+    allowed=choice.get('sources') or [choice.get('source')]
+    return not choice.get('exclusive') or product.get('source') in allowed
 
 
 def publishable_ids(snapshot):

@@ -17,6 +17,7 @@ from catalog_seo import product_discovery, page_metadata, page_structured_data, 
 from brand_category_policy import mirror_source_paths
 from sync_cafe24_partners import SITES as CAFE24_SITES
 from owned_assets import resolve_assets
+from reviewed_supplier_sources import SOURCES as REVIEWED_SOURCES, validate_snapshot as validate_reviewed_source, retail_product, reference_price_overrides
 
 CAFE24_SOURCES=tuple(CAFE24_SITES)
 
@@ -165,6 +166,9 @@ def verified_sources():
             raise RuntimeError('PLTHINK verified brands do not match the source menu')
         if any(p.get('detail_status')!='verified' for p in snapshot['products'].values()):
             raise RuntimeError('PLTHINK product details are incomplete')
+    for source in REVIEWED_SOURCES:
+        path=OUT/(source+'.json')
+        if path.exists():snapshots[source]=validate_reviewed_source(json.loads(path.read_text()))
     return snapshots
 
 
@@ -172,8 +176,10 @@ def build(allow_pending=False):
     snapshots=verified_sources()
     from brand_source_policy import AUDIT,selections,write_audit,source_provenance,merge_category_provenance,purchase_source_allowed
     source_choices=selections()
+    dealer_sales=json.loads((PUBLIC/'brand-source-policy.json').read_text()).get('business_model',{}).get('purchase_reference')=='main_supplier'
     for bid,choice in source_choices.items():
-        if choice.get('exclusive') and choice['source'] not in snapshots:
+        required=choice.get('sources') or [choice.get('source')]
+        if choice.get('exclusive') and any(source not in snapshots for source in required):
             raise RuntimeError('Exclusive replacement is not verified yet: '+bid)
     official_dji=source_choices.get('dji',{}).get('source')=='dji-official' and 'dji-official' in snapshots
     partner_image_rules=json.loads((PUBLIC/'partner-image-rules.json').read_text())
@@ -197,7 +203,7 @@ def build(allow_pending=False):
                 prefix='kpp:'+('b:'+bid if bid else 'p')+':'
             elif source=='imweb-promotions':bid=None;prefix='imweb:promotion:'
             elif source=='l-mount':bid='ldl-mount';prefix='l-mount:b:ldl-mount:'
-            elif source in ('plthink','avx','dji-official','saeki',*CAFE24_SOURCES):bid=brand_id(c['brand']);prefix=source+':b:'
+            elif source in ('plthink','avx','dji-official','saeki',*CAFE24_SOURCES,*REVIEWED_SOURCES):bid=brand_id(c['brand']);prefix=source+':b:'
             else:bid='dji';prefix='imweb:b:dji:'
             if official_dji and bid=='dji' and source!='dji-official':continue
             c.update(id=prefix+c['id'],parent_id=prefix+c['parent_id'] if c['parent_id'] else None,brand_id=bid)
@@ -214,11 +220,15 @@ def build(allow_pending=False):
                 products[pid]['promotion_ids']=['imweb:promotion:'+cid for cid in p0['brand_category_ids']]
                 coverage[source]+=1
                 continue
-            p=deepcopy(p0);p['brand']=reviewed_brand(p,brand_overrides)
+            p=retail_product(p0) if source in REVIEWED_SOURCES else deepcopy(p0);p['brand']=reviewed_brand(p,brand_overrides)
             p['brand_id']=add_brand(p['brand']);p['name']=product_name(p['name'])
             if not purchase_source_allowed(p,source_choices):continue
             bid=p['brand_id'];membership=[];types=[]
-            if p.get('kind')=='purchase':p['_preferred_source']=source_choices.get(bid,{}).get('source')
+            if p.get('kind')=='purchase':
+                p['_prefer_supplier']=dealer_sales
+                choice=source_choices.get(bid,{})
+                p['_preferred_source']=choice.get('source')
+                p['_preferred_sources']=choice.get('main_sources') or [choice.get('source')]
             p['_supplemental_source']=source in (*CAFE24_SOURCES,'saeki')
             if 'avx' in snapshots and source!='avx' and bid=='aputure' and p.get('kind')=='purchase':continue
             if source=='kpp':
@@ -243,7 +253,7 @@ def build(allow_pending=False):
                                                categories, bid, f'imweb:b:{bid}:promotion:')
             elif source=='imweb-dji': membership=['imweb:b:dji:'+cid for cid in p.get('brand_category_ids',[])]
             elif source=='l-mount': membership=['l-mount:b:ldl-mount:'+cid for cid in p.get('brand_category_ids',[])]
-            elif source in ('plthink','avx','dji-official','saeki',*CAFE24_SOURCES): membership=[source+':b:'+cid for cid in p.get('brand_category_ids',[])]
+            elif source in ('plthink','avx','dji-official','saeki',*CAFE24_SOURCES,*REVIEWED_SOURCES): membership=[source+':b:'+cid for cid in p.get('brand_category_ids',[])]
             else:
                 path=p.get('source_category_path') or [];ids=p.get('source_category_ids') or []
                 # Naver standard classifications are retained separately from
@@ -268,8 +278,8 @@ def build(allow_pending=False):
             if source=='kpp' and d.get('source_fingerprint')!=source_fingerprint(p0):
                 d={}
             if source.startswith('imweb-'):d={'detail_status':'verified','description_text':p.get('description_text',''),'images':p['images']}
-            if source in ('l-mount','plthink','avx','dji-official','saeki',*CAFE24_SOURCES):d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation') if k in p}
-            if source=='hipixel' and p.get('description_notice'):d['description_notice']=p['description_notice']
+            if source in ('l-mount','plthink','avx','dji-official','saeki',*CAFE24_SOURCES,*REVIEWED_SOURCES):d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation','description_text_alongside_images') if k in p}
+            if source in ('hipixel',*REVIEWED_SOURCES) and p.get('description_notice'):d['description_notice']=p['description_notice']
             if source=='saeki':
                 d['description_notice']=p.get('description_notice','')
                 d.update(public_release_fields(p))
@@ -298,7 +308,7 @@ def build(allow_pending=False):
             if source=='kpp' and d.get('detail_status')=='verified':p['price']=d['price'];p['sale_price']=d['sale_price']
             p['offers']=[{'source':p['source'],'url':p['source_url'],'status':p['status'],'price':p.get('sale_price'),'id':pid}]
             if p.get('release_status'):p['offers'][0].update(public_release_fields(p))
-            details[pid]={k:d.get(k) for k in ('description_text','options','option_groups','shipping','options_require_confirmation','description_notice','release_status') if d.get(k)}
+            details[pid]={k:d.get(k) for k in ('description_text','options','option_groups','shipping','options_require_confirmation','description_notice','release_status','description_text_alongside_images') if d.get(k)}
             details[pid]['images']=p['images'];details[pid]['source_id']=p['source_id']
             p['_provenance']=source_provenance(p,d,s)
             if source=='hipixel' and p.get('description_evidence'):
@@ -335,6 +345,7 @@ def build(allow_pending=False):
                 if key in override:
                     p[key]=deepcopy(override[key])
                     p['_provenance']['fields'][key]={'source':'owner_override','file':'data/catalog/overrides.json','product_id':pid}
+    reference_price_overrides(products,redirects,snapshots,config.get('products',{}))
     asset_path=PUBLIC/'asset-manifest.json'
     assets=json.loads(asset_path.read_text()) if asset_path.exists() else {}
     public_products=[];public_details=defaultdict(dict);rental_details={};rental_content_audit=[]

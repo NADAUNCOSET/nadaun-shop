@@ -13,3 +13,6 @@ _카테고리_리스트업.txt
 
 # NAS-only private records stay inside this project, never in Git.
 /_private/
+
+# NAS-only owner review documents.
+/검토자료/

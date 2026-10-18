@@ -74,6 +74,14 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(public['publication']['pending_content_product_count'],1)
         self.assertEqual(sum(public['publication'][k] for k in ('accepted_product_count','pending_product_count','owner_excluded_product_count')),6)
 
+    def test_latest_brand_limits_override_whole_supplier_approval(self):
+        self.approval.return_value=True
+        with patch.object(publication,'inventory',return_value={}):
+            public,decisions=publication.partition(source())
+        self.assertNotIn('avx-2',public['products'])  # SmallRig: KPP + CLMEDIA only.
+        self.assertEqual(decisions['excluded_ids']['avx-2'],'smallrig')
+        self.assertIn('avx-3',public['products'])  # TILTA: AVX is a main source.
+
     def test_pending_choice_cannot_unlock_complete_dependency_and_policy_changes_invalidate_receipt(self):
         public,_=self.partition()
         with tempfile.TemporaryDirectory() as tmp,patch.object(publication,'policy_fingerprint',return_value='policy'):

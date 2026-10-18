@@ -53,6 +53,47 @@ class SourcePolicyTests(unittest.TestCase):
         selected={**base,'id':'kpp-1','source':'kpp','status':'soldout'}
         self.assertLess(primary_key(selected),primary_key(base))
 
+    def test_owner_brand_limits_allow_all_selected_sources_and_preserve_rentals(self):
+        choices=policy.selections()
+        for brand,allowed in [('SmallRig',{'kpp','clmedia'}),('LEOFOTO',{'kpp'})]:
+            for source in policy.NAMES:
+                if source in policy.RETIRED_SOURCES:continue
+                with self.subTest(brand=brand,source=source):
+                    p={'brand':brand,'kind':'purchase','source':source}
+                    self.assertEqual(policy.purchase_source_allowed(p,choices),source in allowed)
+                    self.assertTrue(policy.purchase_source_allowed({**p,'kind':'rental'},choices))
+        self.assertTrue(policy.purchase_source_allowed({'brand':'Sony','kind':'purchase','source':'clmedia'},choices))
+
+    def test_exclusive_multi_source_build_requires_every_selected_snapshot(self):
+        import build_catalog
+        choices={'smallrig':{'source':'kpp','sources':['kpp','clmedia'],'exclusive':True}}
+        with patch.object(build_catalog,'verified_sources',return_value={'kpp':{}}),patch.object(policy,'selections',return_value=choices):
+            with self.assertRaisesRegex(RuntimeError,'Exclusive replacement.*smallrig'):
+                build_catalog.build()
+
+    def test_both_tilta_main_sources_beat_old_smartstore_main(self):
+        choice=policy.selections()['tilta']
+        base={'id':'smartstore-1','source':'smartstore','status':'sale',
+              '_preferred_source':choice['source'],'_preferred_sources':choice['main_sources']}
+        for source in ('avx','clmedia'):
+            selected={**base,'id':source+'-1','source':source,'status':'soldout','_supplemental_source':True}
+            self.assertLess(primary_key(selected),primary_key(base))
+        for source in ('avx','clmedia','kpp','smartstore'):
+            self.assertTrue(policy.purchase_source_allowed({'brand':'TILTA','kind':'purchase','source':source}))
+
+    def test_generated_register_identifies_both_tilta_main_sources(self):
+        from catalog_navigation import write_register
+        offers=[{'id':s+'-1','source':s} for s in ('avx','clmedia','smartstore')]
+        catalog={'meta':{'revision':'test'},'brands':[{'id':'tilta','name':'TILTA'}],
+                 'products':[{'id':'avx-1','brand_id':'tilta','kind':'purchase','offers':offers}]}
+        with tempfile.TemporaryDirectory() as folder:
+            write_register(catalog,{},policy.selections(),Path(folder))
+            report=json.loads((Path(folder)/'brand-source-register.json').read_text())
+            self.assertEqual(report['brands'][0]['main_sources'],['avx','clmedia'])
+            self.assertEqual(report['brands'][0]['supplemental_sources'],['smartstore'])
+            self.assertEqual(report['publication_state'],'not_live_verified')
+            self.assertIn('AVX, 씨엘미디어',(Path(folder)/'brand-source-register.md').read_text())
+
     def test_every_canonical_product_has_exact_primary_source_and_all_matches(self):
         offers=[{'id':'kpp-1','source':'kpp','url':'https://example.com/1'},
                 {'id':'smartstore-2','source':'smartstore','url':'https://example.com/2'}]

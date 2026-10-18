@@ -7,7 +7,9 @@
       "reason": "대표 지시: 동일 GR 모델의 나다운 스페이스 판매가 적용. 다른 구성과 액세서리는 제외.",
       "reference_product_id": "smartstore-12837690697",
       "reference_url": "https://smartstore.naver.com/rainbowbene/products/12837690697",
-      "reference_checked_at": "2026-10-15T18:54:33+00:00"
+      "reference_checked_at": "2026-10-15T18:54:33+00:00",
+      "price_source": "smartstore",
+      "reference_expected_name": "[ 리코 레인보우베네 ] GR4"
     },
     "saeki-PD00041564": {
       "expected_name": "RICOH GR IV",
@@ -16,7 +18,9 @@
       "reason": "대표 지시: 동일 GR 모델의 나다운 스페이스 판매가 적용. 다른 구성과 액세서리는 제외.",
       "reference_product_id": "smartstore-12837690697",
       "reference_url": "https://smartstore.naver.com/rainbowbene/products/12837690697",
-      "reference_checked_at": "2026-10-15T18:54:33+00:00"
+      "reference_checked_at": "2026-10-15T18:54:33+00:00",
+      "price_source": "smartstore",
+      "reference_expected_name": "[ 리코 레인보우베네 ] GR4"
     },
     "smartstore-13452266335": {
       "expected_name": "GR4 HDF",
@@ -25,7 +29,9 @@
       "reason": "대표 지시: 동일 GR 모델의 나다운 스페이스 판매가 적용. 다른 구성과 액세서리는 제외.",
       "reference_product_id": "smartstore-13452266335",
       "reference_url": "https://smartstore.naver.com/rainbowbene/products/13452266335",
-      "reference_checked_at": "2026-10-15T18:54:33+00:00"
+      "reference_checked_at": "2026-10-15T18:54:33+00:00",
+      "price_source": "smartstore",
+      "reference_expected_name": "[ 리코 레인보우베네 ] GR4 HDF"
     },
     "saeki-PD00042145": {
       "expected_name": "RICOH GR IV HDF",
@@ -34,7 +40,9 @@
       "reason": "대표 지시: 동일 GR 모델의 나다운 스페이스 판매가 적용. 다른 구성과 액세서리는 제외.",
       "reference_product_id": "smartstore-13452266335",
       "reference_url": "https://smartstore.naver.com/rainbowbene/products/13452266335",
-      "reference_checked_at": "2026-10-15T18:54:33+00:00"
+      "reference_checked_at": "2026-10-15T18:54:33+00:00",
+      "price_source": "smartstore",
+      "reference_expected_name": "[ 리코 레인보우베네 ] GR4 HDF"
     }
   },
   "brand_order": [
@@ -92,6 +100,231 @@
       "flash"
     ],
     "saeki-PD00041927": [
+      "kpp:0330"
+    ],
+    "motion9-258": [
+      "rig-cart-parts"
+    ],
+    "motion9-257": [
+      "rig-cart-parts"
+    ],
+    "motion9-234": [
+      "rig-carts"
+    ],
+    "motion9-209": [
+      "rig-carts"
+    ],
+    "motion9-244": [
+      "rig-cart-parts"
+    ],
+    "motion9-237": [
+      "rig-cart-parts"
+    ],
+    "motion9-235": [
+      "rig-cart-parts"
+    ],
+    "motion9-226": [
+      "rig-cart-parts"
+    ],
+    "motion9-224": [
+      "rig-carts"
+    ],
+    "motion9-214": [
+      "rig-carts"
+    ],
+    "motion9-213": [
+      "rig-carts"
+    ],
+    "motion9-211": [
+      "rig-cart-parts"
+    ],
+    "motion9-189": [
+      "rig-cart-parts"
+    ],
+    "motion9-186": [
+      "rig-cart-parts"
+    ],
+    "motion9-157": [
+      "rig-cart-parts"
+    ],
+    "motion9-155": [
+      "rig-cart-parts"
+    ],
+    "motion9-253": [
+      "rig-cart-parts"
+    ],
+    "motion9-156": [
+      "rig-cart-parts"
+    ],
+    "motion9-195": [
+      "rig-cart-parts"
+    ],
+    "motion9-152": [
+      "rig-screws"
+    ],
+    "motion9-122": [
+      "rig-mounts"
+    ],
+    "motion9-95": [
+      "power-parts"
+    ],
+    "motion9-47": [
+      "rig-rods"
+    ],
+    "motion9-185": [
+      "mount-adapter"
+    ],
+    "funomad-bolt-7-series": [
+      "video-wireless"
+    ],
+    "funomad-bolt6-xt-2025": [
+      "video-wireless"
+    ],
+    "funomad-bolt6-lt-2025": [
+      "video-wireless"
+    ],
+    "funomad-bolt6-mm-2025": [
+      "video-wireless"
+    ],
+    "funomad-prism-flex-2024": [
+      "video-streaming"
+    ],
+    "funomad-prism-mobile-mk2": [
+      "video-streaming"
+    ],
+    "funomad-prism-rack": [
+      "video-streaming"
+    ],
+    "funomad-prism-jetpack": [
+      "video-streaming"
+    ],
+    "funomad-prism-mobile-backpack": [
+      "video-streaming"
+    ],
+    "funomad-serv-series": [
+      "video-streaming"
+    ],
+    "funomad-link": [
+      "video-network"
+    ],
+    "funomad-rt": [
+      "kpp:0640"
+    ],
+    "funomad-cloud": [
+      "software"
+    ],
+    "funomad-teradektv": [
+      "software"
+    ],
+    "funomad-cine-13": [
+      "monitor"
+    ],
+    "funomad-cine-18": [
+      "monitor"
+    ],
+    "funomad-cine-24": [
+      "monitor"
+    ],
+    "funomad-quantum-27": [
+      "monitor"
+    ],
+    "funomad-quantum-32": [
+      "monitor"
+    ],
+    "funomad-oled-series": [
+      "monitor"
+    ],
+    "funomad-ultra5": [
+      "monitor"
+    ],
+    "funomad-ultra7": [
+      "monitor"
+    ],
+    "funomad-ultra-10": [
+      "monitor"
+    ],
+    "funomad-cine7": [
+      "monitor"
+    ],
+    "funomad-indie7": [
+      "monitor"
+    ],
+    "funomad-cine5": [
+      "monitor"
+    ],
+    "funomad-indie5": [
+      "monitor"
+    ],
+    "funomad-used": [
+      "video-wireless"
+    ],
+    "funomad-wc-fuji-gfx100s": [
+      "camera-rig"
+    ],
+    "funomad-wc-fuji-x-h2s": [
+      "camera-rig"
+    ],
+    "funomad-wc-fuji-gfx-eterna": [
+      "camera-rig"
+    ],
+    "funomad-wc-blackmagic-pocket-cinema-camera": [
+      "camera-rig"
+    ],
+    "funomad-wc-blackmagic-ursa-mini": [
+      "camera-rig"
+    ],
+    "funomad-wc-blackmagic-ursa-cine": [
+      "camera-rig"
+    ],
+    "funomad-wc-arri-alexa-35": [
+      "camera-rig"
+    ],
+    "funomad-wc-canon-c500": [
+      "camera-rig"
+    ],
+    "funomad-wc-canon-c400": [
+      "camera-rig"
+    ],
+    "funomad-wc-canon-c80": [
+      "camera-rig"
+    ],
+    "funomad-wc-canon-c70": [
+      "camera-rig"
+    ],
+    "funomad-wc-canon-c50": [
+      "camera-rig"
+    ],
+    "funomad-wc-sony-venice": [
+      "camera-rig"
+    ],
+    "funomad-wc-sony-rialto": [
+      "camera-rig"
+    ],
+    "funomad-wc-sony-burano": [
+      "camera-rig"
+    ],
+    "funomad-wc-sony-fx6": [
+      "camera-rig"
+    ],
+    "funomad-wc-sony-fx3": [
+      "camera-rig"
+    ],
+    "funomad-wc-sony-fx2": [
+      "camera-rig"
+    ],
+    "funomad-wc-fx5-full": [
+      "kpp:0620"
+    ],
+    "funomad-wc-fx5-core": [
+      "kpp:0620"
+    ],
+    "funomad-wc-fx5-elite": [
+      "kpp:0620"
+    ],
+    "funomad-wc-fx5-rear": [
+      "kpp:0620"
+    ],
+    "funomad-wc-fx5-lens": [
       "kpp:0330"
     ]
   },

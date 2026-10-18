@@ -15,12 +15,14 @@ def write_manifest(root,catalog,snapshots,choices):
     # Private source data is excluded from the deployment. Only identities and
     # digests needed to prove completeness are copied into the server manifest.
     inventories={}
-    if 'hipixel' in snapshots:
-        ids=sorted(publishable_ids(snapshots['hipixel']))
-        inventories['hipixel']={'count':len(ids),'sha256':hashlib.sha256('\n'.join(ids).encode()).hexdigest()}
+    for source in ('hipixel','motion9','funomad'):
+        if source in snapshots:
+            ids=sorted(publishable_ids(snapshots[source]))
+            inventories[source]={'count':len(ids),'sha256':hashlib.sha256('\n'.join(ids).encode()).hexdigest()}
     manifest={'schema_version':1,'revision':catalog['meta']['revision'],'require_positions':True,
         'brand_order':[b['id'] for b in catalog['brands']],
         'primary_sources':{bid:c['source'] for bid,c in choices.items()},
+        'main_sources':{bid:c.get('main_sources') or [c['source']] for bid,c in choices.items()},
         'source_inventories':inventories,
         'files':{p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in sorted(files)}}
     save_json(root/'server/catalog-release.json',manifest)

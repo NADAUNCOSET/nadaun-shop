@@ -89,11 +89,12 @@ def write_register(catalog,navigation_audit,choices,directory):
             counts[primary['source']]+=1
         choice=choices.get(b['id'],{})
         main=choice.get('source') or (sorted(counts,key=lambda s:(-counts[s],s))[0] if counts else None)
+        main_sources=choice.get('main_sources') or ([main] if main else [])
         nav=navigation_audit.get('brands',{}).get(b['id'],{})
         rows.append({'position':rank,'brand_id':b['id'],'name':b['name'],
-            'primary_source':main,'category_source':nav.get('preferred_source'),
+            'primary_source':main,'main_sources':main_sources,'category_source':nav.get('preferred_source'),
             'selection_basis':('owner_selected' if choice.get('confirmed_by')=='owner' else 'operator_source_review') if choice else 'current_primary_coverage' if main else 'rental_only',
-            'supplemental_sources':[s for s in sorted(sources) if s!=main],
+            'supplemental_sources':[s for s in sorted(sources) if s not in main_sources],
             'listing_count':len({p.get('listing_id',p['id']) for p in ps}),
             'variant_count':len(ps),'primary_counts':dict(counts),
             'category_fallback_count':nav.get('fallback_products',0),
@@ -111,5 +112,5 @@ def write_register(catalog,navigation_audit,choices,directory):
         '|---:|---|---|---|---|---:|---|']
     for r in rows:
         basis={'owner_selected':'대표 지정','operator_source_review':'원본 확인','current_primary_coverage':'현행 주 상품 수','rental_only':'렌탈 전용'}[r['selection_basis']]
-        lines.append(f"| {r['position']} | {r['name'].replace('|','/')} | {label(r['primary_source'])} | {', '.join(label(s) for s in r['supplemental_sources']) or '—'} | {label(r['category_source'])} | {r['listing_count']} | {basis} |")
+        lines.append(f"| {r['position']} | {r['name'].replace('|','/')} | {', '.join(label(s) for s in r['main_sources']) or '—'} | {', '.join(label(s) for s in r['supplemental_sources']) or '—'} | {label(r['category_source'])} | {r['listing_count']} | {basis} |")
     (directory/'brand-source-register.md').write_text('\n'.join(lines)+'\n')

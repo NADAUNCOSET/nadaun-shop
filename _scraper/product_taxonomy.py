@@ -10,6 +10,7 @@ from collections import Counter
 
 # New leaves supplement the KPP groups; their names describe product types.
 EXTRA = [
+ ('rig-cart-parts','rig-carts','촬영 카트 부품·액세서리'),
  ('studio-camera','camera','스튜디오·라이브 카메라'),('camera-expansion','kpp:09','카메라 확장·연결 장치'),
  ('video-capture','kpp:h0','영상 캡처·재생'),('video-streaming','kpp:h0','스트리밍·인코더'),
  ('video-routing','kpp:h0','영상 라우팅·분배'),('video-multiview','kpp:h0','멀티뷰'),

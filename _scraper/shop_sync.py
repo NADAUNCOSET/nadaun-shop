@@ -50,7 +50,7 @@ CODE += ['_scraper/catalog_checkpoint.py','_scraper/test_catalog_checkpoint.py']
 CODE += ['_scraper/ldnet_identity.py','_scraper/test_ldnet_identity.py']
 CODE += ['_scraper/hipixel_source.py','_scraper/test_hipixel_source.py','_scraper/catalog_navigation.py','_scraper/catalog_release.py','server/catalog-release-check.cjs','CATALOG-RULES.md']
 CODE += ['_scraper/hipixel-reviewed-types.json','.vercelignore']
-CODE += ['_scraper/inline_product_images.py']
+CODE += ['_scraper/inline_product_images.py','_scraper/reviewed_supplier_sources.py','_scraper/test_reviewed_supplier_sources.py']
 CODE += ['_scraper/hipixel-supplemental-navigation.json']
 CODE += ['_scraper/sync_saeki_catalog.py','_scraper/saeki_detail_parser.py','_scraper/saeki_publication.py','_scraper/saeki_categories.py','_scraper/saeki_worker.py','_scraper/test_saeki_catalog.py','_scraper/fixtures/saeki']
 
@@ -82,7 +82,7 @@ def managed_files():
     for source in ('smartstore','kpp','l-mount','nadaun-gift'):
         files.append('data/catalog/sources/'+source+'.json')
     if (OUT/'plthink.json').exists():files.append('data/catalog/sources/plthink.json')
-    for source in ('avx','avx-aputure','avx-approved','dji-official','clmedia','cinemall','onnoff','ldnet','saeki','hipixel'):
+    for source in ('avx','avx-aputure','avx-approved','dji-official','clmedia','cinemall','onnoff','ldnet','saeki','hipixel','motion9','funomad'):
         if (OUT/(source+'.json')).exists():files.append('data/catalog/sources/'+source+'.json')
     for source in ('smartstore','kpp'):
         base=ROOT/'data/catalog/source-details'/source

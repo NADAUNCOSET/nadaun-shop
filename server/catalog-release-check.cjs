@@ -71,8 +71,8 @@ function validateCatalog(catalog,policy={}){
       if(offers.has(o.id))fail('Duplicate supplier product',o.id);
       offers.set(o.id,{...o,product_id:p.id});
     }
-    const preferred=policy.primary_sources?.[p.brand_id];
-    if(preferred&&(p.offers||[]).some(o=>o.source===preferred)&&primary[0]?.source!==preferred)fail('Wrong preferred supplier',p.id);
+    const preferred=policy.main_sources?.[p.brand_id]||(policy.primary_sources?.[p.brand_id]?[policy.primary_sources[p.brand_id]]:[]);
+    if(p.kind==='purchase'&&preferred.length&&(p.offers||[]).some(o=>preferred.includes(o.source))&&!preferred.includes(primary[0]?.source))fail('Wrong preferred supplier',p.id);
   }
   if(catalog.meta.product_count!==products.size)fail('Product total mismatch');
   if(catalog.meta.listing_count!==families.size)fail('Listing total mismatch');

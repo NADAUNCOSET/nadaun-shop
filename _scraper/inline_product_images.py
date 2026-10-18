@@ -34,10 +34,11 @@ def materialize(value,source,root=None):
 def referenced_paths(products,details):
     found=set()
     for p in products:
-        for url in details[p['detail_bucket']][p['id']].get('images',{}).get('detail',[]):
+        images=details[p['detail_bucket']][p['id']].get('images',{})
+        for url in [p.get('image',''),images.get('thumb',''),*images.get('main',[]),*images.get('detail',[])]:
             if url.startswith(PUBLIC+PREFIX):
                 relative=url.removeprefix(PUBLIC)
-                if not re.fullmatch(re.escape(PREFIX)+r'[a-z0-9-]+/[a-f0-9]{64}\.(?:jpg|png|webp)',relative):
+                if not re.fullmatch(re.escape(PREFIX)+r'[a-z0-9-]+/[a-f0-9]{64}\.(?:jpg|jpeg|png|webp|gif)',relative):
                     raise ValueError('Invalid immutable inline image path')
                 found.add(relative)
     return sorted(found)
