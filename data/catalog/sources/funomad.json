@@ -1,0 +1,2548 @@
+{
+  "schema_version": 1,
+  "source": "funomad",
+  "collected_at": "2026-10-18T17:17:16+00:00",
+  "complete": true,
+  "product_count": 51,
+  "coverage": {
+    "count": 51,
+    "ids_sha256": "daf4217524701734bda9aa718e67471a541bfb682686a7ab1a4f57f094b33793"
+  },
+  "categories": [
+    {
+      "id": "teradek-5cfc22ddc6",
+      "name": "TERADEK",
+      "parent_id": null,
+      "brand": "TERADEK",
+      "position": 0
+    },
+    {
+      "id": "teradek-2eef042922",
+      "name": "Bolt 7 Series",
+      "parent_id": "teradek-5cfc22ddc6",
+      "brand": "TERADEK",
+      "position": 1
+    },
+    {
+      "id": "teradek-4da426bc87",
+      "name": "Bolt6 Series",
+      "parent_id": "teradek-5cfc22ddc6",
+      "brand": "TERADEK",
+      "position": 2
+    },
+    {
+      "id": "teradek-b27f7d5a36",
+      "name": "Bolt6 XT I 12G-SDI",
+      "parent_id": "teradek-4da426bc87",
+      "brand": "TERADEK",
+      "position": 3
+    },
+    {
+      "id": "teradek-bb0cf8ab8a",
+      "name": "BOLT6 LT I 3G-SDI",
+      "parent_id": "teradek-4da426bc87",
+      "brand": "TERADEK",
+      "position": 4
+    },
+    {
+      "id": "teradek-c52899a2f6",
+      "name": "BOLT6 Monitor Module",
+      "parent_id": "teradek-4da426bc87",
+      "brand": "TERADEK",
+      "position": 5
+    },
+    {
+      "id": "teradek-d01c672a52",
+      "name": "IP Streaming",
+      "parent_id": "teradek-5cfc22ddc6",
+      "brand": "TERADEK",
+      "position": 6
+    },
+    {
+      "id": "teradek-9d877ed650",
+      "name": "Prism Flex",
+      "parent_id": "teradek-d01c672a52",
+      "brand": "TERADEK",
+      "position": 7
+    },
+    {
+      "id": "teradek-8460f68fad",
+      "name": "Prism Mobile",
+      "parent_id": "teradek-d01c672a52",
+      "brand": "TERADEK",
+      "position": 8
+    },
+    {
+      "id": "teradek-4cc55c8c1d",
+      "name": "Prism Rack",
+      "parent_id": "teradek-d01c672a52",
+      "brand": "TERADEK",
+      "position": 9
+    },
+    {
+      "id": "teradek-80728cbdad",
+      "name": "Prism Jetpack",
+      "parent_id": "teradek-d01c672a52",
+      "brand": "TERADEK",
+      "position": 10
+    },
+    {
+      "id": "teradek-4a91d026b9",
+      "name": "Prism Mobile Backpack",
+      "parent_id": "teradek-d01c672a52",
+      "brand": "TERADEK",
+      "position": 11
+    },
+    {
+      "id": "teradek-c6b18d4824",
+      "name": "Production Streaming",
+      "parent_id": "teradek-5cfc22ddc6",
+      "brand": "TERADEK",
+      "position": 12
+    },
+    {
+      "id": "teradek-ee0ba2474c",
+      "name": "SERV SERIES",
+      "parent_id": "teradek-c6b18d4824",
+      "brand": "TERADEK",
+      "position": 13
+    },
+    {
+      "id": "teradek-20269e6f7f",
+      "name": "LINK",
+      "parent_id": "teradek-c6b18d4824",
+      "brand": "TERADEK",
+      "position": 14
+    },
+    {
+      "id": "teradek-e7b6a4f221",
+      "name": "Wireless Lens Control",
+      "parent_id": "teradek-5cfc22ddc6",
+      "brand": "TERADEK",
+      "position": 15
+    },
+    {
+      "id": "teradek-6ad0fbce76",
+      "name": "Teradek RT",
+      "parent_id": "teradek-e7b6a4f221",
+      "brand": "TERADEK",
+      "position": 16
+    },
+    {
+      "id": "teradek-10d5efb46e",
+      "name": "Services",
+      "parent_id": "teradek-5cfc22ddc6",
+      "brand": "TERADEK",
+      "position": 17
+    },
+    {
+      "id": "teradek-f1c4250233",
+      "name": "Cloud",
+      "parent_id": "teradek-10d5efb46e",
+      "brand": "TERADEK",
+      "position": 18
+    },
+    {
+      "id": "teradek-d48e1e2b81",
+      "name": "Teradek TV",
+      "parent_id": "teradek-10d5efb46e",
+      "brand": "TERADEK",
+      "position": 19
+    },
+    {
+      "id": "smallhd-557dad6394",
+      "name": "SMALLHD",
+      "parent_id": null,
+      "brand": "SmallHD",
+      "position": 20
+    },
+    {
+      "id": "smallhd-9d1a655e72",
+      "name": "4K PRODUCTION MONITOR",
+      "parent_id": "smallhd-557dad6394",
+      "brand": "SmallHD",
+      "position": 21
+    },
+    {
+      "id": "smallhd-0c0e348b40",
+      "name": "CINE",
+      "parent_id": "smallhd-9d1a655e72",
+      "brand": "SmallHD",
+      "position": 22
+    },
+    {
+      "id": "smallhd-5c8b1a61d1",
+      "name": "QUANTUM",
+      "parent_id": "smallhd-9d1a655e72",
+      "brand": "SmallHD",
+      "position": 23
+    },
+    {
+      "id": "smallhd-dd8fb94138",
+      "name": "OLED",
+      "parent_id": "smallhd-9d1a655e72",
+      "brand": "SmallHD",
+      "position": 24
+    },
+    {
+      "id": "smallhd-710d0fa9d4",
+      "name": "ULTRA BRIGHT",
+      "parent_id": "smallhd-557dad6394",
+      "brand": "SmallHD",
+      "position": 25
+    },
+    {
+      "id": "smallhd-8537fb96b4",
+      "name": "Ultra 5",
+      "parent_id": "smallhd-710d0fa9d4",
+      "brand": "SmallHD",
+      "position": 26
+    },
+    {
+      "id": "smallhd-7c62d5d554",
+      "name": "Ultra 7",
+      "parent_id": "smallhd-710d0fa9d4",
+      "brand": "SmallHD",
+      "position": 27
+    },
+    {
+      "id": "smallhd-b0b328755e",
+      "name": "Ultra 10",
+      "parent_id": "smallhd-710d0fa9d4",
+      "brand": "SmallHD",
+      "position": 28
+    },
+    {
+      "id": "smallhd-0d8713256e",
+      "name": "SMART 7 SERIES",
+      "parent_id": "smallhd-557dad6394",
+      "brand": "SmallHD",
+      "position": 29
+    },
+    {
+      "id": "smallhd-6d0e6fe1ab",
+      "name": "Cine 7",
+      "parent_id": "smallhd-0d8713256e",
+      "brand": "SmallHD",
+      "position": 30
+    },
+    {
+      "id": "smallhd-575cbeab85",
+      "name": "Indie 7",
+      "parent_id": "smallhd-0d8713256e",
+      "brand": "SmallHD",
+      "position": 31
+    },
+    {
+      "id": "smallhd-0ac65632be",
+      "name": "SMART 5 SERIES",
+      "parent_id": "smallhd-557dad6394",
+      "brand": "SmallHD",
+      "position": 32
+    },
+    {
+      "id": "smallhd-68000c854b",
+      "name": "Cine 5",
+      "parent_id": "smallhd-0ac65632be",
+      "brand": "SmallHD",
+      "position": 33
+    },
+    {
+      "id": "smallhd-fb9ef16bf6",
+      "name": "Indie 5",
+      "parent_id": "smallhd-0ac65632be",
+      "brand": "SmallHD",
+      "position": 34
+    },
+    {
+      "id": "teradek-4ce62e1271",
+      "name": "GOOD DEALS",
+      "parent_id": "teradek-5cfc22ddc6",
+      "brand": "TERADEK",
+      "position": 35
+    },
+    {
+      "id": "teradek-8ef4c83a58",
+      "name": "Bolt 3000 XT",
+      "parent_id": "teradek-4ce62e1271",
+      "brand": "TERADEK",
+      "position": 36
+    },
+    {
+      "id": "wooden-camera-8b52e8e00e",
+      "name": "WOODEN CAMERA",
+      "parent_id": null,
+      "brand": "Wooden Camera",
+      "position": 37
+    },
+    {
+      "id": "wooden-camera-ff7ab4cc39",
+      "name": "FUJI GFX100S",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 38
+    },
+    {
+      "id": "wooden-camera-d516b953f1",
+      "name": "FUJI X-H2S",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 39
+    },
+    {
+      "id": "wooden-camera-0389a116be",
+      "name": "FUJI GFX ETERNA",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 40
+    },
+    {
+      "id": "wooden-camera-f4ad898cd5",
+      "name": "BLACKMAGIC POCKET CINEMA CAMERA",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 41
+    },
+    {
+      "id": "wooden-camera-3f8ade70fc",
+      "name": "BLACKMAGIC URSA MINI",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 42
+    },
+    {
+      "id": "wooden-camera-95093a488d",
+      "name": "BLACKMAGIC URSA CINE",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 43
+    },
+    {
+      "id": "wooden-camera-c5b990020d",
+      "name": "ARRI ALEXA 35",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 44
+    },
+    {
+      "id": "wooden-camera-c567c2475b",
+      "name": "CANON C500",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 45
+    },
+    {
+      "id": "wooden-camera-06924ad2f1",
+      "name": "CANON C400",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 46
+    },
+    {
+      "id": "wooden-camera-f36e1e0389",
+      "name": "CANON C80",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 47
+    },
+    {
+      "id": "wooden-camera-5dbba15383",
+      "name": "CANON C70",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 48
+    },
+    {
+      "id": "wooden-camera-7ce9bb95dc",
+      "name": "CANON C50",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 49
+    },
+    {
+      "id": "wooden-camera-9a04746d05",
+      "name": "SONY VENICE",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 50
+    },
+    {
+      "id": "wooden-camera-c3e44ca842",
+      "name": "SONY RIALTO",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 51
+    },
+    {
+      "id": "wooden-camera-ef92cbab53",
+      "name": "SONY BURANO",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 52
+    },
+    {
+      "id": "wooden-camera-1a9357c551",
+      "name": "SONY FX6",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 53
+    },
+    {
+      "id": "wooden-camera-c69cc7305e",
+      "name": "SONY FX3",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 54
+    },
+    {
+      "id": "wooden-camera-daa8c939b4",
+      "name": "SONY FX2",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 55
+    },
+    {
+      "id": "wooden-camera-88a8323292",
+      "name": "FX5",
+      "parent_id": "wooden-camera-8b52e8e00e",
+      "brand": "Wooden Camera",
+      "position": 56
+    }
+  ],
+  "products": {
+    "funomad-bolt-7-series": {
+      "id": "funomad-bolt-7-series",
+      "source": "funomad",
+      "source_id": "bolt-7-series",
+      "source_url": "https://funomad.com/bolt-7-series/",
+      "name": "Teradek Bolt 7 시리즈",
+      "brand": "TERADEK",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/c7544bc2f376a77c7e799fc16ceac44ad5867e6aa6446e14692fc19de1837aaf.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/c7544bc2f376a77c7e799fc16ceac44ad5867e6aa6446e14692fc19de1837aaf.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/2507de4c48619ff9ea4873f68158524bf512cd5278117614699f4fa8804e5b23.png",
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/a76557d06b33b473504e4485d0fb9df705c557c78f7175423f1adfaafe6ec5f5.png"
+        ]
+      },
+      "brand_category_ids": [
+        "teradek-5cfc22ddc6",
+        "teradek-2eef042922"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "송신기(TX)·수신기(RX) 및 세트 구성은 상담 시 선택합니다. 모델별 전송 거리와 구성은 상세 비교표를 확인해주세요.\n상담 가능 모델·구성: Bolt 7 750, Bolt 7 1500, Bolt 7 MAX.\n송수신기, 전원 액세서리, 케이블 및 서비스 구독의 포함 여부는 견적서의 확정 구성을 따릅니다.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [
+        {
+          "id": "1",
+          "name": "Bolt 7 750",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "2",
+          "name": "Bolt 7 1500",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "3",
+          "name": "Bolt 7 MAX",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        }
+      ],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "a7c996846c0ca57994cc8592e283412b451042388e298ab791ba0ec9518361cf"
+    },
+    "funomad-bolt6-xt-2025": {
+      "id": "funomad-bolt6-xt-2025",
+      "source": "funomad",
+      "source_id": "bolt6-xt-2025",
+      "source_url": "https://funomad.com/bolt6-xt-2025/",
+      "name": "Teradek Bolt 6 XT 12G-SDI 시리즈",
+      "brand": "TERADEK",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/08ef2b0150cbfe1c4e3e5c261f98bbc6e696c2536c406db21ff154cbc9e1a976.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/08ef2b0150cbfe1c4e3e5c261f98bbc6e696c2536c406db21ff154cbc9e1a976.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/ce8c4f12d79c692ed9f41ecc67ef64013fe76fcd515000b48b3a7f4d607ebb02.png",
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/cf62f901cf37ff628b3c42501035ec28a15492aeaa387ef9162eeed9c28e087b.png",
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/74abe929ec9fec8f5cebf82431ae024f7e76500e10dcc54d27365f6d4830a9d0.png"
+        ]
+      },
+      "brand_category_ids": [
+        "teradek-5cfc22ddc6",
+        "teradek-4da426bc87",
+        "teradek-b27f7d5a36"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모델별 공급 구성·호환성·납기와 견적은 문의로 안내합니다.\n상담 가능 모델·구성: Bolt 6 XT 750, Bolt 6 XT MAX, Bolt 6 XT 10K RX.\n송수신기, 전원 액세서리, 케이블 및 서비스 구독의 포함 여부는 견적서의 확정 구성을 따릅니다.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [
+        {
+          "id": "1",
+          "name": "Bolt 6 XT 750",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "2",
+          "name": "Bolt 6 XT MAX",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "3",
+          "name": "Bolt 6 XT 10K RX",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        }
+      ],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "adf6e1f453aeee946e771ad76ff0329c337184fcb284193c3c7784fa7ece39f7"
+    },
+    "funomad-bolt6-lt-2025": {
+      "id": "funomad-bolt6-lt-2025",
+      "source": "funomad",
+      "source_id": "bolt6-lt-2025",
+      "source_url": "https://funomad.com/bolt6-lt-2025/",
+      "name": "Teradek Bolt 6 LT 3G-SDI 시리즈",
+      "brand": "TERADEK",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/11c138d475e897fa64e6d4fb894e82f6a2903159102f30f9e492e31871cde2a9.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/11c138d475e897fa64e6d4fb894e82f6a2903159102f30f9e492e31871cde2a9.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/cf409b46478a643cf5efcf643c194ec217fddba0987b7fef71e3cd5543f4ff30.png",
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/74abe929ec9fec8f5cebf82431ae024f7e76500e10dcc54d27365f6d4830a9d0.png"
+        ]
+      },
+      "brand_category_ids": [
+        "teradek-5cfc22ddc6",
+        "teradek-4da426bc87",
+        "teradek-bb0cf8ab8a"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모델별 공급 구성·호환성·납기와 견적은 문의로 안내합니다.\n상담 가능 모델·구성: Bolt 6 LT 750, Bolt 6 LT MAX.\n송수신기, 전원 액세서리, 케이블 및 서비스 구독의 포함 여부는 견적서의 확정 구성을 따릅니다.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [
+        {
+          "id": "1",
+          "name": "Bolt 6 LT 750",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "2",
+          "name": "Bolt 6 LT MAX",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        }
+      ],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "423ea16cdf7facf5501d566144545c8495a262c9136db7aec2e7939c4e8c320e"
+    },
+    "funomad-bolt6-mm-2025": {
+      "id": "funomad-bolt6-mm-2025",
+      "source": "funomad",
+      "source_id": "bolt6-mm-2025",
+      "source_url": "https://funomad.com/bolt6-mm-2025/",
+      "name": "Teradek Bolt 6 Monitor Module",
+      "brand": "TERADEK",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/f5da094e49df74a371fd63f778ead3568b3a99dd4ed3d067564bb0e0de70ed7d.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/f5da094e49df74a371fd63f778ead3568b3a99dd4ed3d067564bb0e0de70ed7d.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/aabfadc5640c08145507ac8e226126a05117e4139b91fe8e504f5cafad8fa80e.png",
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/a743e9b13cbbff9242ab068d91b7e428c3ee263dd99a9cd332a13793feab01b6.png",
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/09de2e030720c3199e192dff76be61d5dafefb1e7f8fa639d68c5f845e903d2f.png"
+        ]
+      },
+      "brand_category_ids": [
+        "teradek-5cfc22ddc6",
+        "teradek-4da426bc87",
+        "teradek-c52899a2f6"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "SmallHD 모니터용 무선 모듈입니다. 모니터 포함 여부·송수신 방향·호환 모델은 구성 상담에서 확인합니다.\n상담 가능 모델·구성: Ultra 7 모듈, Smart 7 TX/RX 모듈, Ultra 10 RX 모듈, Ultra 5 모듈.\n송수신기, 전원 액세서리, 케이블 및 서비스 구독의 포함 여부는 견적서의 확정 구성을 따릅니다.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [
+        {
+          "id": "1",
+          "name": "Ultra 7 모듈",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "2",
+          "name": "Smart 7 TX/RX 모듈",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "3",
+          "name": "Ultra 10 RX 모듈",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "4",
+          "name": "Ultra 5 모듈",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        }
+      ],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "a8b18892f8f99b5dde43faf9bde099bab44876c16ea8da497f9bb711f0c8575d"
+    },
+    "funomad-prism-flex-2024": {
+      "id": "funomad-prism-flex-2024",
+      "source": "funomad",
+      "source_id": "prism-flex-2024",
+      "source_url": "https://funomad.com/prism-flex-2024/",
+      "name": "Teradek Prism Flex Mk II",
+      "brand": "TERADEK",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/4057ef21ee27a7df3f079392d707e6cd1c033d567c496d88b5b3ed6ebd82fd4c.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/4057ef21ee27a7df3f079392d707e6cd1c033d567c496d88b5b3ed6ebd82fd4c.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/00fba32cd24305920f1742917a1b2b6af9680027569ce1591fc9eb90c3c8c72e.png"
+        ]
+      },
+      "brand_category_ids": [
+        "teradek-5cfc22ddc6",
+        "teradek-d01c672a52",
+        "teradek-9d877ed650"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모델별 공급 구성·호환성·납기와 견적은 문의로 안내합니다.\n상담 가능 모델·구성: 인코더, 디코더.\n송수신기, 전원 액세서리, 케이블 및 서비스 구독의 포함 여부는 견적서의 확정 구성을 따릅니다.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [
+        {
+          "id": "1",
+          "name": "인코더",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "2",
+          "name": "디코더",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        }
+      ],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "279030005451429a44f1991fc43ca87939e387d9927698ee157e15ba2eb70359"
+    },
+    "funomad-prism-mobile-mk2": {
+      "id": "funomad-prism-mobile-mk2",
+      "source": "funomad",
+      "source_id": "prism-mobile-mk2",
+      "source_url": "https://funomad.com/prism-mobile-mk2/",
+      "name": "Teradek Prism Mobile Mk II",
+      "brand": "TERADEK",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/bf91cc0b3e181ca607f25215ee5ca77626189867c0c536a7e8c19639758b8cd0.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/bf91cc0b3e181ca607f25215ee5ca77626189867c0c536a7e8c19639758b8cd0.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/95f8d9426bdf8c37635ffd7c8bd1db7644a50868b0b57a201bdb5b223423daef.png"
+        ]
+      },
+      "brand_category_ids": [
+        "teradek-5cfc22ddc6",
+        "teradek-d01c672a52",
+        "teradek-8460f68fad"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모델별 공급 구성·호환성·납기와 견적은 문의로 안내합니다.\n상담 가능 모델·구성: 5G 모델, LTE 모델.\n송수신기, 전원 액세서리, 케이블 및 서비스 구독의 포함 여부는 견적서의 확정 구성을 따릅니다.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [
+        {
+          "id": "1",
+          "name": "5G 모델",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "2",
+          "name": "LTE 모델",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        }
+      ],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "2c0733f16876779d52472d34240a87d605cad36f1078a00b5e81201bec980c70"
+    },
+    "funomad-prism-rack": {
+      "id": "funomad-prism-rack",
+      "source": "funomad",
+      "source_id": "prism-rack",
+      "source_url": "https://funomad.com/prism-rack/",
+      "name": "Teradek Prism Rack",
+      "brand": "TERADEK",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/9ae20de4e8a396195cb9274b76f3f53cf9b4b73ef1494b0e90b106ba19c50747.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/9ae20de4e8a396195cb9274b76f3f53cf9b4b73ef1494b0e90b106ba19c50747.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/b587ed16b0518a268373db0e45c8779bf6f94d54b1199aaa2293f7d43ce6dd4e.png"
+        ]
+      },
+      "brand_category_ids": [
+        "teradek-5cfc22ddc6",
+        "teradek-d01c672a52",
+        "teradek-4cc55c8c1d"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모델별 공급 구성·호환성·납기와 견적은 문의로 안내합니다.\n상담 가능 모델·구성: Prism 1RU, Prism 2RU, 인코더 카드, 디코더 카드.\n송수신기, 전원 액세서리, 케이블 및 서비스 구독의 포함 여부는 견적서의 확정 구성을 따릅니다.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [
+        {
+          "id": "1",
+          "name": "Prism 1RU",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "2",
+          "name": "Prism 2RU",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "3",
+          "name": "인코더 카드",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "4",
+          "name": "디코더 카드",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        }
+      ],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "f00bf36bb6b8d23fbcb2aec48462501a7c4fe794556e96441ffdc63c4a49e87b"
+    },
+    "funomad-prism-jetpack": {
+      "id": "funomad-prism-jetpack",
+      "source": "funomad",
+      "source_id": "prism-jetpack",
+      "source_url": "https://funomad.com/prism-jetpack/",
+      "name": "Teradek Prism Jetpack",
+      "brand": "TERADEK",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/e2b4acad4d5df05c79ee4605deec2b4456bc3d0b1f9be9c89758601b64dccb1a.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/e2b4acad4d5df05c79ee4605deec2b4456bc3d0b1f9be9c89758601b64dccb1a.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/b3b41010bfcb73912b81c606fd0aa2dad85689ce75a8bb7cc05f5f49de53b5c2.png"
+        ]
+      },
+      "brand_category_ids": [
+        "teradek-5cfc22ddc6",
+        "teradek-d01c672a52",
+        "teradek-80728cbdad"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모델별 공급 구성·호환성·납기와 견적은 문의로 안내합니다.\n송수신기, 전원 액세서리, 케이블 및 서비스 구독의 포함 여부는 견적서의 확정 구성을 따릅니다.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "5ac1e0c99d7f3dfbb64c909370368a1c31e29f7be4e21d105b7d0032d61465e2"
+    },
+    "funomad-prism-mobile-backpack": {
+      "id": "funomad-prism-mobile-backpack",
+      "source": "funomad",
+      "source_id": "prism-mobile-backpack",
+      "source_url": "https://funomad.com/prism-mobile-backpack/",
+      "name": "Teradek Prism Mobile Backpack",
+      "brand": "TERADEK",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/e360e4abf0074e559867a6b52448447c2ffb7deac527824adb86a16408a1590f.jpg",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/e360e4abf0074e559867a6b52448447c2ffb7deac527824adb86a16408a1590f.jpg"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/d7479a700a3a17a9ce100e43617d57bf80c1af37a063cb5ef10353ac8e3a864d.png"
+        ]
+      },
+      "brand_category_ids": [
+        "teradek-5cfc22ddc6",
+        "teradek-d01c672a52",
+        "teradek-4a91d026b9"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모델별 공급 구성·호환성·납기와 견적은 문의로 안내합니다.\n송수신기, 전원 액세서리, 케이블 및 서비스 구독의 포함 여부는 견적서의 확정 구성을 따릅니다.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "428f147539d009c3836a2c81b017af44e8fbff961bd820ce385f2675f480b0d7"
+    },
+    "funomad-serv-series": {
+      "id": "funomad-serv-series",
+      "source": "funomad",
+      "source_id": "serv-series",
+      "source_url": "https://funomad.com/serv-series/",
+      "name": "Teradek SERV 4K",
+      "brand": "TERADEK",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/7dad385033e190c981e2e6c31cd086f115ea987b0cc74cd8a1d6349c25206256.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/7dad385033e190c981e2e6c31cd086f115ea987b0cc74cd8a1d6349c25206256.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/1336183f1a6a3ea8d778e17714cadce4f95db48d70f55e5f7b8e915dabac51f6.png"
+        ]
+      },
+      "brand_category_ids": [
+        "teradek-5cfc22ddc6",
+        "teradek-c6b18d4824",
+        "teradek-ee0ba2474c"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "로컬·원격 프로덕션 모니터링 스트리밍 장비. 서비스 구독과 주변 장비 포함 여부는 문의해주세요.\n송수신기, 전원 액세서리, 케이블 및 서비스 구독의 포함 여부는 견적서의 확정 구성을 따릅니다.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "e557c3aa644ee0ea78d3da6739c8ad473a6e414192425585edb8c5702138aad0"
+    },
+    "funomad-link": {
+      "id": "funomad-link",
+      "source": "funomad",
+      "source_id": "link",
+      "source_url": "https://funomad.com/link/",
+      "name": "Teradek Link",
+      "brand": "TERADEK",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/979bd582a873500f2faf6d40e86f1c0304f34de73836180068c7b3b643fc3a79.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/979bd582a873500f2faf6d40e86f1c0304f34de73836180068c7b3b643fc3a79.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/b460329583973649b712f77fcd197a2fefbd2c10c70303e95c5e021f5f1093a0.png",
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/ef64fe66c2d378465d4d863aea3933715508070b567a7274d41c90b6c2856b03.png"
+        ]
+      },
+      "brand_category_ids": [
+        "teradek-5cfc22ddc6",
+        "teradek-c6b18d4824",
+        "teradek-20269e6f7f"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "셀룰러 본딩 장비. 데이터·본딩 서비스 구독 및 설치 구성은 별도 상담합니다.\n상담 가능 모델·구성: 4개 모뎀 구성, 8개 모뎀 구성.\n송수신기, 전원 액세서리, 케이블 및 서비스 구독의 포함 여부는 견적서의 확정 구성을 따릅니다.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [
+        {
+          "id": "1",
+          "name": "4개 모뎀 구성",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "2",
+          "name": "8개 모뎀 구성",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        }
+      ],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "b2a95a53a0a1f6355541c1a0444384abdbafbce47201d6f6a2a4353987c8cd8e"
+    },
+    "funomad-rt": {
+      "id": "funomad-rt",
+      "source": "funomad",
+      "source_id": "rt",
+      "source_url": "https://funomad.com/rt/",
+      "name": "Teradek RT 렌즈 제어 시스템",
+      "brand": "TERADEK",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/2b462fe92ad80d566bf7f3b39cf09b85016a6c554baf0c42dc34f909f5de17a4.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/2b462fe92ad80d566bf7f3b39cf09b85016a6c554baf0c42dc34f909f5de17a4.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/2b4083fe170783022de59c5de46daf7ba90fb8e25f4412c8bc275095b42282ef.png",
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/1707dc79ee59f7d14b0d742086c3491e2e289893f787f2dd013d3f9bdf437ab9.png"
+        ]
+      },
+      "brand_category_ids": [
+        "teradek-5cfc22ddc6",
+        "teradek-e7b6a4f221",
+        "teradek-6ad0fbce76"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "핸드 유닛·모터·리시버·거리 측정기 제품군입니다. 개별 품목 및 키트 구성을 선택해 문의해주세요.\n상담 가능 모델·구성: CTRL.5, CTRL.3, CTRL.1, MOTR.S MAX, MOTR.S, MDR.S, MDR.X, TOF.1.\n송수신기, 전원 액세서리, 케이블 및 서비스 구독의 포함 여부는 견적서의 확정 구성을 따릅니다.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [
+        {
+          "id": "1",
+          "name": "CTRL.5",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "2",
+          "name": "CTRL.3",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "3",
+          "name": "CTRL.1",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "4",
+          "name": "MOTR.S MAX",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "5",
+          "name": "MOTR.S",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "6",
+          "name": "MDR.S",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "7",
+          "name": "MDR.X",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "8",
+          "name": "TOF.1",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        }
+      ],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "493b0c4db57ea7c3aeca917b73c2c5dd03e65b6a91cb5942548284089e615db9"
+    },
+    "funomad-cloud": {
+      "id": "funomad-cloud",
+      "source": "funomad",
+      "source_id": "cloud",
+      "source_url": "https://funomad.com/cloud/",
+      "name": "Teradek Cloud",
+      "brand": "TERADEK",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/627a6b4a1741239f4673b2bb5b2263a058a19b0f04744d6f4f39a12208ae682e.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/627a6b4a1741239f4673b2bb5b2263a058a19b0f04744d6f4f39a12208ae682e.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/627a6b4a1741239f4673b2bb5b2263a058a19b0f04744d6f4f39a12208ae682e.png"
+        ]
+      },
+      "brand_category_ids": [
+        "teradek-5cfc22ddc6",
+        "teradek-10d5efb46e",
+        "teradek-f1c4250233"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "클라우드 서비스의 이용 범위·기간·요금제는 문의해주세요.\n송수신기, 전원 액세서리, 케이블 및 서비스 구독의 포함 여부는 견적서의 확정 구성을 따릅니다.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "6dda1fec16bef50178f4b8bd4d406fa2a22ca958b92d677898ad1472110801a1"
+    },
+    "funomad-teradektv": {
+      "id": "funomad-teradektv",
+      "source": "funomad",
+      "source_id": "teradektv",
+      "source_url": "https://funomad.com/teradektv/",
+      "name": "Teradek TV",
+      "brand": "TERADEK",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/a81293d7ea13e6ae24294cfa925fd4fe808355813994d59a74962ae5f0486641.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/a81293d7ea13e6ae24294cfa925fd4fe808355813994d59a74962ae5f0486641.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/d8f657fb4b06a9fa8aa26694cd1ff557c2617011da357d9fd96138fc0a03a228.png"
+        ]
+      },
+      "brand_category_ids": [
+        "teradek-5cfc22ddc6",
+        "teradek-10d5efb46e",
+        "teradek-d48e1e2b81"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "프로덕션 영상 공유·원격 모니터링 서비스입니다. 이용 기간과 구성별 견적을 안내합니다.\n송수신기, 전원 액세서리, 케이블 및 서비스 구독의 포함 여부는 견적서의 확정 구성을 따릅니다.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "dfa88589b49213403974cd06fd7f5b18e5ed7849be10e447eaa71eab50bc4b39"
+    },
+    "funomad-cine-13": {
+      "id": "funomad-cine-13",
+      "source": "funomad",
+      "source_id": "cine-13",
+      "source_url": "https://funomad.com/cine-series/",
+      "name": "SmallHD Cine 13",
+      "brand": "SmallHD",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/372e7c622c90083aa7fcc4152d99596eb391f42b2c1d3e79186af94166fc13c6.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/372e7c622c90083aa7fcc4152d99596eb391f42b2c1d3e79186af94166fc13c6.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/c149ec25212f7eec5c9d0ecabf84d29ca52d8cb7ecf5544a4230d4a65dae9ff0.png"
+        ]
+      },
+      "brand_category_ids": [
+        "smallhd-557dad6394",
+        "smallhd-9d1a655e72",
+        "smallhd-0c0e348b40"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "Cine 13 본체 및 전원·거치 액세서리 구성은 문의해주세요. 상세 자료에 같은 시리즈의 다른 모델이 함께 소개될 수 있습니다.\n모니터용 전원·거치 액세서리와 카메라 제어 라이선스는 구성에 따라 별도이며 필요 항목을 문의해주세요.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "26d7f1cbbafaf89c048c5d806829562009f0cc61ed9d1f1afdbf3f407e596634"
+    },
+    "funomad-cine-18": {
+      "id": "funomad-cine-18",
+      "source": "funomad",
+      "source_id": "cine-18",
+      "source_url": "https://funomad.com/cine-series/",
+      "name": "SmallHD Cine 18",
+      "brand": "SmallHD",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/76c78d476fe3170f3ecb377e99afa0cdaf570e78fd7e12d2c3067f4ed35cfa81.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/76c78d476fe3170f3ecb377e99afa0cdaf570e78fd7e12d2c3067f4ed35cfa81.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/ec7a3ba24fa6437ee188a861c61ddbafd88fa6939deed35f29e956e7380aed7b.png"
+        ]
+      },
+      "brand_category_ids": [
+        "smallhd-557dad6394",
+        "smallhd-9d1a655e72",
+        "smallhd-0c0e348b40"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "Cine 18 본체 및 전원·거치 액세서리 구성은 문의해주세요. 상세 자료에 같은 시리즈의 다른 모델이 함께 소개될 수 있습니다.\n모니터용 전원·거치 액세서리와 카메라 제어 라이선스는 구성에 따라 별도이며 필요 항목을 문의해주세요.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "26d7f1cbbafaf89c048c5d806829562009f0cc61ed9d1f1afdbf3f407e596634"
+    },
+    "funomad-cine-24": {
+      "id": "funomad-cine-24",
+      "source": "funomad",
+      "source_id": "cine-24",
+      "source_url": "https://funomad.com/cine-series/",
+      "name": "SmallHD Cine 24",
+      "brand": "SmallHD",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/fe93c7eec74d9f10add7fa4222f14ce6afa9b9ebfd7b0915ae1ff7fbbe83fd04.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/fe93c7eec74d9f10add7fa4222f14ce6afa9b9ebfd7b0915ae1ff7fbbe83fd04.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/d3f595bcca58952781b09a9faabaeab2998b03cbe23f3919f0fefdfb25215472.png"
+        ]
+      },
+      "brand_category_ids": [
+        "smallhd-557dad6394",
+        "smallhd-9d1a655e72",
+        "smallhd-0c0e348b40"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "Cine 24 본체 및 전원·거치 액세서리 구성은 문의해주세요. 상세 자료에 같은 시리즈의 다른 모델이 함께 소개될 수 있습니다.\n모니터용 전원·거치 액세서리와 카메라 제어 라이선스는 구성에 따라 별도이며 필요 항목을 문의해주세요.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "26d7f1cbbafaf89c048c5d806829562009f0cc61ed9d1f1afdbf3f407e596634"
+    },
+    "funomad-quantum-27": {
+      "id": "funomad-quantum-27",
+      "source": "funomad",
+      "source_id": "quantum-27",
+      "source_url": "https://funomad.com/quantum-series/",
+      "name": "SmallHD Quantum 27",
+      "brand": "SmallHD",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/07705329e81d2a4f4dfa877c15af6332ad660fb9bf4ba97f073d81cd3fb0dfe5.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/07705329e81d2a4f4dfa877c15af6332ad660fb9bf4ba97f073d81cd3fb0dfe5.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/187f4dbd7fae7299408753edb5960651ba18ad575dfae8141724443c83476451.png"
+        ]
+      },
+      "brand_category_ids": [
+        "smallhd-557dad6394",
+        "smallhd-9d1a655e72",
+        "smallhd-5c8b1a61d1"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모델별 공급 구성·호환성·납기와 견적은 문의로 안내합니다.\n모니터용 전원·거치 액세서리와 카메라 제어 라이선스는 구성에 따라 별도이며 필요 항목을 문의해주세요.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "40e7ab1cba105c520e517ae880d2b449407b287cc27eba3a3d7485b54da6980e"
+    },
+    "funomad-quantum-32": {
+      "id": "funomad-quantum-32",
+      "source": "funomad",
+      "source_id": "quantum-32",
+      "source_url": "https://funomad.com/quantum-series/",
+      "name": "SmallHD Quantum 32",
+      "brand": "SmallHD",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/95d2e07cc1decf576103625c6300e4438a08af5876b62a6acd2f39c43ea2e4cd.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/95d2e07cc1decf576103625c6300e4438a08af5876b62a6acd2f39c43ea2e4cd.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/187f4dbd7fae7299408753edb5960651ba18ad575dfae8141724443c83476451.png"
+        ]
+      },
+      "brand_category_ids": [
+        "smallhd-557dad6394",
+        "smallhd-9d1a655e72",
+        "smallhd-5c8b1a61d1"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모델별 공급 구성·호환성·납기와 견적은 문의로 안내합니다.\n모니터용 전원·거치 액세서리와 카메라 제어 라이선스는 구성에 따라 별도이며 필요 항목을 문의해주세요.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "40e7ab1cba105c520e517ae880d2b449407b287cc27eba3a3d7485b54da6980e"
+    },
+    "funomad-oled-series": {
+      "id": "funomad-oled-series",
+      "source": "funomad",
+      "source_id": "oled-series",
+      "source_url": "https://funomad.com/oled-series/",
+      "name": "SmallHD OLED 16",
+      "brand": "SmallHD",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/3fd4139679be65417cecce11a4aff3c4b951ac141accd8ea5e9a947d7ec26474.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/3fd4139679be65417cecce11a4aff3c4b951ac141accd8ea5e9a947d7ec26474.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/5822459c6235c93c1f102911cc564f44b2220aedc0bcd642e6bb1b40c114c94e.png",
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/be96a24ee2a2db94e57829226ff65d14ba62331cc3115e57f23c731778b58045.png"
+        ]
+      },
+      "brand_category_ids": [
+        "smallhd-557dad6394",
+        "smallhd-9d1a655e72",
+        "smallhd-dd8fb94138"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모델별 공급 구성·호환성·납기와 견적은 문의로 안내합니다.\n모니터용 전원·거치 액세서리와 카메라 제어 라이선스는 구성에 따라 별도이며 필요 항목을 문의해주세요.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "ba86cdb676f7415fb79c1a9d8e54a60b3bc352ace33cff01e86096fc61b64c35"
+    },
+    "funomad-ultra5": {
+      "id": "funomad-ultra5",
+      "source": "funomad",
+      "source_id": "ultra5",
+      "source_url": "https://funomad.com/ultra5/",
+      "name": "SmallHD Ultra 5",
+      "brand": "SmallHD",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/99214bb09f3882617e64b6c528bdc070e2e48cc8261036620f4cb7bc11c64c03.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/99214bb09f3882617e64b6c528bdc070e2e48cc8261036620f4cb7bc11c64c03.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/3e089f43943e6b0dfd73ff398b628b268091b4e29ab6a1b129284afb6b1cb7d1.png"
+        ]
+      },
+      "brand_category_ids": [
+        "smallhd-557dad6394",
+        "smallhd-710d0fa9d4",
+        "smallhd-8537fb96b4"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모델별 공급 구성·호환성·납기와 견적은 문의로 안내합니다.\n모니터용 전원·거치 액세서리와 카메라 제어 라이선스는 구성에 따라 별도이며 필요 항목을 문의해주세요.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "297e2c39c0b9e62c9fd20fb70c83cf9d85cc9c1b14963e6a1c8f7eee8957431c"
+    },
+    "funomad-ultra7": {
+      "id": "funomad-ultra7",
+      "source": "funomad",
+      "source_id": "ultra7",
+      "source_url": "https://funomad.com/ultra7/",
+      "name": "SmallHD Ultra 7",
+      "brand": "SmallHD",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/42dc1338c362c93650456f54119239b264b4ddc9f1414841257753bbb0d2c1e8.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/42dc1338c362c93650456f54119239b264b4ddc9f1414841257753bbb0d2c1e8.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/debb04f96d7824a70841b2268f16970c28d22196d0ce17c095f41c0fa472007b.png",
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/c06348d34a99871aa6b854a8d170874ef56bcd7e1383cb6e5ee93e465714297a.png"
+        ]
+      },
+      "brand_category_ids": [
+        "smallhd-557dad6394",
+        "smallhd-710d0fa9d4",
+        "smallhd-7c62d5d554"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모델별 공급 구성·호환성·납기와 견적은 문의로 안내합니다.\n모니터용 전원·거치 액세서리와 카메라 제어 라이선스는 구성에 따라 별도이며 필요 항목을 문의해주세요.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "d8df8158530e23e9e41284ad03c3b323c7db5e999138da5964edffd06060bb74"
+    },
+    "funomad-ultra-10": {
+      "id": "funomad-ultra-10",
+      "source": "funomad",
+      "source_id": "ultra-10",
+      "source_url": "https://funomad.com/ultra-10/",
+      "name": "SmallHD Ultra 10",
+      "brand": "SmallHD",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/b36332cb3fa98a8a2a516756951ab76fcb8d4e79e7d3a84b40e31846d50d0920.webp",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/b36332cb3fa98a8a2a516756951ab76fcb8d4e79e7d3a84b40e31846d50d0920.webp"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/080a431188a8fa66fc7ea48951e9a290c3884224edd1c7f8b197ee99b48858e2.png",
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/1c12f548c96afd7f651823caa4af254f654c6c1f05eafdcb460f1e6c9861c07b.png"
+        ]
+      },
+      "brand_category_ids": [
+        "smallhd-557dad6394",
+        "smallhd-710d0fa9d4",
+        "smallhd-b0b328755e"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모델별 공급 구성·호환성·납기와 견적은 문의로 안내합니다.\n상담 가능 모델·구성: Ultra 10, Ultra 10 Bolt 6 RX.\n모니터용 전원·거치 액세서리와 카메라 제어 라이선스는 구성에 따라 별도이며 필요 항목을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [
+        {
+          "id": "1",
+          "name": "Ultra 10",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        },
+        {
+          "id": "2",
+          "name": "Ultra 10 Bolt 6 RX",
+          "price": null,
+          "additional_price": 0,
+          "disabled": true,
+          "supplier_status": "inquiry",
+          "displayed": true
+        }
+      ],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "d22ca266b546f412f10218e1f80dc0fe624ce1b2421d7b6042bbd40dcdb78866"
+    },
+    "funomad-cine7": {
+      "id": "funomad-cine7",
+      "source": "funomad",
+      "source_id": "cine7",
+      "source_url": "https://funomad.com/cine7/",
+      "name": "SmallHD Cine 7",
+      "brand": "SmallHD",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/08bb35e0ce6631b9be687310e2e8f95fc5c532169b6bbe11455789afbb589bf9.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/08bb35e0ce6631b9be687310e2e8f95fc5c532169b6bbe11455789afbb589bf9.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/08bb35e0ce6631b9be687310e2e8f95fc5c532169b6bbe11455789afbb589bf9.png"
+        ]
+      },
+      "brand_category_ids": [
+        "smallhd-557dad6394",
+        "smallhd-0d8713256e",
+        "smallhd-6d0e6fe1ab"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모니터 단품과 Bolt 6 송수신 모듈의 포함 여부는 상담 시 선택합니다.\n모니터용 전원·거치 액세서리와 카메라 제어 라이선스는 구성에 따라 별도이며 필요 항목을 문의해주세요.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "c60e61cee2fe42fce195a36aa0b980b1bc07a5225ad22d4b7eaac48c2f6eee00"
+    },
+    "funomad-indie7": {
+      "id": "funomad-indie7",
+      "source": "funomad",
+      "source_id": "indie7",
+      "source_url": "https://funomad.com/indie7/",
+      "name": "SmallHD Indie 7",
+      "brand": "SmallHD",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/eafffa6acbb7b6bdd81addb6a14c1b410ec8c4add890e3f7398e618ee0954b33.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/eafffa6acbb7b6bdd81addb6a14c1b410ec8c4add890e3f7398e618ee0954b33.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/eafffa6acbb7b6bdd81addb6a14c1b410ec8c4add890e3f7398e618ee0954b33.png"
+        ]
+      },
+      "brand_category_ids": [
+        "smallhd-557dad6394",
+        "smallhd-0d8713256e",
+        "smallhd-575cbeab85"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모니터 단품과 Bolt 6 송수신 모듈의 포함 여부는 상담 시 선택합니다.\n모니터용 전원·거치 액세서리와 카메라 제어 라이선스는 구성에 따라 별도이며 필요 항목을 문의해주세요.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "ee8a69195791dbad13627aea3d97e57e8575d37e2b728bd3aeb943eeee880d17"
+    },
+    "funomad-cine5": {
+      "id": "funomad-cine5",
+      "source": "funomad",
+      "source_id": "cine5",
+      "source_url": "https://funomad.com/cine5/",
+      "name": "SmallHD Cine 5",
+      "brand": "SmallHD",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/b0bd4722360016c9e446daa6d806c0d11d9ec11be7f41ef97ecd6489857ebef1.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/b0bd4722360016c9e446daa6d806c0d11d9ec11be7f41ef97ecd6489857ebef1.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/b0bd4722360016c9e446daa6d806c0d11d9ec11be7f41ef97ecd6489857ebef1.png"
+        ]
+      },
+      "brand_category_ids": [
+        "smallhd-557dad6394",
+        "smallhd-0ac65632be",
+        "smallhd-68000c854b"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모델별 공급 구성·호환성·납기와 견적은 문의로 안내합니다.\n모니터용 전원·거치 액세서리와 카메라 제어 라이선스는 구성에 따라 별도이며 필요 항목을 문의해주세요.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "cb7283c5c04fbdaf8797d46420a29b395011743f4f897686efba1cad77ffe3c3"
+    },
+    "funomad-indie5": {
+      "id": "funomad-indie5",
+      "source": "funomad",
+      "source_id": "indie5",
+      "source_url": "https://funomad.com/indie5/",
+      "name": "SmallHD Indie 5",
+      "brand": "SmallHD",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/94e6df50d39804a731f0ceb1b0e9102745ab64cb21975f4e7e56b5651193f80d.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/94e6df50d39804a731f0ceb1b0e9102745ab64cb21975f4e7e56b5651193f80d.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/94e6df50d39804a731f0ceb1b0e9102745ab64cb21975f4e7e56b5651193f80d.png"
+        ]
+      },
+      "brand_category_ids": [
+        "smallhd-557dad6394",
+        "smallhd-0ac65632be",
+        "smallhd-fb9ef16bf6"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "모델별 공급 구성·호환성·납기와 견적은 문의로 안내합니다.\n모니터용 전원·거치 액세서리와 카메라 제어 라이선스는 구성에 따라 별도이며 필요 항목을 문의해주세요.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "777b7d3440a747cb6171ce8a9fb878144eba0eabf9159f8628690712e3b74ed5"
+    },
+    "funomad-used": {
+      "id": "funomad-used",
+      "source": "funomad",
+      "source_id": "used",
+      "source_url": "https://funomad.com/used/",
+      "name": "Teradek Bolt 3000 XT 3G-SDI 1:2 Set (중고)",
+      "brand": "TERADEK",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/5d77a916651cfbbbde5c1076a37633e77044915c24089a52b9ce81322bbf2c01.jpg",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/5d77a916651cfbbbde5c1076a37633e77044915c24089a52b9ce81322bbf2c01.jpg"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/8aa1b375c81fc3fc224257484f4cd54ad5deb63f3ffffc3c15b80f0270c5f37f.jpg"
+        ]
+      },
+      "brand_category_ids": [
+        "teradek-5cfc22ddc6",
+        "teradek-4ce62e1271",
+        "teradek-8ef4c83a58"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "펀노마드 인증 중고 제품입니다. 신제품과 구분하며 판매 가능 수량·상태·보증은 상담에서 확인합니다.\n송수신기, 전원 액세서리, 케이블 및 서비스 구독의 포함 여부는 견적서의 확정 구성을 따릅니다.",
+      "description_notice": "가격·재고·납기는 문의로 안내합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "a5304791deef4f73ab4e27b1dab4fe8897f337addebb4f5f74e4e4dbb027ff5d"
+    },
+    "funomad-wc-fuji-gfx100s": {
+      "id": "funomad-wc-fuji-gfx100s",
+      "source": "funomad",
+      "source_id": "wc-fuji-gfx100s",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera FUJI GFX100S 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/1b7aa0adf7ca051ecd7a740191b4756950c5e6216a799a9cb9c2224b4ebba1ab.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/1b7aa0adf7ca051ecd7a740191b4756950c5e6216a799a9cb9c2224b4ebba1ab.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/1b7aa0adf7ca051ecd7a740191b4756950c5e6216a799a9cb9c2224b4ebba1ab.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-ff7ab4cc39"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-fuji-x-h2s": {
+      "id": "funomad-wc-fuji-x-h2s",
+      "source": "funomad",
+      "source_id": "wc-fuji-x-h2s",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera FUJI X-H2S 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/dc94f06e84577c11a1a52fa67f216c7c51d06e7c5f7cb23d83afbdfe2352c704.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/dc94f06e84577c11a1a52fa67f216c7c51d06e7c5f7cb23d83afbdfe2352c704.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/dc94f06e84577c11a1a52fa67f216c7c51d06e7c5f7cb23d83afbdfe2352c704.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-d516b953f1"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-fuji-gfx-eterna": {
+      "id": "funomad-wc-fuji-gfx-eterna",
+      "source": "funomad",
+      "source_id": "wc-fuji-gfx-eterna",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera FUJI GFX ETERNA 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/2075f8516cc102aa445364bfa3f4fb1813eb803c31bd02fe7df084ffb6466cfb.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/2075f8516cc102aa445364bfa3f4fb1813eb803c31bd02fe7df084ffb6466cfb.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/2075f8516cc102aa445364bfa3f4fb1813eb803c31bd02fe7df084ffb6466cfb.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-0389a116be"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-blackmagic-pocket-cinema-camera": {
+      "id": "funomad-wc-blackmagic-pocket-cinema-camera",
+      "source": "funomad",
+      "source_id": "wc-blackmagic-pocket-cinema-camera",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera BLACKMAGIC POCKET CINEMA CAMERA 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/fb8d2d96f3e8fe12dfd5f54e099cf540b6d84a24525924f63ad7909afe0f6014.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/fb8d2d96f3e8fe12dfd5f54e099cf540b6d84a24525924f63ad7909afe0f6014.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/fb8d2d96f3e8fe12dfd5f54e099cf540b6d84a24525924f63ad7909afe0f6014.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-f4ad898cd5"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-blackmagic-ursa-mini": {
+      "id": "funomad-wc-blackmagic-ursa-mini",
+      "source": "funomad",
+      "source_id": "wc-blackmagic-ursa-mini",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera BLACKMAGIC URSA MINI 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/3a5d719126c7a36224c55d11ba465720621c60d05969399245bf17903007adcc.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/3a5d719126c7a36224c55d11ba465720621c60d05969399245bf17903007adcc.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/3a5d719126c7a36224c55d11ba465720621c60d05969399245bf17903007adcc.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-3f8ade70fc"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-blackmagic-ursa-cine": {
+      "id": "funomad-wc-blackmagic-ursa-cine",
+      "source": "funomad",
+      "source_id": "wc-blackmagic-ursa-cine",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera BLACKMAGIC URSA CINE 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/6297b34970b47529288e4d93ccc308e65ec86e7fc3ca055b9fb3bbc188558cf8.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/6297b34970b47529288e4d93ccc308e65ec86e7fc3ca055b9fb3bbc188558cf8.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/6297b34970b47529288e4d93ccc308e65ec86e7fc3ca055b9fb3bbc188558cf8.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-95093a488d"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-arri-alexa-35": {
+      "id": "funomad-wc-arri-alexa-35",
+      "source": "funomad",
+      "source_id": "wc-arri-alexa-35",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera ARRI ALEXA 35 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/12b6ba115d41040c4c94ec6c9fb28a844d803c0e2df622f40db87d86fc348c8a.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/12b6ba115d41040c4c94ec6c9fb28a844d803c0e2df622f40db87d86fc348c8a.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/12b6ba115d41040c4c94ec6c9fb28a844d803c0e2df622f40db87d86fc348c8a.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-c5b990020d"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-canon-c500": {
+      "id": "funomad-wc-canon-c500",
+      "source": "funomad",
+      "source_id": "wc-canon-c500",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera CANON C500 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/834774b970595677a77c74b1cb9ec2760be23f7e2d00b2c9722c90d147702043.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/834774b970595677a77c74b1cb9ec2760be23f7e2d00b2c9722c90d147702043.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/834774b970595677a77c74b1cb9ec2760be23f7e2d00b2c9722c90d147702043.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-c567c2475b"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-canon-c400": {
+      "id": "funomad-wc-canon-c400",
+      "source": "funomad",
+      "source_id": "wc-canon-c400",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera CANON C400 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/e460bca0487fd13449c5eeb55c8278abf0dc38371866219325a926faf5573545.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/e460bca0487fd13449c5eeb55c8278abf0dc38371866219325a926faf5573545.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/e460bca0487fd13449c5eeb55c8278abf0dc38371866219325a926faf5573545.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-06924ad2f1"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-canon-c80": {
+      "id": "funomad-wc-canon-c80",
+      "source": "funomad",
+      "source_id": "wc-canon-c80",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera CANON C80 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/f11930869904bb913e2a5391c892f77794090d013e384750fb95779165ebdd9b.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/f11930869904bb913e2a5391c892f77794090d013e384750fb95779165ebdd9b.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/f11930869904bb913e2a5391c892f77794090d013e384750fb95779165ebdd9b.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-f36e1e0389"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-canon-c70": {
+      "id": "funomad-wc-canon-c70",
+      "source": "funomad",
+      "source_id": "wc-canon-c70",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera CANON C70 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/08d96f8e9eb9af2d3e4befd24a4a83d63af738031152aafa15db6d7e70eb39d4.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/08d96f8e9eb9af2d3e4befd24a4a83d63af738031152aafa15db6d7e70eb39d4.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/08d96f8e9eb9af2d3e4befd24a4a83d63af738031152aafa15db6d7e70eb39d4.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-5dbba15383"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-canon-c50": {
+      "id": "funomad-wc-canon-c50",
+      "source": "funomad",
+      "source_id": "wc-canon-c50",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera CANON C50 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/5d680f20ca2accfb21f45f50ad7961723166382763a4e4b641b5a71637719040.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/5d680f20ca2accfb21f45f50ad7961723166382763a4e4b641b5a71637719040.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/5d680f20ca2accfb21f45f50ad7961723166382763a4e4b641b5a71637719040.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-7ce9bb95dc"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-sony-venice": {
+      "id": "funomad-wc-sony-venice",
+      "source": "funomad",
+      "source_id": "wc-sony-venice",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera SONY VENICE 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/3fa2a0ce192d3c96b36fc4f6130f59684b76f13f78105507ab8b2fdc0a2cc165.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/3fa2a0ce192d3c96b36fc4f6130f59684b76f13f78105507ab8b2fdc0a2cc165.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/3fa2a0ce192d3c96b36fc4f6130f59684b76f13f78105507ab8b2fdc0a2cc165.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-9a04746d05"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-sony-rialto": {
+      "id": "funomad-wc-sony-rialto",
+      "source": "funomad",
+      "source_id": "wc-sony-rialto",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera SONY RIALTO 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/9b7684df6f907838d5fc910d1b69e8246d2f3668644addd5a45625be6358b29b.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/9b7684df6f907838d5fc910d1b69e8246d2f3668644addd5a45625be6358b29b.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/9b7684df6f907838d5fc910d1b69e8246d2f3668644addd5a45625be6358b29b.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-c3e44ca842"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-sony-burano": {
+      "id": "funomad-wc-sony-burano",
+      "source": "funomad",
+      "source_id": "wc-sony-burano",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera SONY BURANO 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/ed302f8fc37c7f821da75a4853918ff41f8b7c64c236e6a702924167062ef4d0.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/ed302f8fc37c7f821da75a4853918ff41f8b7c64c236e6a702924167062ef4d0.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/ed302f8fc37c7f821da75a4853918ff41f8b7c64c236e6a702924167062ef4d0.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-ef92cbab53"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-sony-fx6": {
+      "id": "funomad-wc-sony-fx6",
+      "source": "funomad",
+      "source_id": "wc-sony-fx6",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera SONY FX6 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/fafc86a0f9e9150eb7517801623c94b1e3f39bea9c47c385e2167e7b4c622f5b.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/fafc86a0f9e9150eb7517801623c94b1e3f39bea9c47c385e2167e7b4c622f5b.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/fafc86a0f9e9150eb7517801623c94b1e3f39bea9c47c385e2167e7b4c622f5b.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-1a9357c551"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-sony-fx3": {
+      "id": "funomad-wc-sony-fx3",
+      "source": "funomad",
+      "source_id": "wc-sony-fx3",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera SONY FX3 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/909740b6662c86ff17a87084046ac77c32c21397cb226923eaaea2515c060745.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/909740b6662c86ff17a87084046ac77c32c21397cb226923eaaea2515c060745.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/909740b6662c86ff17a87084046ac77c32c21397cb226923eaaea2515c060745.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-c69cc7305e"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-sony-fx2": {
+      "id": "funomad-wc-sony-fx2",
+      "source": "funomad",
+      "source_id": "wc-sony-fx2",
+      "source_url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera SONY FX2 액세서리 제품군",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/419626c73ac6ec6414a436f2be0739a040d956def166397c5594a31e3c115249.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/419626c73ac6ec6414a436f2be0739a040d956def166397c5594a31e3c115249.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/419626c73ac6ec6414a436f2be0739a040d956def166397c5594a31e3c115249.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-daa8c939b4"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3"
+    },
+    "funomad-wc-fx5-full": {
+      "id": "funomad-wc-fx5-full",
+      "source": "funomad",
+      "source_id": "wc-fx5-full",
+      "source_url": "https://funomad.com/fx5/",
+      "name": "Wooden Camera Sony FX5 Full Cage System",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/de523f08de35245d18660d2d1170ec14a675b87e60298074450655d9d5a04049.webp",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/de523f08de35245d18660d2d1170ec14a675b87e60298074450655d9d5a04049.webp"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/de523f08de35245d18660d2d1170ec14a675b87e60298074450655d9d5a04049.webp"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-88a8323292"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "Sony FX5용 액세서리입니다. 카메라 본체는 포함하지 않습니다. 마운트·키트 세부 구성은 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "90b34d722f9860a3d30f8d5186fdd6cf06c251bd32a697ba0c20a045821d8b06"
+    },
+    "funomad-wc-fx5-core": {
+      "id": "funomad-wc-fx5-core",
+      "source": "funomad",
+      "source_id": "wc-fx5-core",
+      "source_url": "https://funomad.com/fx5/",
+      "name": "Wooden Camera Sony FX5 Core Cage System",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/2177a0c738bdd12b3c3061867bcf90cbb20de6d9141e98ae49a43db55b2ec448.webp",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/2177a0c738bdd12b3c3061867bcf90cbb20de6d9141e98ae49a43db55b2ec448.webp"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/2177a0c738bdd12b3c3061867bcf90cbb20de6d9141e98ae49a43db55b2ec448.webp"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-88a8323292"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "Sony FX5용 액세서리입니다. 카메라 본체는 포함하지 않습니다. 마운트·키트 세부 구성은 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "90b34d722f9860a3d30f8d5186fdd6cf06c251bd32a697ba0c20a045821d8b06"
+    },
+    "funomad-wc-fx5-elite": {
+      "id": "funomad-wc-fx5-elite",
+      "source": "funomad",
+      "source_id": "wc-fx5-elite",
+      "source_url": "https://funomad.com/fx5/",
+      "name": "Wooden Camera Sony FX5 Elite Cage System",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/b169a324f48503ab300c4ef9c3cd4704098e709f5c55afb6b7203798be866f42.webp",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/b169a324f48503ab300c4ef9c3cd4704098e709f5c55afb6b7203798be866f42.webp"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/b169a324f48503ab300c4ef9c3cd4704098e709f5c55afb6b7203798be866f42.webp"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-88a8323292"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "Sony FX5용 액세서리입니다. 카메라 본체는 포함하지 않습니다. 마운트·키트 세부 구성은 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "90b34d722f9860a3d30f8d5186fdd6cf06c251bd32a697ba0c20a045821d8b06"
+    },
+    "funomad-wc-fx5-rear": {
+      "id": "funomad-wc-fx5-rear",
+      "source": "funomad",
+      "source_id": "wc-fx5-rear",
+      "source_url": "https://funomad.com/fx5/",
+      "name": "Wooden Camera Sony FX5 Rear Cage Bracket",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/cf9b2bddc5652bd0aee9a5e2a2ccb5aa39cfc59c6bc7224cff53783d45161da1.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/cf9b2bddc5652bd0aee9a5e2a2ccb5aa39cfc59c6bc7224cff53783d45161da1.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/cf9b2bddc5652bd0aee9a5e2a2ccb5aa39cfc59c6bc7224cff53783d45161da1.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-88a8323292"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "Sony FX5용 액세서리입니다. 카메라 본체는 포함하지 않습니다. 마운트·키트 세부 구성은 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "90b34d722f9860a3d30f8d5186fdd6cf06c251bd32a697ba0c20a045821d8b06"
+    },
+    "funomad-wc-fx5-lens": {
+      "id": "funomad-wc-fx5-lens",
+      "source": "funomad",
+      "source_id": "wc-fx5-lens",
+      "source_url": "https://funomad.com/fx5/",
+      "name": "Wooden Camera Sony FX5 Lens Mount Adapters & Supports",
+      "brand": "Wooden Camera",
+      "kind": "purchase",
+      "status": "inquiry",
+      "supplier_status": "inquiry",
+      "price": null,
+      "sale_price": null,
+      "images": {
+        "thumb": "https://shop.nadaun.co/assets/shop/supplier-details/funomad/e80665c96377663777770fa62bf84d01bf22afb43ae53b0b414134282d1e6180.png",
+        "main": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/e80665c96377663777770fa62bf84d01bf22afb43ae53b0b414134282d1e6180.png"
+        ],
+        "detail": [
+          "https://shop.nadaun.co/assets/shop/supplier-details/funomad/e80665c96377663777770fa62bf84d01bf22afb43ae53b0b414134282d1e6180.png"
+        ]
+      },
+      "brand_category_ids": [
+        "wooden-camera-8b52e8e00e",
+        "wooden-camera-88a8323292"
+      ],
+      "detail_status": "verified",
+      "detail_checked_at": "2026-10-18T17:17:16+00:00",
+      "description_text": "Sony FX5용 액세서리입니다. 카메라 본체는 포함하지 않습니다. 마운트·키트 세부 구성은 문의해주세요.",
+      "description_notice": "가격·재고·납기 문의. 제품군의 개별 모델·세부 구성은 상담으로 확정합니다.",
+      "description_text_alongside_images": true,
+      "options": [],
+      "option_groups": [],
+      "options_require_confirmation": true,
+      "evidence_sha256": "90b34d722f9860a3d30f8d5186fdd6cf06c251bd32a697ba0c20a045821d8b06"
+    }
+  },
+  "coverage_notes": [
+    "현재 메뉴·홈 연결 및 상품 상세 내부 링크 40페이지 확인",
+    "Vision Series/이전 Prism Rack/Ultra10 연결은 원본 404로 신규 판매 등록 보류",
+    "PageOS 6/FIZ Overlays/Fleet Control은 무료 소프트웨어·기능 안내로 별도 판매 SKU를 만들지 않음",
+    "Tier-S/Public Safety/TRT는 지원·솔루션 안내",
+    "Wooden Camera 18개 카메라별 액세서리 제품군과 FX5 5개 구성. 제조사 전체 SKU 수집을 의미하지 않음"
+  ],
+  "evidence": {
+    "pages_verified": 40,
+    "original_images": 83,
+    "reviewed_product_or_family_rows": 51,
+    "manufacturer_full_sku_inventory": false
+  }
+}
