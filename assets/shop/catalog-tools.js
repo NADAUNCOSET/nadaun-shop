@@ -47,7 +47,13 @@ export function catalogSelection(data,{brand='',kind='purchase',cat='',type='',s
   // Old bookmarked category URLs keep their original source tree and membership.
   const legacy=Array.isArray(preferred)&&!!cat&&!preferred.includes(cat);
   const navigation=Array.isArray(preferred)&&!legacy?new Set(preferred):null;
-  const brandCategories=brand?data.categories.filter(c=>c.brand_id===brand&&(kind==='rental'?c.scope==='rental-brand':c.scope!=='rental-brand')&&(!navigation||navigation.has(c.id))):[];
+  const originalCategories=brand?data.categories.filter(c=>c.brand_id===brand&&(kind==='rental'?c.scope==='rental-brand':c.scope!=='rental-brand')&&(!navigation||navigation.has(c.id))):[];
+  const wrappers=new Map(originalCategories.filter(c=>c.navigation_role==='wrapper').map(c=>[c.id,c]));
+  const brandCategories=originalCategories.filter(c=>!['wrapper','collection'].includes(c.navigation_role)).map(c=>{
+    let parent=c.parent_id;const seen=new Set();
+    while(wrappers.has(parent)&&!seen.has(parent)){seen.add(parent);parent=wrappers.get(parent).parent_id}
+    return parent===c.parent_id?c:{...c,parent_id:parent};
+  });
   const typeCategories=data.categories.filter(c=>c.scope===(kind==='rental'?'rental-product':'product'));
   const categoryIds=p=>navigation?(p.navigation_category_ids??p.category_ids):p.category_ids;
   const matchesCategory=p=>!cat||categoryIds(p).includes(cat);

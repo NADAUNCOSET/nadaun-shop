@@ -255,5 +255,6 @@
       "includeFiles": "{server/commerce/**}",
       "maxDuration": 60
     }
-  }
+  },
+  "buildCommand": "node server/catalog-release-check.cjs"
 }

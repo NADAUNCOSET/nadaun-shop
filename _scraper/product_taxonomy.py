@@ -10,6 +10,14 @@ from collections import Counter
 
 # New leaves supplement the KPP groups; their names describe product types.
 EXTRA = [
+ ('studio-camera','camera','스튜디오·라이브 카메라'),('camera-expansion','kpp:09','카메라 확장·연결 장치'),
+ ('video-capture','kpp:h0','영상 캡처·재생'),('video-streaming','kpp:h0','스트리밍·인코더'),
+ ('video-routing','kpp:h0','영상 라우팅·분배'),('video-multiview','kpp:h0','멀티뷰'),
+ ('video-network','kpp:h0','영상 IP 네트워크'),
+ ('video-compositing','kpp:h0','크로마키·영상 합성'),('video-graphics','kpp:h0','문자발생기·방송 그래픽'),
+ ('film-scanner','kpp:h0','필름 스캐너'),('monitor-recorder','monitor','모니터·레코더 일체형'),
+ ('electronic-viewfinder','monitor','전자 뷰파인더'),('audio-control','audio','오디오 컨트롤 패널'),
+ ('network-storage','storage','네트워크 스토리지'),('storage-dock','storage','스토리지 도크·리더'),
  ('monitor-parts','kpp:h0','모니터·뷰파인더 액세서리'),('optical-viewfinder','kpp:09','광학 뷰파인더·확대경'),('video-rack','kpp:h0','영상 장비 랙·설치 부품'),
  ('camera-cooling','kpp:09','카메라 냉각 액세서리'),('camera-rig','kpp:06','카메라 지지대·리그'),
  ('robot-vacuum',None,'로봇 청소기'),('robot-vacuum-body','robot-vacuum','로봇 청소기 본체'),('robot-vacuum-parts','robot-vacuum','로봇 청소기 소모품·액세서리'),
@@ -54,7 +62,7 @@ RULES = [
  ('color',r'컬러\s*차트|컬러체커|colorchecker|캘리브레|calibrat|스파이더\s*[xX]|spyder'),
  ('editing-control',r'speed\s*editor|replay\s*editor|키보드|keyboard|컨트롤\s*패널|micro\s*panel|mini\s*panel|advanced\s*panel|와콤|타블렛'),
  ('editing-software',r'다빈치\s*리졸브\s*스튜디오|davinci resolve studio|capture\s*one|라이선스|소프트웨어'),
- ('print',r'프린터|프린팅|잉크|ink\b|출력\s*용지|사진\s*용지|포토\s*용지'),
+ ('print',r'프린터|프린팅|잉크|\bink\b|출력\s*용지|사진\s*용지|포토\s*용지'),
  ('air-blower',r'에어\s*블로|블로워|블로우|air\s*blower|rocket\s*air'),('cleaning',r'클리닝|cleaning|청소\s*키트|렌즈\s*펜|lens\s*pen'),
  ('tools',r'드라이버|screwdriver|멀티\s*툴|multi.?tool|렌치|wrench|tool\s*kit'),
  ('power-parts',r'배터리\s*(?:플레이트|홀더|어댑터|마운트(?!\s*배터리))|battery\s*(?:plate|holder|adapter|mount)|(?:전원|power|AC).*(?:어댑터|adapto?r)|파워\s*뱅크\s*홀더'),
@@ -304,6 +312,14 @@ def build_taxonomy(products,categories,overrides=None,ldnet_categories=None,saek
         supplied = list(dict.fromkeys(ldnet_types[c] for c in p['category_ids'] if c in ldnet_types))
         reason='kpp-membership' if native else 'ldnet-source-category' if supplied else 'supplier-category' if mounted else ''
         selected=native or supplied or mounted
+        if p['kind']=='purchase':
+            from hipixel_source import product_types as hipixel_types
+            hipixel=hipixel_types(p,categories)
+            if hipixel:selected=['type:'+key for key in hipixel];reason='hipixel-source-category-and-purpose'
+            elif bid=='blackmagic':
+                from hipixel_source import blackmagic_type
+                known=blackmagic_type(name)
+                if known:selected=['type:'+known];reason='blackmagic-manufacturer-family'
         # A verified merged offer still carries its source category evidence.
         # The public primary ID can be Smartstore/Cinemall rather than Saeki.
         saeki_matches=[saeki_products[o['id']] for o in p.get('offers',[])

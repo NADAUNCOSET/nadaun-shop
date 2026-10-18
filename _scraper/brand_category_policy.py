@@ -40,6 +40,8 @@ def mirror_source_paths(category_ids, categories, brand_id, prefix):
         mirrored = {'id': key, 'name': source['name'], 'brand_id': brand_id,
                     'parent_id': prefix + source['parent_id'] if source.get('parent_id') else None,
                     'source_category_id': cid}
+        for field in ('position','navigation_role'):
+            if field in source:mirrored[field]=source[field]
         if key in categories and categories[key] != mirrored:
             raise ValueError('Conflicting mirrored category identity: ' + key)
         categories[key] = mirrored
@@ -77,6 +79,7 @@ def choose_navigation(products, categories, brands, overrides=None):
         for p in rows:
             family = families.setdefault(p.get('listing_id', p['id']), defaultdict(set))
             for cid in p.get('category_ids', []):
+                if categories.get(cid,{}).get('navigation_role')=='collection':continue
                 if cid in categories and categories[cid].get('brand_id') != bid:
                     other_brand_paths.append({'product_id': p['id'], 'category_id': cid})
                     continue

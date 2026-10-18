@@ -67,7 +67,7 @@ def content(mode, brands, products, brand=None, category_galleries=None):
         # Curated purchase display. Do not label this as measured sales ranking.
         eligible=[p for p in products if p['kind']=='purchase' and p['status']!='soldout' and p.get('listing_id',p['id'])==p['id']]
         selected=[]
-        for bid in ['dji','leofoto','hoya','smallrig','tilta','pgytech','nanlite','godox']:
+        for bid in ['blackmagic','dji','leofoto','smallrig','tilta','pgytech','nanlite','godox']:
             featured=next((b['representative_id'] for b in brands if b['id']==bid),None)
             chosen=next((p for p in eligible if p['id']==featured),next((p for p in eligible if p['brand_id']==bid),None))
             if chosen:selected.append(chosen)

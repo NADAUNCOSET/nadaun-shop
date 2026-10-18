@@ -38,6 +38,7 @@
     }
   },
   "brand_order": [
+    "blackmagic",
     "dji",
     "smallrig",
     "leofoto",
@@ -57,8 +58,7 @@
     "wandrd",
     "fxlion",
     "zitay",
-    "hollyland",
-    "blackmagic"
+    "hollyland"
   ],
   "category_order": [],
   "category_browsing_enabled": true,

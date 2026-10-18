@@ -6,7 +6,8 @@ import subprocess
 
 
 def validate_updates(updates):
-    cafe24_sources=('clmedia','cinemall','onnoff','ldnet')
+    from sync_cafe24_partners import SITES
+    cafe24_sources=tuple(SITES)
     sources = {'plthink': 'plthink', 'avx-approved': 'avx', 'dji-official': 'dji-official', 'saeki':'saeki'}
     sources.update({name:name for name in cafe24_sources})
     for name, snapshot in updates.items():

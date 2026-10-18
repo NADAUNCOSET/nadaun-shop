@@ -17,6 +17,12 @@ def text(value):
 
 def name_key(product, brand=None):
     value = text(product['name'])
+    # Observed HiPixel merchandising labels do not change a manufacturer's
+    # model. Keep every other bracketed label, especially bundle/licence terms.
+    if product.get('source')=='hipixel' or product.get('id','').startswith('hipixel-'):
+        value=re.sub(r'\[(?:신제품|오더베이스|가격할인)\]','',value)
+    if product.get('brand_id')=='blackmagic':
+        value=re.sub(r'(video\s+assist\s+[57])["″]',r'\1',value)
     if brand:
         aliases = sorted(set([brand['name'], *brand.get('aliases', [])]), key=len, reverse=True)
         for alias in aliases:
@@ -31,6 +37,14 @@ def model_key(product):
         return None
     value = text(product['name']).upper()
     brand = product['brand_id']
+    if brand=='tvlogic':
+        if re.search(r'호환|전용|후드|hood|액세서리|악세사리|필름|케이블|cable|plate|플레이트|브라켓|어댑터',value,re.I):return None
+        tokens=set(re.findall(r'(?<![A-Z0-9-])((?:LXM|LUM|LVM|VFM|RKM|SVM|SWM|F|R|S)-[0-9]+[A-Z0-9]*(?:-[A-Z0-9]+)*)(?![A-Z0-9-])',value))
+        return next(iter(tokens)) if len(tokens)==1 else None
+    if brand=='teris':
+        if re.search(r'호환|전용',value):return None
+        tokens=set(re.findall(r'(?<![A-Z0-9-])((?:TS-TRAVEL\s+\d+(?:\s+PRO)?)|(?:TS[A-Z0-9]*(?:-[A-Z0-9]+)*|TCE-[A-Z]+|CINE-[A-Z]+|BARREL-\d+|SB-\d+|GS-\d+|MS-\d+|JQ\d+-[IVX]+)(?:\s+(?:PLUS|CINE))?)(?![A-Z0-9-])',value))
+        return next(iter(tokens)) if len(tokens)==1 else None
     patterns = {
         'smallrig': r'(?<![A-Z0-9])(?:SR)?(\d{3,4}[A-Z]?)(?![A-Z0-9])',
         'tilta': r'(?<![A-Z0-9])((?:TA|ES|WLC|MB|UBP|TGA|TT|HDA|GSS|TAM)-[A-Z0-9]+(?:-[A-Z0-9]+)*)(?![A-Z0-9])',
@@ -66,12 +80,22 @@ def variants(product):
 def conflict(a, b, details):
     if (a['brand_id'],a['kind']) != (b['brand_id'],b['kind']):
         return 'different_brand_or_purchase_type'
+    if a['brand_id']=='unbranded':return 'manufacturer_not_verified'
+    if a.get('source')==b.get('source')=='hipixel' and a['source_id']!=b['source_id']:
+        return 'distinct_hipixel_source_skus'
     if a.get('source')==b.get('source')=='saeki' and a['source_id']!=b['source_id']:
         return 'distinct_saeki_source_skus'
     if a.get('source')==b.get('source')=='dji-official' and a.get('ean')!=b.get('ean'):
         return 'different_official_variant'
-    if any(details.get(p['id'],{}).get('options_require_confirmation') for p in (a,b)):
-        return 'unverified_option_equivalence'
+    hipixel_match=any(p.get('source')=='hipixel' or p['id'].startswith('hipixel-') for p in (a,b))
+    for p in (a,b):
+        d=details.get(p['id'],{})
+        if not d.get('options_require_confirmation'):continue
+        # Cafe24's price-inquiry guard also sets this flag for a verified
+        # single SKU. An unknown price is not an unknown colour/size option.
+        price_only=(hipixel_match and p.get('price_inquiry') and p.get('detail_status')=='verified'
+                    and not d.get('options') and not d.get('option_groups'))
+        if not price_only:return 'unverified_option_equivalence'
     av, bv = variants(a), variants(b)
     if av[0] and bv[0] and av[0] != bv[0]:
         return 'different_color'

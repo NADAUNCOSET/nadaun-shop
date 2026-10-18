@@ -26,8 +26,9 @@ SITES={
     'cinemall':('https://www.cinemall.co.kr','56'),
     'onnoff':('https://onnoff.kr','23'),
     'ldnet':('https://ldnet.co.kr','1'),
+    'hipixel':('https://hipixelplus.co.kr','1'),
 }
-WHOLE_SITE={'ldnet'}
+WHOLE_SITE={'ldnet','hipixel'}
 STATE=ROOT/'_scraper/.sync-state'
 # Cinemall's default ranking changes between reads; its own menu exposes
 # sort_method=5 (newest). Keep this cache separate from the original pages.
@@ -87,6 +88,18 @@ def category_tree(payload,root,whole_site=False):
         if current==root:result[cid]={**node,'parent_id':None if cid==root else node['parent_id']}
         elif whole_site:raise ValueError('Source category is orphaned from the whole-site root: '+cid)
     return result
+
+
+def source_category_tree(source,payload):
+    """Keep source order and scoped non-merchandise exclusions explicit."""
+    if source=='hipixel':
+        from hipixel_source import category_payload
+        payload=category_payload(payload)
+    nodes=category_tree(payload,SITES[source][1],whole_site=source in WHOLE_SITE)
+    if source=='hipixel':
+        for position,row in enumerate(payload):
+            nodes[str(row['cate_no'])]['position']=position
+    return nodes
 
 
 def listing(doc,source,cid,page):
@@ -303,7 +316,7 @@ def detail(doc,product,brand):
     if not brand:
         declared=schema.get('brand') or {}
         declared=declared.get('name','') if isinstance(declared,dict) else declared if isinstance(declared,str) else ''
-        seller_names={'씨엘미디어(주)','씨엘미디어','clmedia','시네몰','씨네몰','cinemall','온앤오프','온앤오프미디어','onnoff'}
+        seller_names={'씨엘미디어(주)','씨엘미디어','clmedia','시네몰','씨네몰','cinemall','온앤오프','온앤오프미디어','onnoff','blackmagicdesign_하이픽셀플러스','하이픽셀플러스'}
         if declared.strip().casefold() not in seller_names and declared.strip():brand=declared.strip()
     if not brand:issues.append('brand_membership_requires_review')
     p.update(name=clean(schema['name']),brand=brand or '미분류',kind='purchase',price=price,sale_price=sale,
@@ -314,6 +327,9 @@ def detail(doc,product,brand):
         price_inquiry=bool(quote),
         detail_status='verified' if not issues else 'review_required',content_issues=issues,
         detail_checked_at=stamp())
+    if p.get('source')=='hipixel':
+        from hipixel_source import apply_review
+        apply_review(p,schema)
     # Preserve the source's option/stock evidence privately, never in public JSON.
     return p,{'schema':schema,'option_stock':stock,'rendered_option_states':rendered,'option_type':values.get('option_type'),
               'item_code':values.get('item_code'),'selling_price_content':values.get('product_price_content')}
@@ -417,7 +433,7 @@ class Collector:
         nodes=self.state('categories')
         if nodes is None:
             raw=self.source.get('/exec/front/Product/SubCategory');payload=json.loads(raw)
-            if payload:nodes=category_tree(payload,self.root,whole_site=self.name in WHOLE_SITE)
+            if payload:nodes=source_category_tree(self.name,payload)
             elif self.name in WHOLE_SITE:raise ValueError('Whole-site category tree is missing')
             else:nodes={self.root:{'id':self.root,'name':'브랜드','parent_id':None}}
             self.state('categories',nodes)
@@ -458,6 +474,9 @@ class Collector:
             cats=memberships[sid]
             product['brand']='' if self.name in WHOLE_SITE else inventory_brand(cats,nodes,self.root)
             product['brand_category_ids']=[cid for cid in cats if cid!=self.root]
+            if self.name=='hipixel':
+                from hipixel_source import category_brand
+                product['brand']=category_brand(product['brand_category_ids'],nodes)
         result={'source':self.name,'at':stamp(),'listing_sort':LISTING_SORT.get(self.name),'categories':list(nodes.values()),'coverage':coverage,'products':products,'product_count':len(products),'inventory_complete':True,'complete':False}
         save_json(self.work/'inventory-candidate.json',result)
         self.state('inventory_complete',True)
@@ -468,7 +487,9 @@ class Collector:
     def collect(self):
         with run_lock(self.work):
             snapshot=self.inventory()
-            for sid,p in snapshot['products'].items():
+            entries=list(snapshot['products'].items())
+            if self.name=='hipixel':entries.sort(key=lambda entry:bool(entry[1].get('brand')))
+            for sid,p in entries:
                 if self.db.execute('SELECT 1 FROM details WHERE id=? UNION SELECT 1 FROM errors WHERE id=?',(sid,sid)).fetchone():continue
                 raw=self.source.get('/product/detail.html',product_no=sid)
                 try:record,evidence=detail(soup(raw),p,p['brand'])
@@ -505,7 +526,7 @@ class Collector:
                     'categories_verified':index+1,'categories_found':len(snapshot['coverage']),
                     'changed_categories':changed,'reused_categories':reused,'complete':False})
             if self.name in WHOLE_SITE:
-                latest=category_tree(json.loads(self.source.get('/exec/front/Product/SubCategory')),self.root,whole_site=True)
+                latest=source_category_tree(self.name,json.loads(self.source.get('/exec/front/Product/SubCategory')))
                 if latest!={node['id']:node for node in snapshot['categories']}:changed.append('category-tree')
             rows={sid:json.loads(rec) for sid,rec in self.db.execute('SELECT id,record FROM details') if sid in snapshot['products']}
             errors={sid:error for sid,error in self.db.execute('SELECT id,error FROM errors') if sid in snapshot['products']}

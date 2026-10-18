@@ -1,0 +1,480 @@
+{
+  "453": {
+    "expected_name": "Blackmagic URSA Cine Mount B4",
+    "type": "kpp:0330",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=453"
+    ]
+  },
+  "452": {
+    "expected_name": "Blackmagic URSA Live Encoder",
+    "type": "video-streaming",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=452"
+    ]
+  },
+  "451": {
+    "expected_name": "Blackmagic URSA Cine Studio Viewfinder",
+    "type": "electronic-viewfinder",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=451"
+    ]
+  },
+  "445": {
+    "expected_name": "[신제품]Blackmagic Media Dock Ultra",
+    "type": "storage-dock",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=445"
+    ]
+  },
+  "401": {
+    "expected_name": "Blackmagic Camera ProDock",
+    "type": "camera-expansion",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=401"
+    ]
+  },
+  "347": {
+    "expected_name": "[신제품}Blackmagic PYXIS Pro Handle",
+    "type": "kpp:0650",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=347"
+    ]
+  },
+  "346": {
+    "expected_name": "[신제품}Blackmagic PYXIS Pro Grip",
+    "type": "kpp:0650",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=346"
+    ]
+  },
+  "313": {
+    "expected_name": "[오더베이스] Blackmagic URSA Broadcast ENG Kit",
+    "type": "camera-rig",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=313"
+    ]
+  },
+  "312": {
+    "expected_name": "Blackmagic URSA Cine Battery Plate",
+    "type": "power-parts",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=312"
+    ]
+  },
+  "311": {
+    "expected_name": "Blackmagic URSA Cine PL Mount",
+    "type": "kpp:0330",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=311"
+    ]
+  },
+  "310": {
+    "expected_name": "Blackmagic URSA Cine LPL Mount",
+    "type": "kpp:0330",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=310"
+    ]
+  },
+  "309": {
+    "expected_name": "Blackmagic URSA Cine EF Mount",
+    "type": "kpp:0330",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=309"
+    ]
+  },
+  "308": {
+    "expected_name": "Blackmagic URSA Cine Handle",
+    "type": "kpp:0650",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=308"
+    ]
+  },
+  "306": {
+    "expected_name": "Blackmagic PYXIS Rosette Plate",
+    "type": "kpp:0140",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=306"
+    ]
+  },
+  "194": {
+    "expected_name": "Blackmagic URSA VLock Battery Plate",
+    "type": "power-parts",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=194"
+    ]
+  },
+  "191": {
+    "expected_name": "[오더베이스]Blackmagic URSA Viewfinder",
+    "type": "electronic-viewfinder",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=191"
+    ]
+  },
+  "172": {
+    "expected_name": "Blackmagic 3G-SDI Arduino Shield",
+    "type": "video-control",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=172"
+    ]
+  },
+  "157": {
+    "expected_name": "[오더베이스]Blackmagic URSA Mini Pro Shim Kit",
+    "type": "kpp:0330",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=157"
+    ]
+  },
+  "156": {
+    "expected_name": "[오더베이스]Blackmagic URSA Mini Pro EF Mount",
+    "type": "kpp:0330",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=156"
+    ]
+  },
+  "155": {
+    "expected_name": "[오더베이스]Blackmagic URSA Mini Pro PL Mount",
+    "type": "kpp:0330",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=155"
+    ]
+  },
+  "154": {
+    "expected_name": "[오더베이스]Blackmagic URSA Mini Pro B4 Mount",
+    "type": "kpp:0330",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=154"
+    ]
+  },
+  "150": {
+    "expected_name": "[오더베이스]Blackmagic URSA Mini Pro F Mount",
+    "type": "kpp:0330",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=150"
+    ]
+  },
+  "149": {
+    "expected_name": "[오더베이스] Blackmagic URSA Mini Mic Mount",
+    "type": "kpp:0740",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=149"
+    ]
+  },
+  "135": {
+    "expected_name": "Blackmagic Pocket Camera DC Cable Pack",
+    "type": "power-parts",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=135"
+    ]
+  },
+  "131": {
+    "expected_name": "[오더베이스] Blackmagic Pocket Camera Battery Grip",
+    "type": "power-parts",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=131"
+    ]
+  },
+  "108": {
+    "expected_name": "[오더베이스]Blackmagic URSA Mini Recorder",
+    "type": "video-recorder",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=108"
+    ]
+  },
+  "99": {
+    "expected_name": "Blackmagic Pocket Camera Battery Pro Grip",
+    "type": "power-parts",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=99"
+    ]
+  },
+  "98": {
+    "expected_name": "Blackmagic Pocket Cinema Camera Pro EVF",
+    "type": "electronic-viewfinder",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=98"
+    ]
+  },
+  "89": {
+    "expected_name": "Blackmagic Zoom Demand [마운팅 브라켓 포함]",
+    "type": "remote",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=89"
+    ]
+  },
+  "88": {
+    "expected_name": "Blackmagic Focus Demand [마운팅 브라켓 포함]",
+    "type": "remote",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=88"
+    ]
+  },
+  "17": {
+    "expected_name": "Blackmagic URSA Cine EVF",
+    "type": "electronic-viewfinder",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=17"
+    ]
+  },
+  "18": {
+    "expected_name": "Blackmagic Media Module 8TB",
+    "type": "ssd",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=18"
+    ]
+  },
+  "225": {
+    "expected_name": "R-5T",
+    "type": "monitor",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=225"
+    ]
+  },
+  "224": {
+    "expected_name": "R-7D",
+    "type": "monitor",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=224"
+    ]
+  },
+  "408": {
+    "expected_name": "TERIS TS-RH100W 전용 바퀴 세트 TS-WS100",
+    "type": "kpp:0130",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=408"
+    ]
+  },
+  "407": {
+    "expected_name": "TERIS 75mm 100mm 변환 볼 어댑터 TS-BA75",
+    "type": "kpp:0130",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=407"
+    ]
+  },
+  "390": {
+    "expected_name": "TERIS 돌리 TS-D30",
+    "type": "dolly",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=390"
+    ]
+  },
+  "389": {
+    "expected_name": "TERIS 미드 레벨 스프레더 MS-1",
+    "type": "kpp:0130",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=389"
+    ]
+  },
+  "287": {
+    "expected_name": "TERIS TS-QA-01",
+    "type": "kpp:0140",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=287"
+    ]
+  },
+  "275": {
+    "expected_name": "TERIS GS-2",
+    "type": "kpp:0130",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=275"
+    ]
+  },
+  "273": {
+    "expected_name": "TERIS  SB-135",
+    "type": "equipment-bag",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=273"
+    ]
+  },
+  "271": {
+    "expected_name": "TERIS TS-VCT-14",
+    "type": "kpp:0140",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=271"
+    ]
+  },
+  "270": {
+    "expected_name": "TERIS  GS-1",
+    "type": "kpp:0130",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=270"
+    ]
+  },
+  "269": {
+    "expected_name": "TERIS TSD30S",
+    "type": "dolly",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=269"
+    ]
+  },
+  "268": {
+    "expected_name": "TERIS TSD20S",
+    "type": "dolly",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=268"
+    ]
+  },
+  "258": {
+    "expected_name": "TERIS Barrel-120",
+    "type": "kpp:0130",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=258"
+    ]
+  },
+  "257": {
+    "expected_name": "TERIS Barrel-100",
+    "type": "kpp:0130",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=257"
+    ]
+  },
+  "252": {
+    "expected_name": "TERIS SB-150",
+    "type": "equipment-bag",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=252"
+    ]
+  },
+  "361": {
+    "expected_name": "Micro BNC Cable (15cm, 30cm)",
+    "type": "sdi-cable",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=361"
+    ]
+  },
+  "360": {
+    "expected_name": "마이크로컨버터 랙브라켓(4in1)",
+    "type": "video-rack",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=360"
+    ]
+  },
+  "359": {
+    "expected_name": "미니컨버터 랙브라켓(3in1)",
+    "type": "video-rack",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=359"
+    ]
+  },
+  "294": {
+    "expected_name": "Mini DIN Cable (※DeckLink Quad 2 사용)",
+    "type": "sdi-cable",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=294"
+    ]
+  },
+  "436": {
+    "expected_name": "[신제품]ATEM Monitoring Rack Panel 20",
+    "type": "video-control",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=436",
+      "https://www.blackmagicdesign.com/uk/products/atemconstellationip/cameracontrol"
+    ]
+  },
+  "435": {
+    "expected_name": "[신제품]ATEM Monitoring Rack Panel 40",
+    "type": "video-control",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=435",
+      "https://www.blackmagicdesign.com/uk/products/atemconstellationip/cameracontrol"
+    ]
+  },
+  "208": {
+    "expected_name": "GPI and Tally Interface",
+    "type": "video-control",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=208"
+    ]
+  },
+  "106": {
+    "expected_name": "ATEM Streaming Bridge",
+    "type": "converter",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=106"
+    ]
+  },
+  "303": {
+    "expected_name": "[오더베이스]Blackmagic PCIe Cable Kit",
+    "type": "camera-expansion",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=303"
+    ]
+  },
+  "166": {
+    "expected_name": "Mini XLR Adapter Cables",
+    "type": "audio-cable",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=166"
+    ]
+  },
+  "446": {
+    "expected_name": "[신제품]Blackmagic SDI Expander 8x12G",
+    "type": "converter",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=446"
+    ]
+  },
+  "444": {
+    "expected_name": "[신제품]Blackmagic Ethernet Switch 820",
+    "type": "video-network",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=444"
+    ]
+  },
+  "26": {
+    "expected_name": "Blackmagic Ethernet Switch 360p",
+    "type": "video-network",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=26"
+    ]
+  },
+  "437": {
+    "expected_name": "[신제품]Blackmagic URSA Cine Immersive 100G",
+    "type": "cinema-camera",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=437"
+    ]
+  },
+  "298": {
+    "expected_name": "Blackmagic PYXIS Monitor",
+    "type": "monitor",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=298"
+    ]
+  },
+  "297": {
+    "expected_name": "Blackmagic PYXIS Monitor Kit",
+    "type": "monitor",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=297"
+    ]
+  },
+  "296": {
+    "expected_name": "Blackmagic PYXIS Monitor EVF Kit",
+    "type": "monitor",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=296"
+    ]
+  },
+  "206": {
+    "expected_name": "Blackmagic Audio Monitor 12G G3",
+    "type": "speakers",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=206"
+    ]
+  },
+  "82": {
+    "expected_name": "Blackmagic URSA Studio Viewfinder G2",
+    "type": "electronic-viewfinder",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=82"
+    ]
+  },
+  "283": {
+    "expected_name": "TERIS JQ50-III",
+    "type": "jib",
+    "evidence": [
+      "https://hipixelplus.co.kr/product/detail.html?product_no=283"
+    ]
+  }
+}

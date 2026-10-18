@@ -14,6 +14,7 @@ NAMES['dji-official']='DJI 공식 한국 스토어'
 NAMES['onnoff']='온앤오프미디어'
 NAMES['ldnet']='엘디네트웍스'
 NAMES['saeki']='세기몰'
+NAMES['hipixel']='하이픽셀 플러스'
 # Owner retired the old Imweb catalogue on 2026-10-15. Keep its snapshots
 # for recovery, but never use them for publication or source recommendations.
 RETIRED_SOURCES=frozenset({'imweb','imweb-dji','imweb-promotions'})
@@ -27,7 +28,7 @@ def supplemental_source_approved(source):
     """An owner-approved whole supplier supplements existing primary sources."""
     rule=json.loads(POLICY.read_text()).get('source_approvals',{}).get(source,{})
     return (rule.get('confirmed_by')=='owner' and rule.get('scope')=='all_brands'
-            and rule.get('mode')=='supplement_existing')
+            and rule.get('mode') in ('supplement_existing','prefer_verified_matches'))
 
 
 def policy_fingerprint():
@@ -63,7 +64,7 @@ def snapshots(candidate=None):
     if candidate:
         result[candidate.get('source','avx')]=candidate
     else:
-        for source in ('avx','clmedia','cinemall','onnoff','ldnet'):
+        for source in ('avx','clmedia','cinemall','onnoff','ldnet','hipixel'):
             folder=ROOT/'_scraper/.sync-state'/source
             generation=folder/'generation.json'
             if generation.exists():folder=folder/json.loads(generation.read_text())['directory']
@@ -79,7 +80,7 @@ def inventory(candidate=None):
     overrides=json.loads((PUBLIC/'overrides.json').read_text()).get('brand_overrides',{})
     result=defaultdict(Counter)
     for source,snapshot in snapshots(candidate).items():
-        if source=='ldnet':
+        if source in ('ldnet','hipixel'):
             from cafe24_publication import prepare
             snapshot=prepare(snapshot)
         for p in snapshot['products'].values():
@@ -152,7 +153,7 @@ def write_audit(catalog,candidate=None,provenance=None):
             'selection':chosen.get(bid),
             'approved_supplemental_sources':sorted(approved_sources & set(counts.get(bid,{}))) if not chosen.get(bid,{}).get('exclusive') else [],
             'selection_pending':len(counts.get(bid,{}))>1 and bid not in chosen and not (approved_sources & set(counts.get(bid,{})))} for bid in sorted(set(counts)|set(public_brands))],
-        'products':rows,'public_products_sha256':product_digest(catalog),
+        'products':rows,'public_products_sha256':product_digest(catalog),'navigation_sha256':navigation_digest(catalog),
         'publication':old.get('publication',{'state':'not_live_verified'}) if old.get('catalogue_revision')==catalog['meta']['revision'] and old.get('public_products_sha256')==product_digest(catalog) else {'state':'not_live_verified'}}
     AUDIT.mkdir(parents=True,exist_ok=True,mode=0o700)
     save_json(AUDIT/'source-matches.json',report)
@@ -187,6 +188,7 @@ def verify_audit_live(catalog,release):
     if (catalog['meta']['revision']!=report['catalogue_revision'] or
         release['revision']!=report['catalogue_revision'] or
         product_digest(catalog)!=report['public_products_sha256'] or
+        navigation_digest(catalog)!=report.get('navigation_sha256') or
         len(catalog['products'])!=report['product_count']):
         raise ValueError('Live catalogue differs from the private source ledger')
     report['publication']={'state':'live_verified',**release,'verified_product_count':len(catalog['products'])}
@@ -195,4 +197,17 @@ def verify_audit_live(catalog,release):
     lines=markdown.read_text().splitlines()
     lines=[f"배포 대조: live_verified · {release['verified_at']} · revision {release['revision']} · 상품 {len(catalog['products']):,}개 전수 일치" if line.startswith('배포 대조:') else line for line in lines]
     markdown.write_text('\n'.join(lines)+'\n');markdown.chmod(0o600)
+    register=AUDIT/'brand-source-register.json'
+    if register.exists():
+        data=json.loads(register.read_text())
+        if data['revision']==release['revision']:
+            data.update(publication_state='live_verified',publication=report['publication'])
+            save_json(register,data)
+            note=AUDIT/'brand-source-register.md'
+            note.write_text(note.read_text().replace('운영 배포 검증 전','운영 전수 대조 완료 · '+release['verified_at']))
     return report['publication']
+
+
+def navigation_digest(catalog):
+    value={key:catalog.get(key,[]) for key in ('brands','categories')}
+    return hashlib.sha256(json.dumps(value,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()

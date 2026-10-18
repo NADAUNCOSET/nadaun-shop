@@ -76,6 +76,12 @@ def validate_candidate(snapshot):
                 if not original or original['id']==root or (node['id'],node['name'],node['parent_id'])!=(
                     bid+':'+original['id'],original['name'],bid+':'+original['parent_id'] if original['parent_id']!=root else None):
                     raise ValueError('Normalized source label or ancestry changed')
+                if source=='hipixel' and node.get('position')!=original.get('position'):
+                    raise ValueError('HiPixel category order changed')
+                if source=='hipixel':
+                    from hipixel_source import navigation_role
+                    if node.get('navigation_role')!=navigation_role(original['id']):
+                        raise ValueError('HiPixel category role changed')
     if not snapshot.get('collected_at'):
         raise ValueError('Missing source reconciliation timestamp')
 
@@ -119,6 +125,10 @@ def prepare(snapshot):
                 categories[key]={'id':key,'name':node['name'],'brand':product['brand'],
                     'parent_id':bid+':'+node['parent_id'] if node['parent_id']!=root else None,
                     'source_category_id':cid}
+                if 'position' in node:categories[key]['position']=node['position']
+                if source=='hipixel':
+                    from hipixel_source import navigation_role
+                    categories[key]['navigation_role']=navigation_role(cid)
             product['brand_category_ids']=[bid+':'+cid for cid in memberships]
         result.update(original_categories=result['categories'],categories=list(categories.values()),
             normalized_for_shop=True,scope='all',catalogue_complete=True,candidate_sha256=digest(snapshot))

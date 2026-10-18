@@ -88,6 +88,7 @@ def brand_dictionary():
       'yc-onion':['YCONION','YC Onion','YC ONION'], 'lugbox':['러그박스'],
       'hyperthin':['하이퍼틴'], 'magmod':['맥모드'],
       'schneider-electric':['Schneider Electric','슈나이더 일렉트릭'],
+      'unbranded':['브랜드 미표기'],
     }
     for key,names in extras.items():
         for name in names+[key]: aliases[name.casefold()]=key
@@ -95,6 +96,7 @@ def brand_dictionary():
 
 ALIASES=brand_dictionary()
 DISPLAY={'hy':'H&Y','eimage':'E-IMAGE','blackmagic':'Blackmagic Design','rainbowbene':'NADAUN','lee-filters':'LEE Filters','tokina-cinema':'TOKINA CINEMA','vsgo':'VSGO','ldl-mount':'LDL-MOUNT'}
+DISPLAY['unbranded']='브랜드 미표기'
 
 def brand_id(raw): return ALIASES.get(clean(raw).casefold(),slug(raw or '기타 브랜드'))
 
@@ -200,6 +202,8 @@ def build(allow_pending=False):
             if official_dji and bid=='dji' and source!='dji-official':continue
             c.update(id=prefix+c['id'],parent_id=prefix+c['parent_id'] if c['parent_id'] else None,brand_id=bid)
             categories[c['id']]={k:c[k] for k in ('id','name','parent_id','brand_id')}
+            for field in ('position','navigation_role'):
+                if field in c:categories[c['id']][field]=c[field]
         cached={}
         if not source.startswith('imweb-'):
             for f in (CACHE/source).glob('*.json'):
@@ -265,6 +269,7 @@ def build(allow_pending=False):
                 d={}
             if source.startswith('imweb-'):d={'detail_status':'verified','description_text':p.get('description_text',''),'images':p['images']}
             if source in ('l-mount','plthink','avx','dji-official','saeki',*CAFE24_SOURCES):d={k:p[k] for k in ('detail_status','description_text','images','options','option_groups','options_require_confirmation') if k in p}
+            if source=='hipixel' and p.get('description_notice'):d['description_notice']=p['description_notice']
             if source=='saeki':
                 d['description_notice']=p.get('description_notice','')
                 d.update(public_release_fields(p))
@@ -296,6 +301,11 @@ def build(allow_pending=False):
             details[pid]={k:d.get(k) for k in ('description_text','options','option_groups','shipping','options_require_confirmation','description_notice','release_status') if d.get(k)}
             details[pid]['images']=p['images'];details[pid]['source_id']=p['source_id']
             p['_provenance']=source_provenance(p,d,s)
+            if source=='hipixel':
+                from hipixel_source import add_reviewed_navigation
+                for cid in add_reviewed_navigation(p,categories):
+                    p['_provenance']['source_categories'][cid]=[{'source':'reviewed_product_purpose',
+                        'product_id':pid,'url':p['source_url'],'file':'_scraper/hipixel_source.py'}]
             if pid in brand_overrides:
                 p['_provenance']['fields']['brand']={'source':'reviewed_brand','file':'data/catalog/overrides.json',
                     'product_id':pid,'original_brand':p0['brand'],'brand':p['brand'],'evidence':brand_overrides[pid]['evidence']}
@@ -386,8 +396,8 @@ def build(allow_pending=False):
     for bid,choice in source_choices.items():
         # Owner-selected source is also the first navigation tree once its
         # actual memberships exist. Other verified paths remain a fallback.
-        if bid not in ('dji','aputure') or choice['source'] not in ('avx','dji-official'):continue
-        selected=choice['source']
+        selected=choice.get('navigation_source') or (choice['source'] if bid in ('dji','aputure') else None)
+        if not selected:continue
         if any(p['brand_id']==bid and p['kind']=='purchase' and any(cid.startswith(selected+':') and categories[cid].get('brand_id')==bid for cid in p['category_ids']) for p in public_products):
             navigation_choices[bid]=selected
     navigation_audit=choose_navigation(public_products,categories,brands,navigation_choices)
@@ -426,6 +436,10 @@ def build(allow_pending=False):
             if sample:b.update(logo=sample['image'],image_kind='product',logo_dark=False)
     preferred=config.get('brand_order') or ['dji','smallrig','leofoto','tilta','hoya','hy','pgytech','viltrox','nanlite','godox','kupo','aputure','tokina','tokina-cinema','ttartisan','astrhori','wandrd','fxlion','zitay']
     brand_list=sorted(brands.values(),key=lambda b:(preferred.index(b['id']) if b['id'] in preferred else 999,b['name']))
+    # Empty supplier brand menus remain in the private source snapshot only.
+    categories={cid:c for cid,c in categories.items() if not c.get('brand_id') or c['brand_id'] in brands}
+    from catalog_navigation import arrange_categories
+    categories=arrange_categories(categories,brand_list,navigation_audit)
     meta={'schema_version':1,'source_counts':{k:s['product_count'] for k,s in snapshots.items()},'detail_coverage':dict(coverage),
           'synced_at':max(s['collected_at'] for s in snapshots.values()),'merged_count':merge_count,
           'product_count':len(public_products),'category_browsing_enabled':config.get('category_browsing_enabled',False),
@@ -449,6 +463,8 @@ def build(allow_pending=False):
     revision=hashlib.sha256((json.dumps(output,ensure_ascii=False,sort_keys=True)+presentation).encode()).hexdigest()[:16]
     output['meta']['revision']=revision
     write_audit(output,provenance={pid:p['_provenance'] for pid,p in products.items()})
+    from catalog_navigation import write_register
+    write_register(output,navigation_audit,source_choices,AUDIT)
     PUBLIC.mkdir(parents=True,exist_ok=True)
     for key,bucket in public_details.items():
         (PUBLIC/'details').mkdir(exist_ok=True)
@@ -518,6 +534,8 @@ def build(allow_pending=False):
     entries=''.join('<url><loc>'+html.escape(u)+'</loc>'+('<image:image><image:loc>'+html.escape(images[u])+'</image:loc></image:image>' if u in images else '')+'</url>' for u in urls)
     (ROOT/'catalog-sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+entries+'</urlset>\n')
     (ROOT/'sitemap.xml').write_text(root_sitemap((ROOT/'gift-sitemap.xml').read_text()))
+    from catalog_release import write_manifest
+    write_manifest(ROOT,output,snapshots,source_choices)
     print(json.dumps(meta,ensure_ascii=False,indent=2))
     return output
 

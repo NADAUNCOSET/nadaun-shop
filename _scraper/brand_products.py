@@ -2,6 +2,9 @@
 import re
 
 PREFERRED = {
+    'blackmagic': r'PYXIS\s+(?:6K|12K)|ATEM\s+Mini\s+Extreme',
+    'tvlogic': r'F-7HS|LXM-180|LUM-242',
+    'teris': r'TS-TRAVEL\s+7|TSN6',
     'dji': r'Osmo Action 6|오즈모 포켓 3',
     'smallrig': r'풀.*케이지|카메라 케이지|케이지 키트',
     'leofoto': r'카본.*삼각대|삼각대.*카본',

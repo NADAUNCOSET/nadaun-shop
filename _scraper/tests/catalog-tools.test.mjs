@@ -2,6 +2,18 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {categoryTrail,categoryControls,isDiscounted,isPromotion,matchesBenefit,benefitNavigation,catalogSelection,productTypeNavigation,brandSelectionHref} from '../../assets/shop/catalog-tools.js';
+test('brand wrappers and new/best collections do not obscure real product categories',()=>{
+ const categories=[{id:'h:b',name:'Blackmagic',brand_id:'b',parent_id:null,navigation_role:'wrapper'},
+  {id:'h:s',name:'스위처',brand_id:'b',parent_id:'h:b'},
+  {id:'h:m',name:'ATEM Mini',brand_id:'b',parent_id:'h:s'},
+  {id:'h:n',name:'신제품',brand_id:'b',parent_id:null,navigation_role:'collection'}];
+ const data={categories,brands:[{id:'b',navigation_category_ids:['h:b','h:s','h:m']}],products:[
+  {id:'p',brand_id:'b',kind:'purchase',category_ids:['h:b','h:s','h:m','h:n'],navigation_category_ids:['h:b','h:s','h:m'],type_ids:[]}]};
+ const before=structuredClone(data);const view=catalogSelection(data,{brand:'b',cat:'h:m'});
+ assert.deepEqual(view.brandCategories.map(c=>[c.id,c.parent_id]),[['h:s',null],['h:m','h:s']]);
+ assert.deepEqual(view.rows.map(p=>p.id),['p']);assert.deepEqual(data,before);
+ assert.deepEqual(categoryTrail(new Map(view.brandCategories.map(c=>[c.id,c])),'h:m').map(c=>c.name),['스위처','ATEM Mini']);
+});
 const map=new Map([{id:'a',name:'카메라',parent_id:null},{id:'b',name:'케이지',parent_id:'a'},{id:'c',name:'소니',parent_id:'b'}].map(c=>[c.id,c]));
 test('deepest category keeps the parent link when there are no children',()=>{
  const trail=categoryTrail(map,'c');assert.deepEqual(trail.map(c=>c.id),['a','b','c']);

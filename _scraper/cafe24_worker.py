@@ -38,7 +38,7 @@ def retryable_error(exc):
 
 def parser_revision():
     return hashlib.sha256(b''.join((ROOT/'_scraper'/name).read_bytes() for name in
-        ('sync_cafe24_partners.py','review_cafe24_checkpoint.py'))).hexdigest()
+        ('sync_cafe24_partners.py','review_cafe24_checkpoint.py','hipixel_source.py','hipixel-reviewed-types.json'))).hexdigest()
 
 
 def publish(snapshot):

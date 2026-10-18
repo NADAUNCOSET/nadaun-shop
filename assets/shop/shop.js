@@ -71,7 +71,8 @@ function renderCatalog(){
  const selectedCat=applicable.find(c=>c.id===cat);
  const catLink=(c,depth=0)=>`<a href="${esc(catalogHref({cat:c.id}))}" class="${cat===c.id?'active':''}" ${cat===c.id?'aria-current="page"':''} style="padding-left:${10+depth*8}px"><span>${esc(c.name)}</span><small>${categoryCounts.get(c.id)||0}</small></a>`;
  const nested=(c,depth=0)=>{const children=applicable.filter(x=>x.parent_id===c.id&&relevant(x));return children.length?`<details ${cat===c.id||isAncestor(c.id,cat)?'open':''}><summary>${esc(c.name)}</summary><div>${catLink(c,depth)}${children.map(x=>nested(x,depth+1)).join('')}</div></details>`:catLink(c,depth)};
- const rootOptions=applicable.filter(relevant).map(c=>`<option value="${esc(c.id)}" ${cat===c.id?'selected':''}>${'　'.repeat(Math.max(0,categoryTrail(categoryMap,c.id).length-1))}${esc(c.name)} (${categoryCounts.get(c.id)||0})</option>`).join('');
+ const visibleCategoryMap=new Map(applicable.map(c=>[c.id,c]));
+ const rootOptions=applicable.filter(relevant).map(c=>`<option value="${esc(c.id)}" ${cat===c.id?'selected':''}>${'　'.repeat(Math.max(0,categoryTrail(visibleCategoryMap,c.id).length-1))}${esc(c.name)} (${categoryCounts.get(c.id)||0})</option>`).join('');
  const query=params.get('q')||'';document.querySelector('#search-input').value=query;
  const tokens=globalThis.NadaunProductSearch.tokens(query);
  let filtered=selection.rows.filter(p=>(!params.has('available')||(p.status!=='soldout'&&p.release_status!=='coming_soon'))&&tokens.every(t=>globalThis.NadaunProductSearch.normalize(p.name+' '+(brandMap.get(p.brand_id)?.name||'')+' '+(p.discovery?.search_terms||[]).join(' ')).includes(t)));
@@ -80,12 +81,12 @@ function renderCatalog(){
  else if(sort==='name')filtered.sort((a,b)=>a.name.localeCompare(b.name,'ko'));
  else filtered.sort((a,b)=>Number(a.status==='soldout')-Number(b.status==='soldout'));
  const size=24,pages=Math.max(1,Math.ceil(filtered.length/size));const requested=Number(params.get('page'));const page=Math.min(pages,Math.max(1,Number.isFinite(requested)?Math.floor(requested):1));
- const current=filtered.slice((page-1)*size,page*size);const trail=selectedCat?categoryTrail(categoryMap,cat):[];
+ const current=filtered.slice((page-1)*size,page*size);const trail=selectedCat?categoryTrail(visibleCategoryMap,cat):[];
  const children=selectedCat?applicable.filter(c=>c.parent_id===cat&&relevant(c)):[];
  const heading=discountOnly?((brand?brand.name+' ':'')+(benefit==='promotion'?'프로모션':benefit==='discount'?'할인상품':'할인상품 · 프로모션')):brand?brand.name+(kind==='rental'?' 렌탈':''):query?`“${query}” 검색 결과`:kind==='rental'?'장비 렌탈':'전체 상품';
  const availableBrands=data.brands.filter(b=>kind==='rental'?b.rental_count>0:kind==='purchase'?b.purchase_count>0:true);
  main.innerHTML=`<div class="breadcrumb"><a href="/">홈</a><span>›</span><a href="/brands.html" target="_blank" rel="noopener">브랜드</a>${brand?`<span>›</span><a href="${esc(catalogHref({cat:null,type:null,sale:null}))}">${esc(brand.name)}</a>`:''}${trail.map((c,i)=>`<span aria-hidden="true">›</span>${i===trail.length-1?`<span aria-current="page">${esc(c.name)}</span>`:`<a href="${esc(catalogHref({cat:c.id}))}">${esc(c.name)}</a>`}`).join('')}</div>
- <div class="catalog-heading">${brand?.logo?`<img class="${brand.logo_dark?'brand-logo-dark':''}" src="${safe(brand.logo)}" alt="${esc(brand.name)}" referrerpolicy="no-referrer">`:''}<div><h1>${esc(heading)}</h1><p>제품 종류와 브랜드를 선택해 필요한 ${kind==='rental'?'대여 장비':'상품'}를 찾아보세요.</p></div></div>
+ <div class="catalog-heading">${brand?.logo?`<img class="${brand.logo_dark?'brand-logo-dark':''}" src="${safe(brand.logo)}" alt="${esc(brand.name)}" referrerpolicy="no-referrer">`:''}<div><h1>${esc(heading)}</h1><p>제품 종류와 브랜드를 선택해 필요한 ${kind==='rental'?'대여 장비를':'상품을'} 찾아보세요.</p></div></div>
  ${!bid&&!type&&!cat&&!query&&!discountOnly?browseDirectoryHtml(data,kind):''}
  <div class="catalog-layout" id="catalog-products"><aside class="sidebar" aria-label="브랜드 및 세부 분류"><h2>브랜드 선택</h2><label class="sr" for="brand-select">브랜드 선택</label><select id="brand-select"><option value="">전체 브랜드</option>${availableBrands.map(b=>`<option value="${esc(b.id)}" ${bid===b.id?'selected':''}>${esc(b.name)} (${kind==='rental'?b.rental_count:kind==='purchase'?b.purchase_count:b.count})</option>`).join('')}</select>
  <label class="sr" for="kind-select">구매 또는 렌탈</label><select id="kind-select"><option value="purchase" ${kind==='purchase'?'selected':''}>구매 상품</option><option value="rental" ${kind==='rental'?'selected':''}>렌탈 상품</option><option value="all" ${kind==='all'?'selected':''}>구매 + 렌탈</option></select>

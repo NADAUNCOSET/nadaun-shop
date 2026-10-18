@@ -48,6 +48,8 @@ CODE += ['_scraper/sync_cafe24_partners.py','_scraper/test_cafe24_partners.py']
 CODE += ['_scraper/review_cafe24_checkpoint.py','_scraper/cafe24_publication.py','_scraper/cafe24_worker.py','_scraper/test_cafe24_publication.py']
 CODE += ['_scraper/catalog_checkpoint.py','_scraper/test_catalog_checkpoint.py']
 CODE += ['_scraper/ldnet_identity.py','_scraper/test_ldnet_identity.py']
+CODE += ['_scraper/hipixel_source.py','_scraper/test_hipixel_source.py','_scraper/catalog_navigation.py','_scraper/catalog_release.py','server/catalog-release-check.cjs','CATALOG-RULES.md']
+CODE += ['_scraper/hipixel-reviewed-types.json','.vercelignore']
 CODE += ['_scraper/sync_saeki_catalog.py','_scraper/saeki_detail_parser.py','_scraper/saeki_publication.py','_scraper/saeki_categories.py','_scraper/saeki_worker.py','_scraper/test_saeki_catalog.py','_scraper/fixtures/saeki']
 
 def command(*args):
@@ -69,13 +71,13 @@ def managed_files():
     files=['brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','payment-test.html','orders.html','admin.html','account.html','test-shop.html','test-admin.html','members-admin.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','rental-guide.html','equipment-guide.html','billing-guide.html','sitemap.xml','catalog-sitemap.xml',
            'data/catalog/catalog.json','data/catalog/rental.json','data/catalog/brands.json','data/catalog/sync-status.json','data/catalog/asset-manifest.json','data/catalog/dedup-audit.json']
     files += ['gift-item.html','search.html','gift-sitemap.xml','data/gift/catalog.json','data/gift/manifest.json']
-    files += ['data/catalog/rental-details.json']
+    files += ['data/catalog/rental-details.json','server/catalog-release.json']
     files.extend(p.relative_to(ROOT).as_posix() for p in (ROOT/'data/gift/details').glob('??.json'))
     files.extend(p.relative_to(ROOT).as_posix() for p in ROOT.glob('gift-sitemap-[0-9]*.xml'))
     for source in ('smartstore','kpp','l-mount','nadaun-gift'):
         files.append('data/catalog/sources/'+source+'.json')
     if (OUT/'plthink.json').exists():files.append('data/catalog/sources/plthink.json')
-    for source in ('avx','avx-aputure','avx-approved','dji-official','clmedia','cinemall','onnoff','ldnet','saeki'):
+    for source in ('avx','avx-aputure','avx-approved','dji-official','clmedia','cinemall','onnoff','ldnet','saeki','hipixel'):
         if (OUT/(source+'.json')).exists():files.append('data/catalog/sources/'+source+'.json')
     for source in ('smartstore','kpp'):
         base=ROOT/'data/catalog/source-details'/source
@@ -126,6 +128,7 @@ def verify_live(revision):
     raise RuntimeError('Vercel/live verification timed out; last good deployment remains available')
 
 def publish_existing():
+    command('node','server/catalog-release-check.cjs')
     status=json.loads((ROOT/'data/catalog/sync-status.json').read_text())
     if command('git','diff','--cached','--name-only'):raise RuntimeError('Unrelated staged changes exist; refusing an automatic commit')
     owned=managed_files()
@@ -195,6 +198,8 @@ def run(publish=True,existing=False,source_updates=None):
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_publication_storage.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_partner_worker.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_cafe24*.py')
+        command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_hipixel_source.py')
+        command('node','--test','_scraper/tests/catalog-release.test.cjs')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_ldnet_identity.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_saeki_catalog.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_catalog_checkpoint.py')
