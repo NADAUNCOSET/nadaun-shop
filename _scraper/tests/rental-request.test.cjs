@@ -17,7 +17,7 @@ function fixture(){
 }
 test('rental schedule records exact minute and KST dates including year boundaries',()=>{
  const s=rentalSchedule(schedule,clock);assert.equal(s.pickup_at,Date.parse('2026-10-10T00:15:00Z'));assert.equal(s.return_at,Date.parse('2026-10-11T01:45:00Z'));
- const next=rentalSchedule({start_date:'2026-12-31',end_date:'2027-01-01',pickup_time:'23:59',return_time:'00:01'},clock);assert.equal(next.return_at-next.pickup_at,120000);
+ const next=rentalSchedule({start_date:'2026-12-31',end_date:'2027-01-01',pickup_time:'23:59',return_time:'00:01'},()=>Date.parse('2026-12-20T00:00:00Z'));assert.equal(next.return_at-next.pickup_at,120000);
  assert.equal(rentalSchedule({...schedule,end_date: schedule.start_date,return_time:'09:16'},clock).return_at-rentalSchedule(schedule,clock).pickup_at,60000);
 });
 test('impossible dates, reversed visits, past visits and invalid time values fail',()=>{

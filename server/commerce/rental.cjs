@@ -1,5 +1,10 @@
 'use strict';
 const {ShopError}=require('./security.cjs');
+function calendarMonthLimit(day){
+ const date=new Date(day+'T00:00:00Z'),next=new Date(Date.UTC(date.getUTCFullYear(),date.getUTCMonth()+1,1));
+ const last=new Date(Date.UTC(next.getUTCFullYear(),next.getUTCMonth()+1,0)).getUTCDate();
+ return new Date(Date.UTC(next.getUTCFullYear(),next.getUTCMonth(),Math.min(date.getUTCDate(),last))).toISOString().slice(0,10);
+}
 function rentalSchedule(raw,clock=()=>Date.now()){
  if(!raw||typeof raw!=='object'||Array.isArray(raw))throw new ShopError(400,'대여 시작·종료 날짜와 방문 시간을 입력해주세요.');
  const result={};
@@ -7,7 +12,10 @@ function rentalSchedule(raw,clock=()=>Date.now()){
  for(const key of ['pickup_time','return_time']){const value=raw[key];if(typeof value!=='string'||!/^([01]\d|2[0-3]):[0-5]\d$/.test(value))throw new ShopError(400,'수령·반납 방문 시간을 정확히 입력해주세요.');result[key]=value;}
  function instant(day,time){const ms=Date.parse(day+'T'+time+':00+09:00');if(!Number.isFinite(ms)||new Date(ms+9*3600000).toISOString().slice(0,16)!==day+'T'+time)throw new ShopError(400,'달력에 있는 날짜와 방문 시간을 입력해주세요.');return ms;}
  result.pickup_at=instant(result.start_date,result.pickup_time);result.return_at=instant(result.end_date,result.return_time);
- if(result.pickup_at<clock())throw new ShopError(400,'수령 방문 일시가 지났습니다. 새 일정을 선택해주세요.');
+ const now=clock(),today=new Date(now+9*3600000).toISOString().slice(0,10),limit=calendarMonthLimit(today);
+ if(result.pickup_at<now)throw new ShopError(400,'수령 방문 일시가 지났습니다. 새 일정을 선택해주세요.');
+ if(result.start_date>limit)throw new ShopError(400,'대여 시작일은 오늘부터 한 달 이내에서 선택해주세요.');
+ if(result.end_date>limit)throw new ShopError(400,'반납일은 오늘부터 한 달 이내에서 선택해주세요.');
  if(result.return_at<=result.pickup_at)throw new ShopError(400,'반납 방문 일시는 수령 방문 일시보다 늦어야 합니다.');
  if(result.return_at-result.pickup_at>14*86400000)throw new ShopError(400,'최대 대여기간은 2주(14일)입니다. 수령·반납 방문 일시를 확인해주세요.');
  return result;
