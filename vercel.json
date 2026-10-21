@@ -211,6 +211,10 @@
       "dest": "/api/member-oauth?action=callback&provider=$1"
     },
     {
+      "src": "^/api/toss-webhook$",
+      "dest": "/api/commerce-jobs?action=toss-webhook"
+    },
+    {
       "handle": "filesystem"
     }
   ],
@@ -257,10 +261,6 @@
     },
     "api/shop-test.js": {
       "includeFiles": "{server/commerce/**}",
-      "maxDuration": 60
-    },
-    "api/toss-webhook.js": {
-      "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,data/gift/catalog.json,server/commerce/**}",
       "maxDuration": 60
     }
   },

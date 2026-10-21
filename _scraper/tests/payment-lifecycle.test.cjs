@@ -95,3 +95,12 @@ test('financial endpoints require admin session and allowed origin; customer can
 test('scheduled reconciliation is bounded, repeats safely and reports provider failures',async()=>{
  const f=fixture();await f.create();await f.create();await f.create();assert.equal((await f.service.paymentDrain()).processed,2);assert.equal((await f.service.paymentDrain()).processed,1);assert.equal((await f.service.paymentDrain()).processed,0);f.advance(900001);assert.equal((await f.service.paymentDrain()).processed,2);
 });
+test('public webhook shares the jobs function without exposing protected job execution',async()=>{
+ const handler=require('../../api/commerce-jobs.js'),config=JSON.parse(fs.readFileSync('vercel.json','utf8'));
+ assert.equal(fs.readdirSync('api').filter(n=>n.endsWith('.js')).length,12);
+ assert.equal(config.routes.find(r=>r.src==='^/api/toss-webhook$').dest,'/api/commerce-jobs?action=toss-webhook');
+ for(const [method,query,body,code] of [['GET',{action:'toss-webhook'},{},405],['POST',{action:'toss-webhook'},'x'.repeat(32769),413],['POST',{}, {},401],['POST',{action:'other'}, {},401]]){
+  const r={setHeader(){},status(n){this.code=n;return this;},json(v){this.body=v;return this;}};
+  await handler({method,query,body,headers:{}},r);assert.equal(r.code,code);
+ }
+});

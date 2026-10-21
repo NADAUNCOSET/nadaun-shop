@@ -1,6 +1,9 @@
 const crypto=require('node:crypto');
 const {runtime}=require('../server/commerce/runtime.cjs');
+const {webhookEndpoint}=require('../server/commerce/payment-webhook.cjs');
+const paymentWebhook=webhookEndpoint(()=>runtime());
 module.exports=async(req,res)=>{
+ if(req.query?.action==='toss-webhook')return paymentWebhook(req,res);
  res.setHeader('Cache-Control','no-store');res.setHeader('X-Robots-Tag','noindex');
  const secret=process.env.SHOP_JOBS_SECRET,actual=String(req.headers.authorization||'');
  const expected='Bearer '+secret;
