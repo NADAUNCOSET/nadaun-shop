@@ -219,7 +219,7 @@
       "includeFiles": "{item.html,data/catalog/catalog.json,data/catalog/rental-details.json,assets/shop/rental-content.js,server/share-metadata.cjs}"
     },
     "api/orders.js": {
-      "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,server/commerce/**}",
+      "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,data/gift/catalog.json,server/commerce/**}",
       "maxDuration": 60
     },
     "api/gifts.js": {
@@ -232,11 +232,11 @@
       "includeFiles": "{search.html,data/gift/catalog.json,data/catalog/catalog.json,server/gift-catalog.cjs,server/shop-search.cjs,assets/shop/rental-content.js}"
     },
     "api/toss-return.js": {
-      "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,server/commerce/**}",
+      "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,data/gift/catalog.json,server/commerce/**}",
       "maxDuration": 60
     },
     "api/commerce-jobs.js": {
-      "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,server/commerce/**}",
+      "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,data/gift/catalog.json,server/commerce/**}",
       "maxDuration": 60
     },
     "api/share-image.js": {
@@ -248,11 +248,11 @@
       "maxDuration": 60
     },
     "api/members.js": {
-      "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,server/commerce/**}",
+      "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,data/gift/catalog.json,server/commerce/**}",
       "maxDuration": 60
     },
     "api/member-oauth.js": {
-      "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,server/commerce/**}",
+      "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,data/gift/catalog.json,server/commerce/**}",
       "maxDuration": 60
     },
     "api/shop-test.js": {

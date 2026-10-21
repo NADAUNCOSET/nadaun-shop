@@ -2,6 +2,7 @@
 const crypto=require('node:crypto');
 const {ShopError,hash,protect,sessions}=require('./security.cjs');
 const {customerFields,quoteCatalog,positive}=require('./pricing.cjs');
+const {giftRequest,quoteGift}=require('./gift-orders.cjs');
 const {matchPayment,receiptUrl}=require('./toss.cjs');
 const {rentalSchedule,rentalCustomer,rentalQuote}=require('./rental.cjs');
 const {evidenceFields,paymentEvidence}=require('./evidence.cjs');
@@ -51,11 +52,11 @@ function repository(db,clock=()=>Date.now()){
   list:async()=>db.query('SELECT * FROM shop_orders ORDER BY created_at DESC LIMIT 100'),
   events:async id=>db.query('SELECT actor,action,created_at,version FROM shop_order_events WHERE order_id=? ORDER BY version',[id])};
 }
-function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=null,documents=null,labelProvider=null,invoiceEnabled=false,testing=false,clock=()=>Date.now()}){
+function orderService({repo,catalog,detail,giftProduct=null,dataKey,sessionKey=dataKey,payment=null,documents=null,labelProvider=null,invoiceEnabled=false,testing=false,clock=()=>Date.now()}){
  const cipher=protect(dataKey),returns=sessions(sessionKey,clock);
  const dto=(row,admin=false)=>{
   const stored=cipher.decrypt(row.customer_cipher),customer=Object.fromEntries(Object.entries(stored).filter(([key])=>!key.startsWith('_admin_'))),rental=customer.rental||null,history=fulfillment.shipments(row,stored);
-  return {id:row.id,kind:rental?'rental':'purchase',rental,purchase_workflow:fulfillment.purchaseWorkflow(row,stored),state:row.state,payment_mode:row.payment_mode,lines:JSON.parse(row.lines_json),subtotal:row.subtotal,shipping:row.shipping,total:row.total,quote_version:row.quote_version,quote_expires:row.quote_expires,fulfillment:row.fulfillment,carrier:row.carrier,tracking:row.tracking,shipments:fulfillment.publicShipments(history),created_at:row.created_at,updated_at:row.updated_at,version:row.version,evidence_kind:customer.evidence?.kind||'card_receipt',...(admin?{customer,admin_shipping_label:labelView(stored._admin_shipping_label),admin_note:stored._admin_note||null,admin_cancellation:stored._admin_cancellation||null,admin_cases:fulfillment.adminCases(stored._admin_cases||[],history)}:{})};
+  return {id:row.id,kind:rental?'rental':'purchase',rental,gift:customer.gift||null,purchase_workflow:fulfillment.purchaseWorkflow(row,stored),state:row.state,payment_mode:row.payment_mode,lines:JSON.parse(row.lines_json),subtotal:row.subtotal,shipping:row.shipping,total:row.total,quote_version:row.quote_version,quote_expires:row.quote_expires,fulfillment:row.fulfillment,carrier:row.carrier,tracking:row.tracking,shipments:fulfillment.publicShipments(history),created_at:row.created_at,updated_at:row.updated_at,version:row.version,evidence_kind:customer.evidence?.kind||'card_receipt',...(admin?{customer,admin_shipping_label:labelView(stored._admin_shipping_label),admin_note:stored._admin_note||null,admin_cancellation:stored._admin_cancellation||null,admin_cases:fulfillment.adminCases(stored._admin_cases||[],history)}:{})};
  };
  async function detailed(row,admin=false){
   const document=documents?await documents.get(row.id):null;
@@ -226,6 +227,15 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
    const row=await repo.insert({id:'NS-'+uuid(),customer_hash:owner,request_key:key,fingerprint,state:'REQUESTED',customer_cipher:cipher.encrypt(customer),lines_json:JSON.stringify(q.lines),subtotal:q.subtotal,shipping:q.shipping,total:q.total,confirm_key:uuid(),created_at:now,updated_at:now});
    return dto(row);
   },
+  async createGift(owner,key,input){
+   if(!/^[a-zA-Z0-9_-]{16,100}$/.test(key||''))throw new ShopError(400,'주문 요청 번호가 올바르지 않습니다.');
+   const customer=customerFields(input.customer);customer.evidence=evidenceFields(input.evidence);
+   if(customer.evidence.kind==='tax_invoice'&&!invoiceEnabled)throw new ShopError(503,'전자세금계산서 발급 연결을 준비 중입니다. 구매 상담을 이용해주세요.');
+   const q=giftRequest(giftProduct,input.gift,clock);customer.gift=q.gift;
+   const now=clock(),fingerprint=hash(JSON.stringify({kind:'gift',customer,items:q.lines.map(p=>[p.id,p.option,p.quantity])}));
+   const row=await repo.insert({id:'NS-'+uuid(),customer_hash:owner,request_key:key,fingerprint,state:'REQUESTED',customer_cipher:cipher.encrypt(customer),lines_json:JSON.stringify(q.lines),subtotal:null,shipping:0,total:null,confirm_key:uuid(),created_at:now,updated_at:now});
+   return dto(row);
+  },
   async createRental(owner,key,input){
    if(!/^[a-zA-Z0-9_-]{16,100}$/.test(key||''))throw new ShopError(400,'렌탈 요청 번호가 올바르지 않습니다.');
    const customer=rentalCustomer(input.customer);customer.rental=rentalSchedule(input.rental,clock);customer.evidence=evidenceFields(input.evidence);
@@ -264,7 +274,7 @@ function orderService({repo,catalog,detail,dataKey,sessionKey=dataKey,payment=nu
    if(!['REQUESTED','APPROVED'].includes(row.state)||input.version!==row.version||input.stock_confirmed!==true)throw new ShopError(409,'주문 상태와 재고·납기 확인을 다시 확인해주세요.');
    const customer=cipher.decrypt(row.customer_cipher);if(customer.rental)rentalSchedule(customer.rental,clock);
    const rows=JSON.parse(row.lines_json).map(p=>({id:p.id,option:p.option,quantity:p.quantity}));
-   const q=customer.rental?rentalQuote(catalog,detail,rows,input.rental_prices??[],clock):quoteCatalog(catalog,detail,rows,clock);
+   const q=customer.gift?quoteGift(JSON.parse(row.lines_json),input):customer.rental?rentalQuote(catalog,detail,rows,input.rental_prices??[],clock):quoteCatalog(catalog,detail,rows,clock);
    if(q.total===null)throw new ShopError(409,'금액 미확정 상품은 상담으로 견적을 확정해야 합니다.');
    return dto(await repo.patch(row,{state:'APPROVED',lines_json:JSON.stringify(q.lines),subtotal:q.subtotal,shipping:q.shipping,total:q.total,quote_version:row.quote_version+1,quote_expires:clock()+30*60*1000},actor,'quote_approved'),true);
   },

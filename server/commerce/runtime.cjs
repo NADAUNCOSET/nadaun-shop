@@ -22,11 +22,13 @@ function runtime(env=process.env){
   if(!cache.has(p.detail_bucket))cache.set(p.detail_bucket,JSON.parse(fs.readFileSync(path.join(process.cwd(),'data/catalog/details',p.detail_bucket+'.json'),'utf8')));
   const d=cache.get(p.detail_bucket)[p.id];if(!d)throw Error('Missing detail');return d;
  }
+ let giftProducts;
+ function giftProduct(id){if(!giftProducts)giftProducts=new Map(JSON.parse(fs.readFileSync(path.join(process.cwd(),'data/gift/catalog.json'),'utf8')).products.map(p=>[p.id,p]));return giftProducts.get(id);}
  const db=database(env),repo=repository(db);
  let payment=null,invoice=null;
  if(env.SHOP_ORDERS_ENABLED==='true'){payment=toss(env);if(cacheKey!=='qa')invoice=popbill(env);}
  const documents=documentService({db,repo,dataKey:env.SHOP_ORDER_DATA_KEY,payment,invoice});
- const service=orderService({repo,catalog,detail,dataKey:env.SHOP_ORDER_DATA_KEY,sessionKey:env.SHOP_SESSION_KEY,payment,documents,labelProvider:cacheKey==='qa'?null:goodsflow(env),invoiceEnabled:!!invoice,testing:cacheKey==='qa'});
+ const service=orderService({repo,catalog,detail,giftProduct,dataKey:env.SHOP_ORDER_DATA_KEY,sessionKey:env.SHOP_SESSION_KEY,payment,documents,labelProvider:cacheKey==='qa'?null:goodsflow(env),invoiceEnabled:!!invoice,testing:cacheKey==='qa'});
  const admin=adminService({db,service,dataKey:env.SHOP_ORDER_DATA_KEY});
  const drafts=adminDraftService({db,catalog,detail,dataKey:env.SHOP_ORDER_DATA_KEY});
  const bps=Number(env.SHOP_POINTS_EARN_BPS||0);if(!Number.isSafeInteger(bps)||bps<0||bps>1000)throw Error('Invalid points policy');

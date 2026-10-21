@@ -175,3 +175,5 @@ body[data-mode=admin] .commerce-filter-section .commerce-admin-filter{border:0;b
 [data-auto-shipping] select{width:100%;min-width:0;min-height:44px;border:1px solid #cfd1c9;border-radius:8px;padding:10px 12px;background:#fafaf7;font:inherit;color:#1a1a1a}
 [data-label-result]{overflow-wrap:anywhere}[data-label-result] h3{font-size:16px;margin:24px 0 12px}[data-label-result] ul{padding-left:20px;line-height:1.8;font-size:13px}[data-label-result] li{margin:10px 0}[data-label-result] strong{display:block}
 @media(max-width:700px){[data-auto-shipping] .commerce-fields{grid-template-columns:1fr}}
+
+.commerce-gift-info{margin:20px 0;padding:18px;background:#f7f7f5;border-radius:8px}.commerce-gift-info dl{display:grid;gap:10px}.commerce-gift-info dl div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px}.commerce-gift-info dd{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}#gift-order-form textarea{width:100%;font:inherit;padding:12px;border:1px solid #ccc;border-radius:6px}#gift-order-form{margin:36px 0}

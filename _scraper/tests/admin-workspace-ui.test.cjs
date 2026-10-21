@@ -82,3 +82,8 @@ test('automatic label UI distinguishes connection, printing and actual delivery 
  assert.match(r.context.adminWorkflowForm(order({purchase_workflow:{stage:'delivered',delivery_source:'goodsflow'}})),/택배사에서 확인한 배송 완료/);
  const booked=order({state:'PAID',payment_mode:'live',admin_shipping_label:{status:'printed'},purchase_workflow:{stage:'ready'}});assert.equal(r.context.adminNext(booked),'택배사 집하 대기');assert.doesNotMatch(r.context.adminShipping(booked),/data-shipment-create/);
 });
+
+test('gift cards show requested production conditions and confirmed VAT-inclusive pricing without raw HTML',()=>{
+ const r=runtime(),o=order({gift:{product_id:'2611146',printing:'<svg onload=x>',packaging:'개별 포장'},state:'REQUESTED',total:null,subtotal:null,shipping:0,lines:[{id:'gift-2611146',name:'기프트',option:'',quantity:5000,unit_price:null}]});
+ const html=r.context.orderCard(o,true);assert.match(html,/gift-item\.html\?id=2611146/);assert.match(html,/&lt;svg onload=x&gt;/);assert.doesNotMatch(html,/<svg|data-rental-price/);assert.match(html,/data-gift-price/);assert.match(html,/data-gift-shipping/);assert.match(html,/부가세 포함/);assert.match(r.context.adminTable([o]),/기프트/);
+});

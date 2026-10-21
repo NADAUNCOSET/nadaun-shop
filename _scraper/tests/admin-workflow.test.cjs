@@ -116,11 +116,12 @@ test('private notes and cancellation reasons export as inert text and preserve c
  assert.ok(!JSON.stringify(await f.service.get(order.id,owner)).includes('private internal'));
 });
 test('rental maximum is exactly fourteen elapsed KST days including month and year boundaries',()=>{
- const {rentalSchedule}=require('../../server/commerce/rental.cjs'),f=fixture();
+ const {rentalSchedule}=require('../../server/commerce/rental.cjs');
  for(const [start,end] of [['2026-10-16','2026-10-30'],['2026-10-25','2026-11-08'],['2026-12-25','2027-01-08']]){
-  const raw={start_date:start,end_date:end,pickup_time:'12:15',return_time:'12:15'},value=rentalSchedule(raw,f.clock);assert.equal(value.return_at-value.pickup_at,14*86400000);
-  const before=rentalSchedule({...raw,return_time:'12:14'},f.clock);assert.equal(before.return_at-before.pickup_at,14*86400000-60000);
-  assert.throws(()=>rentalSchedule({...raw,return_time:'12:16'},f.clock),{status:400,message:'최대 대여기간은 2주(14일)입니다. 수령·반납 방문 일시를 확인해주세요.'});
+  const boundaryClock=()=>Date.parse(start+'T00:00:00+09:00');
+  const raw={start_date:start,end_date:end,pickup_time:'12:15',return_time:'12:15'},value=rentalSchedule(raw,boundaryClock);assert.equal(value.return_at-value.pickup_at,14*86400000);
+  const before=rentalSchedule({...raw,return_time:'12:14'},boundaryClock);assert.equal(before.return_at-before.pickup_at,14*86400000-60000);
+  assert.throws(()=>rentalSchedule({...raw,return_time:'12:16'},boundaryClock),{status:400,message:'최대 대여기간은 2주(14일)입니다. 수령·반납 방문 일시를 확인해주세요.'});
  }
 });
 test('rental creation and approval cannot bypass the fourteen-day maximum',async()=>{

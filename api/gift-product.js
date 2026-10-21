@@ -8,5 +8,5 @@ module.exports=function(req,res){
  const result=gift.detail(id);
  res.setHeader('Content-Type','text/html; charset=utf-8');res.setHeader('Cache-Control','public, max-age=0, s-maxage=300');
  if(result.status!==200)res.setHeader('X-Robots-Tag','noindex');
- return res.status(result.status).end(req.method==='HEAD'?'':gift.page(template,result));
+ return res.status(result.status).end(req.method==='HEAD'?'':gift.page(template,result).replace('</head>','<link rel="stylesheet" href="/assets/shop/commerce.css?v=gift-orders-20261021"><script type="module" src="/assets/shop/commerce.js?v=gift-orders-20261021"></script></head>'));
 };

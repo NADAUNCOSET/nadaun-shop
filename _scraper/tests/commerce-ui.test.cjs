@@ -37,9 +37,9 @@ test('disabled checkout does not collect delivery or business information or loa
 test('admin readiness separates enabled administration from pending customer payments and invoices',()=>{
  const r=runtime();
  const pending=r.context.adminReadiness({adminEnabled:true,paymentProvider:'toss',ordersEnabled:false,rentalRequestsEnabled:false,taxInvoiceEnabled:false});
- assert.match(pending,/토스페이먼츠/);assert.equal((pending.match(/오픈 준비 중/g)||[]).length,2);assert.match(pending,/발급 연결 준비 중/);assert.doesNotMatch(pending,/접수 가능|<strong>발급 연결됨/);
- const enabled=r.context.adminReadiness({paymentProvider:'toss',ordersEnabled:true,rentalRequestsEnabled:true,taxInvoiceEnabled:true});
- assert.match(enabled,/토스페이먼츠/);assert.equal((enabled.match(/접수 가능/g)||[]).length,2);assert.match(enabled,/<strong>발급 연결됨/);
+ assert.match(pending,/토스페이먼츠/);assert.equal((pending.match(/오픈 준비 중/g)||[]).length,3);assert.match(pending,/발급 연결 준비 중/);assert.doesNotMatch(pending,/접수 가능|<strong>발급 연결됨/);
+ const enabled=r.context.adminReadiness({paymentProvider:'toss',ordersEnabled:true,rentalRequestsEnabled:true,giftRequestsEnabled:true,taxInvoiceEnabled:true});
+ assert.match(enabled,/토스페이먼츠/);assert.equal((enabled.match(/접수 가능/g)||[]).length,3);assert.match(enabled,/<strong>발급 연결됨/);
  assert.match(r.context.adminReadiness({paymentProvider:'<script>bad</script>',ordersEnabled:'true'}),/확인 필요/);assert.doesNotMatch(r.context.adminReadiness({ordersEnabled:'true'}),/접수 가능/);
 });
 test('tax invoice option is only available when server reports a configured issuer',()=>{
