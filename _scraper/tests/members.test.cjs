@@ -13,7 +13,7 @@ const signup=(email='first@example.com')=>({email,name:'테스트 회원',passwo
 function fixture({testing=true,bps=100}={}){
  let now=Date.now(),remote;const clock=()=>now,sql=new DatabaseSync(':memory:');sql.exec(fs.readFileSync('server/commerce/schema.sql','utf8'));
  const db={async batch(items){sql.exec('BEGIN');try{const rows=items.map(s=>sql.prepare(s.sql).all(...(s.params||[])));sql.exec('COMMIT');return rows;}catch(e){sql.exec('ROLLBACK');throw e;}},async query(statement,params=[]){return(await this.batch([{sql:statement,params}]))[0];}};
- const repo=repository(db,clock),members=memberService({db,repo,dataKey:key,sessionKey:key,enabled:true,earnBasisPoints:bps,testing,clock});
+ const repo=repository(db,clock),members=memberService({db,repo,dataKey:key,sessionKey:key,enabled:true,earnBasisPoints:bps,confirmOrder:(...args)=>service.confirmPurchase(...args),testing,clock});
  const catalog={meta:{synced_at:new Date(now).toISOString()},products:[{id:'purchase',name:'카메라',kind:'purchase',price:100000,status:'inquiry',offers:[{source:'smartstore'}]}],redirects:{}};
  const payment=toss({SHOP_PAYMENT_MODE:'test',SHOP_TOSS_CLIENT_KEY:'test_ck_fixture',SHOP_TOSS_SECRET_KEY:'test_sk_fixture'},async(url,opt)=>{
   if(url.endsWith('/confirm')){const auth=JSON.parse(opt.body);remote={...auth,totalAmount:auth.amount,currency:'KRW',mId:'sample',status:'DONE',card:{approveNo:'123456'},approvedAt:new Date(now).toISOString()};}
@@ -55,7 +55,7 @@ test('point adjustments are atomic, idempotent, reasoned and cannot make a manua
 test('complete member purchase, simulated provider approval, admin visibility, purchase reward and refund reversal',async()=>{
  const f=fixture(),a=await f.join(),order=await f.paid(a.identity);assert.equal(order.state,'PAID');assert.equal(order.payment_mode,'test');assert.equal((await f.service.adminGet(order.id)).customer.name,f.payload.customer.name);await assert.rejects(f.members.confirm(a.identity,{id:order.id}),{status:409});
  const delivered=await f.service.qaDeliver(order.id,{version:order.version},'owner');assert.equal(delivered.shipments[0].delivery_status,'delivered');await f.members.confirm(a.identity,{id:order.id});await f.members.confirm(a.identity,{id:order.id});assert.equal((await f.members.me(a.identity)).points.balance,1000);
- let canceled=await f.service.qaCancel(order.id,{version:delivered.version},'owner');assert.equal(canceled.state,'CANCELED');assert.equal((await f.members.me(a.identity)).points.balance,0);canceled=await f.service.qaCancel(order.id,{version:canceled.version},'owner');assert.equal((await f.members.me(a.identity)).points.history.length,2);
+ let canceled=await f.service.qaCancel(order.id,{version:(await f.service.adminGet(order.id)).version},'owner');assert.equal(canceled.state,'CANCELED');assert.equal((await f.members.me(a.identity)).points.balance,0);canceled=await f.service.qaCancel(order.id,{version:canceled.version},'owner');assert.equal((await f.members.me(a.identity)).points.history.length,2);
 });
 test('test orders cannot earn real rewards or simulate shipping in the operational service',async()=>{
  const f=fixture({testing:false}),a=await f.join(),order=await f.paid(a.identity);await assert.rejects(f.service.qaDeliver(order.id,{version:order.version},'owner'),{status:404});await assert.rejects(f.service.qaCancel(order.id,{version:order.version},'owner'),{status:404});await assert.rejects(f.members.confirm(a.identity,{id:order.id}),{status:409});assert.equal((await f.members.me(a.identity)).points.balance,0);

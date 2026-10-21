@@ -258,6 +258,10 @@
     "api/shop-test.js": {
       "includeFiles": "{server/commerce/**}",
       "maxDuration": 60
+    },
+    "api/toss-webhook.js": {
+      "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,data/gift/catalog.json,server/commerce/**}",
+      "maxDuration": 60
     }
   },
   "buildCommand": "node server/catalog-release-check.cjs",

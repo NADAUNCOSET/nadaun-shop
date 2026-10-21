@@ -11,7 +11,7 @@ function endpoint({service,repo,adminService=null,draftService=null,members=null
   try{
    const url=new URL(req.url,origin),action=url.searchParams.get('action')||'config';
    if(!['GET','POST'].includes(req.method)){res.setHeader('Allow','GET, POST');throw new ShopError(405,'허용되지 않은 요청입니다.');}
-   if(req.method==='GET'&&action==='config')return res.status(200).json({ordersEnabled:enabled,rentalRequestsEnabled:rentalEnabled,giftRequestsEnabled:giftEnabled,adminEnabled:!!adminService,adminDraftsEnabled:!!draftService,adminLoginRequiresEmail:!!configuredEmail,paymentProvider:'toss',taxInvoiceEnabled:service.invoiceEnabled===true,membersEnabled:members?.enabled===true,testing});
+   if(req.method==='GET'&&action==='config')return res.status(200).json({ordersEnabled:enabled,rentalRequestsEnabled:rentalEnabled,giftRequestsEnabled:giftEnabled,adminEnabled:!!adminService,adminDraftsEnabled:!!draftService,adminLoginRequiresEmail:!!configuredEmail,paymentProvider:'toss',orderLifecycleEnabled:typeof service.refund==='function'&&typeof service.confirmPurchase==='function',taxInvoiceEnabled:service.invoiceEnabled===true,membersEnabled:members?.enabled===true,testing});
    const adminAction=['login','logout'].includes(action)||action.startsWith('admin-');
    if(req.method==='POST'&&req.headers.origin!==origin&&!(adminAction&&adminOrigins.includes(req.headers.origin)))throw new ShopError(403,'사이트에서 다시 요청해주세요.');
    const ip=String(req.headers['x-forwarded-for']||'unknown').split(',')[0].trim();
@@ -86,6 +86,8 @@ function endpoint({service,repo,adminService=null,draftService=null,members=null
      if(action==='admin-invoice-preview'&&adminService)return res.status(200).json(await adminService.invoicePreview(input,admin));
      if(action==='admin-invoice-apply'&&adminService)return res.status(200).json(await adminService.invoiceApply(input,admin));
      if(action==='admin-workflow')return res.status(200).json({order:await service.workflow(input.id,input,admin)});
+     if(action==='admin-refund')return res.status(200).json({order:await service.refund(input.id,input,admin)});
+     if(action==='admin-cancel-resolve')return res.status(200).json({order:await service.rejectCancellation(input.id,input,admin)});
      const fn={'admin-approve':'approve','admin-ship':'ship','admin-shipment-update':'updateShipment','admin-case-create':'createCase','admin-case-update':'updateCase','admin-exchange-ship':'exchangeShip','admin-reconcile':'reconcile','admin-document-retry':'retryDocument','admin-rental-pickup':'pickup','admin-rental-return':'rentalReturn','admin-note':'saveNote','admin-cancel-request':'cancelRequest'}[action];
      // The actor is derived exclusively from the verified session, never input.actor.
      if(fn)return res.status(200).json({order:await service[fn](input.id,input,admin)});
@@ -93,7 +95,7 @@ function endpoint({service,repo,adminService=null,draftService=null,members=null
     throw new ShopError(404,'요청을 찾을 수 없습니다.');
    }
    const rentalActions=['session','orders','order','rental-create'];
-   if(!enabled&&!(giftEnabled&&['session','orders','order','gift-create'].includes(action))&&!(rentalEnabled&&rentalActions.includes(action))&&!(['orders','order'].includes(action)||member&&action==='session'))throw new ShopError(503,'주문 서비스 연결을 준비 중입니다.');
+   if(!enabled&&!(giftEnabled&&['session','orders','order','gift-create'].includes(action))&&!(rentalEnabled&&rentalActions.includes(action))&&!(['orders','order','cancel-request','purchase-confirm'].includes(action)||member&&action==='session'))throw new ShopError(503,'주문 서비스 연결을 준비 중입니다.');
    if(action==='gift-create'&&!giftEnabled)throw new ShopError(503,'기프트 접수 연결을 준비 중입니다.');
    if(action==='rental-create'&&!rentalEnabled)throw new ShopError(503,'렌탈 접수 연결을 준비 중입니다.');
    if(action==='session'&&req.method==='POST'){
@@ -102,6 +104,8 @@ function endpoint({service,repo,adminService=null,draftService=null,members=null
    }
    if(!customer&&!member)throw new ShopError(401,'회원 로그인 또는 주문한 브라우저에서 다시 접속해주세요.');
    const owner=member?member.owner:hash(customer);
+   if(action==='cancel-request'&&req.method==='POST')return res.status(200).json({order:await service.customerCancel(input.id,owner,input)});
+   if(action==='purchase-confirm'&&req.method==='POST')return res.status(200).json({order:await service.confirmPurchase(input.id,owner,input)});
    if(action==='orders'&&req.method==='GET')return res.status(200).json({orders:await service.list(owner)});
    if(['document-refresh','document-print'].includes(action)&&req.method==='POST'){
     await repo.limit('document:'+owner,6,60);

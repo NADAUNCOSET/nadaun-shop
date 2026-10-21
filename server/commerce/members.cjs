@@ -4,7 +4,7 @@ const {promisify}=require('node:util');
 const {ShopError,protect,hash,random,passwordMatches,adminEmail}=require('./security.cjs');
 const scrypt=promisify(crypto.scrypt);
 const VERSION='2026-10-17';
-function memberService({db,repo,dataKey,sessionKey,enabled=false,earnBasisPoints=0,testing=false,clock=()=>Date.now()}){
+function memberService({db,repo,dataKey,sessionKey,enabled=false,earnBasisPoints=0,testing=false,confirmOrder=null,clock=()=>Date.now()}){
  const cipher=protect(dataKey),digest=value=>crypto.createHmac('sha256',sessionKey).update(value).digest('hex');
  const emailKey=value=>{const email=adminEmail(value);if(!email)throw new ShopError(400,'이메일 주소를 확인해주세요.');return digest('email:'+email);};
  const find=async id=>(await db.query('SELECT * FROM shop_members WHERE id=? AND status=\'active\'',[id]))[0]||null;
@@ -56,11 +56,11 @@ function memberService({db,repo,dataKey,sessionKey,enabled=false,earnBasisPoints
    await db.query("INSERT INTO shop_points(id,member_id,amount,reason,kind,request_key,fingerprint,actor,created_at) SELECT ?,?,?,?,?,?,?,?,? FROM shop_members WHERE id=? AND status='active' AND (? > 0 OR COALESCE((SELECT SUM(amount) FROM shop_points WHERE member_id=?),0)>=-?) ON CONFLICT(request_key) DO NOTHING",[crypto.randomUUID(),input.id,input.amount,reason,'adjustment',key,fingerprint,actor,clock(),input.id,input.amount,input.id,input.amount]);
    const saved=(await db.query('SELECT fingerprint FROM shop_points WHERE request_key=?',[key]))[0];if(!saved||saved.fingerprint!==fingerprint)throw new ShopError(409,'잔액 또는 요청 정보를 확인해주세요.');return {saved:true,balance:await balance(input.id)};
   },
-  async confirm(member,input){if(!member)throw new ShopError(401,'로그인이 필요합니다.');if(!earnBasisPoints)throw new ShopError(409,'적립 기준을 준비하고 있습니다.');const row=await repo.get(input.id);if(!row||row.customer_hash!==member.owner)throw new ShopError(404,'주문을 찾을 수 없습니다.');const customer=cipher.decrypt(row.customer_cipher);
+  async confirm(member,input){if(!member)throw new ShopError(401,'로그인이 필요합니다.');if(!earnBasisPoints)throw new ShopError(409,'적립 기준을 준비하고 있습니다.');if(!confirmOrder)throw new ShopError(503,'구매확정 연결을 확인해주세요.');await confirmOrder(input.id,member.owner,{confirmed:true});const row=await repo.get(input.id);if(!row||row.customer_hash!==member.owner)throw new ShopError(404,'주문을 찾을 수 없습니다.');const customer=cipher.decrypt(row.customer_cipher);
    if(row.state!=='PAID'||row.payment_mode!==(testing?'test':'live')||customer.rental||row.fulfillment!=='shipped'||(customer._admin_cases||[]).some(c=>!['closed','rejected'].includes(c.status)))throw new ShopError(409,'배송 완료 및 반품·교환 상태를 확인해주세요.');
    const shipments=customer._admin_shipments||[],originals=shipments.filter(s=>s.purpose==='original');if(!originals.length||originals.some(s=>!s.delivered_at))throw new ShopError(409,'배송 완료 확인 후 구매확정할 수 있습니다.');
    const amount=Math.floor(Math.max(0,Math.min(row.subtotal,row.total-row.shipping))*earnBasisPoints/10000);if(!Number.isSafeInteger(amount)||amount<1)throw new ShopError(409,'적립 대상 금액이 없습니다.');
-   await db.query("INSERT INTO shop_points(id,member_id,amount,reason,kind,request_key,fingerprint,actor,source_order,created_at) SELECT ?,?,?,?,'purchase',?,?,?,id,? FROM shop_orders WHERE id=? AND version=? AND state='PAID' ON CONFLICT(request_key) DO NOTHING",[crypto.randomUUID(),member.id,amount,'상품 구매확정 적립','earn:'+row.id,hash(row.id),'customer',clock(),row.id,row.version]);return {confirmed:true,balance:await balance(member.id)};
+   await db.query("INSERT INTO shop_points(id,member_id,amount,reason,kind,request_key,fingerprint,actor,source_order,created_at) SELECT ?,?,?,?,'purchase',?,?,?,id,? FROM shop_orders WHERE id=? AND version=? AND state='PAID' ON CONFLICT(request_key) DO NOTHING",[crypto.randomUUID(),member.id,amount,'상품 구매확정 적립','earn:'+row.id,hash(row.id),'customer',clock(),row.id,row.version]);if(!(await db.query('SELECT id FROM shop_points WHERE request_key=? AND member_id=?',['earn:'+row.id,member.id])).length)throw new ShopError(409,'주문 상태가 변경되어 적립을 다시 확인해야 합니다.');return {confirmed:true,balance:await balance(member.id)};
   }
  };
 }

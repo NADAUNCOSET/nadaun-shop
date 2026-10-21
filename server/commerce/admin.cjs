@@ -1,6 +1,7 @@
 'use strict';
 const {ShopError,protect}=require('./security.cjs');
 const crypto=require('node:crypto');
+const finance=require('./lifecycle.cjs');
 const fulfillment=require('./fulfillment.cjs');
 const STATES=['REQUESTED','APPROVED','PAYMENT_PENDING','CONFIRMING','PAID','PAYMENT_REVIEW','CANCELED'];
 const STATE_NAMES={REQUESTED:'재고·납기 확인 중',APPROVED:'결제 가능',PAYMENT_PENDING:'결제 진행 중',CONFIRMING:'결제 결과 확인 중',PAID:'결제 완료',PAYMENT_REVIEW:'결제 확인 필요',CANCELED:'취소 완료'};
@@ -17,6 +18,11 @@ const WORKFLOW_SQL=`CASE WHEN o.state='PAID' AND o.payment_mode='live' AND NOT $
  WHEN (SELECT we.action FROM shop_order_events we WHERE we.order_id=o.id AND we.action IN ('purchase_preparing','purchase_ready') ORDER BY we.version DESC LIMIT 1)='purchase_ready' THEN 'ready'
  ELSE 'preparing' END ELSE NULL END`;
 const CASES_SQL="EXISTS(SELECT 1 FROM shop_order_events ce WHERE ce.order_id=o.id AND ce.action IN ('return_case_created','exchange_case_created'))";
+const LIFECYCLE_SQL={
+ 'cancel-requests':"(SELECT ce.action FROM shop_order_events ce WHERE ce.order_id=o.id AND ce.action IN ('customer_cancel_requested','customer_cancel_resolved','refund_completed','refund_partial_completed','payment_canceled') ORDER BY ce.version DESC LIMIT 1)='customer_cancel_requested'",
+ 'refund-review':"(SELECT ce.action FROM shop_order_events ce WHERE ce.order_id=o.id AND ce.action IN ('refund_requested','refund_completed','refund_partial_completed') ORDER BY ce.version DESC LIMIT 1)='refund_requested'",
+ 'purchase-confirmed':"o.state='PAID' AND EXISTS(SELECT 1 FROM shop_order_events ce WHERE ce.order_id=o.id AND ce.action='purchase_confirmed')"
+};
 const QUEUE_STAGE={'purchase-preparing':'preparing','purchase-ready':'ready','purchase-transit':'in_transit','purchase-delivered':'delivered'};
 const SEARCH_FIELDS=['all','order','customer','tracking'];
 const encryptedSearch=f=>!!f.search&&f.searchField!=='order';
@@ -40,7 +46,7 @@ function filters(input={},clock=()=>Date.now()){
  const start=date(from),end=date(to)+86400000;
  if(end<=start||end-start>366*86400000)throw new ShopError(400,'한 번에 최대 1년의 자료를 조회할 수 있습니다.');
  const basis=input.basis||'created',mode=input.mode||'operational',state=input.state||'',fulfillment=input.fulfillment||'',document=input.document||'',kind=input.kind||'',queue=input.queue||'',search=typeof input.search==='string'?input.search.trim():input.search==null?'':null,searchField=input.searchField||'all',ids=selectedIds(input.ids);
- if(!['created','paid'].includes(basis)||!['operational','live','test','all'].includes(mode)||state&&!STATES.includes(state)||fulfillment&&!['unfulfilled','processing','shipped'].includes(fulfillment)||document&&!['queued','processing','issued','retry','review','voided','missing'].includes(document)||kind&&!['purchase','rental'].includes(kind)||queue&&!['purchase-shipping','rental-pickup','rental-return','payment-review','purchase-cases',...Object.keys(QUEUE_STAGE)].includes(queue)||!SEARCH_FIELDS.includes(searchField)||search===null||search.length>80||/[\x00-\x1f]/.test(search))throw new ShopError(400,'조회 조건을 확인해주세요.');
+ if(!['created','paid'].includes(basis)||!['operational','live','test','all'].includes(mode)||state&&!STATES.includes(state)||fulfillment&&!['unfulfilled','processing','shipped'].includes(fulfillment)||document&&!['queued','processing','issued','retry','review','voided','missing'].includes(document)||kind&&!['purchase','rental'].includes(kind)||queue&&!['purchase-shipping','rental-pickup','rental-return','payment-review','purchase-cases',...Object.keys(QUEUE_STAGE),...Object.keys(LIFECYCLE_SQL)].includes(queue)||!SEARCH_FIELDS.includes(searchField)||search===null||search.length>80||/[\x00-\x1f]/.test(search))throw new ShopError(400,'조회 조건을 확인해주세요.');
  const page=Number(input.page||1);if(!Number.isSafeInteger(page)||page<1||page>100000)throw new ShopError(400,'페이지를 확인해주세요.');
  return {from,to,start,end,basis,mode,state,fulfillment,document,kind,queue,search,searchField,...(ids?{ids}:{}),page};
 }
@@ -51,7 +57,8 @@ function where(f){
  else if(f.mode!=='all'){terms.push('o.payment_mode=?');params.push(f.mode);}
  for(const [field,value] of [['state',f.state],['fulfillment',f.fulfillment]])if(value){terms.push('o.'+field+'=?');params.push(value);}
  if(f.kind)terms.push((f.kind==='purchase'?'NOT ':'')+RENTAL_SQL);
- if(QUEUE_STAGE[f.queue]){terms.push(`(${WORKFLOW_SQL})=?`);params.push(QUEUE_STAGE[f.queue]);}
+ if(LIFECYCLE_SQL[f.queue])terms.push('('+LIFECYCLE_SQL[f.queue]+')');
+ else if(QUEUE_STAGE[f.queue]){terms.push(`(${WORKFLOW_SQL})=?`);params.push(QUEUE_STAGE[f.queue]);}
  else if(f.queue==='purchase-cases')terms.push(CASES_SQL);
  else if(f.queue==='payment-review')terms.push("o.state IN ('CONFIRMING','PAYMENT_REVIEW')");
  else if(f.queue){terms.push("o.state='PAID'","o.payment_mode='live'",(f.queue==='purchase-shipping'?'NOT ':'')+RENTAL_SQL);terms.push(f.queue==='purchase-shipping'?"o.fulfillment!='shipped'":f.queue==='rental-pickup'?"o.fulfillment='unfulfilled'":"o.fulfillment='processing'");}
@@ -114,7 +121,7 @@ function adminService({db,service,dataKey,clock=()=>Date.now()}){
  function records(row){
   const customer=cipher.decrypt(row.customer_cipher),doc=row.doc_result?cipher.decrypt(row.doc_result):null;
   let receipt=null;if(row.payment_receipt_cipher)receipt=cipher.decrypt(row.payment_receipt_cipher);
-  const verified=!!receipt&&receipt.provider==='toss'&&receipt.orderId===row.id&&receipt.paymentKey===row.payment_key&&receipt.totalAmount===row.total&&receipt.currency==='KRW'&&receipt.status==='DONE';
+  const verified=!!receipt&&receipt.provider==='toss'&&receipt.orderId===row.id&&receipt.paymentKey===row.payment_key&&receipt.totalAmount===row.total&&receipt.currency==='KRW'&&['DONE','CANCELED','PARTIAL_CANCELED'].includes(receipt.status);
   const paidAt=row.paid_at||row.confirmed_at||null;
   return {row,customer,doc,receipt,verified,paidAt};
  }
@@ -133,7 +140,7 @@ function adminService({db,service,dataKey,clock=()=>Date.now()}){
    if(cursor)params.push(cursor.created_at,cursor.created_at,cursor.id);
    const remaining=(scan?10001:limit)-rows.length,size=paged?Math.min(500,remaining):limit;
    const batch=await db.query(`SELECT o.*,d.kind AS doc_kind,d.status AS doc_status,d.result_cipher AS doc_result,
-    d.attempts AS doc_attempts,d.updated_at AS doc_updated_at,${WORKFLOW_SQL} AS workflow_stage,${CASES_SQL} AS has_cases,
+    d.attempts AS doc_attempts,d.updated_at AS doc_updated_at,(${LIFECYCLE_SQL['cancel-requests']}) AS cancel_requested,(${LIFECYCLE_SQL['refund-review']}) AS refund_pending,(${LIFECYCLE_SQL['purchase-confirmed']}) AS purchase_confirmed,${WORKFLOW_SQL} AS workflow_stage,${CASES_SQL} AS has_cases,
     (SELECT e.created_at FROM shop_order_events e WHERE e.order_id=o.id AND e.action='payment_done' LIMIT 1) AS confirmed_at
     FROM shop_orders o LEFT JOIN shop_documents d ON d.order_id=o.id WHERE ${w.sql}${clause}
     ORDER BY o.created_at DESC,o.id DESC LIMIT ? OFFSET ?`,[...params,size,paged?0:offsetRows]);
@@ -147,6 +154,7 @@ function adminService({db,service,dataKey,clock=()=>Date.now()}){
   const lines=JSON.parse(row.lines_json),rental=lines.length>0&&lines.every(line=>line.shipping_class==='pickup');
   if(f.state&&row.state!==f.state||f.fulfillment&&row.fulfillment!==f.fulfillment||f.kind&&(f.kind==='rental')!==rental)return false;
   if(f.document&&(f.document==='missing'?!!row.doc_kind:row.doc_status!==f.document))return false;
+  if(LIFECYCLE_SQL[f.queue])return !!row[{'cancel-requests':'cancel_requested','refund-review':'refund_pending','purchase-confirmed':'purchase_confirmed'}[f.queue]];
   if(QUEUE_STAGE[f.queue])return row.workflow_stage===QUEUE_STAGE[f.queue];
   if(f.queue==='purchase-cases')return !!row.has_cases;
   if(f.queue==='payment-review')return ['CONFIRMING','PAYMENT_REVIEW'].includes(row.state);
@@ -157,7 +165,7 @@ function adminService({db,service,dataKey,clock=()=>Date.now()}){
   }return true;
  }
  function countRows(rows){
-  const out={orders:rows.length,requested:0,approved:0,canceled:0,toShip:0,rentalPickup:0,rentalReturn:0,paymentReview:0,documentPending:0,approvedTotal:0,canceledOriginalTotal:0,purchasePreparing:0,purchaseReady:0,purchaseTransit:0,purchaseDelivered:0,purchaseCases:0};
+  const out={cancelRequested:0,refundPending:0,purchaseConfirmed:0,orders:rows.length,requested:0,approved:0,canceled:0,toShip:0,rentalPickup:0,rentalReturn:0,paymentReview:0,documentPending:0,approvedTotal:0,canceledOriginalTotal:0,purchasePreparing:0,purchaseReady:0,purchaseTransit:0,purchaseDelivered:0,purchaseCases:0};
   for(const row of rows){
    const rental=JSON.parse(row.lines_json).length>0&&JSON.parse(row.lines_json).every(line=>line.shipping_class==='pickup'),paid=row.state==='PAID'&&row.payment_mode==='live';
    if(row.state==='REQUESTED')out.requested++;if(row.state==='APPROVED')out.approved++;if(row.state==='CANCELED')out.canceled++;
@@ -167,13 +175,16 @@ function adminService({db,service,dataKey,clock=()=>Date.now()}){
    if(['queued','processing','retry','review'].includes(row.doc_status))out.documentPending++;
    if(row.payment_mode==='live'&&row.payment_key&&row.payment_receipt_cipher){out.approvedTotal+=row.total;if(row.state==='CANCELED')out.canceledOriginalTotal+=row.total;}
    const key={preparing:'purchasePreparing',ready:'purchaseReady',in_transit:'purchaseTransit',delivered:'purchaseDelivered'}[row.workflow_stage];if(key)out[key]++;
-   if(row.has_cases)out.purchaseCases++;
+   if(row.has_cases)out.purchaseCases++;if(row.cancel_requested)out.cancelRequested++;if(row.refund_pending)out.refundPending++;if(row.purchase_confirmed)out.purchaseConfirmed++;
   }return out;
  }
  async function summary(f){
   if(encryptedSearch(f))return countRows(await query(f,10001));
   const w=where(f);
   const rows=await db.query(`SELECT COUNT(*) AS orders,
+   SUM(CASE WHEN ${LIFECYCLE_SQL['cancel-requests']} THEN 1 ELSE 0 END) AS cancelRequested,
+   SUM(CASE WHEN ${LIFECYCLE_SQL['refund-review']} THEN 1 ELSE 0 END) AS refundPending,
+   SUM(CASE WHEN ${LIFECYCLE_SQL['purchase-confirmed']} THEN 1 ELSE 0 END) AS purchaseConfirmed,
    SUM(CASE WHEN (${WORKFLOW_SQL})='preparing' THEN 1 ELSE 0 END) AS purchasePreparing,
    SUM(CASE WHEN (${WORKFLOW_SQL})='ready' THEN 1 ELSE 0 END) AS purchaseReady,
    SUM(CASE WHEN (${WORKFLOW_SQL})='in_transit' THEN 1 ELSE 0 END) AS purchaseTransit,
@@ -220,7 +231,7 @@ function adminService({db,service,dataKey,clock=()=>Date.now()}){
    const rows=await query(f,10001);
    if(rows.length>10000)throw new ShopError(413,'한 번에 1만 건까지 다운로드할 수 있습니다. 조회 기간을 나눠주세요.');
    if(f.ids&&rows.length!==f.ids.length)throw new ShopError(409,'선택 주문이 현재 조회 조건에서 변경되거나 제외되었습니다. 목록을 새로 조회해주세요.');
-   const orders=[['주문번호','주문접수일시(KST)','결제확정일시(KST)','PG승인일','결제환경','주문상태','배송상태','구매자','연락처','우편번호','배송주소','확정상품액','배송비','주문총액','확인된원승인액','취소주문의원승인액','부분취소금액','PG거래번호','결제수단','증빙종류','증빙상태','증빙승인번호','소득공제/지출증빙','국세청전송상태','사업자등록번호','상호','증빙이메일','택배사','운송장','환불/정산확인','주문유형','대여시작일','대여종료일','수령방문시간','반납방문시간','실제수령처리일시(KST)','실제반납처리일시(KST)','내부 메모','접수 취소 사유','구매 운영단계','배송완료확인일시(KST)','배송완료확인방식']];
+   const orders=[['주문번호','주문접수일시(KST)','결제확정일시(KST)','PG승인일','결제환경','주문상태','배송상태','구매자','연락처','우편번호','배송주소','확정상품액','배송비','주문총액','확인된원승인액','취소주문의원승인액','부분취소금액','PG거래번호','결제수단','증빙종류','증빙상태','증빙승인번호','소득공제/지출증빙','국세청전송상태','사업자등록번호','상호','증빙이메일','택배사','운송장','환불/정산확인','주문유형','대여시작일','대여종료일','수령방문시간','반납방문시간','실제수령처리일시(KST)','실제반납처리일시(KST)','내부 메모','접수 취소 사유','구매 운영단계','배송완료확인일시(KST)','배송완료확인방식','토스취소확인액','남은결제액','고객구매확정일시(KST)']];
    const lines=[['주문번호','상품ID','상품명','옵션','수량','확정단가','확정상품합계']];
    const docs=[['주문번호','증빙종류','발급상태','승인번호','용도','국세청전송상태','발급확인일시(KST)','재처리횟수','발급확인공급가액','발급확인세액','발급확인합계']];
    const events=[['주문번호','처리일시(KST)','처리주체','처리내역','주문버전']];
@@ -229,8 +240,9 @@ function adminService({db,service,dataKey,clock=()=>Date.now()}){
    let gross=0,canceled=0;
    for(const row of rows){const r=records(row),{customer:c,doc:d,receipt:p}=r,e=c.evidence||{},live=r.verified&&row.payment_mode==='live',approved=live?row.total:null,fullCanceled=live&&row.state==='CANCELED'?row.total:null;
     gross+=approved||0;canceled+=fullCanceled||0;
+    const sums=p?finance.amounts(p,row):null;
     const review=row.state==='PAYMENT_REVIEW'?'부분 취소/결제 상태 확인 필요':row.state==='CANCELED'?(row.payment_key?'취소일과 환불액은 PG 명세 대조':'미결제 접수 취소: 환불 거래 없음'):'PG 수수료/실입금액은 정산명세 대조';
-    orders.push([row.id,kstTime(row.created_at),kstTime(r.paidAt),p?.approvalDate||'',row.payment_mode||'미결제',STATE_NAMES[row.state]||row.state,c.rental?(row.fulfillment==='shipped'?'반납 완료':row.fulfillment==='processing'?'대여 중':'수령 예정'):(row.fulfillment==='shipped'?'출고 완료':row.fulfillment==='processing'?'부분 출고':'미출고'),c.name,c.phone,c.postcode,[c.address,c.address_detail].filter(Boolean).join(' '),row.subtotal,row.shipping,row.total,approved,fullCanceled,null,row.payment_key||'',p?.method||'',KIND_NAMES[row.doc_kind||e.kind||'card_receipt'],row.doc_status||'미발급',d?.approval_number||'',d?.purpose==='business'?'지출증빙':d?.purpose==='income'?'소득공제':'',d?.nts_status||'',e.corp_num||'',e.corp_name||'',e.email||'',row.carrier||'',row.tracking||'',review,c.rental?'렌탈':'구매',c.rental?.start_date||'',c.rental?.end_date||'',c.rental?.pickup_time||'',c.rental?.return_time||'',kstTime(c.rental?.actual_pickup_at),kstTime(c.rental?.actual_return_at),c._admin_note?.text||'',c._admin_cancellation?.reason||'',({preparing:'상품 준비 중',ready:'배송 대기',in_transit:'배송 중',delivered:'배송 완료'})[fulfillment.purchaseWorkflow(row,c)?.stage]||'',kstTime(fulfillment.purchaseWorkflow(row,c)?.delivered_at),fulfillment.purchaseWorkflow(row,c)?.delivery_source==='goodsflow'?'택배사 배송 완료 확인':fulfillment.purchaseWorkflow(row,c)?.delivery_source==='manual'?'관리자 수동 확인':'']);
+    orders.push([row.id,kstTime(row.created_at),kstTime(r.paidAt),p?.approvalDate||'',row.payment_mode||'미결제',STATE_NAMES[row.state]||row.state,c.rental?(row.fulfillment==='shipped'?'반납 완료':row.fulfillment==='processing'?'대여 중':'수령 예정'):(row.fulfillment==='shipped'?'출고 완료':row.fulfillment==='processing'?'부분 출고':'미출고'),c.name,c.phone,c.postcode,[c.address,c.address_detail].filter(Boolean).join(' '),row.subtotal,row.shipping,row.total,approved,fullCanceled,p?.status==='PARTIAL_CANCELED'?sums?.canceled_amount??null:null,row.payment_key||'',p?.method||'',KIND_NAMES[row.doc_kind||e.kind||'card_receipt'],row.doc_status||'미발급',d?.approval_number||'',d?.purpose==='business'?'지출증빙':d?.purpose==='income'?'소득공제':'',d?.nts_status||'',e.corp_num||'',e.corp_name||'',e.email||'',row.carrier||'',row.tracking||'',review,c.rental?'렌탈':'구매',c.rental?.start_date||'',c.rental?.end_date||'',c.rental?.pickup_time||'',c.rental?.return_time||'',kstTime(c.rental?.actual_pickup_at),kstTime(c.rental?.actual_return_at),c._admin_note?.text||'',c._admin_cancellation?.reason||'',({preparing:'상품 준비 중',ready:'배송 대기',in_transit:'배송 중',delivered:'배송 완료'})[fulfillment.purchaseWorkflow(row,c)?.stage]||'',kstTime(fulfillment.purchaseWorkflow(row,c)?.delivered_at),fulfillment.purchaseWorkflow(row,c)?.delivery_source==='goodsflow'?'택배사 배송 완료 확인':fulfillment.purchaseWorkflow(row,c)?.delivery_source==='manual'?'관리자 수동 확인':'',sums?.canceled_amount??null,sums?.balance_amount??null,kstTime(c._admin_purchase_confirmation?.confirmed_at)]);
     for(const line of JSON.parse(row.lines_json))lines.push([row.id,line.id,line.name,line.option||'',line.quantity,line.unit_price,Number.isSafeInteger(line.unit_price)?line.unit_price*line.quantity:null]);
     const history=fulfillment.shipments(row,c);
     for(const shipment of history)for(const line of shipment.items)shipments.push([row.id,shipment.id,shipment.purpose==='exchange'?'교환품':'주문상품',shipment.case_id||'',kstTime(shipment.created_at),kstTime(shipment.updated_at),shipment.carrier,shipment.tracking,line.id,line.name,line.option,line.quantity,shipment.actor||'',shipment.updated_by||'',kstTime(shipment.delivered_at),shipment.delivered_at?(shipment.delivery_source==='goodsflow'?'택배사 배송 완료 확인':'관리자 수동 확인'):'',shipment.delivery_confirmed_by||'']);

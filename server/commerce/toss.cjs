@@ -28,6 +28,8 @@ function toss(env,fetcher=fetch){
   if(!v||!paymentKey(v.paymentKey)||typeof v.orderId!=='string'||!Number.isSafeInteger(v.totalAmount)||v.currency!=='KRW'||(mid&&v.mId!==mid))throw new ShopError(502,'토스페이먼츠 거래 연결을 확인해주세요.');
   const c=v.cashReceipt,approval=v.card?.approveNo;
   return {provider:'toss',orderId:v.orderId,paymentKey:v.paymentKey,totalAmount:v.totalAmount,currency:v.currency,status:v.status,
+   balanceAmount:v.balanceAmount,isPartialCancelable:v.isPartialCancelable===true,useEscrow:v.useEscrow===true,
+   cancels:Array.isArray(v.cancels)?v.cancels.map(c=>({transactionKey:c.transactionKey,cancelAmount:c.cancelAmount,cancelStatus:c.cancelStatus,canceledAt:c.canceledAt})):[],
    method:v.card?'CARD':['계좌이체','TRANSFER'].includes(v.method)?'BANK':'OTHER',
    approvedAt:v.approvedAt,approvalDate:typeof v.approvedAt==='string'?v.approvedAt.slice(0,10):null,
    approvalNumber:typeof approval==='string'&&/^\d{1,20}$/.test(approval)?approval:null,
@@ -64,6 +66,14 @@ function toss(env,fetcher=fetch){
    matchPayment(remote,{...order,payment_key:auth.paymentKey});
    if(remote.status!=='CANCELED')throw new ShopError(503,'결제 취소 결과를 확인해주세요.');
    return {canceled:true,paymentKey:auth.paymentKey};
+  },
+  async cancel(order,operation){
+   const remote=await get(order.payment_key);matchPayment(remote,order);
+   if(!Number.isSafeInteger(operation.amount)||operation.amount<1||!Number.isSafeInteger(operation.before_balance)||operation.amount>operation.before_balance||typeof operation.reason!=='string'||operation.reason.length<2||operation.reason.length>200||!/^RF-[a-zA-Z0-9-]{20,60}$/.test(operation.id))throw new ShopError(400,'취소 금액과 사유를 확인해주세요.');
+   // refundableAmount is an additional provider-side concurrent balance check.
+   // Replays MUST use the same key and body, including after an ambiguous timeout.
+   const result=normalized(await call('POST','/'+encodeURIComponent(order.payment_key)+'/cancel',{cancelReason:operation.reason,cancelAmount:operation.amount,refundableAmount:operation.before_balance},stable('refund',operation.id)));
+   matchPayment(result,order);return result;
   },get
  };
 }

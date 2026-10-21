@@ -32,7 +32,7 @@ function runtime(env=process.env){
  const admin=adminService({db,service,dataKey:env.SHOP_ORDER_DATA_KEY});
  const drafts=adminDraftService({db,catalog,detail,dataKey:env.SHOP_ORDER_DATA_KEY});
  const bps=Number(env.SHOP_POINTS_EARN_BPS||0);if(!Number.isSafeInteger(bps)||bps<0||bps>1000)throw Error('Invalid points policy');
- const members=memberService({db,repo,dataKey:env.SHOP_ORDER_DATA_KEY,sessionKey:env.SHOP_SESSION_KEY,enabled:env.SHOP_MEMBERS_ENABLED==='true',earnBasisPoints:bps,testing:cacheKey==='qa'});
+ const members=memberService({db,repo,dataKey:env.SHOP_ORDER_DATA_KEY,sessionKey:env.SHOP_SESSION_KEY,enabled:env.SHOP_MEMBERS_ENABLED==='true',earnBasisPoints:bps,confirmOrder:(...args)=>service.confirmPurchase(...args),testing:cacheKey==='qa'});
  const social=socialService({db,members,dataKey:env.SHOP_ORDER_DATA_KEY,sessionKey:env.SHOP_SESSION_KEY,env});
  const crm=crmService({db,dataKey:env.SHOP_ORDER_DATA_KEY,testing:cacheKey==='qa'});
  const value={repo,service,payment,documents,admin,drafts,members,social,crm};cached.set(cacheKey,value);return value;

@@ -7,6 +7,7 @@ const {matchPayment,receiptUrl}=require('./toss.cjs');
 const {rentalSchedule,rentalCustomer,rentalQuote}=require('./rental.cjs');
 const {evidenceFields,paymentEvidence}=require('./evidence.cjs');
 const fulfillment=require('./fulfillment.cjs');
+const finance=require('./lifecycle.cjs');
 const {shippingLabels,labelView,labelPending}=require('./shipping-labels.cjs');
 const uuid=()=>crypto.randomUUID();
 function repository(db,clock=()=>Date.now()){
@@ -20,7 +21,7 @@ function repository(db,clock=()=>Date.now()){
    {sql:'INSERT INTO shop_order_events(id,order_id,actor,action,created_at,version) SELECT ?,?,?,?,?,? WHERE changes()=1',params:[uuid(),row.id,actor,action,now,version]},
    ...(shippingJob?[{sql:'INSERT INTO shop_shipping_sync(order_id,next_attempt) SELECT ?,? WHERE changes()=1 ON CONFLICT(order_id) DO UPDATE SET next_attempt=excluded.next_attempt',params:[row.id,shippingJob.next_attempt]}]:[]),
    ...(document?[{sql:'INSERT INTO shop_documents(order_id,kind,status,result_cipher,created_at,updated_at,next_attempt) SELECT ?,?,?,?,?,?,? FROM shop_orders WHERE id=? AND version=? AND state=\'PAID\' ON CONFLICT(order_id) DO NOTHING',params:[row.id,document.kind,document.status,document.result_cipher,now,now,document.status==='issued'?now+86400000:0,row.id,version]}]:[]),
-   ...(['CANCELED','PAYMENT_REVIEW'].includes(fields.state)?[{sql:"UPDATE shop_documents SET status='review',updated_at=?,version=version+1 WHERE order_id=? AND EXISTS(SELECT 1 FROM shop_orders WHERE id=? AND version=?)",params:[now,row.id,row.id,version]},
+   ...(['CANCELED','PAYMENT_REVIEW'].includes(fields.state)&&!['refund_requested','customer_cancel_requested','payment_done'].includes(action)?[{sql:"UPDATE shop_documents SET status='review',updated_at=?,version=version+1 WHERE order_id=? AND EXISTS(SELECT 1 FROM shop_orders WHERE id=? AND version=?)",params:[now,row.id,row.id,version]},
     {sql:"INSERT INTO shop_points(id,member_id,amount,reason,kind,request_key,fingerprint,actor,source_order,created_at) SELECT ?,member_id,-amount,'주문 취소·환불 확인에 따른 적립 회수','reversal','reverse:'||source_order,?, ?,source_order,? FROM shop_points WHERE source_order=? AND kind='purchase' AND EXISTS(SELECT 1 FROM shop_orders WHERE id=? AND version=? AND state IN ('CANCELED','PAYMENT_REVIEW')) ON CONFLICT(request_key) DO NOTHING",params:[uuid(),hash(row.id),actor,now,row.id,row.id,version]}]:[])
   ]);
   if(!result[0].length)throw new ShopError(409,'주문 상태가 변경되었습니다. 새로고침 후 다시 확인해주세요.');
@@ -44,6 +45,9 @@ function repository(db,clock=()=>Date.now()){
   if(rows[0].attempts>max)throw new ShopError(429,'요청이 많습니다. 잠시 후 다시 시도해주세요.');
  }
  return {get,patch,insert,limit,
+  // Expiring poll markers share the existing TTL store; no customer data.
+  paymentDue:async now=>db.query("SELECT o.* FROM shop_orders o LEFT JOIN shop_rate_limits p ON p.key='payment-poll:'||o.id WHERE o.payment_key IS NOT NULL AND o.state IN ('PAID','PAYMENT_REVIEW') AND (p.expires_at IS NULL OR p.expires_at<=?) ORDER BY COALESCE(p.expires_at,0),o.created_at LIMIT 2",[now]),
+  paymentChecked:async(id,now)=>db.query("INSERT INTO shop_rate_limits(key,attempts,expires_at) VALUES(?,1,?) ON CONFLICT(key) DO UPDATE SET expires_at=excluded.expires_at",['payment-poll:'+id,now+900000]),
   shippingDue:async now=>db.query('SELECT order_id FROM shop_shipping_sync WHERE next_attempt IS NOT NULL AND next_attempt<=? ORDER BY next_attempt LIMIT 2',[now]),
   scheduleShipping:async(id,next)=>db.query('UPDATE shop_shipping_sync SET next_attempt=? WHERE order_id=?',[next,id]),
   calendar:async id=>(await db.query('SELECT status,event_url,error_code,checked_at FROM shop_calendar_sync WHERE order_id=?',[id]))[0]||null,
@@ -56,7 +60,7 @@ function orderService({repo,catalog,detail,giftProduct=null,dataKey,sessionKey=d
  const cipher=protect(dataKey),returns=sessions(sessionKey,clock);
  const dto=(row,admin=false)=>{
   const stored=cipher.decrypt(row.customer_cipher),customer=Object.fromEntries(Object.entries(stored).filter(([key])=>!key.startsWith('_admin_'))),rental=customer.rental||null,history=fulfillment.shipments(row,stored);
-  return {id:row.id,kind:rental?'rental':'purchase',rental,gift:customer.gift||null,purchase_workflow:fulfillment.purchaseWorkflow(row,stored),state:row.state,payment_mode:row.payment_mode,lines:JSON.parse(row.lines_json),subtotal:row.subtotal,shipping:row.shipping,total:row.total,quote_version:row.quote_version,quote_expires:row.quote_expires,fulfillment:row.fulfillment,carrier:row.carrier,tracking:row.tracking,shipments:fulfillment.publicShipments(history),created_at:row.created_at,updated_at:row.updated_at,version:row.version,evidence_kind:customer.evidence?.kind||'card_receipt',...(admin?{customer,admin_shipping_label:labelView(stored._admin_shipping_label),admin_note:stored._admin_note||null,admin_cancellation:stored._admin_cancellation||null,admin_cases:fulfillment.adminCases(stored._admin_cases||[],history)}:{})};
+  return {id:row.id,kind:rental?'rental':'purchase',rental,gift:customer.gift||null,...finance.view(row,stored,cipher,admin),purchase_workflow:fulfillment.purchaseWorkflow(row,stored),state:row.state,payment_mode:row.payment_mode,lines:JSON.parse(row.lines_json),subtotal:row.subtotal,shipping:row.shipping,total:row.total,quote_version:row.quote_version,quote_expires:row.quote_expires,fulfillment:row.fulfillment,carrier:row.carrier,tracking:row.tracking,shipments:fulfillment.publicShipments(history),created_at:row.created_at,updated_at:row.updated_at,version:row.version,evidence_kind:customer.evidence?.kind||'card_receipt',...(admin?{customer,admin_shipping_label:labelView(stored._admin_shipping_label),admin_note:stored._admin_note||null,admin_cancellation:stored._admin_cancellation||null,admin_cases:fulfillment.adminCases(stored._admin_cases||[],history)}:{})};
  };
  async function detailed(row,admin=false){
   const document=documents?await documents.get(row.id):null;
@@ -66,12 +70,17 @@ function orderService({repo,catalog,detail,giftProduct=null,dataKey,sessionKey=d
  async function own(id,owner){const row=await repo.get(id);if(!row||row.customer_hash!==owner)throw new ShopError(404,'주문을 찾을 수 없습니다. 주문한 브라우저에서 다시 확인해주세요.');return row;}
  async function applyPayment(row,remote,actor='payment'){
   const status=matchPayment(remote,row);
-  const next=status==='DONE'?'PAID':status==='CANCELED'?'CANCELED':status==='PARTIAL_CANCELED'?'PAYMENT_REVIEW':null;
+  const customer=cipher.decrypt(row.customer_cipher),prior=row.payment_receipt_cipher?cipher.decrypt(row.payment_receipt_cipher):null;
+  if(remote.balanceAmount!==undefined)finance.amounts(remote,row,true);
+  const next=status==='DONE'?(finance.blocked(customer)?'PAYMENT_REVIEW':'PAID'):status==='CANCELED'?'CANCELED':status==='PARTIAL_CANCELED'?'PAYMENT_REVIEW':null;
   if(!next)throw new ShopError(503,'결제 결과를 확인 중입니다. 중복 결제하지 말고 잠시 후 주문 상태를 확인해주세요.');
-  if(row.state===next)return row;
-  if(row.state==='CANCELED')throw new ShopError(409,'취소된 결제의 상태 확인이 필요합니다.');
-  try{return await repo.patch(row,{state:next},actor,'payment_'+status.toLowerCase());}
-  catch(error){if(error.status===409){const current=await repo.get(row.id);if(current?.state===next&&current.payment_key===row.payment_key&&current.total===row.total)return current;}throw error;}
+  if(prior?.balanceAmount!==undefined&&remote.balanceAmount>prior.balanceAmount)throw new ShopError(409,'결제 잔액이 이전 확인보다 증가했습니다. 거래를 대조해주세요.');
+  const receipt={...prior,...remote};
+  if(row.state===next&&(JSON.stringify(prior)===JSON.stringify(receipt)||!prior&&remote.status==='DONE'&&remote.balanceAmount===undefined))return row;
+  if(row.state==='CANCELED'&&next!=='CANCELED')throw new ShopError(409,'취소된 결제의 상태 확인이 필요합니다.');
+  customer._admin_payment_checked_at=clock();
+  if(next==='CANCELED'&&customer._admin_cancel_request?.status==='requested'){customer._admin_cancel_request.status='completed';customer._admin_cancel_request.response='결제사 전액 취소 확인';}
+  return repo.patch(row,{state:next,payment_receipt_cipher:cipher.encrypt(receipt),customer_cipher:cipher.encrypt(customer)},actor,'payment_'+status.toLowerCase());
  }
  async function rentalMove(id,input,returning,actor){
   if(!payment)throw new ShopError(503,'토스페이먼츠 결제 서비스 연결을 준비 중입니다.');
@@ -119,6 +128,7 @@ function orderService({repo,catalog,detail,giftProduct=null,dataKey,sessionKey=d
  }
  return {
   dto,invoiceEnabled,
+  ...finance.lifecycle({repo,cipher,payment,clock,own,editable,detailed,applyPayment,testing}),
   ...shippingLabels({repo,cipher,provider:labelProvider,editable,purchaseCustomer,verifiedForShipping,detailed,clock}),
   async workflow(id,input,actor='owner'){
    if(!['preparing','ready','delivered'].includes(input.stage))throw new ShopError(400,'상품 준비·배송 대기·배송 완료 중 처리 단계를 선택해주세요.');
