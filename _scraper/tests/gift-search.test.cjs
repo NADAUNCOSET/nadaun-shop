@@ -9,7 +9,7 @@ test('all gift IDs have counted categories and exact detail buckets without priv
  const counts=new Map();let verified=0;
  for(const p of gift.data.products){
   assert.match(p.id,/^[1-9]\d+$/);
-  assert.deepEqual(Object.keys(p).sort(),['category_ids','detail_available','id','image','name','soldout']);
+  assert(Object.keys(p).every(k=>['category_ids','detail_available','id','image','name','soldout','manufacturer_label','origin','feed_category','feed_observed_at','pricing_available','pricing_observed_at'].includes(k)));
   for(const id of p.category_ids){assert(gift.categories.has(id));counts.set(id,(counts.get(id)||0)+1);}
   if(p.detail_available)verified++;
  }
@@ -18,14 +18,14 @@ test('all gift IDs have counted categories and exact detail buckets without priv
  let count=0;
  for(let n=0;n<256;n++){
   const bucket=JSON.parse(fs.readFileSync(`data/gift/details/${n.toString(16).padStart(2,'0')}.json`));
-  for(const [id,d] of Object.entries(bucket)){assert.equal(Number(id)%256,n);assert(gift.products.get(id).detail_available);assert.equal(d.id,id);assert.deepEqual(Object.keys(d).sort(),['choices','id','images','minimum_quantity','specifications']);count++;}
+  for(const [id,d] of Object.entries(bucket)){assert.equal(Number(id)%256,n);assert(gift.products.get(id).detail_available);assert.equal(d.id,id);assert(Object.keys(d).every(k=>['choices','id','images','minimum_quantity','specifications','pricing'].includes(k)));if(d.pricing)require('../../assets/shop/gift-pricing.js').validate(d.pricing);count++;}
  }
  assert.equal(count,verified);
 });
 
 test('gift browsing is internal, paginated and keeps the upward path at the last category',()=>{
  const home=gift.directory(new URLSearchParams());assert.equal(home.status,200);
- assert.equal((home.body.match(/class="category-image-tile"/g)||[]).length,12);
+ assert.equal((home.body.match(/class="category-image-tile"/g)||[]).length,gift.data.categories.filter(c=>!c.parent_ids.length).length);
  assert.equal((home.body.match(/class="product-card /g)||[]).length,48);
  assert(!home.body.includes('nadaun-gift.com'));
  assert(!home.body.includes('brand-grid'));

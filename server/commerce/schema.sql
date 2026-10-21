@@ -1,3 +1,12 @@
+CREATE TABLE IF NOT EXISTS shop_gift_suppliers (
+  product_id TEXT NOT NULL,
+  version INTEGER NOT NULL CHECK(version > 0),
+  private_cipher TEXT NOT NULL,
+  updated_at INTEGER NOT NULL,
+  actor_cipher TEXT NOT NULL,
+  PRIMARY KEY(product_id, version)
+);
+
 CREATE TABLE IF NOT EXISTS shop_orders (
   id TEXT PRIMARY KEY,
   customer_hash TEXT NOT NULL,

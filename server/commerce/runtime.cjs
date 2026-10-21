@@ -12,6 +12,7 @@ const {goodsflow}=require('./goodsflow.cjs');
 const {memberService}=require('./members.cjs');
 const {socialService}=require('./social.cjs');
 const {crmService}=require('./crm.cjs');
+const {giftAdminService}=require('./gift-admin.cjs');
 const cached=new Map();
 function runtime(env=process.env){
  const cacheKey=env.SHOP_TEST_CONTEXT==='true'?'qa':'live';if(cached.has(cacheKey))return cached.get(cacheKey);
@@ -22,8 +23,15 @@ function runtime(env=process.env){
   if(!cache.has(p.detail_bucket))cache.set(p.detail_bucket,JSON.parse(fs.readFileSync(path.join(process.cwd(),'data/catalog/details',p.detail_bucket+'.json'),'utf8')));
   const d=cache.get(p.detail_bucket)[p.id];if(!d)throw Error('Missing detail');return d;
  }
- let giftProducts;
- function giftProduct(id){if(!giftProducts)giftProducts=new Map(JSON.parse(fs.readFileSync(path.join(process.cwd(),'data/gift/catalog.json'),'utf8')).products.map(p=>[p.id,p]));return giftProducts.get(id);}
+ let giftProducts,giftCatalog;const giftBuckets=new Map();
+ function giftData(){if(!giftCatalog){giftCatalog=JSON.parse(fs.readFileSync(path.join(process.cwd(),'data/gift/catalog.json'),'utf8'));giftProducts=new Map(giftCatalog.products.map(p=>[p.id,p]));}return giftCatalog;}
+ function giftProduct(id){
+  giftData();const p=giftProducts.get(id);if(!p)return null;
+  if(!p.detail_available)return p;
+  const bucket=(Number(id)%256).toString(16).padStart(2,'0');
+  if(!giftBuckets.has(bucket))giftBuckets.set(bucket,JSON.parse(fs.readFileSync(path.join(process.cwd(),'data/gift/details',bucket+'.json'),'utf8')));
+  return {...p,...giftBuckets.get(bucket)[id]};
+ }
  const db=database(env),repo=repository(db);
  let payment=null,invoice=null;
  if(env.SHOP_ORDERS_ENABLED==='true'){payment=toss(env);if(cacheKey!=='qa')invoice=popbill(env);}
@@ -35,6 +43,7 @@ function runtime(env=process.env){
  const members=memberService({db,repo,dataKey:env.SHOP_ORDER_DATA_KEY,sessionKey:env.SHOP_SESSION_KEY,enabled:env.SHOP_MEMBERS_ENABLED==='true',earnBasisPoints:bps,confirmOrder:(...args)=>service.confirmPurchase(...args),testing:cacheKey==='qa'});
  const social=socialService({db,members,dataKey:env.SHOP_ORDER_DATA_KEY,sessionKey:env.SHOP_SESSION_KEY,env});
  const crm=crmService({db,dataKey:env.SHOP_ORDER_DATA_KEY,testing:cacheKey==='qa'});
- const value={repo,service,payment,documents,admin,drafts,members,social,crm};cached.set(cacheKey,value);return value;
+ const giftAdmin=giftAdminService({db,catalog:giftData,product:giftProduct,dataKey:env.SHOP_ORDER_DATA_KEY});
+ const value={repo,service,payment,documents,admin,drafts,members,social,crm,giftAdmin};cached.set(cacheKey,value);return value;
 }
 module.exports={runtime};

@@ -61,5 +61,22 @@ class PublicGiftTests(unittest.TestCase):
         for url in ('javascript:alert(1)','https://user:password@example.com/a.jpg','file:///private/a.jpg'):
             with self.assertRaises(ValueError):image_url(url)
 
+    def test_price_projection_is_public_whitelisted_and_preserves_observation(self):
+        with self.fixture() as db:
+            d=json.loads(db.execute("SELECT record_json FROM public_details WHERE id='101'").fetchone()[0])
+            d.update(observed_at='2026-09-08T00:00:00+00:00',vat_rate='0.1')
+            d['options'][0]['tiers']=[{'minimum_quantity':100,'unit_price_ex_vat':1950,'factory_cost':1500}]
+            db.execute("UPDATE public_details SET record_json=? WHERE id='101'",(json.dumps(d),))
+            catalog,details=project(db,[{'id':'11','name':'타올'}],include_pricing=True)
+            price=details['101']['pricing']
+            self.assertEqual(price['observed_at'],d['observed_at'])
+            self.assertEqual(price['options'][0]['tiers'],[{'minimum_quantity':100,'unit_price_ex_vat':1950}])
+            self.assertNotIn('factory_cost',json.dumps(details))
+            self.assertNotIn('private@example.com',json.dumps(details))
+            self.assertTrue(next(p for p in catalog['products'] if p['id']=='101')['pricing_available'])
+            d['options'][0]['tiers'][0]['unit_price_ex_vat']=0
+            db.execute("UPDATE public_details SET record_json=? WHERE id='101'",(json.dumps(d),))
+            with self.assertRaises(ValueError):project(db,[{'id':'11','name':'타올'}],include_pricing=True)
+
 
 if __name__=='__main__':unittest.main()

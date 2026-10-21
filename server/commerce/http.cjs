@@ -1,6 +1,6 @@
 'use strict';
 const {ShopError,hash,random,sessions,passwordMatches,adminEmail,identityMatches}=require('./security.cjs');
-function endpoint({service,repo,adminService=null,draftService=null,members=null,cookiePrefix='nadaun',testing=false,sessionKey,password,email='',enabled=true,rentalEnabled=false,giftEnabled=false,origin='https://shop.nadaun.co',adminOrigins=['https://order.nadaun.co'],clock=()=>Date.now()}){
+function endpoint({service,repo,adminService=null,draftService=null,giftAdmin=null,members=null,cookiePrefix='nadaun',testing=false,sessionKey,password,email='',enabled=true,rentalEnabled=false,giftEnabled=false,origin='https://shop.nadaun.co',adminOrigins=['https://order.nadaun.co'],clock=()=>Date.now()}){
  const session=sessions(sessionKey,clock);
  const configuredEmail=email?adminEmail(email):null;
  if(email&&!configuredEmail)throw new ShopError(503,'관리자 로그인 설정을 확인해주세요.');
@@ -38,6 +38,11 @@ function endpoint({service,repo,adminService=null,draftService=null,members=null
    if(action==='logout'&&req.method==='POST'){res.setHeader('Set-Cookie',cookie('admin','',0));return res.status(200).json({authenticated:false});}
    if(action.startsWith('admin-')){
     if(!admin)throw new ShopError(401,'관리자 로그인이 필요합니다.');
+    if(giftAdmin){
+     if(action==='admin-gift-products'&&req.method==='GET')return res.status(200).json(await giftAdmin.list(Object.fromEntries(url.searchParams)));
+     if(action==='admin-gift-product'&&req.method==='GET')return res.status(200).json(await giftAdmin.get(url.searchParams.get('id')));
+     if(action==='admin-gift-supplier-save'&&req.method==='POST')return res.status(200).json(await giftAdmin.save(input.product_id,input,admin));
+    }
     if(testing&&action==='admin-qa-deliver'&&req.method==='POST')return res.status(200).json({order:await service.qaDeliver(input.id,input,admin)});
     if(testing&&action==='admin-qa-cancel'&&req.method==='POST')return res.status(200).json({order:await service.qaCancel(input.id,input,admin)});
     if(action==='admin-label-status'&&req.method==='GET')return res.status(200).json(await service.labelStatus());

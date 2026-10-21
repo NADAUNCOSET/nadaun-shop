@@ -1,7 +1,7 @@
 """Project the saved public gift inventory into an internal shop directory.
 
 Reads inventory.sqlite3 in read-only mode. Never opens suppliers.sqlite3,
-requests the source site, or exports original pricing and private records.
+requests the source site, or exports private supplier records.
 """
 from collections import Counter, defaultdict
 import hashlib
@@ -14,6 +14,7 @@ from urllib.parse import urlparse
 
 from gift_supplier_registry import PRIVATE_ROOT
 from sync_shop_sources import ROOT
+from gift_pricing_projection import pricing
 
 PUBLIC = ROOT/'data/gift'
 LOCAL_LABELS = {'186':'안전·소방용품','179':'자동차 기타용품','56756':'홍보용 사탕·젤리'}
@@ -39,7 +40,7 @@ def save(path, data):
     if not path.exists() or path.read_text()!=content:path.write_text(content)
 
 
-def project(db, source_categories):
+def project(db, source_categories, include_pricing=False, reviewed_details=()):
     roots=[dict(zip(('id','name','complete'),r)) for r in db.execute('SELECT id,name,complete FROM roots ORDER BY rowid')]
     if not roots or not all(r['complete'] for r in roots) or db.execute("SELECT value FROM scan_state WHERE key='final_verified'").fetchone()!=('1',):
         raise ValueError('Gift inventory coverage is not verified')
@@ -53,6 +54,9 @@ def project(db, source_categories):
         members[pid].append(rid)
     if set(members)!=set(raw):raise ValueError('Gift products are missing category membership')
     details={pid:json.loads(record) for pid,record in db.execute('SELECT id,record_json FROM public_details')}
+    for d in reviewed_details:
+        if d['product_id'] not in raw:raise ValueError('Reviewed detail is missing inventory identity')
+        details[d['product_id']]=d
     categories={r['id']:{'id':r['id'],'name':text(r['name']),'parent_ids':[],'count':0} for r in roots}
     products=[]; public_details={}; observations=[]
     for pid in sorted(raw,key=int,reverse=True):
@@ -73,7 +77,7 @@ def project(db, source_categories):
         products.append(record)
         observations.append(p['observed_at'])
         if verified:
-            # Explicit public whitelist. No supplier contacts, source prices,
+            # Explicit public whitelist. No supplier contacts, private costs,
             # credentials, exposure flags or opaque original records.
             choices=[]
             for option in d.get('options',[]):
@@ -83,6 +87,12 @@ def project(db, source_categories):
                 'images':list(dict.fromkeys(image_url(u) for u in [*d.get('main_images',[]),*d.get('detail_images',[])])),
                 'specifications':[{'name':text(s['name']),'value':text(s['value'])} for s in d.get('specifications',[])],
                 'minimum_quantity':d.get('minimum_quantity'),'choices':choices}
+            if include_pricing:
+                price=pricing(d)
+                if price:
+                    public_details[pid]['pricing']=price
+                    record['pricing_available']=True
+                    record['pricing_observed_at']=price['observed_at']
     for c in categories.values():
         rows=[p for p in products if c['id'] in p['category_ids']]
         keyword=REPRESENTATIVE.get(c['id'],'')
@@ -102,7 +112,12 @@ def project(db, source_categories):
 def build():
     source=json.loads((ROOT/'data/catalog/sources/nadaun-gift.json').read_text())
     with sqlite3.connect((PRIVATE_ROOT/'inventory.sqlite3').as_uri()+'?mode=ro',uri=True) as db:
-        catalog,details=project(db,source['categories'])
+        catalog,details=project(db,source['categories'],include_pricing=True,reviewed_details=json.loads((PRIVATE_ROOT/'commerce-integration-20261022/verified-public-details.json').read_text()))
+    merge_official_feed(catalog)
+    catalog['meta']['priced_product_count']=sum(bool(d.get('pricing')) for d in details.values())
+    catalog['meta']['price_option_count']=sum(len(d.get('pricing',{}).get('options',[])) for d in details.values())
+    catalog['meta']['price_tier_count']=sum(len(o['tiers']) for d in details.values() for o in d.get('pricing',{}).get('options',[]))
+    catalog['meta']['revision']=hashlib.sha256(json.dumps([catalog,details],ensure_ascii=False,sort_keys=True).encode()).hexdigest()[:16]
     save(PUBLIC/'catalog.json',catalog)
     save(PUBLIC/'manifest.json',{'meta':catalog['meta'],'categories':catalog['categories']})
     buckets={f'{n:02x}':{} for n in range(256)}
@@ -120,6 +135,53 @@ def build():
     (ROOT/'gift-sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<sitemap><loc>https://shop.nadaun.co/'+f+'</loc></sitemap>' for f in maps)+'</sitemapindex>\n')
     print(json.dumps(catalog['meta'],ensure_ascii=False),flush=True)
     return catalog
+
+
+def merge_official_feed(catalog):
+    """Union owner-provided IDs. Feed omission never deletes historical products.
+
+    price_pc may represent a set, so it is intentionally not a unit price.
+    Unknown labels remain visible under a clearly named source-feed group.
+    """
+    folder=PRIVATE_ROOT/'full-acquisition-20261021'
+    feed=folder/'official-feed-products.jsonl'
+    if not feed.exists():raise ValueError('Validated owner feed is required')
+    receipt=json.loads((folder/'feed-validation.json').read_text())
+    rows=[json.loads(line) for line in feed.read_text().splitlines() if line.strip()]
+    if len(rows)!=receipt['validated_rows'] or len({r['id'] for r in rows})!=len(rows):raise ValueError('Feed count mismatch')
+    products={p['id']:p for p in catalog['products']}
+    cats={c['id']:c for c in catalog['categories']}
+    labels=defaultdict(list)
+    for c in cats.values():labels[text(c['name'])].append(c['id'])
+    aliases={'텀블러':'56521','수건':'282','칼라스티커':'56889'}
+    new_count=0
+    for row in rows:
+        pid=row['id']; label=text(row['category_name1'])
+        if pid not in products:
+            matches=labels.get(label,[])
+            cid=matches[0] if len(matches)==1 else aliases.get(label)
+            if cid not in cats:
+                rid='feed';cid='feed-'+hashlib.sha256(label.encode()).hexdigest()[:12]
+                cats.setdefault(rid,{'id':rid,'name':'본사 제공 상품','parent_ids':[],'count':0})
+                cats.setdefault(cid,{'id':cid,'name':label or '분류 확인 중','parent_ids':[rid],'count':0})
+            products[pid]={'id':pid,'name':text(row['title']),'image':image_url(row['image_link']),
+                'category_ids':list(dict.fromkeys([*cats[cid]['parent_ids'],cid])),
+                'detail_available':False,'soldout':None}
+            new_count+=1
+        p=products[pid]
+        p.update(manufacturer_label=text(row['maker']),origin=text(row['origin']),
+            feed_category=label,feed_observed_at=receipt['parsed_at'])
+    catalog['products']=sorted(products.values(),key=lambda p:int(p['id']),reverse=True)
+    for c in cats.values():
+        members=[p for p in products.values() if c['id'] in p['category_ids']]
+        c['count']=len(members)
+        if not c.get('image') and members:c.update(image=members[0]['image'],product_id=members[0]['id'])
+    catalog['categories']=list(cats.values())
+    catalog['meta'].update(product_count=len(products),category_count=len(cats),
+        leaf_category_count=sum(bool(c['parent_ids']) for c in cats.values()),
+        official_feed_count=len(rows),official_feed_added=new_count,official_feed_observed_at=receipt['parsed_at'],
+        official_feed_sha256=receipt['source_sha256'],all_current_details_verified=False,
+        pricing='quantity-estimate-then-confirm')
 
 
 if __name__=='__main__':build()

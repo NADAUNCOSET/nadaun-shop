@@ -7,8 +7,8 @@ module.exports=async function(req,res){
  const {env,cookiePrefix,testing}=selected,key=testing?'qa':'live';let handler=handlers.get(key);
  if(!handler){
   try{
-   const {repo,service,admin,drafts,members}=runtime(env);
-   handler=endpoint({service,repo,adminService:admin,draftService:drafts||null,members,cookiePrefix,testing,enabled:env.SHOP_ORDERS_ENABLED==='true',rentalEnabled:env.SHOP_RENTAL_REQUESTS_ENABLED==='true',giftEnabled:env.SHOP_GIFT_REQUESTS_ENABLED==='true',sessionKey:env.SHOP_SESSION_KEY,password:env.SHOP_ADMIN_PASSWORD_HASH,email:env.SHOP_ADMIN_EMAIL});handlers.set(key,handler);
+   const {repo,service,admin,drafts,members,giftAdmin}=runtime(env);
+   handler=endpoint({service,repo,adminService:admin,draftService:drafts||null,giftAdmin,members,cookiePrefix,testing,enabled:env.SHOP_ORDERS_ENABLED==='true',rentalEnabled:env.SHOP_RENTAL_REQUESTS_ENABLED==='true',giftEnabled:env.SHOP_GIFT_REQUESTS_ENABLED==='true',sessionKey:env.SHOP_SESSION_KEY,password:env.SHOP_ADMIN_PASSWORD_HASH,email:env.SHOP_ADMIN_EMAIL});handlers.set(key,handler);
   }catch{
    res.setHeader('Cache-Control','no-store');res.setHeader('X-Robots-Tag','noindex');
    if(req.method==='GET'&&new URL(req.url,'https://shop.nadaun.co').searchParams.get('action')==='config')return res.status(200).json({ordersEnabled:false,rentalRequestsEnabled:false,giftRequestsEnabled:false,adminEnabled:false,adminLoginRequiresEmail:!!process.env.SHOP_ADMIN_EMAIL,paymentProvider:'toss'});
