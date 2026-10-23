@@ -234,11 +234,13 @@ def main():
         p = json.loads(pending.read_text()); synchronize_head(p)
         deploy_and_verify(p['commit'], p['hashes'], Path(p['run'])); finish(p)
         return
+    if (ROOT/'_scraper/.sync-state/run.lock').exists():
+        print('Another catalog worker is active; requests=0'); return
+    from gift_mirror_health import run as health_check
+    health_check(ROOT)
     previous = STATE/'status.json'
     if previous.exists() and json.loads(previous.read_text()).get('state') == 'requires_review':
         print('Gift daily sync paused for failure review; requests=0'); return
-    if (ROOT/'_scraper/.sync-state/run.lock').exists():
-        print('Another catalog worker is active; requests=0'); return
     ready, reason = check_access()
     if not ready:
         save(STATE/'status.json', {'state': 'waiting_source_access', 'checked_at': now(),
