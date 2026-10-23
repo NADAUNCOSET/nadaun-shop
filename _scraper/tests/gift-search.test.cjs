@@ -9,11 +9,11 @@ test('all gift IDs have counted categories and exact detail buckets without priv
  const counts=new Map();let verified=0;
  for(const p of gift.data.products){
   assert.match(p.id,/^[1-9]\d+$/);
-  assert(Object.keys(p).every(k=>['category_ids','detail_available','id','image','name','soldout','manufacturer_label','origin','feed_category','feed_observed_at','pricing_available','pricing_observed_at'].includes(k)));
-  for(const id of p.category_ids){assert(gift.categories.has(id));counts.set(id,(counts.get(id)||0)+1);}
+  assert(Object.keys(p).every(k=>['category_ids','detail_available','id','image','name','soldout','manufacturer_label','origin','feed_category','feed_observed_at','pricing_available','pricing_observed_at','source_status','source_status_at','source_missing_since','source_missing_snapshots'].includes(k)));
+  for(const id of p.category_ids){assert(gift.categories.has(id));if(p.source_status!=='withdrawn')counts.set(id,(counts.get(id)||0)+1);}
   if(p.detail_available)verified++;
  }
- for(const c of gift.data.categories){assert.equal(c.count,counts.get(c.id));assert(gift.products.get(c.product_id).category_ids.includes(c.id));}
+ for(const c of gift.data.categories){assert.equal(c.count,counts.get(c.id)||0);if(c.count)assert(gift.products.get(c.product_id).category_ids.includes(c.id));}
  assert.equal(verified,gift.data.meta.detail_count);
  let count=0;
  for(let n=0;n<256;n++){
@@ -54,7 +54,7 @@ test('unified search returns purchase, rental and gifts and isolates scope',()=>
   const rows=search.results(q);assert(rows.some(p=>p.search_kind===kind),q);
   const result=search.render(new URLSearchParams({q,scope:kind}));assert(result.counts[kind]>0);
  }
- const id=gift.data.products[0].id;assert.equal(search.results(id)[0].id,id);
+ const id=gift.data.products.find(p=>p.source_status!=='withdrawn').id;assert.equal(search.results(id)[0].id,id);
  assert.equal(search.results('타월').filter(p=>p.search_kind==='gift').length,search.results('타올').filter(p=>p.search_kind==='gift').length);
 });
 
@@ -109,4 +109,16 @@ test('CFexpress aliases keep A/B types separate in unified and browser search',(
  const product=catalog.products.find(p=>p.id===homan[0].id);assert.equal(product.sale_price,20000);assert.equal(product.brand_id,'homan');assert(product.type_ids.includes('rent:146'));
  assert.deepEqual(matching.tokens('CFexpress A 320GB'),['cfexpressa','320gb']);
  assert.equal(search.results('CFexpress A 320GB').filter(p=>p.kind==='rental').length,1);
+});
+
+
+test('confirmed source withdrawal blocks listing, unified search and direct URL without deleting history',()=>{
+ const p=gift.data.products.find(p=>p.source_status!=='withdrawn'),before=p.source_status;
+ try{
+  p.source_status='withdrawn';
+  assert(!gift.find(p.id).some(r=>r.id===p.id));
+  assert(!search.results(p.id).some(r=>r.search_kind==='gift'&&r.id===p.id));
+  const page=gift.detail(p.id);assert.equal(page.status,410);assert(page.noindex);
+  assert(!page.body.includes('data-gift-order'));assert(gift.products.has(p.id));
+ }finally{if(before===undefined)delete p.source_status;else p.source_status=before;}
 });

@@ -11,7 +11,7 @@ const indexed=data.products.map(p=>({p,text:normalize([p.id,p.name,...p.category
 function tokens(query){return String(query||'').trim().slice(0,120).split(/\s+/).filter(Boolean).map(normalize);}
 function find(query='',category=''){
  const words=tokens(query);
- return indexed.filter(({p,text})=>(!category||p.category_ids.includes(category))&&words.every(w=>text.includes(w))).map(x=>x.p);
+ return indexed.filter(({p,text})=>p.source_status!=='withdrawn'&&(!category||p.category_ids.includes(category))&&words.every(w=>text.includes(w))).map(x=>x.p);
 }
 function href(params={},anchor=''){
  const query=new URLSearchParams(Object.entries(params).filter(([,v])=>v!==''&&v!==null&&v!==undefined));
@@ -31,8 +31,9 @@ function directory(params){
  if(category&&!selected)return {status:404,title:'카테고리를 찾을 수 없습니다',body:'<h1>카테고리를 찾을 수 없습니다.</h1><a href="/gifts.html">기프트 전체보기</a>'};
  const rows=find(q,category),page=queryPage(params,rows.length);
  if(page===null)return {status:404,title:'페이지를 찾을 수 없습니다',body:'<h1>페이지를 찾을 수 없습니다.</h1><a href="/gifts.html">기프트 전체보기</a>'};
- const roots=data.categories.filter(c=>!c.parent_ids.length);
- const top=selected?(selected.parent_ids.length?data.categories.filter(c=>c.parent_ids.some(id=>selected.parent_ids.includes(id))):data.categories.filter(c=>c.parent_ids.includes(category))):roots;
+ const visibleCategories=data.categories.filter(c=>c.count>0);
+ const roots=visibleCategories.filter(c=>!c.parent_ids.length);
+ const top=selected?(selected.parent_ids.length?visibleCategories.filter(c=>c.parent_ids.some(id=>selected.parent_ids.includes(id))):visibleCategories.filter(c=>c.parent_ids.includes(category))):roots;
  const parent=selected?.parent_ids[0];
  const trail=selected?`<span>›</span>${parent?`<a href="${href({category:parent})}">${esc(categories.get(parent).name)}</a><span>›</span>`:''}<span aria-current="page">${esc(selected.name)}</span>`:'';
  const children=selected?.parent_ids.length?[]:top;
@@ -44,6 +45,7 @@ function directory(params){
 }
 function detail(id){
  const p=products.get(id);if(!p)return {status:404,title:'상품을 찾을 수 없습니다',body:'<h1>상품을 찾을 수 없습니다.</h1><a href="/gifts.html">기프트 전체보기</a>'};
+ if(p.source_status==='withdrawn')return {status:410,title:'판매가 종료된 상품입니다',noindex:true,body:'<h1>판매가 종료된 상품입니다.</h1><p>기존 주문 내역은 마이페이지에서 확인하실 수 있습니다.</p><a href="/gifts.html">다른 기프트 상품 보기</a>'};
  const bucket=path.join(root,'data/gift/details', (Number(id)%256).toString(16).padStart(2,'0')+'.json');
  const d=p.detail_available?JSON.parse(fs.readFileSync(bucket,'utf8'))[id]:null;
  if(p.detail_available&&!d)throw Error('Verified gift detail missing');

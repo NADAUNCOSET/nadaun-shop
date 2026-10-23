@@ -2,7 +2,7 @@
 const crypto=require('node:crypto');
 const {ShopError,hash,protect,sessions}=require('./security.cjs');
 const {customerFields,quoteCatalog,positive}=require('./pricing.cjs');
-const {giftRequest,quoteGift}=require('./gift-orders.cjs');
+const {giftRequest,quoteGift,ensureAvailable:ensureGiftAvailable}=require('./gift-orders.cjs');
 const {matchPayment,receiptUrl}=require('./toss.cjs');
 const {rentalSchedule,rentalCustomer,rentalQuote}=require('./rental.cjs');
 const {evidenceFields,paymentEvidence}=require('./evidence.cjs');
@@ -283,6 +283,7 @@ function orderService({repo,catalog,detail,giftProduct=null,dataKey,sessionKey=d
    const row=await repo.get(id);if(!row)throw new ShopError(404,'주문을 찾을 수 없습니다.');
    if(!['REQUESTED','APPROVED'].includes(row.state)||input.version!==row.version||input.stock_confirmed!==true)throw new ShopError(409,'주문 상태와 재고·납기 확인을 다시 확인해주세요.');
    const customer=cipher.decrypt(row.customer_cipher);if(customer.rental)rentalSchedule(customer.rental,clock);
+   if(customer.gift)ensureGiftAvailable(giftProduct?.(customer.gift.product_id));
    const rows=JSON.parse(row.lines_json).map(p=>({id:p.id,option:p.option,quantity:p.quantity}));
    const q=customer.gift?quoteGift(JSON.parse(row.lines_json),input):customer.rental?rentalQuote(catalog,detail,rows,input.rental_prices??[],clock):quoteCatalog(catalog,detail,rows,clock);
    if(q.total===null)throw new ShopError(409,'금액 미확정 상품은 상담으로 견적을 확정해야 합니다.');
@@ -293,6 +294,7 @@ function orderService({repo,catalog,detail,giftProduct=null,dataKey,sessionKey=d
    let row=await own(id,owner);
    if(!['APPROVED','PAYMENT_PENDING'].includes(row.state)||row.quote_version!==version||row.quote_expires<=clock()||!positive(row.total))throw new ShopError(409,'확정 금액과 결제 가능 시간을 다시 확인해주세요.');
    if(!['WEB','MOBILE'].includes(device))throw new ShopError(400,'결제 기기 정보를 확인해주세요.');
+   const giftCustomer=cipher.decrypt(row.customer_cipher);if(giftCustomer.gift)ensureGiftAvailable(giftProduct?.(giftCustomer.gift.product_id));
    if(row.state==='APPROVED')row=await repo.patch(row,{state:'PAYMENT_PENDING',payment_mode:payment.mode,payment_provider:'toss'},'customer','payment_started');
    if(row.payment_mode!==payment.mode||row.payment_provider!=='toss')throw new ShopError(409,'결제 환경이 변경되었습니다. 고객센터에 주문번호를 알려주세요.');
    const token=returns.issue(row.id+'|'+row.confirm_key+'|'+payment.mode,'payment',Math.max(1,Math.floor((row.quote_expires-clock())/1000)));

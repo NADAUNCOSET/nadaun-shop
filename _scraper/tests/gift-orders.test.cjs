@@ -62,3 +62,19 @@ test('gift HTTP gate remains closed by default even when normal orders are enabl
  const res={setHeader(){},status(n){this.code=n;return this;},json(v){this.body=v;return this;}};
  await handler({url:'/api/orders?action=gift-create',method:'POST',headers:{origin:'https://shop.nadaun.co'},body:{customer,gift}},res);assert.equal(res.code,503);
 });
+
+
+test('source withdrawal after a request prevents quote/payment but preserves customer order history',async()=>{
+ const f=fixture(),requested=await f.create();
+ try{
+  product.source_status='withdrawn';
+  assert.throws(()=>giftRequest(()=>product,gift,clock),{status:409});
+  await assert.rejects(f.service.approve(requested.id,f.approval(requested)),{status:409});
+  assert.equal((await f.service.get(requested.id,owner)).state,'REQUESTED');
+  delete product.source_status;
+  const approved=await f.service.approve(requested.id,f.approval(requested));
+  product.source_status='withdrawn';
+  await assert.rejects(f.service.start(approved.id,owner,approved.quote_version),{status:409});
+  assert.equal((await f.service.get(approved.id,owner)).state,'APPROVED');
+ }finally{delete product.source_status;}
+});

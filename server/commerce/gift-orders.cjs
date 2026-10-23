@@ -8,13 +8,17 @@ function text(value,max,label){
  if(typeof value!=='string'||value.length>max||/[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]/.test(value))throw new ShopError(400,label+'을 확인해주세요.');
  return value.trim();
 }
+function ensureAvailable(product){
+ if(!product)throw new ShopError(404,'기프트 상품을 찾을 수 없습니다.');
+ if(product.source_status==='withdrawn')throw new ShopError(409,'원본에서 판매가 종료된 상품입니다. 다른 상품을 선택해주세요.');
+ if(product.soldout)throw new ShopError(409,'입고 확인이 필요한 상품입니다. 상담을 이용해주세요.');
+}
 // Observed public prices are estimates. Final approval still requires a fresh
 // operator check of stock, production terms and the final selling price.
 function giftRequest(find,input,clock=()=>Date.now()){
  if(!input||typeof input!=='object'||Array.isArray(input)||typeof input.product_id!=='string'||!/^\d{1,12}$/.test(input.product_id))throw new ShopError(400,'기프트 상품번호를 확인해주세요.');
  const product=find?.(input.product_id);
- if(!product)throw new ShopError(404,'기프트 상품을 찾을 수 없습니다.');
- if(product.soldout)throw new ShopError(409,'입고 확인이 필요한 상품입니다. 상담을 이용해주세요.');
+ ensureAvailable(product);
  if(!Number.isSafeInteger(input.quantity)||input.quantity<1||input.quantity>100000)throw new ShopError(400,'기프트 수량은 1~100,000개로 입력해주세요.');
  const gift={product_id:product.id,variant:text(input.variant,300,'색상·사양'),printing:text(input.printing,500,'인쇄 요청'),packaging:text(input.packaging,300,'포장 요청'),requested_date:text(input.requested_date,10,'희망 수령일'),notes:text(input.notes,1000,'추가 요청')};
  if(product.pricing){
@@ -45,4 +49,4 @@ function quoteGift(lines,input){
  if(!positive(total))throw new ShopError(400,'주문 금액이 온라인 처리 범위를 넘었습니다. 상담을 이용해주세요.');
  return {lines:priced,subtotal,shipping,total};
 }
-module.exports={giftRequest,quoteGift};
+module.exports={giftRequest,quoteGift,ensureAvailable};

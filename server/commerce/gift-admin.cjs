@@ -22,9 +22,9 @@ function giftAdminService({db,catalog,product,dataKey,clock=()=>Date.now()}){
  return {
   async list(input={}){
    const data=catalog(),q=clean(input.q,120).normalize('NFKC').toLowerCase(),category=clean(input.category,80),status=clean(input.status,30),page=Number(input.page||1);
-   if(!Number.isSafeInteger(page)||page<1||page>10000||!['','priced','unpriced','supplier','missing_supplier'].includes(status))throw new ShopError(400,'조회 조건을 확인해주세요.');
+   if(!Number.isSafeInteger(page)||page<1||page>10000||!['','priced','unpriced','supplier','missing_supplier','feed_present','unverified','pending_absence','withdrawn'].includes(status))throw new ShopError(400,'조회 조건을 확인해주세요.');
    const matches=new Map((await latest()).map(r=>[r.product_id,r]));
-   const rows=data.products.filter(p=>(!q||[p.id,p.name,p.manufacturer_label].join(' ').normalize('NFKC').toLowerCase().includes(q))&&(!category||p.category_ids.includes(category))&&(!status||status==='priced'&&p.pricing_available||status==='unpriced'&&!p.pricing_available||status==='supplier'&&matches.has(p.id)||status==='missing_supplier'&&!matches.has(p.id)));
+   const rows=data.products.filter(p=>(!q||[p.id,p.name,p.manufacturer_label].join(' ').normalize('NFKC').toLowerCase().includes(q))&&(!category||p.category_ids.includes(category))&&(!status||status==='priced'&&p.pricing_available||status==='unpriced'&&!p.pricing_available||status==='supplier'&&matches.has(p.id)||status==='missing_supplier'&&!matches.has(p.id)||['feed_present','unverified','pending_absence','withdrawn'].includes(status)&&(p.source_status||'unverified')===status));
    return {meta:{...data.meta,supplier_matched_products:matches.size},categories:data.categories,total:rows.length,page,pages:Math.max(1,Math.ceil(rows.length/40)),products:rows.slice((page-1)*40,page*40).map(p=>({...p,supplier_registered:matches.has(p.id)}))};
   },
   async get(value){
