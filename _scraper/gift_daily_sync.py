@@ -107,8 +107,10 @@ def apply_feed(catalog, raw, *, observed_at, modified_at, minimum_count=1000):
             p['category_ids'] = list(dict.fromkeys([*cats[cid]['parent_ids'], cid]))
         p.update(source_fields)
         p['feed_observed_at'] = observed_at
+        # Older channel data must not replace a newer explicit stock/status check.
         # A newer feed explicitly containing the ID can restore a withdrawal.
-        if p.get('source_status') != 'withdrawn' or modified > timestamp(p['source_status_at']):
+        if not p.get('source_status_at') or modified > timestamp(p['source_status_at']):
+            if p.get('source_status') == 'withdrawn': p['soldout'] = None
             p.update(source_status='feed_present', source_status_at=modified_at)
             for k in ('source_missing_since', 'source_missing_snapshots'):
                 p.pop(k, None)
@@ -117,6 +119,8 @@ def apply_feed(catalog, raw, *, observed_at, modified_at, minimum_count=1000):
         if pid in present or pid in quarantined:
             continue
         if p.get('source_status') == 'withdrawn':
+            continue
+        if p.get('source_status_at') and timestamp(p['source_status_at']) > modified:
             continue
         if p.get('feed_observed_at') or p.get('source_status') in ('feed_present', 'pending_absence'):
             p.setdefault('source_missing_since', modified_at)
@@ -130,19 +134,24 @@ def apply_feed(catalog, raw, *, observed_at, modified_at, minimum_count=1000):
     result['meta'].update(official_feed_count=len(rows), official_feed_added=len(added),
                           official_feed_observed_at=observed_at, official_feed_sha256=sha,
                           automatic_source_refresh=False, all_current_details_verified=False)
-    result['meta']['mirror'] = {
+    full_at = previous.get('full_inventory_observed_at')
+    result['meta']['mirror'] = {**previous,
         'source': 'nadaun-gift', 'source_modified_at': modified_at, 'source_sha256': sha,
         'last_feed_check_at': observed_at, 'source_scope': 'naver_channel_subset',
-        'full_source_inventory_verified': False, 'exact_id_matches': len(present),
+        'full_source_inventory_verified': bool(previous.get('full_source_inventory_verified') and full_at and timestamp(full_at) >= modified),
+        'exact_id_matches': len(present),
         'quarantined_count': len(rejected), 'pending_absence_count': len(pending),
         'daily_refresh_requested': True, 'daily_refresh_state': 'awaiting_source_access',
         'withdrawal_policy': 'confirmed_full_inventory_or_explicit_source_withdrawal',
+        'reviewed_row_repair_count': sum('_reviewed_row_repair' in row for row in rows),
     }
     refresh_metadata(result)
     receipt = {'source_sha256': sha, 'observed_at': observed_at, 'modified_at': modified_at,
                'valid_rows': len(rows), 'quarantined_rows': len(rejected), 'quarantined_ids': sorted(quarantined),
                'added_ids': added, 'changed_ids': changed, 'pending_absence_ids': pending,
                'withdrawn_ids': [], 'all_details_current': False}
+    receipt['reviewed_row_repairs'] = [{'id':row['id'], **row['_reviewed_row_repair']}
+                                      for row in rows if '_reviewed_row_repair' in row]
     return result, receipt
 
 
@@ -197,7 +206,9 @@ def apply_availability(catalog, evidence):
     mirror = result['meta'].setdefault('mirror', {})
     mirror.update(last_availability_check_at=evidence['observed_at'])
     if full:
-        mirror.update(full_source_inventory_verified=True, full_inventory_count=len(rows))
+        mirror.update(full_source_inventory_verified=True, full_inventory_count=len(rows),
+                      full_inventory_observed_at=evidence['observed_at'],
+                      full_inventory_source_sha256=evidence['source_sha256'])
     refresh_metadata(result)
     return result, changes
 

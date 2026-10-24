@@ -1,0 +1,139 @@
+{
+  "reviewed_at": "2026-10-24T19:56:26.679189+09:00",
+  "source_observation": "2026-10-21T23:41:13.517323+09:00",
+  "rule": "Only these exact archived row hashes. Changed or unreviewed malformed rows remain quarantined.",
+  "rows": [
+    {
+      "id": "2013523",
+      "source_row_sha256": "d88ac16a92531baea3fb90fe99410916a04aa6cc66104d55f5a0ed58462bbc45",
+      "original_fields": [
+        "2013523",
+        "[100개 세트] ",
+        "CREE줌인 C.O.B충전후레쉬, 블루다용도공구",
+        "4576000",
+        "https://nadaun-gift.com/new/shop/detail.php?code=2013523&mode=naver_dburl",
+        "https://cloudfront.imggift.com/shop_images/da/a/07/1755371605787867_l.jpg",
+        "손전등",
+        "신상품",
+        "도매",
+        "금강산업",
+        "중국",
+        "",
+        "",
+        "0",
+        "N"
+      ],
+      "canonical_fields": [
+        "2013523",
+        "[100개 세트] CREE줌인 C.O.B충전후레쉬, 블루다용도공구",
+        "4576000",
+        "https://nadaun-gift.com/new/shop/detail.php?code=2013523&mode=naver_dburl",
+        "https://cloudfront.imggift.com/shop_images/da/a/07/1755371605787867_l.jpg",
+        "손전등",
+        "신상품",
+        "도매",
+        "금강산업",
+        "중국",
+        "",
+        "",
+        "0",
+        "N"
+      ],
+      "equivalent_merge_positions": [
+        1
+      ],
+      "reason": "One extra embedded tab; all valid field alignments normalize to the identical 14 source fields",
+      "source_feed_sha256": "71199b10944d893863ab02f9257ab38d7ed0bd8679a3508e8741cd876c281921",
+      "source_line_number": 10775
+    },
+    {
+      "id": "2110851",
+      "source_row_sha256": "8d5d0635c4a8917272cec76e1b9c535db7bda164a83264239a763db2160fd3d6",
+      "original_fields": [
+        "2110851",
+        "막세마  무드골드 로즈 볼펜",
+        "37400",
+        "https://nadaun-gift.com/new/shop/detail.php?code=2110851&mode=naver_dburl&view_num=1",
+        "https://cloudfront.imggift.com/shop_images/ba/a/01/1877631630291029_l.jpg",
+        "고급볼펜",
+        "신상품",
+        "도매",
+        "국제판촉물협회",
+        "기타",
+        "",
+        "고급볼펜,메탈볼펜,막세마,막세마볼펜,판촉볼펜,이태리볼펜,사무용볼펜,잉크",
+        "",
+        "4400",
+        "N"
+      ],
+      "canonical_fields": [
+        "2110851",
+        "막세마 무드골드 로즈 볼펜",
+        "37400",
+        "https://nadaun-gift.com/new/shop/detail.php?code=2110851&mode=naver_dburl&view_num=1",
+        "https://cloudfront.imggift.com/shop_images/ba/a/01/1877631630291029_l.jpg",
+        "고급볼펜",
+        "신상품",
+        "도매",
+        "국제판촉물협회",
+        "기타",
+        "고급볼펜,메탈볼펜,막세마,막세마볼펜,판촉볼펜,이태리볼펜,사무용볼펜,잉크",
+        "",
+        "4400",
+        "N"
+      ],
+      "equivalent_merge_positions": [
+        9,
+        10
+      ],
+      "reason": "One extra embedded tab; all valid field alignments normalize to the identical 14 source fields",
+      "source_feed_sha256": "71199b10944d893863ab02f9257ab38d7ed0bd8679a3508e8741cd876c281921",
+      "source_line_number": 12661
+    },
+    {
+      "id": "2208661",
+      "source_row_sha256": "cca2050b0aa14c77ab31c800795c72f263952129d7310206ef13b28367405cd6",
+      "original_fields": [
+        "2208661",
+        "락앤락  인터락 4호",
+        "8976",
+        "https://nadaun-gift.com/new/shop/detail.php?code=2208661&mode=naver_dburl&view_num=1",
+        "https://cloudfront.imggift.com/shop_images/na/c/01/2022853254014_l.jpg",
+        "밀폐용기",
+        "신상품",
+        "도매",
+        "고센광고기획(고센기프트)",
+        "대한민국",
+        "락앤락, 인터락, 4호, 냉장고, 용기, 냉장고용기, 글라스락",
+        "",
+        "",
+        "4400",
+        "N"
+      ],
+      "canonical_fields": [
+        "2208661",
+        "락앤락 인터락 4호",
+        "8976",
+        "https://nadaun-gift.com/new/shop/detail.php?code=2208661&mode=naver_dburl&view_num=1",
+        "https://cloudfront.imggift.com/shop_images/na/c/01/2022853254014_l.jpg",
+        "밀폐용기",
+        "신상품",
+        "도매",
+        "고센광고기획(고센기프트)",
+        "대한민국",
+        "락앤락, 인터락, 4호, 냉장고, 용기, 냉장고용기, 글라스락",
+        "",
+        "4400",
+        "N"
+      ],
+      "equivalent_merge_positions": [
+        10,
+        11,
+        12
+      ],
+      "reason": "One extra embedded tab; all valid field alignments normalize to the identical 14 source fields",
+      "source_feed_sha256": "71199b10944d893863ab02f9257ab38d7ed0bd8679a3508e8741cd876c281921",
+      "source_line_number": 15011
+    }
+  ]
+}

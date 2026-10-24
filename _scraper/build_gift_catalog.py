@@ -110,6 +110,10 @@ def project(db, source_categories, include_pricing=False, reviewed_details=()):
 
 
 def build():
+    preserved = preserve_daily_mirror()
+    if preserved is not None:
+        print(json.dumps({'gift_mirror':'preserved','revision':preserved['meta']['revision']},ensure_ascii=False),flush=True)
+        return preserved
     source=json.loads((ROOT/'data/catalog/sources/nadaun-gift.json').read_text())
     with sqlite3.connect((PRIVATE_ROOT/'inventory.sqlite3').as_uri()+'?mode=ro',uri=True) as db:
         catalog,details=project(db,source['categories'],include_pricing=True,reviewed_details=json.loads((PRIVATE_ROOT/'commerce-integration-20261022/verified-public-details.json').read_text()))
@@ -135,6 +139,38 @@ def build():
     (ROOT/'gift-sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<sitemap><loc>https://shop.nadaun.co/'+f+'</loc></sitemap>' for f in maps)+'</sitemapindex>\n')
     print(json.dumps(catalog['meta'],ensure_ascii=False),flush=True)
     return catalog
+
+
+def preserve_daily_mirror():
+    """An equipment rebuild must not reset the independently published gift state.
+
+    Daily feed/availability reconciliation owns this state. Rebuilding it from
+    an older inventory would revive withdrawals and discard newer source IDs.
+    New gift details require the gift-specific reconciliation/publication path.
+    """
+    path = PUBLIC/'catalog.json'
+    if not path.exists(): return None
+    current = json.loads(path.read_text())
+    if not current.get('meta', {}).get('mirror'): return None
+    if current['meta']['mirror'].get('source') != 'nadaun-gift':
+        raise ValueError('Gift mirror source identity conflict')
+    from copy import deepcopy
+    from gift_daily_sync import refresh_metadata
+    from gift_mirror_health import inspect
+    details = {}
+    for part in sorted((PUBLIC/'details').glob('??.json')):
+        chunk = json.loads(part.read_text())
+        if set(details) & set(chunk): raise ValueError('Gift detail identity conflict')
+        details.update(chunk)
+    checked = inspect(current, details)
+    if checked['errors']: raise ValueError('Existing gift mirror needs review before equipment publication')
+    expected = deepcopy(current); refresh_metadata(expected)
+    if expected != current: raise ValueError('Existing gift mirror revision/category counts need review')
+    manifest = json.loads((PUBLIC/'manifest.json').read_text())
+    status = json.loads((PUBLIC/'sync-status.json').read_text())
+    if manifest != {'meta':current['meta'],'categories':current['categories']} or status != {'meta':current['meta']}:
+        raise ValueError('Existing gift mirror artifacts do not match')
+    return current
 
 
 def merge_official_feed(catalog):

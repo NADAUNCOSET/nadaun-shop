@@ -109,5 +109,32 @@ class GiftDailySyncTests(unittest.TestCase):
         self.assertEqual(p['source_status'], 'feed_present')
         self.assertEqual(p['pricing_observed_at'], '2026-09-08T01:00:00Z')
 
+    def test_older_feed_cannot_reset_newer_explicit_stock_timestamp(self):
+        first,_=apply()
+        checked,_=apply_availability(first,evidence([{'id':'101','status':'soldout'}]))
+        again,_=apply(checked)
+        p=next(p for p in again['products'] if p['id']=='101')
+        self.assertTrue(p['soldout'])
+        self.assertEqual(p['source_status_at'],'2026-10-24T03:00:00Z')
+        self.assertEqual(again['meta']['mirror']['last_availability_check_at'],'2026-10-24T03:00:00Z')
+        with self.assertRaisesRegex(ValueError,'Older availability'):
+            apply_availability(again,evidence([{'id':'101','status':'active'}],observed_at='2026-10-24T02:30:00Z'))
+
+    def test_older_channel_absence_preserves_a_newer_confirmed_active_product(self):
+        first,_=apply()
+        checked,_=apply_availability(first,evidence([{'id':'103','status':'active'}]))
+        again,_=apply(checked)
+        self.assertEqual(next(p for p in again['products'] if p['id']=='103')['source_status'],'feed_present')
+
+    def test_new_feed_keeps_availability_cursor_but_invalidates_older_full_freshness(self):
+        first,_=apply();first['meta']['official_feed_count']=0
+        rows=[{'id':pid,'status':'active'} for pid in ('101','102','103')]
+        checked,_=apply_availability(first,evidence(rows,kind='authenticated_full_inventory',complete=True,advertised_total=3))
+        again,_=apply(checked)
+        self.assertTrue(again['meta']['mirror']['full_source_inventory_verified'])
+        newer,_=apply(checked,modified='2026-10-25T01:00:00Z',observed='2026-10-25T02:00:00Z')
+        self.assertFalse(newer['meta']['mirror']['full_source_inventory_verified'])
+        self.assertEqual(newer['meta']['mirror']['last_availability_check_at'],'2026-10-24T03:00:00Z')
+
 
 if __name__ == '__main__': unittest.main()

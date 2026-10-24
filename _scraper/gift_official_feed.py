@@ -19,13 +19,43 @@ FIELDS = ['id', 'title', 'price_pc', 'link', 'image_link', 'category_name1',
           'minimum_purchase_quantity', 'shipping', 'adult']
 
 
+def reviewed_row_repairs():
+    path = Path(__file__).with_name('gift-reviewed-feed-rows.json')
+    if not path.exists(): return {}
+    records = json.loads(path.read_text())['rows']; result = {}
+    clean = lambda value: re.sub(r'\s+', ' ', value).strip()
+    for record in records:
+        original, corrected = record['original_fields'], record['canonical_fields']
+        sha = hashlib.sha256('\t'.join(original).encode('euc-kr')).hexdigest()
+        if (sha != record['source_row_sha256'] or sha in result or len(original) != len(FIELDS)+1
+                or len(corrected) != len(FIELDS) or corrected[0] != record['id'] or original[0] != record['id']):
+            raise ValueError('Reviewed source row repair identity conflict')
+        positions = record['equivalent_merge_positions']
+        if not positions: raise ValueError('Reviewed source row repair has no alignment proof')
+        for i in positions:
+            if type(i) is not int or not 1 <= i < len(original)-1:
+                raise ValueError('Invalid reviewed row merge position')
+            merged = original[:i]+[original[i]+'\t'+original[i+1]]+original[i+2:]
+            if [clean(v) for v in merged] != corrected:
+                raise ValueError('Reviewed row repair changed source fields beyond whitespace alignment')
+        result[sha] = record
+    return result
+
+
 def parse_feed(raw):
     lines = raw.decode('euc-kr', errors='strict').splitlines()
     if not lines or lines[0].split('\t') != FIELDS:
         raise ValueError('Official feed schema changed or response is not a feed')
     good, rejected, seen = [], [], set()
+    repairs = reviewed_row_repairs()
     for line_number, line in enumerate(lines[1:], 2):
         parts = line.split('\t')
+        original_parts = parts; repair = None
+        if len(parts) != len(FIELDS):
+            sha = hashlib.sha256(line.encode('euc-kr')).hexdigest()
+            repair = repairs.get(sha)
+            if repair is not None and repair['original_fields'] == parts:
+                parts = repair['canonical_fields']
         reason = None
         if len(parts) != len(FIELDS):
             reason = 'column_count'
@@ -47,11 +77,14 @@ def parse_feed(raw):
                 reason = 'invalid_title_or_price'
             else:
                 # These are source fields, not approved unit selling prices or suppliers.
+                if repair is not None:
+                    row['_reviewed_row_repair'] = {'source_row_sha256': repair['source_row_sha256'],
+                                                   'original_field_count': len(original_parts)}
                 good.append(row)
                 seen.add(pid)
         if reason:
             rejected.append({'line_number': line_number, 'reason': reason,
-                             'field_count': len(parts), 'raw_fields': parts})
+                             'field_count': len(original_parts), 'raw_fields': original_parts})
     if not good:
         raise ValueError('No valid products in official feed')
     return good, rejected
