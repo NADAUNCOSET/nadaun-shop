@@ -44,7 +44,7 @@ def pattern(alias):
     return re.compile(r'(?<![A-Z0-9-])'+r'[\s-]*'.join(map(re.escape,parts))+r'(?![A-Z0-9])')
 PATTERNS={m['id']:[pattern(a) for a in m['aliases']] for m in MODELS}
 
-def title_models(product):
+def title_models(product,*,include_negative=False):
     title=normalize(product['name']);matches=[]
     for m in MODELS:
         # Short model codes are also used for unrelated accessories. Require
@@ -55,7 +55,7 @@ def title_models(product):
         if ambiguous and not context:continue
         spans=[match.span() for expression in PATTERNS[m['id']] for match in expression.finditer(title)]
         if not spans:continue
-        if any(re.search(r'호환\s*(?:불가|안됨)|미지원|지원\s*불가|NOT\s+COMPATIBLE',title[max(0,a-12):b+22]) for a,b in spans):continue
+        if not include_negative and any(re.search(r'호환\s*(?:불가|안됨)|미지원|지원\s*불가|NOT\s+COMPATIBLE',title[max(0,a-12):b+22]) for a,b in spans):continue
         matches.append(m)
     # Remove shorter overlapping aliases (R5 in EOS R5 II, Z6 in Z6 III).
     accepted=[]
@@ -66,25 +66,63 @@ def title_models(product):
         accepted.append(m)
     return accepted
 
-def associate(products):
-    registry={};audit=[]
+def associate(products,matched_titles=None):
+    registry={};audit=[];matched_titles=matched_titles or {}
     for p in products:
         if p.get('kind')!='purchase':continue
-        matches=title_models(p)
-        if not matches:continue
-        own=[m for m in matches if m['brand_id']==p['brand_id']]
-        is_body=bool(own and set(p.get('type_ids',[])) & CAMERA_TYPES)
-        if is_body:matches=own;field='camera_model_ids';role='camera'
-        elif ACCESSORY.search(p['name']) and not set(p.get('type_ids',[])) & CAMERA_TYPES:
+        camera_type=bool(set(p.get('type_ids',[])) & CAMERA_TYPES)
+        evidence=[];conflicts=set()
+        if camera_type:
+            # Bodies keep their own canonical title and manufacturer context.
+            matches=[m for m in title_models(p) if m['brand_id']==p['brand_id']]
+            if not matches:continue
+            field='camera_model_ids';role='camera'
+        else:
+            # Each original title belongs to this exact dedup group AND to an
+            # actual offer. Parse titles separately so maker context, camera
+            # generations and accessory words cannot leak between products.
+            offers={o['id']:o for o in p.get('offers',[]) if o.get('id')}
+            titles=[{'id':p['id'],'name':p['name']}]
+            seen={p['id']}
+            for row in matched_titles.get(p['id'],[]):
+                if row.get('id') not in offers or row['id'] in seen or not row.get('name'):continue
+                titles.append(row);seen.add(row['id'])
+            positive=set();negative=set()
+            for row in titles:
+                context={'name':row['name'],'brand_id':p['brand_id']}
+                qualified=bool(ACCESSORY.search(row['name']))
+                has_negative=bool(re.search(r'호환\s*(?:불가|안됨)|미지원|지원\s*불가|NOT\s+COMPATIBLE',normalize(row['name'])))
+                if not qualified and not has_negative:continue
+                found=title_models(context)
+                denied=({m['id'] for m in title_models(context,include_negative=True)}-{m['id'] for m in found}) if has_negative else set()
+                accepted=[m['id'] for m in found] if qualified else []
+                positive.update(accepted);negative.update(denied)
+                if accepted or denied:
+                    offer=offers.get(row['id'],{})
+                    evidence.append({'id':row['id'],'name':row['name'],
+                        'source':offer.get('source'),'url':offer.get('url'),
+                        'accessory_title':qualified,'model_ids':accepted,
+                        'denied_model_ids':sorted(denied)})
+            # An explicit incompatibility in a bound title cannot be reversed
+            # by a positive title from another supplier. Keep the conflict as
+            # private review evidence rather than recommending the model.
+            conflicts=positive & negative
+            matches=[m for m in MODELS if m['id'] in positive-negative]
             field='compatible_camera_model_ids';role='accessory'
-        else:continue
-        p[field]=[m['id'] for m in matches]
-        if role=='accessory' and '제품군' in p['name']:p['compatibility_scope']='product_family'
+            if not matches and not conflicts:continue
+        ids=[m['id'] for m in matches]
+        if ids:
+            p[field]=ids
+            if role=='accessory' and '제품군' in p['name']:p['compatibility_scope']='product_family'
         for m in matches:
             if m['id'] not in registry:registry[m['id']]={**m,'camera_product_ids':[],'accessory_product_ids':[]}
-            registry[m['id']]['camera_product_ids' if is_body else 'accessory_product_ids'].append(p['id'])
-        audit.append({'id':p['id'],'name':p['name'],'role':role,'camera_model_ids':p[field],
-                      'basis':'supplier_product_title','source_urls':[o['url'] for o in p.get('offers',[])]})
+            registry[m['id']]['camera_product_ids' if role=='camera' else 'accessory_product_ids'].append(p['id'])
+        record={'id':p['id'],'name':p['name'],'role':role,'camera_model_ids':ids,
+            'basis':'matched_supplier_product_titles' if any(e['id']!=p['id'] and e['model_ids'] for e in evidence) else 'supplier_product_title',
+            'source_urls':[o['url'] for o in p.get('offers',[])]}
+        if evidence:record['title_evidence']=evidence
+        if conflicts:record['conflicting_camera_model_ids']=sorted(conflicts)
+        audit.append(record)
     return list(registry.values()),audit
 
 def search_terms(product,registry):

@@ -43,3 +43,27 @@ class CameraCompatibility(unittest.TestCase):
         registry,audit=associate([p]);self.assertEqual(p['compatible_camera_model_ids'],['sony-fx3']);self.assertEqual(p['compatibility_scope'],'product_family')
         self.assertFalse(associate([self.product('Wooden Camera BLACKMAGIC POCKET CINEMA CAMERA 액세서리 제품군','wooden-camera')])[0])
         self.assertEqual(self.ids('Wooden Camera Sony FX5 Lens Mount Adapters & Supports','wooden-camera'),['sony-fx5'])
+
+    def test_same_product_original_title_restores_abbreviated_primary(self):
+        p=self.product('틸타 TA-T16-C-B Pro Kit',brand='tilta',offers=[{'id':'source-1','source':'clmedia','url':'https://cl.example/1'},{'id':'source-2','source':'avx','url':'https://avx.example/2'}])
+        registry,audit=associate([p],{'source-1':[{'id':'source-1','name':p['name']},{'id':'source-2','name':'틸타 Sony FX3/FX30 케이지 Pro Kit'}]})
+        self.assertEqual(p['compatible_camera_model_ids'],['sony-fx3','sony-fx30'])
+        self.assertEqual(audit[0]['title_evidence'][0]['id'],'source-2')
+        self.assertEqual(audit[0]['basis'],'matched_supplier_product_titles')
+        self.assertEqual(len(registry),2)
+    def test_unbound_title_and_cross_title_context_are_ignored(self):
+        p=self.product('스몰리그 Sony 범용 케이지',offers=[{'id':'source-2','url':'https://example/2'}])
+        registry,audit=associate([p],{'source-1':[{'id':'unrelated','name':'니콘 ZR 케이지'},{'id':'source-2','name':'A1 케이지'}]})
+        self.assertFalse(registry);self.assertFalse(audit)
+    def test_accessory_cue_does_not_leak_to_non_accessory_original(self):
+        p=self.product('스몰리그 범용 케이지',offers=[{'id':'source-2','url':'https://example/2'}])
+        self.assertFalse(associate([p],{'source-1':[{'id':'source-2','name':'Sony FX3 카메라 본체'}]})[0])
+    def test_bound_negative_title_vetoes_positive_supplier_claim(self):
+        p=self.product('SmallRig Nikon ZR 케이지',offers=[{'id':'source-2','url':'https://example/2'}])
+        registry,audit=associate([p],{'source-1':[{'id':'source-2','name':'SmallRig Nikon ZR 호환 불가 케이지'}]})
+        self.assertFalse(registry);self.assertNotIn('compatible_camera_model_ids',p)
+        self.assertEqual(audit[0]['conflicting_camera_model_ids'],['nikon-zr'])
+    def test_camera_body_never_inherits_other_supplier_models(self):
+        p=self.product('Nikon Z6 III 카메라',brand='nikon',type_ids=['type:camera'],offers=[{'id':'source-2','url':'https://example/2'}])
+        associate([p],{'source-1':[{'id':'source-2','name':'Nikon Z8 케이지'}]})
+        self.assertEqual(p['camera_model_ids'],['nikon-z6-iii']);self.assertNotIn('compatible_camera_model_ids',p)

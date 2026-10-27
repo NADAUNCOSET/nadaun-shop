@@ -442,10 +442,10 @@ def build(allow_pending=False):
     category_redirects,category_dedup_audit=project_categories(public_products,categories,brands,navigation_audit)
     save_json(AUDIT/'category-dedup-review.json',category_dedup_audit)
     from camera_compatibility import associate,search_terms as compatibility_search_terms
-    camera_models,compatibility_audit=associate(public_products)
+    camera_models,compatibility_audit=associate(public_products,{g['primary_id']:g['members'] for g in dedup_audit['groups']})
     camera_index={m['id']:m for m in camera_models}
     save_json(AUDIT/'camera-compatibility-review.json',{'associations':compatibility_audit,
-        'model_count':len(camera_models),'basis':'Explicit supplier product titles. Unlisted models and generic mount compatibility are not inferred.'})
+        'model_count':len(camera_models),'basis':'Explicit supplier product titles, individually parsed and bound to the same verified offer group. Explicit incompatibility vetoes positive associations. Unlisted models and generic mount compatibility are not inferred.'})
     for p in public_products:
         p['discovery']=product_discovery(p,brands[p['brand_id']],categories)
         model_terms=compatibility_search_terms(p,camera_index)
