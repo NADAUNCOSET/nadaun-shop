@@ -16,7 +16,7 @@
     "motion9": 24,
     "funomad": 51,
     "digitalcp": 915,
-    "sunphoto": 251
+    "sunphoto": 865
   },
   "detail_coverage": {
     "kpp": 4041,
@@ -34,19 +34,20 @@
     "motion9": 24,
     "funomad": 51,
     "digitalcp": 882,
-    "sunphoto": 251
+    "sunphoto": 865
   },
-  "synced_at": "2026-10-27T09:36:43+00:00",
-  "merged_count": 3590,
+  "synced_at": "2026-10-27T10:33:45.975576+00:00",
+  "merged_count": 3591,
   "retired_redirect_count": 1923,
-  "product_count": 30149,
+  "product_count": 30762,
   "category_browsing_enabled": true,
-  "listing_count": 29881,
+  "listing_count": 30494,
   "option_family_count": 268,
   "deduplication": {
-    "brands_checked": 424,
-    "groups": 2974,
-    "removed": 3590
+    "brands_checked": 440,
+    "groups": 2975,
+    "removed": 3591
   },
-  "revision": "28196ebf7b294b86"
+  "detail_content_sha256": "1ef6b167d873b2e2dbfb043d6c0f9dcc2c932dfd6d931b35cf377204704b503e",
+  "revision": "50c740a250154499"
 }

@@ -28,11 +28,13 @@ def sunphoto_categories(result):
         p['original_supplier_category_ids']=original;p['brand_category_ids']=keep
     def key(cid,brand):
         return brand_id(brand)+':'+cid if len(by_group[native[cid]['brand']])>1 else cid
-    categories=[]
+    categories=[];parents={c.get('parent_id') for c in native.values()}
     for c in native.values():
         for brand in sorted(by_group.get(c['brand'],())):
-            categories.append({**c,'id':key(c['id'],brand),'parent_id':key(c['parent_id'],brand) if c.get('parent_id') else None,
-                'brand':brand,'source_category_id':c['id'],'supplier_brand_group':c['brand']})
+            node={**c,'id':key(c['id'],brand),'parent_id':key(c['parent_id'],brand) if c.get('parent_id') else None,
+                'brand':brand,'source_category_id':c['id'],'supplier_brand_group':c['brand']}
+            if c.get('parent_id') is None and c['id'] in parents:node['navigation_role']='wrapper'
+            categories.append(node)
     for p in result['products'].values():p['brand_category_ids']=[key(cid,p['brand']) for cid in p['brand_category_ids']]
     result['original_categories']=list(native.values());result['categories']=categories
 

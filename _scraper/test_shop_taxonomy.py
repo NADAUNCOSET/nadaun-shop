@@ -47,6 +47,20 @@ class ShopTaxonomy(unittest.TestCase):
         self.assertEqual(reviewed_supplier_types({'name':'Z8 Body cap','category_ids':['digitalcp:b:nikon:019']},{}),['lens-cap'])
         self.assertEqual(reviewed_supplier_types({'name':'Z8 BODY','category_ids':[]},{}),[])
 
+    def test_telescope_optics_and_adapters_do_not_become_camera_lenses_or_bodies(self):
+        cases=[('스카이워쳐 T2-ring M48 Nikon','astro-camera-adapter'),
+               ('스카이워쳐 8-24mm Zoom Eyepiece (1.25)','astro-eyepiece'),
+               ('CORONADO BARLOW LENS(2X)','astro-barlow'),
+               ('SolarMax II 60 Filter (10mm blocking filter)','astro-filter'),
+               ('스카이워쳐 Focal Reducer - 80ED','astro-optical-parts'),
+               ('스카이워쳐 Counterweights for EQ6 PRO(5.1kg)','astro-mount-parts')]
+        for name,target in cases:
+            with self.subTest(name=name):
+                p={'id':'astro','name':name,'brand_id':'skywatcher','kind':'purchase','type_ids':[],'category_ids':['sunphoto:b:skywatcher:24']}
+                build_taxonomy([p],self.source_categories)
+                self.assertIn('type:'+target,p['type_ids']);self.assertIn('type:kpp:00',p['type_ids'])
+                self.assertNotIn('type:kpp:03',p['type_ids']);self.assertNotIn('type:camera',p['type_ids'])
+
     def test_compatible_devices_do_not_turn_accessories_into_bodies(self):
         cases=[
             ('blackmagic','HyperDeck Extreme Rack Kit','video-rack'),

@@ -9,12 +9,14 @@ import sync_cafe24_partners as cafe
 BASE='https://sunphoto.kr';ROOTS={'29': 'TAMRON', '30': 'Voigtlander', '28': 'BOYA', '25': 'Kenko', '24': 'Kenko Telescopes', '156': 'COLBOR', '84': 'SLIK', '85': 'HEIPI', '86': 'WEIFENG', '26': 'DOMKE', '27': 'COTTON', '81': 'JOBY', '82': 'Kodak & Polaroid', '83': 'Sunwayfoto', '87': 'CELESTRON', '625': 'SKYWATCHER', '88': 'MEADE', '89': 'NATIONAL GEOGRAPHIC', '256': 'NASA', '578': 'DWARF LAB'}
 # The public menu is a product group; schema and visible brand both say Kenko.
 GROUP_MANUFACTURERS={'Kenko Telescopes':'Kenko'}
-GROUP_ALLOWED={'Kodak & Polaroid':('Kodak & Polaroid','Kodak','Polaroid')}
+GROUP_ALLOWED={'Kodak & Polaroid':('Kodak & Polaroid','Kodak','Polaroid'),'MEADE':('MEADE','CORONADO')}
 MANUFACTURER_REVIEWS={
  '2063':{'group':'Kenko Telescopes','brand':'onetoten','expected_name':'onetoten 8x22 쌍안경 Yellow'},
  '1048':{'group':'Kodak & Polaroid','brand':'ZINK','expected_name':'징크 Zink 정품 SNAP/Mint 전용 Zink Paper 2X3" (스티커 타입) 20매'},
  '1517':{'group':'Sunwayfoto','brand':'썬포토','visible_brand':'자체브랜드','expected_name':'26650 Li-ion Battery for FL-152'}
 }
+_brand_reviews=Path(cafe.__file__).with_name('sunphoto-brand-reviews.json')
+if _brand_reviews.exists():MANUFACTURER_REVIEWS.update(json.loads(_brand_reviews.read_text())['products'])
 def manufacturer_key(value):return ''.join(c for c in unicodedata.normalize('NFKC',str(value)).casefold() if c.isalnum())
 def stamp():return datetime.now(timezone.utc).isoformat()
 def clean(s):return re.sub(r'\s+',' ',str(s or '')).strip()
@@ -38,8 +40,9 @@ def reviewed_detail(raw,product,brand):
     actual=evidence['schema'].get('brand',{})
     actual=actual.get('name','') if isinstance(actual,dict) else str(actual)
     review=MANUFACTURER_REVIEWS.get(str(product.get('source_id')))
-    if review and review['group'] in groups and record['name']==review['expected_name']:
-        allowed[manufacturer_key(review['brand'])]=review['brand']
+    if review:
+        if review['group'] not in groups or record['name']!=review['expected_name']:raise ValueError('Reviewed Sunphoto product identity changed')
+        allowed[manufacturer_key(review.get('schema_brand',review['brand']))]=review['brand']
     if manufacturer_key(actual) not in allowed:raise ValueError('Sunphoto schema manufacturer differs from selected scope')
     if len(groups)>1 or actual.casefold()!=groups[0].casefold():
         visible=[clean(i.select_one('dd').get_text()) for i in page.select('.detail-spec__item')
@@ -49,6 +52,14 @@ def reviewed_detail(raw,product,brand):
         record.update(source_brand_group=groups[0] if len(groups)==1 else None,source_brand_groups=groups)
         if visible_expected=='자체브랜드':record['description_notice']='공급처가 자체브랜드로 표시한 배터리입니다. 호환 모델과 배터리 규격을 확인해주세요.'
     record.update(brand=allowed[manufacturer_key(actual)],source_declared_brand=actual)
+    offer=evidence['schema'].get('offers') or {}
+    visible_price=[clean(i.select_one('dd').get_text()) for i in page.select('.detail-spec__item')
+                   if i.select_one('dt') and i.select_one('dd') and clean(i.select_one('dt').get_text())=='판매가']
+    if record['name'].startswith('[출시예정]') and isinstance(offer,dict) and re.fullmatch(r'출시\s*예정',str(offer.get('price',''))):
+        if len(visible_price)!=1 or not re.fullmatch(r'출시\s*예정',visible_price[0]) or record.get('price') is not None or record.get('sale_price') is not None:
+            raise ValueError('Sunphoto prerelease price evidence differs')
+        record.update(release_status='coming_soon',source_supplier_status=record['supplier_status'],supplier_status='inquiry',status='inquiry',
+            options_require_confirmation=True,description_notice='출시예정 상품으로 가격이 아직 공개되지 않았습니다.')
     if record.get('content_issues')==['description_missing']:
         body=page.select_one('#prdDetailContent')
         facts=[]

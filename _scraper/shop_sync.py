@@ -54,7 +54,9 @@ CODE += ['_scraper/inline_product_images.py','_scraper/reviewed_supplier_sources
 CODE += ['_scraper/hipixel-supplemental-navigation.json','server/promotions.cjs']
 CODE += ['_scraper/reviewed_source_worker.py','_scraper/install_reviewed_workers.py','_scraper/test_reviewed_source_worker.py','_scraper/sync_digitalcp_catalog.py','_scraper/sync_sunphoto_catalog.py','_scraper/test_new_supplier_catalog.py','_scraper/test_promotion_catalog.py','_scraper/fixtures/new-suppliers']
 CODE += ['_scraper/sync_saeki_catalog.py','_scraper/saeki_detail_parser.py','_scraper/saeki_publication.py','_scraper/saeki_categories.py','_scraper/saeki_worker.py','_scraper/test_saeki_catalog.py','_scraper/fixtures/saeki']
-
+CODE += ['_scraper/sunphoto-brand-reviews.json']
+CODE += ['_scraper/retail_content_policy.py','_scraper/retail-content-rules.json','_scraper/test_retail_content_policy.py']
+CODE += ['_scraper/camera_compatibility.py','_scraper/test_camera_compatibility.py','assets/shop/compatibility.js']
 CODE += ['server/catalog-pages.cjs','_scraper/test_sitemap_navigation.py']
 
 def command(*args):

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "brands_checked": 424,
-  "input_count": 33739,
-  "duplicate_group_count": 2974,
-  "duplicate_entries_removed": 3590,
+  "brands_checked": 440,
+  "input_count": 34353,
+  "duplicate_group_count": 2975,
+  "duplicate_entries_removed": 3591,
   "by_brand": {
     "tilta": 291,
     "avenger": 115,
@@ -65,7 +65,8 @@
     "parabolix": 20,
     "matthews": 1,
     "tenba": 1,
-    "durix": 4
+    "durix": 4,
+    "boya": 1
   },
   "groups": [
     {
@@ -75863,6 +75864,30 @@
           "price": 15000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/8822797468"
+        }
+      ]
+    },
+    {
+      "brand_id": "boya",
+      "kind": "purchase",
+      "primary_id": "sunphoto-1150",
+      "evidence": [
+        "name:보야by-ap1"
+      ],
+      "members": [
+        {
+          "id": "sunphoto-1150",
+          "name": "보야 BY-AP1",
+          "price": 71820,
+          "source": "sunphoto",
+          "url": "https://sunphoto.kr/product/보야-by-ap1/1150/category/75/display/1/"
+        },
+        {
+          "id": "sunphoto-1147",
+          "name": "보야 BY-AP1",
+          "price": 71820,
+          "source": "sunphoto",
+          "url": "https://sunphoto.kr/product/보야-by-ap1/1147/category/75/display/1/"
         }
       ]
     }

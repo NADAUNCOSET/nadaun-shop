@@ -64,6 +64,25 @@ class SupplierRegressionTests(unittest.TestCase):
             self.assertEqual(p['brand'],brand);self.assertEqual(p['source_brand_groups'],[group]);self.assertEqual(p['detail_status'],'verified')
             if sid=='1517':self.assertIn('자체브랜드',p['description_notice'])
 
+    def test_exact_skywatcher_identity_preserves_the_legacy_supplier_brand(self):
+        raw=(FIXTURES/'sunphoto-3573.html').read_bytes()
+        product={'id':'sunphoto-3573','source':'sunphoto','source_id':'3573','kind':'purchase'}
+        p=sp.reviewed_detail(raw,product,'SKYWATCHER')
+        self.assertEqual(p['brand'],'SKYWATCHER');self.assertEqual(p['source_declared_brand'],'Kenko')
+        self.assertEqual(p['detail_status'],'verified')
+        changed=raw.replace(b'BLACK DIAMOND 80ED',b'BLACK DIAMOND 81ED')
+        self.assertNotEqual(raw,changed)
+        with self.assertRaises(ValueError):sp.reviewed_detail(changed,product,'SKYWATCHER')
+
+    def test_dwarf_unreleased_products_never_publish_zero_or_guessed_prices(self):
+        for sid in ['3498','3499']:
+            raw=(FIXTURES/('sunphoto-'+sid+'.html')).read_bytes()
+            p=sp.reviewed_detail(raw,{'id':'sunphoto-'+sid,'source':'sunphoto','source_id':sid,'kind':'purchase'},'DWARF LAB')
+            self.assertIsNone(p['price']);self.assertIsNone(p['sale_price']);self.assertEqual(p['release_status'],'coming_soon')
+            self.assertEqual(p['status'],'inquiry');self.assertEqual(p['supplier_status'],'inquiry')
+            from build_catalog import public_release_fields
+            self.assertEqual(public_release_fields(p),{'release_status':'coming_soon'})
+
     def test_genuinely_empty_description_keeps_observed_basic_facts_and_notice(self):
         raw=(FIXTURES/'sunphoto-1178.html').read_bytes();product={'id':'sunphoto-1178','source':'sunphoto','source_id':'1178','kind':'purchase','brand':'Voigtlander'}
         p=sp.reviewed_detail(raw,product,'Voigtlander')

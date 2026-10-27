@@ -1,0 +1,481 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-27",
+  "owner_instruction": "제품 정보는 유지하고 타 판매점 구매·연락·매장 방문 유도는 제외. 상담은 나다운 기존 경로 사용.",
+  "preserve": [
+    "제조사·정식 수입자 정보와 A/S 책임자 고시",
+    "실제 제품 설명·사양·호환성·안전 경고",
+    "공식 펌웨어·설명서 링크",
+    "제조사 보증 조건",
+    "자체 나다운·레인보우베네 연락처"
+  ],
+  "images": [
+    {
+      "id": "digitalcp-dealer-0",
+      "url": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/editor/goods/common-content/4/aeca1e939e19adf1c1eb1d9fe81d652d.jpg",
+      "sha256": "e0090b0790db364ab44776069bf6b5d820d59034885f7998f0c1e31994185fcf",
+      "reason": "청풍 판매 약속·상담 전화·홈페이지·매장 사진 광고",
+      "evidence": "2026-10-27 원본 이미지 직접 열람; NAS retail-content-review/digitalcp-common-0.jpg"
+    },
+    {
+      "id": "digitalcp-dealer-1",
+      "url": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/editor/goods/common-content/26/d4403e58aefac5ab8692b6e4ee9b242b.jpg",
+      "sha256": "a9801bc1053d0932df599b1ad815c2fe093a0d446c784059cd2a71978dd73367",
+      "reason": "청풍 매장 찾아오는 길·매장 주소·전화",
+      "evidence": "2026-10-27 원본 이미지 직접 열람; NAS retail-content-review/digitalcp-common-1.jpg"
+    },
+    {
+      "id": "digitalcp-dealer-2",
+      "url": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/editor/goods/common-content/64/d5d727f8df04f336f65565a33267368b.jpg",
+      "sha256": "78ecb99f97596c91dc7c1b3c5835f79409140e3b9fa3a24ff56e60766dafeabf",
+      "reason": "청풍 매장 방문 행사 광고",
+      "evidence": "2026-10-27 원본 이미지 직접 열람; NAS retail-content-review/digitalcp-common-2.jpg"
+    },
+    {
+      "id": "digitalcp-dealer-3",
+      "url": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/editor/goods/common-content/6/5eabc39470122e98c2aa36b2016ecdfc.jpg",
+      "sha256": "266a5207a7b6eae5197d6d83d797ae52341fc1e3cdd8b25d88b65c65c9e0ca79",
+      "reason": "청풍 도장 날인·재판매 제한·청풍 연락처가 있는 판매점 전용 보증 안내",
+      "evidence": "2026-10-27 원본 이미지 직접 열람; NAS retail-content-review/digitalcp-common-3.jpg"
+    },
+    {
+      "id": "digitalcp-dealer-4",
+      "url": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/editor/goods/common-content/29/6074627f3f406353fbce0ce9293a3590.jpg",
+      "sha256": "1eb1dcf7ab5f7695734bf6bede1f3faed96718ba2bff01feda19d945d756a211",
+      "reason": "청풍몰 전용 구매·방문 수령 및 청풍 전화 안내",
+      "evidence": "2026-10-27 원본 이미지 직접 열람; NAS retail-content-review/digitalcp-common-4.jpg"
+    },
+    {
+      "id": "dealer-module-7733f27a6f58d7",
+      "url": "https://gi.esmplus.com/kppshop/kpp/0common/as.jpg",
+      "sha256": "6e24fc3b6391cf6d33d7503984fde6aeae3739896f36b22903b1e2be108e922e",
+      "reason": "타 판매점의 방문·채널 추가·구매·쿠폰·대리점 모집 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-65fdd11baa29c6",
+      "url": "https://ai.esmplus.com/kppshop/02_HOYA/00_Brand_announcement/HOYA_SELLER.jpg",
+      "sha256": "40adc4e1c7d6d5edb8e0d95c476373da72713719cdef36c7c312520f7b574ae1",
+      "reason": "공급점 자체 상담 채널·직접 보상 구매 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-1026051b76c800",
+      "url": "https://gi.esmplus.com/kppshop/kpp/0common/delivery.jpg",
+      "sha256": "15d9f3e7334370e901d3d2ef3cc8276e16dbe6de0dc77fc102dff171703bc8f7",
+      "reason": "공급점 자체 상담 채널·직접 보상 구매 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json",
+      "manufacturer_notes": [
+        {
+          "brands": [
+            "leofoto"
+          ],
+          "text": "KPP 정식 수입품 보증 안내: Leofoto 삼각대·볼헤드는 구매일부터 10년, 그 외 제품은 1년입니다. 제품별 시리얼과 구매 영수증을 보관해주세요."
+        },
+        {
+          "brands": [
+            "tokina"
+          ],
+          "text": "KPP 정식 수입품 보증 안내: Tokina 일반 렌즈는 구매일부터 2년, CINEMA ATX 렌즈는 1년입니다. 제품의 시리얼을 확인해주세요."
+        },
+        {
+          "brands": [
+            "smallrig",
+            "simorr",
+            "pgytech",
+            "kenko",
+            "zkin",
+            "viltrox",
+            "lim-s",
+            "kase",
+            "hoya",
+            "hny"
+          ],
+          "text": "KPP 정식 수입품 보증 안내: 원본에 표시된 해당 브랜드의 서비스 보증기간은 구매일부터 1년입니다. 제품별 보증서·시리얼·구매 영수증과 적용 조건을 확인해주세요."
+        }
+      ]
+    },
+    {
+      "id": "dealer-module-10932a8e1cac92",
+      "url": "https://gi.esmplus.com/thecamera/take/thecamera/dowon/thecamera_cs.jpg",
+      "sha256": "1df45ceb86b3e0d379325cdea3892305d7b0ebc97cbdfa4e3ae07afdb950cdc7",
+      "reason": "타 판매점 고객센터·직접 수령·배송·반품 안내",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-983c2e17328423",
+      "url": "https://gi.esmplus.com/thecamera/take/thecamera/dowon/get_visit.jpg",
+      "sha256": "a40cecda9f1f543e852d2de6379147f898ad566ebdb5e2c25a5f01f6ac94ceea",
+      "reason": "타 판매점의 방문·채널 추가·구매·쿠폰·대리점 모집 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-e29a12d3ef34e4",
+      "url": "https://ai.esmplus.com/thecamera75/thecamera_info/thecamera_delivery_2.jpg",
+      "sha256": "46ef5f607a9976026e4ca71cd6d22db6571117d67885a7b4b43c106499de8743",
+      "reason": "타 판매점 고객센터·직접 수령·배송·반품 안내",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-9a4a2e0f52ba41",
+      "url": "https://benrokorea.cafe24.com/banner/2025/08/medal2.jpg",
+      "sha256": "162554dc3dc90eb914287966eb7df003bd45d750105151c0bf55c228063762ce",
+      "reason": "타 판매점의 방문·채널 추가·구매·쿠폰·대리점 모집 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-dbe19cf2aa8c1e",
+      "url": "https://image.plthink.com/NANLITE/0.jpg",
+      "sha256": "dd16e93573f04e5be57220a87939d37efe489821048ac5a5de98987645dbfd7d",
+      "reason": "타 판매점의 방문·채널 추가·구매·쿠폰·대리점 모집 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json",
+      "manufacturer_notes": [
+        {
+          "brands": [
+            "nanlite"
+          ],
+          "text": "공식 수입원 안내: NANLITE 조명 제품의 기본 무상 보증은 1년이며, 수령일로부터 30일 이내 정품 등록 시 1년이 추가됩니다. 액세서리는 연장 대상에서 제외됩니다."
+        }
+      ]
+    },
+    {
+      "id": "dealer-module-2eb4e2dfe9b706",
+      "url": "https://image.plthink.com/VALENS/intro.jpg",
+      "sha256": "a7c529dd2808c9ee130bc3b3cdf9cbefde5ffbeeb9a18b14c56430a0f34b962c",
+      "reason": "타 판매점의 방문·채널 추가·구매·쿠폰·대리점 모집 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-42b45056a7252a",
+      "url": "https://image.plthink.com/ULANZI/ALL/intro.jpg",
+      "sha256": "720432614d321149f95291d4ad419edb2985296df9da0fe590c66a5338633393",
+      "reason": "타 판매점 고객센터·직접 수령·배송·반품 안내",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-b1c06677421327",
+      "url": "https://image.plthink.com/FALCAM/ALL/intro_860.jpg",
+      "sha256": "576cce7c9fb3b79cbe41c65f8df50b2a936b4c736b632ab44882da6d9850a24c",
+      "reason": "타 판매점의 방문·채널 추가·구매·쿠폰·대리점 모집 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-95ccc052737163",
+      "url": "https://image.plthink.com/Profoto/ALL/Intro.jpg",
+      "sha256": "fd1356a75c70ffe5903bee03c915399e4916d86ec25b32e8322ecf7d89d1521c",
+      "reason": "다른 회사 명의 공식 판매점 인증·체험존 홍보",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json",
+      "manufacturer_notes": [
+        {
+          "brands": [
+            "profoto"
+          ],
+          "text": "프로포토코리아 정식 유통품의 A/S 및 유지 관리 서비스는 본사 규정에 따릅니다. 공식 서비스 센터: 02-3444-0211, service@profotokorea.com."
+        }
+      ]
+    },
+    {
+      "id": "dealer-module-c954b728b62dc5",
+      "url": "https://image.plthink.com/NANLUX/INTRO/NANLUX_INTRO.jpg",
+      "sha256": "4d2e3d7bbe3e82f2ebfba19916812cc04bc20537cb4fa0bd6decb6cc8aa7e599",
+      "reason": "타 판매점의 방문·채널 추가·구매·쿠폰·대리점 모집 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json",
+      "manufacturer_notes": [
+        {
+          "brands": [
+            "nanlux"
+          ],
+          "text": "공식 수입원 안내: NANLUX 조명 제품의 기본 무상 보증은 2년이며, 수령일로부터 30일 이내 정품 등록 시 1년이 추가됩니다. 액세서리는 연장 대상에서 제외됩니다."
+        }
+      ]
+    },
+    {
+      "id": "dealer-module-99a0c0ff19ef20",
+      "url": "https://image.plthink.com/TILTA/ALL/Outro.jpg",
+      "sha256": "1d818d96778a7ae966406fc45930a8af6906a689e25096b65fbd345292113e40",
+      "reason": "타 판매점 고객센터·직접 수령·배송·반품 안내",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-2e92c7f85d3769",
+      "url": "https://image.plthink.com/KUPO/ALL/Outro.jpg",
+      "sha256": "1d818d96778a7ae966406fc45930a8af6906a689e25096b65fbd345292113e40",
+      "reason": "타 판매점 고객센터·직접 수령·배송·반품 안내",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-9bb387ab24ec7d",
+      "url": "https://image.plthink.com/BambuLab/ALL/Intro.jpg",
+      "sha256": "8564812e690e265782381b78ff10e7b4021785fc7bb08c7e31d49bd9e62d6a0b",
+      "reason": "공급점 명의 판매점·당일출고 약속; 제품 포장 안전 안내는 텍스트로 보존",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json",
+      "manufacturer_notes": [
+        {
+          "brands": [
+            "bambu-lab",
+            "bambulab"
+          ],
+          "text": "제조사 A/S 접수·회수에 대비하여 제품 박스와 내부 완충재를 보관해주세요. 재포장은 제품별 제조사 가이드를 따라주세요."
+        }
+      ]
+    },
+    {
+      "id": "dealer-module-b8955098699154",
+      "url": "https://image.plthink.com/GODOX/ALL/Outro.jpg",
+      "sha256": "0802e01736b1654b53da82310ef98ac5c10c413c12dc8a4c19dde671769ac33a",
+      "reason": "공급점 자체 상담 채널·직접 보상 구매 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-9062c62357bcf4",
+      "url": "https://image.plthink.com/COMICA/00.jpg",
+      "sha256": "ea37a5c215faf2f78507298983a97b58b3a65f69f94e5416cbeb4242ed7993f5",
+      "reason": "타 판매점의 방문·채널 추가·구매·쿠폰·대리점 모집 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-3b3fa7a19f3171",
+      "url": "https://gi.esmplus.com/esun08/images/information/b_infor.jpg",
+      "sha256": "ef6fd5549373dabe796170a266dee7f149ddcdd1af249e047382e6628ed9f0e7",
+      "reason": "타 판매점 고객센터·직접 수령·배송·반품 안내",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-8dae3ad6b6c3ea",
+      "url": "https://image.plthink.com/PANYAN-FILM/ALL/INTRO.jpg",
+      "sha256": "4a8dafd2bb33ceb59a5d90159132a5f2327e65fbbb415c4fe929c373157fb253",
+      "reason": "타 판매점의 방문·채널 추가·구매·쿠폰·대리점 모집 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-2978e46d739c39",
+      "url": "https://image.plthink.com/Profoto/INTRO/11.jpg",
+      "sha256": "7eb318f71668eaefbb48386a34e511e0cad0111c16c3b4222642bf4e265cba90",
+      "reason": "타 판매점의 방문·채널 추가·구매·쿠폰·대리점 모집 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-3c4cde95c93a63",
+      "url": "https://image.plthink.com//Profoto/INTRO/11.jpg",
+      "sha256": "7eb318f71668eaefbb48386a34e511e0cad0111c16c3b4222642bf4e265cba90",
+      "reason": "타 판매점의 방문·채널 추가·구매·쿠폰·대리점 모집 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-e3aacd931f72e6",
+      "url": "https://image.plthink.com/MOVMAX/ALL/Outro.jpg",
+      "sha256": "10bda0bc70dbef8761179085a2e27a4033aed1a76213de79cc076f1633d61c48",
+      "reason": "타 판매점 고객센터·직접 수령·배송·반품 안내",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-164e526d870777",
+      "url": "https://image.plthink.com/SENNHEISER/ALL/Intro.jpg",
+      "sha256": "a37a731f77326138ed8085081383b67348e176d8ec5dc1c1fcc8ff813f39dd4f",
+      "reason": "유쾌한생각 명의 온라인 판매점 인증서와 판매점 전화",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json",
+      "manufacturer_notes": [
+        {
+          "brands": [
+            "sennheiser"
+          ],
+          "text": "젠하이저코리아 정식 수입품은 정품 홀로그램 스티커와 구매 영수증을 함께 보관해주세요. 정품 확인 및 제조사 서비스 센터: 1544-1699."
+        }
+      ]
+    },
+    {
+      "id": "dealer-module-313d67ad893b7b",
+      "url": "https://cdn.saeki.co.kr/malluploadfile/public/images/editor/2023/202307/4c8f785b-79ce-423e-a86a-ae19882a5ca5.jpg",
+      "sha256": "bd4b3d2be6df4057f2d95a3b530348c3622742fb732859a73d0385436cad5052",
+      "reason": "다른 대리점의 오프라인 체험 매장 안내",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-ac4d50eef31b24",
+      "url": "https://cdn.saeki.co.kr/malluploadfile/public/images/editor/2026/202610/131996fb-f8f5-47fb-856f-f3e9ea57236e.jpg",
+      "sha256": "d1ba8a1aac3a251770d9cff2497497b2fd0738564f88178297894e9dc66ffa14",
+      "reason": "타 판매점의 방문·채널 추가·구매·쿠폰·대리점 모집 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-dd807746299dd4",
+      "url": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250716/ec6c9f368e40bdd71bda0ac00d180025.jpg",
+      "sha256": "ce71ab9d05ef03e204d501220d9be07a583f9a982670d5d0181cefba57db7959",
+      "reason": "공급점 전용 주문·배송·전화·반품 정책; 나다운 구매 안내로 대체",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-c3cb31590c2338",
+      "url": "https://ecimg.cafe24img.com/pg1446b41213611071/clmedia/web/upload/NNEditor/20250616/eeb5feb389809471b03a937cf4268bc9.jpg",
+      "sha256": "ce71ab9d05ef03e204d501220d9be07a583f9a982670d5d0181cefba57db7959",
+      "reason": "공급점 전용 주문·배송·전화·반품 정책; 나다운 구매 안내로 대체",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-273a36531c53a0",
+      "url": "https://onnoff.kr/web/upload/NNEditor/20260513/copy-1778640897-EBB0B0EC86A1EC9588EB82B4_EC98A8EC95A4EC98A4ED9484EBAFB8EB9494EC96B4.jpg",
+      "sha256": "d1b626d548bbec21690122ddd65b600512d140acd613752c10761da1ad97cdd0",
+      "reason": "공급점 전용 주문·배송·전화·반품 정책; 나다운 구매 안내로 대체",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-df0471c9b1ed3f",
+      "url": "https://onnoff.kr/web/upload/NNEditor/20260512/EBB0B0EC86A1EC9588EB82B4_EC98A8EC95A4EC98A4ED9484EBAFB8EB9494EC96B4.jpg",
+      "sha256": "d1b626d548bbec21690122ddd65b600512d140acd613752c10761da1ad97cdd0",
+      "reason": "공급점 전용 주문·배송·전화·반품 정책; 나다운 구매 안내로 대체",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-7bd22e38471fc8",
+      "url": "https://onnoff.kr/web/upload/NNEditor/20260514/EBB0B0EC86A1EC9588EB82B4_EC98A8EC95A4EC98A4ED9484EBAFB8EB9494EC96B4.jpg",
+      "sha256": "d1b626d548bbec21690122ddd65b600512d140acd613752c10761da1ad97cdd0",
+      "reason": "공급점 전용 주문·배송·전화·반품 정책; 나다운 구매 안내로 대체",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-b78dc02fad5ed5",
+      "url": "https://onnoff.kr/web/upload/NNEditor/20251212/copy-1765520224-EC868CEB8B8820EAB3B5EC8B9DEB8C80EBA6ACECA090.png",
+      "sha256": "aec3c6a9c5cc41bba36ec92c5fe764778ae0eaeb6e1f867351e32f2a868598c8",
+      "reason": "타 판매점의 방문·채널 추가·구매·쿠폰·대리점 모집 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-92c00080a86ea7",
+      "url": "https://onnoff.kr/web/upload/NNEditor/20251212/copy-1765520352-EBB0B0EC86A1EC9588EB82B4.jpg",
+      "sha256": "d1b626d548bbec21690122ddd65b600512d140acd613752c10761da1ad97cdd0",
+      "reason": "공급점 전용 주문·배송·전화·반품 정책; 나다운 구매 안내로 대체",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-545dab76044825",
+      "url": "https://onnoff.kr/web/upload/NNEditor/20260424/copy-1777018420-EBB0B0EC86A1EC9588EB82B4_EC98A8EC95A4EC98A4ED9484EBAFB8EB9494EC96B4.jpg",
+      "sha256": "d1b626d548bbec21690122ddd65b600512d140acd613752c10761da1ad97cdd0",
+      "reason": "공급점 전용 주문·배송·전화·반품 정책; 나다운 구매 안내로 대체",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-978df871b5f3ef",
+      "url": "https://www.avx.co.kr/data/board/event/panasonic_EVENT.jpg",
+      "sha256": "7f8c42e96298d5924f09d8db5762a9101914b284d1e928fe506d1a07806b27e5",
+      "reason": "타 판매점의 방문·채널 추가·구매·쿠폰·대리점 모집 유도",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "dealer-module-309b31e0641281",
+      "url": "https://sunphoto.co.kr/_spec/optic/skywalker/1136px_topbanner.jpg",
+      "sha256": "f99399871cc362d9dd57a38559f95f309e4fa0309eff522964a175773f926533",
+      "reason": "썬포토 포인트 적립 행사; 나다운 적립 혜택으로 표시하지 않음",
+      "evidence": "2026-10-27 저장 원본 및 macOS Vision OCR 문맥 검토; NAS retail-content-review/ocr-review-records.json"
+    },
+    {
+      "id": "cinemall-dealer-f82580ee5596",
+      "url": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_01.jpg",
+      "reason": "기존 원본 상세에서 별도 img/cs/CS_01~04로 구분한 판매점 공통 CS 모듈",
+      "evidence": "기존 저장본의 공통 CS 자산 경로 전수 비교. 새 원본 요청·이미지 OCR 없음; 개별 수집 보류 유지."
+    },
+    {
+      "id": "cinemall-dealer-41831fbce8f5",
+      "url": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_02.jpg",
+      "reason": "기존 원본 상세에서 별도 img/cs/CS_01~04로 구분한 판매점 공통 CS 모듈",
+      "evidence": "기존 저장본의 공통 CS 자산 경로 전수 비교. 새 원본 요청·이미지 OCR 없음; 개별 수집 보류 유지."
+    },
+    {
+      "id": "cinemall-dealer-e7ebc3221744",
+      "url": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_03.jpg",
+      "reason": "기존 원본 상세에서 별도 img/cs/CS_01~04로 구분한 판매점 공통 CS 모듈",
+      "evidence": "기존 저장본의 공통 CS 자산 경로 전수 비교. 새 원본 요청·이미지 OCR 없음; 개별 수집 보류 유지."
+    },
+    {
+      "id": "cinemall-dealer-5e90cef9aefc",
+      "url": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_04.jpg",
+      "reason": "기존 원본 상세에서 별도 img/cs/CS_01~04로 구분한 판매점 공통 CS 모듈",
+      "evidence": "기존 저장본의 공통 CS 자산 경로 전수 비교. 새 원본 요청·이미지 OCR 없음; 개별 수집 보류 유지."
+    }
+  ],
+  "text": [
+    {
+      "id": "bando-purchase-invitation",
+      "pattern": "카메라\\s*구매문의\\s*:\\s*반도영상\\[URSA Cine-마스터 리셀러\\]\\s*T\\.\\s*02-6273-1500\\s*https://bandocamera\\.co\\.kr/cine-index\\.html\\s*",
+      "reason": "반도영상 구매 상담 유도",
+      "replacement": "",
+      "evidence": "2026-10-27 전체 공개 상세 텍스트 정적 점검 및 원문 문맥 확인"
+    },
+    {
+      "id": "onnoff-repair-sales",
+      "pattern": "(?:온앤오프미디어\\s*에서는\\s*셔틀러\\s*수리도\\s*겸하고\\s*있으니,\\s*)?직접수리가\\s*어려우신경우\\s*고객전화\\s*\\(02-337-0(?:010|100)\\)\\s*으로\\s*문의\\s*주시면\\s*친절히\\s*상담해\\s*드리겠습니다\\.\\s*셔틀러(?:,\\s*소니)?의\\s*다른제품\\s*수리/판매도\\s*가능합니다\\s*\\^\\^",
+      "reason": "온앤오프 전화 및 타제품 판매 안내",
+      "replacement": "",
+      "evidence": "2026-10-27 전체 공개 상세 텍스트 정적 점검 및 원문 문맥 확인"
+    },
+    {
+      "id": "avx-consultation",
+      "pattern": "(?:구매전에\\s*제품\\s*및\\s*가격\\s*상담바랍니다\\.\\s*\\(공지없이\\s*가격변동이\\s*있을\\s*수\\s*있습니다\\.\\)\\s*)?(?:제품\\s*상담|문의)\\s*:\\s*(?:02-2265-0032,\\s*)?010-(?:5327-9134|6280-3541),\\s*sjh@avx\\.co\\.kr\\s*",
+      "reason": "AVX 담당자 판매 전화와 이메일",
+      "replacement": "",
+      "evidence": "2026-10-27 전체 공개 상세 텍스트 정적 점검 및 원문 문맥 확인"
+    },
+    {
+      "id": "avx-showroom",
+      "pattern": "📌\\s*고객센터\\s*안내\\s*고객센터:\\s*02-2265-0032\\s*📌\\s*성수동\\s*에이브이엑스\\s*쇼룸\\s*안내\\s*성수동\\s*에이브이엑스\\s*쇼룸에서는\\s*최신\\s*영상,\\s*음향,\\s*조명\\s*장비를\\s*직접\\s*체험하고\\s*현장에서\\s*구매도\\s*가능합니다\\.\\s*쇼룸\\s*방문\\s*가능한\\s*시간\\s*:\\s*\\(월-금\\)\\s*[^\\n]*?휴게시간\\)",
+      "reason": "AVX 쇼룸 방문·현장 구매·전화 안내",
+      "replacement": "",
+      "evidence": "2026-10-27 전체 공개 상세 텍스트 정적 점검 및 원문 문맥 확인"
+    },
+    {
+      "id": "clmedia-purchase-contact",
+      "pattern": "문의\\s*:\\s*02-591-2593",
+      "reason": "씨엘미디어 예약 판매 문의 번호",
+      "replacement": "",
+      "evidence": "2026-10-27 전체 공개 상세 텍스트 정적 점검 및 원문 문맥 확인"
+    },
+    {
+      "id": "hipixel-adapter-contact",
+      "pattern": ",\\s*다른\\s*제품\\s*어댑터\\s*문의는\\s*대표번호\\(031-450-3515\\)로\\s*문의주시기\\s*바랍니다\\.",
+      "reason": "하이픽셀 직접 구매 문의 문구",
+      "replacement": ".",
+      "evidence": "2026-10-27 전체 공개 상세 텍스트 정적 점검 및 원문 문맥 확인"
+    },
+    {
+      "id": "hipixel-seller-disclaimer",
+      "pattern": "※\\s*고객\\s*실수에\\s*의한\\s*구매건에\\s*대해\\s*당사는\\s*그\\s*어떠한\\s*책임도\\s*없습니다\\.",
+      "reason": "공급점의 포괄적 구매 면책 문구",
+      "replacement": "",
+      "evidence": "2026-10-27 전체 공개 상세 텍스트 정적 점검 및 원문 문맥 확인"
+    },
+    {
+      "id": "manufacturer-page-navigation",
+      "pattern": "판매처\\s*검색\\s*(?=PDF\\s*출력)",
+      "reason": "복사된 제조사 페이지의 구매처 탐색 버튼 문구",
+      "replacement": "",
+      "evidence": "2026-10-27 전체 공개 상세 텍스트 정적 점검 및 원문 문맥 확인"
+    },
+    {
+      "id": "motion9-supplier-related-products",
+      "pattern": "추가\\s*옵션은\\s*하단의\\s*관심상품에서\\s*구매\\s*가능합니다\\.",
+      "reason": "원본 쇼핑몰 하단의 별도 상품 구매 안내",
+      "replacement": "",
+      "evidence": "2026-10-27 전체 공개 상세 텍스트 정적 점검 및 원문 문맥 확인"
+    },
+    {
+      "id": "plthink-store-order-policy",
+      "pattern": "review\\ 작성\\ 폼\\ review\\ board\\ 이\\ 름\\ :\\ 평점\\ :\\ ★\\ ★★\\ ★★★\\ ★★★★\\ ★★★★★\\ 첨\\ 부\\ :\\ 내\\ 용\\ :\\ 등록\\ COMMENT\\ \\+\\ MORE\\ review\\ 리스트\\ NO\\ SUBJECT\\ SCORE\\ NAME\\ DATE\\ REVIEW\\ review\\ 리스트\\ 등록된\\ 리뷰가\\ 없습니다\\.\\ Q\\&A\\ 전체보기\\ QnA\\ 리스트\\ 등록된\\ 문의가\\ 없습니다\\.\\ WRITE\\ 배송\\ 안내\\ 배송료\\ 5만원미만\\ :\\ 3,000원\\ /\\ 5만원\\ 이상\\ :\\ 무료배송\\ \\*일부\\ 협력업체\\ 직접출고\\ 제품의\\ 경우\\ 기본배송비\\ 정책과\\ 별개로\\ 개별\\ 배송비가\\ 청구될\\ 수\\ 있습니다\\.\\ \\(일부\\ 도서,\\ 산간지역은\\ 최소\\ 3천원부터\\ \\~\\ 지역과\\ 물품에\\ 따라\\ 최대\\ 3만원\\ 까지\\ 추가금액이\\ 발생됩니다\\.\\)\\ 배송조건\\ :\\ \\(조건\\)\\ 배송방법\\ 로젠택배\\ /\\ 경동택배\\ /\\ 퀵서비스\\ /\\ 우체국EMS\\ 배송일정\\ 결제일로부터\\ 1\\ \\~\\ 3\\ 영업일\\ 이내\\ 출고를\\ 원칙으로\\ 하고\\ 있습니다\\.\\ 평일\\ 15:00시\\ 까지\\ 결제된\\ 상품의\\ 경우\\ 당일\\ 출고됩니다\\.\\ 다만,\\ 위탁판매\\ 제품의\\ 업체\\ 배송\\ /\\ 휴일과\\ 주말을\\ 포함한\\ 경우\\ /\\ 명절\\ 등\\ 연휴의\\ 전,후\\ 기간\\ /\\ 계절별\\ 생물상품\\ 택배가\\ 많은\\ 시즌\\ \\(ex\\.김장철\\)\\ /\\ 천재지변이나\\ 자연재해로\\ 인한\\ 경우\\ 등에는\\ 배송이\\ 지연될\\ 수\\ 있습니다\\.\\ 출고된\\ 제품의\\ 택배\\ 운송장\\ 번호는\\ 택배\\ 발송\\ 후\\ 입력되며\\ \"주문조회\"\\ 메뉴에서\\ 확인할\\ 수\\ 있습니다\\.\\ 택배\\ 조회는\\ 출고된\\ 다음\\ 날\\ 오전부터\\ 조회가\\ 가능합니다\\.\\ 위탁판매\\ 제품이나\\ 주문\\ 제작형\\ 제품의\\ 경우\\ 출고까지\\ 다소의\\ 시일이\\ 소요될\\ 수\\ 있습니다\\.\\ 이\\ 경우\\ 타\\ 제품과\\ 묶음배송이\\ 불가할\\ 수\\ 있으며,\\ 배송일을\\ 조정할\\ 수\\ 없는\\ 점\\ 양해\\ 바랍니다\\.\\ \\(출고\\ 다음\\ 날\\ 택배\\ 운송장을\\ 조회하면\\ 담당\\ 택배기사\\ 연락처를\\ 확인하실\\ 수\\ 있습니다\\.\\)\\ 퀵\\ 서비스\\ 퀵\\ 서비스\\ 마감\\ 시간은\\ 평일\\ 17:00시\\ 까지\\ 입니다\\.\\ 해당\\ 시간\\ 이후는\\ 요청이\\ 불가합니다\\.\\ 퀵\\ 배송은\\ 준비\\ 시간이\\ 소요되오니\\ 퀵을\\ 저희\\ 쪽에\\ 요청해주시는\\ 경우\\ 미리\\ 전화\\ 연락\\ 을\\ 꼭\\ 부탁드립니다\\.\\ 퀵\\ 비용은\\ 착불\\ 이\\ 기본이며,\\ 퀵을\\ 직접\\ 보내주실\\ 경우에는\\ 당사\\ 준비\\ 후\\ 연락\\ 드리면\\ 보내주시면\\ 됩니다\\.\\ 교환/반품\\ 안내\\ 접수\\ 기간\\ 구매하신\\ 제품은\\ 수령일로부터\\ 7일\\ 이내\\ 교환이나\\ 반품이\\ 가능합니다\\.\\ 받으신\\ 제품이\\ 파손되었거나\\ 이상이\\ 있을\\ 경우\\ 해당\\ 상태를\\ 핸드폰\\ 사진으로\\ 꼭\\ 찍어두시고\\ 당사\\ 고객센터에\\ 연락주시기\\ 바랍니다\\.\\ 교환/반품\\ 불가\\ 구매\\ 후,\\ 수령하신\\ 제품은\\ 반송\\ 후,\\ 새\\ 제품으로\\ 재판매가\\ 가능한\\ 경우에만\\ 교환\\ 및\\ 반품이\\ 가능합니다\\.\\ 1\\.\\ 받으신\\ 제품을\\ 개봉하여\\ 포장재\\ 및\\ 정품\\ 스티커가\\ 훼손된\\ 경우\\ 또는\\ 포장재를\\ 분실한\\ 경우\\(택배박스\\ 제외\\)\\ 2\\.\\ 제품을\\ 설치하거나\\ 사용하여\\ 흠집이\\ 생긴\\ 경우\\ \\(제품LCD\\ 필름또는\\ 텍이\\ 제거된\\ 경우포함\\)\\ 3\\.\\ 주문제작된\\ 상품\\(캔버스\\ 배경\\ 등\\)\\ 또는,\\ 가공되어\\ 출고된\\ 상품\\(배경지\\ 컷팅\\ 등\\)의\\ 경우\\ 4\\.\\ 기타\\ 새\\ 제품으로\\ 판매가\\ 불가하다고\\ 판단될\\ 경우\\ 교환\\ 및\\ 반품이\\ 불가\\ 합니다\\.\\ \\*전원\\ 어댑터류등\\ 전선의\\ 길이\\ 및\\ 모양은\\ 제품의\\ 종류\\ 및\\ 출시\\ 시기에\\ 따라\\ 달라질\\ 수\\ 있으므로\\ 이로인한\\ 교환\\ 반품은\\ 불가합니다\\.\\ 배송비\\ 고객\\ 변심으로\\ 인한\\ 교환/반품은\\ 제품을\\ 받으실\\ 때\\ 무료로\\ 제공받은\\ 택배비를\\ 포함하여\\ 전액\\ 고객\\ 부담입니다\\.\\ 제품의\\ 초기불량으로\\ 인한\\ 교환/반품은\\ 전액\\ 유쾌한생각\\ 부담입니다\\.\\ 배송비는\\ 제품의\\ 크기에\\ 따라\\ 차이가\\ 있습니다\\.\\ 작은\\ 제품은\\ 편도\\ 3,000원부터\\ 시작하며,\\ 2m가\\ 넘는\\ 배경지등의\\ 제품은\\ 편도\\ 8,800원의\\ 배송비가\\ 청구됩니다\\.\\ 제주도\\ 및\\ 도서\\ 산간\\ 지역은\\ 추가비용이\\ 청구됩니다\\.\\ 접수\\ 방법\\ 제품이\\ 파손되지\\ 않도록\\ 신문지나\\ 에어캡\\(뽁뽁이\\)\\ 등으로\\ 충분히\\ 감싸주세요\\.\\ 배송\\ 중\\ 파손으로\\ 인한\\ 문제는\\ 당사가\\ 책임지지\\ 않습니다\\.\\ 고객님의\\ 성함과\\ 연락처,\\ 받으실\\ 주소,\\ 교환\\ 또는\\ 반품\\ 사유를\\ 자세히\\ 적어서\\ 동봉해주세요\\.\\ 당사\\ 고객센터로\\ 택배나\\ 퀵,\\ 방문\\ 등으로\\ 접수해주세요\\ ",
+      "reason": "유쾌한생각 리뷰·주문조회·배송·방문 반품 경로",
+      "replacement": "",
+      "evidence": "2026-10-27 전체 공개 상세 텍스트 정적 점검 및 원문 문맥 확인"
+    },
+    {
+      "id": "plthink-store-as-route",
+      "pattern": "A/S\\ 접수\\ 방법\\ \\-제품\\ 구입\\ 후\\ 1개월\\ 이내의\\ 초기불량이\\ 아닌\\ 경우,\\ 보증수리를\\ 위한\\ 배송비는\\ 소비자\\ 부담을\\ 원칙으로\\ 합니다\\.\\ \\-제품이\\ 파손되지\\ 않도록\\ 신문지나\\ 에어캡\\(뽁뽁이\\)\\ 등으로\\ 충분히\\ 감싸주세요\\.\\ 배송\\ 중\\ 파손으로\\ 인한\\ 문제는\\ 당사가\\ 책임지지\\ 않습니다\\.\\ \\-고객님의\\ 성함과\\ 연락처,\\ 받으실\\ 주소,\\ 제품의\\ 고장\\ 증상을\\ 자세히\\ 적어서\\ 동봉해주세요\\.\\ \\-당사\\ 고객센터로\\ 택배나\\ 퀵,\\ 방문\\ 등으로\\ 접수해주세요\\.\\(퀵\\ 보내실\\ 경우\\ 미리\\ 직원과\\ 상담필요\\)\\ ",
+      "reason": "유쾌한생각 매장 방문·퀵·택배 접수 방법",
+      "replacement": "",
+      "evidence": "2026-10-27 전체 공개 상세 텍스트 정적 점검 및 원문 문맥 확인"
+    },
+    {
+      "id": "saeki-store-order-policy",
+      "pattern": "상세정보\\ 첫\\ 상품평을\\ 작성해주세요\\.\\ 3\\.7\\ 상품평\\ 전체\\ 2\\ 포토상품평\\ 보기\\ 내\\ 상품평\\ 보기\\ 최신순\\ 좋아요순\\ 별점순\\ 등록된\\ 상품평이\\ 없습니다\\.\\ 상품문의\\ 전체\\ 0\\ 답변완료만\\ 보기\\ 내\\ 상품문의\\ 보기\\ 5\\ 10\\ 30\\ 50\\ 상품문의\\ No\\ 제목\\ 아이디\\ 작성일\\ 상태\\ 등록된\\ 상품문의가\\ 없습니다\\.\\ 개인정보\\(고객정보,\\ 핸드폰\\ 번호,\\ 송장\\ 번호\\)를\\ 기재하지\\ 마십시오\\ 이미\\ 주문하신\\ 상품에\\ 대한\\ 서비스\\ 불편사항은\\ 주문내역이\\ 확인되는\\ 1:1문의를\\ 이용하시기\\ 바랍니다\\.\\ 배송\\ 안내\\ 택배업체\\ CJ대한통운,\\ 화물택배\\(건영택배,\\ 천일택배,\\ 경동택배,\\ 대신택배\\)\\ 배송일정\\ 평일\\ 14시\\ 이전\\ 주문\\ 건에\\ 한해\\ 당일\\ 발송됩니다\\.\\ \\(공휴일,\\ 토/일\\ 제외,\\ 일부\\ 상품\\ 제외\\)\\ 평일\\ 14시\\ 이후\\ 주문\\ 건은\\ 2\\~3일\\ 소요될\\ 수\\ 있습니다\\.\\ 단,\\ 주말\\ 또는\\ 공휴일이\\ 있을\\ 경우\\ 1\\~2일\\ 더\\ 소요될\\ 수\\ 있습니다\\.\\ 상품\\ 재고\\ 여부에\\ 따라서\\ 배송\\ 기간이\\ 1\\~2일\\ 더\\ 소요될\\ 수\\ 있습니다\\.\\ 화물택배\\(건영\\ /\\ 천일\\ /\\ 경동\\ /\\ 대신택배\\)의\\ 경우\\ 택배사의\\ 사정에\\ 따라서\\ 최소\\ 1일\\ 최대\\ 3일이\\ 더\\ 소요될\\ 수\\ 있습니다\\.\\ 세기몰\\ 공식\\ 수입\\ 브랜드\\ 외\\ 상품은\\ 재고\\ 여부에\\ 따라서\\ 배송기간이\\ 최소\\ 2일\\ 최대\\ 7일이\\ 소요될\\ 수\\ 있습니다\\.\\ 배송비\\ 50,000원\\ 이상\\ 구매\\ 시\\ 무료배송\\ 50,000원\\ 이하\\ 구매\\ 시\\ 기본\\ 3,000원\\ 화물택배를\\ 이용하거나\\ 또는\\ 도서,\\ 산간지역\\ 배송\\ 시에는\\ 추가\\ 비용이\\ 발생할\\ 수\\ 있습니다\\ 주문취소\\ 안내\\ 주문취소\\ 결제완료\\ 상태에서만\\ 주문\\ 취소\\ 가능\\ 자세한\\ 사항은\\ 고객센터\\(02\\-3668\\-3114\\)로\\ 연락\\ 주시면\\ 빠른\\ 상담을\\ 받아보실\\ 수\\ 있습니다\\.\\ 반품\\ 안내\\ 반품\\ 배송완료\\ 상태에서만\\ 반품\\ 신청이\\ 가능합니다\\.\\ 단순변심에\\ 의한\\ 반품\\ 신청은\\ 배송완료일\\ 기준\\ 7일\\ 내에만\\ 가능합니다\\.\\ 단순변심에\\ 의한\\ 반품일\\ 경우\\ 미개봉/미사용\\ 상품에\\ 한해서만\\ 가능하며,\\ 배송비는\\ 고객님께서\\ 부담해주셔야\\ 합니다\\.\\(환불\\ 진행시\\ 결제금액에서\\ 차감\\)\\ 반품을\\ 신청하시면,\\ 수\\ 일\\ 내로\\ 택배기사님이\\ 방문하여\\ 상품을\\ 회수합니다\\.\\ \\(기사님이\\ 가져가실\\ 수\\ 있게\\ 상품\\ 재포장\\ 부탁드립니다\\.\\)\\ 반품\\ 상품의\\ 실물\\ 확인후\\ 반품확정\\ 및\\ 환불이\\ 진행됩니다\\.\\ 카드결제\\ 환불은\\ 반품확정일로\\ 부터\\ 3\\-5일까지\\ 소요될\\ 수\\ 있습니다\\.\\ 네이버페이\\ 환불은\\ 반품확정일로\\ 부터\\ 1\\-3일까지\\ 소요될\\ 수\\ 있습니다\\.\\ 사용하셨던\\ 포인트\\ 및\\ 쿠폰의\\ 원복시점은\\ 환불이\\ 완료된\\ 시점으로\\ 원복되어\\ 재사용이\\ 가능합니다\\.\\ \\(반품\\ 진행중\\ 쿠폰의\\ 기간이\\ 만료될\\ 경우\\ 자동소멸될\\ 수\\ 있습니다\\.\\)\\ 제한사유\\ 구매확정\\ 후\\ 반품불가\\ 상품\\ 포장개방\\ 및\\ 작동/세팅/렌즈\\ 장착\\ 등의\\ 상품의\\ 가치\\ 훼손이\\ 발생한\\ 경우\\ 반품\\ 불가\\ 디지털\\ 기기의\\ 초기\\ 불량건\\(해당\\ A/S센터의\\ 불량확인서가\\ 발행된\\ 상품\\)의\\ 경우는\\ 예외\\ 상품박스의\\ 개봉\\ 또는\\ 상품\\ 및\\ 상품\\ 박스,\\ 비닐을\\ 분실/훼손한\\ 경우\\ 반품\\ 불가\\ 상품별로\\ 반품의\\ 조건이\\ 다를\\ 수\\ 있으므로\\ 반품신청\\ 전\\ 전화\\ 문의\\ 후\\ 반품진행\\ 부탁드립니다\\.\\ 반품배송비\\ 기본\\ 3,000원\\(무료배송의\\ 경우\\ 왕복운임비\\ 6,000원\\ 부담\\)\\ 화물택배를\\ 이용하거나\\ 또는\\ 제주,\\ 도서,\\ 산간지역\\ 배송\\ 시에는\\ 추가\\ 비용이\\ 발생할\\ 수\\ 있습니다\\.\\ 주의사항\\ 전자상거래\\ 등에서의\\ 소비자보호법에\\ 관한\\ 법률에\\ 의거하여\\ 미성년자가\\ 물품을\\ 구매하는\\ 경우,\\ 법정대리인이\\ 동의하지\\ 않으면\\ 미성년자\\ 본인\\ 또는\\ 법정\\ 대리인이\\ 구매를\\ 취소할\\ 수\\ 있습니다\\.",
+      "reason": "상품 설명이 아닌 세기몰 리뷰·주문·배송·전화·반품 안내",
+      "replacement": "",
+      "evidence": "2026-10-27 전체 공개 상세 텍스트 정적 점검 및 원문 문맥 확인"
+    }
+  ]
+}

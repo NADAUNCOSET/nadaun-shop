@@ -66,6 +66,7 @@ def brand_dictionary():
       'samyang':['삼양옵틱스'], 'qon':['큐온'], 'edelkrone':['에델크론'],
       'hoverair':['호버에어'], 'fxlion':['에프엑스라이온'], 'sedona':['세도나'],
       'motion9':['모션나인'], 'xtar':['엑스타'], 'genelec':['제네렉'],
+      'wooden-camera':['wooden camera','우든카메라','우든 카메라','우든'],
       'eimage':['e-image','이미지그립'], 'sachtler':['셔틀러'], 'gitzo':['짓죠'],
       'phaseone':['페이즈원','phase one'], 'misonics':['미소닉스'], 'pentax':['펜탁스'],
       'sekonic':['세코닉'], 'saramonic':['사라모닉'], 'eizo':['에이조'],
@@ -355,9 +356,17 @@ def build(allow_pending=False):
     asset_path=PUBLIC/'asset-manifest.json'
     assets=json.loads(asset_path.read_text()) if asset_path.exists() else {}
     public_products=[];public_details=defaultdict(dict);rental_details={};rental_content_audit=[]
+    from retail_content_policy import sanitize_detail, assert_clean
+    retail_content_audit=[];retail_products_checked=0
     from shipping_policy import shipping_class
     for pid,p in products.items():
         if p.get('hidden'):continue
+        if p['kind']=='purchase':
+            retail_products_checked+=1
+            details[pid],changes=sanitize_detail(p,details[pid])
+            p['images']=deepcopy(details[pid]['images'])
+            assert_clean(p,details[pid])
+            if changes:retail_content_audit.append({'id':pid,'name':p['name'],'source':p['source'],'changes':changes})
         p['images']=resolve_assets(p['images'])
         details[pid]['images']=p['images']
         main=p['images'].get('main') or []
@@ -378,6 +387,9 @@ def build(allow_pending=False):
         public_products.append(public_row)
         public_details[shard(pid)][pid]=details[pid]
     save_json(PUBLIC/'rental-details.json',rental_details)
+    save_json(AUDIT/'retail-content-review.json',{'products_checked':retail_products_checked,
+        'products_changed':len(retail_content_audit),'products':retail_content_audit,
+        'image_scope':'All public image references checked against reviewed modules; OCR and visual inspection of common assets recorded separately. This is not OCR verification of every unique product image.'})
     save_json(AUDIT/'rental-content-review.json',{'products_checked':len(rental_content_audit),'products':rental_content_audit})
     from product_taxonomy import build_taxonomy
     from rental_taxonomy import build_rental_taxonomy
@@ -424,8 +436,15 @@ def build(allow_pending=False):
     from catalog_navigation import unify_reviewed_navigation
     unify_reviewed_navigation(public_products,categories,brands,navigation_audit)
     save_json(ROOT/'_scraper/.sync-state/brand-category-selection.json',navigation_audit)
+    from camera_compatibility import associate,search_terms as compatibility_search_terms
+    camera_models,compatibility_audit=associate(public_products)
+    camera_index={m['id']:m for m in camera_models}
+    save_json(AUDIT/'camera-compatibility-review.json',{'associations':compatibility_audit,
+        'model_count':len(camera_models),'basis':'Explicit supplier product titles. Unlisted models and generic mount compatibility are not inferred.'})
     for p in public_products:
         p['discovery']=product_discovery(p,brands[p['brand_id']],categories)
+        model_terms=compatibility_search_terms(p,camera_index)
+        if model_terms:p['discovery']['search_terms']=list(dict.fromkeys(p['discovery']['search_terms']+model_terms))
     listing_products=[p for p in public_products if p.get('listing_id',p['id'])==p['id']]
     counts=Counter(p['brand_id'] for p in listing_products)
     kind_counts=Counter((p['brand_id'],p['kind']) for p in listing_products)
@@ -471,7 +490,10 @@ def build(allow_pending=False):
           'deduplication':{'brands_checked':len(brands),'groups':dedup_audit['duplicate_group_count'],'removed':merge_count}}
     from category_gallery import galleries
     category_galleries=galleries(public_products,list(categories.values()))
-    output={'category_gallery':category_galleries,'meta':meta,'brands':brand_list,'categories':list(categories.values()),'products':public_products,'redirects':redirects}
+    detail_hash=hashlib.sha256()
+    for key in sorted(public_details):detail_hash.update(json.dumps(public_details[key],ensure_ascii=False,sort_keys=True,separators=(',',':')).encode())
+    meta['detail_content_sha256']=detail_hash.hexdigest()
+    output={'category_gallery':category_galleries,'camera_models':camera_models,'meta':meta,'brands':brand_list,'categories':list(categories.values()),'products':public_products,'redirects':redirects}
     presentation=''.join(p.read_text() for pattern in ('*.html','policies/*.html') for p in sorted((ROOT/'_scraper/shop_templates').glob(pattern)))
     presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/shop.js','assets/shop/shop.css','assets/shop/cart.js','assets/shop/banners.js','assets/shop/motion.js','_scraper/product_taxonomy.py','_scraper/rental_taxonomy.py','_scraper/references/slrrent-categories.json','data/catalog/banners.json','assets/shop/catalog-tools.js','_scraper/storefront_pages.py','_scraper/catalog_seo.py','api/product.js'))
     presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/commerce.js','assets/shop/commerce.css','assets/shop/members.js','assets/shop/members.css','assets/shop/admin-workspace.js','assets/shop/admin-workspace.css','assets/shop/i18n.js','assets/shop/i18n-data.js','assets/shop/i18n.css','api/members.js','api/member-oauth.js','api/shop-test.js'))
@@ -484,6 +506,7 @@ def build(allow_pending=False):
     presentation+=(ROOT/'data/gift/manifest.json').read_text()
     presentation+=''.join((ROOT/p).read_text() for p in ('server/gift-catalog.cjs','server/shop-search.cjs','api/gifts.js','api/gift-product.js','api/search.js'))
     presentation+=''.join(p.read_text() for p in sorted((ROOT/'assets/shop/vendor').glob('*.js')))
+    presentation+=''.join((ROOT/p).read_text() for p in ('_scraper/retail_content_policy.py','_scraper/retail-content-rules.json','_scraper/camera_compatibility.py','assets/shop/compatibility.js'))
     revision=hashlib.sha256((json.dumps(output,ensure_ascii=False,sort_keys=True)+presentation).encode()).hexdigest()[:16]
     output['meta']['revision']=revision
     write_audit(output,provenance={pid:p['_provenance'] for pid,p in products.items()})

@@ -230,7 +230,7 @@
       "preserve_existing": true,
       "confirmed_by": "owner",
       "confirmed_at": "2026-10-27",
-      "reason": "대표 지정 공급처를 주 기준으로 사용. 동일성이 확인되지 않은 기존 고유 구성과 렌탈 보존."
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
     },
     "voigtlander": {
       "source": "sunphoto",
@@ -240,7 +240,183 @@
       "preserve_existing": true,
       "confirmed_by": "owner",
       "confirmed_at": "2026-10-27",
-      "reason": "대표 지정 공급처를 주 기준으로 사용. 동일성이 확인되지 않은 기존 고유 구성과 렌탈 보존."
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "boya": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "kenko": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "slik": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "heipi": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "weifeng": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "domke": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "cotton": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "kodak": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "polaroid": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "sunwayfoto": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "colbor": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "joby": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "celestron": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "skywatcher": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "dwarf-lab": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "meade": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "national-geographic": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "nasa": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "coronado": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "operator_source_review",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "zink": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "operator_source_review",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "onetoten": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "operator_source_review",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "brand-f2386eae58": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "exclusive": false,
+      "confirmed_by": "operator_source_review",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
     }
   },
   "source_approvals": {
@@ -318,8 +494,8 @@
       "confirmed_by": "owner",
       "confirmed_at": "2026-10-27",
       "scope": "all_brands",
-      "mode": "supplement_existing",
-      "owner_scope": "대표 스크린샷20개 브랜드 루트 전체, 원본 제품군·세부 종류·마운트 유지",
+      "mode": "prefer_verified_matches",
+      "owner_scope": "20개 브랜드 메뉴 전체를 주 기준으로 사용. 원본 브랜드명·하위 분류·구성·규격을 검증하고 혼합 메뉴의 실제 브랜드는 별도 원문 근거로 정규화.",
       "owner_brand_roots": {
         "29": "TAMRON",
         "30": "Voigtlander",

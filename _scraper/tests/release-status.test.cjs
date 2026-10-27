@@ -42,6 +42,7 @@ test('release products are not discount or promotion products, even with stale m
  assert.equal(tools.isDiscounted({...p,release_status:undefined}),true);
 });
 test('browser card and hydrated detail show release messaging without mounting purchase inputs',async()=>{
+ const {compatibilitySection}=await import(pathToFileURL(path.join(root,'assets/shop/compatibility.js')));
  const source=fs.readFileSync(path.join(root,'assets/shop/shop.js'),'utf8');
  const card=source.match(/^function productCard\(p\).*$/m)[0];
  const detail=source.slice(source.indexOf('async function renderItem()'),source.indexOf('\nfunction renderCategories()'));
@@ -49,7 +50,7 @@ test('browser card and hydrated detail show release messaging without mounting p
  const tags=new Map(),main={innerHTML:''};let mounts=0;
  const context={URL,URLSearchParams,console,main,location:{origin:'https://shop.nadaun.co'},
   brandMap:new Map([['test',{name:'TEST'}]]),params:new URLSearchParams({id:product.id}),data:catalog,
-  isDiscounted:()=>true,isPromotion:()=>true,
+  isDiscounted:()=>true,isPromotion:()=>true,compatibilitySection,
   document:{querySelector:selector=>{if(!tags.has(selector))tags.set(selector,{});return tags.get(selector)},querySelectorAll:()=>[]},
   fetch:async()=>({ok:true,json:async()=>({[product.id]:{options:[{name:'옵션',additional_price:10000}],images:{main:[product.image]}}})}),
   mountPurchase:()=>{mounts++}};

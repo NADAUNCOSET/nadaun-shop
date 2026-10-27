@@ -274,7 +274,7 @@ def detail(doc,product,brand,source_base=None):
     values=js_values(doc)
     displayed_price=' '.join(node.get_text(' ',strip=True) for node in doc.select('.xans-product-detaildesign tr') if '판매가' in node.get_text())
     quote=(values.get('product_price_content')=='1' and str(values.get('product_price'))=='0' and
-           re.search(r'문의|상담|예약\s*구매|가격\s*미공개',displayed_price if variant_offers else str(offer.get('price',''))) is not None)
+           re.search(r'문의|상담|예약\s*구매|가격\s*미공개|출시\s*예정',displayed_price if variant_offers else str(offer.get('price',''))) is not None)
     price=None if quote else won_value(values.get('product_price')) if variant_offers else won_value(offer.get('price'))
     script_price=values.get('product_price')
     if not quote and script_price is not None and price!=won_value(script_price):raise ValueError('Schema and displayed price differ')

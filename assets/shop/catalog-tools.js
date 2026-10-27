@@ -51,10 +51,10 @@ export function brandSelectionHref(brand,search,kind){
   return (brand?`/brands/${encodeURIComponent(brand)}.html`:'/catalog.html')+'?'+q.toString();
 }
 
-export function catalogSelection(data,{brand='',kind='purchase',cat='',type='',sale=false,benefit='all',collection=''}={}){
+export function catalogSelection(data,{brand='',kind='purchase',cat='',type='',sale=false,benefit='all',collection='',camera=''}={}){
   const families=new Map(),members=new Map();
   for(const p of data.products){
-    if((brand&&p.brand_id!==brand)||(kind!=='all'&&p.kind!==kind)||(sale&&!matchesBenefit(p,benefit))||(collection==='used'&&!isConsignmentUsed(p)))continue;
+    if((brand&&p.brand_id!==brand)||(kind!=='all'&&p.kind!==kind)||(sale&&!matchesBenefit(p,benefit))||(collection==='used'&&!isConsignmentUsed(p))||(camera&&!p.compatible_camera_model_ids?.includes(camera)))continue;
     const id=p.listing_id||p.id;if(!families.has(id)||p.id===id)families.set(id,p);
     if(!members.has(id))members.set(id,[]);members.get(id).push(p);
   }
@@ -104,14 +104,14 @@ export function productTypeNavigation(categories,counts,selected,href,{hideEmpty
   return `<section class="product-type-filter" aria-label="제품 종류별 카테고리"><div class="type-filter-heading"><h2>제품 종류</h2><span>브랜드와 함께 선택할 수 있습니다.</span></div><nav class="category-chips type-roots" aria-label="제품 대분류"><a href="${escape(href(null))}" ${!selected?'class="active" aria-current="page"':''}>전체</a>${roots.map(link).join('')}</nav>${trail}${current?categoryControls(children,current,href):''}<details class="product-types-all"><summary>세부 카테고리 전체 보기</summary><div class="type-directory">${roots.map(root=>`<section><h3>${link(root)}</h3>${descendants(root.id)}</section>`).join('')}</div></details></section>`;
 }
 
-export function productTypeBrandGroups(data,{kind='purchase',type='',sale=false,benefit='all',collection=''}={}){
+export function productTypeBrandGroups(data,{kind='purchase',type='',sale=false,benefit='all',collection='',camera=''}={}){
  const scope=kind==='rental'?'rental-product':'product';
  const categories=data.categories.filter(c=>c.scope===scope);
  if(!categories.some(c=>c.id===type))return [];
  const children=categories.filter(c=>c.parent_id===type);
  const groups=new Map();
  for(const p of data.products){
-  if((kind!=='all'&&p.kind!==kind)||!p.type_ids.includes(type)||(sale&&!matchesBenefit(p,benefit))||(collection==='used'&&!isConsignmentUsed(p)))continue;
+  if((kind!=='all'&&p.kind!==kind)||!p.type_ids.includes(type)||(sale&&!matchesBenefit(p,benefit))||(collection==='used'&&!isConsignmentUsed(p))||(camera&&!p.compatible_camera_model_ids?.includes(camera)))continue;
   let group=groups.get(p.brand_id);
   if(!group){group={listings:new Set(),counts:new Map()};groups.set(p.brand_id,group)}
   const listing=p.listing_id||p.id;group.listings.add(listing);

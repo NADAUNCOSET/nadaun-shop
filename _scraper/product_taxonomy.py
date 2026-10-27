@@ -25,6 +25,11 @@ EXTRA = [
  ('shotgun-mic','kpp:0730','샷건 마이크'),('lavalier-mic','kpp:0730','라발리에 마이크'),
  ('camera-carry','kpp:09','카메라 휴대 시스템'),
  ('camera-protection','kpp:09','카메라 커버·레인커버'),
+ ('astro-accessories','kpp:00','천체 관측 액세서리'),('astro-eyepiece','astro-accessories','접안렌즈·아이피스'),
+ ('astro-filter','astro-accessories','천체 관측 필터'),('astro-optical-parts','astro-accessories','리듀서·광학 보정 부품'),
+ ('astro-barlow','astro-accessories','바로우 렌즈'),('astro-camera-adapter','astro-accessories','천체 촬영 어댑터·T링'),
+ ('astro-mount-parts','astro-mount','가대 부품·균형추·도브테일'),('astro-control','astro-accessories','관측 제어기·Wi-Fi·GPS'),
+ ('print-paper','print','인화지·프린터 소모품'),
  ('ptz-camera','studio-camera','PTZ·원격 촬영 카메라'),('webcam','studio-camera','웹캠·화상 카메라'),
  ('film-camera','camera','필름 카메라'),('instant-camera','camera','즉석 카메라'),
  ('rig-cart-parts','rig-carts','촬영 카트 부품·액세서리'),
@@ -207,6 +212,13 @@ def reviewed_supplier_types(product,categories):
         if re.search(r'\b(?:lens|body|rear|front)\s+cap\b|렌즈\s*캡|바디\s*캡',name,re.I):return ['lens-cap']
         if '019004' in cp:return ['chargers' if re.search(r'충전|charg',name,re.I) else 'camera-battery']
     if sp:
+        if product['id'].startswith('sunphoto-'):
+            from sync_sunphoto_catalog import MANUFACTURER_REVIEWS
+            reviewed=MANUFACTURER_REVIEWS.get(product['id'].removeprefix('sunphoto-'))
+            if reviewed and reviewed.get('product_type'):
+                if product['name']!=reviewed['expected_name']:raise ValueError('Reviewed telescope model identity changed')
+                return [reviewed['product_type']]
+        if '82' in sp and product.get('brand_id')=='zink' and re.search(r'\bPaper\b',name,re.I):return ['print-paper']
         if sp & {'160','163'}:return ['lens-hood']
         if sp & {'159','162'}:return ['lens-cap']
         if '161' in sp:return ['lens-support']
@@ -221,6 +233,20 @@ def reviewed_supplier_types(product,categories):
                 if label in labels:types.append(target)
             return types
         labels={categories[cid]['name'].strip() for cid in source_ids if cid.startswith('sunphoto:b:') and cid in categories}
+        astro=bool(sp & {'24','87','625','88','89','256','578'})
+        if astro:
+            # These are telescope parts; compatible Nikon/Canon models do not
+            # turn a T-ring into a photographic lens or another manufacturer.
+            for target,pattern in [
+                ('astro-camera-adapter',r'T2?[- ]?ring|camera\s*adapter|카메라.*어댑터'),
+                ('astro-eyepiece',r'접안\s*렌즈|아이피스|eyepiece|\bSWA\b|\bCEMAX\b|\bLET\s*2'),
+                ('astro-barlow',r'barlow|바로우'),('astro-filter',r'필터|\bfilter\b|\betalons?\b'),
+                ('astro-optical-parts',r'focal\s*reducer|flattener|coma\s*corrector|프리즘|\bprism\b|\bdiagonal\b'),
+                ('astro-mount-parts',r'counterweights?|도브테일|dovetail|L[- ]PLATE|ring\s*set|finderscope\s*base'),
+                ('astro-control',r'synscan|hand\s*controller|GPS\s*Module|Wi-?Fi\s*adapter'),
+                ('astro-accessories',r'flash\s*light|flashlight'),
+            ]:
+                if re.search(pattern,name,re.I):return [target]
         observed={
             '굴절망원경':'refractor','굴절망원경세트':'refractor','촬영용굴절':'refractor',
             '반사망원경':'reflector-telescope','반사망원경세트':'reflector-telescope','촬영용반사':'reflector-telescope',
@@ -240,6 +266,10 @@ def reviewed_supplier_types(product,categories):
             'BLACK / WHITE MIST':'mist','필터 액세서리':'filter-parts'}
         matches=list(dict.fromkeys(value for key,value in observed.items() if key in labels))
         if matches:return matches
+        if astro:
+            if '마운트' in labels:return ['astro-mount']
+            if re.search(r'망원경|telescope|guidescope',name,re.I):return ['telescope']
+            return ['kpp:00']
     return []
 
 
@@ -337,7 +367,7 @@ def build_taxonomy(products,categories,overrides=None,ldnet_categories=None,saek
     if saeki_products:
         from saeki_categories import EXTRA as SAEKI_EXTRA
         for key,parent,name in SAEKI_EXTRA:add(key,name,parent)
-    for key,name in [('kpp:03','카메라 렌즈·액세서리'),('kpp:07','조명'),('kpp:08','케이블·테더링'),('kpp:h0','영상 송수신·모니터'),('kpp:c0','드론·액션캠·짐벌'),('kpp:09','촬영 액세서리')]:nodes['type:'+key]['name']=name
+    for key,name in [('kpp:03','카메라 렌즈·액세서리'),('kpp:07','조명'),('kpp:08','케이블·테더링'),('kpp:h0','영상 송수신·모니터'),('kpp:c0','드론·액션캠·짐벌'),('kpp:09','촬영 액세서리'),('kpp:00','천체·광학 관측')]:nodes['type:'+key]['name']=name
     for key in ('0730','0740','0750'):nodes['type:kpp:'+key]['parent_id']='type:audio'
     nodes['type:kpp:0680']['parent_id']='type:power'
     nodes['type:kpp:0450'].update(parent_id='type:kpp:02',name='시네마·효과 필터')
