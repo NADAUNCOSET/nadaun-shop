@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 import threading
 import time
-from urllib.parse import quote, urljoin, unquote
+from urllib.parse import quote, urljoin, unquote, urlsplit, parse_qs
 
 from bs4 import BeautifulSoup
 import requests
@@ -33,21 +33,30 @@ def exact_legacy_map(previous, rows):
     return {code: ids[0] for code, ids in found.items() if len(ids) == 1}
 
 
-def product_detail(raw, row, identity):
+def product_detail(raw, row, identity, previous=None, previous_observed_at=None):
     doc = BeautifulSoup(raw, 'lxml')
     schemas = []
     for script in doc.select('script[type="application/ld+json"]'):
         value = json.loads(script.get_text())
         schemas.extend(value if isinstance(value, list) else value.get('@graph', [value]))
-    matches = [s for s in schemas if s.get('@type') == 'Product' and s.get('sku') == row['code']]
+    matches = [s for s in schemas if s.get('@type') == 'Product'
+        and (s.get('sku') or s.get('mpn')) == row['code']]
     if len(matches) != 1:
         raise ValueError('LDL product schema identity mismatch: '+row['code'])
     schema = matches[0]; offer = schema.get('offers', {})
     url = BASE+'/products/'+quote(row['code'], safe='')
     if offer.get('priceCurrency') != 'KRW' or not str(offer.get('price', '')).isdigit():
         raise ValueError('LDL verified KRW price missing: '+row['code'])
-    if int(offer['price']) != row['priceVal'] or offer.get('url') != schema.get('url') or unquote(schema.get('url','')) != unquote(url):
+    if offer.get('url') != schema.get('url') or unquote(schema.get('url','')) != unquote(url):
         raise ValueError('LDL API/detail price or identity changed: '+row['code'])
+    amount=int(offer['price']);price_evidence={'basis':'api_and_product_schema'}
+    if amount != row['priceVal']:
+        visible=[clean(n.get_text()).replace(',','').replace('₩','').replace('원','').strip()
+            for n in doc.select('.detail-price,.buybar__price')]
+        if not visible or any(not x.isdigit() or int(x)!=amount for x in visible):
+            raise ValueError('LDL API/detail price or identity changed: '+row['code'])
+        price_evidence={'basis':'current_visible_product_and_schema','api_price':row['priceVal'],
+            'product_page_price':amount,'source_listing_price_differs':True}
     title = doc.select_one('h1')
     identity_labels = doc.select('.detail-info > p, .buybar__code')
     if not title or not (row['code'].casefold() in title.get_text().casefold() or any(clean(x.get_text()).casefold() == row['code'].casefold() for x in identity_labels)):
@@ -59,8 +68,33 @@ def product_detail(raw, row, identity):
     if not main: main = schema.get('image') or []
     if not main: raise ValueError('LDL gallery missing: '+row['code'])
     images = list(dict.fromkeys(urljoin(BASE, i.get('data-src') or i.get('src')) for i in body.select('img[src],img[data-src]')))
-    category = clean(schema.get('category'))
-    if not category: raise ValueError('LDL category missing: '+row['code'])
+    raw_category = schema.get('category')
+    category = clean(raw_category) if isinstance(raw_category,str) else ''
+    category_evidence = {'basis':'current_product_schema'}
+    breadcrumbs = [i for s in schemas if s.get('@type')=='BreadcrumbList'
+        for i in s.get('itemListElement',[]) if isinstance(i,dict)
+        and urlsplit(i.get('item','')).hostname==urlsplit(BASE).hostname
+        and urlsplit(i.get('item','')).path=='/products'
+        and parse_qs(urlsplit(i.get('item','')).query).get('category')
+        and clean(i.get('name'))]
+    if breadcrumbs:
+        labels={clean(i['name']) for i in breadcrumbs}
+        if len(labels)!=1:raise ValueError('LDL category breadcrumbs conflict: '+row['code'])
+        category=next(iter(labels));category_evidence={'basis':'current_source_breadcrumb','url':breadcrumbs[0]['item']}
+    if not category:
+        # The redesigned source omits categories on some unchanged model pages.
+        # Preserve a previously observed label only for the exact same source ID
+        # and explicit model code. New/unmapped models remain blocked.
+        if (not previous or previous.get('id') != identity
+            or previous.get('model_code') != row['code']
+            or previous.get('source') != 'l-mount'
+            or not clean(previous.get('source_category_name'))
+            or not previous_observed_at):
+            raise ValueError('LDL category missing: '+row['code'])
+        category = clean(previous['source_category_name'])
+        category_evidence = {'basis':'preserved_exact_model_previous_source',
+            'observed_at':previous_observed_at,'model_code':row['code'],
+            'current_source_category_missing':True}
     colors = [clean(x.get_text()) for x in doc.select('.color-opt span')]
     # The new API has one purchasable model code, with no variant price/stock
     # records. A visual color choice must not become an invented priced option.
@@ -72,13 +106,14 @@ def product_detail(raw, row, identity):
     cid = 'category-'+hashlib.sha256(category.encode()).hexdigest()[:12]
     return {'id':identity,'source_id':row['code'],'source':'l-mount','model_code':row['code'],
         'source_url':url,'name':clean(schema['name']),'brand':'LDL-MOUNT','kind':'purchase',
-        'price':row['priceVal'],'sale_price':row['priceVal'],'status':'soldout' if soldout else 'inquiry',
+        'price':amount,'sale_price':amount,'source_price_evidence':price_evidence,'status':'soldout' if soldout else 'inquiry',
         'supplier_status':'soldout' if soldout else 'available' if available else 'inquiry',
         'images':{'thumb':main[0],'main':main,'detail':images},
         'description_text':'\n'.join(clean(x.get_text(' ',strip=True)) for x in doc.select('#tab-info,#tab-spec,#tab-install')),
         'options':[],'option_groups':([{'name':'색상','values':[{'name':x,'value':x} for x in colors]}] if unknown_options else []),
         'options_require_confirmation':unknown_options or not available,'detail_status':'verified',
-        'detail_checked_at':stamp(),'brand_category_ids':[cid], 'source_category_name':category}, {'id':cid,'name':category,'parent_id':None}
+        'detail_checked_at':stamp(),'brand_category_ids':[cid], 'source_category_name':category,
+        'source_category_evidence':category_evidence}, {'id':cid,'name':category,'parent_id':None}
 
 
 def collect(work=None):
@@ -110,16 +145,17 @@ def collect(work=None):
     save_json(work/'public-catalog-before.json', value)
     def read(row):
         identity = mapping.get(row['code']) or 'ldl-model-'+hashlib.sha256(row['code'].encode()).hexdigest()[:16]
+        prior = previous.get('products',{}).get(identity)
         f = work/(hashlib.sha256(row['code'].encode()).hexdigest()[:20]+'.html.gz')
         cached=f.exists() and time.time()-f.stat().st_mtime<6*3600
         if cached: page=gzip.decompress(f.read_bytes())
         else:
             page=get('/products/'+quote(row['code'],safe=''));f.write_bytes(gzip.compress(page))
-        try:return product_detail(page,row,identity)
+        try:return product_detail(page,row,identity,prior,previous.get('collected_at'))
         except ValueError:
             if not cached:raise
             page=get('/products/'+quote(row['code'],safe=''));f.write_bytes(gzip.compress(page))
-            return product_detail(page,row,identity)
+            return product_detail(page,row,identity,prior,previous.get('collected_at'))
     with ThreadPoolExecutor(max_workers=3) as pool:
         for future in as_completed([pool.submit(read,r) for r in rows]):
             product, category = future.result(); products[product['id']]=product;categories[category['id']]=category

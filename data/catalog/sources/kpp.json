@@ -1,10 +1,10 @@
 {
   "source": "kpp",
   "source_url": "https://kppkpp.co.kr",
-  "collected_at": "2026-10-18T23:04:10+00:00",
+  "collected_at": "2026-10-27T06:23:40+00:00",
   "complete": true,
-  "product_count": 4044,
-  "page_count": 1242,
+  "product_count": 4086,
+  "page_count": 1252,
   "brands": [
     {
       "id": "LEOFOTO",
@@ -300,6 +300,7 @@
         "d2c030",
         "d2c040",
         "d2f0",
+        "d2f0g0",
         "d2f010",
         "d2f020",
         "d2f030",
@@ -334,6 +335,7 @@
       "url": "https://kppkpp.co.kr/shop/brandmall.php?brand=PGYTECH",
       "logo": "https://kppkpp.co.kr/data/file/brand/thumb-3543539898_9Clzd27I_62de4f766e6f3fb137784fa8a57d75261931e3e2_80x35.png",
       "category_ids": [
+        "60c0",
         "6060",
         "6060f0",
         "6060c0",
@@ -5317,6 +5319,20 @@
       ]
     },
     {
+      "id": "d2f0g0",
+      "name": "액션캠",
+      "scope": "brand:SMALLRIG",
+      "parent_id": "d2f0",
+      "path_ids": [
+        "d2f0",
+        "d2f0g0"
+      ],
+      "path": [
+        "액세서리",
+        "액션캠"
+      ]
+    },
+    {
       "id": "d2f010",
       "name": "콜드슈",
       "scope": "brand:SMALLRIG",
@@ -5676,6 +5692,18 @@
       "path": [
         "브랜드별 제품",
         "iPhone"
+      ]
+    },
+    {
+      "id": "60c0",
+      "name": "EVENT",
+      "scope": "brand:PGYTECH",
+      "parent_id": null,
+      "path_ids": [
+        "60c0"
+      ],
+      "path": [
+        "EVENT"
       ]
     },
     {
@@ -9186,13 +9214,13 @@
     "0130": 57,
     "0110": 354,
     "0150": 35,
-    "0140": 286,
+    "0140": 297,
     "0160": 77,
     "0210": 151,
-    "01": 911,
+    "01": 922,
     "0220": 197,
-    "0240": 59,
     "0230": 225,
+    "0240": 59,
     "0260": 5,
     "0250": 91,
     "0310": 18,
@@ -9203,29 +9231,29 @@
     "0340": 32,
     "0320": 277,
     "0410": 32,
+    "03": 424,
     "0420": 13,
     "0430": 2,
-    "0440": 3,
     "04": 117,
+    "0440": 3,
     "0460": 1,
-    "03": 424,
     "0450": 66,
     "0520": 35,
-    "0510": 81,
+    "0510": 84,
     "0530": 62,
     "0540": 56,
     "0560": 3,
     "0550": 31,
-    "05": 268,
+    "05": 271,
     "0610": 57,
     "0630": 27,
     "0640": 50,
     "0650": 125,
-    "0620": 295,
     "0660": 57,
     "0670": 36,
-    "0680": 172,
-    "06a0": 120,
+    "0620": 298,
+    "0680": 179,
+    "06a0": 122,
     "06b0": 0,
     "07": 66,
     "0710": 13,
@@ -9233,7 +9261,7 @@
     "0730": 8,
     "0740": 4,
     "0750": 0,
-    "0690": 503,
+    "0690": 519,
     "0910": 45,
     "09": 108,
     "0930": 12,
@@ -9241,87 +9269,87 @@
     "0920": 41,
     "0950": 8,
     "0960": 0,
-    "00": 13,
     "0010": 0,
+    "00": 13,
     "0020": 5,
     "0030": 5,
     "0040": 1,
-    "0810": 21,
     "08": 21,
+    "0810": 21,
     "h0": 0,
     "c010": 0,
     "c0": 18,
     "c020": 2,
+    "c040": 2,
     "c030": 2,
     "c050": 0,
-    "c040": 2,
     "c060": 12,
     "301010": 36,
     "3010g0": 16,
-    "06": 1432,
+    "06": 1460,
     "301090": 18,
     "3010e0": 13,
     "3010f0": 17,
     "301050": 11,
     "3010k0": 7,
     "3010c0": 20,
-    "3010h0": 9,
     "301040": 35,
+    "3010h0": 9,
     "3010a0": 4,
     "3010b0": 4,
     "301080": 26,
+    "3010i0": 2,
     "301020": 11,
     "3010": 230,
-    "3010i0": 2,
     "3010j0": 2,
+    "3060": 37,
     "306030": 11,
     "306010": 20,
-    "3060": 37,
-    "306040": 2,
     "306020": 0,
+    "306040": 2,
     "306050": 4,
     "3020a0": 0,
+    "302010": 21,
     "302090": 2,
     "3020b0": 1,
-    "302010": 21,
-    "302020": 2,
     "302060": 7,
+    "302020": 2,
+    "3020": 68,
     "302040": 11,
     "302070": 4,
-    "3020": 68,
     "302030": 8,
     "302080": 3,
     "3020c0": 5,
     "302050": 2,
-    "305030": 2,
     "305070": 3,
+    "305030": 2,
     "305020": 5,
     "305040": 6,
+    "3050": 55,
     "305060": 4,
     "305050": 12,
-    "3050": 55,
     "305010": 20,
     "305080": 3,
-    "303010": 27,
+    "303010": 30,
     "303030": 3,
     "303020": 57,
-    "303060": 20,
     "303040": 8,
-    "3030": 117,
+    "303060": 29,
     "303050": 2,
-    "307020": 4,
     "307010": 18,
+    "3030": 129,
+    "307020": 4,
     "307040": 18,
     "307060": 4,
-    "307030": 19,
-    "307050": 25,
     "3070": 74,
+    "307030": 19,
     "308010": 4,
+    "307050": 25,
     "308020": 3,
     "3080": 33,
     "308050": 5,
-    "308030": 8,
     "308040": 5,
+    "308030": 8,
     "308060": 4,
     "304010": 13,
     "304020": 14,
@@ -9332,25 +9360,25 @@
     "3040c0": 4,
     "3040a0": 7,
     "304070": 28,
-    "3040m0": 2,
     "304080": 2,
     "3040g0": 7,
+    "3040m0": 2,
     "3040i0": 2,
-    "3040k0": 8,
     "3040j0": 16,
+    "3040l0": 4,
+    "3040k0": 8,
     "3040": 177,
     "30a010": 7,
-    "3040l0": 4,
-    "30a050": 7,
     "30a020": 5,
-    "30a0": 46,
+    "30a050": 7,
     "30a040": 4,
+    "30a0": 46,
     "30a030": 17,
     "30b010": 9,
     "30b020": 6,
     "30b0": 23,
-    "30b030": 8,
     "40h010": 8,
+    "30b030": 8,
     "40h0": 24,
     "40h020": 8,
     "40h030": 8,
@@ -9360,40 +9388,40 @@
     "4010d0": 9,
     "4010b0": 9,
     "401090": 13,
-    "40e060": 9,
     "4010": 70,
+    "40e060": 9,
     "40e040": 6,
     "40e030": 7,
-    "40e020": 6,
     "40e010": 45,
-    "40e0": 84,
+    "40e020": 6,
     "40e050": 11,
+    "40e0": 84,
     "4020b0": 13,
-    "402090": 12,
-    "4020a0": 9,
     "4020": 35,
-    "404050": 9,
+    "402090": 12,
     "404040": 9,
+    "4020a0": 9,
     "404060": 9,
+    "404050": 9,
     "4040": 45,
-    "404020": 9,
     "404030": 9,
+    "404020": 9,
     "405030": 9,
-    "405020": 9,
     "405050": 9,
-    "4050": 36,
     "405040": 9,
+    "4050": 36,
+    "405020": 9,
     "4090": 9,
+    "4080": 10,
     "409030": 9,
     "408010": 10,
-    "4080": 10,
     "40f010": 6,
     "40f020": 13,
-    "40f040": 0,
     "40f030": 20,
+    "40f040": 0,
     "40f050": 3,
-    "40f060": 4,
     "40f0": 62,
+    "40f060": 4,
     "40f070": 16,
     "501010": 5,
     "501030": 4,
@@ -9401,41 +9429,41 @@
     "501080": 9,
     "501020": 2,
     "501040": 21,
-    "5010": 69,
     "501050": 1,
+    "5010": 69,
     "50b0": 8,
-    "501060": 25,
     "50b010": 8,
-    "502020": 3,
+    "501060": 25,
     "502010": 5,
-    "502040": 3,
-    "502030": 2,
+    "502020": 3,
     "5020": 23,
-    "502050": 10,
+    "502030": 2,
+    "502040": 3,
     "502060": 1,
-    "506020": 8,
+    "502050": 10,
     "506030": 3,
-    "506040": 1,
+    "506020": 8,
     "506050": 7,
+    "506040": 1,
     "506010": 7,
-    "5060": 50,
     "506060": 2,
+    "5060": 50,
     "506080": 7,
     "506090": 1,
     "506070": 14,
     "507050": 5,
     "507040": 6,
-    "507030": 14,
     "5070a0": 5,
+    "507030": 14,
     "507020": 6,
     "507010": 6,
     "5070c0": 5,
     "5070e0": 15,
-    "5070b0": 20,
     "507080": 15,
+    "5070b0": 20,
     "5070d0": 8,
-    "507070": 28,
     "5070": 133,
+    "507070": 28,
     "d21020": 58,
     "d21010": 99,
     "d21030": 41,
@@ -9444,145 +9472,147 @@
     "d21050": 73,
     "d21080": 0,
     "d210c0": 2,
-    "d210a0": 4,
     "d21070": 1,
+    "d210a0": 4,
     "d210b0": 3,
     "d21040": 1,
-    "d210g0": 36,
+    "d210g0": 39,
     "d210d0": 5,
     "d210f0": 4,
     "d21090": 0,
     "d210i0": 0,
     "d210j0": 0,
-    "d210": 362,
+    "d210": 365,
     "d27010": 41,
     "d27020": 8,
-    "d270": 79,
+    "d270": 80,
     "d27040": 5,
-    "d27050": 9,
     "d27060": 2,
+    "d27050": 10,
     "d27070": 11,
     "d23010": 28,
     "d23020": 35,
     "d25010": 8,
     "d230": 63,
     "d25020": 4,
+    "d250": 48,
     "d25030": 17,
     "d25040": 18,
-    "d250": 48,
     "d26020": 8,
     "d26010": 22,
-    "d26040": 5,
     "d26030": 19,
+    "d26040": 5,
     "d26050": 1,
-    "d260": 92,
     "d26060": 36,
+    "d260": 92,
     "d24010": 25,
     "d24020": 33,
     "d240e0": 6,
-    "d24030": 21,
+    "d24030": 22,
     "d24060": 18,
-    "d240c0": 3,
+    "d240": 120,
     "d240d0": 8,
-    "d240": 119,
+    "d240c0": 3,
     "d22020": 15,
     "d22010": 23,
     "d22040": 14,
     "d22050": 1,
-    "d22060": 6,
-    "d220": 120,
     "d22030": 44,
-    "d29020": 2,
+    "d22060": 6,
     "d29010": 9,
+    "d220": 120,
+    "d29020": 2,
+    "d290": 44,
     "d29040": 6,
     "d29030": 27,
     "d2a030": 5,
-    "d290": 44,
+    "d2a010": 8,
     "d2a0": 26,
     "d2a020": 12,
-    "d2a010": 8,
-    "d28020": 5,
     "d28010": 8,
+    "d28020": 5,
     "d28030": 18,
     "d28040": 6,
-    "d280": 54,
-    "d28050": 17,
+    "d280": 53,
+    "d28050": 16,
     "d2b010": 16,
     "d2b020": 18,
     "d2b060": 7,
     "d2b040": 4,
     "d2b030": 32,
-    "d2b050": 9,
-    "d2b0": 87,
-    "d2c050": 2,
+    "d2b0": 94,
+    "d2b050": 16,
     "d2c0": 13,
-    "d2c030": 2,
-    "d2c010": 2,
+    "d2c050": 2,
     "d2c020": 4,
+    "d2c010": 2,
+    "d2c030": 2,
     "d2c040": 2,
+    "d2f0g0": 8,
     "d2f020": 7,
     "d2f010": 23,
-    "d2f040": 14,
     "d2f030": 18,
+    "d2f040": 14,
     "d2f050": 3,
     "d2f070": 11,
-    "d2f060": 58,
     "d2f080": 8,
-    "d2f0a0": 2,
+    "d2f060": 64,
+    "d2f0a0": 3,
     "d2f090": 33,
+    "d2f0d0": 7,
     "d2f0b0": 13,
-    "d2f0d0": 6,
     "d2f0e0": 2,
-    "d2f0c0": 2,
     "d2f0f0": 4,
-    "d2f0": 211,
+    "d2f0": 228,
+    "d2f0c0": 2,
     "d2g020": 28,
-    "d2g010": 65,
     "d2g030": 25,
+    "d2g010": 65,
     "d2g050": 15,
-    "d2g040": 45,
     "d2g060": 3,
+    "d2g040": 45,
     "d2g080": 1,
     "d2g090": 1,
+    "d2g070": 80,
+    "60c0": 0,
     "d2g0a0": 23,
-    "d2g070": 70,
     "6060f0": 6,
     "6060c0": 15,
-    "d2g0": 276,
-    "606010": 11,
-    "606050": 18,
-    "6060": 87,
+    "606010": 13,
+    "d2g0": 286,
     "6060d0": 2,
+    "606050": 18,
     "606060": 4,
-    "606070": 8,
     "606020": 7,
+    "6060": 89,
+    "606070": 8,
     "606080": 8,
     "6060a0": 1,
-    "6060e0": 3,
     "6060b0": 4,
+    "6060e0": 3,
     "60b010": 14,
-    "60b0": 30,
     "60b020": 4,
+    "60b0": 30,
     "60b040": 4,
-    "60b030": 4,
     "60b050": 4,
-    "608030": 2,
+    "60b030": 4,
     "6080": 10,
+    "608030": 2,
     "608010": 7,
     "608020": 0,
     "607080": 8,
     "607060": 9,
-    "607010": 47,
     "607040": 14,
+    "607010": 47,
     "607050": 12,
     "607070": 2,
     "607030": 12,
     "6070": 108,
-    "60a0": 25,
     "60a060": 2,
+    "60a0": 25,
     "60a010": 2,
-    "60a030": 3,
     "60a020": 2,
+    "60a030": 3,
     "60a050": 2,
     "60a040": 14,
     "601010": 19,
@@ -9591,208 +9621,208 @@
     "6010": 57,
     "b06020": 30,
     "b06030": 29,
-    "b06050": 5,
     "b06010": 18,
     "b06040": 0,
+    "b06050": 5,
     "b08010": 4,
     "b060": 82,
+    "b08030": 14,
     "b08020": 13,
-    "b080": 58,
     "b08050": 6,
+    "b080": 58,
     "b08040": 21,
     "b02030": 1,
     "b020": 21,
-    "b08030": 14,
-    "b02040": 2,
     "b02010": 3,
     "b02020": 15,
     "b02050": 0,
+    "b02040": 2,
     "b050": 0,
-    "b05010": 0,
     "b090": 2,
+    "b05010": 0,
+    "1010": 26,
     "101010": 7,
     "101020": 8,
-    "101030": 2,
-    "1010": 26,
     "101050": 1,
+    "101030": 2,
     "101040": 8,
     "102030": 5,
     "102010": 5,
     "1020": 15,
+    "102040": 2,
     "1030": 1,
     "102020": 3,
-    "102040": 2,
+    "106010": 5,
     "106020": 8,
     "1060": 13,
-    "106010": 5,
-    "2010": 35,
-    "201040": 11,
     "201030": 9,
+    "201040": 11,
+    "2010": 35,
+    "201010": 12,
     "201050": 1,
     "201020": 2,
-    "201010": 12,
     "2020": 12,
     "202050": 2,
     "202020": 2,
     "202060": 1,
     "202080": 3,
-    "202040": 2,
     "2030": 2,
-    "203010": 2,
+    "202040": 2,
     "202070": 2,
+    "203010": 2,
+    "206010": 23,
     "206020": 8,
     "206030": 8,
-    "206010": 23,
-    "206050": 4,
-    "2060": 59,
     "206040": 8,
-    "205010": 1,
-    "2050": 1,
+    "2060": 59,
+    "206050": 4,
     "206060": 8,
+    "2050": 1,
+    "205010": 1,
     "v26010": 13,
     "v26020": 22,
     "v260": 35,
-    "v27010": 17,
     "v27020": 15,
     "v270": 32,
+    "v27010": 17,
     "v28010": 8,
     "v28020": 11,
     "v280": 19,
     "v2a0": 12,
-    "v2c0": 4,
     "v2b0": 20,
-    "v2d010": 14,
+    "v2c0": 4,
     "v290": 36,
+    "v2d010": 14,
     "v2d020": 9,
     "v2d030": 8,
-    "v2d040": 1,
     "v2d0": 34,
+    "v2d040": 1,
     "v2d050": 2,
     "v23020": 9,
     "v23030": 4,
     "v230": 17,
     "v23040": 2,
     "v23050": 2,
+    "y21020": 4,
     "y21010": 0,
     "y210": 14,
-    "y21020": 4,
     "y21030": 3,
     "y21050": 3,
     "y21040": 4,
-    "y22050": 3,
     "y22060": 1,
-    "y22070": 3,
-    "y22040": 4,
+    "y22050": 3,
     "y220": 17,
+    "y22040": 4,
+    "y22070": 3,
     "y22020": 0,
-    "y23010": 3,
     "y22030": 4,
+    "y23010": 3,
     "y230": 18,
     "y23020": 15,
-    "y240": 4,
     "y24010": 1,
-    "b110": 9,
+    "y240": 4,
     "y24020": 3,
-    "b11030": 0,
     "b11010": 2,
+    "b110": 9,
     "b11020": 1,
     "b11040": 5,
+    "b11030": 0,
     "b1c0": 22,
     "b1c070": 3,
     "b1c010": 2,
     "b1c020": 0,
-    "b1c050": 3,
     "b1c030": 0,
+    "b1c050": 3,
     "b1c060": 13,
-    "b140": 14,
     "b1c040": 1,
-    "b14030": 0,
+    "b140": 14,
     "b14060": 1,
-    "b14010": 5,
-    "q260": 0,
-    "b14070": 8,
+    "b14030": 0,
     "b14020": 0,
-    "q21080": 1,
+    "b14010": 5,
+    "b14070": 8,
+    "q260": 0,
     "q21090": 2,
-    "q21060": 3,
-    "q21010": 4,
+    "q21080": 1,
     "q210": 30,
+    "q21010": 4,
+    "q21060": 3,
     "q21020": 7,
+    "q21070": 3,
     "q21030": 3,
     "q21050": 4,
-    "q21040": 3,
-    "q21070": 3,
     "q210a0": 1,
-    "q240": 2,
-    "q22010": 2,
+    "q21040": 3,
     "q220": 2,
+    "q22010": 2,
+    "q240": 2,
     "q230": 14,
-    "q23010": 3,
     "q23020": 7,
+    "q23010": 3,
     "q23030": 0,
-    "t21010": 27,
     "t21020": 3,
+    "t21010": 27,
+    "t21070": 3,
     "t21030": 25,
     "t210": 64,
     "t21040": 3,
     "t21050": 0,
-    "t21070": 3,
-    "t22010": 20,
-    "t220": 62,
     "t21060": 2,
     "t22020": 18,
-    "t22040": 2,
+    "t22010": 20,
+    "t220": 62,
     "t22030": 2,
-    "t23020": 16,
+    "t22040": 2,
     "t230": 41,
     "t23010": 13,
+    "t23020": 16,
     "t23030": 12,
-    "t24010": 2,
-    "t240": 26,
     "t24020": 1,
-    "t24040": 2,
+    "t240": 26,
+    "t24010": 2,
     "t24030": 14,
+    "t24040": 2,
     "t24060": 1,
     "t24070": 1,
-    "t24080": 5,
     "t270": 2,
+    "t24080": 5,
+    "t29010": 5,
     "t27010": 2,
     "t290": 13,
-    "t29010": 5,
-    "t29020": 1,
-    "t29030": 2,
-    "t2b010": 1,
     "t29040": 2,
-    "t2b0": 4,
+    "t29030": 2,
+    "t29020": 1,
     "t2b020": 2,
+    "t2b010": 1,
+    "t2b0": 4,
     "t2b030": 1,
-    "t250": 12,
     "t25010": 3,
-    "t25030": 6,
+    "t250": 12,
     "t25020": 1,
-    "t2a0": 9,
-    "t26010": 13,
+    "t25030": 6,
     "t260": 13,
+    "t26010": 13,
+    "t2a0": 9,
     "t2a010": 4,
     "t2a020": 5,
-    "t280": 37,
     "t28010": 13,
+    "t280": 37,
     "t28020": 2,
     "t28030": 3,
-    "t28050": 0,
     "t28040": 5,
     "t28060": 1,
     "t28070": 2,
+    "t28050": 0,
     "t28080": 2,
     "t28090": 4,
-    "t280b0": 2,
     "t280a0": 2,
+    "t280b0": 2,
+    "z11010": 5,
     "z110": 5,
     "z11020": 0,
-    "z11010": 5,
+    "z12010": 7,
     "z120": 15,
     "z12020": 1,
-    "z12010": 7,
     "z12040": 0,
     "z12030": 2,
     "z12050": 2,
@@ -10031,7 +10061,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1560998639",
       "price": 150000,
       "sale_price": 150000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1560998639/thumb-1_262x262.jpg",
@@ -10072,7 +10102,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1561008442",
       "price": 130000,
       "sale_price": 130000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1561008442/thumb-10_262x262.jpg",
@@ -10478,7 +10508,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1561018503",
       "price": 70000,
       "sale_price": 70000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1561018503/thumb-1_262x262.jpg",
@@ -11466,7 +11496,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1561085832",
       "price": 33000,
       "sale_price": 33000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1561085832/thumb-1_262x262.jpg",
@@ -12244,7 +12274,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1561107515",
       "price": 20000,
       "sale_price": 20000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1561107515/thumb-1_262x262.jpg",
@@ -12939,7 +12969,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1561341156",
       "price": 30000,
       "sale_price": 30000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1561341156/thumb-PC90II1_262x262.jpg",
@@ -15658,11 +15688,11 @@
       "id": "kpp-1571035077",
       "source": "kpp",
       "source_id": "1571035077",
-      "name": "레오포토 LS-324CEX+BV-10 레벨링 비디오삼각대 키트",
+      "name": "레오포토 레인저 LS-324CEX+BV-10 비디오헤드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1571035077",
       "price": 738000,
-      "sale_price": 778000,
+      "sale_price": 738000,
       "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
@@ -15892,7 +15922,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1572416153",
       "price": 2970000,
       "sale_price": 3300000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1572416153/thumb-12367CU64CQ65SU7J6Q7J241120_PL_2removebgpreview_262x262.png",
@@ -16638,7 +16668,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1577695904",
       "price": 2970000,
       "sale_price": 3300000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1577695904/thumb-100M_262x262.jpg",
@@ -16716,7 +16746,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1578465182",
       "price": 2470000,
       "sale_price": 2470000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1578465182/thumb-01_262x262.jpg",
@@ -17553,7 +17583,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1583824006",
       "price": 101000,
       "sale_price": 110000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1583824006/thumb-MT03_MBH19_262x262.jpg",
@@ -17588,11 +17618,11 @@
       "id": "kpp-1584413152",
       "source": "kpp",
       "source_id": "1584413152",
-      "name": "레오포토 미니삼각대 MT-03+LH-25 삼각대 세트",
+      "name": "레오포토 스파이더 MT-03+LH-25 미니삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1584413152",
       "price": 157000,
-      "sale_price": 166000,
+      "sale_price": 157000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -18395,11 +18425,11 @@
       "id": "kpp-1596611277",
       "source": "kpp",
       "source_id": "1596611277",
-      "name": "레오포토 써밋 시스테매틱 LM-404C+LH-55R 삼각대 세트",
+      "name": "레오포토 써밋 LM-404C+LH-55R 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1596611277",
-      "price": 1058000,
-      "sale_price": 1058000,
+      "price": 996600,
+      "sale_price": 1049000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -18442,11 +18472,11 @@
       "id": "kpp-1596611496",
       "source": "kpp",
       "source_id": "1596611496",
-      "name": "레오포토 써밋 시스테매틱 LM-365C+LH-55R 삼각대 세트",
+      "name": "레오포토 써밋 LM-365C+LH-55R 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1596611496",
-      "price": 1008000,
-      "sale_price": 1048000,
+      "price": 999000,
+      "sale_price": 999000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -18488,11 +18518,11 @@
       "id": "kpp-1596611623",
       "source": "kpp",
       "source_id": "1596611623",
-      "name": "레오포토 써밋 시스테매틱 LM-364C+LH-55R 삼각대 세트",
+      "name": "레오포토 써밋 LM-364C+LH-55R 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1596611623",
-      "price": 958000,
-      "sale_price": 998000,
+      "price": 949000,
+      "sale_price": 949000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -18623,11 +18653,11 @@
       "id": "kpp-1596611998",
       "source": "kpp",
       "source_id": "1596611998",
-      "name": "레오포토 써밋 시스테매틱 LM-324C+LH-55R 삼각대 세트",
+      "name": "레오포토 써밋 LM-324C+LH-55R 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1596611998",
-      "price": 908000,
-      "sale_price": 948000,
+      "price": 899000,
+      "sale_price": 899000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -18712,11 +18742,11 @@
       "id": "kpp-1596612527",
       "source": "kpp",
       "source_id": "1596612527",
-      "name": "레오포토 LS-284CVL+VH-20 카본삼각대 세트",
+      "name": "레오포토 레인저 LS-284CVL+VH-20 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1596612527",
-      "price": 558000,
-      "sale_price": 558000,
+      "price": 528000,
+      "sale_price": 528000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -18756,11 +18786,11 @@
       "id": "kpp-1596613495",
       "source": "kpp",
       "source_id": "1596613495",
-      "name": "레오포토 레인저 LS-365C+LH-40R 삼각대 세트",
+      "name": "레오포토 레인저 LS-365C+LH-40R 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1596613495",
       "price": 678000,
-      "sale_price": 708000,
+      "sale_price": 678000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -18846,11 +18876,11 @@
       "id": "kpp-1596613788",
       "source": "kpp",
       "source_id": "1596613788",
-      "name": "레오포토 레인저 LS-325C+LH-40R 삼각대 세트",
+      "name": "레오포토 레인저 LS-325C+LH-40R 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1596613788",
-      "price": 578000,
-      "sale_price": 608000,
+      "price": 558000,
+      "sale_price": 558000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -19145,11 +19175,11 @@
       "id": "kpp-1596618240",
       "source": "kpp",
       "source_id": "1596618240",
-      "name": "레오포토 모노포드 MP-285C+VH-20 헤드 세트",
+      "name": "레오포토 MP-285C+VH-20 모노포드 헤드 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1596618240",
-      "price": 258000,
-      "sale_price": 258000,
+      "price": 250000,
+      "sale_price": 250000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -19184,11 +19214,11 @@
       "id": "kpp-1596618371",
       "source": "kpp",
       "source_id": "1596618371",
-      "name": "레오포토 LS-324CEX+BV-10M 레벨링 비디오삼각대 키트",
+      "name": "레오포토 레인저 LS-324CEX+BV-10M 비디오헤드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1596618371",
       "price": 738000,
-      "sale_price": 778000,
+      "sale_price": 738000,
       "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
@@ -19618,7 +19648,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1599459212",
       "price": 240000,
       "sale_price": 240000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1599459212/thumb-01_262x262.jpg",
@@ -19646,7 +19676,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1599459217",
       "price": 300000,
       "sale_price": 300000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1599459217/thumb-01_262x262.jpg",
@@ -20232,7 +20262,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1600134537",
       "price": 120000,
       "sale_price": 120000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1600134537/thumb-7ZmI7Y6Y7J207KeALB_65_262x262.jpg",
@@ -20275,7 +20305,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1600134705",
       "price": 130000,
       "sale_price": 130000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1600134705/thumb-7ZmI7Y6Y7J207KeALB_75_262x262.jpg",
@@ -20318,7 +20348,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1600134809",
       "price": 140000,
       "sale_price": 140000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1600134809/thumb-7ZmI7Y6Y7J207KeAYB_100LP_262x262.jpg",
@@ -23955,10 +23985,10 @@
       "id": "kpp-1608689563",
       "source": "kpp",
       "source_id": "1608689563",
-      "name": "레오포토 미스터Q LQ-284C+LH-36R 카본삼각대",
+      "name": "레오포토 미스터Q LQ-284C+LH-36R 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1608689563",
-      "price": 598000,
+      "price": 538200,
       "sale_price": 598000,
       "supplier_status": "listed",
       "kind": "purchase",
@@ -24899,11 +24929,11 @@
       "id": "kpp-1610093038",
       "source": "kpp",
       "source_id": "1610093038",
-      "name": "레오포토 미니삼각대 MT-03+F-19 삼각대 세트",
+      "name": "레오포토 스파이더 MT-03+F-19 미니삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1610093038",
       "price": 98000,
-      "sale_price": 107000,
+      "sale_price": 98000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -25798,7 +25828,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1617262618",
       "price": 145000,
       "sale_price": 145000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1617262618/thumb-30271_262x262.jpg",
@@ -26463,7 +26493,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1619405505",
       "price": 44000,
       "sale_price": 44000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1619405505/thumb-1_262x262.jpg",
@@ -26830,7 +26860,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1620782600",
       "price": 349000,
       "sale_price": 349000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1620782600/thumb-2gkvhank_262x262.jpg",
@@ -27321,7 +27351,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1624854386",
       "price": 30000,
       "sale_price": 30000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1624854386/thumb-01_262x262.jpg",
@@ -27626,8 +27656,8 @@
       "name": "레오포토 MP-285C+VD-02 모노포드 스탠드 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1626071834",
-      "price": 160000,
-      "sale_price": 160000,
+      "price": 150000,
+      "sale_price": 150000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -29349,7 +29379,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1632468542",
       "price": 4950000,
       "sale_price": 5500000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1632468542/thumb-01_262x262.jpg",
@@ -29384,7 +29414,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1632469574",
       "price": 4950000,
       "sale_price": 5500000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1632469574/thumb-01_262x262.jpg",
@@ -30013,7 +30043,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1634198672",
       "price": 59000,
       "sale_price": 59000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1634198672/thumb-01600_262x262.jpg",
@@ -31476,11 +31506,11 @@
       "id": "kpp-1635489427",
       "source": "kpp",
       "source_id": "1635489427",
-      "name": "레오포토 미니삼각대 MT-03+MBC-20 삼각대 세트",
+      "name": "레오포토 스파이더 MT-03+MBC-20 미니삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1635489427",
       "price": 137000,
-      "sale_price": 146000,
+      "sale_price": 137000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -32058,7 +32088,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1635494331",
       "price": 66000,
       "sale_price": 66000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1635494331/thumb-02600_262x262.jpg",
@@ -32404,9 +32434,9 @@
       "name": "레오포토 아테나 LA-284C 방수방진 카본삼각대 2 시리즈",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1636507508",
-      "price": 269100,
+      "price": 299000,
       "sale_price": 299000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1636507508/thumb-01_262x262.jpg",
@@ -33606,11 +33636,11 @@
       "id": "kpp-1637057783",
       "source": "kpp",
       "source_id": "1637057783",
-      "name": "레오포토 레인저레벨링 LS-365CEX+BV-10 비디오삼각대 세트",
+      "name": "레오포토 레인저 LS-365CEX+BV-10 비디오헤드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1637057783",
-      "price": 838000,
-      "sale_price": 878000,
+      "price": 754200,
+      "sale_price": 838000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -34150,11 +34180,11 @@
       "id": "kpp-1638752933",
       "source": "kpp",
       "source_id": "1638752933",
-      "name": "레오포토 레인저 롱버전 LS-364CL+LH-40R 삼각대 세트",
+      "name": "레오포토 레인저 LS-364CL+LH-40R 롱버전 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1638752933",
-      "price": 818000,
-      "sale_price": 858000,
+      "price": 798000,
+      "sale_price": 798000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -34195,11 +34225,11 @@
       "id": "kpp-1638753168",
       "source": "kpp",
       "source_id": "1638753168",
-      "name": "레오포토 LS-284CVL+LH-30R 카본삼각대 세트",
+      "name": "레오포토 레인저 LS-284CVL+LH-30R 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1638753168",
       "price": 548000,
-      "sale_price": 578000,
+      "sale_price": 548000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -34241,11 +34271,11 @@
       "id": "kpp-1638753211",
       "source": "kpp",
       "source_id": "1638753211",
-      "name": "레오포토 레인저 LS-365C (Full Camo)+LH-55R 4시리즈",
+      "name": "레오포토 레인저 LS-365C (Full Camo)+LH-55R 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1638753211",
-      "price": 848000,
-      "sale_price": 848000,
+      "price": 818000,
+      "sale_price": 818000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -34282,11 +34312,11 @@
       "id": "kpp-1638753263",
       "source": "kpp",
       "source_id": "1638753263",
-      "name": "레오포토 레인저 LS-365C+LH-55R 4시리즈",
+      "name": "레오포토 레인저 LS-365C+LH-55R 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1638753263",
-      "price": 798000,
-      "sale_price": 798000,
+      "price": 768000,
+      "sale_price": 768000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -34729,7 +34759,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1641283218",
       "price": 70700,
       "sale_price": 101000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1641283218/thumb-3714_001_262x262.jpg",
@@ -35146,7 +35176,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1642495002",
       "price": 299000,
       "sale_price": 299000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1642495002/thumb-wjipx5dr_262x262.jpg",
@@ -35185,12 +35215,12 @@
       "id": "kpp-1642495139",
       "source": "kpp",
       "source_id": "1642495139",
-      "name": "레오포토 레인저 LS-365C+LH-47R 삼각대 세트",
+      "name": "레오포토 레인저 LS-365C+LH-47R 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1642495139",
-      "price": 708000,
-      "sale_price": 748000,
-      "supplier_status": "soldout",
+      "price": 718000,
+      "sale_price": 718000,
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1642495139/thumb-2sqpuxmo_262x262.jpg",
@@ -36613,7 +36643,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1649152571",
       "price": 99000,
       "sale_price": 129000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1649152571/thumb-01_262x262.jpg",
@@ -38590,7 +38620,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1649565913",
       "price": 107200,
       "sale_price": 134000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1649565913/thumb-01_262x262.jpg",
@@ -39933,7 +39963,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1649572780",
       "price": 8000,
       "sale_price": 20000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1649572780/thumb-01_262x262.jpg",
@@ -40065,7 +40095,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1649573117",
       "price": 10400,
       "sale_price": 26000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1649573117/thumb-01_262x262.jpg",
@@ -40786,7 +40816,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1650333695",
       "price": 224000,
       "sale_price": 224000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1650333695/thumb-01_262x262.jpg",
@@ -40821,11 +40851,11 @@
       "id": "kpp-1650501894",
       "source": "kpp",
       "source_id": "1650501894",
-      "name": "레오포토 레인저레벨링 LS-365CEX+BV-10M 비디오삼각대 세트",
+      "name": "레오포토 레인저 LS-365CEX+BV-10M 비디오헤드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1650501894",
-      "price": 838000,
-      "sale_price": 878000,
+      "price": 754200,
+      "sale_price": 838000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -41649,7 +41679,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1651027458",
       "price": 299250,
       "sale_price": 399000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1651027458/thumb-01_262x262.jpg",
@@ -42267,10 +42297,10 @@
       "id": "kpp-1651565962",
       "source": "kpp",
       "source_id": "1651565962",
-      "name": "레오포토 포세이돈 LP-284C+LH-36R 방수방진 카본삼각대",
+      "name": "레오포토 포세이돈 LP-284C+LH-36R 방수방진 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1651565962",
-      "price": 448000,
+      "price": 403200,
       "sale_price": 448000,
       "supplier_status": "soldout",
       "kind": "purchase",
@@ -42432,7 +42462,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1651567165",
       "price": 49500,
       "sale_price": 99000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1651567165/thumb-01_262x262.jpg",
@@ -44107,7 +44137,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1657774445",
       "price": 50000,
       "sale_price": 50000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1657774445/thumb-01_262x262.jpg",
@@ -44135,7 +44165,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1657774585",
       "price": 50000,
       "sale_price": 50000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1657774585/thumb-01_262x262.jpg",
@@ -45833,10 +45863,10 @@
       "id": "kpp-1664434534",
       "source": "kpp",
       "source_id": "1664434534",
-      "name": "레오포토 아테나 LA-324C+LH-40R 방수방진 카본삼각대",
+      "name": "레오포토 아테나 LA-324C+LH-40R 방수방진 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1664434534",
-      "price": 598000,
+      "price": 538200,
       "sale_price": 598000,
       "supplier_status": "listed",
       "kind": "purchase",
@@ -45883,12 +45913,12 @@
       "id": "kpp-1664434879",
       "source": "kpp",
       "source_id": "1664434879",
-      "name": "레오포토 아테나 LA-284C+LH-36R 방수방진 카본삼각대",
+      "name": "레오포토 아테나 LA-284C+LH-36R 방수방진 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1664434879",
       "price": 448000,
       "sale_price": 448000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1664434879/thumb-01_262x262.jpg",
@@ -45931,11 +45961,11 @@
       "id": "kpp-1664440475",
       "source": "kpp",
       "source_id": "1664440475",
-      "name": "레오포토 레인저 LS-223C+LH-25 삼각대 세트",
+      "name": "레오포토 레인저 LS-223C+LH-25 미니삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1664440475",
       "price": 188000,
-      "sale_price": 198000,
+      "sale_price": 188000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -47260,7 +47290,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1664860446",
       "price": 74000,
       "sale_price": 74000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1664860446/thumb-01_262x262.jpg",
@@ -47651,7 +47681,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1664867338",
       "price": 15000,
       "sale_price": 15000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1664867338/thumb-01_262x262.jpg",
@@ -49675,7 +49705,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1665046894",
       "price": 99000,
       "sale_price": 99000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1665046894/thumb-01_262x262.jpg",
@@ -52840,7 +52870,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1665558275",
       "price": 120000,
       "sale_price": 120000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1665558275/thumb-STARSCAPE_262x262.jpg",
@@ -55375,7 +55405,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1665563477",
       "price": 45000,
       "sale_price": 45000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1665563477/thumb-01_262x262.jpg",
@@ -58986,7 +59016,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1666084939",
       "price": 50000,
       "sale_price": 50000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1666084939/thumb-01_262x262.jpg",
@@ -60392,7 +60422,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1667872392",
       "price": 390000,
       "sale_price": 390000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1667872392/thumb-01_262x262.jpg",
@@ -60580,7 +60610,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1668408647",
       "price": 15000,
       "sale_price": 15000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1668408647/thumb-01_262x262.jpg",
@@ -61160,7 +61190,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1668649739",
       "price": 108000,
       "sale_price": 120000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1668649739/thumb-1_2_67_82mm_01_262x262.jpg",
@@ -62288,7 +62318,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1671187537",
       "price": 160000,
       "sale_price": 160000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1671187537/thumb-01_262x262.jpg",
@@ -63093,9 +63123,9 @@
         ]
       },
       "brand_category_ids": [
+        "v290",
         "v2d0",
-        "v2d010",
-        "v290"
+        "v2d010"
       ],
       "product_category_ids": [
         "03",
@@ -63828,7 +63858,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1672217483",
       "price": 189000,
       "sale_price": 189000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1672217483/thumb-23mm_f1_4_rf_262x262.jpg",
@@ -65761,7 +65791,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1673421129",
       "price": 59000,
       "sale_price": 59000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1673421129/thumb-01_262x262.jpg",
@@ -67586,7 +67616,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1676254054",
       "price": 28000,
       "sale_price": 28000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1676254054/thumb-UXCPLII_262x262.jpg",
@@ -67718,7 +67748,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1676274062",
       "price": 35000,
       "sale_price": 35000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1676274062/thumb-UXCPLII_262x262.jpg",
@@ -68294,7 +68324,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1676509511",
       "price": 65000,
       "sale_price": 65000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1676509511/thumb-m_t_gray_262x262.jpg",
@@ -70048,7 +70078,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1679298407",
       "price": 145000,
       "sale_price": 145000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1679298407/thumb-01_262x262.jpg",
@@ -72252,7 +72282,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1682300439",
       "price": 12000,
       "sale_price": 12000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1682300439/thumb-01_262x262.jpg",
@@ -73794,7 +73824,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1683174128",
       "price": 1099000,
       "sale_price": 1099000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1683174128/thumb-01_262x262.jpg",
@@ -74746,7 +74776,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1684833084",
       "price": 96000,
       "sale_price": 120000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1684833084/thumb-01_262x262.jpg",
@@ -77097,7 +77127,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1687399441",
       "price": 233000,
       "sale_price": 233000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1687399441/thumb-01_x_262x262.jpg",
@@ -77380,7 +77410,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1687508372",
       "price": 24500,
       "sale_price": 49000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1687508372/thumb-7Iqk66qw_67iU66Oo_01_262x262.jpg",
@@ -77754,7 +77784,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1687509939",
       "price": 44500,
       "sale_price": 89000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1687509939/thumb-65287KeA_7Y287ZSM_01_262x262.jpg",
@@ -78319,7 +78349,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1688376733",
       "price": 339000,
       "sale_price": 339000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1688376733/thumb-01_2_262x262.jpg",
@@ -78582,7 +78612,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1688720316",
       "price": 339000,
       "sale_price": 339000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1688720316/thumb-01_262x262.jpg",
@@ -78625,11 +78655,11 @@
       "id": "kpp-1688959468",
       "source": "kpp",
       "source_id": "1688959468",
-      "name": "레오포토 레인저 롱버전 LS-324CL+LH-40R 삼각대 세트",
+      "name": "레오포토 레인저 LS-324CL+LH-40R 롱버전 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1688959468",
-      "price": 718000,
-      "sale_price": 758000,
+      "price": 698000,
+      "sale_price": 698000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -79654,7 +79684,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1689833155",
       "price": 18000,
       "sale_price": 18000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1689833155/thumb-01_262x262.jpg",
@@ -80004,11 +80034,11 @@
       "id": "kpp-1690246854",
       "source": "kpp",
       "source_id": "1690246854",
-      "name": "레오포토 MT-04+LH-25R 스파이더 미니삼각대 세트",
+      "name": "레오포토 스파이더 MT-04+LH-25R 미니삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1690246854",
       "price": 219000,
-      "sale_price": 228000,
+      "sale_price": 219000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -80236,12 +80266,12 @@
       "id": "kpp-1690332382",
       "source": "kpp",
       "source_id": "1690332382",
-      "name": "레오포토 LQ-284C+LBQ-50S 레벨링 카본 삼각대 세트",
+      "name": "레오포토 미스터Q LQ-284C+LBQ-50S 레벨링 카본 삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1690332382",
-      "price": 498000,
-      "sale_price": 498000,
-      "supplier_status": "listed",
+      "price": 412200,
+      "sale_price": 458000,
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1690332382/thumb-01_262x262.jpg",
@@ -80586,11 +80616,11 @@
       "id": "kpp-1690445608",
       "source": "kpp",
       "source_id": "1690445608",
-      "name": "레오포토 LM-324C+LM32 카본삼각대 스트랩 세트",
+      "name": "레오포토 써밋 LM-324C+LM32 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1690445608",
       "price": 639000,
-      "sale_price": 654000,
+      "sale_price": 639000,
       "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
@@ -80635,7 +80665,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1690446367",
       "price": 239000,
       "sale_price": 239000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1690446367/thumb-01_262x262.jpg",
@@ -80715,12 +80745,12 @@
       "id": "kpp-1690506336",
       "source": "kpp",
       "source_id": "1690506336",
-      "name": "레오포토 LM-324C+DC364C 센터컬럼 카본 삼각대 세트",
+      "name": "레오포토 써밋 LM-324C+DC364C 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1690506336",
       "price": 699000,
-      "sale_price": 729000,
-      "supplier_status": "soldout",
+      "sale_price": 699000,
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1690506336/thumb-01_262x262.jpg",
@@ -80764,7 +80794,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1690532307",
       "price": 8800000,
       "sale_price": 8800000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1690532307/thumb-01_262x262.jpg",
@@ -80801,12 +80831,12 @@
       "id": "kpp-1690535715",
       "source": "kpp",
       "source_id": "1690535715",
-      "name": "레오포토 LM-365C+DC364C 센터컬럼 카본 삼각대 세트",
+      "name": "레오포토 써밋 LM-365C+DC364C 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1690535715",
       "price": 799000,
-      "sale_price": 829000,
-      "supplier_status": "soldout",
+      "sale_price": 799000,
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1690535715/thumb-01_262x262.jpg",
@@ -80846,12 +80876,12 @@
       "id": "kpp-1690535824",
       "source": "kpp",
       "source_id": "1690535824",
-      "name": "레오포토 LM-364C+DC364C 센터컬럼 카본 삼각대 세트",
+      "name": "레오포토 써밋 LM-364C+DC364C 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1690535824",
       "price": 749000,
-      "sale_price": 779000,
-      "supplier_status": "soldout",
+      "sale_price": 749000,
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1690535824/thumb-01_262x262.jpg",
@@ -81113,11 +81143,11 @@
       "id": "kpp-1691375157",
       "source": "kpp",
       "source_id": "1691375157",
-      "name": "레오포토 LS-284CVL+LH-36R 항공샷 카본삼각대 키트",
+      "name": "레오포토 레인저 LS-284CVL+LH-36R 카본삼각대 키트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1691375157",
       "price": 588000,
-      "sale_price": 618000,
+      "sale_price": 588000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -81593,11 +81623,11 @@
       "id": "kpp-1692613015",
       "source": "kpp",
       "source_id": "1692613015",
-      "name": "레오포토 레인저 LS-324C+LH-40R 삼각대 세트",
+      "name": "레오포토 레인저 LS-324C+LH-40R 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1692613015",
-      "price": 538000,
-      "sale_price": 578000,
+      "price": 528000,
+      "sale_price": 528000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -82321,7 +82351,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1692863336",
       "price": 27500,
       "sale_price": 55000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1692863336/thumb-01_262x262.jpg",
@@ -82416,7 +82446,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1692864765",
       "price": 32500,
       "sale_price": 65000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1692864765/thumb-01_262x262.jpg",
@@ -82457,7 +82487,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1692865003",
       "price": 32500,
       "sale_price": 65000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1692865003/thumb-01_262x262.jpg",
@@ -83005,7 +83035,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1694055103",
       "price": 145000,
       "sale_price": 145000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1694055103/thumb-01_262x262.jpg",
@@ -83407,7 +83437,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1694653540",
       "price": 209300,
       "sale_price": 299000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1694653540/thumb-01_nd03_4x4_262x262.jpg",
@@ -83446,7 +83476,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1694654225",
       "price": 209300,
       "sale_price": 299000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1694654225/thumb-01_nd06_4x4_262x262.jpg",
@@ -83485,7 +83515,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1694654344",
       "price": 209300,
       "sale_price": 299000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1694654344/thumb-01_nd09_4x4_262x262.jpg",
@@ -83524,7 +83554,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1694654486",
       "price": 279300,
       "sale_price": 399000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1694654486/thumb-01_nd12_4x4_262x262.jpg",
@@ -83563,7 +83593,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1694654581",
       "price": 279300,
       "sale_price": 399000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1694654581/thumb-01_nd15_4x4_262x262.jpg",
@@ -83602,7 +83632,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1694654983",
       "price": 209300,
       "sale_price": 299000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1694654983/thumb-01_nd18_4x4_262x262.jpg",
@@ -83630,7 +83660,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1694655126",
       "price": 279300,
       "sale_price": 399000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1694655126/thumb-01_nd21_4x4_262x262.jpg",
@@ -83669,7 +83699,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1694655301",
       "price": 279300,
       "sale_price": 399000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1694655301/thumb-01_nd24_4x4_262x262.jpg",
@@ -83893,7 +83923,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1694740232",
       "price": 24000,
       "sale_price": 30000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1694740232/thumb-01_262x262.jpg",
@@ -83933,7 +83963,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1694998620",
       "price": 95000,
       "sale_price": 95000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1694998620/thumb-01_262x262.jpg",
@@ -84077,7 +84107,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1695023164",
       "price": 139000,
       "sale_price": 139000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1695023164/thumb-01_262x262.jpg",
@@ -84625,7 +84655,7 @@
       "id": "kpp-1695612612",
       "source": "kpp",
       "source_id": "1695612612",
-      "name": "레오포토 LY-254C+LH-36R 카본삼각대 세트",
+      "name": "레오포토 미스터Y LY-254C+LH-36R 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1695612612",
       "price": 378000,
@@ -84668,11 +84698,11 @@
       "id": "kpp-1695617567",
       "source": "kpp",
       "source_id": "1695617567",
-      "name": "레오포토 LY-284C+LH-36R 카본삼각대 세트",
+      "name": "레오포토 미스터Y LY-284C+LH-36R 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1695617567",
-      "price": 438000,
-      "sale_price": 438000,
+      "price": 428000,
+      "sale_price": 428000,
       "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
@@ -84711,7 +84741,7 @@
       "id": "kpp-1695617728",
       "source": "kpp",
       "source_id": "1695617728",
-      "name": "레오포토 LY-254C+G3 기어헤드 삼각대 세트",
+      "name": "레오포토 미스터Y LY-254C+G3 기어헤드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1695617728",
       "price": 598000,
@@ -84757,11 +84787,11 @@
       "id": "kpp-1695617994",
       "source": "kpp",
       "source_id": "1695617994",
-      "name": "레오포토 LY-284C+G3 기어헤드 삼각대 세트",
+      "name": "레오포토 미스터Y LY-284C+G3 기어헤드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1695617994",
-      "price": 658000,
-      "sale_price": 658000,
+      "price": 648000,
+      "sale_price": 648000,
       "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
@@ -84803,11 +84833,11 @@
       "id": "kpp-1695622398",
       "source": "kpp",
       "source_id": "1695622398",
-      "name": "레오포토 시스테메틱 LM-404C+HB-70 10X 카본삼각대 볼헤드 세트",
+      "name": "레오포토 써밋 LM-404C+HB-70 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1695622398",
-      "price": 1038000,
-      "sale_price": 1038000,
+      "price": 996600,
+      "sale_price": 1049000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -84851,11 +84881,11 @@
       "id": "kpp-1695623024",
       "source": "kpp",
       "source_id": "1695623024",
-      "name": "레오포토 시스테메틱 LM-404C+G4 10X 카본삼각대 기어헤드 세트",
+      "name": "레오포토 써밋 LM-404C+G4 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1695623024",
-      "price": 1349000,
-      "sale_price": 1349000,
+      "price": 1234100,
+      "sale_price": 1299000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -84902,11 +84932,11 @@
       "id": "kpp-1695623260",
       "source": "kpp",
       "source_id": "1695623260",
-      "name": "레오포토 LM-365C+HB-70 볼헤드 카본삼각대 세트",
+      "name": "레오포토 써밋 LM-365C+HB-70 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1695623260",
-      "price": 1018000,
-      "sale_price": 1048000,
+      "price": 999000,
+      "sale_price": 999000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -84948,11 +84978,11 @@
       "id": "kpp-1695623880",
       "source": "kpp",
       "source_id": "1695623880",
-      "name": "레오포토 LM-365C+G4 기어헤드 카본삼각대 세트",
+      "name": "레오포토 써밋 LM-365C+G4 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1695623880",
-      "price": 1299000,
-      "sale_price": 1349000,
+      "price": 1249000,
+      "sale_price": 1249000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -84995,11 +85025,11 @@
       "id": "kpp-1695624524",
       "source": "kpp",
       "source_id": "1695624524",
-      "name": "레오포토 LM-364C+HB-70 볼헤드 카본삼각대 세트",
+      "name": "레오포토 써밋 LM-364C+HB-70 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1695624524",
-      "price": 968000,
-      "sale_price": 998000,
+      "price": 949000,
+      "sale_price": 949000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -85042,11 +85072,11 @@
       "id": "kpp-1695625411",
       "source": "kpp",
       "source_id": "1695625411",
-      "name": "레오포토 LM-364C+G4 기어헤드 카본삼각대 세트",
+      "name": "레오포토 써밋 LM-364C+G4 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1695625411",
-      "price": 1249000,
-      "sale_price": 1299000,
+      "price": 1199000,
+      "sale_price": 1199000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -85090,11 +85120,11 @@
       "id": "kpp-1695626377",
       "source": "kpp",
       "source_id": "1695626377",
-      "name": "레오포토 LM-324C+HB-70 볼헤드 카본삼각대 세트",
+      "name": "레오포토 써밋 LM-324C+HB-70 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1695626377",
-      "price": 918000,
-      "sale_price": 948000,
+      "price": 899000,
+      "sale_price": 899000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -85136,11 +85166,11 @@
       "id": "kpp-1695626650",
       "source": "kpp",
       "source_id": "1695626650",
-      "name": "레오포토 LM-324C+G4 기어헤드 카본삼각대 세트",
+      "name": "레오포토 써밋 LM-324C+G4 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1695626650",
-      "price": 1199000,
-      "sale_price": 1249000,
+      "price": 1149000,
+      "sale_price": 1149000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -85183,11 +85213,11 @@
       "id": "kpp-1695627109",
       "source": "kpp",
       "source_id": "1695627109",
-      "name": "레오포토 LS-324C+G4 기어헤드 카본삼각대 세트",
+      "name": "레오포토 레인저 LS-324C+G4 기어헤드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1695627109",
-      "price": 919000,
-      "sale_price": 969000,
+      "price": 899000,
+      "sale_price": 899000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -86338,15 +86368,15 @@
       "id": "kpp-1697781302",
       "source": "kpp",
       "source_id": "1697781302",
-      "name": "스몰리그 유압식비디오헤드 삼각대 3751 AD-01",
+      "name": "스몰리그 3751P AD-01 Pro 헤비듀티 유압식 비디오 삼각대",
       "brand": "SMALLRIG",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1697781302",
       "price": 224000,
       "sale_price": 224000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
-        "thumb": "https://kppkpp.co.kr/data/item/1697781302/thumb-01_262x262.jpg",
+        "thumb": "https://kppkpp.co.kr/data/item/1697781302/thumb-3751p_thumbnail_01_262x262.jpg",
         "main": [
           "https://media.nadaun.co/shop/images/smallrig/kpp-1697781302/main_1.webp",
           "https://media.nadaun.co/shop/images/smallrig/kpp-1697781302/main_2.webp",
@@ -86575,7 +86605,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1697784692",
       "price": 233000,
       "sale_price": 233000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1697784692/thumb-01_262x262.jpg",
@@ -86763,7 +86793,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1698196001",
       "price": 46900,
       "sale_price": 67000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1698196001/thumb-01_262x262.jpg",
@@ -88337,8 +88367,8 @@
       "name": "레오포토 MPQ-325C+VD-02 모노포드 스탠드 세트 블랙",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1700636591",
-      "price": 200000,
-      "sale_price": 200000,
+      "price": 190000,
+      "sale_price": 190000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -88376,8 +88406,8 @@
       "name": "레오포토 MPQ-325C+VD-02 모노포드 스탠드 세트 블루",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1700636672",
-      "price": 200000,
-      "sale_price": 200000,
+      "price": 190000,
+      "sale_price": 190000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -88415,8 +88445,8 @@
       "name": "레오포토 MPQ-325C+VD-02 모노포드 스탠드 세트 카모",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1700636710",
-      "price": 200000,
-      "sale_price": 200000,
+      "price": 190000,
+      "sale_price": 190000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -88454,8 +88484,8 @@
       "name": "레오포토 MPQ-325C+VD-02 모노포드 스탠드 세트 그린",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1700636761",
-      "price": 200000,
-      "sale_price": 200000,
+      "price": 190000,
+      "sale_price": 190000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -88493,8 +88523,8 @@
       "name": "레오포토 MPQ-325C+VD-02 모노포드 스탠드 세트 레드",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1700636803",
-      "price": 200000,
-      "sale_price": 200000,
+      "price": 190000,
+      "sale_price": 190000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -88529,11 +88559,11 @@
       "id": "kpp-1700703462",
       "source": "kpp",
       "source_id": "1700703462",
-      "name": "레오포토 MT-04+LH-25 스파이더 미니삼각대 세트",
+      "name": "레오포토 스파이더 MT-04+LH-25 미니삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1700703462",
       "price": 189000,
-      "sale_price": 198000,
+      "sale_price": 189000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -88573,11 +88603,11 @@
       "id": "kpp-1700703753",
       "source": "kpp",
       "source_id": "1700703753",
-      "name": "레오포토 MT-04+MBC-20 스파이더 미니삼각대 세트",
+      "name": "레오포토 스파이더 MT-04+MBC-20 미니삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1700703753",
       "price": 169000,
-      "sale_price": 178000,
+      "sale_price": 169000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -90615,10 +90645,10 @@
       "id": "kpp-1702864506",
       "source": "kpp",
       "source_id": "1702864506",
-      "name": "레오포토 포세이돈 LP-284C+LH-36R 카본삼각대 키트",
+      "name": "레오포토 포세이돈 LP-284C+LH-36R 방수방진 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1702864506",
-      "price": 448000,
+      "price": 403200,
       "sale_price": 448000,
       "supplier_status": "listed",
       "kind": "purchase",
@@ -90667,10 +90697,10 @@
       "id": "kpp-1702867007",
       "source": "kpp",
       "source_id": "1702867007",
-      "name": "레오포토 아테나 LA-324C+LH-40R 카본삼각대 키트",
+      "name": "레오포토 아테나 LA-324C+LH-40R 방수방진 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1702867007",
-      "price": 598000,
+      "price": 538200,
       "sale_price": 598000,
       "supplier_status": "listed",
       "kind": "purchase",
@@ -90717,12 +90747,12 @@
       "id": "kpp-1702867667",
       "source": "kpp",
       "source_id": "1702867667",
-      "name": "레오포토 아테나 LA-284C+LH-36R 카본삼각대 키트",
+      "name": "레오포토 아테나 LA-284C+LH-36R 방수방진 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1702867667",
       "price": 448000,
       "sale_price": 448000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1702867667/thumb-01_262x262.jpg",
@@ -91110,7 +91140,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1703058839",
       "price": 299000,
       "sale_price": 299000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1703058839/thumb-hqjp1d2j_262x262.jpg",
@@ -91201,7 +91231,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1703059165",
       "price": 349000,
       "sale_price": 349000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1703059165/thumb-0fmd00rw_262x262.jpg",
@@ -94419,7 +94449,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1705643602",
       "price": null,
       "sale_price": null,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1705643602/thumb-01_262x262.jpg",
@@ -94474,46 +94504,6 @@
       "product_category_ids": [
         "06",
         "0690"
-      ],
-      "brand_mall_ids": [
-        "LEOFOTO"
-      ],
-      "detail_status": "existing_assets_pending_refresh"
-    },
-    "kpp-1705643757": {
-      "id": "kpp-1705643757",
-      "source": "kpp",
-      "source_id": "1705643757",
-      "name": "레오포토 NF-06 니콘 Z 800/400/600mm 망원렌즈 플레이트",
-      "brand": "LEOFOTO",
-      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1705643757",
-      "price": null,
-      "sale_price": null,
-      "supplier_status": "soldout",
-      "kind": "purchase",
-      "images": {
-        "thumb": "https://kppkpp.co.kr/data/item/1705643757/thumb-01_262x262.jpg",
-        "main": [
-          "https://media.nadaun.co/shop/images/leofoto/kpp-1705643757/main_1.webp",
-          "https://media.nadaun.co/shop/images/leofoto/kpp-1705643757/main_2.webp",
-          "https://media.nadaun.co/shop/images/leofoto/kpp-1705643757/main_3.webp",
-          "https://media.nadaun.co/shop/images/leofoto/kpp-1705643757/main_4.webp",
-          "https://media.nadaun.co/shop/images/leofoto/kpp-1705643757/main_5.webp",
-          "https://media.nadaun.co/shop/images/leofoto/kpp-1705643757/main_6.webp"
-        ],
-        "detail": [
-          "https://media.nadaun.co/shop/detail/leofoto/kpp-1705643757/01.webp",
-          "https://media.nadaun.co/shop/detail/leofoto/kpp-1705643757/02.webp",
-          "https://media.nadaun.co/shop/detail/leofoto/kpp-1705643757/03.webp"
-        ]
-      },
-      "brand_category_ids": [
-        "3030",
-        "303060"
-      ],
-      "product_category_ids": [
-        "01",
-        "0140"
       ],
       "brand_mall_ids": [
         "LEOFOTO"
@@ -94612,7 +94602,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1705644053",
       "price": 59000,
       "sale_price": 59000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1705644053/thumb-01_262x262.jpg",
@@ -94707,7 +94697,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1706147766",
       "price": 30000,
       "sale_price": 30000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1706147766/thumb-01_262x262.jpg",
@@ -94735,7 +94725,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1706604815",
       "price": 64500,
       "sale_price": 129000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1706604815/thumb-01_L_262x262.jpg",
@@ -95787,7 +95777,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1708062801",
       "price": 339000,
       "sale_price": 339000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1708062801/thumb-01_blue_262x262.jpg",
@@ -96671,11 +96661,11 @@
       "id": "kpp-1708588481",
       "source": "kpp",
       "source_id": "1708588481",
-      "name": "레오포토 시스테메틱 LM-404C+PG-3 10X 카본삼각대 짐벌헤드 세트",
+      "name": "레오포토 써밋 LM-404C+PG-3 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1708588481",
-      "price": 1298000,
-      "sale_price": 1298000,
+      "price": 1186600,
+      "sale_price": 1249000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -96814,11 +96804,11 @@
       "id": "kpp-1708589730",
       "source": "kpp",
       "source_id": "1708589730",
-      "name": "레오포토 시스테메틱 LM-364C+PG-3 10X 카본삼각대 짐벌헤드 세트",
+      "name": "레오포토 써밋 LM-364C+PG-3 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1708589730",
-      "price": 1198000,
-      "sale_price": 1248000,
+      "price": 1149000,
+      "sale_price": 1149000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -96957,11 +96947,11 @@
       "id": "kpp-1708590713",
       "source": "kpp",
       "source_id": "1708590713",
-      "name": "레오포토 시스테메틱 LM-365C+PG-3 10X 카본삼각대 짐벌헤드 세트",
+      "name": "레오포토 써밋 LM-365C+PG-3 시스테메틱 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1708590713",
-      "price": 1248000,
-      "sale_price": 1248000,
+      "price": 1199000,
+      "sale_price": 1199000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -97509,7 +97499,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1708998335",
       "price": 139000,
       "sale_price": 139000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1708998335/thumb-01_262x262.jpg",
@@ -98340,11 +98330,11 @@
       "id": "kpp-1709096555",
       "source": "kpp",
       "source_id": "1709096555",
-      "name": "레오포토 포세이돈 LP-284C+G4 10X 카본삼각대 기어헤드 세트",
+      "name": "레오포토 포세이돈 LP-284C+G4 기어헤드 방수방진 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709096555",
-      "price": 899000,
-      "sale_price": 949000,
+      "price": 806600,
+      "sale_price": 849000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -98388,10 +98378,10 @@
       "id": "kpp-1709096979",
       "source": "kpp",
       "source_id": "1709096979",
-      "name": "레오포토 포세이돈 LP-284C+G3 10X 카본삼각대 기어헤드 세트",
+      "name": "레오포토 포세이돈 LP-284C+G3 기어헤드 방수방진 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709096979",
-      "price": 698000,
+      "price": 663100,
       "sale_price": 698000,
       "supplier_status": "listed",
       "kind": "purchase",
@@ -98438,11 +98428,11 @@
       "id": "kpp-1709097506",
       "source": "kpp",
       "source_id": "1709097506",
-      "name": "레오포토 아테나 LA-324C+G4 10X 카본삼각대 기어헤드 세트",
+      "name": "레오포토 아테나 LA-324C+G4 기어헤드 방수방진 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709097506",
-      "price": 990000,
-      "sale_price": 1049000,
+      "price": 901600,
+      "sale_price": 949000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -98485,10 +98475,10 @@
       "id": "kpp-1709097730",
       "source": "kpp",
       "source_id": "1709097730",
-      "name": "레오포토 아테나 LA-324C+G3 10X 카본삼각대 기어헤드 세트",
+      "name": "레오포토 아테나 LA-324C+G3 기어헤드 방수방진 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709097730",
-      "price": 798000,
+      "price": 758100,
       "sale_price": 798000,
       "supplier_status": "listed",
       "kind": "purchase",
@@ -98534,12 +98524,12 @@
       "id": "kpp-1709098224",
       "source": "kpp",
       "source_id": "1709098224",
-      "name": "레오포토 아테나 LA-284C+G4 10X 카본삼각대 기어헤드 세트",
+      "name": "레오포토 아테나 LA-284C+G4 기어헤드 방수방진 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709098224",
-      "price": 848000,
-      "sale_price": 798000,
-      "supplier_status": "listed",
+      "price": 849000,
+      "sale_price": 849000,
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1709098224/thumb-01_262x262.jpg",
@@ -98583,12 +98573,12 @@
       "id": "kpp-1709098341",
       "source": "kpp",
       "source_id": "1709098341",
-      "name": "레오포토 아테나 LA-284C+G3 10X 카본삼각대 기어헤드 세트",
+      "name": "레오포토 아테나 LA-284C+G3 기어헤드 방수방진 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709098341",
       "price": 698000,
       "sale_price": 698000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1709098341/thumb-01_262x262.jpg",
@@ -98634,11 +98624,11 @@
       "id": "kpp-1709107569",
       "source": "kpp",
       "source_id": "1709107569",
-      "name": "레오포토 LS-324C+G3 10X 카본삼각대 기어헤드 세트",
+      "name": "레오포토 레인저 LS-324C+G3 기어헤드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709107569",
-      "price": 778000,
-      "sale_price": 818000,
+      "price": 748000,
+      "sale_price": 748000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -98735,12 +98725,12 @@
       "id": "kpp-1709108020",
       "source": "kpp",
       "source_id": "1709108020",
-      "name": "레오포토 LS-324C+LH-40PR 10X 카본삼각대 파노라마헤드 세트",
+      "name": "레오포토 레인저 LS-324C+LH-40PR 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709108020",
-      "price": 578000,
-      "sale_price": 618000,
-      "supplier_status": "soldout",
+      "price": 568000,
+      "sale_price": 568000,
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1709108020/thumb-01_262x262.jpg",
@@ -98784,12 +98774,12 @@
       "id": "kpp-1709108419",
       "source": "kpp",
       "source_id": "1709108419",
-      "name": "레오포토 LS-324C+FW-01R 10X 카본삼각대 4Way헤드 세트",
+      "name": "레오포토 레인저 LS-324C+FW-01R 4Way헤드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709108419",
-      "price": 638000,
-      "sale_price": 668000,
-      "supplier_status": "listed",
+      "price": 598000,
+      "sale_price": 598000,
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1709108419/thumb-01_262x262.jpg",
@@ -98835,12 +98825,12 @@
       "id": "kpp-1709108685",
       "source": "kpp",
       "source_id": "1709108685",
-      "name": "레오포토 LS-324C+LH-47R 10X 카본삼각대 볼헤드 세트",
+      "name": "레오포토 레인저 LS-324C+LH-47R 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709108685",
-      "price": 618000,
-      "sale_price": 668000,
-      "supplier_status": "soldout",
+      "price": 568000,
+      "sale_price": 568000,
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1709108685/thumb-01_262x262.jpg",
@@ -98882,11 +98872,11 @@
       "id": "kpp-1709109634",
       "source": "kpp",
       "source_id": "1709109634",
-      "name": "레오포토 LS-324C+LH-40R 블루 10X 카본삼각대 볼헤드 세트",
+      "name": "레오포토 레인저 LS-324C+LH-40R 블루 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709109634",
-      "price": 538000,
-      "sale_price": 578000,
+      "price": 528000,
+      "sale_price": 528000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -98930,11 +98920,11 @@
       "id": "kpp-1709109864",
       "source": "kpp",
       "source_id": "1709109864",
-      "name": "레오포토 LS-324C+LH-40R 레드 10X 카본삼각대 볼헤드 세트",
+      "name": "레오포토 레인저 LS-324C+LH-40R 레드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709109864",
-      "price": 538000,
-      "sale_price": 578000,
+      "price": 528000,
+      "sale_price": 528000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -98978,11 +98968,11 @@
       "id": "kpp-1709110044",
       "source": "kpp",
       "source_id": "1709110044",
-      "name": "레오포토 LS-324C+LH-36R 블랙 10X 카본삼각대 볼헤드 세트",
+      "name": "레오포토 레인저 LS-324C+LH-36R 블랙 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709110044",
       "price": 498000,
-      "sale_price": 538000,
+      "sale_price": 498000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -99028,11 +99018,11 @@
       "id": "kpp-1709110315",
       "source": "kpp",
       "source_id": "1709110315",
-      "name": "레오포토 LS-324C+LH-36R 블루 10X 카본삼각대 볼헤드 세트",
+      "name": "레오포토 레인저 LS-324C+LH-36R 블루 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709110315",
       "price": 498000,
-      "sale_price": 538000,
+      "sale_price": 498000,
       "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
@@ -99076,11 +99066,11 @@
       "id": "kpp-1709110478",
       "source": "kpp",
       "source_id": "1709110478",
-      "name": "레오포토 LS-324C+LH-36R 레드 10X 카본삼각대 볼헤드 세트",
+      "name": "레오포토 레인저 LS-324C+LH-36R 레드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709110478",
       "price": 498000,
-      "sale_price": 538000,
+      "sale_price": 498000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -99124,11 +99114,11 @@
       "id": "kpp-1709110647",
       "source": "kpp",
       "source_id": "1709110647",
-      "name": "레오포토 LS-324C+LH-36R 실버 10X 카본삼각대 볼헤드 세트",
+      "name": "레오포토 레인저 LS-324C+LH-36R 실버 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709110647",
       "price": 498000,
-      "sale_price": 538000,
+      "sale_price": 498000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -99742,7 +99732,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1709539057",
       "price": 95000,
       "sale_price": 95000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1709539057/thumb-01_262x262.jpg",
@@ -100841,11 +100831,11 @@
       "id": "kpp-1710831123",
       "source": "kpp",
       "source_id": "1710831123",
-      "name": "레오포토 LS-284C PRO+LH-36R 기어패닝 카본삼각대 세트",
+      "name": "레오포토 레인저 LS-284C PRO+LH-36R 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1710831123",
       "price": 448200,
-      "sale_price": 568000,
+      "sale_price": 498000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -100889,11 +100879,11 @@
       "id": "kpp-1710831276",
       "source": "kpp",
       "source_id": "1710831276",
-      "name": "레오포토 LS-324C PRO+LH-40R 기어패닝 카본삼각대 세트",
+      "name": "레오포토 레인저 LS-324C PRO+LH-40R 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1710831276",
       "price": 598000,
-      "sale_price": 658000,
+      "sale_price": 598000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -100986,7 +100976,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1710914130",
       "price": 82000,
       "sale_price": 82000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1710914130/thumb-01_262x262.jpg",
@@ -102865,7 +102855,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1711444974",
       "price": 95000,
       "sale_price": 95000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1711444974/thumb-01_262x262.jpg",
@@ -103201,7 +103191,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1711445445",
       "price": 95000,
       "sale_price": 95000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1711445445/thumb-01_262x262.jpg",
@@ -104445,7 +104435,7 @@
       "brand": "WANDRD",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1711618431",
       "price": 299500,
-      "sale_price": 599000,
+      "sale_price": 689000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -106005,7 +105995,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1713518814",
       "price": 89000,
       "sale_price": 89000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1713518814/thumb-01_262x262.jpg",
@@ -106092,7 +106082,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1713519465",
       "price": 59000,
       "sale_price": 59000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1713519465/thumb-01_262x262.jpg",
@@ -107903,7 +107893,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1715568930",
       "price": 15000,
       "sale_price": 15000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1715568930/thumb-01_262x262.jpg",
@@ -108043,7 +108033,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1715569569",
       "price": 15000,
       "sale_price": 15000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1715569569/thumb-01_262x262.jpg",
@@ -108078,7 +108068,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1715569608",
       "price": 15000,
       "sale_price": 15000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1715569608/thumb-01_262x262.jpg",
@@ -108270,11 +108260,11 @@
       "id": "kpp-1715826580",
       "source": "kpp",
       "source_id": "1715826580",
-      "name": "레오포토 LS-324C PRO+ G4 카본삼각대 기어헤드 세트",
+      "name": "레오포토 레인저 LS-324C PRO+G4 기어헤드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1715826580",
-      "price": 990000,
-      "sale_price": 1049000,
+      "price": 979000,
+      "sale_price": 979000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -108318,7 +108308,7 @@
       "id": "kpp-1715826601",
       "source": "kpp",
       "source_id": "1715826601",
-      "name": "레오포토 LS-324C PRO+ G3 카본삼각대 기어헤드 세트",
+      "name": "레오포토 레인저 LS-324C PRO+G3 기어헤드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1715826601",
       "price": 798000,
@@ -108368,11 +108358,11 @@
       "id": "kpp-1715826645",
       "source": "kpp",
       "source_id": "1715826645",
-      "name": "레오포토 LS-284C PRO+G4 카본삼각대 기어헤드 세트",
+      "name": "레오포토 레인저 LS-284C PRO+G4 기어헤드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1715826645",
-      "price": 949000,
-      "sale_price": 999000,
+      "price": 854100,
+      "sale_price": 899000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -108416,10 +108406,10 @@
       "id": "kpp-1715826657",
       "source": "kpp",
       "source_id": "1715826657",
-      "name": "레오포토 LS-284C PRO+G3 카본삼각대 기어헤드 세트",
+      "name": "레오포토 레인저 LS-284C PRO+G3 기어헤드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1715826657",
-      "price": 748000,
+      "price": 710600,
       "sale_price": 748000,
       "supplier_status": "listed",
       "kind": "purchase",
@@ -109021,7 +109011,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1718350748",
       "price": 590000,
       "sale_price": 590000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1718350748/thumb-01_nd0.3_262x262.jpg",
@@ -113423,7 +113413,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1721280936",
       "price": 59000,
       "sale_price": 59000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1721280936/thumb-01_6re466aw_262x262.jpg",
@@ -116158,7 +116148,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1728008666",
       "price": 49000,
       "sale_price": 49000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1728008666/thumb-01_65Sl6re466CI7J20_262x262.jpg",
@@ -117245,7 +117235,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1729227290",
       "price": 61900,
       "sale_price": 61900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1729227290/thumb-01_262x262.jpg",
@@ -117459,7 +117449,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1729229656",
       "price": 16900,
       "sale_price": 16900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1729229656/thumb-01_262x262.jpg",
@@ -117624,7 +117614,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1729233139",
       "price": 76900,
       "sale_price": 76900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1729233139/thumb-01_262x262.jpg",
@@ -118395,7 +118385,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1729587386",
       "price": 259900,
       "sale_price": 259900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1729587386/thumb-01_262x262.jpg",
@@ -118925,7 +118915,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1730188718",
       "price": 65000,
       "sale_price": 65000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1730188718/thumb-01_262x262.jpg",
@@ -119017,7 +119007,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1730190172",
       "price": 65000,
       "sale_price": 65000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1730190172/thumb-01_262x262.jpg",
@@ -120522,7 +120512,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1733882306",
       "price": 109000,
       "sale_price": 109000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1733882306/thumb-01_262x262.jpg",
@@ -121611,7 +121601,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1734678268",
       "price": 27500,
       "sale_price": 55000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1734678268/thumb-01_262x262.jpg",
@@ -123357,15 +123347,15 @@
       "id": "kpp-1736392834",
       "source": "kpp",
       "source_id": "1736392834",
-      "name": "스몰리그 4877B 후지 X-M5 엄지그립 실버",
+      "name": "스몰리그 4877C 후지필름 X-M5 엄지그립 실버",
       "brand": "SMALLRIG",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1736392834",
       "price": 25900,
       "sale_price": 25900,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
-        "thumb": "https://kppkpp.co.kr/data/item/1736392834/thumb-thumbnail_4877b_01_262x262.jpg",
+        "thumb": "https://kppkpp.co.kr/data/item/1736392834/thumb-4877c_thumbnail_01_262x262.jpg",
         "main": [],
         "detail": []
       },
@@ -123376,8 +123366,8 @@
         "d2g040"
       ],
       "product_category_ids": [
-        "01",
-        "0140"
+        "06",
+        "0690"
       ],
       "brand_mall_ids": [
         "SMALLRIG"
@@ -123635,7 +123625,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1737434296",
       "price": 119000,
       "sale_price": 119000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1737434296/thumb-01_blue_262x262.jpg",
@@ -125042,7 +125032,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1740635088",
       "price": 1190000,
       "sale_price": 1190000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1740635088/thumb-01_262x262.jpg",
@@ -125282,8 +125272,8 @@
       },
       "brand_category_ids": [
         "6070",
-        "607010",
-        "607040"
+        "607040",
+        "607010"
       ],
       "product_category_ids": [
         "09",
@@ -126711,7 +126701,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1742778578",
       "price": 41900,
       "sale_price": 41900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1742778578/thumb-01_262x262.jpg",
@@ -127524,12 +127514,12 @@
       "id": "kpp-1744166274",
       "source": "kpp",
       "source_id": "1744166274",
-      "name": "레오포토 SW-02 유압식 헤드",
+      "name": "레오포토 SW-02 미니 유압식 손잡이 헤드",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1744166274",
       "price": 129000,
       "sale_price": 129000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1744166274/thumb-01_262x262.jpg",
@@ -128462,7 +128452,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1746586665",
       "price": 119000,
       "sale_price": 119000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1746586665/thumb-01_262x262.jpg",
@@ -128661,11 +128651,11 @@
       "id": "kpp-1747360196",
       "source": "kpp",
       "source_id": "1747360196",
-      "name": "레오포토 MF-324C+BV-10 유압식 비디오 모노포드 키트",
+      "name": "레오포토 MF-324C+BV-10 비디오헤드 모노포드 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1747360196",
-      "price": 518000,
-      "sale_price": 518000,
+      "price": 498000,
+      "sale_price": 498000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -128699,11 +128689,11 @@
       "id": "kpp-1747360653",
       "source": "kpp",
       "source_id": "1747360653",
-      "name": "레오포토 MF-324C+BV-10M 유압식 비디오 모노포드 키트",
+      "name": "레오포토 MF-324C+BV-10M 비디오헤드 모노포드 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1747360653",
-      "price": 518000,
-      "sale_price": 518000,
+      "price": 498000,
+      "sale_price": 498000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -128737,11 +128727,11 @@
       "id": "kpp-1747360754",
       "source": "kpp",
       "source_id": "1747360754",
-      "name": "레오포토 MF-324CL+BV-10 유압식 비디오 모노포드 키트",
+      "name": "레오포토 MF-324CL+BV-10 비디오헤드 모노포드 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1747360754",
-      "price": 538000,
-      "sale_price": 538000,
+      "price": 528000,
+      "sale_price": 528000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -128775,11 +128765,11 @@
       "id": "kpp-1747360894",
       "source": "kpp",
       "source_id": "1747360894",
-      "name": "레오포토 MF-324CL+BV-10M 유압식 비디오 모노포드 키트",
+      "name": "레오포토 MF-324CL+BV-10M 비디오헤드 모노포드 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1747360894",
-      "price": 538000,
-      "sale_price": 538000,
+      "price": 528000,
+      "sale_price": 528000,
       "supplier_status": "listed",
       "kind": "purchase",
       "images": {
@@ -130636,7 +130626,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1749779528",
       "price": 45900,
       "sale_price": 45900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1749779528/thumb-01_262x262.jpg",
@@ -130815,7 +130805,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1750147888",
       "price": 49500,
       "sale_price": 55000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1750147888/thumb-01_262x262.jpg",
@@ -130881,7 +130871,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1750148469",
       "price": 38500,
       "sale_price": 55000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1750148469/thumb-01_262x262.jpg",
@@ -130922,7 +130912,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1750148615",
       "price": 31500,
       "sale_price": 35000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1750148615/thumb-01_262x262.jpg",
@@ -131445,7 +131435,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1750149668",
       "price": 16200,
       "sale_price": 18000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1750149668/thumb-01_262x262.jpg",
@@ -131818,7 +131808,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1750150161",
       "price": 27000,
       "sale_price": 30000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1750150161/thumb-01_262x262.jpg",
@@ -132656,9 +132646,9 @@
         ]
       },
       "brand_category_ids": [
+        "v290",
         "v2d0",
-        "v2d010",
-        "v290"
+        "v2d010"
       ],
       "product_category_ids": [
         "03",
@@ -134660,7 +134650,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1752472008",
       "price": 64900,
       "sale_price": 64900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1752472008/thumb-01_262x262.jpg",
@@ -135447,7 +135437,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1753939172",
       "price": 999000,
       "sale_price": 999000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1753939172/thumb-01_262x262.jpg",
@@ -136595,7 +136585,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1754543946",
       "price": 92900,
       "sale_price": 92900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1754543946/thumb-01_262x262.jpg",
@@ -137187,7 +137177,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1754546385",
       "price": 16900,
       "sale_price": 16900,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1754546385/thumb-01_262x262.jpg",
@@ -137989,15 +137979,15 @@
       "id": "kpp-1754549776",
       "source": "kpp",
       "source_id": "1754549776",
-      "name": "스몰리그 D-Tap 1-to-4 전원 케이블 4831",
+      "name": "스몰리그 4831B D-Tap 1대4 전원 분배 케이블",
       "brand": "SMALLRIG",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1754549776",
       "price": 35900,
       "sale_price": 35900,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
-        "thumb": "https://kppkpp.co.kr/data/item/1754549776/thumb-01_262x262.jpg",
+        "thumb": "https://kppkpp.co.kr/data/item/1754549776/thumb-4831b_thumbnail_01_262x262.jpg",
         "main": [],
         "detail": []
       },
@@ -138740,7 +138730,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1755501705",
       "price": 319000,
       "sale_price": 319000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1755501705/thumb-75mm_f2_x_262x262.jpg",
@@ -141273,7 +141263,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1760344759",
       "price": 770000,
       "sale_price": 770000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1760344759/thumb-01_262x262.jpg",
@@ -142588,7 +142578,7 @@
       "id": "kpp-1761813346",
       "source": "kpp",
       "source_id": "1761813346",
-      "name": "레오포토 아쥬르 퀵 릴리즈 AZ-235C+MBH-30F 카본 여행용 삼각대 볼헤드 세트",
+      "name": "레오포토 아쥬르 AZ-235C+MBH-30F 여행용 카본 삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1761813346",
       "price": 478000,
@@ -142813,7 +142803,7 @@
       "name": "TARION 타리온 타이탄 리그 접이식 경량 시네 카트",
       "brand": "TARION",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1762247902",
-      "price": 599000,
+      "price": 499000,
       "sale_price": 599000,
       "supplier_status": "listed",
       "kind": "purchase",
@@ -143135,9 +143125,9 @@
         ]
       },
       "brand_category_ids": [
+        "v290",
         "v2d0",
-        "v2d010",
-        "v290"
+        "v2d010"
       ],
       "product_category_ids": [
         "03",
@@ -143439,7 +143429,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1763712730",
       "price": 108900,
       "sale_price": 108900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1763712730/thumb-5542_01_262x262.jpg",
@@ -145048,7 +145038,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1764574599",
       "price": 60000,
       "sale_price": 60000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1764574599/thumb-midnightblack_01_262x262.jpg",
@@ -145384,7 +145374,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1765344368",
       "price": 46900,
       "sale_price": 46900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1765344368/thumb-thumb_5663_01_262x262.jpg",
@@ -146250,7 +146240,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1765854871",
       "price": 154900,
       "sale_price": 154900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1765854871/thumb-thumb_5810_01_262x262.jpg",
@@ -147016,7 +147006,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1766478511",
       "price": 29900,
       "sale_price": 29900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1766478511/thumb-thumbnail_01_262x262.jpg",
@@ -147561,7 +147551,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1766991458",
       "price": 30900,
       "sale_price": 30900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1766991458/thumb-mount_5825_01_262x262.jpg",
@@ -148251,7 +148241,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1767333622",
       "price": 45000,
       "sale_price": 45000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1767333622/thumb-p_gm_393_black_01_262x262.jpg",
@@ -148547,10 +148537,10 @@
       "id": "kpp-1767690577",
       "source": "kpp",
       "source_id": "1767690577",
-      "name": "레오포토 아쥬르 퀵 릴리즈 AZ-204C+LH-25R 카본 여행용 삼각대 볼헤드 세트",
+      "name": "레오포토 아쥬르 AZ-204C+LH-25R 여행용 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1767690577",
-      "price": 298000,
+      "price": 268200,
       "sale_price": 298000,
       "supplier_status": "listed",
       "kind": "purchase",
@@ -148590,12 +148580,12 @@
       "id": "kpp-1767690646",
       "source": "kpp",
       "source_id": "1767690646",
-      "name": "레오포토 아쥬르 퀵 릴리즈 AZ-204C+BV-0R+LB-38 카본 삼각대 비디오헤드 세트",
+      "name": "레오포토 아쥬르 AZ-204C+BV-0R+LB-38 여행용 카본 비디오삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1767690646",
-      "price": 358000,
+      "price": 322200,
       "sale_price": 358000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1767690646/thumb-azure_204c_bv0r_lb38_01_262x262.jpg",
@@ -148631,7 +148621,7 @@
       "id": "kpp-1767690706",
       "source": "kpp",
       "source_id": "1767690706",
-      "name": "레오포토 아쥬르 퀵 릴리즈 AZ-235C+LH-30R 카본 여행용 삼각대 볼헤드 세트",
+      "name": "레오포토 아쥬르 AZ-235C+LH-30R 여행용 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1767690706",
       "price": 458000,
@@ -148672,7 +148662,7 @@
       "id": "kpp-1767690949",
       "source": "kpp",
       "source_id": "1767690949",
-      "name": "레오포토 아쥬르 퀵 릴리즈 AZ-235C+LH-36R 카본 여행용 삼각대 볼헤드 세트",
+      "name": "레오포토 아쥬르 AZ-235C+LH-36R 여행용 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1767690949",
       "price": 498000,
@@ -148713,7 +148703,7 @@
       "id": "kpp-1767691005",
       "source": "kpp",
       "source_id": "1767691005",
-      "name": "레오포토 아쥬르 퀵 릴리즈 AZ-235C+G3 카본 삼각대 기어헤드 세트",
+      "name": "레오포토 아쥬르 AZ-235C+G3 여행용 기어헤드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1767691005",
       "price": 698000,
@@ -149588,7 +149578,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1769395034",
       "price": 110000,
       "sale_price": 110000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1769395034/thumb-nova_67mm_01_262x262.jpg",
@@ -150438,7 +150428,7 @@
       "name": "TARION 타리온 접이식 시네카트 PRO 프로 폴딩 카메라 카트",
       "brand": "TARION",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1770345015",
-      "price": 749000,
+      "price": 699000,
       "sale_price": 749000,
       "supplier_status": "listed",
       "kind": "purchase",
@@ -154770,7 +154760,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1777019223",
       "price": 45000,
       "sale_price": 45000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1777019223/thumb-p_cb_603_thumbnail_01_262x262.jpg",
@@ -155188,12 +155178,12 @@
       "id": "kpp-1777439219",
       "source": "kpp",
       "source_id": "1777439219",
-      "name": "레오포토 LS-324C PRO+ G4 PROM 카본삼각대 기어헤드 세트",
+      "name": "레오포토 레인저 LS-324C PRO+G4 PROM 기어헤드 카본삼각대 세트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1777439219",
-      "price": 1119000,
-      "sale_price": 1169000,
-      "supplier_status": "listed",
+      "price": 1099000,
+      "sale_price": 1099000,
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1777439219/thumb-01_262x262.jpg",
@@ -155638,7 +155628,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1779267299",
       "price": 70000,
       "sale_price": 70000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1779267299/thumb-rs82_ii_thumbnail_01_262x262.jpg",
@@ -156625,7 +156615,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1779849169",
       "price": 259000,
       "sale_price": 259000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1779849169/thumb-p_cb_617_thumbnail_01_262x262.jpg",
@@ -156856,7 +156846,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1780044595",
       "price": 95900,
       "sale_price": 95900,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1780044595/thumb-p_cb_289_thumbnail_01_262x262.jpg",
@@ -157636,7 +157626,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1781674158",
       "price": 2730000,
       "sale_price": 3900000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1781674158/thumb-fczbam0x_262x262.jpg",
@@ -157785,7 +157775,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1782281715",
       "price": 40000,
       "sale_price": 70000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1782281715/thumb-rs82_thumbnail_01_262x262.jpg",
@@ -157857,7 +157847,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1782281776",
       "price": 40000,
       "sale_price": 70000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1782281776/thumb-rs82_t_thumbnail_01_262x262.jpg",
@@ -158182,7 +158172,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1782366647",
       "price": 139300,
       "sale_price": 199000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1782366647/thumb-hydrophilic_82mm_thumbnail_01_262x262.jpg",
@@ -158218,7 +158208,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1782366729",
       "price": 139300,
       "sale_price": 199000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1782366729/thumb-hydrophilic_105mm_thumbnail_01_262x262.jpg",
@@ -158254,7 +158244,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1782366751",
       "price": 139300,
       "sale_price": 199000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1782366751/thumb-hydrophilic_82mm_thumbnail_01_262x262.jpg",
@@ -158612,7 +158602,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1782455929",
       "price": 999000,
       "sale_price": 999000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1782455929/thumb-fh_20m_thumbnail_01_262x262.jpg",
@@ -159047,7 +159037,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1784620768",
       "price": 160900,
       "sale_price": 160900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1784620768/thumb-6379_thumbnail_01_262x262.jpg",
@@ -159533,7 +159523,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1784681614",
       "price": 48900,
       "sale_price": 48900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1784681614/thumb-5698_thumbnail_01_262x262.jpg",
@@ -160760,7 +160750,7 @@
       "id": "kpp-1786323912",
       "source": "kpp",
       "source_id": "1786323912",
-      "name": "레오포토 데일리 라이트 카메라 백팩 17L 블랙 인서트 키트",
+      "name": "레오포토 데일리 라이트 카메라 백팩 17L 미드나잇블루 인서트 키트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1786323912",
       "price": 143100,
@@ -160844,7 +160834,7 @@
       "id": "kpp-1786324490",
       "source": "kpp",
       "source_id": "1786324490",
-      "name": "레오포토 데일리 라이트 카메라 백팩 23L 블랙 인서트 키트",
+      "name": "레오포토 데일리 라이트 카메라 백팩 23L 미드나잇블루 인서트 키트",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1786324490",
       "price": 170100,
@@ -160961,7 +160951,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1786325280",
       "price": 159000,
       "sale_price": 159000,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1786325280/thumb-opa_11s_gr_thumbnail_01_262x262.jpg",
@@ -160989,7 +160979,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1786325380",
       "price": 159000,
       "sale_price": 159000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1786325380/thumb-opa_11s_bg_thumbnail_01_262x262.jpg",
@@ -161017,7 +161007,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1786409167",
       "price": 112900,
       "sale_price": 112900,
-      "supplier_status": "soldout",
+      "supplier_status": "listed",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1786409167/thumb-6702_thumbnail_01_262x262.jpg",
@@ -161873,7 +161863,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1787548745",
       "price": 40000,
       "sale_price": 40000,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1787548745/thumb-midnight_black_01_262x262.jpg",
@@ -162019,7 +162009,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1787559436",
       "price": 64900,
       "sale_price": 64900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1787559436/thumb-5362_thumbnail_01_262x262.jpg",
@@ -162557,7 +162547,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1788404262",
       "price": 30900,
       "sale_price": 30900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1788404262/thumb-5886_thumbnail_01_262x262.jpg",
@@ -163157,8 +163147,8 @@
         "detail": []
       },
       "brand_category_ids": [
-        "d280",
-        "d28050",
+        "d2f0",
+        "d2f0g0",
         "d2g0",
         "d2g070"
       ],
@@ -163260,7 +163250,7 @@
       "id": "kpp-1790557850",
       "source": "kpp",
       "source_id": "1790557850",
-      "name": "스몰리그 5297 소니 NP-FZ100 USB-C 충전식 카메라배터리 디스플레이 탑재",
+      "name": "스몰리그 5297 소니 NP-FZ100 USB-C 충전식 카메라 배터리 디스플레이 탑재",
       "brand": "SMALLRIG",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1790557850",
       "price": 65000,
@@ -163512,7 +163502,7 @@
       "id": "kpp-1790815519",
       "source": "kpp",
       "source_id": "1790815519",
-      "name": "사전예약 [20개 한정] 레오포토 MF-363C+VD-04P 원터치 카본 모노포드",
+      "name": "레오포토 MF-363C+VD-04P 원터치 카본 모노포드",
       "brand": "LEOFOTO",
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1790815519",
       "price": 339000,
@@ -163545,7 +163535,7 @@
       "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1790930613",
       "price": 97200,
       "sale_price": 138900,
-      "supplier_status": "listed",
+      "supplier_status": "soldout",
       "kind": "purchase",
       "images": {
         "thumb": "https://kppkpp.co.kr/data/item/1790930613/thumb-canonEOSR50Vcagekit_01_262x262.jpg",
@@ -163727,6 +163717,1229 @@
       "product_category_ids": [
         "01",
         "0110"
+      ],
+      "brand_mall_ids": [
+        "PGYTECH"
+      ]
+    },
+    "kpp-1792550655": {
+      "id": "kpp-1792550655",
+      "source": "kpp",
+      "source_id": "1792550655",
+      "name": "스몰리그 6996 인스타360 루나 울트라 미니 탈부착 삼각대",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792550655",
+      "price": 48900,
+      "sale_price": 48900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792550655/thumb-6996_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d240",
+        "d24030"
+      ],
+      "product_category_ids": [
+        "06",
+        "06a0"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792551809": {
+      "id": "kpp-1792551809",
+      "source": "kpp",
+      "source_id": "1792551809",
+      "name": "스몰리그 7019 DJI 오즈모 포켓 4P 광각 필터",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792551809",
+      "price": 38900,
+      "sale_price": 38900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792551809/thumb-7019_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2f0",
+        "d2f0g0",
+        "d2g0",
+        "d2g070"
+      ],
+      "product_category_ids": [
+        "06",
+        "0690"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792551894": {
+      "id": "kpp-1792551894",
+      "source": "kpp",
+      "source_id": "1792551894",
+      "name": "스몰리그 6658 DJI 오즈모 포켓 4P 분할 필터 키트",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792551894",
+      "price": 80900,
+      "sale_price": 80900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792551894/thumb-6658_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2f0",
+        "d2f0g0",
+        "d2g0",
+        "d2g070"
+      ],
+      "product_category_ids": [
+        "06",
+        "0690"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792552289": {
+      "id": "kpp-1792552289",
+      "source": "kpp",
+      "source_id": "1792552289",
+      "name": "스몰리그 6872 DJI 오즈모 포켓 4/3 필터 포함 케이지 키트",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792552289",
+      "price": 102900,
+      "sale_price": 102900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792552289/thumb-6872_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d210",
+        "d210g0",
+        "d2g0",
+        "d2g070"
+      ],
+      "product_category_ids": [
+        "06",
+        "0620"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792552377": {
+      "id": "kpp-1792552377",
+      "source": "kpp",
+      "source_id": "1792552377",
+      "name": "스몰리그 6971 인스타360 X6 AR HD 액정보호필름",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792552377",
+      "price": 16900,
+      "sale_price": 16900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792552377/thumb-6971_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2f0",
+        "d2f0g0",
+        "d2g0",
+        "d2g070"
+      ],
+      "product_category_ids": [
+        "06",
+        "0690"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792552481": {
+      "id": "kpp-1792552481",
+      "source": "kpp",
+      "source_id": "1792552481",
+      "name": "스몰리그 6987 인스타360 루나 울트라 필터 키트 블랙",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792552481",
+      "price": 46900,
+      "sale_price": 46900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792552481/thumb-6987_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2f0",
+        "d2f0g0",
+        "d2g0",
+        "d2g070"
+      ],
+      "product_category_ids": [
+        "06",
+        "0690"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792552673": {
+      "id": "kpp-1792552673",
+      "source": "kpp",
+      "source_id": "1792552673",
+      "name": "스몰리그 6985 인스타360 루나 울트라 필터 키트 블랙",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792552673",
+      "price": 46900,
+      "sale_price": 46900,
+      "supplier_status": "soldout",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792552673/thumb-6985_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2f0",
+        "d2f0g0",
+        "d2g0",
+        "d2g070"
+      ],
+      "product_category_ids": [
+        "06",
+        "0690"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792553320": {
+      "id": "kpp-1792553320",
+      "source": "kpp",
+      "source_id": "1792553320",
+      "name": "스몰리그 6583 오즈모 포켓 4P 렌즈 프로텍터",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792553320",
+      "price": 16900,
+      "sale_price": 16900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792553320/thumb-6583_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2f0",
+        "d2f0g0",
+        "d2g0",
+        "d2g070"
+      ],
+      "product_category_ids": [
+        "06",
+        "0690"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792553398": {
+      "id": "kpp-1792553398",
+      "source": "kpp",
+      "source_id": "1792553398",
+      "name": "스몰리그 6439 DJI RS 5 퀵릴리즈 마운트 플레이트",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792553398",
+      "price": 64900,
+      "sale_price": 64900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792553398/thumb-6439_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2f0",
+        "d2f0g0",
+        "d2g0",
+        "d2g070"
+      ],
+      "product_category_ids": [
+        "06",
+        "0690"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792553461": {
+      "id": "kpp-1792553461",
+      "source": "kpp",
+      "source_id": "1792553461",
+      "name": "스몰리그 6786 맥세이프 스마트폰 흡착 거치대",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792553461",
+      "price": 24900,
+      "sale_price": 24900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792553461/thumb-6786_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d270",
+        "d27050"
+      ],
+      "product_category_ids": [
+        "06",
+        "06a0"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792557638": {
+      "id": "kpp-1792557638",
+      "source": "kpp",
+      "source_id": "1792557638",
+      "name": "스몰리그 5611 USB-C 60W 마그네틱 코일 충전 케이블 100cm",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792557638",
+      "price": 27900,
+      "sale_price": 27900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792557638/thumb-5611_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2f0",
+        "d2f060"
+      ],
+      "product_category_ids": [
+        "06",
+        "0690"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792557709": {
+      "id": "kpp-1792557709",
+      "source": "kpp",
+      "source_id": "1792557709",
+      "name": "스몰리그 5612 USB-C 100W 마그네틱 코일 충전 케이블 100cm",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792557709",
+      "price": 28900,
+      "sale_price": 28900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792557709/thumb-5612_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2f0",
+        "d2f060"
+      ],
+      "product_category_ids": [
+        "06",
+        "0690"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792557773": {
+      "id": "kpp-1792557773",
+      "source": "kpp",
+      "source_id": "1792557773",
+      "name": "스몰리그 5613 USB-C 240W 마그네틱 코일 충전 케이블 100cm",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792557773",
+      "price": 30900,
+      "sale_price": 30900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792557773/thumb-5613_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2f0",
+        "d2f060"
+      ],
+      "product_category_ids": [
+        "06",
+        "0690"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792557813": {
+      "id": "kpp-1792557813",
+      "source": "kpp",
+      "source_id": "1792557813",
+      "name": "스몰리그 5614 USB-C 240W 코일 데이터 케이블 USB 3.2 Gen2x2 35cm",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792557813",
+      "price": 35900,
+      "sale_price": 35900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792557813/thumb-5614_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2f0",
+        "d2f060"
+      ],
+      "product_category_ids": [
+        "06",
+        "0690"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792557871": {
+      "id": "kpp-1792557871",
+      "source": "kpp",
+      "source_id": "1792557871",
+      "name": "스몰리그 5615 USB-C 240W 코일 데이터 케이블 USB 3.2 Gen2x2 60cm",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792557871",
+      "price": 36900,
+      "sale_price": 36900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792557871/thumb-5615_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2f0",
+        "d2f060"
+      ],
+      "product_category_ids": [
+        "06",
+        "0690"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792557913": {
+      "id": "kpp-1792557913",
+      "source": "kpp",
+      "source_id": "1792557913",
+      "name": "스몰리그 6866 USB-C 240W 코일 데이터 케이블 USB 3.2 Gen2x2 100cm",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792557913",
+      "price": 38900,
+      "sale_price": 38900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792557913/thumb-6866_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2f0",
+        "d2f060"
+      ],
+      "product_category_ids": [
+        "06",
+        "0690"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792558062": {
+      "id": "kpp-1792558062",
+      "source": "kpp",
+      "source_id": "1792558062",
+      "name": "스몰리그 6715 DJI 오즈모 360 II 카메라 케이지 어드밴스드 에디션",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792558062",
+      "price": 64900,
+      "sale_price": 64900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792558062/thumb-6715_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d210",
+        "d210g0",
+        "d2g0",
+        "d2g070"
+      ],
+      "product_category_ids": [
+        "06",
+        "0620"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792558156": {
+      "id": "kpp-1792558156",
+      "source": "kpp",
+      "source_id": "1792558156",
+      "name": "스몰리그 6716 DJI 오즈모 360 II 카메라 케이지 베이직 에디션",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792558156",
+      "price": 59900,
+      "sale_price": 59900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792558156/thumb-6716_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d210",
+        "d210g0",
+        "d2g0",
+        "d2g070"
+      ],
+      "product_category_ids": [
+        "06",
+        "0620"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792558683": {
+      "id": "kpp-1792558683",
+      "source": "kpp",
+      "source_id": "1792558683",
+      "name": "스몰리그 6537 니콘 EN-EL15c D-Tap 더미배터리 전원 케이블",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792558683",
+      "price": 56900,
+      "sale_price": 56900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792558683/thumb-6537_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2b0",
+        "d2b050"
+      ],
+      "product_category_ids": [
+        "06",
+        "0680"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792558755": {
+      "id": "kpp-1792558755",
+      "source": "kpp",
+      "source_id": "1792558755",
+      "name": "스몰리그 6538 소니 NP-FW50 D-Tap 더미배터리 전원 케이블",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792558755",
+      "price": 56900,
+      "sale_price": 56900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792558755/thumb-6538_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2b0",
+        "d2b050"
+      ],
+      "product_category_ids": [
+        "06",
+        "0680"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792558803": {
+      "id": "kpp-1792558803",
+      "source": "kpp",
+      "source_id": "1792558803",
+      "name": "스몰리그 6539 소니 NP-FZ100 USB-C 더미배터리 전원 케이블",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792558803",
+      "price": 64900,
+      "sale_price": 64900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792558803/thumb-6539_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2b0",
+        "d2b050"
+      ],
+      "product_category_ids": [
+        "06",
+        "0680"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792558866": {
+      "id": "kpp-1792558866",
+      "source": "kpp",
+      "source_id": "1792558866",
+      "name": "스몰리그 6540 캐논 LP-E6P USB-C 더미배터리 전원 케이블",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792558866",
+      "price": 64900,
+      "sale_price": 64900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792558866/thumb-6540_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2b0",
+        "d2b050"
+      ],
+      "product_category_ids": [
+        "06",
+        "0680"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792558922": {
+      "id": "kpp-1792558922",
+      "source": "kpp",
+      "source_id": "1792558922",
+      "name": "스몰리그 6541 니콘 EN-EL15c USB-C 더미배터리 전원 케이블",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792558922",
+      "price": 51900,
+      "sale_price": 51900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792558922/thumb-6541_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2b0",
+        "d2b050"
+      ],
+      "product_category_ids": [
+        "06",
+        "0680"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792558983": {
+      "id": "kpp-1792558983",
+      "source": "kpp",
+      "source_id": "1792558983",
+      "name": "스몰리그 6542 소니 NP-FW50 USB-C 더미배터리 전원 케이블",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792558983",
+      "price": 51900,
+      "sale_price": 51900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792558983/thumb-6542_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2b0",
+        "d2b050"
+      ],
+      "product_category_ids": [
+        "06",
+        "0680"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792559050": {
+      "id": "kpp-1792559050",
+      "source": "kpp",
+      "source_id": "1792559050",
+      "name": "스몰리그 6657 파나소닉 DMW-BLK22 USB-C 더미배터리 전원 케이블",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792559050",
+      "price": 51900,
+      "sale_price": 51900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792559050/thumb-6657_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2b0",
+        "d2b050"
+      ],
+      "product_category_ids": [
+        "06",
+        "0680"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792559232": {
+      "id": "kpp-1792559232",
+      "source": "kpp",
+      "source_id": "1792559232",
+      "name": "스몰리그 6499 WS-W1 1인칭 POV 촬영용 허리 지지 마운트",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792559232",
+      "price": 56900,
+      "sale_price": 56900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792559232/thumb-6499_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2f0"
+      ],
+      "product_category_ids": [
+        "06",
+        "0690"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792559315": {
+      "id": "kpp-1792559315",
+      "source": "kpp",
+      "source_id": "1792559315",
+      "name": "스몰리그 6676 WS-N1 웨어러블 넥 스트랩 지지대",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792559315",
+      "price": 35900,
+      "sale_price": 35900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792559315/thumb-6676_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2f0",
+        "d2f0d0"
+      ],
+      "product_category_ids": [
+        "06",
+        "0690"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792559389": {
+      "id": "kpp-1792559389",
+      "source": "kpp",
+      "source_id": "1792559389",
+      "name": "스몰리그 6521 전문가용 아웃도어 카메라 백팩 25L",
+      "brand": "SMALLRIG",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792559389",
+      "price": 321900,
+      "sale_price": 321900,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792559389/thumb-6521_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "d2f0",
+        "d2f0a0"
+      ],
+      "product_category_ids": [
+        "05",
+        "0510"
+      ],
+      "brand_mall_ids": [
+        "SMALLRIG"
+      ]
+    },
+    "kpp-1792653253": {
+      "id": "kpp-1792653253",
+      "source": "kpp",
+      "source_id": "1792653253",
+      "name": "레오포토 QP-38 플레이트 블랙 퀵릴리즈 전용",
+      "brand": "LEOFOTO",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792653253",
+      "price": 20000,
+      "sale_price": 20000,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792653253/thumb-qp_38p_bk_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "3030",
+        "303010"
+      ],
+      "product_category_ids": [
+        "01",
+        "0140"
+      ],
+      "brand_mall_ids": [
+        "LEOFOTO"
+      ]
+    },
+    "kpp-1792654229": {
+      "id": "kpp-1792654229",
+      "source": "kpp",
+      "source_id": "1792654229",
+      "name": "레오포토 QP-38 플레이트 실버 퀵릴리즈 전용",
+      "brand": "LEOFOTO",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792654229",
+      "price": 20000,
+      "sale_price": 20000,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792654229/thumb-qp_38p_sl_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "3030",
+        "303010"
+      ],
+      "product_category_ids": [
+        "01",
+        "0140"
+      ],
+      "brand_mall_ids": [
+        "LEOFOTO"
+      ]
+    },
+    "kpp-1792654259": {
+      "id": "kpp-1792654259",
+      "source": "kpp",
+      "source_id": "1792654259",
+      "name": "레오포토 CF-05 캐논 RF 100-300 F2.8L 망원렌즈 플레이트",
+      "brand": "LEOFOTO",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792654259",
+      "price": 99000,
+      "sale_price": 99000,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792654259/thumb-cf_05_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "3030",
+        "303060"
+      ],
+      "product_category_ids": [
+        "01",
+        "0140"
+      ],
+      "brand_mall_ids": [
+        "LEOFOTO"
+      ]
+    },
+    "kpp-1792654621": {
+      "id": "kpp-1792654621",
+      "source": "kpp",
+      "source_id": "1792654621",
+      "name": "레오포토 CF-06 캐논 RF 200-800 F6.3-9 IS 망원렌즈 플레이트",
+      "brand": "LEOFOTO",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792654621",
+      "price": 45000,
+      "sale_price": 45000,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792654621/thumb-cf_06_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "3030",
+        "303060"
+      ],
+      "product_category_ids": [
+        "01",
+        "0140"
+      ],
+      "brand_mall_ids": [
+        "LEOFOTO"
+      ]
+    },
+    "kpp-1792654858": {
+      "id": "kpp-1792654858",
+      "source": "kpp",
+      "source_id": "1792654858",
+      "name": "레오포토 CF-08 캐논 RF 800 F11 IS 망원렌즈 플레이트",
+      "brand": "LEOFOTO",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792654858",
+      "price": 99000,
+      "sale_price": 99000,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792654858/thumb-nf_08_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "3030",
+        "303060"
+      ],
+      "product_category_ids": [
+        "01",
+        "0140"
+      ],
+      "brand_mall_ids": [
+        "LEOFOTO"
+      ]
+    },
+    "kpp-1792654927": {
+      "id": "kpp-1792654927",
+      "source": "kpp",
+      "source_id": "1792654927",
+      "name": "레오포토 NF-07 니콘 AF-S 180-400mm F4 망원렌즈 플레이트",
+      "brand": "LEOFOTO",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792654927",
+      "price": 99000,
+      "sale_price": 99000,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792654927/thumb-nf_07_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "3030",
+        "303060"
+      ],
+      "product_category_ids": [
+        "01",
+        "0140"
+      ],
+      "brand_mall_ids": [
+        "LEOFOTO"
+      ]
+    },
+    "kpp-1792654982": {
+      "id": "kpp-1792654982",
+      "source": "kpp",
+      "source_id": "1792654982",
+      "name": "레오포토 SF-06 소니 FE 100-400 F4.5 GM 망원렌즈 플레이트",
+      "brand": "LEOFOTO",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792654982",
+      "price": 109000,
+      "sale_price": 109000,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792654982/thumb-sf_06_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "3030",
+        "303060"
+      ],
+      "product_category_ids": [
+        "01",
+        "0140"
+      ],
+      "brand_mall_ids": [
+        "LEOFOTO"
+      ]
+    },
+    "kpp-1792740828": {
+      "id": "kpp-1792740828",
+      "source": "kpp",
+      "source_id": "1792740828",
+      "name": "레오포토 CF-07 캐논 RF 70-200 F2.8L IS 망원렌즈 플레이트",
+      "brand": "LEOFOTO",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792740828",
+      "price": 109000,
+      "sale_price": 109000,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792740828/thumb-cf_07_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "3030",
+        "303060"
+      ],
+      "product_category_ids": [
+        "01",
+        "0140"
+      ],
+      "brand_mall_ids": [
+        "LEOFOTO"
+      ]
+    },
+    "kpp-1792740904": {
+      "id": "kpp-1792740904",
+      "source": "kpp",
+      "source_id": "1792740904",
+      "name": "레오포토 NF-06 니콘 Z 800 F6.3 VR S 망원렌즈 플레이트",
+      "brand": "LEOFOTO",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792740904",
+      "price": 109000,
+      "sale_price": 109000,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792740904/thumb-01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "3030",
+        "303060"
+      ],
+      "product_category_ids": [
+        "01",
+        "0140"
+      ],
+      "brand_mall_ids": [
+        "LEOFOTO"
+      ]
+    },
+    "kpp-1792740961": {
+      "id": "kpp-1792740961",
+      "source": "kpp",
+      "source_id": "1792740961",
+      "name": "레오포토 NF-08 니콘 Z 28-135 F4 PZ 망원렌즈 플레이트",
+      "brand": "LEOFOTO",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792740961",
+      "price": 109000,
+      "sale_price": 109000,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792740961/thumb-nf_08_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "3030",
+        "303060"
+      ],
+      "product_category_ids": [
+        "01",
+        "0140"
+      ],
+      "brand_mall_ids": [
+        "LEOFOTO"
+      ]
+    },
+    "kpp-1792741007": {
+      "id": "kpp-1792741007",
+      "source": "kpp",
+      "source_id": "1792741007",
+      "name": "레오포토 NF-09 니콘 Z 70-200 F2.8 VR S II 망원렌즈 플레이트",
+      "brand": "LEOFOTO",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792741007",
+      "price": 45000,
+      "sale_price": 45000,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792741007/thumb-nf_09_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "3030",
+        "303060"
+      ],
+      "product_category_ids": [
+        "01",
+        "0140"
+      ],
+      "brand_mall_ids": [
+        "LEOFOTO"
+      ]
+    },
+    "kpp-1792741110": {
+      "id": "kpp-1792741110",
+      "source": "kpp",
+      "source_id": "1792741110",
+      "name": "레오포토 PL-80N 도브테일 삼각대 플레이트 CNC가공",
+      "brand": "LEOFOTO",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792741110",
+      "price": 20000,
+      "sale_price": 20000,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792741110/thumb-pl80n_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "3030",
+        "303010"
+      ],
+      "product_category_ids": [
+        "01",
+        "0140"
+      ],
+      "brand_mall_ids": [
+        "LEOFOTO"
+      ]
+    },
+    "kpp-1792741173": {
+      "id": "kpp-1792741173",
+      "source": "kpp",
+      "source_id": "1792741173",
+      "name": "레오포토 SF-05 소니 FE 400mm F2.8 GM / 600mm F4 GM 망원렌즈 플레이트",
+      "brand": "LEOFOTO",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1792741173",
+      "price": 99000,
+      "sale_price": 99000,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1792741173/thumb-sf_05_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "3030",
+        "303060"
+      ],
+      "product_category_ids": [
+        "01",
+        "0140"
+      ],
+      "brand_mall_ids": [
+        "LEOFOTO"
+      ]
+    },
+    "kpp-1793000344": {
+      "id": "kpp-1793000344",
+      "source": "kpp",
+      "source_id": "1793000344",
+      "name": "사전예약 피지테크 원모3 카메라백팩 25L P-CB-460",
+      "brand": "PGYTECH",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1793000344",
+      "price": 269000,
+      "sale_price": 269000,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1793000344/thumb-p_cb_460_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "6060",
+        "606010"
+      ],
+      "product_category_ids": [
+        "05",
+        "0510"
+      ],
+      "brand_mall_ids": [
+        "PGYTECH"
+      ]
+    },
+    "kpp-1793000465": {
+      "id": "kpp-1793000465",
+      "source": "kpp",
+      "source_id": "1793000465",
+      "name": "사전예약 피지테크 원모3 카메라백팩 35L P-CB-461",
+      "brand": "PGYTECH",
+      "source_url": "https://kppkpp.co.kr/shop/item.php?it_id=1793000465",
+      "price": 319000,
+      "sale_price": 319000,
+      "supplier_status": "listed",
+      "kind": "purchase",
+      "images": {
+        "thumb": "https://kppkpp.co.kr/data/item/1793000465/thumb-p_cb_461_thumbnail_01_262x262.jpg",
+        "main": [],
+        "detail": []
+      },
+      "brand_category_ids": [
+        "6060",
+        "606010"
+      ],
+      "product_category_ids": [
+        "05",
+        "0510"
       ],
       "brand_mall_ids": [
         "PGYTECH"

@@ -6,11 +6,22 @@ export function catalogDefaultOrder(brand){
 }
 
 export function isDiscounted(p){
-  return p.release_status!=='coming_soon'&&p.kind==='purchase'&&!!p.offers?.some(o=>['smartstore','imweb'].includes(o.source))&&Number.isFinite(p.price)&&Number.isFinite(p.sale_price)&&p.price>0&&p.sale_price>=0&&p.sale_price<p.price;
+  return p.release_status!=='coming_soon'&&p.kind==='purchase'&&(!!p.offers?.some(o=>['smartstore','imweb'].includes(o.source))||activePromotions(p).some(c=>c.type==='price_discount'))&&Number.isFinite(p.price)&&Number.isFinite(p.sale_price)&&p.price>0&&p.sale_price>=0&&p.sale_price<p.price;
+}
+
+export function activePromotions(p,now=Date.now()){
+  if(p.release_status==='coming_soon'||p.kind!=='purchase'||!Array.isArray(p.promotions))return [];
+  const zoned=v=>typeof v==='string'&&/(?:Z|[+-]\d{2}:\d{2})$/.test(v);
+  return p.promotions.filter(c=>zoned(c.start_at)&&zoned(c.end_at)&&Number.isFinite(Date.parse(c.start_at))&&Number.isFinite(Date.parse(c.end_at))&&Date.parse(c.start_at)<=now&&now<Date.parse(c.end_at));
 }
 
 export function isPromotion(p){
+  if(Array.isArray(p.promotions))return activePromotions(p).length>0;
   return p.release_status!=='coming_soon'&&p.kind==='purchase'&&Array.isArray(p.promotion_ids)&&p.promotion_ids.length>0;
+}
+
+export function isConsignmentUsed(p){
+  return p.kind==='purchase'&&p.offers?.some(o=>o.source==='smartstore')&&/^\s*(?:\[(?:중고|위탁|위탁중고)\]|(?:중고|위탁중고)\s*[:：])/.test(p.name||'');
 }
 
 export function matchesBenefit(p,mode='all'){
@@ -40,10 +51,10 @@ export function brandSelectionHref(brand,search,kind){
   return (brand?`/brands/${encodeURIComponent(brand)}.html`:'/catalog.html')+'?'+q.toString();
 }
 
-export function catalogSelection(data,{brand='',kind='purchase',cat='',type='',sale=false,benefit='all'}={}){
+export function catalogSelection(data,{brand='',kind='purchase',cat='',type='',sale=false,benefit='all',collection=''}={}){
   const families=new Map();
   for(const p of data.products){
-    if((brand&&p.brand_id!==brand)||(kind!=='all'&&p.kind!==kind)||(sale&&!matchesBenefit(p,benefit)))continue;
+    if((brand&&p.brand_id!==brand)||(kind!=='all'&&p.kind!==kind)||(sale&&!matchesBenefit(p,benefit))||(collection==='used'&&!isConsignmentUsed(p)))continue;
     const id=p.listing_id||p.id;if(!families.has(id)||p.id===id)families.set(id,p);
   }
   const base=[...families.values()];

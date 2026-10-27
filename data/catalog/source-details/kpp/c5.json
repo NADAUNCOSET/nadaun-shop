@@ -17,8 +17,8 @@
     "sale_price": 30000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:20:33+00:00",
-    "checked_epoch": 1792347633,
+    "checked_at": "2026-10-27T07:14:27+00:00",
+    "checked_epoch": 1793085267,
     "source_fingerprint": "775bcf3987bd422bc50fd828c439bffd82b7f260103581fb63dba96227a601f4"
   },
   "kpp-1625038786": {
@@ -51,8 +51,8 @@
     "sale_price": 399000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:20:36+00:00",
-    "checked_epoch": 1792347636,
+    "checked_at": "2026-10-27T07:14:30+00:00",
+    "checked_epoch": 1793085270,
     "source_fingerprint": "84d8e28e3f9f4c3e65d98090121a32baaf8d26f2e04e3a1dd554fd889f14d4ea"
   },
   "kpp-1634629607": {
@@ -71,8 +71,8 @@
     "sale_price": 44000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:20:52+00:00",
-    "checked_epoch": 1792347652,
+    "checked_at": "2026-10-27T07:14:42+00:00",
+    "checked_epoch": 1793085282,
     "source_fingerprint": "9c028d27523c353d1cb11b6bb6acbc35d659067c854f51356960bff04d31760e"
   },
   "kpp-1687500931": {
@@ -96,8 +96,8 @@
     "sale_price": 59000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:24:02+00:00",
-    "checked_epoch": 1792347842,
+    "checked_at": "2026-10-27T07:17:22+00:00",
+    "checked_epoch": 1793085442,
     "source_fingerprint": "d25ad2a705f6d86e5edf225be01059dfca59193806243c288f9a9c11a1e77bc2"
   },
   "kpp-1694656253": {
@@ -121,8 +121,8 @@
     "sale_price": 399000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:24:28+00:00",
-    "checked_epoch": 1792347868,
+    "checked_at": "2026-10-27T07:17:45+00:00",
+    "checked_epoch": 1793085465,
     "source_fingerprint": "1b9a84229369d97a36bb704c81ae8caf64a9b7e3cab15d914dfc19fc7e128182"
   },
   "kpp-1719812680": {
@@ -152,8 +152,8 @@
     "sale_price": 301600,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:26:14+00:00",
-    "checked_epoch": 1792347974,
+    "checked_at": "2026-10-27T07:19:14+00:00",
+    "checked_epoch": 1793085554,
     "source_fingerprint": "4a6df0ad465823649636c1e140e6b705526a90f82e6e2b1802e492b7b9fa30e4"
   },
   "kpp-1751935800": {
@@ -179,8 +179,8 @@
     "sale_price": 44900,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:27:44+00:00",
-    "checked_epoch": 1792348064,
+    "checked_at": "2026-10-27T07:20:30+00:00",
+    "checked_epoch": 1793085630,
     "source_fingerprint": "7769c7d66dfd199d6927d0ad16225829280880fd1b5221191a0c1595cf286454"
   },
   "kpp-1767077118": {
@@ -204,8 +204,8 @@
     "sale_price": 10900,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:28:40+00:00",
-    "checked_epoch": 1792348120,
+    "checked_at": "2026-10-27T07:21:17+00:00",
+    "checked_epoch": 1793085677,
     "source_fingerprint": "359cb4f19ded98d21f063433f2284fff81a10843080b8731c9e65d67b93e72f3"
   },
   "kpp-1777018214": {
@@ -232,8 +232,8 @@
     "sale_price": 60800,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:29:06+00:00",
-    "checked_epoch": 1792348146,
+    "checked_at": "2026-10-27T07:21:40+00:00",
+    "checked_epoch": 1793085700,
     "source_fingerprint": "694e6f1abd9b80dfd151aec88a8316c50145d134048dc7e9f764504366b5cd23"
   },
   "kpp-1761728956": {
@@ -245,8 +245,34 @@
     },
     "price": 43900,
     "sale_price": 43900,
-    "checked_at": "2026-10-18T18:28:19+00:00",
-    "checked_epoch": 1792348099,
+    "checked_at": "2026-10-27T07:21:01+00:00",
+    "checked_epoch": 1793085661,
     "source_fingerprint": "26b46e62d7998a356ae9e2892fc7db22ea20ef3159c227660c8ac5be31fa2929"
+  },
+  "kpp-1792553398": {
+    "images": {
+      "main": [
+        "https://kppkpp.co.kr/data/item/1792553398/6439_thumbnail_01.jpg",
+        "https://kppkpp.co.kr/data/item/1792553398/6439_thumbnail_02.jpg",
+        "https://kppkpp.co.kr/data/item/1792553398/6439_thumbnail_03.jpg",
+        "https://kppkpp.co.kr/data/item/1792553398/6439_thumbnail_04.jpg",
+        "https://kppkpp.co.kr/data/item/1792553398/6439_thumbnail_05.jpg"
+      ],
+      "detail": [
+        "https://kppshop.dothome.co.kr/img/02_smallrig/brand_event.jpg",
+        "https://kppshop.dothome.co.kr/img/02_smallrig/15_stabilizer/cate_event.jpg",
+        "https://kppshop.dothome.co.kr/img/02_smallrig/15_stabilizer/6439/product_event.jpg",
+        "https://kppshop.dothome.co.kr/img/02_smallrig/15_stabilizer/6439/6439_01.jpg",
+        "https://kppshop.dothome.co.kr/img/02_smallrig/15_stabilizer/6439/6439_02.jpg",
+        "https://kppshop.dothome.co.kr/img/02_smallrig/15_stabilizer/6439/6439_03.jpg"
+      ]
+    },
+    "price": 64900,
+    "sale_price": 64900,
+    "description_text": "",
+    "detail_status": "verified",
+    "checked_at": "2026-10-27T07:30:47+00:00",
+    "checked_epoch": 1793086247,
+    "source_fingerprint": "ada7a80084c7268bafe4c3ba7d76f9e6eb59b9688e9734455d1225958a4fbc83"
   }
 }

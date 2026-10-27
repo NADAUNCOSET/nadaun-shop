@@ -185,6 +185,62 @@
       "confirmed_by": "owner",
       "confirmed_at": "2026-10-19",
       "reason": "펀노마드 제품·분류 미러링. 펀노마드 신규 상품은 가격 문의. 확인되지 않은 기존 고유 구성은 삭제 보류."
+    },
+    "gopro": {
+      "scope": "purchase",
+      "excluded_purchase": true,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표: 고프로는 아예 판매하지 않음. 렌탈·다른 제조사의 호환 액세서리는 유지."
+    },
+    "nisi": {
+      "excluded_sources": [
+        "digitalcp"
+      ],
+      "reference_source_name": "그린촬영",
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "scope": "purchase",
+      "reason": "대표: 니시는 기존 그린촬영 취급 기준. 청풍 니시 제외. 그린촬영 연결 URL·자료는 별도 검증 전이며 기존 우리몰 상품은 보존."
+    },
+    "novachips": {
+      "held_sources": [
+        "digitalcp"
+      ],
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "scope": "purchase",
+      "reason": "청풍·세기·씨엘미디어 중복 모델/용량/구성을 검토표로 제시하고 대표의 주 공급처 선택을 기다림."
+    },
+    "nikon": {
+      "source": "digitalcp",
+      "navigation_source": "digitalcp",
+      "scope": "purchase",
+      "exclusive": false,
+      "preserve_existing": true,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 지정 공급처를 주 기준으로 사용. 동일성이 확인되지 않은 기존 고유 구성과 렌탈 보존."
+    },
+    "tamron": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "scope": "purchase",
+      "exclusive": false,
+      "preserve_existing": true,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 지정 공급처를 주 기준으로 사용. 동일성이 확인되지 않은 기존 고유 구성과 렌탈 보존."
+    },
+    "voigtlander": {
+      "source": "sunphoto",
+      "navigation_source": "sunphoto",
+      "scope": "purchase",
+      "exclusive": false,
+      "preserve_existing": true,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 지정 공급처를 주 기준으로 사용. 동일성이 확인되지 않은 기존 고유 구성과 렌탈 보존."
     }
   },
   "source_approvals": {
@@ -250,6 +306,20 @@
       "confirmed_by": "owner",
       "confirmed_at": "2026-10-19",
       "reason": "대표 전 제품 미러링 지시. 제품·카테고리·이미지·구성을 보존하고 가격은 문의로 표시."
+    },
+    "digitalcp": {
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "scope": "all_brands",
+      "mode": "supplement_existing",
+      "owner_scope": "니시·스몰리그·DJI·고프로 제외 전체, 노바칩스 편입 보류"
+    },
+    "sunphoto": {
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "scope": "all_brands",
+      "mode": "supplement_existing",
+      "owner_scope": "TAMRON·Voigtlander만"
     }
   },
   "business_model": {

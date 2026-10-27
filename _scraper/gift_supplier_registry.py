@@ -22,7 +22,7 @@ FIELDS = {'product_id', 'product_name', 'supplier', 'terms', 'evidence'}
 SUPPLIER_FIELDS = {'company', 'business_number', 'representative', 'contact_name',
                    'phone', 'mobile', 'fax', 'email'}
 TERM_FIELDS = {'supplier_product_name', 'supplier_product_code', 'shipping',
-               'printing', 'notes', 'commission_percent'}
+               'printing', 'notes', 'commission_percent', 'external_display'}
 EVIDENCE_FIELDS = {'kind', 'reference', 'observed_at'}
 EVIDENCE_KINDS = {'owner_screenshot', 'authenticated_supplier_page', 'owner_export'}
 EMAIL = re.compile(r'[^\s@,;<>]+@[^\s@,;<>]+\.[^\s@,;<>]+\Z')
@@ -57,6 +57,8 @@ def validate_record(record):
     if any('\n' in v or '\r' in v for v in supplier.values()):
         raise ValueError('Supplier contact fields must be single-line text')
     terms = object_fields(record['terms'], TERM_FIELDS)
+    if 'external_display' in terms and terms['external_display'] not in {'allowed', 'blocked', 'unknown'}:
+        raise ValueError('External display must preserve an explicit source status')
     evidence = object_fields(record['evidence'], EVIDENCE_FIELDS, EVIDENCE_FIELDS)
     if evidence['kind'] not in EVIDENCE_KINDS or not evidence['reference']:
         raise ValueError('Verified source evidence is required')

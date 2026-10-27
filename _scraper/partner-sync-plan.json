@@ -113,6 +113,28 @@
       "request_interval_seconds": 2.1,
       "completion_gate": "All brand pagination and detail identities, KRW prices, stock, options, source categories, normal tested publish and live offer-ID reconciliation",
       "on_request_failure": "Keep last verified publication; access protection latches; schema failures remain private for review"
+    },
+    "digitalcp": {
+      "name": "디지털청풍",
+      "url": "https://www.digitalcp.co.kr/",
+      "scope": "All except NiSi SmallRig DJI GoPro; Novachips held pending owner choice",
+      "adapter": "reviewed_source_worker",
+      "refresh_interval_seconds": 43200,
+      "resume_interval_seconds": 600,
+      "request_interval_seconds": 2.1,
+      "on_request_failure": "Preserve last verified publication and latch for review; never infer retirement from a failed read",
+      "completion_gate": "Full owner-scoped inventory, current detail identities, options, category reconciliation, owner policy, staged release gate, exact deployed offer IDs"
+    },
+    "sunphoto": {
+      "name": "썬포토",
+      "url": "https://sunphoto.kr/",
+      "scope": "TAMRON and Voigtlander only",
+      "adapter": "reviewed_source_worker",
+      "refresh_interval_seconds": 43200,
+      "resume_interval_seconds": 600,
+      "request_interval_seconds": 5,
+      "on_request_failure": "Preserve last verified publication and latch for review; never infer retirement from a failed read",
+      "completion_gate": "Full owner-scoped inventory, current detail identities, options, category reconciliation, owner policy, staged release gate, exact deployed offer IDs"
     }
   }
 }

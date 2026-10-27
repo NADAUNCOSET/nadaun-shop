@@ -281,6 +281,13 @@ class Cafe24Tests(unittest.TestCase):
         for value in ('가격문의',1000.5,True):
             with self.assertRaises(ValueError):self.parse(product_page(price=value))
 
+    def test_explicit_reservation_without_a_public_price_is_not_free(self):
+        doc=product_page(price='예약 구매')
+        doc.append(c.soup('<script>var product_price="0";var product_price_content="1";</script>'))
+        p=self.parse(doc)
+        self.assertEqual(p['detail_status'],'verified');self.assertIsNone(p['price'])
+        self.assertTrue(p['price_inquiry']);self.assertEqual(p['status'],'inquiry')
+
     def test_nested_named_brand_wins_over_distributor_category(self):
         nodes={str(i):{'id':str(i),'name':name,'parent_id':str(parent) if parent else None} for i,name,parent in
                [(24,'브랜드',None),(30,'DZOFILM',24),(31,'Thypoch',30),(40,'Thypoch',24),(41,'Simera',40)]}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "campaigns": [
+    {
+      "id": "digitalcp-nikon-autumn-202610",
+      "title": "니콘 가을 감사제",
+      "type": "supplier_event",
+      "source": "digitalcp",
+      "source_url": "https://www.digitalcp.co.kr/board/view.php?bdId=eventPromotion&period=current&sno=291",
+      "start_at": "2026-10-12T00:00:00+09:00",
+      "end_at": "2026-11-16T00:00:00+09:00",
+      "observed_at": "2026-10-27T07:43:35.214896+00:00",
+      "evidence_sha256": "2806b6be487cd1294ed7dff8a23464937fb0e89b3bf50d6f51fcc6b99c60f91a",
+      "source_product_ids": [
+        "digitalcp-1000000822",
+        "digitalcp-1000000884",
+        "digitalcp-1000001142",
+        "digitalcp-1000001433",
+        "digitalcp-1000001532",
+        "digitalcp-1000001533",
+        "digitalcp-1000001749",
+        "digitalcp-1000001750",
+        "digitalcp-1000001755",
+        "digitalcp-1000001831",
+        "digitalcp-1000001833",
+        "digitalcp-1000002090",
+        "digitalcp-1000002130",
+        "digitalcp-1000002136",
+        "digitalcp-1000002239",
+        "digitalcp-1000002367",
+        "digitalcp-1000002369",
+        "digitalcp-1000002377",
+        "digitalcp-1000002820",
+        "digitalcp-1000002883",
+        "digitalcp-1000002905",
+        "digitalcp-1000002933",
+        "digitalcp-1000002961",
+        "digitalcp-1000003024",
+        "digitalcp-1000003140",
+        "digitalcp-1000003155",
+        "digitalcp-1000003159",
+        "digitalcp-1000003160",
+        "digitalcp-1000003193",
+        "digitalcp-1000003194",
+        "digitalcp-1000003196",
+        "digitalcp-1000003357"
+      ],
+      "terms": "공급처 행사 안내입니다. 대상 모델별 캐시백·사은품 및 적용 조건은 구매 상담으로 확인해주세요. 공급처 회원 마일리지는 나다운 판매가에서 즉시 차감되는 혜택이 아닙니다."
+    }
+  ]
+}

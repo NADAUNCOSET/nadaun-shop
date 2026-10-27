@@ -25,7 +25,7 @@ from source_refresh_state import recent_refresh,record_refresh
 
 STATE=ROOT/'_scraper/.sync-state'
 SITE='https://shop.nadaun.co'
-GENERATED=['global.html','data/catalog','assets/shop/thumbnails','brands','brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','payment-test.html','orders.html','admin.html','account.html','test-shop.html','test-admin.html','members-admin.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','rental-guide.html','equipment-guide.html','billing-guide.html','sitemap.xml','catalog-sitemap.xml']
+GENERATED=['promotions.html','used.html','global.html','data/catalog','assets/shop/thumbnails','brands','brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','payment-test.html','orders.html','admin.html','account.html','test-shop.html','test-admin.html','members-admin.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','rental-guide.html','equipment-guide.html','billing-guide.html','sitemap.xml','catalog-sitemap.xml']
 CODE=['_scraper/shipping_policy.py','_scraper/test_shop_shipping.py','assets/shop/shipping.js','_scraper/test_shop_taxonomy.py','_scraper/product_taxonomy.py','_scraper/rental_taxonomy.py','_scraper/references/slrrent-categories.json','assets/shop/motion.js','assets/shop/departments','assets/shop/banners.js','data/catalog/banners.json','assets/shop/studio','_scraper/brand_products.py','assets/shop/vendor','assets/shop/brands','data/catalog/partner-image-rules.json','_scraper/sync_partner_catalogs.py','data/catalog/brand-assets.json','_scraper/catalog_seo.py','assets/shop/catalog-tools.js','_scraper/tests','_scraper/test_shop_catalog.py','api','assets/shop/cart.js','_scraper/storefront_pages.py','_scraper/sync_shop_sources.py','_scraper/sync_kpp_catalog.py','_scraper/enrich_shop_sources.py','_scraper/build_catalog.py','_scraper/catalog_dedup.py','_scraper/shop_sync.py','_scraper/shop_templates','assets/shop/shop.js','assets/shop/shop.css','data/catalog/overrides.json','data/catalog/dedup-rules.json','vercel.json']
 
 CODE += ['_scraper/gift_product_details.py','_scraper/source_transport.py','_scraper/plthink_checkpoint.py','_scraper/sync_plthink_catalog.py',
@@ -34,7 +34,7 @@ CODE += ['.github/workflows/commerce-documents.yml','package.json','package-lock
 CODE += ['_scraper/brand_category_policy.py','_scraper/partner_sync_status.py','_scraper/partner-sync-plan.json']
 CODE += ['assets/shop/storefront.css','assets/shop/scenes.js','assets/shop/browse.js','_scraper/category_gallery.py','_scraper/sync_avx_catalog.py','_scraper/avx_worker.py','_scraper/test_avx_catalog.py']
 CODE += ['_scraper/test_partner_sync_status.py','_scraper/test_shop_brand_evidence.py']
-CODE += ['_scraper/build_gift_catalog.py','_scraper/brand_source_policy.py','_scraper/test_gift_public_catalog.py','_scraper/test_brand_source_policy.py','data/catalog/brand-source-policy.json','server/gift-catalog.cjs','server/shop-search.cjs']
+CODE += ['_scraper/build_gift_catalog.py','_scraper/brand_source_policy.py','_scraper/test_gift_public_catalog.py','_scraper/test_brand_source_policy.py','data/catalog/brand-source-policy.json','data/catalog/promotions.json','_scraper/promotion_catalog.py','server/gift-catalog.cjs','server/shop-search.cjs']
 CODE += ['_scraper/test_catalog_seo.py','_scraper/test_release_status.py','server/share-image.cjs','server/share-metadata.cjs','robots.txt']
 CODE += ['assets/shop/auth','assets/shop/product-search.js','assets/shop/members.js','assets/shop/members.css']
 CODE += ['manage.html','assets/shop/admin-workspace.js','assets/shop/admin-workspace.css','assets/shop/i18n.js','assets/shop/i18n-data.js','assets/shop/i18n.css']
@@ -51,7 +51,8 @@ CODE += ['_scraper/ldnet_identity.py','_scraper/test_ldnet_identity.py']
 CODE += ['_scraper/hipixel_source.py','_scraper/test_hipixel_source.py','_scraper/catalog_navigation.py','_scraper/catalog_release.py','server/catalog-release-check.cjs','CATALOG-RULES.md']
 CODE += ['_scraper/hipixel-reviewed-types.json','.vercelignore']
 CODE += ['_scraper/inline_product_images.py','_scraper/reviewed_supplier_sources.py','_scraper/test_reviewed_supplier_sources.py']
-CODE += ['_scraper/hipixel-supplemental-navigation.json']
+CODE += ['_scraper/hipixel-supplemental-navigation.json','server/promotions.cjs']
+CODE += ['_scraper/reviewed_source_worker.py','_scraper/install_reviewed_workers.py','_scraper/test_reviewed_source_worker.py','_scraper/sync_digitalcp_catalog.py','_scraper/sync_sunphoto_catalog.py','_scraper/test_new_supplier_catalog.py','_scraper/test_promotion_catalog.py','_scraper/fixtures/new-suppliers']
 CODE += ['_scraper/sync_saeki_catalog.py','_scraper/saeki_detail_parser.py','_scraper/saeki_publication.py','_scraper/saeki_categories.py','_scraper/saeki_worker.py','_scraper/test_saeki_catalog.py','_scraper/fixtures/saeki']
 
 def command(*args):
@@ -70,8 +71,8 @@ def api(path):return json.loads(command('vercel','api',path,'--raw'))
 
 def managed_files():
     """Stage exact generated files, never an arbitrary file in those folders."""
-    files=['brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','payment-test.html','orders.html','admin.html','account.html','test-shop.html','test-admin.html','members-admin.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','rental-guide.html','equipment-guide.html','billing-guide.html','sitemap.xml','catalog-sitemap.xml',
-           'data/catalog/catalog.json','data/catalog/rental.json','data/catalog/brands.json','data/catalog/sync-status.json','data/catalog/asset-manifest.json','data/catalog/dedup-audit.json']
+    files=['promotions.html','used.html','brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','payment-test.html','orders.html','admin.html','account.html','test-shop.html','test-admin.html','members-admin.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','rental-guide.html','equipment-guide.html','billing-guide.html','sitemap.xml','catalog-sitemap.xml',
+           'data/catalog/promotions.json','data/catalog/catalog.json','data/catalog/rental.json','data/catalog/brands.json','data/catalog/sync-status.json','data/catalog/asset-manifest.json','data/catalog/dedup-audit.json']
     files += ['gift-item.html','search.html','gift-sitemap.xml','data/gift/catalog.json','data/gift/manifest.json']
     files += ['data/catalog/rental-details.json','server/catalog-release.json']
     manifest=ROOT/'server/catalog-release.json'
@@ -82,7 +83,7 @@ def managed_files():
     for source in ('smartstore','kpp','l-mount','nadaun-gift'):
         files.append('data/catalog/sources/'+source+'.json')
     if (OUT/'plthink.json').exists():files.append('data/catalog/sources/plthink.json')
-    for source in ('avx','avx-aputure','avx-approved','dji-official','clmedia','cinemall','onnoff','ldnet','saeki','hipixel','motion9','funomad'):
+    for source in ('avx','avx-aputure','avx-approved','dji-official','clmedia','cinemall','onnoff','ldnet','saeki','hipixel','motion9','funomad','digitalcp','sunphoto'):
         if (OUT/(source+'.json')).exists():files.append('data/catalog/sources/'+source+'.json')
     for source in ('smartstore','kpp'):
         base=ROOT/'data/catalog/source-details'/source
@@ -204,7 +205,10 @@ def run(publish=True,existing=False,source_updates=None):
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_partner_worker.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_cafe24*.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_hipixel_source.py')
-        command('node','--test','_scraper/tests/catalog-release.test.cjs')
+        command('node','--test','_scraper/tests/catalog-release.test.cjs','_scraper/tests/timed-promotions.test.mjs','_scraper/tests/promotion-route.test.cjs')
+        command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_new_supplier_catalog.py')
+        command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_promotion_catalog.py')
+        command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_reviewed_source_worker.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_ldnet_identity.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_saeki_catalog.py')
         command(sys.executable,'-m','unittest','discover','-s','_scraper','-p','test_catalog_checkpoint.py')

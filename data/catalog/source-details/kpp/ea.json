@@ -26,8 +26,8 @@
     "sale_price": 89000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:19:35+00:00",
-    "checked_epoch": 1792347575,
+    "checked_at": "2026-10-27T07:13:39+00:00",
+    "checked_epoch": 1793085219,
     "source_fingerprint": "3b30cd55dbbb60a8ad4c0ad4ea2d73ffbc0dfe57260683e95c3373c332ba0ce6"
   },
   "kpp-1665045489": {
@@ -57,8 +57,8 @@
     "sale_price": 59000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:22:08+00:00",
-    "checked_epoch": 1792347728,
+    "checked_at": "2026-10-27T07:15:46+00:00",
+    "checked_epoch": 1793085346,
     "source_fingerprint": "e4d5d9f3299382af858f3de698030164ea9bb0f8fd14821f124c5da1265b1eae"
   },
   "kpp-1665563887": {
@@ -78,8 +78,8 @@
     "sale_price": 100000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:22:34+00:00",
-    "checked_epoch": 1792347754,
+    "checked_at": "2026-10-27T07:16:08+00:00",
+    "checked_epoch": 1793085368,
     "source_fingerprint": "c59a9fae998b176d31900b0f718a2668c64437bc8d52343ac728f42ec9a18ba3"
   },
   "kpp-1670474921": {
@@ -111,8 +111,8 @@
     "sale_price": 549000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:23:00+00:00",
-    "checked_epoch": 1792347780,
+    "checked_at": "2026-10-27T07:16:30+00:00",
+    "checked_epoch": 1793085390,
     "source_fingerprint": "3160619d7f84f28f31baedcd474d1fae18d6ffff505f0b8b678e8c739efd4740"
   },
   "kpp-1676274149": {
@@ -142,8 +142,8 @@
     "sale_price": 43000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:23:23+00:00",
-    "checked_epoch": 1792347803,
+    "checked_at": "2026-10-27T07:16:50+00:00",
+    "checked_epoch": 1793085410,
     "source_fingerprint": "df1ae515186aa330c1c92721896a44762da882973198983d82843fdfb8851385"
   },
   "kpp-1690333004": {
@@ -176,8 +176,8 @@
     "sale_price": 698000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:24:15+00:00",
-    "checked_epoch": 1792347855,
+    "checked_at": "2026-10-27T07:17:34+00:00",
+    "checked_epoch": 1793085454,
     "source_fingerprint": "1b4d5e91b4b426dd037cd8b548daedef393506d460a013db53af43bb8b25415a"
   },
   "kpp-1702864506": {
@@ -214,12 +214,12 @@
       ]
     },
     "price": 448000,
-    "sale_price": 448000,
+    "sale_price": 403200,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:24:54+00:00",
-    "checked_epoch": 1792347894,
-    "source_fingerprint": "252a99ad8196781ffb2b7982e617f93e828256ec8bae1d3bbb3fe4b85ea7a457"
+    "checked_at": "2026-10-27T07:30:31+00:00",
+    "checked_epoch": 1793086231,
+    "source_fingerprint": "cb3bf231767d01f6c9b66926ad94f2224dea3741c2760df7b520b59e5de9047d"
   },
   "kpp-1704266935": {
     "images": {
@@ -251,8 +251,8 @@
     "sale_price": 340000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:24:57+00:00",
-    "checked_epoch": 1792347897,
+    "checked_at": "2026-10-27T07:18:11+00:00",
+    "checked_epoch": 1793085491,
     "source_fingerprint": "08e0fd2cd3815608630f02b831841afc26a734b2a94e686f2a73de64b23da50f"
   },
   "kpp-1708911907": {
@@ -287,8 +287,8 @@
     "sale_price": 948000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:25:19+00:00",
-    "checked_epoch": 1792347919,
+    "checked_at": "2026-10-27T07:18:29+00:00",
+    "checked_epoch": 1793085509,
     "source_fingerprint": "d03ee2333ed7201f7c769d8fb4de8353985ecbec2330373bc9ce3619dc7c659a"
   },
   "kpp-1711617194": {
@@ -311,8 +311,8 @@
     "sale_price": 19500,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:25:43+00:00",
-    "checked_epoch": 1792347943,
+    "checked_at": "2026-10-27T07:18:49+00:00",
+    "checked_epoch": 1793085529,
     "source_fingerprint": "d8cb1683c1983775f220e8e08d95aaf73cdbeb76db0f1824380b1c009cb488d6"
   },
   "kpp-1715320398": {
@@ -343,8 +343,8 @@
     "sale_price": 323000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:25:56+00:00",
-    "checked_epoch": 1792347956,
+    "checked_at": "2026-10-27T07:18:59+00:00",
+    "checked_epoch": 1793085539,
     "source_fingerprint": "d654abf360773a80c3c9b8824a3e8ab98afd7a7edf0e4cece0e47b1c4361ff8d"
   },
   "kpp-1737434296": {
@@ -364,9 +364,9 @@
     "sale_price": 119000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:27:04+00:00",
-    "checked_epoch": 1792348024,
-    "source_fingerprint": "c5a8b7f8851e3f4d9b612359354cdac1bd2a4d285d502f5a6388f9f300a40866"
+    "checked_at": "2026-10-27T07:30:38+00:00",
+    "checked_epoch": 1793086238,
+    "source_fingerprint": "20da8cfcc3d80c97ccd7aefb8cf5510afdc58a56b8751c80fb94e9f5c4e38322"
   },
   "kpp-1753336641": {
     "images": {
@@ -383,8 +383,8 @@
     "sale_price": 10000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:27:51+00:00",
-    "checked_epoch": 1792348071,
+    "checked_at": "2026-10-27T07:20:35+00:00",
+    "checked_epoch": 1793085635,
     "source_fingerprint": "7af5a7b04a8bcd4dc81935c8519ed1a3c88947e1c8cd1cf73c7404b09261c40c"
   },
   "kpp-1754550527": {
@@ -413,8 +413,8 @@
     "sale_price": 64900,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:28:03+00:00",
-    "checked_epoch": 1792348083,
+    "checked_at": "2026-10-27T07:20:46+00:00",
+    "checked_epoch": 1793085646,
     "source_fingerprint": "54db9ec80dcf43ecce8d5c050a2f2c2c71e407b51b8f00744fb543af7a2b1c47"
   },
   "kpp-1765348030": {
@@ -440,8 +440,8 @@
     "sale_price": 60900,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:28:33+00:00",
-    "checked_epoch": 1792348113,
+    "checked_at": "2026-10-27T07:21:11+00:00",
+    "checked_epoch": 1793085671,
     "source_fingerprint": "5954bf4dd6cc6ada541ab363cefedceed1343b2f86e48a491e9c162369f51d9c"
   },
   "kpp-1779270057": {
@@ -467,8 +467,8 @@
     "sale_price": 170000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:29:14+00:00",
-    "checked_epoch": 1792348154,
+    "checked_at": "2026-10-27T07:21:46+00:00",
+    "checked_epoch": 1793085706,
     "source_fingerprint": "1f4dde6821086b26755c41614e1b5ef780f0224e5413bcda854c0566915de26d"
   },
   "kpp-1781674158": {
@@ -486,9 +486,9 @@
     "sale_price": 2730000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:29:19+00:00",
-    "checked_epoch": 1792348159,
-    "source_fingerprint": "83d7cb44fdcb426ba34bc9323c1fd382b11118c864cf79692b71acf65812d9ac"
+    "checked_at": "2026-10-27T07:30:43+00:00",
+    "checked_epoch": 1793086243,
+    "source_fingerprint": "21c72e46a758f00b7891876632d2e251550918fccdb2d073442167f997351569"
   },
   "kpp-1788409897": {
     "images": {
@@ -516,8 +516,8 @@
     "sale_price": 179000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:29:43+00:00",
-    "checked_epoch": 1792348183,
+    "checked_at": "2026-10-27T07:22:11+00:00",
+    "checked_epoch": 1793085731,
     "source_fingerprint": "29a76f6611da42edf5fac9581de0c9127b36868d750bfeebd61e0019e4888db4"
   }
 }

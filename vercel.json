@@ -166,6 +166,10 @@
       }
     },
     {
+      "src": "^/promotions\\.html$",
+      "dest": "/api/search?view=promotions"
+    },
+    {
       "src": "^/item\\.html$",
       "dest": "/api/product"
     },
@@ -233,7 +237,7 @@
       "includeFiles": "{gift-item.html,data/gift/**,server/gift-catalog.cjs,server/share-metadata.cjs}"
     },
     "api/search.js": {
-      "includeFiles": "{search.html,data/gift/catalog.json,data/catalog/catalog.json,server/gift-catalog.cjs,server/shop-search.cjs,assets/shop/rental-content.js}"
+      "includeFiles": "{search.html,promotions.html,data/gift/catalog.json,data/catalog/catalog.json,server/gift-catalog.cjs,server/shop-search.cjs,server/promotions.cjs,assets/shop/rental-content.js}"
     },
     "api/toss-return.js": {
       "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,data/gift/catalog.json,data/gift/details/*.json,server/commerce/**,assets/shop/gift-pricing.js}",

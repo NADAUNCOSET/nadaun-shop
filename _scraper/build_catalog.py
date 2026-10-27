@@ -349,6 +349,9 @@ def build(allow_pending=False):
     apply_retired_redirects(products,redirects,config.get('retired_product_redirects',{}))
     retired_redirect_count=len(redirects)-merge_count
     reference_price_overrides(products,redirects,snapshots,config.get('products',{}))
+    from promotion_catalog import apply_promotions
+    promotion_file=PUBLIC/'promotions.json'
+    if promotion_file.exists():apply_promotions(products,categories,json.loads(promotion_file.read_text()))
     asset_path=PUBLIC/'asset-manifest.json'
     assets=json.loads(asset_path.read_text()) if asset_path.exists() else {}
     public_products=[];public_details=defaultdict(dict);rental_details={};rental_content_audit=[]
@@ -363,6 +366,7 @@ def build(allow_pending=False):
             thumb='/'+assets[pid]['path']
         if not thumb:raise RuntimeError('Missing product thumbnail: '+pid)
         public_row={k:p.get(k) for k in ('id','name','brand_id','kind','price','sale_price','status','category_ids','type_ids','promotion_ids','offers','supplier_status')}|{'image':thumb,'detail_bucket':shard(pid),'shipping_class':shipping_class(p,p.get('shipping_class'))}
+        if p.get('promotions'):public_row['promotions']=p['promotions']
         public_row.update(public_release_fields(p))
         if p['kind']=='rental':
             from rental_content import presentation as rental_presentation
@@ -500,6 +504,8 @@ def build(allow_pending=False):
       ('index.html','나다운 샵 | 촬영의 모든 장비','DJI, SmallRig, Leofoto 등 촬영장비를 브랜드별로 만나보세요. 카메라·렌즈·조명·삼각대 구매와 렌탈 상담.','home'),
       ('brands.html','전체 브랜드 | 나다운 샵','DJI, SmallRig, Leofoto 등 전체 촬영장비 브랜드를 대표 제품 사진으로 만나보세요. 브랜드명을 검색하고 브랜드별 상품을 확인하세요.','brands'),
       ('catalog.html','전체 상품 | 나다운 샵','카메라, 렌즈, 조명과 촬영 액세서리. 브랜드와 세부 분류로 나다운 샵의 상품을 찾아보세요.','catalog'),
+      ('promotions.html','프로모션 | 나다운 샵','진행 중인 촬영장비 프로모션의 기간과 대상 상품, 적용 조건을 확인하세요.','promotions'),
+      ('used.html','위탁중고 | 나다운 샵','나다운에서 취급하는 위탁·중고 촬영장비를 확인하세요. 상품별 상태와 구성을 상담해 드립니다.','used'),
       ('catalog_category.html','카테고리별 상품 | 나다운 샵','여러 브랜드의 촬영장비를 제품 종류별로 찾아보세요.','categories'),
       ('item.html','상품 상세 | 나다운 샵','나다운 샵 촬영장비의 상품 정보와 이미지를 확인하고 구매 상담을 받아보세요.','item'),
       ('cart.html','장바구니 | 나다운 샵','선택한 촬영장비와 옵션, 수량을 확인하세요.','cart'),
@@ -549,7 +555,7 @@ def build(allow_pending=False):
         page=page.replace('{{STRUCTURED_DATA}}',page_structured_data('brands/'+b['id']+'.html',title,description,canonical,brand=True))
         page=page.replace('{{CONTENT}}',page_content('catalog',brand_list,public_products,b))
         (brand_dir/(b['id']+'.html')).write_text(page)
-    urls=['https://shop.nadaun.co/','https://shop.nadaun.co/catalog.html','https://shop.nadaun.co/catalog_category.html','https://shop.nadaun.co/brands.html']+['https://shop.nadaun.co/brands/'+b['id']+'.html' for b in brand_list]+['https://shop.nadaun.co/'+p for p in ('studio.html','rental-guide.html','equipment-guide.html','billing-guide.html','about.html','terms.html','privacy.html','shipping.html','services.html','services-guide.html','gifts.html')]+['https://shop.nadaun.co/item.html?id='+p['id'] for p in public_products]
+    urls=['https://shop.nadaun.co/','https://shop.nadaun.co/catalog.html','https://shop.nadaun.co/catalog_category.html','https://shop.nadaun.co/brands.html']+['https://shop.nadaun.co/brands/'+b['id']+'.html' for b in brand_list]+['https://shop.nadaun.co/'+p for p in ('promotions.html','used.html','studio.html','rental-guide.html','equipment-guide.html','billing-guide.html','about.html','terms.html','privacy.html','shipping.html','services.html','services-guide.html','gifts.html')]+['https://shop.nadaun.co/item.html?id='+p['id'] for p in public_products]
     images={'https://shop.nadaun.co/item.html?id='+p['id']:urljoin('https://shop.nadaun.co/',p['image']) for p in public_products}
     entries=''.join('<url><loc>'+html.escape(u)+'</loc>'+('<image:image><image:loc>'+html.escape(images[u])+'</image:loc></image:image>' if u in images else '')+'</url>' for u in urls)
     (ROOT/'catalog-sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+entries+'</urlset>\n')

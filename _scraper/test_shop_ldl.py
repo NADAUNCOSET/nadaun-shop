@@ -22,9 +22,24 @@ class LDLCurrentCatalog(unittest.TestCase):
         raw,row=self.fixture();raw+='<div class="color-opt"><span>블랙</span><span>화이트</span></div>'
         p,_=product_detail(raw,row,'ldl-old');self.assertTrue(p['options_require_confirmation']);self.assertEqual(p['options'],[])
         row['soldOut']=True;p,_=product_detail(raw,row,'ldl-old');self.assertEqual(p['status'],'soldout');self.assertEqual(p['supplier_status'],'soldout')
+    def test_stale_api_price_requires_current_visible_price_and_schema_agreement(self):
+        raw,row=self.fixture();row['priceVal']=9900
+        with self.assertRaises(ValueError):product_detail(raw,row,'ldl-old')
+        p,_=product_detail(raw+'<p class="detail-price">₩10,000</p>',row,'ldl-old')
+        self.assertEqual(p['price'],10000);self.assertEqual(p['source_price_evidence']['api_price'],9900)
+        with self.assertRaises(ValueError):product_detail(raw+'<p class="detail-price">₩9,900</p>',row,'ldl-old')
     def test_legacy_id_matching_requires_unique_full_model_code(self):
         previous={'products':{'one':{'id':'one','name':'APL-64PHS PLUS 모니터'},'two':{'id':'two','name':'APL-64PHS 모니터'},'three':{'id':'three','name':'APL-64PHS 모니터'}}}
         rows=[{'code':'APL-64PHS'},{'code':'APL-64PHS PLUS'}]
         self.assertEqual(exact_legacy_map(previous,rows),{'APL-64PHS PLUS':'one'})
+    def test_source_omitted_category_retains_only_exact_previously_verified_model(self):
+        raw,row=self.fixture(category='')
+        prior={'id':'ldl-old','model_code':row['code'],'source':'l-mount','source_category_name':'모니터암'}
+        p,c=product_detail(raw,row,'ldl-old',prior,'2026-10-18T00:00:00+00:00')
+        self.assertEqual(c['name'],'모니터암')
+        self.assertTrue(p['source_category_evidence']['current_source_category_missing'])
+        for change in ({'model_code':'OTHER'},{'id':'another'},{'source':'other'},{'source_category_name':''}):
+            with self.assertRaises(ValueError):product_detail(raw,row,'ldl-old',dict(prior,**change),'2026-10-18T00:00:00+00:00')
+        with self.assertRaises(ValueError):product_detail(raw,row,'ldl-old',prior)
 
 if __name__=='__main__':unittest.main()

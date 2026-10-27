@@ -9,8 +9,8 @@ from decimal import Decimal, ROUND_HALF_UP
 import hashlib, json, re
 from urllib.parse import urlsplit
 
-SOURCES=('motion9','funomad')
-DOMAINS={'motion9':'motionnine.cafe24.com','funomad':'funomad.com'}
+SOURCES=('motion9','funomad','digitalcp','sunphoto')
+DOMAINS={'motion9':'motionnine.cafe24.com','funomad':'funomad.com','digitalcp':'www.digitalcp.co.kr','sunphoto':'sunphoto.kr'}
 
 def ids_digest(ids):
     return hashlib.sha256('\n'.join(sorted(ids)).encode()).hexdigest()
@@ -35,7 +35,13 @@ def validate_snapshot(s):
         if source=='funomad':
             if p.get('price') is not None or p.get('sale_price') is not None or p.get('status')!='inquiry':raise ValueError('FUNOMAD must be inquiry only')
             if any(o.get('price') is not None or o.get('additional_price') not in (None,0) for o in p.get('options',[])):raise ValueError('FUNOMAD option prices are not public')
-        elif not isinstance(p.get('price'),int) or p['price']<=0:raise ValueError('Motion9 base price requires verification')
+        elif source=='motion9' and (not isinstance(p.get('price'),int) or p['price']<=0):raise ValueError('Motion9 base price requires verification')
+        elif source in ('digitalcp','sunphoto'):
+            if p.get('price') is not None and (isinstance(p['price'],bool) or not isinstance(p['price'],int) or p['price']<=0):raise ValueError('Invalid public supplier price')
+            if source=='digitalcp':
+                from sync_digitalcp_catalog import excluded
+                if excluded(p['brand']):raise ValueError('Owner-excluded DigitalCP brand in candidate')
+            if source=='sunphoto' and p['brand'].casefold() not in ('tamron','voigtlander'):raise ValueError('Sunphoto manufacturer is outside owner scope')
     return s
 
 def markup_won(value):
@@ -45,6 +51,10 @@ def markup_won(value):
 
 def retail_product(raw):
     p=deepcopy(raw)
+    if p['source']=='digitalcp':
+        p['source_regular_price']=raw.get('price')
+        p['price']=raw.get('sale_price')
+        return p
     if p['source']=='funomad':
         p.update(price=None,sale_price=None,status='inquiry',supplier_status='inquiry',options_require_confirmation=True)
         for o in p.get('options',[]):o.update(price=None,additional_price=0)

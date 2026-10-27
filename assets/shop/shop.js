@@ -1,23 +1,33 @@
 import './i18n.js?v=20261018';
 import './rental-content.js';
 import './product-search.js';
-import {isDiscounted,isPromotion,matchesBenefit,benefitNavigation,categoryTrail,categoryControls,catalogSelection,productTypeNavigation,brandSelectionHref,catalogDefaultOrder} from './catalog-tools.js';
+import {isDiscounted,isPromotion,activePromotions,isConsignmentUsed,matchesBenefit,benefitNavigation,categoryTrail,categoryControls,catalogSelection,productTypeNavigation,brandSelectionHref,catalogDefaultOrder} from './catalog-tools.js';
 import {mountPurchase,renderCart,rentalGuide} from './cart.js';
 import {mountBanners} from './banners.js';
 import {browseDirectoryHtml} from './browse.js';
 const main=document.querySelector('#main');
 const params=new URLSearchParams(location.search);
+const collectionPage=document.body.dataset.mode;
+if(collectionPage==='promotions'){params.set('sale','1');if(!params.has('benefit'))params.set('benefit','promotion');params.set('kind','purchase');}
+if(collectionPage==='used'){params.set('collection','used');params.set('kind','purchase');}
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safe=v=>{try{const u=new URL(v,location.origin);return ['https:','http:'].includes(u.protocol)?esc(u.href):''}catch{return ''}};
 const won=v=>Number.isFinite(Number(v))&&v!==null?Number(v).toLocaleString('ko-KR'):'';
 const money=p=>p.release_status==='coming_soon'?null:p.offers?.some(o=>o.source==='smartstore'||o.source==='imweb')?(p.sale_price??p.price):p.price;
 let data,brandMap,categoryMap;
+let promotionTimer;
+function schedulePromotionTransition(){
+ clearTimeout(promotionTimer);const now=Date.now();
+ const times=(data?.products||[]).flatMap(p=>(p.promotions||[]).flatMap(c=>[Date.parse(c.start_at),Date.parse(c.end_at)])).filter(t=>Number.isFinite(t)&&t>now);
+ if(!times.length)return;
+ promotionTimer=setTimeout(()=>{if(['catalog','categories','promotions','used'].includes(document.body.dataset.mode))renderCatalog();schedulePromotionTransition();},Math.min(2147483647,Math.max(1,Math.min(...times)-now+1)));
+}
 const mode=document.body.dataset.mode;
 const currentBrand=()=>document.body.dataset.brand||params.get('brand')||'';
 const normalize=v=>String(v??'').normalize('NFKC').toLocaleLowerCase().replace(/\s+/g,'');
 const brandHref=id=>`/brands/${encodeURIComponent(id)}.html`;
 function discoveryLinks(p){return `<nav class="product-tags" aria-label="관련 상품 검색">${p.discovery.tags.map(tag=>`<a href="/catalog.html?q=${encodeURIComponent(tag)}&amp;kind=${p.kind}">#${esc(tag.replace(/\s+/g,''))}</a>`).join('')}</nav>`}
-function catalogHref(changes={}){const q=new URLSearchParams(location.search);q.delete('page');for(const [k,v]of Object.entries(changes)){v===null||v===''?q.delete(k):q.set(k,v)}const base=document.body.dataset.brand&&!('brand'in changes)?brandHref(document.body.dataset.brand):'/catalog.html';return base+(q.size?'?'+q.toString():'')}
+function catalogHref(changes={}){const q=new URLSearchParams(params);q.delete('page');for(const [k,v]of Object.entries(changes)){v===null||v===''?q.delete(k):q.set(k,v)}if(q.get('kind')==='rental')q.delete('collection');const base=document.body.dataset.brand&&!('brand'in changes)?brandHref(document.body.dataset.brand):collectionPage==='promotions'&&q.get('sale')==='1'?'/promotions.html':collectionPage==='used'&&q.get('collection')==='used'?'/used.html':'/catalog.html';return base+(q.size?'?'+q.toString():'')}
 function empty(title,text='',link='/catalog.html',label='전체 상품 보기'){return `<div class="empty"><h2>${esc(title)}</h2><p>${esc(text)}</p><a href="${esc(link)}">${esc(label)} →</a></div>`}
 function productCard(p){const coming=p.release_status==='coming_soon';const b=brandMap.get(p.brand_id);const price=money(p);const sold=p.status==='soldout';const discount=!coming&&isDiscounted(p);return `<a class="product-card" href="/item.html?id=${encodeURIComponent(p.id)}"><div class="product-image"${p.motion_image?` data-motion-image="${safe(p.motion_image)}"`:""}><img src="${safe(p.image)}" alt="${esc(p.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${coming?'<span class="badge">출시 예정</span>':sold?'<span class="badge">품절</span>':p.kind==='rental'?'<span class="badge rental">렌탈</span>':discount?'<span class="badge sale-badge">SALE</span>':isPromotion(p)?'<span class="badge sale-badge">PROMOTION</span>':''}</div><div class="product-brand">${esc(b?.name||'')}</div><h3 class="product-name">${esc(p.name)}</h3><p class="product-price">${discount?`<span class="price-before">${won(p.price)}원</span>`:''}${coming?'출시 예정 · 가격 미공개':p.kind==='rental'?globalThis.NadaunRental.priceHTML(p):price===null?'가격 문의':`${won(price)}<small>원</small>`}</p>${coming?'<p class="card-note">출시 일정 상담</p>':p.kind==='rental'?'<p class="card-note">일정 확인 후 예약</p>':p.status==='inquiry'?'<p class="card-note">구매·입고 상담</p>':''}</a>`}
 function enhanceBrandIndex(){
@@ -56,6 +66,11 @@ async function enhanceArtMotion(){
  }catch(error){document.documentElement.dataset.shopMotion='unavailable';console.warn('Shop motion unavailable',error)}
 }
 function enhanceGift(){const input=document.querySelector('#gift-search');if(!input)return;const rows=[...document.querySelectorAll('.gift-category-grid>a')];input.addEventListener('input',()=>{const q=normalize(input.value);let visible=0;for(const row of rows){row.hidden=!normalize(row.textContent).includes(q);if(!row.hidden)visible++}document.querySelector('#gift-search-status').textContent=visible?`${visible}개 카테고리`:'일치하는 카테고리가 없습니다.'})}
+function promotionSummary(products){
+ const campaigns=new Map(products.flatMap(p=>activePromotions(p)).map(c=>[c.id,c]));
+ const date=value=>new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(value));
+ return campaigns.size?`<section class="promotion-campaigns" aria-label="진행 중인 행사">${[...campaigns.values()].map(c=>`<article class="detail-notice"><strong>${esc(c.title)}</strong><p>${esc(date(c.start_at))} ~ ${esc(date(Date.parse(c.end_at)-1))}</p><p>${esc(c.terms||'대상 모델과 혜택 적용 조건은 상담으로 확인해주세요.')}</p></article>`).join('')}</section>`:'';
+}
 function renderCatalog(){
  const bid=currentBrand(),brand=brandMap.get(bid);
  if(bid&&!brand){main.innerHTML=empty('브랜드를 찾을 수 없습니다.');return}
@@ -63,7 +78,7 @@ function renderCatalog(){
  let cat=params.get('cat')||'';const type=params.get('type')||'';
  const discountOnly=params.get('sale')==='1'&&kind!=='rental';
  const benefit=['discount','promotion'].includes(params.get('benefit'))?params.get('benefit'):'all';
- const selection=catalogSelection(data,{brand:bid,kind,cat,type,sale:discountOnly,benefit});
+ const selection=catalogSelection(data,{brand:bid,kind,cat,type,sale:discountOnly,benefit,collection:params.get('collection')||''});
  if(cat!==selection.selectedCategory){cat=selection.selectedCategory;params.delete('cat');params.delete('page');history.replaceState(null,'',location.pathname+(params.size?'?'+params.toString():''))}
  const applicable=selection.brandCategories,categoryCounts=selection.brandCounts;
  const relevant=c=>categoryCounts.get(c.id)||cat===c.id||isAncestor(c.id,cat);
@@ -83,25 +98,27 @@ function renderCatalog(){
  const size=24,pages=Math.max(1,Math.ceil(filtered.length/size));const requested=Number(params.get('page'));const page=Math.min(pages,Math.max(1,Number.isFinite(requested)?Math.floor(requested):1));
  const current=filtered.slice((page-1)*size,page*size);const trail=selectedCat?categoryTrail(visibleCategoryMap,cat):[];
  const children=selectedCat?applicable.filter(c=>c.parent_id===cat&&relevant(c)):[];
- const heading=discountOnly?((brand?brand.name+' ':'')+(benefit==='promotion'?'프로모션':benefit==='discount'?'할인상품':'할인상품 · 프로모션')):brand?brand.name+(kind==='rental'?' 렌탈':''):query?`“${query}” 검색 결과`:kind==='rental'?'장비 렌탈':'전체 상품';
+ const heading=params.get('collection')==='used'?((brand?brand.name+' ':'')+'위탁중고'):discountOnly?((brand?brand.name+' ':'')+(benefit==='promotion'?'프로모션':benefit==='discount'?'할인상품':'할인상품 · 프로모션')):brand?brand.name+(kind==='rental'?' 렌탈':''):query?`“${query}” 검색 결과`:kind==='rental'?'장비 렌탈':'전체 상품';
  const availableBrands=data.brands.filter(b=>kind==='rental'?b.rental_count>0:kind==='purchase'?b.purchase_count>0:true);
  main.innerHTML=`<div class="breadcrumb"><a href="/">홈</a><span>›</span><a href="/brands.html" target="_blank" rel="noopener">브랜드</a>${brand?`<span>›</span><a href="${esc(catalogHref({cat:null,type:null,sale:null}))}">${esc(brand.name)}</a>`:''}${trail.map((c,i)=>`<span aria-hidden="true">›</span>${i===trail.length-1?`<span aria-current="page">${esc(c.name)}</span>`:`<a href="${esc(catalogHref({cat:c.id}))}">${esc(c.name)}</a>`}`).join('')}</div>
  <div class="catalog-heading">${brand?.logo?`<img class="${brand.logo_dark?'brand-logo-dark':''}" src="${safe(brand.logo)}" alt="${esc(brand.name)}" referrerpolicy="no-referrer">`:''}<div><h1>${esc(heading)}</h1><p>제품 종류와 브랜드를 선택해 필요한 ${kind==='rental'?'대여 장비를':'상품을'} 찾아보세요.</p></div></div>
- ${!bid&&!type&&!cat&&!query&&!discountOnly?browseDirectoryHtml(data,kind):''}
+ ${!bid&&!type&&!cat&&!query&&!discountOnly&&params.get('collection')!=='used'?browseDirectoryHtml(data,kind):''}
  <div class="catalog-layout" id="catalog-products"><aside class="sidebar" aria-label="브랜드 및 세부 분류"><h2>브랜드 선택</h2><label class="sr" for="brand-select">브랜드 선택</label><select id="brand-select"><option value="">전체 브랜드</option>${availableBrands.map(b=>`<option value="${esc(b.id)}" ${bid===b.id?'selected':''}>${esc(b.name)} (${kind==='rental'?b.rental_count:kind==='purchase'?b.purchase_count:b.count})</option>`).join('')}</select>
  <label class="sr" for="kind-select">구매 또는 렌탈</label><select id="kind-select"><option value="purchase" ${kind==='purchase'?'selected':''}>구매 상품</option><option value="rental" ${kind==='rental'?'selected':''}>렌탈 상품</option><option value="all" ${kind==='all'?'selected':''}>구매 + 렌탈</option></select>
  ${kind!=='rental'?`<a class="sidebar-sale ${discountOnly?'active':''}" href="${esc(catalogHref({sale:'1',benefit:null,cat:null,type:null,kind:'purchase',q:null}))}" ${discountOnly?'aria-current="page"':''}><span>할인상품 · 프로모션</span><small>SALE</small></a>`:''}
+ ${kind!=='rental'?'<a class="sidebar-sale" href="/promotions.html">프로모션</a><a class="sidebar-sale" href="/used.html">위탁중고</a>':''}
  <div class="mobile-categories" style="display:none" ${applicable.length?'':'hidden'}><label class="sr" for="category-select">브랜드 세부 카테고리</label><select id="category-select"><option value="">브랜드 전체 카테고리</option>${rootOptions}</select></div>
  ${bid?`<div class="sidebar-list"><h2>${esc(brand.name)} 카테고리</h2><a href="${esc(catalogHref({cat:null}))}" class="${!cat?'active':''}">브랜드 전체 <small>${selection.base.filter(p=>!type||p.type_ids.includes(type)).length}</small></a>${roots.map(c=>nested(c)).join('')}</div>`:'<p class="brand-filter-help">브랜드를 선택하면 해당 브랜드의 세부 카테고리가 표시됩니다.</p>'}
  </aside><section class="catalog-results" aria-label="상품 목록">
  ${productTypeNavigation(selection.typeCategories,selection.typeCounts,type,id=>catalogHref({type:id}),{hideEmpty:Boolean(bid)})}
  <div class="catalog-controls"><span>${selectedCat?esc(selectedCat.name)+' · ':''}총 <b>${filtered.length.toLocaleString('ko-KR')}</b>개</span><div class="filters-right"><label><input id="available-only" type="checkbox" ${params.has('available')?'checked':''}>품절 상품 제외</label><label class="sr" for="sort-select">상품 정렬</label><select id="sort-select"><option value="default">기본순</option><option value="low" ${sort==='low'?'selected':''}>낮은 가격순</option><option value="high" ${sort==='high'?'selected':''}>높은 가격순</option><option value="name" ${sort==='name'?'selected':''}>상품명순</option></select></div></div>
  ${discountOnly?benefitNavigation(benefit,key=>catalogHref({sale:'1',benefit:key==='all'?null:key,cat:null,type:null})):''}
+ ${discountOnly&&benefit!=='discount'?promotionSummary(filtered):''}
  ${categoryControls(children,selectedCat,id=>catalogHref({cat:id}))}
- ${current.length?`<div class="product-grid">${current.map(productCard).join('')}</div>`:empty('조건에 맞는 상품이 없습니다.','제품 종류나 브랜드 분류를 바꿔 찾아보세요.',catalogHref({cat:null,type:null,q:null,available:null}),'분류 초기화')}
+ ${current.length?`<div class="product-grid">${current.map(productCard).join('')}</div>`:empty(params.get('collection')==='used'?'등록된 위탁중고 상품이 없습니다.':discountOnly&&benefit==='promotion'?'진행 중인 프로모션이 없습니다.':'조건에 맞는 상품이 없습니다.',params.get('collection')==='used'?'상품이 등록되면 상태와 구성을 확인하실 수 있습니다.':'제품 종류나 브랜드 분류를 바꿔 찾아보세요.',catalogHref({cat:null,type:null,q:null,available:null}),'분류 초기화')}
  <nav class="pagination" aria-label="상품 페이지">${page>1?`<a href="${esc(catalogHref({page:page-1}))}" aria-label="이전 페이지">←</a>`:''}${Array.from({length:pages},(_,i)=>i+1).filter(n=>n===1||n===pages||Math.abs(n-page)<=2).map((n,i,arr)=>`${i&&n-arr[i-1]>1?'<span aria-hidden="true">…</span>':''}<a href="${esc(catalogHref({page:n}))}" class="${n===page?'active':''}" ${n===page?'aria-current="page"':''}>${n}</a>`).join('')}${page<pages?`<a href="${esc(catalogHref({page:page+1}))}" aria-label="다음 페이지">→</a>`:''}</nav>
  </section></div>`;
- document.querySelector('#brand-select').addEventListener('change',e=>{location.href=brandSelectionHref(e.target.value,location.search,kind)});
+ document.querySelector('#brand-select').addEventListener('change',e=>{location.href=brandSelectionHref(e.target.value,params.toString(),kind)});
  document.querySelector('#kind-select').addEventListener('change',e=>{location.href=catalogHref({kind:e.target.value,cat:null,type:null,sale:e.target.value==='rental'?null:params.get('sale'),benefit:e.target.value==='rental'?null:params.get('benefit')})});
  document.querySelector('#category-select').addEventListener('change',e=>{location.href=catalogHref({cat:e.target.value})});
  document.querySelector('#sort-select').addEventListener('change',e=>{location.href=catalogHref({sort:e.target.value})});
@@ -137,7 +154,7 @@ document.addEventListener('load',event=>{
 },true);
 if(mode==='gift')enhanceGift();
 if(mode==='brands')enhanceBrandIndex();
-if(!['policy','guide','gift','gift-item','search','about','studio','home','brands','orders','admin','payment-test','account','test-shop','members-admin'].includes(mode))try{const revision=document.querySelector('meta[name="catalog-revision"]').content;const response=await fetch(`/data/catalog/${["catalog","categories"].includes(mode)&&params.get("kind")==="rental"?"rental":"catalog"}.json?v=${revision}`);if(!response.ok)throw Error('상품 목록을 불러오지 못했습니다.');data=await response.json();brandMap=new Map(data.brands.map(b=>[b.id,b]));categoryMap=new Map((data.categories||[]).map(c=>[c.id,c]));if(mode==='item')await renderItem();else if(mode==='cart'||mode==='checkout')await renderCart(data,mode==='checkout');else if(mode==='categories')renderCategories();else renderCatalog();}catch(error){console.error(error);main.innerHTML=empty('잠시 상품을 불러오지 못했습니다.','새로고침 후 다시 확인해주세요.','https://smartstore.naver.com/rainbowbene','스마트스토어에서 상품 보기')}
+if(!['policy','guide','gift','gift-item','search','about','studio','home','brands','orders','admin','payment-test','account','test-shop','members-admin'].includes(mode))try{const revision=document.querySelector('meta[name="catalog-revision"]').content;const response=await fetch(`/data/catalog/${["catalog","categories"].includes(mode)&&params.get("kind")==="rental"?"rental":"catalog"}.json?v=${revision}`);if(!response.ok)throw Error('상품 목록을 불러오지 못했습니다.');data=await response.json();brandMap=new Map(data.brands.map(b=>[b.id,b]));categoryMap=new Map((data.categories||[]).map(c=>[c.id,c]));if(mode==='item')await renderItem();else if(mode==='cart'||mode==='checkout')await renderCart(data,mode==='checkout');else if(mode==='categories')renderCategories();else renderCatalog();schedulePromotionTransition();}catch(error){console.error(error);main.innerHTML=empty('잠시 상품을 불러오지 못했습니다.','새로고침 후 다시 확인해주세요.','https://smartstore.naver.com/rainbowbene','스마트스토어에서 상품 보기')}
 
 if(mode==='home')try{mountBanners(document.querySelector('.shop-banner'))}catch(error){console.warn('Banner autoplay unavailable',error)}
 if(!['policy','cart','checkout','orders','admin','payment-test','account','test-shop','members-admin'].includes(mode))enhanceArtMotion();

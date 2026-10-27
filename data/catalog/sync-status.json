@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "source_counts": {
-    "kpp": 4044,
+    "kpp": 4086,
     "smartstore": 6859,
     "l-mount": 345,
     "plthink": 6653,
     "saeki": 7452,
-    "dji-official": 930,
+    "dji-official": 937,
     "clmedia": 2242,
     "cinemall": 1209,
     "onnoff": 1067,
@@ -14,15 +14,17 @@
     "hipixel": 334,
     "avx": 1286,
     "motion9": 24,
-    "funomad": 51
+    "funomad": 51,
+    "digitalcp": 915,
+    "sunphoto": 251
   },
   "detail_coverage": {
-    "kpp": 3999,
+    "kpp": 4041,
     "smartstore": 5831,
     "l-mount": 345,
     "plthink": 5488,
     "saeki": 7335,
-    "dji-official": 925,
+    "dji-official": 932,
     "clmedia": 2143,
     "cinemall": 1183,
     "onnoff": 553,
@@ -30,19 +32,21 @@
     "hipixel": 334,
     "avx": 1286,
     "motion9": 24,
-    "funomad": 51
+    "funomad": 51,
+    "digitalcp": 882,
+    "sunphoto": 251
   },
-  "synced_at": "2026-10-19T05:50:16+00:00",
-  "merged_count": 3583,
-  "retired_redirect_count": 1930,
-  "product_count": 28973,
+  "synced_at": "2026-10-27T08:07:50+00:00",
+  "merged_count": 3590,
+  "retired_redirect_count": 1923,
+  "product_count": 30148,
   "category_browsing_enabled": true,
-  "listing_count": 28703,
-  "option_family_count": 270,
+  "listing_count": 29880,
+  "option_family_count": 268,
   "deduplication": {
-    "brands_checked": 414,
-    "groups": 2966,
-    "removed": 3583
+    "brands_checked": 424,
+    "groups": 2974,
+    "removed": 3590
   },
-  "revision": "8838d3a4e3507edd"
+  "revision": "863da9f3a5f69e63"
 }

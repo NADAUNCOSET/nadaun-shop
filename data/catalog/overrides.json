@@ -1738,13 +1738,6 @@
       "expected_kind": "purchase",
       "evidence": "Verified same offer group smartstore-13812638806 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
     },
-    "smartstore-13812636524": {
-      "target_id": "kpp-1786323912",
-      "expected_target_name": "레오포토 데일리 라이트 카메라 백팩 17L 블랙 인서트 키트",
-      "expected_brand_id": "leofoto",
-      "expected_kind": "purchase",
-      "evidence": "Verified same offer group smartstore-13812636524 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
-    },
     "smartstore-13812634636": {
       "target_id": "kpp-1786324173",
       "expected_target_name": "레오포토 데일리 라이트 카메라 백팩 17L 그레이 인서트 키트",
@@ -1758,13 +1751,6 @@
       "expected_brand_id": "leofoto",
       "expected_kind": "purchase",
       "evidence": "Verified same offer group smartstore-13812632679 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
-    },
-    "smartstore-13812631031": {
-      "target_id": "kpp-1786324490",
-      "expected_target_name": "레오포토 데일리 라이트 카메라 백팩 23L 블랙 인서트 키트",
-      "expected_brand_id": "leofoto",
-      "expected_kind": "purchase",
-      "evidence": "Verified same offer group smartstore-13812631031 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
     },
     "smartstore-13812629260": {
       "target_id": "kpp-1786324791",
@@ -4670,20 +4656,6 @@
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
       "evidence": "Verified same offer group kpp-1735204053 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
-    },
-    "smartstore-13745582311": {
-      "target_id": "kpp-1736392834",
-      "expected_target_name": "스몰리그 4877B 후지 X-M5 엄지그립 실버",
-      "expected_brand_id": "smallrig",
-      "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1736392834 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
-    },
-    "onnoff-1075": {
-      "target_id": "kpp-1736392834",
-      "expected_target_name": "스몰리그 4877B 후지 X-M5 엄지그립 실버",
-      "expected_brand_id": "smallrig",
-      "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1736392834 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
     },
     "smartstore-13745582251": {
       "target_id": "kpp-1735625659",
@@ -8240,27 +8212,6 @@
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
       "evidence": "Verified same offer group kpp-1754541982 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
-    },
-    "smartstore-13745582265": {
-      "target_id": "kpp-1754549776",
-      "expected_target_name": "스몰리그 D-Tap 1-to-4 전원 케이블 4831",
-      "expected_brand_id": "smallrig",
-      "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1754549776 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
-    },
-    "plthink-1927414": {
-      "target_id": "kpp-1754549776",
-      "expected_target_name": "스몰리그 D-Tap 1-to-4 전원 케이블 4831",
-      "expected_brand_id": "smallrig",
-      "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1754549776 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
-    },
-    "onnoff-1107": {
-      "target_id": "kpp-1754549776",
-      "expected_target_name": "스몰리그 D-Tap 1-to-4 전원 케이블 4831",
-      "expected_brand_id": "smallrig",
-      "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1754549776 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
     },
     "plthink-1927415": {
       "target_id": "kpp-1752468795",
@@ -15226,6 +15177,57 @@
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
       "evidence": "Verified same offer group kpp-1790930613 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
+    }
+  },
+  "retired_without_replacement": {
+    "smartstore-13812636524": {
+      "previous_target_id": "kpp-1786323912",
+      "expected_previous_name": "레오포토 데일리 라이트 카메라 백팩 17L 블랙 인서트 키트",
+      "current_source_name": "레오포토 데일리 라이트 카메라 백팩 17L 미드나잇블루 인서트 키트",
+      "reason": "Source reused product ID for a different color; no exact black replacement exists in the complete current KPP inventory. Do not redirect to another color.",
+      "checked_at": "2026-10-27T07:49:00.787001+00:00"
+    },
+    "smartstore-13812631031": {
+      "previous_target_id": "kpp-1786324490",
+      "expected_previous_name": "레오포토 데일리 라이트 카메라 백팩 23L 블랙 인서트 키트",
+      "current_source_name": "레오포토 데일리 라이트 카메라 백팩 23L 미드나잇블루 인서트 키트",
+      "reason": "Current supplier reused the target ID for a different color or exact model suffix. No exact previous-model replacement verified; do not redirect a retired URL to a different configuration.",
+      "checked_at": "2026-10-27T07:53:26.800518+00:00"
+    },
+    "smartstore-13745582311": {
+      "previous_target_id": "kpp-1736392834",
+      "expected_previous_name": "스몰리그 4877B 후지 X-M5 엄지그립 실버",
+      "current_source_name": "스몰리그 4877C 후지필름 X-M5 엄지그립 실버",
+      "reason": "Current supplier reused the target ID for a different color or exact model suffix. No exact previous-model replacement verified; do not redirect a retired URL to a different configuration.",
+      "checked_at": "2026-10-27T07:53:26.800721+00:00"
+    },
+    "onnoff-1075": {
+      "previous_target_id": "kpp-1736392834",
+      "expected_previous_name": "스몰리그 4877B 후지 X-M5 엄지그립 실버",
+      "current_source_name": "스몰리그 4877C 후지필름 X-M5 엄지그립 실버",
+      "reason": "Current supplier reused the target ID for a different color or exact model suffix. No exact previous-model replacement verified; do not redirect a retired URL to a different configuration.",
+      "checked_at": "2026-10-27T07:53:26.800726+00:00"
+    },
+    "smartstore-13745582265": {
+      "previous_target_id": "kpp-1754549776",
+      "expected_previous_name": "스몰리그 D-Tap 1-to-4 전원 케이블 4831",
+      "current_source_name": "스몰리그 4831B D-Tap 1대4 전원 분배 케이블",
+      "reason": "Current supplier reused the target ID for a different color or exact model suffix. No exact previous-model replacement verified; do not redirect a retired URL to a different configuration.",
+      "checked_at": "2026-10-27T07:53:26.800732+00:00"
+    },
+    "plthink-1927414": {
+      "previous_target_id": "kpp-1754549776",
+      "expected_previous_name": "스몰리그 D-Tap 1-to-4 전원 케이블 4831",
+      "current_source_name": "스몰리그 4831B D-Tap 1대4 전원 분배 케이블",
+      "reason": "Current supplier reused the target ID for a different color or exact model suffix. No exact previous-model replacement verified; do not redirect a retired URL to a different configuration.",
+      "checked_at": "2026-10-27T07:53:26.800739+00:00"
+    },
+    "onnoff-1107": {
+      "previous_target_id": "kpp-1754549776",
+      "expected_previous_name": "스몰리그 D-Tap 1-to-4 전원 케이블 4831",
+      "current_source_name": "스몰리그 4831B D-Tap 1대4 전원 분배 케이블",
+      "reason": "Current supplier reused the target ID for a different color or exact model suffix. No exact previous-model replacement verified; do not redirect a retired URL to a different configuration.",
+      "checked_at": "2026-10-27T07:53:26.800742+00:00"
     }
   }
 }

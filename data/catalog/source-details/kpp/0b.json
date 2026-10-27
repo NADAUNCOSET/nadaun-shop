@@ -18,8 +18,8 @@
     "sale_price": 347000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:20:38+00:00",
-    "checked_epoch": 1792347638,
+    "checked_at": "2026-10-27T07:14:31+00:00",
+    "checked_epoch": 1793085271,
     "source_fingerprint": "50ba9d74f3c0b5252a205d87714770797ed55fa22e34ac78d4bd056986c6dc95"
   },
   "kpp-1664356314": {
@@ -52,8 +52,8 @@
     "sale_price": 511000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:21:52+00:00",
-    "checked_epoch": 1792347712,
+    "checked_at": "2026-10-27T07:15:34+00:00",
+    "checked_epoch": 1793085334,
     "source_fingerprint": "f81b6c97bf7699c20c6fbc2ef651f7c7b20d1d34ccedb8993927f2f37ef2cf88"
   },
   "kpp-1676254054": {
@@ -83,9 +83,9 @@
     "sale_price": 28000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:23:22+00:00",
-    "checked_epoch": 1792347802,
-    "source_fingerprint": "d27c84f95ae74917786c8c4f800cafa0a98f6bbca987ee08ac121d5bba207a90"
+    "checked_at": "2026-10-27T07:30:22+00:00",
+    "checked_epoch": 1793086222,
+    "source_fingerprint": "0ca4e0e2db489f9e2bb6d0e6aae33f975f8bb4759240effc2a435a86398aac5e"
   },
   "kpp-1679364102": {
     "images": {
@@ -112,8 +112,8 @@
     "sale_price": 37000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:23:34+00:00",
-    "checked_epoch": 1792347814,
+    "checked_at": "2026-10-27T07:16:59+00:00",
+    "checked_epoch": 1793085419,
     "source_fingerprint": "dcae3be91ba4ee98568a290c75f1ca3e85f9567080f5a20394d8f1800a59e9e1"
   },
   "kpp-1694655301": {
@@ -137,9 +137,9 @@
     "sale_price": 279300,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:24:28+00:00",
-    "checked_epoch": 1792347868,
-    "source_fingerprint": "c43b9a92901b8ff714bcef8d1cfab8a1136bf2ad7276e7411907838394f201c1"
+    "checked_at": "2026-10-27T07:30:27+00:00",
+    "checked_epoch": 1793086227,
+    "source_fingerprint": "851c0148907b629fa75643bd65c5e267a2d5f4bcabda022e0cb7ef8703d47645"
   },
   "kpp-1709107816": {
     "images": {
@@ -175,8 +175,8 @@
     "sale_price": 638000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:25:23+00:00",
-    "checked_epoch": 1792347923,
+    "checked_at": "2026-10-27T07:18:32+00:00",
+    "checked_epoch": 1793085512,
     "source_fingerprint": "5c9fbe5b1106f63a8a1c3a07d00f12b9fbed771396b717ca109af39c9bba7d49"
   },
   "kpp-1711444773": {
@@ -219,8 +219,8 @@
     "sale_price": 150000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:25:38+00:00",
-    "checked_epoch": 1792347938,
+    "checked_at": "2026-10-27T07:18:44+00:00",
+    "checked_epoch": 1793085524,
     "source_fingerprint": "b8a5d9f87b0ae4e423ba7859cc75547af4adc20aa7656d680484ab0fe398c59f"
   },
   "kpp-1712643218": {
@@ -248,8 +248,8 @@
     "sale_price": 731000,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:25:47+00:00",
-    "checked_epoch": 1792347947,
+    "checked_at": "2026-10-27T07:18:52+00:00",
+    "checked_epoch": 1793085532,
     "source_fingerprint": "51522286a61c84549f04acc447d93496aaa81890905c40a996cfdbf747d72322"
   },
   "kpp-1761728021": {
@@ -275,8 +275,8 @@
     "sale_price": 41900,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:28:18+00:00",
-    "checked_epoch": 1792348098,
+    "checked_at": "2026-10-27T07:21:00+00:00",
+    "checked_epoch": 1793085660,
     "source_fingerprint": "4bec1be61efc749a8d3d12a6659f796ec4085a53ce854858e27b189918476ca0"
   },
   "kpp-1788424486": {
@@ -302,8 +302,8 @@
     "sale_price": 56900,
     "description_text": "",
     "detail_status": "verified",
-    "checked_at": "2026-10-18T18:29:44+00:00",
-    "checked_epoch": 1792348184,
+    "checked_at": "2026-10-27T07:22:12+00:00",
+    "checked_epoch": 1793085732,
     "source_fingerprint": "5590182519dc71ccd875eb18681944edc2d3ee4bce60c6dddb8461e641a1fc64"
   }
 }

@@ -861,5 +861,11 @@
     "category_id": "hipixel:b:tvlogic:78",
     "basis": "Verified identical offer in baseline 0cb09924587c3c6d group plthink-1926187; preserve reviewed category after dealer source priority change.",
     "product_type": "monitor"
+  },
+  "smartstore-13740633079": {
+    "expected_name": "DaVinci Resolve Studio 라이센스 키 타입",
+    "brand_id": "blackmagic",
+    "category_id": "hipixel:b:blackmagic:71",
+    "basis": "Current HiPixel product211 is explicitly an event offer, so keep our activation-key offer separate and map its verified software purpose to the current DaVinci Resolve software category. USB dongle and hardware panels remain separate."
   }
 }

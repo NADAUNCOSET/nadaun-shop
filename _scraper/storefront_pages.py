@@ -80,6 +80,14 @@ def content(mode, brands, products, brand=None, category_galleries=None):
         for key,value in {'BRAND_COUNT':len(brands)}.items():
             page=page.replace('{{'+key+'}}',escape(str(value)))
         return page.replace('{{BANNERS}}',banner_content()).replace('{{CATEGORY_GALLERY}}',gallery_html((category_galleries or {}).get('purchase',[]))).replace('{{BRANDS}}',links).replace('{{PRODUCTS}}',''.join(card(p) for p in selected if p)).replace('{{RENTALS}}',''.join(card(p) for p in rental))
+    if mode in ('promotions','used'):
+        from promotion_catalog import consignment_used,instant
+        from datetime import datetime,timezone
+        now=datetime.now(timezone.utc);name='프로모션' if mode=='promotions' else '위탁중고'
+        description='기간별 혜택과 대상 상품, 행사 조건을 확인하세요.' if mode=='promotions' else '상품별 상태와 구성을 확인하고 상담해 드립니다.'
+        rows=[p for p in products if p['kind']=='purchase' and p.get('listing_id',p['id'])==p['id'] and (consignment_used(p) if mode=='used' else any(instant(c['start_at'])<=now<instant(c['end_at']) for c in p.get('promotions',[])))]
+        listing=''.join(card(p) for p in rows[:24]) if rows else '<p class="empty-state">'+('진행 중인 프로모션을 확인하고 있습니다.' if mode=='promotions' else '등록된 위탁중고 상품이 없습니다.')+'</p>'
+        return f'<div class="breadcrumb"><a href="/">홈</a><span>›</span>{name}</div><div class="catalog-heading"><div><h1>{name}</h1><p>{description}</p></div></div><div class="product-grid">{listing}</div>'
     if mode in ('catalog','categories'):
         name=(brand['name']+' 브랜드몰') if brand else '전체 상품'
         rows=[p for p in products if (not brand or p['brand_id']==brand['id']) and p.get('listing_id',p['id'])==p['id']]

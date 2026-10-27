@@ -213,12 +213,12 @@
   "meta": {
     "schema_version": 1,
     "source_counts": {
-      "kpp": 4044,
+      "kpp": 4086,
       "smartstore": 6859,
       "l-mount": 345,
       "plthink": 6653,
       "saeki": 7452,
-      "dji-official": 930,
+      "dji-official": 937,
       "clmedia": 2242,
       "cinemall": 1209,
       "onnoff": 1067,
@@ -226,15 +226,17 @@
       "hipixel": 334,
       "avx": 1286,
       "motion9": 24,
-      "funomad": 51
+      "funomad": 51,
+      "digitalcp": 915,
+      "sunphoto": 251
     },
     "detail_coverage": {
-      "kpp": 3999,
+      "kpp": 4041,
       "smartstore": 5831,
       "l-mount": 345,
       "plthink": 5488,
       "saeki": 7335,
-      "dji-official": 925,
+      "dji-official": 932,
       "clmedia": 2143,
       "cinemall": 1183,
       "onnoff": 553,
@@ -242,21 +244,23 @@
       "hipixel": 334,
       "avx": 1286,
       "motion9": 24,
-      "funomad": 51
+      "funomad": 51,
+      "digitalcp": 882,
+      "sunphoto": 251
     },
-    "synced_at": "2026-10-19T05:50:16+00:00",
-    "merged_count": 3583,
-    "retired_redirect_count": 1930,
+    "synced_at": "2026-10-27T08:07:50+00:00",
+    "merged_count": 3590,
+    "retired_redirect_count": 1923,
     "product_count": 217,
     "category_browsing_enabled": true,
     "listing_count": 217,
-    "option_family_count": 270,
+    "option_family_count": 268,
     "deduplication": {
-      "brands_checked": 414,
-      "groups": 2966,
-      "removed": 3583
+      "brands_checked": 424,
+      "groups": 2974,
+      "removed": 3590
     },
-    "revision": "8838d3a4e3507edd",
+    "revision": "863da9f3a5f69e63",
     "view": "rental"
   },
   "brands": [
@@ -279,11 +283,11 @@
         "hipixel:b:blackmagic:24",
         "hipixel:b:blackmagic:31",
         "hipixel:b:blackmagic:67",
+        "hipixel:b:blackmagic:49",
+        "hipixel:b:blackmagic:71",
         "hipixel:b:blackmagic:30",
         "hipixel:b:blackmagic:64",
         "hipixel:b:blackmagic:65",
-        "hipixel:b:blackmagic:111",
-        "hipixel:b:blackmagic:49",
         "hipixel:b:blackmagic:72",
         "hipixel:b:blackmagic:47",
         "hipixel:b:blackmagic:69",
@@ -295,7 +299,6 @@
         "hipixel:b:blackmagic:91",
         "hipixel:b:blackmagic:46",
         "hipixel:b:blackmagic:66",
-        "hipixel:b:blackmagic:71",
         "hipixel:b:blackmagic:48",
         "hipixel:b:blackmagic:106",
         "hipixel:b:blackmagic:62",
@@ -309,13 +312,14 @@
         "hipixel:b:blackmagic:53",
         "hipixel:b:blackmagic:74",
         "hipixel:b:blackmagic:60",
+        "hipixel:b:blackmagic:111",
         "hipixel:b:blackmagic:61",
         "hipixel:b:blackmagic:54",
         "hipixel:b:blackmagic:55",
         "hipixel:b:blackmagic:99"
       ],
-      "count": 315,
-      "purchase_count": 315,
+      "count": 316,
+      "purchase_count": 316,
       "rental_count": 0,
       "primary_source": "hipixel",
       "category_ids": [
@@ -688,8 +692,8 @@
         "dji-official:b:service:107:101.228.1",
         "dji-official:b:service:107:101.228.2"
       ],
-      "count": 936,
-      "purchase_count": 925,
+      "count": 943,
+      "purchase_count": 932,
       "rental_count": 11,
       "category_ids": [
         "naver:b:dji:50000206",
@@ -983,7 +987,7 @@
       "representative_id": "dji-official-6937224126060",
       "representative_image": "https://se-cdn.djiits.com/tpc/uploads/spu/cover/12bba4939cd4f341e741cdf5d2c8d9b0@origin.png?format=webp",
       "representative_name": "Osmo Action 6 스탠더드 콤보",
-      "representative_alternate": "https://se-cdn.djiits.com/tpc/uploads/carousel/image/07a460c41963750113b6f2d649e5873c@origin.jpg?format=webp",
+      "representative_alternate": "https://se-cdn.djiits.com/tpc/uploads/carousel/image/fdcdf8597710bd95d5c2c0a588fbaadb@origin.jpg?format=webp",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -1141,6 +1145,7 @@
         "kpp:b:smallrig:d2f0d0",
         "kpp:b:smallrig:d2f0e0",
         "kpp:b:smallrig:d2f0f0",
+        "kpp:b:smallrig:d2f0g0",
         "kpp:b:smallrig:d2g0",
         "kpp:b:smallrig:d2g010",
         "kpp:b:smallrig:d2g020",
@@ -1156,8 +1161,8 @@
         "kpp:b:smallrig:global:0680",
         "kpp:b:smallrig:mirror:kpp:b:leofoto:3080"
       ],
-      "count": 1529,
-      "purchase_count": 1526,
+      "count": 1558,
+      "purchase_count": 1555,
       "rental_count": 3,
       "category_ids": [
         "kpp:b:smallrig:d210",
@@ -1245,6 +1250,7 @@
         "kpp:b:smallrig:d2c030",
         "kpp:b:smallrig:d2c040",
         "kpp:b:smallrig:d2f0",
+        "kpp:b:smallrig:d2f0g0",
         "kpp:b:smallrig:d2f010",
         "kpp:b:smallrig:d2f020",
         "kpp:b:smallrig:d2f030",
@@ -1387,6 +1393,7 @@
       "aliases": [
         "LEOFOTO",
         "레오포토",
+        "Leofoto",
         "leofoto"
       ],
       "logo": "/assets/shop/brands/leofoto-1b3f51f678.webp",
@@ -1487,8 +1494,8 @@
         "kpp:b:leofoto:global:0120",
         "kpp:b:leofoto:global:0130"
       ],
-      "count": 740,
-      "purchase_count": 740,
+      "count": 749,
+      "purchase_count": 749,
       "rental_count": 0,
       "category_ids": [
         "kpp:b:leofoto:3010",
@@ -1586,7 +1593,12 @@
         "kpp:b:leofoto:30b030",
         "kpp:b:leofoto:global:01",
         "kpp:b:leofoto:global:0120",
-        "kpp:b:leofoto:global:0130"
+        "kpp:b:leofoto:global:0130",
+        "digitalcp:b:leofoto:037",
+        "digitalcp:b:leofoto:043",
+        "digitalcp:b:leofoto:043001",
+        "digitalcp:b:leofoto:043004",
+        "digitalcp:b:leofoto:021"
       ],
       "exclusive_purchase_categories": true,
       "representative_id": "kpp-1561081215",
@@ -2005,6 +2017,7 @@
       "logo": "/assets/shop/brands/hy-2f5bc0b5c2.webp",
       "featured": true,
       "navigation_category_ids": [
+        "digitalcp:b:hy:041",
         "kpp:b:hy:5010",
         "kpp:b:hy:501010",
         "kpp:b:hy:501020",
@@ -2049,8 +2062,8 @@
         "kpp:b:hy:global:09",
         "kpp:b:hy:global:0940"
       ],
-      "count": 284,
-      "purchase_count": 284,
+      "count": 291,
+      "purchase_count": 291,
       "rental_count": 0,
       "category_ids": [
         "kpp:b:hy:5010",
@@ -2095,7 +2108,8 @@
         "kpp:b:hy:5070d0",
         "kpp:b:hy:507070",
         "kpp:b:hy:global:09",
-        "kpp:b:hy:global:0940"
+        "kpp:b:hy:global:0940",
+        "digitalcp:b:hy:041"
       ],
       "representative_id": "kpp-1617763438",
       "representative_image": "https://kppkpp.co.kr/data/item/1617763438/M_HY_HOLDER.jpg",
@@ -2114,6 +2128,9 @@
       "logo": "/assets/shop/brands/pgytech-e21dea7666.webp",
       "featured": true,
       "navigation_category_ids": [
+        "digitalcp:b:pgytech:037",
+        "digitalcp:b:pgytech:047",
+        "digitalcp:b:pgytech:048",
         "kpp:b:pgytech:6010",
         "kpp:b:pgytech:601010",
         "kpp:b:pgytech:601020",
@@ -2160,10 +2177,11 @@
         "kpp:b:pgytech:mirror:kpp:b:smallrig:d2g0",
         "kpp:b:pgytech:mirror:kpp:b:smallrig:d2g070"
       ],
-      "count": 293,
-      "purchase_count": 293,
+      "count": 306,
+      "purchase_count": 306,
       "rental_count": 0,
       "category_ids": [
+        "kpp:b:pgytech:60c0",
         "kpp:b:pgytech:6060",
         "kpp:b:pgytech:6060f0",
         "kpp:b:pgytech:6060c0",
@@ -2209,7 +2227,10 @@
         "kpp:b:pgytech:mirror:kpp:b:smallrig:d260",
         "kpp:b:pgytech:mirror:kpp:b:smallrig:d26060",
         "kpp:b:pgytech:mirror:kpp:b:smallrig:d2g0",
-        "kpp:b:pgytech:mirror:kpp:b:smallrig:d2g070"
+        "kpp:b:pgytech:mirror:kpp:b:smallrig:d2g070",
+        "digitalcp:b:pgytech:037",
+        "digitalcp:b:pgytech:047",
+        "digitalcp:b:pgytech:048"
       ],
       "representative_id": "kpp-1664848290",
       "representative_image": "https://kppkpp.co.kr/data/item/1664848290/01.jpg",
@@ -2427,6 +2448,7 @@
         "naver:b:godox:50001404",
         "naver:b:godox:50002326",
         "naver:b:godox:50002082",
+        "naver:b:godox:50024359",
         "plthink:b:073",
         "plthink:b:073:004",
         "plthink:b:073:001",
@@ -2817,9 +2839,9 @@
         "kpp:b:tokina-cinema:2050",
         "kpp:b:tokina-cinema:205010"
       ],
-      "representative_id": "kpp-1572416204",
-      "representative_image": "https://kppkpp.co.kr/data/item/1572416204/01.jpg",
-      "representative_name": "TOKINA VISTA 18mm T1.5 PL 시네마 렌즈",
+      "representative_id": "kpp-1572416153",
+      "representative_image": "https://kppkpp.co.kr/data/item/1572416153/12367CU64CQ65SU7J6Q7J241120_PL_2removebgpreview.png",
+      "representative_name": "CINEMA 11-20mm T2.9 PL MOUNT",
       "image_kind": "logo",
       "logo_dark": true
     },
@@ -3180,10 +3202,10 @@
         "kpp:b:zitay:z13040",
         "kpp:b:zitay:z13050"
       ],
-      "representative_id": "kpp-1750148234",
-      "representative_image": "https://kppkpp.co.kr/data/item/1750148234/01.jpg",
-      "representative_name": "ZITAY 지테이 소니 NP-FZ100 더미 배터리 DC 타입 DC62",
-      "representative_alternate": "https://kppkpp.co.kr/data/item/1750148234/02.jpg",
+      "representative_id": "kpp-1750147888",
+      "representative_image": "https://kppkpp.co.kr/data/item/1750147888/01.jpg",
+      "representative_name": "ZITAY 지테이 소니 NP-FZ100 더미 배터리 D-tap 타입 DT17",
+      "representative_alternate": "https://kppkpp.co.kr/data/item/1750147888/02.jpg",
       "image_kind": "logo",
       "logo_dark": false
     },
@@ -3989,6 +4011,29 @@
       "logo_dark": false
     },
     {
+      "id": "arcrest",
+      "name": "ARCREST",
+      "aliases": [
+        "ARCREST"
+      ],
+      "logo": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000001242/image/main/1000001242_main_087.jpg",
+      "navigation_category_ids": [
+        "digitalcp:b:arcrest:041"
+      ],
+      "count": 4,
+      "purchase_count": 4,
+      "rental_count": 0,
+      "category_ids": [
+        "digitalcp:b:arcrest:041"
+      ],
+      "representative_id": "digitalcp-1000001242",
+      "representative_image": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000001242/image/detail/1000001242_detail_031.jpg",
+      "representative_name": "ARCREST ND4 FILTER",
+      "representative_alternate": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000001242/image/magnify/1000001242_magnify_097.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "arri",
       "name": "ARRI",
       "aliases": [
@@ -4640,6 +4685,29 @@
       "logo_dark": false
     },
     {
+      "id": "berlebach",
+      "name": "BERLEBACH",
+      "aliases": [
+        "berlebach"
+      ],
+      "logo": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000001304/image/main/1000001304_main_021.jpg",
+      "navigation_category_ids": [
+        "digitalcp:b:berlebach:043"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "digitalcp:b:berlebach:043"
+      ],
+      "representative_id": "digitalcp-1000001304",
+      "representative_image": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000001304/image/detail/1000001304_detail_083.jpg",
+      "representative_name": "벨리바흐 미니 삼각대 - Camouflage(진열)",
+      "representative_alternate": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000001304/image/magnify/1000001304_magnify_066.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "betz-tools",
       "name": "BETZ-TOOLS",
       "aliases": [
@@ -4767,6 +4835,31 @@
       "representative_image": "https://cdn.saeki.co.kr/malluploadfile/public/images/site/2026/202609/41e8e920-d7de-454d-b56c-f4b26facfa16.jpg",
       "representative_name": "Hadley One (Midnight FibreNyte)",
       "representative_alternate": "https://cdn.saeki.co.kr/malluploadfile/public/images/item/2026/202609/74cb8e06-b837-494b-bd28-148266bf58a5.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "biso",
+      "name": "BISO",
+      "aliases": [
+        "BISO"
+      ],
+      "logo": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000002813/image/main/1000002813_main_039.jpg",
+      "navigation_category_ids": [
+        "digitalcp:b:biso:043",
+        "digitalcp:b:biso:043003"
+      ],
+      "count": 1,
+      "purchase_count": 1,
+      "rental_count": 0,
+      "category_ids": [
+        "digitalcp:b:biso:043",
+        "digitalcp:b:biso:043003"
+      ],
+      "representative_id": "digitalcp-1000002813",
+      "representative_image": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000002813/image/detail/1000002813_detail_088.jpg",
+      "representative_name": "SmallRig Tripod Clip 3070 (휴대용 동영상 촬영 그립)",
+      "representative_alternate": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000002813/image/magnify/1000002813_magnify_057.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -5152,6 +5245,7 @@
         "cinemall:b:258",
         "cinemall:b:259",
         "clmedia:b:48",
+        "digitalcp:b:canon:019",
         "kpp:b:canon:global:03",
         "naver:b:canon:50000206",
         "naver:b:canon:50000266",
@@ -5198,8 +5292,8 @@
         "saeki:b:canon:100280",
         "saeki:b:canon:root"
       ],
-      "count": 249,
-      "purchase_count": 233,
+      "count": 250,
+      "purchase_count": 234,
       "rental_count": 16,
       "category_ids": [
         "kpp:b:canon:global:03",
@@ -5260,6 +5354,7 @@
         "cinemall:b:259",
         "cinemall:b:255",
         "cinemall:b:256",
+        "digitalcp:b:canon:019",
         "rental-brand:canon:2",
         "rental-brand:canon:29",
         "rental-brand:canon:24",
@@ -5520,13 +5615,17 @@
       ],
       "logo": "https://www.plthink.com/shopimages/plthink/0080720003533.jpg?1751269724",
       "navigation_category_ids": [
+        "digitalcp:b:coman:043",
+        "digitalcp:b:coman:043003",
         "plthink:b:coman:reviewed:plthink:b:072"
       ],
-      "count": 1,
-      "purchase_count": 1,
+      "count": 2,
+      "purchase_count": 2,
       "rental_count": 0,
       "category_ids": [
-        "plthink:b:coman:reviewed:plthink:b:072"
+        "plthink:b:coman:reviewed:plthink:b:072",
+        "digitalcp:b:coman:043",
+        "digitalcp:b:coman:043003"
       ],
       "representative_id": "plthink-1909118",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080720003532.jpg?1751269724",
@@ -6225,10 +6324,13 @@
       "id": "elgato",
       "name": "ELGATO",
       "aliases": [
-        "ELGATO"
+        "ELGATO",
+        "Elgato"
       ],
       "logo": "https://www.plthink.com/shopimages/plthink/0080880000563.jpg?1768532249",
       "navigation_category_ids": [
+        "digitalcp:b:elgato:019",
+        "digitalcp:b:elgato:045",
         "plthink:b:088",
         "plthink:b:088:001",
         "plthink:b:088:002",
@@ -6237,8 +6339,8 @@
         "plthink:b:088:005",
         "plthink:b:088:006"
       ],
-      "count": 18,
-      "purchase_count": 18,
+      "count": 20,
+      "purchase_count": 20,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:088",
@@ -6247,7 +6349,9 @@
         "plthink:b:088:006",
         "plthink:b:088:002",
         "plthink:b:088:003",
-        "plthink:b:088:004"
+        "plthink:b:088:004",
+        "digitalcp:b:elgato:019",
+        "digitalcp:b:elgato:045"
       ],
       "representative_id": "plthink-1927701",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080880000562.jpg?1768532249",
@@ -7201,6 +7305,7 @@
       "aliases": [
         "짓죠",
         "GITZO",
+        "Gitzo",
         "기트조",
         "gitzo"
       ],
@@ -7209,6 +7314,8 @@
         "avx:b:1d9592a776356f0a",
         "avx:b:dcc842507d05de24",
         "avx:b:e14317c0cdf962dd",
+        "digitalcp:b:gitzo:043",
+        "digitalcp:b:gitzo:043001",
         "naver:b:gitzo:50000206",
         "naver:b:gitzo:50001394",
         "naver:b:gitzo:50002113",
@@ -7247,8 +7354,8 @@
         "saeki:b:gitzo:100625",
         "saeki:b:gitzo:root"
       ],
-      "count": 127,
-      "purchase_count": 127,
+      "count": 128,
+      "purchase_count": 128,
       "rental_count": 0,
       "category_ids": [
         "naver:b:gitzo:50000206",
@@ -7293,7 +7400,10 @@
         "saeki:b:gitzo:100168",
         "avx:b:e14317c0cdf962dd",
         "avx:b:1d9592a776356f0a",
-        "avx:b:dcc842507d05de24"
+        "avx:b:dcc842507d05de24",
+        "digitalcp:b:gitzo:037",
+        "digitalcp:b:gitzo:043",
+        "digitalcp:b:gitzo:043001"
       ],
       "representative_id": "saeki-PD00008033",
       "representative_image": "https://cdn.saeki.co.kr/malluploadfile/public/images/site/2025/202503/07fca454-9751-4047-a6f0-3bc3e08a5df8.jpg",
@@ -7332,16 +7442,20 @@
       ],
       "logo": "https://www.plthink.com/shopimages/plthink/0080150000143.jpg?1768449817",
       "navigation_category_ids": [
+        "digitalcp:b:goodsgood:019",
+        "digitalcp:b:goodsgood:019028",
         "plthink:b:015",
         "plthink:b:015:001"
       ],
-      "count": 5,
-      "purchase_count": 5,
+      "count": 10,
+      "purchase_count": 10,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:015",
         "plthink:b:015:001",
-        "plthink:b:015:002"
+        "plthink:b:015:002",
+        "digitalcp:b:goodsgood:019",
+        "digitalcp:b:goodsgood:019028"
       ],
       "representative_id": "plthink-1917653",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080150000142.jpg?1768449817",
@@ -8559,6 +8673,7 @@
         "naver:b:joby:50000255",
         "naver:b:joby:50001390",
         "naver:b:joby:50002082",
+        "naver:b:joby:50002077",
         "plthink:b:090",
         "plthink:b:090:001",
         "plthink:b:090:002",
@@ -8724,6 +8839,31 @@
       "representative_id": "plthink-1926221",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080870000132.jpg?1790813850",
       "representative_name": "[Kateluo] 카텔로 KT-6 붐 바스켓 서스펜션 샷건 붐마이크 블림프",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "kenko",
+      "name": "KENKO",
+      "aliases": [
+        "KENKO"
+      ],
+      "logo": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000001867/image/main/1000000195_main_026.jpg",
+      "navigation_category_ids": [
+        "digitalcp:b:kenko:041",
+        "digitalcp:b:kenko:041010"
+      ],
+      "count": 16,
+      "purchase_count": 16,
+      "rental_count": 0,
+      "category_ids": [
+        "digitalcp:b:kenko:041",
+        "digitalcp:b:kenko:041010"
+      ],
+      "representative_id": "digitalcp-1000001867",
+      "representative_image": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000001867/image/detail/1000000195_detail_056.jpg",
+      "representative_name": "AIR MCUV 46mm",
+      "representative_alternate": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000001867/image/magnify/1000000195_magnify_051.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -9466,15 +9606,19 @@
       ],
       "logo": "https://kppkpp.co.kr/data/item/1569985070/thumb-1_262x262.jpg",
       "navigation_category_ids": [
+        "digitalcp:b:lims:043",
+        "digitalcp:b:lims:047",
         "kpp:b:lims:global:05",
         "kpp:b:lims:global:0530"
       ],
-      "count": 6,
-      "purchase_count": 6,
+      "count": 9,
+      "purchase_count": 9,
       "rental_count": 0,
       "category_ids": [
         "kpp:b:lims:global:05",
-        "kpp:b:lims:global:0530"
+        "kpp:b:lims:global:0530",
+        "digitalcp:b:lims:047",
+        "digitalcp:b:lims:043"
       ],
       "representative_id": "kpp-1569985070",
       "representative_image": "https://kppkpp.co.kr/data/item/1569985070/1.jpg",
@@ -9809,6 +9953,7 @@
         "avx:b:397e70d5c170678a",
         "avx:b:a933faeb52de631f",
         "avx:b:c15a908f05ded1e7",
+        "digitalcp:b:manfrotto:043",
         "naver:b:manfrotto:50000206",
         "naver:b:manfrotto:50001389",
         "naver:b:manfrotto:50002074",
@@ -9911,16 +10056,16 @@
         "saeki:b:manfrotto:100625",
         "saeki:b:manfrotto:root"
       ],
-      "count": 1097,
-      "purchase_count": 1095,
+      "count": 1098,
+      "purchase_count": 1096,
       "rental_count": 2,
       "category_ids": [
         "naver:b:manfrotto:50000206",
         "naver:b:manfrotto:50001389",
         "naver:b:manfrotto:50002076",
         "naver:b:manfrotto:50001387",
-        "naver:b:manfrotto:50004634",
         "naver:b:manfrotto:50004635",
+        "naver:b:manfrotto:50004634",
         "naver:b:manfrotto:50001394",
         "naver:b:manfrotto:50002113",
         "naver:b:manfrotto:50002074",
@@ -10026,6 +10171,7 @@
         "avx:b:2ac542574a203381",
         "avx:b:a933faeb52de631f",
         "avx:b:397e70d5c170678a",
+        "digitalcp:b:manfrotto:043",
         "rental-brand:manfrotto:7",
         "rental-brand:manfrotto:127"
       ],
@@ -10131,10 +10277,15 @@
       "id": "matin",
       "name": "MATIN",
       "aliases": [
-        "MATIN"
+        "MATIN",
+        "Matin"
       ],
       "logo": "https://www.plthink.com/shopimages/plthink/0080720001923.jpg?1751271076",
       "navigation_category_ids": [
+        "digitalcp:b:matin:043",
+        "digitalcp:b:matin:043003",
+        "digitalcp:b:matin:045",
+        "digitalcp:b:matin:047",
         "plthink:b:matin:reviewed:plthink:b:072",
         "saeki:b:matin:100004",
         "saeki:b:matin:100008",
@@ -10149,8 +10300,8 @@
         "saeki:b:matin:100246",
         "saeki:b:matin:root"
       ],
-      "count": 30,
-      "purchase_count": 30,
+      "count": 43,
+      "purchase_count": 43,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:matin:reviewed:plthink:b:072",
@@ -10165,7 +10316,11 @@
         "saeki:b:matin:100008",
         "saeki:b:matin:100060",
         "saeki:b:matin:100246",
-        "saeki:b:matin:100187"
+        "saeki:b:matin:100187",
+        "digitalcp:b:matin:047",
+        "digitalcp:b:matin:043",
+        "digitalcp:b:matin:045",
+        "digitalcp:b:matin:043003"
       ],
       "representative_id": "plthink-4628",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080720001922.jpg?1751271076",
@@ -10933,17 +11088,51 @@
       "name": "NIKON",
       "aliases": [
         "니콘",
-        "NIKON"
+        "NIKON",
+        "Nikon"
       ],
       "logo": "/assets/shop/brands/nikon-53a64b7b19.webp",
       "navigation_category_ids": [
+        "digitalcp:b:nikon:013",
+        "digitalcp:b:nikon:013005",
+        "digitalcp:b:nikon:013007",
+        "digitalcp:b:nikon:019",
+        "digitalcp:b:nikon:019001",
+        "digitalcp:b:nikon:019003",
+        "digitalcp:b:nikon:019004",
+        "digitalcp:b:nikon:019005",
+        "digitalcp:b:nikon:019007",
+        "digitalcp:b:nikon:019008",
+        "digitalcp:b:nikon:019009",
+        "digitalcp:b:nikon:019014",
+        "digitalcp:b:nikon:019020",
+        "digitalcp:b:nikon:021",
+        "digitalcp:b:nikon:021001",
+        "digitalcp:b:nikon:021002",
+        "digitalcp:b:nikon:021003",
+        "digitalcp:b:nikon:021004",
+        "digitalcp:b:nikon:023",
+        "digitalcp:b:nikon:023008",
+        "digitalcp:b:nikon:023009",
+        "digitalcp:b:nikon:023011",
+        "digitalcp:b:nikon:037",
+        "digitalcp:b:nikon:041",
+        "digitalcp:b:nikon:043",
+        "digitalcp:b:nikon:045",
+        "digitalcp:b:nikon:045001",
+        "digitalcp:b:nikon:047",
+        "digitalcp:b:nikon:047001",
+        "digitalcp:b:nikon:049",
+        "digitalcp:b:nikon:049001",
+        "digitalcp:b:nikon:049002",
+        "digitalcp:b:nikon:049003",
         "saeki:b:nikon:100001",
         "saeki:b:nikon:100020",
         "saeki:b:nikon:100101",
         "saeki:b:nikon:root"
       ],
-      "count": 23,
-      "purchase_count": 18,
+      "count": 691,
+      "purchase_count": 686,
       "rental_count": 5,
       "category_ids": [
         "naver:b:nikon:50000206",
@@ -10953,6 +11142,39 @@
         "saeki:b:nikon:100001",
         "saeki:b:nikon:100020",
         "saeki:b:nikon:100101",
+        "digitalcp:b:nikon:023",
+        "digitalcp:b:nikon:037",
+        "digitalcp:b:nikon:021",
+        "digitalcp:b:nikon:023011",
+        "digitalcp:b:nikon:019",
+        "digitalcp:b:nikon:013",
+        "digitalcp:b:nikon:021004",
+        "digitalcp:b:nikon:023009",
+        "digitalcp:b:nikon:013005",
+        "digitalcp:b:nikon:023008",
+        "digitalcp:b:nikon:049",
+        "digitalcp:b:nikon:049002",
+        "digitalcp:b:nikon:043",
+        "digitalcp:b:nikon:049003",
+        "digitalcp:b:nikon:013007",
+        "digitalcp:b:nikon:019004",
+        "digitalcp:b:nikon:019008",
+        "digitalcp:b:nikon:019005",
+        "digitalcp:b:nikon:019003",
+        "digitalcp:b:nikon:019009",
+        "digitalcp:b:nikon:019014",
+        "digitalcp:b:nikon:019007",
+        "digitalcp:b:nikon:019020",
+        "digitalcp:b:nikon:019001",
+        "digitalcp:b:nikon:041",
+        "digitalcp:b:nikon:049001",
+        "digitalcp:b:nikon:047",
+        "digitalcp:b:nikon:047001",
+        "digitalcp:b:nikon:045",
+        "digitalcp:b:nikon:045001",
+        "digitalcp:b:nikon:021001",
+        "digitalcp:b:nikon:021003",
+        "digitalcp:b:nikon:021002",
         "rental-brand:nikon:8",
         "rental-brand:nikon:146",
         "rental-brand:nikon:1",
@@ -10963,6 +11185,29 @@
       "representative_image": "https://shop-phinf.pstatic.net/20251222_164/17663733326542U2zL_JPEG/100506318771679434_680260237.jpg",
       "representative_name": "NIKON 니콘 ZR 케이지 세트 미러리스 RAW촬영 캠 렌탈",
       "image_kind": "logo",
+      "logo_dark": false
+    },
+    {
+      "id": "nikon-original-goods",
+      "name": "NIKON-ORIGINAL-GOODS",
+      "aliases": [
+        "Nikon Original Goods"
+      ],
+      "logo": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000001917/image/main/1000001917_main_047.jpg",
+      "navigation_category_ids": [
+        "digitalcp:b:nikonoriginalgoods:047"
+      ],
+      "count": 3,
+      "purchase_count": 3,
+      "rental_count": 0,
+      "category_ids": [
+        "digitalcp:b:nikonoriginalgoods:047"
+      ],
+      "representative_id": "digitalcp-1000001917",
+      "representative_image": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000001917/image/detail/1000001917_detail_082.jpg",
+      "representative_name": "니콘 CL-L2 렌즈 세미 소프트케이스",
+      "representative_alternate": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000001917/image/magnify/1000001917_magnify_097.jpg",
+      "image_kind": "product",
       "logo_dark": false
     },
     {
@@ -11160,7 +11405,11 @@
         "clmedia:b:485",
         "clmedia:b:487",
         "clmedia:b:488",
-        "clmedia:b:489"
+        "clmedia:b:489",
+        "digitalcp:b:노바칩스:037",
+        "digitalcp:b:노바칩스:048",
+        "digitalcp:b:노바칩스:047",
+        "digitalcp:b:노바칩스:048003"
       ],
       "representative_id": "saeki-PD00040517",
       "representative_image": "https://cdn.saeki.co.kr/malluploadfile/public/images/site/2024/202411/aab6486d-f513-4e25-b45a-f1c9b6fc32f1.jpg",
@@ -11464,6 +11713,8 @@
         "avx:b:c2949090f09a0285",
         "avx:b:e45d093249fad484",
         "clmedia:b:79",
+        "digitalcp:b:panasonic:019",
+        "digitalcp:b:panasonic:019004",
         "plthink:b:144",
         "plthink:b:144:001",
         "plthink:b:144:002",
@@ -11476,8 +11727,8 @@
         "saeki:b:panasonic:100110",
         "saeki:b:panasonic:root"
       ],
-      "count": 59,
-      "purchase_count": 59,
+      "count": 61,
+      "purchase_count": 61,
       "rental_count": 0,
       "category_ids": [
         "plthink:b:144",
@@ -11506,7 +11757,9 @@
         "avx:b:5f21e865a7f98930",
         "avx:b:859343aa1c132be9",
         "avx:b:6660688e91546530",
-        "avx:b:9db77efa7f752862"
+        "avx:b:9db77efa7f752862",
+        "digitalcp:b:panasonic:019",
+        "digitalcp:b:panasonic:019004"
       ],
       "representative_id": "plthink-1924752",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0081440000052.jpg?1775202485",
@@ -11645,10 +11898,13 @@
       "id": "peak-design",
       "name": "PEAK-DESIGN",
       "aliases": [
-        "Peak Design"
+        "Peak Design",
+        "peak design"
       ],
       "logo": "https://cdn.saeki.co.kr/malluploadfile/public/images/site/2026/202601/b0117d13-df01-4598-b9e2-8975b9f198bd.jpg",
       "navigation_category_ids": [
+        "digitalcp:b:peakdesign:043",
+        "digitalcp:b:peakdesign:047",
         "saeki:b:peak-design:100001",
         "saeki:b:peak-design:100004",
         "saeki:b:peak-design:100023",
@@ -11662,8 +11918,8 @@
         "saeki:b:peak-design:100625",
         "saeki:b:peak-design:root"
       ],
-      "count": 90,
-      "purchase_count": 90,
+      "count": 106,
+      "purchase_count": 106,
       "rental_count": 0,
       "category_ids": [
         "saeki:b:peak-design:root",
@@ -11677,7 +11933,9 @@
         "saeki:b:peak-design:100043",
         "saeki:b:peak-design:100189",
         "saeki:b:peak-design:100039",
-        "saeki:b:peak-design:100177"
+        "saeki:b:peak-design:100177",
+        "digitalcp:b:peakdesign:047",
+        "digitalcp:b:peakdesign:043"
       ],
       "representative_id": "saeki-PD00042216",
       "representative_image": "https://cdn.saeki.co.kr/malluploadfile/public/images/site/2026/202601/b0117d13-df01-4598-b9e2-8975b9f198bd.jpg",
@@ -11704,6 +11962,8 @@
         "clmedia:b:608",
         "clmedia:b:609",
         "clmedia:b:81",
+        "digitalcp:b:pelican:047",
+        "digitalcp:b:pelican:047002",
         "naver:b:pelican:50000206",
         "naver:b:pelican:50001387",
         "naver:b:pelican:50001394",
@@ -11725,8 +11985,8 @@
         "saeki:b:pelican:100259",
         "saeki:b:pelican:root"
       ],
-      "count": 476,
-      "purchase_count": 476,
+      "count": 568,
+      "purchase_count": 568,
       "rental_count": 0,
       "category_ids": [
         "naver:b:pelican:50000206",
@@ -11755,7 +12015,9 @@
         "clmedia:b:608",
         "clmedia:b:609",
         "avx:b:46577780edcc8922",
-        "avx:b:050a69b358f0b5d7"
+        "avx:b:050a69b358f0b5d7",
+        "digitalcp:b:pelican:047",
+        "digitalcp:b:pelican:047002"
       ],
       "representative_id": "smartstore-13752020115",
       "representative_image": "https://shop-phinf.pstatic.net/20260908_263/1788877699963ctfYP_JPEG/g201112271733_111_detail.jpg",
@@ -11977,6 +12239,7 @@
       ],
       "logo": "https://shop-phinf.pstatic.net/20230315_25/1678850278530kz8r6_JPEG/79986106360569501_757940277.jpg",
       "navigation_category_ids": [
+        "digitalcp:b:유쾌한생각:019",
         "naver:b:plthink:50000206",
         "naver:b:plthink:50001390",
         "naver:b:plthink:50002082",
@@ -11986,8 +12249,8 @@
         "plthink:b:016:005",
         "plthink:b:plthink:reviewed:plthink:b:072"
       ],
-      "count": 189,
-      "purchase_count": 189,
+      "count": 190,
+      "purchase_count": 190,
       "rental_count": 0,
       "category_ids": [
         "naver:b:plthink:50000206",
@@ -11997,7 +12260,8 @@
         "plthink:b:016:001",
         "plthink:b:016:005",
         "plthink:b:016:003",
-        "plthink:b:plthink:reviewed:plthink:b:072"
+        "plthink:b:plthink:reviewed:plthink:b:072",
+        "digitalcp:b:유쾌한생각:019"
       ],
       "representative_id": "smartstore-8241085468",
       "representative_image": "https://shop-phinf.pstatic.net/20230315_25/1678850278530kz8r6_JPEG/79986106360569501_757940277.jpg",
@@ -12993,6 +13257,8 @@
       "logo": "/assets/shop/brands/rode-c2a843582d.webp",
       "navigation_category_ids": [
         "clmedia:b:88",
+        "digitalcp:b:rode:045",
+        "digitalcp:b:rode:045001",
         "plthink:b:038",
         "plthink:b:038:001",
         "plthink:b:038:002",
@@ -13006,8 +13272,8 @@
         "saeki:b:rode:100271",
         "saeki:b:rode:root"
       ],
-      "count": 192,
-      "purchase_count": 191,
+      "count": 197,
+      "purchase_count": 196,
       "rental_count": 1,
       "category_ids": [
         "naver:b:rode:50000206",
@@ -13026,6 +13292,8 @@
         "saeki:b:rode:100052",
         "saeki:b:rode:100226",
         "clmedia:b:88",
+        "digitalcp:b:rode:045",
+        "digitalcp:b:rode:045001",
         "rental-brand:rode:5",
         "rental-brand:rode:54"
       ],
@@ -13375,12 +13643,14 @@
         "샌디스크",
         "SANDISK",
         "SanDisk",
+        "Sandisk",
         "sandisk"
       ],
       "logo": "/assets/shop/brands/sandisk-fa2757420f.webp",
       "navigation_category_ids": [
         "avx:b:986916cf72161632",
         "avx:b:cf7296552d7087b6",
+        "digitalcp:b:sandisk:048",
         "naver:b:sandisk:50000206",
         "naver:b:sandisk:50001385",
         "naver:b:sandisk:50004624",
@@ -13393,8 +13663,8 @@
         "saeki:b:sandisk:100115",
         "saeki:b:sandisk:root"
       ],
-      "count": 83,
-      "purchase_count": 81,
+      "count": 91,
+      "purchase_count": 89,
       "rental_count": 2,
       "category_ids": [
         "naver:b:sandisk:50000206",
@@ -13413,6 +13683,7 @@
         "clmedia:b:92",
         "avx:b:986916cf72161632",
         "avx:b:cf7296552d7087b6",
+        "digitalcp:b:sandisk:048",
         "rental-brand:sandisk:8",
         "rental-brand:sandisk:146"
       ],
@@ -13984,6 +14255,7 @@
         "naver:b:shure:50001404",
         "naver:b:shure:50006972",
         "naver:b:shure:50000153",
+        "naver:b:shure:50002326",
         "naver:b:shure:50002328",
         "naver:b:shure:50000095",
         "naver:b:shure:50001214",
@@ -13996,7 +14268,6 @@
         "naver:b:shure:50024399",
         "naver:b:shure:50024459",
         "naver:b:shure:50024479",
-        "naver:b:shure:50002326",
         "naver:b:shure:50002327",
         "naver:b:shure:50024359",
         "naver:b:shure:50001968",
@@ -14183,6 +14454,31 @@
       "logo_dark": false
     },
     {
+      "id": "sirui",
+      "name": "SIRUI",
+      "aliases": [
+        "SIRUI"
+      ],
+      "logo": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000000246/image/main/1000000246_main_094.PNG",
+      "navigation_category_ids": [
+        "digitalcp:b:sirui:043",
+        "digitalcp:b:sirui:043003"
+      ],
+      "count": 3,
+      "purchase_count": 3,
+      "rental_count": 0,
+      "category_ids": [
+        "digitalcp:b:sirui:043",
+        "digitalcp:b:sirui:043003"
+      ],
+      "representative_id": "digitalcp-1000000246",
+      "representative_image": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000000246/image/detail/1000000246_detail_062.PNG",
+      "representative_name": "ET-1004 + E-10 KIT",
+      "representative_alternate": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000000246/image/magnify/1000000246_magnify_092.PNG",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "skb",
       "name": "SKB",
       "aliases": [
@@ -14227,6 +14523,31 @@
       "representative_id": "plthink-1928357",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080850000422.jpg?1786413736",
       "representative_name": "[SKINARMA] 스키나마 3in1 액시스 맥세이프 카드 지갑 아이폰 거치대 홀더 2장 수납",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "skoko",
+      "name": "SKOKO",
+      "aliases": [
+        "Skoko"
+      ],
+      "logo": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/2264/image/main/2264_Main.jpeg",
+      "navigation_category_ids": [
+        "digitalcp:b:skoko:019",
+        "digitalcp:b:skoko:019011"
+      ],
+      "count": 6,
+      "purchase_count": 6,
+      "rental_count": 0,
+      "category_ids": [
+        "digitalcp:b:skoko:019",
+        "digitalcp:b:skoko:019011"
+      ],
+      "representative_id": "digitalcp-2264",
+      "representative_image": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/2264/image/detail/2264_Detail0.jpeg",
+      "representative_name": "스코코 D5600 보호필름 1세트",
+      "representative_alternate": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/2264/image/magnify/1516771350893l0.jpg",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -14871,6 +15192,88 @@
       "logo_dark": false
     },
     {
+      "id": "tamron",
+      "name": "TAMRON",
+      "aliases": [
+        "TAMRON"
+      ],
+      "logo": "https://ecimg.cafe24img.com/pg1313b16629550065/sunphoto3/web/product/big/20261014/d4b4090adcd7462d6530f01973b5bf29.jpg",
+      "navigation_category_ids": [
+        "sunphoto:b:159",
+        "sunphoto:b:160",
+        "sunphoto:b:161",
+        "sunphoto:b:165",
+        "sunphoto:b:166",
+        "sunphoto:b:167",
+        "sunphoto:b:168",
+        "sunphoto:b:169",
+        "sunphoto:b:170",
+        "sunphoto:b:171",
+        "sunphoto:b:172",
+        "sunphoto:b:173",
+        "sunphoto:b:174",
+        "sunphoto:b:175",
+        "sunphoto:b:176",
+        "sunphoto:b:177",
+        "sunphoto:b:178",
+        "sunphoto:b:179",
+        "sunphoto:b:180",
+        "sunphoto:b:182",
+        "sunphoto:b:183",
+        "sunphoto:b:185",
+        "sunphoto:b:194",
+        "sunphoto:b:29",
+        "sunphoto:b:43",
+        "sunphoto:b:44",
+        "sunphoto:b:45",
+        "sunphoto:b:46",
+        "sunphoto:b:48",
+        "sunphoto:b:49",
+        "sunphoto:b:512"
+      ],
+      "count": 99,
+      "purchase_count": 99,
+      "rental_count": 0,
+      "category_ids": [
+        "sunphoto:b:29",
+        "sunphoto:b:165",
+        "sunphoto:b:166",
+        "sunphoto:b:49",
+        "sunphoto:b:512",
+        "sunphoto:b:167",
+        "sunphoto:b:168",
+        "sunphoto:b:169",
+        "sunphoto:b:170",
+        "sunphoto:b:171",
+        "sunphoto:b:172",
+        "sunphoto:b:173",
+        "sunphoto:b:174",
+        "sunphoto:b:175",
+        "sunphoto:b:176",
+        "sunphoto:b:177",
+        "sunphoto:b:178",
+        "sunphoto:b:179",
+        "sunphoto:b:180",
+        "sunphoto:b:182",
+        "sunphoto:b:183",
+        "sunphoto:b:185",
+        "sunphoto:b:194",
+        "sunphoto:b:160",
+        "sunphoto:b:159",
+        "sunphoto:b:161",
+        "sunphoto:b:43",
+        "sunphoto:b:44",
+        "sunphoto:b:45",
+        "sunphoto:b:46",
+        "sunphoto:b:48"
+      ],
+      "representative_id": "sunphoto-3565",
+      "representative_image": "https://ecimg.cafe24img.com/pg1313b16629550065/sunphoto3/web/product/big/20261014/d4b4090adcd7462d6530f01973b5bf29.jpg",
+      "representative_name": "[예약판매 10/30 발송 예정] 탐론 16-50mm F2.8 A B091 for Canon RF-Mount",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "tango",
       "name": "TANGO",
       "aliases": [
@@ -15484,13 +15887,15 @@
       ],
       "logo": "https://www.plthink.com/shopimages/plthink/0080720000363.jpg?1768445932",
       "navigation_category_ids": [
+        "digitalcp:b:transcend:048",
         "plthink:b:transcend:reviewed:plthink:b:072"
       ],
-      "count": 2,
-      "purchase_count": 2,
+      "count": 4,
+      "purchase_count": 4,
       "rental_count": 0,
       "category_ids": [
-        "plthink:b:transcend:reviewed:plthink:b:072"
+        "plthink:b:transcend:reviewed:plthink:b:072",
+        "digitalcp:b:transcend:048"
       ],
       "representative_id": "plthink-1910036",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080720000362.jpg?1768445932",
@@ -16002,6 +16407,50 @@
       "representative_id": "plthink-1928092",
       "representative_image": "https://www.plthink.com/shopimages/plthink/0080760001202.jpg?1763692131",
       "representative_name": "[vMix] 브이믹스 PRO 라이브 스트리밍 녹화 소프트웨어 라이센스 영상 제작",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
+      "id": "voigtlander",
+      "name": "VOIGTLANDER",
+      "aliases": [
+        "Voigtlander"
+      ],
+      "logo": "https://ecimg.cafe24img.com/pg1313b16629550065/sunphoto3/web/product/big/20260821/290d5200bad482fff22b85e6135edc55.jpg",
+      "navigation_category_ids": [
+        "sunphoto:b:162",
+        "sunphoto:b:163",
+        "sunphoto:b:164",
+        "sunphoto:b:30",
+        "sunphoto:b:50",
+        "sunphoto:b:51",
+        "sunphoto:b:513",
+        "sunphoto:b:52",
+        "sunphoto:b:53",
+        "sunphoto:b:54",
+        "sunphoto:b:56",
+        "sunphoto:b:57"
+      ],
+      "count": 152,
+      "purchase_count": 152,
+      "rental_count": 0,
+      "category_ids": [
+        "sunphoto:b:30",
+        "sunphoto:b:50",
+        "sunphoto:b:51",
+        "sunphoto:b:52",
+        "sunphoto:b:53",
+        "sunphoto:b:54",
+        "sunphoto:b:57",
+        "sunphoto:b:56",
+        "sunphoto:b:513",
+        "sunphoto:b:164",
+        "sunphoto:b:163",
+        "sunphoto:b:162"
+      ],
+      "representative_id": "sunphoto-3459",
+      "representative_image": "https://ecimg.cafe24img.com/pg1313b16629550065/sunphoto3/web/product/big/20260821/290d5200bad482fff22b85e6135edc55.jpg",
+      "representative_name": "보이그랜더 Hood LHX-1B",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -17114,6 +17563,31 @@
       "logo_dark": false
     },
     {
+      "id": "brand-c19d72f2ba",
+      "name": "디지털청풍",
+      "aliases": [
+        "디지털청풍"
+      ],
+      "logo": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000002893/image/main/1000002893_main_076.jpg",
+      "navigation_category_ids": [
+        "digitalcp:b:디지털청풍:019",
+        "digitalcp:b:디지털청풍:047"
+      ],
+      "count": 2,
+      "purchase_count": 2,
+      "rental_count": 0,
+      "category_ids": [
+        "digitalcp:b:디지털청풍:019",
+        "digitalcp:b:디지털청풍:047"
+      ],
+      "representative_id": "digitalcp-1000002893",
+      "representative_image": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000002893/image/detail/1000002893_detail_087.jpg",
+      "representative_name": "고급 카메라 더스트 브로워",
+      "representative_alternate": "https://godomall.speedycdn.net/a7a4cef2857f769f27ab84fe56bacf93/goods/1000002893/image/magnify/1000002893_magnify_062.jpg",
+      "image_kind": "product",
+      "logo_dark": false
+    },
+    {
       "id": "brand-f84b02763b",
       "name": "디포그",
       "aliases": [
@@ -17365,24 +17839,34 @@
         "브랜드 미표기",
         "unbranded"
       ],
-      "logo": "https://ecimg.cafe24img.com/pg821b55468729089/hipplus/web/product/big/20240920/2d1d5db36c14536856e1bf5ea003e398.jpg",
+      "logo": "https://ecimg.cafe24img.com/pg821b55468729089/hipplus/web/product/big/20250409/cd6449728d40051e73780e34701d882e.gif",
       "navigation_category_ids": [
+        "digitalcp:b:브랜드미표기:019",
+        "digitalcp:b:브랜드미표기:019020",
+        "digitalcp:b:브랜드미표기:037",
+        "digitalcp:b:브랜드미표기:041",
+        "digitalcp:b:브랜드미표기:043",
         "hipixel:b:unbranded:57",
         "hipixel:b:unbranded:86",
         "hipixel:b:unbranded:purpose:video-rack"
       ],
-      "count": 4,
-      "purchase_count": 4,
+      "count": 7,
+      "purchase_count": 7,
       "rental_count": 0,
       "primary_source": "hipixel",
       "category_ids": [
         "hipixel:b:unbranded:57",
         "hipixel:b:unbranded:86",
-        "hipixel:b:unbranded:purpose:video-rack"
+        "hipixel:b:unbranded:purpose:video-rack",
+        "digitalcp:b:브랜드미표기:037",
+        "digitalcp:b:브랜드미표기:041",
+        "digitalcp:b:브랜드미표기:019",
+        "digitalcp:b:브랜드미표기:019020",
+        "digitalcp:b:브랜드미표기:043"
       ],
-      "representative_id": "hipixel-294",
-      "representative_image": "https://ecimg.cafe24img.com/pg821b55468729089/hipplus/web/product/big/20240920/2d1d5db36c14536856e1bf5ea003e398.jpg",
-      "representative_name": "Mini DIN Cable (※DeckLink Quad 2 사용)",
+      "representative_id": "hipixel-361",
+      "representative_image": "https://ecimg.cafe24img.com/pg821b55468729089/hipplus/web/product/big/20250409/cd6449728d40051e73780e34701d882e.gif",
+      "representative_name": "Micro BNC Cable (15cm, 30cm)",
       "image_kind": "product",
       "logo_dark": false
     },
@@ -18045,7 +18529,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "tilta",
-      "navigation_position": 66
+      "navigation_position": 69
     },
     {
       "id": "naver:b:tilta:50001394",
@@ -18067,7 +18551,7 @@
       "parent_id": null,
       "brand_id": "tilta",
       "scope": "rental-brand",
-      "navigation_position": 74
+      "navigation_position": 77
     },
     {
       "id": "rental-brand:tilta:134",
@@ -18082,7 +18566,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "nanlite",
-      "navigation_position": 108
+      "navigation_position": 116
     },
     {
       "id": "naver:b:nanlite:50001394",
@@ -18104,7 +18588,7 @@
       "parent_id": null,
       "brand_id": "nanlite",
       "scope": "rental-brand",
-      "navigation_position": 111
+      "navigation_position": 119
     },
     {
       "id": "rental-brand:nanlite:102",
@@ -18127,7 +18611,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "kupo",
-      "navigation_position": 120
+      "navigation_position": 128
     },
     {
       "id": "naver:b:kupo:50001394",
@@ -18149,7 +18633,7 @@
       "parent_id": null,
       "brand_id": "kupo",
       "scope": "rental-brand",
-      "navigation_position": 124
+      "navigation_position": 132
     },
     {
       "id": "rental-brand:kupo:104",
@@ -18165,7 +18649,7 @@
       "parent_id": null,
       "brand_id": "kupo",
       "scope": "rental-brand",
-      "navigation_position": 125
+      "navigation_position": 133
     },
     {
       "id": "rental-brand:kupo:56",
@@ -18188,7 +18672,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "aputure",
-      "navigation_position": 128
+      "navigation_position": 136
     },
     {
       "id": "naver:b:aputure:50001394",
@@ -18224,7 +18708,7 @@
       "parent_id": null,
       "brand_id": "aputure",
       "scope": "rental-brand",
-      "navigation_position": 131
+      "navigation_position": 139
     },
     {
       "id": "rental-brand:aputure:102",
@@ -18247,7 +18731,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "fxlion",
-      "navigation_position": 170
+      "navigation_position": 178
     },
     {
       "id": "naver:b:fxlion:50001394",
@@ -18269,7 +18753,7 @@
       "parent_id": null,
       "brand_id": "fxlion",
       "scope": "rental-brand",
-      "navigation_position": 173
+      "navigation_position": 181
     },
     {
       "id": "rental-brand:fxlion:46",
@@ -18284,14 +18768,14 @@
       "name": "모니터",
       "parent_id": null,
       "brand_id": "hollyland",
-      "navigation_position": 178
+      "navigation_position": 186
     },
     {
       "id": "naver:b:hollyland:50000209",
       "name": "음향가전",
       "parent_id": null,
       "brand_id": "hollyland",
-      "navigation_position": 179
+      "navigation_position": 187
     },
     {
       "id": "naver:b:hollyland:50001968",
@@ -18305,7 +18789,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "hollyland",
-      "navigation_position": 180
+      "navigation_position": 188
     },
     {
       "id": "naver:b:hollyland:50001394",
@@ -18327,7 +18811,7 @@
       "parent_id": null,
       "brand_id": "hollyland",
       "scope": "rental-brand",
-      "navigation_position": 183
+      "navigation_position": 191
     },
     {
       "id": "rental-brand:hollyland:368",
@@ -18343,7 +18827,7 @@
       "parent_id": null,
       "brand_id": "hollyland",
       "scope": "rental-brand",
-      "navigation_position": 184
+      "navigation_position": 192
     },
     {
       "id": "rental-brand:hollyland:145",
@@ -18374,7 +18858,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "arri",
-      "navigation_position": 216
+      "navigation_position": 225
     },
     {
       "id": "naver:b:arri:50001394",
@@ -18396,7 +18880,7 @@
       "parent_id": null,
       "brand_id": "arri",
       "scope": "rental-brand",
-      "navigation_position": 218
+      "navigation_position": 227
     },
     {
       "id": "rental-brand:arri:102",
@@ -18419,7 +18903,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "atomos",
-      "navigation_position": 228
+      "navigation_position": 237
     },
     {
       "id": "naver:b:atomos:50001394",
@@ -18441,7 +18925,7 @@
       "parent_id": null,
       "brand_id": "atomos",
       "scope": "rental-brand",
-      "navigation_position": 230
+      "navigation_position": 239
     },
     {
       "id": "rental-brand:atomos:145",
@@ -18464,7 +18948,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "aurora",
-      "navigation_position": 232
+      "navigation_position": 241
     },
     {
       "id": "naver:b:aurora:50001394",
@@ -18486,7 +18970,7 @@
       "parent_id": null,
       "brand_id": "aurora",
       "scope": "rental-brand",
-      "navigation_position": 233
+      "navigation_position": 242
     },
     {
       "id": "rental-brand:aurora:103",
@@ -18501,7 +18985,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "avenger",
-      "navigation_position": 235
+      "navigation_position": 244
     },
     {
       "id": "naver:b:avenger:50001394",
@@ -18523,7 +19007,7 @@
       "parent_id": null,
       "brand_id": "avenger",
       "scope": "rental-brand",
-      "navigation_position": 239
+      "navigation_position": 248
     },
     {
       "id": "rental-brand:avenger:104",
@@ -18538,7 +19022,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "benro",
-      "navigation_position": 252
+      "navigation_position": 261
     },
     {
       "id": "naver:b:benro:50001394",
@@ -18560,7 +19044,7 @@
       "parent_id": null,
       "brand_id": "benro",
       "scope": "rental-brand",
-      "navigation_position": 253
+      "navigation_position": 262
     },
     {
       "id": "rental-brand:benro:127",
@@ -18575,7 +19059,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "boya",
-      "navigation_position": 264
+      "navigation_position": 275
     },
     {
       "id": "naver:b:boya:50001394",
@@ -18597,7 +19081,7 @@
       "parent_id": null,
       "brand_id": "boya",
       "scope": "rental-brand",
-      "navigation_position": 265
+      "navigation_position": 276
     },
     {
       "id": "rental-brand:boya:54",
@@ -18612,7 +19096,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "canon",
-      "navigation_position": 275
+      "navigation_position": 286
     },
     {
       "id": "naver:b:canon:50000268",
@@ -18669,7 +19153,7 @@
       "parent_id": null,
       "brand_id": "canon",
       "scope": "rental-brand",
-      "navigation_position": 281
+      "navigation_position": 293
     },
     {
       "id": "rental-brand:canon:29",
@@ -18701,7 +19185,7 @@
       "parent_id": null,
       "brand_id": "canon",
       "scope": "rental-brand",
-      "navigation_position": 282
+      "navigation_position": 294
     },
     {
       "id": "rental-brand:canon:90",
@@ -18725,7 +19209,7 @@
       "parent_id": null,
       "brand_id": "canon",
       "scope": "rental-brand",
-      "navigation_position": 283
+      "navigation_position": 295
     },
     {
       "id": "rental-brand:canon:12",
@@ -18740,7 +19224,7 @@
       "name": "캠핑",
       "parent_id": null,
       "brand_id": "ecoflow",
-      "navigation_position": 326
+      "navigation_position": 339
     },
     {
       "id": "naver:b:ecoflow:50017740",
@@ -18755,7 +19239,7 @@
       "parent_id": null,
       "brand_id": "ecoflow",
       "scope": "rental-brand",
-      "navigation_position": 328
+      "navigation_position": 341
     },
     {
       "id": "rental-brand:ecoflow:46",
@@ -18770,7 +19254,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "edelkrone",
-      "navigation_position": 329
+      "navigation_position": 342
     },
     {
       "id": "naver:b:edelkrone:50001394",
@@ -18792,7 +19276,7 @@
       "parent_id": null,
       "brand_id": "edelkrone",
       "scope": "rental-brand",
-      "navigation_position": 332
+      "navigation_position": 345
     },
     {
       "id": "rental-brand:edelkrone:139",
@@ -18824,7 +19308,7 @@
       "parent_id": null,
       "brand_id": "edelkrone",
       "scope": "rental-brand",
-      "navigation_position": 333
+      "navigation_position": 346
     },
     {
       "id": "rental-brand:edelkrone:46",
@@ -18839,7 +19323,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "farseeing",
-      "navigation_position": 353
+      "navigation_position": 368
     },
     {
       "id": "naver:b:farseeing:50001394",
@@ -18861,7 +19345,7 @@
       "parent_id": null,
       "brand_id": "farseeing",
       "scope": "rental-brand",
-      "navigation_position": 356
+      "navigation_position": 371
     },
     {
       "id": "rental-brand:farseeing:46",
@@ -18876,7 +19360,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "feelworld",
-      "navigation_position": 358
+      "navigation_position": 373
     },
     {
       "id": "naver:b:feelworld:50001394",
@@ -18898,7 +19382,7 @@
       "parent_id": null,
       "brand_id": "feelworld",
       "scope": "rental-brand",
-      "navigation_position": 359
+      "navigation_position": 374
     },
     {
       "id": "rental-brand:feelworld:145",
@@ -18921,7 +19405,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "fomex",
-      "navigation_position": 367
+      "navigation_position": 382
     },
     {
       "id": "naver:b:fomex:50001394",
@@ -18943,7 +19427,7 @@
       "parent_id": null,
       "brand_id": "fomex",
       "scope": "rental-brand",
-      "navigation_position": 368
+      "navigation_position": 383
     },
     {
       "id": "rental-brand:fomex:103",
@@ -18966,7 +19450,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "gentree",
-      "navigation_position": 381
+      "navigation_position": 396
     },
     {
       "id": "naver:b:gentree:50001391",
@@ -19002,7 +19486,7 @@
       "parent_id": null,
       "brand_id": "gentree",
       "scope": "rental-brand",
-      "navigation_position": 385
+      "navigation_position": 400
     },
     {
       "id": "rental-brand:gentree:46",
@@ -19017,7 +19501,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "hobolite",
-      "navigation_position": 410
+      "navigation_position": 428
     },
     {
       "id": "naver:b:hobolite:50001394",
@@ -19039,7 +19523,7 @@
       "parent_id": null,
       "brand_id": "hobolite",
       "scope": "rental-brand",
-      "navigation_position": 411
+      "navigation_position": 429
     },
     {
       "id": "rental-brand:hobolite:102",
@@ -19054,7 +19538,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "homan",
-      "navigation_position": 414
+      "navigation_position": 432
     },
     {
       "id": "naver:b:homan:50001394",
@@ -19076,7 +19560,7 @@
       "parent_id": null,
       "brand_id": "homan",
       "scope": "rental-brand",
-      "navigation_position": 417
+      "navigation_position": 435
     },
     {
       "id": "rental-brand:homan:146",
@@ -19091,7 +19575,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "ifootage",
-      "navigation_position": 428
+      "navigation_position": 446
     },
     {
       "id": "naver:b:ifootage:50001394",
@@ -19113,7 +19597,7 @@
       "parent_id": null,
       "brand_id": "ifootage",
       "scope": "rental-brand",
-      "navigation_position": 430
+      "navigation_position": 448
     },
     {
       "id": "rental-brand:ifootage:127",
@@ -19128,7 +19612,7 @@
       "name": "캠핑",
       "parent_id": null,
       "brand_id": "jackery",
-      "navigation_position": 440
+      "navigation_position": 458
     },
     {
       "id": "naver:b:jackery:50017740",
@@ -19143,7 +19627,7 @@
       "parent_id": null,
       "brand_id": "jackery",
       "scope": "rental-brand",
-      "navigation_position": 447
+      "navigation_position": 465
     },
     {
       "id": "rental-brand:jackery:46",
@@ -19158,7 +19642,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "jcprom",
-      "navigation_position": 449
+      "navigation_position": 467
     },
     {
       "id": "naver:b:jcprom:50001394",
@@ -19180,7 +19664,7 @@
       "parent_id": null,
       "brand_id": "jcprom",
       "scope": "rental-brand",
-      "navigation_position": 450
+      "navigation_position": 468
     },
     {
       "id": "rental-brand:jcprom:232",
@@ -19195,7 +19679,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "lexar",
-      "navigation_position": 493
+      "navigation_position": 512
     },
     {
       "id": "naver:b:lexar:50001394",
@@ -19217,7 +19701,7 @@
       "parent_id": null,
       "brand_id": "lexar",
       "scope": "rental-brand",
-      "navigation_position": 495
+      "navigation_position": 514
     },
     {
       "id": "rental-brand:lexar:146",
@@ -19232,7 +19716,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "manfrotto",
-      "navigation_position": 517
+      "navigation_position": 538
     },
     {
       "id": "naver:b:manfrotto:50001394",
@@ -19254,7 +19738,7 @@
       "parent_id": null,
       "brand_id": "manfrotto",
       "scope": "rental-brand",
-      "navigation_position": 522
+      "navigation_position": 544
     },
     {
       "id": "rental-brand:manfrotto:127",
@@ -19269,7 +19753,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "misonics",
-      "navigation_position": 535
+      "navigation_position": 560
     },
     {
       "id": "naver:b:misonics:50001394",
@@ -19291,7 +19775,7 @@
       "parent_id": null,
       "brand_id": "misonics",
       "scope": "rental-brand",
-      "navigation_position": 536
+      "navigation_position": 561
     },
     {
       "id": "rental-brand:misonics:102",
@@ -19306,7 +19790,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "rainbowbene",
-      "navigation_position": 561
+      "navigation_position": 586
     },
     {
       "id": "naver:b:rainbowbene:50001394",
@@ -19327,7 +19811,7 @@
       "name": "생활편의",
       "parent_id": null,
       "brand_id": "rainbowbene",
-      "navigation_position": 562
+      "navigation_position": 587
     },
     {
       "id": "naver:b:rainbowbene:50007304",
@@ -19342,7 +19826,7 @@
       "parent_id": null,
       "brand_id": "rainbowbene",
       "scope": "rental-brand",
-      "navigation_position": 563
+      "navigation_position": 588
     },
     {
       "id": "rental-brand:rainbowbene:studio",
@@ -19358,7 +19842,7 @@
       "parent_id": null,
       "brand_id": "rainbowbene",
       "scope": "rental-brand",
-      "navigation_position": 564
+      "navigation_position": 589
     },
     {
       "id": "rental-brand:rainbowbene:232",
@@ -19374,7 +19858,7 @@
       "parent_id": null,
       "brand_id": "rainbowbene",
       "scope": "rental-brand",
-      "navigation_position": 565
+      "navigation_position": 590
     },
     {
       "id": "rental-brand:rainbowbene:103",
@@ -19390,7 +19874,7 @@
       "parent_id": null,
       "brand_id": "rainbowbene",
       "scope": "rental-brand",
-      "navigation_position": 566
+      "navigation_position": 591
     },
     {
       "id": "rental-brand:rainbowbene:140",
@@ -19405,7 +19889,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "nanlux",
-      "navigation_position": 568
+      "navigation_position": 593
     },
     {
       "id": "naver:b:nanlux:50001394",
@@ -19427,7 +19911,7 @@
       "parent_id": null,
       "brand_id": "nanlux",
       "scope": "rental-brand",
-      "navigation_position": 571
+      "navigation_position": 596
     },
     {
       "id": "rental-brand:nanlux:102",
@@ -19442,7 +19926,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "nikon",
-      "navigation_position": 579
+      "navigation_position": 613
     },
     {
       "id": "naver:b:nikon:50001394",
@@ -19464,7 +19948,7 @@
       "parent_id": null,
       "brand_id": "nikon",
       "scope": "rental-brand",
-      "navigation_position": 580
+      "navigation_position": 615
     },
     {
       "id": "rental-brand:nikon:146",
@@ -19480,7 +19964,7 @@
       "parent_id": null,
       "brand_id": "nikon",
       "scope": "rental-brand",
-      "navigation_position": 581
+      "navigation_position": 616
     },
     {
       "id": "rental-brand:nikon:11",
@@ -19503,7 +19987,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "peribounce",
-      "navigation_position": 630
+      "navigation_position": 673
     },
     {
       "id": "naver:b:peribounce:50001394",
@@ -19525,7 +20009,7 @@
       "parent_id": null,
       "brand_id": "peribounce",
       "scope": "rental-brand",
-      "navigation_position": 631
+      "navigation_position": 674
     },
     {
       "id": "rental-brand:peribounce:103",
@@ -19540,7 +20024,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "phaseone",
-      "navigation_position": 632
+      "navigation_position": 675
     },
     {
       "id": "naver:b:phaseone:50000265",
@@ -19555,7 +20039,7 @@
       "parent_id": null,
       "brand_id": "phaseone",
       "scope": "rental-brand",
-      "navigation_position": 634
+      "navigation_position": 677
     },
     {
       "id": "rental-brand:phaseone:medium-camera",
@@ -19570,7 +20054,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "profoto",
-      "navigation_position": 666
+      "navigation_position": 710
     },
     {
       "id": "naver:b:profoto:50001394",
@@ -19592,7 +20076,7 @@
       "parent_id": null,
       "brand_id": "profoto",
       "scope": "rental-brand",
-      "navigation_position": 667
+      "navigation_position": 711
     },
     {
       "id": "rental-brand:profoto:47",
@@ -19615,7 +20099,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "red",
-      "navigation_position": 680
+      "navigation_position": 724
     },
     {
       "id": "naver:b:red:50001394",
@@ -19637,7 +20121,7 @@
       "parent_id": null,
       "brand_id": "red",
       "scope": "rental-brand",
-      "navigation_position": 681
+      "navigation_position": 725
     },
     {
       "id": "rental-brand:red:11",
@@ -19660,7 +20144,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "rode",
-      "navigation_position": 698
+      "navigation_position": 742
     },
     {
       "id": "naver:b:rode:50001394",
@@ -19682,7 +20166,7 @@
       "parent_id": null,
       "brand_id": "rode",
       "scope": "rental-brand",
-      "navigation_position": 701
+      "navigation_position": 746
     },
     {
       "id": "rental-brand:rode:54",
@@ -19697,7 +20181,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "sachtler",
-      "navigation_position": 707
+      "navigation_position": 752
     },
     {
       "id": "naver:b:sachtler:50001394",
@@ -19719,7 +20203,7 @@
       "parent_id": null,
       "brand_id": "sachtler",
       "scope": "rental-brand",
-      "navigation_position": 711
+      "navigation_position": 756
     },
     {
       "id": "rental-brand:sachtler:127",
@@ -19734,7 +20218,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "sandisk",
-      "navigation_position": 719
+      "navigation_position": 764
     },
     {
       "id": "naver:b:sandisk:50001394",
@@ -19756,7 +20240,7 @@
       "parent_id": null,
       "brand_id": "sandisk",
       "scope": "rental-brand",
-      "navigation_position": 723
+      "navigation_position": 769
     },
     {
       "id": "rental-brand:sandisk:146",
@@ -19771,7 +20255,7 @@
       "name": "모니터",
       "parent_id": null,
       "brand_id": "saramonic",
-      "navigation_position": 726
+      "navigation_position": 772
     },
     {
       "id": "rental-brand:saramonic:5",
@@ -19779,7 +20263,7 @@
       "parent_id": null,
       "brand_id": "saramonic",
       "scope": "rental-brand",
-      "navigation_position": 729
+      "navigation_position": 775
     },
     {
       "id": "rental-brand:saramonic:210",
@@ -19794,7 +20278,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "sekonic",
-      "navigation_position": 741
+      "navigation_position": 787
     },
     {
       "id": "naver:b:sekonic:50001394",
@@ -19816,7 +20300,7 @@
       "parent_id": null,
       "brand_id": "sekonic",
       "scope": "rental-brand",
-      "navigation_position": 743
+      "navigation_position": 789
     },
     {
       "id": "rental-brand:sekonic:103",
@@ -19831,7 +20315,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "sennheiser",
-      "navigation_position": 750
+      "navigation_position": 796
     },
     {
       "id": "naver:b:sennheiser:50001394",
@@ -19853,7 +20337,7 @@
       "parent_id": null,
       "brand_id": "sennheiser",
       "scope": "rental-brand",
-      "navigation_position": 754
+      "navigation_position": 800
     },
     {
       "id": "rental-brand:sennheiser:368",
@@ -19868,7 +20352,7 @@
       "name": "모니터",
       "parent_id": null,
       "brand_id": "shure",
-      "navigation_position": 759
+      "navigation_position": 805
     },
     {
       "id": "rental-brand:shure:5",
@@ -19876,7 +20360,7 @@
       "parent_id": null,
       "brand_id": "shure",
       "scope": "rental-brand",
-      "navigation_position": 762
+      "navigation_position": 808
     },
     {
       "id": "rental-brand:shure:54",
@@ -19891,7 +20375,7 @@
       "name": "모니터",
       "parent_id": null,
       "brand_id": "smallhd",
-      "navigation_position": 770
+      "navigation_position": 818
     },
     {
       "id": "rental-brand:smallhd:6",
@@ -19899,7 +20383,7 @@
       "parent_id": null,
       "brand_id": "smallhd",
       "scope": "rental-brand",
-      "navigation_position": 774
+      "navigation_position": 822
     },
     {
       "id": "rental-brand:smallhd:145",
@@ -19922,7 +20406,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "sony",
-      "navigation_position": 782
+      "navigation_position": 830
     },
     {
       "id": "naver:b:sony:50001394",
@@ -19965,7 +20449,7 @@
       "parent_id": null,
       "brand_id": "sony",
       "scope": "rental-brand",
-      "navigation_position": 790
+      "navigation_position": 838
     },
     {
       "id": "rental-brand:sony:146",
@@ -19981,7 +20465,7 @@
       "parent_id": null,
       "brand_id": "sony",
       "scope": "rental-brand",
-      "navigation_position": 791
+      "navigation_position": 839
     },
     {
       "id": "rental-brand:sony:90",
@@ -19997,7 +20481,7 @@
       "parent_id": null,
       "brand_id": "sony",
       "scope": "rental-brand",
-      "navigation_position": 792
+      "navigation_position": 840
     },
     {
       "id": "rental-brand:sony:26",
@@ -20021,7 +20505,7 @@
       "parent_id": null,
       "brand_id": "sony",
       "scope": "rental-brand",
-      "navigation_position": 793
+      "navigation_position": 841
     },
     {
       "id": "rental-brand:sony:11",
@@ -20044,7 +20528,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "swit",
-      "navigation_position": 802
+      "navigation_position": 850
     },
     {
       "id": "naver:b:swit:50001394",
@@ -20066,7 +20550,7 @@
       "parent_id": null,
       "brand_id": "swit",
       "scope": "rental-brand",
-      "navigation_position": 805
+      "navigation_position": 853
     },
     {
       "id": "rental-brand:swit:46",
@@ -20081,14 +20565,14 @@
       "name": "모니터",
       "parent_id": null,
       "brand_id": "teradek",
-      "navigation_position": 816
+      "navigation_position": 865
     },
     {
       "id": "naver:b:teradek:50000206",
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "teradek",
-      "navigation_position": 817
+      "navigation_position": 866
     },
     {
       "id": "naver:b:teradek:50001394",
@@ -20110,7 +20594,7 @@
       "parent_id": null,
       "brand_id": "teradek",
       "scope": "rental-brand",
-      "navigation_position": 821
+      "navigation_position": 870
     },
     {
       "id": "rental-brand:teradek:145",
@@ -20141,7 +20625,7 @@
       "name": "음향가전",
       "parent_id": null,
       "brand_id": "turbosound",
-      "navigation_position": 846
+      "navigation_position": 896
     },
     {
       "id": "naver:b:turbosound:50001402",
@@ -20163,7 +20647,7 @@
       "parent_id": null,
       "brand_id": "turbosound",
       "scope": "rental-brand",
-      "navigation_position": 847
+      "navigation_position": 897
     },
     {
       "id": "rental-brand:turbosound:114",
@@ -20178,7 +20662,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "xtar",
-      "navigation_position": 881
+      "navigation_position": 932
     },
     {
       "id": "naver:b:xtar:50001394",
@@ -20200,7 +20684,7 @@
       "parent_id": null,
       "brand_id": "xtar",
       "scope": "rental-brand",
-      "navigation_position": 882
+      "navigation_position": 933
     },
     {
       "id": "rental-brand:xtar:46",
@@ -20215,7 +20699,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "zoom",
-      "navigation_position": 902
+      "navigation_position": 953
     },
     {
       "id": "naver:b:zoom:50001394",
@@ -20237,7 +20721,7 @@
       "parent_id": null,
       "brand_id": "zoom",
       "scope": "rental-brand",
-      "navigation_position": 908
+      "navigation_position": 959
     },
     {
       "id": "rental-brand:zoom:113",
@@ -20252,7 +20736,7 @@
       "name": "카메라/캠코더용품",
       "parent_id": null,
       "brand_id": "brand-7226ee717c",
-      "navigation_position": 940
+      "navigation_position": 997
     },
     {
       "id": "naver:b:brand-7226ee717c:50001394",
@@ -20274,7 +20758,7 @@
       "parent_id": null,
       "brand_id": "brand-7226ee717c",
       "scope": "rental-brand",
-      "navigation_position": 941
+      "navigation_position": 998
     },
     {
       "id": "rental-brand:brand-7226ee717c:140",
@@ -20297,105 +20781,105 @@
       "name": "파워뱅크",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 975
+      "navigation_position": 1032
     },
     {
       "id": "naver:p:50002113",
       "name": "기타카메라/캠코더용품",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 976
+      "navigation_position": 1033
     },
     {
       "id": "naver:p:50004604",
       "name": "표준렌즈",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 978
+      "navigation_position": 1035
     },
     {
       "id": "naver:p:50002082",
       "name": "배경/노출용품",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 983
+      "navigation_position": 1040
     },
     {
       "id": "naver:p:50002086",
       "name": "전용호환배터리",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 987
+      "navigation_position": 1044
     },
     {
       "id": "naver:p:50000153",
       "name": "모니터",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1012
+      "navigation_position": 1070
     },
     {
       "id": "naver:p:50000266",
       "name": "미러리스디카",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1013
+      "navigation_position": 1071
     },
     {
       "id": "naver:p:50000268",
       "name": "캠코더",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1016
+      "navigation_position": 1074
     },
     {
       "id": "naver:p:50002320",
       "name": "스피커단품",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1017
+      "navigation_position": 1075
     },
     {
       "id": "naver:p:50004605",
       "name": "광각렌즈",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1021
+      "navigation_position": 1079
     },
     {
       "id": "naver:p:50001968",
       "name": "방송음향기기",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1028
+      "navigation_position": 1085
     },
     {
       "id": "naver:p:50004606",
       "name": "망원렌즈",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1032
+      "navigation_position": 1089
     },
     {
       "id": "naver:p:50007304",
       "name": "사진/영상 촬영",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1035
+      "navigation_position": 1092
     },
     {
       "id": "naver:p:50002101",
       "name": "GPS/무선송수신",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1041
+      "navigation_position": 1098
     },
     {
       "id": "naver:p:50000265",
       "name": "DSLR카메라",
       "parent_id": null,
       "brand_id": null,
-      "navigation_position": 1042
+      "navigation_position": 1099
     },
     {
       "id": "type:kpp:01",
@@ -20404,7 +20888,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": "kpp:p:01",
-      "navigation_position": 1046
+      "navigation_position": 1104
     },
     {
       "id": "type:kpp:0110",
@@ -20449,7 +20933,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": null,
-      "navigation_position": 1048
+      "navigation_position": 1106
     },
     {
       "id": "type:mirrorless",
@@ -20503,7 +20987,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": "kpp:p:03",
-      "navigation_position": 1049
+      "navigation_position": 1107
     },
     {
       "id": "type:kpp:0320",
@@ -20521,7 +21005,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": "kpp:p:04",
-      "navigation_position": 1050
+      "navigation_position": 1108
     },
     {
       "id": "type:kpp:06",
@@ -20530,7 +21014,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": "kpp:p:06",
-      "navigation_position": 1052
+      "navigation_position": 1110
     },
     {
       "id": "type:kpp:0610",
@@ -20611,7 +21095,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": "kpp:p:07",
-      "navigation_position": 1053
+      "navigation_position": 1111
     },
     {
       "id": "type:kpp:0710",
@@ -20737,7 +21221,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": null,
-      "navigation_position": 1054
+      "navigation_position": 1112
     },
     {
       "id": "type:kpp:0730",
@@ -20800,7 +21284,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": null,
-      "navigation_position": 1055
+      "navigation_position": 1113
     },
     {
       "id": "type:kpp:0680",
@@ -20863,7 +21347,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": "kpp:p:h0",
-      "navigation_position": 1056
+      "navigation_position": 1114
     },
     {
       "id": "type:video-wireless",
@@ -20899,7 +21383,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": "kpp:p:c0",
-      "navigation_position": 1057
+      "navigation_position": 1115
     },
     {
       "id": "type:kpp:c020",
@@ -20926,7 +21410,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": "kpp:p:09",
-      "navigation_position": 1059
+      "navigation_position": 1117
     },
     {
       "id": "type:apple-box",
@@ -20980,7 +21464,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": null,
-      "navigation_position": 1065
+      "navigation_position": 1123
     },
     {
       "id": "rent:1",
@@ -20990,7 +21474,7 @@
       "scope": "rental-product",
       "source_id": "1",
       "source_name": "CINEMA",
-      "navigation_position": 1081
+      "navigation_position": 1139
     },
     {
       "id": "rent:10",
@@ -21160,7 +21644,7 @@
       "scope": "rental-product",
       "source_id": "2",
       "source_name": "CAMERA",
-      "navigation_position": 1082
+      "navigation_position": 1140
     },
     {
       "id": "rent:21",
@@ -21289,7 +21773,7 @@
       "scope": "rental-product",
       "source_id": "3",
       "source_name": "LENS",
-      "navigation_position": 1083
+      "navigation_position": 1141
     },
     {
       "id": "rent:53",
@@ -21358,7 +21842,7 @@
       "scope": "rental-product",
       "source_id": "4",
       "source_name": "LIGHTING",
-      "navigation_position": 1084
+      "navigation_position": 1142
     },
     {
       "id": "rent:102",
@@ -21438,7 +21922,7 @@
       "scope": "rental-product",
       "source_id": "5",
       "source_name": "AUDIO",
-      "navigation_position": 1085
+      "navigation_position": 1143
     },
     {
       "id": "rent:368",
@@ -21548,7 +22032,7 @@
       "scope": "rental-product",
       "source_id": "6",
       "source_name": "DISPLAY",
-      "navigation_position": 1086
+      "navigation_position": 1144
     },
     {
       "id": "rent:119",
@@ -21687,7 +22171,7 @@
       "scope": "rental-product",
       "source_id": "7",
       "source_name": "SUPPORT",
-      "navigation_position": 1087
+      "navigation_position": 1145
     },
     {
       "id": "rent:127",
@@ -21817,7 +22301,7 @@
       "scope": "rental-product",
       "source_id": "8",
       "source_name": "ACCESSORY",
-      "navigation_position": 1088
+      "navigation_position": 1146
     },
     {
       "id": "rent:146",
@@ -21937,7 +22421,7 @@
       "scope": "rental-product",
       "source_id": "9",
       "source_name": "ETC",
-      "navigation_position": 1089
+      "navigation_position": 1147
     },
     {
       "id": "rent:155",
@@ -23241,6 +23725,7 @@
           "메모리·스토리지",
           "샌디스크",
           "SanDisk",
+          "Sandisk",
           "sandisk",
           "촬영장비 대여",
           "장비 대여",
@@ -23310,6 +23795,7 @@
           "메모리·스토리지",
           "샌디스크",
           "SanDisk",
+          "Sandisk",
           "sandisk",
           "촬영장비 대여",
           "장비 대여",
@@ -23923,6 +24409,7 @@
           "기타카메라/캠코더용품",
           "메모리·스토리지",
           "니콘",
+          "Nikon",
           "CFexpress Type B",
           "CFexpress B",
           "CFE-B",
@@ -23995,6 +24482,7 @@
           "기타카메라/캠코더용품",
           "메모리·스토리지",
           "니콘",
+          "Nikon",
           "CFexpress Type B",
           "CFexpress B",
           "CFE-B",
@@ -24067,6 +24555,7 @@
           "기타카메라/캠코더용품",
           "메모리·스토리지",
           "니콘",
+          "Nikon",
           "CFexpress Type B",
           "CFexpress B",
           "CFE-B",
@@ -24139,6 +24628,7 @@
           "기타카메라/캠코더용품",
           "메모리·스토리지",
           "니콘",
+          "Nikon",
           "CFexpress Type B",
           "CFexpress B",
           "CFE-B",
@@ -24215,6 +24705,7 @@
           "시네마 카메라",
           "시네마 패키지",
           "니콘",
+          "Nikon",
           "촬영장비 대여",
           "장비 대여",
           "나다운 스페이스",
@@ -37976,7 +38467,6 @@
     "clmedia-1020": "kpp-1735203762",
     "clmedia-1022": "kpp-1736393234",
     "clmedia-1023": "kpp-1735204053",
-    "clmedia-1024": "kpp-1736392834",
     "clmedia-1026": "kpp-1735625659",
     "clmedia-1027": "kpp-1730082697",
     "clmedia-1028": "kpp-1735625872",
@@ -38336,7 +38826,6 @@
     "clmedia-2135": "kpp-1754544675",
     "clmedia-2136": "kpp-1758160545",
     "clmedia-2149": "kpp-1754541982",
-    "clmedia-2150": "kpp-1754549776",
     "kpp-1672366416": "clmedia-2155",
     "plthink-1927418": "clmedia-2155",
     "clmedia-2156": "kpp-1752468795",
@@ -38645,6 +39134,7 @@
     "clmedia-3405": "kpp-1786067624",
     "clmedia-344": "kpp-1657763335",
     "clmedia-3441": "kpp-1752463655",
+    "clmedia-3475": "kpp-1792558803",
     "smartstore-13812350366": "clmedia-3478",
     "clmedia-348": "kpp-1665021561",
     "clmedia-351": "kpp-1657763501",
@@ -38866,6 +39356,9 @@
     "clmedia-993": "kpp-1720080798",
     "clmedia-996": "kpp-1729587386",
     "clmedia-997": "kpp-1720581779",
+    "saeki-PD00041930": "digitalcp-1000002959",
+    "saeki-PD00030806": "digitalcp-1000003306",
+    "digitalcp-1000003429": "digitalcp-1000003433",
     "plthink-1923311": "hipixel-100",
     "smartstore-13740633194": "hipixel-100",
     "smartstore-8258738337": "hipixel-100",
@@ -39081,8 +39574,6 @@
     "plthink-1924550": "hipixel-21",
     "smartstore-13740633263": "hipixel-21",
     "smartstore-13740634077": "hipixel-210",
-    "smartstore-13740633079": "hipixel-211",
-    "smartstore-8263809015": "hipixel-211",
     "plthink-1923719": "hipixel-212",
     "smartstore-13740634076": "hipixel-212",
     "plthink-1923585": "hipixel-213",
@@ -39222,6 +39713,7 @@
     "smartstore-7083071388": "hipixel-389",
     "plthink-1927142": "hipixel-39",
     "smartstore-13740633250": "hipixel-39",
+    "smartstore-13740632981": "hipixel-396",
     "plthink-1924548": "hipixel-40",
     "smartstore-13740634271": "hipixel-40",
     "smartstore-13740632980": "hipixel-401",
@@ -39230,6 +39722,8 @@
     "smartstore-13740634270": "hipixel-41",
     "plthink-1923693": "hipixel-42",
     "smartstore-13740634269": "hipixel-42",
+    "smartstore-13740632979": "hipixel-427",
+    "smartstore-13740632978": "hipixel-428",
     "plthink-1923692": "hipixel-43",
     "smartstore-13740634268": "hipixel-43",
     "smartstore-13740634027": "hipixel-432",
@@ -39413,6 +39907,9 @@
     "smartstore-6962001535": "kpp-1649572461",
     "smartstore-13744158767": "kpp-1649573623",
     "smartstore-13744158770": "kpp-1649589962",
+    "kpp-1651565962": "kpp-1702864506",
+    "kpp-1664434534": "kpp-1702867007",
+    "kpp-1664434879": "kpp-1702867667",
     "smartstore-13744158765": "kpp-1664859199",
     "smartstore-13744158766": "kpp-1664859578",
     "smartstore-13744158314": "kpp-1664860446",
@@ -40616,7 +41113,7 @@
     "smartstore-10781269963": "smartstore-5089432645",
     "smartstore-10817338957": "smartstore-6961350645",
     "smartstore-10817343290": "smartstore-6961372587",
-    "smartstore-11668039658": "smartstore-11669013361",
+    "smartstore-11669013361": "smartstore-11668039658",
     "smartstore-12084361679": "smartstore-12084364259",
     "smartstore-12085645442": "smartstore-12085653091",
     "smartstore-12112597205": "smartstore-12086012875",
@@ -40640,6 +41137,7 @@
     "smartstore-13742686832": "smartstore-13740393584",
     "smartstore-13742693069": "smartstore-13740393591",
     "smartstore-13742686833": "smartstore-13740393591",
+    "smartstore-8263809015": "smartstore-13740633079",
     "smartstore-13740655688": "smartstore-9336885649",
     "smartstore-13740655689": "smartstore-9336870581",
     "smartstore-13740655690": "smartstore-9336856403",
@@ -40676,10 +41174,8 @@
     "smartstore-8237990015": "smartstore-8237989318",
     "smartstore-13812640585": "kpp-1786323040",
     "smartstore-13812638806": "kpp-1786323466",
-    "smartstore-13812636524": "kpp-1786323912",
     "smartstore-13812634636": "kpp-1786324173",
     "smartstore-13812632679": "kpp-1786324289",
-    "smartstore-13812631031": "kpp-1786324490",
     "smartstore-13812629260": "kpp-1786324791",
     "smartstore-13812627424": "kpp-1786324966",
     "smartstore-13745586975": "clmedia-3118",
@@ -41095,8 +41591,6 @@
     "onnoff-1074": "kpp-1736393234",
     "smartstore-13745582377": "kpp-1735204053",
     "onnoff-442": "kpp-1735204053",
-    "smartstore-13745582311": "kpp-1736392834",
-    "onnoff-1075": "kpp-1736392834",
     "smartstore-13745582251": "kpp-1735625659",
     "smartstore-13745582247": "kpp-1730082697",
     "onnoff-443": "kpp-1730082697",
@@ -41605,9 +42099,6 @@
     "smartstore-13745582838": "kpp-1754541982",
     "plthink-1927413": "kpp-1754541982",
     "onnoff-466": "kpp-1754541982",
-    "smartstore-13745582265": "kpp-1754549776",
-    "plthink-1927414": "kpp-1754549776",
-    "onnoff-1107": "kpp-1754549776",
     "plthink-1927415": "kpp-1752468795",
     "onnoff-467": "kpp-1752468795",
     "smartstore-13745586957": "kpp-1759303654",

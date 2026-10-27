@@ -244,8 +244,8 @@ def normalize_options(stock,offers,base_price,quote,global_soldout,rendered=None
     return options,groups,status,list(dict.fromkeys(issues))
 
 
-def detail(doc,product,brand):
-    p=deepcopy(product);base,_=SITES[p['source']];sid=p['source_id'];schema=None;group=None
+def detail(doc,product,brand,source_base=None):
+    p=deepcopy(product);base=source_base or SITES[p['source']][0];sid=p['source_id'];schema=None;group=None
     for script in doc.select('script[type="application/ld+json"]'):
         try:obj=json.loads(script.get_text(),strict=False)
         except ValueError:continue
@@ -274,7 +274,7 @@ def detail(doc,product,brand):
     values=js_values(doc)
     displayed_price=' '.join(node.get_text(' ',strip=True) for node in doc.select('.xans-product-detaildesign tr') if '판매가' in node.get_text())
     quote=(values.get('product_price_content')=='1' and str(values.get('product_price'))=='0' and
-           re.search(r'문의|상담',displayed_price if variant_offers else str(offer.get('price',''))) is not None)
+           re.search(r'문의|상담|예약\s*구매|가격\s*미공개',displayed_price if variant_offers else str(offer.get('price',''))) is not None)
     price=None if quote else won_value(values.get('product_price')) if variant_offers else won_value(offer.get('price'))
     script_price=values.get('product_price')
     if not quote and script_price is not None and price!=won_value(script_price):raise ValueError('Schema and displayed price differ')
@@ -339,8 +339,8 @@ def detail(doc,product,brand):
 
 
 class Source:
-    def __init__(self,source,work,interval=5):
-        self.source=source;self.work=work;self.base=SITES[source][0];self.next=0;self.interval=interval
+    def __init__(self,source,work,interval=5,base=None):
+        self.source=source;self.work=work;self.base=base or SITES[source][0];self.next=0;self.interval=interval
         self.session=requests.Session();self.session.headers['User-Agent']='NADAUNShopCatalog/1.0 (+https://shop.nadaun.co)'
         if source=='ldnet':self.session.headers['Connection']='close'
 
