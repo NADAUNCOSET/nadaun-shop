@@ -16,7 +16,7 @@ def fixture(source='digitalcp'):
     return {'source':source,'collected_at':datetime.now(timezone.utc).isoformat(),'complete':True,
         'product_count':1,'products':{pid:p},'categories':[{'id':'root','name':'제품','parent_id':None}],
         'coverage':[{'id':'root','expected':2 if source=='digitalcp' else 1,'unique':2 if source=='digitalcp' else 1}],
-        'source_inventory_count':2,'excluded_counts':{'DJI':1},'owner_brand_roots':{'29':'TAMRON','30':'Voigtlander'}}
+        'source_inventory_count':2,'excluded_counts':{'DJI':1},'owner_brand_roots':__import__('sync_sunphoto_catalog').ROOTS}
 
 class ReviewedWorkerTests(unittest.TestCase):
     def test_normalization_preserves_original_category_coverage_and_checks_complete_partition(self):

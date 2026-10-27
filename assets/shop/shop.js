@@ -1,7 +1,7 @@
 import './i18n.js?v=20261018';
 import './rental-content.js';
 import './product-search.js';
-import {isDiscounted,isPromotion,activePromotions,isConsignmentUsed,matchesBenefit,benefitNavigation,categoryTrail,categoryControls,catalogSelection,productTypeNavigation,brandSelectionHref,catalogDefaultOrder} from './catalog-tools.js';
+import {isDiscounted,isPromotion,activePromotions,isConsignmentUsed,matchesBenefit,benefitNavigation,categoryTrail,categoryControls,catalogSelection,productTypeNavigation,productTypeBrandGroups,productTypeBrandNavigation,brandSelectionHref,catalogDefaultOrder} from './catalog-tools.js';
 import {mountPurchase,renderCart,rentalGuide} from './cart.js';
 import {mountBanners} from './banners.js';
 import {browseDirectoryHtml} from './browse.js';
@@ -100,6 +100,8 @@ function renderCatalog(){
  const children=selectedCat?applicable.filter(c=>c.parent_id===cat&&relevant(c)):[];
  const heading=params.get('collection')==='used'?((brand?brand.name+' ':'')+'위탁중고'):discountOnly?((brand?brand.name+' ':'')+(benefit==='promotion'?'프로모션':benefit==='discount'?'할인상품':'할인상품 · 프로모션')):brand?brand.name+(kind==='rental'?' 렌탈':''):query?`“${query}” 검색 결과`:kind==='rental'?'장비 렌탈':'전체 상품';
  const availableBrands=data.brands.filter(b=>kind==='rental'?b.rental_count>0:kind==='purchase'?b.purchase_count>0:true);
+ const typeBrandGroups=productTypeBrandGroups(data,{kind,type,sale:discountOnly,benefit,collection:params.get('collection')||''});
+ const typeBrandHref=(brandId,typeId)=>{const q=new URLSearchParams(params);q.set('type',typeId);return brandSelectionHref(brandId,q.toString(),kind)};
  main.innerHTML=`<div class="breadcrumb"><a href="/">홈</a><span>›</span><a href="/brands.html" target="_blank" rel="noopener">브랜드</a>${brand?`<span>›</span><a href="${esc(catalogHref({cat:null,type:null,sale:null}))}">${esc(brand.name)}</a>`:''}${trail.map((c,i)=>`<span aria-hidden="true">›</span>${i===trail.length-1?`<span aria-current="page">${esc(c.name)}</span>`:`<a href="${esc(catalogHref({cat:c.id}))}">${esc(c.name)}</a>`}`).join('')}</div>
  <div class="catalog-heading">${brand?.logo?`<img class="${brand.logo_dark?'brand-logo-dark':''}" src="${safe(brand.logo)}" alt="${esc(brand.name)}" referrerpolicy="no-referrer">`:''}<div><h1>${esc(heading)}</h1><p>제품 종류와 브랜드를 선택해 필요한 ${kind==='rental'?'대여 장비를':'상품을'} 찾아보세요.</p></div></div>
  ${!bid&&!type&&!cat&&!query&&!discountOnly&&params.get('collection')!=='used'?browseDirectoryHtml(data,kind):''}
@@ -108,9 +110,10 @@ function renderCatalog(){
  ${kind!=='rental'?`<a class="sidebar-sale ${discountOnly?'active':''}" href="${esc(catalogHref({sale:'1',benefit:null,cat:null,type:null,kind:'purchase',q:null}))}" ${discountOnly?'aria-current="page"':''}><span>할인상품 · 프로모션</span><small>SALE</small></a>`:''}
  ${kind!=='rental'?'<a class="sidebar-sale" href="/promotions.html">프로모션</a><a class="sidebar-sale" href="/used.html">위탁중고</a>':''}
  <div class="mobile-categories" style="display:none" ${applicable.length?'':'hidden'}><label class="sr" for="category-select">브랜드 세부 카테고리</label><select id="category-select"><option value="">브랜드 전체 카테고리</option>${rootOptions}</select></div>
- ${bid?`<div class="sidebar-list"><h2>${esc(brand.name)} 카테고리</h2><a href="${esc(catalogHref({cat:null}))}" class="${!cat?'active':''}">브랜드 전체 <small>${selection.base.filter(p=>!type||p.type_ids.includes(type)).length}</small></a>${roots.map(c=>nested(c)).join('')}</div>`:'<p class="brand-filter-help">브랜드를 선택하면 해당 브랜드의 세부 카테고리가 표시됩니다.</p>'}
+ ${bid?`<div class="sidebar-list"><h2>${esc(brand.name)} 카테고리</h2><a href="${esc(catalogHref({cat:null}))}" class="${!cat?'active':''}">브랜드 전체 <small>${selection.typeFilteredCount}</small></a>${roots.map(c=>nested(c)).join('')}</div>`:'<p class="brand-filter-help">브랜드를 선택하면 해당 브랜드의 세부 카테고리가 표시됩니다.</p>'}
  </aside><section class="catalog-results" aria-label="상품 목록">
  ${productTypeNavigation(selection.typeCategories,selection.typeCounts,type,id=>catalogHref({type:id}),{hideEmpty:Boolean(bid)})}
+ ${productTypeBrandNavigation(typeBrandGroups,selection.typeCategories.find(c=>c.id===type),bid,typeBrandHref)}
  <div class="catalog-controls"><span>${selectedCat?esc(selectedCat.name)+' · ':''}총 <b>${filtered.length.toLocaleString('ko-KR')}</b>개</span><div class="filters-right"><label><input id="available-only" type="checkbox" ${params.has('available')?'checked':''}>품절 상품 제외</label><label class="sr" for="sort-select">상품 정렬</label><select id="sort-select"><option value="default">기본순</option><option value="low" ${sort==='low'?'selected':''}>낮은 가격순</option><option value="high" ${sort==='high'?'selected':''}>높은 가격순</option><option value="name" ${sort==='name'?'selected':''}>상품명순</option></select></div></div>
  ${discountOnly?benefitNavigation(benefit,key=>catalogHref({sale:'1',benefit:key==='all'?null:key,cat:null,type:null})):''}
  ${discountOnly&&benefit!=='discount'?promotionSummary(filtered):''}

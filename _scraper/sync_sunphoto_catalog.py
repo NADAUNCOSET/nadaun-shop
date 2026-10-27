@@ -1,4 +1,4 @@
-"""Owner-scoped TAMRON and Voigtlander source catalogue from Sunphoto."""
+"""Owner-approved20 brand roots from observed Sunphoto public navigation."""
 from pathlib import Path
 from datetime import datetime,timezone
 from urllib.parse import urljoin,urlsplit,parse_qs
@@ -6,7 +6,7 @@ import gzip,hashlib,json,math,re
 from bs4 import BeautifulSoup
 import sync_cafe24_partners as cafe
 
-BASE='https://sunphoto.kr';ROOTS={'29':'TAMRON','30':'Voigtlander'}
+BASE='https://sunphoto.kr';ROOTS={'29': 'TAMRON', '30': 'Voigtlander', '28': 'BOYA', '25': 'Kenko', '24': 'Kenko Telescopes', '156': 'COLBOR', '84': 'SLIK', '85': 'HEIPI', '86': 'WEIFENG', '26': 'DOMKE', '27': 'COTTON', '81': 'JOBY', '82': 'Kodak & Polaroid', '83': 'Sunwayfoto', '87': 'CELESTRON', '625': 'SKYWATCHER', '88': 'MEADE', '89': 'NATIONAL GEOGRAPHIC', '256': 'NASA', '578': 'DWARF LAB'}
 def stamp():return datetime.now(timezone.utc).isoformat()
 def clean(s):return re.sub(r'\s+',' ',str(s or '')).strip()
 def save(p,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,ensure_ascii=False,separators=(',',':'))+'\n')

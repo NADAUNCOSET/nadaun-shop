@@ -260,7 +260,7 @@
       "groups": 2974,
       "removed": 3590
     },
-    "revision": "863da9f3a5f69e63",
+    "revision": "aadbc21bec0c4147",
     "view": "rental"
   },
   "brands": [
@@ -20942,7 +20942,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": null,
-      "navigation_position": 1
+      "navigation_position": 3
     },
     {
       "id": "type:cinema-camera",
@@ -20951,7 +20951,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": null,
-      "navigation_position": 3
+      "navigation_position": 5
     },
     {
       "id": "type:camcorder",
@@ -20960,7 +20960,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": null,
-      "navigation_position": 4
+      "navigation_position": 6
     },
     {
       "id": "type:compact-camera",
@@ -20969,7 +20969,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": null,
-      "navigation_position": 5
+      "navigation_position": 7
     },
     {
       "id": "type:medium-camera",
@@ -20978,7 +20978,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": null,
-      "navigation_position": 6
+      "navigation_position": 8
     },
     {
       "id": "type:kpp:03",
@@ -21239,7 +21239,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": null,
-      "navigation_position": 0
+      "navigation_position": 2
     },
     {
       "id": "type:studio-mic",
@@ -21248,7 +21248,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": null,
-      "navigation_position": 2
+      "navigation_position": 4
     },
     {
       "id": "type:intercom",
@@ -21419,7 +21419,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": null,
-      "navigation_position": 11
+      "navigation_position": 15
     },
     {
       "id": "type:storage",
@@ -21428,7 +21428,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": null,
-      "navigation_position": 16
+      "navigation_position": 20
     },
     {
       "id": "type:sd-card",
@@ -21455,7 +21455,7 @@
       "brand_id": null,
       "scope": "product",
       "source_id": null,
-      "navigation_position": 17
+      "navigation_position": 21
     },
     {
       "id": "type:studio",

@@ -10,6 +10,23 @@ from collections import Counter
 
 # New leaves supplement the KPP groups; their names describe product types.
 EXTRA = [
+ ('lens-hood','kpp:0340','렌즈 후드'),('lens-cap','kpp:0340','렌즈 앞·뒤 캡'),
+ ('lens-support','kpp:0340','렌즈 지지대·삼각대 링'),
+ ('mirrorless-lens','kpp:03','미러리스 렌즈'),('dslr-lens','kpp:03','DSLR 렌즈'),
+ ('lens-mounts','kpp:03','렌즈 마운트별 보기'),
+ ('lens-sony-e','lens-mounts','소니 E 마운트'),('lens-nikon-z','lens-mounts','니콘 Z 마운트'),
+ ('lens-fuji-x','lens-mounts','후지필름 X 마운트'),('lens-canon-rf','lens-mounts','캐논 RF 마운트'),
+ ('lens-nikon-f','lens-mounts','니콘 F 마운트'),('lens-leica-m','lens-mounts','라이카 M·VM 마운트'),
+ ('battery-grip','kpp:09','배터리 그립·세로그립'),('shoe-parts','kpp:09','핫슈 커버·슈 액세서리'),
+ ('rangefinder','kpp:00','거리측정기'),('microscope','kpp:00','현미경'),
+ ('binoculars','kpp:00','쌍안경·단망경'),('scope','kpp:00','스코프'),
+ ('telescope','kpp:00','천체망원경'),('refractor','telescope','굴절망원경'),('reflector-telescope','telescope','반사망원경'),
+ ('astro-mount','kpp:00','천체망원경 가대'),('equatorial-mount','astro-mount','적도의'),('altazimuth-mount','astro-mount','경위대'),
+ ('shotgun-mic','kpp:0730','샷건 마이크'),('lavalier-mic','kpp:0730','라발리에 마이크'),
+ ('camera-carry','kpp:09','카메라 휴대 시스템'),
+ ('camera-protection','kpp:09','카메라 커버·레인커버'),
+ ('ptz-camera','studio-camera','PTZ·원격 촬영 카메라'),('webcam','studio-camera','웹캠·화상 카메라'),
+ ('film-camera','camera','필름 카메라'),('instant-camera','camera','즉석 카메라'),
  ('rig-cart-parts','rig-carts','촬영 카트 부품·액세서리'),
  ('studio-camera','camera','스튜디오·라이브 카메라'),('camera-expansion','kpp:09','카메라 확장·연결 장치'),
  ('video-capture','kpp:h0','영상 캡처·재생'),('video-streaming','kpp:h0','스트리밍·인코더'),
@@ -119,7 +136,8 @@ def camera_accessory_type(name,brand):
       ('kpp:0650',r'카메라\s*손잡이'),
       ('rig-rods',r'\d+\s*mm.{0,15}로드'),
       ('camera-cooling',r'카메라\s*쿨러|camera\s*cool'),
-      ('remote',r'(?:카메라|LANC).*(?:컨트롤러|원격제어)|remote\s*controller'),
+      ('remote',r'(?:카메라|LANC).*(?:컨트롤러|원격제어)|remote\s*controller|리모트\s*송신기'),
+      ('video-control',r'원격\s*카메라\s*제어장치'),
       ('camera-rig',r'카메라\s*받침|camera\s*rig|카메라\s*회전\s*리그'),
       ('rig-carts',r'릭샤|rickshaw|인력거'),
       ('camera-rig',r'카메라.*리모트\s*헤드'),
@@ -154,6 +172,75 @@ def camera_accessory_type(name,brand):
     # URSA sound accessories are not Blackmagic URSA cinema cameras.
     if brand=='ursa' and re.search(r'Sticky|Tape|Soft|Shorties|Plush|Fur',name,re.I):return 'kpp:0740'
     return None
+
+
+def reviewed_supplier_types(product,categories):
+    """Use observed supplier membership, keeping camera and lens contexts apart."""
+    source_ids=set(product.get('category_ids',[]))
+    cp={cid.rsplit(':',1)[-1] for cid in source_ids if cid.startswith('digitalcp:b:')}
+    sp={cid.rsplit(':',1)[-1] for cid in source_ids if cid.startswith('sunphoto:b:')}
+    # Promotional gifts after the source's slash are not the principal device.
+    name=re.sub(r'^\s*(?:\[[^\]]+\]\s*)+','',product['name']).split(' / ')[0]
+    if cp:
+        precise={'023008':'mirrorless','023009':'compact-camera','013007':'kpp:0330',
+            '021001':'binoculars','021002':'scope','021003':'microscope','021004':'rangefinder',
+            '019003':'battery-grip','019005':'remote','019007':'optical-viewfinder','019008':'shoe-parts',
+            '019009':'cable-parts','019011':'screen-protection','019014':'editing-software',
+            '019028':'dry-cabinet','019001':'camera-expansion','047001':'kpp:0920',
+            '047002':'kpp:0530','043001':'kpp:0110','043003':'kpp:0110','043004':'kpp:0130',
+            '048003':'sd-card','045001':'kpp:0730'}
+        matched=list(dict.fromkeys(value for key,value in precise.items() if key in cp))
+        if matched:return matched
+        if '023' in cp:
+            # Source camera membership is mandatory; a compatible Z camera
+            # mentioned on an accessory never creates a body classification.
+            if re.match(r'(?:NIKON\s*)?Z\s*(?:fc?|[5-9]|30|50)',name,re.I):return ['mirrorless']
+            if re.match(r'(?:NIKON\s*)?D\s*\d',name,re.I):return ['dslr']
+            if re.search(r'COOLPIX',name,re.I):return ['compact-camera']
+            return ['camera']
+        if '013' in cp:return ['mirrorless-lens' if '013005' in cp else 'kpp:03']
+        if '021' in cp:
+            if re.search(r'COOLSHOT|PROSTAFF\s*1000|거리측정',name,re.I):return ['rangefinder']
+            if re.search(r'쌍안경|MONARCH|PROSTAFF\s*[357P]|SPORTSTAR|ACTION|ACULON|\bWX\s*\d',name,re.I):return ['binoculars']
+            return ['kpp:00']
+        if re.search(r'\b(?:lens\s+hood|hood\s+for)\b|렌즈\s*후드',name,re.I):return ['lens-hood']
+        if re.search(r'\b(?:lens|body|rear|front)\s+cap\b|렌즈\s*캡|바디\s*캡',name,re.I):return ['lens-cap']
+        if '019004' in cp:return ['chargers' if re.search(r'충전|charg',name,re.I) else 'camera-battery']
+    if sp:
+        if sp & {'160','163'}:return ['lens-hood']
+        if sp & {'159','162'}:return ['lens-cap']
+        if '161' in sp:return ['lens-support']
+        if '164' in sp:return ['kpp:0330']
+        if sp & {'29','30'} and not sp & {'49','56'}:
+            types=['mirrorless-lens' if '165' in sp else 'dslr-lens' if '166' in sp else 'kpp:03']
+            for ids,target in [({'43','51'},'lens-sony-e'),({'44','52'},'lens-nikon-z'),
+                ({'45','53'},'lens-fuji-x'),({'46','54'},'lens-canon-rf'),({'48','57'},'lens-nikon-f'),({'50'},'lens-leica-m')]:
+                if sp & ids:types.append(target)
+            labels={categories[cid]['name'] for cid in source_ids if cid.startswith('sunphoto:b:') and cid in categories}
+            for label,target in [('광각 줌 렌즈','wide-lens'),('표준 줌 렌즈','standard-lens'),('망원 줌 렌즈','tele-lens')]:
+                if label in labels:types.append(target)
+            return types
+        labels={categories[cid]['name'].strip() for cid in source_ids if cid.startswith('sunphoto:b:') and cid in categories}
+        observed={
+            '굴절망원경':'refractor','굴절망원경세트':'refractor','촬영용굴절':'refractor',
+            '반사망원경':'reflector-telescope','반사망원경세트':'reflector-telescope','촬영용반사':'reflector-telescope',
+            '천체망원경':'telescope','디지털 천체 망원경':'telescope','OPTICAL TUBE':'telescope',
+            '쌍안경':'binoculars','BINOCULAR':'binoculars','스포팅스코프':'scope','현미경':'microscope',
+            '적도의':'equatorial-mount','경위대':'altazimuth-mount',
+            '샷건 마이크':'shotgun-mic','라발리에 마이크':'lavalier-mic','핸드헬드 마이크':'wired-mic',
+            'USB / 스튜디오용 마이크':'studio-mic','3.5mm TRS용 무선 마이크':'wireless-mic',
+            '스마트폰용 무선 마이크':'wireless-mic','스마트폰/3.5mm TRS 겸용 무선 마이크':'wireless-mic',
+            '이어폰/헤드폰':'kpp:0750','LED 조명':'continuous','LED  라이트':'continuous',
+            '삼각대':'kpp:0110','일반 삼각대':'kpp:0110','삼각대 (Leg only)':'kpp:0110',
+            '삼각대 + 헤드':'kpp:0110','미니 삼각대(고릴라포드)':'mini-tripod','모노포드':'monopod','헤드':'kpp:0120',
+            '가방':'equipment-bag','플레이트':'kpp:0140','매직암':'rig-arms','멀티마운트':'rig-mounts',
+            '카메라 휴대 시스템':'camera-carry','Kodak 카메라':'camera','Polaroid 프린터':'print',
+            '텔레컨버터/접사 튜브':'kpp:0330','용도별 - UV/Protector':'uv','용도별 - C-PL':'cpl',
+            '용도별 - ND':'kpp:0220','ND4/8':'fixed-nd','PL/C-PL/PL-Fader':'kpp:0210',
+            'BLACK / WHITE MIST':'mist','필터 액세서리':'filter-parts'}
+        matches=list(dict.fromkeys(value for key,value in observed.items() if key in labels))
+        if matches:return matches
+    return []
 
 
 def reviewed_device_type(name, brand, selected):
@@ -191,6 +278,9 @@ def reviewed_device_type(name, brand, selected):
 
 def reviewed_accessory_type(name, brand):
     """Use confirmed accessory brands before compatible camera/keyboard names."""
+    if re.search(r'카메라\s*보호\s*랩$',name,re.I):return 'kpp:0550'
+    if re.search(r'카메라\s*방수포\)?$',name,re.I):return 'camera-protection'
+    if re.fullmatch(r'(?:고급\s*)?카메라\s*더스트\s*브로워',name):return 'air-blower'
     if brand=='healing-shield' and re.search(r'보호\s*필름|screen\s*protect',name,re.I):
         return 'screen-protection'
     if brand!='vsgo':return None
@@ -324,6 +414,9 @@ def build_taxonomy(products,categories,overrides=None,ldnet_categories=None,saek
             from catalog_navigation import reviewed_product_type
             reviewed=reviewed_product_type(p)
             if reviewed:selected=['type:'+reviewed];reason='reviewed-supplemental-product-purpose'
+            if not selected:
+                supplier_types=reviewed_supplier_types(p,categories)
+                if supplier_types:selected=['type:'+key for key in supplier_types];reason='reviewed-supplier-native-category'
         # A verified merged offer still carries its source category evidence.
         # The public primary ID can be Smartstore/Cinemall rather than Saeki.
         saeki_matches=[saeki_products[o['id']] for o in p.get('offers',[])
@@ -363,7 +456,8 @@ def build_taxonomy(products,categories,overrides=None,ldnet_categories=None,saek
                 elif bid in GRIP_BRANDS:selected=['type:light-grip'];reason='brand-family'
                 else:selected=['type:ldnet-other' if ldnet_only else 'type:other'];reason='general-review'
         if p['kind']=='purchase' and any('type:camera' in path(cid) for cid in selected):
-            accessory=camera_accessory_type(name,bid)
+            principal=name.split(' / ')[0] if reason=='reviewed-supplier-native-category' else name
+            accessory=camera_accessory_type(principal,bid)
             if accessory:selected=['type:'+accessory];reason='camera-accessory:'+accessory
         if p['kind']=='purchase' and (device:=reviewed_device_type(name,bid,selected)):
             selected=['type:'+device];reason='reviewed-device-purpose:'+device
@@ -381,6 +475,23 @@ def build_taxonomy(products,categories,overrides=None,ldnet_categories=None,saek
                 selected=['type:'+target];reason='dji-official-robot'
             elif re.match(r'^Osmo Nano \(',name,re.I):
                 selected=['type:kpp:c020'];reason='dji-official-action-camera'
+            elif re.match(r'^DJI O4 Air Unit(?: Pro)? 카메라 모듈$',name,re.I):
+                selected=['type:drone-parts'];reason='dji-official-replacement-camera-module'
+        if p['kind']=='purchase' and selected==['type:camera']:
+            principal=name.split(' / ')[0]
+            labels={re.sub(r'\s+','',categories[c]['name']).casefold() for c in p['category_ids'] if c in categories}
+            subtype=None
+            if re.search(r'\bPTZ\b',principal,re.I):subtype='ptz-camera'
+            elif re.search(r'웹캠|\bwebcam\b',principal,re.I):subtype='webcam'
+            elif re.search(r'시네마\s*라인|시네\s*카메라|시네마\s*카메라',principal,re.I):subtype='cinema-camera'
+            elif re.search(r'캠코더|\bcamcorder\b',principal,re.I):subtype='camcorder'
+            elif re.search(r'즉석|인스턴트|instant',principal,re.I):subtype='instant-camera'
+            elif re.search(r'필름\s*카메라|reusable\s*camera',principal,re.I):subtype='film-camera'
+            elif labels & {'미러리스','미러리스카메라','mirrorless'}:subtype='mirrorless'
+            elif labels & {'dslr','dslr카메라'}:subtype='dslr'
+            else:
+                subtype=next((NAVER[c.split(':')[-1]] for c in p['type_ids'] if c.startswith('naver:p:') and NAVER.get(c.split(':')[-1]) in ('mirrorless','dslr','compact-camera','camcorder')),None)
+            if subtype:selected=['type:'+subtype];reason='camera-source-subtype:'+subtype
         # Subdivide known groups only. Accessory model names do not create bodies.
         ancestors=set(x for c in selected for x in path(c))
         refinements=[

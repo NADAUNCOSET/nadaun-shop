@@ -19,8 +19,9 @@ def normalize(snapshot):
         raise ValueError('Scoped supplier category coverage differs')
     if source=='digitalcp' and snapshot.get('source_inventory_count')!=len(snapshot['products'])+sum(snapshot.get('excluded_counts',{}).values()):
         raise ValueError('DigitalCP owner scope partition differs')
-    if source=='sunphoto' and snapshot.get('owner_brand_roots')!={'29':'TAMRON','30':'Voigtlander'}:
-        raise ValueError('Sunphoto owner scope changed')
+    if source=='sunphoto':
+        from sync_sunphoto_catalog import ROOTS
+        if snapshot.get('owner_brand_roots')!=ROOTS:raise ValueError('Sunphoto owner scope changed')
     result.update(schema_version=1,source_category_coverage=coverage,
         coverage={'count':len(snapshot['products']),'ids_sha256':ids_digest(snapshot['products'])})
     return validate_snapshot(result)

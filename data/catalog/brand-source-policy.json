@@ -319,7 +319,29 @@
       "confirmed_at": "2026-10-27",
       "scope": "all_brands",
       "mode": "supplement_existing",
-      "owner_scope": "TAMRON·Voigtlander만"
+      "owner_scope": "대표 스크린샷20개 브랜드 루트 전체, 원본 제품군·세부 종류·마운트 유지",
+      "owner_brand_roots": {
+        "29": "TAMRON",
+        "30": "Voigtlander",
+        "28": "BOYA",
+        "25": "Kenko",
+        "24": "Kenko Telescopes",
+        "156": "COLBOR",
+        "84": "SLIK",
+        "85": "HEIPI",
+        "86": "WEIFENG",
+        "26": "DOMKE",
+        "27": "COTTON",
+        "81": "JOBY",
+        "82": "Kodak & Polaroid",
+        "83": "Sunwayfoto",
+        "87": "CELESTRON",
+        "625": "SKYWATCHER",
+        "88": "MEADE",
+        "89": "NATIONAL GEOGRAPHIC",
+        "256": "NASA",
+        "578": "DWARF LAB"
+      }
     }
   },
   "business_model": {

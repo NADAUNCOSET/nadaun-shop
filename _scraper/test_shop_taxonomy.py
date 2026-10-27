@@ -24,6 +24,29 @@ class ShopTaxonomy(unittest.TestCase):
             self.assertEqual({k:v for k,v in a.items() if k not in ('type_ids','category_ids')},{k:v for k,v in b.items() if k not in ('type_ids','category_ids')})
         return rows,{**cats,**{c['id']:c for c in rentals}}
 
+    def test_observed_supplier_paths_keep_body_lens_mount_and_accessory_context(self):
+        cases=[
+            ('NIKKOR Z 35mm f/1.2 S','nikon',['digitalcp:b:nikon:013','digitalcp:b:nikon:013005'],['mirrorless-lens']),
+            ('Z8 Body / LCD 보호필름 증정','nikon',['digitalcp:b:nikon:023'],['mirrorless']),
+            ('D850 body','nikon',['digitalcp:b:nikon:023'],['dslr']),
+            ('MONARCH M5 10x50','nikon',['digitalcp:b:nikon:021'],['binoculars']),
+            ('COOLSHOT PRO III STABILIZED','nikon',['digitalcp:b:nikon:021','digitalcp:b:nikon:021004'],['rangefinder']),
+            ('HB-117 Lens Hood','nikon',['digitalcp:b:nikon:019'],['lens-hood']),
+            ('탐론 HA064 - Hood for16-30 VXD A064','tamron',['sunphoto:b:29','sunphoto:b:49','sunphoto:b:160'],['lens-hood']),
+            ('28-75mm F/2.8','tamron',['sunphoto:b:29','sunphoto:b:165','sunphoto:b:44'],['mirrorless-lens','lens-nikon-z']),
+        ]
+        for name,brand,categories,targets in cases:
+            with self.subTest(name=name):
+                rows=[dict(id='case',name=name,brand_id=brand,kind='purchase',type_ids=[],category_ids=categories)]
+                before=deepcopy(rows);build_taxonomy(rows,self.source_categories)
+                for target in targets:self.assertIn('type:'+target,rows[0]['type_ids'])
+                if targets[0] not in ('mirrorless','dslr'):self.assertNotIn('type:camera',rows[0]['type_ids'])
+                self.assertEqual(rows[0]['category_ids'],before[0]['category_ids'])
+        # Identical compatible model names without the source body membership stay accessories.
+        from product_taxonomy import reviewed_supplier_types
+        self.assertEqual(reviewed_supplier_types({'name':'Z8 Body cap','category_ids':['digitalcp:b:nikon:019']},{}),['lens-cap'])
+        self.assertEqual(reviewed_supplier_types({'name':'Z8 BODY','category_ids':[]},{}),[])
+
     def test_compatible_devices_do_not_turn_accessories_into_bodies(self):
         cases=[
             ('blackmagic','HyperDeck Extreme Rack Kit','video-rack'),
@@ -43,6 +66,8 @@ class ShopTaxonomy(unittest.TestCase):
             ('libec','Libec ZFC-L 카메라 컨트롤러 LANC 원격제어','remote'),
             ('canon','캐논 RC-IP100 PTZ 카메라 컨트롤러','video-control'),
             ('aten','ATEN UC3310 CAMLIVE MX UVC 카메라 매트릭스','switcher'),
+            ('panasonic','파나소닉 AW-RP60 소형 원격 카메라 제어장치','video-control'),
+            ('nikon','WR-T10 (카메라 무선 리모트 송신기)','remote'),
         ]
         for brand,name,target in cases:
             with self.subTest(name=name):
@@ -64,6 +89,9 @@ class ShopTaxonomy(unittest.TestCase):
 
     def test_reviewed_cleaning_and_protective_products_never_become_bodies(self):
         cases=[('vsgo','비스고 V-S03E 풀프레임 카메라센서 세척봉','cleaning'),
+               ('ulanzi','울란지 CM009(45cm) 카메라 보호 랩','kpp:0550'),
+               ('peak-design','픽디자인 쉘 (카메라 방수포)','camera-protection'),
+               ('test-brand','고급 카메라 더스트 브로워','air-blower'),
                ('vsgo','VSGO Optical Lens Cleaner V-C01E','cleaning'),
                ('vsgo','비스고 VS-S02E APS-C 크롭바디용 카메라센서 키트','cleaning'),
                ('vsgo','VSGO Air-Move Blower V-B02E','air-blower'),
