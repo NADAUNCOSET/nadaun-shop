@@ -55,6 +55,8 @@ CODE += ['_scraper/hipixel-supplemental-navigation.json','server/promotions.cjs'
 CODE += ['_scraper/reviewed_source_worker.py','_scraper/install_reviewed_workers.py','_scraper/test_reviewed_source_worker.py','_scraper/sync_digitalcp_catalog.py','_scraper/sync_sunphoto_catalog.py','_scraper/test_new_supplier_catalog.py','_scraper/test_promotion_catalog.py','_scraper/fixtures/new-suppliers']
 CODE += ['_scraper/sync_saeki_catalog.py','_scraper/saeki_detail_parser.py','_scraper/saeki_publication.py','_scraper/saeki_categories.py','_scraper/saeki_worker.py','_scraper/test_saeki_catalog.py','_scraper/fixtures/saeki']
 
+CODE += ['server/catalog-pages.cjs','_scraper/test_sitemap_navigation.py']
+
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
     # Full catalogue tests read thousands of verified NAS files. A cold SMB

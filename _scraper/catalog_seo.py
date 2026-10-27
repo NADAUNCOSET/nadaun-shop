@@ -7,6 +7,9 @@ import json
 import re
 import xml.etree.ElementTree as ET
 import html
+from html.parser import HTMLParser
+from pathlib import Path
+from urllib.parse import urljoin
 
 SITE = 'https://shop.nadaun.co/'
 PAGE_METADATA = {
@@ -18,15 +21,15 @@ PAGE_METADATA = {
                               '카메라, 렌즈, 촬영조명, 삼각대와 액세서리를 제품 종류별로 확인하세요. 구매 상품과 장비 렌탈을 구분해 안내합니다.'),
     'brands.html': ('촬영장비 브랜드 찾기 | 나다운 스페이스',
                     'DJI·SmallRig·Leofoto 등 촬영장비 브랜드별 상품과 옵션을 확인하세요. 나다운 스페이스에서 구매·렌탈 상담을 안내합니다.'),
-    'rental-guide.html': ('영등포 렌탈샵 · 카메라·렌즈·조명 대여 | 나다운 스페이스',
+    'rental-guide.html': ('영등포 카메라 대여·렌즈·조명 렌탈 | 나다운 스페이스',
                          '서울 영등포 나다운 스페이스의 촬영장비 렌탈. 카메라·렌즈·조명·모니터의 대여 구성, 최대 2주 이용과 픽업·반납을 안내합니다.'),
-    'studio.html': ('영등포 자연광·호리존 스튜디오 대여 | 나다운 스튜디오',
+    'studio.html': ('영등포 촬영 스튜디오 대여 · 자연광·호리존 | 나다운 스튜디오',
                     '서울 영등포 나다운 스튜디오. 자연광·호리존·전동 배경지와 룩북·제품 촬영 공간, 시설 및 예약 방법을 안내합니다.'),
     'about.html': ('나다운 스페이스 소개 | 영등포 촬영장비·스튜디오',
                    '레인보우베네가 운영하는 나다운 스페이스. 영등포 촬영장비 구매·렌탈, 스튜디오 대여와 기프트·굿즈를 안내합니다.'),
     'services.html': ('구매·장비 렌탈 이용안내 | 나다운 스페이스',
                       '나다운 스페이스의 촬영장비 구매·렌탈 방법과 영등포 픽업·반납, 기프트 견적, 장비 협찬·사진영상 제작 문의를 안내합니다.'),
-    'gifts.html': ('기업 선물·판촉물·브랜드 굿즈 | 나다운 기프트',
+    'gifts.html': ('기념품·판촉물·기업 선물·브랜드 굿즈 | 나다운 기프트',
                    '나다운 기프트의 기업 선물, 판촉물과 브랜드 굿즈. 수량·인쇄·포장 조건을 비교하고 재고·제작 일정과 최종 견적을 상담하세요.'),
 }
 
@@ -142,3 +145,53 @@ def root_sitemap(gift_index):
             '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+
             ''.join('<sitemap><loc>'+html.escape(url)+'</loc></sitemap>' for url in maps)+
             '</sitemapindex>\n')
+
+
+def static_page_urls(root):
+    """Discover canonical public menu/guide pages, including future additions."""
+    class Head(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.canonical = None
+            self.noindex = False
+        def handle_starttag(self, tag, attrs):
+            values = dict(attrs)
+            if tag == 'meta' and values.get('name', '').lower() == 'robots':
+                self.noindex |= 'noindex' in values.get('content', '').lower()
+            if tag == 'link' and 'canonical' in values.get('rel', '').split():
+                self.canonical = values.get('href')
+    # Request-specific endpoints and the legacy 308 alias are not static pages.
+    excluded = {'item.html', 'gift-item.html', 'search.html', 'rental.html'}
+    urls = []
+    for page in sorted(Path(root).glob('*.html')):
+        if page.name in excluded:
+            continue
+        head = Head()
+        head.feed(page.read_text())
+        canonical = SITE + ('' if page.name == 'index.html' else page.name)
+        if not head.noindex and head.canonical == canonical:
+            urls.append(canonical)
+    return urls
+
+
+def write_sitemaps(root, catalog):
+    """Update discovery files without fetching/rebuilding supplier inventories."""
+    root = Path(root)
+    products = catalog['products']
+    urls = list(dict.fromkeys([
+        *static_page_urls(root),
+        *(SITE+'brands/'+b['id']+'.html' for b in catalog['brands']),
+        *(SITE+'item.html?id='+p['id'] for p in products),
+    ]))
+    images = {SITE+'item.html?id='+p['id']:urljoin(SITE, p['image']) for p in products}
+    entries = ''.join('<url><loc>'+html.escape(url)+'</loc>'+(
+        '<image:image><image:loc>'+html.escape(images[url])+'</image:loc></image:image>'
+        if url in images else '')+'</url>' for url in urls)
+    if len(urls) > 50000:
+        raise ValueError('Equipment sitemap needs sharding before publication')
+    content = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+               'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+entries+'</urlset>\n')
+    (root/'catalog-sitemap.xml').write_text(content)
+    (root/'sitemap.xml').write_text(root_sitemap((root/'gift-sitemap.xml').read_text()))
+    return len(urls)

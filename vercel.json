@@ -207,6 +207,22 @@
       }
     },
     {
+      "src": "^/(catalog|catalog_category)\\.html$",
+      "dest": "/api/search?view=catalog"
+    },
+    {
+      "src": "^/brands/([a-z0-9-]+)\\.html$",
+      "dest": "/api/search?view=catalog&brand=$1"
+    },
+    {
+      "src": "^/(sitemap|catalog-sitemap|gift-sitemap(-[1-9][0-9]*)?)\\.xml$",
+      "headers": {
+        "Content-Type": "application/xml; charset=utf-8",
+        "Cache-Control": "public, max-age=0, must-revalidate"
+      },
+      "continue": true
+    },
+    {
       "src": "^/share-image\\.jpg$",
       "dest": "/api/share-image"
     },
@@ -237,7 +253,7 @@
       "includeFiles": "{gift-item.html,data/gift/**,server/gift-catalog.cjs,server/share-metadata.cjs}"
     },
     "api/search.js": {
-      "includeFiles": "{search.html,promotions.html,data/gift/catalog.json,data/catalog/catalog.json,server/gift-catalog.cjs,server/shop-search.cjs,server/promotions.cjs,assets/shop/rental-content.js}"
+      "includeFiles": "{search.html,promotions.html,data/gift/catalog.json,data/catalog/catalog.json,server/gift-catalog.cjs,server/shop-search.cjs,server/promotions.cjs,assets/shop/rental-content.js,catalog.html,server/catalog-pages.cjs,assets/shop/catalog-tools.js}"
     },
     "api/toss-return.js": {
       "includeFiles": "{data/catalog/catalog.json,data/catalog/details/*.json,data/gift/catalog.json,data/gift/details/*.json,server/commerce/**,assets/shop/gift-pricing.js}",

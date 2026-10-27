@@ -13,7 +13,7 @@ from sync_shop_sources import ROOT,OUT,clean,save_json
 from enrich_shop_sources import CACHE,shard,source_fingerprint
 from catalog_dedup import model_key,deduplicate,name_key,primary_key
 from storefront_pages import content as page_content
-from catalog_seo import product_discovery, page_metadata, page_structured_data, root_sitemap
+from catalog_seo import product_discovery, page_metadata, page_structured_data, root_sitemap, write_sitemaps
 from brand_category_policy import mirror_source_paths
 from sync_cafe24_partners import SITES as CAFE24_SITES
 from owned_assets import resolve_assets
@@ -555,11 +555,7 @@ def build(allow_pending=False):
         page=page.replace('{{STRUCTURED_DATA}}',page_structured_data('brands/'+b['id']+'.html',title,description,canonical,brand=True))
         page=page.replace('{{CONTENT}}',page_content('catalog',brand_list,public_products,b))
         (brand_dir/(b['id']+'.html')).write_text(page)
-    urls=['https://shop.nadaun.co/','https://shop.nadaun.co/catalog.html','https://shop.nadaun.co/catalog_category.html','https://shop.nadaun.co/brands.html']+['https://shop.nadaun.co/brands/'+b['id']+'.html' for b in brand_list]+['https://shop.nadaun.co/'+p for p in ('promotions.html','used.html','studio.html','rental-guide.html','equipment-guide.html','billing-guide.html','about.html','terms.html','privacy.html','shipping.html','services.html','services-guide.html','gifts.html')]+['https://shop.nadaun.co/item.html?id='+p['id'] for p in public_products]
-    images={'https://shop.nadaun.co/item.html?id='+p['id']:urljoin('https://shop.nadaun.co/',p['image']) for p in public_products}
-    entries=''.join('<url><loc>'+html.escape(u)+'</loc>'+('<image:image><image:loc>'+html.escape(images[u])+'</image:loc></image:image>' if u in images else '')+'</url>' for u in urls)
-    (ROOT/'catalog-sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+entries+'</urlset>\n')
-    (ROOT/'sitemap.xml').write_text(root_sitemap((ROOT/'gift-sitemap.xml').read_text()))
+    write_sitemaps(ROOT,output)
     from catalog_release import write_manifest
     write_manifest(ROOT,output,snapshots,source_choices)
     print(json.dumps(meta,ensure_ascii=False,indent=2))
