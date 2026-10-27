@@ -215,12 +215,16 @@
       "dest": "/api/search?view=catalog&brand=$1"
     },
     {
-      "src": "^/(sitemap|catalog-sitemap|gift-sitemap(-[1-9][0-9]*)?)\\.xml$",
+      "src": "^/(sitemap(-index)?|catalog-sitemap|gift-sitemap(-[1-9][0-9]*)?)\\.xml$",
       "headers": {
         "Content-Type": "application/xml; charset=utf-8",
         "Cache-Control": "public, max-age=0, must-revalidate"
       },
       "continue": true
+    },
+    {
+      "src": "^/sitemap-index\\.xml$",
+      "dest": "/sitemap.xml"
     },
     {
       "src": "^/share-image\\.jpg$",

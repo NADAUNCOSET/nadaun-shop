@@ -5,6 +5,8 @@ Disallow: /cart.html
 Disallow: /checkout.html
 Disallow: /api/
 
+Sitemap: https://shop.nadaun.co/sitemap-index.xml
+
 Sitemap: https://shop.nadaun.co/sitemap.xml
 
 Sitemap: https://shop.nadaun.co/catalog-sitemap.xml
