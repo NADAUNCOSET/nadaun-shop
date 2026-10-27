@@ -49,6 +49,21 @@ class SupplierRegressionTests(unittest.TestCase):
             self.assertEqual(len(p['images']['detail']),1);self.assertTrue(p['images']['detail'][0].startswith(inline_product_images.PUBLIC+inline_product_images.PREFIX+'sunphoto/'))
             self.assertEqual(len(list(Path(folder).rglob('*.png'))),1)
 
+    def test_telescope_menu_group_keeps_the_observed_manufacturer(self):
+        raw=(FIXTURES/'sunphoto-2521.html').read_bytes()
+        product={'id':'sunphoto-2521','source':'sunphoto','source_id':'2521','source_url':'https://sunphoto.kr/product/detail.html?product_no=2521','kind':'purchase'}
+        p=sp.reviewed_detail(raw,product,'Kenko Telescopes')
+        self.assertEqual(p['brand'],'Kenko');self.assertEqual(p['source_brand_group'],'Kenko Telescopes')
+        self.assertEqual(p['detail_status'],'verified')
+        with self.assertRaises(ValueError):sp.reviewed_detail(raw,product,'SKYWATCHER')
+
+    def test_reviewed_subbrands_keep_actual_brand_instead_of_the_compatible_menu(self):
+        for sid,group,brand in [('1048','Kodak & Polaroid','ZINK'),('1517','Sunwayfoto','썬포토')]:
+            raw=(FIXTURES/('sunphoto-'+sid+'.html')).read_bytes()
+            p=sp.reviewed_detail(raw,{'id':'sunphoto-'+sid,'source':'sunphoto','source_id':sid,'kind':'purchase'},group)
+            self.assertEqual(p['brand'],brand);self.assertEqual(p['source_brand_groups'],[group]);self.assertEqual(p['detail_status'],'verified')
+            if sid=='1517':self.assertIn('자체브랜드',p['description_notice'])
+
     def test_genuinely_empty_description_keeps_observed_basic_facts_and_notice(self):
         raw=(FIXTURES/'sunphoto-1178.html').read_bytes();product={'id':'sunphoto-1178','source':'sunphoto','source_id':'1178','kind':'purchase','brand':'Voigtlander'}
         p=sp.reviewed_detail(raw,product,'Voigtlander')

@@ -14,11 +14,28 @@ def fixture(source='digitalcp'):
        'price':10000,'sale_price':10000,'detail_status':'verified','evidence_sha256':'a'*64,
        'images':{'main':['https://example.com/product.png']},'brand_category_ids':['root']}
     return {'source':source,'collected_at':datetime.now(timezone.utc).isoformat(),'complete':True,
-        'product_count':1,'products':{pid:p},'categories':[{'id':'root','name':'제품','parent_id':None}],
+        'product_count':1,'products':{pid:p},'categories':[{'id':'root','name':'제품','parent_id':None,'brand':p['brand']}],
         'coverage':[{'id':'root','expected':2 if source=='digitalcp' else 1,'unique':2 if source=='digitalcp' else 1}],
         'source_inventory_count':2,'excluded_counts':{'DJI':1},'owner_brand_roots':__import__('sync_sunphoto_catalog').ROOTS}
 
 class ReviewedWorkerTests(unittest.TestCase):
+    def test_cross_listed_source_groups_do_not_create_the_wrong_manufacturer(self):
+        s=fixture('sunphoto');p=next(iter(s['products'].values()));p['brand']='NASA';p['brand_category_ids']=['national','nasa']
+        s['categories']=[{'id':'national','name':'NATIONAL GEOGRAPHIC','brand':'NATIONAL GEOGRAPHIC','parent_id':None},{'id':'nasa','name':'NASA','brand':'NASA','parent_id':None}]
+        s['coverage']=[{'id':c['id'],'expected':1,'unique':1} for c in s['categories']]
+        out=worker.normalize(s);actual=next(iter(out['products'].values()))
+        self.assertEqual(actual['brand'],'NASA');self.assertEqual(actual['brand_category_ids'],['nasa'])
+        self.assertEqual(actual['original_supplier_category_ids'],['national','nasa']);self.assertEqual(out['original_categories'],s['categories'])
+
+    def test_composite_source_menu_keeps_each_observed_manufacturer_and_original_ids(self):
+        s=fixture('sunphoto');first=next(iter(s['products'].values()));first['brand']='Kodak'
+        second=deepcopy(first);second.update(id='sunphoto-2',source_id='2',brand='Polaroid',source_url='https://sunphoto.kr/product/2')
+        s['products'][second['id']]=second;s['product_count']=2;s['categories'][0]['brand']='Kodak & Polaroid';s['coverage'][0].update(expected=2,unique=2)
+        out=worker.normalize(s);cats={c['id']:c for c in out['categories']}
+        self.assertEqual(len(cats),2)
+        for p in out['products'].values():
+            self.assertEqual(cats[p['brand_category_ids'][0]]['brand'],p['brand']);self.assertEqual(p['original_supplier_category_ids'],['root'])
+
     def test_normalization_preserves_original_category_coverage_and_checks_complete_partition(self):
         s=fixture();before=deepcopy(s);result=worker.normalize(s)
         self.assertEqual(s,before);self.assertEqual(result['source_category_coverage'],s['coverage'])

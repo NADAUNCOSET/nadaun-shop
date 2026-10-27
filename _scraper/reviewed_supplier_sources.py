@@ -42,8 +42,11 @@ def validate_snapshot(s):
                 from sync_digitalcp_catalog import excluded
                 if excluded(p['brand']):raise ValueError('Owner-excluded DigitalCP brand in candidate')
             if source=='sunphoto':
-                from sync_sunphoto_catalog import ROOTS
-                if p['brand'].casefold() not in {b.casefold() for b in ROOTS.values()}:raise ValueError('Sunphoto manufacturer is outside owner scope')
+                from sync_sunphoto_catalog import ROOTS,GROUP_ALLOWED,MANUFACTURER_REVIEWS,manufacturer_key
+                allowed={manufacturer_key(value) for group in ROOTS.values() for value in GROUP_ALLOWED.get(group,(group,))}
+                review=MANUFACTURER_REVIEWS.get(p['source_id'])
+                reviewed=review and (review['brand'],review['expected_name'])==(p['brand'],p['name']) and review['group'] in p.get('source_brand_groups',[])
+                if manufacturer_key(p['brand']) not in allowed and not reviewed:raise ValueError('Sunphoto manufacturer is outside owner scope')
     return s
 
 def markup_won(value):

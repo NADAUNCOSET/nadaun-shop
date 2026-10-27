@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "brands_checked": 424,
-  "input_count": 33738,
+  "input_count": 33739,
   "duplicate_group_count": 2974,
   "duplicate_entries_removed": 3590,
   "by_brand": {
@@ -16937,7 +16937,7 @@
         {
           "id": "onnoff-78",
           "name": "소니 ILME-FX30B (바디킷)",
-          "price": 2729000,
+          "price": 2699000,
           "source": "onnoff",
           "url": "https://onnoff.kr/product/detail.html?product_no=78"
         }

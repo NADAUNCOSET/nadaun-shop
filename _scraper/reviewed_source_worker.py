@@ -10,6 +10,32 @@ from reviewed_supplier_sources import validate_snapshot,ids_digest
 SOURCES=('digitalcp','sunphoto')
 INTERVAL=12*3600
 
+def sunphoto_categories(result):
+    """Manufacturer facets preserve the full, possibly cross-listed source tree."""
+    from sync_sunphoto_catalog import GROUP_MANUFACTURERS,GROUP_ALLOWED,MANUFACTURER_REVIEWS,manufacturer_key
+    from build_catalog import brand_id
+    native={c['id']:c for c in result['categories']};by_group={}
+    allowed=lambda group:{manufacturer_key(v) for v in GROUP_ALLOWED.get(group,(GROUP_MANUFACTURERS.get(group,group),))}
+    for p in result['products'].values():
+        original=list(p['brand_category_ids']);keep=[]
+        for cid in original:
+            group=native[cid]['brand']
+            review=MANUFACTURER_REVIEWS.get(p['source_id'])
+            reviewed=review and (review['group'],review['brand'],review['expected_name'])==(group,p['brand'],p['name'])
+            if manufacturer_key(p['brand']) in allowed(group) or reviewed:
+                keep.append(cid);by_group.setdefault(group,set()).add(p['brand'])
+        if not keep:raise ValueError('No source group agrees with actual manufacturer: '+p['id'])
+        p['original_supplier_category_ids']=original;p['brand_category_ids']=keep
+    def key(cid,brand):
+        return brand_id(brand)+':'+cid if len(by_group[native[cid]['brand']])>1 else cid
+    categories=[]
+    for c in native.values():
+        for brand in sorted(by_group.get(c['brand'],())):
+            categories.append({**c,'id':key(c['id'],brand),'parent_id':key(c['parent_id'],brand) if c.get('parent_id') else None,
+                'brand':brand,'source_category_id':c['id'],'supplier_brand_group':c['brand']})
+    for p in result['products'].values():p['brand_category_ids']=[key(cid,p['brand']) for cid in p['brand_category_ids']]
+    result['original_categories']=list(native.values());result['categories']=categories
+
 def normalize(snapshot):
     source=snapshot.get('source');result=deepcopy(snapshot)
     if source not in SOURCES or snapshot.get('complete') is not True:
@@ -22,6 +48,7 @@ def normalize(snapshot):
     if source=='sunphoto':
         from sync_sunphoto_catalog import ROOTS
         if snapshot.get('owner_brand_roots')!=ROOTS:raise ValueError('Sunphoto owner scope changed')
+        sunphoto_categories(result)
     result.update(schema_version=1,source_category_coverage=coverage,
         coverage={'count':len(snapshot['products']),'ids_sha256':ids_digest(snapshot['products'])})
     return validate_snapshot(result)

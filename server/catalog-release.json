@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "aadbc21bec0c4147",
+  "revision": "28196ebf7b294b86",
   "require_positions": true,
   "brand_order": [
     "blackmagic",
@@ -775,8 +775,8 @@
     "assets/shop/supplier-details/motion9/f4f5ea53f2ad60fef900f9dd9fd9b72fadcc03b35db2942d902b471b84d36b64.jpg": "f4f5ea53f2ad60fef900f9dd9fd9b72fadcc03b35db2942d902b471b84d36b64",
     "assets/shop/supplier-details/motion9/fd43b8071a40d1ccf7b164f4c7b07b378d54139795cdb4813bfeedc91c606f1a.jpg": "fd43b8071a40d1ccf7b164f4c7b07b378d54139795cdb4813bfeedc91c606f1a",
     "assets/shop/supplier-details/sunphoto/ec33865f3d5f58c3b2c667c57ea64374073da73734aa038505726b9fbabb08f6.png": "ec33865f3d5f58c3b2c667c57ea64374073da73734aa038505726b9fbabb08f6",
-    "data/catalog/brands.json": "4e26a15578d9b287ef9879d57ad40d1569c36feb0842d2144e13a7a1b9cc3382",
-    "data/catalog/catalog.json": "7f9f0932575c4320dd0090bec48c9c3680888f8fcb6fddb0aaaa6abebc67c2c6",
+    "data/catalog/brands.json": "7d5ea39fc8607b88c3f220ae17453af315e6183b247b47cadd84535ea04ddb76",
+    "data/catalog/catalog.json": "780506ea020895b53ac787c0f6ae16e69876d571a23e0b4f310edde537e01186",
     "data/catalog/details/00.json": "34e5cbf08e782ddee5cd3d7db3d46a517fbe3d592fd9d96750effc29160ffd08",
     "data/catalog/details/01.json": "966328e22ae64face49c0c8dd7046e786a3b6086a89cb2d19591fac15b209acd",
     "data/catalog/details/02.json": "65fbd64b0898950555ae1f5967237ece2f5f2ac6d8139e41e900a22bcea07405",
@@ -784,7 +784,7 @@
     "data/catalog/details/04.json": "d50ffa6d00332b38bea31e3b2e0a23f8656432b93b32b18eef2a817512ceaeaa",
     "data/catalog/details/05.json": "a23d1c6e6e8b414a039cd5ddf71530cefbd3413becf7ffc62b8cf2167484467e",
     "data/catalog/details/06.json": "1a86b3e6f1337124794d215ebd847dc0d72758fc636b4bb0c6f872010d2e5fbe",
-    "data/catalog/details/07.json": "59e6008051ac8427e5df7eb883974810d781737b145580c9d16a3206df960cce",
+    "data/catalog/details/07.json": "23d9bf36d988e44bd5c78f48bf83fd0962e19dab1769f28af0b1e1b55ec887c5",
     "data/catalog/details/08.json": "1e7ad175ecfff5f27f3769c60e4166de5febcc00eb151125328d967434467396",
     "data/catalog/details/09.json": "5504804ed6767961cb4056474bdf910e46e703872cbae5d8b48bb6bcbb495bd9",
     "data/catalog/details/0a.json": "e7acb96c8d72fb0d82aaca5bc92784f7379fbce493da55980f52e0b76901ad7c",
@@ -814,7 +814,7 @@
     "data/catalog/details/22.json": "57564fe9ddd1376f583be20cc9d14c4ecc5d8dcf70cca2e9e591ec6e7640606f",
     "data/catalog/details/23.json": "07457356babfbd5ba339aba27497136e2f2dedf6e82d6b5bec6cabc7590c2b3e",
     "data/catalog/details/24.json": "6959a712811e22fda288a575712d2e7173ba321ad04fc709e87c5b2821207ab4",
-    "data/catalog/details/25.json": "3f4d235d4407cd6ad2b2a2912b1f49e812350f5f0375793b260aa4c5a72d0396",
+    "data/catalog/details/25.json": "2e9560130472e058bb3f0023c260adb64771ba8e4a1cd2f1243e1c2b36cf965c",
     "data/catalog/details/26.json": "ebc9cd5e0c20c7193ded0c8dd70bbad30043a68e95294c793dcbe97e2640bc70",
     "data/catalog/details/27.json": "7ef18b61a0f0d3f541f833c7c300cbb9f3e06c52e376c080e7c46b43f04c1eeb",
     "data/catalog/details/28.json": "b1c35d195f9784d1d2db172073b5f101634602324c57a2a8b333ab8b6ac815d0",
@@ -831,7 +831,7 @@
     "data/catalog/details/33.json": "82b508ea158cdce9a5f4d706c15a20e5ec2303c62300e37ccacca90e02a382f3",
     "data/catalog/details/34.json": "f0c228db6b500f8669f27e2053c9194e07634924d9bf6f827ea7d11350035576",
     "data/catalog/details/35.json": "fbeed15a8016965195b27a25a20ad611f506b9932d01a6039952e39bdcd4d7ab",
-    "data/catalog/details/36.json": "ad05413c63fe26e2b4acb98379dbd4193322d4cc87c80852d676f6438a7a91f3",
+    "data/catalog/details/36.json": "be0dc9954167ecd18d97ef5af38f88b3d0fa61aeda9231b89f2924f4d4d122c6",
     "data/catalog/details/37.json": "eddb9d28224fedfa4307f01a300719e4ed9192c619756843f109b913e76ef3bf",
     "data/catalog/details/38.json": "353e4601621c1ba6dde8e847f093ccdd07bce2a915f8fb7efbcfb98c0dfd9d95",
     "data/catalog/details/39.json": "23791f8d4d9de10d075e18e43c227bb5f2e199a440bdce47b60f5f6bd874b1ad",
@@ -871,7 +871,7 @@
     "data/catalog/details/5b.json": "c898d3046006d2ed8e4c5af608e30884826c0ebeca8bf8ceb2a47b851ad74839",
     "data/catalog/details/5c.json": "8ebcf642833ad3e6658ceefe1e4c7ab22d8376dfc97bd1d1727548d1dff188cb",
     "data/catalog/details/5d.json": "976033e48e09e54a1f6dfc06c72876801a5c0e9484c2a0101f30760aa1c179a7",
-    "data/catalog/details/5e.json": "bf805c4b6bbf96e3dd14c895fbe5384e9ac509df007d688ae89952038a342289",
+    "data/catalog/details/5e.json": "9b17005b2f3551727d875d493f96236c2c402a24a814ba4b9101887dd8b10424",
     "data/catalog/details/5f.json": "cc45fe55e4334f5fab01d17c7b6b07fe28f345a29bd4fd644bdb11350f1fd51e",
     "data/catalog/details/60.json": "d2a9fa977a2f1d1d9393d6b9869c2668a748da02ab420fc91968c43309d0ae36",
     "data/catalog/details/61.json": "5e59a1db3f0cbe7b002dbbb2e27d0c75b42746515c88a98eecaa0db412910b26",
@@ -893,7 +893,7 @@
     "data/catalog/details/71.json": "a8cc882a154e3f9c81827f6744169f4e8a80e888033d5b22c32339b6cde1bcdf",
     "data/catalog/details/72.json": "744edaa9049daa17b781678254bf1ca6ce66ced596ba8807c17add7a5da1bf52",
     "data/catalog/details/73.json": "351c5c847104725083a988910f4410b80f05d035b46394cc788042e6bd3ffbaf",
-    "data/catalog/details/74.json": "7f8aebd0749afbaf1331628e3cf8568253a382f5d579634dfcc1954d7dfd5ca5",
+    "data/catalog/details/74.json": "61b9272be18bbdd616d3195e914c8dc726782f2292c1499f04e84057dcc82ea5",
     "data/catalog/details/75.json": "f2b6538d41e063c6d5ea2685216b9ab02740266faad963366d26e637340fee81",
     "data/catalog/details/76.json": "f85c5064af5ca2c8e89e9143d448f32d0e983c7993f3c452f6239ba435158605",
     "data/catalog/details/77.json": "779097c97afb756d9d19c7914199648109beaea06459fc1ee10f3b5a69278bce",
@@ -1034,7 +1034,7 @@
     "data/catalog/details/fe.json": "d1ce82b77f329a892ff13ee2c47573ae62ffa15bcbc3b4fb5914b7a5ecab3e64",
     "data/catalog/details/ff.json": "120a113c8461fe886a6ca8dc574382367ca136c4cc193a4d9644de572c3ed753",
     "data/catalog/promotions.json": "bb343ac275b5cfb1ead5f92d92045e649faf22f687927233bab054dc42f4d04a",
-    "data/catalog/rental.json": "14b4742c962aea4b484bd2771c5915be62c0866be959900e3b74662a416c3ef5",
-    "data/catalog/sync-status.json": "625f3ce06fc828526e1d613ded464ed0f24a20613a14826930bf6000261bfdec"
+    "data/catalog/rental.json": "434749896986d3ac01cf6b8229acf4f7ce5b1067c691dce5b56b395fa309506e",
+    "data/catalog/sync-status.json": "1fb43ff7fedf99f972139afbf5968a6a8d526576e935e655010f0cadfe184a9f"
   }
 }

@@ -2,11 +2,20 @@
 from pathlib import Path
 from datetime import datetime,timezone
 from urllib.parse import urljoin,urlsplit,parse_qs
-import gzip,hashlib,json,math,re
+import gzip,hashlib,json,math,re,unicodedata
 from bs4 import BeautifulSoup
 import sync_cafe24_partners as cafe
 
 BASE='https://sunphoto.kr';ROOTS={'29': 'TAMRON', '30': 'Voigtlander', '28': 'BOYA', '25': 'Kenko', '24': 'Kenko Telescopes', '156': 'COLBOR', '84': 'SLIK', '85': 'HEIPI', '86': 'WEIFENG', '26': 'DOMKE', '27': 'COTTON', '81': 'JOBY', '82': 'Kodak & Polaroid', '83': 'Sunwayfoto', '87': 'CELESTRON', '625': 'SKYWATCHER', '88': 'MEADE', '89': 'NATIONAL GEOGRAPHIC', '256': 'NASA', '578': 'DWARF LAB'}
+# The public menu is a product group; schema and visible brand both say Kenko.
+GROUP_MANUFACTURERS={'Kenko Telescopes':'Kenko'}
+GROUP_ALLOWED={'Kodak & Polaroid':('Kodak & Polaroid','Kodak','Polaroid')}
+MANUFACTURER_REVIEWS={
+ '2063':{'group':'Kenko Telescopes','brand':'onetoten','expected_name':'onetoten 8x22 쌍안경 Yellow'},
+ '1048':{'group':'Kodak & Polaroid','brand':'ZINK','expected_name':'징크 Zink 정품 SNAP/Mint 전용 Zink Paper 2X3" (스티커 타입) 20매'},
+ '1517':{'group':'Sunwayfoto','brand':'썬포토','visible_brand':'자체브랜드','expected_name':'26650 Li-ion Battery for FL-152'}
+}
+def manufacturer_key(value):return ''.join(c for c in unicodedata.normalize('NFKC',str(value)).casefold() if c.isalnum())
 def stamp():return datetime.now(timezone.utc).isoformat()
 def clean(s):return re.sub(r'\s+',' ',str(s or '')).strip()
 def save(p,d):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,ensure_ascii=False,separators=(',',':'))+'\n')
@@ -17,16 +26,29 @@ def sid(url):
     m=re.search(r'/product/[^/]+/(\d+)(?:/|$)',parsed.path);return m[1] if m else ''
 
 def reviewed_detail(raw,product,brand):
+    groups=[brand] if isinstance(brand,str) else sorted(brand)
+    allowed={manufacturer_key(value):value for group in groups for value in GROUP_ALLOWED.get(group,(GROUP_MANUFACTURERS.get(group,group),))}
     page=document(raw)
     for image in page.select('#prdDetailContent img'):
         value=image.get('ec-data-src') or image.get('data-src') or image.get('src','')
         if value.startswith('data:image/'):
             from inline_product_images import materialize
             image['ec-data-src']=materialize(value,'sunphoto')
-    record,evidence=cafe.detail(page,product,brand,source_base=BASE)
+    record,evidence=cafe.detail(page,product,groups[0],source_base=BASE)
     actual=evidence['schema'].get('brand',{})
     actual=actual.get('name','') if isinstance(actual,dict) else str(actual)
-    if actual.casefold()!=brand.casefold():raise ValueError('Sunphoto schema manufacturer differs from selected scope')
+    review=MANUFACTURER_REVIEWS.get(str(product.get('source_id')))
+    if review and review['group'] in groups and record['name']==review['expected_name']:
+        allowed[manufacturer_key(review['brand'])]=review['brand']
+    if manufacturer_key(actual) not in allowed:raise ValueError('Sunphoto schema manufacturer differs from selected scope')
+    if len(groups)>1 or actual.casefold()!=groups[0].casefold():
+        visible=[clean(i.select_one('dd').get_text()) for i in page.select('.detail-spec__item')
+                 if i.select_one('dt') and i.select_one('dd') and clean(i.select_one('dt').get_text())=='브랜드']
+        visible_expected=review.get('visible_brand',actual) if review and review['group'] in groups and record['name']==review['expected_name'] else actual
+        if visible!=[visible_expected]:raise ValueError('Sunphoto grouped manufacturer requires visible/schema agreement')
+        record.update(source_brand_group=groups[0] if len(groups)==1 else None,source_brand_groups=groups)
+        if visible_expected=='자체브랜드':record['description_notice']='공급처가 자체브랜드로 표시한 배터리입니다. 호환 모델과 배터리 규격을 확인해주세요.'
+    record.update(brand=allowed[manufacturer_key(actual)],source_declared_brand=actual)
     if record.get('content_issues')==['description_missing']:
         body=page.select_one('#prdDetailContent')
         facts=[]
@@ -97,8 +119,8 @@ def collect(work):
     products={};errors={};details=work/'details';details.mkdir(exist_ok=True)
     for number,p in rows.items():
         brands={nodes[cid]['brand'] for cid in memberships[number]}
-        if len(brands)!=1:raise ValueError('Sunphoto product belongs to conflicting manufacturer scopes')
-        brand=next(iter(brands));file=details/(number+'.json')
+        if not brands:raise ValueError('Sunphoto product has no approved source group')
+        brand=next(iter(brands)) if len(brands)==1 else sorted(brands);file=details/(number+'.json')
         try:
             if file.exists():record=json.loads(file.read_text())
             else:
