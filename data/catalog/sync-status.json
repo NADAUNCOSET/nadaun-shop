@@ -38,16 +38,16 @@
   },
   "synced_at": "2026-10-27T10:33:45.975576+00:00",
   "merged_count": 3591,
-  "retired_redirect_count": 1923,
-  "product_count": 30762,
+  "retired_redirect_count": 1924,
+  "product_count": 30761,
   "category_browsing_enabled": true,
-  "listing_count": 30494,
+  "listing_count": 30493,
   "option_family_count": 268,
   "deduplication": {
     "brands_checked": 440,
     "groups": 2975,
     "removed": 3591
   },
-  "detail_content_sha256": "1ef6b167d873b2e2dbfb043d6c0f9dcc2c932dfd6d931b35cf377204704b503e",
-  "revision": "50c740a250154499"
+  "detail_content_sha256": "32be83e7b5b55cbae0b5d525a05dc7aa0fe8707402146a537234843dbe80f485",
+  "revision": "36ef72e454f24c0d"
 }

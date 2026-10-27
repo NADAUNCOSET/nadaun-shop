@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "50c740a250154499",
+  "revision": "36ef72e454f24c0d",
   "require_positions": true,
   "brand_order": [
     "blackmagic",
@@ -882,8 +882,8 @@
     "assets/shop/supplier-details/sunphoto/92b22df5dd7c635c1dfd029f1a288cbcfd634e25f2bc3c8b13774a96c16f98da.png": "92b22df5dd7c635c1dfd029f1a288cbcfd634e25f2bc3c8b13774a96c16f98da",
     "assets/shop/supplier-details/sunphoto/ec33865f3d5f58c3b2c667c57ea64374073da73734aa038505726b9fbabb08f6.png": "ec33865f3d5f58c3b2c667c57ea64374073da73734aa038505726b9fbabb08f6",
     "assets/shop/supplier-details/sunphoto/f290191e069531bc610bc15bb34a39b6f059696e24ffc31f1fd1d06587bb7e1d.png": "f290191e069531bc610bc15bb34a39b6f059696e24ffc31f1fd1d06587bb7e1d",
-    "data/catalog/brands.json": "ba31274a61024e822a2ccf71ef043fa2c57a01cbfdbcd38f8817a5a8efd914ce",
-    "data/catalog/catalog.json": "2d3c31bf2aa75982e0f13e2fceb73840c42749cb4466792766ac1b8976a2f65d",
+    "data/catalog/brands.json": "81bf5f9492ce523caa287e084a42306302f2411fd7c2804ed031cedaba0f8c18",
+    "data/catalog/catalog.json": "7acc11fb80610d5523f5235cc5200a62ad4e28df7d647d3943c847eac9a19df0",
     "data/catalog/details/00.json": "27c9fe3deebb26dc85658ec54478d2ea84a37dad44ce8f42ff051a721aec8db7",
     "data/catalog/details/01.json": "c26ac2c9d4ccf88c74ba54e7d08f7e6b75fc584ceeffe753ffe67e4e4b1eac2c",
     "data/catalog/details/02.json": "16869b09b81b237785875f03ccdb937b5249807d4420529dbcb5fa4f0e0effd4",
@@ -1133,7 +1133,7 @@
     "data/catalog/details/f6.json": "3c8b77f876339c2c20c278268a07b0e1e8ac2ed9c3d7f5f3f0f5aeb40792b917",
     "data/catalog/details/f7.json": "7e1926d2da54f07945aeb07b49024262ff672b95ae0ccc23346daa1c88782a7d",
     "data/catalog/details/f8.json": "3843178e1499ea5fe16ed3fa5094cbbee1890b7bdb78da9fbce53fa7a1dc465f",
-    "data/catalog/details/f9.json": "563d53020cee4b0c3fedd0d4b58ee05f75beddf71216d05222ef618df78e6314",
+    "data/catalog/details/f9.json": "1c15914cbee0266730bd25cf7190fc6ade4c8987316a96ba35e73115b10d0a27",
     "data/catalog/details/fa.json": "1e8a8c342f8ffa447230ab68129b819398bd8b1949b477061114152fa62558bb",
     "data/catalog/details/fb.json": "6bc503204f80e0285f8a4b84000cad9e0ca37ff41456bbebf05fb382ca2ab15e",
     "data/catalog/details/fc.json": "b78504c51e385b85cfa489ef5769f744579b364cc1c3b1af99d666c69dc3dc42",
@@ -1141,7 +1141,7 @@
     "data/catalog/details/fe.json": "c872ea3bb41fb09595ed38cb33d9c2b07ce8359f7c6d59475602260b2e4af354",
     "data/catalog/details/ff.json": "adccb8e9954fc33ceec4b0a41f1016707291798305bba41f1fba46d8bf407ed7",
     "data/catalog/promotions.json": "bb343ac275b5cfb1ead5f92d92045e649faf22f687927233bab054dc42f4d04a",
-    "data/catalog/rental.json": "326fd5cf3c2e16586d4831edf8a9a7bb56577d7d0f984719be117f02b6001a09",
-    "data/catalog/sync-status.json": "15cb158bd3ac25fa45a1b2f403734e78f0b2d1e5438a777e58ea0afd252f5131"
+    "data/catalog/rental.json": "c102d4dd9908b007a15a1d6dcbcbed8045f5ec53fe104d3121df6154f629704a",
+    "data/catalog/sync-status.json": "7139dcb6ef7a3adf617ee294a0758afcda48ae439b45cd34daf60280576da774"
   }
 }

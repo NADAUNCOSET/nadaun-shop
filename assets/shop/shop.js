@@ -82,7 +82,7 @@ function renderCatalog(){
  const camera=params.get('camera')||'';
  const selectedCamera=(data.camera_models||[]).find(m=>m.id===camera);
  const selection=catalogSelection(data,{brand:bid,kind,cat,type,sale:discountOnly,benefit,collection:params.get('collection')||'',camera});
- if(cat!==selection.selectedCategory){cat=selection.selectedCategory;params.delete('cat');params.delete('page');history.replaceState(null,'',location.pathname+(params.size?'?'+params.toString():''))}
+ if(cat!==selection.selectedCategory){cat=selection.selectedCategory;if(cat)params.set('cat',cat);else params.delete('cat');params.delete('page');history.replaceState(null,'',location.pathname+(params.size?'?'+params.toString():''))}
  const applicable=selection.brandCategories,categoryCounts=selection.brandCounts;
  const relevant=c=>categoryCounts.get(c.id)||cat===c.id||isAncestor(c.id,cat);
  const roots=applicable.filter(c=>!c.parent_id&&relevant(c));

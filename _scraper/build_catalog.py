@@ -436,6 +436,9 @@ def build(allow_pending=False):
     from catalog_navigation import unify_reviewed_navigation
     unify_reviewed_navigation(public_products,categories,brands,navigation_audit)
     save_json(ROOT/'_scraper/.sync-state/brand-category-selection.json',navigation_audit)
+    from category_dedup import project as project_categories
+    category_redirects,category_dedup_audit=project_categories(public_products,categories,brands,navigation_audit)
+    save_json(AUDIT/'category-dedup-review.json',category_dedup_audit)
     from camera_compatibility import associate,search_terms as compatibility_search_terms
     camera_models,compatibility_audit=associate(public_products)
     camera_index={m['id']:m for m in camera_models}
@@ -493,7 +496,7 @@ def build(allow_pending=False):
     detail_hash=hashlib.sha256()
     for key in sorted(public_details):detail_hash.update(json.dumps(public_details[key],ensure_ascii=False,sort_keys=True,separators=(',',':')).encode())
     meta['detail_content_sha256']=detail_hash.hexdigest()
-    output={'category_gallery':category_galleries,'camera_models':camera_models,'meta':meta,'brands':brand_list,'categories':list(categories.values()),'products':public_products,'redirects':redirects}
+    output={'category_redirects':category_redirects,'category_gallery':category_galleries,'camera_models':camera_models,'meta':meta,'brands':brand_list,'categories':list(categories.values()),'products':public_products,'redirects':redirects}
     presentation=''.join(p.read_text() for pattern in ('*.html','policies/*.html') for p in sorted((ROOT/'_scraper/shop_templates').glob(pattern)))
     presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/shop.js','assets/shop/shop.css','assets/shop/cart.js','assets/shop/banners.js','assets/shop/motion.js','_scraper/product_taxonomy.py','_scraper/rental_taxonomy.py','_scraper/references/slrrent-categories.json','data/catalog/banners.json','assets/shop/catalog-tools.js','_scraper/storefront_pages.py','_scraper/catalog_seo.py','api/product.js'))
     presentation+=''.join((ROOT/p).read_text() for p in ('assets/shop/commerce.js','assets/shop/commerce.css','assets/shop/members.js','assets/shop/members.css','assets/shop/admin-workspace.js','assets/shop/admin-workspace.css','assets/shop/i18n.js','assets/shop/i18n-data.js','assets/shop/i18n.css','api/members.js','api/member-oauth.js','api/shop-test.js'))
@@ -520,7 +523,7 @@ def build(allow_pending=False):
     (PUBLIC/'brands.json').write_text(json.dumps({'meta':{'revision':revision},'brands':brand_list},ensure_ascii=False,separators=(',',':'))+'\n')
     rental_products=[p for p in public_products if p['kind']=='rental']
     rental_category_ids={cid for p in rental_products for field in ('category_ids','type_ids') for cid in p[field]}
-    save_json(PUBLIC/'rental.json',{'category_gallery':{'rental':category_galleries['rental']},'meta':{**meta,'view':'rental','product_count':len(rental_products),'listing_count':len({p.get('listing_id',p['id']) for p in rental_products})},'brands':brand_list,'categories':[c for c in categories.values() if c['id'] in rental_category_ids or c.get('scope')=='rental-product'],'products':rental_products,'redirects':redirects})
+    save_json(PUBLIC/'rental.json',{'category_redirects':category_redirects,'category_gallery':{'rental':category_galleries['rental']},'meta':{**meta,'view':'rental','product_count':len(rental_products),'listing_count':len({p.get('listing_id',p['id']) for p in rental_products})},'brands':brand_list,'categories':[c for c in categories.values() if c['id'] in rental_category_ids or c.get('scope')=='rental-product'],'products':rental_products,'redirects':redirects})
     save_json(PUBLIC/'sync-status.json',meta)
     template=(ROOT/'_scraper/shop_templates/page.html').read_text()
     for filename,title,description,mode in [

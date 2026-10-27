@@ -52,6 +52,7 @@ export function brandSelectionHref(brand,search,kind){
 }
 
 export function catalogSelection(data,{brand='',kind='purchase',cat='',type='',sale=false,benefit='all',collection='',camera=''}={}){
+  cat=data.category_redirects?.[cat]||cat;
   const families=new Map(),members=new Map();
   for(const p of data.products){
     if((brand&&p.brand_id!==brand)||(kind!=='all'&&p.kind!==kind)||(sale&&!matchesBenefit(p,benefit))||(collection==='used'&&!isConsignmentUsed(p))||(camera&&!p.compatible_camera_model_ids?.includes(camera)))continue;

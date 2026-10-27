@@ -18,7 +18,7 @@ async function render(catalog,params,brandId='',pathname='/catalog.html'){
  const brand=brands.get(brandId),kind=params.get('kind')||(brand?.purchase_count===0&&brand?.rental_count>0?'rental':'purchase');
  const error=()=>({status:404,noindex:true,title:'상품 목록을 찾을 수 없습니다 | 나다운 스페이스',body:'<h1>상품 목록을 찾을 수 없습니다.</h1><a href="/catalog.html">전체 상품 보기</a>'});
  if((brandId&&!brand)||!['purchase','rental','all'].includes(kind))return error();
- const type=params.get('type')||'',cat=params.get('cat')||'';
+ const type=params.get('type')||'',cat=catalog.category_redirects?.[params.get('cat')]||params.get('cat')||'';
  if((type&&!categories.has(type))||(cat&&!categories.has(cat)))return error();
  const camera=params.get('camera')||'',selectedCamera=(catalog.camera_models||[]).find(m=>m.id===camera);
  if(camera&&!selectedCamera)return error();

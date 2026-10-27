@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "brands_checked": 440,
-  "input_count": 34353,
+  "input_count": 34352,
   "duplicate_group_count": 2975,
   "duplicate_entries_removed": 3591,
   "by_brand": {
@@ -78731,6 +78731,17 @@
       "reason": "세기 원본 구성품 확인: 카메라가 없는 액세서리 패키지를 본체와 구분",
       "evidence": [
         "https://www.saeki.co.kr/item/itemDetail?itemId=PD00041927"
+      ]
+    },
+    {
+      "id": "smartstore-9204578250",
+      "before": "[ 대여 나다운 영등포 스튜디오 ] 자연광 호리존 배경지 10롤 스튜디오 공간대여",
+      "after": "[ 대여 나다운 영등포 스튜디오 ] 자연광 호리존 배경지 10롤 스튜디오 공간대여",
+      "hidden": true,
+      "reason": "2026-10-27 대표 지시: 같은 나다운 영등포 스튜디오가 두 번 노출되어 최신 등록11378368014 하나로 정리. 원본 목록은 보존. 같은 주소·사진9장·현재판매가50000원·공간구성 확인.",
+      "evidence": [
+        "https://smartstore.naver.com/rainbowbene/products/9204578250",
+        "https://smartstore.naver.com/rainbowbene/products/11378368014"
       ]
     }
   ],
