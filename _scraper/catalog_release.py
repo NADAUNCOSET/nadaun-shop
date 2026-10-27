@@ -5,7 +5,7 @@ from pathlib import Path
 
 def write_manifest(root,catalog,snapshots,choices):
     from sync_shop_sources import save_json
-    from brand_source_policy import publishable_ids
+    from brand_source_policy import publishable_ids,duplicate_priority_sources
     files=['data/catalog/catalog.json','data/catalog/brands.json','data/catalog/rental.json','data/catalog/sync-status.json']
     if (root/'data/catalog/promotions.json').exists():files.append('data/catalog/promotions.json')
     files += [str(p.relative_to(root)) for p in (root/'data/catalog/details').glob('??.json')]
@@ -24,6 +24,8 @@ def write_manifest(root,catalog,snapshots,choices):
         'brand_order':[b['id'] for b in catalog['brands']],
         'primary_sources':{bid:c['source'] for bid,c in choices.items() if c.get('source')},
         'main_sources':{bid:c.get('main_sources') or [c['source']] for bid,c in choices.items() if c.get('source')},
+        'duplicate_priority_sources':duplicate_priority_sources(),
+        'fallback_sources':{bid:c['fallback_sources'] for bid,c in choices.items() if c.get('fallback_sources')},
         'source_inventories':inventories,
         'files':{p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in sorted(files)}}
     save_json(root/'server/catalog-release.json',manifest)

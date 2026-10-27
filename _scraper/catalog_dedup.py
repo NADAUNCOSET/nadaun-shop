@@ -144,7 +144,9 @@ def primary_key(p):
         modified = 0
     sid = str(p.get('source_id') or p['id'].split('-',1)[1])
     preferred=p.get('_preferred_sources') or [p.get('_preferred_source')]
+    fallback=p.get('_fallback_preferred_sources') or []
     return (0 if source in preferred else 1,
+            fallback.index(source) if source in fallback else len(fallback),
             1 if p.get('_prefer_supplier') and source=='smartstore' else 0,
             1 if p.get('_supplemental_source') else 0,
             0 if p.get('status')=='sale' else 1,

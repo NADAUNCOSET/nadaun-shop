@@ -2,21 +2,20 @@
   "version": 2,
   "brands": {
     "tilta": {
-      "source": "avx",
+      "source": "clmedia",
       "sources": [
-        "avx",
-        "clmedia"
+        "clmedia",
+        "avx"
       ],
       "scope": "purchase",
       "confirmed_by": "owner",
       "preserve_existing": true,
-      "reason": "대표 지정: TILTA는 AVX와 씨엘미디어가 공동 주 기준. 기존 스마트스토어 메인 지시를 대체. 두 주 기준에 없는 고유 상품은 기존 보완 정책을 유지하며 씨네몰의 별도 승인·중지 조건은 해제하지 않음.",
+      "reason": "2026-10-28 대표 확정: 틸타의 동일 모델·옵션·구성 겹침은 씨엘미디어를 우선. 다른 허용 출처의 고유 상품과 기존 KPP 세부 메뉴/이미지 참고·렌탈은 보존. 기존 AVX 및 승인 보조 원본은 유지. 씨엘미디어에 동일 제품이 있을 때만 우선.",
       "main_sources": [
-        "avx",
         "clmedia"
       ],
       "exclusive": false,
-      "confirmed_at": "2026-10-19",
+      "confirmed_at": "2026-10-28",
       "navigation_source": "kpp",
       "reference_sources": [
         "kpp"
@@ -24,7 +23,10 @@
       "image_reference_sources": [
         "kpp"
       ],
-      "reference_note": "2026-10-19 대표 추가: KPP의 잘 정리된 상품·카테고리·이미지도 비교하고 활용. 기존 AVX·씨엘미디어 공동 주 기준은 유지."
+      "reference_note": "2026-10-19 대표 추가: KPP의 잘 정리된 상품·카테고리·이미지도 비교하고 활용. 기존 AVX·씨엘미디어 공동 주 기준은 유지.",
+      "fallback_sources": [
+        "avx"
+      ]
     },
     "dji": {
       "source": "dji-official",
@@ -40,16 +42,24 @@
       ]
     },
     "smallrig": {
-      "source": "kpp",
+      "source": "clmedia",
       "sources": [
-        "kpp",
-        "clmedia"
+        "clmedia",
+        "kpp"
       ],
       "scope": "purchase",
       "confirmed_by": "owner",
-      "reason": "대표 지정: 스몰리그는 KPP와 씨엘미디어만 확인. 다른 공급처의 해당 브랜드 구매 상품은 검토·편입 대상에서 제외. 원본 스냅샷과 렌탈은 보존.",
+      "reason": "2026-10-28 대표 확정: 스몰리그의 동일 모델·옵션·구성 겹침은 씨엘미디어를 우선. 다른 허용 출처의 고유 상품과 기존 KPP 세부 메뉴/이미지 참고·렌탈은 보존. 스몰리그 구매 원본은 KPP·씨엘미디어만 허용.",
       "exclusive": true,
-      "confirmed_at": "2026-10-19"
+      "confirmed_at": "2026-10-28",
+      "main_sources": [
+        "clmedia"
+      ],
+      "navigation_source": "kpp",
+      "preserve_existing": true,
+      "fallback_sources": [
+        "kpp"
+      ]
     },
     "aputure": {
       "source": "avx",
@@ -63,9 +73,9 @@
       "navigation_source": "hipixel",
       "scope": "purchase",
       "confirmed_by": "owner",
-      "confirmed_at": "2026-10-18",
+      "confirmed_at": "2026-10-28",
       "preserve_existing": true,
-      "reason": "하이픽셀 플러스 전 제품을 주 기준으로 지정. 동일 모델·구성·옵션의 다른 공급처 목록만 통합하고 주 사이트에 없는 고유 상품과 렌탈은 보존."
+      "reason": "하이픽셀 플러스 전 제품을 주 기준으로 지정. 동일 모델·구성·옵션의 다른 공급처 목록만 통합하고 주 사이트에 없는 고유 상품과 렌탈은 보존. 2026-10-28 대표 재확정: 겹치는 블랙매직은 하이픽셀플러스 우선."
     },
     "tvlogic": {
       "source": "hipixel",
@@ -417,6 +427,16 @@
       "confirmed_by": "operator_source_review",
       "confirmed_at": "2026-10-27",
       "reason": "대표 승인 썬포토20개 브랜드 메뉴 전체의 실제 브랜드. 수입사 원본을 주 기준으로 하고 검증된 같은 모델부터 우선 연결하며 렌탈은 보존."
+    },
+    "kupo": {
+      "source": "clmedia",
+      "navigation_source": "clmedia",
+      "scope": "purchase",
+      "exclusive": false,
+      "preserve_existing": true,
+      "confirmed_by": "owner",
+      "confirmed_at": "2026-10-27",
+      "reason": "대표 지정: KUPO는 씨엘미디어 메인. 확인된 동일 제품의 다른 원본은 보조 대리점으로 연결하고 고유 상품·렌탈은 보존."
     }
   },
   "source_approvals": {
@@ -544,5 +564,15 @@
     "motion9_requested_source": "https://motionnine.cafe24.com/",
     "motion9_price_multiplier": "1.05",
     "funomad_price_mode": "inquiry_only"
+  },
+  "duplicate_source_priority": {
+    "scope": "matched_purchase",
+    "sources": [
+      "clmedia"
+    ],
+    "confirmed_by": "owner",
+    "confirmed_at": "2026-10-28",
+    "brand_specific_choices_take_precedence": true,
+    "reason": "대표: 겹치는건 씨엘미디어를 따라가면 됨. 틸타도 씨엘미디어, 블랙매직은 하이픽셀플러스. 기존 브랜드별 단독/수입사 기준과 렌탈은 유지. 정확히 같은 상품으로 이미 검증된 그룹의 원본 선택만 변경; 고유 상품/별도 옵션/미확정 모델/보류 원본은 임의 병합·삭제하지 않음."
   }
 }

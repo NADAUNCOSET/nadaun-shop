@@ -73,6 +73,10 @@ function validateCatalog(catalog,policy={}){
     }
     const preferred=policy.main_sources?.[p.brand_id]||(policy.primary_sources?.[p.brand_id]?[policy.primary_sources[p.brand_id]]:[]);
     if(p.kind==='purchase'&&preferred.length&&(p.offers||[]).some(o=>preferred.includes(o.source))&&!preferred.includes(primary[0]?.source))fail('Wrong preferred supplier',p.id);
+    const hasPreferred=(p.offers||[]).some(o=>preferred.includes(o.source));
+    const fallback=hasPreferred?[]:policy.primary_sources?.[p.brand_id]?(policy.fallback_sources?.[p.brand_id]||[]):(policy.duplicate_priority_sources||[]);
+    const expected=fallback.find(s=>(p.offers||[]).some(o=>o.source===s));
+    if(p.kind==='purchase'&&expected&&primary[0]?.source!==expected)fail('Wrong duplicate-priority supplier',p.id);
   }
   if(catalog.meta.product_count!==products.size)fail('Product total mismatch');
   if(catalog.meta.listing_count!==families.size)fail('Listing total mismatch');

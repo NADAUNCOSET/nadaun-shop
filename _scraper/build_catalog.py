@@ -175,8 +175,9 @@ def verified_sources():
 
 def build(allow_pending=False):
     snapshots=verified_sources()
-    from brand_source_policy import AUDIT,selections,write_audit,source_provenance,merge_category_provenance,purchase_source_allowed
+    from brand_source_policy import AUDIT,selections,write_audit,source_provenance,merge_category_provenance,purchase_source_allowed,duplicate_priority_sources
     source_choices=selections()
+    duplicate_defaults=duplicate_priority_sources()
     dealer_sales=json.loads((PUBLIC/'brand-source-policy.json').read_text()).get('business_model',{}).get('purchase_reference')=='main_supplier'
     for bid,choice in source_choices.items():
         required=choice.get('sources') or [choice.get('source')]
@@ -230,6 +231,7 @@ def build(allow_pending=False):
                 choice=source_choices.get(bid,{})
                 p['_preferred_source']=choice.get('source')
                 p['_preferred_sources']=choice.get('main_sources') or [choice.get('source')]
+                p['_fallback_preferred_sources']=choice.get('fallback_sources',[]) if choice.get('source') else duplicate_defaults
             p['_supplemental_source']=source in (*CAFE24_SOURCES,'saeki')
             if 'avx' in snapshots and source!='avx' and bid=='aputure' and p.get('kind')=='purchase':continue
             if source=='kpp':

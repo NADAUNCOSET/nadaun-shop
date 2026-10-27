@@ -28,6 +28,17 @@ def selections():
     return json.loads(POLICY.read_text())['brands']
 
 
+def duplicate_priority_sources():
+    rule=json.loads(POLICY.read_text()).get('duplicate_source_priority',{})
+    if not rule:return []
+    if rule.get('confirmed_by')!='owner' or rule.get('scope')!='matched_purchase':
+        raise ValueError('Duplicate source priority lacks owner purchase approval')
+    sources=rule.get('sources',[])
+    if not isinstance(sources,list) or not sources or len(set(sources))!=len(sources) or any(s not in NAMES or s in RETIRED_SOURCES for s in sources):
+        raise ValueError('Invalid duplicate supplier priority')
+    return sources
+
+
 def supplemental_source_approved(source):
     """An owner-approved whole supplier supplements existing primary sources."""
     rule=json.loads(POLICY.read_text()).get('source_approvals',{}).get(source,{})

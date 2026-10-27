@@ -71,17 +71,20 @@ class SourcePolicyTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError,'Exclusive replacement.*smallrig'):
                 build_catalog.build()
 
-    def test_both_tilta_main_sources_beat_old_smartstore_main(self):
+    def test_tilta_clmedia_beats_avx_and_smartstore_for_verified_match(self):
         choice=policy.selections()['tilta']
         base={'id':'smartstore-1','source':'smartstore','status':'sale',
               '_preferred_source':choice['source'],'_preferred_sources':choice['main_sources']}
-        for source in ('avx','clmedia'):
+        for source in ('clmedia',):
             selected={**base,'id':source+'-1','source':source,'status':'soldout','_supplemental_source':True}
             self.assertLess(primary_key(selected),primary_key(base))
+        cl={**base,'id':'clmedia-1','source':'clmedia','status':'soldout','_supplemental_source':True}
+        avx={**base,'id':'avx-1','source':'avx','status':'sale','_supplemental_source':True}
+        self.assertLess(primary_key(cl),primary_key(avx))
         for source in ('avx','clmedia','kpp','smartstore'):
             self.assertTrue(policy.purchase_source_allowed({'brand':'TILTA','kind':'purchase','source':source}))
 
-    def test_generated_register_identifies_both_tilta_main_sources(self):
+    def test_generated_register_identifies_tilta_main_and_avx_dealer(self):
         from catalog_navigation import write_register
         offers=[{'id':s+'-1','source':s} for s in ('avx','clmedia','smartstore')]
         catalog={'meta':{'revision':'test'},'brands':[{'id':'tilta','name':'TILTA'}],
@@ -89,10 +92,37 @@ class SourcePolicyTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             write_register(catalog,{},policy.selections(),Path(folder))
             report=json.loads((Path(folder)/'brand-source-register.json').read_text())
-            self.assertEqual(report['brands'][0]['main_sources'],['avx','clmedia'])
-            self.assertEqual(report['brands'][0]['supplemental_sources'],['smartstore'])
+            self.assertEqual(report['brands'][0]['main_sources'],['clmedia'])
+            self.assertEqual(report['brands'][0]['supplemental_sources'],['avx','smartstore'])
             self.assertEqual(report['publication_state'],'not_live_verified')
-            self.assertIn('AVX, 씨엘미디어',(Path(folder)/'brand-source-register.md').read_text())
+            self.assertIn('씨엘미디어',(Path(folder)/'brand-source-register.md').read_text())
+
+    def test_tilta_without_clmedia_keeps_avx_before_other_dealers(self):
+        choice=policy.selections()['tilta']
+        base={'id':'kpp-1','source':'kpp','status':'sale','_preferred_sources':choice['main_sources'],'_fallback_preferred_sources':choice['fallback_sources']}
+        avx={**base,'id':'avx-1','source':'avx','status':'soldout'}
+        self.assertLess(primary_key(avx),primary_key(base))
+
+    def test_default_clmedia_wins_verified_unassigned_purchase_match(self):
+        base={'id':'plthink-1','source':'plthink','status':'sale','_fallback_preferred_sources':['clmedia']}
+        cl={**base,'id':'clmedia-1','source':'clmedia','status':'soldout','_supplemental_source':True}
+        self.assertLess(primary_key(cl),primary_key(base))
+
+    def test_blackmagic_explicit_primary_beats_default_clmedia(self):
+        base={'id':'clmedia-1','source':'clmedia','status':'sale','_preferred_source':'hipixel','_fallback_preferred_sources':['clmedia']}
+        hip={**base,'id':'hipixel-1','source':'hipixel','status':'soldout','_supplemental_source':True}
+        self.assertLess(primary_key(hip),primary_key(base))
+
+    def test_default_priority_requires_owner_scope_and_known_source(self):
+        with tempfile.TemporaryDirectory() as folder,patch.object(policy,'POLICY',Path(folder)/'policy.json'):
+            for rule in [{'confirmed_by':'operator','scope':'matched_purchase','sources':['clmedia']},
+                         {'confirmed_by':'owner','scope':'all','sources':['clmedia']},
+                         {'confirmed_by':'owner','scope':'matched_purchase','sources':['unknown']},
+                         {'confirmed_by':'owner','scope':'matched_purchase','sources':['clmedia','clmedia']}]:
+                policy.POLICY.write_text(json.dumps({'duplicate_source_priority':rule}))
+                with self.assertRaises(ValueError):policy.duplicate_priority_sources()
+            policy.POLICY.write_text(json.dumps({'duplicate_source_priority':{'confirmed_by':'owner','scope':'matched_purchase','sources':['clmedia']}}))
+            self.assertEqual(policy.duplicate_priority_sources(),['clmedia'])
 
     def test_every_canonical_product_has_exact_primary_source_and_all_matches(self):
         offers=[{'id':'kpp-1','source':'kpp','url':'https://example.com/1'},
