@@ -20,8 +20,10 @@ async function render(catalog,params,brandId='',pathname='/catalog.html'){
  if((brandId&&!brand)||!['purchase','rental','all'].includes(kind))return error();
  const type=params.get('type')||'',cat=params.get('cat')||'';
  if((type&&!categories.has(type))||(cat&&!categories.has(cat)))return error();
+ const camera=params.get('camera')||'',selectedCamera=(catalog.camera_models||[]).find(m=>m.id===camera);
+ if(camera&&!selectedCamera)return error();
  const sale=params.get('sale')==='1'&&kind!=='rental',benefit=['discount','promotion'].includes(params.get('benefit'))?params.get('benefit'):'all';
- const selected=t.catalogSelection(catalog,{brand:brandId,kind,type,cat,sale,benefit,collection:params.get('collection')||''});
+ const selected=t.catalogSelection(catalog,{brand:brandId,kind,type,cat,sale,benefit,collection:params.get('collection')||'',camera});
  if(type&&!selected.typeCategories.some(c=>c.id===type))return error();
  const q=(params.get('q')||'').trim().slice(0,120),tokens=matching.tokens(q),sort=params.get('sort')||'default';
  const rows=selected.rows.filter(p=>(!params.has('available')||(p.status!=='soldout'&&p.release_status!=='coming_soon'))&&tokens.every(w=>matching.normalize(p.name+' '+(brands.get(p.brand_id)?.name||'')+' '+(p.discovery?.search_terms||[]).join(' ')).includes(w)));
@@ -38,10 +40,11 @@ async function render(catalog,params,brandId='',pathname='/catalog.html'){
  };
  const intent=kind==='rental'?'카메라 대여·렌즈·조명 렌탈':'카메라·렌즈·조명 구매';
  const subject=[brand?.name,categories.get(type)?.name,categories.get(selected.selectedCategory)?.name].filter(Boolean).join(' · ');
- const heading=q?'“'+q+'” 검색 결과':(subject?subject+' · ':'')+intent;
+ const heading=q?'“'+q+'” 검색 결과':selectedCamera?selectedCamera.name+'용 케이지·액세서리':(subject?subject+' · ':'')+intent;
  const title=heading+(page>1?' · '+page+'페이지':'')+' | 나다운 스페이스';
  const canonicalParams=new URLSearchParams();
  if(kind!=='purchase')canonicalParams.set('kind',kind);
+ if(camera)canonicalParams.set('camera',camera);
  if(type)canonicalParams.set('type',type);
  if(selected.selectedCategory)canonicalParams.set('cat',selected.selectedCategory);
  if(page>1)canonicalParams.set('page',page);

@@ -16,6 +16,13 @@ test('mount-specific family variant is present in initial HTML',async()=>{
  assert.deepEqual(x.rows.map(p=>p.id),['lens-b']);assert.match(x.body,/id=lens-b/);
  assert.equal(x.canonical,'https://shop.nadaun.co/brands/sample.html?type=type-b');
 });
+test('camera compatibility uses the browser selection and a unique canonical',async()=>{
+ const data={...catalog,camera_models:[{id:'sample-camera',name:'샘플 카메라'}],products:catalog.products.map(p=>({...p,compatible_camera_model_ids:p.id==='lens-b'?['sample-camera']:[]}))};
+ const x=await render(data,new URLSearchParams('camera=sample-camera'));
+ assert.deepEqual(x.rows.map(p=>p.id),['lens-b']);assert.match(x.heading||x.body,/샘플 카메라용/);
+ assert.equal(x.canonical,'https://shop.nadaun.co/catalog.html?camera=sample-camera');
+ assert.equal((await render(data,new URLSearchParams('camera=missing'))).status,404);
+});
 test('invalid routes return 404; free text and sorting do not create indexable search pages',async()=>{
  for(const params of ['page=999','page=-1','type=missing','kind=invalid','kind=rental&type=type-a'])assert.equal((await render(catalog,new URLSearchParams(params))).status,404);
  assert.equal((await render(catalog,new URLSearchParams(),'missing')).status,404);
