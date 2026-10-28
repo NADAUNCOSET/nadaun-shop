@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "brands_checked": 440,
-  "input_count": 34352,
-  "duplicate_group_count": 2975,
-  "duplicate_entries_removed": 3591,
+  "input_count": 34375,
+  "duplicate_group_count": 2991,
+  "duplicate_entries_removed": 3606,
   "by_brand": {
     "tilta": 291,
     "avenger": 115,
@@ -14,7 +14,7 @@
     "godox": 441,
     "sony": 20,
     "pmi": 2,
-    "smallrig": 563,
+    "smallrig": 579,
     "openmoon": 1,
     "kupo": 73,
     "tvlogic": 21,
@@ -1284,7 +1284,7 @@
         {
           "id": "clmedia-2154",
           "name": "틸타 TGA-PRG DJI 로닌 RS2 / RS3 / RS3 Pro / RS4 / RS4Pro / RS5 용 링그립 플러스",
-          "price": 400000,
+          "price": 518000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2154"
         },
@@ -1315,7 +1315,7 @@
         {
           "id": "clmedia-2153",
           "name": "틸타 TGA-PRG2 DJI 로닌 RS2 / RS3 / RS3 Pro / RS4 / RS4 Pro / RS5 용 링그립 컨트롤 키트",
-          "price": 568000,
+          "price": 691000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2153"
         },
@@ -1636,11 +1636,18 @@
     {
       "brand_id": "tilta",
       "kind": "purchase",
-      "primary_id": "avx-1849",
+      "primary_id": "clmedia-3532",
       "evidence": [
         "model:HDA-T15-B-TG"
       ],
       "members": [
+        {
+          "id": "clmedia-3532",
+          "name": "틸타 HDA-T15-B-TG 히드라 에일리언 미니 핸드헬드 키트– 티타늄 그레이",
+          "price": 241000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3532"
+        },
         {
           "id": "avx-1849",
           "name": "틸타 히드라 에일리언 미니 핸드 헬드 키트 HDA-T15-B-TG [국내정식판매처]",
@@ -3319,6 +3326,30 @@
     {
       "brand_id": "tilta",
       "kind": "purchase",
+      "primary_id": "clmedia-3504",
+      "evidence": [
+        "model:WLC-T06-MK"
+      ],
+      "members": [
+        {
+          "id": "clmedia-3504",
+          "name": "틸타 WLC-T06-MK 뉴클리어스 M II 무선 렌즈 컨트롤 모터 키트",
+          "price": 518000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3504"
+        },
+        {
+          "id": "avx-2917",
+          "name": "틸타 Nucleus-M II 모터 키트 WLC-T06-MK",
+          "price": 518000,
+          "source": "avx",
+          "url": "https://www.avx.co.kr/goods/view?no=2917"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
       "primary_id": "clmedia-3062",
       "evidence": [
         "model:HDA-ESC-6"
@@ -3327,7 +3358,7 @@
         {
           "id": "clmedia-3062",
           "name": "틸타 HDA-ESC-6 히드라 6인치 전자 석션컵",
-          "price": 183000,
+          "price": 223000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=3062"
         },
@@ -17859,6 +17890,30 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
+      "primary_id": "clmedia-1024",
+      "evidence": [
+        "model:4877C"
+      ],
+      "members": [
+        {
+          "id": "clmedia-1024",
+          "name": "스몰리그 4877C 후지필름 X-M5용 엄지 그립 (실버)",
+          "price": 25900,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=1024"
+        },
+        {
+          "id": "kpp-1736392834",
+          "name": "스몰리그 4877C 후지필름 X-M5 엄지그립 실버",
+          "price": 25900,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1736392834"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
       "primary_id": "clmedia-1026",
       "evidence": [
         "model:4805"
@@ -18965,22 +19020,22 @@
       "kind": "purchase",
       "primary_id": "clmedia-1150",
       "evidence": [
-        "model:4977"
+        "model:4977B"
       ],
       "members": [
         {
           "id": "clmedia-1150",
-          "name": "스몰리그 4977 캐논 EOS R5 Mark II용 호크락 퀵 릴리스 케이지",
-          "price": 106900,
+          "name": "스몰리그 4977B 캐논 EOS R5 Mark II 호환 호크락 퀵 릴리즈 카메라 케이지",
+          "price": 89900,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=1150"
         },
         {
-          "id": "kpp-1731565928",
-          "name": "스몰리그 캐논 EOS R5 Mark II 호크락 퀵 릴리즈 케이지 4977",
+          "id": "kpp-1784622107",
+          "name": "스몰리그 4977B 캐논 EOS R5 Mark II 호크락 퀵릴리즈 케이지",
           "price": 89900,
           "source": "kpp",
-          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1731565928"
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1784622107"
         }
       ]
     },
@@ -23353,6 +23408,30 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
+      "primary_id": "clmedia-1883",
+      "evidence": [
+        "model:2919"
+      ],
+      "members": [
+        {
+          "id": "clmedia-1883",
+          "name": "스몰리그 2919 DC5521 - LP-E6 더미 배터리 충전 케이블",
+          "price": 28000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=1883"
+        },
+        {
+          "id": "kpp-1606725831",
+          "name": "스몰리그 캐논 LP-E6 배터리 호환 충전 케이블 2919",
+          "price": 28000,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1606725831"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
       "primary_id": "clmedia-1885",
       "evidence": [
         "model:1598"
@@ -23593,30 +23672,6 @@
     {
       "brand_id": "tilta",
       "kind": "purchase",
-      "primary_id": "clmedia-1962",
-      "evidence": [
-        "name:tdmw-blk22-gnusb-c충전식배터리"
-      ],
-      "members": [
-        {
-          "id": "clmedia-1962",
-          "name": "틸타 TDMW-BLK22-GN USB-C 충전식 배터리",
-          "price": 33000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=1962"
-        },
-        {
-          "id": "smartstore-12003486706",
-          "name": "TILTA TDMW-BLK22-GN USB-C 충전식 배터리",
-          "price": 33000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/12003486706"
-        }
-      ]
-    },
-    {
-      "brand_id": "tilta",
-      "kind": "purchase",
       "primary_id": "clmedia-1963",
       "evidence": [
         "name:tnp-w235-gnusb-c충전식배터리"
@@ -23704,37 +23759,6 @@
           "price": 58000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/12003499884"
-        }
-      ]
-    },
-    {
-      "brand_id": "tilta",
-      "kind": "purchase",
-      "primary_id": "clmedia-1966",
-      "evidence": [
-        "name:tnp-fz100-gnusb-c충전식배터리"
-      ],
-      "members": [
-        {
-          "id": "clmedia-1966",
-          "name": "틸타 TNP-FZ100-GN USB-C 충전식 배터리",
-          "price": 59000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=1966"
-        },
-        {
-          "id": "saeki-PD00042910",
-          "name": "틸타 TNP-FZ100-GN USB-C 충전식 배터리",
-          "price": 62000,
-          "source": "saeki",
-          "url": "https://www.saeki.co.kr/item/itemDetail?itemId=PD00042910"
-        },
-        {
-          "id": "smartstore-12003502638",
-          "name": "TILTA TNP-FZ100-GN USB-C 충전식 배터리",
-          "price": 62000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/12003502638"
         }
       ]
     },
@@ -25062,7 +25086,7 @@
         {
           "id": "clmedia-2098",
           "name": "틸타 MB-T16 미라지 매트박스",
-          "price": 171000,
+          "price": 206000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2098"
         },
@@ -25635,6 +25659,30 @@
           "price": 30900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1758160545"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "clmedia-214",
+      "evidence": [
+        "model:3268"
+      ],
+      "members": [
+        {
+          "id": "clmedia-214",
+          "name": "스몰리그 3268 USB-C to DC 케이블",
+          "price": 44000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=214"
+        },
+        {
+          "id": "kpp-1685498644",
+          "name": "스몰리그 USB-C to DC 케이블 3268",
+          "price": 44000,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1685498644"
         }
       ]
     },
@@ -26456,31 +26504,6 @@
           "price": 65500,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1606983993"
-        }
-      ]
-    },
-    {
-      "brand_id": "smallrig",
-      "kind": "purchase",
-      "primary_id": "clmedia-2306",
-      "evidence": [
-        "model:5521",
-        "name:5521범블비에디션11인치로제트매직암"
-      ],
-      "members": [
-        {
-          "id": "clmedia-2306",
-          "name": "스몰리그 5521 범블비에디션 11인치 로제트매직암",
-          "price": 67900,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=2306"
-        },
-        {
-          "id": "kpp-1761728839",
-          "name": "스몰리그 5521 범블비에디션 11인치 로제트매직암",
-          "price": 67900,
-          "source": "kpp",
-          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1761728839"
         }
       ]
     },
@@ -28352,45 +28375,6 @@
     {
       "brand_id": "tilta",
       "kind": "purchase",
-      "primary_id": "clmedia-2577",
-      "evidence": [
-        "model:TT-0506-A19",
-        "name:tt-0506-a1919mm도브테일숄더마운트"
-      ],
-      "members": [
-        {
-          "id": "clmedia-2577",
-          "name": "틸타 TT-0506-A19 19mm 도브테일 숄더 마운트",
-          "price": 1359000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=2577"
-        },
-        {
-          "id": "kpp-1664875280",
-          "name": "틸타 19mm 도브테일 숄더 마운트 TT-0506-A19",
-          "price": 1096000,
-          "source": "kpp",
-          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1664875280"
-        },
-        {
-          "id": "plthink-1928781",
-          "name": "[TILTA] 틸타 숄더리그 마운트 19mm 도브테일 플레이트 TT-0506-A19",
-          "price": 1359000,
-          "source": "plthink",
-          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1928781"
-        },
-        {
-          "id": "smartstore-13744158762",
-          "name": "TT-0506-A19 19mm 도브테일 숄더 마운트",
-          "price": 1359000,
-          "source": "smartstore",
-          "url": "https://smartstore.naver.com/rainbowbene/products/13744158762"
-        }
-      ]
-    },
-    {
-      "brand_id": "tilta",
-      "kind": "purchase",
       "primary_id": "clmedia-2582",
       "evidence": [
         "model:TA-AMB4-B"
@@ -29735,7 +29719,7 @@
         {
           "id": "clmedia-2771",
           "name": "틸타 ES-T20-B-V 소니 FX6 어드밴스키트 (V마운트)",
-          "price": 467000,
+          "price": 605000,
           "source": "clmedia",
           "url": "https://clmedia.co.kr/product/detail.html?product_no=2771"
         },
@@ -32624,6 +32608,223 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
+      "primary_id": "clmedia-3493",
+      "evidence": [
+        "model:7019"
+      ],
+      "members": [
+        {
+          "id": "clmedia-3493",
+          "name": "스몰리그 7019 스몰리그 DJI 오즈모 포켓 4P 전용 광각 필터",
+          "price": 38900,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3493"
+        },
+        {
+          "id": "kpp-1792551809",
+          "name": "스몰리그 7019 DJI 오즈모 포켓 4P 광각 필터",
+          "price": 38900,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1792551809"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "clmedia-3494",
+      "evidence": [
+        "model:6538"
+      ],
+      "members": [
+        {
+          "id": "clmedia-3494",
+          "name": "스몰리그 6538 소니 NP-FW50 호환 D-Tap 더미배터리 전원 케이블",
+          "price": 56900,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3494"
+        },
+        {
+          "id": "kpp-1792558755",
+          "name": "스몰리그 6538 소니 NP-FW50 D-Tap 더미배터리 전원 케이블",
+          "price": 56900,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1792558755"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "clmedia-3495",
+      "evidence": [
+        "model:6537"
+      ],
+      "members": [
+        {
+          "id": "clmedia-3495",
+          "name": "스몰리그 6537 니콘 EN-EL15C 호환 D-Tap 더미배터리 전원 케이블",
+          "price": 56900,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3495"
+        },
+        {
+          "id": "kpp-1792558683",
+          "name": "스몰리그 6537 니콘 EN-EL15c D-Tap 더미배터리 전원 케이블",
+          "price": 56900,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1792558683"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "clmedia-3497",
+      "evidence": [
+        "model:6521"
+      ],
+      "members": [
+        {
+          "id": "clmedia-3497",
+          "name": "스몰리그 6521 프로페셔널 아웃도어 백팩 25L",
+          "price": 321900,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3497"
+        },
+        {
+          "id": "kpp-1792559389",
+          "name": "스몰리그 6521 전문가용 아웃도어 카메라 백팩 25L",
+          "price": 321900,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1792559389"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "clmedia-3498",
+      "evidence": [
+        "model:6439"
+      ],
+      "members": [
+        {
+          "id": "clmedia-3498",
+          "name": "스몰리그 6439 DJI RS 시리즈용 맨프로토-아르카 타입 퀵릴리즈 마운트 플레이트",
+          "price": 64900,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3498"
+        },
+        {
+          "id": "kpp-1792553398",
+          "name": "스몰리그 6439 DJI RS 5 퀵릴리즈 마운트 플레이트",
+          "price": 64900,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1792553398"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "clmedia-3501",
+      "evidence": [
+        "model:6540"
+      ],
+      "members": [
+        {
+          "id": "clmedia-3501",
+          "name": "스몰리그 6540 캐논 LP-E6P 호환 USB-C 더미 배터리 전원 케이블",
+          "price": 64900,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3501"
+        },
+        {
+          "id": "kpp-1792558866",
+          "name": "스몰리그 6540 캐논 LP-E6P USB-C 더미배터리 전원 케이블",
+          "price": 64900,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1792558866"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "clmedia-3502",
+      "evidence": [
+        "model:4831B"
+      ],
+      "members": [
+        {
+          "id": "clmedia-3502",
+          "name": "스몰리그 4831B D-Tap 1:4 전원 분배 케이블",
+          "price": 35900,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3502"
+        },
+        {
+          "id": "kpp-1754549776",
+          "name": "스몰리그 4831B D-Tap 1대4 전원 분배 케이블",
+          "price": 35900,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1754549776"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "clmedia-3503",
+      "evidence": [
+        "model:3751P",
+        "name:3751pad-01pro헤비듀티유압식비디오삼각대"
+      ],
+      "members": [
+        {
+          "id": "clmedia-3503",
+          "name": "스몰리그 3751P AD-01 Pro 헤비듀티 유압식 비디오 삼각대",
+          "price": 224000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3503"
+        },
+        {
+          "id": "kpp-1697781302",
+          "name": "스몰리그 3751P AD-01 Pro 헤비듀티 유압식 비디오 삼각대",
+          "price": 224000,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1697781302"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "clmedia-3507",
+      "evidence": [
+        "model:2797"
+      ],
+      "members": [
+        {
+          "id": "clmedia-3507",
+          "name": "스몰리그 2797 안전 잠금 버튼 멀티 콜드슈 마운트",
+          "price": 22000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3507"
+        },
+        {
+          "id": "kpp-1606730610",
+          "name": "스몰리그 릴리스 콜드슈 마운트 2797",
+          "price": 22000,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1606730610"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
       "primary_id": "clmedia-351",
       "evidence": [
         "model:3932"
@@ -32648,6 +32849,54 @@
     {
       "brand_id": "smallrig",
       "kind": "purchase",
+      "primary_id": "clmedia-3517",
+      "evidence": [
+        "model:6359"
+      ],
+      "members": [
+        {
+          "id": "clmedia-3517",
+          "name": "스몰리그 6359 오즈모 포켓 3 / 4 / 4P 호환 USB-C 자석 부착 카메라 거치대",
+          "price": 46900,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3517"
+        },
+        {
+          "id": "kpp-1787559818",
+          "name": "스몰리그 6359 DJI 오즈모 포켓4 C타입 퀵릴리스 백플레이트 마운트",
+          "price": 46900,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1787559818"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "clmedia-3519",
+      "evidence": [
+        "model:2059"
+      ],
+      "members": [
+        {
+          "id": "clmedia-3519",
+          "name": "스몰리그 2059 1/4인치 나사 포함 핫슈 마운트",
+          "price": 12000,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3519"
+        },
+        {
+          "id": "kpp-1665016019",
+          "name": "스몰리그 핫슈 미니 볼헤드 마운트 2SET 2059",
+          "price": 12000,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1665016019"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
       "primary_id": "clmedia-352",
       "evidence": [
         "model:3848"
@@ -32666,6 +32915,103 @@
           "price": 28000,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1665040141"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "clmedia-3527",
+      "evidence": [
+        "model:6624",
+        "name:6624알루미늄합금모노포드"
+      ],
+      "members": [
+        {
+          "id": "clmedia-3527",
+          "name": "스몰리그 6624 알루미늄 합금 모노포드",
+          "price": 192900,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3527"
+        },
+        {
+          "id": "kpp-1790643988",
+          "name": "스몰리그 6624 알루미늄 합금 모노포드",
+          "price": 192900,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1790643988"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "clmedia-3528",
+      "evidence": [
+        "model:6864"
+      ],
+      "members": [
+        {
+          "id": "clmedia-3528",
+          "name": "스몰리그 6864 DJI 오즈모 포켓3 / 4 / 4P 호환 경량 브이로그 케이지 키트",
+          "price": 62900,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3528"
+        },
+        {
+          "id": "kpp-1789095932",
+          "name": "스몰리그 6864 DJI 오즈모 포켓 4P / 포켓4 브이로그 케이지 키트",
+          "price": 62900,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1789095932"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "clmedia-3529",
+      "evidence": [
+        "model:6987"
+      ],
+      "members": [
+        {
+          "id": "clmedia-3529",
+          "name": "스몰리그 6987 인스타360 루나 울트라 호환 필터 키트 ( VND / CPL / 1/4블랙 미스트)",
+          "price": 46900,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3529"
+        },
+        {
+          "id": "kpp-1792552481",
+          "name": "스몰리그 6987 인스타360 루나 울트라 필터 키트 블랙",
+          "price": 46900,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1792552481"
+        }
+      ]
+    },
+    {
+      "brand_id": "smallrig",
+      "kind": "purchase",
+      "primary_id": "clmedia-3531",
+      "evidence": [
+        "model:6006"
+      ],
+      "members": [
+        {
+          "id": "clmedia-3531",
+          "name": "스몰리그 6006 DJI 오즈모 포켓3 / 4 / 4P /엑스트라 뮤즈 호환 케이지 (확장)",
+          "price": 38900,
+          "source": "clmedia",
+          "url": "https://clmedia.co.kr/product/detail.html?product_no=3531"
+        },
+        {
+          "id": "kpp-1787558760",
+          "name": "스몰리그 6006 DJI 오즈모 포켓 4 확장형 케이지",
+          "price": 38900,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1787558760"
         }
       ]
     },
@@ -35811,30 +36157,6 @@
           "price": 105900,
           "source": "kpp",
           "url": "https://kppkpp.co.kr/shop/item.php?it_id=1729234256"
-        }
-      ]
-    },
-    {
-      "brand_id": "smallrig",
-      "kind": "purchase",
-      "primary_id": "clmedia-854",
-      "evidence": [
-        "model:4838"
-      ],
-      "members": [
-        {
-          "id": "clmedia-854",
-          "name": "스몰리그 LP-E6NH 4채널 카메라 배터리 충전기 4838",
-          "price": 50000,
-          "source": "clmedia",
-          "url": "https://clmedia.co.kr/product/detail.html?product_no=854"
-        },
-        {
-          "id": "kpp-1734326591",
-          "name": "스몰리그 캐논 LP-E6NH 4채널 카메라 배터리 충전기 PD 60W 고속 충전지원 4838",
-          "price": 50000,
-          "source": "kpp",
-          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1734326591"
         }
       ]
     },
@@ -47339,6 +47661,37 @@
           "price": 29000,
           "source": "smartstore",
           "url": "https://smartstore.naver.com/rainbowbene/products/13744158683"
+        }
+      ]
+    },
+    {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "kpp-1664875280",
+      "evidence": [
+        "model:TT-0506-A19"
+      ],
+      "members": [
+        {
+          "id": "kpp-1664875280",
+          "name": "틸타 19mm 도브테일 숄더 마운트 TT-0506-A19",
+          "price": 1096000,
+          "source": "kpp",
+          "url": "https://kppkpp.co.kr/shop/item.php?it_id=1664875280"
+        },
+        {
+          "id": "plthink-1928781",
+          "name": "[TILTA] 틸타 숄더리그 마운트 19mm 도브테일 플레이트 TT-0506-A19",
+          "price": 1359000,
+          "source": "plthink",
+          "url": "https://www.plthink.com/shop/shopdetail.html?branduid=1928781"
+        },
+        {
+          "id": "smartstore-13744158762",
+          "name": "TT-0506-A19 19mm 도브테일 숄더 마운트",
+          "price": 1359000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/13744158762"
         }
       ]
     },
@@ -74083,6 +74436,30 @@
       ]
     },
     {
+      "brand_id": "tilta",
+      "kind": "purchase",
+      "primary_id": "saeki-PD00042910",
+      "evidence": [
+        "name:tnp-fz100-gnusb-c충전식배터리"
+      ],
+      "members": [
+        {
+          "id": "saeki-PD00042910",
+          "name": "틸타 TNP-FZ100-GN USB-C 충전식 배터리",
+          "price": 62000,
+          "source": "saeki",
+          "url": "https://www.saeki.co.kr/item/itemDetail?itemId=PD00042910"
+        },
+        {
+          "id": "smartstore-12003502638",
+          "name": "TILTA TNP-FZ100-GN USB-C 충전식 배터리",
+          "price": 62000,
+          "source": "smartstore",
+          "url": "https://smartstore.naver.com/rainbowbene/products/12003502638"
+        }
+      ]
+    },
+    {
       "brand_id": "harlowe",
       "kind": "purchase",
       "primary_id": "saeki-PD00043008",
@@ -78742,6 +79119,42 @@
       "evidence": [
         "https://smartstore.naver.com/rainbowbene/products/9204578250",
         "https://smartstore.naver.com/rainbowbene/products/11378368014"
+      ]
+    },
+    {
+      "id": "clmedia-3526",
+      "before": "스몰리그 6410 니콘 Z5 호환 마운트 플레이트",
+      "after": "스몰리그 6410 니콘 Z5IIC 호환 L자형 마운트 플레이트",
+      "hidden": false,
+      "reason": "Supplier title omitted the camera model suffix. SmallRig official SKU 6410 page identifies Z5IIC; preserve exact compatibility rather than imply original Z5.",
+      "evidence": [
+        "https://www.smallrig.com/l-shaped-mount-plate-for-nikon-z5iic.html"
+      ]
+    }
+  ],
+  "reviewed_model_keys": [
+    {
+      "id": "kpp-1792552481",
+      "expected_name": "스몰리그 6987 인스타360 루나 울트라 필터 키트 블랙",
+      "expected_brand_id": "smallrig",
+      "expected_kind": "purchase",
+      "model": "6987",
+      "evidence": [
+        "Exact SmallRig manufacturer SKU 6987; Insta360 is the compatible camera brand, not a second product SKU. Both source names identify the Luna Ultra filter kit; selectable option combinations are checked independently.",
+        "https://clmedia.co.kr/product/detail.html?product_no=3529",
+        "https://kppkpp.co.kr/shop/item.php?it_id=1792552481"
+      ]
+    },
+    {
+      "id": "clmedia-3529",
+      "expected_name": "스몰리그 6987 인스타360 루나 울트라 호환 필터 키트 ( VND / CPL / 1/4블랙 미스트)",
+      "expected_brand_id": "smallrig",
+      "expected_kind": "purchase",
+      "model": "6987",
+      "evidence": [
+        "Exact SmallRig manufacturer SKU 6987; Insta360 is the compatible camera brand, not a second product SKU. Both source names identify the Luna Ultra filter kit; selectable option combinations are checked independently.",
+        "https://clmedia.co.kr/product/detail.html?product_no=3529",
+        "https://kppkpp.co.kr/shop/item.php?it_id=1792552481"
       ]
     }
   ],

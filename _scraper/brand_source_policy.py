@@ -62,10 +62,16 @@ def purchase_source_allowed(product, choices=None):
 
 
 def publishable_ids(snapshot):
+    from build_catalog import reviewed_brand
     choices=selections()
     rules=json.loads((ROOT/'data/catalog/dedup-rules.json').read_text()).get('corrections',{})
     hidden={pid for pid,rule in rules.items() if rule.get('hidden')}
-    return {pid for pid,p in snapshot['products'].items() if purchase_source_allowed(p,choices) and pid not in hidden}
+    override_path=ROOT/'data/catalog/overrides.json'
+    overrides=json.loads(override_path.read_text()).get('brand_overrides',{}) if override_path.exists() else {}
+    # Use the same guarded brand correction as build_catalog before applying
+    # source restrictions. Raw supplier labels can be a retailer, not a maker.
+    return {pid for pid,p in snapshot['products'].items()
+            if purchase_source_allowed({**p,'brand':reviewed_brand(p,overrides)},choices) and pid not in hidden}
 
 
 def snapshots(candidate=None):

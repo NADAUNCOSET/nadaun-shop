@@ -175,10 +175,27 @@ def deduplicate(products, details, brands, rules=None):
 
     active = {pid:p for pid,p in products.items() if not p.get('hidden')}
     identities = defaultdict(list)
+    reviewed_models = []
     for pid,p in active.items():
         prefix = (p['brand_id'],p['kind'])
         identities[(*prefix,'name',name_key(p,brands.get(p['brand_id'])))].append(pid)
         sku = model_key(p)
+        reviewed = rules.get('reviewed_model_keys', {}).get(pid)
+        if reviewed:
+            # A reviewed SKU disambiguates numbers in compatibility names.
+            # Exact title/brand/kind guards and the normal variant/option
+            # conflict checks remain mandatory; display titles are untouched.
+            model = reviewed.get('model')
+            tokens = set(re.findall(r'(?<![A-Z0-9])(?:SR)?(\d{3,4}[A-Z]?)(?![A-Z0-9])', text(p['name']).upper()))
+            if (p['brand_id'] != 'smallrig' or p['kind'] != 'purchase'
+                    or reviewed.get('expected_brand_id') != p['brand_id']
+                    or reviewed.get('expected_kind') != p['kind']
+                    or reviewed.get('expected_name') != p['name']
+                    or not model or model not in tokens or not reviewed.get('evidence')
+                    or (sku is not None and sku != model)):
+                raise RuntimeError('Reviewed model identity changed; recheck product: '+pid)
+            sku = model
+            reviewed_models.append({'id':pid, **reviewed})
         if sku:
             identities[(*prefix,'model',sku)].append(pid)
     parent = {pid:pid for pid in active}
@@ -245,5 +262,6 @@ def deduplicate(products, details, brands, rules=None):
     audit = {'schema_version':1,'brands_checked':len(brands),'input_count':len(active),
              'duplicate_group_count':len(groups),'duplicate_entries_removed':len(redirects),
              'by_brand':dict(Counter(g['brand_id'] for g in groups)),
-             'groups':groups,'kept_distinct':rejected,'corrections':corrections}
+             'groups':groups,'kept_distinct':rejected,'corrections':corrections,
+             'reviewed_model_keys':reviewed_models}
     return redirects, audit

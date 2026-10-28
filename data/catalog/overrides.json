@@ -1560,7 +1560,20 @@
       "reason": "원본 상품명에 명시된 제품 브랜드로 기타/공급사 분류 정정",
       "reviewed_at": "2026-10-14",
       "live_title_verified": false,
-      "source_checked_at": "2026-10-11T14:58:13+00:00"
+      "source_checked_at": "2026-10-11T14:58:13+00:00",
+      "reviewed_versions": [
+        {
+          "expected_name": "프로 크로마키테이프 Pro Gaff Chroma Key Tape 48mmx9m",
+          "expected_brand": "PRO GAFF",
+          "brand": "PRO GAFF",
+          "evidence": [
+            "https://clmedia.co.kr/product/detail.html?product_no=441"
+          ],
+          "reason": "Verified refreshed supplier detail now declares the same previously reviewed PRO GAFF brand. Preserve prior source-version guard.",
+          "source_checked_at": "2026-10-27T12:24:48+00:00",
+          "reviewed_at": "2026-10-28T20:18:38.515694+09:00"
+        }
+      ]
     },
     "clmedia-52": {
       "expected_name": "하이퍼틴 SAHTU30BLACK 마이크로 to HDMI 케이블 3m",
@@ -2530,13 +2543,6 @@
       "expected_kind": "purchase",
       "evidence": "Verified same offer group smartstore-13745582204 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
     },
-    "smartstore-13745582199": {
-      "target_id": "clmedia-753",
-      "expected_target_name": "스몰리그 4713B 후지필름 X-T50 엘쉐이프그립 실버",
-      "expected_brand_id": "smallrig",
-      "expected_kind": "purchase",
-      "evidence": "Verified same offer group smartstore-13745582199 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
-    },
     "smartstore-13745582117": {
       "target_id": "clmedia-890",
       "expected_target_name": "스몰리그 4626 RC 220D Pro COB LED 비디오 라이트",
@@ -3083,13 +3089,6 @@
       "expected_kind": "purchase",
       "evidence": "Verified same offer group smartstore-13742812705 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
     },
-    "smartstore-13742812704": {
-      "target_id": "clmedia-1294",
-      "expected_target_name": "홀리랜드 HL-SF02 MARS4K & COSMO C1 스크류 피팅 마운트",
-      "expected_brand_id": "hollyland",
-      "expected_kind": "purchase",
-      "evidence": "Verified same offer group smartstore-13742812704 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
-    },
     "smartstore-13742812703": {
       "target_id": "clmedia-1297",
       "expected_target_name": "홀리랜드 HL-SC01 MARS-M1-ENHANCED 보관 가방",
@@ -3222,13 +3221,6 @@
       "expected_brand_id": "hollyland",
       "expected_kind": "purchase",
       "evidence": "Verified same offer group smartstore-13742812642 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
-    },
-    "smartstore-13742812641": {
-      "target_id": "clmedia-1805",
-      "expected_target_name": "홀리랜드 HL-CCS03 PYRO7 보관 케이스",
-      "expected_brand_id": "hollyland",
-      "expected_kind": "purchase",
-      "evidence": "Verified same offer group smartstore-13742812641 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
     },
     "smartstore-13742812640": {
       "target_id": "clmedia-2026",
@@ -3917,11 +3909,11 @@
       "evidence": "Verified same offer group smartstore-11718224914 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
     },
     "smartstore-11718172994": {
-      "target_id": "clmedia-1726",
-      "expected_target_name": "스몰리그 5123 DJI 포켓3 / 인스타360 X4 / 고프로 히어로13블랙용 미니 쇼크업소버암",
+      "target_id": "kpp-1749091665",
+      "expected_target_name": "스몰리그 액션캠 미니 쇼크 석션컵 오즈모 포켓3 / 고프로 / 인스타 5123",
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
-      "evidence": "Verified same offer group smartstore-11718172994 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
+      "evidence": "Verified same offer group smartstore-11718172994 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 current CLMEDIA inventory reviewed; exact original model preserved via verified supplier offer, with B/C generations kept separate."
     },
     "smartstore-11516501622": {
       "target_id": "clmedia-857",
@@ -4323,18 +4315,18 @@
       "evidence": "Verified same offer group kpp-1606730228 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
     },
     "smartstore-13812317445": {
-      "target_id": "kpp-1606730610",
-      "expected_target_name": "스몰리그 릴리스 콜드슈 마운트 2797",
+      "target_id": "clmedia-3507",
+      "expected_target_name": "스몰리그 2797 안전 잠금 버튼 멀티 콜드슈 마운트",
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1606730610 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
+      "evidence": "Verified same offer group kpp-1606730610 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 current CLMEDIA inventory reviewed; exact original model preserved via verified supplier offer, with B/C generations kept separate."
     },
     "avx-754": {
-      "target_id": "kpp-1606730610",
-      "expected_target_name": "스몰리그 릴리스 콜드슈 마운트 2797",
+      "target_id": "clmedia-3507",
+      "expected_target_name": "스몰리그 2797 안전 잠금 버튼 멀티 콜드슈 마운트",
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1606730610 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
+      "evidence": "Verified same offer group kpp-1606730610 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 current CLMEDIA inventory reviewed; exact original model preserved via verified supplier offer, with B/C generations kept separate."
     },
     "avx-755": {
       "target_id": "kpp-1636613880",
@@ -5730,11 +5722,11 @@
       "evidence": "Verified same offer group kpp-1731566182 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신."
     },
     "saeki-PD00040470": {
-      "target_id": "clmedia-1150",
-      "expected_target_name": "스몰리그 4977 캐논 EOS R5 Mark II용 호크락 퀵 릴리스 케이지",
+      "target_id": "kpp-1731565928",
+      "expected_target_name": "스몰리그 캐논 EOS R5 Mark II 호크락 퀵 릴리즈 케이지 4977",
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1731565928 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신."
+      "evidence": "Verified same offer group kpp-1731565928 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신. 2026-10-28 current CLMEDIA inventory reviewed; exact original model preserved via verified supplier offer, with B/C generations kept separate."
     },
     "smartstore-13745581830": {
       "target_id": "clmedia-1151",
@@ -6640,11 +6632,11 @@
       "evidence": "Verified same offer group kpp-1735622050 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신."
     },
     "onnoff-613": {
-      "target_id": "clmedia-1726",
-      "expected_target_name": "스몰리그 5123 DJI 포켓3 / 인스타360 X4 / 고프로 히어로13블랙용 미니 쇼크업소버암",
+      "target_id": "kpp-1749091665",
+      "expected_target_name": "스몰리그 액션캠 미니 쇼크 석션컵 오즈모 포켓3 / 고프로 / 인스타 5123",
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
-      "evidence": "Verified same offer group smartstore-11718172994 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
+      "evidence": "Verified same offer group smartstore-11718172994 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 current CLMEDIA inventory reviewed; exact original model preserved via verified supplier offer, with B/C generations kept separate."
     },
     "smartstore-13745582410": {
       "target_id": "clmedia-1729",
@@ -8887,25 +8879,25 @@
       "evidence": "Verified same offer group kpp-1606983993 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신."
     },
     "smartstore-13745582778": {
-      "target_id": "clmedia-2306",
+      "target_id": "kpp-1761728839",
       "expected_target_name": "스몰리그 5521 범블비에디션 11인치 로제트매직암",
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1761728839 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신."
+      "evidence": "Verified same offer group kpp-1761728839 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신. 2026-10-28 current CLMEDIA inventory reviewed; exact original model preserved via verified supplier offer, with B/C generations kept separate."
     },
     "plthink-1927691": {
-      "target_id": "clmedia-2306",
+      "target_id": "kpp-1761728839",
       "expected_target_name": "스몰리그 5521 범블비에디션 11인치 로제트매직암",
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1761728839 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신."
+      "evidence": "Verified same offer group kpp-1761728839 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신. 2026-10-28 current CLMEDIA inventory reviewed; exact original model preserved via verified supplier offer, with B/C generations kept separate."
     },
     "onnoff-622": {
-      "target_id": "clmedia-2306",
+      "target_id": "kpp-1761728839",
       "expected_target_name": "스몰리그 5521 범블비에디션 11인치 로제트매직암",
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1761728839 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신."
+      "evidence": "Verified same offer group kpp-1761728839 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신. 2026-10-28 current CLMEDIA inventory reviewed; exact original model preserved via verified supplier offer, with B/C generations kept separate."
     },
     "plthink-1927692": {
       "target_id": "clmedia-2307",
@@ -13002,13 +12994,6 @@
       "expected_kind": "purchase",
       "evidence": "Verified same offer group kpp-1699864345 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신."
     },
-    "plthink-1925815": {
-      "target_id": "clmedia-753",
-      "expected_target_name": "스몰리그 4713B 후지필름 X-T50 엘쉐이프그립 실버",
-      "expected_brand_id": "smallrig",
-      "expected_kind": "purchase",
-      "evidence": "Verified same offer group smartstore-13745582199 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
-    },
     "smartstore-13745582200": {
       "target_id": "clmedia-756",
       "expected_target_name": "스몰리그 4717 다용도 경량 삼각대 CT-01",
@@ -13584,18 +13569,18 @@
       "evidence": "Verified same offer group kpp-1729234256 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신."
     },
     "smartstore-11429098084": {
-      "target_id": "clmedia-854",
-      "expected_target_name": "스몰리그 LP-E6NH 4채널 카메라 배터리 충전기 4838",
+      "target_id": "kpp-1734326591",
+      "expected_target_name": "스몰리그 캐논 LP-E6NH 4채널 카메라 배터리 충전기 PD 60W 고속 충전지원 4838",
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1734326591 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신."
+      "evidence": "Verified same offer group kpp-1734326591 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신. 2026-10-28 current CLMEDIA inventory reviewed; exact original model preserved via verified supplier offer, with B/C generations kept separate."
     },
     "onnoff-1140": {
-      "target_id": "clmedia-854",
-      "expected_target_name": "스몰리그 LP-E6NH 4채널 카메라 배터리 충전기 4838",
+      "target_id": "kpp-1734326591",
+      "expected_target_name": "스몰리그 캐논 LP-E6NH 4채널 카메라 배터리 충전기 PD 60W 고속 충전지원 4838",
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1734326591 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신."
+      "evidence": "Verified same offer group kpp-1734326591 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 대표의 겹침 원본 우선순위 변경에 따라 동일한 기존 offer ID 전체 집합을 대조하고 대표 원본/상품명 연결만 갱신. 2026-10-28 current CLMEDIA inventory reviewed; exact original model preserved via verified supplier offer, with B/C generations kept separate."
     },
     "plthink-1924839": {
       "target_id": "clmedia-857",
@@ -14998,32 +14983,32 @@
       "evidence": "Verified same offer group kpp-1684222024 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
     },
     "smartstore-8550542774": {
-      "target_id": "kpp-1685498644",
-      "expected_target_name": "스몰리그 USB-C to DC 케이블 3268",
+      "target_id": "clmedia-214",
+      "expected_target_name": "스몰리그 3268 USB-C to DC 케이블",
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1685498644 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
+      "evidence": "Verified same offer group kpp-1685498644 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 current CLMEDIA inventory reviewed; exact original model preserved via verified supplier offer, with B/C generations kept separate."
     },
     "smartstore-13745581761": {
-      "target_id": "kpp-1685498644",
-      "expected_target_name": "스몰리그 USB-C to DC 케이블 3268",
+      "target_id": "clmedia-214",
+      "expected_target_name": "스몰리그 3268 USB-C to DC 케이블",
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1685498644 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
+      "evidence": "Verified same offer group kpp-1685498644 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 current CLMEDIA inventory reviewed; exact original model preserved via verified supplier offer, with B/C generations kept separate."
     },
     "plthink-1922133": {
-      "target_id": "kpp-1685498644",
-      "expected_target_name": "스몰리그 USB-C to DC 케이블 3268",
+      "target_id": "clmedia-214",
+      "expected_target_name": "스몰리그 3268 USB-C to DC 케이블",
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1685498644 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
+      "evidence": "Verified same offer group kpp-1685498644 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 current CLMEDIA inventory reviewed; exact original model preserved via verified supplier offer, with B/C generations kept separate."
     },
     "onnoff-993": {
-      "target_id": "kpp-1685498644",
-      "expected_target_name": "스몰리그 USB-C to DC 케이블 3268",
+      "target_id": "clmedia-214",
+      "expected_target_name": "스몰리그 3268 USB-C to DC 케이블",
       "expected_brand_id": "smallrig",
       "expected_kind": "purchase",
-      "evidence": "Verified same offer group kpp-1685498644 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL."
+      "evidence": "Verified same offer group kpp-1685498644 in published baseline 0cb09924587c3c6d; source policy changed, preserve existing URL. 2026-10-28 current CLMEDIA inventory reviewed; exact original model preserved via verified supplier offer, with B/C generations kept separate."
     },
     "onnoff-955": {
       "target_id": "kpp-1685697567",
@@ -15430,6 +15415,48 @@
       "expected_brand_id": "rainbowbene",
       "expected_kind": "rental",
       "evidence": "2026-10-27 대표 명시적 중복 정리 지시. 동일 영등포로33길18 2층·동일9사진·판매가50000원·동일공간/10롤/최소2시간. 최신브랜딩 본문이 있는11378368014 유지. 기존 예약/주소의9204578250은 대상 상품으로 해석."
+    },
+    "clmedia-1726": {
+      "target_id": "kpp-1749091665",
+      "expected_target_name": "스몰리그 액션캠 미니 쇼크 석션컵 오즈모 포켓3 / 고프로 / 인스타 5123",
+      "expected_brand_id": "smallrig",
+      "expected_kind": "purchase",
+      "evidence": "2026-10-28 complete CLMEDIA inventory and unavailable old detail verified; exact manufacturer/model/configuration checked against preserved old record and current replacement. See private CLMEDIA retirement review."
+    },
+    "clmedia-1971": {
+      "target_id": "onnoff-310",
+      "expected_target_name": "소니 SEL24240",
+      "expected_brand_id": "sony",
+      "expected_kind": "purchase",
+      "evidence": "2026-10-28 complete CLMEDIA inventory and unavailable old detail verified; exact manufacturer/model/configuration checked against preserved old record and current replacement. See private CLMEDIA retirement review."
+    },
+    "clmedia-2306": {
+      "target_id": "kpp-1761728839",
+      "expected_target_name": "스몰리그 5521 범블비에디션 11인치 로제트매직암",
+      "expected_brand_id": "smallrig",
+      "expected_kind": "purchase",
+      "evidence": "2026-10-28 complete CLMEDIA inventory and unavailable old detail verified; exact manufacturer/model/configuration checked against preserved old record and current replacement. See private CLMEDIA retirement review."
+    },
+    "clmedia-2577": {
+      "target_id": "kpp-1664875280",
+      "expected_target_name": "틸타 19mm 도브테일 숄더 마운트 TT-0506-A19",
+      "expected_brand_id": "tilta",
+      "expected_kind": "purchase",
+      "evidence": "2026-10-28 complete CLMEDIA inventory and unavailable old detail verified; exact manufacturer/model/configuration checked against preserved old record and current replacement. See private CLMEDIA retirement review."
+    },
+    "clmedia-3477": {
+      "target_id": "clmedia-3360",
+      "expected_target_name": "[입고완료] 디조필름 DZO-AZ25180I Arles Zoom T2.6 FF 시네 2렌즈 번들 (ARRI PL)",
+      "expected_brand_id": "dzofilm",
+      "expected_kind": "purchase",
+      "evidence": "2026-10-28 complete CLMEDIA inventory and unavailable old detail verified; exact manufacturer/model/configuration checked against preserved old record and current replacement. See private CLMEDIA retirement review."
+    },
+    "clmedia-854": {
+      "target_id": "kpp-1734326591",
+      "expected_target_name": "스몰리그 캐논 LP-E6NH 4채널 카메라 배터리 충전기 PD 60W 고속 충전지원 4838",
+      "expected_brand_id": "smallrig",
+      "expected_kind": "purchase",
+      "evidence": "2026-10-28 complete CLMEDIA inventory and unavailable old detail verified; exact manufacturer/model/configuration checked against preserved old record and current replacement. See private CLMEDIA retirement review."
     }
   },
   "retired_without_replacement": {
@@ -15481,6 +15508,54 @@
       "current_source_name": "스몰리그 4831B D-Tap 1대4 전원 분배 케이블",
       "reason": "Current supplier reused the target ID for a different color or exact model suffix. No exact previous-model replacement verified; do not redirect a retired URL to a different configuration.",
       "checked_at": "2026-10-27T07:53:26.800742+00:00"
+    },
+    "smartstore-13745582199": {
+      "previous_target_id": "clmedia-753",
+      "expected_previous_name": "스몰리그 4713B 후지필름 X-T50 엘쉐이프그립 실버",
+      "current_source_name": "스몰리그 4713C 후지필름 X-T50 엘쉐이프그립 실버",
+      "reason": "Verified source withdrawal, or supplier reused the source ID for a different model suffix; no exact approved replacement for this previous model. Do not redirect to a different generation.",
+      "checked_at": "2026-10-28T20:20:05.357198+09:00"
+    },
+    "smartstore-13742812704": {
+      "previous_target_id": "clmedia-1294",
+      "expected_previous_name": "홀리랜드 HL-SF02 MARS4K & COSMO C1 스크류 피팅 마운트",
+      "current_source_name": null,
+      "reason": "Verified source withdrawal, or supplier reused the source ID for a different model suffix; no exact approved replacement for this previous model. Do not redirect to a different generation.",
+      "checked_at": "2026-10-28T20:20:05.357408+09:00"
+    },
+    "smartstore-13742812641": {
+      "previous_target_id": "clmedia-1805",
+      "expected_previous_name": "홀리랜드 HL-CCS03 PYRO7 보관 케이스",
+      "current_source_name": null,
+      "reason": "Verified source withdrawal, or supplier reused the source ID for a different model suffix; no exact approved replacement for this previous model. Do not redirect to a different generation.",
+      "checked_at": "2026-10-28T20:20:05.357453+09:00"
+    },
+    "plthink-1925815": {
+      "previous_target_id": "clmedia-753",
+      "expected_previous_name": "스몰리그 4713B 후지필름 X-T50 엘쉐이프그립 실버",
+      "current_source_name": "스몰리그 4713C 후지필름 X-T50 엘쉐이프그립 실버",
+      "reason": "Verified source withdrawal, or supplier reused the source ID for a different model suffix; no exact approved replacement for this previous model. Do not redirect to a different generation.",
+      "checked_at": "2026-10-28T20:20:05.359125+09:00"
+    },
+    "clmedia-1294": {
+      "expected_previous_name": "홀리랜드 HL-SF02 MARS4K & COSMO C1 스크류 피팅 마운트",
+      "reason": "Not in the verified complete current supplier inventory; current detail unavailable; no exact replacement verified.",
+      "checked_at": "2026-10-28T20:20:05.359630+09:00"
+    },
+    "clmedia-1805": {
+      "expected_previous_name": "홀리랜드 HL-CCS03 PYRO7 보관 케이스",
+      "reason": "Not in the verified complete current supplier inventory; current detail unavailable; no exact replacement verified.",
+      "checked_at": "2026-10-28T20:20:05.359640+09:00"
+    },
+    "clmedia-2150": {
+      "expected_previous_name": "스몰리그 4831 1 to 4 디탭케이블",
+      "reason": "Not in the verified complete current supplier inventory; current detail unavailable; no exact replacement verified.",
+      "checked_at": "2026-10-28T20:20:05.359648+09:00"
+    },
+    "clmedia-2204": {
+      "expected_previous_name": "틸타 TK-IP16-PFC-B 크로노스 아이폰16프로 케이지(블랙)",
+      "reason": "Not in the verified complete current supplier inventory; current detail unavailable; no exact replacement verified.",
+      "checked_at": "2026-10-28T20:20:05.359652+09:00"
     }
   }
 }

@@ -21,6 +21,19 @@ class SourcePolicyTests(unittest.TestCase):
             self.assertEqual(p.read_text(),'{"historical":true}')
             with self.assertRaises(ValueError):policy.snapshots({'source':'imweb','products':{}})
 
+    def test_publication_ids_apply_guarded_manufacturer_before_source_exclusion(self):
+        source={'products':{'clmedia-1':{'id':'clmedia-1','name':'Motion9 cart','brand':'CLMEDIA','kind':'purchase','source':'clmedia'},
+                            'clmedia-2':{'id':'clmedia-2','name':'SmallRig mount','brand':'SmallRig','kind':'purchase','source':'clmedia'},
+                            'clmedia-3':{'id':'clmedia-3','name':'Motion9 rental','brand':'MOTION9','kind':'rental','source':'clmedia'}}}
+        with tempfile.TemporaryDirectory() as folder,patch.object(policy,'ROOT',Path(folder)),patch.object(policy,'selections',return_value={'motion9':{'source':'motion9','exclusive':True}}):
+            d=Path(folder)/'data/catalog';d.mkdir(parents=True)
+            (d/'dedup-rules.json').write_text('{"corrections":{}}')
+            (d/'overrides.json').write_text(json.dumps({'brand_overrides':{'clmedia-1':{'expected_name':'Motion9 cart','expected_brand':'CLMEDIA','brand':'MOTION9','evidence':['reviewed supplier title']}}}))
+            self.assertEqual(policy.publishable_ids(source),{'clmedia-2','clmedia-3'})
+            self.assertEqual(source['products']['clmedia-1']['brand'],'CLMEDIA')
+            source['products']['clmedia-1']['name']='Different cart'
+            with self.assertRaisesRegex(ValueError,'Reviewed brand evidence changed'):policy.publishable_ids(source)
+
     def test_owner_all_brand_approval_resolves_avx_overlap_without_changing_primary(self):
         self.approval.side_effect=lambda source:source=='avx'
         counts={'smallrig':{'avx':1,'kpp':2},'sony':{'avx':1,'smartstore':2}}

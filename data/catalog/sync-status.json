@@ -7,7 +7,7 @@
     "plthink": 6653,
     "saeki": 7452,
     "dji-official": 937,
-    "clmedia": 2242,
+    "clmedia": 2265,
     "cinemall": 1209,
     "onnoff": 1068,
     "ldnet": 3075,
@@ -25,7 +25,7 @@
     "plthink": 5488,
     "saeki": 7335,
     "dji-official": 932,
-    "clmedia": 2143,
+    "clmedia": 2166,
     "cinemall": 1183,
     "onnoff": 554,
     "ldnet": 3075,
@@ -36,18 +36,18 @@
     "digitalcp": 882,
     "sunphoto": 865
   },
-  "synced_at": "2026-10-27T10:33:45.975576+00:00",
-  "merged_count": 3591,
-  "retired_redirect_count": 1924,
-  "product_count": 30761,
+  "synced_at": "2026-10-28T11:14:36+00:00",
+  "merged_count": 3606,
+  "retired_redirect_count": 1926,
+  "product_count": 30769,
   "category_browsing_enabled": true,
-  "listing_count": 30493,
+  "listing_count": 30501,
   "option_family_count": 268,
   "deduplication": {
     "brands_checked": 440,
-    "groups": 2975,
-    "removed": 3591
+    "groups": 2991,
+    "removed": 3606
   },
-  "detail_content_sha256": "8d52699c352b083cb6dc6aaba150d1357992886c272c545d5beb504f594e2d11",
-  "revision": "03700a2ec5cbf2f3"
+  "detail_content_sha256": "62f0a480e5ddd95b98e34ae2b1cd1edbd73a2830c856f1487082d4590c4c41c4",
+  "revision": "eb9fe6ca68e66db8"
 }

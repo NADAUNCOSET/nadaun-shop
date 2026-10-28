@@ -111,6 +111,30 @@ class SourceRules(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             deduplicate(p,d,{}, {'corrections':{'smartstore-1':{'expected_name':'이전 상품','name':'수정 이름','reason':'검토'}}})
 
+    def reviewed_model_fixture(self, options=None):
+        p,d=self.merge_fixture(['스몰리그 6987 인스타360 필터 키트','스몰리그 6987 인스타360 루나 울트라 필터'],options=options)
+        rules={'reviewed_model_keys':{pid:{'expected_name':v['name'],'expected_brand_id':'smallrig','expected_kind':'purchase','model':'6987','evidence':['Verified manufacturer SKU in both source titles']} for pid,v in p.items()}}
+        return p,d,rules
+
+    def test_reviewed_model_disambiguates_compatibility_number_without_renaming(self):
+        p,d,rules=self.reviewed_model_fixture();names={i:v['name'] for i,v in p.items()}
+        self.assertTrue(all(model_key(v) is None for v in p.values()))
+        redirects,a=deduplicate(p,d,{'smallrig':{'name':'SMALLRIG'}},rules)
+        self.assertEqual(len(redirects),1)
+        self.assertEqual(len(a['reviewed_model_keys']),2)
+        self.assertEqual(next(iter(p.values()))['name'],names[next(iter(p))])
+
+    def test_reviewed_model_still_preserves_different_options(self):
+        p,d,rules=self.reviewed_model_fixture({1:[{'name':'CPL only'}]})
+        self.assertEqual(deduplicate(p,d,{'smallrig':{'name':'SMALLRIG'}},rules)[0],{})
+
+    def test_reviewed_model_fails_closed_on_changed_title_kind_or_sku(self):
+        for field,value in [('name','스몰리그 6987B 인스타360 필터'),('kind','rental'),('brand_id','tilta')]:
+            p,d,rules=self.reviewed_model_fixture();p['smartstore-1'][field]=value
+            with self.assertRaises(RuntimeError):deduplicate(p,d,{},rules)
+        p,d,rules=self.reviewed_model_fixture();rules['reviewed_model_keys']['smartstore-1']['model']='7000'
+        with self.assertRaises(RuntimeError):deduplicate(p,d,{},rules)
+
     def test_site_metadata_policies_and_chat_links(self):
         for filename in ['index.html','catalog.html','brands/dji.html','terms.html','privacy.html','shipping.html','cart.html','checkout.html']:
             soup=BeautifulSoup((ROOT/filename).read_text(),'lxml')
