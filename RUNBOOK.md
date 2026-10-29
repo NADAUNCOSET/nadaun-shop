@@ -1253,3 +1253,17 @@ PLTHINK6,346/AVX1,869/LDNET3,078은 최신 수집 검증 후 공개 반영 대�
 
 근거: `_private/catalog/studio-review-20261027/STATUS.json`, content-publication/deployment/semantic-audit, review-page-verification, linked-review-syntax-verification. 최신 전체 작업 상태는 `_private/catalog/mirror-refresh-20261027/STATUS.json`의 current_release와 pending에서 이어간다. 기록시각 2026-10-27T23:27:27.932312+09:00.
 <!-- STUDIO-BRAND-REVIEW-C5-20261027 END -->
+
+
+<!-- MIRROR-AUDIT-20261029 -->
+## 2026-10-29 전체 미러링 재점검과 완료 판정 보강
+
+대표 요청: “정확하게 확인해”, “미러링 완벽하게 할 수 있도록 확실하게 체크해놔”. 이전 씨엘미디어 반영과 전체 자동 미러링을 구분해 현재Mac에서 읽기전용 전수 감사를 진행했다. 16공급처·공개 offer34,375건의 ID집합/저장 가격·판매상태·원본URL이 운영과 일치했고 장비30,769개/기프트72,935개JSON은 NAS 게시본과 바이트 일치했다. 구조 오류0. 이것은 현재 공급처 새 전수수집이나 모든 옵션·이미지 의미 검수의 완료가 아니다. KPP5개는 원본 fingerprint와 verified/unavailable 캐시가 일치하는 기존 제외이며, 이번 실시간 판매종료 확인으로 날짜를 바꾸지 않았다.
+
+현재 원본 갱신기한 경과, 카탈로그 예약10개 유지보수 중지, 디지털청풍/썬포토 예약 미설치, 모션나인/펀노마드 정기갱신 미구현을 구분했다. PLTHINK6346/AVX1869/LDNET3078의 검증 수집은 증분·제외 검토 후 게시 대기다. 세기7531개 중 상세7483/오류48로 미완료다. 시네몰 개별 보류·기프트 접근제한·최신 상세/단가/공급업체 연결 미완료를 유지한다.
+
+상태 보고는 실제 구현된 reviewed_source_worker를 인식하고 오래된 게시영수증/수집시각·오류 래치·접근 보류를 분리했다. 썬포토 plan의 과거2브랜드 설명을 현재 승인20브랜드로 정정했으며 실제 수집기는 이미20범위였다. 공용 source promotion에 이전 게시본보다 오래된 complete 후보를 막는 날짜 검사를 추가했다. Cafe24 모든 운영 수집·오프라인 재검토를 PC별 SQLite로 일치시키고 전체 NAS작업경로 해시로 동명 작업폴더의 DB충돌을 방지했다. SQLite contextmanager만으로 닫히지 않던 backup 연결을 명시적으로 close한다.
+
+검사 중 NAS TMPDIR의 fixture가 기존 로컬 runtime namespace와 겹치는 오류를 발견했다. NAS 게시본은 유지했고 로컬 LDNET 상세3072행/페이지/오류표의 내용 해시가 NAS 복구사본과 같음을 확인했다. 바뀐 상태2키(categories/inventory_ready)는 원래 NAS 검증사본 SHA954263d8bcf9f43a916d78182cefb5a91cb60efa6c836c1771f0f41d40297e67로 복구했다. 이번에 생성된 CLMEDIA/시네몰 fixture4파일만 NAS에 해시 검증 보존 후 정리했다. 이후 모든 관련 시험은 runtime_root를 격리해 통과했다. 공개 상품·공급처 원본·실제 예약 실행은 변경하지 않았다.
+
+관련 회귀98개 통과, 후속 상태22개·감사10개 통과, 현행503파일 release gate 통과. 전체판정은 현재revision·각원본SHA와 실제6종 end-to-end 근거가 없으면 완료를 만들지 않는다. 기존 검토자료 첫화면과 생성기에 12_전체미러링점검 링크를 추가했다. 코드범위만 Git에 저장하고 최종 commit/READY/운영 재조회는 `_private/catalog/mirror-audit-20261029/publication.json`, `deployment-status.json`, `completion.json`으로 확인한다. 공급처 요청0·예약 재개0. 기록 2026-10-29T20:50:47.020418+09:00.

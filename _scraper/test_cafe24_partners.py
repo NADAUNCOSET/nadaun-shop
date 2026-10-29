@@ -61,6 +61,12 @@ def rendered_variant_page():
 
 
 class Cafe24Tests(unittest.TestCase):
+    def setUp(self):
+        import catalog_checkpoint
+        runtime=tempfile.TemporaryDirectory();self.addCleanup(runtime.cleanup)
+        patcher=patch.object(catalog_checkpoint,'runtime_root',return_value=Path(runtime.name)/'runtime')
+        patcher.start();self.addCleanup(patcher.stop)
+
     def test_transport_retries_connection_reset_without_changing_identity_or_cookie(self):
         with tempfile.TemporaryDirectory() as tmp,patch.object(c.time,'sleep') as sleep,patch.object(c.time,'monotonic',return_value=100):
             source=c.Source('ldnet',Path(tmp));source.session.cookies.set('observed','same')

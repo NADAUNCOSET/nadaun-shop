@@ -7,10 +7,31 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from publication_storage import promote_updates, stage_generated, validate_updates
+from publication_storage import promote_updates, stage_generated, validate_updates, reject_snapshot_rollback
 
 
 class PublicationStorageTests(unittest.TestCase):
+    def test_older_complete_candidate_is_blocked_before_any_batch_write(self):
+        self.lock()
+        old=self.candidate|{'collected_at':'2026-10-27T20:00:00+09:00'}
+        newer=self.candidate|{'collected_at':'2026-10-28T11:00:00Z'}
+        (self.out/'plthink.json').write_text(json.dumps(newer))
+        self.cmd('git','add','--','sources/plthink.json')
+        self.cmd('git','-c','commit.gpgsign=false','commit','-qm','Published source fixture')
+        with self.assertRaisesRegex(ValueError,'older than the published'):
+            self.promote({'plthink':old})
+        self.assertEqual(self.writes,[])
+        self.assertEqual(json.loads((self.out/'plthink.json').read_text()),newer)
+
+    def test_timestamp_ordering_uses_actual_instant_and_preserves_equal_time_reparse(self):
+        published=self.candidate|{'collected_at':'2026-10-28T20:00:00+09:00'}
+        (self.out/'plthink.json').write_text(json.dumps(published))
+        for timestamp in ['2026-10-28T11:00:00Z','2026-10-28T12:00:00+00:00']:
+            reject_snapshot_rollback({'plthink':self.candidate|{'collected_at':timestamp}},self.out)
+        for timestamp in [None,'not-a-date','2026-10-28T12:00:00']:
+            with self.subTest(timestamp=timestamp),self.assertRaisesRegex(ValueError,'timestamp requires review'):
+                reject_snapshot_rollback({'plthink':self.candidate|{'collected_at':timestamp}},self.out)
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)

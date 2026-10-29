@@ -70,7 +70,8 @@ def publish(snapshot):
     if ids!=publishable_ids(snapshot):raise ValueError('Published supplier identities differ from reviewed scope')
     receipt=result|{'source':source,'source_collected_at':snapshot['collected_at'],
         'source_sha256':hashlib.sha256((OUT/(source+'.json')).read_bytes()).hexdigest(),
-        'verified_products':len(ids),'policy_sha256':policy_fingerprint()}
+        'verified_products':len(ids),'source_verified_products':snapshot['product_count'],
+        'excluded_ids':sorted(set(snapshot['products'])-ids),'policy_sha256':policy_fingerprint()}
     save_json(folder/'published.json',receipt);return receipt
 
 def work(source):

@@ -1,11 +1,13 @@
 """Read-only partner readiness report. A scheduled process is not a live mirror."""
 import hashlib
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 from sync_shop_sources import ROOT, OUT, stamp
 
 STATE = ROOT / '_scraper/.sync-state'
 PLAN = ROOT / '_scraper/partner-sync-plan.json'
+IMPLEMENTED_ADAPTERS = frozenset({'plthink', 'avx', 'dji-official', 'cafe24', 'saeki', 'reviewed_source_worker'})
 
 
 def read(path):
@@ -44,9 +46,14 @@ def verified_receipt(source, out=OUT, state=STATE):
         from saeki_publication import validate_candidate
         try:validate_candidate(snapshot)
         except (ValueError,KeyError,TypeError):return False
-    if source in ('plthink','clmedia','cinemall','onnoff','ldnet','saeki'):
+    if source in ('digitalcp','sunphoto','motion9','funomad'):
+        from reviewed_supplier_sources import validate_snapshot
+        try:validate_snapshot(snapshot)
+        except (ValueError,KeyError,TypeError):return False
+    if source in ('plthink','clmedia','cinemall','onnoff','ldnet','saeki','digitalcp','sunphoto','motion9','funomad'):
         from brand_source_policy import publishable_ids,policy_fingerprint
-        expected=publishable_ids(snapshot)
+        try:expected=publishable_ids(snapshot)
+        except (ValueError,KeyError,TypeError):return False
         if (len(expected)!=count or 'excluded_ids' in receipt) and (receipt.get('policy_sha256')!=policy_fingerprint() or
             receipt.get('excluded_ids')!=sorted(set(snapshot['products'])-expected) or
             receipt.get('source_verified_products')!=count):return False
@@ -68,7 +75,7 @@ def report(plan_path=PLAN, out=OUT, state=STATE):
         published = verified_receipt(source, out, state)
         dependency = config.get('after_live_verified')
         waiting = dependency if dependency and not verified_receipt(dependency, out, state) else None
-        adapter_ready = config.get('adapter') in ('plthink', 'avx', 'dji-official','cafe24','saeki')
+        adapter_ready = config.get('adapter') in IMPLEMENTED_ADAPTERS
         collector_ready = config.get('collection_adapter') == 'cafe24'
         if collector_ready:progress=progress|{'checked_at':progress.get('at')}
         if source == 'avx':
@@ -84,20 +91,42 @@ def report(plan_path=PLAN, out=OUT, state=STATE):
         # A receipt cannot turn an unimplemented adapter into recurring sync.
         source_choices = read(folder / 'publication-waiting.json') if source == 'avx' else {}
         receipt=read(folder/'published.json')
+        error = read(folder / 'worker-error.json' if source in ('avx','dji-official','saeki') or collector_ready or config.get('adapter')=='reviewed_source_worker' else state / (source + '-worker-error.json'))
+        suspension = read(folder / 'source-suspended.json')
+        suspended = bool(suspension) and suspension.get('suspended', True) is not False
         phase = (source_choices['state'] if source_choices.get('state') in ('awaiting_brand_source_choices','awaiting_content_review') and not published else
                  progress.get('phase',config.get('status','not_started')) if collector_ready else
                  config.get('status','awaiting_source_access') if not adapter_ready else
                  'waiting_for_predecessor' if waiting else
                  'live_verified' if published else progress.get('phase', 'not_started'))
+        if suspended:
+            phase = 'source_suspended'
+        elif error.get('requires_review') and not error.get('resolved'):
+            phase = 'error_requires_review'
+        collected_at = receipt.get('source_collected_at')
+        age = None
+        try:
+            observed = datetime.fromisoformat(collected_at.replace('Z', '+00:00'))
+            if observed.tzinfo is not None:
+                age = (datetime.now(timezone.utc) - observed).total_seconds()
+        except (AttributeError, ValueError):
+            pass
         result['sources'][source] = {
             'name': config['name'], 'phase': phase, 'waiting_for_live_source': waiting,
             'adapter_ready': adapter_ready, 'last_snapshot_live_verified': published,
             'collection_adapter_ready':collector_ready or adapter_ready,
             'automatic_refresh_implemented': adapter_ready,
+            'scheduler_checked': False,
+            'live_rechecked': False,
+            'last_snapshot_receipt_verified': published,
+            'source_collected_at': collected_at,
+            'source_age_hours': round(age/3600, 2) if age is not None and age >= 0 else None,
+            'source_refresh_due': age is None or age < 0 or age >= config.get('refresh_interval_seconds', 43200),
+            'source_suspended': suspended,
             'refresh_interval_seconds': config.get('refresh_interval_seconds') if adapter_ready else None,
             'target_refresh_interval_seconds': config.get('target_refresh_interval_seconds'),
             'progress': {k: progress.get(k) for k in ('checked_at', 'brand_count', 'brands_checked', 'products_found', 'details_verified','categories_verified','categories_found','page','pages_in_category','details_parsed','detail_errors','content_reviews')},
-            'last_worker_error': read(folder / 'worker-error.json' if source in ('avx','dji-official','saeki') or collector_ready else state / (source + '-worker-error.json')) or None,
+            'last_worker_error': error or None,
             'blocker': config.get('blocker') if not adapter_ready else None,
             'pending_brand_source_choices':len(source_choices.get('brands',[])),
             'pending_source_content_reviews':receipt.get('content_hold_count',progress.get('content_held',0)) if source=='saeki' else len(source_choices.get('content_review_ids',{})),

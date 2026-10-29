@@ -3,6 +3,28 @@ import json
 import os
 import socket
 import subprocess
+from datetime import datetime
+
+
+def reject_snapshot_rollback(updates, out):
+    """A cached, complete generation must not replace newer published evidence."""
+    for name, candidate in updates.items():
+        path = out / (name + '.json')
+        if not path.exists():
+            continue
+        previous = json.loads(path.read_text())
+        old = previous.get('collected_at')
+        if not old:
+            continue  # Legacy snapshots without dating cannot establish ordering.
+        try:
+            current = datetime.fromisoformat(old.replace('Z', '+00:00'))
+            incoming = datetime.fromisoformat(candidate['collected_at'].replace('Z', '+00:00'))
+            if current.tzinfo is None or incoming.tzinfo is None:
+                raise ValueError('Source timestamps must include a timezone')
+        except (KeyError, TypeError, AttributeError, ValueError) as exc:
+            raise ValueError('Source observation timestamp requires review: ' + name) from exc
+        if incoming < current:
+            raise ValueError('Source snapshot is older than the published snapshot: ' + name)
 
 
 def validate_updates(updates):
@@ -51,6 +73,8 @@ def promote_updates(updates, root, out, state, managed, save_json):
     changed = {row[3:].decode() for row in raw.split(b'\0') if row}
     if changed & set(managed):
         raise RuntimeError('Existing generated edits require review before source promotion')
+    # Validate every source's ordering before writing any member of the batch.
+    reject_snapshot_rollback(updates, out)
     for name, snapshot in updates.items():
         save_json(out / (name + '.json'), snapshot)
 

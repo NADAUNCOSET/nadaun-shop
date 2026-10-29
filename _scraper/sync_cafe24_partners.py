@@ -370,7 +370,9 @@ class Collector:
     def __init__(self,source,work=None):
         self.name=source;self.base,self.root=SITES[source];self.work=Path(work) if work is not None else STATE/source;self.work.mkdir(exist_ok=True,parents=True)
         self.database_path=self.work/'checkpoint.sqlite3';self.next_snapshot=0
-        if source in WHOLE_SITE and self.work.is_relative_to(ROOT):
+        # All production Cafe24 generations use a PC-local live database.
+        # NAS holds only a closed, integrity/hash-verified recovery snapshot.
+        if self.work.is_relative_to(ROOT):
             from catalog_checkpoint import restore
             self.database_path=restore(self.work,source)
         self.source=Source(source,STATE/source);self.db=sqlite3.connect(self.database_path,timeout=30)

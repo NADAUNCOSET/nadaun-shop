@@ -128,7 +128,7 @@
     "sunphoto": {
       "name": "썬포토",
       "url": "https://sunphoto.kr/",
-      "scope": "TAMRON and Voigtlander only",
+      "scope": "All20 owner-approved brand-menu roots; actual manufacturers verified separately; rentals unchanged",
       "adapter": "reviewed_source_worker",
       "refresh_interval_seconds": 43200,
       "resume_interval_seconds": 600,

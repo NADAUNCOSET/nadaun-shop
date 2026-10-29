@@ -15,16 +15,16 @@ import sync_cafe24_partners as catalog
 def review(source, apply=False, work=None):
     work = Path(work) if work is not None else catalog.STATE / source
     database = work / 'checkpoint.sqlite3'
-    if source in catalog.WHOLE_SITE and work.is_relative_to(catalog.ROOT):
-        from catalog_checkpoint import runtime_root
-        runtime=runtime_root()/source/work.name/'checkpoint.sqlite3'
+    if work.is_relative_to(catalog.ROOT):
+        from catalog_checkpoint import runtime_path
+        runtime=runtime_path(work,source)
         if runtime.exists():database=runtime
     inventory = json.loads((work / 'inventory-candidate.json').read_text())
     checked_at = catalog.stamp()
     report = {'source': source, 'at': checked_at, 'applied': apply,
               'supplier_requests': 0, 'published': False, 'results': {}}
     with catalog.run_lock(work) if apply else nullcontext():
-        if apply and source in catalog.WHOLE_SITE and work.is_relative_to(catalog.ROOT):
+        if apply and work.is_relative_to(catalog.ROOT):
             from catalog_checkpoint import restore
             database=restore(work,source)
         db = sqlite3.connect(database.as_uri() + ('?mode=rw' if apply else '?mode=ro'), uri=True)
