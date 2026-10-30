@@ -1,4 +1,6 @@
 import json,tempfile,unittest
+import io
+from PIL import Image
 from unittest.mock import patch
 from pathlib import Path
 from supplier_banners import image_candidates,collect,render,ROOT
@@ -44,4 +46,21 @@ class SupplierBannerTests(unittest.TestCase):
             reader=Reader();first=collect(root,sources=['one'],fetcher=reader)
             self.assertEqual(len(first['sites']),2);self.assertEqual(next(r for r in first['sites'] if r['source']=='two')['checked_at'],'2000-01-01T00:00:00+00:00')
             second=collect(root,fetcher=reader);self.assertEqual(reader.urls,['https://one.example/','https://two.example/'])
+    def test_changed_bytes_at_the_same_banner_url_are_archived_on_refresh(self):
+        class Response:
+            status_code=200
+            def __init__(self,url,content):self.url=url;self.content=content
+        class Reader:
+            color='red'
+            def get(self,url):
+                if not url.endswith('.png'):return Response(url,b'<div class="main-visual"><img src="banner.png"></div>')
+                data=io.BytesIO();Image.new('RGB',(800,200),self.color).save(data,format='PNG');return Response(url,data.getvalue())
+        with temporary() as temp:
+            root=Path(temp);s=root/'_scraper';s.mkdir()
+            (s/'mirror-policy.json').write_text(json.dumps({'schema_version':1,'confirmed_by':'owner','refresh_interval_seconds':432000,'collection_concurrency':1,'failed_or_partial_inventory_removes_products':False}))
+            (s/'partner-sync-plan.json').write_text(json.dumps({'sources':{'one':{'url':'https://one.example/'}}}))
+            reader=Reader();first=collect(root,force=True,fetcher=reader);digest=first['assets'][0]['sha256']
+            reader.color='blue';second=collect(root,force=True,fetcher=reader)
+            self.assertEqual(len(second['assets']),2);self.assertFalse(second['assets'][0]['current']);self.assertEqual(second['assets'][1]['supersedes_sha256'],digest)
+            third=collect(root,force=True,fetcher=reader);self.assertEqual(len(third['assets']),2)
 if __name__=='__main__':unittest.main()
