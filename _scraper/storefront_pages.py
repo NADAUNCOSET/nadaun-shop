@@ -27,6 +27,18 @@ def banner_content():
         slides.append(f'<a class="shop-banner-slide{" is-active" if i==0 else ""}" href="{escape(b["href"])}" data-banner-title="{escape(b["title"])}" aria-label="{escape(b["alt"])} 상품 보기"'+('' if i==0 else ' inert aria-hidden="true"')+'>'+visual+'</a>')
     return '<section class="shop-banner" aria-label="브랜드 소식" aria-roledescription="캐러셀"><div class="shop-banner-stage">'+''.join(slides)+'</div><div class="banner-bar"><span class="banner-caption">'+escape(banners[0]['title'])+'</span><div class="banner-controls" hidden><button type="button" data-banner-prev aria-label="이전 배너">←</button><span class="banner-counter" aria-live="off">01 / '+str(len(banners)).zfill(2)+'</span><button type="button" data-banner-next aria-label="다음 배너">→</button><button type="button" class="banner-accessibility-pause" data-banner-pause aria-pressed="false">배너 자동 넘김 멈추기</button></div><span class="sr" data-banner-status role="status"></span></div><div class="banner-progress" aria-hidden="true"><span></span></div></section>'
 
+def _banner_links_markup(banners):
+    cards = []
+    for item in banners:
+        if not item['href'].startswith('/') or item['href'].startswith('//'):
+            raise ValueError('Banner shortcut must stay inside the shop')
+        cards.append('<a href="' + escape(item['href'], quote=True) + '" style="display:block;border:1px solid #e6e2d9;border-radius:10px;overflow:hidden;color:inherit;text-decoration:none;background:#fff"><img src="' + escape(item['desktop'], quote=True) + '" alt="' + escape(item['alt'], quote=True) + '" width="1920" height="400" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;aspect-ratio:24/5;object-fit:contain"><span style="display:block;padding:10px 12px;font-size:13px;line-height:1.5">' + escape(item['title']) + ' <span aria-hidden="true">↗</span></span></a>')
+    return '<nav class="supplier-banner-links" aria-label="브랜드 배너별 상품 바로가기" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px;margin:22px 0 38px">' + ''.join(cards) + '</nav>'
+
+def banner_links_content():
+    banners = json.loads((Path(__file__).resolve().parents[1] / 'data/catalog/banners.json').read_text())['banners']
+    return _banner_links_markup(banners)
+
 def brand_tile(b):
     motion=f' data-motion-image="{escape(b["representative_alternate"])}"' if b.get('representative_alternate') else ''
     mark=f'<span class="brand-mark"><img src="{escape(b["logo"])}" alt="{escape(b["name"])}" loading="lazy" decoding="async"></span>' if b.get('image_kind')=='logo' and not b.get('logo_dark') else f'<span class="brand-mark brand-mark-text">{escape(b["name"])}</span>'
@@ -79,7 +91,7 @@ def content(mode, brands, products, brand=None, category_galleries=None):
         page=(Path(__file__).parent/'shop_templates/home.html').read_text()
         for key,value in {'BRAND_COUNT':len(brands)}.items():
             page=page.replace('{{'+key+'}}',escape(str(value)))
-        return page.replace('{{BANNERS}}',banner_content()).replace('{{CATEGORY_GALLERY}}',gallery_html((category_galleries or {}).get('purchase',[]))).replace('{{BRANDS}}',links).replace('{{PRODUCTS}}',''.join(card(p) for p in selected if p)).replace('{{RENTALS}}',''.join(card(p) for p in rental))
+        return page.replace('{{BANNERS}}',banner_content()+banner_links_content()).replace('{{CATEGORY_GALLERY}}',gallery_html((category_galleries or {}).get('purchase',[]))).replace('{{BRANDS}}',links).replace('{{PRODUCTS}}',''.join(card(p) for p in selected if p)).replace('{{RENTALS}}',''.join(card(p) for p in rental))
     if mode in ('promotions','used'):
         from promotion_catalog import consignment_used,instant
         from datetime import datetime,timezone
