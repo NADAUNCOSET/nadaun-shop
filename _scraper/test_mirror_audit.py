@@ -59,10 +59,18 @@ class MirrorAuditTests(unittest.TestCase):
 
     def test_hipixel_uses_its_actual_dedicated_worker_not_the_general_catalog_timer(self):
         with tempfile.TemporaryDirectory() as tmp:
+            (Path(tmp)/'_scraper').mkdir();(Path(tmp)/'_scraper/cafe24_worker.py').write_text('fixture')
             schedules={'co.nadaun.shop.hipixel-sync':{'registered':True},'co.nadaun.shop.catalog-sync':{'registered':False}}
             result=source_controls(Path(tmp),'hipixel',{},schedules)
             self.assertTrue(result['scheduler_registered'])
             self.assertEqual(result['scheduler_labels'],['co.nadaun.shop.hipixel-sync'])
+
+    def test_new_shared_queue_is_recognized_only_for_implemented_sources(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);(root/'_scraper').mkdir();(root/'_scraper/cafe24_worker.py').write_text('fixture')
+            schedules={'co.nadaun.shop.mirror-cycle':{'registered':True}}
+            self.assertTrue(source_controls(root,'hipixel',{},schedules)['scheduler_registered'])
+            self.assertFalse(source_controls(root,'gauphoto',{'adapter':'pending'},schedules)['automatic_refresh_implemented'])
 
     def test_unavailable_exclusion_requires_exact_cached_identity_guard(self):
         from enrich_shop_sources import shard,source_fingerprint

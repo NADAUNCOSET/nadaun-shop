@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "confirmed_by": "owner",
+  "confirmed_at": "2026-10-30",
+  "refresh_interval_seconds": 432000,
+  "poll_interval_seconds": 900,
+  "retry_interval_seconds": 1800,
+  "collection_concurrency": 1,
+  "refresh_review_html_after_every_attempt": true,
+  "refresh_all_product_review_html_after_publication": true,
+  "collect_supplier_banners_on_refresh": true,
+  "preserve_confirmed_brand_sources": true,
+  "unconfirmed_brand_sources": "owner_review",
+  "failed_or_partial_inventory_removes_products": false,
+  "source_access_holds": "preserve_and_report",
+  "rental_order_automation": "unchanged_windows_runtime",
+  "runtime": "macos_launchd_with_nas_state_and_cross_host_lock"
+}

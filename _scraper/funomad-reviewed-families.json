@@ -1,0 +1,1350 @@
+{
+  "products": [
+    {
+      "id": "bolt-7-series",
+      "page": "bolt-7-series",
+      "url": "https://funomad.com/bolt-7-series/",
+      "name": "Teradek Bolt 7 시리즈",
+      "category_path": [
+        "TERADEK",
+        "Bolt 7 Series"
+      ],
+      "models": [
+        "Bolt 7 750",
+        "Bolt 7 1500",
+        "Bolt 7 MAX"
+      ],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/09/BG_IMAGE_d79bf706-9b12-405b-9ed1-eb7e47f5683d.png",
+        "https://funomad.com/wp-content/uploads/2026/09/Bolt-7-Table.png",
+        "https://funomad.com/wp-content/uploads/2026/09/Tab_TX_Size_Desk.png"
+      ],
+      "notice": "송신기(TX)·수신기(RX) 및 세트 구성은 상담 시 선택합니다. 모델별 전송 거리와 구성은 상세 비교표를 확인해주세요.",
+      "evidence_sha256": "a7c996846c0ca57994cc8592e283412b451042388e298ab791ba0ec9518361cf"
+    },
+    {
+      "id": "bolt6-xt-2025",
+      "page": "bolt6-xt-2025",
+      "url": "https://funomad.com/bolt6-xt-2025/",
+      "name": "Teradek Bolt 6 XT 12G-SDI 시리즈",
+      "category_path": [
+        "TERADEK",
+        "Bolt6 Series",
+        "Bolt6 XT I 12G-SDI"
+      ],
+      "models": [
+        "Bolt 6 XT 750",
+        "Bolt 6 XT MAX",
+        "Bolt 6 XT 10K RX"
+      ],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2025/09/xt_750_desktop.png",
+        "https://funomad.com/wp-content/uploads/2025/09/xt_max_desktop.png",
+        "https://funomad.com/wp-content/uploads/2025/09/xt_10x_rx_desktop.png",
+        "https://funomad.com/wp-content/uploads/2025/09/Table.png"
+      ],
+      "notice": "",
+      "evidence_sha256": "adf6e1f453aeee946e771ad76ff0329c337184fcb284193c3c7784fa7ece39f7"
+    },
+    {
+      "id": "bolt6-lt-2025",
+      "page": "bolt6-lt-2025",
+      "url": "https://funomad.com/bolt6-lt-2025/",
+      "name": "Teradek Bolt 6 LT 3G-SDI 시리즈",
+      "category_path": [
+        "TERADEK",
+        "Bolt6 Series",
+        "BOLT6 LT I 3G-SDI"
+      ],
+      "models": [
+        "Bolt 6 LT 750",
+        "Bolt 6 LT MAX"
+      ],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2025/09/lt_750_desktop.png",
+        "https://funomad.com/wp-content/uploads/2025/09/lt_max.png",
+        "https://funomad.com/wp-content/uploads/2025/09/Table.png"
+      ],
+      "notice": "",
+      "evidence_sha256": "423ea16cdf7facf5501d566144545c8495a262c9136db7aec2e7939c4e8c320e"
+    },
+    {
+      "id": "bolt6-mm-2025",
+      "page": "bolt6-mm-2025",
+      "url": "https://funomad.com/bolt6-mm-2025/",
+      "name": "Teradek Bolt 6 Monitor Module",
+      "category_path": [
+        "TERADEK",
+        "Bolt6 Series",
+        "BOLT6 Monitor Module"
+      ],
+      "models": [
+        "Ultra 7 모듈",
+        "Smart 7 TX/RX 모듈",
+        "Ultra 10 RX 모듈",
+        "Ultra 5 모듈"
+      ],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2025/09/ultra-7-tx_desktop.png",
+        "https://funomad.com/wp-content/uploads/2025/09/smart_7_tx.png",
+        "https://funomad.com/wp-content/uploads/2025/09/ultra_10_rx.png",
+        "https://funomad.com/wp-content/uploads/2025/09/ultra_5_tx.png"
+      ],
+      "notice": "SmallHD 모니터용 무선 모듈입니다. 모니터 포함 여부·송수신 방향·호환 모델은 구성 상담에서 확인합니다.",
+      "evidence_sha256": "a8b18892f8f99b5dde43faf9bde099bab44876c16ea8da497f9bb711f0c8575d"
+    },
+    {
+      "id": "prism-flex-2024",
+      "page": "prism-flex-2024",
+      "url": "https://funomad.com/prism-flex-2024/",
+      "name": "Teradek Prism Flex Mk II",
+      "category_path": [
+        "TERADEK",
+        "IP Streaming",
+        "Prism Flex"
+      ],
+      "models": [
+        "인코더",
+        "디코더"
+      ],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2024/03/Compact-Soluton.png",
+        "https://funomad.com/wp-content/uploads/2024/12/Compare-Prism-Models.png"
+      ],
+      "notice": "",
+      "evidence_sha256": "279030005451429a44f1991fc43ca87939e387d9927698ee157e15ba2eb70359"
+    },
+    {
+      "id": "prism-mobile-mk2",
+      "page": "prism-mobile-mk2",
+      "url": "https://funomad.com/prism-mobile-mk2/",
+      "name": "Teradek Prism Mobile Mk II",
+      "category_path": [
+        "TERADEK",
+        "IP Streaming",
+        "Prism Mobile"
+      ],
+      "models": [
+        "5G 모델",
+        "LTE 모델"
+      ],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2024/03/overlap_img_desktop.png",
+        "https://funomad.com/wp-content/uploads/2024/03/bonding_gfx.png"
+      ],
+      "notice": "",
+      "evidence_sha256": "2c0733f16876779d52472d34240a87d605cad36f1078a00b5e81201bec980c70"
+    },
+    {
+      "id": "prism-rack",
+      "page": "prism-rack",
+      "url": "https://funomad.com/prism-rack/",
+      "name": "Teradek Prism Rack",
+      "category_path": [
+        "TERADEK",
+        "IP Streaming",
+        "Prism Rack"
+      ],
+      "models": [
+        "Prism 1RU",
+        "Prism 2RU",
+        "인코더 카드",
+        "디코더 카드"
+      ],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2024/05/RU-divider.png",
+        "https://funomad.com/wp-content/uploads/2024/12/Table_PrismRU.png"
+      ],
+      "notice": "",
+      "evidence_sha256": "f00bf36bb6b8d23fbcb2aec48462501a7c4fe794556e96441ffdc63c4a49e87b"
+    },
+    {
+      "id": "prism-jetpack",
+      "page": "prism-jetpack",
+      "url": "https://funomad.com/prism-jetpack/",
+      "name": "Teradek Prism Jetpack",
+      "category_path": [
+        "TERADEK",
+        "IP Streaming",
+        "Prism Jetpack"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2025/09/Hardware-Overview_Jetpack.png",
+        "https://funomad.com/wp-content/uploads/2025/09/Jetpack_Operator_2.png"
+      ],
+      "notice": "",
+      "evidence_sha256": "5ac1e0c99d7f3dfbb64c909370368a1c31e29f7be4e21d105b7d0032d61465e2"
+    },
+    {
+      "id": "prism-mobile-backpack",
+      "page": "prism-mobile-backpack",
+      "url": "https://funomad.com/prism-mobile-backpack/",
+      "name": "Teradek Prism Mobile Backpack",
+      "category_path": [
+        "TERADEK",
+        "IP Streaming",
+        "Prism Mobile Backpack"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2024/05/Prism-Mobile-Backpack-LTE.jpg",
+        "https://funomad.com/wp-content/uploads/2024/05/Prism-Mobile-Backpack-Back.png"
+      ],
+      "notice": "",
+      "evidence_sha256": "428f147539d009c3836a2c81b017af44e8fbff961bd820ce385f2675f480b0d7"
+    },
+    {
+      "id": "serv-series",
+      "page": "serv-series",
+      "url": "https://funomad.com/serv-series/",
+      "name": "Teradek SERV 4K",
+      "category_path": [
+        "TERADEK",
+        "Production Streaming",
+        "SERV SERIES"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2024/06/Teradek_Serv_4K_Image-quality.png",
+        "https://funomad.com/wp-content/uploads/2024/06/Compare-Serv-Models.png"
+      ],
+      "notice": "로컬·원격 프로덕션 모니터링 스트리밍 장비. 서비스 구독과 주변 장비 포함 여부는 문의해주세요.",
+      "evidence_sha256": "e557c3aa644ee0ea78d3da6739c8ad473a6e414192425585edb8c5702138aad0"
+    },
+    {
+      "id": "link",
+      "page": "link",
+      "url": "https://funomad.com/link/",
+      "name": "Teradek Link",
+      "category_path": [
+        "TERADEK",
+        "Production Streaming",
+        "LINK"
+      ],
+      "models": [
+        "4개 모뎀 구성",
+        "8개 모뎀 구성"
+      ],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/07/Hardware_Overview_front.png",
+        "https://funomad.com/wp-content/uploads/2026/07/Hardware_Overview_back.png",
+        "https://funomad.com/wp-content/uploads/2026/07/WORKFLOW_D-1.png"
+      ],
+      "notice": "셀룰러 본딩 장비. 데이터·본딩 서비스 구독 및 설치 구성은 별도 상담합니다.",
+      "evidence_sha256": "b2a95a53a0a1f6355541c1a0444384abdbafbce47201d6f6a2a4353987c8cd8e"
+    },
+    {
+      "id": "rt",
+      "page": "rt",
+      "url": "https://funomad.com/rt/",
+      "name": "Teradek RT 렌즈 제어 시스템",
+      "category_path": [
+        "TERADEK",
+        "Wireless Lens Control",
+        "Teradek RT"
+      ],
+      "models": [
+        "CTRL.5",
+        "CTRL.3",
+        "CTRL.1",
+        "MOTR.S MAX",
+        "MOTR.S",
+        "MDR.S",
+        "MDR.X",
+        "TOF.1"
+      ],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2025/03/MAX_WIDTH_1fc78e00-d19d-417d-b4a6-eb5e15625ebc.png",
+        "https://funomad.com/wp-content/uploads/2025/03/hardware_front_ctrl_5.png",
+        "https://funomad.com/wp-content/uploads/2025/03/hardware_back_ctrl_5.png"
+      ],
+      "notice": "핸드 유닛·모터·리시버·거리 측정기 제품군입니다. 개별 품목 및 키트 구성을 선택해 문의해주세요.",
+      "evidence_sha256": "493b0c4db57ea7c3aeca917b73c2c5dd03e65b6a91cb5942548284089e615db9"
+    },
+    {
+      "id": "cloud",
+      "page": "cloud",
+      "url": "https://funomad.com/cloud/",
+      "name": "Teradek Cloud",
+      "category_path": [
+        "TERADEK",
+        "Services",
+        "Cloud"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2024/07/CoreShare_m.png"
+      ],
+      "notice": "클라우드 서비스의 이용 범위·기간·요금제는 문의해주세요.",
+      "evidence_sha256": "6dda1fec16bef50178f4b8bd4d406fa2a22ca958b92d677898ad1472110801a1"
+    },
+    {
+      "id": "teradektv",
+      "page": "teradektv",
+      "url": "https://funomad.com/teradektv/",
+      "name": "Teradek TV",
+      "category_path": [
+        "TERADEK",
+        "Services",
+        "Teradek TV"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2024/02/Manage_In_The_Cloud_photo.png",
+        "https://funomad.com/wp-content/uploads/2024/02/IMAGE_10773eda-d59f-4e35-85d2-39bd2c02ac23.png"
+      ],
+      "notice": "프로덕션 영상 공유·원격 모니터링 서비스입니다. 이용 기간과 구성별 견적을 안내합니다.",
+      "evidence_sha256": "dfa88589b49213403974cd06fd7f5b18e5ed7849be10e447eaa71eab50bc4b39"
+    },
+    {
+      "id": "cine-13",
+      "page": "cine-series",
+      "url": "https://funomad.com/cine-series/",
+      "name": "SmallHD Cine 13",
+      "category_path": [
+        "SMALLHD",
+        "4K PRODUCTION MONITOR",
+        "CINE"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2024/03/cine-13-compare-d.png",
+        "https://funomad.com/wp-content/uploads/2024/04/cine-13-shop-dm_large.png"
+      ],
+      "notice": "Cine 13 본체 및 전원·거치 액세서리 구성은 문의해주세요. 상세 자료에 같은 시리즈의 다른 모델이 함께 소개될 수 있습니다.",
+      "evidence_sha256": "26d7f1cbbafaf89c048c5d806829562009f0cc61ed9d1f1afdbf3f407e596634"
+    },
+    {
+      "id": "cine-18",
+      "page": "cine-series",
+      "url": "https://funomad.com/cine-series/",
+      "name": "SmallHD Cine 18",
+      "category_path": [
+        "SMALLHD",
+        "4K PRODUCTION MONITOR",
+        "CINE"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2024/03/cine-18-compare-d.png",
+        "https://funomad.com/wp-content/uploads/2024/04/cine-18-shop-dm_large.png"
+      ],
+      "notice": "Cine 18 본체 및 전원·거치 액세서리 구성은 문의해주세요. 상세 자료에 같은 시리즈의 다른 모델이 함께 소개될 수 있습니다.",
+      "evidence_sha256": "26d7f1cbbafaf89c048c5d806829562009f0cc61ed9d1f1afdbf3f407e596634"
+    },
+    {
+      "id": "cine-24",
+      "page": "cine-series",
+      "url": "https://funomad.com/cine-series/",
+      "name": "SmallHD Cine 24",
+      "category_path": [
+        "SMALLHD",
+        "4K PRODUCTION MONITOR",
+        "CINE"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2024/03/cine-24-compare-d.png",
+        "https://funomad.com/wp-content/uploads/2024/04/cine-24-shop-dm_large.png"
+      ],
+      "notice": "Cine 24 본체 및 전원·거치 액세서리 구성은 문의해주세요. 상세 자료에 같은 시리즈의 다른 모델이 함께 소개될 수 있습니다.",
+      "evidence_sha256": "26d7f1cbbafaf89c048c5d806829562009f0cc61ed9d1f1afdbf3f407e596634"
+    },
+    {
+      "id": "quantum-27",
+      "page": "quantum-series",
+      "url": "https://funomad.com/quantum-series/",
+      "name": "SmallHD Quantum 27",
+      "category_path": [
+        "SMALLHD",
+        "4K PRODUCTION MONITOR",
+        "QUANTUM"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2025/06/Quantum_27_compare_chart_desktop.png",
+        "https://funomad.com/wp-content/uploads/2025/09/Compare-Quantum-Series.png"
+      ],
+      "notice": "",
+      "evidence_sha256": "40e7ab1cba105c520e517ae880d2b449407b287cc27eba3a3d7485b54da6980e"
+    },
+    {
+      "id": "quantum-32",
+      "page": "quantum-series",
+      "url": "https://funomad.com/quantum-series/",
+      "name": "SmallHD Quantum 32",
+      "category_path": [
+        "SMALLHD",
+        "4K PRODUCTION MONITOR",
+        "QUANTUM"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2025/06/quantum_32.png",
+        "https://funomad.com/wp-content/uploads/2025/09/Compare-Quantum-Series.png"
+      ],
+      "notice": "",
+      "evidence_sha256": "40e7ab1cba105c520e517ae880d2b449407b287cc27eba3a3d7485b54da6980e"
+    },
+    {
+      "id": "oled-series",
+      "page": "oled-series",
+      "url": "https://funomad.com/oled-series/",
+      "name": "SmallHD OLED 16",
+      "category_path": [
+        "SMALLHD",
+        "4K PRODUCTION MONITOR",
+        "OLED"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/06/oled-front.png",
+        "https://funomad.com/wp-content/uploads/2026/06/oled-back.png",
+        "https://funomad.com/wp-content/uploads/2026/06/Tech-specs-oled-16-d.png"
+      ],
+      "notice": "",
+      "evidence_sha256": "ba86cdb676f7415fb79c1a9d8e54a60b3bc352ace33cff01e86096fc61b64c35"
+    },
+    {
+      "id": "ultra5",
+      "page": "ultra5",
+      "url": "https://funomad.com/ultra5/",
+      "name": "SmallHD Ultra 5",
+      "category_path": [
+        "SMALLHD",
+        "ULTRA BRIGHT",
+        "Ultra 5"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2025/04/sec2-img.png",
+        "https://funomad.com/wp-content/uploads/2025/04/Hardware-Overview.png"
+      ],
+      "notice": "",
+      "evidence_sha256": "297e2c39c0b9e62c9fd20fb70c83cf9d85cc9c1b14963e6a1c8f7eee8957431c"
+    },
+    {
+      "id": "ultra7",
+      "page": "ultra7",
+      "url": "https://funomad.com/ultra7/",
+      "name": "SmallHD Ultra 7",
+      "category_path": [
+        "SMALLHD",
+        "ULTRA BRIGHT",
+        "Ultra 7"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/02/Ultra7_desktop.png",
+        "https://funomad.com/wp-content/uploads/2024/01/s_ultra7_d.png",
+        "https://funomad.com/wp-content/uploads/2024/01/In-Action_Image.png"
+      ],
+      "notice": "",
+      "evidence_sha256": "d8df8158530e23e9e41284ad03c3b323c7db5e999138da5964edffd06060bb74"
+    },
+    {
+      "id": "ultra-10",
+      "page": "ultra-10",
+      "url": "https://funomad.com/ultra-10/",
+      "name": "SmallHD Ultra 10",
+      "category_path": [
+        "SMALLHD",
+        "ULTRA BRIGHT",
+        "Ultra 10"
+      ],
+      "models": [
+        "Ultra 10",
+        "Ultra 10 Bolt 6 RX"
+      ],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/08/ultra-10-hero-desktop-poster.webp",
+        "https://funomad.com/wp-content/uploads/2024/09/front-tab-img-1.png",
+        "https://funomad.com/wp-content/uploads/2024/09/back-tab-img-1.png"
+      ],
+      "notice": "",
+      "evidence_sha256": "d22ca266b546f412f10218e1f80dc0fe624ce1b2421d7b6042bbd40dcdb78866"
+    },
+    {
+      "id": "cine7",
+      "page": "cine7",
+      "url": "https://funomad.com/cine7/",
+      "name": "SmallHD Cine 7",
+      "category_path": [
+        "SMALLHD",
+        "SMART 7 SERIES",
+        "Cine 7"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2024/03/moniter_modules.png"
+      ],
+      "notice": "모니터 단품과 Bolt 6 송수신 모듈의 포함 여부는 상담 시 선택합니다.",
+      "evidence_sha256": "c60e61cee2fe42fce195a36aa0b980b1bc07a5225ad22d4b7eaac48c2f6eee00"
+    },
+    {
+      "id": "indie7",
+      "page": "indie7",
+      "url": "https://funomad.com/indie7/",
+      "name": "SmallHD Indie 7",
+      "category_path": [
+        "SMALLHD",
+        "SMART 7 SERIES",
+        "Indie 7"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2024/03/Indie7bolt6.png"
+      ],
+      "notice": "모니터 단품과 Bolt 6 송수신 모듈의 포함 여부는 상담 시 선택합니다.",
+      "evidence_sha256": "ee8a69195791dbad13627aea3d97e57e8575d37e2b728bd3aeb943eeee880d17"
+    },
+    {
+      "id": "cine5",
+      "page": "cine5",
+      "url": "https://funomad.com/cine5/",
+      "name": "SmallHD Cine 5",
+      "category_path": [
+        "SMALLHD",
+        "SMART 5 SERIES",
+        "Cine 5"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2024/03/sec2-2ndimg.png"
+      ],
+      "notice": "",
+      "evidence_sha256": "cb7283c5c04fbdaf8797d46420a29b395011743f4f897686efba1cad77ffe3c3"
+    },
+    {
+      "id": "indie5",
+      "page": "indie5",
+      "url": "https://funomad.com/indie5/",
+      "name": "SmallHD Indie 5",
+      "category_path": [
+        "SMALLHD",
+        "SMART 5 SERIES",
+        "Indie 5"
+      ],
+      "models": [],
+      "images": [
+        "https://smallhd.com/cdn/shop/products/SmallHD_16-0525_Indie-5_Front_Screen-On.png?v=1660752601"
+      ],
+      "notice": "",
+      "evidence_sha256": "777b7d3440a747cb6171ce8a9fb878144eba0eabf9159f8628690712e3b74ed5",
+      "image_evidence": "펀노마드 원본 이미지404. 동일 모델 Indie5/16-0525의 SmallHD 공식 상품 페이지 og:image 원본으로 보완. 가격은 펀노마드 문의 기준 유지."
+    },
+    {
+      "id": "used",
+      "page": "used",
+      "url": "https://funomad.com/used/",
+      "name": "Teradek Bolt 3000 XT 3G-SDI 1:2 Set (중고)",
+      "category_path": [
+        "TERADEK",
+        "GOOD DEALS",
+        "Bolt 3000 XT"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2025/12/KakaoTalk_20240207_113950623_03.jpg",
+        "https://funomad.com/wp-content/uploads/2025/12/KakaoTalk_20240207_121158784_01.jpg"
+      ],
+      "notice": "펀노마드 인증 중고 제품입니다. 신제품과 구분하며 판매 가능 수량·상태·보증은 상담에서 확인합니다.",
+      "evidence_sha256": "a5304791deef4f73ab4e27b1dab4fe8897f337addebb4f5f74e4e4dbb027ff5d"
+    },
+    {
+      "id": "wc-fuji-gfx100s",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera FUJI GFX100S 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "FUJI GFX100S"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/FUJI_GFX100S.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/fujifilm-gfx100s#new_tab"
+    },
+    {
+      "id": "wc-fuji-x-h2s",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera FUJI X-H2S 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "FUJI X-H2S"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/FUJI_X-H2S.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/fujifilm-xh2s-accessories#new_tab"
+    },
+    {
+      "id": "wc-fuji-gfx-eterna",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera FUJI GFX ETERNA 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "FUJI GFX ETERNA"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/FUJI_GFX_ETERNA.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/fujifilm-gfx-eterna-55-accessories#new_tab"
+    },
+    {
+      "id": "wc-blackmagic-pocket-cinema-camera",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera BLACKMAGIC POCKET CINEMA CAMERA 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "BLACKMAGIC POCKET CINEMA CAMERA"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/Blackmagic_PocketCinema.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/blackmagic-pocket-cinema-camera-6k-pro-accessory-kits#new_tab"
+    },
+    {
+      "id": "wc-blackmagic-ursa-mini",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera BLACKMAGIC URSA MINI 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "BLACKMAGIC URSA MINI"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/BlackMagic_UrsaMini.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/blackmagic-ursa-mini-accessory-kits#new_tab"
+    },
+    {
+      "id": "wc-blackmagic-ursa-cine",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera BLACKMAGIC URSA CINE 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "BLACKMAGIC URSA CINE"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/Blackmagic_URSA.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/blackmagic-ursa-cine-12k-17k#new_tab"
+    },
+    {
+      "id": "wc-arri-alexa-35",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera ARRI ALEXA 35 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "ARRI ALEXA 35"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/ARRI_ALEXA35-400x284.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/arri-alexa-35-accessories?page=1#new_tab"
+    },
+    {
+      "id": "wc-canon-c500",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera CANON C500 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "CANON C500"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/CANON_C500.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/canon-c500mkii-accessory-kits#new_tab"
+    },
+    {
+      "id": "wc-canon-c400",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera CANON C400 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "CANON C400"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/CANON_C400.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/canon-c400-accessories#new_tab"
+    },
+    {
+      "id": "wc-canon-c80",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera CANON C80 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "CANON C80"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/CANON_C80.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/canon-c80-camera-accessories#new_tab"
+    },
+    {
+      "id": "wc-canon-c70",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera CANON C70 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "CANON C70"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/288800_C70.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/canon-c70-accessory-kits#new_tab"
+    },
+    {
+      "id": "wc-canon-c50",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera CANON C50 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "CANON C50"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/CANON_C50.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/canon-eos-c50-cage-accessories#new_tab"
+    },
+    {
+      "id": "wc-sony-venice",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera SONY VENICE 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "SONY VENICE"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/SONY_VENICE.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/sony-venice-rialto-accessories?page=1&pf_t_category=VENICE&pf_t_category=VENICE+2#new_tab"
+    },
+    {
+      "id": "wc-sony-rialto",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera SONY RIALTO 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "SONY RIALTO"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/SONY_RIALTO.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/sony-venice-rialto-accessories?pf_t_category=Rialto&pf_t_category=Rialto+2&pf_t_category=Rialto+Mini#new_tab"
+    },
+    {
+      "id": "wc-sony-burano",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera SONY BURANO 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "SONY BURANO"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/SONY_BURANO.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/sony-burano-accessories?page=1#new_tab"
+    },
+    {
+      "id": "wc-sony-fx6",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera SONY FX6 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "SONY FX6"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/283800_FX6.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/sony-fx6-cage-accessories#new_tab"
+    },
+    {
+      "id": "wc-sony-fx3",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera SONY FX3 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "SONY FX3"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/SONY_FX3.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/sony-fx3-fx30-cage-accessories?page=1#new_tab"
+    },
+    {
+      "id": "wc-sony-fx2",
+      "page": "wooden-camera-2",
+      "url": "https://funomad.com/wooden-camera-2/",
+      "name": "Wooden Camera SONY FX2 액세서리 제품군",
+      "category_path": [
+        "WOODEN CAMERA",
+        "SONY FX2"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/01/SONY_FX2.png"
+      ],
+      "notice": "해당 카메라용 Wooden Camera 액세서리 제품군입니다. 카메라 본체는 포함하지 않습니다. 케이지·베이스플레이트·핸들 등 필요한 개별 구성과 호환 모델을 문의해주세요.",
+      "evidence_sha256": "8fe6f2211cc140fafd6e246a490893c4ed0154121049d3adaffbad61678962f3",
+      "manufacturer_collection_url": "https://woodencamera.com/collections/sony-fx2-cage-accessories#new_tab"
+    },
+    {
+      "id": "wc-fx5-full",
+      "page": "fx5",
+      "url": "https://funomad.com/fx5/",
+      "name": "Wooden Camera Sony FX5 Full Cage System",
+      "category_path": [
+        "WOODEN CAMERA",
+        "FX5"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/10/full_cage_system_d@2x.webp"
+      ],
+      "notice": "Sony FX5용 액세서리입니다. 카메라 본체는 포함하지 않습니다. 마운트·키트 세부 구성은 문의해주세요.",
+      "evidence_sha256": "90b34d722f9860a3d30f8d5186fdd6cf06c251bd32a697ba0c20a045821d8b06"
+    },
+    {
+      "id": "wc-fx5-core",
+      "page": "fx5",
+      "url": "https://funomad.com/fx5/",
+      "name": "Wooden Camera Sony FX5 Core Cage System",
+      "category_path": [
+        "WOODEN CAMERA",
+        "FX5"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/10/core_cage_system_d@2x.webp"
+      ],
+      "notice": "Sony FX5용 액세서리입니다. 카메라 본체는 포함하지 않습니다. 마운트·키트 세부 구성은 문의해주세요.",
+      "evidence_sha256": "90b34d722f9860a3d30f8d5186fdd6cf06c251bd32a697ba0c20a045821d8b06"
+    },
+    {
+      "id": "wc-fx5-elite",
+      "page": "fx5",
+      "url": "https://funomad.com/fx5/",
+      "name": "Wooden Camera Sony FX5 Elite Cage System",
+      "category_path": [
+        "WOODEN CAMERA",
+        "FX5"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/10/elite_cage_system_d@2x-1.webp"
+      ],
+      "notice": "Sony FX5용 액세서리입니다. 카메라 본체는 포함하지 않습니다. 마운트·키트 세부 구성은 문의해주세요.",
+      "evidence_sha256": "90b34d722f9860a3d30f8d5186fdd6cf06c251bd32a697ba0c20a045821d8b06"
+    },
+    {
+      "id": "wc-fx5-rear",
+      "page": "fx5",
+      "url": "https://funomad.com/fx5/",
+      "name": "Wooden Camera Sony FX5 Rear Cage Bracket",
+      "category_path": [
+        "WOODEN CAMERA",
+        "FX5"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/10/rear_cage_bracket_tab_img.png"
+      ],
+      "notice": "Sony FX5용 액세서리입니다. 카메라 본체는 포함하지 않습니다. 마운트·키트 세부 구성은 문의해주세요.",
+      "evidence_sha256": "90b34d722f9860a3d30f8d5186fdd6cf06c251bd32a697ba0c20a045821d8b06"
+    },
+    {
+      "id": "wc-fx5-lens",
+      "page": "fx5",
+      "url": "https://funomad.com/fx5/",
+      "name": "Wooden Camera Sony FX5 Lens Mount Adapters & Supports",
+      "category_path": [
+        "WOODEN CAMERA",
+        "FX5"
+      ],
+      "models": [],
+      "images": [
+        "https://funomad.com/wp-content/uploads/2026/10/lense_mount_adpator_and_support.png"
+      ],
+      "notice": "Sony FX5용 액세서리입니다. 카메라 본체는 포함하지 않습니다. 마운트·키트 세부 구성은 문의해주세요.",
+      "evidence_sha256": "90b34d722f9860a3d30f8d5186fdd6cf06c251bd32a697ba0c20a045821d8b06"
+    }
+  ],
+  "coverage_notes": [
+    "현재 메뉴·홈 연결 및 상품 상세 내부 링크 40페이지 확인",
+    "Vision Series/이전 Prism Rack/Ultra10 연결은 원본 404로 신규 판매 등록 보류",
+    "PageOS 6/FIZ Overlays/Fleet Control은 무료 소프트웨어·기능 안내로 별도 판매 SKU를 만들지 않음",
+    "Tier-S/Public Safety/TRT는 지원·솔루션 안내",
+    "Wooden Camera 18개 카메라별 액세서리 제품군과 FX5 5개 구성. 제조사 전체 SKU 수집을 의미하지 않음"
+  ],
+  "navigation": [
+    {
+      "label": "TERADEK",
+      "path": [
+        "TERADEK"
+      ],
+      "url": null
+    },
+    {
+      "label": "Bolt 7 Series",
+      "path": [
+        "TERADEK",
+        "Bolt 7 Series"
+      ],
+      "url": "https://funomad.com/bolt-7-series/"
+    },
+    {
+      "label": "Bolt6 Series",
+      "path": [
+        "TERADEK",
+        "Bolt6 Series"
+      ],
+      "url": "https://funomad.com/bolt6-series-2025/"
+    },
+    {
+      "label": "Bolt6 XT I 12G-SDI",
+      "path": [
+        "TERADEK",
+        "Bolt6 Series",
+        "Bolt6 XT I 12G-SDI"
+      ],
+      "url": "https://funomad.com/bolt6-xt-2025/"
+    },
+    {
+      "label": "BOLT6 LT I 3G-SDI",
+      "path": [
+        "TERADEK",
+        "Bolt6 Series",
+        "BOLT6 LT I 3G-SDI"
+      ],
+      "url": "https://funomad.com/bolt6-lt-2025/"
+    },
+    {
+      "label": "BOLT6 Monitor Module",
+      "path": [
+        "TERADEK",
+        "Bolt6 Series",
+        "BOLT6 Monitor Module"
+      ],
+      "url": "https://funomad.com/bolt6-mm-2025/"
+    },
+    {
+      "label": "IP Streaming",
+      "path": [
+        "TERADEK",
+        "IP Streaming"
+      ],
+      "url": "https://funomad.com/prism-series-2024/"
+    },
+    {
+      "label": "Prism Flex",
+      "path": [
+        "TERADEK",
+        "IP Streaming",
+        "Prism Flex"
+      ],
+      "url": "https://funomad.com/prism-flex-2024/"
+    },
+    {
+      "label": "Prism Mobile",
+      "path": [
+        "TERADEK",
+        "IP Streaming",
+        "Prism Mobile"
+      ],
+      "url": "https://funomad.com/prism-mobile-mk2/"
+    },
+    {
+      "label": "Prism Rack",
+      "path": [
+        "TERADEK",
+        "IP Streaming",
+        "Prism Rack"
+      ],
+      "url": "https://funomad.com/prism-rack/"
+    },
+    {
+      "label": "Prism Jetpack",
+      "path": [
+        "TERADEK",
+        "IP Streaming",
+        "Prism Jetpack"
+      ],
+      "url": "https://funomad.com/prism-jetpack/"
+    },
+    {
+      "label": "Prism Mobile Backpack",
+      "path": [
+        "TERADEK",
+        "IP Streaming",
+        "Prism Mobile Backpack"
+      ],
+      "url": "https://funomad.com/prism-mobile-backpack/"
+    },
+    {
+      "label": "Production Streaming",
+      "path": [
+        "TERADEK",
+        "Production Streaming"
+      ],
+      "url": null
+    },
+    {
+      "label": "SERV SERIES",
+      "path": [
+        "TERADEK",
+        "Production Streaming",
+        "SERV SERIES"
+      ],
+      "url": "https://funomad.com/serv-series/"
+    },
+    {
+      "label": "LINK",
+      "path": [
+        "TERADEK",
+        "Production Streaming",
+        "LINK"
+      ],
+      "url": "https://funomad.com/link/"
+    },
+    {
+      "label": "Wireless Lens Control",
+      "path": [
+        "TERADEK",
+        "Wireless Lens Control"
+      ],
+      "url": null
+    },
+    {
+      "label": "Teradek RT",
+      "path": [
+        "TERADEK",
+        "Wireless Lens Control",
+        "Teradek RT"
+      ],
+      "url": "https://funomad.com/rt/"
+    },
+    {
+      "label": "Services",
+      "path": [
+        "TERADEK",
+        "Services"
+      ],
+      "url": null
+    },
+    {
+      "label": "Cloud",
+      "path": [
+        "TERADEK",
+        "Services",
+        "Cloud"
+      ],
+      "url": "https://funomad.com/cloud/"
+    },
+    {
+      "label": "Teradek TV",
+      "path": [
+        "TERADEK",
+        "Services",
+        "Teradek TV"
+      ],
+      "url": "https://funomad.com/teradektv/"
+    },
+    {
+      "label": "SMALLHD",
+      "path": [
+        "SMALLHD"
+      ],
+      "url": null
+    },
+    {
+      "label": "4K PRODUCTION MONITOR",
+      "path": [
+        "SMALLHD",
+        "4K PRODUCTION MONITOR"
+      ],
+      "url": null
+    },
+    {
+      "label": "CINE",
+      "path": [
+        "SMALLHD",
+        "4K PRODUCTION MONITOR",
+        "CINE"
+      ],
+      "url": "https://funomad.com/cine-series/"
+    },
+    {
+      "label": "QUANTUM",
+      "path": [
+        "SMALLHD",
+        "4K PRODUCTION MONITOR",
+        "QUANTUM"
+      ],
+      "url": "https://funomad.com/quantum-series/"
+    },
+    {
+      "label": "OLED",
+      "path": [
+        "SMALLHD",
+        "4K PRODUCTION MONITOR",
+        "OLED"
+      ],
+      "url": "https://funomad.com/oled-series/"
+    },
+    {
+      "label": "ULTRA BRIGHT",
+      "path": [
+        "SMALLHD",
+        "ULTRA BRIGHT"
+      ],
+      "url": null
+    },
+    {
+      "label": "Ultra 5",
+      "path": [
+        "SMALLHD",
+        "ULTRA BRIGHT",
+        "Ultra 5"
+      ],
+      "url": "https://funomad.com/ultra5/"
+    },
+    {
+      "label": "Ultra 7",
+      "path": [
+        "SMALLHD",
+        "ULTRA BRIGHT",
+        "Ultra 7"
+      ],
+      "url": "https://funomad.com/ultra7/"
+    },
+    {
+      "label": "Ultra 10",
+      "path": [
+        "SMALLHD",
+        "ULTRA BRIGHT",
+        "Ultra 10"
+      ],
+      "url": "https://funomad.com/ultra-10/"
+    },
+    {
+      "label": "SMART 7 SERIES",
+      "path": [
+        "SMALLHD",
+        "SMART 7 SERIES"
+      ],
+      "url": null
+    },
+    {
+      "label": "Cine 7",
+      "path": [
+        "SMALLHD",
+        "SMART 7 SERIES",
+        "Cine 7"
+      ],
+      "url": "https://funomad.com/cine7/"
+    },
+    {
+      "label": "Indie 7",
+      "path": [
+        "SMALLHD",
+        "SMART 7 SERIES",
+        "Indie 7"
+      ],
+      "url": "https://funomad.com/indie7/"
+    },
+    {
+      "label": "SMART 5 SERIES",
+      "path": [
+        "SMALLHD",
+        "SMART 5 SERIES"
+      ],
+      "url": null
+    },
+    {
+      "label": "Cine 5",
+      "path": [
+        "SMALLHD",
+        "SMART 5 SERIES",
+        "Cine 5"
+      ],
+      "url": "https://funomad.com/cine5/"
+    },
+    {
+      "label": "Indie 5",
+      "path": [
+        "SMALLHD",
+        "SMART 5 SERIES",
+        "Indie 5"
+      ],
+      "url": "https://funomad.com/indie5/"
+    },
+    {
+      "label": "Software",
+      "path": [
+        "SMALLHD",
+        "Software"
+      ],
+      "url": null
+    },
+    {
+      "label": "PageOS 6",
+      "path": [
+        "SMALLHD",
+        "Software",
+        "PageOS 6"
+      ],
+      "url": "https://funomad.com/pageos6/"
+    },
+    {
+      "label": "FIZ Overlays",
+      "path": [
+        "SMALLHD",
+        "Software",
+        "FIZ Overlays"
+      ],
+      "url": "https://funomad.com/fiz-overlays/"
+    },
+    {
+      "label": "Fleet Control",
+      "path": [
+        "SMALLHD",
+        "Software",
+        "Fleet Control"
+      ],
+      "url": "https://funomad.com/fleet-control/"
+    },
+    {
+      "label": "WOODEN CAMERA",
+      "path": [
+        "WOODEN CAMERA"
+      ],
+      "url": "https://funomad.com/wooden-camera-2/"
+    },
+    {
+      "label": "FX5",
+      "path": [
+        "WOODEN CAMERA",
+        "FX5"
+      ],
+      "url": "https://funomad.com/fx5/"
+    },
+    {
+      "label": "SOLUTIONS",
+      "path": [
+        "SOLUTIONS"
+      ],
+      "url": null
+    },
+    {
+      "label": "Public Safety",
+      "path": [
+        "SOLUTIONS",
+        "Public Safety"
+      ],
+      "url": "https://funomad.com/public-safety/"
+    },
+    {
+      "label": "SUPPORT",
+      "path": [
+        "SUPPORT"
+      ],
+      "url": null
+    },
+    {
+      "label": "Tier-S",
+      "path": [
+        "SUPPORT",
+        "Tier-S"
+      ],
+      "url": "https://funomad.com/tier-s/"
+    },
+    {
+      "label": "GOOD DEALS",
+      "path": [
+        "GOOD DEALS"
+      ],
+      "url": null
+    },
+    {
+      "label": "Bolt 3000 XT",
+      "path": [
+        "GOOD DEALS",
+        "Bolt 3000 XT"
+      ],
+      "url": "https://funomad.com/used/"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "approved product and product-family rows; not manufacturer full SKU coverage",
+  "approved_baseline": "2026-10-27"
+}

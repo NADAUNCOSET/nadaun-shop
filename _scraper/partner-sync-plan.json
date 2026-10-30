@@ -6,18 +6,20 @@
       "url": "https://store.dji.com/kr/",
       "adapter": "dji-official",
       "scope": "Exclusive DJI purchase source including ROMO and official refurbished products; rentals unchanged",
-      "refresh_interval_seconds": 43200,
-      "resume_interval_seconds": 600,
+      "refresh_interval_seconds": 432000,
+      "resume_interval_seconds": 900,
       "request_interval_seconds": 3,
       "completion_gate": "Full official categories, exact SKU identities, KRW prices and stock, detailed content, scoped commit, deployed live verification",
-      "on_request_failure": "Preserve the last publication; never interpret an incomplete response as removed or sold out"
+      "on_request_failure": "Preserve the last publication; never interpret an incomplete response as removed or sold out",
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
     },
     "plthink": {
       "name": "유쾌한생각",
       "url": "https://www.plthink.com/",
       "adapter": "plthink",
-      "refresh_interval_seconds": 43200,
-      "resume_interval_seconds": 600
+      "refresh_interval_seconds": 432000,
+      "resume_interval_seconds": 900,
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
     },
     "onnoff": {
       "name": "온앤오프미디어",
@@ -25,7 +27,7 @@
       "brand_url": "https://onnoff.kr/category/%EB%B8%8C%EB%9E%9C%EB%93%9C/23/",
       "after_live_verified": "plthink",
       "adapter": "cafe24",
-      "target_refresh_interval_seconds": 43200,
+      "target_refresh_interval_seconds": 432000,
       "status": "collecting_for_publication",
       "blocker": "Full inventory, source details, category reconciliation and live publication must pass; existing primary sources and exclusive brand choices remain in force.",
       "required_fields": [
@@ -43,19 +45,21 @@
       "collection_adapter": "cafe24",
       "access_checked_at": "2026-09-10T15:08:59+00:00",
       "request_interval_seconds": 5,
-      "resume_interval_seconds": 600,
-      "refresh_interval_seconds": 43200
+      "resume_interval_seconds": 900,
+      "refresh_interval_seconds": 432000,
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
     },
     "avx": {
       "name": "에이브이엑스",
       "url": "https://www.avx.co.kr/",
       "adapter": "avx",
       "scope": "All public brands and products; Aputure purchase replacement first; rentals unchanged",
-      "refresh_interval_seconds": 43200,
-      "resume_interval_seconds": 600,
+      "refresh_interval_seconds": 432000,
+      "resume_interval_seconds": 900,
       "request_interval_seconds": 3,
       "completion_gate": "Complete unique inventory, reconciled details/options, scoped commit and production ID verification",
-      "on_request_failure": "Preserve last published snapshot; protection responses permanently latch until provider review"
+      "on_request_failure": "Preserve last published snapshot; protection responses permanently latch until provider review",
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
     },
     "clmedia": {
       "name": "씨엘미디어",
@@ -65,13 +69,14 @@
       "status": "collecting_for_publication",
       "scope": "All public brands; owner confirms overlapping brand sources before publish",
       "blocker": "Full inventory, source details, category reconciliation and live publication must pass; existing primary sources and exclusive brand choices remain in force.",
-      "target_refresh_interval_seconds": 43200,
+      "target_refresh_interval_seconds": 432000,
       "completion_gate": "Complete source inventory/details, owner-approved brand matches, dedup audit, deployed live ID verification",
       "access_checked_at": "2026-09-10T15:08:59+00:00",
       "collection_adapter": "cafe24",
       "request_interval_seconds": 5,
-      "resume_interval_seconds": 600,
-      "refresh_interval_seconds": 43200
+      "resume_interval_seconds": 900,
+      "refresh_interval_seconds": 432000,
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
     },
     "cinemall": {
       "name": "시네몰",
@@ -81,13 +86,14 @@
       "status": "collecting_for_publication",
       "scope": "All public brands; owner confirms overlapping brand sources before publish",
       "blocker": "Full inventory, source details, category reconciliation and live publication must pass; existing primary sources and exclusive brand choices remain in force.",
-      "target_refresh_interval_seconds": 43200,
+      "target_refresh_interval_seconds": 432000,
       "completion_gate": "Complete source inventory/details, owner-approved brand matches, dedup audit, deployed live ID verification",
       "access_checked_at": "2026-09-10T15:08:59+00:00",
       "collection_adapter": "cafe24",
       "request_interval_seconds": 5,
-      "resume_interval_seconds": 600,
-      "refresh_interval_seconds": 43200
+      "resume_interval_seconds": 900,
+      "refresh_interval_seconds": 432000,
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
     },
     "ldnet": {
       "name": "엘디네트웍스 / ANYPORT",
@@ -97,10 +103,11 @@
       "scope": "All public categories and products; manufacturer schema supplies the brand, including ANYPORT omitted from the brand shop",
       "status": "not_started",
       "request_interval_seconds": 5,
-      "resume_interval_seconds": 600,
-      "refresh_interval_seconds": 43200,
+      "resume_interval_seconds": 900,
+      "refresh_interval_seconds": 432000,
       "completion_gate": "Every source category count, full inventory union, manufacturer identity, details, options, stock, category tree reconciliation and deployed live offer IDs must pass",
-      "on_request_failure": "Preserve last verified snapshot; access protection latches immediately; incomplete inventory or content remains private"
+      "on_request_failure": "Preserve last verified snapshot; access protection latches immediately; incomplete inventory or content remains private",
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
     },
     "saeki": {
       "name": "세기몰",
@@ -108,33 +115,125 @@
       "brand_url": "https://www.saeki.co.kr/brand/main",
       "adapter": "saeki",
       "scope": "All shop brand menus; actual product brands and source categories; separate loyalty-only goods and existing exclusive source policy",
-      "refresh_interval_seconds": 43200,
-      "resume_interval_seconds": 600,
+      "refresh_interval_seconds": 432000,
+      "resume_interval_seconds": 900,
       "request_interval_seconds": 2.1,
       "completion_gate": "All brand pagination and detail identities, KRW prices, stock, options, source categories, normal tested publish and live offer-ID reconciliation",
-      "on_request_failure": "Keep last verified publication; access protection latches; schema failures remain private for review"
+      "on_request_failure": "Keep last verified publication; access protection latches; schema failures remain private for review",
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
     },
     "digitalcp": {
       "name": "디지털청풍",
       "url": "https://www.digitalcp.co.kr/",
       "scope": "All except NiSi SmallRig DJI GoPro; Novachips held pending owner choice",
       "adapter": "reviewed_source_worker",
-      "refresh_interval_seconds": 43200,
-      "resume_interval_seconds": 600,
+      "refresh_interval_seconds": 432000,
+      "resume_interval_seconds": 900,
       "request_interval_seconds": 2.1,
       "on_request_failure": "Preserve last verified publication and latch for review; never infer retirement from a failed read",
-      "completion_gate": "Full owner-scoped inventory, current detail identities, options, category reconciliation, owner policy, staged release gate, exact deployed offer IDs"
+      "completion_gate": "Full owner-scoped inventory, current detail identities, options, category reconciliation, owner policy, staged release gate, exact deployed offer IDs",
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
     },
     "sunphoto": {
       "name": "썬포토",
       "url": "https://sunphoto.kr/",
       "scope": "All20 owner-approved brand-menu roots; actual manufacturers verified separately; rentals unchanged",
       "adapter": "reviewed_source_worker",
-      "refresh_interval_seconds": 43200,
-      "resume_interval_seconds": 600,
+      "refresh_interval_seconds": 432000,
+      "resume_interval_seconds": 900,
       "request_interval_seconds": 5,
       "on_request_failure": "Preserve last verified publication and latch for review; never infer retirement from a failed read",
-      "completion_gate": "Full owner-scoped inventory, current detail identities, options, category reconciliation, owner policy, staged release gate, exact deployed offer IDs"
+      "completion_gate": "Full owner-scoped inventory, current detail identities, options, category reconciliation, owner policy, staged release gate, exact deployed offer IDs",
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
+    },
+    "smartstore": {
+      "name": "우리 스마트스토어",
+      "url": "https://smartstore.naver.com/rainbowbene",
+      "adapter": "catalog-base",
+      "refresh_interval_seconds": 432000,
+      "resume_interval_seconds": 900,
+      "on_request_failure": "Keep the last verified publication; failed/partial source reads never imply retirement",
+      "review_html_required": true,
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
+    },
+    "kpp": {
+      "name": "KPP",
+      "url": "https://kppkpp.co.kr/",
+      "adapter": "catalog-base",
+      "refresh_interval_seconds": 432000,
+      "resume_interval_seconds": 900,
+      "on_request_failure": "Keep the last verified publication; failed/partial source reads never imply retirement",
+      "review_html_required": true,
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
+    },
+    "l-mount": {
+      "name": "L-Mount / LDL",
+      "url": "https://www.l-mount.co.kr",
+      "adapter": "catalog-base",
+      "refresh_interval_seconds": 432000,
+      "resume_interval_seconds": 900,
+      "on_request_failure": "Keep the last verified publication; failed/partial source reads never imply retirement",
+      "review_html_required": true,
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
+    },
+    "motion9": {
+      "name": "모션나인",
+      "url": "https://motionnine.cafe24.com/",
+      "adapter": "reviewed-manual",
+      "refresh_interval_seconds": 432000,
+      "resume_interval_seconds": 900,
+      "on_request_failure": "Keep the last verified publication; failed/partial source reads never imply retirement",
+      "review_html_required": true,
+      "scope": "Motion9 products with verified source option IDs; retail source price +5 percent",
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
+    },
+    "funomad": {
+      "name": "펀노마드",
+      "url": "https://funomad.com/",
+      "adapter": "reviewed-manual",
+      "refresh_interval_seconds": 432000,
+      "resume_interval_seconds": 900,
+      "on_request_failure": "Keep the last verified publication; failed/partial source reads never imply retirement",
+      "review_html_required": true,
+      "scope": "All approved product/category pages; inquiry only; no numeric public prices",
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
+    },
+    "gauphoto": {
+      "name": "가우포토",
+      "url": "https://www.gauphoto.co.kr/",
+      "adapter": "pending-scoped-adapter",
+      "refresh_interval_seconds": 432000,
+      "resume_interval_seconds": 900,
+      "on_request_failure": "Keep the last verified publication; failed/partial source reads never imply retirement",
+      "review_html_required": true,
+      "scope": "Godox photo products only; category/identity matching required before publication",
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
+    },
+    "hipixel": {
+      "name": "하이픽셀 플러스",
+      "url": "https://hipixelplus.co.kr/",
+      "adapter": "cafe24",
+      "scope": "Owner-confirmed Blackmagic primary and existing reviewed HiPixel brands; preserve supplier categories and identity guards",
+      "status": "five_day_queue",
+      "refresh_interval_seconds": 432000,
+      "target_refresh_interval_seconds": 432000,
+      "resume_interval_seconds": 900,
+      "request_interval_seconds": 5,
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
+    },
+    "greenshop": {
+      "name": "그린촬영 · NiSi",
+      "url": "https://nisifilters.imweb.me/",
+      "adapter": "pending-scoped-adapter",
+      "scope": "NiSi only; current inventory/detail matching is private and not a published complete source",
+      "status": "adapter_review_pending",
+      "refresh_interval_seconds": 432000,
+      "target_refresh_interval_seconds": 432000,
+      "resume_interval_seconds": 900,
+      "request_interval_seconds": 5,
+      "scheduler_label": "co.nadaun.shop.mirror-cycle"
     }
-  }
+  },
+  "owner_cadence_confirmed_at": "2026-10-30",
+  "review_html_after_each_update": true
 }

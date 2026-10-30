@@ -7,7 +7,7 @@ from sync_shop_sources import ROOT, OUT, stamp
 
 STATE = ROOT / '_scraper/.sync-state'
 PLAN = ROOT / '_scraper/partner-sync-plan.json'
-IMPLEMENTED_ADAPTERS = frozenset({'plthink', 'avx', 'dji-official', 'cafe24', 'saeki', 'reviewed_source_worker'})
+IMPLEMENTED_ADAPTERS = frozenset({'plthink', 'avx', 'dji-official', 'cafe24', 'saeki', 'reviewed_source_worker','catalog-base','reviewed-manual'})
 
 
 def read(path):
@@ -75,7 +75,8 @@ def report(plan_path=PLAN, out=OUT, state=STATE):
         published = verified_receipt(source, out, state)
         dependency = config.get('after_live_verified')
         waiting = dependency if dependency and not verified_receipt(dependency, out, state) else None
-        adapter_ready = config.get('adapter') in IMPLEMENTED_ADAPTERS
+        from mirror_cycle import adapter_implemented
+        adapter_ready = config.get('adapter') in IMPLEMENTED_ADAPTERS and adapter_implemented(source)
         collector_ready = config.get('collection_adapter') == 'cafe24'
         if collector_ready:progress=progress|{'checked_at':progress.get('at')}
         if source == 'avx':

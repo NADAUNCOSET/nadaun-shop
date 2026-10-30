@@ -214,8 +214,14 @@ def build(allow_pending=False):
                 if field in c:categories[c['id']][field]=c[field]
         cached={}
         if not source.startswith('imweb-'):
-            for f in (CACHE/source).glob('*.json'):
-                if re.fullmatch('[a-f0-9]{2}',f.stem):cached.update(json.loads(f.read_text()))
+            from mirror_runtime import detail_fallback
+            fallback=detail_fallback(ROOT)
+            # Published cache is a read-only baseline in the automatic worktree.
+            # Fresh automatic observations are written to that worktree only.
+            roots=([fallback] if fallback else [])+[CACHE]
+            for cache_root in roots:
+                for f in (cache_root/source).glob('*.json'):
+                    if re.fullmatch('[a-f0-9]{2}',f.stem):cached.update(json.loads(f.read_text()))
         for pid,p0 in s['products'].items():
             if source=='dji-official' and brand_id(p0['brand'])!='dji':continue
             if source=='imweb-promotions' and pid in products:

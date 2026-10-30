@@ -131,7 +131,10 @@ def source_controls(root, source, config, schedules):
     labels = (['co.nadaun.shop.catalog-sync'] if source in ('smartstore', 'kpp', 'l-mount') else
               ['co.nadaun.shop.reviewed-'+source+'-sync'] if source in ('digitalcp', 'sunphoto') else
               ['co.nadaun.shop.'+source+'-sync'])
-    implemented = bool(config.get('adapter')) or source in ('smartstore', 'kpp', 'l-mount', 'hipixel')
+    from mirror_cycle import adapter_implemented
+    implemented = adapter_implemented(source,root)
+    if schedules.get('co.nadaun.shop.mirror-cycle',{}).get('registered') is True:
+        labels=['co.nadaun.shop.mirror-cycle']
     registered = all(schedules.get(k, {}).get('registered') is True for k in labels) if implemented else False
     suspended = bool(suspension) and suspension.get('suspended', True) is not False
     issues = []

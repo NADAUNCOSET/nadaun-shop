@@ -22,8 +22,9 @@ from enrich_shop_sources import collect as enrich
 from build_catalog import build
 from sync_gift_inventory import ensure_source_access, GiftSourceSuspended
 from source_refresh_state import recent_refresh,record_refresh
+from mirror_runtime import master_for
 
-STATE=ROOT/'_scraper/.sync-state'
+STATE=(master_for(ROOT) or ROOT)/'_scraper/.sync-state'
 SITE='https://shop.nadaun.co'
 GENERATED=['promotions.html','used.html','global.html','data/catalog','assets/shop/thumbnails','brands','brands.html','index.html','catalog.html','catalog_category.html','item.html','cart.html','checkout.html','payment-test.html','orders.html','admin.html','account.html','test-shop.html','test-admin.html','members-admin.html','terms.html','privacy.html','shipping.html','services.html','gifts.html','about.html','studio.html','rental-guide.html','equipment-guide.html','billing-guide.html','sitemap.xml','catalog-sitemap.xml']
 CODE=['_scraper/shipping_policy.py','_scraper/test_shop_shipping.py','assets/shop/shipping.js','_scraper/test_shop_taxonomy.py','_scraper/product_taxonomy.py','_scraper/rental_taxonomy.py','_scraper/references/slrrent-categories.json','assets/shop/motion.js','assets/shop/departments','assets/shop/banners.js','data/catalog/banners.json','assets/shop/studio','_scraper/brand_products.py','assets/shop/vendor','assets/shop/brands','data/catalog/partner-image-rules.json','_scraper/sync_partner_catalogs.py','data/catalog/brand-assets.json','_scraper/catalog_seo.py','assets/shop/catalog-tools.js','_scraper/tests','_scraper/test_shop_catalog.py','api','assets/shop/cart.js','_scraper/storefront_pages.py','_scraper/sync_shop_sources.py','_scraper/sync_kpp_catalog.py','_scraper/enrich_shop_sources.py','_scraper/build_catalog.py','_scraper/catalog_dedup.py','_scraper/shop_sync.py','_scraper/shop_templates','assets/shop/shop.js','assets/shop/shop.css','data/catalog/overrides.json','data/catalog/dedup-rules.json','vercel.json']
@@ -60,14 +61,23 @@ CODE += ['_scraper/sunphoto-brand-reviews.json']
 CODE += ['_scraper/retail_content_policy.py','_scraper/retail-content-rules.json','_scraper/test_retail_content_policy.py']
 CODE += ['_scraper/camera_compatibility.py','_scraper/test_camera_compatibility.py','assets/shop/compatibility.js']
 CODE += ['server/catalog-pages.cjs','_scraper/test_sitemap_navigation.py']
+CODE += ['_scraper/mirror-policy.json','_scraper/mirror_schedule.py','_scraper/mirror_runtime.py',
+         '_scraper/mirror_cycle.py','_scraper/install_mirror_cycle.py','_scraper/review_refresh.py',
+         '_scraper/supplier_banners.py','_scraper/test_supplier_banners.py','_scraper/test_mirror_cycle.py',
+         '_scraper/manual_source_worker.py','_scraper/funomad_source.py','_scraper/funomad-reviewed-families.json',
+         '_scraper/test_manual_source_worker.py']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
     # Full catalogue tests read thousands of verified NAS files. A cold SMB
     # cache exceeds three minutes; keep every check and give it a bounded run.
     timeout=900 if args[0]=='git' else 600 if ('-m' in args and 'unittest' in args) or (args[0]=='node' and '--test' in args) else 180
+    test_environment=None
+    if 'unittest' in args or '--test' in args:
+        # Fixtures must never inherit the live master-publication context.
+        test_environment=dict(os.environ);test_environment.pop('NADAUN_SHOP_MASTER_ROOT',None)
     try:
-        p=subprocess.run(args,cwd=ROOT,text=True,capture_output=True,timeout=timeout)
+        p=subprocess.run(args,cwd=ROOT,text=True,capture_output=True,timeout=timeout,env=test_environment)
     except subprocess.TimeoutExpired:
         raise RuntimeError(f'{args[0]} {args[1]} timed out; inspect NAS connectivity before retrying') from None
     if p.returncode:raise RuntimeError(f'{args[0]} {args[1]} failed: '+(p.stderr or p.stdout)[-1500:])
@@ -144,6 +154,8 @@ def publish_existing():
     status=json.loads((ROOT/'data/catalog/sync-status.json').read_text())
     if command('git','diff','--cached','--name-only'):raise RuntimeError('Unrelated staged changes exist; refusing an automatic commit')
     owned=managed_files()
+    from mirror_runtime import prepare_publication,synchronize_master
+    operator_sync=prepare_publication(ROOT,owned)
     from publication_storage import stage_generated
     stage_generated(owned,command)
     staged=command('git','diff','--cached','--name-only')
@@ -152,9 +164,17 @@ def publish_existing():
     command('git','diff','--cached','--check')
     if staged:command('git','commit','-m','auto(shop): refresh verified brand catalogue')
     command('git','push','origin','HEAD:main')
+    synchronize_master(ROOT,operator_sync,command('git','rev-parse','HEAD'))
     command('git','fetch','origin','main')
     if command('git','rev-parse','HEAD')!=command('git','rev-parse','origin/main'):raise RuntimeError('NAS and remote main differ')
     result=verify_live(status['revision']);save_json(STATE/'last-success.json',result)
+    from mirror_runtime import synchronize_review_audits
+    review_root=synchronize_review_audits(ROOT) or ROOT
+    from review_refresh import refresh
+    review=refresh(review_root,publication=result)
+    result['review_html_updated']=bool(review.get('passed'))
+    result['review_refresh_receipt']=review.get('receipt')
+    save_json(STATE/'last-success.json',result)
     print(json.dumps(result,ensure_ascii=False),flush=True)
     return result
 
