@@ -3,6 +3,8 @@ from collections import Counter
 from copy import deepcopy
 import hashlib
 import json
+import re
+from urllib.parse import urlsplit,parse_qs
 from brand_source_policy import inventory,selections,supplemental_source_approved,POLICY
 from build_catalog import brand_id
 
@@ -11,11 +13,20 @@ def policy_fingerprint():return hashlib.sha256(POLICY.read_bytes()).hexdigest()
 
 
 def partition(snapshot):
+    def terminal_hidden(p):
+        evidence=p.get('source_hidden_evidence',{});url=urlsplit(evidence.get('url',''))
+        return (p.get('detail_status')=='source_hidden' and p.get('supplier_status')=='unlisted'
+            and p.get('content_issues')==['source_hidden_product'] and p.get('price') is None and p.get('sale_price') is None
+            and p.get('source')=='avx' and p.get('id')=='avx-'+p.get('source_id','')
+            and evidence.get('url')==p.get('source_url') and url.hostname=='www.avx.co.kr'
+            and url.scheme=='https' and evidence.get('message')=='미노출 상품 입니다.'
+            and url.path=='/goods/view' and parse_qs(url.query).get('no')==[p.get('source_id')]
+            and re.fullmatch(r'[a-f0-9]{64}',evidence.get('html_sha256','')) is not None)
     if (snapshot.get('source')!='avx' or snapshot.get('scope')!='all' or
         not snapshot.get('complete') or not snapshot.get('catalogue_complete') or
         snapshot.get('coverage')!={'expected':snapshot.get('product_count'),'unique':len(snapshot.get('products',{}))} or
         snapshot.get('product_count')!=len(snapshot.get('products',{})) or
-        any(p.get('detail_status')!='verified' for p in snapshot['products'].values())):
+        any(p.get('detail_status')!='verified' and not terminal_hidden(p) for p in snapshot['products'].values())):
         raise ValueError('AVX publication requires a complete reconciled full-source candidate')
     chosen=selections();counts=inventory(snapshot);supplemental=supplemental_source_approved('avx')
     accepted={};held={};excluded={};brand_held={};content_review={}
@@ -48,6 +59,8 @@ def partition(snapshot):
         'publication':{'full_collection_verified':True,'source_product_count':snapshot['product_count'],
             'accepted_product_count':len(accepted),'pending_product_count':len(held),
             'owner_excluded_product_count':len(excluded),'pending_brand_count':len(decisions['pending_brands']),
+            'source_hidden_product_count':sum(p.get('detail_status')=='source_hidden' for p in snapshot['products'].values()),
+            'source_verified_detail_count':sum(p.get('detail_status')=='verified' for p in snapshot['products'].values()),
             'pending_content_product_count':len(content_review),
             'policy_sha256':decisions['policy_sha256']}}
     return public,decisions

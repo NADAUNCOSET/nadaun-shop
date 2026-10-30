@@ -18,6 +18,7 @@ from urllib.parse import parse_qs, urljoin, urlparse
 from bs4 import BeautifulSoup
 import requests
 from sync_shop_sources import ROOT, OUT, clean, save_json, stamp
+from catalog_checkpoint import restore, snapshot
 
 BASE = 'https://www.avx.co.kr'
 WORK = ROOT / '_scraper/.sync-state/avx'
@@ -120,6 +121,18 @@ def parse_list(text):
     return total, products
 
 
+def hidden_product(product,text):
+    """A public unlisted notice is terminal; never request its hidden content."""
+    doc=BeautifulSoup(text,'lxml')
+    notice=any(re.fullmatch(r"\s*alert\(['\"]미노출\s*상품\s*입니다[.!]?['\"]\)\s*;?\s*",s.get_text()) for s in doc.find_all('script'))
+    if not notice or re.search(r'gl_goods_seq\s*=',text) or doc.select_one('meta[property="og:title"]'):return None
+    p=deepcopy(product)
+    p.update(price=None,sale_price=None,status='inquiry',supplier_status='unlisted',detail_status='source_hidden',
+        content_status='review_required',content_issues=['source_hidden_product'],description_text='',
+        options=[],option_groups=[],options_require_confirmation=True,verified_at=stamp(),
+        source_hidden_evidence={'url':p['source_url'],'message':'미노출 상품 입니다.','html_sha256':hashlib.sha256(text.encode()).hexdigest()})
+    return p
+
 def parse_detail(product, text, description):
     p = deepcopy(product)
     doc = BeautifulSoup(text, 'lxml')
@@ -190,12 +203,17 @@ class Importer:
         self.source = Source(work)
         self._last_report = 0
         self._last_phase = None
-        self.db = sqlite3.connect(work / 'checkpoint.sqlite3')
+        self.database = restore(work,'avx')
+        self.db = sqlite3.connect(self.database)
         self.db.execute('CREATE TABLE IF NOT EXISTS pages (key TEXT PRIMARY KEY, total INTEGER, payload TEXT)')
         self.db.execute('CREATE TABLE IF NOT EXISTS details (id TEXT PRIMARY KEY, fingerprint TEXT, payload TEXT)')
         self.db.execute('CREATE TABLE IF NOT EXISTS detail_errors (id TEXT PRIMARY KEY, error TEXT, at TEXT)')
         self.db.execute('CREATE TABLE IF NOT EXISTS metadata (key TEXT PRIMARY KEY, payload TEXT)')
         self.db.commit()
+
+    def close(self):
+        try:snapshot(self.db,self.work,self.database,'avx')
+        finally:self.db.close()
 
     def invalidate_listings(self, reason, category=None):
         # A catalogue can change during a long import. Preserve verified details
@@ -242,7 +260,7 @@ class Importer:
         self._last_phase = phase
         count = self.db.execute('SELECT count(*) FROM details').fetchone()[0]
         save_json(self.work / 'progress.json', {'at': stamp(), 'phase': phase,
-                  'verified_details': count, 'full_catalogue_complete': False, **extra})
+                  'processed_details': count, 'full_catalogue_complete': False, **extra})
         print(phase, count, extra, flush=True)
 
     def collect(self, scope='all'):
@@ -266,7 +284,7 @@ class Importer:
         pending = ap if scope == 'aputure' else self.listing()
         for sid in pending:
             if sid in ap: pending[sid]['brand_category_ids'] = ap[sid]['brand_category_ids']
-        done = {}; failures = {}; consecutive_errors = 0
+        done = {}; failures = {}; consecutive_errors = 0; verified_count=0; hidden_count=0
         # Reuse verified rows in memory: per-item SMB reads/progress rewrites
         # make a checkpoint-only replay unnecessarily slow and unstable.
         stored_rows = {sid:(fp,payload) for sid,fp,payload in self.db.execute('SELECT id,fingerprint,payload FROM details')}
@@ -278,9 +296,10 @@ class Importer:
                 product = json.loads(stored[1])
             else:
                 detail = self.source.get('/goods/view', no=sid)
-                content = self.source.get('/goods/view_contents', no=sid, zoom=1, view_preload=1)
+                hidden=hidden_product(p,detail)
+                content = '' if hidden else self.source.get('/goods/view_contents', no=sid, zoom=1, view_preload=1)
                 try:
-                    product = parse_detail(p, detail, content)
+                    product = hidden or parse_detail(p, detail, content)
                 except CatalogueChanged:
                     self.invalidate_listings('detail_price_changed')
                     raise
@@ -298,7 +317,10 @@ class Importer:
                 self.db.commit()
             consecutive_errors = 0
             done[sid] = product
-            self.report('details', scope=scope, found=len(done), expected=len(pending))
+            verified_count+=product.get('detail_status')=='verified'
+            hidden_count+=product.get('detail_status')=='source_hidden'
+            self.report('details', scope=scope, found=len(done), expected=len(pending),
+                        verified_details=verified_count,source_hidden_product_count=hidden_count)
             if set(ap) <= set(done) and not (self.work / 'aputure-complete.json').exists():
                 self.export({k:done[k] for k in ap}, cats, 'aputure')
         if failures:
@@ -346,6 +368,8 @@ class Importer:
             'collected_at':stamp(),'product_count':len(rows),'products':rows,
             'categories':list(categories.values()), 'coverage':{'expected':total,'unique':len(rows)},
             'brands':sorted({p['brand'] for p in rows.values()})}
+        snapshot['source_hidden_product_count']=sum(p.get('detail_status')=='source_hidden' for p in rows.values())
+        snapshot['source_verified_detail_count']=sum(p.get('detail_status')=='verified' for p in rows.values())
         # Collection never mutates a published source, including the intermediate
         # Aputure pass during a full refresh. The shared publisher promotes it.
         path = self.work/('aputure-candidate.json' if scope == 'aputure' else 'catalogue-candidate.json')
@@ -357,14 +381,15 @@ class Importer:
         save_json(self.work / (scope+'-complete.json'), {'at':stamp(),'path':str(path.relative_to(ROOT)),
             'product_count':len(rows),'source_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
         self.report('complete', scope=scope, found=len(rows), expected=total,
-                    full_catalogue_complete=scope=='all')
+                    full_catalogue_complete=scope=='all',verified_details=snapshot['source_verified_detail_count'],
+                    source_hidden_product_count=snapshot['source_hidden_product_count'])
         return snapshot
 
 
 def collect(scope='all'):
     importer = Importer()
     try: return importer.collect(scope)
-    finally: importer.db.close()
+    finally: importer.close()
 
 
 if __name__ == '__main__':

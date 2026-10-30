@@ -169,21 +169,43 @@ def unavailable_exclusions(root, source, products, candidates):
     return result
 
 
-def pending_runs(root):
-    """Read actual run files; the aggregate's old 'running' text is historical."""
-    folder=root/'_private/catalog/mirror-refresh-20261027'
+def pending_runs(root, processes=None):
+    """Find the latest private generation without treating saved text as a process."""
+    if processes is None:
+        observed=subprocess.run(['ps','-axo','pid=,command='],capture_output=True,text=True)
+        processes={}
+        if observed.returncode==0:
+            for line in observed.stdout.splitlines():
+                parts=line.strip().split(None,1)
+                if len(parts)==2 and parts[0].isdigit():processes[int(parts[0])]=parts[1]
     result={}
-    for path in folder.glob('*-run.json'):
-        data=read(path);source=data.get('source') or path.name.removesuffix('-run.json').removesuffix('-detail')
-        p=data.get('result',data)
-        row={'file':str(path),'state':data.get('state',p.get('phase')),
-                        'product_count':data.get('product_count',p.get('total')),
-                        'verified':p.get('verified'),'errors':p.get('errors'),
-                        'finished_at':data.get('finished_at'),'published_flag_in_run':data.get('published'),
-                        'historical_run_state_not_live_process':True}
-        prior=result.get(source)
-        if not prior or (dated(row['finished_at']) or datetime.min.replace(tzinfo=timezone.utc)) >= (dated(prior['finished_at']) or datetime.min.replace(tzinfo=timezone.utc)):
-            result[source]=row
+    for folder in sorted((root/'_private/catalog').glob('mirror-*')):
+        if not folder.is_dir():continue
+        jobs={j.get('source'):j for j in read(folder/'START.json').get('jobs',[])}
+        for path in folder.glob('*-run.json'):
+            data=read(path);source=data.get('source') or path.name.removesuffix('-run.json').removesuffix('-detail')
+            p=data.get('result',data)
+            times=[dated(v) for v in (data.get('finished_at'),data.get('at'),data.get('started_at'),p.get('at'))]
+            updated=max((v for v in times if v),default=datetime.min.replace(tzinfo=timezone.utc))
+            pid=jobs.get(source,{}).get('pid');command=processes.get(pid,'')
+            in_generation=any(str(value)+'/' in command for value in {folder,folder.resolve()})
+            running=bool(command and in_generation and
+                         ('collect-'+source+'.py' in command or command.endswith(' '+source)))
+            row={'file':str(path),'state':data.get('state',p.get('phase')),
+                 'product_count':data.get('product_count',p.get('total')),
+                 'verified':p.get('verified'),'errors':p.get('errors'),
+                 'finished_at':data.get('finished_at'),'updated_at':updated.isoformat(),
+                 'published_flag_in_run':data.get('published'),
+                 'historical_run_state_not_live_process':True,
+                 'process_observed_running':running,'observed_pid':pid if running else None}
+            progress=read(folder/(source+'-fresh')/'progress.json')
+            if progress:
+                row['collection_progress']={k:progress[k] for k in (
+                    'at','checked_at','phase','products_found','details_verified',
+                    'verified_details','brands_complete','brands_total',
+                    'categories_verified','categories_found','complete') if k in progress}
+            prior=result.get(source)
+            if not prior or updated >= dated(prior['updated_at']):result[source]=row
     return result
 
 
@@ -290,7 +312,7 @@ def run(root=ROOT, output=None, live=False, schedules=None):
         for offer in product['offers']:grouped[offer['source']].append(offer)
     sources = []
     runs=pending_runs(root)
-    for source in sorted(set(paths)|set(plans)|set(catalog['meta'].get('source_counts', {}))):
+    for source in sorted(set(paths)|set(plans)|set(catalog['meta'].get('source_counts', {}))|set(runs)):
         config = plans.get(source, {})
         path = paths.get(source)
         snapshot = read(path) if path else {'source': source}
@@ -313,7 +335,7 @@ def run(root=ROOT, output=None, live=False, schedules=None):
         row['stored_offer_projection']=offer_comparison(root,source,snapshot,grouped[source])
         if row['stored_offer_projection']['differences']:row['issues'].append('stored_offer_projection_mismatch')
         controls = source_controls(root, source, config, schedules)
-        row.update(name=config.get('name', NAMES.get(source, source)), snapshot_file=str(path) if path else None,
+        row.update(name=config.get('name', NAMES.get(source, '그린촬영 / NiSi' if source=='greenshop' else source)), snapshot_file=str(path) if path else None,
                    source_sha256=hashlib.sha256(path.read_bytes()).hexdigest() if path else None, controls=controls)
         row['receipt_matches_saved_source'] = bool(path and controls['receipt_source_sha256']==row['source_sha256'])
         row['issues'] += issues+controls.pop('issues')

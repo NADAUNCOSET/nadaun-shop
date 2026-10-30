@@ -7,6 +7,7 @@ import unittest
 from unittest.mock import patch
 import avx_publication as publication
 from partner_sync_status import verified_receipt
+from sync_avx_catalog import hidden_product
 
 
 def source():
@@ -18,6 +19,16 @@ def source():
 
 
 class PublicationTests(unittest.TestCase):
+    def test_unlisted_public_notice_completes_source_audit_but_is_never_published(self):
+        snapshot=source();p=snapshot['products']['avx-0'];p.update(source='avx',source_id='0',source_url='https://www.avx.co.kr/goods/view?no=0',price=100)
+        snapshot['products']['avx-0']=hidden_product(p,"<script>alert('미노출 상품 입니다.');</script>")
+        self.approval.return_value=True
+        with patch.object(publication,'inventory',return_value={}),patch.object(publication,'selections',return_value={}):public,decisions=publication.partition(snapshot)
+        self.assertNotIn('avx-0',public['products']);self.assertIn('avx-0',decisions['held_ids'])
+        self.assertEqual(public['publication']['source_hidden_product_count'],1);self.assertEqual(public['publication']['source_verified_detail_count'],5)
+        snapshot['products']['avx-0']['source_hidden_evidence']['url']='https://www.avx.co.kr/goods/view?no=99'
+        with self.assertRaises(ValueError):publication.partition(snapshot)
+
     def setUp(self):
         approval=patch.object(publication,'supplemental_source_approved',return_value=False)
         self.approval=approval.start();self.addCleanup(approval.stop)

@@ -15,6 +15,7 @@ import requests
 from sync_shop_sources import OUT, ROOT, clean, save_json, stamp
 from source_transport import interrupted_get
 from plthink_checkpoint import Checkpoint
+from catalog_checkpoint import restore, snapshot
 from sync_gift_inventory import run_lock
 
 BASE = 'https://www.plthink.com'
@@ -278,12 +279,15 @@ def report(phase,brands,total,products,details):
 def collect_plthink():
     WORK.mkdir(parents=True,exist_ok=True)
     with run_lock(WORK):
-        checkpoint=Checkpoint(WORK/'checkpoint.sqlite3')
+        database=restore(WORK,'plthink')
+        checkpoint=Checkpoint(database)
         try:return _collect_plthink(checkpoint)
         except Exception as exc:
             save_json(WORK/'last-error.json',{'at':stamp(),'error':type(exc).__name__+': '+str(exc),'published':False})
             raise
-        finally:checkpoint.close()
+        finally:
+            try:snapshot(checkpoint.db,WORK,database,'plthink')
+            finally:checkpoint.close()
 
 
 if __name__=='__main__':collect_plthink()

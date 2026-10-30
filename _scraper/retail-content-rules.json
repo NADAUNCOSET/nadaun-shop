@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_at": "2026-10-27",
+  "reviewed_at": "2026-10-30",
   "owner_instruction": "제품 정보는 유지하고 타 판매점 구매·연락·매장 방문 유도는 제외. 상담은 나다운 기존 경로 사용.",
   "preserve": [
     "제조사·정식 수입자 정보와 A/S 책임자 고시",
@@ -390,6 +390,13 @@
       "url": "https://ecimg.cafe24img.com/pg418b70355747015/cinemallshop/img/cs/CS_04.jpg",
       "reason": "기존 원본 상세에서 별도 img/cs/CS_01~04로 구분한 판매점 공통 CS 모듈",
       "evidence": "기존 저장본의 공통 CS 자산 경로 전수 비교. 새 원본 요청·이미지 OCR 없음; 개별 수집 보류 유지."
+    },
+    {
+      "id": "datacolor-external-trade-in-promotion",
+      "url": "https://mustcolor2.openhost.cafe24.com/event/mustcolor/brand_notice/datacolor_notice_partners.jpg",
+      "sha256": "a8e2ef1b757d5ccbe98fad3a879ffb109b6b84bbb4e7070b0f90845027ebd4b5",
+      "reason": "외부 보상판매 할인과 QR·사이트 방문 유도. 제품 설명·보증 고지와 별개인 판촉 배너.",
+      "evidence": "2026-10-30 원본 이미지 직접 열람; NAS mirror-completion-20261030/image-verification/a8e2ef1b757d5ccbe98fad3a879ffb109b6b84bbb4e7070b0f90845027ebd4b5.bin"
     }
   ],
   "text": [

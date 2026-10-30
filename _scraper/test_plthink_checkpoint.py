@@ -9,6 +9,24 @@ import build_catalog
 
 
 class ResumeTests(unittest.TestCase):
+    def test_collector_runs_local_sqlite_and_preserves_a_verified_nas_snapshot(self):
+        import sqlite3
+        from contextlib import closing
+        import sync_plthink_catalog as collector
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);work=root/'nas';work.mkdir();runtime=root/'pc-runtime'
+            def collect(checkpoint):
+                database=Path(checkpoint.db.execute('PRAGMA database_list').fetchone()[2])
+                self.assertTrue(database.resolve().is_relative_to(runtime.resolve()))
+                self.assertNotEqual(database,work/'checkpoint.sqlite3')
+                checkpoint.save_detail({'id':'plthink-1'},{'id':'plthink-1','detail_status':'verified'})
+                return {'complete':True}
+            with patch.object(collector,'WORK',work),patch('catalog_checkpoint.runtime_root',return_value=runtime),patch.object(collector,'_collect_plthink',side_effect=collect):
+                self.assertTrue(collector.collect_plthink()['complete'])
+            with closing(sqlite3.connect(work/'checkpoint.sqlite3')) as saved:
+                self.assertEqual(saved.execute('PRAGMA quick_check').fetchone(),('ok',))
+                self.assertEqual(saved.execute('SELECT id FROM details').fetchall(),[('plthink-1',)])
+
     def test_reopen_preserves_generation_pages_and_details(self):
         with tempfile.TemporaryDirectory() as tmp:
             path=Path(tmp)/'resume.sqlite3';state=Checkpoint(path)

@@ -6,10 +6,27 @@ import json
 import hashlib
 import tempfile
 import unittest
-from mirror_audit import saved_source, scheduler_inventory, age_hours, source_paths, completion_issues, unavailable_exclusions, offer_comparison, source_controls
+from mirror_audit import saved_source, scheduler_inventory, age_hours, source_paths, completion_issues, unavailable_exclusions, offer_comparison, source_controls, pending_runs
 
 
 class MirrorAuditTests(unittest.TestCase):
+    def test_latest_private_run_replaces_historical_run_and_checks_the_process(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);base=root/'_private/catalog';base.mkdir(parents=True)
+            old=base/'mirror-refresh-20261027';new=base/'mirror-completion-20261030'
+            old.mkdir();new.mkdir()
+            (base/'mirror-audit-latest.json').write_text('{}')
+            (old/'plthink-run.json').write_text(json.dumps({'source':'plthink','state':'collected_verified','finished_at':'2026-10-27T10:00:00Z'}))
+            (new/'plthink-run.json').write_text(json.dumps({'source':'plthink','phase':'running','at':'2026-10-30T03:00:00Z','published':False}))
+            (new/'START.json').write_text(json.dumps({'jobs':[{'source':'plthink','pid':123}]}))
+            command='python '+str(new/'collect-pending.py')+' plthink'
+            result=pending_runs(root,{123:command})['plthink']
+            self.assertEqual(result['state'],'running')
+            self.assertTrue(result['process_observed_running'])
+            self.assertFalse(result['published_flag_in_run'])
+            self.assertFalse(pending_runs(root,{})['plthink']['process_observed_running'])
+            self.assertFalse(pending_runs(root,{123:'python unrelated.py plthink'})['plthink']['process_observed_running'])
+
     def setUp(self):
         self.now=datetime(2026,10,29,12,tzinfo=timezone.utc)
         self.snapshot={'source':'example','complete':True,'collected_at':'2026-10-29T11:00:00Z',

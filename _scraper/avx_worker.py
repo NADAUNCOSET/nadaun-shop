@@ -76,7 +76,7 @@ def work():
         # One provider-wide protection latch, also for future generations.
         importer.source.work=WORK
         try:snapshot=importer.collect('all')
-        finally:importer.db.close()
+        finally:importer.close()
         return publish(snapshot)
 
 

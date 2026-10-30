@@ -3,7 +3,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import Mock, patch
-from sync_avx_catalog import Source, SourceSuspended, Importer, CatalogueChanged, parse_list, parse_detail
+from sync_avx_catalog import Source, SourceSuspended, Importer, CatalogueChanged, parse_list, parse_detail,hidden_product
 
 
 def listing(price='54,000', state='', sid='3034'):
@@ -15,6 +15,47 @@ def listing(price='54,000', state='', sid='3034'):
 
 
 class AvxTests(unittest.TestCase):
+    def setUp(self):
+        runtime=tempfile.TemporaryDirectory()
+        self.addCleanup(runtime.cleanup)
+        self.runtime=Path(runtime.name)
+        patcher=patch('catalog_checkpoint.runtime_root',return_value=self.runtime)
+        patcher.start();self.addCleanup(patcher.stop)
+
+    def test_runtime_database_is_local_and_closed_snapshot_can_be_restored(self):
+        import sqlite3
+        from contextlib import closing
+        with tempfile.TemporaryDirectory() as directory:
+            work=Path(directory);importer=Importer(work)
+            database=Path(importer.db.execute('PRAGMA database_list').fetchone()[2])
+            self.assertTrue(database.resolve().is_relative_to(self.runtime.resolve()))
+            self.assertNotEqual(database,work/'checkpoint.sqlite3')
+            importer.db.execute('INSERT INTO details VALUES (?,?,?)',('123','identity','{"verified":true}'))
+            importer.db.commit();importer.close()
+            with closing(sqlite3.connect(work/'checkpoint.sqlite3')) as saved:
+                self.assertEqual(saved.execute('PRAGMA quick_check').fetchone(),('ok',))
+                self.assertEqual(saved.execute('SELECT id FROM details').fetchall(),[('123',)])
+            database.unlink()
+            restored=Importer(work)
+            self.assertEqual(restored.db.execute('SELECT id FROM details').fetchall(),[('123',)])
+            restored.close()
+
+    def test_public_unlisted_notice_is_terminal_and_does_not_request_hidden_contents(self):
+        with tempfile.TemporaryDirectory() as directory:
+            importer=Importer(Path(directory));_,listed=parse_list(listing())
+            importer.db.execute('INSERT INTO metadata VALUES (?,?)',('menu',json.dumps({'0020':{'id':'0020','name':'Aputure','parent_id':None}})));importer.db.commit()
+            importer.listing=Mock(return_value=listed)
+            importer.source.get=Mock(return_value="<script>alert('미노출 상품 입니다.');</script>")
+            importer.export=Mock(return_value={'complete':True})
+            result=importer.collect('all');self.assertTrue(result['complete'])
+            importer.source.get.assert_called_once_with('/goods/view',no='3034')
+            record=importer.export.call_args.args[0]['3034'];self.assertEqual(record['detail_status'],'source_hidden');self.assertIsNone(record['price']);self.assertEqual(record['description_text'],'')
+            importer.db.close()
+
+    def test_protection_and_identity_mismatch_are_not_unlisted_evidence(self):
+        _,listed=parse_list(listing());product=listed['3034']
+        for html in ["<script>alert('로그인 해주세요');</script>","Access denied", "<script>alert('미노출 상품 입니다.');</script><script>gl_goods_seq = 3034;</script>"]:
+            self.assertIsNone(hidden_product(product,html))
     def test_list_uses_vat_inclusive_display_price_and_excludes_unrelated_links(self):
         total, products = parse_list('<a href="/goods/view?no=999">추천</a>'+listing())
         self.assertEqual((total,set(products)), (1,{'3034'}))

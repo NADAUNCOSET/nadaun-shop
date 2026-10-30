@@ -3,6 +3,16 @@ from pathlib import Path
 from retail_content_policy import sanitize_detail,assert_clean,load_rules
 
 class RetailContentPolicy(unittest.TestCase):
+    def test_datacolor_trade_in_banner_is_removed_and_product_instructions_remain(self):
+        banner='https://mustcolor2.openhost.cafe24.com/event/mustcolor/brand_notice/datacolor_notice_partners.jpg'
+        instructions='https://mustcolor2.openhost.cafe24.com/product/datacolor/SpyderShelf_detail.jpg'
+        original={'images':{'detail':[banner,instructions]},'description_text':'스파이더 셸프 장착 방법'}
+        result,audit=sanitize_detail({'id':'saeki-PD00023673','kind':'purchase'},original)
+        self.assertEqual(result['images']['detail'],[instructions])
+        self.assertEqual(result['description_text'],original['description_text'])
+        self.assertIn(banner,original['images']['detail'])
+        self.assertEqual(audit[0]['rule'],'datacolor-external-trade-in-promotion')
+
     def test_dealer_module_removed_across_sources_without_changing_raw_or_product_photos(self):
         urls=[row['url'] for row in load_rules()[0].values()]
         original={'images':{'main':['https://maker.example/camera.jpg'],'detail':[urls[0],'https://maker.example/specs.jpg',urls[1]]},

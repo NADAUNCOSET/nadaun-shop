@@ -9,6 +9,12 @@ from unittest.mock import Mock
 FIXTURES=Path(__file__).with_name('fixtures')/'saeki'
 
 class SaekiTests(unittest.TestCase):
+ def test_verified_datacolor_source_images_restore_the_actual_product_description(self):
+  product=self.parsed('PD00023673')
+  self.assertEqual(product['name'],'Datacolor Spyder Shelf')
+  self.assertEqual(product['sale_price'],26400)
+  self.assertIn('https://mustcolor2.openhost.cafe24.com/product/datacolor/SpyderShelf_detail.jpg',product['images']['detail'])
+
  def fixture(self,pid='PD00041562'):
   return (FIXTURES/(pid+'.html')).read_text(),json.loads((FIXTURES/(pid+'.json')).read_text())
  def parsed(self,pid='PD00041562'):
@@ -65,7 +71,7 @@ class SaekiTests(unittest.TestCase):
   self.assertNotIn('release_status',self.parsed('PD00043223'))
  def test_exact_reviewed_image_paths_do_not_allow_the_whole_host(self):
   from saeki_detail_parser import photo,REVIEWED_IMAGE_URLS
-  self.assertEqual(len(REVIEWED_IMAGE_URLS),21)
+  self.assertEqual(len(REVIEWED_IMAGE_URLS),43)
   for source,target in REVIEWED_IMAGE_URLS.items():self.assertEqual(photo(source),target)
   for bad in [
     'https://photonart747.godohosting.com/data/goods/unknown.jpg',
@@ -73,7 +79,9 @@ class SaekiTests(unittest.TestCase):
     'https://shop-phinf.pstatic.net/20241125_181/1732527109692esO4T_JPEG/fx.jpg',
     'http://cdn.saeki.co.kr/malluploadfile/public/saeki/brand/2014_contents_img/unknown.jpg',
     'http://www.saeki.co.kr/brand/2011_contents_img/Avenger_C462_01.jpg',
-    'https://saekiserver.cafe24.com/2019_contents_img/Ricoh_theta_z1_btn.jpg']:
+    'https://saekiserver.cafe24.com/2019_contents_img/Ricoh_theta_z1_btn.jpg',
+    'https://mustcolor2.openhost.cafe24.com/product/datacolor/unreviewed.jpg',
+    'https://mustcolor2.openhost.cafe24.com/product/datacolor/SpyderShelf_detail.jpg?changed=1']:
    with self.subTest(url=bad),self.assertRaises(ValueError):photo(bad)
   self.assertTrue(all(u.startswith('https://')for u in self.parsed('PD00007371')['images']['detail']))
  def test_empty_actual_portfolio_descriptions_remain_unverified(self):
