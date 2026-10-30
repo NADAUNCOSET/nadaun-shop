@@ -1,0 +1,7 @@
+.supplier-banner-feature{display:grid;grid-template-columns:38% 62%;grid-template-rows:minmax(0,1fr);width:100%;height:100%;overflow:hidden;background:var(--banner-bg,#f5f5f2);color:var(--banner-fg,#171717)}
+.supplier-banner-feature>picture{min-width:0;min-height:0}
+.supplier-banner-copy{display:flex;flex-direction:column;justify-content:center;gap:clamp(8px,1.1vw,18px);padding:clamp(20px,3vw,64px);min-width:0}
+.supplier-banner-copy>span:first-child{font-size:clamp(10px,1vw,17px);letter-spacing:.1em;font-weight:600}
+.supplier-banner-copy>strong{font-size:clamp(22px,2.9vw,52px);line-height:1.2;letter-spacing:-.04em;word-break:keep-all}
+.supplier-banner-copy>span:last-child{font-size:clamp(11px,1vw,16px)}
+@media(max-width:700px){.shop-banner-slide .supplier-banner-feature{display:none}}
