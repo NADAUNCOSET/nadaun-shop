@@ -66,6 +66,7 @@ CODE += ['_scraper/mirror-policy.json','_scraper/mirror_schedule.py','_scraper/m
          '_scraper/supplier_banners.py','_scraper/test_supplier_banners.py','_scraper/test_mirror_cycle.py',
          '_scraper/manual_source_worker.py','_scraper/funomad_source.py','_scraper/funomad-reviewed-families.json',
          '_scraper/test_manual_source_worker.py']
+CODE += ['_scraper/full_refresh.py','_scraper/test_full_refresh.py']
 
 def command(*args):
     print('Run: '+' '.join(str(a) for a in args[:2]),flush=True)
