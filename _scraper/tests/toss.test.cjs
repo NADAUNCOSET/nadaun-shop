@@ -13,6 +13,15 @@ test('Toss keys cannot mix environments; live requires a verified merchant',()=>
  const live={...env,SHOP_PAYMENT_MODE:'live',SHOP_TOSS_CLIENT_KEY:'live_ck_fixture',SHOP_TOSS_SECRET_KEY:'live_sk_fixture'};
  assert.throws(()=>toss(live));assert.equal(toss({...live,SHOP_TOSS_LIVE_VERIFIED:'true'}).mode,'live');
 });
+test('payment-window keys use matching families, private API auth and the same ownership checks',async()=>{
+ const modern={...env,SHOP_TOSS_CLIENT_KEY:'test_gck_fixture',SHOP_TOSS_SECRET_KEY:'test_gsk_fixture'};
+ const calls=[],adapter=toss(modern,async(url,options)=>{calls.push({url,options});return response(approval);});
+ const prepared=adapter.prepare(row,customer,'signed');assert.equal(prepared.clientKey,modern.SHOP_TOSS_CLIENT_KEY);assert.equal(prepared.amount,row.total);assert.ok(!JSON.stringify(prepared).includes(modern.SHOP_TOSS_SECRET_KEY));
+ assert.throws(()=>adapter.prepare(row,{...customer,evidence:{kind:'tax_invoice'}},'signed'));
+ assert.equal((await adapter.approve(auth,row)).method,'BANK');assert.equal(calls[0].options.headers.Authorization,'Basic '+Buffer.from(modern.SHOP_TOSS_SECRET_KEY+':').toString('base64'));
+ for(const change of [{SHOP_TOSS_SECRET_KEY:'test_sk_fixture'},{SHOP_TOSS_SECRET_KEY:'live_gsk_fixture'},{SHOP_TOSS_CLIENT_KEY:'test_ck_fixture'}])assert.throws(()=>toss({...modern,...change}));
+ await assert.rejects(toss(modern,async()=>response({...approval,totalAmount:1})).approve(auth,row));
+});
 test('server quote prepares card or transfer and excludes duplicate invoice evidence',()=>{
  const adapter=toss(env),card=adapter.prepare(row,customer,'signed'),cash=adapter.prepare(row,{...customer,evidence:{kind:'cash_receipt'}},'signed'),tax=adapter.prepare(row,{...customer,evidence:{kind:'tax_invoice'}},'signed');
  assert.deepEqual(card.request.amount,{currency:'KRW',value:11000});assert.equal(card.request.method,'CARD');assert.equal(cash.request.method,'TRANSFER');assert.equal(tax.request.transfer.cashReceipt.type,'미발행');assert.match(card.request.successUrl,/^https:\/\/shop.nadaun.co\/api\/toss-return\?token=signed$/);assert.ok(!JSON.stringify(card).includes(env.SHOP_TOSS_SECRET_KEY));

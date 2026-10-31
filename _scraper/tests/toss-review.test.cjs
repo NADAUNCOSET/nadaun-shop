@@ -14,6 +14,17 @@ test('review never accepts live keys or exposes secrets; ordinary ordering stays
  for(const change of [{SHOP_TOSS_TEST_CLIENT_KEY:''},{SHOP_TOSS_TEST_CLIENT_KEY:'live_ck_wrong'},{SHOP_TOSS_TEST_SECRET_KEY:'live_sk_wrong'}]){const f=fixture(change);assert.equal((await f.call('config')).value.configured,false);assert.equal((await f.call('prepare',{method:'POST',body:{id:'purchase-one',method:'CARD'}})).code,503);assert.equal(f.calls.length,0);}
  const f=fixture();assert.equal((await f.call('config')).value.configured,true);assert.ok(!JSON.stringify((await f.call('config')).value).includes(env.SHOP_TOSS_TEST_SECRET_KEY));
 });
+test('window-key test merchant can prepare, approve and cancel without opening real orders',async()=>{
+ const changes={SHOP_TOSS_TEST_CLIENT_KEY:'test_gck_fixture',SHOP_TOSS_TEST_SECRET_KEY:'test_gsk_fixture'};
+ for(const mismatch of [{SHOP_TOSS_TEST_SECRET_KEY:'test_sk_fixture'},{SHOP_TOSS_TEST_CLIENT_KEY:'live_gck_fixture'}])assert.equal((await fixture({...changes,...mismatch}).call('config')).value.configured,false);
+ for(const method of ['CARD','TRANSFER']){
+  const f=fixture(changes);assert.equal((await f.call('config')).value.configured,true);
+  const v=(await f.call('prepare',{method:'POST',body:{id:'rental-one',method}})).value;f.setIntent(v);assert.equal(v.clientKey,changes.SHOP_TOSS_TEST_CLIENT_KEY);assert.ok(!JSON.stringify(v).includes(changes.SHOP_TOSS_TEST_SECRET_KEY));
+  const token=new URL(v.request.successUrl).searchParams.get('token');
+  const approved=await f.call('return',{url:'&token='+encodeURIComponent(token)+'&paymentKey=test_payment&orderId='+v.orderId+'&amount=10000'});assert.equal(approved.code,200);
+  const cancel=approved.value.match(/name="token" value="([^"]+)"/)[1];assert.equal((await f.call('cancel',{method:'POST',body:{token:cancel}})).code,200);assert.equal((await f.call('cancel',{method:'POST',body:{token:cancel}})).code,200);assert.equal(f.calls.filter(c=>c.url.endsWith('/cancel')).length,1);
+ }
+});
 test('server owns product price; review requests reject foreign origin, malformed bodies and unknown items',async()=>{
  const f=fixture();assert.equal((await f.call('prepare',{method:'POST',origin:'https://other.invalid',body:{}})).code,403);
  for(const body of [[],{id:'missing',method:'CARD'},{id:'purchase-one',method:'OTHER'}])assert.equal((await f.call('prepare',{method:'POST',body})).code,400);

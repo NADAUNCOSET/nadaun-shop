@@ -1,9 +1,15 @@
 'use strict';
-// Toss Payments SDK v2 / API individual integration. Secrets never reach the browser.
+// Toss Payments SDK v2: API individual and payment-window keys. Secrets stay server-side.
 const crypto=require('node:crypto');
 const {ShopError}=require('./security.cjs');
 const ORIGIN='https://shop.nadaun.co',SDK='https://js.tosspayments.com/v2/standard';
 const paymentKey=value=>typeof value==='string'&&/^[a-zA-Z0-9_-]{1,200}$/.test(value);
+function keyFamily(mode,client,secret){
+ if(!['test','live'].includes(mode))return null;
+ for(const [family,c,s] of [['individual','ck','sk'],['window','gck','gsk']])
+  if(new RegExp('^'+mode+'_'+c+'_[a-zA-Z0-9_-]+$').test(client||'')&&new RegExp('^'+mode+'_'+s+'_[a-zA-Z0-9_-]+$').test(secret||''))return family;
+ return null;
+}
 function receiptUrl(value){
  try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password&&!u.port&&['dashboard.tosspayments.com','pgweb.tosspayments.com','receipt.tosspayments.com'].includes(u.hostname)?u.href:null;}catch{return null;}
 }
@@ -14,7 +20,8 @@ function matchPayment(value,order){
 }
 function toss(env,fetcher=fetch){
  const mode=env.SHOP_PAYMENT_MODE,client=env.SHOP_TOSS_CLIENT_KEY,secret=env.SHOP_TOSS_SECRET_KEY,mid=env.SHOP_TOSS_MID;
- if(!['test','live'].includes(mode)||!new RegExp('^'+mode+'_ck_[a-zA-Z0-9_-]+$').test(client||'')||!new RegExp('^'+mode+'_sk_[a-zA-Z0-9_-]+$').test(secret||'')||
+ const family=keyFamily(mode,client,secret);
+ if(!family||
    (mode==='live'&&(!/^[a-zA-Z0-9_-]{1,50}$/.test(mid||'')||env.SHOP_TOSS_LIVE_VERIFIED!=='true')))
   throw new ShopError(503,'토스페이먼츠 결제 서비스 연결을 준비 중입니다.');
  async function call(method,path,body,key){
@@ -42,6 +49,9 @@ function toss(env,fetcher=fetch){
   prepare(order,customer,token){
    if(!Number.isSafeInteger(order.total)||order.total<1||order.total>100000000)throw new ShopError(400,'확정 결제 금액을 확인해주세요.');
    const kind=customer.evidence?.kind||'card_receipt';if(!['card_receipt','cash_receipt','tax_invoice'].includes(kind))throw new ShopError(400,'증빙 종류를 확인해주세요.');
+   // The window UI owns cash-receipt collection. Do not silently drop the legacy
+   // transfer.cashReceipt override that prevents duplicate tax-invoice evidence.
+   if(family==='window'&&kind==='tax_invoice')throw new ShopError(503,'세금계산서 결제 연결을 확인하고 있습니다.');
    const lines=JSON.parse(order.lines_json),request={method:kind==='card_receipt'?'CARD':'TRANSFER',amount:{currency:'KRW',value:order.total},orderId:order.id,orderName:(lines[0].name+(lines.length>1?' 외 '+(lines.length-1)+'건':'')).slice(0,100),successUrl:ORIGIN+'/api/toss-return?token='+encodeURIComponent(token),failUrl:ORIGIN+'/orders.html?result=closed',customerName:customer.name,customerMobilePhone:customer.phone.replace(/[^0-9]/g,'')};
    if(kind==='card_receipt')request.card={flowMode:'DEFAULT'};
    else request.transfer={cashReceipt:{type:kind==='tax_invoice'?'미발행':'소득공제'}};
@@ -77,4 +87,4 @@ function toss(env,fetcher=fetch){
   },get
  };
 }
-module.exports={toss,matchPayment,receiptUrl,SDK,ORIGIN};
+module.exports={toss,keyFamily,matchPayment,receiptUrl,SDK,ORIGIN};

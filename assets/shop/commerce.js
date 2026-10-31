@@ -219,9 +219,34 @@ function loadToss(){return sdk||(sdk=new Promise((resolve,reject)=>{
  script.onerror=()=>{sdk=null;script.remove();reject(Error('결제창을 불러오지 못했습니다. 다시 시도해주세요.'));};document.head.append(script);
 }).catch(error=>{sdk=null;throw error;}));}
 function deviceType(){return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(/Macintosh/i.test(navigator.userAgent)&&navigator.maxTouchPoints>1)?'MOBILE':'WEB';}
+async function openTossPayment(provider,clientKey,request){
+ const instance=provider(clientKey),customerKey=provider.ANONYMOUS;
+ if(!/^(test|live)_gck_[a-zA-Z0-9_-]+$/.test(clientKey))return instance.payment({customerKey}).requestPayment(request);
+ const widgets=instance.widgets({customerKey});
+ await widgets.setAmount(request.amount);
+ const paymentWindow=await widgets.renderPaymentWindow({orderName:request.orderName});
+ // Method and amount belong to the window UI. Only documented request fields
+ // are forwarded; legacy card.flowMode/transfer.cashReceipt are not widget APIs.
+ const params={orderId:request.orderId,orderName:request.orderName,successUrl:request.successUrl,failUrl:request.failUrl};
+ for(const key of ['customerName','customerMobilePhone','customerEmail'])if(request[key])params[key]=request[key];
+ return new Promise((resolve,reject)=>{
+  let settled=false,requesting=false;
+  const finish=error=>{if(settled)return;settled=true;try{paymentWindow.destroy();}catch{}if(error)reject(error);else resolve();};
+  paymentWindow.on('cancel',()=>finish(Object.assign(Error('결제창을 닫았습니다.'),{code:'USER_CANCEL'})));
+  paymentWindow.on('paymentRequest',async event=>{
+   if(settled||requesting)return;
+   // Keep the signed server intent tied to the selected, supported method.
+   // Virtual accounts and other asynchronous methods are not enabled by this change.
+   if(event?.paymentMethod?.method!==request.method){finish(Error(request.method==='CARD'?'카드 결제수단을 선택해 다시 테스트해주세요.':'계좌이체를 선택해 다시 테스트해주세요.'));return;}
+   requesting=true;
+   try{await widgets.requestPayment(params);finish();}
+   catch{finish(Error('결제 요청을 완료하지 못했습니다. 주문 상태를 확인한 뒤 다시 시도해주세요.'));}
+  });
+ });
+}
 function paymentRequest(value,order){
  const r=value.request,success=new URL(r?.successUrl||'',location.origin);
- if(value.provider!=='toss'||!['test','live'].includes(value.mode)||!new RegExp('^'+value.mode+'_ck_[a-zA-Z0-9_-]+$').test(value.clientKey||'')||!Number.isSafeInteger(value.amount)||value.amount<1||value.amount>100000000||value.orderId!==order.id||value.amount!==order.total||r?.amount?.currency!=='KRW'||r.amount.value!==value.amount||r.orderId!==value.orderId||!['CARD','TRANSFER'].includes(r.method)||success.origin!==location.origin||success.pathname!=='/api/toss-return'||!success.searchParams.get('token')||r.failUrl!==location.origin+'/orders.html?result=closed')throw Error('결제 요청 정보를 확인해주세요.');
+ if(value.provider!=='toss'||!['test','live'].includes(value.mode)||!new RegExp('^'+value.mode+'_(?:g)?ck_[a-zA-Z0-9_-]+$').test(value.clientKey||'')||!Number.isSafeInteger(value.amount)||value.amount<1||value.amount>100000000||value.orderId!==order.id||value.amount!==order.total||r?.amount?.currency!=='KRW'||r.amount.value!==value.amount||r.orderId!==value.orderId||!['CARD','TRANSFER'].includes(r.method)||success.origin!==location.origin||success.pathname!=='/api/toss-return'||!success.searchParams.get('token')||r.failUrl!==location.origin+'/orders.html?result=closed')throw Error('결제 요청 정보를 확인해주세요.');
  return r;
 }
 function safeReceiptUrl(value){try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password&&!u.port&&['dashboard.tosspayments.com','pgweb.tosspayments.com','receipt.tosspayments.com'].includes(u.hostname)?u.href:null;}catch{return null;}}
@@ -242,8 +267,8 @@ async function paymentTest(){
     const product=ready.products.find(p=>p.id===select.value),response=await fetch('/api/toss-review?action=prepare',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:product.id,method:button.dataset.reviewMethod})}),value=await response.json();
     if(!response.ok)throw Error(value.error||'테스트 요청을 확인해주세요.');
     const r=value.request,success=new URL(r?.successUrl||'',location.origin);
-    if(value.mode!=='test'||value.provider!=='toss'||!/^test_ck_[a-zA-Z0-9_-]+$/.test(value.clientKey||'')||value.amount!==product.amount||!Number.isSafeInteger(product.amount)||product.amount<1||r?.amount?.value!==product.amount||r.amount.currency!=='KRW'||r.orderId!==value.orderId||!/^NDTEST_[a-f0-9]{24}$/.test(value.orderId)||r.method!==button.dataset.reviewMethod||success.origin!=='https://shop.nadaun.co'||success.pathname!=='/api/toss-review'||success.searchParams.get('action')!=='return'||!success.searchParams.get('token')||r.failUrl!=='https://shop.nadaun.co/payment-test.html?result=closed')throw Error('안전한 테스트 결제 요청을 확인하지 못했습니다.');
-    await provider(value.clientKey).payment({customerKey:provider.ANONYMOUS}).requestPayment(r);
+    if(value.mode!=='test'||value.provider!=='toss'||!/^test_(?:g)?ck_[a-zA-Z0-9_-]+$/.test(value.clientKey||'')||value.amount!==product.amount||!Number.isSafeInteger(product.amount)||product.amount<1||r?.amount?.value!==product.amount||r.amount.currency!=='KRW'||r.orderId!==value.orderId||!/^NDTEST_[a-f0-9]{24}$/.test(value.orderId)||r.method!==button.dataset.reviewMethod||success.origin!=='https://shop.nadaun.co'||success.pathname!=='/api/toss-review'||success.searchParams.get('action')!=='return'||!success.searchParams.get('token')||r.failUrl!=='https://shop.nadaun.co/payment-test.html?result=closed')throw Error('안전한 테스트 결제 요청을 확인하지 못했습니다.');
+    await openTossPayment(provider,value.clientKey,r);
    }catch(error){status.textContent=error?.code==='USER_CANCEL'?'테스트 결제창을 닫았습니다. 다시 테스트할 수 있습니다.':error.message||'테스트 결제창 연결을 확인해주세요.';buttons.forEach(b=>b.disabled=false);}
   };
  }catch(error){holder.innerHTML='<h2>토스페이먼츠 테스트 결제</h2><p>테스트 연결을 확인하고 있습니다. 잠시 후 다시 확인해주세요.</p>';message(feedback,error.message);}
@@ -256,7 +281,7 @@ async function pay(order,card,button){
  button.disabled=true;message(feedback,'토스페이먼츠 결제창으로 연결하고 있습니다.');
  try{
   const provider=await loadToss(),value=await api('start',{id:order.id,quote_version:order.quote_version,device:deviceType()}),request=paymentRequest(value,order);
-  await provider(value.clientKey).payment({customerKey:provider.ANONYMOUS}).requestPayment(request);
+  await openTossPayment(provider,value.clientKey,request);
  }catch{message(feedback,'결제창이 닫혔거나 연결을 완료하지 못했습니다. 주문 상태를 확인한 뒤 다시 시도해주세요.');button.disabled=false;}
 }
 async function orders(){

@@ -30,6 +30,33 @@ test('mobile and touch iPad payments select MOBILE',()=>{
 test('SDK errors remain retryable and never expose provider messages',async()=>{
  const r=runtime();let count=0;r.context.document.head.append=script=>{if(count++===0)script.onerror();else script.onload();};const button={};await r.context.pay(paymentOrder,card(r),button);assert.equal(button.disabled,false);assert.equal(r.paymentForm,undefined);const pending=r.context.pay(paymentOrder,card(r),button);await tick();assert.ok(r.paymentForm);r.close();await pending;
 });
+function windowRuntime({method='CARD',failure=false,renderFailure=false}={}){
+ const calls=[],events={},sent=[];let release;
+ const provider=key=>{assert.equal(key,'test_gck_fixture');return {widgets({customerKey}){
+  assert.equal(customerKey,'ANONYMOUS');return {
+   async setAmount(amount){calls.push('amount');assert.equal(amount.value,24500);assert.equal(amount.currency,'KRW');},
+   async renderPaymentWindow(params){calls.push('render');assert.equal(params.orderName,'test');if(renderFailure)throw Error('render');return {on(name,callback){events[name]=callback;},destroy(){calls.push('destroy');}};},
+   async requestPayment(params){calls.push('request');sent.push(params);if(failure)throw Error('private-provider-message');await new Promise(resolve=>release=resolve);}
+  };
+ }};};provider.ANONYMOUS='ANONYMOUS';
+ const r=runtime({window:{TossPayments:provider}});r.value.clientKey='test_gck_fixture';r.value.request.method=method;r.value.request.card={flowMode:'DEFAULT'};r.value.request.transfer={cashReceipt:{type:'소득공제'}};
+ return {r,calls,events,sent,release:()=>release()};
+}
+test('window checkout sets the approved amount before rendering and waits for buyer action',async()=>{
+ for(const method of ['CARD','TRANSFER']){
+  const w=windowRuntime({method}),button={},pending=w.r.context.pay(paymentOrder,card(w.r),button);await tick();assert.deepEqual(w.calls,['amount','render']);assert.equal(w.sent.length,0);
+  const action=w.events.paymentRequest({paymentMethod:{method},paymentInfo:{amount:1}});await tick();await w.events.paymentRequest({paymentMethod:{method}});assert.equal(w.sent.length,1);await w.r.context.pay(paymentOrder,card(w.r),button);assert.equal(w.r.requests.length,1);
+  const request=w.sent[0];assert.equal(request.orderId,paymentOrder.id);assert.equal(request.successUrl,w.r.value.request.successUrl);for(const key of ['method','amount','card','transfer','paymentInfo'])assert.equal(request[key],undefined);
+  w.release();await action;await pending;assert.deepEqual(w.calls,['amount','render','request','destroy']);
+ }
+});
+test('window cancellation, unsupported methods and SDK failure all allow a clean retry',async()=>{
+ for(const scenario of ['cancel','unsupported','failure','render']){
+  const w=windowRuntime({failure:scenario==='failure',renderFailure:scenario==='render'}),button={},pending=w.r.context.pay(paymentOrder,card(w.r),button);await tick();
+  if(scenario==='cancel')w.events.cancel();if(scenario==='unsupported')await w.events.paymentRequest({paymentMethod:{method:'VIRTUAL_ACCOUNT'}});if(scenario==='failure')await w.events.paymentRequest({paymentMethod:{method:'CARD'}});
+  await pending;assert.equal(button.disabled,false);assert.ok(!w.r.feedback.textContent.includes('private-provider-message'));assert.equal(w.sent.length,scenario==='failure'?1:0);if(scenario!=='render')assert.equal(w.calls.filter(c=>c==='destroy').length,1);
+ }
+});
 test('disabled checkout does not collect delivery or business information or load PG scripts',async()=>{
  const r=runtime({fetch:async()=>({ok:true,json:async()=>({ordersEnabled:false})})});let inserted=false;r.main.querySelector=s=>s==='.checkout-services'?{isConnected:true,before(){inserted=true;}}:null;
  await r.context.mountCheckout();assert.equal(inserted,false);assert.equal(r.sdkCalls.length,0);

@@ -2,12 +2,12 @@
 // Merchant test keys only. This flow never opens or writes the operational DB.
 const crypto=require('node:crypto');
 const {ShopError,sessions}=require('./security.cjs');
-const {toss,matchPayment}=require('./toss.cjs');
+const {toss,keyFamily,matchPayment}=require('./toss.cjs');
 const ORIGIN='https://shop.nadaun.co';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function reviewEndpoint({env,catalog,fetcher=fetch,clock=()=>Date.now()}){
  const client=env.SHOP_TOSS_TEST_CLIENT_KEY,secret=env.SHOP_TOSS_TEST_SECRET_KEY;
- const ready=/^test_ck_[a-zA-Z0-9_-]+$/.test(client||'')&&/^test_sk_[a-zA-Z0-9_-]+$/.test(secret||'')&&/^[a-f0-9]{64}$/i.test(env.SHOP_SESSION_KEY||'');
+ const ready=!!keyFamily('test',client,secret)&&/^[a-f0-9]{64}$/i.test(env.SHOP_SESSION_KEY||'');
  const adapter=ready?toss({...env,SHOP_PAYMENT_MODE:'test',SHOP_TOSS_CLIENT_KEY:client,SHOP_TOSS_SECRET_KEY:secret,SHOP_TOSS_MID:env.SHOP_TOSS_TEST_MID||'',SHOP_TOSS_LIVE_VERIFIED:'false'},fetcher):null;
  const signed=ready?sessions(env.SHOP_SESSION_KEY,clock):null;
  const options=['purchase','rental'].map(kind=>(catalog.products||[]).find(p=>p.kind===kind&&p.status==='sale'&&Number.isSafeInteger(p.sale_price??p.price)&&(p.sale_price??p.price)>0&&(p.sale_price??p.price)<=100000000)).filter(Boolean).map(p=>({id:p.id,name:p.name,kind:p.kind,amount:p.sale_price??p.price}));
