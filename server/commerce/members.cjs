@@ -4,6 +4,16 @@ const {promisify}=require('node:util');
 const {ShopError,protect,hash,random,passwordMatches,adminEmail}=require('./security.cjs');
 const scrypt=promisify(crypto.scrypt);
 const VERSION='2026-10-17';
+function deliveryContact(raw,contactOnly=false){
+ const result={};
+ for(const [key,min,max] of [['name',2,60],['phone',9,20],...(!contactOnly?[['postcode',5,5],['address',5,160],['address_detail',1,100]]:[])]){
+  const value=typeof raw?.[key]==='string'?raw[key].trim():'';
+  result[key]=value.length>=min&&value.length<=max&&!/[\x00-\x1f\x7f<>]/.test(value)?value:'';
+ }
+ if(!/^0[\d -]{8,19}$/.test(result.phone))result.phone='';
+ if(!contactOnly&&!/^\d{5}$/.test(result.postcode))result.postcode='';
+ return result;
+}
 function memberService({db,repo,dataKey,sessionKey,enabled=false,earnBasisPoints=0,testing=false,confirmOrder=null,clock=()=>Date.now()}){
  const cipher=protect(dataKey),digest=value=>crypto.createHmac('sha256',sessionKey).update(value).digest('hex');
  const emailKey=value=>{const email=adminEmail(value);if(!email)throw new ShopError(400,'이메일 주소를 확인해주세요.');return digest('email:'+email);};
@@ -40,6 +50,20 @@ function memberService({db,repo,dataKey,sessionKey,enabled=false,earnBasisPoints
   },
   async logout(token){if(token)await db.query('DELETE FROM shop_member_sessions WHERE token_hash=?',[digest('session:'+token)]);return {authenticated:false};},
   async me(member){if(!member)return {authenticated:false,enabled,policy:policy()};return {authenticated:true,member:{id:member.id,email:member.email,name:member.name,email_verified:member.email_verified,password_enabled:member.password_enabled,providers:(await db.query('SELECT provider FROM shop_social_identities WHERE member_id=? ORDER BY provider',[member.id])).map(i=>i.provider)},points:{balance:await balance(member.id),history:await db.query('SELECT amount,reason,kind,created_at FROM shop_points WHERE member_id=? ORDER BY created_at DESC,id DESC LIMIT 50',[member.id])},policy:policy()};},
+  async delivery(member,{contactOnly=false}={}){
+   if(!member)throw new ShopError(401,'로그인 후 회원정보와 최근 배송지를 선택할 수 있습니다.');check();
+   const row=await find(member.id);if(!row)throw new ShopError(401,'다시 로그인해주세요.');
+   const saved=deliveryContact(cipher.decrypt(row.profile_cipher),contactOnly),recent=[],seen=new Set();
+   // Derive ownership from the authenticated member ID, never a query parameter,
+   // email match, guest cookie or caller-supplied owner hash. No new PII store.
+   const orders=await db.query("SELECT customer_cipher FROM shop_orders WHERE customer_hash=? AND state<>'CANCELED' ORDER BY created_at DESC,id DESC LIMIT 50",[owner(row.id)]);
+   for(const order of orders){
+    let customer;try{customer=cipher.decrypt(order.customer_cipher);}catch{continue;}
+    const address=deliveryContact(customer,contactOnly);if(Object.values(address).some(v=>!v))continue;
+    const key=JSON.stringify({...address,phone:address.phone.replace(/[ -]/g,'')});if(seen.has(key))continue;seen.add(key);recent.push(address);if(recent.length===10)break;
+   }
+   return {authenticated:true,profile:saved,recent};
+  },
   async changePassword(member,input){if(!member)throw new ShopError(401,'로그인이 필요합니다.');const row=await find(member.id);if(!await passwordMatches(input.current_password,row?.password_hash))throw new ShopError(401,'현재 비밀번호를 확인해주세요.');const password=await pass(input.password),recovery=random();
    const result=await db.batch([{sql:'UPDATE shop_members SET password_hash=?,recovery_hash=? WHERE id=? AND password_hash=? RETURNING id',params:[password,digest('recovery:'+recovery),row.id,row.password_hash]},{sql:'DELETE FROM shop_member_sessions WHERE member_id=? AND EXISTS(SELECT 1 FROM shop_members WHERE id=? AND password_hash=?)',params:[row.id,row.id,password]}]);if(!result[0].length)throw new ShopError(409,'계정 정보가 변경됐습니다. 다시 로그인해주세요.');return {changed:true,recovery_code:recovery};
   },

@@ -28,6 +28,7 @@ async function mountCheckout(){
   ['name','받는 분','text','name',60],['phone','연락처','tel','tel',20],['postcode','우편번호','text','postal-code',5],['address','주소','text','address-line1',160],['address_detail','상세 주소','text','address-line2',100]
  ].map(([key,label,type,autocomplete,max])=>`<label>${label}<input name="${key}" type="${type}" autocomplete="${autocomplete}" maxlength="${max}" required ${key==='postcode'?'inputmode="numeric" pattern="[0-9]{5}"':''}></label>`).join('')+'</div>'+evidenceForm(ready.taxInvoiceEnabled)+'<label class="commerce-check"><input type="checkbox" name="consent" required><span>주문·배송 및 선택한 증빙 발급에 필요한 이름, 연락처, 주소와 사업자 정보·이메일의 수집·이용에 동의합니다. <a href="/privacy.html" target="_blank" rel="noopener">처리 항목과 보유기간 확인 ↗</a></span></label><p class="commerce-feedback" role="status" hidden></p><button type="submit" class="button-primary">주문 접수하기 →</button>'+notice;
  services.before(form);
+ void import('./member-delivery.js?v=20261031').then(m=>m.mountDeliveryChooser(form)).catch(()=>{});
  const evidenceSelect=form.querySelector('[name=evidence_kind]');
  evidenceSelect.onchange=()=>{const tax=form.querySelector('[data-tax-fields]'),active=evidenceSelect.value==='tax_invoice';tax.hidden=!active;tax.querySelectorAll('input').forEach(input=>{input.disabled=!active;input.required=active;});};evidenceSelect.onchange();
  const state=main.querySelector('.summary-state');if(state)state.textContent='재고·납기 확인 후 결제';
@@ -36,7 +37,7 @@ async function mountCheckout(){
  const step=main.querySelector('.selection-steps li:last-child');if(step)step.innerHTML='<span>03</span>접수 · 결제';
  const key=crypto.randomUUID();let sentPayload;
  form.addEventListener('submit',async event=>{
-  event.preventDefault();const button=form.querySelector('button'),feedback=form.querySelector('.commerce-feedback');button.disabled=true;message(feedback,'주문을 접수하고 있습니다.');
+  event.preventDefault();const button=form.querySelector('button[type=submit]'),feedback=form.querySelector('.commerce-feedback');button.disabled=true;message(feedback,'주문을 접수하고 있습니다.');
   try{
    if(!sentPayload){const fields=new FormData(form),items=checkoutItems();sentPayload={customer:Object.fromEntries(['name','phone','postcode','address','address_detail'].map(k=>[k,fields.get(k)])),items};sentPayload.customer.consent=fields.has('consent');sentPayload.evidence={kind:fields.get('evidence_kind')};if(sentPayload.evidence.kind==='tax_invoice')for(const k of ['corp_num','corp_name','ceo_name','address','biz_type','biz_class','email'])sentPayload.evidence[k]=fields.get('tax_'+k);}
    form.querySelectorAll('input,select').forEach(input=>input.disabled=true);
@@ -68,6 +69,7 @@ async function mountGiftOrder(){
   ['name','받는 분','text','name',60],['phone','연락처','tel','tel',20],['postcode','우편번호','text','postal-code',5],['address','주소','text','address-line1',160],['address_detail','상세 주소','text','address-line2',100]
  ].map(([key,label,type,autocomplete,max])=>`<label>${label}<input name="${key}" type="${type}" autocomplete="${autocomplete}" maxlength="${max}" required ${key==='postcode'?'inputmode="numeric" pattern="[0-9]{5}"':''}></label>`).join('')+'</div>'+evidenceForm(ready.taxInvoiceEnabled)+'<label class="commerce-check"><input type="checkbox" name="consent" required><span>주문 상담·배송과 증빙 발급에 필요한 이름·연락처·주소 및 요청 내용의 수집·이용에 동의합니다. <a href="/privacy.html" target="_blank" rel="noopener">처리 항목과 보유기간 확인 ↗</a></span></label><p class="commerce-feedback" role="status" hidden></p><button type="submit" class="button-primary">기프트 주문 요청 접수하기 →</button>'+notice;
  target.append(form);
+ void import('./member-delivery.js?v=20261031').then(m=>m.mountDeliveryChooser(form)).catch(()=>{});
  const quantity=form.elements.quantity;quantity.value=pricing?.minimum_quantity||Number(main.querySelector('.gift-minimum strong')?.textContent.replace(/[^0-9]/g,''))||1;
  if(pricing){
   const block=document.createElement('section');block.className='gift-pricing';
@@ -83,7 +85,7 @@ async function mountGiftOrder(){
  evidenceSelect.onchange=()=>{const tax=form.querySelector('[data-tax-fields]'),active=evidenceSelect.value==='tax_invoice';tax.hidden=!active;tax.querySelectorAll('input').forEach(input=>{input.disabled=!active;input.required=active;});};evidenceSelect.onchange();
  let key=crypto.randomUUID(),payload,busy=false;
  form.addEventListener('submit',async event=>{
-  event.preventDefault();if(busy)return;busy=true;const button=form.querySelector('button'),feedback=form.querySelector('.commerce-feedback');button.disabled=true;message(feedback,'기프트 주문 요청을 저장하고 있습니다.');
+  event.preventDefault();if(busy)return;busy=true;const button=form.querySelector('button[type=submit]'),feedback=form.querySelector('.commerce-feedback');button.disabled=true;message(feedback,'기프트 주문 요청을 저장하고 있습니다.');
   try{
    if(!payload){const fields=new FormData(form);payload={customer:Object.fromEntries(['name','phone','postcode','address','address_detail'].map(k=>[k,fields.get(k)])),gift:{product_id:target.dataset.giftOrder,quantity:Number(fields.get('quantity')),...(pricing?{option_id:fields.get('gift_option'),pricing_revision:pricing.revision}:{}),...Object.fromEntries(['variant','printing','packaging','requested_date','notes'].map(k=>[k,fields.get(k)]))},evidence:{kind:fields.get('evidence_kind')}};payload.customer.consent=fields.has('consent');if(payload.evidence.kind==='tax_invoice')for(const k of ['corp_num','corp_name','ceo_name','address','biz_type','biz_class','email'])payload.evidence[k]=fields.get('tax_'+k);}
    form.querySelectorAll('input,select,textarea').forEach(input=>input.disabled=true);

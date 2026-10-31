@@ -13,6 +13,7 @@ function memberEndpoint({members,repo,crm=null,sessionKey,adminPasswordEmail='',
    let input=req.body;if(req.method==='POST'){if(typeof input==='string'){if(Buffer.byteLength(input)>8192)throw new ShopError(413,'입력 내용을 확인해주세요.');try{input=JSON.parse(input);}catch{throw new ShopError(400,'입력 형식을 확인해주세요.');}}if(!input||typeof input!=='object'||Array.isArray(input)||Buffer.byteLength(JSON.stringify(input))>8192)throw new ShopError(400,'입력 내용을 확인해주세요.');}
    const token=cookieValue(req,tokenName),member=await members.authenticate(token);
    if(action==='me'&&req.method==='GET')return res.status(200).json({...await members.me(member),testing});
+   if(action==='delivery'&&req.method==='GET')return res.status(200).json(await members.delivery(member,{contactOnly:url.searchParams.get('contact')==='1'}));
    if(adminAction){const admin=signed.read(cookieValue(req,'__Host-'+cookiePrefix+'-admin'),'admin');if(!admin||email&&admin!==email)throw new ShopError(401,'관리자 로그인이 필요합니다.');
     if(crm){
      if(action==='admin-overview'&&req.method==='GET')return res.status(200).json(await crm.overview());

@@ -27,6 +27,47 @@ function fixture({testing=true,bps=100}={}){
  return {sql,db,repo,members,service,catalog,payload,join,paid,clock,advance:n=>now+=n};
 }
 async function invoke(handler,action,{method='POST',body={},cookie='',origin='https://shop.nadaun.co'}={}){const res={headers:{},setHeader(k,v){this.headers[k]=v;},status(n){this.code=n;return this;},json(v){this.value=v;return this;}};await handler({method,url:'/api/members?action='+action,headers:{origin,cookie,'x-forwarded-for':'test-ip'},body},res);return res;}
+test('member delivery projects registered contact only and never creates another personal-data store',async()=>{
+ const f=fixture(),a=await f.join(),saved={...f.payload.customer,email:a.member.email,legacy:{private_notes:'not-public'},internal:'not-public'};
+ f.sql.prepare('UPDATE shop_members SET profile_cipher=? WHERE id=?').run(protect(key).encrypt(saved),a.member.id);
+ const before=f.sql.prepare('SELECT total_changes() AS n').get().n,result=await f.members.delivery(a.identity);
+ assert.deepEqual(result.profile,{name:saved.name,phone:saved.phone,postcode:saved.postcode,address:saved.address,address_detail:saved.address_detail});assert.deepEqual(result.recent,[]);
+ assert.ok(!JSON.stringify(result).includes('not-public'));assert.ok(!JSON.stringify(result).includes(a.member.email));assert.equal(f.sql.prepare('SELECT total_changes() AS n').get().n,before);
+ const fresh=fixture(),missing=await fresh.join(),empty=await fresh.members.delivery(missing.identity);assert.equal(empty.profile.name,missing.member.name);assert.equal(empty.profile.phone,'');assert.equal(empty.profile.address,'');
+});
+test('recent delivery choices belong to the current member, deduplicate newest-first and preserve different recipients',async()=>{
+ const f=fixture(),a=await f.join(),b=await f.join('other@example.com');
+ const add=async(member,customer)=>{f.advance(1000);return f.service.create(member.owner,'delivery-'+crypto.randomUUID(),{...f.payload,customer});};
+ const first={...f.payload.customer,name:'첫번째 수령인'},second={...first,name:'다른 수령인'};
+ await add(a.identity,{...first,phone:first.phone.replace(/-/g,'')});await add(a.identity,second);await add(a.identity,first);await add(b.identity,{...first,name:'다른 회원 비공개'});
+ const canceled=await add(a.identity,{...first,name:'취소한 배송지'});f.sql.prepare("UPDATE shop_orders SET state='CANCELED' WHERE id=?").run(canceled.id);
+ const result=await f.members.delivery({...a.identity,owner:b.identity.owner});assert.deepEqual(result.recent.map(r=>r.name),[first.name,second.name]);assert.ok(!JSON.stringify(result).includes('다른 회원 비공개'));
+});
+test('rental contact selection returns only names and phones and ignores incomplete addresses for shipping',async()=>{
+ const f=fixture(),a=await f.join(),order=await f.service.create(a.identity.owner,'delivery-rental-fixture',f.payload);
+ f.sql.prepare('UPDATE shop_orders SET customer_cipher=? WHERE id=?').run(protect(key).encrypt({name:'방문 예약자',phone:'010-1234-5678',rental:{private:'not-public'}}),order.id);
+ assert.equal((await f.members.delivery(a.identity)).recent.length,0);
+ const result=await f.members.delivery(a.identity,{contactOnly:true});assert.deepEqual(result.recent,[{name:'방문 예약자',phone:'010-1234-5678'}]);assert.deepEqual(Object.keys(result.profile),['name','phone']);assert.ok(!JSON.stringify(result).includes('not-public'));
+});
+test('delivery keeps malformed historical data out, limits choices and leaves encrypted records unchanged',async()=>{
+ const f=fixture(),a=await f.join();
+ for(let i=0;i<13;i++){f.advance(1000);await f.service.create(a.identity.owner,'delivery-limit-'+i,{...f.payload,customer:{...f.payload.customer,address_detail:(i+1)+'층'}});}
+ const result=await f.members.delivery(a.identity);assert.equal(result.recent.length,10);assert.equal(result.recent[0].address_detail,'13층');
+ f.sql.prepare('UPDATE shop_members SET profile_cipher=? WHERE id=?').run(protect(key).encrypt({name:'<svg onload=x>',phone:'bad-phone',postcode:'123456',address:'x',address_detail:'\n'}),a.member.id);
+ const invalid=await f.members.delivery(a.identity);assert.ok(Object.values(invalid.profile).every(v=>v===''));
+ f.sql.prepare('UPDATE shop_orders SET customer_cipher=? WHERE id=(SELECT id FROM shop_orders ORDER BY created_at DESC LIMIT 1)').run('invalid-cipher');assert.equal((await f.members.delivery(a.identity)).recent[0].address_detail,'12층');
+});
+test('delivery endpoint requires a valid member cookie, rejects writes and cannot select another member by ID',async()=>{
+ const f=fixture(),a=await f.join(),b=await f.join('another@example.com'),handler=memberEndpoint({members:f.members,repo:f.repo,sessionKey:key});
+ for(const cookie of ['', '__Host-nadaun-member=fake','__Host-nadaun-admin='+sessions(key).issue('owner','admin',600)])assert.equal((await invoke(handler,'delivery',{method:'GET',cookie})).code,401);
+ const cookie='__Host-nadaun-member='+a.token;let r=await invoke(handler,'delivery&id='+b.member.id,{method:'GET',cookie});assert.equal(r.code,200);assert.equal(r.value.profile.name,a.member.name);assert.equal(r.headers['Cache-Control'],'no-store');
+ assert.equal((await invoke(handler,'delivery',{cookie,body:{name:'overwrite'}})).code,404);
+ r=await invoke(handler,'delivery&contact=1',{method:'GET',cookie});assert.deepEqual(Object.keys(r.value.profile),['name','phone']);
+ f.advance(8*86400000);assert.equal((await invoke(handler,'delivery',{method:'GET',cookie})).code,401);
+});
+test('closed members cannot retrieve delivery information through a stale identity',async()=>{
+ const f=fixture(),a=await f.join();await f.members.close(a.identity,{password,confirmed:true});await assert.rejects(f.members.delivery(a.identity),{status:401});
+});
 test('signup encrypts identity and hashes password/recovery; consent and normalized duplicate checks',async()=>{
  const f=fixture();await assert.rejects(f.members.signup({...signup(),privacy:false}),{status:400});await assert.rejects(f.members.signup({...signup(),password:'short'}),{status:400});
  const a=await f.join(),raw=f.sql.prepare('SELECT * FROM shop_members').get();assert.equal(raw.email_hash.includes('@'),false);assert.equal(raw.profile_cipher.includes('example'),false);assert.equal(raw.password_hash.includes(password),false);assert.equal(raw.recovery_hash.includes(a.recovery_code),false);assert.equal(a.member.email_verified,false);

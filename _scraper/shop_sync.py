@@ -40,6 +40,7 @@ CODE += ['_scraper/test_partner_sync_status.py','_scraper/test_shop_brand_eviden
 CODE += ['_scraper/build_gift_catalog.py','_scraper/brand_source_policy.py','_scraper/test_gift_public_catalog.py','_scraper/test_brand_source_policy.py','data/catalog/brand-source-policy.json','data/catalog/promotions.json','_scraper/promotion_catalog.py','server/gift-catalog.cjs','server/shop-search.cjs']
 CODE += ['_scraper/test_catalog_seo.py','_scraper/test_release_status.py','server/share-image.cjs','server/share-metadata.cjs','robots.txt']
 CODE += ['assets/shop/auth','assets/shop/product-search.js','assets/shop/members.js','assets/shop/members.css']
+CODE += ['assets/shop/member-delivery.js','assets/shop/member-delivery.css']
 CODE += ['manage.html','assets/shop/admin-workspace.js','assets/shop/admin-workspace.css','assets/shop/i18n.js','assets/shop/i18n-data.js','assets/shop/i18n.css']
 CODE += ['_scraper/source_refresh_state.py','_scraper/test_source_refresh_state.py','_scraper/owned_assets.py','_scraper/owned-asset-map.json','_scraper/test_owned_assets.py']
 CODE += ['_scraper/avx_publication.py','_scraper/test_avx_publication.py']
