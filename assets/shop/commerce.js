@@ -215,9 +215,22 @@ function adminActions(order){
 let sdk;
 function loadToss(){return sdk||(sdk=new Promise((resolve,reject)=>{
  const script=document.createElement('script');script.src='https://js.tosspayments.com/v2/standard';
- script.onload=()=>{if(typeof window.TossPayments==='function')resolve(window.TossPayments);else{sdk=null;script.remove();reject(Error('토스페이먼츠 결제창을 불러오지 못했습니다.'));}};
- script.onerror=()=>{sdk=null;script.remove();reject(Error('결제창을 불러오지 못했습니다. 다시 시도해주세요.'));};document.head.append(script);
+ let settled=false;
+ const fail=()=>{if(settled)return;settled=true;clearTimeout(timer);sdk=null;script.remove();reject(Error('결제창을 불러오지 못했습니다. 다시 시도해주세요.'));};
+ const timer=setTimeout(fail,15000);
+ script.onload=()=>{if(settled)return;if(typeof window.TossPayments!=='function'){fail();return;}settled=true;clearTimeout(timer);resolve(window.TossPayments);};
+ script.onerror=fail;document.head.append(script);
 }).catch(error=>{sdk=null;throw error;}));}
+async function reviewRequest(action,body){
+ const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);
+ try{
+  const response=await fetch('/api/toss-review?action='+action,{method:body?'POST':'GET',cache:'no-store',signal:controller.signal,...(body?{headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:{})});
+  let value;try{value=await response.json();}catch{throw Error('테스트 서버 응답을 확인하지 못했습니다. 다시 확인해주세요.');}
+  if(!response.ok)throw Error('테스트 서버 연결을 완료하지 못했습니다. 다시 확인해주세요.');
+  return value;
+ }catch(error){if(controller.signal.aborted)throw Error('테스트 서버 응답이 지연되고 있습니다. 다시 확인해주세요.');throw error;}
+ finally{clearTimeout(timer);}
+}
 function deviceType(){return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(/Macintosh/i.test(navigator.userAgent)&&navigator.maxTouchPoints>1)?'MOBILE':'WEB';}
 async function openTossPayment(provider,clientKey,request){
  const instance=provider(clientKey),customerKey=provider.ANONYMOUS;
@@ -252,26 +265,27 @@ function paymentRequest(value,order){
 function safeReceiptUrl(value){try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password&&!u.port&&['dashboard.tosspayments.com','pgweb.tosspayments.com','receipt.tosspayments.com'].includes(u.hostname)?u.href:null;}catch{return null;}}
 async function paymentTest(){
  const holder=main.querySelector('#payment-demo'),feedback=main.querySelector('#preview-result');
+ const retry='<button type="button" class="button-outline" data-review-retry>연결 다시 확인</button>';
+ const bindRetry=()=>{const button=holder.querySelector?.('[data-review-retry]');if(button)button.onclick=()=>{button.disabled=true;void paymentTest();};};
  const closed=new URLSearchParams(location.search).get('result')==='closed';if(location.search)history.replaceState(null,'','/payment-test.html');
  if(closed)message(feedback,'테스트 결제창을 닫았습니다. 다시 테스트할 수 있습니다.');
  try{
-  const response=await fetch('/api/toss-review?action=config',{cache:'no-store'}),ready=await response.json();if(!response.ok||ready.mode!=='test'||!Array.isArray(ready.products))throw Error('테스트 연결 상태를 확인하지 못했습니다.');
+  const ready=await reviewRequest('config');if(ready.mode!=='test'||!Array.isArray(ready.products))throw Error('테스트 연결 상태를 확인하지 못했습니다.');
   holder.innerHTML='<h2>토스페이먼츠 테스트 결제</h2><p>실제 금액은 청구되지 않으며 상품 주문이나 렌탈 예약이 생성되지 않습니다.</p><label>테스트 상품<select data-review-product>'+ready.products.map(p=>'<option value="'+esc(p.id)+'">'+esc((p.kind==='rental'?'렌탈':'구매')+' · '+p.name)+'</option>').join('')+'</select></label><p data-review-amount></p><div class="commerce-actions"><button type="button" class="button-primary" data-review-method="CARD" disabled>카드 테스트 결제창</button><button type="button" class="button-outline" data-review-method="TRANSFER" disabled>계좌이체 테스트 결제창</button></div><p data-review-status role="status">'+(ready.configured?'안전한 테스트 결제창을 불러오고 있습니다.':'테스트 상점 연결 대기 중입니다. 연결이 완료되면 이 화면에서 결제창과 승인·취소 결과를 확인할 수 있습니다.')+'</p><p><a href="/terms.html">이용약관</a> · <a href="/privacy.html">개인정보 처리 안내</a> · <a href="/shipping.html">배송·교환·반품 안내</a></p>';
   const select=holder.querySelector('[data-review-product]'),status=holder.querySelector('[data-review-status]'),buttons=[...holder.querySelectorAll('[data-review-method]')];
   const update=()=>{const p=ready.products.find(p=>p.id===select.value);holder.querySelector('[data-review-amount]').textContent=p?'테스트 금액 '+money(p.amount):'테스트 가능한 상품을 확인하고 있습니다.';};select.onchange=update;update();
-  if(!ready.configured||!ready.products.length)return;
+  if(!ready.configured||!ready.products.length){status.textContent=!ready.configured?'테스트 상점 연결 대기 중입니다.':'현재 테스트 가능한 상품을 확인하지 못했습니다.';status.insertAdjacentHTML('afterend',retry);bindRetry();return;}
   const provider=await loadToss();buttons.forEach(b=>b.disabled=false);status.textContent='결제수단을 선택하면 토스 테스트 결제창이 열립니다.';
   for(const button of buttons)button.onclick=async()=>{
    buttons.forEach(b=>b.disabled=true);status.textContent='토스 테스트 결제창으로 연결하고 있습니다.';
    try{
-    const product=ready.products.find(p=>p.id===select.value),response=await fetch('/api/toss-review?action=prepare',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:product.id,method:button.dataset.reviewMethod})}),value=await response.json();
-    if(!response.ok)throw Error(value.error||'테스트 요청을 확인해주세요.');
+    const product=ready.products.find(p=>p.id===select.value),value=await reviewRequest('prepare',{id:product.id,method:button.dataset.reviewMethod});
     const r=value.request,success=new URL(r?.successUrl||'',location.origin);
     if(value.mode!=='test'||value.provider!=='toss'||!/^test_(?:g)?ck_[a-zA-Z0-9_-]+$/.test(value.clientKey||'')||value.amount!==product.amount||!Number.isSafeInteger(product.amount)||product.amount<1||r?.amount?.value!==product.amount||r.amount.currency!=='KRW'||r.orderId!==value.orderId||!/^NDTEST_[a-f0-9]{24}$/.test(value.orderId)||r.method!==button.dataset.reviewMethod||success.origin!=='https://shop.nadaun.co'||success.pathname!=='/api/toss-review'||success.searchParams.get('action')!=='return'||!success.searchParams.get('token')||r.failUrl!=='https://shop.nadaun.co/payment-test.html?result=closed')throw Error('안전한 테스트 결제 요청을 확인하지 못했습니다.');
     await openTossPayment(provider,value.clientKey,r);
    }catch(error){status.textContent=error?.code==='USER_CANCEL'?'테스트 결제창을 닫았습니다. 다시 테스트할 수 있습니다.':error.message||'테스트 결제창 연결을 확인해주세요.';buttons.forEach(b=>b.disabled=false);}
   };
- }catch(error){holder.innerHTML='<h2>토스페이먼츠 테스트 결제</h2><p>테스트 연결을 확인하고 있습니다. 잠시 후 다시 확인해주세요.</p>';message(feedback,error.message);}
+ }catch(error){holder.innerHTML='<h2>토스페이먼츠 테스트 결제</h2><p>테스트 연결을 완료하지 못했습니다. 연결 상태를 다시 확인할 수 있습니다.</p>'+retry;bindRetry();message(feedback,error.message);}
 }
 
 async function pay(order,card,button){
@@ -312,7 +326,7 @@ async function orders(){
 function adminReadiness(ready){
  const provider={toss:'토스페이먼츠'}[ready.paymentProvider]||'확인 필요';
  const rows=[['현재 결제대행사',provider],['고객 주문·결제',ready.ordersEnabled===true?'접수 가능':'오픈 준비 중'],['렌탈 온라인 접수',ready.rentalRequestsEnabled===true?'접수 가능':'오픈 준비 중'],['기프트 주문 요청',ready.giftRequestsEnabled===true?'접수 가능':'오픈 준비 중'],['전자세금계산서',ready.taxInvoiceEnabled===true?'발급 연결됨':'발급 연결 준비 중']];
- return '<div class="commerce-admin-summary" aria-label="운영 연결 상태">'+rows.map(([label,value])=>'<div><span>'+esc(label)+'</span><strong>'+esc(value)+'</strong></div>').join('')+'</div><p class="commerce-note">현금영수증 소득공제·사업자 지출증빙은 결제대행사에서 처리합니다. 전자세금계산서는 별도 발급 연결이 필요합니다.</p>';
+ return '<div class="commerce-admin-summary" aria-label="운영 연결 상태">'+rows.map(([label,value])=>'<div><span>'+esc(label)+'</span><strong>'+esc(value)+'</strong></div>').join('')+'</div><p><a class="button-outline" href="https://shop.nadaun.co/payment-test.html">토스 테스트 결제 →</a></p><p class="commerce-note">현금영수증 소득공제·사업자 지출증빙은 결제대행사에서 처리합니다. 전자세금계산서는 별도 발급 연결이 필요합니다.</p>';
 }
 const adminColumns=[['order','주문'],['customer','고객'],['product','상품·일정'],['amount','주문 금액'],['payment','결제 상태'],['shipping','배송·송장'],['next','다음 처리']];
 const adminPreferenceKey='nadaun-admin-view-v1';

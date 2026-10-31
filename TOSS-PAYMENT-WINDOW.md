@@ -11,3 +11,10 @@
 검증: 카드·계좌이체/신규·기존 키/금액·주문·소유권/중복 요청·취소/결제창 닫기/오류 후 재시도 포함 Node 94검사 통과. 공급사 응답과 SDK는 모의 객체이며 실제 PG 승인을 뜻하지 않는다. 비공개 입력·등록 코드의 별도 12검사도 통과했다. 키 본문은 Git·문서·로그에 기록하지 않는다. 환경변수 등록, 실제 PG 결제창 승인·취소 검수, 라이브 개통은 별도로 확인한다.
 
 공식 근거: [API 키](https://docs.tosspayments.com/reference/using-api/api-keys), [결제창형 SDK](https://docs.tosspayments.com/sdk/v2/js/payment-window), [결제창형 가이드](https://docs.tosspayments.com/guides/v2/payment-widget/integration-window).
+
+
+## 2026-10-31 테스트 페이지 재점검
+
+관리자 화면의 운영 연결 항목에서 테스트 페이지로 바로 이동할 수 있다. `order.nadaun.co/payment-test.html`과 확장자 없는 `/payment-test`는 `shop.nadaun.co/payment-test.html`로 이동시켜 결제 요청 Origin을 일치시킨다. 테스트 서버 요청과 SDK 로드에 각각15초 제한을 두고 오류 후 연결을 다시 확인할 수 있게 했다. 자바스크립트가 꺼져 있으면 활성화 안내를 표시한다. 이 보완은 실제 운영 화면이나 결제 승인·취소의 확인을 대신하지 않는다.
+
+현재 확인한 NAS/Vercel에는 TEST 키2개만 있다. 라이브 클라이언트/시크릿/MID는 미설정이며 토스 공식 문서상 테스트 키로 실제 금액을 청구할 수 없다. 대표가 라이브 결제 개통을 요청했으나 필요한 상점 정보·키와 실제 검수가 확보되기 전 고객 결제 스위치를 켜지 않는다.

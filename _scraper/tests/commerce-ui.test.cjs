@@ -10,7 +10,7 @@ function runtime(overrides={}){
  function createElement(tag){const node={tag,isConnected:true,children:[],append(child){this.children.push(child);},remove(){this.isConnected=false;}};elements.push(node);return node;}
  const document={body:{dataset:{mode:'unit'},append(){}},querySelector(){return main;},createElement,head:{append(script){assert.equal(script.src,'https://js.tosspayments.com/v2/standard');sdkCalls.push('load');script.onload();}}};
  const value={provider:'toss',mode:'test',clientKey:'test_ck_fixture',orderId:'NS-fixture',amount:24500,request:{method:'CARD',amount:{currency:'KRW',value:24500},orderId:'NS-fixture',orderName:'test',successUrl:'https://shop.nadaun.co/api/toss-return?token=opaque',failUrl:'https://shop.nadaun.co/orders.html?result=closed'}};
- const context=vm.createContext({document,window:{TossPayments},URL,URLSearchParams,console,crypto:require('node:crypto').webcrypto,navigator:{userAgent:'Macintosh',maxTouchPoints:0},location:{origin:'https://shop.nadaun.co',search:''},history:{replaceState(){}},fetch:async(url,options)=>{requests.push({url,options});return{ok:true,json:async()=>value};},...overrides});vm.runInContext(source,context);
+ const context=vm.createContext({document,window:{TossPayments},URL,URLSearchParams,AbortController,setTimeout,clearTimeout,console,crypto:require('node:crypto').webcrypto,navigator:{userAgent:'Macintosh',maxTouchPoints:0},location:{origin:'https://shop.nadaun.co',search:''},history:{replaceState(){}},fetch:async(url,options)=>{requests.push({url,options});return{ok:true,json:async()=>value};},...overrides});vm.runInContext(source,context);
  return {context,requests,sdkCalls,elements,feedback,main,value,get paymentForm(){return paymentForm;},close:()=>close()};
 }
 const card=(r,checked=true)=>({querySelector:s=>s.includes('consent')?{checked}:r.feedback});
@@ -29,6 +29,30 @@ test('mobile and touch iPad payments select MOBILE',()=>{
 });
 test('SDK errors remain retryable and never expose provider messages',async()=>{
  const r=runtime();let count=0;r.context.document.head.append=script=>{if(count++===0)script.onerror();else script.onload();};const button={};await r.context.pay(paymentOrder,card(r),button);assert.equal(button.disabled,false);assert.equal(r.paymentForm,undefined);const pending=r.context.pay(paymentOrder,card(r),button);await tick();assert.ok(r.paymentForm);r.close();await pending;
+});
+test('a stalled SDK load times out, ignores late load events and can be retried',async()=>{
+ const timers=new Map();let next=0;const r=runtime({setTimeout(fn){timers.set(++next,fn);return next;},clearTimeout(id){timers.delete(id);}}),scripts=[];
+ r.context.document.head.append=script=>scripts.push(script);
+ const pending=r.context.loadToss();assert.equal(timers.size,1);[...timers.values()][0]();await assert.rejects(pending,/다시 시도/);assert.equal(scripts[0].isConnected,false);
+ scripts[0].onload();const retry=r.context.loadToss();assert.equal(scripts.length,2);scripts[1].onload();assert.equal(typeof await retry,'function');assert.equal(timers.size,0);
+});
+test('stalled test API fetches abort and give a retryable message',async()=>{
+ let expire,signal,cleared=false;
+ const r=runtime({setTimeout(fn){expire=fn;return 1;},clearTimeout(){cleared=true;},fetch:async(url,options)=>{signal=options.signal;return new Promise((resolve,reject)=>signal.addEventListener('abort',()=>reject(Object.assign(Error('aborted'),{name:'AbortError'}))));}});
+ const pending=r.context.reviewRequest('config');expire();await assert.rejects(pending,/응답이 지연/);assert.equal(signal.aborted,true);assert.equal(cleared,true);
+});
+test('test API failure shows a working retry without reflecting server diagnostics',async()=>{
+ let requests=0;const button={},holder={querySelector:()=>button},feedback={};
+ const r=runtime({fetch:async()=>{requests++;return {ok:false,json:async()=>({error:'private-provider-detail'})};}});r.main.querySelector=s=>s==='#payment-demo'?holder:feedback;
+ await r.context.paymentTest();assert.match(holder.innerHTML,/data-review-retry/);assert.ok(!feedback.textContent.includes('private-provider-detail'));assert.equal(typeof button.onclick,'function');
+ button.onclick();await tick();assert.equal(requests,2);
+});
+test('a configured merchant renders usable test buttons and recovers when checkout closes',async()=>{
+ const product={id:'p1',kind:'purchase',name:'카메라',amount:24500},select={value:'p1'},status={},amount={},buttons=[{dataset:{reviewMethod:'CARD'}},{dataset:{reviewMethod:'TRANSFER'}}];
+ const holder={querySelector:s=>s==='[data-review-product]'?select:s==='[data-review-status]'?status:amount,querySelectorAll:()=>buttons},feedback={};let r;
+ r=runtime({fetch:async url=>({ok:true,json:async()=>url.includes('action=config')?{configured:true,mode:'test',products:[product]}:{...r.value,orderId:'NDTEST_'+'a'.repeat(24),request:{...r.value.request,orderId:'NDTEST_'+'a'.repeat(24),successUrl:'https://shop.nadaun.co/api/toss-review?action=return&token=signed',failUrl:'https://shop.nadaun.co/payment-test.html?result=closed'}}})});
+ r.main.querySelector=s=>s==='#payment-demo'?holder:feedback;await r.context.paymentTest();assert.ok(buttons.every(b=>b.disabled===false));assert.match(amount.textContent,/24,500/);
+ const pending=buttons[0].onclick();await tick();assert.equal(r.paymentForm.amount.value,product.amount);assert.ok(buttons.every(b=>b.disabled));r.close();await pending;assert.ok(buttons.every(b=>b.disabled===false));
 });
 function windowRuntime({method='CARD',failure=false,renderFailure=false}={}){
  const calls=[],events={},sent=[];let release;
@@ -68,6 +92,7 @@ test('admin readiness separates enabled administration from pending customer pay
  const enabled=r.context.adminReadiness({paymentProvider:'toss',ordersEnabled:true,rentalRequestsEnabled:true,giftRequestsEnabled:true,taxInvoiceEnabled:true});
  assert.match(enabled,/토스페이먼츠/);assert.equal((enabled.match(/접수 가능/g)||[]).length,3);assert.match(enabled,/<strong>발급 연결됨/);
  assert.match(r.context.adminReadiness({paymentProvider:'<script>bad</script>',ordersEnabled:'true'}),/확인 필요/);assert.doesNotMatch(r.context.adminReadiness({ordersEnabled:'true'}),/접수 가능/);
+ assert.match(pending,/href="https:\/\/shop\.nadaun\.co\/payment-test\.html"/);
 });
 test('tax invoice option is only available when server reports a configured issuer',()=>{
  const r=runtime();assert.ok(!r.context.evidenceForm(false).includes('<option value="tax_invoice">'));assert.match(r.context.evidenceForm(true),/<option value="tax_invoice">/);assert.match(r.context.evidenceForm(true),/type="email"/);assert.match(r.context.evidenceForm(true),/소득공제 \/ 지출증빙/);
@@ -80,7 +105,7 @@ test('order HTML hides private business data and test shipment actions',()=>{
  const html=r.context.orderCard(order,true);assert.ok(!html.includes('<img src=x'));assert.ok(!html.includes('<script>'));assert.ok(!html.includes('commerce-shipping'));const customer=r.context.orderCard(order);assert.ok(!customer.includes('secret-business-id'));assert.ok(!customer.includes('commerce-address'));
 });
 test('test payment page strips sensitive redirect query and fails closed on invalid merchant configuration',async()=>{
- let cleaned;const r=runtime({location:{origin:'https://shop.nadaun.co',search:'?result=success&paymentKey=secret'},history:{replaceState(a,b,path){cleaned=path;}}});const holder={};r.main.querySelector=()=>holder;await r.context.paymentTest();assert.equal(cleaned,'/payment-test.html');assert.equal(r.sdkCalls.length,0);assert.ok(!holder.innerHTML.includes('secret'));assert.match(holder.innerHTML,/테스트 연결을 확인/);
+ let cleaned;const r=runtime({location:{origin:'https://shop.nadaun.co',search:'?result=success&paymentKey=secret'},history:{replaceState(a,b,path){cleaned=path;}}});const holder={};r.main.querySelector=()=>holder;await r.context.paymentTest();assert.equal(cleaned,'/payment-test.html');assert.equal(r.sdkCalls.length,0);assert.ok(!holder.innerHTML.includes('secret'));assert.match(holder.innerHTML,/테스트 연결을 완료하지 못/);assert.match(holder.innerHTML,/data-review-retry/);
 });
 
 test('order submission includes only checked cart lines and strips selection metadata',()=>{
